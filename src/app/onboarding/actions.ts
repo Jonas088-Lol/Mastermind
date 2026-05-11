@@ -1,0 +1,82 @@
+"use server";
+
+import { randomBytes } from "node:crypto";
+import { redirect } from "next/navigation";
+import { hashPassword } from "@/lib/auth/passwords";
+import { prisma } from "@/lib/db/client";
+import { sendEmail } from "@/lib/email";
+import { setSession } from "@/lib/session";
+
+function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
+    .replace(/ß/g, "ss")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 40);
+}
+
+function err(msg: string): never {
+  redirect(`/onboarding?step=5&error=${encodeURIComponent(msg)}`);
+}
+
+export async function createSchoolAndAdmin(formData: FormData) {
+  const schoolName = String(formData.get("school-name") ?? "").trim();
+  const adminName = String(formData.get("admin-name") ?? "").trim();
+  const adminEmail = String(formData.get("admin-email") ?? "")
+    .trim()
+    .toLowerCase();
+  const adminPassword = String(formData.get("admin-password") ?? "");
+  const plan = String(formData.get("plan") ?? "basic");
+
+  if (!schoolName || schoolName.length < 3) err("Schulname zu kurz (min. 3 Zeichen)");
+  if (!adminName || adminName.length < 2) err("Vor- und Nachname angeben");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(adminEmail)) err("Ungültige E-Mail-Adresse");
+  if (adminPassword.length < 12) err("Passwort mindestens 12 Zeichen");
+  if (!["basic", "pro", "enterprise"].includes(plan)) err("Ungültiger Plan");
+
+  let slug = slugify(schoolName);
+  const existing = await prisma.school.findUnique({ where: { slug } });
+  if (existing) slug = `${slug}-${randomBytes(3).toString("hex")}`;
+
+  const existingUser = await prisma.user.findUnique({ where: { email: adminEmail } });
+  if (existingUser) err("Diese E-Mail-Adresse ist bereits registriert");
+
+  const passwordHash = await hashPassword(adminPassword);
+
+  const school = await prisma.school.create({
+    data: {
+      slug,
+      name: schoolName,
+      plan,
+      users: {
+        create: {
+          email: adminEmail,
+          name: adminName,
+          passwordHash,
+          role: "admin",
+          verifiedAt: new Date(),
+        },
+      },
+    },
+    include: { users: true },
+  });
+
+  const admin = school.users[0];
+
+  await sendEmail({
+    to: adminEmail,
+    subject: `Willkommen bei MasterMind — ${schoolName} ist live`,
+    text:
+      `Hallo ${adminName},\n\n` +
+      `deine Schule „${schoolName}" wurde erfolgreich eingerichtet.\n\n` +
+      `Melde dich mit dieser E-Mail-Adresse und deinem Passwort an.\n\n` +
+      `— MasterMind\n`,
+  });
+
+  await setSession({ email: admin.email, realRole: "admin" });
+  redirect("/admin");
+}

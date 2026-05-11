@@ -1,0 +1,795 @@
+// MasterMind — Prisma Schema (Production: PostgreSQL)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ── Tenancy ────────────────────────────────────────────────
+
+model School {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  city      String?
+  state     String?
+  plan      String   @default("basic")
+  seats     Int      @default(100)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users            User[]
+  classes          SchoolClass[]
+  subjects         Subject[]
+  timetableEntries TimetableEntry[]
+  messageThreads   MessageThread[]
+  periodConfigs    SchoolPeriodConfig[]
+  absences         Absence[]
+  learningPaths    LearningPath[]
+  teams            SchoolTeam[]
+}
+
+// ── Auth & Identity ────────────────────────────────────────
+
+model User {
+  id              String    @id @default(cuid())
+  email           String    @unique
+  name            String
+  passwordHash    String
+  role            String
+  klasse          String?
+  classId         String?
+  twoFactor       Boolean   @default(false)
+  twoFactorSecret String?
+  verifiedAt      DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  schoolId    String?
+  school      School?     @relation(fields: [schoolId], references: [id])
+  schoolClass SchoolClass? @relation("StudentClass", fields: [classId], references: [id])
+
+  sessions          Session[]
+  verifications     VerificationToken[]
+  taskCompletions   TaskCompletion[]
+  notificationReads NotificationRead[]
+  aiQuotaEntries    AiQuotaEntry[]
+  backupCodes       BackupCode[]
+
+  teacherSubjectClasses TeacherSubjectClass[]
+  timetableEntries      TimetableEntry[]      @relation("TimetableTeacher")
+  teacherAssignments    Assignment[]          @relation("TeacherAssignments")
+  teacherGrades         Grade[]               @relation("TeacherGrades")
+
+  studentSubmissions Submission[]    @relation("StudentSubmissions")
+  studentGrades      Grade[]         @relation("StudentGrades")
+  flashcardDecks     FlashcardDeck[]
+
+  messageParticipants MessageParticipant[]
+  sentMessages        Message[]            @relation("SentMessages")
+
+  appNotifications AppNotification[]
+
+  authoredNotes Note[] @relation("AuthorNotes")
+
+  xp             Int       @default(0)
+  xpLogs         XpLog[]
+  streak         Int       @default(0)
+  lastActiveDate DateTime?
+
+  parentLinks   ParentStudentLink[] @relation("ParentLinks")
+  studentParents ParentStudentLink[] @relation("StudentParents")
+
+  reportedAbsences   Absence[] @relation("AbsenceReporter")
+  studentAbsences    Absence[] @relation("AbsenceStudent")
+  confirmedAbsences  Absence[] @relation("AbsenceConfirmer")
+  achievements       UserAchievement[]
+
+  createdLearningPaths LearningPath[]     @relation("CreatedLearningPaths")
+  quizAnswers          QuizAnswer[]
+  learningProgress     LearningProgress[]
+
+  teacherLessonLogs  LessonLog[]          @relation("TeacherLessonLogs")
+  studentAttendance  AttendanceRecord[]   @relation("StudentAttendance")
+  teacherAttendance  AttendanceRecord[]   @relation("TeacherAttendance")
+  teacherIncidents   ClassbookIncident[]  @relation("TeacherIncidents")
+  studentIncidents   ClassbookIncident[]  @relation("StudentIncidents")
+
+  exerciseAnswers    ExerciseAnswer[]
+  exerciseProgress   ExerciseProgress[]
+
+  duelsAsChallenger  Duel[]            @relation("DuelChallenger")
+  duelsAsChallenged  Duel[]            @relation("DuelChallenged")
+  pushSubscriptions  PushSubscription[]
+  fileUploads        FileUpload[]
+
+  @@index([role])
+  @@index([schoolId])
+  @@index([classId])
+}
+
+model BackupCode {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  codeHash  String    @unique
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
+}
+
+model Session {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token      String   @unique
+  expiresAt  DateTime
+  ipAddress  String?
+  userAgent  String?
+  viewAs     String?
+  lastUsedAt DateTime @default(now())
+  createdAt  DateTime @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model VerificationToken {
+  id         String    @id @default(cuid())
+  userId     String?
+  user       User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email      String
+  type       String
+  token      String    @unique
+  expiresAt  DateTime
+  consumedAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([email, type])
+  @@index([token])
+}
+
+model TaskCompletion {
+  id     String   @id @default(cuid())
+  userId String
+  user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  taskId String
+  doneAt DateTime @default(now())
+
+  @@unique([userId, taskId])
+  @@index([userId])
+}
+
+model NotificationRead {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notificationId String
+  readAt         DateTime @default(now())
+
+  @@unique([userId, notificationId])
+  @@index([userId])
+}
+
+model AiQuotaEntry {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  used      Int      @default(0)
+  resetAt   DateTime
+  updatedAt DateTime @updatedAt
+}
+
+// ── Schul-Struktur ─────────────────────────────────────────
+
+model SchoolClass {
+  id       String @id @default(cuid())
+  name     String // "9b"
+  grade    Int    // 9
+  schoolId String
+  school   School @relation(fields: [schoolId], references: [id])
+
+  students              User[]                @relation("StudentClass")
+  teacherSubjectClasses TeacherSubjectClass[]
+  timetableEntries      TimetableEntry[]
+  assignments           Assignment[]
+  lessonLogs            LessonLog[]
+  incidents             ClassbookIncident[]
+
+  @@unique([schoolId, name])
+  @@index([schoolId])
+}
+
+model Subject {
+  id        String @id @default(cuid())
+  name      String // "Mathematik"
+  shortName String // "M"
+  color     String @default("#6366f1")
+  schoolId  String
+  school    School @relation(fields: [schoolId], references: [id])
+
+  teacherSubjectClasses TeacherSubjectClass[]
+  timetableEntries      TimetableEntry[]
+  assignments           Assignment[]
+  grades                Grade[]
+  flashcardDecks        FlashcardDeck[]
+  lessonLogs            LessonLog[]
+  learningPaths         LearningPath[]
+
+  @@index([schoolId])
+}
+
+model TeacherSubjectClass {
+  id        String      @id @default(cuid())
+  teacherId String
+  teacher   User        @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  subjectId String
+  subject   Subject     @relation(fields: [subjectId], references: [id])
+  classId   String
+  class     SchoolClass @relation(fields: [classId], references: [id])
+
+  @@unique([teacherId, subjectId, classId])
+  @@index([teacherId])
+  @@index([classId])
+}
+
+model TimetableEntry {
+  id        String      @id @default(cuid())
+  schoolId  String
+  school    School      @relation(fields: [schoolId], references: [id])
+  classId   String
+  class     SchoolClass @relation(fields: [classId], references: [id])
+  teacherId String
+  teacher   User        @relation("TimetableTeacher", fields: [teacherId], references: [id])
+  subjectId String
+  subject   Subject     @relation(fields: [subjectId], references: [id])
+  day       Int // 1=Mo … 5=Fr
+  period    Int // 1–9
+  room      String?
+
+  @@unique([classId, day, period])
+  @@index([classId])
+  @@index([teacherId])
+}
+
+model ParentStudentLink {
+  id        String @id @default(cuid())
+  parentId  String
+  parent    User   @relation("ParentLinks", fields: [parentId], references: [id], onDelete: Cascade)
+  studentId String
+  student   User   @relation("StudentParents", fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([parentId, studentId])
+  @@index([parentId])
+  @@index([studentId])
+}
+
+// ── Aufgaben & Noten ───────────────────────────────────────
+
+model Assignment {
+  id          String      @id @default(cuid())
+  title       String
+  description String?
+  dueAt       DateTime
+  type        String      @default("homework") // homework | test | project | exam
+  maxPoints   Int?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  teacherId   String
+  teacher     User        @relation("TeacherAssignments", fields: [teacherId], references: [id])
+  classId     String
+  class       SchoolClass @relation(fields: [classId], references: [id])
+  subjectId   String
+  subject     Subject     @relation(fields: [subjectId], references: [id])
+
+  submissions Submission[]
+  fileUploads FileUpload[]
+
+  @@index([classId])
+  @@index([teacherId])
+  @@index([dueAt])
+}
+
+model Submission {
+  id           String     @id @default(cuid())
+  assignmentId String
+  assignment   Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  studentId    String
+  student      User       @relation("StudentSubmissions", fields: [studentId], references: [id])
+  content      String?
+  status       String     @default("open") // open | submitted | graded | late
+  submittedAt  DateTime?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  grade Grade? @relation("SubmissionGrade")
+
+  @@unique([assignmentId, studentId])
+  @@index([studentId])
+  @@index([assignmentId])
+}
+
+model Grade {
+  id           String      @id @default(cuid())
+  studentId    String
+  student      User        @relation("StudentGrades", fields: [studentId], references: [id])
+  teacherId    String
+  teacher      User        @relation("TeacherGrades", fields: [teacherId], references: [id])
+  subjectId    String
+  subject      Subject     @relation(fields: [subjectId], references: [id])
+  submissionId String?     @unique
+  submission   Submission? @relation("SubmissionGrade", fields: [submissionId], references: [id])
+  value        Float // 1.0–6.0
+  weight       Float       @default(1.0)
+  type         String // klausur | test | muendlich | hausaufgabe | projekt
+  comment      String?
+  date         DateTime    @default(now())
+
+  @@index([studentId, subjectId])
+  @@index([teacherId])
+  @@index([date])
+}
+
+// ── Nachrichten ────────────────────────────────────────────
+
+model MessageThread {
+  id        String   @id @default(cuid())
+  subject   String
+  schoolId  String
+  school    School   @relation(fields: [schoolId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  participants MessageParticipant[]
+  messages     Message[]
+
+  @@index([schoolId, updatedAt])
+}
+
+model MessageParticipant {
+  id         String        @id @default(cuid())
+  threadId   String
+  thread     MessageThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  userId     String
+  user       User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lastReadAt DateTime?
+
+  @@unique([threadId, userId])
+  @@index([userId])
+}
+
+model Message {
+  id       String        @id @default(cuid())
+  threadId String
+  thread   MessageThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  senderId String
+  sender   User          @relation("SentMessages", fields: [senderId], references: [id])
+  content  String
+  sentAt   DateTime      @default(now())
+
+  @@index([threadId, sentAt])
+  @@index([senderId])
+}
+
+// ── Karteikarten ───────────────────────────────────────────
+
+model FlashcardDeck {
+  id        String   @id @default(cuid())
+  name      String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subjectId String?
+  subject   Subject? @relation(fields: [subjectId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  cards Flashcard[]
+
+  @@index([userId])
+}
+
+model Flashcard {
+  id           String        @id @default(cuid())
+  deckId       String
+  deck         FlashcardDeck @relation(fields: [deckId], references: [id], onDelete: Cascade)
+  front        String
+  back         String
+  nextReviewAt DateTime      @default(now())
+  interval     Int           @default(1)
+  easeFactor   Float         @default(2.5)
+  repetitions  Int           @default(0)
+
+  @@index([deckId])
+  @@index([nextReviewAt])
+}
+
+// ── Benachrichtigungen ─────────────────────────────────────
+
+model AppNotification {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      String // assignment | grade | message | system
+  title     String
+  body      String
+  linkUrl   String?
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId, createdAt])
+}
+
+// ── Klassenbuch ─────────────────────────────────────────────
+
+model LessonLog {
+  id        String   @id @default(cuid())
+  date      DateTime @default(now())
+  period    String   // e.g. "1.-2."
+  topic     String
+  homework  String?
+  signedAt  DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  teacherId String
+  teacher   User        @relation("TeacherLessonLogs", fields: [teacherId], references: [id])
+  classId   String
+  class     SchoolClass @relation(fields: [classId], references: [id])
+  subjectId String
+  subject   Subject     @relation(fields: [subjectId], references: [id])
+
+  attendanceRecords AttendanceRecord[]
+
+  @@index([teacherId])
+  @@index([classId])
+  @@index([date])
+}
+
+model AttendanceRecord {
+  id       String   @id @default(cuid())
+  date     DateTime
+  status   String   // anwesend | fehlt | verspaetet | entschuldigt
+  reason   String?
+  signedAt DateTime?
+  createdAt DateTime @default(now())
+
+  lessonId  String?
+  lesson    LessonLog? @relation(fields: [lessonId], references: [id])
+  studentId String
+  student   User        @relation("StudentAttendance", fields: [studentId], references: [id])
+  teacherId String
+  teacher   User        @relation("TeacherAttendance", fields: [teacherId], references: [id])
+
+  @@unique([lessonId, studentId])
+  @@index([studentId])
+  @@index([date])
+}
+
+// ── Community Notizen ──────────────────────────────────────
+
+model Note {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  isPublic  Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  authorId String
+  author   User    @relation("AuthorNotes", fields: [authorId], references: [id], onDelete: Cascade)
+
+  images NoteImage[]
+
+  @@index([authorId])
+  @@index([isPublic, createdAt])
+}
+
+model ClassbookIncident {
+  id        String   @id @default(cuid())
+  type      String   // Verweis | Lob | Hinweis
+  text      String
+  date      DateTime @default(now())
+  createdAt DateTime @default(now())
+
+  teacherId String
+  teacher   User        @relation("TeacherIncidents", fields: [teacherId], references: [id])
+  studentId String
+  student   User        @relation("StudentIncidents", fields: [studentId], references: [id])
+  classId   String
+  class     SchoolClass @relation(fields: [classId], references: [id])
+
+  @@index([teacherId])
+  @@index([classId])
+  @@index([date])
+}
+
+model XpLog {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount       Int
+  reason       String   // "aufgabe_abgabe" | "karteikarte" | "note_geteilt" | "aufgabe_bewertet"
+  referenceId  String?  // ID der Aufgabe/Note etc.
+  createdAt    DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model NoteImage {
+  id        String   @id @default(cuid())
+  noteId    String
+  note      Note     @relation(fields: [noteId], references: [id], onDelete: Cascade)
+  filename  String
+  mimeType  String
+  size      Int
+  createdAt DateTime @default(now())
+
+  @@index([noteId])
+}
+
+model SchoolPeriodConfig {
+  id        String @id @default(cuid())
+  schoolId  String
+  school    School @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  period    Int    // 1–9
+  startTime String // "08:00"
+  endTime   String // "08:45"
+
+  @@unique([schoolId, period])
+  @@index([schoolId])
+}
+
+model Absence {
+  id         String    @id @default(cuid())
+  studentId  String
+  student    User      @relation("AbsenceStudent", fields: [studentId], references: [id], onDelete: Cascade)
+  reporterId String
+  reporter   User      @relation("AbsenceReporter", fields: [reporterId], references: [id], onDelete: Cascade)
+  schoolId   String
+  school     School    @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  fromDate   DateTime
+  toDate     DateTime
+  reason     String?
+  status     String    @default("pending") // pending | confirmed | rejected
+  confirmedById String?
+  confirmedBy   User?     @relation("AbsenceConfirmer", fields: [confirmedById], references: [id], onDelete: SetNull)
+  confirmedAt   DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([studentId])
+  @@index([schoolId])
+}
+
+model UserAchievement {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  slug        String   // "first_xp" | "streak_7" | "streak_30" | "level_5" | "notes_10" | "assignments_25"
+  unlockedAt  DateTime @default(now())
+
+  @@unique([userId, slug])
+  @@index([userId])
+}
+
+model LearningPath {
+  id          String   @id @default(cuid())
+  schoolId    String
+  school      School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  subjectId   String
+  subject     Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  createdById String
+  createdBy   User     @relation("CreatedLearningPaths", fields: [createdById], references: [id], onDelete: Cascade)
+  modules     LearningModule[]
+  progress    LearningProgress[]
+  createdAt   DateTime @default(now())
+
+  @@index([schoolId])
+  @@index([subjectId])
+}
+
+model LearningModule {
+  id        String         @id @default(cuid())
+  pathId    String
+  path      LearningPath   @relation(fields: [pathId], references: [id], onDelete: Cascade)
+  title     String
+  order     Int
+  questions QuizQuestion[]
+  progress  LearningProgress[]
+
+  @@index([pathId])
+}
+
+model QuizQuestion {
+  id          String         @id @default(cuid())
+  moduleId    String
+  module      LearningModule @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  question    String
+  type        String         @default("multiple_choice") // multiple_choice | true_false
+  options     String         // JSON array
+  correct     String         // correct option index (0-based) as string
+  explanation String?
+  order       Int
+  answers     QuizAnswer[]
+
+  @@index([moduleId])
+}
+
+model QuizAnswer {
+  id         String       @id @default(cuid())
+  userId     String
+  user       User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId String
+  question   QuizQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  answer     String
+  correct    Boolean
+  createdAt  DateTime     @default(now())
+
+  @@index([userId])
+  @@index([questionId])
+}
+
+model LearningProgress {
+  id          String         @id @default(cuid())
+  userId      String
+  user        User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  pathId      String
+  path        LearningPath   @relation(fields: [pathId], references: [id], onDelete: Cascade)
+  moduleId    String
+  module      LearningModule @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  completedAt DateTime       @default(now())
+
+  @@unique([userId, moduleId])
+  @@index([userId])
+  @@index([pathId])
+}
+
+// ── Übungen (plattformweit) ────────────────────────────────
+
+model ExerciseTopic {
+  id          String  @id @default(cuid())
+  subject     String  // deutsch | mathematik | englisch | physik | chemie | biologie | geschichte | informatik | python | javascript | java | latein | franzosisch | spanisch
+  grade       Int     // 1–13
+  title       String
+  description String?
+  order       Int     @default(0)
+
+  lessons   ExerciseLesson[]
+  questions ExerciseQuestion[]
+  progress  ExerciseProgress[]
+  duels     Duel[]
+
+  @@index([subject, grade])
+}
+
+model ExerciseLesson {
+  id       String        @id @default(cuid())
+  topicId  String
+  topic    ExerciseTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  content  String        // Markdown
+  videoUrl String?
+  order    Int           @default(0)
+
+  @@index([topicId])
+}
+
+model ExerciseQuestion {
+  id          String        @id @default(cuid())
+  topicId     String
+  topic       ExerciseTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  type        String        // mc | fill_blank | true_false | order | match | blitz
+  question    String
+  options     String?       // JSON array
+  correct     String        // JSON value or index
+  explanation String?
+  order       Int           @default(0)
+
+  answers ExerciseAnswer[]
+
+  @@index([topicId])
+}
+
+model ExerciseAnswer {
+  id         String           @id @default(cuid())
+  userId     String
+  user       User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questionId String
+  question   ExerciseQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  answer     String
+  correct    Boolean
+  createdAt  DateTime         @default(now())
+
+  @@index([userId])
+  @@index([questionId])
+}
+
+model ExerciseProgress {
+  id          String        @id @default(cuid())
+  userId      String
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  topicId     String
+  topic       ExerciseTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  score       Int           @default(0)
+  completedAt DateTime?
+  startedAt   DateTime      @default(now())
+
+  @@unique([userId, topicId])
+  @@index([userId])
+}
+
+// ── Schulmannschaften ──────────────────────────────────────
+
+model SchoolTeam {
+  id       String  @id @default(cuid())
+  schoolId String
+  school   School  @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  name     String  // "Fußball Herren", "Basketball Damen"
+  sport    String  // fussball | basketball | volleyball | handball | leichtathletik | schwimmen | tennis
+  season   String? // "2025/26"
+  coach    String?
+  results  String? // JSON: array of {date, opponent, scoreHome, scoreAway}
+
+  @@index([schoolId])
+}
+
+// ── Duelle ─────────────────────────────────────────────────
+
+model Duel {
+  id           String    @id @default(cuid())
+  challengerId String
+  challenger   User      @relation("DuelChallenger", fields: [challengerId], references: [id], onDelete: Cascade)
+  challengedId String
+  challenged   User      @relation("DuelChallenged", fields: [challengedId], references: [id], onDelete: Cascade)
+  topicId      String
+  topic        ExerciseTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  status       String    @default("pending") // pending | accepted | completed | declined | expired
+  challengerScore Int?
+  challengedScore Int?
+  winnerId     String?
+  message      String?   // optional challenge message
+  createdAt    DateTime  @default(now())
+  expiresAt    DateTime
+  completedAt  DateTime?
+
+  @@index([challengerId])
+  @@index([challengedId])
+  @@index([status])
+}
+
+// ── Web Push Subscriptions ─────────────────────────────────
+
+model PushSubscription {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  endpoint  String   @unique
+  p256dh    String
+  auth      String
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// ── Großdatei-Uploads ─────────────────────────────────────────
+
+model FileUpload {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  filename     String
+  mimeType     String
+  size         Int      // bytes
+  path         String   // storage path
+  assignmentId String?
+  assignment   Assignment? @relation(fields: [assignmentId], references: [id], onDelete: SetNull)
+  createdAt    DateTime @default(now())
+
+  @@index([userId])
+  @@index([assignmentId])
+}

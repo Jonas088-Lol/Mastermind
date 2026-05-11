@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Dummy-DB für Build/Lint — die echten Migrations laufen im Deploy-Job
+  DATABASE_URL: file:./prisma/ci.db
+  SESSION_SECRET: ci-only-secret-do-not-use-in-prod
+
+jobs:
+  lint-and-build:
+    name: Lint, Type-Check, Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+      - name: Apply migrations to CI DB
+        run: npx prisma migrate deploy
+
+      - name: ESLint
+        run: npx eslint src/
+
+      - name: TypeScript build (incl. type-check)
+        run: npx next build

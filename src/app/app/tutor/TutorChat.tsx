@@ -1,0 +1,461 @@
+"use client";
+
+import {
+  ArrowUp,
+  Bookmark,
+  Camera,
+  Mic,
+  Paperclip,
+  Sparkles,
+  Volume2,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Avatar } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+type Role = "user" | "assistant";
+
+interface Message {
+  id: string;
+  role: Role;
+  content: string;
+  rating?: "up" | "down";
+  pending?: boolean;
+}
+
+const INITIAL: Message[] = [
+  {
+    id: "u1",
+    role: "user",
+    content:
+      "Kannst du mir Aufgabe 5b erklären? Ich verstehe nicht, wie man die pq-Formel auf x² + 4x − 12 = 0 anwendet.",
+  },
+  {
+    id: "a1",
+    role: "assistant",
+    content:
+      "Klar, gehen wir das Schritt für Schritt durch.\n\n1. Bringe die Gleichung in die Normalform: x² + px + q = 0. Bei dir: p = 4, q = −12.\n2. Setze in x = −p/2 ± √((p/2)² − q) ein.\n3. Das ergibt x = −2 ± √(4 + 12) = −2 ± √16 = −2 ± 4.\n4. Also: x₁ = 2 und x₂ = −6.\n5. Probe: 2² + 4·2 − 12 = 0 ✓ und (−6)² + 4·(−6) − 12 = 0 ✓.\n\nMagst du eine ähnliche Aufgabe selbst durchgehen?",
+  },
+];
+
+interface TutorChatProps {
+  initialQuotaUsed?: number;
+  initialQuotaLimit?: number;
+  isAiConfigured?: boolean;
+  /** When set, the chat will populate the textarea with this text and focus it. */
+  injectedPrompt?: { text: string; seq: number };
+  onInjectedPromptConsumed?: () => void;
+}
+
+export function TutorChat({
+  initialQuotaUsed = 47,
+  initialQuotaLimit = 50,
+  isAiConfigured = false,
+  injectedPrompt,
+  onInjectedPromptConsumed,
+}: TutorChatProps) {
+  const [messages, setMessages] = useState<Message[]>(INITIAL);
+  const [input, setInput] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [quotaUsed, setQuotaUsed] = useState(initialQuotaUsed);
+  const [configured, setConfigured] = useState(isAiConfigured);
+  const scrollRef = useRef<HTMLOListElement>(null);
+  const abortRef = useRef<AbortController | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({
+      top: scrollRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [messages]);
+
+  // Populate textarea when a quick-prompt or recent topic is selected.
+  // The dependency on injectedPrompt.seq ensures this runs even when the same
+  // prompt text is clicked twice in a row.
+  useEffect(() => {
+    if (injectedPrompt) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setInput(injectedPrompt.text);
+      textareaRef.current?.focus();
+      onInjectedPromptConsumed?.();
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [injectedPrompt?.seq]);
+
+  async function send(question: string) {
+    const trimmed = question.trim();
+    if (!trimmed || busy) return;
+
+    setError(null);
+    setBusy(true);
+
+    const userMsg: Message = {
+      id: `u-${Date.now()}`,
+      role: "user",
+      content: trimmed,
+    };
+    const assistantId = `a-${Date.now()}`;
+    const placeholder: Message = {
+      id: assistantId,
+      role: "assistant",
+      content: "",
+      pending: true,
+    };
+    const next = [...messages, userMsg, placeholder];
+    setMessages(next);
+    setInput("");
+
+    const controller = new AbortController();
+    abortRef.current = controller;
+
+    try {
+      const res = await fetch("/api/ai/tutor", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          messages: next
+            .filter((m) => !m.pending)
+            .map((m) => ({ role: m.role, content: m.content })),
+        }),
+        signal: controller.signal,
+      });
+
+      if (!res.ok) {
+        const data = (await res.json().catch(() => ({}))) as {
+          error?: string;
+        };
+        throw new Error(data.error ?? `Fehler ${res.status}`);
+      }
+      if (!res.body) throw new Error("Kein Stream-Body");
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      const updateAssistant = (delta: string) => {
+        setMessages((curr) =>
+          curr.map((m) =>
+            m.id === assistantId
+              ? { ...m, content: m.content + delta, pending: true }
+              : m
+          )
+        );
+      };
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+
+        // Parse SSE chunks separated by blank lines
+        let sep: number;
+        while ((sep = buffer.indexOf("\n\n")) >= 0) {
+          const chunk = buffer.slice(0, sep);
+          buffer = buffer.slice(sep + 2);
+
+          let event = "message";
+          let data = "";
+          for (const line of chunk.split(/\r?\n/)) {
+            if (line.startsWith("event:")) event = line.slice(6).trim();
+            else if (line.startsWith("data:"))
+              data += (data ? "\n" : "") + line.slice(5).trim();
+          }
+          if (!data) continue;
+
+          if (event === "token") {
+            try {
+              const text = JSON.parse(data) as string;
+              updateAssistant(text);
+            } catch {
+              // ignore malformed
+            }
+          } else if (event === "meta") {
+            try {
+              const meta = JSON.parse(data) as {
+                quota?: { used: number; limit: number };
+                configured?: boolean;
+              };
+              if (meta.quota) {
+                setQuotaUsed(meta.quota.used);
+              }
+              if (typeof meta.configured === "boolean") {
+                setConfigured(meta.configured);
+              }
+            } catch {
+              // ignore
+            }
+          } else if (event === "error") {
+            try {
+              const e = JSON.parse(data) as { message?: string };
+              throw new Error(e.message ?? "Fehler beim Streamen");
+            } catch (err) {
+              throw err instanceof Error ? err : new Error("Stream-Fehler");
+            }
+          } else if (event === "done") {
+            // streaming finished; fall through to mark as not pending
+          }
+        }
+      }
+
+      setMessages((curr) =>
+        curr.map((m) => (m.id === assistantId ? { ...m, pending: false } : m))
+      );
+    } catch (err) {
+      const msg =
+        err instanceof Error && err.name !== "AbortError"
+          ? err.message
+          : null;
+      if (msg) {
+        setError(msg);
+        setMessages((curr) =>
+          curr.map((m) =>
+            m.id === assistantId
+              ? {
+                  ...m,
+                  content: m.content || `Fehler: ${msg}`,
+                  pending: false,
+                }
+              : m
+          )
+        );
+      }
+    } finally {
+      setBusy(false);
+      abortRef.current = null;
+    }
+  }
+
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    void send(input);
+  }
+
+  function rate(id: string, value: "up" | "down") {
+    setMessages((curr) =>
+      curr.map((m) => (m.id === id ? { ...m, rating: value } : m))
+    );
+  }
+
+  function stop() {
+    abortRef.current?.abort();
+  }
+
+  function newConversation() {
+    if (busy) stop();
+    setMessages([]);
+    setError(null);
+    setInput("");
+  }
+
+  return (
+    <div className="flex flex-col">
+      <div className="flex items-center justify-between border-b border-border px-5 py-3">
+        <div className="flex items-center gap-2">
+          <span className="size-1.5 animate-pulse bg-success" aria-hidden />
+          <p className="text-xs font-semibold uppercase tracking-wider">
+            Mathe · pq-Formel
+          </p>
+          <Badge variant={configured ? "success" : "warning"}>
+            {configured ? "KI live" : "Mock-Modus"}
+          </Badge>
+        </div>
+        <Button variant="ghost" size="sm" onClick={newConversation}>
+          Neue Konversation
+        </Button>
+      </div>
+
+      <ol
+        ref={scrollRef}
+        className="flex max-h-[60vh] flex-col gap-6 overflow-y-auto p-5"
+      >
+        {messages.map((m) => (
+          <li key={m.id}>
+            <ChatBubble message={m} onRate={(v) => rate(m.id, v)} />
+          </li>
+        ))}
+        {messages.length === 0 && (
+          <li className="grid place-items-center py-16 text-center">
+            <Sparkles className="size-8 text-brand" strokeWidth={1.5} />
+            <p className="mt-4 text-base font-semibold">
+              Wobei kann ich dir helfen?
+            </p>
+            <p className="mt-1 max-w-sm text-sm text-muted-fg">
+              Schreib eine Frage in das Feld unten — ich gehe Schritt für
+              Schritt mit dir durch.
+            </p>
+          </li>
+        )}
+      </ol>
+
+      {error && (
+        <div className="border-t border-danger/40 bg-danger/[0.06] px-5 py-2 text-xs text-danger">
+          {error}
+        </div>
+      )}
+
+      <div className="border-t border-border bg-bg p-3">
+        <form
+          onSubmit={onSubmit}
+          className="border border-border bg-surface focus-within:border-fg/30"
+        >
+          <textarea
+            ref={textareaRef}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
+                e.preventDefault();
+                void send(input);
+              }
+            }}
+            disabled={busy}
+            rows={3}
+            placeholder="Frag mich z. B. wie du eine pq-Formel-Aufgabe rechnest."
+            className="block w-full resize-none bg-transparent px-3 py-2.5 text-sm leading-relaxed focus:outline-none disabled:opacity-60"
+          />
+          <div className="flex items-center justify-between border-t border-border px-2 py-1.5">
+            <div className="flex items-center gap-0.5">
+              <ToolButton
+                icon={<Paperclip className="size-3.5" />}
+                label="Datei anhängen"
+              />
+              <ToolButton
+                icon={<Camera className="size-3.5" />}
+                label="Mathe-Scanner"
+              />
+              <ToolButton
+                icon={<Mic className="size-3.5" />}
+                label="Diktat"
+              />
+            </div>
+            <div className="flex items-center gap-2">
+              {busy ? (
+                <Button
+                  type="button"
+                  size="sm"
+                  variant="outline"
+                  onClick={stop}
+                >
+                  Stop
+                </Button>
+              ) : null}
+              <Button type="submit" size="sm" disabled={busy || !input.trim()}>
+                Senden
+                <ArrowUp className="size-3.5" />
+              </Button>
+            </div>
+          </div>
+        </form>
+        <p className="mt-2 px-1 text-[10px] text-muted-fg">
+          Cmd + Enter zum Senden · {quotaUsed} / {initialQuotaLimit} KI-Anfragen
+          diese Woche · Pseudonymisierung aktiv
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ChatBubble({
+  message,
+  onRate,
+}: {
+  message: Message;
+  onRate: (rating: "up" | "down") => void;
+}) {
+  if (message.role === "user") {
+    return (
+      <div className="flex justify-end">
+        <div className="max-w-xl">
+          <div className="border border-border bg-surface px-4 py-3">
+            <p className="whitespace-pre-wrap text-sm">{message.content}</p>
+          </div>
+          <p className="mt-1 text-right font-mono text-[10px] uppercase tracking-wider text-muted-fg">
+            Du
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex gap-3">
+      <Avatar
+        name="MasterMind KI"
+        size="md"
+        className="bg-fg text-bg ring-fg"
+      />
+      <div className="min-w-0 flex-1 space-y-3">
+        <p className="whitespace-pre-wrap text-sm leading-relaxed">
+          {message.content || (message.pending ? "…" : "")}
+          {message.pending && message.content && (
+            <span className="ml-0.5 inline-block size-2 animate-pulse bg-fg" />
+          )}
+        </p>
+        {!message.pending && message.content && (
+          <div className="flex items-center gap-1.5">
+            <Badge variant="outline">MasterMind KI</Badge>
+            <button
+              type="button"
+              aria-label="Vorlesen"
+              className="grid size-7 place-items-center text-muted-fg hover:text-fg"
+            >
+              <Volume2 className="size-3.5" />
+            </button>
+            <button
+              type="button"
+              aria-label="Hilfreich"
+              onClick={() => onRate("up")}
+              className={cn(
+                "grid size-7 place-items-center text-muted-fg hover:text-success",
+                message.rating === "up" && "text-success"
+              )}
+            >
+              👍
+            </button>
+            <button
+              type="button"
+              aria-label="Nicht hilfreich"
+              onClick={() => onRate("down")}
+              className={cn(
+                "grid size-7 place-items-center text-muted-fg hover:text-danger",
+                message.rating === "down" && "text-danger"
+              )}
+            >
+              👎
+            </button>
+            <button
+              type="button"
+              aria-label="Speichern"
+              className="grid size-7 place-items-center text-muted-fg hover:text-fg"
+            >
+              <Bookmark className="size-3.5" />
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ToolButton({
+  icon,
+  label,
+}: {
+  icon: React.ReactNode;
+  label: string;
+}) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      title={label}
+      className="grid size-8 place-items-center text-muted-fg transition-colors hover:bg-surface-2 hover:text-fg"
+    >
+      {icon}
+    </button>
+  );
+}

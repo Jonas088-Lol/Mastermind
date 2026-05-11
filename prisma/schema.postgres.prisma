@@ -1,0 +1,124 @@
+// Production-Schema-Variante für Postgres.
+//
+// Identisch zu prisma/schema.prisma, mit folgenden Unterschieden:
+//   - provider auf "postgresql"
+//   - relationMode = "foreignKeys" (SQLite hatte das implizit)
+//
+// Switch-Workflow:
+//   1. cp prisma/schema.postgres.prisma prisma/schema.prisma
+//   2. rm -rf prisma/migrations
+//   3. DATABASE_URL=postgresql://... npx prisma migrate dev --name init
+//   4. npm run db:seed
+//
+// Production-Deploy verwendet `prisma migrate deploy` (siehe vercel.json).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model School {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  city      String?
+  state     String?
+  plan      String   @default("basic")
+  seats     Int      @default(100)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users User[]
+}
+
+model User {
+  id              String    @id @default(cuid())
+  email           String    @unique
+  name            String
+  passwordHash    String
+  role            String
+  klasse          String?
+  twoFactor       Boolean   @default(false)
+  twoFactorSecret String?
+  verifiedAt      DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  schoolId String?
+  school   School? @relation(fields: [schoolId], references: [id])
+
+  sessions          Session[]
+  verifications     VerificationToken[]
+  taskCompletions   TaskCompletion[]
+  notificationReads NotificationRead[]
+  aiQuotaEntries    AiQuotaEntry[]
+
+  @@index([role])
+  @@index([schoolId])
+}
+
+model Session {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token      String   @unique
+  expiresAt  DateTime
+  ipAddress  String?
+  userAgent  String?
+  viewAs     String?
+  lastUsedAt DateTime @default(now())
+  createdAt  DateTime @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model VerificationToken {
+  id         String    @id @default(cuid())
+  userId     String?
+  user       User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email      String
+  type       String
+  token      String    @unique
+  expiresAt  DateTime
+  consumedAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([email, type])
+  @@index([token])
+}
+
+model TaskCompletion {
+  id     String   @id @default(cuid())
+  userId String
+  user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  taskId String
+  doneAt DateTime @default(now())
+
+  @@unique([userId, taskId])
+  @@index([userId])
+}
+
+model NotificationRead {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notificationId String
+  readAt         DateTime @default(now())
+
+  @@unique([userId, notificationId])
+  @@index([userId])
+}
+
+model AiQuotaEntry {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  used      Int      @default(0)
+  resetAt   DateTime
+  updatedAt DateTime @updatedAt
+}

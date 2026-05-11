@@ -1,0 +1,574 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
+import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Timer } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+export interface QuizQuestion {
+  id: string;
+  type: string;
+  question: string;
+  options: string | null;
+  correct: string;
+  explanation: string | null;
+  order: number;
+}
+
+interface QuizEngineProps {
+  questions: QuizQuestion[];
+  topicId: string;
+  subject: string;
+  grade: number;
+  topicTitle: string;
+  backHref: string;
+  onComplete: (score: number) => Promise<void>;
+}
+
+type AnswerState = "pending" | "correct" | "wrong";
+
+export function QuizEngine({ questions, topicTitle, backHref, onComplete }: QuizEngineProps) {
+  const router = useRouter();
+  const [idx, setIdx] = useState(0);
+  const [answer, setAnswer] = useState<string>("");
+  const [answerState, setAnswerState] = useState<AnswerState>("pending");
+  const [results, setResults] = useState<boolean[]>([]);
+  const [done, setDone] = useState(false);
+  const [saving, setSaving] = useState(false);
+
+  // Blitz timer
+  const [timeLeft, setTimeLeft] = useState<number | null>(null);
+
+  const question = questions[idx];
+  const isBlitz = question?.type === "blitz";
+
+  useEffect(() => {
+    if (!isBlitz || answerState !== "pending") return;
+    setTimeLeft(10);
+    const interval = setInterval(() => {
+      setTimeLeft((t) => {
+        if (t === null || t <= 1) {
+          clearInterval(interval);
+          handleSubmit("__timeout__");
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idx]);
+
+  const handleSubmit = useCallback(
+    (userAnswer: string) => {
+      if (answerState !== "pending") return;
+      const correct = checkAnswer(question, userAnswer);
+      setAnswerState(correct ? "correct" : "wrong");
+      setResults((prev) => [...prev, correct]);
+    },
+    [answerState, question]
+  );
+
+  const handleNext = useCallback(async () => {
+    if (idx + 1 >= questions.length) {
+      const score = Math.round(((results.filter(Boolean).length) / questions.length) * 100);
+      setSaving(true);
+      await onComplete(score);
+      setSaving(false);
+      setDone(true);
+      return;
+    }
+    setIdx((i) => i + 1);
+    setAnswer("");
+    setAnswerState("pending");
+    setTimeLeft(null);
+  }, [idx, questions.length, results, onComplete]);
+
+  if (done) {
+    const correct = results.filter(Boolean).length;
+    const score = Math.round((correct / questions.length) * 100);
+    return (
+      <ResultScreen
+        score={score}
+        correct={correct}
+        total={questions.length}
+        backHref={backHref}
+        onRetry={() => {
+          setIdx(0);
+          setAnswer("");
+          setAnswerState("pending");
+          setResults([]);
+          setDone(false);
+          setTimeLeft(null);
+        }}
+      />
+    );
+  }
+
+  return (
+    <div className="mx-auto flex max-w-2xl flex-col gap-6">
+      {/* Progress */}
+      <div className="flex items-center gap-3">
+        <div className="flex-1">
+          <div className="flex items-center justify-between text-xs text-muted-fg">
+            <span>Frage {idx + 1} von {questions.length}</span>
+            {isBlitz && timeLeft !== null && (
+              <span className={cn("flex items-center gap-1 font-mono font-bold", timeLeft <= 3 ? "text-danger" : "")}>
+                <Timer className="size-3.5" />
+                {timeLeft}s
+              </span>
+            )}
+          </div>
+          <div className="mt-1.5 h-1.5 w-full bg-border">
+            <div
+              className="h-full bg-brand transition-all"
+              style={{ width: `${((idx) / questions.length) * 100}%` }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Question card */}
+      <div className="border border-border bg-bg">
+        <div className="border-b border-border bg-surface px-5 py-3">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+            {TYPE_LABEL[question.type] ?? question.type}
+          </span>
+        </div>
+        <div className="p-5">
+          <p className="text-base font-semibold leading-relaxed">{question.question}</p>
+        </div>
+      </div>
+
+      {/* Answer area */}
+      <div>
+        {answerState === "pending" ? (
+          <AnswerInput
+            question={question}
+            answer={answer}
+            setAnswer={setAnswer}
+            onSubmit={handleSubmit}
+          />
+        ) : (
+          <FeedbackArea
+            correct={answerState === "correct"}
+            explanation={question.explanation}
+            correctAnswer={question.correct}
+            question={question}
+          />
+        )}
+      </div>
+
+      {/* Next button */}
+      {answerState !== "pending" && (
+        <button
+          onClick={handleNext}
+          disabled={saving}
+          className="flex items-center justify-center gap-2 bg-fg py-3 text-sm font-semibold text-bg hover:bg-fg/90 disabled:opacity-50"
+        >
+          {idx + 1 >= questions.length ? (
+            saving ? "Speichere…" : "Ergebnis anzeigen"
+          ) : (
+            <>Weiter <ArrowRight className="size-4" /></>
+          )}
+        </button>
+      )}
+    </div>
+  );
+}
+
+// ─── Answer Input ────────────────────────────────────────────────────────────
+
+function AnswerInput({
+  question,
+  answer,
+  setAnswer,
+  onSubmit,
+}: {
+  question: QuizQuestion;
+  answer: string;
+  setAnswer: (v: string) => void;
+  onSubmit: (v: string) => void;
+}) {
+  const { type, options: optionsJson } = question;
+  const options = optionsJson ? (JSON.parse(optionsJson) as string[] | { left: string[]; right: string[] }) : null;
+
+  if (type === "mc" || type === "blitz") {
+    const opts = options as string[];
+    return (
+      <div className="grid gap-2">
+        {opts.map((opt, i) => (
+          <button
+            key={i}
+            onClick={() => onSubmit(String(i))}
+            className="flex items-center gap-3 border border-border bg-bg px-4 py-3 text-left text-sm font-medium transition-colors hover:border-brand hover:bg-brand/5"
+          >
+            <span className="flex size-6 shrink-0 items-center justify-center border border-border font-mono text-xs font-bold">
+              {String.fromCharCode(65 + i)}
+            </span>
+            {opt}
+          </button>
+        ))}
+      </div>
+    );
+  }
+
+  if (type === "true_false") {
+    return (
+      <div className="grid grid-cols-2 gap-3">
+        {(["Wahr", "Falsch"] as const).map((label) => (
+          <button
+            key={label}
+            onClick={() => onSubmit(label === "Wahr" ? "true" : "false")}
+            className="border border-border bg-bg py-5 text-center text-sm font-bold transition-colors hover:border-brand hover:bg-brand/5"
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+    );
+  }
+
+  if (type === "fill_blank") {
+    const correctArr = JSON.parse(question.correct) as string[];
+    const blanks = correctArr.length;
+    const parts = question.question.split("___");
+    const [values, setValues] = useState<string[]>(Array(blanks).fill(""));
+
+    return (
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmit(JSON.stringify(values));
+        }}
+        className="flex flex-col gap-4"
+      >
+        {blanks === 1 ? (
+          <input
+            autoFocus
+            type="text"
+            value={values[0]}
+            onChange={(e) => setValues([e.target.value])}
+            placeholder="Antwort eingeben…"
+            className="border border-border bg-bg px-4 py-3 text-sm focus:border-brand focus:outline-none"
+          />
+        ) : (
+          <div className="space-y-2">
+            {values.map((v, i) => (
+              <input
+                key={i}
+                autoFocus={i === 0}
+                type="text"
+                value={v}
+                onChange={(e) => setValues((prev) => { const next = [...prev]; next[i] = e.target.value; return next; })}
+                placeholder={`Lücke ${i + 1}…`}
+                className="w-full border border-border bg-bg px-4 py-3 text-sm focus:border-brand focus:outline-none"
+              />
+            ))}
+          </div>
+        )}
+        <button
+          type="submit"
+          className="bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90"
+        >
+          Prüfen
+        </button>
+      </form>
+    );
+  }
+
+  if (type === "order") {
+    const opts = options as string[];
+    const [order, setOrder] = useState<number[]>(opts.map((_, i) => i));
+
+    function move(from: number, to: number) {
+      setOrder((prev) => {
+        const next = [...prev];
+        const [moved] = next.splice(from, 1);
+        next.splice(to, 0, moved);
+        return next;
+      });
+    }
+
+    return (
+      <div className="flex flex-col gap-4">
+        <p className="text-xs text-muted-fg">Verschiebe die Elemente in die richtige Reihenfolge.</p>
+        <ol className="space-y-2">
+          {order.map((origIdx, pos) => (
+            <li
+              key={origIdx}
+              className="flex items-center gap-3 border border-border bg-bg px-4 py-3 text-sm"
+            >
+              <span className="font-mono text-xs font-bold text-muted-fg">{pos + 1}.</span>
+              <span className="flex-1">{opts[origIdx]}</span>
+              <div className="flex gap-1">
+                {pos > 0 && (
+                  <button
+                    onClick={() => move(pos, pos - 1)}
+                    className="size-6 border border-border text-xs text-muted-fg hover:border-brand"
+                  >
+                    ↑
+                  </button>
+                )}
+                {pos < order.length - 1 && (
+                  <button
+                    onClick={() => move(pos, pos + 1)}
+                    className="size-6 border border-border text-xs text-muted-fg hover:border-brand"
+                  >
+                    ↓
+                  </button>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+        <button
+          onClick={() => onSubmit(JSON.stringify(order))}
+          className="bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90"
+        >
+          Prüfen
+        </button>
+      </div>
+    );
+  }
+
+  if (type === "match") {
+    const opts = options as { left: string[]; right: string[] };
+    const [pairs, setPairs] = useState<(number | null)[]>(Array(opts.left.length).fill(null));
+    const [activeLeft, setActiveLeft] = useState<number | null>(null);
+
+    function handleLeftClick(i: number) {
+      setActiveLeft(i === activeLeft ? null : i);
+    }
+
+    function handleRightClick(j: number) {
+      if (activeLeft === null) return;
+      setPairs((prev) => {
+        const next = [...prev];
+        const existing = next.indexOf(j);
+        if (existing !== -1) next[existing] = null;
+        next[activeLeft] = j;
+        return next;
+      });
+      setActiveLeft(null);
+    }
+
+    const allPaired = pairs.every((p) => p !== null);
+
+    return (
+      <div className="flex flex-col gap-4">
+        <p className="text-xs text-muted-fg">Klicke zuerst einen Begriff links, dann die passende Erklärung rechts.</p>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="space-y-2">
+            {opts.left.map((item, i) => (
+              <button
+                key={i}
+                onClick={() => handleLeftClick(i)}
+                className={cn(
+                  "w-full border px-3 py-2.5 text-left text-sm font-medium transition-colors",
+                  activeLeft === i
+                    ? "border-brand bg-brand/10"
+                    : pairs[i] !== null
+                    ? "border-success/50 bg-success/5"
+                    : "border-border bg-bg hover:border-brand"
+                )}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-2">
+            {opts.right.map((item, j) => {
+              const matched = pairs.indexOf(j);
+              return (
+                <button
+                  key={j}
+                  onClick={() => handleRightClick(j)}
+                  className={cn(
+                    "w-full border px-3 py-2.5 text-left text-sm transition-colors",
+                    matched !== -1
+                      ? "border-success/50 bg-success/5 font-medium"
+                      : activeLeft !== null
+                      ? "border-border bg-bg hover:border-brand"
+                      : "border-border bg-bg text-muted-fg"
+                  )}
+                >
+                  {matched !== -1 && <span className="mr-1.5 text-xs text-muted-fg">{matched + 1}→</span>}
+                  {item}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        <button
+          onClick={() => onSubmit(JSON.stringify(pairs))}
+          disabled={!allPaired}
+          className="bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90 disabled:opacity-40"
+        >
+          Prüfen
+        </button>
+      </div>
+    );
+  }
+
+  return <p className="text-sm text-muted-fg">Unbekannter Fragetyp: {type}</p>;
+}
+
+// ─── Feedback ───────────────────────────────────────────────────────────────
+
+function FeedbackArea({
+  correct,
+  explanation,
+  correctAnswer,
+  question,
+}: {
+  correct: boolean;
+  explanation: string | null;
+  correctAnswer: string;
+  question: QuizQuestion;
+}) {
+  const opts = question.options ? (JSON.parse(question.options) as string[] | { left: string[]; right: string[] }) : null;
+
+  let correctLabel = "";
+  if (question.type === "mc" || question.type === "blitz") {
+    const i = parseInt(correctAnswer, 10);
+    correctLabel = (opts as string[])?.[i] ?? correctAnswer;
+  } else if (question.type === "true_false") {
+    correctLabel = correctAnswer === "true" ? "Wahr" : "Falsch";
+  } else if (question.type === "fill_blank") {
+    correctLabel = (JSON.parse(correctAnswer) as string[]).join(", ");
+  }
+
+  return (
+    <div
+      className={cn(
+        "border p-5",
+        correct ? "border-success/40 bg-success/5" : "border-danger/40 bg-danger/5"
+      )}
+    >
+      <div className="flex items-start gap-3">
+        {correct ? (
+          <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-success" />
+        ) : (
+          <XCircle className="mt-0.5 size-5 shrink-0 text-danger" />
+        )}
+        <div className="space-y-1.5">
+          <p className={cn("font-semibold", correct ? "text-success" : "text-danger")}>
+            {correct ? "Richtig!" : "Falsch"}
+          </p>
+          {!correct && correctLabel && (
+            <p className="text-sm">
+              <span className="text-muted-fg">Richtige Antwort: </span>
+              <span className="font-semibold">{correctLabel}</span>
+            </p>
+          )}
+          {explanation && (
+            <p className="text-sm text-muted-fg">{explanation}</p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Result screen ───────────────────────────────────────────────────────────
+
+function ResultScreen({
+  score,
+  correct,
+  total,
+  backHref,
+  onRetry,
+}: {
+  score: number;
+  correct: number;
+  total: number;
+  backHref: string;
+  onRetry: () => void;
+}) {
+  const great = score >= 80;
+  const ok = score >= 50;
+
+  return (
+    <div className="mx-auto flex max-w-md flex-col items-center gap-6 py-12 text-center">
+      <div
+        className={cn(
+          "flex size-24 items-center justify-center border-2",
+          great ? "border-success text-success" : ok ? "border-warning text-warning" : "border-danger text-danger"
+        )}
+      >
+        <Trophy className="size-10" strokeWidth={1.5} />
+      </div>
+
+      <div>
+        <p className="text-5xl font-bold tracking-tight">{score}%</p>
+        <p className="mt-2 text-sm text-muted-fg">
+          {correct} von {total} Fragen richtig
+        </p>
+      </div>
+
+      <p className="text-base font-medium">
+        {great ? "Ausgezeichnet! Du hast das Thema verstanden." : ok ? "Gut gemacht! Noch ein bisschen Übung fehlt." : "Nicht aufgeben — probier es nochmal!"}
+      </p>
+
+      <div className="flex gap-3">
+        <button
+          onClick={onRetry}
+          className="flex items-center gap-2 border border-border bg-bg px-5 py-2.5 text-sm font-semibold hover:bg-surface"
+        >
+          <RotateCcw className="size-3.5" />
+          Nochmal
+        </button>
+        <a
+          href={backHref}
+          className="flex items-center gap-2 bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90"
+        >
+          Zurück
+        </a>
+      </div>
+    </div>
+  );
+}
+
+// ─── helpers ────────────────────────────────────────────────────────────────
+
+function checkAnswer(question: QuizQuestion, userAnswer: string): boolean {
+  const { type, correct } = question;
+
+  if (userAnswer === "__timeout__") return false;
+
+  if (type === "mc" || type === "blitz" || type === "true_false") {
+    return userAnswer === correct;
+  }
+
+  if (type === "fill_blank") {
+    const correctArr = JSON.parse(correct) as string[];
+    const userArr = JSON.parse(userAnswer) as string[];
+    return correctArr.every(
+      (c, i) => (userArr[i] ?? "").trim().toLowerCase() === c.trim().toLowerCase()
+    );
+  }
+
+  if (type === "order") {
+    const correctOrder = JSON.parse(correct) as number[];
+    const userOrder = JSON.parse(userAnswer) as number[];
+    return JSON.stringify(userOrder) === JSON.stringify(correctOrder);
+  }
+
+  if (type === "match") {
+    const correctPairs = JSON.parse(correct) as number[];
+    const userPairs = JSON.parse(userAnswer) as (number | null)[];
+    return correctPairs.every((c, i) => userPairs[i] === c);
+  }
+
+  return false;
+}
+
+const TYPE_LABEL: Record<string, string> = {
+  mc: "Multiple Choice",
+  blitz: "Blitzrunde",
+  fill_blank: "Lückentext",
+  true_false: "Wahr / Falsch",
+  order: "Reihenfolge",
+  match: "Zuordnung",
+};

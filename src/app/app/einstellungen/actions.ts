@@ -1,0 +1,56 @@
+"use server";
+import { revalidatePath } from "next/cache";
+import { prisma } from "@/lib/db/client";
+import { getSession } from "@/lib/session";
+import { hashPassword, verifyPassword } from "@/lib/auth/passwords";
+
+export async function logoutDevice(sessionId: string) {
+  const session = await getSession();
+  if (!session) return;
+  const target = await prisma.session.findUnique({ where: { id: sessionId } });
+  if (!target || target.userId !== session.userId) return;
+  await prisma.session.delete({ where: { id: sessionId } });
+  revalidatePath("/app/einstellungen");
+}
+
+export async function logoutAllDevices() {
+  const session = await getSession();
+  if (!session) return;
+  // Exclude the current session (identified by the sid on the session object)
+  const currentToken = session.sid;
+  await prisma.session.deleteMany({
+    where: {
+      userId: session.userId,
+      ...(currentToken ? { NOT: { token: currentToken } } : {}),
+    },
+  });
+  revalidatePath("/app/einstellungen");
+}
+
+export async function changePassword(formData: FormData) {
+  const session = await getSession();
+  if (!session) throw new Error("Unauthorized");
+
+  const current = formData.get("current") as string;
+  const newPw = formData.get("new") as string;
+
+  if (!current || !newPw) throw new Error("Fehlende Felder");
+  if (newPw.length < 8) throw new Error("Neues Passwort zu kurz");
+
+  const user = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: { passwordHash: true },
+  });
+  if (!user) throw new Error("Benutzer nicht gefunden");
+
+  const valid = await verifyPassword(current, user.passwordHash);
+  if (!valid) throw new Error("Aktuelles Passwort falsch");
+
+  const newHash = await hashPassword(newPw);
+  await prisma.user.update({
+    where: { id: session.userId },
+    data: { passwordHash: newHash },
+  });
+
+  revalidatePath("/app/einstellungen");
+}
