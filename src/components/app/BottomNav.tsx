@@ -4,38 +4,52 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Award,
+  BarChart3,
   BookOpen,
   Brain,
+  Building2,
   Calendar,
   CheckSquare,
   ClipboardEdit,
+  ClipboardList,
   Home,
   Layers,
   LineChart,
+  Megaphone,
   MessageSquare,
+  Settings,
   Shield,
   Sparkles,
   Swords,
+  Trophy,
+  UserCircle,
   Users,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const ICONS = {
-  home: Home,
+  award: Award,
+  barChart3: BarChart3,
   bookOpen: BookOpen,
   brain: Brain,
+  building2: Building2,
   calendar: Calendar,
   checkSquare: CheckSquare,
-  layers: Layers,
-  award: Award,
-  sparkles: Sparkles,
-  users: Users,
   clipboardEdit: ClipboardEdit,
+  clipboardList: ClipboardList,
+  home: Home,
+  layers: Layers,
   lineChart: LineChart,
+  megaphone: Megaphone,
   messageSquare: MessageSquare,
+  settings: Settings,
   shield: Shield,
+  sparkles: Sparkles,
   swords: Swords,
+  trophy: Trophy,
+  userCircle: UserCircle,
+  users: Users,
 } satisfies Record<string, LucideIcon>;
 
 export type BottomNavIcon = keyof typeof ICONS;
@@ -72,7 +86,7 @@ export function BottomNav({ items }: BottomNavProps) {
                 href={item.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative flex flex-col items-center gap-0.5 px-2 py-2.5 text-[10px] font-semibold uppercase tracking-wider transition-colors",
+                  "relative flex flex-col items-center gap-0.5 px-2 py-2.5 text-[11px] font-semibold uppercase tracking-wider transition-colors",
                   active ? "text-fg" : "text-muted-fg hover:text-fg"
                 )}
               >

@@ -4,9 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Award,
+  BarChart3,
   BookMarked,
   BookOpen,
   Brain,
+  Building2,
   Calendar,
   CheckSquare,
   ClipboardEdit,
@@ -26,24 +28,26 @@ import {
 import { cn } from "@/lib/utils";
 
 const ICONS = {
-  home: Home,
+  award: Award,
+  barChart3: BarChart3,
+  bookMarked: BookMarked,
   bookOpen: BookOpen,
   brain: Brain,
+  building2: Building2,
   calendar: Calendar,
   checkSquare: CheckSquare,
-  layers: Layers,
-  award: Award,
-  sparkles: Sparkles,
-  users: Users,
-  userCircle: UserCircle,
-  settings: Settings,
-  bookMarked: BookMarked,
   clipboardEdit: ClipboardEdit,
+  home: Home,
+  layers: Layers,
   lineChart: LineChart,
   messageSquare: MessageSquare,
-  trophy: Trophy,
+  settings: Settings,
   shield: Shield,
+  sparkles: Sparkles,
   swords: Swords,
+  trophy: Trophy,
+  userCircle: UserCircle,
+  users: Users,
 } satisfies Record<string, LucideIcon>;
 
 export type IconKey = keyof typeof ICONS;
