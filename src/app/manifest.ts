@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
+    id: "/",
     name: "MasterMind — Eine Plattform für Schule",
     short_name: "MasterMind",
     description:
@@ -16,11 +17,6 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: "ltr",
     categories: ["education", "productivity"],
     icons: [
-      {
-        src: "/icon",
-        sizes: "192x192",
-        type: "image/png",
-      },
       {
         src: "/icon",
         sizes: "512x512",
