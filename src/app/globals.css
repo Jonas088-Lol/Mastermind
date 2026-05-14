@@ -196,3 +196,16 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Safe area — PWA standalone mode ────────────────────────── */
+@supports (padding-top: env(safe-area-inset-top)) {
+  @media all and (display-mode: standalone) {
+    .safe-top {
+      padding-top: env(safe-area-inset-top);
+    }
+    .safe-sides {
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
+  }
+}

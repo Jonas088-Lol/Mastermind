@@ -21,7 +21,7 @@ export function AppHeader({
   notifications = [],
 }: AppHeaderProps) {
   return (
-    <header className="flex h-16 items-center gap-4 border-b border-border bg-bg/85 px-6 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
+    <header className="safe-top flex h-16 items-center gap-4 border-b border-border bg-bg/85 px-6 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
       <Link
         href="/search"
         className="group flex flex-1 max-w-md items-center gap-2 border border-border bg-surface px-3 py-1.5 text-left text-sm text-muted-fg transition-colors hover:border-border-strong hover:text-fg"
