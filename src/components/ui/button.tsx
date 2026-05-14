@@ -19,10 +19,10 @@ const button = cva(
           "text-brand underline-offset-4 hover:underline px-0",
       },
       size: {
-        sm: "h-8 px-3 text-xs",
-        md: "h-10 px-5",
+        sm: "h-9 px-3 text-xs",
+        md: "h-11 px-5",
         lg: "h-12 px-6 text-base",
-        icon: "h-10 w-10",
+        icon: "h-11 w-11",
       },
     },
     defaultVariants: {
