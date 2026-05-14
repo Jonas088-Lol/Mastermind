@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { Input } from "@/components/ui/input";
 import { effectiveRole, getSession } from "@/lib/session";
 import { createClass } from "./actions";
 
@@ -26,11 +27,7 @@ export default async function NeueKlassePage() {
       <form action={createClass} className="flex flex-col gap-5">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="name" className="text-sm font-semibold">Klassenbezeichnung</label>
-          <input
-            id="name" name="name" type="text" required
-            placeholder="z. B. 9b oder 10A"
-            className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
-          />
+          <Input id="name" name="name" type="text" required placeholder="z. B. 9b oder 10A" />
           <p className="text-xs text-muted-fg">Wird automatisch in Großbuchstaben umgewandelt.</p>
         </div>
 

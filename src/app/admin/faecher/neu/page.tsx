@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { Input } from "@/components/ui/input";
 import { effectiveRole, getSession } from "@/lib/session";
 import { createSubject } from "./actions";
 
@@ -31,20 +32,12 @@ export default async function NeuesFachPage() {
       <form action={createSubject} className="flex flex-col gap-5">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="name" className="text-sm font-semibold">Fachname *</label>
-          <input
-            id="name" name="name" type="text" required
-            placeholder="z. B. Mathematik"
-            className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
-          />
+          <Input id="name" name="name" type="text" required placeholder="z. B. Mathematik" />
         </div>
 
         <div className="flex flex-col gap-1.5">
           <label htmlFor="shortName" className="text-sm font-semibold">Kürzel *</label>
-          <input
-            id="shortName" name="shortName" type="text" required maxLength={4}
-            placeholder="z. B. M"
-            className="h-10 w-24 border border-border bg-bg px-3 text-sm font-mono uppercase focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
-          />
+          <Input id="shortName" name="shortName" type="text" required maxLength={4} placeholder="z. B. M" className="w-24 font-mono uppercase" />
           <p className="text-xs text-muted-fg">Wird automatisch großgeschrieben. Max. 4 Zeichen.</p>
         </div>
 
