@@ -73,25 +73,31 @@ export function TutorSidebar({
           <CardTitle>Letzte Themen</CardTitle>
         </CardHeader>
         <CardBody className="!px-0 !pb-0">
-          <ul className="divide-y divide-border border-t border-border">
-            {recentTopics.map((t) => (
-              <li key={t.title}>
-                <button
-                  type="button"
-                  onClick={() => onSelect(t.title)}
-                  className="flex w-full items-start gap-3 px-5 py-3 text-left transition-colors hover:bg-surface"
-                >
-                  <Bookmark className="mt-0.5 size-3.5 shrink-0 text-muted-fg" />
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-semibold">{t.title}</p>
-                    <p className="text-[10px] uppercase tracking-wider text-muted-fg">
-                      {t.subject} · {t.time}
-                    </p>
-                  </div>
-                </button>
-              </li>
-            ))}
-          </ul>
+          {recentTopics.length === 0 ? (
+            <p className="border-t border-border px-5 py-6 text-center text-sm text-muted-fg">
+              Noch keine Themen gespeichert.
+            </p>
+          ) : (
+            <ul className="divide-y divide-border border-t border-border">
+              {recentTopics.map((t) => (
+                <li key={t.title}>
+                  <button
+                    type="button"
+                    onClick={() => onSelect(t.title)}
+                    className="flex w-full items-start gap-3 px-5 py-3 text-left transition-colors hover:bg-surface"
+                  >
+                    <Bookmark className="mt-0.5 size-3.5 shrink-0 text-muted-fg" />
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-semibold">{t.title}</p>
+                      <p className="text-[10px] uppercase tracking-wider text-muted-fg">
+                        {t.subject} · {t.time}
+                      </p>
+                    </div>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </CardBody>
       </Card>
     </>

@@ -117,7 +117,7 @@ export default async function DuelPage({ params }: PageParams) {
     id: q.id,
     question: q.question,
     type: q.type,
-    options: JSON.parse(q.options) as string[],
+    options: q.options ? JSON.parse(q.options) as string[] : [],
     correct: q.correct,
     explanation: q.explanation ?? null,
     order: q.order,

@@ -8,13 +8,6 @@ import { TutorWrapper } from "./TutorWrapper";
 
 export const metadata: Metadata = { title: "KI-Tutor" };
 
-const RECENT_TOPICS = [
-  { title: "pq-Formel · Aufgabe 5b", subject: "Mathe", time: "vor 2 Min." },
-  { title: "Photosynthese — Lichtreaktion", subject: "Bio", time: "gestern" },
-  { title: "Past Perfect vs. Past Simple", subject: "Englisch", time: "vor 2 Tagen" },
-  { title: "Hebelgesetz — Berechnungen", subject: "Physik", time: "vor 3 Tagen" },
-];
-
 export default async function TutorPage() {
   const session = await getSession();
   if (!session) redirect("/login");
@@ -46,7 +39,7 @@ export default async function TutorPage() {
       </header>
 
       <TutorWrapper
-        recentTopics={RECENT_TOPICS}
+        recentTopics={[]}
         initialQuotaUsed={quota.used}
         initialQuotaLimit={quota.limit}
         isAiConfigured={aiOn}

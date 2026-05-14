@@ -11,9 +11,12 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { prisma } from "@/lib/db/client";
+import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -30,156 +33,19 @@ type Hit = {
   icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
 };
 
-const INDEX: Hit[] = [
-  // Schüler
-  {
-    title: "Aufgabe 5 — Quadratische Gleichungen",
-    body: "Mathe · 9b · Hr. Becker · fällig heute 18:00",
-    href: "/app/aufgaben",
-    scope: "Aufgabe",
-    icon: CheckSquare,
-  },
-  {
-    title: "Vokabeln Unit 7",
-    body: "Englisch · Fr. Wagner · fällig heute 20:00",
-    href: "/app/aufgaben",
-    scope: "Aufgabe",
-    icon: CheckSquare,
-  },
-  {
-    title: "Bio · Photosynthese",
-    body: "24 Karten · 5 fällig · KI-Deck",
-    href: "/app/karteikarten",
-    scope: "Karteikarten",
-    icon: Layers,
-  },
-  {
-    title: "Englisch · Unit 7 Vokabeln",
-    body: "60 Karten · 7 fällig · Lehrer-Deck",
-    href: "/app/karteikarten",
-    scope: "Karteikarten",
-    icon: Layers,
-  },
-  {
-    title: "Quadratische Funktionen",
-    body: "Mathe-Lernpfad · 8 Module · 5/8 erledigt",
-    href: "/app/lernen",
-    scope: "Lernpfad",
-    icon: BookOpen,
-  },
-  {
-    title: "Hebelgesetz & Drehmoment",
-    body: "Physik-Lernpfad · 6 Module · 1/6 erledigt",
-    href: "/app/lernen",
-    scope: "Lernpfad",
-    icon: BookOpen,
-  },
-  {
-    title: "Stundenplan · Woche 11",
-    body: "9. – 13. März · 1 Vertretung · 1 KA",
-    href: "/app/plan",
-    scope: "Stundenplan",
-    icon: BookOpen,
-  },
-  {
-    title: "Noten · alle Fächer",
-    body: "Ø 2,3 · Beste: Englisch (1,8) · Schwächste: Physik (2,9)",
-    href: "/app/noten",
-    scope: "Noten",
-    icon: ClipboardList,
-  },
-
-  // Lehrer
-  {
-    title: "Klasse 9b · Mathematik",
-    body: "26 Schüler · Ø 2,4 · 3 Risiko-Schüler",
-    href: "/teach/klassen/9b",
-    scope: "Klasse",
-    icon: Users,
-  },
-  {
-    title: "Klasse 10a · Physik",
-    body: "24 Schüler · Ø 2,8 · 5 Risiko-Schüler · Trend fallend",
-    href: "/teach/klassen/10a",
-    scope: "Klasse",
-    icon: Users,
-  },
-  {
-    title: "Klasse 8c · Mathematik",
-    body: "28 Schüler · Ø 2,1 · 1 Risiko-Schüler · Trend steigend",
-    href: "/teach/klassen/8c",
-    scope: "Klasse",
-    icon: Users,
-  },
-  {
-    title: "Klasse 11a · Physik",
-    body: "20 Schüler · Ø 2,9 · 4 Risiko-Schüler",
-    href: "/teach/klassen/11a",
-    scope: "Klasse",
-    icon: Users,
-  },
-  {
-    title: "Korrektur-Stapel · 23 Abgaben",
-    body: "14 KI-bereit · ein Klick zum Annehmen",
-    href: "/teach/korrektur",
-    scope: "Korrektur",
-    icon: ClipboardList,
-  },
-  {
-    title: "KI-Generator · Klassenarbeit",
-    body: "8 Aufgaben · 36 Punkte · Lehrplan-Score 92 %",
-    href: "/teach/generator",
-    scope: "KI",
-    icon: ClipboardList,
-  },
-  {
-    title: "Sandra Meier — Mutter von Lukas",
-    body: "Nachricht: Mathe-Note besprechen, 16 Uhr",
-    href: "/teach/nachrichten",
-    scope: "Nachricht",
-    icon: MessageSquare,
-  },
-  {
-    title: "Familie Weber — Eltern von Tom",
-    body: "Nachricht: Termin wegen schlechter Noten",
-    href: "/teach/nachrichten",
-    scope: "Nachricht",
-    icon: MessageSquare,
-  },
-
-  // Schüler aus Klassen
-  {
-    title: "Anna Bauer · 9b",
-    body: "Mathe 1,8 · Trend steigend · Anwesenheit 100%",
-    href: "/teach/klassen/9b",
-    scope: "Schüler",
-    icon: Users,
-  },
-  {
-    title: "Tom Weber · 10a",
-    body: "Risiko-Schüler · 4,2 · 3 fehlende Abgaben",
-    href: "/teach/klassen/10a",
-    scope: "Schüler",
-    icon: Users,
-  },
-  {
-    title: "Lukas Meier · 9b",
-    body: "Mathe 2,3 · Englisch 1,8 · Streak 14 Tage",
-    href: "/teach/klassen/9b",
-    scope: "Schüler",
-    icon: Users,
-  },
-];
-
 interface PageProps {
   searchParams: Promise<{ q?: string }>;
 }
 
 export default async function SearchPage({ searchParams }: PageProps) {
+  const session = await getSession();
+  if (!session) redirect("/login");
+
   const { q } = await searchParams;
   const query = (q ?? "").trim();
-  const hits = query.length === 0 ? [] : filterIndex(INDEX, query);
+  const role = effectiveRole(session);
 
+  const hits: Hit[] = query.length === 0 ? [] : await search(session.userId, role, query);
   const groups = groupBy(hits, (h) => h.scope);
 
   return (
@@ -211,13 +77,13 @@ export default async function SearchPage({ searchParams }: PageProps) {
           </form>
           <p className="text-xs text-muted-fg">
             {query.length === 0
-              ? "Tipp: probiere 'Anna', '9b', 'Photosynthese' oder 'Tom Weber'."
+              ? "Tipp: probiere einen Aufgaben-Titel, Schülernamen oder Klassennamen."
               : `${hits.length} Treffer für '${query}'`}
           </p>
         </header>
 
         {query.length === 0 ? (
-          <EmptyState />
+          <EmptyState role={role} />
         ) : hits.length === 0 ? (
           <NoResults query={query} />
         ) : (
@@ -234,7 +100,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
                 </div>
                 <ul className="divide-y divide-border border border-border bg-bg">
                   {items.map((hit) => (
-                    <HitRow key={`${hit.scope}-${hit.title}`} hit={hit} query={query} />
+                    <HitRow key={`${hit.scope}-${hit.title}-${hit.href}`} hit={hit} query={query} />
                   ))}
                 </ul>
               </section>
@@ -244,6 +110,199 @@ export default async function SearchPage({ searchParams }: PageProps) {
       </div>
     </main>
   );
+}
+
+async function search(userId: string, role: string, q: string): Promise<Hit[]> {
+  const hits: Hit[] = [];
+
+  if (role === "student") {
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+      select: { classId: true },
+    });
+
+    const [assignments, decks, paths] = await Promise.all([
+      user?.classId
+        ? prisma.assignment.findMany({
+            where: { classId: user.classId, title: { contains: q } },
+            select: { id: true, title: true, description: true, subject: { select: { name: true } }, dueAt: true },
+            take: 10,
+          })
+        : [],
+      prisma.flashcardDeck.findMany({
+        where: { userId, name: { contains: q } },
+        select: { id: true, name: true, subject: { select: { name: true } }, _count: { select: { cards: true } } },
+        take: 10,
+      }),
+      prisma.learningPath.findMany({
+        where: { title: { contains: q } },
+        select: { id: true, title: true, description: true, subject: { select: { name: true } } },
+        take: 10,
+      }),
+    ]);
+
+    for (const a of assignments) {
+      hits.push({
+        title: a.title,
+        body: `${a.subject.name} · fällig ${a.dueAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}${a.description ? " · " + a.description.slice(0, 60) : ""}`,
+        href: `/app/aufgaben/${a.id}`,
+        scope: "Aufgabe",
+        icon: CheckSquare,
+      });
+    }
+    for (const d of decks) {
+      hits.push({
+        title: d.name,
+        body: `${d._count.cards} Karten${d.subject ? " · " + d.subject.name : ""}`,
+        href: `/app/karteikarten`,
+        scope: "Karteikarten",
+        icon: Layers,
+      });
+    }
+    for (const p of paths) {
+      hits.push({
+        title: p.title,
+        body: `${p.subject.name}${p.description ? " · " + p.description.slice(0, 60) : ""}`,
+        href: `/app/lernen`,
+        scope: "Lernpfad",
+        icon: BookOpen,
+      });
+    }
+  }
+
+  if (role === "teacher") {
+    const [students, classes, assignments] = await Promise.all([
+      prisma.user.findMany({
+        where: {
+          role: "student",
+          name: { contains: q },
+          schoolClass: { assignments: { some: { teacherId: userId } } },
+        },
+        select: { id: true, name: true, classId: true, schoolClass: { select: { name: true } } },
+        take: 10,
+      }),
+      prisma.schoolClass.findMany({
+        where: {
+          name: { contains: q },
+          assignments: { some: { teacherId: userId } },
+        },
+        select: { id: true, name: true, _count: { select: { students: true } } },
+        take: 10,
+      }),
+      prisma.assignment.findMany({
+        where: { teacherId: userId, title: { contains: q } },
+        select: { id: true, title: true, subject: { select: { name: true } }, class: { select: { name: true } }, dueAt: true },
+        take: 10,
+      }),
+    ]);
+
+    for (const s of students) {
+      hits.push({
+        title: s.name,
+        body: `Klasse ${s.schoolClass?.name ?? "—"}`,
+        href: s.schoolClass?.name
+          ? `/teach/klassen/${encodeURIComponent(s.schoolClass.name)}`
+          : `/teach/klassen`,
+        scope: "Schüler",
+        icon: Users,
+      });
+    }
+    for (const c of classes) {
+      hits.push({
+        title: c.name,
+        body: `${c._count.students} Schüler`,
+        href: `/teach/klassen/${encodeURIComponent(c.name)}`,
+        scope: "Klasse",
+        icon: Users,
+      });
+    }
+    for (const a of assignments) {
+      hits.push({
+        title: a.title,
+        body: `${a.subject.name} · ${a.class.name} · fällig ${a.dueAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}`,
+        href: `/teach/korrektur`,
+        scope: "Aufgabe",
+        icon: CheckSquare,
+      });
+    }
+
+    // Teacher's own flashcard decks
+    const decks = await prisma.flashcardDeck.findMany({
+      where: { userId, name: { contains: q } },
+      select: { id: true, name: true, subject: { select: { name: true } }, _count: { select: { cards: true } } },
+      take: 5,
+    });
+    for (const d of decks) {
+      hits.push({
+        title: d.name,
+        body: `${d._count.cards} Karten${d.subject ? " · " + d.subject.name : ""}`,
+        href: `/teach/karteikarten`,
+        scope: "Karteikarten",
+        icon: Layers,
+      });
+    }
+  }
+
+  if (role === "parent") {
+    // Search children's assignments by finding linked students
+    const links = await prisma.parentStudentLink.findMany({
+      where: { parentId: userId },
+      select: { student: { select: { id: true, name: true, classId: true } } },
+    });
+    const studentIds = links.map((l) => l.student.id);
+    const classIds = links.map((l) => l.student.classId).filter(Boolean) as string[];
+
+    const assignments = await prisma.assignment.findMany({
+      where: { classId: { in: classIds }, title: { contains: q } },
+      select: { id: true, title: true, subject: { select: { name: true } }, dueAt: true },
+      take: 10,
+    });
+    for (const a of assignments) {
+      hits.push({
+        title: a.title,
+        body: `${a.subject.name} · fällig ${a.dueAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}`,
+        href: `/eltern/aufgaben`,
+        scope: "Aufgabe",
+        icon: CheckSquare,
+      });
+    }
+
+    const students = await prisma.user.findMany({
+      where: { id: { in: studentIds }, name: { contains: q } },
+      select: { id: true, name: true, schoolClass: { select: { name: true } } },
+    });
+    for (const s of students) {
+      hits.push({
+        title: s.name,
+        body: `Klasse ${s.schoolClass?.name ?? "—"}`,
+        href: `/eltern`,
+        scope: "Kind",
+        icon: Users,
+      });
+    }
+  }
+
+  // All roles: message threads
+  const threads = await prisma.messageThread.findMany({
+    where: {
+      participants: { some: { userId } },
+      subject: { contains: q },
+    },
+    select: { id: true, subject: true },
+    take: 5,
+  });
+  for (const t of threads) {
+    const prefix = role === "teacher" ? "/teach" : role === "parent" ? "/eltern" : "/app";
+    hits.push({
+      title: t.subject,
+      body: "Nachrichtenthread",
+      href: `${prefix}/nachrichten/${t.id}`,
+      scope: "Nachricht",
+      icon: MessageSquare,
+    });
+  }
+
+  return hits;
 }
 
 function HitRow({ hit, query }: { hit: Hit; query: string }) {
@@ -292,10 +351,15 @@ function Highlighted({ text, query }: { text: string; query: string }) {
   );
 }
 
-function EmptyState() {
-  const examples = ["Anna", "9b", "Photosynthese", "Korrektur", "Tom Weber"];
+function EmptyState({ role }: { role: string }) {
+  const examples =
+    role === "teacher"
+      ? ["Klasse 9b", "Anna Bauer", "Mathe", "Physik"]
+      : role === "student"
+      ? ["Mathe", "Biologie", "Vokabeln", "Lernpfad"]
+      : ["Hausaufgaben", "Note", "Klasse"];
   return (
-    <div className="grid gap-px border border-border bg-border sm:grid-cols-3 md:grid-cols-5">
+    <div className="grid gap-px border border-border bg-border sm:grid-cols-4">
       {examples.map((ex) => (
         <Link
           key={ex}
@@ -313,11 +377,7 @@ function EmptyState() {
 
 function NoResults({ query }: { query: string }) {
   return (
-    <div
-      className={cn(
-        "border border-dashed border-border bg-bg p-8 text-center"
-      )}
-    >
+    <div className={cn("border border-dashed border-border bg-bg p-8 text-center")}>
       <p className="text-base font-semibold">
         Keine Treffer für &bdquo;{query}&ldquo;
       </p>
@@ -325,16 +385,6 @@ function NoResults({ query }: { query: string }) {
         Versuche kürzere Begriffe oder schau in der App-Navigation nach.
       </p>
     </div>
-  );
-}
-
-function filterIndex(index: Hit[], q: string): Hit[] {
-  const lowered = q.toLowerCase();
-  return index.filter(
-    (h) =>
-      h.title.toLowerCase().includes(lowered) ||
-      h.body.toLowerCase().includes(lowered) ||
-      h.scope.toLowerCase().includes(lowered)
   );
 }
 

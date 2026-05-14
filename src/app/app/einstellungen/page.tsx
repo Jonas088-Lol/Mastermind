@@ -25,6 +25,7 @@ import { ThemeButtons } from "./ThemeButtons";
 import { ToggleSection } from "./ToggleSection";
 import { DeviceLogoutButton } from "./DeviceLogout";
 import { logoutAllDevices, changePassword } from "./actions";
+import { PushSubscribeToggle } from "@/components/app/PushSubscribeToggle";
 
 export const metadata: Metadata = { title: "Einstellungen" };
 
@@ -190,7 +191,7 @@ export default async function EinstellungenPage() {
                       <div>
                         <p className="text-sm font-semibold">Passwort</p>
                         <p className="mt-0.5 text-xs text-muted-fg">
-                          zuletzt geändert vor 47 Tagen
+                          Passwort ändern oder zurücksetzen
                         </p>
                       </div>
                       <span className="inline-flex h-8 cursor-pointer items-center rounded-none px-3 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg">
@@ -221,8 +222,7 @@ export default async function EinstellungenPage() {
                 <TwoFactorSetup initiallyEnabled={Boolean(me?.twoFactor)} />
                 <Field
                   label="Verbundene Konten"
-                  value="Microsoft Schule (SSO)"
-                  action="Verwalten"
+                  value="Kein SSO verbunden"
                 />
               </CardBody>
             </Card>
@@ -234,11 +234,14 @@ export default async function EinstellungenPage() {
               <CardHeader>
                 <CardTitle>Benachrichtigungen</CardTitle>
               </CardHeader>
-              <CardBody className="space-y-1">
-                <ToggleSection
-                  items={NOTIFICATION_ITEMS}
-                  storageKey="mm_notification_prefs"
-                />
+              <CardBody className="space-y-4">
+                <PushSubscribeToggle />
+                <div className="border-t border-border pt-3">
+                  <ToggleSection
+                    items={NOTIFICATION_ITEMS}
+                    storageKey="mm_notification_prefs"
+                  />
+                </div>
               </CardBody>
             </Card>
           </section>
@@ -451,7 +454,7 @@ function Field({
 }: {
   label: string;
   value: string;
-  action: string;
+  action?: string;
   status?: "ok";
 }) {
   return (
@@ -465,9 +468,11 @@ function Field({
           {value}
         </p>
       </div>
-      <Button variant="ghost" size="sm">
-        {action}
-      </Button>
+      {action && (
+        <Button variant="ghost" size="sm">
+          {action}
+        </Button>
+      )}
     </div>
   );
 }

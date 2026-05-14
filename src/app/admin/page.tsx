@@ -24,7 +24,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
@@ -33,78 +33,35 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Schul-Admin" };
 
-const tasks = [
-  {
-    title: "12 Schüler haben kein Login eingelöst",
-    body: "Welcome-Mails wurden vor 7 Tagen versendet. Erinnerung schicken?",
-    severity: "warning" as const,
-    cta: "Erinnern",
-  },
-  {
-    title: "Untis-Stundenplan-Import bereit",
-    body: "Datei hochgeladen am 10. März. 32 Klassen erkannt — Vorschau prüfen.",
-    severity: "info" as const,
-    cta: "Prüfen",
-  },
-  {
-    title: "Lizenz läuft in 47 Tagen aus",
-    body: "Pro-Paket bis 14. Juni 2026. Verlängerung jetzt sichert keine Unterbrechung.",
-    severity: "neutral" as const,
-    cta: "Verlängern",
-  },
-  {
-    title: "2 neue Lehrer-Anträge",
-    body: "Hr. Schäfer und Fr. Otto haben sich registriert — Freischaltung ausstehend.",
-    severity: "danger" as const,
-    cta: "Prüfen",
-  },
-];
+function buildIntegrations() {
+  return [
+    { name: "Microsoft Entra SSO", configured: Boolean(process.env.AZURE_CLIENT_ID) },
+    { name: "Google Workspace", configured: Boolean(process.env.GOOGLE_CLIENT_ID) },
+    { name: "Apple School Manager", configured: false },
+    { name: "Untis-Stundenplan", configured: false },
+    { name: "WebUntis API", configured: false },
+  ];
+}
 
-const audit = [
-  {
-    actor: "Andrea Hoffmann",
-    action: "Lehrer-Account",
-    target: "Markus Becker",
-    detail: "Rolle aktualisiert: Lehrer → Lehrer + Klassensprecher",
-    time: "vor 12 Min.",
-  },
-  {
-    actor: "System · SCIM",
-    action: "Nutzer importiert",
-    target: "8 Schüler · Klasse 7c",
-    detail: "Quelle: schule.de/SCIM-API",
-    time: "vor 2 Std.",
-  },
-  {
-    actor: "Andrea Hoffmann",
-    action: "SSO-Konfig",
-    target: "Microsoft Entra ID",
-    detail: "Tenant gewechselt · 234 Nutzer betroffen",
-    time: "gestern",
-  },
-  {
-    actor: "Plattform",
-    action: "Backup",
-    target: "Datenbank",
-    detail: "Tägliches Snapshot · 4,7 GB nach Frankfurt",
-    time: "gestern",
-  },
-  {
-    actor: "Andrea Hoffmann",
-    action: "Branding",
-    target: "Akzentfarbe",
-    detail: "Hex #1E3A8A → #2563EB",
-    time: "vor 2 Tagen",
-  },
-];
+const ROLE_LABEL: Record<string, string> = {
+  student: "Schüler",
+  teacher: "Lehrkraft",
+  parent: "Elternteil",
+  admin: "Admin",
+  super: "Super-Admin",
+};
 
-const integrations = [
-  { name: "Microsoft Entra SSO", status: "active" as const, detail: "234 Nutzer" },
-  { name: "Untis-Stundenplan", status: "active" as const, detail: "letzter Import vor 2 Tagen" },
-  { name: "Google Workspace", status: "ready" as const, detail: "Bereit zum Aktivieren" },
-  { name: "Apple School Manager", status: "off" as const, detail: "Nicht konfiguriert" },
-  { name: "WebUntis API", status: "active" as const, detail: "Sync alle 15 Min." },
-];
+function relativeTime(date: Date): string {
+  const diff = Date.now() - date.getTime();
+  const min = Math.floor(diff / 60_000);
+  if (min < 1) return "gerade eben";
+  if (min < 60) return `vor ${min} Min.`;
+  const h = Math.floor(min / 60);
+  if (h < 24) return `vor ${h} Std.`;
+  const d = Math.floor(h / 24);
+  if (d === 1) return "gestern";
+  return `vor ${d} Tagen`;
+}
 
 export default async function AdminPage() {
   const session = await getSession();
@@ -124,9 +81,10 @@ export default async function AdminPage() {
     ]);
 
   const totalUsers = studentCount + teacherCount + parentCount + adminCount;
+  const integrations = buildIntegrations();
 
   const school = schoolId
-    ? await prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } })
+    ? await prisma.school.findUnique({ where: { id: schoolId }, select: { name: true, plan: true, seats: true } })
     : null;
 
   const schoolName = school?.name ?? "Schule";
@@ -149,6 +107,97 @@ export default async function AdminPage() {
   ]);
 
   const aiRequestsMonth = aiUsageMonth._sum.used ?? 0;
+
+  // Dynamic admin tasks derived from DB state
+  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const [neverLoggedIn, pendingTeachers, openSubmissions] = await Promise.all([
+    prisma.user.count({
+      where: { ...(schoolId ? { schoolId } : {}), sessions: { none: {} }, createdAt: { gte: sevenDaysAgo } },
+    }),
+    prisma.user.count({
+      where: { ...(schoolId ? { schoolId } : {}), role: "teacher", verifiedAt: null },
+    }),
+    prisma.submission.count({
+      where: { status: "submitted", ...(schoolId ? { assignment: { class: { schoolId } } } : {}) },
+    }),
+  ]);
+
+  type AdminTask = { title: string; body: string; severity: "info" | "warning" | "danger" | "neutral"; cta: string; href: string };
+  const adminTasks: AdminTask[] = [];
+  if (neverLoggedIn > 0) {
+    adminTasks.push({
+      title: `${neverLoggedIn} ${neverLoggedIn === 1 ? "Nutzer hat" : "Nutzer haben"} kein Login eingelöst`,
+      body: "In den letzten 7 Tagen registriert – bitte erinnern.",
+      severity: "warning",
+      cta: "Nutzer anzeigen",
+      href: "/admin/nutzer",
+    });
+  }
+  if (pendingTeachers > 0) {
+    adminTasks.push({
+      title: `${pendingTeachers} unverifizierte${pendingTeachers === 1 ? "r Lehrer" : " Lehrer"}`,
+      body: `${pendingTeachers === 1 ? "Eine Lehrkraft hat" : `${pendingTeachers} Lehrkräfte haben`} die E-Mail noch nicht bestätigt.`,
+      severity: "danger",
+      cta: "Prüfen",
+      href: "/admin/nutzer",
+    });
+  }
+  if (openSubmissions > 0) {
+    adminTasks.push({
+      title: `${openSubmissions} Abgabe${openSubmissions === 1 ? "" : "n"} warten auf Korrektur`,
+      body: "Schüler warten auf Feedback ihrer Lehrkräfte.",
+      severity: "info",
+      cta: "Übersicht",
+      href: "/admin/abgaben",
+    });
+  }
+  if (school && totalUsers >= school.seats * 0.9) {
+    adminTasks.push({
+      title: `Kapazität nahezu erreicht: ${totalUsers} / ${school.seats} Sitze`,
+      body: "90 % der Lizenz-Kapazität genutzt. Erweiterung empfohlen.",
+      severity: "warning",
+      cta: "Lizenz",
+      href: "/admin/lizenz",
+    });
+  }
+
+  // Audit entries from real DB activity
+  const [recentGrades, recentCreatedUsers] = await Promise.all([
+    prisma.grade.findMany({
+      where: schoolId ? { subject: { schoolId } } : {},
+      include: {
+        teacher: { select: { name: true } },
+        student: { select: { name: true } },
+        subject: { select: { name: true } },
+      },
+      orderBy: { date: "desc" },
+      take: 4,
+    }),
+    prisma.user.findMany({
+      where: { ...(schoolId ? { schoolId } : {}), createdAt: { gte: sevenDaysAgo } },
+      select: { name: true, role: true, createdAt: true },
+      orderBy: { createdAt: "desc" },
+      take: 3,
+    }),
+  ]);
+
+  type RawAuditEntry = { actor: string; action: string; target: string; detail: string; date: Date };
+  const rawAuditEntries: RawAuditEntry[] = [
+    ...recentGrades.map((g) => ({
+      actor: g.teacher.name,
+      action: "Note eingetragen",
+      target: g.student.name,
+      detail: `${g.subject.name} · Note ${g.value.toFixed(1)}`,
+      date: g.date,
+    })),
+    ...recentCreatedUsers.map((u) => ({
+      actor: "System",
+      action: "Nutzer registriert",
+      target: u.name,
+      detail: `Rolle: ${ROLE_LABEL[u.role] ?? u.role}`,
+      date: u.createdAt,
+    })),
+  ].sort((a, b) => b.date.getTime() - a.date.getTime()).slice(0, 5);
 
   const userBreakdown = [
     { role: "Schüler", count: studentCount, total: Math.max(studentCount, 1), tone: "brand" as const },
@@ -203,15 +252,18 @@ export default async function AdminPage() {
               Hallo {firstName}
             </h1>
             <p className="mt-1 text-sm text-muted-fg">
-              {totalUsers} Nutzer · {classCount} Klassen · Lizenz läuft in 47 Tagen
+              {totalUsers} Nutzer · {classCount} Klassen{school ? ` · ${totalUsers} / ${school.seats} Sitze` : ""}
             </p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" size="sm">
+          <Link
+            href="/api/admin/dsgvo-export"
+            className={buttonVariants({ variant: "outline", size: "sm" })}
+          >
             <Download className="size-3.5" />
             DSGVO-Export
-          </Button>
+          </Link>
           <Link
             href="/admin/nutzer/neu"
             className={buttonVariants({ variant: "outline", size: "sm" })}
@@ -219,10 +271,13 @@ export default async function AdminPage() {
             <UserPlus className="size-3.5" />
             Nutzer einladen
           </Link>
-          <Button size="sm">
+          <Link
+            href="/admin/stundenplan"
+            className={buttonVariants({ size: "sm" })}
+          >
             <Upload className="size-3.5" />
-            Untis importieren
-          </Button>
+            Stundenplan
+          </Link>
         </div>
       </header>
 
@@ -250,32 +305,35 @@ export default async function AdminPage() {
               <div>
                 <CardTitle>Aufgaben</CardTitle>
                 <p className="mt-1 text-sm text-muted-fg">
-                  {tasks.length} offene Vorgänge · sortiert nach Dringlichkeit
+                  {adminTasks.length} offene Vorgänge
                 </p>
               </div>
-              <Button variant="ghost" size="sm">
-                Filter
-              </Button>
             </CardHeader>
             <CardBody className="!px-0 !pb-0">
-              <ul className="divide-y divide-border border-t border-border">
-                {tasks.map((t) => (
-                  <li
-                    key={t.title}
-                    className="flex items-start gap-4 px-5 py-4 transition-colors hover:bg-surface"
-                  >
-                    <SeverityDot severity={t.severity} />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-semibold">{t.title}</p>
-                      <p className="mt-1 text-xs text-muted-fg">{t.body}</p>
-                    </div>
-                    <Button size="sm" variant="secondary">
-                      {t.cta}
-                      <ArrowRight className="size-3.5" />
-                    </Button>
-                  </li>
-                ))}
-              </ul>
+              {adminTasks.length === 0 ? (
+                <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
+                  Keine offenen Vorgänge. Alles in Ordnung.
+                </p>
+              ) : (
+                <ul className="divide-y divide-border border-t border-border">
+                  {adminTasks.map((t) => (
+                    <li
+                      key={t.title}
+                      className="flex items-start gap-4 px-5 py-4 transition-colors hover:bg-surface"
+                    >
+                      <SeverityDot severity={t.severity} />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-semibold">{t.title}</p>
+                        <p className="mt-1 text-xs text-muted-fg">{t.body}</p>
+                      </div>
+                      <Link href={t.href} className={buttonVariants({ size: "sm", variant: "secondary" })}>
+                        {t.cta}
+                        <ArrowRight className="size-3.5" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </CardBody>
           </Card>
 
@@ -335,31 +393,37 @@ export default async function AdminPage() {
               </Link>
             </CardHeader>
             <CardBody className="!px-0 !pb-0">
-              <ul className="divide-y divide-border border-t border-border">
-                {audit.map((a, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start gap-4 px-5 py-3.5 transition-colors hover:bg-surface"
-                  >
-                    <Avatar name={a.actor} size="sm" />
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm">
-                        <span className="font-semibold">{a.actor}</span>
-                        <span className="text-muted-fg"> · </span>
-                        <span>{a.action}</span>
-                        <span className="text-muted-fg"> · </span>
-                        <span className="font-medium">{a.target}</span>
-                      </p>
-                      <p className="mt-0.5 truncate text-xs text-muted-fg">
-                        {a.detail}
-                      </p>
-                    </div>
-                    <span className="hidden shrink-0 font-mono text-[10px] uppercase tracking-wider text-muted-fg sm:inline">
-                      {a.time}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              {rawAuditEntries.length === 0 ? (
+                <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
+                  Noch keine Aktivitäten aufgezeichnet.
+                </p>
+              ) : (
+                <ul className="divide-y divide-border border-t border-border">
+                  {rawAuditEntries.map((a, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-4 px-5 py-3.5 transition-colors hover:bg-surface"
+                    >
+                      <Avatar name={a.actor} size="sm" />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm">
+                          <span className="font-semibold">{a.actor}</span>
+                          <span className="text-muted-fg"> · </span>
+                          <span>{a.action}</span>
+                          <span className="text-muted-fg"> · </span>
+                          <span className="font-medium">{a.target}</span>
+                        </p>
+                        <p className="mt-0.5 truncate text-xs text-muted-fg">
+                          {a.detail}
+                        </p>
+                      </div>
+                      <span className="hidden shrink-0 font-mono text-[10px] uppercase tracking-wider text-muted-fg sm:inline">
+                        {relativeTime(a.date)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </CardBody>
           </Card>
         </div>
@@ -370,38 +434,35 @@ export default async function AdminPage() {
               <div className="flex items-center gap-2">
                 <KeyRound className="size-4 text-brand" strokeWidth={1.75} />
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-                  Lizenz · Pro
+                  Lizenz · {school?.plan ?? "basic"}
                 </p>
               </div>
               <p className="mt-4 text-base font-semibold leading-snug">
-                {totalUsers} Nutzer aktiv
+                {totalUsers} / {school?.seats ?? "—"} Sitze belegt
               </p>
-              <Progress value={Math.min(100, (totalUsers / 1000) * 100)} tone="brand" className="mt-3" />
+              <Progress
+                value={school ? Math.min(100, Math.round((totalUsers / school.seats) * 100)) : 0}
+                tone="brand"
+                className="mt-3"
+              />
               <ul className="mt-5 space-y-2 text-sm">
                 <li className="flex items-center justify-between">
                   <span className="text-muted-fg">Plan</span>
-                  <span className="font-semibold">Pro Schule</span>
+                  <span className="font-semibold capitalize">{school?.plan ?? "—"}</span>
                 </li>
                 <li className="flex items-center justify-between">
-                  <span className="text-muted-fg">Vertragsende</span>
-                  <span className="font-mono">14. Juni 2026</span>
+                  <span className="text-muted-fg">Sitze</span>
+                  <span className="font-mono">{school?.seats ?? "—"}</span>
                 </li>
                 <li className="flex items-center justify-between">
-                  <span className="text-muted-fg">Monatlich</span>
-                  <span className="font-mono">1.890 €</span>
-                </li>
-                <li className="flex items-center justify-between">
-                  <span className="text-muted-fg">AVV</span>
-                  <span className="inline-flex items-center gap-1 text-success">
-                    <CheckCircle2 className="size-3.5" />
-                    signiert
-                  </span>
+                  <span className="text-muted-fg">Abrechnungsdetails</span>
+                  <span className="text-xs text-muted-fg">→ Plattform</span>
                 </li>
               </ul>
-              <Button className="mt-5 w-full">
-                Lizenz verlängern
+              <Link href="/admin/lizenz" className={buttonVariants({ className: "mt-5 w-full" })}>
+                Lizenz verwalten
                 <ArrowRight className="size-3.5" />
-              </Button>
+              </Link>
             </CardBody>
           </Card>
 
@@ -422,10 +483,12 @@ export default async function AdminPage() {
                     key={i.name}
                     className="flex items-center gap-3 px-5 py-3 transition-colors hover:bg-surface"
                   >
-                    <IntegrationDot status={i.status} />
+                    <IntegrationDot status={i.configured ? "active" : "off"} />
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-semibold">{i.name}</p>
-                      <p className="truncate text-xs text-muted-fg">{i.detail}</p>
+                      <p className="truncate text-xs text-muted-fg">
+                        {i.configured ? "Aktiv" : "Nicht konfiguriert"}
+                      </p>
                     </div>
                     <ArrowUpRight className="size-3.5 text-muted-fg" />
                   </li>

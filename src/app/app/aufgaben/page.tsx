@@ -36,7 +36,7 @@ const STATUS_LABEL: Record<string, string> = {
 };
 
 function formatDue(dueAt: Date): string {
-  const now = new Date("2026-05-05");
+  const now = new Date();
   const diff = Math.floor((dueAt.getTime() - now.getTime()) / 86_400_000);
   const dateStr = dueAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" });
   if (diff < 0) return `überfällig · ${dateStr}`;
@@ -83,7 +83,7 @@ export default async function AufgabenPage({ searchParams }: PageProps) {
     const sub = a.submissions[0];
     if (sub?.status === "graded") return "graded";
     if (sub?.status === "submitted") return "submitted";
-    const now = new Date("2026-05-05");
+    const now = new Date();
     const diff = (a.dueAt.getTime() - now.getTime()) / 86_400_000;
     if (!sub && diff < 0) return "late";
     if (diff <= 1) return "due-soon";

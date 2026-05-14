@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { AlertTriangle, CheckCircle2, Key, Shield } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { getSession, isSuper } from "@/lib/session";
@@ -82,13 +81,15 @@ export default async function PlattformSicherheitPage() {
           </div>
         </CardHeader>
         <CardBody>
-          <p className="text-sm text-muted-fg mb-4">API-Keys für interne Service-zu-Service-Kommunikation.</p>
+          <p className="text-sm text-muted-fg mb-4">
+            API-Keys werden über Umgebungsvariablen verwaltet (<code className="font-mono text-xs">.env.local</code>).
+            Rotation erfolgt direkt im Hosting-Provider oder Secret-Manager.
+          </p>
           <div className="space-y-2">
-            {["KI-Service", "E-Mail-Provider", "Monitoring"].map((svc) => (
+            {["ANTHROPIC_API_KEY", "VAPID_PRIVATE_KEY", "DATABASE_URL"].map((svc) => (
               <div key={svc} className="flex items-center justify-between border border-border px-4 py-2.5">
-                <span className="text-sm font-semibold">{svc}</span>
+                <span className="font-mono text-sm font-semibold">{svc}</span>
                 <span className="font-mono text-xs text-muted-fg">••••••••••••••••</span>
-                <Button size="sm" variant="ghost">Rotieren</Button>
               </div>
             ))}
           </div>

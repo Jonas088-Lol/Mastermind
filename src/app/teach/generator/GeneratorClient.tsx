@@ -25,7 +25,8 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
-import { sendToClass } from "./actions";
+import type { ExamResult } from "@/lib/ai/exam";
+import { runAiGenerate, sendToClass } from "./actions";
 
 // ── Types ─────────────────────────────────────────────────────────
 
@@ -35,8 +36,20 @@ interface TscItem {
   subject: { id: string; name: string };
 }
 
+interface RecentAssignment {
+  id: string;
+  title: string;
+  klasse: string;
+  when: string;
+  submissionCount: number;
+  maxPoints: number | null;
+}
+
 interface GeneratorClientProps {
   tscList: TscItem[];
+  recentAssignments: RecentAssignment[];
+  quotaUsed: number;
+  quotaLimit: number;
 }
 
 // ── Constants ─────────────────────────────────────────────────────
@@ -48,19 +61,6 @@ const TEMPLATES = [
   { icon: Leaf, label: "Bio-Test", body: "10 Multiple-Choice + 2 Freitext", topic: "Photosynthese", duration: "30", questions: 12 },
   { icon: Beaker, label: "Chemie-Praktikum", body: "Versuchsprotokoll-Vorlage", topic: "Säuren und Basen", duration: "90", questions: 5 },
   { icon: GraduationCap, label: "Lernzielkontrolle", body: "Kurz · 15 Min.", topic: "Lernzielkontrolle", duration: "20", questions: 4 },
-];
-
-const RECENT = [
-  { title: "KA Mathe 9b — Quadratische Funktionen", klasse: "9b", when: "vor 2 Std.", questions: 8, points: 36 },
-  { title: "Test Physik 10a — Optik", klasse: "10a", when: "gestern", questions: 6, points: 20 },
-  { title: "Wochen-Quiz 8c — Bruchrechnen", klasse: "8c", when: "vor 3 Tagen", questions: 10, points: 15 },
-];
-
-const SAMPLE_QUESTIONS = [
-  { n: 1, points: 4, type: "Rechnung", title: "Wende die pq-Formel auf x² + 4x − 12 = 0 an. Notiere alle Schritte." },
-  { n: 2, points: 6, type: "Rechnung & Begründung", title: "Bestimme die Nullstellen von f(x) = x² − 6x + 5. Erkläre, was die Diskriminante über die Lösungen aussagt." },
-  { n: 3, points: 5, type: "Anwendung", title: "Ein Stein wird mit der Geschwindigkeit v₀ = 20 m/s senkrecht nach oben geworfen. Berechne die Steighöhe und die Steigzeit (g = 10 m/s²)." },
-  { n: 4, points: 5, type: "Skizze & Interpretation", title: "Skizziere die Funktion f(x) = (x − 2)² − 4 ohne Wertetabelle. Beschreibe, wie sie aus der Normalparabel entsteht." },
 ];
 
 const ALL_TASK_TYPES = ["Rechnen", "Begründen", "Skizzieren", "Multiple Choice", "Anwendung"];
@@ -77,7 +77,7 @@ const DEFAULT_FORM = {
 
 // ── Main component ────────────────────────────────────────────────
 
-export function GeneratorClient({ tscList }: GeneratorClientProps) {
+export function GeneratorClient({ tscList, recentAssignments, quotaUsed, quotaLimit }: GeneratorClientProps) {
   const [form, setForm] = useState(() => {
     const first = tscList[0];
     return {
@@ -88,43 +88,70 @@ export function GeneratorClient({ tscList }: GeneratorClientProps) {
     };
   });
   const [phase, setPhase] = useState<"idle" | "generating" | "done">("idle");
+  const [examResult, setExamResult] = useState<ExamResult | null>(null);
+  const [generateError, setGenerateError] = useState<string | null>(null);
   const [sending, setSending] = useState(false);
-
-  const totalPoints = SAMPLE_QUESTIONS.reduce((s, q) => s + q.points, 0);
-  const expectedTime = SAMPLE_QUESTIONS.length * 6;
+  const [sendResult, setSendResult] = useState<"sent" | "error" | null>(null);
 
   const selectedTsc = tscList.find((t) => t.id === form.klasseId);
 
-  function handleGenerate() {
+  const questions = examResult?.questions ?? [];
+  const totalPoints = examResult?.totalPoints ?? 0;
+  const expectedTime = examResult?.estimatedMinutes ?? 0;
+  const curriculumScore = examResult?.curriculumScore ?? 0;
+
+  async function handleGenerate() {
+    if (!selectedTsc) return;
     setPhase("generating");
-    setTimeout(() => setPhase("done"), 1500);
+    setGenerateError(null);
+    const result = await runAiGenerate({
+      klasse: selectedTsc.class.name,
+      subject: selectedTsc.subject.name,
+      topic: form.topic,
+      duration: Number(form.duration),
+      questionCount: form.questions,
+      difficulty: form.difficulty.toLowerCase() as "leicht" | "mittel" | "schwer",
+      types: form.taskTypes,
+      goalHint: form.lernziel || undefined,
+    });
+    if (result.ok && result.result) {
+      setExamResult(result.result);
+      setPhase("done");
+    } else {
+      setGenerateError(result.error ?? "Unbekannter Fehler beim Generieren.");
+      setPhase("idle");
+    }
   }
 
   function handleReset() {
     setPhase("idle");
+    setExamResult(null);
+    setGenerateError(null);
+    setSendResult(null);
   }
 
   function handleEmptyTemplate() {
     setForm({ ...DEFAULT_FORM, klasseId: form.klasseId });
     setPhase("idle");
+    setExamResult(null);
+    setGenerateError(null);
   }
 
   function handlePdf() {
-    // Trigger browser print dialog — user can save as PDF from there
     window.print();
   }
 
   async function handleSendToClass() {
     if (!selectedTsc) return;
     setSending(true);
+    setSendResult(null);
     try {
-      const title = form.topic
-        ? `${form.topic} · ${selectedTsc.class.name}`
-        : `Generierter Test · ${selectedTsc.class.name}`;
+      const title = examResult?.title
+        ?? (form.topic ? `${form.topic} · ${selectedTsc.class.name}` : `Generierter Test · ${selectedTsc.class.name}`);
       await sendToClass(selectedTsc.class.id, selectedTsc.subject.id, title);
-      alert("Aufgabe wurde an die Klasse gesendet!");
+      setSendResult("sent");
     } catch {
-      alert("Fehler beim Senden.");
+      setSendResult("error");
     } finally {
       setSending(false);
     }
@@ -306,7 +333,7 @@ export function GeneratorClient({ tscList }: GeneratorClientProps) {
               className="w-full"
               size="lg"
               onClick={handleGenerate}
-              disabled={phase === "generating"}
+              disabled={phase === "generating" || !selectedTsc || !form.topic.trim()}
             >
               {phase === "generating" ? (
                 <Loader2 className="size-4 animate-spin" />
@@ -316,8 +343,12 @@ export function GeneratorClient({ tscList }: GeneratorClientProps) {
               {phase === "generating" ? "Generiert..." : "Generieren"}
             </Button>
 
+            {generateError && (
+              <p className="text-center text-xs font-semibold text-danger">{generateError}</p>
+            )}
+
             <p className="text-center text-[10px] uppercase tracking-wider text-muted-fg">
-              Verbraucht 1 Generator-Anfrage · 47 von 50 frei
+              Verbraucht 1 Generator-Anfrage · {quotaLimit - quotaUsed} von {quotaLimit} frei
             </p>
           </CardBody>
         </Card>
@@ -346,17 +377,16 @@ export function GeneratorClient({ tscList }: GeneratorClientProps) {
             </div>
           )}
 
-          {phase === "done" && (
+          {phase === "done" && examResult && (
             <>
               <CardHeader>
                 <div>
-                  <CardTitle>
-                    Vorschau ·{" "}
-                    {form.topic || "Generierter Test"}{" "}
-                    {selectedTsc ? `· ${selectedTsc.class.name}` : ""}
-                  </CardTitle>
+                  <CardTitle>{examResult.title}</CardTitle>
                   <p className="mt-1 text-sm text-muted-fg">
-                    {SAMPLE_QUESTIONS.length} Aufgaben · {totalPoints} Punkte · {expectedTime} Min.
+                    {questions.length} Aufgaben · {totalPoints} Punkte · {expectedTime} Min.
+                    {examResult.source === "mock" && (
+                      <span className="ml-2 text-warning">· Mock-Modus</span>
+                    )}
                   </p>
                 </div>
                 <div className="flex gap-2">
@@ -370,23 +400,28 @@ export function GeneratorClient({ tscList }: GeneratorClientProps) {
                   </Button>
                   <Button size="sm" onClick={handleSendToClass} disabled={sending || !selectedTsc}>
                     <Send className="size-3.5" />
-                    {sending ? "Sende..." : "An Klasse senden"}
+                    {sending ? "Sende..." : sendResult === "sent" ? "Gesendet ✓" : "An Klasse senden"}
                   </Button>
                 </div>
+                {sendResult === "error" && (
+                  <p className="text-xs font-semibold text-danger">
+                    Fehler beim Senden. Bitte erneut versuchen.
+                  </p>
+                )}
               </CardHeader>
               <CardBody className="!px-0 !pb-0">
                 <div className="border-t border-border bg-surface px-5 py-3 text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
                   Aufgaben
                 </div>
                 <ol className="divide-y divide-border">
-                  {SAMPLE_QUESTIONS.map((q) => (
+                  {questions.map((q) => (
                     <li
-                      key={q.n}
+                      key={q.number}
                       className="flex flex-col gap-3 px-5 py-4 transition-colors hover:bg-surface lg:flex-row"
                     >
                       <div className="flex shrink-0 items-start gap-3 lg:flex-col lg:items-center">
                         <span className="grid size-8 place-items-center bg-fg text-bg font-mono text-xs font-bold">
-                          {q.n}
+                          {q.number}
                         </span>
                         <span className="hidden font-mono text-[10px] uppercase tracking-wider text-muted-fg lg:block">
                           {q.points} P.
@@ -400,14 +435,18 @@ export function GeneratorClient({ tscList }: GeneratorClientProps) {
                           </span>
                         </div>
                         <p className="mt-1.5 text-sm leading-relaxed">{q.title}</p>
+                        {q.expected && (
+                          <details className="mt-2">
+                            <summary className="cursor-pointer text-xs text-muted-fg hover:text-fg">
+                              Erwartungshorizont
+                            </summary>
+                            <p className="mt-1 text-xs text-muted-fg">{q.expected}</p>
+                          </details>
+                        )}
                         <div className="mt-2 flex gap-1.5">
                           <Button variant="ghost" size="sm">
                             <FileEdit className="size-3.5" />
                             Bearbeiten
-                          </Button>
-                          <Button variant="ghost" size="sm">
-                            <RefreshCw className="size-3.5" />
-                            Variante
                           </Button>
                         </div>
                       </div>
@@ -425,6 +464,22 @@ export function GeneratorClient({ tscList }: GeneratorClientProps) {
                   </div>
                 </div>
 
+                {examResult.rubric.length > 0 && (
+                  <div className="border-t border-border p-5">
+                    <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+                      Bewertungsraster
+                    </p>
+                    <ul className="space-y-1.5">
+                      {examResult.rubric.map((r) => (
+                        <li key={r.label} className="flex items-center justify-between text-xs">
+                          <span>{r.label}</span>
+                          <span className="font-mono text-muted-fg">{r.maxPoints} P.</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 <div className="border-t border-border p-5">
                   <div className="flex items-center gap-2 text-xs">
                     <Sparkles className="size-3.5 text-brand" />
@@ -434,12 +489,12 @@ export function GeneratorClient({ tscList }: GeneratorClientProps) {
                   </div>
                   <ul className="mt-3 space-y-2 text-xs">
                     <CheckItem label={`${form.difficulty}e Schwierigkeit ausgewogen`} />
-                    <CheckItem label="Kompetenz K3 · Kommunizieren" />
-                    <CheckItem label="Aufgabentypen variiert" />
+                    <CheckItem label={`${questions.length} Aufgaben · ${form.taskTypes.length} Typen`} />
+                    <CheckItem label="Erwartungshorizonte für alle Aufgaben" />
                   </ul>
-                  <Progress value={92} tone="success" className="mt-4" />
+                  <Progress value={curriculumScore} tone={curriculumScore >= 80 ? "success" : "warning"} className="mt-4" />
                   <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-fg">
-                    92 % Lehrplan-Übereinstimmung
+                    {curriculumScore} % Lehrplan-Übereinstimmung
                   </p>
                 </div>
               </CardBody>
@@ -448,42 +503,39 @@ export function GeneratorClient({ tscList }: GeneratorClientProps) {
         </Card>
       </div>
 
-      {/* Recent generations */}
+      {/* Recent assignments */}
       <Card>
         <CardHeader>
-          <CardTitle>Letzte Generierungen</CardTitle>
-          <span className="font-mono text-xs text-muted-fg">3 von 50 Anfragen heute</span>
+          <CardTitle>Letzte Aufgaben</CardTitle>
+          <span className="font-mono text-xs text-muted-fg">{quotaUsed} von {quotaLimit} Anfragen verbraucht</span>
         </CardHeader>
         <CardBody className="!px-0 !pb-0">
-          <ul className="divide-y divide-border border-t border-border">
-            {RECENT.map((r) => (
-              <li
-                key={r.title}
-                className="flex items-center gap-4 px-5 py-3 transition-colors hover:bg-surface"
-              >
-                <Avatar name="MasterMind KI" size="sm" className="bg-fg text-bg ring-fg" />
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-semibold">{r.title}</p>
-                  <p className="text-xs text-muted-fg">
-                    {r.klasse} · {r.questions} Aufgaben · {r.points} Punkte
-                  </p>
-                </div>
-                <span className="hidden font-mono text-[10px] uppercase tracking-wider text-muted-fg sm:inline">
-                  {r.when}
-                </span>
-                {/* No history stored yet — button is visually disabled */}
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  aria-disabled="true"
-                  className="cursor-not-allowed opacity-50"
-                  onClick={(e) => e.preventDefault()}
+          {recentAssignments.length === 0 ? (
+            <p className="border-t border-border px-5 py-8 text-center text-sm text-muted-fg">
+              Noch keine Aufgaben erstellt.
+            </p>
+          ) : (
+            <ul className="divide-y divide-border border-t border-border">
+              {recentAssignments.map((r) => (
+                <li
+                  key={r.id}
+                  className="flex items-center gap-4 px-5 py-3 transition-colors hover:bg-surface"
                 >
-                  Öffnen
-                </Button>
-              </li>
-            ))}
-          </ul>
+                  <Avatar name="MasterMind KI" size="sm" className="bg-fg text-bg ring-fg" />
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-semibold">{r.title}</p>
+                    <p className="text-xs text-muted-fg">
+                      {r.klasse} · {r.submissionCount} Abgaben
+                      {r.maxPoints != null ? ` · ${r.maxPoints} Punkte` : ""}
+                    </p>
+                  </div>
+                  <span className="hidden font-mono text-[10px] uppercase tracking-wider text-muted-fg sm:inline">
+                    {r.when}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
         </CardBody>
       </Card>
     </div>

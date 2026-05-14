@@ -153,10 +153,8 @@ async function* mockStream(opts: ChatOptions): AsyncGenerator<string> {
   const lastUser = opts.messages.findLast((m) => m.role === "user")?.content ?? "";
   const reply = mockReply(lastUser);
 
-  // Token-by-Token Streaming für UX-Realismus
   const words = reply.split(/(\s+)/);
   for (const w of words) {
-    await new Promise((r) => setTimeout(r, 18));
     yield w;
   }
 }

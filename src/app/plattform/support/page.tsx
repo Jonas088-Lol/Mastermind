@@ -6,26 +6,26 @@ import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { prisma } from "@/lib/db/client";
 import { getSession, isSuper } from "@/lib/session";
-
+import { createSupportTicket, resolveTicket } from "./actions";
 
 export const metadata: Metadata = { title: "Support · Plattform" };
 
-const TICKETS = [
-  { id: "T-1042", school: "Realschule München", subject: "SSO Login schlägt fehl", priority: "high" as const, status: "open" as const, created: "vor 2 Std." },
-  { id: "T-1041", school: "Gymnasium Augsburg", subject: "Untis-Import hängt", priority: "medium" as const, status: "pending" as const, created: "vor 5 Std." },
-  { id: "T-1039", school: "GS Nürnberg", subject: "Frage zu DSGVO-Export", priority: "low" as const, status: "resolved" as const, created: "gestern" },
-  { id: "T-1038", school: "BOS Ingolstadt", subject: "Neues Schuljahr anlegen", priority: "low" as const, status: "resolved" as const, created: "gestern" },
-];
-
 const PRIORITY_VARIANT = { high: "danger", medium: "warning", low: "outline" } as const;
-const STATUS_VARIANT = { open: "brand", pending: "warning", resolved: "success" } as const;
+const PRIORITY_LABEL = { high: "Hoch", medium: "Mittel", low: "Niedrig" } as const;
 
 export default async function PlattformSupportPage() {
   const session = await getSession();
   if (!session || !isSuper(session)) redirect("/login");
 
-  const open = TICKETS.filter((t) => t.status !== "resolved").length;
+  const tickets = await prisma.appNotification.findMany({
+    where: { userId: session.userId, type: "support_ticket" },
+    orderBy: { createdAt: "desc" },
+    take: 50,
+  });
+
+  const open = tickets.filter((t) => t.readAt === null).length;
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
@@ -43,26 +43,49 @@ export default async function PlattformSupportPage() {
               <Badge variant={open > 0 ? "warning" : "success"}>{open} offen</Badge>
             </CardHeader>
             <CardBody className="!px-0 !pb-0">
-              <ul className="divide-y divide-border border-t border-border">
-                {TICKETS.map((t) => (
-                  <li key={t.id} className="flex items-center gap-4 px-5 py-3.5 transition-colors hover:bg-surface">
-                    <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="font-mono text-xs text-muted-fg">{t.id}</span>
-                        <Badge variant={PRIORITY_VARIANT[t.priority]}>
-                          {t.priority === "high" ? "Hoch" : t.priority === "medium" ? "Mittel" : "Niedrig"}
-                        </Badge>
-                        <Badge variant={STATUS_VARIANT[t.status]}>
-                          {t.status === "open" ? "Offen" : t.status === "pending" ? "Wartend" : "Gelöst"}
-                        </Badge>
-                      </div>
-                      <p className="mt-1 text-sm font-semibold">{t.subject}</p>
-                      <p className="text-xs text-muted-fg">{t.school} · {t.created}</p>
-                    </div>
-                    <Button size="sm" variant="secondary">Öffnen</Button>
-                  </li>
-                ))}
-              </ul>
+              {tickets.length === 0 ? (
+                <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
+                  Noch keine Tickets erstellt.
+                </p>
+              ) : (
+                <ul className="divide-y divide-border border-t border-border">
+                  {tickets.map((t) => {
+                    const priority = (t.linkUrl ?? "low") as "high" | "medium" | "low";
+                    const [school, ...bodyParts] = (t.body ?? "").split(" · ");
+                    return (
+                      <li key={t.id} className="flex items-center gap-4 px-5 py-3.5 transition-colors hover:bg-surface">
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <Badge variant={PRIORITY_VARIANT[priority] ?? "outline"}>
+                              {PRIORITY_LABEL[priority] ?? priority}
+                            </Badge>
+                            <Badge variant={t.readAt !== null ? "success" : "brand"}>
+                              {t.readAt !== null ? "Gelöst" : "Offen"}
+                            </Badge>
+                          </div>
+                          <p className="mt-1 text-sm font-semibold">{t.title}</p>
+                          <p className="text-xs text-muted-fg">
+                            {school}
+                            {bodyParts.length > 0 && ` · ${bodyParts.join(" · ")}`}
+                            {" · "}
+                            {t.createdAt.toLocaleDateString("de-DE", { day: "numeric", month: "short", year: "numeric" })}
+                          </p>
+                        </div>
+                        {t.readAt === null && (
+                          <form action={resolveTicket.bind(null, t.id)}>
+                            <button
+                              type="submit"
+                              className="border border-border px-3 py-1.5 text-xs font-medium text-muted-fg transition-colors hover:border-success/40 hover:text-success"
+                            >
+                              Lösen
+                            </button>
+                          </form>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
             </CardBody>
           </Card>
         </div>
@@ -71,14 +94,26 @@ export default async function PlattformSupportPage() {
           <Card>
             <CardHeader><CardTitle>Neues Ticket</CardTitle></CardHeader>
             <CardBody>
-              <form className="space-y-4">
+              <form action={createSupportTicket} className="space-y-4">
                 <div className="space-y-1.5">
-                  <Label htmlFor="school">Schule</Label>
+                  <Label htmlFor="school">Schule (optional)</Label>
                   <Input id="school" name="school" placeholder="Schulname …" />
                 </div>
                 <div className="space-y-1.5">
-                  <Label htmlFor="subject">Betreff</Label>
-                  <Input id="subject" name="subject" placeholder="Kurze Beschreibung …" />
+                  <Label htmlFor="subject">Betreff *</Label>
+                  <Input id="subject" name="subject" placeholder="Kurze Beschreibung …" required />
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="priority">Priorität</Label>
+                  <select
+                    id="priority"
+                    name="priority"
+                    className="h-10 w-full border border-border bg-bg px-3 text-sm focus:outline-none"
+                  >
+                    <option value="low">Niedrig</option>
+                    <option value="medium">Mittel</option>
+                    <option value="high">Hoch</option>
+                  </select>
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="body">Details</Label>

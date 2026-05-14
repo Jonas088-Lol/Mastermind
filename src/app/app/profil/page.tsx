@@ -165,6 +165,8 @@ export default async function ProfilPage() {
         <Progress value={xpInLevel} tone="brand" className="mt-3" />
         <p className="mt-2 text-xs text-muted-fg">
           {100 - xpInLevel} XP bis Level {level + 1} · {user.xp.toLocaleString("de-DE")} XP gesamt
+          {" · "}
+          <Link href="/app/profil/xp" className="text-brand hover:underline">Verlauf</Link>
         </p>
       </section>
 

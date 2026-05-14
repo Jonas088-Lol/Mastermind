@@ -25,20 +25,6 @@ interface Message {
   pending?: boolean;
 }
 
-const INITIAL: Message[] = [
-  {
-    id: "u1",
-    role: "user",
-    content:
-      "Kannst du mir Aufgabe 5b erklären? Ich verstehe nicht, wie man die pq-Formel auf x² + 4x − 12 = 0 anwendet.",
-  },
-  {
-    id: "a1",
-    role: "assistant",
-    content:
-      "Klar, gehen wir das Schritt für Schritt durch.\n\n1. Bringe die Gleichung in die Normalform: x² + px + q = 0. Bei dir: p = 4, q = −12.\n2. Setze in x = −p/2 ± √((p/2)² − q) ein.\n3. Das ergibt x = −2 ± √(4 + 12) = −2 ± √16 = −2 ± 4.\n4. Also: x₁ = 2 und x₂ = −6.\n5. Probe: 2² + 4·2 − 12 = 0 ✓ und (−6)² + 4·(−6) − 12 = 0 ✓.\n\nMagst du eine ähnliche Aufgabe selbst durchgehen?",
-  },
-];
 
 interface TutorChatProps {
   initialQuotaUsed?: number;
@@ -50,13 +36,13 @@ interface TutorChatProps {
 }
 
 export function TutorChat({
-  initialQuotaUsed = 47,
+  initialQuotaUsed = 0,
   initialQuotaLimit = 50,
   isAiConfigured = false,
   injectedPrompt,
   onInjectedPromptConsumed,
 }: TutorChatProps) {
-  const [messages, setMessages] = useState<Message[]>(INITIAL);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);

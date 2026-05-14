@@ -1,11 +1,9 @@
 import {
   ArrowLeft,
-  Building2,
   Database,
   Download,
   Filter,
   KeyRound,
-  Palette,
   Search,
   ShieldCheck,
   UserCog,
@@ -13,21 +11,22 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { prisma } from "@/lib/db/client";
+import { getSession, isSuper } from "@/lib/session";
 import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = { title: "Audit-Log" };
+export const metadata: Metadata = { title: "Audit-Log · Plattform" };
 
-type EntryType = "auth" | "user" | "data" | "billing" | "system" | "brand";
+type EntryType = "auth" | "user" | "data" | "system";
 type Severity = "info" | "warning" | "critical";
 
 interface AuditEntry {
-  ts: string;
-  date: string;
+  date: Date;
   actor: string;
   actorEmail?: string;
   scope: string;
@@ -39,41 +38,129 @@ interface AuditEntry {
   ip?: string;
 }
 
-const ENTRIES: AuditEntry[] = [
-  { ts: "12:32", date: "12.03.", actor: "Plattform-Admin", actorEmail: "super@mastermind.app", scope: "Realschule München", type: "user", severity: "info", action: "Rolle aktualisiert", target: "Markus Becker", detail: "Lehrer → Lehrer + Klassensprecher", ip: "10.0.4.12" },
-  { ts: "11:48", date: "12.03.", actor: "System · SCIM", scope: "Realschule München", type: "user", severity: "info", action: "Nutzer importiert", target: "8 Schüler · Klasse 7c", detail: "Quelle: schule.de SCIM-API" },
-  { ts: "11:12", date: "12.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", scope: "Realschule München", type: "billing", severity: "info", action: "Lizenz erweitert", target: "Pro · 800 → 1000 Sitze", detail: "Verlängerung um 12 Monate · 1.890 €/Mo" },
-  { ts: "10:54", date: "12.03.", actor: "Plattform", scope: "Plattform", type: "system", severity: "info", action: "Backup", target: "DB · Postgres Primary", detail: "Tägliches Snapshot · 4,7 GB · Frankfurt" },
-  { ts: "09:18", date: "12.03.", actor: "Tom Vogel", actorEmail: "tom@mastermind.app", scope: "Plattform", type: "system", severity: "warning", action: "Feature-Flag", target: "ki.tutor.audio", detail: "Beta-Aktivierung für 4 Schulen" },
-  { ts: "08:02", date: "12.03.", actor: "Familie Weber", actorEmail: "weber@email.de", scope: "Realschule München", type: "auth", severity: "warning", action: "3 Failed-Logins", target: "weber@email.de", detail: "IP gleicht Heim-Adresse · kein Block ausgelöst", ip: "84.130.x.x" },
-  { ts: "22:45", date: "11.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", scope: "Realschule München", type: "auth", severity: "info", action: "SSO-Konfig", target: "Microsoft Entra ID", detail: "Tenant gewechselt · 234 Nutzer betroffen" },
-  { ts: "18:30", date: "11.03.", actor: "L. Krüger", actorEmail: "lk@mastermind.app", scope: "Gymnasium Stadtpark", type: "billing", severity: "info", action: "Plan upgegradet", target: "Pro → Enterprise", detail: "1.500 Sitze · 4.200 €/Mo" },
-  { ts: "15:08", date: "11.03.", actor: "Plattform", scope: "Plattform", type: "system", severity: "critical", action: "KI-Provider-Latenz", target: "EU-Frankfurt", detail: "p95 > 3 s für 12 Min · auto-recovery" },
-  { ts: "14:22", date: "11.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", scope: "Realschule München", type: "brand", severity: "info", action: "Branding", target: "Akzentfarbe", detail: "Hex #1E3A8A → #2563EB" },
-  { ts: "11:45", date: "11.03.", actor: "Sabine Brandt", actorEmail: "sabine@gesamtschule-koeln.de", scope: "Gesamtschule Köln-Mitte", type: "data", severity: "info", action: "DSGVO-Export", target: "Schüler Kl. 8a", detail: "ZIP · 12 Datensätze · auf Antrag" },
-  { ts: "09:00", date: "11.03.", actor: "Plattform", scope: "Plattform", type: "system", severity: "info", action: "Release", target: "v2.4.1", detail: "Hotfix: Untis-Import Umlaute · 47 Schulen aktualisiert" },
-];
-
 const TYPE_ICON: Record<EntryType, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
   auth: KeyRound,
   user: UserCog,
   data: Users,
-  billing: Building2,
   system: Database,
-  brand: Palette,
+};
+
+const ROLE_LABEL: Record<string, string> = {
+  student: "Schüler",
+  teacher: "Lehrkraft",
+  parent: "Elternteil",
+  admin: "Admin",
+  super: "Super-Admin",
 };
 
 interface PageProps {
-  searchParams: Promise<{ type?: string; severity?: string }>;
+  searchParams: Promise<{ type?: string; severity?: string; q?: string }>;
 }
 
 export default async function AuditPage({ searchParams }: PageProps) {
-  const { type, severity } = await searchParams;
-  const filtered = ENTRIES.filter((e) => {
+  const session = await getSession();
+  if (!session || !isSuper(session)) redirect("/login");
+
+  const { type, severity, q } = await searchParams;
+
+  const [recentSessions, recentUsers, recentGrades, teachersWithout2FA] = await Promise.all([
+    prisma.session.findMany({
+      include: {
+        user: { select: { name: true, email: true, school: { select: { name: true } } } },
+      },
+      orderBy: { createdAt: "desc" },
+      take: 20,
+    }),
+    prisma.user.findMany({
+      select: {
+        name: true,
+        email: true,
+        role: true,
+        createdAt: true,
+        school: { select: { name: true } },
+      },
+      orderBy: { createdAt: "desc" },
+      take: 15,
+    }),
+    prisma.grade.findMany({
+      include: {
+        teacher: { select: { name: true, email: true, school: { select: { name: true } } } },
+        student: { select: { name: true } },
+        subject: { select: { name: true } },
+      },
+      orderBy: { date: "desc" },
+      take: 10,
+    }),
+    prisma.user.findMany({
+      where: { role: "teacher", twoFactor: false },
+      select: { name: true, email: true, updatedAt: true, school: { select: { name: true } } },
+      take: 8,
+    }),
+  ]);
+
+  const allEntries: AuditEntry[] = [
+    ...recentSessions.map((s) => ({
+      date: s.createdAt,
+      type: "auth" as EntryType,
+      severity: "info" as Severity,
+      actor: s.user.name,
+      actorEmail: s.user.email,
+      scope: s.user.school?.name ?? "Plattform",
+      action: "Anmeldung",
+      target: "Login",
+      detail: s.ipAddress ? `IP: ${s.ipAddress}` : "Sitzung gestartet",
+      ip: s.ipAddress ?? undefined,
+    })),
+    ...recentUsers.map((u) => ({
+      date: u.createdAt,
+      type: "user" as EntryType,
+      severity: "info" as Severity,
+      actor: "System",
+      scope: u.school?.name ?? "Plattform",
+      action: "Nutzer registriert",
+      target: u.name,
+      detail: `Rolle: ${ROLE_LABEL[u.role] ?? u.role} · ${u.email}`,
+    })),
+    ...recentGrades.map((g) => ({
+      date: g.date,
+      type: "data" as EntryType,
+      severity: "info" as Severity,
+      actor: g.teacher.name,
+      actorEmail: g.teacher.email,
+      scope: g.teacher.school?.name ?? "—",
+      action: "Note eingetragen",
+      target: g.student.name,
+      detail: `${g.subject.name} · Note ${g.value.toFixed(1)}`,
+    })),
+    ...teachersWithout2FA.map((t) => ({
+      date: t.updatedAt,
+      type: "auth" as EntryType,
+      severity: "warning" as Severity,
+      actor: "System · Sicherheit",
+      scope: t.school?.name ?? "—",
+      action: "2FA nicht aktiviert",
+      target: t.name,
+      detail: `${t.email} · Lehrkraft ohne 2FA`,
+    })),
+  ].sort((a, b) => b.date.getTime() - a.date.getTime());
+
+  const filtered = allEntries.filter((e) => {
     if (type && e.type !== type) return false;
     if (severity && e.severity !== severity) return false;
+    if (q) {
+      const search = q.toLowerCase();
+      if (
+        !e.actor.toLowerCase().includes(search) &&
+        !e.target.toLowerCase().includes(search) &&
+        !e.detail.toLowerCase().includes(search) &&
+        !e.scope.toLowerCase().includes(search) &&
+        !(e.ip ?? "").includes(search)
+      ) return false;
+    }
     return true;
   });
+
+  const warningCount = allEntries.filter((e) => e.severity === "warning").length;
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
@@ -87,25 +174,26 @@ export default async function AuditPage({ searchParams }: PageProps) {
         </Link>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Audit-Log
-            </h1>
+            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Audit-Log</h1>
             <p className="mt-1 text-sm text-muted-fg">
-              Plattformweit · DSGVO-konform · 90 Tage retention · {ENTRIES.length} angezeigt
+              Plattformweit · DSGVO-konform · {allEntries.length} Einträge
             </p>
           </div>
-          <Button variant="outline" size="sm">
+          <Link
+            href="/api/super/audit-export"
+            className="inline-flex items-center gap-1.5 border border-border bg-bg px-3 py-1.5 text-xs font-medium text-muted-fg transition-colors hover:text-fg"
+          >
             <Download className="size-3.5" />
             CSV-Export
-          </Button>
+          </Link>
         </div>
       </header>
 
       <section className="grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-4">
-        <Stat label="Heute · Einträge" value="247" suffix="↓ 8 % ggü. Vortag" />
-        <Stat label="Failed-Logins · 24 h" value="12" suffix="3 mehrfach pro IP" />
-        <Stat label="Kritische Events" value="1" suffix="KI-Latenz · resolved" />
-        <Stat label="DSGVO-Anfragen" value="2" suffix="diesen Monat" />
+        <StatTile label="Einträge gesamt" value={String(allEntries.length)} suffix="letzte Aktivitäten" />
+        <StatTile label="Logins" value={String(recentSessions.length)} suffix="zuletzt erfasst" />
+        <StatTile label="Warnungen" value={String(warningCount)} suffix="Sicherheitshinweise" />
+        <StatTile label="Neue Nutzer" value={String(recentUsers.length)} suffix="zuletzt registriert" />
       </section>
 
       <section className="flex flex-col gap-3 border border-border bg-bg p-4 sm:flex-row sm:items-center sm:gap-6">
@@ -114,21 +202,19 @@ export default async function AuditPage({ searchParams }: PageProps) {
           Typ
         </div>
         <div className="flex flex-wrap gap-1.5">
-          <Chip href="/plattform/audit" active={!type && !severity}>Alle</Chip>
+          <Chip href="/plattform/audit" active={!type && !severity && !q}>Alle</Chip>
           <Chip href="/plattform/audit?type=auth" active={type === "auth"}>Auth</Chip>
           <Chip href="/plattform/audit?type=user" active={type === "user"}>Nutzer</Chip>
-          <Chip href="/plattform/audit?type=billing" active={type === "billing"}>Abrechnung</Chip>
-          <Chip href="/plattform/audit?type=system" active={type === "system"}>System</Chip>
           <Chip href="/plattform/audit?type=data" active={type === "data"}>Daten</Chip>
+          <Chip href="/plattform/audit?type=system" active={type === "system"}>System</Chip>
         </div>
         <div className="flex flex-wrap gap-1.5 sm:ml-auto">
           <Chip href="/plattform/audit?severity=warning" active={severity === "warning"}>Warning</Chip>
-          <Chip href="/plattform/audit?severity=critical" active={severity === "critical"}>Kritisch</Chip>
         </div>
         <form action="/plattform/audit" method="get" className="sm:ml-2">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 size-3.5 -translate-y-1/2 text-muted-fg" />
-            <Input name="q" placeholder="Akteur · IP · Target…" className="h-8 w-56 pl-9 text-xs" />
+            <Input name="q" defaultValue={q} placeholder="Akteur · IP · Ziel…" className="h-8 w-56 pl-9 text-xs" />
           </div>
         </form>
       </section>
@@ -142,47 +228,41 @@ export default async function AuditPage({ searchParams }: PageProps) {
           </Badge>
         </CardHeader>
         <CardBody className="!px-0 !pb-0">
-          <ul className="divide-y divide-border border-t border-border">
-            {filtered.map((e, i) => (
-              <EntryRow key={i} entry={e} />
-            ))}
-          </ul>
+          {filtered.length === 0 ? (
+            <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
+              Keine Einträge für diesen Filter.
+            </p>
+          ) : (
+            <ul className="divide-y divide-border border-t border-border">
+              {filtered.map((e, i) => (
+                <EntryRow key={i} entry={e} />
+              ))}
+            </ul>
+          )}
         </CardBody>
       </Card>
     </div>
   );
 }
 
-function Stat({ label, value, suffix }: { label: string; value: string; suffix: string }) {
+function StatTile({ label, value, suffix }: { label: string; value: string; suffix: string }) {
   return (
     <div className="bg-bg p-5">
-      <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">
-        {label}
-      </p>
+      <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">{label}</p>
       <p className="mt-3 font-mono text-3xl font-bold tracking-tight">{value}</p>
       <p className="mt-1 text-xs text-muted-fg">{suffix}</p>
     </div>
   );
 }
 
-function Chip({
-  href,
-  active,
-  children,
-}: {
-  href: string;
-  active: boolean;
-  children: React.ReactNode;
-}) {
+function Chip({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
   return (
     <Link
       href={href}
       aria-pressed={active}
       className={cn(
         "px-2.5 py-1 text-xs font-medium transition-colors",
-        active
-          ? "bg-fg text-bg"
-          : "border border-border bg-bg text-muted-fg hover:border-fg/30 hover:text-fg"
+        active ? "bg-fg text-bg" : "border border-border bg-bg text-muted-fg hover:border-fg/30 hover:text-fg"
       )}
     >
       {children}
@@ -191,12 +271,10 @@ function Chip({
 }
 
 function EntryRow({ entry }: { entry: AuditEntry }) {
-  const Icon = TYPE_ICON[entry.type];
-  const severityTone = {
-    info: "outline" as const,
-    warning: "warning" as const,
-    critical: "danger" as const,
-  }[entry.severity];
+  const Icon = TYPE_ICON[entry.type] ?? Database;
+  const severityTone = { info: "outline" as const, warning: "warning" as const, critical: "danger" as const }[entry.severity];
+  const ts = entry.date.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+  const dateStr = entry.date.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
 
   return (
     <li className="grid grid-cols-1 gap-2 px-5 py-3.5 transition-colors hover:bg-surface lg:grid-cols-[auto_auto_1fr_auto] lg:items-center lg:gap-4">
@@ -214,8 +292,8 @@ function EntryRow({ entry }: { entry: AuditEntry }) {
           <Icon className="size-4" strokeWidth={1.75} />
         </span>
         <div className="font-mono text-[10px] uppercase tracking-wider text-muted-fg">
-          <p className="font-bold">{entry.ts}</p>
-          <p>{entry.date}</p>
+          <p className="font-bold">{ts}</p>
+          <p>{dateStr}</p>
         </div>
       </div>
       <Avatar name={entry.actor} size="sm" className="hidden lg:grid" />
@@ -235,9 +313,7 @@ function EntryRow({ entry }: { entry: AuditEntry }) {
         </div>
         <p className="mt-0.5 truncate text-xs text-muted-fg">
           {entry.detail}
-          {entry.ip && (
-            <span className="ml-2 font-mono">· {entry.ip}</span>
-          )}
+          {entry.ip && <span className="ml-2 font-mono">· {entry.ip}</span>}
         </p>
       </div>
     </li>

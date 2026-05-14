@@ -1,6 +1,8 @@
 import { ArrowLeft, Filter, Flag, Plus, Search } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
+import { getSession, isSuper } from "@/lib/session";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
@@ -43,6 +45,9 @@ interface PageProps {
 }
 
 export default async function FlagsPage({ searchParams }: PageProps) {
+  const session = await getSession();
+  if (!session || !isSuper(session)) redirect("/login");
+
   const { state } = await searchParams;
   const filtered = FLAGS.filter((f) => !state || f.state === state);
 

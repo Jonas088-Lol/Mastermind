@@ -13,11 +13,13 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { prisma } from "@/lib/db/client";
+import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Audit-Log" };
@@ -26,8 +28,7 @@ type EntryType = "auth" | "user" | "data" | "billing" | "system" | "brand";
 type Severity = "info" | "warning" | "critical";
 
 interface AuditEntry {
-  ts: string;
-  date: string;
+  date: Date;
   actor: string;
   actorEmail?: string;
   type: EntryType;
@@ -38,23 +39,6 @@ interface AuditEntry {
   ip?: string;
 }
 
-const ENTRIES: AuditEntry[] = [
-  { ts: "12:32", date: "12.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", type: "user", severity: "info", action: "Rolle aktualisiert", target: "Markus Becker", detail: "Lehrer → Lehrer + Klassensprecher", ip: "10.0.4.12" },
-  { ts: "11:48", date: "12.03.", actor: "System · SCIM", type: "user", severity: "info", action: "Nutzer importiert", target: "8 Schüler · Klasse 7c", detail: "Quelle: schule.de SCIM-API" },
-  { ts: "11:12", date: "12.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", type: "billing", severity: "info", action: "Lizenz erweitert", target: "Pro · 800 → 1000 Sitze", detail: "Verlängerung um 12 Monate · 1.890 €/Mo" },
-  { ts: "10:54", date: "12.03.", actor: "Plattform", type: "system", severity: "info", action: "Backup", target: "DB · Postgres Primary", detail: "Tägliches Snapshot · 4,7 GB · Frankfurt" },
-  { ts: "08:02", date: "12.03.", actor: "Familie Weber", actorEmail: "weber@email.de", type: "auth", severity: "warning", action: "3 Failed-Logins", target: "weber@email.de", detail: "IP gleicht Heim-Adresse · kein Block ausgelöst", ip: "84.130.x.x" },
-  { ts: "22:45", date: "11.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", type: "auth", severity: "info", action: "SSO-Konfig", target: "Microsoft Entra ID", detail: "Tenant gewechselt · 234 Nutzer betroffen" },
-  { ts: "14:22", date: "11.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", type: "brand", severity: "info", action: "Branding", target: "Akzentfarbe", detail: "Hex #1E3A8A → #2563EB" },
-  { ts: "11:10", date: "11.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", type: "data", severity: "info", action: "DSGVO-Export", target: "Schüler Tom Weber", detail: "ZIP · auf Antrag der Eltern" },
-  { ts: "09:00", date: "11.03.", actor: "Markus Becker", actorEmail: "becker@schule.de", type: "data", severity: "info", action: "Klassenarbeit erstellt", target: "9b Mathe — Funktionen", detail: "KI-Generator · 8 Aufgaben · 36 Punkte" },
-  { ts: "16:48", date: "10.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", type: "user", severity: "info", action: "Lehrer eingeladen", target: "Petra Bauer", detail: "Welcome-Mail an p.bauer@schule.de versendet" },
-  { ts: "14:30", date: "10.03.", actor: "System", type: "system", severity: "info", action: "Untis-Import", target: "Stundenplan KW11", detail: "32 Klassen · 1 Vertretung erkannt" },
-  { ts: "11:22", date: "10.03.", actor: "Greta Hoffmann", actorEmail: "g.hoffmann@email.de", type: "auth", severity: "info", action: "Magic-Link verwendet", target: "Login", detail: "Erste Anmeldung · 2FA übersprungen (Eltern)" },
-  { ts: "10:08", date: "10.03.", actor: "Andrea Hoffmann", actorEmail: "admin@schule.de", type: "user", severity: "info", action: "Account deaktiviert", target: "Tom Weber", detail: "Schulwechsel · Daten 30 Tage Karenz" },
-  { ts: "09:45", date: "10.03.", actor: "Stefan Sommer", actorEmail: "sommer@schule.de", type: "auth", severity: "warning", action: "2FA fehlt", target: "sommer@schule.de", detail: "Pflicht-Setup beim nächsten Login erzwingen" },
-];
-
 const TYPE_ICON: Record<EntryType, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
   auth: KeyRound,
   user: UserCog,
@@ -64,15 +48,114 @@ const TYPE_ICON: Record<EntryType, React.ComponentType<{ className?: string; str
   brand: Palette,
 };
 
+const ROLE_LABEL: Record<string, string> = {
+  student: "Schüler",
+  teacher: "Lehrkraft",
+  parent: "Elternteil",
+  admin: "Admin",
+  super: "Super-Admin",
+};
+
 interface PageProps {
-  searchParams: Promise<{ type?: string; severity?: string }>;
+  searchParams: Promise<{ type?: string; severity?: string; q?: string }>;
 }
 
 export default async function AdminAuditPage({ searchParams }: PageProps) {
-  const { type, severity } = await searchParams;
-  const filtered = ENTRIES.filter((e) => {
+  const session = await getSession();
+  if (!session) redirect("/login");
+  if (effectiveRole(session) !== "admin") redirect("/");
+
+  const { type, severity, q } = await searchParams;
+  const schoolId = session.schoolId;
+
+  const schoolName = schoolId
+    ? (await prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } }))?.name ?? "Schule"
+    : "Schule";
+
+  const [recentSessions, recentUsers, recentGrades, teachersWithout2FA] = await Promise.all([
+    prisma.session.findMany({
+      where: schoolId ? { user: { schoolId } } : {},
+      include: { user: { select: { name: true, email: true } } },
+      orderBy: { createdAt: "desc" },
+      take: 15,
+    }),
+    prisma.user.findMany({
+      where: { ...(schoolId ? { schoolId } : {}) },
+      select: { name: true, email: true, role: true, createdAt: true },
+      orderBy: { createdAt: "desc" },
+      take: 10,
+    }),
+    prisma.grade.findMany({
+      where: schoolId ? { subject: { schoolId } } : {},
+      include: {
+        teacher: { select: { name: true, email: true } },
+        student: { select: { name: true } },
+        subject: { select: { name: true } },
+      },
+      orderBy: { date: "desc" },
+      take: 10,
+    }),
+    prisma.user.findMany({
+      where: { ...(schoolId ? { schoolId } : {}), role: "teacher", twoFactor: false },
+      select: { name: true, email: true, updatedAt: true },
+      take: 5,
+    }),
+  ]);
+
+  const allEntries: AuditEntry[] = [
+    ...recentSessions.map((s) => ({
+      date: s.createdAt,
+      type: "auth" as EntryType,
+      severity: "info" as Severity,
+      actor: s.user.name,
+      actorEmail: s.user.email,
+      action: "Anmeldung",
+      target: "Login",
+      detail: s.ipAddress ? `IP: ${s.ipAddress}` : "Sitzung gestartet",
+      ip: s.ipAddress ?? undefined,
+    })),
+    ...recentUsers.map((u) => ({
+      date: u.createdAt,
+      type: "user" as EntryType,
+      severity: "info" as Severity,
+      actor: "System",
+      action: "Nutzer registriert",
+      target: u.name,
+      detail: `Rolle: ${ROLE_LABEL[u.role] ?? u.role} · ${u.email}`,
+    })),
+    ...recentGrades.map((g) => ({
+      date: g.date,
+      type: "data" as EntryType,
+      severity: "info" as Severity,
+      actor: g.teacher.name,
+      actorEmail: g.teacher.email,
+      action: "Note eingetragen",
+      target: g.student.name,
+      detail: `${g.subject.name} · Note ${g.value.toFixed(1)}`,
+    })),
+    ...teachersWithout2FA.map((t) => ({
+      date: t.updatedAt,
+      type: "auth" as EntryType,
+      severity: "warning" as Severity,
+      actor: "System · Sicherheit",
+      action: "2FA nicht aktiviert",
+      target: t.name,
+      detail: `${t.email} · Lehrkraft ohne Zwei-Faktor-Authentifizierung`,
+    })),
+  ].sort((a, b) => b.date.getTime() - a.date.getTime());
+
+  const filtered = allEntries.filter((e) => {
     if (type && e.type !== type) return false;
     if (severity && e.severity !== severity) return false;
+    if (q) {
+      const search = q.toLowerCase();
+      if (
+        !e.actor.toLowerCase().includes(search) &&
+        !e.target.toLowerCase().includes(search) &&
+        !e.detail.toLowerCase().includes(search) &&
+        !(e.ip ?? "").includes(search)
+      ) return false;
+    }
     return true;
   });
 
@@ -92,13 +175,16 @@ export default async function AdminAuditPage({ searchParams }: PageProps) {
               Audit-Log
             </h1>
             <p className="mt-1 text-sm text-muted-fg">
-              Realschule München · DSGVO-konform · 90 Tage retention · {ENTRIES.length} Einträge
+              {schoolName} · DSGVO-konform · {allEntries.length} Einträge
             </p>
           </div>
-          <Button variant="outline" size="sm">
+          <Link
+            href="/api/admin/audit-export"
+            className="inline-flex items-center gap-1.5 border border-border bg-bg px-3 py-1.5 text-xs font-medium text-muted-fg transition-colors hover:text-fg"
+          >
             <Download className="size-3.5" />
             CSV-Export
-          </Button>
+          </Link>
         </div>
       </header>
 
@@ -108,11 +194,9 @@ export default async function AdminAuditPage({ searchParams }: PageProps) {
           Typ
         </div>
         <div className="flex flex-wrap gap-1.5">
-          <Chip href="/admin/audit" active={!type && !severity}>Alle</Chip>
+          <Chip href="/admin/audit" active={!type && !severity && !q}>Alle</Chip>
           <Chip href="/admin/audit?type=auth" active={type === "auth"}>Auth</Chip>
           <Chip href="/admin/audit?type=user" active={type === "user"}>Nutzer</Chip>
-          <Chip href="/admin/audit?type=billing" active={type === "billing"}>Abrechnung</Chip>
-          <Chip href="/admin/audit?type=system" active={type === "system"}>System</Chip>
           <Chip href="/admin/audit?type=data" active={type === "data"}>Daten</Chip>
         </div>
         <div className="flex flex-wrap gap-1.5 sm:ml-auto">
@@ -121,7 +205,7 @@ export default async function AdminAuditPage({ searchParams }: PageProps) {
         <form action="/admin/audit" method="get" className="sm:ml-2">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 size-3.5 -translate-y-1/2 text-muted-fg" />
-            <Input name="q" placeholder="Akteur · IP · Target…" className="h-8 w-56 pl-9 text-xs" />
+            <Input name="q" defaultValue={q} placeholder="Akteur · IP · Ziel…" className="h-8 w-56 pl-9 text-xs" />
           </div>
         </form>
       </section>
@@ -135,11 +219,17 @@ export default async function AdminAuditPage({ searchParams }: PageProps) {
           </Badge>
         </CardHeader>
         <CardBody className="!px-0 !pb-0">
-          <ul className="divide-y divide-border border-t border-border">
-            {filtered.map((e, i) => (
-              <EntryRow key={i} entry={e} />
-            ))}
-          </ul>
+          {filtered.length === 0 ? (
+            <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
+              Keine Einträge für diesen Filter.
+            </p>
+          ) : (
+            <ul className="divide-y divide-border border-t border-border">
+              {filtered.map((e, i) => (
+                <EntryRow key={i} entry={e} />
+              ))}
+            </ul>
+          )}
         </CardBody>
       </Card>
     </div>
@@ -179,6 +269,9 @@ function EntryRow({ entry }: { entry: AuditEntry }) {
     critical: "danger" as const,
   }[entry.severity];
 
+  const ts = entry.date.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+  const dateStr = entry.date.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit" });
+
   return (
     <li className="grid grid-cols-1 gap-2 px-5 py-3.5 transition-colors hover:bg-surface lg:grid-cols-[auto_auto_1fr] lg:items-center lg:gap-4">
       <div className="flex items-center gap-3">
@@ -195,8 +288,8 @@ function EntryRow({ entry }: { entry: AuditEntry }) {
           <Icon className="size-4" strokeWidth={1.75} />
         </span>
         <div className="font-mono text-[10px] uppercase tracking-wider text-muted-fg">
-          <p className="font-bold">{entry.ts}</p>
-          <p>{entry.date}</p>
+          <p className="font-bold">{ts}</p>
+          <p>{dateStr}</p>
         </div>
       </div>
       <Avatar name={entry.actor} size="sm" className="hidden lg:grid" />

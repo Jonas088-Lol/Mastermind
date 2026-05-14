@@ -9,6 +9,7 @@ import {
   GraduationCap,
   Mail,
   Sparkles,
+  UserCheck,
   Users,
 } from "lucide-react";
 import Link from "next/link";
@@ -146,6 +147,13 @@ export default async function ClassDetailPage({ params }: PageParams) {
             >
               <ClipboardList className="size-3.5" />
               Aufgabe stellen
+            </Link>
+            <Link
+              href={`/teach/klassen/${encodeURIComponent(slug)}/anwesenheit`}
+              className={buttonVariants({ variant: "outline", size: "sm" })}
+            >
+              <UserCheck className="size-3.5" />
+              Anwesenheit
             </Link>
             <Link
               href="/teach/generator"

@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { saveBranding } from "./actions";
 
 export const metadata: Metadata = { title: "Branding · Admin" };
 
@@ -35,28 +36,30 @@ export default async function AdminBrandingPage() {
           </div>
         </CardHeader>
         <CardBody>
-          <form className="space-y-5">
+          <form action={saveBranding} className="space-y-5">
             <div className="space-y-1.5">
               <Label htmlFor="school-name">Schulname</Label>
-              <Input id="school-name" name="schoolName" defaultValue={school?.name ?? ""} />
+              <Input id="school-name" name="schoolName" defaultValue={school?.name ?? ""} required />
             </div>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 opacity-50">
               <Label htmlFor="logo">Schul-Logo</Label>
-              <Input id="logo" name="logo" type="file" accept=".png,.jpg,.svg" />
-              <p className="text-xs text-muted-fg">Empfohlen: SVG oder PNG, mind. 512×512 px</p>
+              <Input id="logo" name="logo" type="file" accept=".png,.jpg,.svg" disabled />
+              <p className="text-xs text-muted-fg">Logo-Upload: in Kürze verfügbar</p>
             </div>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 opacity-50">
               <Label htmlFor="accent">Akzentfarbe</Label>
               <div className="flex items-center gap-3">
-                <Input id="accent" name="accent" type="color" defaultValue="#2563eb" className="h-10 w-20 cursor-pointer p-1" />
-                <Input name="accentHex" defaultValue="#2563EB" className="font-mono" placeholder="#2563EB" />
+                <Input id="accent" name="accent" type="color" defaultValue="#2563eb" className="h-10 w-20 cursor-pointer p-1" disabled />
+                <Input name="accentHex" defaultValue="#2563EB" className="font-mono" placeholder="#2563EB" disabled />
               </div>
+              <p className="text-xs text-muted-fg">Akzentfarbe: in Kürze verfügbar</p>
             </div>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 opacity-50">
               <Label htmlFor="favicon">Favicon</Label>
-              <Input id="favicon" name="favicon" type="file" accept=".ico,.png,.svg" />
+              <Input id="favicon" name="favicon" type="file" accept=".ico,.png,.svg" disabled />
+              <p className="text-xs text-muted-fg">Favicon-Upload: in Kürze verfügbar</p>
             </div>
-            <Button type="submit">Änderungen speichern</Button>
+            <Button type="submit">Schulname speichern</Button>
           </form>
         </CardBody>
       </Card>

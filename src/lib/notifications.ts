@@ -8,7 +8,7 @@ const TYPE_TO_KIND: Record<string, NotificationKind> = {
   system: "system",
 };
 
-const NOW = new Date("2026-05-06");
+const NOW = new Date();
 
 function relativeTime(date: Date): string {
   const diffMs = NOW.getTime() - date.getTime();

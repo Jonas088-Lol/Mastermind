@@ -14,9 +14,12 @@ import {
   Trash2,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
+import { prisma } from "@/lib/db/client";
+import { effectiveRole, getSession } from "@/lib/session";
 
 export const metadata: Metadata = { title: "Einstellungen" };
 
@@ -31,12 +34,35 @@ const SECTIONS = [
   { id: "daten", label: "Daten & DSGVO", icon: Shield },
 ] as const;
 
-export default function TeachEinstellungenPage() {
+export default async function TeachEinstellungenPage() {
+  const session = await getSession();
+  if (!session) redirect("/login");
+  if (effectiveRole(session) !== "teacher") redirect("/");
+
+  const user = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: {
+      email: true,
+      twoFactor: true,
+      createdAt: true,
+      sessions: {
+        select: { id: true, ipAddress: true, userAgent: true, lastUsedAt: true, createdAt: true },
+        orderBy: { lastUsedAt: "desc" },
+        take: 5,
+      },
+      school: { select: { name: true } },
+    },
+  });
+
+  const schoolLine = user?.school?.name
+    ? `${user.school.name} · seit ${user.createdAt.getFullYear()}`
+    : "Kein Schulkonto verknüpft";
+
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
       <header>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
-          Konto · Markus Becker
+          Konto · {session.name}
         </p>
         <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
           Einstellungen
@@ -72,19 +98,13 @@ export default function TeachEinstellungenPage() {
                 <CardTitle>Account</CardTitle>
               </CardHeader>
               <CardBody className="space-y-5">
-                <Field label="E-Mail" value="becker@schule.de" action="Ändern" />
-                <Field label="Schul-Account" value="Realschule München · seit 2014" status="ok" />
-                <Field label="Passwort" value="zuletzt geändert vor 12 Tagen" action="Neu setzen" />
+                <Field label="E-Mail" value={user?.email ?? "—"} action="Ändern" />
+                <Field label="Schul-Account" value={schoolLine} status={user?.school ? "ok" : undefined} />
+                <Field label="Passwort" value="Passwort ändern" action="Neu setzen" />
                 <Field
                   label="2-Faktor-Authentifizierung"
-                  value="aktiv · Authenticator-App"
-                  status="ok"
-                  action="Verwalten"
-                />
-                <Field
-                  label="SSO"
-                  value="Microsoft Entra ID (Schulkonto)"
-                  status="ok"
+                  value={user?.twoFactor ? "aktiv · Authenticator-App" : "nicht aktiviert"}
+                  status={user?.twoFactor ? "ok" : undefined}
                   action="Verwalten"
                 />
               </CardBody>
@@ -253,17 +273,26 @@ export default function TeachEinstellungenPage() {
               <CardHeader>
                 <div>
                   <CardTitle>Geräte & Sessions</CardTitle>
-                  <p className="mt-1 text-sm text-muted-fg">2 aktive Sessions</p>
+                  <p className="mt-1 text-sm text-muted-fg">{user?.sessions.length ?? 0} aktive Sessions</p>
                 </div>
-                <Button variant="outline" size="sm">
-                  Alle abmelden
-                </Button>
               </CardHeader>
               <CardBody className="!px-0 !pb-0">
-                <ul className="divide-y divide-border border-t border-border">
-                  <DeviceRow icon={Laptop} name="MacBook Pro · Safari" location="München · DE" time="diese Sitzung" current />
-                  <DeviceRow icon={Smartphone} name="iPhone · MasterMind App" location="München · DE" time="vor 2 Std." />
-                </ul>
+                {!user?.sessions.length ? (
+                  <p className="border-t border-border px-5 py-4 text-sm text-muted-fg">Keine Sessions.</p>
+                ) : (
+                  <ul className="divide-y divide-border border-t border-border">
+                    {user.sessions.map((s, i) => (
+                      <DeviceRow
+                        key={s.id}
+                        icon={i === 0 ? Laptop : Smartphone}
+                        name={s.userAgent?.slice(0, 60) ?? "Unbekanntes Gerät"}
+                        location={s.ipAddress ?? "—"}
+                        time={i === 0 ? "diese Sitzung" : s.lastUsedAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}
+                        current={i === 0}
+                      />
+                    ))}
+                  </ul>
+                )}
               </CardBody>
             </Card>
           </section>

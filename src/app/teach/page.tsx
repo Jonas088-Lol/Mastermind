@@ -101,6 +101,12 @@ export default async function TeachDashboardPage() {
 
   const totalStudents = classes.reduce((s, c) => s + c.studentCount, 0);
 
+  // Assignments created this month as proxy for AI-assisted work
+  const monthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+  const assignmentsThisMonth = await prisma.assignment.count({
+    where: { teacherId: session.userId, createdAt: { gte: monthStart } },
+  });
+
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
       <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -133,7 +139,7 @@ export default async function TeachDashboardPage() {
           { label: "Schüler gesamt", value: String(totalStudents), icon: Users, suffix: `${classes.length} Klassen`, tone: "text-info" },
           { label: "Korrekturen offen", value: String(pendingSubmissions.length), icon: ClipboardEdit, suffix: "warten auf Feedback", tone: "text-warning" },
           { label: "Stunden heute", value: String(todayEntries.length), icon: Clock, suffix: "Unterrichtsstunden", tone: "text-fg" },
-          { label: "KI-Stunden gespart", value: "11,4", icon: Sparkles, suffix: "diesen Monat", tone: "text-brand" },
+          { label: "Aufgaben diesen Monat", value: String(assignmentsThisMonth), icon: Sparkles, suffix: "neu erstellt", tone: "text-brand" },
         ].map((s) => (
           <div key={s.label} className="bg-bg p-5">
             <div className="flex items-center justify-between">
@@ -190,7 +196,9 @@ export default async function TeachDashboardPage() {
                           {s.assignment.title} · {s.submittedAt?.toLocaleDateString("de-DE", { day: "numeric", month: "short" }) ?? "—"}
                         </p>
                       </div>
-                      <Button size="sm" variant="secondary">Öffnen</Button>
+                      <Link href={`/teach/korrektur/${s.id}`} className={buttonVariants({ size: "sm", variant: "secondary" })}>
+                        Öffnen
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -252,7 +260,7 @@ export default async function TeachDashboardPage() {
                   { label: "KA-Generator", desc: "Klassenarbeiten in Minuten", href: "/teach/generator", icon: Sparkles },
                   { label: "Auto-Korrektur", desc: "KI-Vorbewertung & Stapel", href: "/teach/korrektur", icon: ClipboardEdit },
                   { label: "Kompetenz-Heatmap", desc: "Lernstand pro Klasse", href: "/teach/kompetenzen", icon: Brain },
-                  { label: "Lernpfad-Empfehlungen", desc: "KI-Hinweise pro Schüler", href: "/teach/kompetenzen", icon: Lightbulb },
+                  { label: "Lernpfad-Empfehlungen", desc: "KI-Hinweise pro Schüler", href: "/teach/lernpfade", icon: Lightbulb },
                 ].map((tool) => (
                   <li key={tool.label}>
                     <Link

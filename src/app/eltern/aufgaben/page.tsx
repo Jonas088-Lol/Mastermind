@@ -8,7 +8,7 @@ import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 
 export const metadata: Metadata = { title: "Aufgaben · Eltern" };
 
-const now = new Date("2026-05-05");
+const now = new Date();
 
 export default async function ElternAufgabenPage() {
   const session = await getSession();

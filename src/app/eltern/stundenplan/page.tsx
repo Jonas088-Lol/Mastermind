@@ -7,9 +7,9 @@ import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 export const metadata: Metadata = { title: "Stundenplan · Eltern" };
 
 const DAY_NAMES = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"];
-const TODAY_DOW = 2;
 
 export default async function ElternStundenplanPage() {
+  const todayDow = (() => { const d = new Date().getDay(); return d === 0 ? 7 : d; })();
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "parent") redirect(ROLE_HOME[effectiveRole(session)]);
@@ -47,10 +47,10 @@ export default async function ElternStundenplanPage() {
             {links.length > 1 && <h2 className="mb-4 text-lg font-bold">{student.name}</h2>}
             <div className="grid gap-4 md:grid-cols-5">
               {byDay.map((entries, idx) => (
-                <Card key={idx} className={idx + 1 === TODAY_DOW ? "border-brand/40" : ""}>
+                <Card key={idx} className={idx + 1 === todayDow ? "border-brand/40" : ""}>
                   <CardHeader>
                     <CardTitle className="text-sm">{DAY_NAMES[idx]}</CardTitle>
-                    {idx + 1 === TODAY_DOW && (
+                    {idx + 1 === todayDow && (
                       <span className="rounded-none bg-brand px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-brand-fg">
                         Heute
                       </span>

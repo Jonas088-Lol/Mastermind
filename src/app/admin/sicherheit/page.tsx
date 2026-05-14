@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { Key, Lock, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Key, Lock, ShieldCheck, XCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { sendTwoFAReminders } from "./actions";
 
 export const metadata: Metadata = { title: "Sicherheit · Admin" };
 
@@ -14,12 +14,24 @@ export default async function AdminSicherheitPage() {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
 
-  const [teacherCount, teacherWith2FA] = await Promise.all([
-    prisma.user.count({ where: { role: "teacher", ...(session.schoolId ? { schoolId: session.schoolId } : {}) } }),
-    prisma.user.count({ where: { role: "teacher", twoFactor: true, ...(session.schoolId ? { schoolId: session.schoolId } : {}) } }),
+  const schoolId = session.schoolId;
+
+  const [teacherCount, teacherWith2FA, adminCount, adminWith2FA, loginsToday] = await Promise.all([
+    prisma.user.count({ where: { role: "teacher", ...(schoolId ? { schoolId } : {}) } }),
+    prisma.user.count({ where: { role: "teacher", twoFactor: true, ...(schoolId ? { schoolId } : {}) } }),
+    prisma.user.count({ where: { role: { in: ["admin", "super"] }, ...(schoolId ? { schoolId } : {}) } }),
+    prisma.user.count({ where: { role: { in: ["admin", "super"] }, twoFactor: true, ...(schoolId ? { schoolId } : {}) } }),
+    prisma.session.count({
+      where: {
+        createdAt: { gte: new Date(new Date().setHours(0, 0, 0, 0)) },
+        ...(schoolId ? { user: { schoolId } } : {}),
+      },
+    }),
   ]);
 
   const twoFAPct = teacherCount > 0 ? Math.round((teacherWith2FA / teacherCount) * 100) : 0;
+  const adminTwoFAPct = adminCount > 0 ? Math.round((adminWith2FA / adminCount) * 100) : 0;
+  const teachersWithout2FA = teacherCount - teacherWith2FA;
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">
@@ -29,16 +41,21 @@ export default async function AdminSicherheitPage() {
         <p className="mt-1 text-sm text-muted-fg">Sicherheitsrichtlinien und Zugriffsschutz.</p>
       </header>
 
-      <div className="grid grid-cols-2 gap-px border border-border bg-border">
+      <div className="grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-3">
         <div className="bg-bg p-5">
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">2FA · Lehrer</p>
           <p className="mt-2 font-mono text-3xl font-bold">{twoFAPct}%</p>
           <p className="mt-1 text-xs text-muted-fg">{teacherWith2FA} von {teacherCount}</p>
         </div>
         <div className="bg-bg p-5">
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">Fehlgeschl. Logins</p>
-          <p className="mt-2 font-mono text-3xl font-bold">3</p>
-          <p className="mt-1 text-xs text-muted-fg">Letzte 24 Stunden</p>
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">2FA · Admins</p>
+          <p className="mt-2 font-mono text-3xl font-bold">{adminTwoFAPct}%</p>
+          <p className="mt-1 text-xs text-muted-fg">{adminWith2FA} von {adminCount}</p>
+        </div>
+        <div className="col-span-2 bg-bg p-5 sm:col-span-1">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">Logins · Heute</p>
+          <p className="mt-2 font-mono text-3xl font-bold">{loginsToday}</p>
+          <p className="mt-1 text-xs text-muted-fg">neue Sessions</p>
         </div>
       </div>
 
@@ -53,26 +70,42 @@ export default async function AdminSicherheitPage() {
           </Badge>
         </CardHeader>
         <CardBody>
-          <p className="text-sm text-muted-fg mb-4">
+          <p className="text-sm text-muted-fg">
             {twoFAPct === 100
-              ? "Alle Lehrer haben 2FA aktiviert. Sehr gut!"
-              : `${teacherCount - teacherWith2FA} Lehrer haben noch kein 2FA aktiviert.`}
+              ? "Alle Lehrer haben 2FA aktiviert."
+              : `${teachersWithout2FA} ${teachersWithout2FA === 1 ? "Lehrer hat" : "Lehrer haben"} noch kein 2FA aktiviert.`}
           </p>
-          <div className="space-y-3">
-            <label className="flex items-center justify-between text-sm">
-              <span>2FA für Lehrer verpflichtend</span>
-              <input type="checkbox" defaultChecked={twoFAPct === 100} className="size-4 accent-brand" />
-            </label>
-            <label className="flex items-center justify-between text-sm">
-              <span>2FA für Admins verpflichtend</span>
-              <input type="checkbox" defaultChecked className="size-4 accent-brand" />
-            </label>
-            <label className="flex items-center justify-between text-sm">
-              <span>2FA für Schüler empfohlen</span>
-              <input type="checkbox" className="size-4 accent-brand" />
-            </label>
-          </div>
-          <Button size="sm" className="mt-4">Erinnerung an Lehrer senden</Button>
+          <ul className="mt-4 space-y-2.5 text-sm">
+            {[
+              { label: "2FA für Lehrer", active: twoFAPct === 100 },
+              { label: "2FA für Admins", active: adminTwoFAPct === 100 },
+            ].map((row) => (
+              <li key={row.label} className="flex items-center justify-between">
+                <span>{row.label}</span>
+                {row.active ? (
+                  <span className="inline-flex items-center gap-1 text-xs text-success">
+                    <CheckCircle2 className="size-3.5" />
+                    alle aktiv
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 text-xs text-warning">
+                    <XCircle className="size-3.5" />
+                    ausstehend
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+          {teachersWithout2FA > 0 && (
+            <form action={sendTwoFAReminders} className="mt-4">
+              <button
+                type="submit"
+                className="border border-border bg-bg px-3 py-1.5 text-xs font-medium text-muted-fg transition-colors hover:border-brand/40 hover:text-brand"
+              >
+                Erinnerung an {teachersWithout2FA} {teachersWithout2FA === 1 ? "Lehrer" : "Lehrer"} senden
+              </button>
+            </form>
+          )}
         </CardBody>
       </Card>
 
@@ -84,21 +117,28 @@ export default async function AdminSicherheitPage() {
           </div>
         </CardHeader>
         <CardBody>
-          <div className="space-y-3 text-sm">
-            <label className="flex items-center justify-between">
-              <span>Mindestlänge 12 Zeichen</span>
-              <input type="checkbox" defaultChecked className="size-4 accent-brand" />
-            </label>
-            <label className="flex items-center justify-between">
-              <span>Sonderzeichen erforderlich</span>
-              <input type="checkbox" defaultChecked className="size-4 accent-brand" />
-            </label>
-            <label className="flex items-center justify-between">
-              <span>Passwort-Ablauf nach 180 Tagen</span>
-              <input type="checkbox" className="size-4 accent-brand" />
-            </label>
-          </div>
-          <Button size="sm" variant="outline" className="mt-4">Speichern</Button>
+          <ul className="space-y-3 text-sm">
+            {[
+              { label: "Mindestlänge 8 Zeichen", active: true },
+              { label: "Sonderzeichen empfohlen", active: false },
+              { label: "Passwort-Ablauf", active: false },
+            ].map((row) => (
+              <li key={row.label} className="flex items-center justify-between text-sm">
+                <span>{row.label}</span>
+                {row.active ? (
+                  <span className="inline-flex items-center gap-1 text-xs text-success">
+                    <CheckCircle2 className="size-3.5" />
+                    aktiv
+                  </span>
+                ) : (
+                  <span className="text-xs text-muted-fg">nicht erzwungen</span>
+                )}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-xs text-muted-fg">
+            Erweiterte Passwort-Richtlinien werden über die Plattform-Konfiguration verwaltet.
+          </p>
         </CardBody>
       </Card>
 
@@ -110,14 +150,13 @@ export default async function AdminSicherheitPage() {
           </div>
         </CardHeader>
         <CardBody>
-          <p className="text-sm text-muted-fg mb-4">API-Tokens für Drittanbieter-Integrationen.</p>
-          <div className="border border-dashed border-border py-6 text-center text-sm text-muted-fg">
-            Noch kein API-Token erstellt.
+          <div className="border border-dashed border-border bg-surface p-4 text-center">
+            <Key className="mx-auto size-7 text-muted-fg" strokeWidth={1.5} />
+            <p className="mt-3 text-sm font-semibold">Keine API-Tokens konfiguriert</p>
+            <p className="mt-1 text-xs text-muted-fg">
+              API-Token-Verwaltung für Drittanbieter-Integrationen steht in einer zukünftigen Version bereit.
+            </p>
           </div>
-          <Button size="sm" variant="outline" className="mt-4">
-            <Key className="size-3.5" />
-            Token erstellen
-          </Button>
         </CardBody>
       </Card>
     </div>

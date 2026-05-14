@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { acceptDuel, declineDuel } from "./actions";
+import { acceptDuel, declineDuel, sendChallenge } from "./actions";
 
 export const metadata: Metadata = { title: "Duelle" };
 
@@ -23,13 +23,14 @@ export default async function DuellePage() {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect("/");
+  const userId = session.userId;
 
   const now = new Date();
 
   const [myDuels, classmates, topics] = await Promise.all([
     prisma.duel.findMany({
       where: {
-        OR: [{ challengerId: session.userId }, { challengedId: session.userId }],
+        OR: [{ challengerId: userId }, { challengedId: userId }],
         NOT: { status: "expired" },
       },
       include: {
@@ -42,10 +43,10 @@ export default async function DuellePage() {
     }),
     prisma.user.findMany({
       where: {
-        schoolId: session.schoolId ?? "",
+        schoolId: session!.schoolId ?? "",
         role: "student",
-        id: { not: session.userId },
-        classId: session.classId ?? undefined,
+        id: { not: userId },
+        classId: session!.classId ?? undefined,
       },
       select: { id: true, name: true },
       orderBy: { name: "asc" },
@@ -58,18 +59,18 @@ export default async function DuellePage() {
     }),
   ]);
 
-  const pending = myDuels.filter((d) => d.status === "pending" && d.challengedId === session.userId);
+  const pending = myDuels.filter((d) => d.status === "pending" && d.challengedId === userId);
   const active = myDuels.filter((d) => d.status === "accepted");
   const completed = myDuels.filter((d) => d.status === "completed");
 
   function duelLabel(duel: (typeof myDuels)[number]) {
-    const isChallenger = duel.challengerId === session.userId;
+    const isChallenger = duel.challengerId === userId;
     const opponent = isChallenger ? duel.challenged : duel.challenger;
     return { opponent, isChallenger };
   }
 
   function outcomeLabel(duel: (typeof myDuels)[number]) {
-    if (duel.winnerId === session.userId) return { text: "Gewonnen", cls: "text-success" };
+    if (duel.winnerId === userId) return { text: "Gewonnen", cls: "text-success" };
     if (duel.winnerId === null) return { text: "Unentschieden", cls: "text-muted-fg" };
     return { text: "Verloren", cls: "text-danger" };
   }
@@ -86,7 +87,7 @@ export default async function DuellePage() {
       <section className="grid grid-cols-3 gap-px border border-border bg-border">
         {[
           { label: "Offen", value: pending.length + active.length, icon: Clock, tone: "text-warning" },
-          { label: "Gewonnen", value: completed.filter((d) => d.winnerId === session.userId).length, icon: Trophy, tone: "text-success" },
+          { label: "Gewonnen", value: completed.filter((d) => d.winnerId === userId).length, icon: Trophy, tone: "text-success" },
           { label: "Gespielt", value: completed.length, icon: Swords, tone: "text-brand" },
         ].map((s) => (
           <div key={s.label} className="bg-bg p-4">
@@ -109,7 +110,7 @@ export default async function DuellePage() {
             </div>
           </CardHeader>
           <CardBody>
-            <form action="/app/duelle/challenge" method="POST" className="flex flex-col gap-4">
+            <form action={sendChallenge} className="flex flex-col gap-4">
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-semibold uppercase tracking-wider text-muted-fg">Gegner</label>
                 <select
@@ -147,13 +148,13 @@ export default async function DuellePage() {
                   className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
                 />
               </div>
-              <Link
-                href="/app/duelle/neu"
-                className={buttonVariants({ className: "w-full" })}
+              <button
+                type="submit"
+                className="flex w-full items-center justify-center gap-2 bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90"
               >
                 <Swords className="size-4" />
                 Herausfordern
-              </Link>
+              </button>
             </form>
           </CardBody>
         </Card>

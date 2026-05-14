@@ -9,6 +9,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import { submitAssignment } from "./actions";
+import { FileUploadClient } from "./FileUploadClient";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -31,7 +32,7 @@ const TYPE_LABEL: Record<string, string> = {
 };
 
 function formatDue(dueAt: Date): string {
-  const now = new Date("2026-05-05");
+  const now = new Date();
   const diff = Math.floor((dueAt.getTime() - now.getTime()) / 86_400_000);
   const dateStr = dueAt.toLocaleDateString("de-DE", {
     day: "numeric",
@@ -65,6 +66,10 @@ export default async function AufgabeDetailPage({ params }: Props) {
       subject: { select: { name: true, shortName: true, color: true } },
       teacher: { select: { name: true } },
       class: { select: { id: true } },
+      fileUploads: {
+        where: { userId: session.userId },
+        select: { id: true, filename: true, size: true, mimeType: true },
+      },
     },
   });
 
@@ -196,7 +201,7 @@ export default async function AufgabeDetailPage({ params }: Props) {
           )}
         </CardHeader>
         <CardBody>
-          <form action={submitAssignment} className="flex flex-col gap-4">
+          <form action={submitAssignment} className="flex flex-col gap-5">
             <input type="hidden" name="assignmentId" value={id} />
             <div className="flex flex-col gap-1.5">
               <label
@@ -222,6 +227,12 @@ export default async function AufgabeDetailPage({ params }: Props) {
                 )}
               />
             </div>
+
+            <FileUploadClient
+              assignmentId={id}
+              disabled={isReadOnly}
+              existingFiles={assignment.fileUploads}
+            />
 
             {!isReadOnly && (
               <div className="flex justify-end">

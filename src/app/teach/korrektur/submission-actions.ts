@@ -4,7 +4,7 @@ import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
 import { awardXp } from "@/lib/xp";
 
-export async function acceptSubmission(submissionId: string, grade: number) {
+export async function acceptSubmission(submissionId: string, grade: number, comment?: string) {
   const session = await getSession();
   if (!session) return;
 
@@ -28,11 +28,13 @@ export async function acceptSubmission(submissionId: string, grade: number) {
       submissionId: submissionId,
       value: grade,
       type: "test",
+      comment: comment ?? null,
     },
-    update: { value: grade },
+    update: { value: grade, comment: comment ?? null },
   });
   await awardXp(sub.studentId, "aufgabe_bewertet", submissionId);
   revalidatePath("/teach/korrektur");
+  revalidatePath(`/teach/korrektur/${submissionId}`);
 }
 
 export async function openSubmission(submissionId: string) {

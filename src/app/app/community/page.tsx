@@ -11,90 +11,101 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
+import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Community" };
 
-interface Group {
-  slug: string;
-  name: string;
-  subject: string;
-  members: number;
-  unread: number;
-  lastMessage: string;
-  lastFrom: string;
-  lastTime: string;
+function relativeTime(date: Date): string {
+  const diff = Date.now() - date.getTime();
+  const min = Math.floor(diff / 60_000);
+  if (min < 1) return "gerade eben";
+  if (min < 60) return `vor ${min} Min.`;
+  const h = Math.floor(min / 60);
+  if (h < 24) return `vor ${h} Std.`;
+  const d = Math.floor(h / 24);
+  if (d === 1) return "gestern";
+  return `vor ${d} Tagen`;
 }
-
-const GROUPS: Group[] = [
-  {
-    slug: "9b-mathe-ka",
-    name: "9b · Klassenarbeit Mathe",
-    subject: "Mathe",
-    members: 18,
-    unread: 7,
-    lastMessage: "Hat jemand die Aufgabe 5b verstanden? Ich komm bei der pq-Formel nicht weiter.",
-    lastFrom: "Lisa H.",
-    lastTime: "vor 12 Min.",
-  },
-  {
-    slug: "bio-lerngruppe",
-    name: "Bio Lerngruppe Photosynthese",
-    subject: "Bio",
-    members: 6,
-    unread: 0,
-    lastMessage: "Top, dann morgen 16 Uhr in der Bibliothek!",
-    lastFrom: "Greta",
-    lastTime: "gestern",
-  },
-  {
-    slug: "englisch-tandem",
-    name: "Englisch-Tandem · Speaking",
-    subject: "Englisch",
-    members: 4,
-    unread: 2,
-    lastMessage: "I prepared three topics for tomorrow — check the doc.",
-    lastFrom: "Ben S.",
-    lastTime: "vor 3 Std.",
-  },
-];
-
-interface RankEntry {
-  rank: number;
-  name: string;
-  klasse: string;
-  xp: number;
-  delta: string;
-  me?: boolean;
-}
-
-const LEADERBOARD: RankEntry[] = [
-  { rank: 1, name: "Anna Bauer", klasse: "9b", xp: 4820, delta: "+340" },
-  { rank: 2, name: "Bea Hertz", klasse: "8c", xp: 4710, delta: "+412" },
-  { rank: 3, name: "Greta Hoffmann", klasse: "9b", xp: 4502, delta: "+290" },
-  { rank: 7, name: "Lukas Meier", klasse: "9b", xp: 3980, delta: "+340", me: true },
-  { rank: 8, name: "Hannes Müller", klasse: "9b", xp: 3870, delta: "+221" },
-];
 
 export default async function CommunityPage() {
-  const dbNotes = await prisma.note.findMany({
-    where: { isPublic: true },
-    include: { author: { select: { name: true } } },
-    orderBy: { createdAt: "desc" },
-    take: 10,
+  const session = await getSession();
+  if (!session) redirect("/login");
+  if (effectiveRole(session) === "super") redirect("/plattform");
+
+  const schoolId = session.schoolId;
+  const now = new Date();
+  const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  const [dbNotes, threads, leaderboardUsers, activeTodayCount, publicNotesCount, maxStreakResult, school] =
+    await Promise.all([
+      prisma.note.findMany({
+        where: { isPublic: true },
+        include: { author: { select: { name: true } } },
+        orderBy: { createdAt: "desc" },
+        take: 10,
+      }),
+      prisma.messageThread.findMany({
+        where: {
+          participants: { some: { userId: session.userId } },
+          ...(schoolId ? { schoolId } : {}),
+        },
+        include: {
+          participants: { where: { userId: session.userId }, select: { lastReadAt: true } },
+          messages: {
+            orderBy: { sentAt: "desc" },
+            take: 1,
+            include: { sender: { select: { name: true } } },
+          },
+          _count: { select: { participants: true } },
+        },
+        orderBy: { updatedAt: "desc" },
+        take: 10,
+      }),
+      prisma.user.findMany({
+        where: { ...(schoolId ? { schoolId } : {}), role: "student" },
+        select: { id: true, name: true, klasse: true, xp: true },
+        orderBy: { xp: "desc" },
+        take: 8,
+      }),
+      prisma.session.count({
+        where: { createdAt: { gte: startOfDay }, ...(schoolId ? { user: { schoolId } } : {}) },
+      }),
+      prisma.note.count({ where: { isPublic: true } }),
+      prisma.user.aggregate({ _max: { streak: true }, where: schoolId ? { schoolId } : {} }),
+      schoolId ? prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } }) : Promise.resolve(null),
+    ]);
+
+  const groups = threads.map((t) => {
+    const lastMsg = t.messages[0];
+    const myPart = t.participants[0];
+    const hasUnread = !!lastMsg && (!myPart?.lastReadAt || myPart.lastReadAt < lastMsg.sentAt);
+    return {
+      id: t.id,
+      name: t.subject,
+      members: t._count.participants,
+      unread: hasUnread ? 1 : 0,
+      lastMessage: lastMsg?.content?.slice(0, 100) ?? "",
+      lastFrom: lastMsg?.sender.name.split(" ")[0] ?? "",
+      lastTime: lastMsg ? relativeTime(lastMsg.sentAt) : "—",
+    };
   });
+
+  const myRank = leaderboardUsers.findIndex((u) => u.id === session.userId);
+  const maxStreak = maxStreakResult._max.streak ?? 0;
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
       <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
-            Lerncommunity · Realschule München
+            Lerncommunity{school ? ` · ${school.name}` : ""}
           </p>
           <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
             Community
@@ -164,20 +175,26 @@ export default async function CommunityPage() {
               <div>
                 <CardTitle>Lerngruppen</CardTitle>
                 <p className="mt-1 text-sm text-muted-fg">
-                  Du bist in 3 Gruppen · 9 ungelesene Nachrichten
+                  {groups.length} Gespräche · {groups.filter((g) => g.unread > 0).length} ungelesen
                 </p>
               </div>
-              <Button variant="ghost" size="sm">
-                Alle Gruppen
+              <Link href="/app/nachrichten" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+                Alle öffnen
                 <ArrowRight className="size-3.5" />
-              </Button>
+              </Link>
             </CardHeader>
             <CardBody className="!px-0 !pb-0">
-              <ul className="divide-y divide-border border-t border-border">
-                {GROUPS.map((g) => (
-                  <GroupRow key={g.slug} group={g} />
-                ))}
-              </ul>
+              {groups.length === 0 ? (
+                <div className="border-t border-border px-5 py-8 text-center text-sm text-muted-fg">
+                  Noch keine Nachrichten. Schreibe deiner Klasse!
+                </div>
+              ) : (
+                <ul className="divide-y divide-border border-t border-border">
+                  {groups.map((g) => (
+                    <GroupRow key={g.id} group={g} />
+                  ))}
+                </ul>
+              )}
             </CardBody>
           </Card>
         </div>
@@ -198,60 +215,70 @@ export default async function CommunityPage() {
                 Belohnung: <span className="font-semibold text-fg">+250 XP</span> ·
                 noch 4 Tage · 1 von 3 erledigt.
               </p>
-              <Button className="mt-5 w-full">
+              <Link href="/app/aufgaben" className={buttonVariants({ className: "mt-5 w-full" })}>
                 Challenge öffnen
                 <ArrowRight className="size-3.5" />
-              </Button>
+              </Link>
             </CardBody>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Klassen-Ranking</CardTitle>
-              <Badge variant="outline">9b</Badge>
+              <CardTitle>Schul-Ranking</CardTitle>
+              <Badge variant="outline">XP</Badge>
             </CardHeader>
             <CardBody className="!px-0 !pb-0">
-              <ul className="divide-y divide-border border-t border-border">
-                {LEADERBOARD.map((r) => (
-                  <li
-                    key={r.rank}
-                    className={cn(
-                      "flex items-center gap-3 px-5 py-2.5",
-                      r.me && "bg-brand/[0.06]"
-                    )}
-                  >
-                    <span
-                      className={cn(
-                        "grid size-7 shrink-0 place-items-center font-mono text-xs font-bold",
-                        r.rank === 1 && "bg-warning text-bg",
-                        r.rank === 2 && "bg-fg/70 text-bg",
-                        r.rank === 3 && "bg-fg/40 text-bg",
-                        r.rank > 3 && "bg-surface text-muted-fg"
-                      )}
-                    >
-                      {r.rank === 1 ? <Crown className="size-3.5" /> : r.rank}
-                    </span>
-                    <Avatar name={r.name} size="sm" />
-                    <div className="min-w-0 flex-1">
-                      <p
-                        className={cn(
-                          "truncate text-sm",
-                          r.me ? "font-bold text-brand" : "font-semibold"
-                        )}
+              {leaderboardUsers.length === 0 ? (
+                <p className="border-t border-border px-5 py-4 text-sm text-muted-fg">Noch keine XP-Daten.</p>
+              ) : (
+                <ul className="divide-y divide-border border-t border-border">
+                  {leaderboardUsers.map((u, idx) => {
+                    const rank = idx + 1;
+                    const isMe = u.id === session.userId;
+                    return (
+                      <li
+                        key={u.id}
+                        className={cn("flex items-center gap-3 px-5 py-2.5", isMe && "bg-brand/[0.06]")}
                       >
-                        {r.me ? "Du" : r.name}
-                      </p>
-                      <p className="text-[10px] uppercase tracking-wider text-muted-fg">
-                        {r.klasse}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-mono text-sm font-bold tabular-nums">{r.xp}</p>
-                      <p className="font-mono text-[10px] text-success">{r.delta}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+                        <span
+                          className={cn(
+                            "grid size-7 shrink-0 place-items-center font-mono text-xs font-bold",
+                            rank === 1 && "bg-warning text-bg",
+                            rank === 2 && "bg-fg/70 text-bg",
+                            rank === 3 && "bg-fg/40 text-bg",
+                            rank > 3 && "bg-surface text-muted-fg"
+                          )}
+                        >
+                          {rank === 1 ? <Crown className="size-3.5" /> : rank}
+                        </span>
+                        <Avatar name={u.name} size="sm" />
+                        <div className="min-w-0 flex-1">
+                          <p className={cn("truncate text-sm", isMe ? "font-bold text-brand" : "font-semibold")}>
+                            {isMe ? "Du" : u.name}
+                          </p>
+                          {u.klasse && (
+                            <p className="text-[10px] uppercase tracking-wider text-muted-fg">Klasse {u.klasse}</p>
+                          )}
+                        </div>
+                        <div className="text-right">
+                          <p className="font-mono text-sm font-bold tabular-nums">{u.xp.toLocaleString("de-DE")}</p>
+                          <p className="font-mono text-[10px] text-muted-fg">XP</p>
+                        </div>
+                      </li>
+                    );
+                  })}
+                  {myRank >= leaderboardUsers.length && (
+                    <li className="flex items-center gap-3 bg-brand/[0.06] px-5 py-2.5">
+                      <span className="grid size-7 shrink-0 place-items-center bg-surface font-mono text-xs font-bold text-muted-fg">
+                        {myRank + 1}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-bold text-brand">Du</p>
+                      </div>
+                    </li>
+                  )}
+                </ul>
+              )}
             </CardBody>
           </Card>
 
@@ -266,21 +293,21 @@ export default async function CommunityPage() {
                     <Users className="size-3.5" />
                     Aktive heute
                   </span>
-                  <span className="font-mono font-bold">438</span>
+                  <span className="font-mono font-bold">{activeTodayCount.toLocaleString("de-DE")}</span>
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="flex items-center gap-2 text-muted-fg">
                     <FileText className="size-3.5" />
                     Geteilte Notizen
                   </span>
-                  <span className="font-mono font-bold">2.847</span>
+                  <span className="font-mono font-bold">{publicNotesCount.toLocaleString("de-DE")}</span>
                 </li>
                 <li className="flex items-center justify-between">
                   <span className="flex items-center gap-2 text-muted-fg">
                     <Flame className="size-3.5" />
                     Längster Streak
                   </span>
-                  <span className="font-mono font-bold">93 Tage</span>
+                  <span className="font-mono font-bold">{maxStreak} Tage</span>
                 </li>
               </ul>
             </CardBody>
@@ -333,10 +360,12 @@ function DbNoteRow({ note }: { note: DbNote }) {
   );
 }
 
-function GroupRow({ group }: { group: Group }) {
+type ThreadGroup = { id: string; name: string; members: number; unread: number; lastMessage: string; lastFrom: string; lastTime: string };
+
+function GroupRow({ group }: { group: ThreadGroup }) {
   return (
     <Link
-      href={`/app/community/gruppe/${group.slug}`}
+      href={`/app/nachrichten/${group.id}`}
       className="flex items-start gap-3 px-5 py-3.5 transition-colors hover:bg-surface"
     >
       <div className="grid size-10 shrink-0 place-items-center bg-fg text-bg">
@@ -347,12 +376,14 @@ function GroupRow({ group }: { group: Group }) {
           <p className="truncate text-sm font-semibold">{group.name}</p>
           {group.unread > 0 && <Badge variant="brand">{group.unread}</Badge>}
         </div>
-        <p className="mt-0.5 line-clamp-1 text-xs text-muted-fg">
-          <span className="font-medium text-fg">{group.lastFrom}: </span>
-          {group.lastMessage}
-        </p>
+        {group.lastMessage && (
+          <p className="mt-0.5 line-clamp-1 text-xs text-muted-fg">
+            <span className="font-medium text-fg">{group.lastFrom}: </span>
+            {group.lastMessage}
+          </p>
+        )}
         <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-fg">
-          {group.members} Mitglieder · {group.lastTime}
+          {group.members} Teilnehmer · {group.lastTime}
         </p>
       </div>
     </Link>

@@ -41,7 +41,7 @@ export default async function TeachAufgabenPage() {
     orderBy: { dueAt: "asc" },
   });
 
-  const now = new Date("2026-05-05");
+  const now = new Date();
 
   const rows = assignments.map((a) => {
     const submitted = a.submissions.filter((s) => s.status !== "open").length;

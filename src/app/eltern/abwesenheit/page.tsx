@@ -27,7 +27,7 @@ export default async function ElternAbwesenheitPage() {
 
   const links = await prisma.parentStudentLink.findMany({
     where: { parentId: session.userId },
-    include: { student: { select: { id: true, name: true, klasse: true } } },
+    include: { student: { select: { id: true, name: true, schoolClass: { select: { name: true } } } } },
   });
 
   const absences = await prisma.absence.findMany({
@@ -66,7 +66,7 @@ export default async function ElternAbwesenheitPage() {
               >
                 {links.map(({ student }) => (
                   <option key={student.id} value={student.id}>
-                    {student.name} · Klasse {student.klasse ?? "—"}
+                    {student.name} · Klasse {student.schoolClass?.name ?? "—"}
                   </option>
                 ))}
               </select>
