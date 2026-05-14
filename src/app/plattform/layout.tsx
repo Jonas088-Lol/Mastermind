@@ -1,4 +1,6 @@
 import { redirect } from "next/navigation";
+import { Sidebar, type NavItem } from "@/components/app/Sidebar";
+import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
 import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
 import {
@@ -9,6 +11,24 @@ import {
   isImpersonating,
   isSuper,
 } from "@/lib/session";
+
+const plattformNavItems: NavItem[] = [
+  { href: "/plattform",              label: "Übersicht",   icon: "home",         exact: true },
+  { href: "/schultraeger/schulen",   label: "Schulen",     icon: "building2" },
+  { href: "/plattform/statistiken",  label: "Statistiken", icon: "barChart3" },
+  { href: "/plattform/support",      label: "Support",     icon: "messageSquare" },
+  { href: "/plattform/flags",        label: "Flags",       icon: "shield" },
+  { href: "/plattform/audit",        label: "Audit-Log",   icon: "lineChart" },
+  { href: "/plattform/kb",           label: "Wissensbasis",icon: "bookOpen" },
+];
+
+const plattformBottomItems: BottomNavItem[] = [
+  { href: "/plattform",             label: "Start",   icon: "home",         exact: true },
+  { href: "/schultraeger/schulen",  label: "Schulen", icon: "building2" },
+  { href: "/plattform/statistiken", label: "Stats",   icon: "barChart3" },
+  { href: "/plattform/support",     label: "Support", icon: "messageSquare" },
+  { href: "/plattform/audit",       label: "Audit",   icon: "lineChart" },
+];
 
 export default async function PlattformLayout({
   children,
@@ -22,21 +42,27 @@ export default async function PlattformLayout({
   if (effective !== "super") redirect(ROLE_HOME[effective]);
 
   return (
-    <div className="flex min-h-screen flex-col bg-surface">
-      <div className="sticky top-0 z-30">
-        {isSuper(session) && (
-          <ImpersonationBar
-            effective={effective}
-            isImpersonating={isImpersonating(session)}
+    <div className="flex min-h-screen bg-surface">
+      <Sidebar items={plattformNavItems} rootHref="/plattform" />
+      <div className="flex min-w-0 flex-1 flex-col">
+        <div className="sticky top-0 z-30">
+          {isSuper(session) && (
+            <ImpersonationBar
+              effective={effective}
+              isImpersonating={isImpersonating(session)}
+            />
+          )}
+          <AppHeader
+            user={displayUser(session)}
+            searchPlaceholder="Suchen — Schulen, Tickets, Audit-Logs, Flags …"
+            unreadCount={3}
           />
-        )}
-        <AppHeader
-          user={displayUser(session)}
-          searchPlaceholder="Suchen — Schulen, Tickets, Audit-Logs, Flags …"
-          unreadCount={3}
-        />
+        </div>
+        <main className="flex-1 px-6 py-8 pb-24 lg:px-10 lg:py-10 lg:pb-10">
+          {children}
+        </main>
+        <BottomNav items={plattformBottomItems} />
       </div>
-      <main className="flex-1 px-6 py-8 lg:px-10 lg:py-10">{children}</main>
     </div>
   );
 }
