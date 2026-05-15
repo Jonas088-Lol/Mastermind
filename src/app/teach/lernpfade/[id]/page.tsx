@@ -1,4 +1,4 @@
-import { ArrowLeft, Plus, Trash2 } from "lucide-react";
+import { ArrowLeft, Plus, Send, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
@@ -15,6 +15,7 @@ import {
   addQuestion,
   deleteModule,
   deleteQuestion,
+  recommendToClass,
   updateLearningPath,
 } from "./actions";
 
@@ -59,8 +60,16 @@ export default async function LernpfadDetailPage({ params }: PageProps) {
   const totalModules = path.modules.length;
   const uniqueStudents = path.progress.length;
 
+  const teacherClasses = await prisma.teacherSubjectClass.findMany({
+    where: { teacherId: session.userId },
+    include: { class: { select: { id: true, name: true } } },
+    distinct: ["classId"],
+  });
+  const classes = teacherClasses.map((t) => t.class);
+
   const updateWithId = updateLearningPath.bind(null, id);
   const addModuleWithId = addModule.bind(null, id);
+  const recommendWithId = recommendToClass.bind(null, id);
 
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-8">
@@ -262,6 +271,39 @@ export default async function LernpfadDetailPage({ params }: PageProps) {
           </form>
         </CardBody>
       </Card>
+
+      {/* ── Recommend to class ───────────────────────────────── */}
+      {classes.length > 0 && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <Send className="size-4 text-muted-fg" strokeWidth={1.75} />
+              <CardTitle>An Klasse empfehlen</CardTitle>
+            </div>
+          </CardHeader>
+          <CardBody>
+            <p className="mb-4 text-sm text-muted-fg">
+              Schüler erhalten eine Push-Benachrichtigung mit dem Link zu diesem Lernpfad.
+            </p>
+            <form action={recommendWithId} className="flex gap-3">
+              <select
+                name="classId"
+                required
+                className="h-10 flex-1 border border-border bg-bg px-3 text-sm focus:outline-none focus:ring-1 focus:ring-brand"
+              >
+                <option value="">Klasse wählen…</option>
+                {classes.map((c) => (
+                  <option key={c.id} value={c.id}>{c.name}</option>
+                ))}
+              </select>
+              <button type="submit" className={buttonVariants({ size: "sm" })}>
+                <Send className="size-3.5" />
+                Empfehlen
+              </button>
+            </form>
+          </CardBody>
+        </Card>
+      )}
     </div>
   );
 }

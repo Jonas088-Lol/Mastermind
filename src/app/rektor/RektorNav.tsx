@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, Home, Megaphone, Users } from "lucide-react";
+import { BarChart3, Home, Megaphone, Shield, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
   { href: "/rektor", label: "Übersicht", icon: Home, exact: true },
   { href: "/rektor/statistiken", label: "Statistiken", icon: BarChart3 },
   { href: "/rektor/personal", label: "Personal", icon: Users },
+  { href: "/rektor/mannschaften", label: "Mannschaften", icon: Shield },
   { href: "/rektor/broadcast", label: "Broadcast", icon: Megaphone },
 ];
 

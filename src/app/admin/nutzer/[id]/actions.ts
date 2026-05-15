@@ -59,3 +59,40 @@ export async function resetTwoFactor(userId: string): Promise<void> {
   await prisma.backupCode.deleteMany({ where: { userId } });
   revalidatePath(`/admin/nutzer/${userId}`);
 }
+
+export async function linkParentToStudent(parentId: string, formData: FormData): Promise<void> {
+  const session = await getSession();
+  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+
+  const studentEmail = (formData.get("studentEmail") as string | null)?.trim().toLowerCase() ?? "";
+  if (!studentEmail) return;
+
+  const parent = await prisma.user.findUnique({ where: { id: parentId } });
+  if (!parent || parent.schoolId !== session.schoolId) return;
+
+  const student = await prisma.user.findFirst({
+    where: { email: studentEmail, schoolId: session.schoolId, role: "student" },
+    select: { id: true },
+  });
+  if (!student) return;
+
+  await prisma.parentStudentLink.upsert({
+    where: { parentId_studentId: { parentId, studentId: student.id } },
+    create: { parentId, studentId: student.id },
+    update: {},
+  });
+
+  revalidatePath(`/admin/nutzer/${parentId}`);
+}
+
+export async function unlinkParentFromStudent(parentId: string, linkId: string): Promise<void> {
+  const session = await getSession();
+  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+
+  const parent = await prisma.user.findUnique({ where: { id: parentId } });
+  if (!parent || parent.schoolId !== session.schoolId) return;
+
+  await prisma.parentStudentLink.delete({ where: { id: linkId } });
+
+  revalidatePath(`/admin/nutzer/${parentId}`);
+}

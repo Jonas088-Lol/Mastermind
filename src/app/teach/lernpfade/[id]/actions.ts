@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
+import { pushToUsers } from "@/lib/push";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 
 async function guardTeacher(pathId: string) {
@@ -77,4 +78,40 @@ export async function deleteQuestion(
   await guardTeacher(pathId);
   await prisma.quizQuestion.delete({ where: { id: questionId } });
   revalidatePath(`/teach/lernpfade/${pathId}`);
+}
+
+export async function recommendToClass(pathId: string, formData: FormData): Promise<void> {
+  const session = await guardTeacher(pathId);
+  const classId = (formData.get("classId") as string | null)?.trim() ?? "";
+  if (!classId) return;
+
+  const path = await prisma.learningPath.findUnique({
+    where: { id: pathId },
+    select: { title: true },
+  });
+  if (!path) return;
+
+  const students = await prisma.user.findMany({
+    where: { classId, role: "student", schoolId: session.schoolId ?? undefined },
+    select: { id: true },
+  });
+  if (students.length === 0) return;
+
+  const studentIds = students.map((s) => s.id);
+
+  await Promise.all([
+    pushToUsers(studentIds, {
+      title: "Lernpfad empfohlen",
+      body: `Dein Lehrer empfiehlt: ${path.title}`,
+      url: `/app/lernen/${pathId}`,
+    }).catch(() => {}),
+    prisma.appNotification.createMany({
+      data: studentIds.map((userId) => ({
+        userId,
+        type: "info",
+        title: "Lernpfad empfohlen",
+        body: `Dein Lehrer empfiehlt: ${path.title}`,
+      })),
+    }),
+  ]);
 }

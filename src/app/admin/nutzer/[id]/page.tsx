@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
-import { ArrowLeft, Key, Mail, Shield, Trash2, UserCog } from "lucide-react";
+import { ArrowLeft, Key, Link2, Mail, Shield, Trash2, UserCog, X } from "lucide-react";
 import Link from "next/link";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { prisma } from "@/lib/db/client";
 import { ROLE_LABEL, effectiveRole, getSession } from "@/lib/session";
-import { deleteUser, resetTwoFactor, updateUserClass, updateUserRole } from "./actions";
+import { deleteUser, linkParentToStudent, resetTwoFactor, unlinkParentFromStudent, updateUserClass, updateUserRole } from "./actions";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -46,6 +47,18 @@ export default async function NutzerDetailPage({ params }: { params: Promise<{ i
           include: {
             subject: { select: { name: true, color: true } },
             class:   { select: { name: true } },
+          },
+        },
+        parentLinks: {
+          include: {
+            student: {
+              select: { id: true, name: true, email: true, schoolClass: { select: { name: true } } },
+            },
+          },
+        },
+        studentParents: {
+          include: {
+            parent: { select: { id: true, name: true, email: true } },
           },
         },
         _count: {
@@ -207,6 +220,82 @@ export default async function NutzerDetailPage({ params }: { params: Promise<{ i
           </CardBody>
         </Card>
       </div>
+
+      {/* Parent → children links */}
+      {user.role === "parent" && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Link2 className="size-4 text-muted-fg" strokeWidth={1.75} />
+              Verknüpfte Kinder
+            </CardTitle>
+          </CardHeader>
+          <CardBody className="space-y-4">
+            {user.parentLinks.length > 0 ? (
+              <ul className="divide-y divide-border border border-border">
+                {user.parentLinks.map((link) => (
+                  <li key={link.id} className="flex items-center gap-3 px-4 py-3 text-sm">
+                    <div className="min-w-0 flex-1">
+                      <p className="font-medium">{link.student.name}</p>
+                      <p className="text-xs text-muted-fg">{link.student.email}</p>
+                    </div>
+                    {link.student.schoolClass && (
+                      <Badge variant="neutral">{link.student.schoolClass.name}</Badge>
+                    )}
+                    <Link href={`/admin/nutzer/${link.student.id}`} className="text-xs text-muted-fg hover:text-fg">
+                      Profil →
+                    </Link>
+                    <form action={unlinkParentFromStudent.bind(null, id, link.id)}>
+                      <button type="submit" title="Verknüpfung aufheben" className="text-muted-fg hover:text-danger">
+                        <X className="size-4" />
+                      </button>
+                    </form>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-muted-fg">Noch keine Kinder verknüpft.</p>
+            )}
+            <form action={linkParentToStudent.bind(null, id)} className="flex gap-2">
+              <Input
+                type="email"
+                name="studentEmail"
+                required
+                placeholder="E-Mail des Schülers"
+                className="flex-1"
+              />
+              <Button type="submit" variant="secondary" size="md">Verknüpfen</Button>
+            </form>
+          </CardBody>
+        </Card>
+      )}
+
+      {/* Student → parent links */}
+      {user.role === "student" && user.studentParents.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Link2 className="size-4 text-muted-fg" strokeWidth={1.75} />
+              Verknüpfte Eltern
+            </CardTitle>
+          </CardHeader>
+          <CardBody className="!px-0 !pb-0">
+            <ul className="divide-y divide-border border-t border-border">
+              {user.studentParents.map((link) => (
+                <li key={link.id} className="flex items-center gap-3 px-5 py-3 text-sm">
+                  <div className="min-w-0 flex-1">
+                    <p className="font-medium">{link.parent.name}</p>
+                    <p className="text-xs text-muted-fg">{link.parent.email}</p>
+                  </div>
+                  <Link href={`/admin/nutzer/${link.parent.id}`} className="text-xs text-muted-fg hover:text-fg">
+                    Profil →
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </CardBody>
+        </Card>
+      )}
 
       {/* Teaching */}
       {user.teacherSubjectClasses.length > 0 && (
