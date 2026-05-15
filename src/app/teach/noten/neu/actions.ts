@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { pushToUsers } from "@/lib/push";
+import { awardXp } from "@/lib/xp";
 
 export async function saveGrade(formData: FormData): Promise<void> {
   const session = await getSession();
@@ -44,12 +45,24 @@ export async function saveGrade(formData: FormData): Promise<void> {
     },
   });
 
-  // Push to student (fire-and-forget)
-  pushToUsers([studentId], {
-    title: "Neue Note eingetragen",
-    body: `${subject?.name ?? "Fach"}: ${value.toFixed(1).replace(".", ",")}`,
-    url: "/app/noten",
-  }).catch(() => {});
+  const gradeLabel = value.toFixed(1).replace(".", ",");
+  const subjectName = subject?.name ?? "Fach";
+  await Promise.all([
+    pushToUsers([studentId], {
+      title: "Neue Note eingetragen",
+      body: `${subjectName}: ${gradeLabel}`,
+      url: "/app/noten",
+    }).catch(() => {}),
+    prisma.appNotification.create({
+      data: {
+        userId: studentId,
+        type: "grade",
+        title: "Neue Note eingetragen",
+        body: `${subjectName}: ${gradeLabel}`,
+      },
+    }),
+    awardXp(studentId, "aufgabe_bewertet", `grade-${Date.now()}`),
+  ]);
 
   revalidatePath(`/teach/klassen/${classSlug}`);
   redirect(`/teach/klassen/${classSlug}`);
