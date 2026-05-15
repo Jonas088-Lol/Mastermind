@@ -24,7 +24,8 @@ import { TwoFactorSetup } from "./2fa/TwoFactorSetup";
 import { ThemeButtons } from "./ThemeButtons";
 import { ToggleSection } from "./ToggleSection";
 import { DeviceLogoutButton } from "./DeviceLogout";
-import { logoutAllDevices, changePassword } from "./actions";
+import { logoutAllDevices, changePassword, deleteOwnAccount } from "./actions";
+import { LangSelector } from "./LangSelector";
 import { PushSubscribeToggle } from "@/components/app/PushSubscribeToggle";
 
 export const metadata: Metadata = { title: "Einstellungen" };
@@ -120,9 +121,12 @@ export default async function EinstellungenPage() {
   const me = session
     ? await prisma.user.findUnique({
         where: { email: session.email },
-        select: { email: true, twoFactor: true },
+        select: { email: true, twoFactor: true, prefs: true },
       })
     : null;
+
+  const prefs = me?.prefs ? (JSON.parse(me.prefs) as Record<string, unknown>) : {};
+  const currentLang = typeof prefs.lang === "string" ? prefs.lang : "de";
 
   // Fetch real sessions for Geräte section
   const sessions = session
@@ -307,12 +311,7 @@ export default async function EinstellungenPage() {
                 <CardTitle>Sprache</CardTitle>
               </CardHeader>
               <CardBody>
-                <div className="grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
-                  <LangOption label="Deutsch" code="DE" active />
-                  <LangOption label="English" code="EN" />
-                  <LangOption label="Türkçe" code="TR" />
-                  <LangOption label="Polski" code="PL" />
-                </div>
+                <LangSelector current={currentLang} />
                 <p className="mt-3 text-xs text-muted-fg">
                   Sprache der Oberfläche. Schul-Inhalte folgen dem Klassen-Lehrplan.
                 </p>
@@ -371,17 +370,48 @@ export default async function EinstellungenPage() {
               </CardHeader>
               <CardBody className="space-y-3">
                 <div className="grid gap-px border border-border bg-border sm:grid-cols-2">
-                  <DataAction
-                    icon={<Download className="size-4" />}
-                    label="Daten exportieren"
-                    detail="Als ZIP · enthält Noten, Aufgaben, Notizen"
-                  />
-                  <DataAction
-                    icon={<Trash2 className="size-4" />}
-                    label="Account löschen"
-                    detail="Endgültig · 30-Tage-Karenz · DSGVO Art. 17"
-                    danger
-                  />
+                  <a
+                    href="/api/user/dsgvo-export"
+                    download
+                    className="group flex items-start gap-3 bg-bg p-5 text-left transition-colors hover:bg-surface"
+                  >
+                    <span className="grid size-9 shrink-0 place-items-center bg-surface text-fg transition-colors group-hover:bg-fg group-hover:text-bg">
+                      <Download className="size-4" />
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-semibold">Daten exportieren</p>
+                      <p className="mt-0.5 text-xs text-muted-fg">Als JSON · enthält Noten, Aufgaben, Nachrichten</p>
+                    </div>
+                  </a>
+
+                  <details className="group bg-bg">
+                    <summary className="flex cursor-pointer list-none items-start gap-3 p-5 transition-colors hover:bg-danger/[0.04]">
+                      <span className="grid size-9 shrink-0 place-items-center bg-danger/10 text-danger transition-colors group-open:bg-danger group-open:text-bg">
+                        <Trash2 className="size-4" />
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-semibold text-danger">Account löschen</p>
+                        <p className="mt-0.5 text-xs text-muted-fg">Endgültig · DSGVO Art. 17</p>
+                      </div>
+                    </summary>
+                    <form action={deleteOwnAccount} className="border-t border-border px-5 pb-5 pt-4">
+                      <p className="mb-3 text-xs text-muted-fg">
+                        Tippe <strong>LÖSCHEN</strong> zur Bestätigung. Dein Account wird sofort deaktiviert.
+                      </p>
+                      <input
+                        name="confirm"
+                        placeholder="LÖSCHEN"
+                        required
+                        className="mb-3 h-9 w-full border border-danger/40 bg-bg px-3 text-sm focus:border-danger focus:outline-none"
+                      />
+                      <button
+                        type="submit"
+                        className="h-9 w-full bg-danger px-4 text-xs font-semibold text-bg transition-opacity hover:opacity-90"
+                      >
+                        Account unwiderruflich löschen
+                      </button>
+                    </form>
+                  </details>
                 </div>
                 <p className="text-xs text-muted-fg">
                   Hosting in Frankfurt am Main · Backup täglich · AVV mit deiner Schule
@@ -477,31 +507,6 @@ function Field({
   );
 }
 
-function LangOption({
-  label,
-  code,
-  active,
-}: {
-  label: string;
-  code: string;
-  active?: boolean;
-}) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      className={`flex flex-col items-start gap-0.5 px-4 py-3 text-left transition-colors ${
-        active ? "bg-fg text-bg" : "bg-bg text-muted-fg hover:bg-surface"
-      }`}
-    >
-      <span className="font-mono text-[10px] uppercase tracking-wider opacity-70">
-        {code}
-      </span>
-      <span className="text-sm font-semibold">{label}</span>
-    </button>
-  );
-}
-
 function DeviceRow({
   sessionId,
   name,
@@ -533,39 +538,3 @@ function DeviceRow({
   );
 }
 
-function DataAction({
-  icon,
-  label,
-  detail,
-  danger,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  detail: string;
-  danger?: boolean;
-}) {
-  return (
-    <button
-      type="button"
-      className={`group flex items-start gap-3 bg-bg p-5 text-left transition-colors ${
-        danger ? "hover:bg-danger/[0.04]" : "hover:bg-surface"
-      }`}
-    >
-      <span
-        className={`grid size-9 shrink-0 place-items-center transition-colors ${
-          danger
-            ? "bg-danger/10 text-danger group-hover:bg-danger group-hover:text-bg"
-            : "bg-surface text-fg group-hover:bg-fg group-hover:text-bg"
-        }`}
-      >
-        {icon}
-      </span>
-      <div className="min-w-0 flex-1">
-        <p className={`text-sm font-semibold ${danger ? "text-danger" : ""}`}>
-          {label}
-        </p>
-        <p className="mt-0.5 text-xs text-muted-fg">{detail}</p>
-      </div>
-    </button>
-  );
-}

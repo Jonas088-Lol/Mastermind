@@ -269,10 +269,13 @@ export default async function NotenPage() {
                     </li>
                   )}
                 </ul>
-                <Button className="mt-6 w-full">
+                <Link
+                  href="/app/lernen"
+                  className="mt-6 flex w-full items-center justify-center gap-1.5 bg-fg px-4 py-2.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+                >
                   Lernplan starten
                   <ArrowRight className="size-3.5" />
-                </Button>
+                </Link>
               </CardBody>
             </Card>
           </section>

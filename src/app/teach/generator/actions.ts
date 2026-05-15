@@ -48,15 +48,19 @@ export async function runAiGenerate(
 export async function sendToClass(
   classId: string,
   subjectId: string,
-  title: string
+  title: string,
+  description?: string,
+  maxPoints?: number
 ): Promise<void> {
   const session = await getSession();
   if (!session) throw new Error("Unauthorized");
   await prisma.assignment.create({
     data: {
       title,
+      description: description ?? null,
+      maxPoints: maxPoints ?? null,
       type: "test",
-      dueAt: new Date(Date.now() + 7 * 86400000), // 1 week from now
+      dueAt: new Date(Date.now() + 7 * 86400000),
       teacherId: session.userId,
       classId,
       subjectId,

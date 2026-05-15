@@ -11,8 +11,10 @@ export const metadata: Metadata = { title: "XP-Verlauf" };
 const REASON_LABEL: Record<string, string> = {
   aufgabe_abgabe: "Aufgabe abgegeben",
   karteikarte: "Karteikarte gelernt",
+  karteikarte_session: "Karteikarten-Session",
   note_geteilt: "Notiz geteilt",
   aufgabe_bewertet: "Aufgabe bewertet",
+  tages_herausforderung: "Tägliche Herausforderung",
   duel_win: "Duell gewonnen",
   duel_participate: "Duell gespielt",
   daily_challenge: "Tägliche Herausforderung",

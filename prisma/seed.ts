@@ -821,6 +821,115 @@ async function main() {
   }
   console.log(`  ✓ ${teamDefs.length} Schulmannschaften`);
 
+  // ── XP-Logs ──────────────────────────────────────────────────
+  const xpDefs = [
+    // Lukas — 340 XP total (Level 3)
+    { userId: lukasId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-30) },
+    { userId: lukasId, amount: 15, reason: "karteikarte_session", createdAt: d(-28) },
+    { userId: lukasId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-25) },
+    { userId: lukasId, amount: 20, reason: "aufgabe_bewertet", createdAt: d(-22) },
+    { userId: lukasId, amount: 15, reason: "karteikarte_session", createdAt: d(-20) },
+    { userId: lukasId, amount: 25, reason: "tages_herausforderung", createdAt: d(-18) },
+    { userId: lukasId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-15) },
+    { userId: lukasId, amount: 15, reason: "karteikarte_session", createdAt: d(-14) },
+    { userId: lukasId, amount: 5, reason: "note_geteilt", createdAt: d(-12) },
+    { userId: lukasId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-10) },
+    { userId: lukasId, amount: 25, reason: "tages_herausforderung", createdAt: d(-9) },
+    { userId: lukasId, amount: 15, reason: "karteikarte_session", createdAt: d(-7) },
+    { userId: lukasId, amount: 20, reason: "aufgabe_bewertet", createdAt: d(-6) },
+    { userId: lukasId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-5) },
+    { userId: lukasId, amount: 15, reason: "karteikarte_session", createdAt: d(-4) },
+    { userId: lukasId, amount: 25, reason: "tages_herausforderung", createdAt: d(-3) },
+    { userId: lukasId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-2) },
+    { userId: lukasId, amount: 15, reason: "karteikarte_session", createdAt: d(-1) },
+    { userId: lukasId, amount: 20, reason: "aufgabe_bewertet", createdAt: d(0) },
+    { userId: lukasId, amount: 25, reason: "tages_herausforderung", createdAt: d(0) },
+    // Anna — 520 XP (Level 5)
+    { userId: annaId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-30) },
+    { userId: annaId, amount: 25, reason: "tages_herausforderung", createdAt: d(-29) },
+    { userId: annaId, amount: 15, reason: "karteikarte_session", createdAt: d(-28) },
+    { userId: annaId, amount: 20, reason: "aufgabe_bewertet", createdAt: d(-25) },
+    { userId: annaId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-23) },
+    { userId: annaId, amount: 25, reason: "tages_herausforderung", createdAt: d(-21) },
+    { userId: annaId, amount: 15, reason: "karteikarte_session", createdAt: d(-19) },
+    { userId: annaId, amount: 5, reason: "note_geteilt", createdAt: d(-17) },
+    { userId: annaId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-15) },
+    { userId: annaId, amount: 20, reason: "aufgabe_bewertet", createdAt: d(-13) },
+    { userId: annaId, amount: 25, reason: "tages_herausforderung", createdAt: d(-11) },
+    { userId: annaId, amount: 15, reason: "karteikarte_session", createdAt: d(-9) },
+    { userId: annaId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-7) },
+    { userId: annaId, amount: 25, reason: "tages_herausforderung", createdAt: d(-5) },
+    { userId: annaId, amount: 15, reason: "karteikarte_session", createdAt: d(-3) },
+    { userId: annaId, amount: 20, reason: "aufgabe_bewertet", createdAt: d(-1) },
+    // Tim — 120 XP (Level 1)
+    { userId: timId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-20) },
+    { userId: timId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-12) },
+    { userId: timId, amount: 15, reason: "karteikarte_session", createdAt: d(-7) },
+    { userId: timId, amount: 25, reason: "tages_herausforderung", createdAt: d(-3) },
+    { userId: timId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-1) },
+    // Mia — 280 XP (Level 2)
+    { userId: miaId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-25) },
+    { userId: miaId, amount: 15, reason: "karteikarte_session", createdAt: d(-22) },
+    { userId: miaId, amount: 25, reason: "tages_herausforderung", createdAt: d(-19) },
+    { userId: miaId, amount: 20, reason: "aufgabe_bewertet", createdAt: d(-16) },
+    { userId: miaId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-13) },
+    { userId: miaId, amount: 15, reason: "karteikarte_session", createdAt: d(-10) },
+    { userId: miaId, amount: 5, reason: "note_geteilt", createdAt: d(-7) },
+    { userId: miaId, amount: 10, reason: "aufgabe_abgabe", createdAt: d(-5) },
+    { userId: miaId, amount: 25, reason: "tages_herausforderung", createdAt: d(-2) },
+    { userId: miaId, amount: 20, reason: "aufgabe_bewertet", createdAt: d(-1) },
+  ];
+
+  for (const x of xpDefs) {
+    const exists = await prisma.xpLog.findFirst({
+      where: { userId: x.userId, reason: x.reason, createdAt: x.createdAt },
+    });
+    if (!exists) {
+      await prisma.xpLog.create({ data: x });
+    }
+  }
+  console.log(`  ✓ ${xpDefs.length} XP-Einträge`);
+
+  // Sync user.xp with sum of their XP logs
+  const xpByUser: Record<string, number> = {};
+  for (const x of xpDefs) {
+    xpByUser[x.userId] = (xpByUser[x.userId] ?? 0) + x.amount;
+  }
+  const streakByUser: Record<string, number> = {
+    [lukasId]: 14,
+    [annaId]: 22,
+    [timId]: 3,
+    [miaId]: 9,
+  };
+  for (const [uid, total] of Object.entries(xpByUser)) {
+    await prisma.user.update({
+      where: { id: uid },
+      data: { xp: total, streak: streakByUser[uid] ?? 0, lastActiveDate: d(0) },
+    });
+  }
+  console.log(`  ✓ user.xp + streak synced for ${Object.keys(xpByUser).length} Nutzer`);
+
+  // ── Achievements ──────────────────────────────────────────────
+  const achievementDefs = [
+    { userId: lukasId, slug: "first_xp", unlockedAt: d(-30) },
+    { userId: lukasId, slug: "streak_7", unlockedAt: d(-7) },
+    { userId: annaId, slug: "first_xp", unlockedAt: d(-30) },
+    { userId: annaId, slug: "streak_7", unlockedAt: d(-9) },
+    { userId: annaId, slug: "level_5", unlockedAt: d(-5) },
+    { userId: timId, slug: "first_xp", unlockedAt: d(-20) },
+    { userId: miaId, slug: "first_xp", unlockedAt: d(-25) },
+    { userId: miaId, slug: "streak_7", unlockedAt: d(-10) },
+  ];
+
+  for (const a of achievementDefs) {
+    await prisma.userAchievement.upsert({
+      where: { userId_slug: { userId: a.userId, slug: a.slug } },
+      update: {},
+      create: a,
+    });
+  }
+  console.log(`  ✓ ${achievementDefs.length} Achievements`);
+
   console.log(`\n✅ Done. School: ${school.name}\n`);
 }
 

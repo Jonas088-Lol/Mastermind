@@ -13,7 +13,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
@@ -91,10 +91,10 @@ export default async function KarteikartenPage() {
             <Plus className="size-3.5" />
             Neues Deck
           </Link>
-          <Button variant="outline" size="sm">
+          <Link href="/app/karteikarten/aus-pdf" className={buttonVariants({ variant: "outline", size: "sm" })}>
             <Sparkles className="size-3.5" />
             Aus PDF generieren
-          </Button>
+          </Link>
         </div>
       </header>
 

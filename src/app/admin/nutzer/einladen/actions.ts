@@ -38,7 +38,7 @@ export async function inviteTeacher(formData: FormData): Promise<void> {
   });
 
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
-  const inviteUrl = `${appUrl}/onboarding?token=${token}&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&role=teacher`;
+  const inviteUrl = `${appUrl}/onboarding?token=${token}&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&role=teacher&schoolId=${session.schoolId}`;
 
   await sendEmail({
     to: email,

@@ -4,6 +4,7 @@ import {
   Building2,
   Check,
   CheckCircle2,
+  KeyRound,
   Palette,
   ShieldCheck,
   Sparkles,
@@ -12,8 +13,8 @@ import {
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { createSchoolAndAdmin } from "./actions";
-import { Button } from "@/components/ui/button";
+import { activateStudentInvite, activateTeacherInvite, createSchoolAndAdmin } from "./actions";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -33,11 +34,55 @@ const STEPS = [
 ] as const;
 
 interface PageProps {
-  searchParams: Promise<{ step?: string; error?: string }>;
+  searchParams: Promise<{
+    step?: string;
+    error?: string;
+    token?: string;
+    email?: string;
+    name?: string;
+    role?: string;
+    schoolId?: string;
+    klasse?: string;
+    plan?: string;
+    sso?: string;
+    schulname?: string;
+  }>;
 }
 
+const VALID_SSO = ["entra", "google", "apple", "saml", "email"] as const;
+type SsoKey = (typeof VALID_SSO)[number];
+
 export default async function OnboardingPage({ searchParams }: PageProps) {
-  const { step: stepStr, error } = await searchParams;
+  const { step: stepStr, error, token, email, name, role, schoolId, klasse, plan: planParam, sso: ssoParam, schulname: schulnameParam } = await searchParams;
+  const plan = ["basic", "pro", "enterprise"].includes(planParam ?? "") ? (planParam as string) : undefined;
+  const sso = VALID_SSO.includes(ssoParam as SsoKey) ? (ssoParam as SsoKey) : undefined;
+  const schulname = schulnameParam?.trim() || undefined;
+
+  if (token && role === "teacher") {
+    return (
+      <TeacherActivatePage
+        token={token}
+        email={email ?? ""}
+        name={name ?? ""}
+        schoolId={schoolId ?? ""}
+        error={error}
+      />
+    );
+  }
+
+  if (token && role === "student") {
+    return (
+      <StudentActivatePage
+        token={token}
+        email={email ?? ""}
+        name={name ?? ""}
+        schoolId={schoolId ?? ""}
+        klasse={klasse ?? ""}
+        error={error}
+      />
+    );
+  }
+
   const stepNum = clamp(parseInt(stepStr ?? "1", 10) || 1, 1, 5);
 
   return (
@@ -63,18 +108,245 @@ export default async function OnboardingPage({ searchParams }: PageProps) {
         <Stepper current={stepNum} />
 
         <section className="mt-10">
-          {stepNum === 1 && <Step1 />}
-          {stepNum === 2 && <Step2 />}
-          {stepNum === 3 && <Step3 />}
+          {stepNum === 1 && <Step1 plan={plan} sso={sso} schulname={schulname} />}
+          {stepNum === 2 && <Step2 plan={plan} />}
+          {stepNum === 3 && <Step3 plan={plan} sso={sso} schulname={schulname} />}
           {stepNum === 4 && <Step4 />}
-          {stepNum === 5 && <Step5 error={error} />}
+          {stepNum === 5 && <Step5 error={error} plan={plan} schulname={schulname} />}
         </section>
 
-        {stepNum < 5 && <Navigation step={stepNum} />}
+        {stepNum > 1 && stepNum < 5 && <Navigation step={stepNum} plan={plan} sso={sso} schulname={schulname} />}
       </div>
     </main>
   );
 }
+
+/* ── Teacher Invite Activation ──────────────────────────────── */
+
+function TeacherActivatePage({
+  token,
+  email,
+  name,
+  schoolId,
+  error,
+}: {
+  token: string;
+  email: string;
+  name: string;
+  schoolId: string;
+  error?: string;
+}) {
+  return (
+    <main className="min-h-screen bg-surface">
+      <header className="border-b border-border bg-bg">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-bold tracking-tight"
+          >
+            <span className="grid size-7 place-items-center bg-fg text-bg text-[11px] font-black">
+              MM
+            </span>
+            <span>MasterMind</span>
+          </Link>
+          <span className="font-mono text-[10px] uppercase tracking-widest text-muted-fg">
+            Account einrichten
+          </span>
+        </div>
+      </header>
+
+      <div className="mx-auto max-w-xl px-6 py-16">
+        <div className="mb-8 flex items-center gap-3">
+          <div className="grid size-12 place-items-center bg-brand text-brand-fg">
+            <KeyRound className="size-5" strokeWidth={1.75} />
+          </div>
+          <div>
+            <h1 className="text-xl font-bold tracking-tight">Willkommen bei MasterMind</h1>
+            <p className="text-sm text-muted-fg">Richte jetzt deinen Lehrer-Account ein</p>
+          </div>
+        </div>
+
+        <Card>
+          <CardBody>
+            {error && (
+              <div className="mb-5 border-l-2 border-danger bg-danger/[0.06] px-4 py-3 text-sm text-danger">
+                {decodeURIComponent(error)}
+              </div>
+            )}
+            <form action={activateTeacherInvite} className="space-y-5">
+              <input type="hidden" name="token" value={token} />
+              <input type="hidden" name="schoolId" value={schoolId} />
+
+              <div className="space-y-1.5">
+                <Label htmlFor="ta-name">Vor- und Nachname</Label>
+                <Input
+                  id="ta-name"
+                  name="name"
+                  defaultValue={name}
+                  placeholder="z. B. Anna Müller"
+                  required
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="ta-email">E-Mail-Adresse</Label>
+                <Input
+                  id="ta-email"
+                  name="email"
+                  type="email"
+                  defaultValue={email}
+                  readOnly
+                  className="bg-surface text-muted-fg"
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="ta-password">Passwort wählen (min. 8 Zeichen)</Label>
+                <Input
+                  id="ta-password"
+                  name="password"
+                  type="password"
+                  placeholder="Sicheres Passwort"
+                  required
+                  minLength={8}
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="flex w-full items-center justify-center gap-2 bg-fg px-4 py-3 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+              >
+                <CheckCircle2 className="size-4" strokeWidth={1.75} />
+                Account erstellen &amp; einloggen
+              </button>
+            </form>
+          </CardBody>
+        </Card>
+      </div>
+    </main>
+  );
+}
+
+function StudentActivatePage({
+  token,
+  email,
+  name,
+  schoolId,
+  klasse,
+  error,
+}: {
+  token: string;
+  email: string;
+  name: string;
+  schoolId: string;
+  klasse: string;
+  error?: string;
+}) {
+  return (
+    <main className="min-h-screen bg-surface">
+      <header className="border-b border-border bg-bg">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-bold tracking-tight"
+          >
+            <span className="grid size-7 place-items-center bg-fg text-bg text-[11px] font-black">
+              MM
+            </span>
+            <span>MasterMind</span>
+          </Link>
+          <span className="font-mono text-[10px] uppercase tracking-widest text-muted-fg">
+            Account einrichten
+          </span>
+        </div>
+      </header>
+
+      <div className="mx-auto max-w-xl px-6 py-16">
+        <div className="mb-8 flex items-center gap-3">
+          <div className="grid size-12 place-items-center bg-brand text-brand-fg">
+            <KeyRound className="size-5" strokeWidth={1.75} />
+          </div>
+          <div>
+            <h1 className="text-xl font-bold tracking-tight">Willkommen bei MasterMind</h1>
+            <p className="text-sm text-muted-fg">Richte jetzt deinen Schüler-Account ein</p>
+          </div>
+        </div>
+
+        <Card>
+          <CardBody>
+            {error && (
+              <div className="mb-5 border-l-2 border-danger bg-danger/[0.06] px-4 py-3 text-sm text-danger">
+                {decodeURIComponent(error)}
+              </div>
+            )}
+            <form action={activateStudentInvite} className="space-y-5">
+              <input type="hidden" name="token" value={token} />
+              <input type="hidden" name="schoolId" value={schoolId} />
+
+              <div className="space-y-1.5">
+                <Label htmlFor="sa-name">Vor- und Nachname</Label>
+                <Input
+                  id="sa-name"
+                  name="name"
+                  defaultValue={name}
+                  placeholder="z. B. Lisa Müller"
+                  required
+                />
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="sa-email">E-Mail-Adresse</Label>
+                <Input
+                  id="sa-email"
+                  name="email"
+                  type="email"
+                  defaultValue={email}
+                  readOnly
+                  className="bg-surface text-muted-fg"
+                />
+              </div>
+
+              {klasse && (
+                <div className="space-y-1.5">
+                  <Label htmlFor="sa-klasse">Klasse</Label>
+                  <Input
+                    id="sa-klasse"
+                    name="klasse"
+                    defaultValue={klasse}
+                    readOnly
+                    className="bg-surface text-muted-fg"
+                  />
+                </div>
+              )}
+
+              <div className="space-y-1.5">
+                <Label htmlFor="sa-password">Passwort wählen (min. 8 Zeichen)</Label>
+                <Input
+                  id="sa-password"
+                  name="password"
+                  type="password"
+                  placeholder="Sicheres Passwort"
+                  required
+                  minLength={8}
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="flex w-full items-center justify-center gap-2 bg-fg px-4 py-3 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+              >
+                <CheckCircle2 className="size-4" strokeWidth={1.75} />
+                Account erstellen &amp; einloggen
+              </button>
+            </form>
+          </CardBody>
+        </Card>
+      </div>
+    </main>
+  );
+}
+
+/* ────────────────────────────────────────────── */
 
 function Stepper({ current }: { current: number }) {
   return (
@@ -122,223 +394,245 @@ function Stepper({ current }: { current: number }) {
   );
 }
 
-function Navigation({ step }: { step: number }) {
+function navHref(step: number, plan?: string, sso?: string, schulname?: string) {
+  const p = new URLSearchParams({ step: String(step) });
+  if (plan) p.set("plan", plan);
+  if (sso) p.set("sso", sso);
+  if (schulname) p.set("schulname", schulname);
+  return `/onboarding?${p.toString()}`;
+}
+
+function Navigation({ step, plan, sso, schulname }: { step: number; plan?: string; sso?: string; schulname?: string }) {
   return (
     <div className="mt-10 flex items-center justify-between border-t border-border pt-6">
-      {step > 1 ? (
-        <Link
-          href={`/onboarding?step=${step - 1}`}
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-fg transition-colors hover:text-fg"
-        >
-          <ArrowLeft className="size-3.5" />
-          Zurück
-        </Link>
-      ) : (
-        <span />
-      )}
-      {step < 5 ? (
-        <Link
-          href={`/onboarding?step=${step + 1}`}
-          className="inline-flex items-center gap-2 bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
-        >
-          {step === 4 ? "Onboarding abschließen" : "Weiter"}
-          <ArrowRight className="size-4" />
-        </Link>
-      ) : (
-        <Link
-          href="/admin"
-          className="inline-flex items-center gap-2 bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
-        >
-          Zum Admin-Dashboard
-          <ArrowRight className="size-4" />
-        </Link>
-      )}
+      <Link
+        href={navHref(step - 1, plan, sso, schulname)}
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-fg transition-colors hover:text-fg"
+      >
+        <ArrowLeft className="size-3.5" />
+        Zurück
+      </Link>
+      <Link
+        href={navHref(step + 1, plan, sso, schulname)}
+        className="inline-flex items-center gap-2 bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+      >
+        {step === 4 ? "Onboarding abschließen" : "Weiter"}
+        <ArrowRight className="size-4" />
+      </Link>
     </div>
   );
 }
 
 /* ────────────────────────────────────────────── */
 
-function Step1() {
+function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: string; schulname?: string }) {
   return (
-    <div className="grid gap-6 md:grid-cols-[1fr_320px]">
-      <Card>
-        <CardHeader>
-          <CardTitle>Schul-Daten</CardTitle>
-        </CardHeader>
-        <CardBody className="space-y-5">
-          <div className="space-y-1.5">
-            <Label htmlFor="school-name">Schul-Name</Label>
-            <Input id="school-name" defaultValue="Realschule München" />
-          </div>
-          <div className="grid gap-5 sm:grid-cols-2">
-            <div className="space-y-1.5">
-              <Label htmlFor="school-type">Schulart</Label>
-              <select
-                id="school-type"
-                defaultValue="realschule"
-                className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
-              >
-                <option value="grundschule">Grundschule</option>
-                <option value="hauptschule">Hauptschule</option>
-                <option value="realschule">Realschule</option>
-                <option value="gymnasium">Gymnasium</option>
-                <option value="gesamtschule">Gesamtschule</option>
-                <option value="berufskolleg">Berufskolleg</option>
-                <option value="anders">Andere</option>
-              </select>
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="bundesland">Bundesland</Label>
-              <select
-                id="bundesland"
-                defaultValue="by"
-                className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
-              >
-                <option value="bw">Baden-Württemberg</option>
-                <option value="by">Bayern</option>
-                <option value="be">Berlin</option>
-                <option value="bb">Brandenburg</option>
-                <option value="hb">Bremen</option>
-                <option value="hh">Hamburg</option>
-                <option value="he">Hessen</option>
-                <option value="mv">Mecklenburg-Vorpommern</option>
-                <option value="ni">Niedersachsen</option>
-                <option value="nw">Nordrhein-Westfalen</option>
-                <option value="rp">Rheinland-Pfalz</option>
-                <option value="sl">Saarland</option>
-                <option value="sn">Sachsen</option>
-                <option value="st">Sachsen-Anhalt</option>
-                <option value="sh">Schleswig-Holstein</option>
-                <option value="th">Thüringen</option>
-              </select>
-            </div>
-            <div className="space-y-1.5 sm:col-span-2">
-              <Label htmlFor="address">Adresse</Label>
-              <Input
-                id="address"
-                placeholder="Straße, PLZ, Ort"
-                defaultValue="Pestalozzistraße 12, 80469 München"
-              />
-            </div>
-          </div>
+    <form method="GET" action="/onboarding">
+      <input type="hidden" name="step" value="2" />
+      {plan && <input type="hidden" name="plan" value={plan} />}
+      {sso && <input type="hidden" name="sso" value={sso} />}
 
-          <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-[1fr_320px]">
+        <Card>
+          <CardHeader>
+            <CardTitle>Schul-Daten</CardTitle>
+          </CardHeader>
+          <CardBody className="space-y-5">
             <div className="space-y-1.5">
-              <Label htmlFor="students">Schüler-Zahl (ungefähr)</Label>
-              <Input id="students" type="number" defaultValue={750} />
+              <Label htmlFor="schulname">Schul-Name</Label>
+              <Input id="schulname" name="schulname" defaultValue={currentName ?? "Realschule München"} required />
             </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="teachers">Lehrer-Zahl (ungefähr)</Label>
-              <Input id="teachers" type="number" defaultValue={95} />
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="space-y-1.5">
+                <Label htmlFor="school-type">Schulart</Label>
+                <select
+                  id="school-type"
+                  name="schulart"
+                  defaultValue="realschule"
+                  className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
+                >
+                  <option value="grundschule">Grundschule</option>
+                  <option value="hauptschule">Hauptschule</option>
+                  <option value="realschule">Realschule</option>
+                  <option value="gymnasium">Gymnasium</option>
+                  <option value="gesamtschule">Gesamtschule</option>
+                  <option value="berufskolleg">Berufskolleg</option>
+                  <option value="anders">Andere</option>
+                </select>
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="bundesland">Bundesland</Label>
+                <select
+                  id="bundesland"
+                  name="bundesland"
+                  defaultValue="by"
+                  className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
+                >
+                  <option value="bw">Baden-Württemberg</option>
+                  <option value="by">Bayern</option>
+                  <option value="be">Berlin</option>
+                  <option value="bb">Brandenburg</option>
+                  <option value="hb">Bremen</option>
+                  <option value="hh">Hamburg</option>
+                  <option value="he">Hessen</option>
+                  <option value="mv">Mecklenburg-Vorpommern</option>
+                  <option value="ni">Niedersachsen</option>
+                  <option value="nw">Nordrhein-Westfalen</option>
+                  <option value="rp">Rheinland-Pfalz</option>
+                  <option value="sl">Saarland</option>
+                  <option value="sn">Sachsen</option>
+                  <option value="st">Sachsen-Anhalt</option>
+                  <option value="sh">Schleswig-Holstein</option>
+                  <option value="th">Thüringen</option>
+                </select>
+              </div>
+              <div className="space-y-1.5 sm:col-span-2">
+                <Label htmlFor="address">Adresse</Label>
+                <Input
+                  id="address"
+                  name="address"
+                  placeholder="Straße, PLZ, Ort"
+                  defaultValue="Pestalozzistraße 12, 80469 München"
+                />
+              </div>
             </div>
-          </div>
-        </CardBody>
-      </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Was passiert hier?</CardTitle>
-        </CardHeader>
-        <CardBody>
-          <p className="text-sm text-muted-fg">
-            Wir nutzen diese Daten, um das richtige Lehrplan-Profil und die
-            passende Lizenz-Größe vorzuschlagen. Du kannst alles später jederzeit
-            anpassen.
-          </p>
-          <ul className="mt-4 space-y-2 text-xs">
-            <Hint text="Lehrplan-Profil pro Bundesland" />
-            <Hint text="Klassengrößen-Sanity-Check" />
-            <Hint text="AVV-Vorlage automatisch bereitgestellt" />
-          </ul>
-        </CardBody>
-      </Card>
-    </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="space-y-1.5">
+                <Label htmlFor="students">Schüler-Zahl (ungefähr)</Label>
+                <Input id="students" name="students" type="number" defaultValue={750} />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="teachers">Lehrer-Zahl (ungefähr)</Label>
+                <Input id="teachers" name="teachers" type="number" defaultValue={95} />
+              </div>
+            </div>
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Was passiert hier?</CardTitle>
+          </CardHeader>
+          <CardBody>
+            <p className="text-sm text-muted-fg">
+              Wir nutzen diese Daten, um das richtige Lehrplan-Profil und die
+              passende Lizenz-Größe vorzuschlagen. Du kannst alles später jederzeit
+              anpassen.
+            </p>
+            <ul className="mt-4 space-y-2 text-xs">
+              <Hint text="Lehrplan-Profil pro Bundesland" />
+              <Hint text="Klassengrößen-Sanity-Check" />
+              <Hint text="AVV-Vorlage automatisch bereitgestellt" />
+            </ul>
+          </CardBody>
+        </Card>
+      </div>
+
+      <div className="mt-10 flex justify-end border-t border-border pt-6">
+        <button
+          type="submit"
+          className="inline-flex items-center gap-2 bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+        >
+          Weiter
+          <ArrowRight className="size-4" />
+        </button>
+      </div>
+    </form>
   );
 }
 
-function Step2() {
+function Step2({ plan: currentPlan }: { plan?: string }) {
   const plans = [
     {
+      key: "basic",
       name: "Basic",
       price: "von 0,90 €",
       per: "/ Schüler / Monat",
       bullets: ["Bis 100 Sitze", "Standard-Funktionen", "E-Mail-Support"],
-      tone: "outline" as const,
     },
     {
+      key: "pro",
       name: "Pro",
       price: "1,49 €",
       per: "/ Schüler / Monat",
       bullets: ["Unbegrenzte Sitze", "KI-Funktionen v3", "Reports & Analytics", "API & Webhooks"],
-      tone: "brand" as const,
       recommended: true,
     },
     {
+      key: "enterprise",
       name: "Enterprise",
       price: "Auf Anfrage",
       per: "Multi-Campus",
       bullets: ["Alles in Pro", "White-Label", "SSO via SAML", "SLA + Priority-Support"],
-      tone: "success" as const,
     },
   ];
+  const selected = currentPlan ?? "pro";
   return (
     <div>
       <p className="text-sm text-muted-fg">
         Wähle dein Paket. Du kannst jederzeit upgraden — Daten bleiben erhalten.
       </p>
       <div className="mt-6 grid gap-px border border-border bg-border md:grid-cols-3">
-        {plans.map((p) => (
-          <div
-            key={p.name}
-            className={cn(
-              "flex flex-col gap-4 bg-bg p-6",
-              p.recommended &&
-                "border-l-2 border-l-brand bg-gradient-to-b from-brand/[0.04] to-transparent"
-            )}
-          >
-            <div className="flex items-center gap-2">
-              <h3 className="text-lg font-bold tracking-tight">{p.name}</h3>
-              {p.recommended && <Badge variant="brand">Empfohlen</Badge>}
-            </div>
-            <div>
-              <p className="font-mono text-2xl font-bold tracking-tight">{p.price}</p>
-              <p className="text-xs text-muted-fg">{p.per}</p>
-            </div>
-            <ul className="space-y-2 border-t border-border pt-4 text-sm">
-              {p.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-2">
-                  <Check className="mt-0.5 size-3.5 shrink-0 text-success" strokeWidth={2.5} />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-            <button
-              type="button"
+        {plans.map((p) => {
+          const isSelected = selected === p.key;
+          return (
+            <div
+              key={p.name}
               className={cn(
-                "mt-auto px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-colors",
-                p.recommended
-                  ? "bg-brand text-brand-fg hover:bg-brand-dark"
-                  : "border border-border bg-bg text-fg hover:bg-surface"
+                "flex flex-col gap-4 bg-bg p-6",
+                p.recommended && !isSelected &&
+                  "border-l-2 border-l-brand bg-gradient-to-b from-brand/[0.04] to-transparent",
+                isSelected && "border-l-2 border-l-success bg-gradient-to-b from-success/[0.04] to-transparent"
               )}
             >
-              {p.name} wählen
-            </button>
-          </div>
-        ))}
+              <div className="flex items-center gap-2">
+                <h3 className="text-lg font-bold tracking-tight">{p.name}</h3>
+                {isSelected && <Badge variant="success">Gewählt</Badge>}
+                {p.recommended && !isSelected && <Badge variant="brand">Empfohlen</Badge>}
+              </div>
+              <div>
+                <p className="font-mono text-2xl font-bold tracking-tight">{p.price}</p>
+                <p className="text-xs text-muted-fg">{p.per}</p>
+              </div>
+              <ul className="space-y-2 border-t border-border pt-4 text-sm">
+                {p.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <Check className="mt-0.5 size-3.5 shrink-0 text-success" strokeWidth={2.5} />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href={navHref(3, p.key)}
+                className={cn(
+                  "mt-auto px-3 py-2 text-center text-xs font-semibold uppercase tracking-wider transition-colors",
+                  isSelected
+                    ? "bg-success text-bg hover:opacity-90"
+                    : p.recommended
+                    ? "bg-brand text-brand-fg hover:opacity-90"
+                    : "border border-border bg-bg text-fg hover:bg-surface"
+                )}
+              >
+                {isSelected ? "Weiter mit " : ""}{p.name} wählen
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 }
 
-function Step3() {
-  const providers = [
-    { name: "Microsoft Entra ID", desc: "SAML & SCIM · Schulkonten direkt", recommended: true },
-    { name: "Google Workspace", desc: "OAuth · empfohlen für G-Suite-Schulen" },
-    { name: "Apple School Manager", desc: "Managed Apple IDs für iPad-Klassen" },
-    { name: "SAML 2.0 (eigener IdP)", desc: "Beliebiger SAML-Provider" },
-    { name: "Nur E-Mail + Passwort", desc: "2FA pflicht für Lehrer" },
+function Step3({ plan, sso: currentSso, schulname }: { plan?: string; sso?: string; schulname?: string }) {
+  const providers: { key: SsoKey; name: string; desc: string; recommended?: true }[] = [
+    { key: "entra", name: "Microsoft Entra ID", desc: "SAML & SCIM · Schulkonten direkt", recommended: true },
+    { key: "google", name: "Google Workspace", desc: "OAuth · empfohlen für G-Suite-Schulen" },
+    { key: "apple", name: "Apple School Manager", desc: "Managed Apple IDs für iPad-Klassen" },
+    { key: "saml", name: "SAML 2.0 (eigener IdP)", desc: "Beliebiger SAML-Provider" },
+    { key: "email", name: "Nur E-Mail + Passwort", desc: "2FA pflicht für Lehrer" },
   ];
+  const selected = currentSso ?? "entra";
   return (
     <Card>
       <CardHeader>
@@ -351,30 +645,36 @@ function Step3() {
           größere Schulen — kein zusätzliches Passwort, automatische Provisionierung.
         </p>
         <ul className="divide-y divide-border border border-border bg-bg">
-          {providers.map((p, i) => (
-            <li
-              key={p.name}
-              className={cn(
-                "flex items-center gap-4 p-4 transition-colors hover:bg-surface",
-                i === 0 && "border-l-2 border-l-brand bg-brand/[0.04]"
-              )}
-            >
-              <ShieldCheck
-                className={cn("size-4 shrink-0", i === 0 ? "text-brand" : "text-muted-fg")}
-                strokeWidth={1.75}
-              />
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <p className="text-sm font-semibold">{p.name}</p>
-                  {p.recommended && <Badge variant="brand">Empfohlen</Badge>}
+          {providers.map((p) => {
+            const isActive = selected === p.key;
+            return (
+              <li
+                key={p.name}
+                className={cn(
+                  "flex items-center gap-4 p-4 transition-colors hover:bg-surface",
+                  isActive && "border-l-2 border-l-brand bg-brand/[0.04]"
+                )}
+              >
+                <ShieldCheck
+                  className={cn("size-4 shrink-0", isActive ? "text-brand" : "text-muted-fg")}
+                  strokeWidth={1.75}
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm font-semibold">{p.name}</p>
+                    {p.recommended && <Badge variant="brand">Empfohlen</Badge>}
+                  </div>
+                  <p className="text-xs text-muted-fg">{p.desc}</p>
                 </div>
-                <p className="text-xs text-muted-fg">{p.desc}</p>
-              </div>
-              <Button size="sm" variant={i === 0 ? "primary" : "outline"}>
-                {i === 0 ? "Aktiv" : "Wählen"}
-              </Button>
-            </li>
-          ))}
+                <Link
+                  href={navHref(4, plan, p.key, schulname)}
+                  className={buttonVariants({ size: "sm", variant: isActive ? "primary" : "outline" })}
+                >
+                  {isActive ? "Aktiv" : "Wählen"}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         <p className="border-l-2 border-warning bg-warning/[0.06] px-4 py-3 text-xs text-muted-fg">
           2-Faktor-Authentifizierung wird für alle Lehrer- und Admin-Accounts
@@ -481,13 +781,16 @@ function Step4() {
           <p className="mt-3 text-xs text-muted-fg">
             So sieht deine Schule auf jeder Anmelde-Seite aus.
           </p>
+          <p className="mt-4 border-l-2 border-brand bg-brand/[0.06] px-3 py-2 text-xs text-muted-fg">
+            Logo, Farbe und Subdomain werden nach der Einrichtung im Admin-Panel unter <strong>Branding</strong> konfiguriert.
+          </p>
         </CardBody>
       </Card>
     </div>
   );
 }
 
-function Step5({ error }: { error?: string }) {
+function Step5({ error, plan, schulname }: { error?: string; plan?: string; schulname?: string }) {
   return (
     <div className="grid gap-6 md:grid-cols-[1fr_360px]">
       <Card>
@@ -506,6 +809,7 @@ function Step5({ error }: { error?: string }) {
               <Input
                 id="school-name"
                 name="school-name"
+                defaultValue={schulname ?? ""}
                 placeholder="z. B. Realschule München"
                 required
               />
@@ -515,7 +819,7 @@ function Step5({ error }: { error?: string }) {
               <select
                 id="plan"
                 name="plan"
-                defaultValue="pro"
+                defaultValue={plan ?? "pro"}
                 className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
               >
                 <option value="basic">Basic — ab 0,90 € / Schüler / Mo.</option>

@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
@@ -65,10 +64,10 @@ export default async function TeachNachrichtenPage() {
             {participations.length} Konversationen
           </p>
         </div>
-        <Button size="sm">
+        <Link href="/teach/nachrichten/neu" className="inline-flex items-center gap-1.5 bg-fg px-3 py-2 text-xs font-semibold text-bg transition-opacity hover:opacity-90">
           <Plus className="size-3.5" />
           Neue Nachricht
-        </Button>
+        </Link>
       </header>
 
       {participations.length === 0 ? (

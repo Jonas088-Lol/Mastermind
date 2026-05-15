@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Plus, Users } from "lucide-react";
 import Link from "next/link";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 
@@ -64,8 +64,8 @@ export default async function AdminKlassenPage() {
                   <p className="mt-1 text-sm">{teachers.length > 0 ? teachers.join(", ") : "—"}</p>
                 </div>
                 <div className="mt-auto flex gap-2">
-                  <Button size="sm" variant="outline" className="flex-1">Bearbeiten</Button>
-                  <Button size="sm" variant="ghost">Schüler</Button>
+                  <Link href={`/admin/klassen/${c.id}`} className={buttonVariants({ size: "sm", variant: "outline" }) + " flex-1"}>Bearbeiten</Link>
+                  <Link href={`/admin/klassen/${c.id}#schueler`} className={buttonVariants({ size: "sm", variant: "ghost" })}>Schüler</Link>
                 </div>
               </div>
             );

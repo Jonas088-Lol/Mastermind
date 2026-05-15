@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getSession, isSuper } from "@/lib/session";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
@@ -66,10 +65,10 @@ export default async function FlagsPage({ searchParams }: PageProps) {
               {totalCount} Flags · {countMap["on"] ?? 0} aktiv · {countMap["experiment"] ?? 0} Experimente
             </p>
           </div>
-          <Button size="sm">
+          <Link href="/plattform/flags/neu" className="inline-flex items-center gap-1.5 bg-fg px-3 py-2 text-xs font-semibold text-bg transition-opacity hover:opacity-90">
             <Plus className="size-3.5" />
             Neuer Flag
-          </Button>
+          </Link>
         </div>
       </header>
 
@@ -198,7 +197,12 @@ function FlagRow({ flag }: {
         </button>
       </form>
 
-      <Button size="sm" variant="ghost">Bearbeiten</Button>
+      <Link
+        href={`/plattform/flags/${flag.name}`}
+        className="inline-flex h-8 items-center px-3 text-xs font-semibold text-muted-fg transition-colors hover:bg-surface hover:text-fg"
+      >
+        Bearbeiten
+      </Link>
     </li>
   );
 }

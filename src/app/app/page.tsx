@@ -221,32 +221,30 @@ export default async function DashboardPage() {
                   {upcomingAssignments.map((a) => {
                     const daysLeft = Math.floor((a.dueAt.getTime() - now.getTime()) / 86_400_000);
                     return (
-                      <li
-                        key={a.id}
-                        className="flex items-center gap-4 px-5 py-3.5 transition-colors hover:bg-surface"
-                      >
-                        <button
-                          type="button"
-                          aria-label={`${a.title} als erledigt markieren`}
-                          className="grid size-5 shrink-0 place-items-center border border-border-strong text-transparent transition-colors hover:border-brand hover:text-brand"
+                      <li key={a.id}>
+                        <Link
+                          href={`/app/aufgaben/${a.id}`}
+                          className="flex items-center gap-4 px-5 py-3.5 transition-colors hover:bg-surface"
                         >
-                          <CheckSquare className="size-3" />
-                        </button>
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-center gap-2">
-                            <span
-                              className="inline-flex items-center px-1.5 py-0.5 text-[11px] font-semibold"
-                              style={{ backgroundColor: a.subject.color + "22", color: a.subject.color }}
-                            >
-                              {a.subject.shortName}
-                            </span>
-                            <p className="truncate text-sm font-medium">{a.title}</p>
+                          <span className="grid size-5 shrink-0 place-items-center border border-border-strong text-border-strong">
+                            <CheckSquare className="size-3" />
+                          </span>
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-2">
+                              <span
+                                className="inline-flex items-center px-1.5 py-0.5 text-[11px] font-semibold"
+                                style={{ backgroundColor: a.subject.color + "22", color: a.subject.color }}
+                              >
+                                {a.subject.shortName}
+                              </span>
+                              <p className="truncate text-sm font-medium">{a.title}</p>
+                            </div>
+                            <p className="mt-0.5 truncate text-xs text-muted-fg">{a.teacher.name}</p>
                           </div>
-                          <p className="mt-0.5 truncate text-xs text-muted-fg">{a.teacher.name}</p>
-                        </div>
-                        <span className="hidden font-mono text-xs text-muted-fg sm:inline">
-                          {daysLeft === 0 ? "Heute" : daysLeft === 1 ? "Morgen" : `in ${daysLeft} Tagen`}
-                        </span>
+                          <span className="hidden font-mono text-xs text-muted-fg sm:inline">
+                            {daysLeft === 0 ? "Heute" : daysLeft === 1 ? "Morgen" : `in ${daysLeft} Tagen`}
+                          </span>
+                        </Link>
                       </li>
                     );
                   })}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Paperclip, Upload, X, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Download, Paperclip, Upload, X, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 interface UploadedFile {
   id: string;
@@ -89,11 +89,16 @@ export function FileUploadClient({ assignmentId, disabled, existingFiles = [] }:
       <div className="flex flex-col gap-2">
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">Angehängte Dateien</p>
         {uploads.map((f) => (
-          <div key={f.id} className="flex items-center gap-3 border border-border bg-bg px-3 py-2 text-sm">
+          <a
+            key={f.id}
+            href={`/api/files/${f.id}?download=1`}
+            className="flex items-center gap-3 border border-border bg-bg px-3 py-2 text-sm transition-colors hover:bg-surface"
+          >
             <Paperclip className="size-4 shrink-0 text-muted-fg" strokeWidth={1.75} />
             <span className="flex-1 truncate font-medium">{f.filename}</span>
             <span className="text-xs text-muted-fg">{formatBytes(f.size)}</span>
-          </div>
+            <Download className="size-3.5 shrink-0 text-muted-fg" />
+          </a>
         ))}
       </div>
     ) : null;

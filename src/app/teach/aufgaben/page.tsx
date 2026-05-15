@@ -73,10 +73,10 @@ export default async function TeachAufgabenPage() {
             {counts.korrektur} in Korrektur · {counts.erledigt} abgeschlossen
           </p>
         </div>
-        <Button size="sm">
+        <Link href="/teach/aufgaben/neu" className="inline-flex items-center gap-1.5 bg-fg px-3 py-2 text-xs font-semibold text-bg transition-opacity hover:opacity-90">
           <Plus className="size-3.5" />
           Neue Aufgabe
-        </Button>
+        </Link>
       </header>
 
       <Card>

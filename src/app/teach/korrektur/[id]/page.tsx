@@ -1,4 +1,4 @@
-import { ArrowLeft, CheckCircle2, Clock, FileText, User } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Clock, Download, FileText, Paperclip } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
@@ -49,8 +49,20 @@ export default async function KorrekturDetailPage({ params }: PageProps) {
   if (!sub) notFound();
   if (sub.assignment.teacherId !== session.userId) notFound();
 
+  const files = await prisma.fileUpload.findMany({
+    where: { assignmentId: sub.assignmentId, userId: sub.studentId },
+    select: { id: true, filename: true, size: true, mimeType: true },
+    orderBy: { createdAt: "asc" },
+  });
+
   const isGraded = sub.status === "graded";
   const currentGrade = sub.grade?.value ?? null;
+
+  function formatBytes(bytes: number): string {
+    if (bytes < 1024) return `${bytes} B`;
+    if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  }
 
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-6">
@@ -127,6 +139,36 @@ export default async function KorrekturDetailPage({ params }: PageProps) {
           )}
         </CardBody>
       </Card>
+
+      {/* Uploaded files */}
+      {files.length > 0 && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <Paperclip className="size-4 text-muted-fg" strokeWidth={1.75} />
+              <CardTitle>Angehängte Dateien</CardTitle>
+            </div>
+            <span className="text-xs text-muted-fg">{files.length} {files.length === 1 ? "Datei" : "Dateien"}</span>
+          </CardHeader>
+          <CardBody className="!p-0">
+            <ul className="divide-y divide-border">
+              {files.map((f) => (
+                <li key={f.id}>
+                  <a
+                    href={`/api/files/${f.id}?download=1`}
+                    className="flex items-center gap-3 px-5 py-3 text-sm transition-colors hover:bg-surface"
+                  >
+                    <FileText className="size-4 shrink-0 text-muted-fg" strokeWidth={1.75} />
+                    <span className="flex-1 truncate font-medium">{f.filename}</span>
+                    <span className="text-xs text-muted-fg">{formatBytes(f.size)}</span>
+                    <Download className="size-3.5 shrink-0 text-muted-fg" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </CardBody>
+        </Card>
+      )}
 
       {/* Grade section */}
       <Card className={cn(isGraded && "border-success/30 bg-success/[0.03]")}>

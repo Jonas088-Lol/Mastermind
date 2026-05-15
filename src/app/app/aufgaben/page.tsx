@@ -9,7 +9,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
@@ -119,10 +119,10 @@ export default async function AufgabenPage({ searchParams }: PageProps) {
             {counts.erledigt} erledigt · {counts.spät} verspätet
           </p>
         </div>
-        <Button variant="outline" size="sm">
+        <Link href="/app/lernplan" className={buttonVariants({ variant: "outline", size: "sm" })}>
           <Sparkles className="size-3.5" />
           KI-Lernplan generieren
-        </Button>
+        </Link>
       </header>
 
       <section className="flex flex-col gap-3 border border-border bg-bg p-4 sm:flex-row sm:items-center sm:gap-6">

@@ -18,8 +18,13 @@ import { redirect } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { changePassword } from "./actions";
+import { PrefSelector } from "./PrefSelector";
+import { PrefToggle } from "./PrefToggle";
+import { SessionLogoutButton } from "./SessionLogoutButton";
 
 export const metadata: Metadata = { title: "Einstellungen" };
 
@@ -34,6 +39,15 @@ const SECTIONS = [
   { id: "daten", label: "Daten & DSGVO", icon: Shield },
 ] as const;
 
+type Prefs = Record<string, boolean | string>;
+
+function pref(prefs: Prefs, key: string, defaultVal: boolean): boolean;
+function pref(prefs: Prefs, key: string, defaultVal: string): string;
+function pref(prefs: Prefs, key: string, defaultVal: boolean | string): boolean | string {
+  if (key in prefs) return prefs[key] as boolean | string;
+  return defaultVal;
+}
+
 export default async function TeachEinstellungenPage() {
   const session = await getSession();
   if (!session) redirect("/login");
@@ -45,8 +59,9 @@ export default async function TeachEinstellungenPage() {
       email: true,
       twoFactor: true,
       createdAt: true,
+      prefs: true,
       sessions: {
-        select: { id: true, ipAddress: true, userAgent: true, lastUsedAt: true, createdAt: true },
+        select: { id: true, ipAddress: true, userAgent: true, lastUsedAt: true, token: true },
         orderBy: { lastUsedAt: "desc" },
         take: 5,
       },
@@ -54,8 +69,10 @@ export default async function TeachEinstellungenPage() {
     },
   });
 
+  const prefs: Prefs = user?.prefs ? JSON.parse(user.prefs) : {};
+  const currentToken = session.sid;
   const schoolLine = user?.school?.name
-    ? `${user.school.name} · seit ${user.createdAt.getFullYear()}`
+    ? `${user.school.name} · seit ${user?.createdAt.getFullYear()}`
     : "Kein Schulkonto verknüpft";
 
   return (
@@ -64,9 +81,7 @@ export default async function TeachEinstellungenPage() {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
           Konto · {session.name}
         </p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
-          Einstellungen
-        </h1>
+        <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Einstellungen</h1>
         <p className="mt-1 text-sm text-muted-fg">
           KI-Verhalten, Benachrichtigungen, Geräte und Daten verwalten.
         </p>
@@ -92,182 +107,121 @@ export default async function TeachEinstellungenPage() {
         </aside>
 
         <div className="space-y-8">
+          {/* ── Account ────────────────────────────────────── */}
           <section id="account">
             <Card>
-              <CardHeader>
-                <CardTitle>Account</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Account</CardTitle></CardHeader>
               <CardBody className="space-y-5">
-                <Field label="E-Mail" value={user?.email ?? "—"} action="Ändern" />
+                <Field label="E-Mail" value={user?.email ?? "—"} />
                 <Field label="Schul-Account" value={schoolLine} status={user?.school ? "ok" : undefined} />
-                <Field label="Passwort" value="Passwort ändern" action="Neu setzen" />
                 <Field
                   label="2-Faktor-Authentifizierung"
-                  value={user?.twoFactor ? "aktiv · Authenticator-App" : "nicht aktiviert"}
+                  value={user?.twoFactor ? "Aktiv · Authenticator-App" : "Nicht aktiviert"}
                   status={user?.twoFactor ? "ok" : undefined}
-                  action="Verwalten"
                 />
+                <details>
+                  <summary className="flex cursor-pointer items-center justify-between py-1 text-sm font-semibold">
+                    Passwort ändern
+                    <span className="text-xs font-normal text-muted-fg">Klicken zum Aufklappen</span>
+                  </summary>
+                  <form action={changePassword} className="mt-3 space-y-3">
+                    <Input name="current" type="password" placeholder="Aktuelles Passwort" required />
+                    <Input name="new" type="password" placeholder="Neues Passwort (min. 8 Zeichen)" minLength={8} required />
+                    <Button type="submit" size="sm">Passwort ändern</Button>
+                  </form>
+                </details>
               </CardBody>
             </Card>
           </section>
 
+          {/* ── KI-Funktionen ──────────────────────────────── */}
           <section id="ki">
             <Card>
               <CardHeader>
                 <div>
                   <CardTitle>KI-Funktionen</CardTitle>
-                  <p className="mt-1 text-sm text-muted-fg">
-                    Wie viel Hilfe willst du in deinem Workflow?
-                  </p>
+                  <p className="mt-1 text-sm text-muted-fg">Wie viel Hilfe willst du in deinem Workflow?</p>
                 </div>
-                <Badge variant="brand">
-                  <Sparkles className="size-3" />
-                  v3
-                </Badge>
+                <Badge variant="brand"><Sparkles className="size-3" />v3</Badge>
               </CardHeader>
               <CardBody className="space-y-1">
-                <Toggle
-                  icon={<Sparkles className="size-4" />}
-                  label="Auto-Vorbewertung von Abgaben"
-                  detail="KI bewertet vor — du nimmst per Klick an oder änderst"
-                  on
-                />
-                <Toggle
-                  icon={<Sparkles className="size-4" />}
-                  label="Aufgaben-Vorschläge bei neuen Aufgaben"
-                  detail="KI schlägt Wortlaut + Bewertungsraster vor"
-                  on
-                />
-                <Toggle
-                  icon={<Sparkles className="size-4" />}
-                  label="Risiko-Schüler erkennen"
-                  detail="KI markiert Schüler mit fallendem Trend automatisch"
-                  on
-                />
-                <Toggle
-                  icon={<Sparkles className="size-4" />}
-                  label="Auto-Antwort-Vorschläge in Nachrichten"
-                  detail="3 Vorschläge pro eingehender Mail · Du wählst"
-                  on
-                />
-                <Toggle
-                  icon={<Sparkles className="size-4" />}
-                  label="Lehrplan-Check"
-                  detail="Generierte Aufgaben werden gegen KMK-Standards validiert"
-                  on
-                />
+                <PrefToggle prefKey="ki_vorbewertung" label="Auto-Vorbewertung von Abgaben" detail="KI bewertet vor — du nimmst per Klick an oder änderst" icon={<Sparkles className="size-4" />} defaultOn={pref(prefs, "ki_vorbewertung", true) as boolean} />
+                <PrefToggle prefKey="ki_aufgaben_vorschlag" label="Aufgaben-Vorschläge bei neuen Aufgaben" detail="KI schlägt Wortlaut + Bewertungsraster vor" icon={<Sparkles className="size-4" />} defaultOn={pref(prefs, "ki_aufgaben_vorschlag", true) as boolean} />
+                <PrefToggle prefKey="ki_risiko_schueler" label="Risiko-Schüler erkennen" detail="KI markiert Schüler mit fallendem Trend automatisch" icon={<Sparkles className="size-4" />} defaultOn={pref(prefs, "ki_risiko_schueler", true) as boolean} />
+                <PrefToggle prefKey="ki_nachrichten" label="Auto-Antwort-Vorschläge in Nachrichten" detail="3 Vorschläge pro eingehender Mail · Du wählst" icon={<Sparkles className="size-4" />} defaultOn={pref(prefs, "ki_nachrichten", true) as boolean} />
+                <PrefToggle prefKey="ki_lehrplan_check" label="Lehrplan-Check" detail="Generierte Aufgaben werden gegen KMK-Standards validiert" icon={<Sparkles className="size-4" />} defaultOn={pref(prefs, "ki_lehrplan_check", true) as boolean} />
               </CardBody>
             </Card>
           </section>
 
+          {/* ── Benachrichtigungen ─────────────────────────── */}
           <section id="benachrichtigungen">
             <Card>
-              <CardHeader>
-                <CardTitle>Benachrichtigungen</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Benachrichtigungen</CardTitle></CardHeader>
               <CardBody className="space-y-1">
-                <Toggle
-                  icon={<Smartphone className="size-4" />}
-                  label="Push · Neue Eltern-Nachricht"
-                  detail="Sofort, wenn ein Elternteil schreibt"
-                  on
-                />
-                <Toggle
-                  icon={<Smartphone className="size-4" />}
-                  label="Push · Schüler-Frage zu Aufgabe"
-                  detail="Direkt im Tutor- oder Aufgaben-Kontext"
-                  on
-                />
-                <Toggle
-                  icon={<Mail className="size-4" />}
-                  label="E-Mail · Tageszusammenfassung 7 Uhr"
-                  detail="Was steht heute an? Vertretungen, Korrekturen, Termine"
-                  on
-                />
-                <Toggle
-                  icon={<Bell className="size-4" />}
-                  label="Push · Korrektur-Stapel ≥ 20"
-                  detail="Erinnerung, wenn der Stapel groß wird"
-                  on={false}
-                />
-                <Toggle
-                  icon={<Bell className="size-4" />}
-                  label="Ruhe-Zeiten (18:00 – 07:00)"
-                  detail="Push wird unterdrückt · Notfälle ausgenommen"
-                  on
-                />
+                <PrefToggle prefKey="notif_eltern_msg" label="Push · Neue Eltern-Nachricht" detail="Sofort, wenn ein Elternteil schreibt" icon={<Smartphone className="size-4" />} defaultOn={pref(prefs, "notif_eltern_msg", true) as boolean} />
+                <PrefToggle prefKey="notif_schueler_frage" label="Push · Schüler-Frage zu Aufgabe" detail="Direkt im Tutor- oder Aufgaben-Kontext" icon={<Smartphone className="size-4" />} defaultOn={pref(prefs, "notif_schueler_frage", true) as boolean} />
+                <PrefToggle prefKey="notif_tageszusammenfassung" label="E-Mail · Tageszusammenfassung 7 Uhr" detail="Was steht heute an? Vertretungen, Korrekturen, Termine" icon={<Mail className="size-4" />} defaultOn={pref(prefs, "notif_tageszusammenfassung", true) as boolean} />
+                <PrefToggle prefKey="notif_korrektur_stapel" label="Push · Korrektur-Stapel ≥ 20" detail="Erinnerung, wenn der Stapel groß wird" icon={<Bell className="size-4" />} defaultOn={pref(prefs, "notif_korrektur_stapel", false) as boolean} />
+                <PrefToggle prefKey="notif_ruhezeiten" label="Ruhe-Zeiten (18:00 – 07:00)" detail="Push wird unterdrückt · Notfälle ausgenommen" icon={<Bell className="size-4" />} defaultOn={pref(prefs, "notif_ruhezeiten", true) as boolean} />
               </CardBody>
             </Card>
           </section>
 
+          {/* ── Privatsphäre ───────────────────────────────── */}
           <section id="privatsphaere">
             <Card>
-              <CardHeader>
-                <CardTitle>Privatsphäre</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Privatsphäre</CardTitle></CardHeader>
               <CardBody className="space-y-1">
-                <Toggle
-                  icon={<Eye className="size-4" />}
-                  label="Sprechstunde öffentlich für Eltern"
-                  detail="Eltern können selbst Termine buchen"
-                  on
-                />
-                <Toggle
-                  icon={<Eye className="size-4" />}
-                  label="Klassen-Statistiken im Lehrer-Kollegium teilen"
-                  detail="Anonymisiert · für Fachkonferenzen"
-                  on={false}
-                />
-                <Toggle
-                  icon={<Eye className="size-4" />}
-                  label="KI darf aus Korrekturen lernen"
-                  detail="Anonymisiert · verbessert Vorbewertungs-Qualität"
-                  on
-                />
+                <PrefToggle prefKey="priv_sprechstunde" label="Sprechstunde öffentlich für Eltern" detail="Eltern können selbst Termine buchen" icon={<Eye className="size-4" />} defaultOn={pref(prefs, "priv_sprechstunde", true) as boolean} />
+                <PrefToggle prefKey="priv_statistiken_teilen" label="Klassen-Statistiken im Lehrer-Kollegium teilen" detail="Anonymisiert · für Fachkonferenzen" icon={<Eye className="size-4" />} defaultOn={pref(prefs, "priv_statistiken_teilen", false) as boolean} />
+                <PrefToggle prefKey="priv_ki_lernen" label="KI darf aus Korrekturen lernen" detail="Anonymisiert · verbessert Vorbewertungs-Qualität" icon={<Eye className="size-4" />} defaultOn={pref(prefs, "priv_ki_lernen", true) as boolean} />
               </CardBody>
             </Card>
           </section>
 
+          {/* ── Darstellung ────────────────────────────────── */}
           <section id="darstellung">
             <Card>
-              <CardHeader>
-                <CardTitle>Darstellung</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Darstellung</CardTitle></CardHeader>
               <CardBody className="space-y-5">
                 <div>
-                  <p className="text-sm font-semibold">Theme</p>
-                  <div className="mt-3 grid grid-cols-3 gap-px border border-border bg-border">
-                    <ThemeOption label="Hell" active />
-                    <ThemeOption label="Dunkel" />
-                    <ThemeOption label="System" />
-                  </div>
+                  <p className="mb-3 text-sm font-semibold">Theme</p>
+                  <PrefSelector
+                    prefKey="theme"
+                    current={(pref(prefs, "theme", "system")) as string}
+                    options={[
+                      { value: "light", label: "Hell" },
+                      { value: "dark", label: "Dunkel" },
+                      { value: "system", label: "System" },
+                    ]}
+                  />
                 </div>
-                <Toggle
-                  icon={<Palette className="size-4" />}
-                  label="Kompakte Tabellen"
-                  detail="Mehr Zeilen pro Bildschirm"
-                  on={false}
+                <PrefToggle prefKey="compact_tables" label="Kompakte Tabellen" detail="Mehr Zeilen pro Bildschirm" icon={<Palette className="size-4" />} defaultOn={pref(prefs, "compact_tables", false) as boolean} />
+              </CardBody>
+            </Card>
+          </section>
+
+          {/* ── Sprache ────────────────────────────────────── */}
+          <section id="sprache">
+            <Card>
+              <CardHeader><CardTitle>Sprache</CardTitle></CardHeader>
+              <CardBody>
+                <PrefSelector
+                  prefKey="lang"
+                  current={(pref(prefs, "lang", "de")) as string}
+                  options={[
+                    { value: "de", label: "Deutsch", sub: "DE" },
+                    { value: "en", label: "English", sub: "EN" },
+                    { value: "tr", label: "Türkçe", sub: "TR" },
+                    { value: "pl", label: "Polski", sub: "PL" },
+                  ]}
                 />
               </CardBody>
             </Card>
           </section>
 
-          <section id="sprache">
-            <Card>
-              <CardHeader>
-                <CardTitle>Sprache</CardTitle>
-              </CardHeader>
-              <CardBody>
-                <div className="grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
-                  <LangOption label="Deutsch" code="DE" active />
-                  <LangOption label="English" code="EN" />
-                  <LangOption label="Türkçe" code="TR" />
-                  <LangOption label="Polski" code="PL" />
-                </div>
-              </CardBody>
-            </Card>
-          </section>
-
+          {/* ── Geräte & Sessions ──────────────────────────── */}
           <section id="geraete">
             <Card>
               <CardHeader>
@@ -281,40 +235,44 @@ export default async function TeachEinstellungenPage() {
                   <p className="border-t border-border px-5 py-4 text-sm text-muted-fg">Keine Sessions.</p>
                 ) : (
                   <ul className="divide-y divide-border border-t border-border">
-                    {user.sessions.map((s, i) => (
-                      <DeviceRow
-                        key={s.id}
-                        icon={i === 0 ? Laptop : Smartphone}
-                        name={s.userAgent?.slice(0, 60) ?? "Unbekanntes Gerät"}
-                        location={s.ipAddress ?? "—"}
-                        time={i === 0 ? "diese Sitzung" : s.lastUsedAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}
-                        current={i === 0}
-                      />
-                    ))}
+                    {user.sessions.map((s) => {
+                      const isCurrent = s.token === currentToken;
+                      return (
+                        <li key={s.id} className="flex items-center gap-4 px-5 py-4">
+                          {isCurrent ? (
+                            <Laptop className="size-4 shrink-0 text-muted-fg" strokeWidth={1.75} />
+                          ) : (
+                            <Smartphone className="size-4 shrink-0 text-muted-fg" strokeWidth={1.75} />
+                          )}
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-2">
+                              <p className="truncate text-sm font-semibold">
+                                {s.userAgent?.slice(0, 60) ?? "Unbekanntes Gerät"}
+                              </p>
+                              {isCurrent && <Badge variant="brand">Jetzt</Badge>}
+                            </div>
+                            <p className="text-xs text-muted-fg">
+                              {s.ipAddress ?? "—"} · {isCurrent ? "diese Sitzung" : s.lastUsedAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}
+                            </p>
+                          </div>
+                          {!isCurrent && <SessionLogoutButton sessionId={s.id} />}
+                        </li>
+                      );
+                    })}
                   </ul>
                 )}
               </CardBody>
             </Card>
           </section>
 
+          {/* ── Daten & DSGVO ──────────────────────────────── */}
           <section id="daten">
             <Card>
-              <CardHeader>
-                <CardTitle>Daten & DSGVO</CardTitle>
-              </CardHeader>
+              <CardHeader><CardTitle>Daten & DSGVO</CardTitle></CardHeader>
               <CardBody className="space-y-3">
                 <div className="grid gap-px border border-border bg-border sm:grid-cols-2">
-                  <DataAction
-                    icon={<Download className="size-4" />}
-                    label="Daten exportieren"
-                    detail="Alle eigenen Daten · ZIP"
-                  />
-                  <DataAction
-                    icon={<Trash2 className="size-4" />}
-                    label="Account schließen"
-                    detail="Schul-Admin-Bestätigung erforderlich"
-                    danger
-                  />
+                  <DataAction icon={<Download className="size-4" />} label="Daten exportieren" detail="Alle eigenen Daten · ZIP" />
+                  <DataAction icon={<Trash2 className="size-4" />} label="Account schließen" detail="Schul-Admin-Bestätigung erforderlich" danger />
                 </div>
                 <p className="text-xs text-muted-fg">
                   Schul-Daten verbleiben bei der Schule. Persönliche Daten gem. DSGVO Art. 17 löschbar.
@@ -328,17 +286,7 @@ export default async function TeachEinstellungenPage() {
   );
 }
 
-function Field({
-  label,
-  value,
-  action,
-  status,
-}: {
-  label: string;
-  value: string;
-  action?: string;
-  status?: "ok";
-}) {
+function Field({ label, value, status }: { label: string; value: string; status?: "ok" }) {
   return (
     <div className="flex flex-col gap-2 border-b border-border pb-4 last:border-b-0 last:pb-0 sm:flex-row sm:items-center sm:justify-between">
       <div>
@@ -348,152 +296,17 @@ function Field({
           {value}
         </p>
       </div>
-      {action && (
-        <Button variant="ghost" size="sm">
-          {action}
-        </Button>
-      )}
     </div>
   );
 }
 
-function Toggle({
-  icon,
-  label,
-  detail,
-  on,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  detail: string;
-  on: boolean;
-}) {
-  return (
-    <div className="flex items-start gap-3 border-b border-border py-3 last:border-b-0">
-      <span className="mt-0.5 grid size-7 shrink-0 place-items-center bg-surface text-muted-fg">
-        {icon}
-      </span>
-      <div className="min-w-0 flex-1">
-        <p className="text-sm font-semibold">{label}</p>
-        <p className="mt-0.5 text-xs text-muted-fg">{detail}</p>
-      </div>
-      <button
-        type="button"
-        role="switch"
-        aria-checked={on}
-        aria-label={label}
-        className={`relative h-5 w-9 shrink-0 transition-colors ${
-          on ? "bg-brand" : "bg-border-strong"
-        }`}
-      >
-        <span
-          className={`absolute top-0.5 size-4 bg-bg transition-[left] ${
-            on ? "left-[18px]" : "left-0.5"
-          }`}
-        />
-      </button>
-    </div>
-  );
-}
-
-function ThemeOption({ label, active }: { label: string; active?: boolean }) {
+function DataAction({ icon, label, detail, danger }: { icon: React.ReactNode; label: string; detail: string; danger?: boolean }) {
   return (
     <button
       type="button"
-      aria-pressed={active}
-      className={`px-4 py-3 text-sm transition-colors ${
-        active ? "bg-fg text-bg" : "bg-bg text-muted-fg hover:bg-surface"
-      }`}
+      className={`group flex items-start gap-3 bg-bg p-5 text-left transition-colors ${danger ? "hover:bg-danger/[0.04]" : "hover:bg-surface"}`}
     >
-      {label}
-    </button>
-  );
-}
-
-function LangOption({
-  label,
-  code,
-  active,
-}: {
-  label: string;
-  code: string;
-  active?: boolean;
-}) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      className={`flex flex-col items-start gap-0.5 px-4 py-3 text-left transition-colors ${
-        active ? "bg-fg text-bg" : "bg-bg text-muted-fg hover:bg-surface"
-      }`}
-    >
-      <span className="font-mono text-[10px] uppercase tracking-wider opacity-70">
-        {code}
-      </span>
-      <span className="text-sm font-semibold">{label}</span>
-    </button>
-  );
-}
-
-function DeviceRow({
-  icon: Icon,
-  name,
-  location,
-  time,
-  current,
-}: {
-  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
-  name: string;
-  location: string;
-  time: string;
-  current?: boolean;
-}) {
-  return (
-    <li className="flex items-center gap-4 px-5 py-4">
-      <Icon className="size-4 shrink-0 text-muted-fg" strokeWidth={1.75} />
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2">
-          <p className="truncate text-sm font-semibold">{name}</p>
-          {current && <Badge variant="brand">Jetzt</Badge>}
-        </div>
-        <p className="text-xs text-muted-fg">
-          {location} · {time}
-        </p>
-      </div>
-      {!current && (
-        <Button variant="ghost" size="sm">
-          Abmelden
-        </Button>
-      )}
-    </li>
-  );
-}
-
-function DataAction({
-  icon,
-  label,
-  detail,
-  danger,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  detail: string;
-  danger?: boolean;
-}) {
-  return (
-    <button
-      type="button"
-      className={`group flex items-start gap-3 bg-bg p-5 text-left transition-colors ${
-        danger ? "hover:bg-danger/[0.04]" : "hover:bg-surface"
-      }`}
-    >
-      <span
-        className={`grid size-9 shrink-0 place-items-center transition-colors ${
-          danger
-            ? "bg-danger/10 text-danger group-hover:bg-danger group-hover:text-bg"
-            : "bg-surface text-fg group-hover:bg-fg group-hover:text-bg"
-        }`}
-      >
+      <span className={`grid size-9 shrink-0 place-items-center transition-colors ${danger ? "bg-danger/10 text-danger group-hover:bg-danger group-hover:text-bg" : "bg-surface text-fg group-hover:bg-fg group-hover:text-bg"}`}>
         {icon}
       </span>
       <div className="min-w-0 flex-1">

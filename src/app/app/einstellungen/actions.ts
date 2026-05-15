@@ -1,8 +1,26 @@
 "use server";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
 import { hashPassword, verifyPassword } from "@/lib/auth/passwords";
+
+export async function updatePref(key: string, formData: FormData) {
+  const session = await getSession();
+  if (!session) return;
+  const value = formData.get("value") as string;
+  const user = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: { prefs: true },
+  });
+  const existing = user?.prefs ? (JSON.parse(user.prefs) as Record<string, unknown>) : {};
+  existing[key] = value === "true" ? true : value === "false" ? false : value;
+  await prisma.user.update({
+    where: { id: session.userId },
+    data: { prefs: JSON.stringify(existing) },
+  });
+  revalidatePath("/app/einstellungen");
+}
 
 export async function logoutDevice(sessionId: string) {
   const session = await getSession();
@@ -25,6 +43,19 @@ export async function logoutAllDevices() {
     },
   });
   revalidatePath("/app/einstellungen");
+}
+
+export async function deleteOwnAccount(formData: FormData) {
+  const session = await getSession();
+  if (!session) return;
+  const confirm = formData.get("confirm") as string;
+  if (confirm !== "LÖSCHEN") return;
+  await prisma.session.deleteMany({ where: { userId: session.userId } });
+  await prisma.user.update({
+    where: { id: session.userId },
+    data: { email: `deleted_${session.userId}@deleted.invalid`, name: "Gelöschter Nutzer", passwordHash: "" },
+  });
+  redirect("/login");
 }
 
 export async function changePassword(formData: FormData) {

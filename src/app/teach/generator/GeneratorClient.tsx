@@ -142,13 +142,15 @@ export function GeneratorClient({ tscList, recentAssignments, quotaUsed, quotaLi
   }
 
   async function handleSendToClass() {
-    if (!selectedTsc) return;
+    if (!selectedTsc || !examResult) return;
     setSending(true);
     setSendResult(null);
     try {
-      const title = examResult?.title
-        ?? (form.topic ? `${form.topic} · ${selectedTsc.class.name}` : `Generierter Test · ${selectedTsc.class.name}`);
-      await sendToClass(selectedTsc.class.id, selectedTsc.subject.id, title);
+      const title = examResult.title ?? `${form.topic} · ${selectedTsc.class.name}`;
+      const description = examResult.questions
+        .map((q) => `Aufgabe ${q.number} (${q.points} P.) — ${q.type}\n${q.title}${q.expected ? `\n→ ${q.expected}` : ""}`)
+        .join("\n\n");
+      await sendToClass(selectedTsc.class.id, selectedTsc.subject.id, title, description, examResult.totalPoints);
       setSendResult("sent");
     } catch {
       setSendResult("error");

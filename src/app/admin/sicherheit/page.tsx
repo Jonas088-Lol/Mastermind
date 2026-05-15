@@ -1,22 +1,29 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { CheckCircle2, Key, Lock, ShieldCheck, XCircle } from "lucide-react";
+import { CheckCircle2, Key, Lock, ShieldCheck, Trash2, XCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
-import { sendTwoFAReminders } from "./actions";
+import { createApiToken, revokeApiToken, sendTwoFAReminders } from "./actions";
 
 export const metadata: Metadata = { title: "Sicherheit · Admin" };
 
-export default async function AdminSicherheitPage() {
+interface PageProps {
+  searchParams: Promise<{ newToken?: string; tokenName?: string }>;
+}
+
+export default async function AdminSicherheitPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
 
+  const { newToken, tokenName } = await searchParams;
   const schoolId = session.schoolId;
 
-  const [teacherCount, teacherWith2FA, adminCount, adminWith2FA, loginsToday] = await Promise.all([
+  const [teacherCount, teacherWith2FA, adminCount, adminWith2FA, loginsToday, apiTokens] = await Promise.all([
     prisma.user.count({ where: { role: "teacher", ...(schoolId ? { schoolId } : {}) } }),
     prisma.user.count({ where: { role: "teacher", twoFactor: true, ...(schoolId ? { schoolId } : {}) } }),
     prisma.user.count({ where: { role: { in: ["admin", "super"] }, ...(schoolId ? { schoolId } : {}) } }),
@@ -27,6 +34,12 @@ export default async function AdminSicherheitPage() {
         ...(schoolId ? { user: { schoolId } } : {}),
       },
     }),
+    schoolId
+      ? prisma.apiToken.findMany({
+          where: { schoolId },
+          orderBy: { createdAt: "desc" },
+        })
+      : Promise.resolve([]),
   ]);
 
   const twoFAPct = teacherCount > 0 ? Math.round((teacherWith2FA / teacherCount) * 100) : 0;
@@ -146,17 +159,98 @@ export default async function AdminSicherheitPage() {
         <CardHeader>
           <div className="flex items-center gap-2">
             <Key className="size-4 text-muted-fg" />
-            <CardTitle>API-Zugriff & Tokens</CardTitle>
+            <CardTitle>API-Tokens · {apiTokens.length}</CardTitle>
           </div>
         </CardHeader>
-        <CardBody>
-          <div className="border border-dashed border-border bg-surface p-4 text-center">
-            <Key className="mx-auto size-7 text-muted-fg" strokeWidth={1.5} />
-            <p className="mt-3 text-sm font-semibold">Keine API-Tokens konfiguriert</p>
-            <p className="mt-1 text-xs text-muted-fg">
-              API-Token-Verwaltung für Drittanbieter-Integrationen steht in einer zukünftigen Version bereit.
-            </p>
-          </div>
+        <CardBody className="space-y-5">
+          {newToken && (
+            <div className="border border-success bg-success/[0.06] p-4">
+              <p className="mb-1 text-xs font-semibold text-success">
+                Token &bdquo;{tokenName}&ldquo; erstellt — einmalig sichtbar
+              </p>
+              <p className="break-all font-mono text-sm">{newToken}</p>
+              <p className="mt-2 text-xs text-muted-fg">
+                Kopiere diesen Token jetzt. Er wird nicht erneut angezeigt.
+              </p>
+            </div>
+          )}
+
+          {apiTokens.length > 0 && (
+            <ul className="divide-y divide-border border border-border">
+              {apiTokens.map((t) => {
+                const revokeAction = revokeApiToken.bind(null, t.id);
+                const expired = t.expiresAt ? t.expiresAt < new Date() : false;
+                return (
+                  <li key={t.id} className="flex items-center gap-3 px-4 py-3">
+                    <Key className="size-4 shrink-0 text-muted-fg" strokeWidth={1.5} />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <p className="text-sm font-semibold">{t.name}</p>
+                        <Badge variant={expired ? "danger" : "success"}>
+                          {expired ? "abgelaufen" : t.scopes}
+                        </Badge>
+                      </div>
+                      <p className="font-mono text-xs text-muted-fg">
+                        {t.prefix}… · erstellt {t.createdAt.toLocaleDateString("de-DE")}
+                        {t.lastUsedAt && ` · zuletzt genutzt ${t.lastUsedAt.toLocaleDateString("de-DE")}`}
+                        {t.expiresAt && ` · läuft ab ${t.expiresAt.toLocaleDateString("de-DE")}`}
+                      </p>
+                    </div>
+                    <form action={revokeAction}>
+                      <button
+                        type="submit"
+                        aria-label="Token widerrufen"
+                        className="grid size-7 place-items-center text-muted-fg transition-colors hover:bg-danger/10 hover:text-danger"
+                      >
+                        <Trash2 className="size-3.5" />
+                      </button>
+                    </form>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+
+          <form action={createApiToken} className="space-y-3 border-t border-border pt-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">Neuer Token</p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="space-y-1">
+                <Label htmlFor="token-name">Name</Label>
+                <Input id="token-name" name="name" placeholder="z. B. Untis-Sync" required />
+              </div>
+              <div className="space-y-1">
+                <Label htmlFor="token-scopes">Berechtigungen</Label>
+                <select
+                  id="token-scopes"
+                  name="scopes"
+                  className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
+                >
+                  <option value="read">read — Lesezugriff</option>
+                  <option value="write">write — Schreib- & Lesezugriff</option>
+                  <option value="admin">admin — Vollzugriff</option>
+                </select>
+              </div>
+              <div className="space-y-1 sm:col-span-2">
+                <Label htmlFor="token-expires">Ablaufdatum</Label>
+                <select
+                  id="token-expires"
+                  name="expiresIn"
+                  className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
+                >
+                  <option value="">Kein Ablaufdatum</option>
+                  <option value="30d">30 Tage</option>
+                  <option value="90d">90 Tage</option>
+                  <option value="365d">1 Jahr</option>
+                </select>
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="bg-fg px-4 py-2 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+            >
+              Token erstellen
+            </button>
+          </form>
         </CardBody>
       </Card>
     </div>

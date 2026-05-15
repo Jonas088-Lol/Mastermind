@@ -33,10 +33,11 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Schul-Admin" };
 
-function buildIntegrations() {
+function buildIntegrations(dbSso: { provider: string; enabled: boolean }[]) {
+  const ssoMap = Object.fromEntries(dbSso.map((c) => [c.provider, c.enabled]));
   return [
-    { name: "Microsoft Entra SSO", configured: Boolean(process.env.AZURE_CLIENT_ID) },
-    { name: "Google Workspace", configured: Boolean(process.env.GOOGLE_CLIENT_ID) },
+    { name: "Microsoft Entra SSO", configured: Boolean(process.env.AZURE_CLIENT_ID) || Boolean(ssoMap["entra"]) },
+    { name: "Google Workspace", configured: Boolean(process.env.GOOGLE_CLIENT_ID) || Boolean(ssoMap["google"]) },
     { name: "Apple School Manager", configured: false },
     { name: "Untis-Stundenplan", configured: false },
     { name: "WebUntis API", configured: false },
@@ -81,21 +82,26 @@ export default async function AdminPage() {
     ]);
 
   const totalUsers = studentCount + teacherCount + parentCount + adminCount;
-  const integrations = buildIntegrations();
 
-  const school = schoolId
-    ? await prisma.school.findUnique({ where: { id: schoolId }, select: { name: true, plan: true, seats: true } })
-    : null;
+  const [school, dbSsoConfigs] = await Promise.all([
+    schoolId
+      ? prisma.school.findUnique({ where: { id: schoolId }, select: { name: true, plan: true, seats: true } })
+      : null,
+    schoolId
+      ? prisma.ssoConfig.findMany({ where: { schoolId }, select: { provider: true, enabled: true } })
+      : Promise.resolve([]),
+  ]);
 
   const schoolName = school?.name ?? "Schule";
   const firstName = session.name.split(" ")[0];
+  const integrations = buildIntegrations(dbSsoConfigs);
 
   // Real metrics
   const now = new Date();
   const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
 
-  const [loginsToday, aiUsageMonth, activeUserCount] = await Promise.all([
+  const [loginsToday, aiUsageMonth, activeUserCount, twoFaTeachers] = await Promise.all([
     prisma.session.count({
       where: { createdAt: { gte: startOfDay } },
     }),
@@ -104,6 +110,7 @@ export default async function AdminPage() {
       where: { updatedAt: { gte: startOfMonth } },
     }),
     prisma.user.count({ where: schoolId ? { schoolId } : {} }),
+    prisma.user.count({ where: { role: "teacher", twoFactor: true, ...(schoolId ? { schoolId } : {}) } }),
   ]);
 
   const aiRequestsMonth = aiUsageMonth._sum.used ?? 0;
@@ -546,9 +553,20 @@ export default async function AdminPage() {
             </CardHeader>
             <CardBody>
               <ul className="space-y-2.5 text-xs">
-                <SystemRow icon={Database} label="Datenbank" detail="Frankfurt am Main · p95 12ms" ok />
-                <SystemRow icon={ShieldCheck} label="2FA-Abdeckung" detail={`${teacherCount} von ${teacherCount} Lehrern`} ok />
-                <SystemRow icon={AlertTriangle} label="Failed Logins" detail="3 in 24h · normal" warn />
+                <SystemRow icon={Database} label="Datenbank" detail="Verbunden" ok />
+                <SystemRow
+                  icon={ShieldCheck}
+                  label="2FA-Abdeckung"
+                  detail={teacherCount > 0 ? `${twoFaTeachers} / ${teacherCount} Lehrer` : "Keine Lehrer"}
+                  ok={twoFaTeachers === teacherCount && teacherCount > 0}
+                  warn={twoFaTeachers < teacherCount}
+                />
+                <SystemRow
+                  icon={Activity}
+                  label="Logins heute"
+                  detail={`${loginsToday} Sessions`}
+                  ok={loginsToday > 0}
+                />
               </ul>
             </CardBody>
           </Card>

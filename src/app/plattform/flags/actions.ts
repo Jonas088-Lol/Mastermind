@@ -48,6 +48,51 @@ export async function toggleFlag(name: string): Promise<void> {
   revalidatePath("/plattform/flags");
 }
 
+export async function createFlag(formData: FormData): Promise<void> {
+  const session = await getSession();
+  if (!session || !isSuper(session)) redirect("/login");
+
+  const name = String(formData.get("name") ?? "").trim().toLowerCase().replace(/\s+/g, "-");
+  const description = String(formData.get("description") ?? "").trim();
+  const state = (formData.get("state") ?? "off") as "on" | "off" | "rollout" | "experiment";
+  const rollout = Math.min(100, Math.max(0, Number(formData.get("rollout") ?? 0)));
+  const owner = String(formData.get("owner") ?? "Plattform").trim();
+  const scope = String(formData.get("scope") ?? "alle").trim();
+
+  if (!name || !description) redirect("/plattform/flags/neu?error=Pflichtfelder+fehlen");
+
+  const existing = await prisma.featureFlag.findUnique({ where: { name } });
+  if (existing) redirect("/plattform/flags/neu?error=Flag+existiert+bereits");
+
+  await prisma.featureFlag.create({ data: { name, description, state, rollout, owner, scope } });
+  revalidatePath("/plattform/flags");
+  redirect("/plattform/flags");
+}
+
+export async function updateFlag(name: string, formData: FormData): Promise<void> {
+  const session = await getSession();
+  if (!session || !isSuper(session)) redirect("/login");
+
+  const description = String(formData.get("description") ?? "").trim();
+  const state = (formData.get("state") ?? "off") as "on" | "off" | "rollout" | "experiment";
+  const rollout = Math.min(100, Math.max(0, Number(formData.get("rollout") ?? 0)));
+  const owner = String(formData.get("owner") ?? "").trim();
+  const scope = String(formData.get("scope") ?? "").trim();
+
+  await prisma.featureFlag.update({ where: { name }, data: { description, state, rollout, owner, scope } });
+  revalidatePath("/plattform/flags");
+  redirect("/plattform/flags");
+}
+
+export async function deleteFlag(name: string): Promise<void> {
+  const session = await getSession();
+  if (!session || !isSuper(session)) redirect("/login");
+
+  await prisma.featureFlag.delete({ where: { name } });
+  revalidatePath("/plattform/flags");
+  redirect("/plattform/flags");
+}
+
 export async function updateFlagState(
   name: string,
   state: "on" | "off" | "rollout" | "experiment",

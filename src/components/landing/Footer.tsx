@@ -1,21 +1,47 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 
-const cols = [
+type ColLink = { label: string; href?: string };
+
+const cols: { title: string; links: ColLink[] }[] = [
   {
     title: "Produkt",
-    links: ["Für Schulen", "Für Lehrer", "Für Schüler", "Für Eltern", "Preise"],
+    links: [
+      { label: "Für Schulen" },
+      { label: "Für Lehrer" },
+      { label: "Für Schüler" },
+      { label: "Für Eltern" },
+      { label: "Preise" },
+    ],
   },
   {
     title: "Plattform",
-    links: ["KI-Tutor", "Stundenplan", "Klassenbuch", "API", "Status"],
+    links: [
+      { label: "KI-Tutor" },
+      { label: "Stundenplan" },
+      { label: "Klassenbuch" },
+      { label: "API" },
+      { label: "Status" },
+    ],
   },
   {
     title: "Unternehmen",
-    links: ["Über uns", "Karriere", "Presse", "Kontakt"],
+    links: [
+      { label: "Über uns" },
+      { label: "Karriere" },
+      { label: "Presse" },
+      { label: "Kontakt" },
+    ],
   },
   {
     title: "Recht",
-    links: ["Impressum", "Datenschutz", "AGB", "AVV", "Cookies"],
+    links: [
+      { label: "Impressum", href: "/impressum" },
+      { label: "Datenschutz", href: "/datenschutz" },
+      { label: "AGB", href: "/agb" },
+      { label: "AVV", href: "/avv" },
+      { label: "Cookies" },
+    ],
   },
 ];
 
@@ -43,13 +69,17 @@ export function Footer() {
             </p>
             <ul className="mt-4 space-y-2 text-sm">
               {c.links.map((l) => (
-                <li key={l}>
-                  <a
-                    href="#"
-                    className="text-fg/80 transition-colors hover:text-fg"
-                  >
-                    {l}
-                  </a>
+                <li key={l.label}>
+                  {l.href ? (
+                    <Link
+                      href={l.href}
+                      className="text-fg/80 transition-colors hover:text-fg"
+                    >
+                      {l.label}
+                    </Link>
+                  ) : (
+                    <span className="cursor-default text-fg/40">{l.label}</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -59,7 +89,7 @@ export function Footer() {
 
       <div className="border-t border-border">
         <Container className="flex flex-col items-start justify-between gap-3 py-6 text-xs text-muted-fg sm:flex-row sm:items-center">
-          <p>© 2027 MasterMind GmbH · Hosting Frankfurt am Main</p>
+          <p>© {new Date().getFullYear()} MasterMind GmbH · Hosting Frankfurt am Main</p>
           <p className="font-mono">
             Made with <span className="text-brand">◆</span> in Deutschland
           </p>
