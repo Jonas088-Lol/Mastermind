@@ -12,34 +12,7 @@ import {
   isSuper,
 } from "@/lib/session";
 import { fetchNotifications } from "@/lib/notifications";
-
-const items: NavItem[] = [
-  { href: "/teach", label: "Dashboard", icon: "home", exact: true },
-  { href: "/teach/klassen", label: "Klassen", icon: "users", badge: "4" },
-  { href: "/teach/aufgaben", label: "Aufgaben", icon: "checkSquare" },
-  { href: "/teach/korrektur", label: "Korrektur", icon: "clipboardEdit", badge: "23" },
-  { href: "/teach/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
-  { href: "/teach/arbeitsblatter/templates", label: "Vorlagen", icon: "layers" },
-  { href: "/teach/generator", label: "KI-Generator", icon: "sparkles" },
-  { href: "/teach/kompetenzen", label: "Kompetenzen", icon: "lineChart" },
-  { href: "/teach/lernpfade", label: "Lernpfade", icon: "layers" },
-  { href: "/teach/klassenbuch", label: "Klassenbuch", icon: "bookMarked" },
-  { href: "/teach/abwesenheit", label: "Abwesenheiten", icon: "calendar" },
-  { href: "/teach/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: "5" },
-];
-
-const bottomItems: NavItem[] = [
-  { href: "/teach/profil", label: "Profil", icon: "userCircle" },
-  { href: "/teach/einstellungen", label: "Einstellungen", icon: "settings" },
-];
-
-const mobileNav: BottomNavItem[] = [
-  { href: "/teach", label: "Start", icon: "home", exact: true },
-  { href: "/teach/klassen", label: "Klassen", icon: "users", badge: "4" },
-  { href: "/teach/korrektur", label: "Korrektur", icon: "clipboardEdit", badge: "23" },
-  { href: "/teach/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: "5" },
-  { href: "/teach/generator", label: "KI", icon: "sparkles" },
-];
+import { prisma } from "@/lib/db/client";
 
 export default async function TeachLayout({
   children,
@@ -52,7 +25,60 @@ export default async function TeachLayout({
   const effective = effectiveRole(session);
   if (effective !== "teacher") redirect(ROLE_HOME[effective]);
 
-  const { notifications, unreadCount } = await fetchNotifications(session.userId);
+  const [{ notifications, unreadCount }, pendingCorrections, unreadThreads] = await Promise.all([
+    fetchNotifications(session.userId),
+    prisma.submission.count({
+      where: { assignment: { teacherId: session.userId }, status: "submitted" },
+    }),
+    prisma.messageParticipant.count({
+      where: {
+        userId: session.userId,
+        thread: {
+          messages: {
+            some: {
+              senderId: { not: session.userId },
+              sentAt: { gt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
+            },
+          },
+        },
+        OR: [
+          { lastReadAt: null },
+          { thread: { updatedAt: { gt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) } } },
+        ],
+      },
+    }),
+  ]);
+
+  const corrBadge = pendingCorrections > 0 ? String(pendingCorrections) : undefined;
+  const msgBadge = unreadThreads > 0 ? String(unreadThreads) : undefined;
+
+  const items: NavItem[] = [
+    { href: "/teach", label: "Dashboard", icon: "home", exact: true },
+    { href: "/teach/klassen", label: "Klassen", icon: "users" },
+    { href: "/teach/aufgaben", label: "Aufgaben", icon: "checkSquare" },
+    { href: "/teach/korrektur", label: "Korrektur", icon: "clipboardEdit", badge: corrBadge },
+    { href: "/teach/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
+    { href: "/teach/arbeitsblatter/templates", label: "Vorlagen", icon: "layers" },
+    { href: "/teach/generator", label: "KI-Generator", icon: "sparkles" },
+    { href: "/teach/kompetenzen", label: "Kompetenzen", icon: "lineChart" },
+    { href: "/teach/lernpfade", label: "Lernpfade", icon: "layers" },
+    { href: "/teach/klassenbuch", label: "Klassenbuch", icon: "bookMarked" },
+    { href: "/teach/abwesenheit", label: "Abwesenheiten", icon: "calendar" },
+    { href: "/teach/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: msgBadge },
+  ];
+
+  const bottomItems: NavItem[] = [
+    { href: "/teach/profil", label: "Profil", icon: "userCircle" },
+    { href: "/teach/einstellungen", label: "Einstellungen", icon: "settings" },
+  ];
+
+  const mobileNav: BottomNavItem[] = [
+    { href: "/teach", label: "Start", icon: "home", exact: true },
+    { href: "/teach/klassen", label: "Klassen", icon: "users" },
+    { href: "/teach/korrektur", label: "Korrektur", icon: "clipboardEdit", badge: corrBadge },
+    { href: "/teach/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: msgBadge },
+    { href: "/teach/generator", label: "KI", icon: "sparkles" },
+  ];
 
   return (
     <div className="flex min-h-screen bg-surface">
