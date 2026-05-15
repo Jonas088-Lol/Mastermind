@@ -57,6 +57,8 @@ export default async function TeachLayout({
     { href: "/teach/klassen", label: "Klassen", icon: "users" },
     { href: "/teach/aufgaben", label: "Aufgaben", icon: "checkSquare" },
     { href: "/teach/korrektur", label: "Korrektur", icon: "clipboardEdit", badge: corrBadge },
+    { href: "/teach/noten", label: "Noten", icon: "lineChart" },
+    { href: "/teach/plan", label: "Stundenplan", icon: "calendar" },
     { href: "/teach/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
     { href: "/teach/arbeitsblatter/templates", label: "Vorlagen", icon: "layers" },
     { href: "/teach/generator", label: "KI-Generator", icon: "sparkles" },
