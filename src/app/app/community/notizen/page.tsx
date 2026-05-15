@@ -5,7 +5,7 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardBody } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
-import { getSession } from "@/lib/session";
+import { effectiveRole, getSession } from "@/lib/session";
 import { deleteNote } from "./[id]/actions";
 
 export const metadata: Metadata = { title: "Notizen · Community" };
@@ -13,6 +13,8 @@ export const metadata: Metadata = { title: "Notizen · Community" };
 export default async function CommunityNotizenPage() {
   const session = await getSession();
   if (!session) redirect("/login");
+  const role = effectiveRole(session);
+  const canModerate = role === "teacher" || role === "admin" || role === "super";
 
   const notes = await prisma.note.findMany({
     where: {
@@ -68,7 +70,7 @@ export default async function CommunityNotizenPage() {
                         >
                           <ArrowRight className="size-3.5" />
                         </Link>
-                        {isOwner && (
+                        {(isOwner || canModerate) && (
                           <form action={deleteNote.bind(null, n.id)}>
                             <button
                               type="submit"

@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
+import { pushToUsers } from "@/lib/push";
 import { getSession } from "@/lib/session";
 
 export async function updateAttendance(
@@ -64,6 +65,37 @@ export async function createIncident(formData: FormData) {
       text,
     },
   });
+
+  // Notify parents of the student when a Verweis (warning) is issued
+  if (type === "Verweis") {
+    const parentLinks = await prisma.parentStudentLink.findMany({
+      where: { studentId },
+      select: { parentId: true },
+    });
+    const student = await prisma.user.findUnique({
+      where: { id: studentId },
+      select: { name: true },
+    });
+    if (parentLinks.length > 0) {
+      const parentIds = parentLinks.map((l) => l.parentId);
+      const body = `${student?.name ?? "Ihr Kind"} hat einen Verweis erhalten.`;
+      await Promise.all([
+        pushToUsers(parentIds, {
+          title: "Verweis eingetragen",
+          body,
+          url: "/eltern",
+        }).catch(() => {}),
+        prisma.appNotification.createMany({
+          data: parentIds.map((userId) => ({
+            userId,
+            type: "warning",
+            title: "Verweis eingetragen",
+            body,
+          })),
+        }),
+      ]);
+    }
+  }
 
   revalidatePath("/teach/klassenbuch");
 }

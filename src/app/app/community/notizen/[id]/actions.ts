@@ -11,10 +11,16 @@ export async function deleteNote(noteId: string): Promise<void> {
 
   const note = await prisma.note.findUnique({
     where: { id: noteId },
-    select: { authorId: true },
+    select: { authorId: true, author: { select: { schoolId: true } } },
   });
+  if (!note) return;
 
-  if (!note || note.authorId !== session.userId) return;
+  const { effectiveRole } = await import("@/lib/session");
+  const role = effectiveRole(session);
+  const isOwner = note.authorId === session.userId;
+  const isModerator = role === "teacher" || role === "admin" || role === "super";
+
+  if (!isOwner && !isModerator) return;
 
   await prisma.note.delete({ where: { id: noteId } });
   revalidatePath("/app/community/notizen");
