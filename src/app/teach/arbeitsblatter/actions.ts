@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { pushToUsers } from "@/lib/push";
 
 async function guardTeacher() {
   const session = await getSession();
@@ -189,6 +190,36 @@ export async function assignWorksheet(worksheetId: string, formData: FormData): 
       showSolution,
     },
   });
+
+  // Notify students in the assigned class
+  if (classId) {
+    const students = await prisma.user.findMany({
+      where: { classId, role: "student" },
+      select: { id: true },
+    });
+    const studentIds = students.map((s) => s.id);
+    if (studentIds.length > 0) {
+      const dueLabel = dueAt && !isNaN(dueAt.getTime())
+        ? ` · Fällig ${dueAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}`
+        : "";
+      await Promise.all([
+        pushToUsers(studentIds, {
+          title: "Neues Arbeitsblatt",
+          body: `${worksheet.title}${dueLabel}`,
+          url: `/app/arbeitsblatter`,
+        }),
+        prisma.appNotification.createMany({
+          data: studentIds.map((userId) => ({
+            userId,
+            type: "assignment",
+            title: "Neues Arbeitsblatt",
+            body: `${worksheet.title}${dueLabel}`,
+          })),
+          skipDuplicates: true,
+        }),
+      ]);
+    }
+  }
 
   revalidatePath(`/teach/arbeitsblatter/${worksheetId}`);
 }

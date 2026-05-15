@@ -92,6 +92,9 @@ export default async function WorksheetDetailPage({ params }: PageProps) {
         <Link href={`/teach/arbeitsblatter/${id}/vorschau`} className={buttonVariants({ variant: "outline", size: "sm" })}>
           Vorschau
         </Link>
+        <Link href={`/teach/arbeitsblatter/${id}/ergebnisse`} className={buttonVariants({ variant: "outline", size: "sm" })}>
+          Ergebnisse
+        </Link>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <h1 className="text-2xl font-bold tracking-tight">{worksheet.title}</h1>
