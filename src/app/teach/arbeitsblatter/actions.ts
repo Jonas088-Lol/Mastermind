@@ -215,7 +215,6 @@ export async function assignWorksheet(worksheetId: string, formData: FormData): 
             title: "Neues Arbeitsblatt",
             body: `${worksheet.title}${dueLabel}`,
           })),
-          skipDuplicates: true,
         }),
       ]);
     }
