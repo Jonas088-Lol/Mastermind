@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  Edit,
   GraduationCap,
   Plus,
   Trash2,
@@ -79,6 +80,13 @@ export default async function LernpfadePage() {
                   {p._count.modules} Module · {p._count.progress} Abschlüsse von Schülern
                 </p>
               </div>
+              <Link
+                href={`/teach/lernpfade/${p.id}`}
+                className={buttonVariants({ variant: "outline", size: "sm" })}
+              >
+                <Edit className="size-3.5" />
+                Bearbeiten
+              </Link>
               <form action={deleteLearningPath.bind(null, p.id)}>
                 <Button type="submit" variant="ghost" size="icon" aria-label="Lernpfad löschen">
                   <Trash2 className="size-4 text-muted-fg" strokeWidth={1.75} />
