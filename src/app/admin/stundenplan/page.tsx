@@ -5,6 +5,7 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { savePeriodConfig, saveTimetableEntry, deleteTimetableEntry } from "./actions";
+import { CsvImportCard } from "./CsvImportCard";
 
 export const metadata: Metadata = { title: "Stundenplan · Admin" };
 
@@ -100,6 +101,8 @@ export default async function AdminStundenplanPage() {
           </form>
         </CardBody>
       </Card>
+
+      <CsvImportCard />
 
       <Card>
         <CardHeader>
