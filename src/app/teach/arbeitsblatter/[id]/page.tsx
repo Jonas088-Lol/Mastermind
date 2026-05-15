@@ -18,27 +18,13 @@ import {
   saveWorksheetItem,
   updateWorksheet,
 } from "../actions";
+import { WorksheetItemForm } from "./WorksheetItemForm";
 
 export const metadata: Metadata = { title: "Arbeitsblatt bearbeiten" };
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
-
-const ITEM_TYPES = [
-  "text_input",
-  "fill_blank",
-  "multiple_choice",
-  "true_false",
-  "drag_drop",
-  "matching",
-  "sorting",
-  "drawing",
-  "number_wall",
-  "number_line",
-  "calculation_wheel",
-  "hundred_chart",
-] as const;
 
 const ITEM_TYPE_LABEL: Record<string, string> = {
   text_input: "Texteingabe",
@@ -53,21 +39,6 @@ const ITEM_TYPE_LABEL: Record<string, string> = {
   number_line: "Zahlenstrahl",
   calculation_wheel: "Rechenrad",
   hundred_chart: "Hunderterfeld",
-};
-
-const CONFIG_EXAMPLES: Record<string, string> = {
-  text_input: JSON.stringify({ label: "Erkläre in eigenen Worten:", multiline: true, maxLength: 500 }, null, 2),
-  fill_blank: JSON.stringify({ text: "Die Hauptstadt von Deutschland ist {{blank:0}}.", blanks: [{ id: "0" }] }, null, 2),
-  multiple_choice: JSON.stringify({ question: "Welche Antwort ist richtig?", options: ["Antwort A", "Antwort B", "Antwort C", "Antwort D"] }, null, 2),
-  true_false: JSON.stringify({ question: "Die Erde ist eine Scheibe." }, null, 2),
-  drag_drop: JSON.stringify({ instruction: "Ordne zu:", items: [{ id: "a", label: "Hund" }, { id: "b", label: "Katze" }, { id: "c", label: "Adler" }], zones: [{ id: "z1", label: "Säugetier" }, { id: "z2", label: "Vogel" }] }, null, 2),
-  matching: JSON.stringify({ instruction: "Verbinde:", leftItems: [{ id: "l1", label: "Berlin" }, { id: "l2", label: "Paris" }], rightItems: [{ id: "r1", label: "Frankreich" }, { id: "r2", label: "Deutschland" }] }, null, 2),
-  sorting: JSON.stringify({ instruction: "Sortiere:", items: [{ id: "1", label: "Frühling" }, { id: "2", label: "Sommer" }, { id: "3", label: "Herbst" }, { id: "4", label: "Winter" }] }, null, 2),
-  drawing: JSON.stringify({ instruction: "Zeichne ein Haus.", width: 600, height: 300 }, null, 2),
-  number_wall: JSON.stringify({ rows: [[3, null, 5, 2], [null, null, null], [null, null], [null]] }, null, 2),
-  number_line: JSON.stringify({ min: 0, max: 20, step: 1, toPlace: [7, 13, 18], showNumbers: true }, null, 2),
-  calculation_wheel: JSON.stringify({ center: 6, operation: "*", spokes: [1, 2, 3, 4, 5, 6, 7, 8, null, null], mode: "fill_outer" }, null, 2),
-  hundred_chart: JSON.stringify({ task: "Markiere alle Vielfachen von 5", mode: "mark", preMarked: [] }, null, 2),
 };
 
 export default async function WorksheetDetailPage({ params }: PageProps) {
@@ -277,78 +248,10 @@ export default async function WorksheetDetailPage({ params }: PageProps) {
           <CardTitle>Item hinzufügen</CardTitle>
         </CardHeader>
         <CardBody>
-          <div className="flex flex-col gap-6">
-            {ITEM_TYPES.map((type) => {
-              const saveAction = saveWorksheetItem.bind(null, id);
-              return (
-                <details key={type} className="group border border-border">
-                  <summary className="flex cursor-pointer items-center justify-between px-4 py-3 text-sm font-semibold hover:bg-surface">
-                    {ITEM_TYPE_LABEL[type]}
-                    <span className="text-xs font-normal text-muted-fg">aufklappen</span>
-                  </summary>
-                  <div className="border-t border-border px-4 pb-4 pt-4">
-                    <form action={saveAction} className="flex flex-col gap-4">
-                      <input type="hidden" name="type" value={type} />
-                      <input type="hidden" name="order" value={worksheet.items.length + 1} />
-
-                      <div className="flex flex-col gap-1.5">
-                        <Label htmlFor={`config-${type}`}>Config (JSON)</Label>
-                        <textarea
-                          id={`config-${type}`}
-                          name="config"
-                          rows={8}
-                          defaultValue={CONFIG_EXAMPLES[type] ?? "{}"}
-                          className="w-full border border-border bg-bg px-3 py-2 font-mono text-xs text-fg outline-none transition-colors focus-visible:border-brand focus-visible:ring-2 focus-visible:ring-brand/30"
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-1.5">
-                        <Label htmlFor={`answer-${type}`}>Korrekte Antwort (JSON, optional)</Label>
-                        <Input
-                          id={`answer-${type}`}
-                          name="correctAnswer"
-                          placeholder='z. B. "Berlin" oder [0, 2]'
-                        />
-                      </div>
-
-                      <div className="grid gap-4 sm:grid-cols-3">
-                        <div className="flex flex-col gap-1.5">
-                          <Label htmlFor={`hint-${type}`}>Hinweis</Label>
-                          <Input id={`hint-${type}`} name="hint" placeholder="Tipp für Schüler …" />
-                        </div>
-                        <div className="flex flex-col gap-1.5">
-                          <Label htmlFor={`points-${type}`}>Punkte</Label>
-                          <Input
-                            id={`points-${type}`}
-                            name="points"
-                            type="number"
-                            min={0}
-                            defaultValue={1}
-                          />
-                        </div>
-                        <div className="flex items-end gap-2 pb-0.5">
-                          <input
-                            id={`required-${type}`}
-                            name="required"
-                            type="checkbox"
-                            defaultChecked
-                            className="size-4 accent-brand"
-                          />
-                          <Label htmlFor={`required-${type}`}>Pflichtfeld</Label>
-                        </div>
-                      </div>
-
-                      <div className="flex justify-end border-t border-border pt-3">
-                        <button type="submit" className={buttonVariants({ size: "sm" })}>
-                          Item speichern
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </details>
-              );
-            })}
-          </div>
+          <WorksheetItemForm
+            nextOrder={worksheet.items.length + 1}
+            onSave={saveWorksheetItem.bind(null, id)}
+          />
         </CardBody>
       </Card>
 
