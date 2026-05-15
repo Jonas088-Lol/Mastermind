@@ -51,6 +51,7 @@ export default async function AppLayout({
     { href: "/app/uebungen", label: "Übungen", icon: "brain" },
     { href: "/app/karteikarten", label: "Karteikarten", icon: "layers", badge: dueFlashcards > 0 ? String(dueFlashcards) : undefined },
     { href: "/app/aufgaben", label: "Aufgaben", icon: "checkSquare", badge: pendingAssignments > 0 ? String(pendingAssignments) : undefined },
+    { href: "/app/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
     { href: "/app/plan", label: "Stundenplan", icon: "calendar" },
     { href: "/app/noten", label: "Noten", icon: "award" },
     { href: "/app/nachrichten", label: "Nachrichten", icon: "messageSquare" },

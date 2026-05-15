@@ -18,6 +18,8 @@ const items: NavItem[] = [
   { href: "/teach/klassen", label: "Klassen", icon: "users", badge: "4" },
   { href: "/teach/aufgaben", label: "Aufgaben", icon: "checkSquare" },
   { href: "/teach/korrektur", label: "Korrektur", icon: "clipboardEdit", badge: "23" },
+  { href: "/teach/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
+  { href: "/teach/arbeitsblatter/templates", label: "Vorlagen", icon: "layers" },
   { href: "/teach/generator", label: "KI-Generator", icon: "sparkles" },
   { href: "/teach/kompetenzen", label: "Kompetenzen", icon: "lineChart" },
   { href: "/teach/lernpfade", label: "Lernpfade", icon: "layers" },

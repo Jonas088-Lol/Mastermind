@@ -36,6 +36,7 @@ model School {
   teams            SchoolTeam[]
   ssoConfigs       SsoConfig[]
   apiTokens        ApiToken[]
+  worksheets       Worksheet[]
 }
 
 model SsoConfig {
@@ -130,6 +131,10 @@ model User {
   pushSubscriptions  PushSubscription[]
   fileUploads        FileUpload[]
 
+  createdWorksheets         Worksheet[]           @relation("CreatedWorksheets")
+  teacherWorksheetAssigns   WorksheetAssignment[] @relation("TeacherWorksheetAssignments")
+  worksheetSubmissions      WorksheetSubmission[] @relation("StudentWorksheetSubmissions")
+
   @@index([role])
   @@index([schoolId])
   @@index([classId])
@@ -223,6 +228,7 @@ model SchoolClass {
   assignments           Assignment[]
   lessonLogs            LessonLog[]
   incidents             ClassbookIncident[]
+  worksheetAssignments  WorksheetAssignment[]
 
   @@unique([schoolId, name])
   @@index([schoolId])
@@ -243,6 +249,7 @@ model Subject {
   flashcardDecks        FlashcardDeck[]
   lessonLogs            LessonLog[]
   learningPaths         LearningPath[]
+  worksheets            Worksheet[]
 
   @@index([schoolId])
 }
@@ -845,4 +852,99 @@ model ApiToken {
   createdAt  DateTime  @default(now())
 
   @@index([schoolId])
+}
+
+// ── Arbeitsblätter (Interactive Worksheet Engine) ──────────
+
+model Worksheet {
+  id               String   @id @default(cuid())
+  schoolId         String
+  school           School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  creatorId        String
+  creator          User     @relation("CreatedWorksheets", fields: [creatorId], references: [id], onDelete: Cascade)
+  title            String
+  description      String?
+  subjectId        String?
+  subject          Subject? @relation(fields: [subjectId], references: [id])
+  gradeLevel       Int?
+  difficulty       String   @default("mittel")
+  estimatedMinutes Int      @default(15)
+  status           String   @default("draft")
+  isTemplate       Boolean  @default(false)
+  language         String   @default("de")
+  items            WorksheetItem[]
+  assignments      WorksheetAssignment[]
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([schoolId])
+  @@index([creatorId])
+}
+
+model WorksheetItem {
+  id            String    @id @default(cuid())
+  worksheetId   String
+  worksheet     Worksheet @relation(fields: [worksheetId], references: [id], onDelete: Cascade)
+  type          String
+  order         Int
+  config        String
+  correctAnswer String?
+  hint          String?
+  points        Int       @default(1)
+  required      Boolean   @default(true)
+  answers       WorksheetItemAnswer[]
+
+  @@index([worksheetId])
+}
+
+model WorksheetAssignment {
+  id           String       @id @default(cuid())
+  worksheetId  String
+  worksheet    Worksheet    @relation(fields: [worksheetId], references: [id], onDelete: Cascade)
+  classId      String?
+  class        SchoolClass? @relation(fields: [classId], references: [id])
+  teacherId    String
+  teacher      User         @relation("TeacherWorksheetAssignments", fields: [teacherId], references: [id], onDelete: Cascade)
+  assignedAt   DateTime     @default(now())
+  dueAt        DateTime?
+  maxAttempts  Int          @default(1)
+  showHints    Boolean      @default(true)
+  showSolution Boolean      @default(false)
+  submissions  WorksheetSubmission[]
+
+  @@index([worksheetId])
+  @@index([classId])
+}
+
+model WorksheetSubmission {
+  id           String              @id @default(cuid())
+  assignmentId String
+  assignment   WorksheetAssignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  studentId    String
+  student      User                @relation("StudentWorksheetSubmissions", fields: [studentId], references: [id], onDelete: Cascade)
+  startedAt    DateTime            @default(now())
+  submittedAt  DateTime?
+  score        Int?
+  maxScore     Int?
+  timeTakenSec Int?
+  status       String              @default("in_progress")
+  itemAnswers  WorksheetItemAnswer[]
+
+  @@index([assignmentId])
+  @@index([studentId])
+}
+
+model WorksheetItemAnswer {
+  id           String              @id @default(cuid())
+  submissionId String
+  submission   WorksheetSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  itemId       String
+  item         WorksheetItem       @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  answer       String
+  isCorrect    Boolean?
+  pointsEarned Int?
+  answeredAt   DateTime            @default(now())
+
+  @@unique([submissionId, itemId])
+  @@index([submissionId])
 }

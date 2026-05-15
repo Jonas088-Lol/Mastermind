@@ -209,3 +209,51 @@
     }
   }
 }
+
+/* ── Worksheet print / PDF export ──────────────────────────── */
+@media print {
+  body { background: white !important; color: black !important; }
+
+  /* Hide nav, sidebar, buttons, timer */
+  nav, aside, header:not(.ws-print-header),
+  [data-print-hide],
+  .ws-timer, .ws-tts-btn, .ws-hint-btn,
+  .ws-nav-footer, .ws-progress-dots { display: none !important; }
+
+  /* Worksheet container */
+  .ws-print-container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Show all items on one page, no pagination */
+  .ws-item-page { display: block !important; page-break-inside: avoid; }
+
+  /* Inputs: show as underline fields */
+  .ws-print-container input[type="text"],
+  .ws-print-container input[type="number"],
+  .ws-print-container textarea {
+    border: none !important;
+    border-bottom: 1px solid black !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Canvas drawing areas: show border */
+  .ws-print-container canvas {
+    border: 1px solid #ccc !important;
+  }
+
+  /* Force colors for badges / feedback */
+  .ws-correct { background-color: #d1fae5 !important; -webkit-print-color-adjust: exact; }
+  .ws-wrong   { background-color: #fee2e2 !important; -webkit-print-color-adjust: exact; }
+
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+}
