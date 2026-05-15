@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
+import { UserPlus } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession, ROLE_LABEL } from "@/lib/session";
 
@@ -32,10 +34,19 @@ export default async function PersonalPage() {
 
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-8">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schulleitung</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight">Personal</h1>
-        <p className="mt-1 text-sm text-muted-fg">{staff.length} Mitarbeiter</p>
+      <header className="flex items-end justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schulleitung</p>
+          <h1 className="mt-1 text-3xl font-bold tracking-tight">Personal</h1>
+          <p className="mt-1 text-sm text-muted-fg">{staff.length} Mitarbeiter</p>
+        </div>
+        <Link
+          href="/admin/nutzer/einladen"
+          className="flex items-center gap-2 bg-fg px-4 py-2 text-sm font-semibold text-bg hover:bg-fg/90"
+        >
+          <UserPlus className="size-4" />
+          Lehrkraft einladen
+        </Link>
       </header>
 
       <div className="border border-border">

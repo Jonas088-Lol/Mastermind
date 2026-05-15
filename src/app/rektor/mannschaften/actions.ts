@@ -85,3 +85,23 @@ export async function addResult(teamId: string, formData: FormData): Promise<voi
 
   revalidatePath("/rektor/mannschaften");
 }
+
+export async function deleteResult(teamId: string, resultIndex: number): Promise<void> {
+  const session = await guardRector();
+  if (!session.schoolId) return;
+
+  const team = await prisma.schoolTeam.findUnique({ where: { id: teamId } });
+  if (!team || team.schoolId !== session.schoolId) return;
+
+  let results: MatchResult[] = [];
+  try { results = JSON.parse(team.results ?? "[]") as MatchResult[]; } catch { results = []; }
+
+  results.splice(resultIndex, 1);
+
+  await prisma.schoolTeam.update({
+    where: { id: teamId },
+    data: { results: JSON.stringify(results) },
+  });
+
+  revalidatePath("/rektor/mannschaften");
+}

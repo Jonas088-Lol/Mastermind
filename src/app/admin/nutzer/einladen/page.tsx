@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { effectiveRole, getSession } from "@/lib/session";
 import { inviteTeacher } from "./actions";
+import { BulkInviteTeacherCard } from "./BulkInviteTeacherCard";
 
 export const metadata: Metadata = { title: "Lehrer einladen" };
 
@@ -63,6 +64,15 @@ export default async function LehrerEinladenPage() {
           </Link>
         </div>
       </form>
+
+      <div className="mt-2 space-y-2">
+        <div className="flex items-center gap-3">
+          <div className="flex-1 border-t border-border" />
+          <span className="text-xs text-muted-fg">oder</span>
+          <div className="flex-1 border-t border-border" />
+        </div>
+        <BulkInviteTeacherCard />
+      </div>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { addResult, createTeam, deleteTeam } from "./actions";
+import { addResult, createTeam, deleteResult, deleteTeam } from "./actions";
 
 export const metadata: Metadata = { title: "Mannschaften · Schulleitung" };
 
@@ -203,6 +203,15 @@ export default async function MannschaftenPage() {
                               }>
                                 {r.scoreHome}:{r.scoreAway}
                               </span>
+                              <form action={deleteResult.bind(null, team.id, i)}>
+                                <button
+                                  type="submit"
+                                  title="Ergebnis löschen"
+                                  className="text-muted-fg hover:text-danger"
+                                >
+                                  <Trash2 className="size-3.5" />
+                                </button>
+                              </form>
                             </li>
                           );
                         })}

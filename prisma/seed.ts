@@ -70,8 +70,8 @@ async function main() {
   // ── Users ───────────────────────────────────────────────────
   const userDefs = [
     { email: "super@mastermind.app", name: "Plattform-Admin", password: "super", role: "super", schoolId: null, classId: null, klasse: null, twoFactor: false },
-    { email: "admin@schule.de", name: "Andrea Hoffmann", password: "admin", role: "admin", schoolId: school.id, classId: null, klasse: null, twoFactor: true },
-    { email: "becker@schule.de", name: "Markus Becker", password: "lehrer", role: "teacher", schoolId: school.id, classId: null, klasse: null, twoFactor: true },
+    { email: "admin@schule.de", name: "Andrea Hoffmann", password: "admin", role: "admin", schoolId: school.id, classId: null, klasse: null, twoFactor: false },
+    { email: "becker@schule.de", name: "Markus Becker", password: "lehrer", role: "teacher", schoolId: school.id, classId: null, klasse: null, twoFactor: false },
     { email: "wagner@schule.de", name: "Lisa Wagner", password: "lehrer", role: "teacher", schoolId: school.id, classId: null, klasse: null, twoFactor: false },
     { email: "klein@schule.de", name: "Eva Klein", password: "lehrer", role: "teacher", schoolId: school.id, classId: null, klasse: null, twoFactor: false },
     { email: "heinrich@schule.de", name: "Thomas Heinrich", password: "lehrer", role: "teacher", schoolId: school.id, classId: null, klasse: null, twoFactor: false },
