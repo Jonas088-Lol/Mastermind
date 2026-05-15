@@ -3,6 +3,7 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
 import { awardXp } from "@/lib/xp";
+import { pushToUsers } from "@/lib/push";
 
 export async function acceptSubmission(submissionId: string, grade: number, comment?: string) {
   const session = await getSession();
@@ -10,7 +11,7 @@ export async function acceptSubmission(submissionId: string, grade: number, comm
 
   const sub = await prisma.submission.findUnique({
     where: { id: submissionId },
-    include: { assignment: { select: { subjectId: true, teacherId: true } } },
+    include: { assignment: { select: { subjectId: true, teacherId: true, title: true } } },
   });
   if (!sub) return;
 
@@ -33,6 +34,25 @@ export async function acceptSubmission(submissionId: string, grade: number, comm
     update: { value: grade, comment: comment ?? null },
   });
   await awardXp(sub.studentId, "aufgabe_bewertet", submissionId);
+
+  const gradeLabel = grade.toFixed(1).replace(".", ",");
+  const assignmentTitle = sub.assignment.title ?? "Aufgabe";
+  await Promise.all([
+    pushToUsers([sub.studentId], {
+      title: "Aufgabe bewertet",
+      body: `${assignmentTitle} · Note ${gradeLabel}`,
+      url: `/app/aufgaben/${sub.assignmentId}`,
+    }),
+    prisma.appNotification.create({
+      data: {
+        userId: sub.studentId,
+        type: "grade",
+        title: "Aufgabe bewertet",
+        body: `${assignmentTitle} · Note ${gradeLabel}`,
+      },
+    }),
+  ]);
+
   revalidatePath("/teach/korrektur");
   revalidatePath(`/teach/korrektur/${submissionId}`);
 }
