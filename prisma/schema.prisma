@@ -37,6 +37,8 @@ model School {
   ssoConfigs       SsoConfig[]
   apiTokens        ApiToken[]
   worksheets       Worksheet[]
+  seasons          Season[]
+  bossBattles      BossBattle[]
 }
 
 model SsoConfig {
@@ -104,6 +106,19 @@ model User {
   xpLogs         XpLog[]
   streak         Int       @default(0)
   lastActiveDate DateTime?
+
+  prestige         Int     @default(0)
+  equippedTitle    String?
+  comboStreak      Int     @default(0)
+  totalDailyLogins Int     @default(0)
+  lastLoginDate    String?
+
+  userQuests       UserQuest[]
+  userTitles       UserTitle[]
+  dailyLoginRewards DailyLoginReward[]
+  seasonPasses     UserSeasonPass[]
+  bossParticipations BossParticipant[]
+  userSkillNodes   UserSkillNode[]
 
   parentLinks   ParentStudentLink[] @relation("ParentLinks")
   studentParents ParentStudentLink[] @relation("StudentParents")
@@ -947,4 +962,165 @@ model WorksheetItemAnswer {
 
   @@unique([submissionId, itemId])
   @@index([submissionId])
+}
+
+// ── Gamification ───────────────────────────────────────────
+
+model Quest {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  lore        String?
+  type        String   // daily | weekly | monthly | event | boss | hidden | story
+  category    String   // xp | submission | flashcard | streak | duel | exercise | community | login | quest
+  targetCount Int      @default(1)
+  xpReward    Int      @default(50)
+  titleReward String?
+  icon        String   @default("⚔️")
+  difficulty  String   @default("normal") // tutorial | easy | normal | hard | epic | legendary | nightmare | boss
+  rarity      String   @default("common") // common | uncommon | rare | epic | legendary | mythic
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  userProgress UserQuest[]
+}
+
+model UserQuest {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questId     String
+  quest       Quest     @relation(fields: [questId], references: [id], onDelete: Cascade)
+  progress    Int       @default(0)
+  completedAt DateTime?
+  claimedAt   DateTime?
+  assignedAt  DateTime  @default(now())
+  expiresAt   DateTime?
+
+  @@unique([userId, questId])
+  @@index([userId])
+  @@index([questId])
+}
+
+model UserTitle {
+  id         String    @id @default(cuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  titleSlug  String
+  unlockedAt DateTime  @default(now())
+
+  @@unique([userId, titleSlug])
+  @@index([userId])
+}
+
+model DailyLoginReward {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  day       Int
+  xpAwarded Int
+  claimedAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+model Season {
+  id       String   @id @default(cuid())
+  schoolId String?
+  school   School?  @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  name     String
+  number   Int
+  theme    String?
+  startAt  DateTime
+  endAt    DateTime
+  isActive Boolean  @default(false)
+
+  passes UserSeasonPass[]
+
+  @@index([schoolId])
+  @@index([isActive])
+}
+
+model UserSeasonPass {
+  id       String @id @default(cuid())
+  userId   String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  seasonId String
+  season   Season @relation(fields: [seasonId], references: [id], onDelete: Cascade)
+  xpEarned Int    @default(0)
+  tier     Int    @default(0)
+
+  @@unique([userId, seasonId])
+  @@index([userId])
+}
+
+model BossBattle {
+  id          String   @id @default(cuid())
+  schoolId    String?
+  school      School?  @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  name        String
+  description String
+  lore        String?
+  subject     String?
+  gradeLevel  Int?
+  maxHp       Int      @default(10000)
+  currentHp   Int      @default(10000)
+  difficulty  String   @default("hard")
+  xpReward    Int      @default(500)
+  icon        String   @default("👹")
+  startAt     DateTime
+  endAt       DateTime
+  isActive    Boolean  @default(false)
+
+  participants BossParticipant[]
+
+  @@index([schoolId])
+  @@index([isActive])
+}
+
+model BossParticipant {
+  id             String     @id @default(cuid())
+  userId         String
+  user           User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  battleId       String
+  battle         BossBattle @relation(fields: [battleId], references: [id], onDelete: Cascade)
+  damage         Int        @default(0)
+  correctAnswers Int        @default(0)
+  joinedAt       DateTime   @default(now())
+
+  @@unique([userId, battleId])
+  @@index([userId])
+  @@index([battleId])
+}
+
+model SkillNode {
+  id          String  @id @default(cuid())
+  subject     String
+  slug        String
+  title       String
+  description String
+  tier        Int     @default(1)
+  requiredXp  Int     @default(0)
+  icon        String  @default("⭐")
+  color       String  @default("#6366f1")
+  parentSlug  String?
+  xpBonus     Int     @default(0)
+  sortOrder   Int     @default(0)
+
+  userNodes UserSkillNode[]
+
+  @@unique([subject, slug])
+}
+
+model UserSkillNode {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nodeId      String
+  node        SkillNode @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+  unlockedAt  DateTime  @default(now())
+
+  @@unique([userId, nodeId])
+  @@index([userId])
 }
