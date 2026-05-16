@@ -20,7 +20,7 @@ import { Progress } from "@/components/ui/progress";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { levelFromXp } from "@/lib/xp";
+import { levelFromXp, getRankForXp, xpProgressInLevel, xpToNextLevel, formatXp, getTitleBySlug } from "@/lib/game";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Profil" };
