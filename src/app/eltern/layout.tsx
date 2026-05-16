@@ -20,6 +20,7 @@ const items: NavItem[] = [
   { href: "/eltern/stundenplan", label: "Stundenplan", icon: "calendar" },
   { href: "/eltern/aufgaben", label: "Aufgaben", icon: "checkSquare" },
   { href: "/eltern/abwesenheit", label: "Abwesenheit", icon: "clipboardEdit" },
+  { href: "/eltern/fehlzeiten", label: "Fehlzeiten", icon: "calendarX" },
 ];
 
 const bottomItems: NavItem[] = [

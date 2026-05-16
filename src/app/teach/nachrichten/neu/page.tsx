@@ -17,7 +17,10 @@ const ROLE_LABEL: Record<string, string> = {
 
 const ROLE_ORDER = ["student", "parent", "teacher", "admin"];
 
-export default async function TeachNeueNachrichtPage() {
+interface PageProps { searchParams: Promise<{ to?: string }> }
+
+export default async function TeachNeueNachrichtPage({ searchParams }: PageProps) {
+  const { to: preselectedId } = await searchParams;
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "teacher") redirect("/teach");
@@ -65,7 +68,7 @@ export default async function TeachNeueNachrichtPage() {
             {ROLE_ORDER.filter((r) => byRole.has(r)).map((role) => (
               <optgroup key={role} label={ROLE_LABEL[role] ?? role}>
                 {byRole.get(role)!.map((u) => (
-                  <option key={u.id} value={u.id}>
+                  <option key={u.id} value={u.id} selected={u.id === preselectedId}>
                     {u.name}{u.klasse ? ` (${u.klasse})` : ""}
                   </option>
                 ))}

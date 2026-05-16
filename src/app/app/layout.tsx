@@ -60,6 +60,7 @@ export default async function AppLayout({
     { href: "/app/community", label: "Community", icon: "users" },
     { href: "/app/mannschaften", label: "Mannschaften", icon: "shield" },
     { href: "/app/ranking", label: "Ranking", icon: "trophy" },
+    { href: "/app/fehlzeiten", label: "Fehlzeiten", icon: "calendarX" },
   ];
 
   const mobileNavItems: BottomNavItem[] = [

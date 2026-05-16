@@ -157,13 +157,22 @@ export function NotificationCenter({ unreadCount, notifications = [] }: Notifica
                 <Check className="size-3.5" />
                 Alle als gelesen markieren
               </button>
-              <Link
-                href="/app/einstellungen#benachrichtigungen"
-                onClick={() => setOpen(false)}
-                className="text-xs font-semibold uppercase tracking-wider text-muted-fg transition-colors hover:text-fg"
-              >
-                Einstellungen
-              </Link>
+              <div className="flex items-center gap-4">
+                <Link
+                  href="/notifications"
+                  onClick={() => setOpen(false)}
+                  className="text-xs font-semibold uppercase tracking-wider text-muted-fg transition-colors hover:text-fg"
+                >
+                  Alle anzeigen
+                </Link>
+                <Link
+                  href="/app/einstellungen#benachrichtigungen"
+                  onClick={() => setOpen(false)}
+                  className="text-xs font-semibold uppercase tracking-wider text-muted-fg transition-colors hover:text-fg"
+                >
+                  Einstellungen
+                </Link>
+              </div>
             </div>
 
             {list.length === 0 ? (

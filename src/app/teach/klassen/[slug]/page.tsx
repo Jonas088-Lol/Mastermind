@@ -156,6 +156,13 @@ export default async function ClassDetailPage({ params }: PageParams) {
               Anwesenheit
             </Link>
             <Link
+              href={`/teach/klassen/${encodeURIComponent(slug)}/eltern`}
+              className={buttonVariants({ variant: "outline", size: "sm" })}
+            >
+              <Users className="size-3.5" />
+              Elternkontakte
+            </Link>
+            <Link
               href="/teach/generator"
               className={cn(buttonVariants({ size: "sm" }), "glow-on-hover")}
             >
