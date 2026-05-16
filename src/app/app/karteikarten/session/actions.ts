@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { awardXp } from "@/lib/xp";
+import { incrementQuestProgress } from "@/lib/quests";
 import { redirect } from "next/navigation";
 
 export async function gradeCard(cardId: string, rating: number) {
@@ -48,4 +49,7 @@ export async function gradeCard(cardId: string, rating: number) {
   });
 
   await awardXp(session.userId, "karteikarte_session", cardId);
+  if (rating > 0) {
+    await incrementQuestProgress(session.userId, "flashcard");
+  }
 }

@@ -25,19 +25,6 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Profil" };
 
-const LEVEL_NAMES = [
-  "Einsteiger",
-  "Lernling",
-  "Entdecker",
-  "Aufsteiger",
-  "Kämpfer",
-  "Streber",
-  "Profi",
-  "Experte",
-  "Meister",
-  "Legende",
-];
-
 const RARITY_LABELS: Record<string, string> = {
   rare: "Selten",
   epic: "Episch",
@@ -59,6 +46,9 @@ export default async function ProfilPage() {
       createdAt: true,
       xp: true,
       streak: true,
+      prestige: true,
+      equippedTitle: true,
+      totalDailyLogins: true,
       school: { select: { name: true } },
       studentSubmissions: {
         select: {
@@ -89,9 +79,10 @@ export default async function ProfilPage() {
   const earnedCount = earnedSlugs.size;
 
   const level = levelFromXp(user.xp);
-  const xpInLevel = user.xp % 100;
-  const levelName = LEVEL_NAMES[(level - 1) % LEVEL_NAMES.length];
-  const nextLevelName = LEVEL_NAMES[level % LEVEL_NAMES.length];
+  const rank = getRankForXp(user.xp);
+  const xpPct = xpProgressInLevel(user.xp);
+  const xpNeeded = xpToNextLevel(user.xp);
+  const equippedTitleDef = user.equippedTitle ? getTitleBySlug(user.equippedTitle) : null;
 
   const joinedDate = user.createdAt.toLocaleDateString("de-DE", { month: "long", year: "numeric" });
 
@@ -118,8 +109,20 @@ export default async function ProfilPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
               {user.klasse ? `Klasse ${user.klasse} · ` : ""}{user.school?.name ?? "—"}
             </p>
-            <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">{user.name}</h1>
-            <p className="mt-1 flex items-center gap-3 text-sm text-muted-fg">
+            <div className="mt-1 flex flex-wrap items-baseline gap-3">
+              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{user.name}</h1>
+              {equippedTitleDef && (
+                <span className="text-base font-bold" style={{ color: equippedTitleDef.color }}>
+                  [{equippedTitleDef.name}]
+                </span>
+              )}
+            </div>
+            <p className="mt-1 flex flex-wrap items-center gap-2 text-sm text-muted-fg">
+              <span className="flex items-center gap-1">
+                <span>{rank.icon}</span>
+                <span className="font-semibold" style={{ color: rank.color }}>{rank.nameDE}</span>
+              </span>
+              <span>·</span>
               <span className="flex items-center gap-1.5">
                 <Mail className="size-3.5" />
                 {user.email}
@@ -142,31 +145,40 @@ export default async function ProfilPage() {
       </header>
 
       <section className="grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-4">
-        <Stat label="Level" value={String(level)} suffix={levelName} icon={Zap} tone="text-brand" />
+        <Stat label="Level" value={String(level)} suffix={rank.nameDE} icon={Zap} tone="text-brand" />
         <Stat label="Streak" value={user.streak > 0 ? String(user.streak) : "0"} suffix="Tage" icon={Flame} tone="text-warning" />
         <Stat label="Abgaben" value={String(submissionCount)} suffix="abgegeben" icon={Trophy} tone="text-success" />
         <Stat label="Achievements" value={String(earnedCount)} suffix={`/ ${ACHIEVEMENTS.length}`} icon={Sparkles} tone="text-info" />
       </section>
 
-      <section className="border border-brand/40 bg-gradient-to-r from-brand/[0.08] to-transparent p-5">
-        <div className="flex items-center gap-2">
-          <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
-          <p className="text-xs font-semibold uppercase tracking-wider text-brand">
-            Level {level} → {level + 1}
+      <section className="border bg-gradient-to-r from-brand/[0.08] to-transparent p-5" style={{ borderColor: `${rank.color}40` }}>
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <span className="text-xl">{rank.icon}</span>
+            <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: rank.color }}>
+              {rank.nameDE} · Level {level}
+            </p>
+          </div>
+          <p className="font-mono text-sm text-muted-fg">
+            {formatXp(user.xp)} XP gesamt
           </p>
         </div>
         <div className="mt-4 flex items-baseline justify-between">
-          <p className="text-base font-semibold">{levelName} → {nextLevelName}</p>
+          <p className="text-base font-semibold">Level {level} → {level + 1}</p>
           <p className="font-mono text-sm">
-            <span className="font-bold">{xpInLevel}</span>
-            <span className="text-muted-fg"> / 100 XP</span>
+            <span className="font-bold">{xpPct}%</span>
+            <span className="text-muted-fg"> · {formatXp(xpNeeded)} XP fehlen</span>
           </p>
         </div>
-        <Progress value={xpInLevel} tone="brand" className="mt-3" />
-        <p className="mt-2 text-xs text-muted-fg">
-          {100 - xpInLevel} XP bis Level {level + 1} · {user.xp.toLocaleString("de-DE")} XP gesamt
-          {" · "}
-          <Link href="/app/profil/xp" className="text-brand hover:underline">Verlauf</Link>
+        <Progress value={xpPct} tone="brand" className="mt-3" />
+        <p className="mt-2 flex items-center gap-3 text-xs text-muted-fg">
+          <Link href="/app/profil/xp" className="text-brand hover:underline">XP-Verlauf</Link>
+          <span>·</span>
+          <Link href="/app/ranking" className="text-brand hover:underline">Ranking</Link>
+          <span>·</span>
+          <Link href="/app/titel" className="text-brand hover:underline">
+            {equippedTitleDef ? `Titel: ${equippedTitleDef.name}` : "Titel ausrüsten"}
+          </Link>
         </p>
       </section>
 

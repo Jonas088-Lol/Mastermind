@@ -6,6 +6,7 @@ export const XP_REWARDS = {
   aufgabe_bewertet: 10,
   karteikarte_session: 5,
   note_geteilt: 15,
+  quiz_completed: 10,
 } as const;
 
 export type XpReason = keyof typeof XP_REWARDS;

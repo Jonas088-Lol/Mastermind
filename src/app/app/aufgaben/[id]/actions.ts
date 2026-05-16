@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { awardXp } from "@/lib/xp";
+import { incrementQuestProgress } from "@/lib/quests";
 
 export async function submitAssignment(formData: FormData) {
   const session = await getSession();
@@ -33,6 +34,7 @@ export async function submitAssignment(formData: FormData) {
   });
 
   await awardXp(session.userId, "aufgabe_abgabe", assignmentId);
+  await incrementQuestProgress(session.userId, "submission");
 
   revalidatePath("/app/aufgaben");
   redirect("/app/aufgaben");

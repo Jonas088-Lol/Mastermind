@@ -21,6 +21,7 @@ import { ACHIEVEMENTS } from "@/lib/achievements";
 import { prisma } from "@/lib/db/client";
 import { getAiQuota } from "@/lib/db/store";
 import { getSession } from "@/lib/session";
+import { levelFromXp, getRankForXp } from "@/lib/game";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Dashboard" };
@@ -128,6 +129,27 @@ export default async function DashboardPage() {
   const currentXp = userXpData?.xp ?? 0;
   const weeklyXp = weeklyXpLogs._sum.amount ?? 0;
   const dailyXp = dailyXpLog._sum.amount ?? 0;
+  const rank = getRankForXp(currentXp);
+  const level = levelFromXp(currentXp);
+
+  // Pending quest claims
+  const pendingQuestClaims = await prisma.userQuest.count({
+    where: { userId: session.userId, completedAt: { not: null }, claimedAt: null },
+  });
+
+  // Active boss battle
+  const activeBoss = await prisma.bossBattle.findFirst({
+    where: { isActive: true, OR: [{ schoolId: null }, { schoolId: session.schoolId ?? "" }] },
+    select: { name: true, currentHp: true, maxHp: true, icon: true },
+  });
+
+  // Daily login reward status
+  const todayLoginStr = now.toISOString().slice(0, 10);
+  const userLoginData = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: { lastLoginDate: true },
+  });
+  const dailyBonusAvailable = userLoginData?.lastLoginDate !== todayLoginStr;
 
   // Daily challenge: deterministically pick a topic by date seed
   const allTopics = await prisma.exerciseTopic.findMany({
@@ -330,6 +352,57 @@ export default async function DashboardPage() {
               <p className="mt-3 text-center text-[10px] uppercase tracking-wider text-muted-fg">
                 Noch {quotaFree} KI-Anfragen frei
               </p>
+            </CardBody>
+          </Card>
+
+          {/* Gamification quick access */}
+          <Card>
+            <CardBody className="!p-5">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">{rank.icon}</span>
+                  <div>
+                    <p className="text-sm font-bold" style={{ color: rank.color }}>{rank.nameDE}</p>
+                    <p className="text-[11px] text-muted-fg">Level {level} · {currentXp.toLocaleString("de-DE")} XP</p>
+                  </div>
+                </div>
+                <Link href="/app/ranking" className="text-xs text-muted-fg hover:text-fg">Ranking →</Link>
+              </div>
+              <div className="mt-4 space-y-1.5">
+                <Link
+                  href="/app/quests"
+                  className={cn(
+                    "flex items-center justify-between px-3 py-2 text-sm transition-colors hover:bg-surface",
+                    pendingQuestClaims > 0 ? "bg-warning/[0.05]" : "bg-surface",
+                  )}
+                >
+                  <span className="flex items-center gap-2">
+                    <Zap className="size-3.5 text-warning" />
+                    Quests
+                  </span>
+                  {pendingQuestClaims > 0 && (
+                    <Badge variant="warning">{pendingQuestClaims} offen</Badge>
+                  )}
+                </Link>
+                {activeBoss && (
+                  <Link href="/app/boss" className="flex items-center justify-between bg-danger/[0.04] px-3 py-2 text-sm transition-colors hover:bg-danger/[0.07]">
+                    <span className="flex items-center gap-2">
+                      <Swords className="size-3.5 text-danger" />
+                      <span>{activeBoss.icon} {activeBoss.name}</span>
+                    </span>
+                    <Badge variant="danger">Aktiv</Badge>
+                  </Link>
+                )}
+                {dailyBonusAvailable && (
+                  <Link href="/app/tagesbelohnung" className="flex items-center justify-between bg-success/[0.04] px-3 py-2 text-sm transition-colors hover:bg-success/[0.07]">
+                    <span className="flex items-center gap-2">
+                      <span>☀️</span>
+                      Tagesbonus
+                    </span>
+                    <Badge variant="success">Abholen!</Badge>
+                  </Link>
+                )}
+              </div>
             </CardBody>
           </Card>
 

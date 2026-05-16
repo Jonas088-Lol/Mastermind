@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Flame, Zap } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { levelFromXp, xpToNextLevel } from "@/lib/xp";
+import { levelFromXp, xpToNextLevel, xpProgressInLevel, getRankForXp, formatXp } from "@/lib/game";
 
 export const metadata: Metadata = { title: "XP-Verlauf" };
 
@@ -18,6 +18,10 @@ const REASON_LABEL: Record<string, string> = {
   duel_win: "Duell gewonnen",
   duel_participate: "Duell gespielt",
   daily_challenge: "Tägliche Herausforderung",
+  quiz_completed: "Übungsquiz abgeschlossen",
+  quest_reward: "Quest-Belohnung eingelöst",
+  daily_login_reward: "Tagesbonus eingelöst",
+  boss_battle_reward: "Boss besiegt",
 };
 
 const STREAK_MILESTONES = [3, 7, 14, 30, 60, 100];
@@ -43,8 +47,8 @@ export default async function XpLogPage() {
 
   const level = levelFromXp(user.xp);
   const xpToNext = xpToNextLevel(user.xp);
-  const xpInLevel = user.xp % 100;
-  const progressPct = 100 > 0 ? Math.round((xpInLevel / 100) * 100) : 100;
+  const progressPct = xpProgressInLevel(user.xp);
+  const rank = getRankForXp(user.xp);
 
   const nextMilestone = STREAK_MILESTONES.find((m) => m > user.streak) ?? null;
 
@@ -74,12 +78,12 @@ export default async function XpLogPage() {
         <div className="bg-bg p-5">
           <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-muted-fg">
             <Zap className="size-3.5" />
-            Level {level}
+            {rank.icon} Level {level} · {rank.nameDE}
           </div>
-          <p className="mt-2 font-mono text-3xl font-bold">{user.xp.toLocaleString("de-DE")} XP</p>
+          <p className="mt-2 font-mono text-3xl font-bold">{formatXp(user.xp)} XP</p>
           <div className="mt-3">
             <div className="mb-1 flex justify-between text-xs text-muted-fg">
-              <span>{xpInLevel} / 100 XP</span>
+              <span>Nächstes Level: {formatXp(xpToNext)} XP</span>
               <span>{progressPct}%</span>
             </div>
             <div className="h-1.5 w-full bg-surface">
