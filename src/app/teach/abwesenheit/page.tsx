@@ -5,6 +5,7 @@ import {
   Users,
   XCircle,
 } from "lucide-react";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
@@ -17,13 +18,36 @@ import { confirmAbsence, rejectAbsence } from "./actions";
 
 export const metadata: Metadata = { title: "Abwesenheiten" };
 
-export default async function AbwesenheitPage() {
+interface PageProps {
+  searchParams: Promise<{ classId?: string }>;
+}
+
+export default async function AbwesenheitPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "teacher") redirect("/");
 
+  const { classId } = await searchParams;
+
+  // Teacher's classes
+  const teacherClasses = await prisma.teacherSubjectClass.findMany({
+    where: { teacherId: session.userId },
+    select: { classId: true, class: { select: { id: true, name: true } } },
+    distinct: ["classId"],
+    orderBy: { class: { name: "asc" } },
+  });
+  const myClassIds = teacherClasses.map((t) => t.class.id);
+
+  // Students in selected filter
+  const activeClassId = classId && myClassIds.includes(classId) ? classId : null;
+
   const absences = await prisma.absence.findMany({
-    where: { schoolId: session.schoolId ?? undefined },
+    where: {
+      schoolId: session.schoolId ?? undefined,
+      ...(activeClassId
+        ? { student: { classId: activeClassId } }
+        : {}),
+    },
     include: {
       student: { select: { name: true, klasse: true } },
       reporter: { select: { name: true } },
@@ -47,6 +71,8 @@ export default async function AbwesenheitPage() {
     return Math.ceil((to.getTime() - from.getTime()) / 86_400_000) + 1;
   }
 
+  const activeClass = teacherClasses.find((t) => t.class.id === activeClassId);
+
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-8">
       <header>
@@ -58,6 +84,37 @@ export default async function AbwesenheitPage() {
           {pending.length} ausstehend · {confirmed.length} bestätigt · {rejected.length} abgelehnt
         </p>
       </header>
+
+      {/* Class filter */}
+      {teacherClasses.length > 0 && (
+        <div className="flex flex-wrap items-center gap-2">
+          <Link
+            href="/teach/abwesenheit"
+            className={cn(
+              "border px-3 py-1.5 text-xs font-semibold transition-colors",
+              !activeClassId
+                ? "border-fg bg-fg text-bg"
+                : "border-border text-muted-fg hover:border-fg/30 hover:text-fg"
+            )}
+          >
+            Alle Klassen
+          </Link>
+          {teacherClasses.map((t) => (
+            <Link
+              key={t.class.id}
+              href={`/teach/abwesenheit?classId=${t.class.id}`}
+              className={cn(
+                "border px-3 py-1.5 text-xs font-semibold transition-colors",
+                activeClassId === t.class.id
+                  ? "border-fg bg-fg text-bg"
+                  : "border-border text-muted-fg hover:border-fg/30 hover:text-fg"
+              )}
+            >
+              {t.class.name}
+            </Link>
+          ))}
+        </div>
+      )}
 
       <section className="grid grid-cols-3 gap-px border border-border bg-border">
         <div className="bg-bg p-5">
@@ -88,7 +145,10 @@ export default async function AbwesenheitPage() {
           <CardHeader>
             <div>
               <CardTitle>Ausstehend</CardTitle>
-              <p className="mt-1 text-sm text-muted-fg">{pending.length} warten auf Bestätigung</p>
+              <p className="mt-1 text-sm text-muted-fg">
+                {pending.length} warten auf Bestätigung
+                {activeClass ? ` in Klasse ${activeClass.class.name}` : ""}
+              </p>
             </div>
             <Badge variant="warning">{pending.length} offen</Badge>
           </CardHeader>
@@ -149,46 +209,40 @@ export default async function AbwesenheitPage() {
             </div>
           </CardHeader>
           <CardBody className="!px-0 !pb-0">
-            {absences.length === 0 ? (
-              <p className="px-5 py-4 text-sm text-muted-fg">Noch keine Abwesenheiten gemeldet.</p>
-            ) : (
-              <ul className="divide-y divide-border border-t border-border">
-                {[...confirmed, ...rejected].map((a) => (
-                  <li key={a.id} className="flex items-start gap-4 px-5 py-3.5">
-                    <div className={cn(
-                      "grid size-9 shrink-0 place-items-center bg-surface",
-                    )}>
-                      {a.status === "confirmed"
-                        ? <CheckCircle2 className="size-4 text-success" strokeWidth={1.75} />
-                        : <XCircle className="size-4 text-danger" strokeWidth={1.75} />}
+            <ul className="divide-y divide-border border-t border-border">
+              {[...confirmed, ...rejected].map((a) => (
+                <li key={a.id} className="flex items-start gap-4 px-5 py-3.5">
+                  <div className="grid size-9 shrink-0 place-items-center bg-surface">
+                    {a.status === "confirmed"
+                      ? <CheckCircle2 className="size-4 text-success" strokeWidth={1.75} />
+                      : <XCircle className="size-4 text-danger" strokeWidth={1.75} />}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-semibold">{a.student.name}</p>
+                      {a.student.klasse && (
+                        <span className="text-xs text-muted-fg">Klasse {a.student.klasse}</span>
+                      )}
+                      <Badge variant={a.status === "confirmed" ? "success" : "danger"} className="ml-auto">
+                        {a.status === "confirmed" ? "Bestätigt" : "Abgelehnt"}
+                      </Badge>
                     </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2">
-                        <p className="text-sm font-semibold">{a.student.name}</p>
-                        {a.student.klasse && (
-                          <span className="text-xs text-muted-fg">Klasse {a.student.klasse}</span>
-                        )}
-                        <Badge variant={a.status === "confirmed" ? "success" : "danger"} className="ml-auto">
-                          {a.status === "confirmed" ? "Bestätigt" : "Abgelehnt"}
-                        </Badge>
-                      </div>
-                      <p className="mt-0.5 text-sm text-muted-fg">
-                        {formatRange(a.fromDate, a.toDate)}
+                    <p className="mt-0.5 text-sm text-muted-fg">
+                      {formatRange(a.fromDate, a.toDate)}
+                    </p>
+                    {a.reason && (
+                      <p className="mt-0.5 text-xs text-muted-fg">Grund: {a.reason}</p>
+                    )}
+                    {a.confirmedBy && (
+                      <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted-fg">
+                        {a.status === "confirmed" ? "Bestätigt" : "Abgelehnt"} von {a.confirmedBy.name}
+                        {a.confirmedAt && ` · ${a.confirmedAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}`}
                       </p>
-                      {a.reason && (
-                        <p className="mt-0.5 text-xs text-muted-fg">Grund: {a.reason}</p>
-                      )}
-                      {a.confirmedBy && (
-                        <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted-fg">
-                          {a.status === "confirmed" ? "Bestätigt" : "Abgelehnt"} von {a.confirmedBy.name}
-                          {a.confirmedAt && ` · ${a.confirmedAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}`}
-                        </p>
-                      )}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
           </CardBody>
         </Card>
       )}
@@ -198,7 +252,11 @@ export default async function AbwesenheitPage() {
           <CardBody>
             <div className="flex flex-col items-center gap-3 py-8 text-center">
               <Users className="size-8 text-muted-fg" strokeWidth={1.5} />
-              <p className="text-sm text-muted-fg">Noch keine Abwesenheiten gemeldet.</p>
+              <p className="text-sm text-muted-fg">
+                {activeClass
+                  ? `Keine Abwesenheiten für Klasse ${activeClass.class.name}.`
+                  : "Noch keine Abwesenheiten gemeldet."}
+              </p>
             </div>
           </CardBody>
         </Card>

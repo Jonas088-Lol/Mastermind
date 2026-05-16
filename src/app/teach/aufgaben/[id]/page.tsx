@@ -3,6 +3,7 @@ import {
   Calendar,
   Download,
   FileText,
+  Pencil,
   Paperclip,
   Users,
 } from "lucide-react";
@@ -125,17 +126,26 @@ export default async function TeachAufgabeDetailPage({ params }: PageProps) {
           </p>
         </div>
 
-        {/* CSV Export */}
-        <a
-          href={`/api/teach/noten-export?assignmentId=${assignment.id}`}
-          className={cn(
-            buttonVariants({ variant: "secondary", size: "sm" }),
-            "shrink-0 gap-1.5"
-          )}
-        >
-          <Download className="size-3.5" />
-          CSV Export
-        </a>
+        <div className="flex shrink-0 gap-2">
+          <Link
+            href={`/teach/aufgaben/${assignment.id}/bearbeiten`}
+            className={cn(buttonVariants({ variant: "outline", size: "sm" }), "gap-1.5")}
+          >
+            <Pencil className="size-3.5" />
+            Bearbeiten
+          </Link>
+          {/* CSV Export */}
+          <a
+            href={`/api/teach/noten-export?assignmentId=${assignment.id}`}
+            className={cn(
+              buttonVariants({ variant: "secondary", size: "sm" }),
+              "gap-1.5"
+            )}
+          >
+            <Download className="size-3.5" />
+            CSV Export
+          </a>
+        </div>
       </header>
 
       {/* Stats row */}

@@ -67,6 +67,7 @@ export default async function TeachLayout({
     { href: "/teach/klassenbuch", label: "Klassenbuch", icon: "bookMarked" },
     { href: "/teach/abwesenheit", label: "Abwesenheiten", icon: "calendar" },
     { href: "/teach/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: msgBadge },
+    { href: "/teach/broadcast", label: "Broadcast", icon: "users" },
   ];
 
   const bottomItems: NavItem[] = [

@@ -8,6 +8,7 @@ import {
   ClockAlert,
   GraduationCap,
   Mail,
+  Pencil,
   Sparkles,
   UserCheck,
   Users,
@@ -161,6 +162,13 @@ export default async function ClassDetailPage({ params }: PageParams) {
             >
               <Users className="size-3.5" />
               Elternkontakte
+            </Link>
+            <Link
+              href={`/teach/noten/neu?classId=${schoolClass.id}&classSlug=${encodeURIComponent(slug)}`}
+              className={buttonVariants({ variant: "outline", size: "sm" })}
+            >
+              <Pencil className="size-3.5" />
+              Note eintragen
             </Link>
             <Link
               href="/teach/generator"
