@@ -1,5 +1,4 @@
 import {
-  Camera,
   Edit3,
   Flame,
   Lock,
@@ -9,6 +8,7 @@ import {
   Trophy,
   Zap,
 } from "lucide-react";
+import { AvatarUploadButton } from "./AvatarUpload";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
@@ -49,6 +49,7 @@ export default async function ProfilPage() {
       prestige: true,
       equippedTitle: true,
       totalDailyLogins: true,
+      avatarUrl: true,
       school: { select: { name: true } },
       studentSubmissions: {
         select: {
@@ -96,14 +97,8 @@ export default async function ProfilPage() {
       <header className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div className="flex items-end gap-5">
           <div className="relative">
-            <Avatar name={user.name} size="lg" className="size-20 text-2xl" />
-            <button
-              type="button"
-              aria-label="Avatar ändern"
-              className="absolute -bottom-1 -right-1 grid size-7 place-items-center bg-fg text-bg transition-transform hover:scale-110"
-            >
-              <Camera className="size-3.5" />
-            </button>
+            <Avatar name={user.name} size="lg" src={user.avatarUrl ?? undefined} className="size-20 text-2xl" />
+            <AvatarUploadButton />
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">

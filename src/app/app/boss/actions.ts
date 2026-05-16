@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { awardCoins, COIN_REWARDS } from "@/lib/coins";
 
 export async function attackBoss(battleId: string): Promise<void> {
   const session = await getSession();
@@ -43,11 +44,15 @@ export async function attackBoss(battleId: string): Promise<void> {
       });
 
       const totalDamage = participants.reduce((s, p) => s + p.damage, 0);
-      for (const p of participants) {
+      for (let i = 0; i < participants.length; i++) {
+        const p = participants[i];
         const shareRatio = totalDamage > 0 ? p.damage / totalDamage : 1 / participants.length;
         const xpShare = Math.round(battle.xpReward * shareRatio);
         await tx.user.update({ where: { id: p.userId }, data: { xp: { increment: xpShare } } });
         await tx.xpLog.create({ data: { userId: p.userId, amount: xpShare, reason: "boss_battle_reward", referenceId: battleId } });
+        // Award coins — MVP (index 0, sorted by damage desc) gets bonus
+        const coins = i === 0 ? COIN_REWARDS.boss_battle_reward + COIN_REWARDS.boss_mvp_bonus : COIN_REWARDS.boss_battle_reward;
+        await awardCoins(p.userId, i === 0 ? "boss_mvp_bonus" : "boss_battle_reward", coins, battleId);
       }
     }
   });

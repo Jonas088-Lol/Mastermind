@@ -91,7 +91,7 @@ function HeroMockup() {
         <div className="grid grid-cols-3 gap-2">
           <Stat label="Streak" value="14" suffix="🔥" />
           <Stat label="XP" value="2.340" />
-          <Stat label="KI" value="47" suffix="/50" />
+          <Stat label="Münzen" value="480" suffix="🪙" />
         </div>
 
         <div>
@@ -105,13 +105,13 @@ function HeroMockup() {
           </ul>
         </div>
 
-        <div className="border border-border bg-surface-2 p-3">
+        <div className="border border-brand/30 bg-brand/[0.04] p-3">
           <p className="text-[11px] font-semibold uppercase tracking-wider text-brand">
-            ◆ KI-Vorschlag
+            ⚡ Aktiver Booster
           </p>
           <p className="mt-1.5 text-sm leading-snug">
-            Du hattest in Physik 3 Fehler zum Hebelgesetz. <br />
-            <span className="text-muted-fg">10 Min. üben?</span>
+            XP-Booster ×2 aktiv — noch 45 Min. <br />
+            <span className="text-muted-fg">Quest: 2/3 Karteikarten fertig</span>
           </p>
         </div>
       </div>

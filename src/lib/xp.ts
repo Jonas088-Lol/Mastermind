@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/db/client";
 import { checkAndAwardAchievements } from "@/lib/achievements";
+import { applyBoosterToXp } from "@/lib/booster";
+import { awardCoins, COIN_REWARDS } from "@/lib/coins";
 
 export const XP_REWARDS = {
   aufgabe_abgabe: 20,
@@ -29,7 +31,8 @@ export async function awardXp(
   reason: XpReason,
   referenceId?: string
 ): Promise<void> {
-  const amount = XP_REWARDS[reason];
+  const base = XP_REWARDS[reason];
+  const amount = await applyBoosterToXp(base, userId);
   const today = todayUTC();
 
   const user = await prisma.user.findUnique({
@@ -56,6 +59,12 @@ export async function awardXp(
       },
     }),
   ]);
+
+  // Award coins for this activity (fire-and-forget)
+  const coinAmount = COIN_REWARDS[reason as keyof typeof COIN_REWARDS] ?? 0;
+  if (coinAmount > 0) {
+    awardCoins(userId, reason, coinAmount, referenceId).catch(() => {});
+  }
 
   // Fire-and-forget achievement check (non-blocking)
   checkAndAwardAchievements(userId).catch(() => {});

@@ -42,10 +42,16 @@ export default function manifest(): MetadataRoute.Manifest {
         url: "/app/karteikarten",
       },
       {
-        name: "Stundenplan",
-        short_name: "Plan",
-        description: "Wochenstundenplan ansehen",
-        url: "/app/plan",
+        name: "Quests",
+        short_name: "Quests",
+        description: "Tägliche Quests ansehen",
+        url: "/app/quests",
+      },
+      {
+        name: "Shop",
+        short_name: "Shop",
+        description: "Münzen im Shop ausgeben",
+        url: "/app/shop",
       },
       {
         name: "KI-Tutor",

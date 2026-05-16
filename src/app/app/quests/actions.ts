@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { awardCoins, COIN_REWARDS } from "@/lib/coins";
 
 export async function claimQuestReward(questId: string): Promise<void> {
   const session = await getSession();
@@ -30,6 +31,9 @@ export async function claimQuestReward(questId: string): Promise<void> {
       data: { xp: { increment: xpReward } },
     }),
   ]);
+
+  // Award coins for quest completion
+  await awardCoins(session.userId, "quest_reward", COIN_REWARDS.quest_reward, questId);
 
   // Award title reward if applicable
   if (userQuest.quest.titleReward) {

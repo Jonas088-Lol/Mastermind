@@ -112,6 +112,16 @@ model User {
   comboStreak      Int     @default(0)
   totalDailyLogins Int     @default(0)
   lastLoginDate    String?
+  avatarUrl        String?
+
+  coins          Int     @default(0)
+  streakFreezes  Int     @default(0)
+  isPremium      Boolean @default(false)
+  premiumUntil   DateTime?
+
+  coinLogs         CoinLog[]
+  inventoryItems   UserInventoryItem[]
+  userBoosters     UserBooster[]
 
   userQuests       UserQuest[]
   userTitles       UserTitle[]
@@ -1123,4 +1133,78 @@ model UserSkillNode {
 
   @@unique([userId, nodeId])
   @@index([userId])
+}
+
+// ── Virtual Economy ────────────────────────────────────────
+
+model CoinLog {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount      Int      // positive = earned, negative = spent
+  reason      String   // "quest_reward" | "daily_login" | "exercise" | "shop_purchase" | "stripe_purchase" | ...
+  referenceId String?
+  createdAt   DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model ShopItem {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String
+  category    String   // "booster" | "streak_freeze" | "cosmetic" | "title" | "powerup" | "bundle"
+  coinPrice   Int      @default(0)    // 0 = real-money only
+  realPrice   Int?                    // cents, null = coins only
+  icon        String   @default("🎁")
+  rarity      String   @default("common") // common | uncommon | rare | epic | legendary
+  effect      String?  // "xp_boost" | "streak_freeze" | "ai_quota" | "cosmetic" | ...
+  effectValue String?  // JSON or plain value
+  isLimited   Boolean  @default(false)
+  stock       Int?
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model UserInventoryItem {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemSlug    String
+  quantity    Int       @default(1)
+  acquiredAt  DateTime  @default(now())
+  expiresAt   DateTime?
+
+  @@index([userId])
+  @@index([itemSlug])
+}
+
+model UserBooster {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  boosterSlug String    // references ShopItem.slug
+  multiplier  Float
+  activatedAt DateTime  @default(now())
+  expiresAt   DateTime
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model StripeOrder {
+  id              String   @id @default(cuid())
+  userId          String
+  sessionId       String   @unique
+  productSlug     String   // "coins_100" | "coins_500" | "premium_month" | ...
+  amount          Int      // cents
+  currency        String   @default("eur")
+  status          String   @default("pending") // pending | completed | failed
+  createdAt       DateTime @default(now())
+  completedAt     DateTime?
+
+  @@index([userId])
+  @@index([sessionId])
 }

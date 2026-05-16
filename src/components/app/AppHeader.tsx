@@ -12,6 +12,7 @@ export interface AppHeaderProps {
   searchPlaceholder?: string;
   unreadCount?: number;
   notifications?: NotificationItem[];
+  coinBalance?: number;
 }
 
 export function AppHeader({
@@ -19,6 +20,7 @@ export function AppHeader({
   searchPlaceholder = "Suchen — Aufgaben, Karten, Lehrer …",
   unreadCount = 0,
   notifications = [],
+  coinBalance,
 }: AppHeaderProps) {
   return (
     <header className="safe-top flex h-16 items-center gap-4 border-b border-border bg-bg/85 px-6 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
@@ -36,6 +38,16 @@ export function AppHeader({
       </Link>
 
       <div className="flex items-center gap-1">
+        {coinBalance !== undefined && (
+          <Link
+            href="/app/coins"
+            className="flex items-center gap-1 rounded px-2 py-1 text-sm font-semibold text-amber-600 hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-amber-900/20 transition-colors"
+            title="Münzen"
+          >
+            <span>🪙</span>
+            <span>{coinBalance.toLocaleString("de-DE")}</span>
+          </Link>
+        )}
         <NotificationCenter unreadCount={unreadCount} notifications={notifications} />
         <ThemeToggle />
         <div className="ml-2 flex items-center gap-2 border-l border-border pl-3">

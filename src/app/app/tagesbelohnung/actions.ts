@@ -5,6 +5,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { LOGIN_REWARD_SCHEDULE } from "@/lib/game";
 import { incrementQuestProgress } from "@/lib/quests";
+import { awardCoins, COIN_REWARDS } from "@/lib/coins";
 
 export async function claimDailyLoginReward(): Promise<void> {
   const session = await getSession();
@@ -41,6 +42,7 @@ export async function claimDailyLoginReward(): Promise<void> {
   ]);
 
   await incrementQuestProgress(session.userId, "login");
+  await awardCoins(session.userId, "daily_login_reward", COIN_REWARDS.daily_login_reward);
 
   revalidatePath("/app/tagesbelohnung");
 }

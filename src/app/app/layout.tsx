@@ -31,7 +31,7 @@ export default async function AppLayout({
   const effective = effectiveRole(session);
   if (effective !== "student") redirect(ROLE_HOME[effective]);
 
-  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments] = await Promise.all([
+  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData] = await Promise.all([
     fetchNotifications(session.userId),
     prisma.flashcard.count({
       where: { deck: { userId: session.userId }, nextReviewAt: { lte: new Date() } },
@@ -43,6 +43,7 @@ export default async function AppLayout({
         assignment: { dueAt: { gte: new Date() } },
       },
     }),
+    prisma.user.findUnique({ where: { id: session.userId }, select: { coins: true } }),
   ]);
 
   const navItems: NavItem[] = [
@@ -67,6 +68,9 @@ export default async function AppLayout({
     { href: "/app/titel", label: "Titel", icon: "tag" },
     { href: "/app/tagesbelohnung", label: "Tagesbonus", icon: "sun" },
     { href: "/app/erfolge", label: "Erfolge", icon: "star" },
+    { href: "/app/shop", label: "Shop", icon: "shoppingBag" },
+    { href: "/app/inventar", label: "Inventar", icon: "package" },
+    { href: "/app/coins", label: "Münzen", icon: "coins" },
     { href: "/app/fehlzeiten", label: "Fehlzeiten", icon: "calendarX" },
   ];
 
@@ -89,7 +93,7 @@ export default async function AppLayout({
               isImpersonating={isImpersonating(session)}
             />
           )}
-          <AppHeader user={displayUser(session)} unreadCount={unreadCount} notifications={notifications} />
+          <AppHeader user={displayUser(session)} unreadCount={unreadCount} notifications={notifications} coinBalance={userData?.coins ?? 0} />
         </div>
         <main className="flex-1 px-6 py-8 pb-24 lg:px-10 lg:py-10 lg:pb-10">
           {children}
