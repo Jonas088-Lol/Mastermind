@@ -14,6 +14,7 @@ import {
   CheckSquare,
   ClipboardEdit,
   FileText,
+  Gift,
   Home,
   Layers,
   LineChart,
@@ -22,10 +23,14 @@ import {
   Shield,
   Sparkles,
   Star,
+  Sun,
   Swords,
+  Tag,
+  Target,
   Trophy,
   UserCircle,
   Users,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -42,6 +47,7 @@ const ICONS = {
   checkSquare: CheckSquare,
   clipboardEdit: ClipboardEdit,
   fileText: FileText,
+  gift: Gift,
   home: Home,
   layers: Layers,
   lineChart: LineChart,
@@ -50,10 +56,14 @@ const ICONS = {
   shield: Shield,
   sparkles: Sparkles,
   star: Star,
+  sun: Sun,
   swords: Swords,
+  tag: Tag,
+  target: Target,
   trophy: Trophy,
   userCircle: UserCircle,
   users: Users,
+  zap: Zap,
 } satisfies Record<string, LucideIcon>;
 
 export type IconKey = keyof typeof ICONS;

@@ -60,6 +60,12 @@ export default async function AppLayout({
     { href: "/app/community", label: "Community", icon: "users" },
     { href: "/app/mannschaften", label: "Mannschaften", icon: "shield" },
     { href: "/app/ranking", label: "Ranking", icon: "trophy" },
+    { href: "/app/quests", label: "Quests", icon: "zap" },
+    { href: "/app/boss", label: "Boss-Battle", icon: "swords" },
+    { href: "/app/saison", label: "Saison", icon: "gift" },
+    { href: "/app/skills", label: "Skill-Bäume", icon: "target" },
+    { href: "/app/titel", label: "Titel", icon: "tag" },
+    { href: "/app/tagesbelohnung", label: "Tagesbonus", icon: "sun" },
     { href: "/app/erfolge", label: "Erfolge", icon: "star" },
     { href: "/app/fehlzeiten", label: "Fehlzeiten", icon: "calendarX" },
   ];
