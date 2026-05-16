@@ -9,6 +9,7 @@ import {
   ClipboardList,
   PenLine,
   Plus,
+  Trash2,
   Users,
 } from "lucide-react";
 import Link from "next/link";
@@ -22,7 +23,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import { AttendanceButtons } from "./AttendanceButtons";
-import { signLesson } from "./actions";
+import { deleteIncident, signLesson } from "./actions";
 
 export const metadata: Metadata = { title: "Klassenbuch" };
 
@@ -363,6 +364,15 @@ export default async function KlassenbuchPage({ searchParams }: PageProps) {
                         })}
                       </p>
                     </div>
+                    <form action={deleteIncident.bind(null, inc.id)} className="shrink-0">
+                      <button
+                        type="submit"
+                        title="Vorfall löschen"
+                        className="text-muted-fg hover:text-danger"
+                      >
+                        <Trash2 className="size-4" />
+                      </button>
+                    </form>
                   </li>
                 );
               })}

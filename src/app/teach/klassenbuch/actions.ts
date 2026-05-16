@@ -99,3 +99,17 @@ export async function createIncident(formData: FormData) {
 
   revalidatePath("/teach/klassenbuch");
 }
+
+export async function deleteIncident(incidentId: string): Promise<void> {
+  const session = await getSession();
+  if (!session) return;
+
+  const incident = await prisma.classbookIncident.findUnique({
+    where: { id: incidentId },
+    select: { teacherId: true },
+  });
+  if (!incident || incident.teacherId !== session.userId) return;
+
+  await prisma.classbookIncident.delete({ where: { id: incidentId } });
+  revalidatePath("/teach/klassenbuch");
+}

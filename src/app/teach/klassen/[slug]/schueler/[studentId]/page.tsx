@@ -6,6 +6,7 @@ import {
   CheckCircle2,
   ClockAlert,
   GraduationCap,
+  Plus,
   Trophy,
   Zap,
 } from "lucide-react";
@@ -139,13 +140,22 @@ export default async function StudentProfilePage({ params }: PageParams) {
 
         <div className="flex items-start gap-5">
           <Avatar name={student.name} size="lg" className="size-16 text-xl" />
-          <div>
+          <div className="min-w-0 flex-1">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
               {student.schoolClass?.name ? `Klasse ${student.schoolClass.name} · ` : ""}Schülerprofil
             </p>
             <h1 className="mt-1 text-3xl font-bold tracking-tight">{student.name}</h1>
             <p className="mt-1 text-sm text-muted-fg">{student.email} · dabei seit {joinedDate}</p>
           </div>
+          {student.schoolClass && (
+            <Link
+              href={`/teach/noten/neu?classId=${student.schoolClass.id}&studentId=${studentId}&classSlug=${encodeURIComponent(slug)}`}
+              className="flex shrink-0 items-center gap-2 bg-fg px-4 py-2 text-sm font-semibold text-bg hover:bg-fg/90"
+            >
+              <Plus className="size-4" />
+              Note eintragen
+            </Link>
+          )}
         </div>
       </header>
 

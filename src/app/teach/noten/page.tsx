@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Download, Plus } from "lucide-react";
+import { ArrowRight, Download, Plus, Trash2 } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { deleteGrade } from "./actions";
 
 export const metadata: Metadata = { title: "Noten · Lehrer" };
 
@@ -143,6 +144,7 @@ export default async function TeachNotenPage() {
                   <th className="px-4 py-3 text-right">Note</th>
                   <th className="px-4 py-3 text-left">Kommentar</th>
                   <th className="px-4 py-3 text-right">Eintragen</th>
+                  <th className="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -182,6 +184,13 @@ export default async function TeachNotenPage() {
                             <Plus className="inline size-3.5" /> Note
                           </Link>
                         )}
+                      </td>
+                      <td className="px-4 py-2.5 text-right">
+                        <form action={deleteGrade.bind(null, g.id)}>
+                          <button type="submit" title="Note löschen" className="text-muted-fg hover:text-danger">
+                            <Trash2 className="size-3.5" />
+                          </button>
+                        </form>
                       </td>
                     </tr>
                   );
