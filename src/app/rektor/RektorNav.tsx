@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, Home, Megaphone, Shield, Users } from "lucide-react";
+import { BarChart3, CalendarDays, Home, Megaphone, Shield, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
@@ -10,6 +10,8 @@ const items = [
   { href: "/rektor/statistiken", label: "Statistiken", icon: BarChart3 },
   { href: "/rektor/personal", label: "Personal", icon: Users },
   { href: "/rektor/mannschaften", label: "Mannschaften", icon: Shield },
+  { href: "/rektor/schuljahr", label: "Schuljahresplanung", icon: CalendarDays },
+  { href: "/rektor/evaluation", label: "Evaluation", icon: BarChart3 },
   { href: "/rektor/broadcast", label: "Broadcast", icon: Megaphone },
 ];
 

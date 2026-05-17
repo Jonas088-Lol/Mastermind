@@ -16,6 +16,7 @@ import { fetchNotifications } from "@/lib/notifications";
 const adminNavItems: NavItem[] = [
   { href: "/admin",               label: "Dashboard",    icon: "home",         exact: true },
   { href: "/admin/nutzer",        label: "Nutzer",       icon: "users" },
+  { href: "/admin/import",        label: "Import",       icon: "fileCheck" },
   { href: "/admin/klassen",       label: "Klassen",      icon: "building2" },
   { href: "/admin/faecher",       label: "Fächer",       icon: "bookOpen" },
   { href: "/admin/stundenplan",   label: "Stundenplan",  icon: "calendar" },
