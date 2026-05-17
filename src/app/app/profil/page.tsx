@@ -50,6 +50,7 @@ export default async function ProfilPage() {
       equippedTitle: true,
       totalDailyLogins: true,
       avatarUrl: true,
+      coins: true,
       school: { select: { name: true } },
       studentSubmissions: {
         select: {
@@ -65,7 +66,7 @@ export default async function ProfilPage() {
 
   if (!user) redirect("/login");
 
-  const [submissionCount, , earnedAchievements] = await Promise.all([
+  const [submissionCount, , earnedAchievements, activeBoosters] = await Promise.all([
     prisma.submission.count({
       where: { studentId: session.userId, status: { in: ["submitted", "graded"] } },
     }),
@@ -73,6 +74,10 @@ export default async function ProfilPage() {
     prisma.userAchievement.findMany({
       where: { userId: session.userId },
       orderBy: { unlockedAt: "desc" },
+    }),
+    prisma.userBooster.findMany({
+      where: { userId: session.userId, expiresAt: { gt: new Date() } },
+      orderBy: { expiresAt: "asc" },
     }),
   ]);
 
@@ -176,6 +181,56 @@ export default async function ProfilPage() {
           </Link>
         </p>
       </section>
+
+      <div className="grid gap-6 sm:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>Münzen</CardTitle>
+            <Link href="/app/coins" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+              Aufladen
+            </Link>
+          </CardHeader>
+          <CardBody>
+            <p className="font-mono text-4xl font-bold">🪙 {user.coins}</p>
+            <div className="mt-3 flex gap-2">
+              <Link href="/app/shop" className={buttonVariants({ variant: "outline", size: "sm" })}>Shop</Link>
+              <Link href="/app/inventar" className={buttonVariants({ variant: "outline", size: "sm" })}>Inventar</Link>
+            </div>
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Aktive Booster</CardTitle>
+          </CardHeader>
+          <CardBody className="!px-0 !pb-0">
+            {activeBoosters.length === 0 ? (
+              <div className="px-5 py-4">
+                <p className="text-sm text-muted-fg">Kein aktiver Booster.</p>
+                <Link href="/app/shop" className={cn(buttonVariants({ variant: "outline", size: "sm" }), "mt-3")}>
+                  Im Shop stöbern
+                </Link>
+              </div>
+            ) : (
+              <ul className="divide-y divide-border border-t border-border">
+                {activeBoosters.map((b) => (
+                  <li key={b.id} className="px-5 py-3">
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="text-sm font-semibold capitalize">
+                        {b.boosterSlug.replace(/_/g, " ")}
+                      </p>
+                      <span className="font-mono text-xs font-bold text-brand">×{b.multiplier}</span>
+                    </div>
+                    <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-fg">
+                      bis {b.expiresAt.toLocaleDateString("de-DE", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </CardBody>
+        </Card>
+      </div>
 
       <div className="grid gap-6 xl:grid-cols-3">
         <div className="xl:col-span-2">

@@ -70,6 +70,7 @@ export default async function TeachLayout({
     { href: "/teach/broadcast", label: "Broadcast", icon: "users" },
     { href: "/teach/sitzplan", label: "Sitzplan", icon: "grid" },
     { href: "/teach/elterngespraeche", label: "Elterngespräche", icon: "userCheck" },
+    { href: "/teach/elternsprechtag", label: "Elternsprechtag", icon: "calendarDays" },
     { href: "/teach/statistiken", label: "Statistiken", icon: "barChart3" },
     { href: "/teach/kalender", label: "Kalender", icon: "calendarDays" },
   ];

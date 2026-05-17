@@ -987,6 +987,202 @@ async function main() {
   }
   console.log(`  ✓ ${shopItems.length} Shop-Items`);
 
+  // ── SchoolEvents ─────────────────────────────────────────────
+  const schoolEventDefs = [
+    {
+      id: "seed-event-1",
+      schoolId: school.id,
+      title: "Pfingstferien",
+      description: "Schulferien — kein Unterricht",
+      startAt: d(10),
+      endAt: d(17),
+      allDay: true,
+      category: "holiday",
+      classIds: null,
+      createdBy: userIds["admin@schule.de"],
+    },
+    {
+      id: "seed-event-2",
+      schoolId: school.id,
+      title: "Zentrales Abschlussexamen — 10. Klasse",
+      description: "Schriftliche Abschlussprüfung Mathematik für alle 10. Klassen",
+      startAt: d(21),
+      endAt: d(21),
+      allDay: true,
+      category: "exam",
+      classIds: JSON.stringify([S.classes["10a"]]),
+      createdBy: userIds["admin@schule.de"],
+    },
+    {
+      id: "seed-event-3",
+      schoolId: school.id,
+      title: "Schulfest 2026",
+      description: "Unser jährliches Schulfest — alle sind herzlich eingeladen!",
+      startAt: d(30),
+      endAt: d(30),
+      allDay: true,
+      category: "event",
+      classIds: null,
+      createdBy: userIds["admin@schule.de"],
+    },
+    {
+      id: "seed-event-4",
+      schoolId: school.id,
+      title: "Lehrerkonferenz — Jahresplanung",
+      description: "Notenkonferenz und Besprechung der Jahresplanung für alle Fachschaften",
+      startAt: d(7),
+      endAt: d(7),
+      allDay: false,
+      category: "meeting",
+      classIds: null,
+      createdBy: userIds["admin@schule.de"],
+    },
+    {
+      id: "seed-event-5",
+      schoolId: school.id,
+      title: "Tag der offenen Tür",
+      description: "Besucher können den Schulalltag kennenlernen — alle Klassen präsentieren Projekte",
+      startAt: d(45),
+      endAt: d(45),
+      allDay: true,
+      category: "event",
+      classIds: null,
+      createdBy: userIds["admin@schule.de"],
+    },
+  ];
+  for (const ev of schoolEventDefs) {
+    await prisma.schoolEvent.upsert({
+      where: { id: ev.id },
+      update: {},
+      create: ev,
+    });
+  }
+  console.log(`  ✓ ${schoolEventDefs.length} Schulkalender-Einträge`);
+
+  // ── SubstitutionEntries ───────────────────────────────────────
+  const substitutionDefs = [
+    {
+      id: "seed-subst-1",
+      schoolId: school.id,
+      date: d(3),
+      period: 1,
+      classId: S.classes["9b"],
+      absentTeacherId: userIds["wagner@schule.de"],
+      substituteTeacherId: userIds["becker@schule.de"],
+      subjectName: "Englisch",
+      type: "substitution",
+      note: "Frau Wagner ist krank — Hr. Becker übernimmt",
+    },
+    {
+      id: "seed-subst-2",
+      schoolId: school.id,
+      date: d(3),
+      period: 2,
+      classId: S.classes["9b"],
+      absentTeacherId: userIds["wagner@schule.de"],
+      substituteTeacherId: null,
+      subjectName: "Englisch",
+      type: "cancellation",
+      note: "Stunde fällt aus — selbstständig Unit 7 wiederholen",
+    },
+    {
+      id: "seed-subst-3",
+      schoolId: school.id,
+      date: d(5),
+      period: 3,
+      classId: S.classes["10a"],
+      absentTeacherId: userIds["heinrich@schule.de"],
+      substituteTeacherId: userIds["klein@schule.de"],
+      subjectName: "Biologie",
+      type: "substitution",
+      note: "Fr. Klein übernimmt die Biologie-Stunde",
+    },
+  ];
+  for (const sub of substitutionDefs) {
+    await prisma.substitutionEntry.upsert({
+      where: { id: sub.id },
+      update: {},
+      create: sub,
+    });
+  }
+  console.log(`  ✓ ${substitutionDefs.length} Vertretungsplan-Einträge`);
+
+  // ── ConsentForms ──────────────────────────────────────────────
+  const consentFormDefs = [
+    {
+      id: "seed-consent-1",
+      schoolId: school.id,
+      title: "Einwilligung Klassenfahrt Berlin 2026",
+      description:
+        "Hiermit willige ich ein, dass mein Kind an der Klassenfahrt nach Berlin (12.–16. Juni 2026) teilnimmt. Die Kosten betragen 280 €. Unterkunft: Jugendherberge Berlin-Mitte.",
+      deadline: d(20),
+      isActive: true,
+      targetClassIds: JSON.stringify([S.classes["9b"]]),
+    },
+    {
+      id: "seed-consent-2",
+      schoolId: school.id,
+      title: "Einwilligung Veröffentlichung von Fotos",
+      description:
+        "Hiermit erteile ich die Einwilligung zur Veröffentlichung von Fotos und Videos, auf denen mein Kind abgebildet ist, auf der Schulwebsite und in Schulpublikationen.",
+      deadline: d(35),
+      isActive: true,
+      targetClassIds: null,
+    },
+  ];
+  for (const cf of consentFormDefs) {
+    await prisma.consentForm.upsert({
+      where: { id: cf.id },
+      update: {},
+      create: cf,
+    });
+  }
+  console.log(`  ✓ ${consentFormDefs.length} Einwilligungsformulare`);
+
+  // ── ParentTeacherSlots ────────────────────────────────────────
+  const parentTeacherSlotDefs = [
+    {
+      id: "seed-slot-1",
+      teacherId: userIds["becker@schule.de"],
+      startsAt: new Date(d(14).setHours(14, 0, 0, 0)),
+      duration: 15,
+      location: "Raum 101",
+      isBooked: false,
+    },
+    {
+      id: "seed-slot-2",
+      teacherId: userIds["becker@schule.de"],
+      startsAt: new Date(d(14).setHours(14, 15, 0, 0)),
+      duration: 15,
+      location: "Raum 101",
+      isBooked: false,
+    },
+    {
+      id: "seed-slot-3",
+      teacherId: userIds["becker@schule.de"],
+      startsAt: new Date(d(14).setHours(14, 30, 0, 0)),
+      duration: 15,
+      location: "Raum 101",
+      isBooked: false,
+    },
+    {
+      id: "seed-slot-4",
+      teacherId: userIds["wagner@schule.de"],
+      startsAt: new Date(d(14).setHours(15, 0, 0, 0)),
+      duration: 15,
+      location: "Raum 101",
+      isBooked: false,
+    },
+  ];
+  for (const slot of parentTeacherSlotDefs) {
+    await prisma.parentTeacherSlot.upsert({
+      where: { id: slot.id },
+      update: {},
+      create: slot,
+    });
+  }
+  console.log(`  ✓ ${parentTeacherSlotDefs.length} Elternsprechtag-Slots`);
+
   console.log(`\n✅ Done. School: ${school.name}\n`);
 }
 

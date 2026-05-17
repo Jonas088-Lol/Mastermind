@@ -7,7 +7,9 @@ import {
   ClipboardList,
   ClockAlert,
   GraduationCap,
+  Grid3X3,
   Mail,
+  MessageSquare,
   Pencil,
   Sparkles,
   UserCheck,
@@ -162,6 +164,20 @@ export default async function ClassDetailPage({ params }: PageParams) {
             >
               <Users className="size-3.5" />
               Elternkontakte
+            </Link>
+            <Link
+              href={`/teach/sitzplan?class=${encodeURIComponent(slug)}`}
+              className={buttonVariants({ variant: "outline", size: "sm" })}
+            >
+              <Grid3X3 className="size-3.5" />
+              Sitzplan
+            </Link>
+            <Link
+              href={`/teach/elterngespraeche?studentId=`}
+              className={buttonVariants({ variant: "outline", size: "sm" })}
+            >
+              <MessageSquare className="size-3.5" />
+              Elterngespräche
             </Link>
             <Link
               href={`/teach/noten/neu?classId=${schoolClass.id}&classSlug=${encodeURIComponent(slug)}`}
