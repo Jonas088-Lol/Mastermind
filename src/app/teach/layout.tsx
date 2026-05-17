@@ -68,6 +68,10 @@ export default async function TeachLayout({
     { href: "/teach/abwesenheit", label: "Abwesenheiten", icon: "calendar" },
     { href: "/teach/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: msgBadge },
     { href: "/teach/broadcast", label: "Broadcast", icon: "users" },
+    { href: "/teach/sitzplan", label: "Sitzplan", icon: "grid" },
+    { href: "/teach/elterngespraeche", label: "Elterngespräche", icon: "userCheck" },
+    { href: "/teach/statistiken", label: "Statistiken", icon: "barChart3" },
+    { href: "/teach/kalender", label: "Kalender", icon: "calendarDays" },
   ];
 
   const bottomItems: NavItem[] = [

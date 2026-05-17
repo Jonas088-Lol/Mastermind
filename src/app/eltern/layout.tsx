@@ -21,6 +21,11 @@ const items: NavItem[] = [
   { href: "/eltern/aufgaben", label: "Aufgaben", icon: "checkSquare" },
   { href: "/eltern/abwesenheit", label: "Abwesenheit", icon: "clipboardEdit" },
   { href: "/eltern/fehlzeiten", label: "Fehlzeiten", icon: "calendarX" },
+  { href: "/eltern/leistungsentwicklung", label: "Leistung", icon: "trendingUp" },
+  { href: "/eltern/elternsprechtag", label: "Sprechtag", icon: "calendarDays" },
+  { href: "/eltern/kalender", label: "Kalender", icon: "calendar" },
+  { href: "/eltern/einwilligungen", label: "Einwilligungen", icon: "fileCheck" },
+  { href: "/eltern/lernfortschritt", label: "Lernfortschritt", icon: "zap" },
 ];
 
 const bottomItems: NavItem[] = [

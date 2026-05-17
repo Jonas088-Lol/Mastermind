@@ -39,6 +39,9 @@ model School {
   worksheets       Worksheet[]
   seasons          Season[]
   bossBattles      BossBattle[]
+  schoolEvents     SchoolEvent[]
+  substitutions    SubstitutionEntry[]
+  consentForms     ConsentForm[]
 }
 
 model SsoConfig {
@@ -160,6 +163,15 @@ model User {
   teacherWorksheetAssigns   WorksheetAssignment[] @relation("TeacherWorksheetAssignments")
   worksheetSubmissions      WorksheetSubmission[] @relation("StudentWorksheetSubmissions")
 
+  teacherMeetingNotes  TeacherMeetingNote[] @relation("TeacherNotes")
+  studentMeetingNotes  TeacherMeetingNote[] @relation("StudentNotes")
+  parentConsentResponses ConsentResponse[]  @relation("ParentConsentResponses")
+  studentConsentResponses ConsentResponse[] @relation("StudentConsentResponses")
+  teacherSlots         ParentTeacherSlot[]  @relation("TeacherSlots")
+  parentBookings       ParentTeacherBooking[] @relation("ParentBookings")
+  substitutionsAbsent  SubstitutionEntry[]  @relation("AbsentTeacher")
+  substitutionsCovering SubstitutionEntry[] @relation("SubstituteTeacher")
+
   @@index([role])
   @@index([schoolId])
   @@index([classId])
@@ -254,6 +266,8 @@ model SchoolClass {
   lessonLogs            LessonLog[]
   incidents             ClassbookIncident[]
   worksheetAssignments  WorksheetAssignment[]
+  seatingPlans          SeatingPlan[]
+  substitutions         SubstitutionEntry[]
 
   @@unique([schoolId, name])
   @@index([schoolId])
@@ -1207,4 +1221,150 @@ model StripeOrder {
 
   @@index([userId])
   @@index([sessionId])
+}
+
+// ── Schulkalender ──────────────────────────────────────────
+
+model SchoolEvent {
+  id          String   @id @default(cuid())
+  schoolId    String
+  school      School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  startAt     DateTime
+  endAt       DateTime?
+  allDay      Boolean  @default(true)
+  category    String   @default("event") // "holiday" | "exam" | "event" | "deadline" | "meeting"
+  classIds    String?  // JSON array of class IDs — null = all classes
+  color       String?
+  createdBy   String?
+  createdAt   DateTime @default(now())
+
+  @@index([schoolId, startAt])
+}
+
+// ── Vertretungsplan ────────────────────────────────────────
+
+model SubstitutionEntry {
+  id                  String   @id @default(cuid())
+  schoolId            String
+  school              School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  date                DateTime
+  period              Int
+  classId             String
+  class               SchoolClass @relation(fields: [classId], references: [id])
+  absentTeacherId     String?
+  absentTeacher       User?    @relation("AbsentTeacher", fields: [absentTeacherId], references: [id])
+  substituteTeacherId String?
+  substituteTeacher   User?    @relation("SubstituteTeacher", fields: [substituteTeacherId], references: [id])
+  subjectName         String?
+  note                String?
+  type                String   @default("substitution") // "substitution" | "cancellation" | "room_change"
+  room                String?
+  createdAt           DateTime @default(now())
+
+  @@index([schoolId, date])
+  @@index([classId])
+}
+
+// ── Elterngespräche ────────────────────────────────────────
+
+model TeacherMeetingNote {
+  id         String   @id @default(cuid())
+  teacherId  String
+  teacher    User     @relation("TeacherNotes", fields: [teacherId], references: [id])
+  studentId  String
+  student    User     @relation("StudentNotes", fields: [studentId], references: [id])
+  parentName String?
+  meetingAt  DateTime
+  notes      String
+  followUp   String?
+  isPrivate  Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([teacherId])
+  @@index([studentId])
+}
+
+// ── Sitzplan ──────────────────────────────────────────────
+
+model SeatingPlan {
+  id          String   @id @default(cuid())
+  classId     String
+  class       SchoolClass @relation(fields: [classId], references: [id])
+  subjectId   String?
+  label       String   @default("Standard")
+  layout      String   // JSON: [{row:0,col:0,studentId:"..."}]
+  rows        Int      @default(5)
+  cols        Int      @default(6)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([classId])
+}
+
+// ── Einwilligungen (Eltern) ────────────────────────────────
+
+model ConsentForm {
+  id          String   @id @default(cuid())
+  schoolId    String
+  school      School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  title       String
+  description String
+  deadline    DateTime?
+  isActive    Boolean  @default(true)
+  targetClassIds String? // JSON — null = all classes
+  createdAt   DateTime @default(now())
+
+  responses   ConsentResponse[]
+
+  @@index([schoolId])
+}
+
+model ConsentResponse {
+  id          String      @id @default(cuid())
+  formId      String
+  form        ConsentForm @relation(fields: [formId], references: [id], onDelete: Cascade)
+  parentId    String
+  parent      User        @relation("ParentConsentResponses", fields: [parentId], references: [id])
+  studentId   String
+  student     User        @relation("StudentConsentResponses", fields: [studentId], references: [id])
+  agreed      Boolean
+  signature   String?
+  respondedAt DateTime    @default(now())
+
+  @@unique([formId, parentId, studentId])
+  @@index([formId])
+  @@index([parentId])
+}
+
+// ── Elternsprechtag ────────────────────────────────────────
+
+model ParentTeacherSlot {
+  id        String   @id @default(cuid())
+  teacherId String
+  teacher   User     @relation("TeacherSlots", fields: [teacherId], references: [id])
+  startsAt  DateTime
+  duration  Int      @default(10) // minutes
+  isBooked  Boolean  @default(false)
+  location  String?
+  createdAt DateTime @default(now())
+
+  booking   ParentTeacherBooking?
+
+  @@index([teacherId, startsAt])
+}
+
+model ParentTeacherBooking {
+  id        String            @id @default(cuid())
+  slotId    String            @unique
+  slot      ParentTeacherSlot @relation(fields: [slotId], references: [id], onDelete: Cascade)
+  parentId  String
+  parent    User              @relation("ParentBookings", fields: [parentId], references: [id])
+  studentId String
+  note      String?
+  createdAt DateTime          @default(now())
+
+  @@index([parentId])
 }
