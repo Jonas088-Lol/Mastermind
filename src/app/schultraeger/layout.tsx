@@ -7,6 +7,8 @@ const schultraegerBottomItems: BottomNavItem[] = [
   { href: "/schultraeger",             label: "Start",       icon: "home",      exact: true },
   { href: "/schultraeger/schulen",     label: "Schulen",     icon: "building2" },
   { href: "/schultraeger/statistiken", label: "Statistiken", icon: "barChart3" },
+  { href: "/schultraeger/lizenzen",    label: "Lizenzen",    icon: "fileText" },
+  { href: "/schultraeger/abrechnung",  label: "Abrechnung",  icon: "coins" },
 ];
 
 export default async function SchultraegerLayout({ children }: { children: React.ReactNode }) {

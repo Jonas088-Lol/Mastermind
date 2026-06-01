@@ -11,31 +11,44 @@ export async function sendTeacherBroadcast(formData: FormData): Promise<void> {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "teacher") return;
 
+  const targetType = (formData.get("targetType") as string | null)?.trim() ?? "class";
   const classId = (formData.get("classId") as string | null)?.trim() ?? "";
-  const target = (formData.get("target") as string | null)?.trim() ?? "students";
   const subject = (formData.get("subject") as string | null)?.trim() ?? "";
   const message = (formData.get("message") as string | null)?.trim() ?? "";
 
-  if (!classId || !subject || !message) return;
-
-  const students = await prisma.user.findMany({
-    where: { classId, role: "student" },
-    select: { id: true },
-  });
-  const studentIds = students.map((s) => s.id);
+  if (!subject || !message) return;
 
   const recipientIds: string[] = [];
 
-  if (target === "students" || target === "both") {
-    recipientIds.push(...studentIds);
-  }
-
-  if (target === "parents" || target === "both") {
-    const parentLinks = await prisma.parentStudentLink.findMany({
-      where: { studentId: { in: studentIds } },
+  if (targetType === "class") {
+    if (!classId) return;
+    const students = await prisma.user.findMany({
+      where: { classId, role: "student" },
+      select: { id: true },
+    });
+    recipientIds.push(...students.map((s) => s.id));
+  } else if (targetType === "all_students") {
+    const tscEntries = await prisma.teacherSubjectClass.findMany({
+      where: { teacherId: session.userId },
+      select: { classId: true },
+    });
+    const classIds = [...new Set(tscEntries.map((t) => t.classId))];
+    const students = await prisma.user.findMany({
+      where: { classId: { in: classIds }, role: "student" },
+      select: { id: true },
+    });
+    recipientIds.push(...students.map((s) => s.id));
+  } else if (targetType === "all_parents") {
+    const tscEntries = await prisma.teacherSubjectClass.findMany({
+      where: { teacherId: session.userId },
+      select: { classId: true },
+    });
+    const classIds = [...new Set(tscEntries.map((t) => t.classId))];
+    const links = await prisma.parentStudentLink.findMany({
+      where: { student: { classId: { in: classIds } } },
       select: { parentId: true },
     });
-    recipientIds.push(...parentLinks.map((l) => l.parentId));
+    recipientIds.push(...links.map((l) => l.parentId));
   }
 
   const unique = [...new Set(recipientIds)];
@@ -55,5 +68,5 @@ export async function sendTeacherBroadcast(formData: FormData): Promise<void> {
   pushToUsers(unique, { title: subject, body: message, url: "/app/nachrichten" }).catch(() => {});
 
   revalidatePath("/teach/broadcast");
-  redirect("/teach");
+  redirect("/teach/broadcast?sent=1");
 }

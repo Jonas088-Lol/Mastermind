@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Building2, Home, BarChart3 } from "lucide-react";
+import { Building2, Home, BarChart3, FileText, Coins } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
   { href: "/schultraeger", label: "Übersicht", icon: Home, exact: true },
   { href: "/schultraeger/schulen", label: "Schulen", icon: Building2 },
   { href: "/schultraeger/statistiken", label: "Statistiken", icon: BarChart3 },
+  { href: "/schultraeger/lizenzen", label: "Lizenzen", icon: FileText },
+  { href: "/schultraeger/abrechnung", label: "Abrechnung", icon: Coins },
 ];
 
 export function SchultraegerNav() {

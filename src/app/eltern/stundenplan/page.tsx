@@ -7,77 +7,231 @@ import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 export const metadata: Metadata = { title: "Stundenplan · Eltern" };
 
 const DAY_NAMES = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"];
+const DAY_NAMES_SHORT = ["Mo", "Di", "Mi", "Do", "Fr"];
+const MAX_PERIOD = 8;
 
 export default async function ElternStundenplanPage() {
-  const todayDow = (() => { const d = new Date().getDay(); return d === 0 ? 7 : d; })();
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "parent") redirect(ROLE_HOME[effectiveRole(session)]);
+
+  // today's day-of-week: 1=Mo … 5=Fr, 0/6 = weekend → no highlight
+  const todayDow = (() => {
+    const d = new Date().getDay();
+    return d === 0 || d === 6 ? -1 : d;
+  })();
 
   const links = await prisma.parentStudentLink.findMany({
     where: { parentId: session.userId },
     include: {
       student: {
-        include: {
-          timetableEntries: {
+        select: {
+          id: true,
+          name: true,
+          klasse: true,
+          classId: true,
+          schoolClass: {
             include: {
-              subject: { select: { name: true, color: true } },
-              teacher: { select: { name: true } },
+              timetableEntries: {
+                include: {
+                  subject: { select: { name: true, color: true, shortName: true } },
+                  teacher: { select: { name: true } },
+                },
+                orderBy: [{ day: "asc" }, { period: "asc" }],
+              },
             },
-            orderBy: [{ day: "asc" }, { period: "asc" }],
           },
         },
       },
     },
+    orderBy: { student: { name: "asc" } },
   });
 
   return (
-    <div className="mx-auto flex max-w-7xl flex-col gap-8">
+    <div className="mx-auto flex max-w-7xl flex-col gap-10">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schuljahr 2025/26</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
+          Schuljahr 2025/26
+        </p>
         <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Stundenplan</h1>
+        <p className="mt-1 text-sm text-muted-fg">
+          Wochenstundenplan deiner {links.length === 1 ? "Tochter / deines Sohnes" : "Kinder"}.
+        </p>
       </header>
 
-      {links.map(({ student }) => {
-        const byDay = Array.from({ length: 5 }, (_, i) =>
-          student.timetableEntries.filter((e) => e.day === i + 1)
+      {links.length === 0 && (
+        <p className="text-sm text-muted-fg">Kein Kind mit deinem Konto verknüpft.</p>
+      )}
+
+      {links.map(({ student }, studentIdx) => {
+        const entries = student.schoolClass?.timetableEntries ?? [];
+        const className =
+          student.schoolClass?.name ?? student.klasse ?? "Unbekannte Klasse";
+
+        // Build a day → period → entry lookup
+        const grid: Map<number, Map<number, (typeof entries)[number]>> = new Map();
+        for (const e of entries) {
+          if (!grid.has(e.day)) grid.set(e.day, new Map());
+          grid.get(e.day)!.set(e.period, e);
+        }
+
+        // Compute the actual max period used (at least 6, at most MAX_PERIOD)
+        const maxPeriodUsed = entries.reduce((m, e) => Math.max(m, e.period), 0);
+        const periods = Array.from(
+          { length: Math.max(6, Math.min(maxPeriodUsed, MAX_PERIOD)) },
+          (_, i) => i + 1,
         );
+
         return (
-          <div key={student.id}>
-            {links.length > 1 && <h2 className="mb-4 text-lg font-bold">{student.name}</h2>}
-            <div className="grid gap-4 md:grid-cols-5">
-              {byDay.map((entries, idx) => (
-                <Card key={idx} className={idx + 1 === todayDow ? "border-brand/40" : ""}>
-                  <CardHeader>
-                    <CardTitle className="text-sm">{DAY_NAMES[idx]}</CardTitle>
-                    {idx + 1 === todayDow && (
-                      <span className="rounded-none bg-brand px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-brand-fg">
-                        Heute
-                      </span>
-                    )}
-                  </CardHeader>
-                  <CardBody className="!px-0 !pb-0">
-                    {entries.length === 0 ? (
-                      <p className="border-t border-border px-4 py-3 text-xs text-muted-fg">Kein Unterricht</p>
-                    ) : (
-                      <ol className="divide-y divide-border border-t border-border">
-                        {entries.map((e) => (
-                          <li key={e.id} className="flex items-start gap-2 px-4 py-2.5 text-xs">
-                            <span className="mt-0.5 w-4 shrink-0 font-mono text-muted-fg">{e.period}.</span>
-                            <span className="mt-1 inline-block size-1.5 shrink-0" style={{ backgroundColor: e.subject.color }} />
-                            <div className="min-w-0">
-                              <p className="font-semibold">{e.subject.name}</p>
-                              <p className="text-muted-fg">{e.teacher.name}</p>
-                            </div>
-                          </li>
+          <section key={student.id} className="flex flex-col gap-4">
+            {links.length > 1 && (
+              <div className="flex items-baseline gap-3">
+                <h2 className="text-xl font-bold">{student.name}</h2>
+                <span className="text-sm text-muted-fg">Klasse {className}</span>
+              </div>
+            )}
+
+            {entries.length === 0 ? (
+              <p className="text-sm text-muted-fg">
+                Kein Stundenplan für Klasse {className} hinterlegt.
+              </p>
+            ) : (
+              <>
+                {/* Desktop: full week grid */}
+                <div className="hidden overflow-x-auto md:block">
+                  <table className="w-full border-separate border-spacing-0 rounded-lg border border-border text-sm">
+                    <thead>
+                      <tr>
+                        <th className="w-10 border-b border-r border-border bg-muted px-3 py-2 text-left text-xs font-semibold text-muted-fg">
+                          Std.
+                        </th>
+                        {DAY_NAMES.map((name, idx) => (
+                          <th
+                            key={name}
+                            className={[
+                              "border-b border-r border-border px-3 py-2 text-left text-xs font-semibold last:border-r-0",
+                              idx + 1 === todayDow
+                                ? "bg-brand/10 text-brand"
+                                : "bg-muted text-muted-fg",
+                            ].join(" ")}
+                          >
+                            <span className="flex items-center gap-1.5">
+                              {name}
+                              {idx + 1 === todayDow && (
+                                <span className="rounded bg-brand px-1 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-brand-fg">
+                                  Heute
+                                </span>
+                              )}
+                            </span>
+                          </th>
                         ))}
-                      </ol>
-                    )}
-                  </CardBody>
-                </Card>
-              ))}
-            </div>
-          </div>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {periods.map((period, pIdx) => (
+                        <tr key={period} className={pIdx % 2 === 0 ? "" : "bg-muted/30"}>
+                          <td className="border-b border-r border-border px-3 py-2 text-center font-mono text-xs font-semibold text-muted-fg last-of-type:border-b-0">
+                            {period}.
+                          </td>
+                          {Array.from({ length: 5 }, (_, dayIdx) => {
+                            const dayNum = dayIdx + 1;
+                            const entry = grid.get(dayNum)?.get(period);
+                            const isToday = dayNum === todayDow;
+                            return (
+                              <td
+                                key={dayIdx}
+                                className={[
+                                  "border-b border-r border-border px-3 py-2 align-top last:border-r-0",
+                                  isToday ? "bg-brand/5" : "",
+                                  pIdx === periods.length - 1 ? "border-b-0" : "",
+                                ].join(" ")}
+                              >
+                                {entry ? (
+                                  <div className="flex flex-col gap-0.5">
+                                    <div className="flex items-center gap-1.5">
+                                      <span
+                                        className="inline-block size-2 shrink-0 rounded-sm"
+                                        style={{ backgroundColor: entry.subject.color }}
+                                      />
+                                      <span className="font-semibold leading-snug">
+                                        {entry.subject.name}
+                                      </span>
+                                    </div>
+                                    <p className="text-xs text-muted-fg">{entry.teacher.name}</p>
+                                    {entry.room && (
+                                      <p className="text-xs text-muted-fg">Raum {entry.room}</p>
+                                    )}
+                                  </div>
+                                ) : (
+                                  <span className="text-xs text-muted-fg/40">–</span>
+                                )}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Mobile: day columns as cards */}
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:hidden">
+                  {Array.from({ length: 5 }, (_, idx) => {
+                    const dayNum = idx + 1;
+                    const isToday = dayNum === todayDow;
+                    const dayEntries = entries.filter((e) => e.day === dayNum);
+                    return (
+                      <Card
+                        key={dayNum}
+                        className={isToday ? "border-brand/40 ring-1 ring-brand/20" : ""}
+                      >
+                        <CardHeader>
+                          <CardTitle className="text-sm">{DAY_NAMES_SHORT[idx]}</CardTitle>
+                          {isToday && (
+                            <span className="rounded bg-brand px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-brand-fg">
+                              Heute
+                            </span>
+                          )}
+                        </CardHeader>
+                        <CardBody className="!px-0 !pb-0">
+                          {dayEntries.length === 0 ? (
+                            <p className="border-t border-border px-4 py-3 text-xs text-muted-fg">
+                              Frei
+                            </p>
+                          ) : (
+                            <ol className="divide-y divide-border border-t border-border">
+                              {dayEntries.map((e) => (
+                                <li key={e.id} className="flex items-start gap-2 px-4 py-2.5 text-xs">
+                                  <span className="mt-0.5 w-4 shrink-0 font-mono text-muted-fg">
+                                    {e.period}.
+                                  </span>
+                                  <span
+                                    className="mt-1 inline-block size-1.5 shrink-0 rounded-sm"
+                                    style={{ backgroundColor: e.subject.color }}
+                                  />
+                                  <div className="min-w-0">
+                                    <p className="font-semibold leading-snug">{e.subject.name}</p>
+                                    <p className="text-muted-fg">{e.teacher.name}</p>
+                                    {e.room && (
+                                      <p className="text-muted-fg">Raum {e.room}</p>
+                                    )}
+                                  </div>
+                                </li>
+                              ))}
+                            </ol>
+                          )}
+                        </CardBody>
+                      </Card>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            {studentIdx < links.length - 1 && (
+              <hr className="mt-4 border-border" />
+            )}
+          </section>
         );
       })}
     </div>

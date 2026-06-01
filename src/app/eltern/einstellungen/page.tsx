@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { Bell, Lock, User } from "lucide-react";
+import { Bell, Link2, Lock, User } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -28,6 +29,21 @@ export default async function ElternEinstellungenPage() {
     select: { name: true, email: true, notifPrefs: true },
   });
 
+  const links = await prisma.parentStudentLink.findMany({
+    where: { parentId: session.userId },
+    include: {
+      student: {
+        select: {
+          id: true,
+          name: true,
+          klasse: true,
+          schoolClass: { select: { name: true } },
+        },
+      },
+    },
+    orderBy: { student: { name: "asc" } },
+  });
+
   const prefs: Record<string, boolean> = me?.notifPrefs
     ? JSON.parse(me.notifPrefs)
     : {};
@@ -39,6 +55,7 @@ export default async function ElternEinstellungenPage() {
         <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Einstellungen</h1>
       </header>
 
+      {/* ── 1. Profil ── */}
       <Card>
         <CardHeader>
           <div className="flex items-center gap-2">
@@ -53,14 +70,115 @@ export default async function ElternEinstellungenPage() {
               <Input id="name" name="name" defaultValue={me?.name ?? session.name} required />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="email">E-Mail</Label>
-              <Input id="email" name="email" type="email" defaultValue={me?.email ?? session.email} required />
+              <Label htmlFor="email">E-Mail-Adresse</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                defaultValue={me?.email ?? session.email}
+                required
+              />
             </div>
             <Button type="submit" variant="outline" size="sm">Speichern</Button>
           </form>
         </CardBody>
       </Card>
 
+      {/* ── 2. Verknüpfte Kinder ── */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <Link2 className="size-4 text-muted-fg" />
+            <CardTitle>Verknüpfte Kinder</CardTitle>
+          </div>
+        </CardHeader>
+        <CardBody className="!px-0 !pb-0">
+          {links.length === 0 ? (
+            <p className="border-t border-border px-5 py-6 text-sm text-muted-fg">
+              Kein Kind mit deinem Konto verknüpft.
+            </p>
+          ) : (
+            <>
+              <ul className="divide-y divide-border border-t border-border">
+                {links.map(({ student }) => {
+                  const initials = student.name
+                    .split(" ")
+                    .map((w) => w[0])
+                    .slice(0, 2)
+                    .join("")
+                    .toUpperCase();
+                  const className =
+                    student.schoolClass?.name ?? student.klasse ?? "–";
+                  return (
+                    <li key={student.id} className="flex items-center gap-4 px-5 py-4">
+                      <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-brand/10 font-semibold text-sm text-brand">
+                        {initials}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="font-semibold text-sm">{student.name}</p>
+                        <p className="text-xs text-muted-fg">Klasse {className}</p>
+                      </div>
+                      <a
+                        href="/eltern/lernfortschritt"
+                        className="shrink-0 text-xs font-medium text-brand underline-offset-2 hover:underline"
+                      >
+                        Lernfortschritt
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className="border-t border-border px-5 py-3 text-xs text-muted-fg">
+                Änderungen nur über Schuladmin möglich.
+              </p>
+            </>
+          )}
+        </CardBody>
+      </Card>
+
+      {/* ── 3. Passwort ändern ── */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <Lock className="size-4 text-muted-fg" />
+            <CardTitle>Passwort ändern</CardTitle>
+          </div>
+        </CardHeader>
+        <CardBody>
+          <form action={changePassword} className="space-y-4">
+            <div className="space-y-1.5">
+              <Label htmlFor="current">Aktuelles Passwort</Label>
+              <Input id="current" name="current" type="password" required autoComplete="current-password" />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="new">Neues Passwort</Label>
+              <Input
+                id="new"
+                name="new"
+                type="password"
+                minLength={8}
+                required
+                autoComplete="new-password"
+              />
+              <p className="text-xs text-muted-fg">Mindestens 8 Zeichen.</p>
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="newConfirm">Neues Passwort bestätigen</Label>
+              <Input
+                id="newConfirm"
+                name="newConfirm"
+                type="password"
+                minLength={8}
+                required
+                autoComplete="new-password"
+              />
+            </div>
+            <Button type="submit" variant="outline" size="sm">Passwort ändern</Button>
+          </form>
+        </CardBody>
+      </Card>
+
+      {/* ── 4. Benachrichtigungen ── */}
       <Card>
         <CardHeader>
           <div className="flex items-center gap-2">
@@ -85,28 +203,27 @@ export default async function ElternEinstellungenPage() {
             </ul>
             <Button type="submit" variant="outline" size="sm">Einstellungen speichern</Button>
           </form>
-        </CardBody>
-      </Card>
 
-      <Card>
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <Lock className="size-4 text-muted-fg" />
-            <CardTitle>Passwort ändern</CardTitle>
+          {/* Push-Benachrichtigungen — Platzhalter */}
+          <div className="mt-6 border-t border-border pt-5">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-fg">
+              Push-Benachrichtigungen
+            </p>
+            <ul className="space-y-3 text-sm">
+              {[
+                { label: "Browser-Push (E-Mail-Zusammenfassung)" },
+                { label: "Mobilgerät / App-Push" },
+              ].map(({ label }) => (
+                <li key={label} className="flex items-center justify-between">
+                  <span className="text-muted-fg">{label}</span>
+                  <div className="flex items-center gap-2">
+                    <Badge variant="outline">Kommt bald</Badge>
+                    <input type="checkbox" disabled className="size-4 cursor-not-allowed opacity-40" />
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-        </CardHeader>
-        <CardBody>
-          <form action={changePassword} className="space-y-4">
-            <div className="space-y-1.5">
-              <Label htmlFor="current">Aktuelles Passwort</Label>
-              <Input id="current" name="current" type="password" required />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="new">Neues Passwort</Label>
-              <Input id="new" name="new" type="password" minLength={8} required />
-            </div>
-            <Button type="submit" variant="outline" size="sm">Passwort ändern</Button>
-          </form>
         </CardBody>
       </Card>
     </div>

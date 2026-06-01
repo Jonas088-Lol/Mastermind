@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { MessageSquare } from "lucide-react";
+import { CheckCircle2, ExternalLink, Mail, MessageSquare, Wrench } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,12 +8,38 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/db/client";
 import { getSession, isSuper } from "@/lib/session";
+import { COMPANY } from "@/lib/company";
 import { createSupportTicket, resolveTicket } from "./actions";
 
 export const metadata: Metadata = { title: "Support · Plattform" };
 
 const PRIORITY_VARIANT = { high: "danger", medium: "warning", low: "outline" } as const;
 const PRIORITY_LABEL = { high: "Hoch", medium: "Mittel", low: "Niedrig" } as const;
+
+const STATUS_SERVICES = [
+  { name: "API", ok: true },
+  { name: "Datenbank", ok: true },
+  { name: "E-Mail", ok: true },
+  { name: "Zahlungen", ok: true },
+] as const;
+
+const CONTACTS = [
+  {
+    role: "Technischer Support",
+    email: COMPANY.email,
+    note: "Für Fehler, Ausfälle & technische Fragen",
+  },
+  {
+    role: "Vertrieb",
+    email: "vertrieb@mastermind.app",
+    note: "Lizenzen, Pakete & Preise",
+  },
+  {
+    role: "Datenschutz",
+    email: COMPANY.emailPrivacy,
+    note: "DSGVO-Anfragen & Löschbegehren",
+  },
+] as const;
 
 export default async function PlattformSupportPage() {
   const session = await getSession();
@@ -36,16 +62,34 @@ export default async function PlattformSupportPage() {
       </header>
 
       <div className="grid gap-6 xl:grid-cols-3">
-        <div className="xl:col-span-2">
+        {/* Left column: tickets + system status + maintenance */}
+        <div className="space-y-6 xl:col-span-2">
+
+          {/* Ticket list */}
           <Card>
             <CardHeader>
               <CardTitle>Support-Tickets</CardTitle>
               <Badge variant={open > 0 ? "warning" : "success"}>{open} offen</Badge>
             </CardHeader>
             <CardBody className="!px-0 !pb-0">
+              <div className="border-t border-border bg-surface px-5 py-3">
+                <p className="text-xs text-muted-fg">
+                  Tickets werden über{" "}
+                  <a
+                    href="https://tickets.mastermind.de"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-brand underline-offset-2 hover:underline"
+                  >
+                    tickets.mastermind.de
+                    <ExternalLink className="size-3" />
+                  </a>{" "}
+                  verwaltet. Interne Notizen können unten erstellt werden.
+                </p>
+              </div>
               {tickets.length === 0 ? (
                 <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
-                  Noch keine Tickets erstellt.
+                  Noch keine internen Tickets erstellt.
                 </p>
               ) : (
                 <ul className="divide-y divide-border border-t border-border">
@@ -88,8 +132,84 @@ export default async function PlattformSupportPage() {
               )}
             </CardBody>
           </Card>
+
+          {/* System status */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="size-4 text-muted-fg" />
+                <CardTitle>System-Status</CardTitle>
+              </div>
+              <Badge variant="success">Alle Systeme aktiv</Badge>
+            </CardHeader>
+            <CardBody className="!px-0 !pb-0">
+              <ul className="divide-y divide-border border-t border-border">
+                {STATUS_SERVICES.map((svc) => (
+                  <li key={svc.name} className="flex items-center justify-between px-5 py-3">
+                    <span className="text-sm font-medium">{svc.name}</span>
+                    <div className="flex items-center gap-2">
+                      <span className="size-2 rounded-full bg-success" />
+                      <Badge variant="success">Aktiv</Badge>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </CardBody>
+          </Card>
+
+          {/* Maintenance announcement (UI mockup only) */}
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Wrench className="size-4 text-muted-fg" />
+                <CardTitle>Wartungsankündigung</CardTitle>
+              </div>
+              <Badge variant="outline">Mockup</Badge>
+            </CardHeader>
+            <CardBody>
+              <p className="mb-4 text-xs text-muted-fg">
+                Diese Ankündigung wird nirgends gespeichert — rein informelle Vorschau.
+              </p>
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="maint-start">Start</Label>
+                    <input
+                      id="maint-start"
+                      name="maint-start"
+                      type="datetime-local"
+                      className="h-9 w-full border border-border bg-bg px-3 text-sm focus:outline-none focus:ring-1 focus:ring-brand"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="maint-end">Ende</Label>
+                    <input
+                      id="maint-end"
+                      name="maint-end"
+                      type="datetime-local"
+                      className="h-9 w-full border border-border bg-bg px-3 text-sm focus:outline-none focus:ring-1 focus:ring-brand"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="maint-msg">Nachricht</Label>
+                  <textarea
+                    id="maint-msg"
+                    name="maint-msg"
+                    rows={3}
+                    placeholder="Wir führen planmäßige Wartungsarbeiten durch …"
+                    className="w-full resize-none border border-border bg-bg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-brand"
+                  />
+                </div>
+                <Button type="button" variant="outline" className="w-full" disabled>
+                  Ankündigung absenden (Demo)
+                </Button>
+              </form>
+            </CardBody>
+          </Card>
         </div>
 
+        {/* Right column: new ticket + SLA + contacts */}
         <div className="space-y-4">
           <Card>
             <CardHeader><CardTitle>Neues Ticket</CardTitle></CardHeader>
@@ -140,6 +260,31 @@ export default async function PlattformSupportPage() {
                 <li className="flex justify-between"><span className="text-muted-fg">Hoch</span><span className="font-semibold">4 Stunden</span></li>
                 <li className="flex justify-between"><span className="text-muted-fg">Mittel</span><span className="font-semibold">1 Werktag</span></li>
                 <li className="flex justify-between"><span className="text-muted-fg">Niedrig</span><span className="font-semibold">3 Werktage</span></li>
+              </ul>
+            </CardBody>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Mail className="size-4 text-muted-fg" />
+                <CardTitle>Kontaktdaten</CardTitle>
+              </div>
+            </CardHeader>
+            <CardBody className="!px-0 !pb-0">
+              <ul className="divide-y divide-border border-t border-border">
+                {CONTACTS.map((c) => (
+                  <li key={c.role} className="px-5 py-3.5">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">{c.role}</p>
+                    <a
+                      href={`mailto:${c.email}`}
+                      className="mt-0.5 block text-sm font-medium text-brand hover:underline underline-offset-2"
+                    >
+                      {c.email}
+                    </a>
+                    <p className="mt-0.5 text-xs text-muted-fg">{c.note}</p>
+                  </li>
+                ))}
               </ul>
             </CardBody>
           </Card>

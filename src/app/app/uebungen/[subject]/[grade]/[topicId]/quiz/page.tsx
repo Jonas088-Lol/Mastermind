@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { XP_REWARDS } from "@/lib/xp";
 import { QuizEngine } from "./QuizEngine";
 import { saveQuizResult } from "./actions";
 
@@ -59,6 +60,7 @@ export default async function QuizPage({ params }: PageParams) {
         grade={grade}
         topicTitle={topic.title}
         backHref={backHref}
+        xpPerQuiz={XP_REWARDS.quiz_completed}
         onComplete={handleComplete}
       />
     </div>

@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/navigation";
-import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Timer } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Timer, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface QuizQuestion {
@@ -22,13 +21,19 @@ interface QuizEngineProps {
   grade: number;
   topicTitle: string;
   backHref: string;
+  xpPerQuiz: number;
   onComplete: (score: number) => Promise<void>;
 }
 
 type AnswerState = "pending" | "correct" | "wrong";
 
-export function QuizEngine({ questions, topicTitle, backHref, onComplete }: QuizEngineProps) {
-  const router = useRouter();
+export function QuizEngine({
+  questions,
+  topicTitle,
+  backHref,
+  xpPerQuiz,
+  onComplete,
+}: QuizEngineProps) {
   const [idx, setIdx] = useState(0);
   const [answer, setAnswer] = useState<string>("");
   const [answerState, setAnswerState] = useState<AnswerState>("pending");
@@ -71,7 +76,7 @@ export function QuizEngine({ questions, topicTitle, backHref, onComplete }: Quiz
 
   const handleNext = useCallback(async () => {
     if (idx + 1 >= questions.length) {
-      const score = Math.round(((results.filter(Boolean).length) / questions.length) * 100);
+      const score = Math.round((results.filter(Boolean).length / questions.length) * 100);
       setSaving(true);
       await onComplete(score);
       setSaving(false);
@@ -85,13 +90,16 @@ export function QuizEngine({ questions, topicTitle, backHref, onComplete }: Quiz
   }, [idx, questions.length, results, onComplete]);
 
   if (done) {
-    const correct = results.filter(Boolean).length;
-    const score = Math.round((correct / questions.length) * 100);
+    const correctCount = results.filter(Boolean).length;
+    const score = Math.round((correctCount / questions.length) * 100);
+    const xpEarned = Math.round(xpPerQuiz * (score / 100));
     return (
       <ResultScreen
         score={score}
-        correct={correct}
+        correct={correctCount}
         total={questions.length}
+        xpEarned={xpEarned}
+        results={results}
         backHref={backHref}
         onRetry={() => {
           setIdx(0);
@@ -105,35 +113,71 @@ export function QuizEngine({ questions, topicTitle, backHref, onComplete }: Quiz
     );
   }
 
+  // Progress: how many answered out of total
+  const answeredCount = idx + (answerState !== "pending" ? 1 : 0);
+  const progressPct = (answeredCount / questions.length) * 100;
+
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-6">
-      {/* Progress */}
-      <div className="flex items-center gap-3">
-        <div className="flex-1">
-          <div className="flex items-center justify-between text-xs text-muted-fg">
-            <span>Frage {idx + 1} von {questions.length}</span>
+      {/* Progress header */}
+      <div className="space-y-2">
+        <div className="flex items-center justify-between text-xs text-muted-fg">
+          <span className="font-semibold">
+            Frage {idx + 1} von {questions.length}
+          </span>
+          <div className="flex items-center gap-3">
             {isBlitz && timeLeft !== null && (
-              <span className={cn("flex items-center gap-1 font-mono font-bold", timeLeft <= 3 ? "text-danger" : "")}>
+              <span
+                className={cn(
+                  "flex items-center gap-1 font-mono font-bold",
+                  timeLeft <= 3 ? "text-danger" : "text-muted-fg"
+                )}
+              >
                 <Timer className="size-3.5" />
                 {timeLeft}s
               </span>
             )}
+            <span>{topicTitle}</span>
           </div>
-          <div className="mt-1.5 h-1.5 w-full bg-border">
+        </div>
+        {/* Progress bar */}
+        <div className="h-1.5 w-full overflow-hidden bg-surface-2">
+          <div
+            className="h-full bg-brand transition-[width] duration-300"
+            style={{ width: `${progressPct}%` }}
+          />
+        </div>
+        {/* Per-question dots */}
+        <div className="flex gap-1">
+          {questions.map((_, i) => (
             <div
-              className="h-full bg-brand transition-all"
-              style={{ width: `${((idx) / questions.length) * 100}%` }}
+              key={i}
+              className={cn(
+                "h-1 flex-1",
+                i < results.length
+                  ? results[i]
+                    ? "bg-success"
+                    : "bg-danger"
+                  : i === idx
+                  ? "bg-brand/40"
+                  : "bg-surface-2"
+              )}
             />
-          </div>
+          ))}
         </div>
       </div>
 
       {/* Question card */}
       <div className="border border-border bg-bg">
-        <div className="border-b border-border bg-surface px-5 py-3">
+        <div className="flex items-center justify-between border-b border-border bg-surface px-5 py-3">
           <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
             {TYPE_LABEL[question.type] ?? question.type}
           </span>
+          {question.type === "blitz" && (
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-warning">
+              Zeitlimit!
+            </span>
+          )}
         </div>
         <div className="p-5">
           <p className="text-base font-semibold leading-relaxed">{question.question}</p>
@@ -159,7 +203,7 @@ export function QuizEngine({ questions, topicTitle, backHref, onComplete }: Quiz
         )}
       </div>
 
-      {/* Next button */}
+      {/* Next / submit button */}
       {answerState !== "pending" && (
         <button
           onClick={handleNext}
@@ -169,7 +213,9 @@ export function QuizEngine({ questions, topicTitle, backHref, onComplete }: Quiz
           {idx + 1 >= questions.length ? (
             saving ? "Speichere…" : "Ergebnis anzeigen"
           ) : (
-            <>Weiter <ArrowRight className="size-4" /></>
+            <>
+              Weiter <ArrowRight className="size-4" />
+            </>
           )}
         </button>
       )}
@@ -191,7 +237,9 @@ function AnswerInput({
   onSubmit: (v: string) => void;
 }) {
   const { type, options: optionsJson } = question;
-  const options = optionsJson ? (JSON.parse(optionsJson) as string[] | { left: string[]; right: string[] }) : null;
+  const options = optionsJson
+    ? (JSON.parse(optionsJson) as string[] | { left: string[]; right: string[] })
+    : null;
 
   if (type === "mc" || type === "blitz") {
     const opts = options as string[];
@@ -232,7 +280,6 @@ function AnswerInput({
   if (type === "fill_blank") {
     const correctArr = JSON.parse(question.correct) as string[];
     const blanks = correctArr.length;
-    const parts = question.question.split("___");
     const [values, setValues] = useState<string[]>(Array(blanks).fill(""));
 
     return (
@@ -260,7 +307,13 @@ function AnswerInput({
                 autoFocus={i === 0}
                 type="text"
                 value={v}
-                onChange={(e) => setValues((prev) => { const next = [...prev]; next[i] = e.target.value; return next; })}
+                onChange={(e) =>
+                  setValues((prev) => {
+                    const next = [...prev];
+                    next[i] = e.target.value;
+                    return next;
+                  })
+                }
                 placeholder={`Lücke ${i + 1}…`}
                 className="w-full border border-border bg-bg px-4 py-3 text-sm focus:border-brand focus:outline-none"
               />
@@ -292,7 +345,9 @@ function AnswerInput({
 
     return (
       <div className="flex flex-col gap-4">
-        <p className="text-xs text-muted-fg">Verschiebe die Elemente in die richtige Reihenfolge.</p>
+        <p className="text-xs text-muted-fg">
+          Verschiebe die Elemente in die richtige Reihenfolge.
+        </p>
         <ol className="space-y-2">
           {order.map((origIdx, pos) => (
             <li
@@ -334,7 +389,9 @@ function AnswerInput({
 
   if (type === "match") {
     const opts = options as { left: string[]; right: string[] };
-    const [pairs, setPairs] = useState<(number | null)[]>(Array(opts.left.length).fill(null));
+    const [pairs, setPairs] = useState<(number | null)[]>(
+      Array(opts.left.length).fill(null)
+    );
     const [activeLeft, setActiveLeft] = useState<number | null>(null);
 
     function handleLeftClick(i: number) {
@@ -357,7 +414,9 @@ function AnswerInput({
 
     return (
       <div className="flex flex-col gap-4">
-        <p className="text-xs text-muted-fg">Klicke zuerst einen Begriff links, dann die passende Erklärung rechts.</p>
+        <p className="text-xs text-muted-fg">
+          Klicke zuerst einen Begriff links, dann die passende Erklärung rechts.
+        </p>
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-2">
             {opts.left.map((item, i) => (
@@ -393,7 +452,9 @@ function AnswerInput({
                       : "border-border bg-bg text-muted-fg"
                   )}
                 >
-                  {matched !== -1 && <span className="mr-1.5 text-xs text-muted-fg">{matched + 1}→</span>}
+                  {matched !== -1 && (
+                    <span className="mr-1.5 text-xs text-muted-fg">{matched + 1}→</span>
+                  )}
                   {item}
                 </button>
               );
@@ -427,7 +488,9 @@ function FeedbackArea({
   correctAnswer: string;
   question: QuizQuestion;
 }) {
-  const opts = question.options ? (JSON.parse(question.options) as string[] | { left: string[]; right: string[] }) : null;
+  const opts = question.options
+    ? (JSON.parse(question.options) as string[] | { left: string[]; right: string[] })
+    : null;
 
   let correctLabel = "";
   if (question.type === "mc" || question.type === "blitz") {
@@ -462,9 +525,7 @@ function FeedbackArea({
               <span className="font-semibold">{correctLabel}</span>
             </p>
           )}
-          {explanation && (
-            <p className="text-sm text-muted-fg">{explanation}</p>
-          )}
+          {explanation && <p className="text-sm text-muted-fg">{explanation}</p>}
         </div>
       </div>
     </div>
@@ -477,51 +538,114 @@ function ResultScreen({
   score,
   correct,
   total,
+  xpEarned,
+  results,
   backHref,
   onRetry,
 }: {
   score: number;
   correct: number;
   total: number;
+  xpEarned: number;
+  results: boolean[];
   backHref: string;
   onRetry: () => void;
 }) {
   const great = score >= 80;
   const ok = score >= 50;
+  const wrong = total - correct;
 
   return (
-    <div className="mx-auto flex max-w-md flex-col items-center gap-6 py-12 text-center">
-      <div
-        className={cn(
-          "flex size-24 items-center justify-center border-2",
-          great ? "border-success text-success" : ok ? "border-warning text-warning" : "border-danger text-danger"
-        )}
-      >
-        <Trophy className="size-10" strokeWidth={1.5} />
-      </div>
+    <div className="mx-auto flex max-w-md flex-col gap-6">
+      {/* Trophy + score */}
+      <div className="flex flex-col items-center gap-4 py-8 text-center">
+        <div
+          className={cn(
+            "flex size-20 items-center justify-center border-2",
+            great
+              ? "border-success text-success"
+              : ok
+              ? "border-warning text-warning"
+              : "border-danger text-danger"
+          )}
+        >
+          <Trophy className="size-9" strokeWidth={1.5} />
+        </div>
 
-      <div>
-        <p className="text-5xl font-bold tracking-tight">{score}%</p>
-        <p className="mt-2 text-sm text-muted-fg">
-          {correct} von {total} Fragen richtig
+        <div>
+          <p className="text-5xl font-black tracking-tight">{score}%</p>
+          <p className="mt-1 text-sm text-muted-fg">
+            {correct} von {total} Fragen richtig
+          </p>
+        </div>
+
+        <p className="text-sm font-medium text-muted-fg">
+          {great
+            ? "Ausgezeichnet! Du hast das Thema verstanden."
+            : ok
+            ? "Gut gemacht! Noch ein bisschen Übung fehlt."
+            : "Nicht aufgeben — probier es nochmal!"}
         </p>
       </div>
 
-      <p className="text-base font-medium">
-        {great ? "Ausgezeichnet! Du hast das Thema verstanden." : ok ? "Gut gemacht! Noch ein bisschen Übung fehlt." : "Nicht aufgeben — probier es nochmal!"}
-      </p>
+      {/* Stats cards */}
+      <div className="grid grid-cols-3 gap-3">
+        <div className="flex flex-col items-center gap-1 border border-success/30 bg-success/[0.04] p-4 text-center">
+          <CheckCircle2 className="size-5 text-success" />
+          <span className="text-2xl font-black text-success">{correct}</span>
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+            Richtig
+          </span>
+        </div>
+        <div className="flex flex-col items-center gap-1 border border-danger/30 bg-danger/[0.04] p-4 text-center">
+          <XCircle className="size-5 text-danger" />
+          <span className="text-2xl font-black text-danger">{wrong}</span>
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+            Falsch
+          </span>
+        </div>
+        <div className="flex flex-col items-center gap-1 border border-brand/30 bg-brand/[0.04] p-4 text-center">
+          <Zap className="size-5 text-brand" />
+          <span className="text-2xl font-black text-brand">+{xpEarned}</span>
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+            XP
+          </span>
+        </div>
+      </div>
 
+      {/* Per-question result strip */}
+      <div>
+        <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+          Fragen im Überblick
+        </p>
+        <div className="flex gap-1">
+          {results.map((r, i) => (
+            <div
+              key={i}
+              title={`Frage ${i + 1}: ${r ? "Richtig" : "Falsch"}`}
+              className={cn(
+                "flex h-7 flex-1 items-center justify-center text-[10px] font-bold text-white",
+                r ? "bg-success" : "bg-danger"
+              )}
+            >
+              {i + 1}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Action buttons */}
       <div className="flex gap-3">
         <button
           onClick={onRetry}
-          className="flex items-center gap-2 border border-border bg-bg px-5 py-2.5 text-sm font-semibold hover:bg-surface"
+          className="flex flex-1 items-center justify-center gap-2 border border-border bg-bg py-3 text-sm font-semibold hover:bg-surface"
         >
           <RotateCcw className="size-3.5" />
           Nochmal
         </button>
         <a
           href={backHref}
-          className="flex items-center gap-2 bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90"
+          className="flex flex-1 items-center justify-center gap-2 bg-fg py-3 text-sm font-semibold text-bg hover:bg-fg/90"
         >
           Zurück
         </a>

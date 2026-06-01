@@ -7,7 +7,7 @@ const links = [
   { href: "#fuer-schulen", label: "Für Schulen" },
   { href: "#fuer-schueler", label: "Für Schüler" },
   { href: "#funktionen", label: "Funktionen" },
-  { href: "#preise", label: "Preise" },
+  { href: "/preise", label: "Preise" },
 ];
 
 export function Navbar() {

@@ -11,7 +11,7 @@ const cols: { title: string; links: ColLink[] }[] = [
       { label: "Für Lehrer" },
       { label: "Für Schüler" },
       { label: "Für Eltern" },
-      { label: "Preise" },
+      { label: "Preise", href: "/preise" },
     ],
   },
   {
@@ -30,7 +30,8 @@ const cols: { title: string; links: ColLink[] }[] = [
       { label: "Über uns" },
       { label: "Karriere" },
       { label: "Presse" },
-      { label: "Kontakt" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Kontakt", href: "/kontakt" },
     ],
   },
   {

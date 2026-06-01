@@ -30,8 +30,21 @@ export async function updateClass(classId: string, formData: FormData): Promise<
 export async function deleteClass(classId: string): Promise<void> {
   const session = await guardAdmin();
 
-  const klass = await prisma.schoolClass.findUnique({ where: { id: classId }, select: { schoolId: true } });
+  const klass = await prisma.schoolClass.findUnique({
+    where: { id: classId },
+    select: {
+      schoolId: true,
+      name: true,
+      _count: { select: { students: true } },
+    },
+  });
   if (!klass || klass.schoolId !== session.schoolId) return;
+
+  if (klass._count.students > 0) {
+    throw new Error(
+      `Klasse "${klass.name}" kann nicht gelöscht werden – es sind noch ${klass._count.students} Schüler zugewiesen.`
+    );
+  }
 
   await prisma.schoolClass.delete({ where: { id: classId } });
   revalidatePath("/admin/klassen");

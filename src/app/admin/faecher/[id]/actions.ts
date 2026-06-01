@@ -30,9 +30,37 @@ export async function deleteSubject(id: string): Promise<void> {
   if (!session || effectiveRole(session) !== "admin") return;
   if (!session.schoolId) return;
 
+  const subject = await prisma.subject.findFirst({
+    where: { id, schoolId: session.schoolId },
+    select: {
+      name: true,
+      _count: {
+        select: {
+          timetableEntries: true,
+          teacherSubjectClasses: true,
+          assignments: true,
+        },
+      },
+    },
+  });
+
+  if (!subject) return;
+
+  const usageCount =
+    subject._count.timetableEntries +
+    subject._count.teacherSubjectClasses +
+    subject._count.assignments;
+
+  if (usageCount > 0) {
+    throw new Error(
+      `Fach "${subject.name}" wird noch verwendet: ${subject._count.timetableEntries} Stundenplan-Einträge, ${subject._count.teacherSubjectClasses} Klassen-Zuweisungen, ${subject._count.assignments} Aufgaben.`
+    );
+  }
+
   await prisma.subject.deleteMany({
     where: { id, schoolId: session.schoolId },
   });
 
   revalidatePath("/admin/faecher");
+  redirect("/admin/faecher");
 }

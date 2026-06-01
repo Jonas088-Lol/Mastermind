@@ -1,9 +1,13 @@
 import {
+  AlertTriangle,
   ArrowRight,
+  BookOpen,
   Brain,
+  CalendarClock,
   ClipboardEdit,
   Clock,
   Lightbulb,
+  Megaphone,
   Sparkles,
   Users,
 } from "lucide-react";
@@ -107,6 +111,61 @@ export default async function TeachDashboardPage() {
     where: { teacherId: session.userId, createdAt: { gte: monthStart } },
   });
 
+  // Aktuelle Woche: assignments due this week
+  const weekStart = new Date(now);
+  weekStart.setDate(now.getDate() - (TODAY_DOW - 1));
+  weekStart.setHours(0, 0, 0, 0);
+  const weekEnd = new Date(weekStart);
+  weekEnd.setDate(weekStart.getDate() + 6);
+  weekEnd.setHours(23, 59, 59, 999);
+
+  const weekAssignments = await prisma.assignment.findMany({
+    where: {
+      teacherId: session.userId,
+      dueAt: { gte: weekStart, lte: weekEnd },
+    },
+    include: {
+      class: { select: { name: true } },
+      subject: { select: { shortName: true, color: true } },
+    },
+    orderBy: { dueAt: "asc" },
+    take: 6,
+  });
+
+  const ungradedCount = await prisma.submission.count({
+    where: {
+      status: "submitted",
+      assignment: { teacherId: session.userId },
+    },
+  });
+
+  // Elternsprechtag: booked slots this week
+  const weekSlots = await prisma.parentTeacherSlot.findMany({
+    where: {
+      teacherId: session.userId,
+      isBooked: true,
+      startsAt: { gte: weekStart, lte: weekEnd },
+    },
+    include: {
+      booking: { select: { parentId: true, studentId: true } },
+    },
+    orderBy: { startsAt: "asc" },
+    take: 5,
+  });
+
+  // Klassenbuch: last 3 incidents for teacher's classes
+  const recentIncidents = await prisma.classbookIncident.findMany({
+    where: {
+      classId: { in: tscEntries.map((t) => t.classId) },
+    },
+    include: {
+      student: { select: { name: true } },
+      class: { select: { name: true } },
+    },
+    orderBy: { date: "desc" },
+    take: 3,
+  });
+
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
       <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -199,6 +258,50 @@ export default async function TeachDashboardPage() {
                       <Link href={`/teach/korrektur/${s.id}`} className={buttonVariants({ size: "sm", variant: "secondary" })}>
                         Öffnen
                       </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </CardBody>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <div>
+                <CardTitle>Aktuelle Woche</CardTitle>
+                <p className="mt-1 text-sm text-muted-fg">
+                  {weekAssignments.length} Aufgaben fällig · {ungradedCount} unbewertet
+                </p>
+              </div>
+              <Link href="/teach/aufgaben">
+                <Button variant="ghost" size="sm">
+                  Alle
+                  <ArrowRight className="size-3.5" />
+                </Button>
+              </Link>
+            </CardHeader>
+            <CardBody className="!px-0 !pb-0">
+              {weekAssignments.length === 0 ? (
+                <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
+                  Diese Woche keine fälligen Aufgaben.
+                </div>
+              ) : (
+                <ul className="divide-y divide-border border-t border-border">
+                  {weekAssignments.map((a) => (
+                    <li key={a.id} className="flex items-center gap-4 px-5 py-3 transition-colors hover:bg-surface">
+                      <span
+                        className="inline-flex size-2 shrink-0"
+                        style={{ backgroundColor: a.subject.color }}
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-semibold">{a.title}</p>
+                        <p className="text-xs text-muted-fg">
+                          {a.class.name} · {a.subject.shortName}
+                        </p>
+                      </div>
+                      <span className="shrink-0 font-mono text-xs text-muted-fg">
+                        {a.dueAt.toLocaleDateString("de-DE", { weekday: "short", day: "numeric", month: "short" })}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -329,6 +432,116 @@ export default async function TeachDashboardPage() {
               </CardBody>
             </Card>
           )}
+
+          {/* Elternsprechtag widget */}
+          <Card>
+            <CardHeader>
+              <div>
+                <CardTitle>Elternsprechtag</CardTitle>
+                <p className="mt-1 text-sm text-muted-fg">
+                  {weekSlots.length > 0
+                    ? `${weekSlots.length} gebuchte Slot${weekSlots.length > 1 ? "s" : ""} diese Woche`
+                    : "Keine Buchungen diese Woche"}
+                </p>
+              </div>
+              <CalendarClock className="size-4 text-muted-fg" strokeWidth={1.75} />
+            </CardHeader>
+            <CardBody className="!px-0 !pb-0">
+              {weekSlots.length === 0 ? (
+                <div className="border-t border-border px-5 py-5 text-sm text-muted-fg">
+                  Diese Woche keine gebuchten Termine.
+                </div>
+              ) : (
+                <ul className="divide-y divide-border border-t border-border">
+                  {weekSlots.map((slot) => (
+                    <li key={slot.id} className="flex items-center gap-3 px-5 py-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-semibold">
+                          {slot.startsAt.toLocaleDateString("de-DE", { weekday: "short", day: "numeric", month: "short" })}
+                        </p>
+                        <p className="text-xs text-muted-fg">
+                          {slot.startsAt.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })} Uhr
+                          {slot.location ? ` · ${slot.location}` : ""}
+                        </p>
+                      </div>
+                      <span className="shrink-0 text-xs font-medium text-success">Gebucht</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </CardBody>
+          </Card>
+
+          {/* Klassenbuch incidents */}
+          {recentIncidents.length > 0 && (
+            <Card>
+              <CardHeader>
+                <div>
+                  <CardTitle>Klassenbuch</CardTitle>
+                  <p className="mt-1 text-sm text-muted-fg">Letzte Vorfälle</p>
+                </div>
+                <Link href="/teach/klassenbuch">
+                  <Button variant="ghost" size="sm">
+                    Alle
+                    <ArrowRight className="size-3.5" />
+                  </Button>
+                </Link>
+              </CardHeader>
+              <CardBody className="!px-0 !pb-0">
+                <ul className="divide-y divide-border border-t border-border">
+                  {recentIncidents.map((inc) => (
+                    <li key={inc.id} className="flex items-start gap-3 px-5 py-3">
+                      <AlertTriangle
+                        className={cn(
+                          "mt-0.5 size-4 shrink-0",
+                          inc.type === "Verweis" ? "text-danger" :
+                          inc.type === "Lob" ? "text-success" : "text-warning"
+                        )}
+                        strokeWidth={1.75}
+                      />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-semibold">{inc.student.name}</p>
+                        <p className="line-clamp-1 text-xs text-muted-fg">{inc.text}</p>
+                        <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted-fg">
+                          {inc.class.name} · {inc.date.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}
+                        </p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </CardBody>
+            </Card>
+          )}
+
+          {/* Schnellzugriff */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Schnellzugriff</CardTitle>
+            </CardHeader>
+            <CardBody className="!px-0 !pb-0">
+              <ul className="divide-y divide-border border-t border-border">
+                {[
+                  { label: "Broadcast senden", desc: "Klassen & Eltern benachrichtigen", href: "/teach/broadcast", icon: Megaphone },
+                  { label: "Klassenbuch", desc: "Einträge & Vorfälle", href: "/teach/klassenbuch", icon: BookOpen },
+                  { label: "Abwesenheiten", desc: "Meldungen bestätigen", href: "/teach/abwesenheit", icon: Users },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="flex items-center gap-3 px-5 py-3 transition-colors hover:bg-surface"
+                    >
+                      <item.icon className="size-4 shrink-0 text-muted-fg" strokeWidth={1.75} />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-semibold">{item.label}</p>
+                        <p className="text-xs text-muted-fg">{item.desc}</p>
+                      </div>
+                      <ArrowRight className="size-3.5 shrink-0 text-muted-fg" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </CardBody>
+          </Card>
 
           <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
             <CardBody className="!p-5">

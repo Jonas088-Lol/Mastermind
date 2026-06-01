@@ -67,6 +67,7 @@ export default async function AppLayout({
     { href: "/app/skills", label: "Skill-Bäume", icon: "target" },
     { href: "/app/titel", label: "Titel", icon: "tag" },
     { href: "/app/tagesbelohnung", label: "Tagesbonus", icon: "sun" },
+    { href: "/app/streaks", label: "Streaks", icon: "flame" },
     { href: "/app/erfolge", label: "Erfolge", icon: "star" },
     { href: "/app/shop", label: "Shop", icon: "shoppingBag" },
     { href: "/app/inventar", label: "Inventar", icon: "package" },
