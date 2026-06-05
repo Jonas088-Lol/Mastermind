@@ -21,6 +21,11 @@ export async function POST(req: NextRequest) {
   if (!session) return new Response("Unauthorized", { status: 401 });
 
   const uploadId = req.headers.get("X-Upload-Id") ?? crypto.randomUUID();
+  // Validate uploadId is a proper UUID to prevent path traversal
+  const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  if (!UUID_RE.test(uploadId)) {
+    return Response.json({ error: "Ungültige Upload-ID" }, { status: 400 });
+  }
   const chunkIndex = parseInt(req.headers.get("X-Chunk-Index") ?? "0", 10);
   const totalChunks = parseInt(req.headers.get("X-Total-Chunks") ?? "1", 10);
   const filename = req.headers.get("X-Filename") ?? "upload";

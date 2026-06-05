@@ -126,7 +126,7 @@ export default async function TeachEinstellungenPage() {
                   </summary>
                   <form action={changePassword} className="mt-3 space-y-3">
                     <Input name="current" type="password" placeholder="Aktuelles Passwort" required />
-                    <Input name="new" type="password" placeholder="Neues Passwort (min. 8 Zeichen)" minLength={8} required />
+                    <Input name="new" type="password" placeholder="Neues Passwort (min. 12 Zeichen)" minLength={12} required />
                     <Button type="submit" size="sm">Passwort ändern</Button>
                   </form>
                 </details>

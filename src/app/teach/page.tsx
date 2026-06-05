@@ -48,14 +48,20 @@ export default async function TeachDashboardPage() {
     where: { teacherId: session.userId },
     include: {
       subject: { select: { name: true, shortName: true, color: true } },
-      class: { include: { students: { select: { id: true } } } },
+      class: {
+        select: {
+          id: true,
+          name: true,
+          _count: { select: { students: true } },
+        },
+      },
     },
   });
 
   const seenClasses = new Set<string>();
   const classes = tscEntries
     .filter((t) => { if (seenClasses.has(t.class.id)) return false; seenClasses.add(t.class.id); return true; })
-    .map((t) => ({ id: t.class.id, name: t.class.name, subject: t.subject.name, color: t.subject.color, studentCount: t.class.students.length }));
+    .map((t) => ({ id: t.class.id, name: t.class.name, subject: t.subject.name, color: t.subject.color, studentCount: t.class._count.students }));
 
   // Pending submissions (submitted, not yet graded)
   const pendingSubmissions = await prisma.submission.findMany({
@@ -86,22 +92,28 @@ export default async function TeachDashboardPage() {
     orderBy: { period: "asc" },
   });
 
-  // Unread messages count
+  // Unread messages count — single query instead of N+1 loop
   const myParticipations = await prisma.messageParticipant.findMany({
     where: { userId: session.userId },
-    select: { threadId: true, lastReadAt: true },
+    select: {
+      threadId: true,
+      lastReadAt: true,
+      thread: {
+        select: {
+          messages: {
+            where: { senderId: { not: session.userId } },
+            orderBy: { sentAt: "desc" },
+            take: 1,
+            select: { sentAt: true },
+          },
+        },
+      },
+    },
   });
-  const unreadCount = await (async () => {
-    let count = 0;
-    for (const p of myParticipations) {
-      const lastMsg = await prisma.message.findFirst({
-        where: { threadId: p.threadId, senderId: { not: session.userId } },
-        orderBy: { sentAt: "desc" },
-      });
-      if (lastMsg && (!p.lastReadAt || p.lastReadAt < lastMsg.sentAt)) count++;
-    }
-    return count;
-  })();
+  const unreadCount = myParticipations.filter((p) => {
+    const lastMsg = p.thread.messages[0];
+    return lastMsg && (!p.lastReadAt || p.lastReadAt < lastMsg.sentAt);
+  }).length;
 
   const totalStudents = classes.reduce((s, c) => s + c.studentCount, 0);
 

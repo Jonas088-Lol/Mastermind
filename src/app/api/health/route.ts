@@ -1,25 +1,29 @@
-import { NextResponse } from "next/server";
-import { isAiConfigured } from "@/lib/ai";
+import { type NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
-import { isEmailConfigured } from "@/lib/email";
+import { rateLimit, ipFromHeaders } from "@/lib/security/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  const ip = ipFromHeaders(req.headers);
+  const rl = await rateLimit({ scope: "health", key: ip, limit: 30, windowSec: 60 });
+  if (!rl.ok) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
+
   const startedAt = Date.now();
 
   let dbOk = false;
   let dbLatencyMs: number | null = null;
-  let dbError: string | undefined;
 
   const dbStart = Date.now();
   try {
     await prisma.$queryRaw`SELECT 1`;
     dbOk = true;
     dbLatencyMs = Date.now() - dbStart;
-  } catch (err) {
-    dbError = err instanceof Error ? err.message : "unknown";
+  } catch {
+    // error details not exposed
   }
 
   const status = dbOk ? "ok" : "degraded";
@@ -31,22 +35,9 @@ export async function GET() {
       uptime: process.uptime(),
       checked_at: new Date().toISOString(),
       duration_ms: Date.now() - startedAt,
-      services: {
-        db: {
-          ok: dbOk,
-          latency_ms: dbLatencyMs,
-          error: dbError,
-        },
-        ai: {
-          configured: isAiConfigured(),
-        },
-        email: {
-          configured: isEmailConfigured(),
-        },
-      },
-      runtime: {
-        node: process.version,
-        env: process.env.NODE_ENV ?? "unknown",
+      db: {
+        ok: dbOk,
+        latency_ms: dbLatencyMs,
       },
     },
     {

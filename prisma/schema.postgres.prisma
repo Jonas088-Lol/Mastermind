@@ -270,6 +270,7 @@ model TeacherSubjectClass {
   @@unique([teacherId, subjectId, classId])
   @@index([teacherId])
   @@index([classId])
+  @@index([subjectId])
 }
 
 model TimetableEntry {
@@ -327,6 +328,7 @@ model Assignment {
   @@index([classId])
   @@index([teacherId])
   @@index([dueAt])
+  @@index([classId, dueAt])
 }
 
 model Submission {
@@ -346,6 +348,8 @@ model Submission {
   @@unique([assignmentId, studentId])
   @@index([studentId])
   @@index([assignmentId])
+  @@index([status, submittedAt])
+  @@index([assignmentId, studentId, status])
 }
 
 model Grade {
@@ -395,6 +399,7 @@ model MessageParticipant {
 
   @@unique([threadId, userId])
   @@index([userId])
+  @@index([userId, lastReadAt])
 }
 
 model Message {
@@ -408,6 +413,7 @@ model Message {
 
   @@index([threadId, sentAt])
   @@index([senderId])
+  @@index([threadId, senderId, sentAt])
 }
 
 // ── Karteikarten ───────────────────────────────────────────
@@ -826,4 +832,21 @@ model FileUpload {
 
   @@index([userId])
   @@index([assignmentId])
+}
+
+// ── Audit Log ──────────────────────────────────────────────
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  schoolId   String?
+  actorId    String?
+  targetId   String?
+  action     String
+  details    String?
+  ip         String?
+  createdAt  DateTime @default(now())
+
+  @@index([schoolId, createdAt])
+  @@index([actorId, createdAt])
+  @@index([action, createdAt])
 }

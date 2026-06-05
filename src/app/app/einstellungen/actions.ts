@@ -66,7 +66,7 @@ export async function changePassword(formData: FormData) {
   const newPw = formData.get("new") as string;
 
   if (!current || !newPw) throw new Error("Fehlende Felder");
-  if (newPw.length < 8) throw new Error("Neues Passwort zu kurz");
+  if (newPw.length < 12) throw new Error("Neues Passwort mindestens 12 Zeichen");
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },

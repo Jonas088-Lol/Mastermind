@@ -85,7 +85,9 @@ export default async function DashboardPage() {
     take: 3,
   });
 
-  // Overall avg grade
+  // Overall avg grade — weighted average computed in JS from minimal DB projection.
+  // Prisma doesn't support native weighted averages, so we fetch only value+weight
+  // (no unnecessary columns) and compute server-side before sending to the client.
   const allGrades = await prisma.grade.findMany({
     where: { studentId: session.userId },
     select: { value: true, weight: true },

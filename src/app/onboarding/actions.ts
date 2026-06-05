@@ -95,7 +95,7 @@ export async function activateTeacherInvite(formData: FormData) {
   }
 
   if (!token) inviteErr("Ungültiger Einladungslink");
-  if (password.length < 8) inviteErr("Passwort mindestens 8 Zeichen");
+  if (password.length < 12) inviteErr("Passwort mindestens 12 Zeichen");
 
   const vt = await prisma.verificationToken.findUnique({ where: { token } });
   if (!vt || vt.type !== "teacher-invite") inviteErr("Ungültiger Einladungslink");
@@ -146,7 +146,7 @@ export async function activateStudentInvite(formData: FormData) {
   }
 
   if (!token) inviteErr("Ungültiger Einladungslink");
-  if (password.length < 8) inviteErr("Passwort mindestens 8 Zeichen");
+  if (password.length < 12) inviteErr("Passwort mindestens 12 Zeichen");
 
   const vt = await prisma.verificationToken.findUnique({ where: { token } });
   if (!vt || vt.type !== "student-invite") inviteErr("Ungültiger Einladungslink");

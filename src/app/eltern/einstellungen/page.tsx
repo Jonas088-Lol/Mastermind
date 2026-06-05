@@ -156,11 +156,11 @@ export default async function ElternEinstellungenPage() {
                 id="new"
                 name="new"
                 type="password"
-                minLength={8}
+                minLength={12}
                 required
                 autoComplete="new-password"
               />
-              <p className="text-xs text-muted-fg">Mindestens 8 Zeichen.</p>
+              <p className="text-xs text-muted-fg">Mindestens 12 Zeichen.</p>
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="newConfirm">Neues Passwort bestätigen</Label>
@@ -168,7 +168,7 @@ export default async function ElternEinstellungenPage() {
                 id="newConfirm"
                 name="newConfirm"
                 type="password"
-                minLength={8}
+                minLength={12}
                 required
                 autoComplete="new-password"
               />

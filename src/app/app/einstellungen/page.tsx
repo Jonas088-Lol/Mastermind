@@ -238,8 +238,8 @@ export default async function EinstellungenPage() {
                       <Input
                         name="new"
                         type="password"
-                        placeholder="Neues Passwort (min. 8 Zeichen)"
-                        minLength={8}
+                        placeholder="Neues Passwort (min. 12 Zeichen)"
+                        minLength={12}
                         required
                       />
                       <Button type="submit" size="sm">

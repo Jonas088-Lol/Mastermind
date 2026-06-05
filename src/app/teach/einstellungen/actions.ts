@@ -45,7 +45,7 @@ export async function changePassword(formData: FormData): Promise<void> {
   const current = formData.get("current") as string;
   const newPw = formData.get("new") as string;
 
-  if (!current || !newPw || newPw.length < 8) return;
+  if (!current || !newPw || newPw.length < 12) return;
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },

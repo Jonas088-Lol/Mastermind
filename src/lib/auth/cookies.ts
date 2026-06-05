@@ -1,10 +1,14 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 
-const DEV_FALLBACK_SECRET =
-  "mastermind-dev-secret-change-me-in-production-via-SESSION_SECRET-env-var";
-
 function getSecret(): string {
-  return process.env.SESSION_SECRET || DEV_FALLBACK_SECRET;
+  const secret = process.env.SESSION_SECRET;
+  if (!secret) {
+    if (process.env.NODE_ENV === "production") {
+      throw new Error("SESSION_SECRET environment variable is required in production");
+    }
+    return "mastermind-dev-secret-change-me-in-production-via-SESSION_SECRET-env-var";
+  }
+  return secret;
 }
 
 function base64UrlEncode(buf: Buffer): string {

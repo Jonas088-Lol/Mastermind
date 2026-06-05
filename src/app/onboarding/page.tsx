@@ -201,14 +201,14 @@ function TeacherActivatePage({
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="ta-password">Passwort wählen (min. 8 Zeichen)</Label>
+                <Label htmlFor="ta-password">Passwort wählen (min. 12 Zeichen)</Label>
                 <Input
                   id="ta-password"
                   name="password"
                   type="password"
                   placeholder="Sicheres Passwort"
                   required
-                  minLength={8}
+                  minLength={12}
                 />
               </div>
 
@@ -320,14 +320,14 @@ function StudentActivatePage({
               )}
 
               <div className="space-y-1.5">
-                <Label htmlFor="sa-password">Passwort wählen (min. 8 Zeichen)</Label>
+                <Label htmlFor="sa-password">Passwort wählen (min. 12 Zeichen)</Label>
                 <Input
                   id="sa-password"
                   name="password"
                   type="password"
                   placeholder="Sicheres Passwort"
                   required
-                  minLength={8}
+                  minLength={12}
                 />
               </div>
 

@@ -20,6 +20,14 @@ export async function sendMessage(formData: FormData) {
   });
   if (!participant) return;
 
+  // Verify thread belongs to sender's school
+  const thread = await prisma.messageThread.findUnique({
+    where: { id: threadId },
+    select: { schoolId: true },
+  });
+  if (!thread) return;
+  if (session.schoolId && thread.schoolId && thread.schoolId !== session.schoolId) return;
+
   await prisma.$transaction([
     prisma.message.create({ data: { threadId, senderId: session.userId, content } }),
     prisma.messageThread.update({ where: { id: threadId }, data: { updatedAt: new Date() } }),
