@@ -44,5 +44,8 @@ jobs:
       - name: ESLint
         run: npx eslint src/
 
+      - name: Unit tests
+        run: npm test
+
       - name: TypeScript build (incl. type-check)
         run: npx next build

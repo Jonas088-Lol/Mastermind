@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
+import { logger } from "@/lib/logger";
 import { pushToUsers } from "@/lib/push";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 
@@ -104,7 +105,7 @@ export async function recommendToClass(pathId: string, formData: FormData): Prom
       title: "Lernpfad empfohlen",
       body: `Dein Lehrer empfiehlt: ${path.title}`,
       url: `/app/lernen/${pathId}`,
-    }).catch(() => {}),
+    }).catch((err) => { logger.warn("lernpfade: push failed", { error: String(err) }); }),
     prisma.appNotification.createMany({
       data: studentIds.map((userId) => ({
         userId,

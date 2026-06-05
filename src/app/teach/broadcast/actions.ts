@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { pushToUsers } from "@/lib/push";
+import { logger } from "@/lib/logger";
 
 export async function sendTeacherBroadcast(formData: FormData): Promise<void> {
   const session = await getSession();
@@ -65,7 +66,9 @@ export async function sendTeacherBroadcast(formData: FormData): Promise<void> {
   });
 
   // Fire push notifications (fire-and-forget)
-  pushToUsers(unique, { title: subject, body: message, url: "/app/nachrichten" }).catch(() => {});
+  pushToUsers(unique, { title: subject, body: message, url: "/app/nachrichten" }).catch((err) => {
+    logger.warn("broadcast: push notification failed", { error: String(err) });
+  });
 
   revalidatePath("/teach/broadcast");
   redirect("/teach/broadcast?sent=1");

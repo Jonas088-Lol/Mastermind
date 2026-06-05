@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
+import { logger } from "@/lib/logger";
 import { pushToUsers } from "@/lib/push";
 import { getSession } from "@/lib/session";
 
@@ -84,7 +85,7 @@ export async function createIncident(formData: FormData) {
           title: "Verweis eingetragen",
           body,
           url: "/eltern",
-        }).catch(() => {}),
+        }).catch((err) => { logger.warn("klassenbuch: push failed", { error: String(err) }); }),
         prisma.appNotification.createMany({
           data: parentIds.map((userId) => ({
             userId,

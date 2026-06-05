@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { pushToUsers } from "@/lib/push";
+import { logger } from "@/lib/logger";
 
 export async function createAssignment(formData: FormData): Promise<void> {
   const session = await getSession();
@@ -68,7 +69,9 @@ export async function createAssignment(formData: FormData): Promise<void> {
     pushToUsers(
       students.map((s) => s.id),
       { title: "Neue Aufgabe", body: `${subject?.name ?? "Fach"}: ${title}`, url: "/app/aufgaben" }
-    ).catch(() => {});
+    ).catch((err) => {
+      logger.warn("aufgaben: push notification failed", { error: String(err) });
+    });
   }
 
   revalidatePath("/teach/aufgaben");

@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { logger } from "@/lib/logger";
 import { pushToUsers } from "@/lib/push";
 import { awardXp } from "@/lib/xp";
 
@@ -52,7 +53,7 @@ export async function saveGrade(formData: FormData): Promise<void> {
       title: "Neue Note eingetragen",
       body: `${subjectName}: ${gradeLabel}`,
       url: "/app/noten",
-    }).catch(() => {}),
+    }).catch((err) => { logger.warn("noten: push failed", { error: String(err) }); }),
     prisma.appNotification.create({
       data: {
         userId: studentId,
