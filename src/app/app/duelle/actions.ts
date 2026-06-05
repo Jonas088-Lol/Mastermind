@@ -113,16 +113,20 @@ export async function submitDuelScore(duelId: string, score: number): Promise<{ 
       data: { status: "completed", winnerId, completedAt: new Date() },
     });
 
-    // XP awards
+    // XP awards — all writes in one transaction to avoid partial state
     const WINNER_XP = 30;
     const PARTICIPANT_XP = 10;
-    if (winnerId) {
-      await prisma.user.update({ where: { id: winnerId }, data: { xp: { increment: WINNER_XP } } });
-      await prisma.xpLog.create({ data: { userId: winnerId, amount: WINNER_XP, reason: "duel_win", referenceId: duelId } });
-    }
     const loserId = winnerId === duel.challengerId ? duel.challengedId : duel.challengerId;
-    await prisma.user.update({ where: { id: loserId }, data: { xp: { increment: PARTICIPANT_XP } } });
-    await prisma.xpLog.create({ data: { userId: loserId, amount: PARTICIPANT_XP, reason: "duel_participate", referenceId: duelId } });
+    await prisma.$transaction([
+      ...(winnerId
+        ? [
+            prisma.user.update({ where: { id: winnerId }, data: { xp: { increment: WINNER_XP } } }),
+            prisma.xpLog.create({ data: { userId: winnerId, amount: WINNER_XP, reason: "duel_win", referenceId: duelId } }),
+          ]
+        : []),
+      prisma.user.update({ where: { id: loserId }, data: { xp: { increment: PARTICIPANT_XP } } }),
+      prisma.xpLog.create({ data: { userId: loserId, amount: PARTICIPANT_XP, reason: "duel_participate", referenceId: duelId } }),
+    ]);
 
     // Notification for both
     const winnerMsg = winnerId

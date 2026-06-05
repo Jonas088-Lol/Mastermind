@@ -1,4 +1,5 @@
 import webpush from "web-push";
+import { logger } from "@/lib/logger";
 
 const VAPID_PUBLIC = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? "";
 const VAPID_PRIVATE = process.env.VAPID_PRIVATE_KEY ?? "";
@@ -10,7 +11,8 @@ if (VAPID_PUBLIC && VAPID_PRIVATE) {
 
 export async function sendPushNotification(
   subscription: { endpoint: string; p256dh: string; auth: string },
-  payload: { title: string; body: string; url?: string }
+  payload: { title: string; body: string; url?: string },
+  attempt = 1
 ): Promise<boolean> {
   if (!VAPID_PUBLIC || !VAPID_PRIVATE) return false;
   try {
@@ -22,7 +24,18 @@ export async function sendPushNotification(
       JSON.stringify(payload)
     );
     return true;
-  } catch {
+  } catch (err) {
+    const status = (err as { statusCode?: number }).statusCode;
+    // 410 Gone = subscription expired, don't retry
+    if (status === 410) {
+      logger.warn("push: subscription expired, skipping", { endpoint: subscription.endpoint.slice(0, 60) });
+      return false;
+    }
+    if (attempt < 3) {
+      await new Promise((r) => setTimeout(r, 500 * attempt));
+      return sendPushNotification(subscription, payload, attempt + 1);
+    }
+    logger.error("push: send failed after retries", err, { endpoint: subscription.endpoint.slice(0, 60) });
     return false;
   }
 }
@@ -39,5 +52,7 @@ export async function pushToUsers(
     where: { userId: { in: userIds } },
     select: { endpoint: true, p256dh: true, auth: true },
   });
-  await Promise.allSettled(subs.map((s) => sendPushNotification(s, payload)));
+  const results = await Promise.allSettled(subs.map((s) => sendPushNotification(s, payload)));
+  const failed = results.filter((r) => r.status === "rejected" || (r.status === "fulfilled" && !r.value)).length;
+  if (failed > 0) logger.warn("push: some notifications failed", { total: subs.length, failed });
 }

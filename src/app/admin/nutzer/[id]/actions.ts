@@ -3,6 +3,8 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
+import { auditLog } from "@/lib/audit";
+import { sendEmail, twoFactorResetEmail } from "@/lib/email";
 import { effectiveRole, getSession } from "@/lib/session";
 
 export async function updateUserRole(userId: string, formData: FormData): Promise<void> {
@@ -41,6 +43,14 @@ export async function deleteUser(userId: string): Promise<void> {
   if (!target || target.schoolId !== session.schoolId) return;
   if (target.id === session.userId) return;
 
+  await auditLog({
+    schoolId: session.schoolId ?? undefined,
+    actorId: session.userId,
+    targetId: userId,
+    action: "user.deleted",
+    details: `role=${target.role} email=${target.email}`,
+  });
+
   await prisma.user.delete({ where: { id: userId } });
   redirect("/admin/nutzer");
 }
@@ -49,14 +59,37 @@ export async function resetTwoFactor(userId: string): Promise<void> {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "admin") redirect("/admin");
 
-  const target = await prisma.user.findUnique({ where: { id: userId } });
+  const target = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { id: true, email: true, name: true, schoolId: true },
+  });
   if (!target || target.schoolId !== session.schoolId) return;
+
+  const adminUser = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: { name: true },
+  });
 
   await prisma.user.update({
     where: { id: userId },
     data: { twoFactor: false, twoFactorSecret: null },
   });
   await prisma.backupCode.deleteMany({ where: { userId } });
+
+  await auditLog({
+    schoolId: session.schoolId ?? undefined,
+    actorId: session.userId,
+    targetId: userId,
+    action: "user.2fa_reset",
+  });
+
+  await sendEmail(
+    twoFactorResetEmail({
+      email: target.email,
+      adminName: adminUser?.name ?? "Administrator",
+    })
+  );
+
   revalidatePath(`/admin/nutzer/${userId}`);
 }
 

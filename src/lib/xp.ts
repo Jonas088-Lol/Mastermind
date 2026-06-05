@@ -2,6 +2,7 @@ import { prisma } from "@/lib/db/client";
 import { checkAndAwardAchievements } from "@/lib/achievements";
 import { applyBoosterToXp } from "@/lib/booster";
 import { awardCoins, COIN_REWARDS } from "@/lib/coins";
+import { logger } from "@/lib/logger";
 
 export const XP_REWARDS = {
   aufgabe_abgabe: 20,
@@ -63,9 +64,13 @@ export async function awardXp(
   // Award coins for this activity (fire-and-forget)
   const coinAmount = COIN_REWARDS[reason as keyof typeof COIN_REWARDS] ?? 0;
   if (coinAmount > 0) {
-    awardCoins(userId, reason, coinAmount, referenceId).catch(() => {});
+    awardCoins(userId, reason, coinAmount, referenceId).catch((err) => {
+      logger.error("xp: coin award failed", err, { userId, reason });
+    });
   }
 
   // Fire-and-forget achievement check (non-blocking)
-  checkAndAwardAchievements(userId).catch(() => {});
+  checkAndAwardAchievements(userId).catch((err) => {
+    logger.error("xp: achievement check failed", err, { userId });
+  });
 }

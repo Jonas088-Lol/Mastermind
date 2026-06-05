@@ -16,6 +16,7 @@ import {
   passwordResetEmail,
   sendEmail,
 } from "@/lib/email";
+import { auditLog } from "@/lib/audit";
 import { ipFromHeaders, rateLimit } from "@/lib/security/rate-limit";
 import {
   ROLE_HOME,
@@ -145,6 +146,12 @@ export async function switchView(formData: FormData) {
     throw new Error("Ungültige Sicht");
   }
 
+  await auditLog({
+    actorId: session.userId,
+    action: "session.impersonation_start",
+    details: `viewAs=${target}`,
+  });
+
   await setSession({
     email: session.email,
     realRole: session.realRole,
@@ -157,6 +164,12 @@ export async function stopImpersonation() {
   const session = await getSession();
   if (!session) redirect("/login");
   if (!isSuper(session)) redirect(ROLE_HOME[effectiveRole(session)]);
+
+  await auditLog({
+    actorId: session.userId,
+    action: "session.impersonation_end",
+    details: `wasViewAs=${effectiveRole(session)}`,
+  });
 
   await setSession({ email: session.email, realRole: session.realRole });
   redirect(ROLE_HOME[session.realRole]);

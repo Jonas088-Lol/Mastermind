@@ -12,6 +12,8 @@
 import { randomBytes } from "node:crypto";
 import { hashPassword, verifyPassword } from "@/lib/auth/passwords";
 import { prisma } from "@/lib/db/client";
+import { sendEmail, backupCodeUsedEmail } from "@/lib/email";
+import { rateLimit } from "@/lib/security/rate-limit";
 
 const CHARSET = "23456789ABCDEFGHJKMNPQRSTVWXYZ";
 const GROUP_LEN = 4;
@@ -69,12 +71,23 @@ export async function regenerateBackupCodes(
 /**
  * Sucht einen unbenutzten BackupCode-Eintrag für den User, dessen Hash zum
  * Input passt, markiert ihn als verbraucht. Gibt true bei Erfolg zurück.
+ *
+ * Rate-limited: 5 Versuche pro 15 Minuten pro User.
  */
 export async function consumeBackupCode(
   userId: string,
   input: string
 ): Promise<boolean> {
   if (!isLikelyBackupCode(input)) return false;
+
+  const limit = await rateLimit({
+    scope: "backup-code",
+    key: userId,
+    limit: 5,
+    windowSec: 900,
+  });
+  if (!limit.ok) return false;
+
   const normalized = normalizeCode(input);
 
   const candidates = await prisma.backupCode.findMany({
@@ -88,7 +101,16 @@ export async function consumeBackupCode(
         where: { id: c.id, usedAt: null },
         data: { usedAt: new Date() },
       });
-      if (updated.count === 1) return true;
+      if (updated.count === 1) {
+        // Notify user — fire-and-forget
+        prisma.user
+          .findUnique({ where: { id: userId }, select: { email: true } })
+          .then((u) => {
+            if (u?.email) sendEmail(backupCodeUsedEmail({ email: u.email }));
+          })
+          .catch(() => undefined);
+        return true;
+      }
     }
   }
   return false;
