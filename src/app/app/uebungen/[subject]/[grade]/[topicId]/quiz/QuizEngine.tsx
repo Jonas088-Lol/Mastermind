@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Timer, Zap, Lightbulb } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { native } from "@/lib/native";
 
 export interface QuizQuestion {
   id: string;
@@ -71,6 +72,12 @@ export function QuizEngine({
       const correct = checkAnswer(question, userAnswer);
       setAnswerState(correct ? "correct" : "wrong");
       setResults((prev) => [...prev, correct]);
+      // Native haptic feedback
+      if (correct) {
+        native.haptics.notification("Success").catch(() => {});
+      } else {
+        native.haptics.notification("Error").catch(() => {});
+      }
     },
     [answerState, question]
   );

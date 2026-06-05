@@ -17,17 +17,38 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: "ltr",
     categories: ["education", "productivity"],
     icons: [
-      {
-        src: "/icon",
-        sizes: "512x512",
-        type: "image/png",
-      },
-      {
-        src: "/apple-icon",
-        sizes: "180x180",
-        type: "image/png",
-      },
+      // Maskable icon (fills the full icon shape on Android)
+      { src: "/icon?size=512", sizes: "512x512", type: "image/png", purpose: "maskable" },
+      // Any purpose (transparent background, used in splash)
+      { src: "/icon?size=512", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/icon?size=192", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/icon?size=180", sizes: "180x180", type: "image/png", purpose: "any" },
+      { src: "/icon?size=152", sizes: "152x152", type: "image/png", purpose: "any" },
+      { src: "/icon?size=144", sizes: "144x144", type: "image/png", purpose: "any" },
+      { src: "/icon?size=128", sizes: "128x128", type: "image/png", purpose: "any" },
+      { src: "/icon?size=96",  sizes: "96x96",   type: "image/png", purpose: "any" },
+      { src: "/icon?size=72",  sizes: "72x72",   type: "image/png", purpose: "any" },
+      // Apple touch icon
+      { src: "/apple-icon",   sizes: "180x180", type: "image/png" },
     ],
+    // Related apps — for Play Store / App Store banners
+    related_applications: [],
+    prefer_related_applications: false,
+    // Protocol handlers for deep links (mastermind://app/...)
+    protocol_handlers: [
+      { protocol: "web+mastermind", url: "/app/%s" },
+    ],
+    // Share target — "Teilen mit MasterMind" in Android share sheet
+    share_target: {
+      action: "/app/community/notizen/neu",
+      method: "POST",
+      enctype: "multipart/form-data",
+      params: {
+        title: "title",
+        text: "text",
+        url: "url",
+      },
+    },
     shortcuts: [
       {
         name: "Aufgaben",

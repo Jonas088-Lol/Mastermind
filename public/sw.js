@@ -1,117 +1,78 @@
-const CACHE_VERSION = "mm-v1";
-const STATIC_CACHE = `${CACHE_VERSION}-static`;
-const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
+/**
+ * MasterMind Service Worker v3
+ * Cache-First for static, Network-First for pages, offline fallback
+ */
+const CACHE_VERSION = 'mm-v3';
+const STATIC_CACHE  = CACHE_VERSION + '-static';
+const PAGE_CACHE    = CACHE_VERSION + '-pages';
+const IMAGE_CACHE   = CACHE_VERSION + '-images';
 
-const PRECACHE_URLS = ["/", "/login", "/offline", "/manifest.webmanifest"];
+const PRECACHE_PAGES = ['/', '/login', '/offline', '/app', '/app/aufgaben', '/app/karteikarten', '/app/uebungen', '/app/noten'];
 
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches
-      .open(STATIC_CACHE)
-      .then((cache) => cache.addAll(PRECACHE_URLS))
-      .then(() => self.skipWaiting())
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open(PAGE_CACHE).then((c) =>
+      Promise.all(PRECACHE_PAGES.map((url) =>
+        fetch(url, { credentials: 'same-origin' })
+          .then((r) => { if (r.ok) c.put(url, r); })
+          .catch(() => {})
+      ))
+    ).then(() => self.skipWaiting())
   );
 });
 
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches
-      .keys()
-      .then((keys) =>
-        Promise.all(
-          keys
-            .filter((k) => !k.startsWith(CACHE_VERSION))
-            .map((k) => caches.delete(k))
-        )
-      )
-      .then(() => self.clients.claim())
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.filter((k) => k.startsWith('mm-') && !k.startsWith(CACHE_VERSION)).map((k) => caches.delete(k)))
+    ).then(() => self.clients.claim())
   );
 });
 
-self.addEventListener("fetch", (event) => {
-  const { request } = event;
-
-  if (request.method !== "GET") return;
-
+self.addEventListener('fetch', (e) => {
+  const { request } = e;
   const url = new URL(request.url);
-
   if (url.origin !== self.location.origin) return;
+  if (url.pathname.startsWith('/api/') || request.method !== 'GET') return;
 
-  if (url.pathname.startsWith("/_next/static/")) {
-    event.respondWith(cacheFirst(request));
+  if (url.pathname.startsWith('/_next/static/')) {
+    e.respondWith(caches.open(STATIC_CACHE).then(async (c) => {
+      const hit = await c.match(request);
+      if (hit) return hit;
+      const res = await fetch(request);
+      if (res.ok) c.put(request, res.clone());
+      return res;
+    }));
     return;
   }
 
-  if (
-    url.pathname.startsWith("/icon") ||
-    url.pathname.startsWith("/apple-icon") ||
-    url.pathname.startsWith("/favicon") ||
-    url.pathname === "/manifest.webmanifest" ||
-    url.pathname === "/opengraph-image"
-  ) {
-    event.respondWith(cacheFirst(request));
-    return;
-  }
-
-  if (request.mode === "navigate") {
-    event.respondWith(networkFirstWithOfflineFallback(request));
-    return;
-  }
-});
-
-self.addEventListener("push", (event) => {
-  if (!event.data) return;
-  let data;
-  try { data = event.data.json(); } catch { data = { title: "Mastermind", body: event.data.text() }; }
-  const title = data.title ?? "Mastermind";
-  const options = {
-    body: data.body ?? "",
-    icon: "/icon",
-    badge: "/icon",
-    data: { url: data.url ?? "/" },
-  };
-  event.waitUntil(self.registration.showNotification(title, options));
-});
-
-self.addEventListener("notificationclick", (event) => {
-  event.notification.close();
-  const url = event.notification.data?.url ?? "/";
-  event.waitUntil(
-    clients.matchAll({ type: "window", includeUncontrolled: true }).then((cs) => {
-      const match = cs.find((c) => c.url === url && "focus" in c);
-      if (match) return match.focus();
-      return clients.openWindow(url);
-    })
+  e.respondWith(
+    fetch(request, { credentials: 'same-origin' })
+      .then((res) => {
+        if (res.ok) caches.open(PAGE_CACHE).then((c) => c.put(request, res.clone()));
+        return res;
+      })
+      .catch(async () => {
+        const cached = await caches.match(request);
+        if (cached) return cached;
+        if (request.headers.get('accept')?.includes('text/html')) return caches.match('/offline') ?? new Response('Offline', { status: 503 });
+        return new Response('', { status: 503 });
+      })
   );
 });
 
-async function cacheFirst(request) {
-  const cache = await caches.open(STATIC_CACHE);
-  const cached = await cache.match(request);
-  if (cached) return cached;
-  try {
-    const response = await fetch(request);
-    if (response.ok) cache.put(request, response.clone());
-    return response;
-  } catch (err) {
-    return new Response("", { status: 504, statusText: "offline" });
-  }
-}
+self.addEventListener('push', (e) => {
+  if (!e.data) return;
+  let p; try { p = e.data.json(); } catch { p = { title: 'MasterMind', body: e.data.text() }; }
+  e.waitUntil(self.registration.showNotification(p.title ?? 'MasterMind', { body: p.body ?? '', icon: '/icon', badge: '/icon', data: p.data ?? {}, vibrate: [100, 50, 100] }));
+});
 
-async function networkFirstWithOfflineFallback(request) {
-  const cache = await caches.open(RUNTIME_CACHE);
-  try {
-    const response = await fetch(request);
-    if (response.ok) cache.put(request, response.clone());
-    return response;
-  } catch (err) {
-    const cached = await cache.match(request);
-    if (cached) return cached;
-    const offline = await caches.match("/offline");
-    if (offline) return offline;
-    return new Response(
-      "<h1>Offline</h1><p>Diese Seite ist offline nicht verfügbar.</p>",
-      { status: 503, headers: { "Content-Type": "text/html; charset=utf-8" } }
-    );
-  }
-}
+self.addEventListener('notificationclick', (e) => {
+  e.notification.close();
+  const url = e.notification.data?.url ?? '/app';
+  e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
+    const ex = clients.find((c) => c.url.includes(self.location.origin));
+    if (ex) { ex.focus(); ex.postMessage({ type: 'NOTIFICATION_CLICK', url }); }
+    else self.clients.openWindow(url);
+  }));
+});

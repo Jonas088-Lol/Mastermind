@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
+import { AppInit } from "@/components/AppInit";
 import "./globals.css";
 
 const inter = Inter({
@@ -54,15 +55,20 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Tells Dark Reader and other theme extensions that this app
-            manages its own color scheme — prevents SVG attribute injection
-            that causes React hydration mismatches. */}
         <meta name="color-scheme" content="light dark" />
         <meta name="darkreader-lock" />
+        {/* iOS PWA / native app meta */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="MasterMind" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        {/* Capacitor safe-area support */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>
       <body className="min-h-screen bg-bg text-fg antialiased" suppressHydrationWarning>
         <ThemeProvider>{children}</ThemeProvider>
         <ServiceWorkerRegister />
+        <AppInit />
       </body>
     </html>
   );
