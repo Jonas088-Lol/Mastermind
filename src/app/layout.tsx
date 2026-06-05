@@ -53,7 +53,14 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen bg-bg text-fg antialiased">
+      <head>
+        {/* Tells Dark Reader and other theme extensions that this app
+            manages its own color scheme — prevents SVG attribute injection
+            that causes React hydration mismatches. */}
+        <meta name="color-scheme" content="light dark" />
+        <meta name="darkreader-lock" />
+      </head>
+      <body className="min-h-screen bg-bg text-fg antialiased" suppressHydrationWarning>
         <ThemeProvider>{children}</ThemeProvider>
         <ServiceWorkerRegister />
       </body>

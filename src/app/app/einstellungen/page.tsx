@@ -182,11 +182,37 @@ export default async function EinstellungenPage() {
                 <CardTitle>Account</CardTitle>
               </CardHeader>
               <CardBody className="space-y-5">
-                <Field
-                  label="E-Mail"
-                  value={me?.email ?? "—"}
-                  action="Ändern"
-                />
+                <div className="flex flex-col gap-2 border-b border-border pb-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold">E-Mail</p>
+                    <p className="mt-0.5 text-xs text-muted-fg">{me?.email ?? "—"}</p>
+                  </div>
+                  <details className="sm:shrink-0">
+                    <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 border border-border px-3 py-1.5 text-xs font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg">
+                      E-Mail ändern
+                    </summary>
+                    <form action="/api/user/change-email" method="post" className="mt-3 space-y-2 border border-border p-3">
+                      <input
+                        name="newEmail"
+                        type="email"
+                        placeholder="Neue E-Mail-Adresse"
+                        required
+                        className="h-9 w-full border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
+                      />
+                      <input
+                        name="password"
+                        type="password"
+                        placeholder="Passwort zur Bestätigung"
+                        required
+                        className="h-9 w-full border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
+                      />
+                      <p className="text-[11px] text-muted-fg">Ein Bestätigungslink wird an die neue Adresse gesendet.</p>
+                      <button type="submit" className="bg-fg px-3 py-1.5 text-xs font-semibold text-bg hover:opacity-90">
+                        Änderung beantragen
+                      </button>
+                    </form>
+                  </details>
+                </div>
 
                 {/* Password change — inline expandable form */}
                 <div className="border-b border-border pb-4 last:border-b-0 last:pb-0">

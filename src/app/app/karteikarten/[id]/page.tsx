@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { ArrowLeft, ArrowRight, Layers } from "lucide-react";
+import { FlashcardModes } from "./FlashcardModes";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -102,15 +103,28 @@ export default async function DeckDetailPage({ params }: Props) {
           />
         </div>
 
-        {/* Session start button */}
-        <div className="flex justify-end">
-          <Link
-            href="/app/karteikarten/session"
-            className={buttonVariants({ size: "md" })}
-          >
-            Session starten ({due} fällig)
-            <ArrowRight className="size-4" />
-          </Link>
+        {/* Lernmodi */}
+        <div className="space-y-3">
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href="/app/karteikarten/session"
+              className={buttonVariants({ size: "md" })}
+            >
+              Spaced-Repetition-Session ({due} fällig)
+              <ArrowRight className="size-4" />
+            </Link>
+          </div>
+
+          {total >= 1 && (
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-fg">
+                Weitere Lernmodi
+              </p>
+              <FlashcardModes
+                cards={deck.cards.map((c) => ({ id: c.id, front: c.front, back: c.back }))}
+              />
+            </div>
+          )}
         </div>
       </header>
 

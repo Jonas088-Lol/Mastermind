@@ -14,6 +14,7 @@ import {
 import { fetchNotifications } from "@/lib/notifications";
 import { prisma } from "@/lib/db/client";
 import { InstallPrompt } from "@/components/app/InstallPrompt";
+import { AppShell } from "@/components/app/AppShell";
 
 const bottomItems: NavItem[] = [
   { href: "/app/profil", label: "Profil", icon: "userCircle" },
@@ -48,11 +49,13 @@ export default async function AppLayout({
 
   const navItems: NavItem[] = [
     { href: "/app", label: "Dashboard", icon: "home", exact: true },
+    { href: "/app/heft", label: "Hefte", icon: "pencilLine" },
     { href: "/app/lernen", label: "Lernen", icon: "bookOpen" },
     { href: "/app/uebungen", label: "Übungen", icon: "brain" },
     { href: "/app/karteikarten", label: "Karteikarten", icon: "layers", badge: dueFlashcards > 0 ? String(dueFlashcards) : undefined },
     { href: "/app/aufgaben", label: "Aufgaben", icon: "checkSquare", badge: pendingAssignments > 0 ? String(pendingAssignments) : undefined },
     { href: "/app/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
+    { href: "/search", label: "Suche", icon: "search" },
     { href: "/app/plan", label: "Stundenplan", icon: "calendar" },
     { href: "/app/noten", label: "Noten", icon: "award" },
     { href: "/app/nachrichten", label: "Nachrichten", icon: "messageSquare" },
@@ -101,6 +104,7 @@ export default async function AppLayout({
         </main>
         <BottomNav items={mobileNavItems} />
         <InstallPrompt />
+        <AppShell />
       </div>
     </div>
   );

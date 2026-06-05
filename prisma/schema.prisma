@@ -70,6 +70,7 @@ model User {
   role            String
   klasse          String?
   classId         String?
+  pomodoroGoal    Int       @default(4)
   twoFactor       Boolean   @default(false)
   twoFactorSecret String?
   notifPrefs      String?
@@ -104,6 +105,8 @@ model User {
   appNotifications AppNotification[]
 
   authoredNotes Note[] @relation("AuthorNotes")
+  notebooks     Notebook[]
+  vocabLists    VocabList[]
 
   xp             Int       @default(0)
   xpLogs         XpLog[]
@@ -1367,4 +1370,74 @@ model ParentTeacherBooking {
   createdAt DateTime          @default(now())
 
   @@index([parentId])
+}
+
+// ── Digitale Hefte (Block-Editor) ─────────────────────────
+
+model Notebook {
+  id        String         @id @default(cuid())
+  userId    String
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  subject   String?
+  color     String         @default("#6366f1")
+  icon      String         @default("📓")
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  pages     NotebookPage[]
+
+  @@index([userId])
+}
+
+model NotebookPage {
+  id         String   @id @default(cuid())
+  notebookId String
+  notebook   Notebook @relation(fields: [notebookId], references: [id], onDelete: Cascade)
+  title      String   @default("Neue Seite")
+  content    String   @default("[]")
+  order      Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([notebookId])
+}
+
+// ── Vokabeltrainer ─────────────────────────────────────────
+
+model VocabList {
+  id        String       @id @default(cuid())
+  userId    String
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  langFrom  String       @default("Deutsch")
+  langTo    String       @default("Englisch")
+  subject   String?
+  isPublic  Boolean      @default(false)
+  color     String       @default("#6366f1")
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  entries   VocabEntry[]
+
+  @@index([userId])
+}
+
+model VocabEntry {
+  id          String    @id @default(cuid())
+  listId      String
+  list        VocabList @relation(fields: [listId], references: [id], onDelete: Cascade)
+  word        String
+  translation String
+  example     String?
+  hint        String?
+  nextReview  DateTime  @default(now())
+  interval    Int       @default(1)
+  easeFactor  Float     @default(2.5)
+  repetitions Int       @default(0)
+  streak      Int       @default(0)
+  createdAt   DateTime  @default(now())
+
+  @@index([listId])
+  @@index([nextReview])
 }

@@ -14,8 +14,10 @@ const csp = [
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
-  // Anthropic API + Vercel preview comments + Resend
+  // Anthropic API + Resend
   "connect-src 'self' https://api.anthropic.com https://api.resend.com",
+  // YouTube embeds for exercise video lessons
+  "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com",
   "frame-ancestors 'none'",
   "form-action 'self'",
   "base-uri 'self'",

@@ -86,6 +86,25 @@ export default async function TopicPage({ params }: PageParams) {
         ))}
       </div>
 
+      {/* Video Lektion */}
+      {lesson?.videoUrl && (
+        <section className="border border-border overflow-hidden">
+          <div className="flex items-center gap-2 border-b border-border bg-surface px-5 py-3">
+            <Play className="size-4 text-brand" strokeWidth={1.75} />
+            <span className="text-sm font-semibold">Erklärvideo</span>
+          </div>
+          <div className="aspect-video w-full">
+            <iframe
+              src={getYouTubeEmbed(lesson.videoUrl)}
+              className="h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title={topic.title}
+            />
+          </div>
+        </section>
+      )}
+
       {/* Lerntext */}
       {lesson && (
         <section className="border border-border">
@@ -129,6 +148,12 @@ export default async function TopicPage({ params }: PageParams) {
       )}
     </div>
   );
+}
+
+function getYouTubeEmbed(url: string): string {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([A-Za-z0-9_-]{11})/);
+  if (match) return `https://www.youtube-nocookie.com/embed/${match[1]}`;
+  return url;
 }
 
 function MarkdownContent({ content }: { content: string }) {

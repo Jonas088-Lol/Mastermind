@@ -59,15 +59,35 @@ export interface NotificationCenterProps {
 export function NotificationCenter({ unreadCount, notifications = [] }: NotificationCenterProps) {
   const [open, setOpen] = useState(false);
   const [readIds, setReadIds] = useState<Set<string>>(new Set());
+  const [liveNotifications, setLiveNotifications] = useState(notifications);
+  const [liveUnreadFromServer, setLiveUnreadFromServer] = useState(unreadCount);
   const [, startTransition] = useTransition();
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
-  const list = notifications.map((n) => ({
+  // Poll for new notifications every 30 seconds when panel is closed
+  useEffect(() => {
+    if (open) return;
+    const poll = async () => {
+      try {
+        const res = await fetch("/api/notifications", { cache: "no-store" });
+        if (!res.ok) return;
+        const data = await res.json() as { notifications: NotificationItem[]; unreadCount: number };
+        setLiveNotifications(data.notifications ?? []);
+        setLiveUnreadFromServer(data.unreadCount ?? 0);
+      } catch {
+        // silent fail
+      }
+    };
+    const id = setInterval(poll, 30_000);
+    return () => clearInterval(id);
+  }, [open]);
+
+  const list = liveNotifications.map((n) => ({
     ...n,
     unread: n.unread && !readIds.has(n.id),
   }));
   const liveUnread = list.filter((n) => n.unread).length;
-  const badgeCount = readIds.size > 0 ? liveUnread : unreadCount;
+  const badgeCount = readIds.size > 0 ? liveUnread : liveUnreadFromServer;
 
   function markRead(ids: string[]) {
     if (ids.length === 0) return;
