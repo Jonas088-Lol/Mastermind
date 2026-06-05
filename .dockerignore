@@ -1,0 +1,45 @@
+# Dependencies (reinstalled inside container)
+node_modules
+npm-debug.log*
+
+# Next.js build output (rebuilt inside container)
+.next
+out
+
+# Development databases
+prisma/prisma/dev.db
+prisma/prisma/dev.db-journal
+prisma/*.db
+prisma/*.db-journal
+
+# Environment files — NEVER bake secrets into images
+.env
+.env.*
+!.env.production.example
+
+# Version control
+.git
+.gitignore
+
+# Editor & OS
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Docs & extras
+docs/
+*.md
+!README.md
+
+# Test / scripts that aren't needed at runtime
+scripts/seed*.ts
+scripts/generate-vapid.mjs
+
+# CI / deployment config not needed inside image
+.github
+vercel.json
+capacitor.config.ts
+ecosystem.config.js

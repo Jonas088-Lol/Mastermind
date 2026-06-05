@@ -1,0 +1,124 @@
+version: "3.9"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# MasterMind — Production Docker Compose
+#
+# Services:
+#   app      → Next.js 16 (standalone, port 3000)
+#   db       → PostgreSQL 16 (port 5432, internal only)
+#   nginx    → Reverse proxy + SSL termination (ports 80 + 443)
+#
+# Usage:
+#   1. cp .env.production.example .env.production
+#   2. Fill in all required values in .env.production
+#   3. docker compose --env-file .env.production up -d
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+
+  # ── PostgreSQL 16 ─────────────────────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: mastermind_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB:       ${POSTGRES_DB:-mastermind}
+      POSTGRES_USER:     ${POSTGRES_USER:-mastermind}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-mastermind} -d ${POSTGRES_DB:-mastermind}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # Do NOT expose port 5432 to the host — internal only
+
+  # ── Next.js App ───────────────────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    container_name: mastermind_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+
+      # Database (references the db service by hostname)
+      DATABASE_URL: postgresql://${POSTGRES_USER:-mastermind}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-mastermind}?sslmode=disable&connection_limit=10
+
+      # Required secrets
+      SESSION_SECRET:        ${SESSION_SECRET:?SESSION_SECRET is required}
+      NEXT_PUBLIC_APP_URL:   ${NEXT_PUBLIC_APP_URL:?NEXT_PUBLIC_APP_URL is required}
+
+      # Optional — AI, Email, Payments, Push
+      ANTHROPIC_API_KEY:             ${ANTHROPIC_API_KEY:-}
+      RESEND_API_KEY:                ${RESEND_API_KEY:-}
+      EMAIL_FROM:                    ${EMAIL_FROM:-noreply@mastermind.app}
+      EMAIL_REPLY_TO:                ${EMAIL_REPLY_TO:-}
+      STRIPE_SECRET_KEY:             ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET:         ${STRIPE_WEBHOOK_SECRET:-}
+      NEXT_PUBLIC_VAPID_PUBLIC_KEY:  ${NEXT_PUBLIC_VAPID_PUBLIC_KEY:-}
+      VAPID_PRIVATE_KEY:             ${VAPID_PRIVATE_KEY:-}
+      VAPID_EMAIL:                   ${VAPID_EMAIL:-}
+      UPSTASH_REDIS_REST_URL:        ${UPSTASH_REDIS_REST_URL:-}
+      UPSTASH_REDIS_REST_TOKEN:      ${UPSTASH_REDIS_REST_TOKEN:-}
+    networks:
+      - internal
+    # Do NOT expose port 3000 to host — nginx handles that
+
+  # ── Nginx Reverse Proxy ────────────────────────────────────────────────────
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: mastermind_nginx
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - certbot_webroot:/var/www/certbot:ro
+      - certbot_certs:/etc/letsencrypt:ro
+    networks:
+      - internal
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Certbot (SSL — run once to issue cert, then auto-renews) ──────────────
+  certbot:
+    image: certbot/certbot:latest
+    container_name: mastermind_certbot
+    volumes:
+      - certbot_webroot:/var/www/certbot
+      - certbot_certs:/etc/letsencrypt
+    # Manual run: docker compose run --rm certbot certonly --webroot ...
+    entrypoint: /bin/sh -c 'trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; sleep 12h & wait $${!}; done'
+    networks:
+      - internal
+
+volumes:
+  postgres_data:
+    name: mastermind_postgres_data
+  certbot_webroot:
+    name: mastermind_certbot_webroot
+  certbot_certs:
+    name: mastermind_certbot_certs
+
+networks:
+  internal:
+    name: mastermind_network
+    driver: bridge

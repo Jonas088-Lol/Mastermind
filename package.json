@@ -2,6 +2,10 @@
   "name": "mastermind",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,9 +15,16 @@
     "db:deploy": "prisma migrate deploy",
     "db:seed": "tsx prisma/seed.ts",
     "db:seed-topics": "tsx scripts/seed-topics.ts",
+    "db:seed-extended": "tsx scripts/seed-extended.ts",
+    "db:seed-mega": "tsx scripts/seed-mega.ts",
     "db:studio": "prisma studio",
     "db:reset": "prisma migrate reset --force",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose --env-file .env.production up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f app",
+    "docker:migrate": "docker compose exec app node_modules/.bin/prisma migrate deploy"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -30,6 +41,7 @@
     "next": "16.2.4",
     "next-themes": "^0.4.6",
     "pdf-parse": "^2.4.5",
+    "pg": "^8.21.0",
     "prisma": "^6.19.3",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -41,6 +53,7 @@
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/pdf-parse": "^1.1.5",
+    "@types/pg": "^8.20.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/web-push": "^3.6.4",
