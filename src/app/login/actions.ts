@@ -149,7 +149,7 @@ export async function switchView(formData: FormData) {
   await auditLog({
     actorId: session.userId,
     action: "session.impersonation_start",
-    details: `viewAs=${target}`,
+    details: { viewAs: target },
   });
 
   await setSession({
@@ -168,7 +168,7 @@ export async function stopImpersonation() {
   await auditLog({
     actorId: session.userId,
     action: "session.impersonation_end",
-    details: `wasViewAs=${effectiveRole(session)}`,
+    details: { wasViewAs: effectiveRole(session) },
   });
 
   await setSession({ email: session.email, realRole: session.realRole });

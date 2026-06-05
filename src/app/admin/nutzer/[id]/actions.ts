@@ -48,7 +48,7 @@ export async function deleteUser(userId: string): Promise<void> {
     actorId: session.userId,
     targetId: userId,
     action: "user.deleted",
-    details: `role=${target.role} email=${target.email}`,
+    details: { role: target.role, email: target.email },
   });
 
   await prisma.user.delete({ where: { id: userId } });
