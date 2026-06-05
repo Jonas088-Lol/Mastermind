@@ -1,0 +1,62 @@
+name: Deploy
+
+# Runs on every push to main — AFTER the CI check passes
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false   # Never cancel a running deploy
+
+jobs:
+  # ── CI gate: lint + build must pass before we deploy ─────────────────────
+  lint-and-build:
+    name: Lint, Type-Check, Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DATABASE_URL: file:./prisma/ci.db
+      SESSION_SECRET: ci-only-secret-do-not-use-in-prod
+      NEXT_PUBLIC_APP_URL: https://example.com
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+      - name: Apply migrations to CI DB
+        run: npx prisma migrate deploy
+
+      - name: ESLint
+        run: npx eslint src/
+
+      - name: TypeScript build
+        run: npx next build
+
+  # ── Deploy: SSH into VPS and run deploy.sh ────────────────────────────────
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+    needs: lint-and-build
+    timeout-minutes: 15
+    environment: production   # optional: add manual approval in GitHub settings
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          script: bash /opt/mastermind/scripts/deploy.sh

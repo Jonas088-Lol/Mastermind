@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1117" />
+  <title>MasterMind</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      background: #0d1117;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #e6edf3;
+      overscroll-behavior: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; } }
+    .spinner {
+      width: 44px;
+      height: 44px;
+      border: 3px solid #21262d;
+      border-top-color: #6366f1;
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .logo { font-size: 22px; font-weight: 700; letter-spacing: -0.4px; }
+    .logo span { color: #6366f1; }
+    .sub { font-size: 13px; color: #8b949e; margin-top: -8px; }
+    .offline {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+      padding: 32px;
+    }
+    .offline-icon { font-size: 48px; }
+    .offline h2 { font-size: 18px; font-weight: 600; }
+    .offline p { font-size: 14px; color: #8b949e; max-width: 260px; line-height: 1.5; }
+    .retry-btn {
+      margin-top: 8px;
+      padding: 10px 24px;
+      background: #6366f1;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .retry-btn:active { opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <div class="logo">Master<span>Mind</span></div>
+    <div class="sub">Verbinden…</div>
+  </div>
+
+  <div class="offline" id="offline">
+    <div class="offline-icon">📡</div>
+    <h2>Keine Verbindung</h2>
+    <p>Bitte prüfe deine Internetverbindung und versuche es erneut.</p>
+    <button class="retry-btn" onclick="location.reload()">Erneut versuchen</button>
+  </div>
+
+  <script>
+    // Show offline screen if network is unavailable after 8s
+    var timer = setTimeout(function() {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('offline').style.display = 'flex';
+    }, 8000);
+
+    // Capacitor will replace this view with server.url — this is only shown briefly
+    if (typeof window !== 'undefined' && !navigator.onLine) {
+      clearTimeout(timer);
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('offline').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
