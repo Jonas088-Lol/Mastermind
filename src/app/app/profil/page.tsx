@@ -66,7 +66,7 @@ export default async function ProfilPage() {
 
   if (!user) redirect("/login");
 
-  const [submissionCount, , earnedAchievements, activeBoosters] = await Promise.all([
+  const [submissionCount, , earnedAchievements, activeBoosters, gradesBySubject, exerciseProgress, vocabStats, xpLogs] = await Promise.all([
     prisma.submission.count({
       where: { studentId: session.userId, status: { in: ["submitted", "graded"] } },
     }),
@@ -79,9 +79,70 @@ export default async function ProfilPage() {
       where: { userId: session.userId, expiresAt: { gt: new Date() } },
       orderBy: { expiresAt: "asc" },
     }),
+    // Grade averages per subject
+    prisma.grade.findMany({
+      where: { studentId: session.userId },
+      select: { value: true, subject: { select: { name: true, color: true } } },
+    }),
+    // Exercise completion by subject
+    prisma.exerciseProgress.findMany({
+      where: { userId: session.userId, completedAt: { not: null } },
+      include: { topic: { select: { subject: true, title: true } } },
+    }),
+    // Vocab stats
+    prisma.vocabList.findMany({
+      where: { userId: session.userId },
+      include: { entries: { select: { repetitions: true } } },
+    }),
+    // XP logs last 30 days for activity heatmap
+    prisma.xpLog.findMany({
+      where: {
+        userId: session.userId,
+        createdAt: { gte: new Date(Date.now() - 30 * 86400_000) },
+      },
+      select: { createdAt: true, amount: true },
+      orderBy: { createdAt: "asc" },
+    }),
   ]);
 
   const earnedSlugs = new Set(earnedAchievements.map((a) => a.slug));
+
+  // Build subject grade map
+  const subjectGradeMap: Record<string, { name: string; color: string; values: number[] }> = {};
+  for (const g of gradesBySubject) {
+    const key = g.subject.name;
+    if (!subjectGradeMap[key]) subjectGradeMap[key] = { name: g.subject.name, color: g.subject.color, values: [] };
+    subjectGradeMap[key].values.push(g.value);
+  }
+  const subjectStats = Object.values(subjectGradeMap).map((s) => ({
+    ...s,
+    avg: s.values.reduce((a, b) => a + b, 0) / s.values.length,
+    count: s.values.length,
+  })).sort((a, b) => a.avg - b.avg);
+
+  // Exercise progress by subject
+  const exerciseBySubject: Record<string, number> = {};
+  for (const ep of exerciseProgress) {
+    const subj = ep.topic.subject;
+    exerciseBySubject[subj] = (exerciseBySubject[subj] ?? 0) + 1;
+  }
+
+  // Vocab stats
+  const totalVocab = vocabStats.reduce((s, l) => s + l.entries.length, 0);
+  const masteredVocab = vocabStats.reduce((s, l) => s + l.entries.filter(e => e.repetitions >= 3).length, 0);
+
+  // Activity heatmap: XP per day last 30 days
+  const activityMap: Record<string, number> = {};
+  for (const log of xpLogs) {
+    const day = log.createdAt.toISOString().slice(0, 10);
+    activityMap[day] = (activityMap[day] ?? 0) + log.amount;
+  }
+  const last30Days = Array.from({ length: 30 }, (_, i) => {
+    const d = new Date(Date.now() - (29 - i) * 86400_000);
+    const key = d.toISOString().slice(0, 10);
+    return { key, xp: activityMap[key] ?? 0, label: d.toLocaleDateString("de-DE", { day: "numeric", month: "short" }) };
+  });
+  const maxXpDay = Math.max(...last30Days.map(d => d.xp), 1);
   const earnedCount = earnedSlugs.size;
 
   const level = levelFromXp(user.xp);
@@ -181,6 +242,167 @@ export default async function ProfilPage() {
           </Link>
         </p>
       </section>
+
+      {/* ── Lernstatistiken ─────────────────────────────────── */}
+      <div className="grid gap-6 lg:grid-cols-3">
+        {/* Notenübersicht nach Fach */}
+        <Card className="lg:col-span-2">
+          <CardHeader>
+            <CardTitle>Noten nach Fach</CardTitle>
+            <Link href="/app/noten" className="text-xs text-muted-fg hover:text-brand">Alle Noten →</Link>
+          </CardHeader>
+          <CardBody>
+            {subjectStats.length === 0 ? (
+              <p className="text-sm text-muted-fg">Noch keine Noten vorhanden.</p>
+            ) : (
+              <div className="space-y-3">
+                {subjectStats.map((s) => {
+                  const barPct = Math.max(0, Math.min(100, ((6 - s.avg) / 5) * 100));
+                  const tone = s.avg <= 2 ? "#10b981" : s.avg <= 3.5 ? "#f59e0b" : "#ef4444";
+                  return (
+                    <div key={s.name} className="space-y-1">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="font-medium">{s.name}</span>
+                        <span className="font-mono font-bold" style={{ color: tone }}>
+                          Ø {s.avg.toFixed(1)} <span className="text-muted-fg font-normal">({s.count}×)</span>
+                        </span>
+                      </div>
+                      <div className="h-2 w-full bg-border">
+                        <div className="h-full transition-all" style={{ width: `${barPct}%`, backgroundColor: tone }} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </CardBody>
+        </Card>
+
+        {/* Aktivitäts-Heatmap */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Aktivität (30 Tage)</CardTitle>
+          </CardHeader>
+          <CardBody>
+            <div className="flex flex-wrap gap-1">
+              {last30Days.map((day) => {
+                const intensity = day.xp === 0 ? 0 : Math.ceil((day.xp / maxXpDay) * 4);
+                const bg = ["bg-border", "bg-brand/25", "bg-brand/50", "bg-brand/75", "bg-brand"][intensity];
+                return (
+                  <div
+                    key={day.key}
+                    title={`${day.label}: ${day.xp} XP`}
+                    className={`size-4 ${bg} transition-colors`}
+                  />
+                );
+              })}
+            </div>
+            <p className="mt-3 text-xs text-muted-fg">
+              {last30Days.filter(d => d.xp > 0).length} aktive Tage · {last30Days.reduce((s, d) => s + d.xp, 0)} XP
+            </p>
+          </CardBody>
+        </Card>
+      </div>
+
+      {/* Übungen + Vokabeln Stats */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Exercise progress */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Übungsfortschritt</CardTitle>
+            <Link href="/app/uebungen" className="text-xs text-muted-fg hover:text-brand">Üben →</Link>
+          </CardHeader>
+          <CardBody>
+            {Object.keys(exerciseBySubject).length === 0 ? (
+              <div className="space-y-2">
+                <p className="text-sm text-muted-fg">Noch keine Übungen abgeschlossen.</p>
+                <Link href="/app/uebungen" className="text-xs font-semibold text-brand hover:underline">
+                  Jetzt starten →
+                </Link>
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {Object.entries(exerciseBySubject)
+                  .sort(([, a], [, b]) => b - a)
+                  .slice(0, 6)
+                  .map(([subj, count]) => (
+                    <div key={subj} className="flex items-center justify-between text-sm">
+                      <span className="capitalize">{subj}</span>
+                      <span className="font-mono text-xs font-bold text-brand">{count} ✓</span>
+                    </div>
+                  ))}
+                <p className="pt-1 text-xs text-muted-fg">
+                  {exerciseProgress.length} Themen abgeschlossen
+                </p>
+              </div>
+            )}
+          </CardBody>
+        </Card>
+
+        {/* Vocab stats */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Vokabeln</CardTitle>
+            <Link href="/app/vokabeln" className="text-xs text-muted-fg hover:text-brand">Trainer →</Link>
+          </CardHeader>
+          <CardBody>
+            {vocabStats.length === 0 ? (
+              <div className="space-y-2">
+                <p className="text-sm text-muted-fg">Noch keine Vokabellisten.</p>
+                <Link href="/app/vokabeln" className="text-xs font-semibold text-brand hover:underline">
+                  Liste erstellen →
+                </Link>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-3 text-center">
+                  <div className="border border-border p-3">
+                    <p className="font-mono text-2xl font-bold">{totalVocab}</p>
+                    <p className="text-[10px] uppercase tracking-wider text-muted-fg">Vokabeln</p>
+                  </div>
+                  <div className="border border-success/30 bg-success/5 p-3">
+                    <p className="font-mono text-2xl font-bold text-success">{masteredVocab}</p>
+                    <p className="text-[10px] uppercase tracking-wider text-muted-fg">Gemeistert</p>
+                  </div>
+                </div>
+                <div className="h-2 w-full bg-border">
+                  <div
+                    className="h-full bg-success transition-all"
+                    style={{ width: totalVocab > 0 ? `${Math.round((masteredVocab / totalVocab) * 100)}%` : "0%" }}
+                  />
+                </div>
+                <p className="text-xs text-muted-fg">
+                  {vocabStats.length} Listen · {totalVocab > 0 ? Math.round((masteredVocab / totalVocab) * 100) : 0}% gemeistert
+                </p>
+              </div>
+            )}
+          </CardBody>
+        </Card>
+
+        {/* Quick links */}
+        <Card>
+          <CardHeader><CardTitle>Schnellzugriff</CardTitle></CardHeader>
+          <CardBody className="!px-0 !pb-0">
+            <ul className="divide-y divide-border border-t border-border">
+              {[
+                { href: "/app/lernplan", label: "KI-Lernplan generieren", emoji: "🤖" },
+                { href: "/app/karteikarten", label: "Karteikarten", emoji: "🃏" },
+                { href: "/app/vokabeln", label: "Vokabeltrainer", emoji: "📝" },
+                { href: "/app/heft", label: "Meine Hefte", emoji: "📓" },
+                { href: "/app/quests", label: "Quests", emoji: "⚔️" },
+                { href: "/app/streaks", label: "Streak-Kalender", emoji: "🔥" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="flex items-center gap-3 px-5 py-2.5 text-sm transition-colors hover:bg-surface">
+                    <span>{item.emoji}</span>
+                    <span>{item.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </CardBody>
+        </Card>
+      </div>
 
       <div className="grid gap-6 sm:grid-cols-2">
         <Card>

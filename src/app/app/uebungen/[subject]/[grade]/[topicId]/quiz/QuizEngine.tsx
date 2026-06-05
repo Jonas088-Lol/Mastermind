@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Timer, Zap } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Timer, Zap, Lightbulb } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface QuizQuestion {
@@ -40,6 +40,7 @@ export function QuizEngine({
   const [results, setResults] = useState<boolean[]>([]);
   const [done, setDone] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [hintUsed, setHintUsed] = useState(false);
 
   // Blitz timer
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
@@ -74,6 +75,30 @@ export function QuizEngine({
     [answerState, question]
   );
 
+  // Keyboard shortcuts: 1/2/3/4 for MC, T/F for true_false, Enter to advance
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (answerState !== "pending") {
+        if (e.key === "Enter" || e.key === " ") handleNext();
+        return;
+      }
+      if (question.type === "mc" || question.type === "blitz") {
+        const n = parseInt(e.key, 10);
+        if (n >= 1 && n <= 4) {
+          const opts = JSON.parse(question.options ?? "[]") as string[];
+          if (opts[n - 1]) handleSubmit(String(n - 1));
+        }
+      }
+      if (question.type === "true_false") {
+        if (e.key === "t" || e.key === "T" || e.key === "1") handleSubmit("true");
+        if (e.key === "f" || e.key === "F" || e.key === "2") handleSubmit("false");
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [answerState, question, idx]);
+
   const handleNext = useCallback(async () => {
     if (idx + 1 >= questions.length) {
       const score = Math.round((results.filter(Boolean).length / questions.length) * 100);
@@ -87,6 +112,7 @@ export function QuizEngine({
     setAnswer("");
     setAnswerState("pending");
     setTimeLeft(null);
+    setHintUsed(false);
   }, [idx, questions.length, results, onComplete]);
 
   if (done) {
@@ -173,15 +199,41 @@ export function QuizEngine({
           <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
             {TYPE_LABEL[question.type] ?? question.type}
           </span>
-          {question.type === "blitz" && (
-            <span className="text-[10px] font-semibold uppercase tracking-wider text-warning">
-              Zeitlimit!
-            </span>
-          )}
+          <div className="flex items-center gap-3">
+            {(question.type === "mc" || question.type === "true_false") && answerState === "pending" && (
+              <span className="hidden text-[10px] text-muted-fg sm:block">
+                {question.type === "mc" ? "Tipp: 1 2 3 4 eingeben" : "T = Wahr · F = Falsch"}
+              </span>
+            )}
+            {question.type === "blitz" && (
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-warning">
+                Zeitlimit!
+              </span>
+            )}
+          </div>
         </div>
         <div className="p-5">
           <p className="text-base font-semibold leading-relaxed">{question.question}</p>
         </div>
+        {/* Hint button */}
+        {answerState === "pending" && question.explanation && !hintUsed && (
+          <div className="border-t border-border px-5 py-2">
+            <button
+              type="button"
+              onClick={() => setHintUsed(true)}
+              className="flex items-center gap-1.5 text-xs text-muted-fg transition-colors hover:text-brand"
+            >
+              <Lightbulb className="size-3.5" strokeWidth={1.75} />
+              Tipp anzeigen
+            </button>
+          </div>
+        )}
+        {hintUsed && question.explanation && answerState === "pending" && (
+          <div className="flex items-start gap-2 border-t border-brand/20 bg-brand/4 px-5 py-3">
+            <Lightbulb className="mt-0.5 size-3.5 shrink-0 text-brand" strokeWidth={1.75} />
+            <p className="text-xs text-muted-fg">{question.explanation}</p>
+          </div>
+        )}
       </div>
 
       {/* Answer area */}
@@ -604,7 +656,7 @@ function ResultScreen({
             Falsch
           </span>
         </div>
-        <div className="flex flex-col items-center gap-1 border border-brand/30 bg-brand/[0.04] p-4 text-center">
+        <div className="flex flex-col items-center gap-1 border border-brand/30 bg-brand/4 p-4 text-center">
           <Zap className="size-5 text-brand" />
           <span className="text-2xl font-black text-brand">+{xpEarned}</span>
           <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
