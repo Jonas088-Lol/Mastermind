@@ -32,7 +32,7 @@ export default async function AppLayout({
   const effective = effectiveRole(session);
   if (effective !== "student") redirect(ROLE_HOME[effective]);
 
-  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData] = await Promise.all([
+  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData, unreadThreads] = await Promise.all([
     fetchNotifications(session.userId),
     prisma.flashcard.count({
       where: { deck: { userId: session.userId }, nextReviewAt: { lte: new Date() } },
@@ -45,6 +45,23 @@ export default async function AppLayout({
       },
     }),
     prisma.user.findUnique({ where: { id: session.userId }, select: { coins: true } }),
+    prisma.messageParticipant.count({
+      where: {
+        userId: session.userId,
+        thread: {
+          messages: {
+            some: {
+              senderId: { not: session.userId },
+              sentAt: { gt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
+            },
+          },
+        },
+        OR: [
+          { lastReadAt: null },
+          { thread: { updatedAt: { gt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) } } },
+        ],
+      },
+    }).catch(() => 0),
   ]);
 
   const navItems: NavItem[] = [
@@ -62,7 +79,7 @@ export default async function AppLayout({
     { href: "/app/noten",          label: "Noten",         icon: "award"         },
     { href: "/app/plan",           label: "Stundenplan",   icon: "calendar"      },
     { href: "/app/fehlzeiten",     label: "Fehlzeiten",    icon: "calendarX"     },
-    { href: "/app/nachrichten",    label: "Nachrichten",   icon: "messageSquare" },
+    { href: "/app/nachrichten",    label: "Nachrichten",   icon: "messageSquare", badge: unreadThreads > 0 ? String(unreadThreads) : undefined },
     // ── Gamification ─────────────────────────────────
     { href: "/app/ranking",        label: "Ranking",       icon: "trophy"        },
     { href: "/app/quests",         label: "Quests",        icon: "zap"           },
