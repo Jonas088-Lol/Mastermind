@@ -12,9 +12,9 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Fur Schulen | MasterMind",
+  title: "Für Schulen | MasterMind",
   description:
-    "MasterMind fur Schulen: vollstandige Schulplattform mit DSGVO-Konformitat, SSO, Reporting und API — alles aus einer Hand.",
+    "MasterMind für Schulen: vollständige Schulplattform mit DSGVO-Konformität, SSO, Reporting und API — alles aus einer Hand.",
 };
 
 const sections = [
@@ -22,16 +22,16 @@ const sections = [
     icon: School,
     title: "Schul-Administration",
     bullets: [
-      "Klassen, Facher und Stundenpläne zentral verwalten",
+      "Klassen, Fächer und Stundenpläne zentral verwalten",
       "Stundenplan-Import aus Untis in weniger als 5 Minuten",
       "Digitales Klassenbuch, Fehlzeiten und Vertretungsplan",
     ],
   },
   {
     icon: ShieldCheck,
-    title: "DSGVO-Konformitat",
+    title: "DSGVO-Konformität",
     bullets: [
-      "Hosting ausschliesslich auf ISO-27001-zertifizierten Servern in Frankfurt",
+      "Hosting ausschließlich auf ISO-27001-zertifizierten Servern in Frankfurt",
       "AVV-Abschluss innerhalb von 24 Stunden nach Vertragsschluss",
       "Kein Tracking, keine Werbung, kein Datenverkauf — garantiert",
     ],
@@ -40,27 +40,27 @@ const sections = [
     icon: KeyRound,
     title: "SSO & Anmeldung",
     bullets: [
-      "SAML 2.0 und SCIM fur Microsoft Azure AD, Google Workspace und mehr",
-      "Zwei-Faktor-Authentifizierung fur alle Benutzerkonten",
-      "Einladungslinks und Massen-Import per CSV fur schnelles Onboarding",
+      "SAML 2.0 und SCIM für Microsoft Azure AD, Google Workspace und mehr",
+      "Zwei-Faktor-Authentifizierung für alle Benutzerkonten",
+      "Einladungslinks und Massen-Import per CSV für schnelles Onboarding",
     ],
   },
   {
     icon: LineChart,
     title: "Reporting & Analytics",
     bullets: [
-      "Schulweite Lernstands-Ubersicht fur die Schulleitung",
+      "Schulweite Lernstands-Übersicht für die Schulleitung",
       "Fach- und Klassenvergleiche als Export oder Live-Dashboard",
-      "Audit-Log aller relevanten Aktionen fur Transparenz und Compliance",
+      "Audit-Log aller relevanten Aktionen für Transparenz und Compliance",
     ],
   },
   {
     icon: Code2,
     title: "API & Integrationen",
     bullets: [
-      "REST-API fur eigene Anpassungen und Drittsysteme",
-      "Webhooks fur Echtzeit-Benachrichtigungen an Schulverwaltungs-Software",
-      "White-Label-Option fur Schultrager mit eigenem Branding und Domain",
+      "REST-API für eigene Anpassungen und Drittsysteme",
+      "Webhooks für Echtzeit-Benachrichtigungen an Schulverwaltungs-Software",
+      "White-Label-Option für Schulträger mit eigenem Branding und Domain",
     ],
   },
 ];
@@ -74,14 +74,14 @@ export default function FuerSchulenPage() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow">
               <span className="inline-block size-1.5 bg-brand" />
-              Fur Schulen
+              Für Schulen
             </span>
             <h1 className="mt-4 text-4xl sm:text-5xl">
               Die komplette Schulplattform
             </h1>
             <p className="mt-5 text-lg text-muted-fg">
-              Von der Administration uber DSGVO-konforme Kommunikation bis hin zur
-              KI-gestutzten Lernanalyse — MasterMind ist die einzige Plattform, die
+              Von der Administration über DSGVO-konforme Kommunikation bis hin zur
+              KI-gestützten Lernanalyse — MasterMind ist die einzige Plattform, die
               Ihre Schule wirklich braucht.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
@@ -93,7 +93,7 @@ export default function FuerSchulenPage() {
               </Link>
               <Link href="/preise">
                 <Button size="lg" variant="outline">
-                  Preise fur Schulen
+                  Preise für Schulen
                 </Button>
               </Link>
             </div>
@@ -112,7 +112,6 @@ export default function FuerSchulenPage() {
                   i % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                {/* Text */}
                 <div className="flex-1 space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="grid size-10 shrink-0 place-items-center border border-border bg-surface">
@@ -129,8 +128,6 @@ export default function FuerSchulenPage() {
                     ))}
                   </ul>
                 </div>
-
-                {/* Placeholder mockup */}
                 <div className="flex-1">
                   <div className="flex aspect-video w-full items-center justify-center border border-border bg-surface text-sm text-muted-fg">
                     Screenshot Platzhalter — {s.title}
@@ -169,8 +166,8 @@ export default function FuerSchulenPage() {
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-3xl sm:text-4xl">Jetzt Pilot starten</h2>
             <p className="mt-4 text-lg text-muted-fg">
-              30 Tage kostenlos, keine Kreditkarte, personlicher Ansprechpartner fur
-              den Einfuhrungsprozess.
+              30 Tage kostenlos, keine Kreditkarte, persönlicher Ansprechpartner für
+              den Einführungsprozess.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link href="/kontakt">

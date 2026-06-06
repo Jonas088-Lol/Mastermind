@@ -25,7 +25,7 @@ const features = [
     icon: Brain,
     title: "KI-Tutor",
     bullets: [
-      "Personalisierte Erklarungen je nach Wissensstand",
+      "Personalisierte Erklärungen je nach Wissensstand",
       "Sofortige Antworten auf Fragen — rund um die Uhr",
       "Adaptives Frage-Antwort-Training mit Spaced Repetition",
     ],
@@ -35,26 +35,26 @@ const features = [
     title: "Aufgaben-Management",
     bullets: [
       "Hausaufgaben, Tests und Projekte in einer Ansicht",
-      "KI-Vorkorrektur spart Lehrkraften bis zu 60 % Zeit",
-      "Automatische Erinnerungen fur Schuler vor Abgabeschluss",
+      "KI-Vorkorrektur spart Lehrkräften bis zu 60 % Zeit",
+      "Automatische Erinnerungen für Schüler vor Abgabeschluss",
     ],
   },
   {
     icon: BarChart2,
-    title: "Notenuebersicht",
+    title: "Notenübersicht",
     bullets: [
-      "Kompetenz-Heatmap pro Schuler und Lernziel",
+      "Kompetenz-Heatmap pro Schüler und Lernziel",
       "Notenentwicklung als Zeitreihe visualisiert",
-      "Export als PDF fur Elterngesprache",
+      "Export als PDF für Elterngespräche",
     ],
   },
   {
     icon: Trophy,
     title: "Gamification — XP, Streaks & Duelle",
     bullets: [
-      "Erfahrungspunkte fur jede abgeschlossene Aufgabe",
-      "Tagesstreaks motivieren zu regelmaßigem Lernen",
-      "Klassen-Duelle und Ranglisten fur gesunden Wettbewerb",
+      "Erfahrungspunkte für jede abgeschlossene Aufgabe",
+      "Tagesstreaks motivieren zu regelmäßigem Lernen",
+      "Klassen-Duelle und Ranglisten für gesunden Wettbewerb",
     ],
   },
   {
@@ -63,7 +63,7 @@ const features = [
     bullets: [
       "Block-Editor mit Mathe-Formeln, Tabellen und Zeichnen",
       "Karteikarten-System mit automatischer Wiederholung",
-      "Hefte pro Fach — direkt mit Ubungen verknupft",
+      "Hefte pro Fach — direkt mit Übungen verknüpft",
     ],
   },
   {
@@ -88,7 +88,7 @@ const features = [
     icon: ShieldCheck,
     title: "DSGVO-konform",
     bullets: [
-      "Hosting ausschliesslich auf Servern in Frankfurt am Main",
+      "Hosting ausschließlich auf Servern in Frankfurt am Main",
       "AVV-Abschluss innerhalb von 24 Stunden",
       "Kein Tracking, keine Werbung, kein Datenverkauf",
     ],
@@ -110,8 +110,8 @@ export default function FunktionenPage() {
               Alles was Schulen brauchen — in einer Plattform
             </h1>
             <p className="mt-5 text-lg text-muted-fg">
-              MasterMind vereint Lern-App, Schulverwaltung und KI-Tutor. Keine fuenf
-              verschiedenen Tools — eine Plattform, die fur Schuler, Lehrkrafte und
+              MasterMind vereint Lern-App, Schulverwaltung und KI-Tutor. Keine fünf
+              verschiedenen Tools — eine Plattform, die für Schüler, Lehrkräfte und
               Schulleitungen funktioniert.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">

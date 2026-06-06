@@ -56,6 +56,8 @@ export default async function TopicPage({ params }: PageParams) {
       OR: [
         { title: { contains: label } },
         { title: { contains: label.toLowerCase() } },
+        { subject: { contains: label } },
+        { subject: { contains: label.toLowerCase() } },
       ],
     },
     include: {
@@ -163,7 +165,7 @@ export default async function TopicPage({ params }: PageParams) {
       {/* Neues Heft CTA */}
       <div className="flex items-center gap-3 border border-dashed border-border bg-surface/50 px-5 py-4">
         <NotebookPen className="size-4 shrink-0 text-muted-fg" />
-        <p className="flex-1 text-sm text-muted-fg">Heft fur {label} anlegen und Notizen machen</p>
+        <p className="flex-1 text-sm text-muted-fg">Heft für {label} anlegen und Notizen machen</p>
         <Link
           href={`/app/heft?createFor=${encodeURIComponent(label)}`}
           className="text-xs font-semibold text-brand hover:underline"

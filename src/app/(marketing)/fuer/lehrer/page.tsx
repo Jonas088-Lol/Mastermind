@@ -12,9 +12,9 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Fur Lehrer | MasterMind",
+  title: "Für Lehrer | MasterMind",
   description:
-    "MasterMind fur Lehrkrafte: Aufgaben erstellen, KI-Vorkorrektur, Notenmanagement, Klassenanalyse und Broadcast — weniger Verwaltung, mehr Unterricht.",
+    "MasterMind für Lehrkräfte: Aufgaben erstellen, KI-Vorkorrektur, Notenmanagement, Klassenanalyse und Broadcast — weniger Verwaltung, mehr Unterricht.",
 };
 
 const sections = [
@@ -32,7 +32,7 @@ const sections = [
     title: "KI-Vorkorrektur",
     bullets: [
       "KI bewertet Abgaben nach deinen Kriterien vor — du hast die Endkontrolle",
-      "Automatische Ruckmeldungs-Texte fur jeden Schuler individualisiert",
+      "Automatische Rückmeldungs-Texte für jeden Schüler individualisiert",
       "Spart durchschnittlich 60 % der Korrekturzeit",
     ],
   },
@@ -40,8 +40,8 @@ const sections = [
     icon: BarChart2,
     title: "Notenmanagement",
     bullets: [
-      "Alle Noten zentral erfassen — schriftlich, mundlich, praktisch",
-      "Gewichtung und Notenschlussel frei konfigurierbar",
+      "Alle Noten zentral erfassen — schriftlich, mündlich, praktisch",
+      "Gewichtung und Notenschlüssel frei konfigurierbar",
       "Export als PDF, Excel oder direkt ins Zeugnis-System",
     ],
   },
@@ -49,7 +49,7 @@ const sections = [
     icon: Users,
     title: "Klassenanalyse",
     bullets: [
-      "Kompetenz-Heatmap zeigt Lernlucken in der Klasse auf einen Blick",
+      "Kompetenz-Heatmap zeigt Lernlücken in der Klasse auf einen Blick",
       "Differenzierung leicht gemacht: Gruppen nach Leistungsstand filtern",
       "Lernfortschritt im Zeitverlauf — vor und nach einer Unterrichtseinheit",
     ],
@@ -74,14 +74,14 @@ export default function FuerLehrerPage() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow">
               <span className="inline-block size-1.5 bg-brand" />
-              Fur Lehrer
+              Für Lehrer
             </span>
             <h1 className="mt-4 text-4xl sm:text-5xl">
               Weniger Verwaltung, mehr Unterricht
             </h1>
             <p className="mt-5 text-lg text-muted-fg">
-              MasterMind nimmt Lehrkraften den Papierkram ab. Aufgaben, Korrekturen,
-              Noten und Kommunikation — alles an einem Ort, mit KI-Unterstutzung.
+              MasterMind nimmt Lehrkräften den Papierkram ab. Aufgaben, Korrekturen,
+              Noten und Kommunikation — alles an einem Ort, mit KI-Unterstützung.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link href="/kontakt">
@@ -111,7 +111,6 @@ export default function FuerLehrerPage() {
                   i % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                {/* Text */}
                 <div className="flex-1 space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="grid size-10 shrink-0 place-items-center border border-border bg-surface">
@@ -128,8 +127,6 @@ export default function FuerLehrerPage() {
                     ))}
                   </ul>
                 </div>
-
-                {/* Placeholder mockup */}
                 <div className="flex-1">
                   <div className="flex aspect-video w-full items-center justify-center border border-border bg-surface text-sm text-muted-fg">
                     Screenshot Platzhalter — {s.title}
@@ -147,12 +144,12 @@ export default function FuerLehrerPage() {
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-3xl sm:text-4xl">Bereit, Zeit zu sparen?</h2>
             <p className="mt-4 text-lg text-muted-fg">
-              Spreche deine Schulleitung an oder buche direkt eine personliche Demo.
+              Sprich deine Schulleitung an oder buche direkt eine persönliche Demo.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link href="/kontakt">
                 <Button size="lg" className="glow-on-hover">
-                  Personliche Demo buchen
+                  Persönliche Demo buchen
                   <ArrowRight className="size-4" />
                 </Button>
               </Link>

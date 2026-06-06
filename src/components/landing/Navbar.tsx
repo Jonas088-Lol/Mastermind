@@ -5,9 +5,9 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { ChevronDown } from "lucide-react";
 
 const fuerLinks = [
-  { href: "/fuer/schueler", label: "Fur Schuler" },
-  { href: "/fuer/lehrer", label: "Fur Lehrer" },
-  { href: "/fuer/schulen", label: "Fur Schulen" },
+  { href: "/fuer/schueler", label: "Für Schüler" },
+  { href: "/fuer/lehrer", label: "Für Lehrer" },
+  { href: "/fuer/schulen", label: "Für Schulen" },
 ];
 
 export function Navbar() {
@@ -35,7 +35,7 @@ export function Navbar() {
               type="button"
               className="flex items-center gap-1 text-sm font-medium text-muted-fg transition-colors hover:text-fg group-hover:text-fg"
             >
-              Fur wen?
+              Für wen?
               <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" strokeWidth={2} />
             </button>
             <div

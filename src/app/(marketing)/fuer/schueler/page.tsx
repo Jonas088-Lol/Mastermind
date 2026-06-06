@@ -12,37 +12,37 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Fur Schuler | MasterMind",
+  title: "Für Schüler | MasterMind",
   description:
-    "MasterMind fur Schuler: KI-Tutor, Gamification, Lernpfade, Karteikarten und Notentracking — lerne smarter, nicht harter.",
+    "MasterMind für Schüler: KI-Tutor, Gamification, Lernpfade, Karteikarten und Notentracking — lerne smarter, nicht härter.",
 };
 
 const sections = [
   {
     icon: Brain,
-    title: "KI-Tutor — Erklarungen auf Knopfdruck",
+    title: "KI-Tutor — Erklärungen auf Knopfdruck",
     bullets: [
-      "Frag den KI-Tutor jederzeit — er erklart Aufgaben Schritt fur Schritt",
-      "Anpassung an deinen Wissensstand: einfachere oder tiefere Erklarungen",
-      "Verfugbar fur alle Facher: Mathe, Deutsch, Englisch, Physik und mehr",
+      "Frag den KI-Tutor jederzeit — er erklärt Aufgaben Schritt für Schritt",
+      "Anpassung an deinen Wissensstand: einfachere oder tiefere Erklärungen",
+      "Verfügbar für alle Fächer: Mathe, Deutsch, Englisch, Physik und mehr",
     ],
   },
   {
     icon: Trophy,
-    title: "Gamification — Lernen mit Spass",
+    title: "Gamification — Lernen mit Spaß",
     bullets: [
-      "Sammle XP fur jede abgeschlossene Aufgabe und jedes Quiz",
+      "Sammle XP für jede abgeschlossene Aufgabe und jedes Quiz",
       "Halte deinen Tagesstreak am Laufen — bis zu ×2 XP-Booster",
-      "Fordere Mitschuler zu Wissensduellen heraus und klettere in der Rangliste",
+      "Fordere Mitschüler zu Wissensduellen heraus und klettere in der Rangliste",
     ],
   },
   {
     icon: Layers,
     title: "Personalisierte Lernpfade",
     bullets: [
-      "MasterMind erkennt, wo du Lucken hast, und schlagt das richtige Thema vor",
-      "Spaced Repetition sorgt fur nachhaltiges Merken statt kurzzeitigem Bulimie-Lernen",
-      "Fortschrittsanzeige pro Fach und Lernziel — immer weisst du, wo du stehst",
+      "MasterMind erkennt, wo du Lücken hast, und schlägt das richtige Thema vor",
+      "Spaced Repetition sorgt für nachhaltiges Merken statt kurzfristigem Bulimie-Lernen",
+      "Fortschrittsanzeige pro Fach und Lernziel — du weißt immer, wo du stehst",
     ],
   },
   {
@@ -51,7 +51,7 @@ const sections = [
     bullets: [
       "Erstelle Karteikarten direkt aus deinen Heften oder vom KI-Tutor generiert",
       "Automatische Wiederholungs-Intervalle nach Lernstand",
-      "Vokabel-Trainer mit Bild- und Ton-Unterstutzung",
+      "Vokabel-Trainer mit Bild- und Ton-Unterstützung",
     ],
   },
   {
@@ -59,7 +59,7 @@ const sections = [
     title: "Notentracking",
     bullets: [
       "Alle Noten auf einen Blick — nach Fach sortiert und als Zeitreihe",
-      "Durchschnitts-Berechnung und Prognosefunktion fur die nachste Arbeit",
+      "Durchschnitts-Berechnung und Prognosefunktion für die nächste Arbeit",
       "Teile deinen Fortschritt mit deinen Eltern — auf Wunsch",
     ],
   },
@@ -74,14 +74,14 @@ export default function FuerSchuelerPage() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow">
               <span className="inline-block size-1.5 bg-brand" />
-              Fur Schuler
+              Für Schüler
             </span>
             <h1 className="mt-4 text-4xl sm:text-5xl">
-              Lerne smarter, nicht harter
+              Lerne smarter, nicht härter
             </h1>
             <p className="mt-5 text-lg text-muted-fg">
               MasterMind gibt dir einen KI-Tutor, der immer Zeit hat, Gamification die
-              motiviert und Lernpfade die wirklich funktionieren — alles in einer App.
+              motiviert, und Lernpfade, die wirklich funktionieren — alles in einer App.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link href="/kontakt">
@@ -111,7 +111,6 @@ export default function FuerSchuelerPage() {
                   i % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                {/* Text */}
                 <div className="flex-1 space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="grid size-10 shrink-0 place-items-center border border-border bg-surface">
@@ -128,8 +127,6 @@ export default function FuerSchuelerPage() {
                     ))}
                   </ul>
                 </div>
-
-                {/* Placeholder mockup */}
                 <div className="flex-1">
                   <div className="flex aspect-video w-full items-center justify-center border border-border bg-surface text-sm text-muted-fg">
                     Screenshot Platzhalter — {s.title}
@@ -147,12 +144,12 @@ export default function FuerSchuelerPage() {
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-3xl sm:text-4xl">Deine Schule noch nicht dabei?</h2>
             <p className="mt-4 text-lg text-muted-fg">
-              Sprich deine Lehrkrafte an oder fordere eine Demo fur deine Schule an.
+              Sprich deine Lehrkräfte an oder fordere eine Demo für deine Schule an.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link href="/kontakt">
                 <Button size="lg" className="glow-on-hover">
-                  Demo fur meine Schule
+                  Demo für meine Schule
                   <ArrowRight className="size-4" />
                 </Button>
               </Link>

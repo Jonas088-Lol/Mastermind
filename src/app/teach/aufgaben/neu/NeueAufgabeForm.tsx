@@ -149,7 +149,7 @@ export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
               <option value="file">Datei-Upload (PDF, Bild, Dokument)</option>
               <option value="quiz">Quiz-Aufgabe (interaktiv auf der Plattform)</option>
               <option value="link">Link-Abgabe (URL eingeben)</option>
-              <option value="offline">Offline / Prasenz-Abgabe</option>
+              <option value="offline">Offline / Präsenz-Abgabe</option>
             </select>
           </div>
 
@@ -170,7 +170,7 @@ export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
 
           {/* Visibility */}
           <div className="space-y-1.5">
-            <Label>Veroffentlichung</Label>
+            <Label>Veröffentlichung</Label>
             <div className="grid gap-2 sm:grid-cols-2">
               <label className="flex cursor-pointer items-center gap-2">
                 <input
@@ -180,7 +180,7 @@ export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
                   checked={publishMode === "now"}
                   onChange={() => setPublishMode("now")}
                 />
-                <span className="text-sm">Sofort veroffentlichen</span>
+                <span className="text-sm">Sofort veröffentlichen</span>
               </label>
               <label className="flex cursor-pointer items-center gap-2">
                 <input
@@ -195,7 +195,7 @@ export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
             </div>
             {publishMode === "scheduled" && (
               <div className="space-y-1.5 pt-1">
-                <Label htmlFor="publishAt">Veroffentlichungszeitpunkt</Label>
+                <Label htmlFor="publishAt">Veröffentlichungszeitpunkt</Label>
                 <Input id="publishAt" name="publishAt" type="datetime-local" />
               </div>
             )}
@@ -205,7 +205,7 @@ export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
           <ToggleRow
             name="groupSubmission"
             label="Gruppen-Abgabe erlauben"
-            detail="Schuler konnen in Teams von 2–4 Personen abgeben"
+            detail="Schüler können in Teams von 2–4 Personen abgeben"
             checked={groupSubOn}
             onChange={setGroupSubOn}
           />
@@ -214,7 +214,7 @@ export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
           <ToggleRow
             name="peerReview"
             label="Peer-Review aktivieren"
-            detail="Jeder Schuler bewertet nach Abgabe 2 Mitschuler anonym"
+            detail="Jeder Schüler bewertet nach Abgabe 2 Mitschüler anonym"
             checked={peerReviewOn}
             onChange={setPeerReviewOn}
           />
