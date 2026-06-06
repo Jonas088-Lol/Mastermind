@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ClientRedirect } from "@/components/ClientRedirect";
+import { BrandLogo } from "@/components/BrandLogo";
 import {
   ACCOUNTS,
   DEMO_PASSWORDS,
@@ -69,10 +70,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
       {/* LEFT: marketing context */}
       <aside className="hidden flex-col justify-between border-r border-border bg-fg p-10 text-bg lg:flex">
         <Link href="/" className="flex items-center gap-2 font-bold tracking-tight">
-          <span className="grid size-7 place-items-center bg-bg text-fg text-[11px] font-black">
-            MM
-          </span>
-          <span>MasterMind</span>
+          <BrandLogo height="h-8" showName variant="inverted" />
         </Link>
 
         <div className="max-w-md">
@@ -105,14 +103,8 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
       {/* RIGHT: auth */}
       <main className="flex min-h-screen flex-col px-6 py-10 sm:px-10 lg:px-14">
-        <Link
-          href="/"
-          className="flex items-center gap-2 font-bold tracking-tight lg:hidden"
-        >
-          <span className="grid size-7 place-items-center bg-fg text-bg text-[11px] font-black">
-            MM
-          </span>
-          <span>MasterMind</span>
+        <Link href="/" className="flex items-center gap-2 font-bold tracking-tight lg:hidden">
+          <BrandLogo height="h-8" showName />
         </Link>
 
         <div className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center py-10">
@@ -149,7 +141,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           {error === "invalid" && (
             <div
               role="alert"
-              className="mt-6 flex items-start gap-3 border border-danger/40 bg-danger/[0.06] p-3 text-sm text-danger"
+              className="mt-6 flex items-start gap-3 border border-danger/40 bg-danger/6 p-3 text-sm text-danger"
             >
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
               <div>
@@ -165,7 +157,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           {error === "rate-limit" && (
             <div
               role="alert"
-              className="mt-6 flex items-start gap-3 border border-warning/40 bg-warning/[0.06] p-3 text-sm text-warning"
+              className="mt-6 flex items-start gap-3 border border-warning/40 bg-warning/6 p-3 text-sm text-warning"
             >
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
               <p>Zu viele Login-Versuche. Bitte warte ein paar Minuten.</p>
@@ -177,7 +169,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             error === "2fa-rate-limit") && (
             <div
               role="alert"
-              className="mt-6 flex items-start gap-3 border border-warning/40 bg-warning/[0.06] p-3 text-sm text-warning"
+              className="mt-6 flex items-start gap-3 border border-warning/40 bg-warning/6 p-3 text-sm text-warning"
             >
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
               <p>
@@ -191,7 +183,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           {sent === "1" && useMagicLink && (
             <div
               role="status"
-              className="mt-6 flex items-start gap-3 border border-success/40 bg-success/[0.06] p-3 text-sm text-success"
+              className="mt-6 flex items-start gap-3 border border-success/40 bg-success/6 p-3 text-sm text-success"
             >
               <Mail className="mt-0.5 size-4 shrink-0" />
               <div>
@@ -281,7 +273,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                   type="submit"
                   className={`group flex w-full items-center gap-3 border bg-bg px-3 py-2.5 text-left transition-colors ${
                     t.primary
-                      ? "border-brand/50 bg-gradient-to-r from-brand/[0.06] to-transparent hover:border-brand"
+                      ? "border-brand/50 bg-linear-to-r from-brand/6 to-transparent hover:border-brand"
                       : "border-border hover:border-brand"
                   }`}
                 >

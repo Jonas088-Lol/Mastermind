@@ -48,6 +48,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const ICONS = {
   award: Award,
@@ -119,10 +120,7 @@ export function Sidebar({ items, bottomItems = [], rootHref }: SidebarProps) {
         href={rootHref}
         className="flex h-16 items-center gap-2 border-b border-border px-5 font-bold tracking-tight"
       >
-        <span className="grid size-7 place-items-center bg-fg text-bg text-[11px] font-black">
-          MM
-        </span>
-        <span>MasterMind</span>
+        <BrandLogo height="h-7" showName />
       </Link>
 
       <nav className="flex-1 overflow-y-auto p-3" aria-label="Hauptnavigation">
