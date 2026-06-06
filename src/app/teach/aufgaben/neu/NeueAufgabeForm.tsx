@@ -21,6 +21,7 @@ const TYPES = [
   { value: "test", label: "Test" },
   { value: "project", label: "Projekt" },
   { value: "exam", label: "Klassenarbeit" },
+  { value: "klausur", label: "Online-Klausur" },
 ];
 
 export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {

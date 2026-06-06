@@ -304,6 +304,10 @@ const ROLE_SUBTITLE: Record<Role, string> = {
   school_company: "Schulträger",
 };
 
+export function isPrivateUser(session: Session): boolean {
+  return !session.schoolId;
+}
+
 /** Header-User: super bei Impersonation zeigt Zielrolle als Demo-Kontext. */
 export function displayUser(s: Session): { name: string; subtitle: string } {
   if (isSuper(s) && s.viewAs) return DEMO_USERS[s.viewAs];

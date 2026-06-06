@@ -21,9 +21,10 @@ model School {
   seats       Int      @default(100)
   logoUrl     String?
   faviconUrl  String?
-  accentColor String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  accentColor      String?
+  featureSettings  String   @default("{}")  // JSON: { disabled: string[], windows: Record<string, {from: string, to: string}> }
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
   users            User[]
   classes          SchoolClass[]

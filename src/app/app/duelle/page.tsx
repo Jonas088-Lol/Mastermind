@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { COIN_REWARDS } from "@/lib/coins";
 import { acceptDuel, declineDuel, sendChallenge } from "./actions";
 
 export const metadata: Metadata = { title: "Duelle" };
@@ -82,6 +83,20 @@ export default async function DuellePage() {
         <h1 className="mt-1 text-3xl font-bold tracking-tight">Duelle</h1>
         <p className="mt-1 text-sm text-muted-fg">Fordere Mitschüler zu Quiz-Duellen heraus.</p>
       </header>
+
+      <div className="grid gap-px border border-brand/20 bg-brand/5 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          { icon: "⚔️", title: "Was sind Duelle?", text: "Fordere einen Mitschüler zu einem Wissens-Quiz heraus. Ihr beantwortet beide dieselben Fragen — wer mehr richtig hat, gewinnt." },
+          { icon: "🏆", title: "Belohnungen", text: `Gewinner: +${COIN_REWARDS.duel_win} Münzen & XP. Teilnahme: +${COIN_REWARDS.duel_participate} Münzen. Top-Duelle verbessern dein Ranking.` },
+          { icon: "⏰", title: "Ablauf", text: "Herausforderung senden → Gegner nimmt an → Beide spielen das Quiz getrennt → Ergebnis wird verglichen." },
+        ].map((info) => (
+          <div key={info.title} className="bg-bg p-5">
+            <div className="mb-2 text-2xl">{info.icon}</div>
+            <p className="text-sm font-bold">{info.title}</p>
+            <p className="mt-1 text-xs text-muted-fg leading-relaxed">{info.text}</p>
+          </div>
+        ))}
+      </div>
 
       {/* Stats */}
       <section className="grid grid-cols-3 gap-px border border-border bg-border">

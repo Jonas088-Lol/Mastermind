@@ -32,7 +32,9 @@ export default async function AppLayout({
   const effective = effectiveRole(session);
   if (effective !== "student") redirect(ROLE_HOME[effective]);
 
-  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData, unreadThreads] = await Promise.all([
+  const isPrivate = !session.schoolId;
+
+  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData, unreadThreads, school] = await Promise.all([
     fetchNotifications(session.userId),
     prisma.flashcard.count({
       where: { deck: { userId: session.userId }, nextReviewAt: { lte: new Date() } },
@@ -62,9 +64,31 @@ export default async function AppLayout({
         ],
       },
     }).catch(() => 0),
+    session.schoolId
+      ? prisma.school.findUnique({ where: { id: session.schoolId }, select: { name: true } }).catch(() => null)
+      : Promise.resolve(null),
   ]);
 
-  const navItems: NavItem[] = [
+  const navItems: NavItem[] = isPrivate ? [
+    { href: "/app",               label: "Dashboard",    icon: "home",         exact: true },
+    { href: "/app/heft",          label: "Hefte",        icon: "pencilLine"    },
+    { href: "/app/vokabeln",      label: "Vokabeln",     icon: "languages"     },
+    { href: "/app/uebungen",      label: "Übungen",      icon: "brain"         },
+    { href: "/app/karteikarten",  label: "Karteikarten", icon: "layers",       badge: dueFlashcards > 0 ? String(dueFlashcards) : undefined },
+    { href: "/app/lernen",        label: "Lernpfade",    icon: "bookOpen"      },
+    { href: "/app/tutor",         label: "KI-Tutor",     icon: "sparkles"      },
+    { href: "/app/noten",         label: "Meine Noten",  icon: "award"         },
+    { href: "/app/community",     label: "Community",    icon: "users"         },
+    { href: "/app/ranking",       label: "Ranking",      icon: "trophy"        },
+    { href: "/app/duelle",        label: "Duelle",       icon: "swords"        },
+    { href: "/app/streaks",       label: "Streaks",      icon: "flame"         },
+    { href: "/app/erfolge",       label: "Erfolge",      icon: "star"          },
+    { href: "/app/quests",        label: "Quests",       icon: "zap"           },
+    { href: "/app/shop",          label: "Shop",         icon: "shoppingBag"   },
+    { href: "/app/inventar",      label: "Inventar",     icon: "package"       },
+    { href: "/app/coins",         label: "Münzen",       icon: "coins"         },
+    { href: "/search",            label: "Suche",        icon: "search"        },
+  ] : [
     // ── Lernen (Kern) ──────────────────────────────────
     { href: "/app",                label: "Dashboard",     icon: "home",         exact: true },
     { href: "/app/heft",           label: "Hefte",         icon: "pencilLine"    },
@@ -88,7 +112,7 @@ export default async function AppLayout({
     { href: "/app/streaks",        label: "Streaks",       icon: "flame"         },
     { href: "/app/erfolge",        label: "Erfolge",       icon: "star"          },
     { href: "/app/saison",         label: "Saison",        icon: "gift"          },
-    { href: "/app/skills",         label: "Skill-Bäume",   icon: "target"        },
+    { href: "/app/skills",         label: "Skill-Tree",    icon: "target"        },
     // ── Community & Social ────────────────────────────
     { href: "/app/community",      label: "Community",     icon: "users"         },
     { href: "/app/mannschaften",   label: "Mannschaften",  icon: "shield"        },
@@ -110,6 +134,8 @@ export default async function AppLayout({
     { href: "/app/tutor", label: "Tutor", icon: "sparkles" },
   ];
 
+  const appName = isPrivate ? "MasterMind" : undefined;
+
   return (
     <div className="flex min-h-screen bg-surface">
       <Sidebar items={navItems} bottomItems={bottomItems} rootHref="/app" />
@@ -121,7 +147,7 @@ export default async function AppLayout({
               isImpersonating={isImpersonating(session)}
             />
           )}
-          <AppHeader user={displayUser(session)} unreadCount={unreadCount} notifications={notifications} coinBalance={userData?.coins ?? 0} />
+          <AppHeader user={displayUser(session)} unreadCount={unreadCount} notifications={notifications} coinBalance={userData?.coins ?? 0} appName={appName} />
         </div>
         <main className="flex-1 px-6 py-8 pb-24 lg:px-10 lg:py-10 lg:pb-10">
           {children}

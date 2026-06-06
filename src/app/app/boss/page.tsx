@@ -71,6 +71,20 @@ export default async function BossPage() {
         </p>
       </header>
 
+      <div className="grid gap-px border border-border bg-border sm:grid-cols-3">
+        {[
+          { icon: "👾", title: "Was sind Boss-Battles?", text: "Ein mächtiger Gegner bedroht die Klasse! Alle Schüler greifen gemeinsam an, indem sie Quizfragen richtig beantworten. Jede richtige Antwort verursacht Schaden." },
+          { icon: "💥", title: "Schaden & HP", text: "Dein Schaden hängt von Schwierigkeit und korrekten Antworten ab. Je mehr du beiträgst, desto höher dein Anteil an der XP-Belohnung." },
+          { icon: "🎁", title: "Belohnungen", text: "Wenn der Boss stirbt, erhalten alle Teilnehmer XP — proportional zu ihrem Schaden. Der MVP (meisten Schaden) erhält zusätzliche Münzen." },
+        ].map((info) => (
+          <div key={info.title} className="bg-bg p-5">
+            <div className="mb-2 text-2xl">{info.icon}</div>
+            <p className="text-sm font-bold">{info.title}</p>
+            <p className="mt-1 text-xs text-muted-fg leading-relaxed">{info.text}</p>
+          </div>
+        ))}
+      </div>
+
       {activeBattles.length === 0 ? (
         <Card>
           <CardBody className="py-16 text-center">

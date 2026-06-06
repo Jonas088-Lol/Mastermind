@@ -56,6 +56,14 @@ const EARN_WAYS = [
   { reason: "achievement_unlock",  icon: "🎖️", label: "Erfolg freischalten",   amount: COIN_REWARDS.achievement_unlock },
   { reason: "weekly_quest_bonus",  icon: "📆", label: "Wochen-Quest",          amount: COIN_REWARDS.weekly_quest_bonus },
   { reason: "monthly_quest_bonus", icon: "🗓️", label: "Monats-Quest",          amount: COIN_REWARDS.monthly_quest_bonus },
+  { reason: "lernpfad_completed",     icon: "📖", label: "Lernpfad abgeschlossen",  amount: COIN_REWARDS.lernpfad_completed },
+  { reason: "streak_7_tage",          icon: "🔥", label: "7-Tage-Streak",           amount: COIN_REWARDS.streak_7_tage },
+  { reason: "streak_30_tage",         icon: "🔥", label: "30-Tage-Streak",          amount: COIN_REWARDS.streak_30_tage },
+  { reason: "vokabel_session",        icon: "🔤", label: "Vokabel-Session",         amount: COIN_REWARDS.vokabel_session },
+  { reason: "quiz_perfect_score",     icon: "💯", label: "Quiz mit 100%",           amount: COIN_REWARDS.quiz_perfect_score },
+  { reason: "heft_seite_erstellt",    icon: "📓", label: "Heft-Seite erstellt",     amount: COIN_REWARDS.heft_seite_erstellt },
+  { reason: "freund_eingeladen",      icon: "👥", label: "Freund eingeladen",       amount: COIN_REWARDS.freund_eingeladen },
+  { reason: "klasse_platz_1_woche",   icon: "🥇", label: "Platz 1 Klassen-Ranking",amount: COIN_REWARDS.klasse_platz_1_woche },
 ] as const;
 
 const COIN_PACKS = [

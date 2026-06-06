@@ -13,6 +13,7 @@ export interface AppHeaderProps {
   unreadCount?: number;
   notifications?: NotificationItem[];
   coinBalance?: number;
+  appName?: string;
 }
 
 export function AppHeader({
@@ -21,6 +22,7 @@ export function AppHeader({
   unreadCount = 0,
   notifications = [],
   coinBalance,
+  appName,
 }: AppHeaderProps) {
   return (
     <header className="safe-top flex h-16 items-center gap-4 border-b border-border bg-bg/85 px-6 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
@@ -36,6 +38,12 @@ export function AppHeader({
           K
         </kbd>
       </Link>
+
+      {appName && (
+        <span className="hidden lg:block text-xs font-semibold text-muted-fg border border-border px-2 py-0.5 bg-surface">
+          {appName}
+        </span>
+      )}
 
       <div className="flex items-center gap-1">
         {coinBalance !== undefined && (

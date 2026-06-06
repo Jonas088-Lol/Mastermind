@@ -16,6 +16,16 @@ export const COIN_REWARDS = {
   duel_win:           20,
   duel_participate:    5,
   achievement_unlock: 10,
+  lernpfad_completed:       30,
+  heft_seite_erstellt:       3,
+  streak_7_tage:            50,
+  streak_30_tage:          150,
+  vokabel_session:           3,
+  quiz_perfect_score:       15,
+  erste_aufgabe_semester:   10,
+  freund_eingeladen:        25,
+  profil_foto_gesetzt:       5,
+  klasse_platz_1_woche:     40,
 } as const;
 
 export type CoinReason = keyof typeof COIN_REWARDS;

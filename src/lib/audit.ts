@@ -11,7 +11,8 @@ export type AuditAction =
   | "session.impersonation_end"
   | "api_token.created"
   | "api_token.revoked"
-  | "school.settings_changed";
+  | "school.settings_changed"
+  | "exam.tab_switch";
 
 export async function auditLog(opts: {
   action: AuditAction;

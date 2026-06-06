@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { CheckCircle2, Clock, FileSignature, XCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { CheckCircle2, Clock, Info, XCircle } from "lucide-react";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession, ROLE_HOME } from "@/lib/session";
 import { cn } from "@/lib/utils";
-import { reportStudentAbsence } from "./actions";
 
 export const metadata: Metadata = { title: "Fehlzeiten · Schüler" };
-
-const todayStr = () => new Date().toISOString().slice(0, 10);
 
 const STATUS_LABEL: Record<string, { label: string; icon: typeof Clock; cls: string }> = {
   pending:   { label: "Ausstehend",  icon: Clock,         cls: "text-warning" },
@@ -31,52 +25,25 @@ export default async function SchuelerFehlzeitenPage() {
     take: 30,
   });
 
-  const today = todayStr();
-
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">
       <header>
         <h1 className="text-2xl font-bold tracking-tight">Fehlzeiten</h1>
         <p className="mt-1 text-sm text-muted-fg">
-          Melde dich krank oder trage Fehlzeiten ein — die Schule bestätigt sie.
+          Deine gemeldeten Fehlzeiten im Überblick.
         </p>
       </header>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Neue Abwesenheit melden</CardTitle>
-        </CardHeader>
-        <CardBody>
-          <form action={reportStudentAbsence} className="space-y-5">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-1.5">
-                <Label htmlFor="from">Von</Label>
-                <Input id="from" name="from" type="date" defaultValue={today} required />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="to">Bis</Label>
-                <Input id="to" name="to" type="date" defaultValue={today} required />
-              </div>
-            </div>
-
-            <div className="space-y-1.5">
-              <Label htmlFor="reason">Grund (optional)</Label>
-              <textarea
-                id="reason"
-                name="reason"
-                rows={3}
-                className="w-full resize-none border border-border bg-bg px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-brand"
-                placeholder="z. B. Erkältung, Arzttermin …"
-              />
-            </div>
-
-            <Button type="submit" className="w-full">
-              <FileSignature className="size-4" />
-              Abwesenheit melden
-            </Button>
-          </form>
-        </CardBody>
-      </Card>
+      <div className="flex items-start gap-3 border border-info/30 bg-info/5 px-5 py-4">
+        <Info className="mt-0.5 size-4 shrink-0 text-info" strokeWidth={1.75} />
+        <div>
+          <p className="text-sm font-semibold">Krankmeldungen über deine Eltern</p>
+          <p className="mt-0.5 text-xs text-muted-fg">
+            Abwesenheiten müssen von einem Erziehungsberechtigten gemeldet werden.
+            Deine Eltern können dies im Eltern-Portal unter "Abwesenheiten" tun.
+          </p>
+        </div>
+      </div>
 
       <Card>
         <CardHeader>
