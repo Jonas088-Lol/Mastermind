@@ -1,11 +1,12 @@
 import { AlertCircle, ArrowLeft, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ClientRedirect } from "@/components/ClientRedirect";
 import { getPending2FA } from "@/lib/auth/pending-2fa";
+import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { cancelTwoFactorLogin, verifyLoginTwoFactor } from "@/app/login/actions";
 
 export const metadata: Metadata = {
@@ -19,8 +20,13 @@ interface PageProps {
 }
 
 export default async function TwoFactorLoginPage({ searchParams }: PageProps) {
+  // Back-button guard: if already fully logged in, return home via replace (not push)
+  const session = await getSession();
+  if (session) return <ClientRedirect to={ROLE_HOME[effectiveRole(session)]} />;
+
   const pending = await getPending2FA();
-  if (!pending) redirect("/login?error=2fa-expired");
+  // No pending state + no session = stale / back-button navigation; go to login silently
+  if (!pending) return <ClientRedirect to="/login" />;
 
   const { error } = await searchParams;
   const masked = pending.email.replace(

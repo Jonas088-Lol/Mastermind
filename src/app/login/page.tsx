@@ -11,10 +11,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ClientRedirect } from "@/components/ClientRedirect";
 import {
   ACCOUNTS,
   DEMO_PASSWORDS,
@@ -62,7 +62,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   const useMagicLink = method === "magic";
 
   const session = await getSession();
-  if (session) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (session) return <ClientRedirect to={ROLE_HOME[effectiveRole(session)]} />;
 
   return (
     <div className="grid min-h-screen lg:grid-cols-2">

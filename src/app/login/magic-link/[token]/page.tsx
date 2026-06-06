@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { consumeToken } from "@/lib/auth/tokens";
 import { prisma } from "@/lib/db/client";
-import { ROLE_HOME, type Role, setSession } from "@/lib/session";
+import { ClientRedirect } from "@/components/ClientRedirect";
+import { ROLE_HOME, type Role, effectiveRole, getSession, setSession } from "@/lib/session";
 
 export const metadata: Metadata = {
   title: "Anmelden",
@@ -17,6 +18,10 @@ interface PageProps {
 }
 
 export default async function MagicLinkConsumePage({ params }: PageProps) {
+  // Back-button guard: already logged in means the token was already used
+  const existingSession = await getSession();
+  if (existingSession) return <ClientRedirect to={ROLE_HOME[effectiveRole(existingSession)]} />;
+
   const { token } = await params;
   const consumed = await consumeToken("magic_link", token);
 
