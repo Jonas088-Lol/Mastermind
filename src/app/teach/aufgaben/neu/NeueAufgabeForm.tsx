@@ -29,6 +29,9 @@ export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
   const [aiOn, setAiOn] = useState(true);
   const [lateOn, setLateOn] = useState(true);
   const [reminderOn, setReminderOn] = useState(true);
+  const [groupSubOn, setGroupSubOn] = useState(false);
+  const [peerReviewOn, setPeerReviewOn] = useState(false);
+  const [publishMode, setPublishMode] = useState<"now" | "scheduled">("now");
 
   const selectedClass = classes.find((c) => c.id === selectedClassId);
   const subjects = selectedClass?.subjects ?? [];
@@ -132,6 +135,93 @@ export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
       </Card>
 
       <Card>
+        <CardHeader><CardTitle>Abgabe &amp; Bewertung</CardTitle></CardHeader>
+        <CardBody className="space-y-5">
+          {/* Submission mode */}
+          <div className="space-y-1.5">
+            <Label htmlFor="submissionMode">Abgabe-Modus</Label>
+            <select
+              id="submissionMode"
+              name="submissionMode"
+              className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
+            >
+              <option value="text">Textfeld (direkt auf der Plattform)</option>
+              <option value="file">Datei-Upload (PDF, Bild, Dokument)</option>
+              <option value="quiz">Quiz-Aufgabe (interaktiv auf der Plattform)</option>
+              <option value="link">Link-Abgabe (URL eingeben)</option>
+              <option value="offline">Offline / Prasenz-Abgabe</option>
+            </select>
+          </div>
+
+          {/* Grading mode */}
+          <div className="space-y-1.5">
+            <Label htmlFor="gradingMode">Bewertungsschema</Label>
+            <select
+              id="gradingMode"
+              name="gradingMode"
+              className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
+            >
+              <option value="points">Punkte (0 – Max. Punkte)</option>
+              <option value="grade">Deutsche Note (1–6)</option>
+              <option value="pass_fail">Bestanden / Nicht bestanden</option>
+              <option value="none">Keine Bewertung (nur Einreichung)</option>
+            </select>
+          </div>
+
+          {/* Visibility */}
+          <div className="space-y-1.5">
+            <Label>Veroffentlichung</Label>
+            <div className="grid gap-2 sm:grid-cols-2">
+              <label className="flex cursor-pointer items-center gap-2">
+                <input
+                  type="radio"
+                  name="publishMode"
+                  value="now"
+                  checked={publishMode === "now"}
+                  onChange={() => setPublishMode("now")}
+                />
+                <span className="text-sm">Sofort veroffentlichen</span>
+              </label>
+              <label className="flex cursor-pointer items-center gap-2">
+                <input
+                  type="radio"
+                  name="publishMode"
+                  value="scheduled"
+                  checked={publishMode === "scheduled"}
+                  onChange={() => setPublishMode("scheduled")}
+                />
+                <span className="text-sm">Planen</span>
+              </label>
+            </div>
+            {publishMode === "scheduled" && (
+              <div className="space-y-1.5 pt-1">
+                <Label htmlFor="publishAt">Veroffentlichungszeitpunkt</Label>
+                <Input id="publishAt" name="publishAt" type="datetime-local" />
+              </div>
+            )}
+          </div>
+
+          {/* Group submission */}
+          <ToggleRow
+            name="groupSubmission"
+            label="Gruppen-Abgabe erlauben"
+            detail="Schuler konnen in Teams von 2–4 Personen abgeben"
+            checked={groupSubOn}
+            onChange={setGroupSubOn}
+          />
+
+          {/* Peer review */}
+          <ToggleRow
+            name="peerReview"
+            label="Peer-Review aktivieren"
+            detail="Jeder Schuler bewertet nach Abgabe 2 Mitschuler anonym"
+            checked={peerReviewOn}
+            onChange={setPeerReviewOn}
+          />
+        </CardBody>
+      </Card>
+
+      <Card>
         <CardHeader><CardTitle>Optionen</CardTitle></CardHeader>
         <CardBody className="space-y-3">
           <ToggleRow
@@ -205,7 +295,7 @@ function ToggleRow({
         className={`relative h-5 w-9 shrink-0 transition-colors ${checked ? "bg-brand" : "bg-border"}`}
       >
         <span
-          className={`absolute top-0.5 size-4 bg-bg transition-[left] ${checked ? "left-[18px]" : "left-0.5"}`}
+          className={`absolute top-0.5 size-4 bg-bg transition-[left] ${checked ? "left-4.5" : "left-0.5"}`}
         />
       </button>
     </div>

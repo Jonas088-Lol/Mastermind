@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Play } from "lucide-react";
+import { ArrowLeft, BookOpen, FileText, NotebookPen, Play } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
@@ -49,6 +49,24 @@ export default async function TopicPage({ params }: PageParams) {
   if (!topic || topic.subject !== subject || topic.grade !== parseInt(grade, 10)) notFound();
 
   const label = SUBJECT_LABEL[subject] ?? subject;
+
+  const relatedNotebooks = await prisma.notebook.findMany({
+    where: {
+      userId: session.userId,
+      OR: [
+        { title: { contains: label } },
+        { title: { contains: label.toLowerCase() } },
+      ],
+    },
+    include: {
+      pages: {
+        select: { id: true, title: true, updatedAt: true },
+        orderBy: { order: "asc" },
+        take: 5,
+      },
+    },
+    take: 3,
+  });
   const progress = topic.progress[0];
   const lesson = topic.lessons[0];
 
@@ -117,6 +135,42 @@ export default async function TopicPage({ params }: PageParams) {
           </div>
         </section>
       )}
+
+      {/* Deine Notizen */}
+      {relatedNotebooks.length > 0 && (
+        <section className="border border-border">
+          <div className="flex items-center justify-between border-b border-border bg-surface px-5 py-3">
+            <div className="flex items-center gap-2">
+              <NotebookPen className="size-4 text-brand" strokeWidth={1.75} />
+              <span className="text-sm font-semibold">Deine Notizen — {label}</span>
+            </div>
+            <Link href="/app/heft" className="text-xs text-muted-fg hover:text-fg">Alle Hefte →</Link>
+          </div>
+          <ul className="divide-y divide-border">
+            {relatedNotebooks.flatMap((nb) => nb.pages.map((page) => ({ ...page, notebookId: nb.id }))).slice(0, 5).map((page) => (
+              <li key={page.id}>
+                <Link href={`/app/heft/${page.notebookId}/${page.id}`} className="flex items-center gap-3 px-5 py-3 hover:bg-surface">
+                  <FileText className="size-3.5 shrink-0 text-muted-fg" />
+                  <span className="text-sm">{page.title || "Unbenannte Seite"}</span>
+                  <span className="ml-auto text-xs text-muted-fg">{page.updatedAt.toLocaleDateString("de-DE")}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Neues Heft CTA */}
+      <div className="flex items-center gap-3 border border-dashed border-border bg-surface/50 px-5 py-4">
+        <NotebookPen className="size-4 shrink-0 text-muted-fg" />
+        <p className="flex-1 text-sm text-muted-fg">Heft fur {label} anlegen und Notizen machen</p>
+        <Link
+          href={`/app/heft?createFor=${encodeURIComponent(label)}`}
+          className="text-xs font-semibold text-brand hover:underline"
+        >
+          Neues Heft +
+        </Link>
+      </div>
 
       {/* Vorheriger Score */}
       {progress?.completedAt && (

@@ -19,13 +19,33 @@ export async function createAssignment(formData: FormData): Promise<void> {
   const dueAtRaw = (formData.get("dueAt") as string | null)?.trim() ?? "";
   const description = (formData.get("description") as string | null)?.trim() || null;
   const maxPointsRaw = (formData.get("maxPoints") as string | null)?.trim() ?? "";
+  const submissionMode = (formData.get("submissionMode") as string | null)?.trim() || "text";
+  const gradingMode = (formData.get("gradingMode") as string | null)?.trim() || "points";
+  const publishMode = (formData.get("publishMode") as string | null)?.trim() || "now";
+  const publishAtRaw = (formData.get("publishAt") as string | null)?.trim() ?? "";
+  const groupSubmission = (formData.get("groupSubmission") as string | null) === "on";
+  const peerReview = (formData.get("peerReview") as string | null) === "on";
 
   if (!title || !classId || !subjectId || !dueAtRaw) return;
 
   const dueAt = new Date(dueAtRaw);
   if (isNaN(dueAt.getTime())) return;
 
+  const publishAt =
+    publishMode === "scheduled" && publishAtRaw ? new Date(publishAtRaw) : null;
+
   const maxPoints = maxPointsRaw ? parseInt(maxPointsRaw, 10) : null;
+
+  // Pack submission options into description metadata since schema has no dedicated columns.
+  const meta = JSON.stringify({
+    submissionMode,
+    gradingMode,
+    publishMode,
+    ...(publishAt && !isNaN(publishAt.getTime()) ? { publishAt: publishAt.toISOString() } : {}),
+    groupSubmission,
+    peerReview,
+  });
+  const fullDescription = description ? `${description}\n\n<!--meta:${meta}-->` : `<!--meta:${meta}-->`;
 
   // Verify teacher owns this class assignment right
   const tsc = await prisma.teacherSubjectClass.findFirst({
@@ -36,7 +56,7 @@ export async function createAssignment(formData: FormData): Promise<void> {
   const assignment = await prisma.assignment.create({
     data: {
       title,
-      description,
+      description: fullDescription,
       dueAt,
       type,
       maxPoints: maxPoints && !isNaN(maxPoints) ? maxPoints : null,

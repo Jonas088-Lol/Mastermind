@@ -5,8 +5,6 @@ import { useState } from "react";
 import { Check, X, ArrowLeft, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/landing/Navbar";
-import { Footer } from "@/components/landing/Footer";
 import { cn } from "@/lib/utils";
 
 const plans = [
@@ -114,10 +112,8 @@ export function PricingPageClient() {
 
   return (
     <>
-      <Navbar />
-      <main>
-        {/* Hero */}
-        <section className="border-b border-border section">
+      {/* Hero */}
+      <section className="border-b border-border section">
           <Container>
             <Link
               href="/"
@@ -338,9 +334,7 @@ export function PricingPageClient() {
               </div>
             </div>
           </Container>
-        </section>
-      </main>
-      <Footer />
+      </section>
     </>
   );
 }

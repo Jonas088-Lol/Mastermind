@@ -2,12 +2,12 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { ChevronDown } from "lucide-react";
 
-const links = [
-  { href: "#fuer-schulen", label: "Für Schulen" },
-  { href: "#fuer-schueler", label: "Für Schüler" },
-  { href: "#funktionen", label: "Funktionen" },
-  { href: "/preise", label: "Preise" },
+const fuerLinks = [
+  { href: "/fuer/schueler", label: "Fur Schuler" },
+  { href: "/fuer/lehrer", label: "Fur Lehrer" },
+  { href: "/fuer/schulen", label: "Fur Schulen" },
 ];
 
 export function Navbar() {
@@ -22,15 +22,45 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden gap-8 md:flex" aria-label="Hauptnavigation">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-muted-fg transition-colors hover:text-fg"
+          <Link
+            href="/funktionen"
+            className="text-sm font-medium text-muted-fg transition-colors hover:text-fg"
+          >
+            Funktionen
+          </Link>
+
+          {/* "Fur wen?" dropdown — CSS-only hover */}
+          <div className="group relative">
+            <button
+              type="button"
+              className="flex items-center gap-1 text-sm font-medium text-muted-fg transition-colors hover:text-fg group-hover:text-fg"
             >
-              {l.label}
-            </a>
-          ))}
+              Fur wen?
+              <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" strokeWidth={2} />
+            </button>
+            <div
+              className="invisible absolute left-0 top-full z-50 mt-1 min-w-45 border border-border bg-bg opacity-0 shadow-md transition-all group-hover:visible group-hover:opacity-100"
+              role="menu"
+            >
+              {fuerLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  role="menuitem"
+                  className="block px-4 py-2.5 text-sm text-muted-fg transition-colors hover:bg-surface hover:text-fg"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <Link
+            href="/preise"
+            className="text-sm font-medium text-muted-fg transition-colors hover:text-fg"
+          >
+            Preise
+          </Link>
         </nav>
 
         <div className="flex items-center gap-2">
