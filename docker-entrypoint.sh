@@ -21,10 +21,7 @@ until node -e "
 done
 echo "✓ Database reachable."
 
-# Run pending migrations (safe in production — only applies new ones)
-echo "⏳ Running migrations..."
-node_modules/.bin/prisma migrate deploy --schema ./prisma/schema.prisma
-echo "✓ Migrations done."
+# Migrations are run by the separate 'migrate' service in docker-compose
 
 # Start Next.js standalone server
 echo "✓ Starting Next.js on port ${PORT:-3000}..."
