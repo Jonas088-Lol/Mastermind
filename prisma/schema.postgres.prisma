@@ -111,10 +111,17 @@ model User {
 
   authoredNotes Note[] @relation("AuthorNotes")
 
-  xp             Int       @default(0)
-  xpLogs         XpLog[]
-  streak         Int       @default(0)
-  lastActiveDate DateTime?
+  xp               Int       @default(0)
+  xpLogs           XpLog[]
+  streak           Int       @default(0)
+  lastActiveDate   DateTime?
+  coins            Int       @default(0)
+  prestige         Int       @default(0)
+  equippedTitle    String?
+  totalDailyLogins Int       @default(0)
+  lastLoginDate    String?
+  avatarUrl        String?
+  streakFreezes    Int       @default(0)
 
   parentLinks   ParentStudentLink[] @relation("ParentLinks")
   studentParents ParentStudentLink[] @relation("StudentParents")
