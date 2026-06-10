@@ -33,9 +33,10 @@ model School {
   seats       Int      @default(100)
   logoUrl     String?
   faviconUrl  String?
-  accentColor String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  accentColor      String?
+  featureSettings  String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
   users            User[]
   classes          SchoolClass[]
