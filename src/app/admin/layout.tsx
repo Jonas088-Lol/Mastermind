@@ -3,6 +3,7 @@ import { Sidebar, type NavItem } from "@/components/app/Sidebar";
 import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
 import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
+import { SchoolBrandingInjector } from "@/components/SchoolBrandingInjector";
 import {
   ROLE_HOME,
   displayUser,
@@ -11,6 +12,7 @@ import {
   isImpersonating,
   isSuper,
 } from "@/lib/session";
+import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
 
 const adminNavItems: NavItem[] = [
@@ -56,11 +58,17 @@ export default async function AdminLayout({
   const effective = effectiveRole(session);
   if (effective !== "admin") redirect(ROLE_HOME[effective]);
 
-  const { notifications, unreadCount } = await fetchNotifications(session.userId);
+  const [{ notifications, unreadCount }, branding] = await Promise.all([
+    fetchNotifications(session.userId),
+    getSchoolBranding(session),
+  ]);
+
+  const schoolDisplayName = branding?.brandName ?? branding?.name;
 
   return (
     <div className="flex min-h-screen bg-surface">
-      <Sidebar items={adminNavItems} rootHref="/admin" />
+      <SchoolBrandingInjector branding={branding} />
+      <Sidebar items={adminNavItems} rootHref="/admin" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="sticky top-0 z-30">
           {isSuper(session) && (

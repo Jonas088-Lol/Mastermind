@@ -1,9 +1,19 @@
 import { ImageResponse } from "next/og";
+import { existsSync, readFileSync } from "fs";
+import { join } from "path";
 
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
+export const runtime = "nodejs";
 
 export default function AppleIcon() {
+  const brandIconPath = join(process.cwd(), "public/brand/icon.png");
+  if (existsSync(brandIconPath)) {
+    return new Response(readFileSync(brandIconPath), {
+      headers: { "Content-Type": "image/png" },
+    });
+  }
+
   return new ImageResponse(
     (
       <div

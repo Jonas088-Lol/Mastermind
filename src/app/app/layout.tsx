@@ -3,6 +3,7 @@ import { Sidebar, type NavItem } from "@/components/app/Sidebar";
 import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
 import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
+import { SchoolBrandingInjector } from "@/components/SchoolBrandingInjector";
 import {
   ROLE_HOME,
   displayUser,
@@ -11,6 +12,7 @@ import {
   isImpersonating,
   isSuper,
 } from "@/lib/session";
+import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
 import { prisma } from "@/lib/db/client";
 import { InstallPrompt } from "@/components/app/InstallPrompt";
@@ -34,7 +36,7 @@ export default async function AppLayout({
 
   const isPrivate = !session.schoolId;
 
-  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData, unreadThreads, school] = await Promise.all([
+  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData, unreadThreads, branding] = await Promise.all([
     fetchNotifications(session.userId),
     prisma.flashcard.count({
       where: { deck: { userId: session.userId }, nextReviewAt: { lte: new Date() } },
@@ -64,9 +66,7 @@ export default async function AppLayout({
         ],
       },
     }).catch(() => 0),
-    session.schoolId
-      ? prisma.school.findUnique({ where: { id: session.schoolId }, select: { name: true } }).catch(() => null)
-      : Promise.resolve(null),
+    getSchoolBranding(session),
   ]);
 
   const navItems: NavItem[] = isPrivate ? [
@@ -135,10 +135,12 @@ export default async function AppLayout({
   ];
 
   const appName = isPrivate ? "MasterMind" : undefined;
+  const schoolDisplayName = branding?.brandName ?? branding?.name;
 
   return (
     <div className="flex min-h-screen bg-surface">
-      <Sidebar items={navItems} bottomItems={bottomItems} rootHref="/app" />
+      <SchoolBrandingInjector branding={branding} />
+      <Sidebar items={navItems} bottomItems={bottomItems} rootHref="/app" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="sticky top-0 z-30">
           {isSuper(session) && (

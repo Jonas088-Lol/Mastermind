@@ -3,6 +3,7 @@ import { Sidebar, type NavItem } from "@/components/app/Sidebar";
 import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
 import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
+import { SchoolBrandingInjector } from "@/components/SchoolBrandingInjector";
 import {
   ROLE_HOME,
   displayUser,
@@ -11,6 +12,7 @@ import {
   isImpersonating,
   isSuper,
 } from "@/lib/session";
+import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
 import { prisma } from "@/lib/db/client";
 
@@ -25,7 +27,7 @@ export default async function TeachLayout({
   const effective = effectiveRole(session);
   if (effective !== "teacher") redirect(ROLE_HOME[effective]);
 
-  const [{ notifications, unreadCount }, pendingCorrections, unreadThreads] = await Promise.all([
+  const [{ notifications, unreadCount }, pendingCorrections, unreadThreads, branding] = await Promise.all([
     fetchNotifications(session.userId),
     prisma.submission.count({
       where: { assignment: { teacherId: session.userId }, status: "submitted" },
@@ -47,6 +49,7 @@ export default async function TeachLayout({
         ],
       },
     }),
+    getSchoolBranding(session),
   ]);
 
   const corrBadge = pendingCorrections > 0 ? String(pendingCorrections) : undefined;
@@ -88,9 +91,12 @@ export default async function TeachLayout({
     { href: "/teach/generator", label: "KI", icon: "sparkles" },
   ];
 
+  const schoolDisplayName = branding?.brandName ?? branding?.name;
+
   return (
     <div className="flex min-h-screen bg-surface">
-      <Sidebar items={items} bottomItems={bottomItems} rootHref="/teach" />
+      <SchoolBrandingInjector branding={branding} />
+      <Sidebar items={items} bottomItems={bottomItems} rootHref="/teach" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="sticky top-0 z-30">
           {isSuper(session) && (

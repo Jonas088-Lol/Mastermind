@@ -19,9 +19,11 @@ model School {
   state       String?
   plan        String   @default("basic")
   seats       Int      @default(100)
-  logoUrl     String?
-  faviconUrl  String?
+  logoUrl          String?
+  logoDarkUrl      String?
+  faviconUrl       String?
   accentColor      String?
+  brandName        String?  // Anzeigename (falls abweichend vom Schulnamen)
   featureSettings  String   @default("{}")  // JSON: { disabled: string[], windows: Record<string, {from: string, to: string}> }
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt

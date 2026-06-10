@@ -109,9 +109,13 @@ export interface SidebarProps {
   items: NavItem[];
   bottomItems?: NavItem[];
   rootHref: string;
+  /** School logo URL — overrides the platform default logo */
+  logoSrc?: string | null;
+  /** Alt text for the logo (school name) */
+  logoAlt?: string;
 }
 
-export function Sidebar({ items, bottomItems = [], rootHref }: SidebarProps) {
+export function Sidebar({ items, bottomItems = [], rootHref, logoSrc, logoAlt }: SidebarProps) {
   const pathname = usePathname();
 
   return (
@@ -120,7 +124,7 @@ export function Sidebar({ items, bottomItems = [], rootHref }: SidebarProps) {
         href={rootHref}
         className="flex h-16 items-center gap-2 border-b border-border px-5 font-bold tracking-tight"
       >
-        <BrandLogo height="h-7" showName />
+        <BrandLogo height="h-7" showName src={logoSrc} alt={logoAlt} />
       </Link>
 
       <nav className="flex-1 overflow-y-auto p-3" aria-label="Hauptnavigation">

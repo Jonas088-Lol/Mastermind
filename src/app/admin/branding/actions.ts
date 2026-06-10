@@ -14,11 +14,12 @@ async function saveUploadedFile(
   file: File,
   subfolder: string,
   schoolId: string,
+  suffix = "",
 ): Promise<string> {
   const ext = file.name.split(".").pop()?.toLowerCase() ?? "png";
   const dir = join(process.cwd(), "public", "uploads", subfolder);
   await mkdir(dir, { recursive: true });
-  const filename = `${schoolId}.${ext}`;
+  const filename = `${schoolId}${suffix}.${ext}`;
   const bytes = await file.arrayBuffer();
   await writeFile(join(dir, filename), Buffer.from(bytes));
   return `/uploads/${subfolder}/${filename}`;
@@ -33,11 +34,16 @@ export async function saveBranding(formData: FormData): Promise<void> {
   const schoolName = (formData.get("schoolName") as string | null)?.trim() ?? "";
   if (!schoolName) return;
 
+  const brandName = (formData.get("brandName") as string | null)?.trim() || null;
   const accentColor = (formData.get("accentHex") as string | null)?.trim() ?? null;
   const logoFile = formData.get("logo") as File | null;
+  const logoDarkFile = formData.get("logoDark") as File | null;
   const faviconFile = formData.get("favicon") as File | null;
 
-  const data: Record<string, unknown> = { name: schoolName };
+  const data: Record<string, unknown> = {
+    name: schoolName,
+    brandName,
+  };
 
   if (accentColor && /^#[0-9a-fA-F]{6}$/.test(accentColor)) {
     data.accentColor = accentColor;
@@ -51,6 +57,16 @@ export async function saveBranding(formData: FormData): Promise<void> {
       throw new Error("Logo: max. 2 MB");
     }
     data.logoUrl = await saveUploadedFile(logoFile, "logos", session.schoolId);
+  }
+
+  if (logoDarkFile && logoDarkFile.size > 0) {
+    if (!ALLOWED_IMAGE_TYPES.includes(logoDarkFile.type)) {
+      throw new Error("Dark Logo: nur PNG, JPEG, SVG oder WebP erlaubt");
+    }
+    if (logoDarkFile.size > MAX_LOGO_SIZE) {
+      throw new Error("Dark Logo: max. 2 MB");
+    }
+    data.logoDarkUrl = await saveUploadedFile(logoDarkFile, "logos", session.schoolId, "-dark");
   }
 
   if (faviconFile && faviconFile.size > 0) {
@@ -70,4 +86,6 @@ export async function saveBranding(formData: FormData): Promise<void> {
 
   revalidatePath("/admin/branding");
   revalidatePath("/admin");
+  revalidatePath("/app");
+  revalidatePath("/teach");
 }

@@ -1,10 +1,18 @@
 import { ImageResponse } from "next/og";
+import { existsSync, readFileSync } from "fs";
+import { join } from "path";
 
 export const alt = "MasterMind — Eine Plattform für Schule";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+export const runtime = "nodejs";
 
 export default function OpenGraphImage() {
+  const brandIconPath = join(process.cwd(), "public/brand/icon.png");
+  const logoDataUri = existsSync(brandIconPath)
+    ? `data:image/png;base64,${readFileSync(brandIconPath).toString("base64")}`
+    : null;
+
   return new ImageResponse(
     (
       <div
@@ -36,22 +44,33 @@ export default function OpenGraphImage() {
         />
 
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              background: "hsl(210, 16%, 96%)",
-              color: "hsl(222, 24%, 7%)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 26,
-              fontWeight: 900,
-              letterSpacing: -1,
-            }}
-          >
-            MM
-          </div>
+          {logoDataUri ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={logoDataUri}
+              width={56}
+              height={56}
+              style={{ borderRadius: 8, objectFit: "contain" }}
+              alt=""
+            />
+          ) : (
+            <div
+              style={{
+                width: 56,
+                height: 56,
+                background: "hsl(210, 16%, 96%)",
+                color: "hsl(222, 24%, 7%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 26,
+                fontWeight: 900,
+                letterSpacing: -1,
+              }}
+            >
+              MM
+            </div>
+          )}
           <div
             style={{
               fontSize: 28,

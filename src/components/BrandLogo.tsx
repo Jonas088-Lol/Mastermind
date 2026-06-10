@@ -3,6 +3,8 @@
 import { useState } from "react";
 
 interface BrandLogoProps {
+  /** Explicit logo URL (e.g. school logo). Skips file-system fallback when set. */
+  src?: string | null;
   /** Height class e.g. "h-8" */
   height?: string;
   /** Show "MasterMind" text next to MM fallback mark */
@@ -13,29 +15,40 @@ interface BrandLogoProps {
    */
   variant?: "default" | "inverted";
   className?: string;
+  /** Alt text for the logo image */
+  alt?: string;
 }
 
 /**
- * Displays /public/brand/logo.png when present, otherwise falls back to the
- * "MM" text mark (+ optional name). Drop logo.png into public/brand/ and the
- * image is picked up automatically on the next page load — no code changes needed.
- *
- * For dark backgrounds supply variant="inverted" — it tries logo-dark.png first.
+ * Displays a logo image with graceful fallback chain:
+ *   1. Explicit `src` prop (school logo from DB)
+ *   2. /public/brand/logo.png (platform-wide custom logo)
+ *   3. /public/brand/logo-dark.png (inverted variant)
+ *   4. "MM" text mark fallback
  */
 export function BrandLogo({
+  src,
   height = "h-8",
   showName = true,
   variant = "default",
   className,
+  alt = "Logo",
 }: BrandLogoProps) {
-  const primarySrc = variant === "inverted" ? "/brand/logo-dark.png" : "/brand/logo.png";
-  const [src, setSrc] = useState(primarySrc);
+  const platformSrc = variant === "inverted" ? "/brand/logo-dark.png" : "/brand/logo.png";
+
+  // Start with explicit src, fall through to platform logo
+  const initialSrc = src ?? platformSrc;
+  const [imgSrc, setImgSrc] = useState(initialSrc);
   const [failed, setFailed] = useState(false);
 
   function handleError() {
-    if (src === "/brand/logo-dark.png") {
-      // Fall back to the light logo before giving up
-      setSrc("/brand/logo.png");
+    if (imgSrc === src && src !== platformSrc) {
+      // Custom school logo failed — try platform logo
+      setImgSrc(platformSrc);
+    } else if (imgSrc !== "/brand/logo.png" && imgSrc !== "/brand/logo-dark.png") {
+      setFailed(true);
+    } else if (imgSrc === "/brand/logo-dark.png") {
+      setImgSrc("/brand/logo.png");
     } else {
       setFailed(true);
     }
@@ -44,8 +57,8 @@ export function BrandLogo({
   if (!failed) {
     return (
       <img
-        src={src}
-        alt="Logo"
+        src={imgSrc}
+        alt={alt}
         className={`${height} w-auto max-w-45 object-contain object-left ${className ?? ""}`}
         onError={handleError}
       />
