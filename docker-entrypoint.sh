@@ -7,9 +7,10 @@ echo "▶ MasterMind — Starting up..."
 echo "⏳ Waiting for database..."
 RETRIES=30
 until node -e "
-  const { Client } = require('pg');
-  const c = new Client({ connectionString: process.env.DATABASE_URL });
-  c.connect().then(() => { c.end(); process.exit(0); }).catch(() => process.exit(1));
+  const net = require('net');
+  const s = net.createConnection(5432, 'db');
+  s.on('connect', () => { s.destroy(); process.exit(0); });
+  s.on('error', () => { s.destroy(); process.exit(1); });
 " 2>/dev/null; do
   RETRIES=$((RETRIES - 1))
   if [ "$RETRIES" -le 0 ]; then
