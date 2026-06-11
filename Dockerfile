@@ -8,8 +8,11 @@ WORKDIR /app
 RUN apk add --no-cache libc6-compat openssl
 
 COPY package.json package-lock.json ./
-# Install all deps (including devDeps — needed for Next.js build)
-RUN npm ci
+# Install all deps (including devDeps — needed for Next.js build).
+# --ignore-scripts skips the postinstall `prisma generate` which fails here
+# because prisma/schema.prisma doesn't exist yet; the builder stage runs it
+# explicitly after copying the schema.
+RUN npm ci --ignore-scripts
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Stage 2 — builder: compile the Next.js app
