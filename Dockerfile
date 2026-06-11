@@ -78,12 +78,14 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static     ./.next/static
 COPY --from=builder /app/prisma                ./prisma
 COPY --from=builder /app/node_modules/.prisma  ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma  ./node_modules/@prisma
-# Prisma CLI — needed by entrypoint for db push
-COPY --from=builder /app/node_modules/prisma          ./node_modules/prisma
-# @prisma/config (Prisma 6) depends on effect → fast-check → pure-rand (not traced by NFT)
-COPY --from=builder /app/node_modules/effect          ./node_modules/effect
-COPY --from=builder /app/node_modules/fast-check      ./node_modules/fast-check
-COPY --from=builder /app/node_modules/pure-rand       ./node_modules/pure-rand
+
+# Install Prisma CLI with its complete transitive dep tree into an isolated
+# directory. npm install at build time → no missing-module whack-a-mole at runtime.
+COPY --from=builder /app/node_modules/prisma/package.json /tmp/prisma-ver.json
+RUN PRISMA_VER=$(node -e "process.stdout.write(require('/tmp/prisma-ver.json').version)") && \
+    mkdir -p /prisma-cli && cd /prisma-cli && echo '{}' > package.json && \
+    npm install --ignore-scripts "prisma@${PRISMA_VER}" && \
+    rm /tmp/prisma-ver.json
 
 # Entrypoint script handles migrations before starting the server
 COPY docker-entrypoint.sh ./

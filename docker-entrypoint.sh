@@ -25,14 +25,14 @@ echo "✓ Database reachable."
 # Sync schema directly from schema.prisma (bypasses SQLite migration files).
 # Uses --accept-data-loss so it never hangs waiting for interactive confirmation.
 echo "⏳ Syncing database schema (db push)..."
-if node node_modules/prisma/build/index.js db push \
+if node /prisma-cli/node_modules/prisma/build/index.js db push \
     --schema ./prisma/schema.prisma \
     --accept-data-loss \
     --skip-generate; then
   echo "✓ Schema synced."
 else
   echo "⚠ db push failed — see logs above. The server will still start."
-  echo "  Tip: run 'docker compose exec app node node_modules/prisma/build/index.js db push --schema ./prisma/schema.prisma --accept-data-loss' manually."
+  echo "  Tip: run 'docker compose exec app node /prisma-cli/node_modules/prisma/build/index.js db push --schema ./prisma/schema.prisma --accept-data-loss' manually."
 fi
 
 # Seed initial demo data (idempotent — all writes use upsert).
