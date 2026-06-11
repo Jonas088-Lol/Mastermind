@@ -85,7 +85,8 @@ COPY --from=builder /app/node_modules/prisma/package.json /tmp/prisma-ver.json
 RUN PRISMA_VER=$(node -e "process.stdout.write(require('/tmp/prisma-ver.json').version)") && \
     mkdir -p /prisma-cli && cd /prisma-cli && echo '{}' > package.json && \
     npm install --ignore-scripts "prisma@${PRISMA_VER}" && \
-    rm /tmp/prisma-ver.json
+    rm /tmp/prisma-ver.json && \
+    chown -R nextjs:nodejs /prisma-cli
 
 # Entrypoint script handles migrations before starting the server
 COPY docker-entrypoint.sh ./
