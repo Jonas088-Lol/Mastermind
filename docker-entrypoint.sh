@@ -2,13 +2,16 @@
 
 echo "▶ MasterMind — Starting up..."
 
-# Wait until Postgres is reachable (max 60s)
+# Wait until Postgres port is open (max 60s).
+# Uses only Node built-ins — no npm packages needed in the standalone image.
 echo "⏳ Waiting for database..."
 RETRIES=60
 until node -e "
-  const { Client } = require('pg');
-  const c = new Client({ connectionString: process.env.DATABASE_URL });
-  c.connect().then(() => { c.end(); process.exit(0); }).catch(() => process.exit(1));
+  const url = new URL(process.env.DATABASE_URL);
+  const net = require('net');
+  const s = net.createConnection(parseInt(url.port || '5432'), url.hostname);
+  s.on('connect', () => { s.destroy(); process.exit(0); });
+  s.on('error', () => { s.destroy(); process.exit(1); });
 " 2>/dev/null; do
   RETRIES=$((RETRIES - 1))
   if [ "$RETRIES" -le 0 ]; then
