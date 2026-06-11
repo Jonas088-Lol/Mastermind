@@ -38,6 +38,17 @@ ENV NEXT_PUBLIC_APP_URL="https://example.com"
 
 RUN npm run build
 
+# Bundle seed.ts to self-contained CJS so the runner can seed without tsx/tsc.
+# esbuild is a dependency of tsx (devDep) and available here in the builder.
+# --external:@prisma/client keeps the Prisma import as-is (present in runner).
+RUN node_modules/.bin/esbuild prisma/seed.ts \
+    --bundle \
+    --platform=node \
+    --target=node22 \
+    --format=cjs \
+    --outfile=prisma/seed.cjs \
+    --external:@prisma/client
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Stage 3 — runner: minimal production image
 # ─────────────────────────────────────────────────────────────────────────────
@@ -60,10 +71,12 @@ COPY --from=builder /app/public           ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static     ./.next/static
 
-# Copy Prisma files needed at runtime (migrations + generated client)
-COPY --from=builder /app/prisma           ./prisma
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
-COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+# Copy Prisma files needed at runtime (schema + generated client + compiled seed)
+COPY --from=builder /app/prisma                ./prisma
+COPY --from=builder /app/node_modules/.prisma  ./node_modules/.prisma
+COPY --from=builder /app/node_modules/@prisma  ./node_modules/@prisma
+# Prisma CLI — needed by entrypoint for db push
+COPY --from=builder /app/node_modules/prisma   ./node_modules/prisma
 
 # Entrypoint script handles migrations before starting the server
 COPY docker-entrypoint.sh ./

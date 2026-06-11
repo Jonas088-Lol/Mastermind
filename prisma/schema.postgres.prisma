@@ -1,16 +1,6 @@
-// Production-Schema-Variante für Postgres.
-//
-// Identisch zu prisma/schema.prisma, mit folgenden Unterschieden:
-//   - provider auf "postgresql"
-//
-// Switch-Workflow:
-//   1. cp prisma/schema.postgres.prisma prisma/schema.prisma
-//   2. rm -rf prisma/migrations
-//   3. DATABASE_URL=postgresql://... npx prisma migrate dev --name init
-//   4. npm run db:seed && npm run db:seed-topics
-//
-// Production-Deploy verwendet `prisma migrate deploy` (siehe vercel.json).
-
+// MasterMind — Production Schema (PostgreSQL)
+// Identisch zu prisma/schema.prisma, aber mit provider = "postgresql"
+// Das Dockerfile kopiert diese Datei beim Build: cp prisma/schema.postgres.prisma prisma/schema.prisma
 
 generator client {
   provider = "prisma-client-js"
@@ -31,11 +21,14 @@ model School {
   state       String?
   plan        String   @default("basic")
   seats       Int      @default(100)
-  logoUrl     String?
-  faviconUrl  String?
-  accentColor String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  logoUrl          String?
+  logoDarkUrl      String?
+  faviconUrl       String?
+  accentColor      String?
+  brandName        String?
+  featureSettings  String   @default("{}")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
   users            User[]
   classes          SchoolClass[]
@@ -47,13 +40,20 @@ model School {
   learningPaths    LearningPath[]
   teams            SchoolTeam[]
   ssoConfigs       SsoConfig[]
+  apiTokens        ApiToken[]
+  worksheets       Worksheet[]
+  seasons          Season[]
+  bossBattles      BossBattle[]
+  schoolEvents     SchoolEvent[]
+  substitutions    SubstitutionEntry[]
+  consentForms     ConsentForm[]
 }
 
 model SsoConfig {
   id           String   @id @default(cuid())
   schoolId     String
   school       School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
-  provider     String   // "entra" | "google"
+  provider     String
   clientId     String
   clientSecret String
   tenantId     String?
@@ -75,6 +75,7 @@ model User {
   role            String
   klasse          String?
   classId         String?
+  pomodoroGoal    Int       @default(4)
   twoFactor       Boolean   @default(false)
   twoFactorSecret String?
   notifPrefs      String?
@@ -84,7 +85,7 @@ model User {
   updatedAt       DateTime  @updatedAt
 
   schoolId    String?
-  school      School?     @relation(fields: [schoolId], references: [id])
+  school      School?      @relation(fields: [schoolId], references: [id])
   schoolClass SchoolClass? @relation("StudentClass", fields: [classId], references: [id])
 
   sessions          Session[]
@@ -109,37 +110,75 @@ model User {
   appNotifications AppNotification[]
 
   authoredNotes Note[] @relation("AuthorNotes")
+  notebooks     Notebook[]
+  vocabLists    VocabList[]
 
   xp             Int       @default(0)
   xpLogs         XpLog[]
   streak         Int       @default(0)
   lastActiveDate DateTime?
 
-  parentLinks   ParentStudentLink[] @relation("ParentLinks")
+  prestige         Int     @default(0)
+  equippedTitle    String?
+  comboStreak      Int     @default(0)
+  totalDailyLogins Int     @default(0)
+  lastLoginDate    String?
+  avatarUrl        String?
+
+  coins          Int      @default(0)
+  streakFreezes  Int      @default(0)
+  isPremium      Boolean  @default(false)
+  premiumUntil   DateTime?
+
+  coinLogs         CoinLog[]
+  inventoryItems   UserInventoryItem[]
+  userBoosters     UserBooster[]
+
+  userQuests        UserQuest[]
+  userTitles        UserTitle[]
+  dailyLoginRewards DailyLoginReward[]
+  seasonPasses      UserSeasonPass[]
+  bossParticipations BossParticipant[]
+  userSkillNodes    UserSkillNode[]
+
+  parentLinks    ParentStudentLink[] @relation("ParentLinks")
   studentParents ParentStudentLink[] @relation("StudentParents")
 
-  reportedAbsences   Absence[] @relation("AbsenceReporter")
-  studentAbsences    Absence[] @relation("AbsenceStudent")
-  confirmedAbsences  Absence[] @relation("AbsenceConfirmer")
-  achievements       UserAchievement[]
+  reportedAbsences  Absence[] @relation("AbsenceReporter")
+  studentAbsences   Absence[] @relation("AbsenceStudent")
+  confirmedAbsences Absence[] @relation("AbsenceConfirmer")
+  achievements      UserAchievement[]
 
   createdLearningPaths LearningPath[]     @relation("CreatedLearningPaths")
   quizAnswers          QuizAnswer[]
   learningProgress     LearningProgress[]
 
-  teacherLessonLogs  LessonLog[]          @relation("TeacherLessonLogs")
-  studentAttendance  AttendanceRecord[]   @relation("StudentAttendance")
-  teacherAttendance  AttendanceRecord[]   @relation("TeacherAttendance")
-  teacherIncidents   ClassbookIncident[]  @relation("TeacherIncidents")
-  studentIncidents   ClassbookIncident[]  @relation("StudentIncidents")
+  teacherLessonLogs  LessonLog[]         @relation("TeacherLessonLogs")
+  studentAttendance  AttendanceRecord[]  @relation("StudentAttendance")
+  teacherAttendance  AttendanceRecord[]  @relation("TeacherAttendance")
+  teacherIncidents   ClassbookIncident[] @relation("TeacherIncidents")
+  studentIncidents   ClassbookIncident[] @relation("StudentIncidents")
 
-  exerciseAnswers    ExerciseAnswer[]
-  exerciseProgress   ExerciseProgress[]
+  exerciseAnswers  ExerciseAnswer[]
+  exerciseProgress ExerciseProgress[]
 
-  duelsAsChallenger  Duel[]            @relation("DuelChallenger")
-  duelsAsChallenged  Duel[]            @relation("DuelChallenged")
-  pushSubscriptions  PushSubscription[]
-  fileUploads        FileUpload[]
+  duelsAsChallenger Duel[]             @relation("DuelChallenger")
+  duelsAsChallenged Duel[]             @relation("DuelChallenged")
+  pushSubscriptions PushSubscription[]
+  fileUploads       FileUpload[]
+
+  createdWorksheets       Worksheet[]           @relation("CreatedWorksheets")
+  teacherWorksheetAssigns WorksheetAssignment[] @relation("TeacherWorksheetAssignments")
+  worksheetSubmissions    WorksheetSubmission[] @relation("StudentWorksheetSubmissions")
+
+  teacherMeetingNotes     TeacherMeetingNote[]    @relation("TeacherNotes")
+  studentMeetingNotes     TeacherMeetingNote[]    @relation("StudentNotes")
+  parentConsentResponses  ConsentResponse[]       @relation("ParentConsentResponses")
+  studentConsentResponses ConsentResponse[]       @relation("StudentConsentResponses")
+  teacherSlots            ParentTeacherSlot[]     @relation("TeacherSlots")
+  parentBookings          ParentTeacherBooking[]  @relation("ParentBookings")
+  substitutionsAbsent     SubstitutionEntry[]     @relation("AbsentTeacher")
+  substitutionsCovering   SubstitutionEntry[]     @relation("SubstituteTeacher")
 
   @@index([role])
   @@index([schoolId])
@@ -223,8 +262,8 @@ model AiQuotaEntry {
 
 model SchoolClass {
   id       String @id @default(cuid())
-  name     String // "9b"
-  grade    Int    // 9
+  name     String
+  grade    Int
   schoolId String
   school   School @relation(fields: [schoolId], references: [id])
 
@@ -234,6 +273,9 @@ model SchoolClass {
   assignments           Assignment[]
   lessonLogs            LessonLog[]
   incidents             ClassbookIncident[]
+  worksheetAssignments  WorksheetAssignment[]
+  seatingPlans          SeatingPlan[]
+  substitutions         SubstitutionEntry[]
 
   @@unique([schoolId, name])
   @@index([schoolId])
@@ -241,8 +283,8 @@ model SchoolClass {
 
 model Subject {
   id        String @id @default(cuid())
-  name      String // "Mathematik"
-  shortName String // "M"
+  name      String
+  shortName String
   color     String @default("#6366f1")
   schoolId  String
   school    School @relation(fields: [schoolId], references: [id])
@@ -254,6 +296,7 @@ model Subject {
   flashcardDecks        FlashcardDeck[]
   lessonLogs            LessonLog[]
   learningPaths         LearningPath[]
+  worksheets            Worksheet[]
 
   @@index([schoolId])
 }
@@ -283,8 +326,8 @@ model TimetableEntry {
   teacher   User        @relation("TimetableTeacher", fields: [teacherId], references: [id])
   subjectId String
   subject   Subject     @relation(fields: [subjectId], references: [id])
-  day       Int // 1=Mo … 5=Fr
-  period    Int // 1–9
+  day       Int
+  period    Int
   room      String?
 
   @@unique([classId, day, period])
@@ -311,7 +354,7 @@ model Assignment {
   title       String
   description String?
   dueAt       DateTime
-  type        String      @default("homework") // homework | test | project | exam
+  type        String      @default("homework")
   maxPoints   Int?
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
@@ -338,7 +381,7 @@ model Submission {
   studentId    String
   student      User       @relation("StudentSubmissions", fields: [studentId], references: [id])
   content      String?
-  status       String     @default("open") // open | submitted | graded | late
+  status       String     @default("open")
   submittedAt  DateTime?
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
@@ -362,9 +405,9 @@ model Grade {
   subject      Subject     @relation(fields: [subjectId], references: [id])
   submissionId String?     @unique
   submission   Submission? @relation("SubmissionGrade", fields: [submissionId], references: [id])
-  value        Float // 1.0–6.0
+  value        Float
   weight       Float       @default(1.0)
-  type         String // klausur | test | muendlich | hausaufgabe | projekt
+  type         String
   comment      String?
   date         DateTime    @default(now())
 
@@ -454,7 +497,7 @@ model AppNotification {
   id        String    @id @default(cuid())
   userId    String
   user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  type      String // assignment | grade | message | system
+  type      String
   title     String
   body      String
   linkUrl   String?
@@ -467,14 +510,14 @@ model AppNotification {
 // ── Klassenbuch ─────────────────────────────────────────────
 
 model LessonLog {
-  id        String   @id @default(cuid())
-  date      DateTime @default(now())
-  period    String   // e.g. "1.-2."
+  id        String    @id @default(cuid())
+  date      DateTime  @default(now())
+  period    String
   topic     String
   homework  String?
   signedAt  DateTime?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
 
   teacherId String
   teacher   User        @relation("TeacherLessonLogs", fields: [teacherId], references: [id])
@@ -491,12 +534,12 @@ model LessonLog {
 }
 
 model AttendanceRecord {
-  id       String   @id @default(cuid())
-  date     DateTime
-  status   String   // anwesend | fehlt | verspaetet | entschuldigt
-  reason   String?
-  signedAt DateTime?
-  createdAt DateTime @default(now())
+  id        String     @id @default(cuid())
+  date      DateTime
+  status    String
+  reason    String?
+  signedAt  DateTime?
+  createdAt DateTime   @default(now())
 
   lessonId  String?
   lesson    LessonLog? @relation(fields: [lessonId], references: [id])
@@ -531,7 +574,7 @@ model Note {
 
 model ClassbookIncident {
   id        String   @id @default(cuid())
-  type      String   // Verweis | Lob | Hinweis
+  type      String
   text      String
   date      DateTime @default(now())
   createdAt DateTime @default(now())
@@ -549,13 +592,13 @@ model ClassbookIncident {
 }
 
 model XpLog {
-  id           String   @id @default(cuid())
-  userId       String
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  amount       Int
-  reason       String   // "aufgabe_abgabe" | "karteikarte" | "note_geteilt" | "aufgabe_bewertet"
-  referenceId  String?  // ID der Aufgabe/Note etc.
-  createdAt    DateTime @default(now())
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount      Int
+  reason      String
+  referenceId String?
+  createdAt   DateTime @default(now())
 
   @@index([userId, createdAt])
 }
@@ -576,41 +619,41 @@ model SchoolPeriodConfig {
   id        String @id @default(cuid())
   schoolId  String
   school    School @relation(fields: [schoolId], references: [id], onDelete: Cascade)
-  period    Int    // 1–9
-  startTime String // "08:00"
-  endTime   String // "08:45"
+  period    Int
+  startTime String
+  endTime   String
 
   @@unique([schoolId, period])
   @@index([schoolId])
 }
 
 model Absence {
-  id         String    @id @default(cuid())
-  studentId  String
-  student    User      @relation("AbsenceStudent", fields: [studentId], references: [id], onDelete: Cascade)
-  reporterId String
-  reporter   User      @relation("AbsenceReporter", fields: [reporterId], references: [id], onDelete: Cascade)
-  schoolId   String
-  school     School    @relation(fields: [schoolId], references: [id], onDelete: Cascade)
-  fromDate   DateTime
-  toDate     DateTime
-  reason     String?
-  status     String    @default("pending") // pending | confirmed | rejected
+  id            String    @id @default(cuid())
+  studentId     String
+  student       User      @relation("AbsenceStudent", fields: [studentId], references: [id], onDelete: Cascade)
+  reporterId    String
+  reporter      User      @relation("AbsenceReporter", fields: [reporterId], references: [id], onDelete: Cascade)
+  schoolId      String
+  school        School    @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  fromDate      DateTime
+  toDate        DateTime
+  reason        String?
+  status        String    @default("pending")
   confirmedById String?
   confirmedBy   User?     @relation("AbsenceConfirmer", fields: [confirmedById], references: [id], onDelete: SetNull)
   confirmedAt   DateTime?
-  createdAt  DateTime  @default(now())
+  createdAt     DateTime  @default(now())
 
   @@index([studentId])
   @@index([schoolId])
 }
 
 model UserAchievement {
-  id          String   @id @default(cuid())
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  slug        String   // "first_xp" | "streak_7" | "streak_30" | "level_5" | "notes_10" | "assignments_25"
-  unlockedAt  DateTime @default(now())
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  slug       String
+  unlockedAt DateTime @default(now())
 
   @@unique([userId, slug])
   @@index([userId])
@@ -651,9 +694,9 @@ model QuizQuestion {
   moduleId    String
   module      LearningModule @relation(fields: [moduleId], references: [id], onDelete: Cascade)
   question    String
-  type        String         @default("multiple_choice") // multiple_choice | true_false
-  options     String         // JSON array
-  correct     String         // correct option index (0-based) as string
+  type        String         @default("multiple_choice")
+  options     String
+  correct     String
   explanation String?
   order       Int
   answers     QuizAnswer[]
@@ -690,12 +733,12 @@ model LearningProgress {
   @@index([pathId])
 }
 
-// ── Übungen (plattformweit) ────────────────────────────────
+// ── Übungen ────────────────────────────────────────────────
 
 model ExerciseTopic {
   id          String  @id @default(cuid())
-  subject     String  // deutsch | mathematik | englisch | physik | chemie | biologie | geschichte | informatik | python | javascript | java | latein | franzosisch | spanisch
-  grade       Int     // 1–13
+  subject     String
+  grade       Int
   title       String
   description String?
   order       Int     @default(0)
@@ -712,7 +755,7 @@ model ExerciseLesson {
   id       String        @id @default(cuid())
   topicId  String
   topic    ExerciseTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
-  content  String        // Markdown
+  content  String
   videoUrl String?
   order    Int           @default(0)
 
@@ -723,10 +766,10 @@ model ExerciseQuestion {
   id          String        @id @default(cuid())
   topicId     String
   topic       ExerciseTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
-  type        String        // mc | fill_blank | true_false | order | match | blitz
+  type        String
   question    String
-  options     String?       // JSON array
-  correct     String        // JSON value or index
+  options     String?
+  correct     String
   explanation String?
   order       Int           @default(0)
 
@@ -769,11 +812,11 @@ model SchoolTeam {
   id       String  @id @default(cuid())
   schoolId String
   school   School  @relation(fields: [schoolId], references: [id], onDelete: Cascade)
-  name     String  // "Fußball Herren", "Basketball Damen"
-  sport    String  // fussball | basketball | volleyball | handball | leichtathletik | schwimmen | tennis
-  season   String? // "2025/26"
+  name     String
+  sport    String
+  season   String?
   coach    String?
-  results  String? // JSON: array of {date, opponent, scoreHome, scoreAway}
+  results  String?
 
   @@index([schoolId])
 }
@@ -781,28 +824,28 @@ model SchoolTeam {
 // ── Duelle ─────────────────────────────────────────────────
 
 model Duel {
-  id           String    @id @default(cuid())
-  challengerId String
-  challenger   User      @relation("DuelChallenger", fields: [challengerId], references: [id], onDelete: Cascade)
-  challengedId String
-  challenged   User      @relation("DuelChallenged", fields: [challengedId], references: [id], onDelete: Cascade)
-  topicId      String
-  topic        ExerciseTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
-  status       String    @default("pending") // pending | accepted | completed | declined | expired
+  id              String        @id @default(cuid())
+  challengerId    String
+  challenger      User          @relation("DuelChallenger", fields: [challengerId], references: [id], onDelete: Cascade)
+  challengedId    String
+  challenged      User          @relation("DuelChallenged", fields: [challengedId], references: [id], onDelete: Cascade)
+  topicId         String
+  topic           ExerciseTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  status          String        @default("pending")
   challengerScore Int?
   challengedScore Int?
-  winnerId     String?
-  message      String?   // optional challenge message
-  createdAt    DateTime  @default(now())
-  expiresAt    DateTime
-  completedAt  DateTime?
+  winnerId        String?
+  message         String?
+  createdAt       DateTime      @default(now())
+  expiresAt       DateTime
+  completedAt     DateTime?
 
   @@index([challengerId])
   @@index([challengedId])
   @@index([status])
 }
 
-// ── Web Push Subscriptions ─────────────────────────────────
+// ── Web Push ───────────────────────────────────────────────
 
 model PushSubscription {
   id        String   @id @default(cuid())
@@ -816,35 +859,612 @@ model PushSubscription {
   @@index([userId])
 }
 
-// ── Großdatei-Uploads ─────────────────────────────────────────
+// ── Datei-Uploads ─────────────────────────────────────────
 
 model FileUpload {
-  id           String   @id @default(cuid())
+  id           String      @id @default(cuid())
   userId       String
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   filename     String
   mimeType     String
-  size         Int      // bytes
-  path         String   // storage path
+  size         Int
+  path         String
   assignmentId String?
   assignment   Assignment? @relation(fields: [assignmentId], references: [id], onDelete: SetNull)
-  createdAt    DateTime @default(now())
+  createdAt    DateTime    @default(now())
 
   @@index([userId])
   @@index([assignmentId])
 }
 
+// ── Feature Flags ──────────────────────────────────────────
+
+model FeatureFlag {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String
+  state       String   @default("off")
+  rollout     Int      @default(0)
+  scope       String   @default("alle")
+  owner       String   @default("Plattform")
+  metric      String?
+  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now())
+}
+
+model ApiToken {
+  id         String    @id @default(cuid())
+  schoolId   String
+  school     School    @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  name       String
+  tokenHash  String    @unique
+  prefix     String
+  scopes     String    @default("read")
+  lastUsedAt DateTime?
+  expiresAt  DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([schoolId])
+}
+
+// ── Arbeitsblätter ─────────────────────────────────────────
+
+model Worksheet {
+  id               String   @id @default(cuid())
+  schoolId         String
+  school           School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  creatorId        String
+  creator          User     @relation("CreatedWorksheets", fields: [creatorId], references: [id], onDelete: Cascade)
+  title            String
+  description      String?
+  subjectId        String?
+  subject          Subject? @relation(fields: [subjectId], references: [id])
+  gradeLevel       Int?
+  difficulty       String   @default("mittel")
+  estimatedMinutes Int      @default(15)
+  status           String   @default("draft")
+  isTemplate       Boolean  @default(false)
+  language         String   @default("de")
+  items            WorksheetItem[]
+  assignments      WorksheetAssignment[]
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([schoolId])
+  @@index([creatorId])
+}
+
+model WorksheetItem {
+  id            String    @id @default(cuid())
+  worksheetId   String
+  worksheet     Worksheet @relation(fields: [worksheetId], references: [id], onDelete: Cascade)
+  type          String
+  order         Int
+  config        String
+  correctAnswer String?
+  hint          String?
+  points        Int       @default(1)
+  required      Boolean   @default(true)
+  answers       WorksheetItemAnswer[]
+
+  @@index([worksheetId])
+}
+
+model WorksheetAssignment {
+  id           String       @id @default(cuid())
+  worksheetId  String
+  worksheet    Worksheet    @relation(fields: [worksheetId], references: [id], onDelete: Cascade)
+  classId      String?
+  class        SchoolClass? @relation(fields: [classId], references: [id])
+  teacherId    String
+  teacher      User         @relation("TeacherWorksheetAssignments", fields: [teacherId], references: [id], onDelete: Cascade)
+  assignedAt   DateTime     @default(now())
+  dueAt        DateTime?
+  maxAttempts  Int          @default(1)
+  showHints    Boolean      @default(true)
+  showSolution Boolean      @default(false)
+  submissions  WorksheetSubmission[]
+
+  @@index([worksheetId])
+  @@index([classId])
+}
+
+model WorksheetSubmission {
+  id           String              @id @default(cuid())
+  assignmentId String
+  assignment   WorksheetAssignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  studentId    String
+  student      User                @relation("StudentWorksheetSubmissions", fields: [studentId], references: [id], onDelete: Cascade)
+  startedAt    DateTime            @default(now())
+  submittedAt  DateTime?
+  score        Int?
+  maxScore     Int?
+  timeTakenSec Int?
+  status       String              @default("in_progress")
+  itemAnswers  WorksheetItemAnswer[]
+
+  @@index([assignmentId])
+  @@index([studentId])
+}
+
+model WorksheetItemAnswer {
+  id           String              @id @default(cuid())
+  submissionId String
+  submission   WorksheetSubmission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  itemId       String
+  item         WorksheetItem       @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  answer       String
+  isCorrect    Boolean?
+  pointsEarned Int?
+  answeredAt   DateTime            @default(now())
+
+  @@unique([submissionId, itemId])
+  @@index([submissionId])
+}
+
+// ── Gamification ───────────────────────────────────────────
+
+model Quest {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  description String
+  lore        String?
+  type        String
+  category    String
+  targetCount Int      @default(1)
+  xpReward    Int      @default(50)
+  titleReward String?
+  icon        String   @default("⚔️")
+  difficulty  String   @default("normal")
+  rarity      String   @default("common")
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  userProgress UserQuest[]
+}
+
+model UserQuest {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  questId     String
+  quest       Quest     @relation(fields: [questId], references: [id], onDelete: Cascade)
+  progress    Int       @default(0)
+  completedAt DateTime?
+  claimedAt   DateTime?
+  assignedAt  DateTime  @default(now())
+  expiresAt   DateTime?
+
+  @@unique([userId, questId])
+  @@index([userId])
+  @@index([questId])
+}
+
+model UserTitle {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  titleSlug  String
+  unlockedAt DateTime @default(now())
+
+  @@unique([userId, titleSlug])
+  @@index([userId])
+}
+
+model DailyLoginReward {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  day       Int
+  xpAwarded Int
+  claimedAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+model Season {
+  id       String   @id @default(cuid())
+  schoolId String?
+  school   School?  @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  name     String
+  number   Int
+  theme    String?
+  startAt  DateTime
+  endAt    DateTime
+  isActive Boolean  @default(false)
+
+  passes UserSeasonPass[]
+
+  @@index([schoolId])
+  @@index([isActive])
+}
+
+model UserSeasonPass {
+  id       String @id @default(cuid())
+  userId   String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  seasonId String
+  season   Season @relation(fields: [seasonId], references: [id], onDelete: Cascade)
+  xpEarned Int    @default(0)
+  tier     Int    @default(0)
+
+  @@unique([userId, seasonId])
+  @@index([userId])
+}
+
+model BossBattle {
+  id          String   @id @default(cuid())
+  schoolId    String?
+  school      School?  @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  name        String
+  description String
+  lore        String?
+  subject     String?
+  gradeLevel  Int?
+  maxHp       Int      @default(10000)
+  currentHp   Int      @default(10000)
+  difficulty  String   @default("hard")
+  xpReward    Int      @default(500)
+  icon        String   @default("👹")
+  startAt     DateTime
+  endAt       DateTime
+  isActive    Boolean  @default(false)
+
+  participants BossParticipant[]
+
+  @@index([schoolId])
+  @@index([isActive])
+}
+
+model BossParticipant {
+  id             String     @id @default(cuid())
+  userId         String
+  user           User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  battleId       String
+  battle         BossBattle @relation(fields: [battleId], references: [id], onDelete: Cascade)
+  damage         Int        @default(0)
+  correctAnswers Int        @default(0)
+  joinedAt       DateTime   @default(now())
+
+  @@unique([userId, battleId])
+  @@index([userId])
+  @@index([battleId])
+}
+
+model SkillNode {
+  id          String  @id @default(cuid())
+  subject     String
+  slug        String
+  title       String
+  description String
+  tier        Int     @default(1)
+  requiredXp  Int     @default(0)
+  icon        String  @default("⭐")
+  color       String  @default("#6366f1")
+  parentSlug  String?
+  xpBonus     Int     @default(0)
+  sortOrder   Int     @default(0)
+
+  userNodes UserSkillNode[]
+
+  @@unique([subject, slug])
+}
+
+model UserSkillNode {
+  id         String    @id @default(cuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  nodeId     String
+  node       SkillNode @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+  unlockedAt DateTime  @default(now())
+
+  @@unique([userId, nodeId])
+  @@index([userId])
+}
+
+// ── Virtual Economy ────────────────────────────────────────
+
+model CoinLog {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount      Int
+  reason      String
+  referenceId String?
+  createdAt   DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model ShopItem {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String
+  category    String
+  coinPrice   Int      @default(0)
+  realPrice   Int?
+  icon        String   @default("🎁")
+  rarity      String   @default("common")
+  effect      String?
+  effectValue String?
+  isLimited   Boolean  @default(false)
+  stock       Int?
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model UserInventoryItem {
+  id         String    @id @default(cuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemSlug   String
+  quantity   Int       @default(1)
+  acquiredAt DateTime  @default(now())
+  expiresAt  DateTime?
+
+  @@index([userId])
+  @@index([itemSlug])
+}
+
+model UserBooster {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  boosterSlug String
+  multiplier  Float
+  activatedAt DateTime @default(now())
+  expiresAt   DateTime
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model StripeOrder {
+  id          String    @id @default(cuid())
+  userId      String
+  sessionId   String    @unique
+  productSlug String
+  amount      Int
+  currency    String    @default("eur")
+  status      String    @default("pending")
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  @@index([userId])
+  @@index([sessionId])
+}
+
+// ── Schulkalender ──────────────────────────────────────────
+
+model SchoolEvent {
+  id          String    @id @default(cuid())
+  schoolId    String
+  school      School    @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  startAt     DateTime
+  endAt       DateTime?
+  allDay      Boolean   @default(true)
+  category    String    @default("event")
+  classIds    String?
+  color       String?
+  createdBy   String?
+  createdAt   DateTime  @default(now())
+
+  @@index([schoolId, startAt])
+}
+
+// ── Vertretungsplan ────────────────────────────────────────
+
+model SubstitutionEntry {
+  id                  String      @id @default(cuid())
+  schoolId            String
+  school              School      @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  date                DateTime
+  period              Int
+  classId             String
+  class               SchoolClass @relation(fields: [classId], references: [id])
+  absentTeacherId     String?
+  absentTeacher       User?       @relation("AbsentTeacher", fields: [absentTeacherId], references: [id])
+  substituteTeacherId String?
+  substituteTeacher   User?       @relation("SubstituteTeacher", fields: [substituteTeacherId], references: [id])
+  subjectName         String?
+  note                String?
+  type                String      @default("substitution")
+  room                String?
+  createdAt           DateTime    @default(now())
+
+  @@index([schoolId, date])
+  @@index([classId])
+}
+
+// ── Elterngespräche ────────────────────────────────────────
+
+model TeacherMeetingNote {
+  id         String   @id @default(cuid())
+  teacherId  String
+  teacher    User     @relation("TeacherNotes", fields: [teacherId], references: [id])
+  studentId  String
+  student    User     @relation("StudentNotes", fields: [studentId], references: [id])
+  parentName String?
+  meetingAt  DateTime
+  notes      String
+  followUp   String?
+  isPrivate  Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([teacherId])
+  @@index([studentId])
+}
+
+// ── Sitzplan ──────────────────────────────────────────────
+
+model SeatingPlan {
+  id        String      @id @default(cuid())
+  classId   String
+  class     SchoolClass @relation(fields: [classId], references: [id])
+  subjectId String?
+  label     String      @default("Standard")
+  layout    String
+  rows      Int         @default(5)
+  cols      Int         @default(6)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@index([classId])
+}
+
+// ── Einwilligungen ─────────────────────────────────────────
+
+model ConsentForm {
+  id             String    @id @default(cuid())
+  schoolId       String
+  school         School    @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  title          String
+  description    String
+  deadline       DateTime?
+  isActive       Boolean   @default(true)
+  targetClassIds String?
+  createdAt      DateTime  @default(now())
+
+  responses ConsentResponse[]
+
+  @@index([schoolId])
+}
+
+model ConsentResponse {
+  id          String      @id @default(cuid())
+  formId      String
+  form        ConsentForm @relation(fields: [formId], references: [id], onDelete: Cascade)
+  parentId    String
+  parent      User        @relation("ParentConsentResponses", fields: [parentId], references: [id])
+  studentId   String
+  student     User        @relation("StudentConsentResponses", fields: [studentId], references: [id])
+  agreed      Boolean
+  signature   String?
+  respondedAt DateTime    @default(now())
+
+  @@unique([formId, parentId, studentId])
+  @@index([formId])
+  @@index([parentId])
+}
+
+// ── Elternsprechtag ────────────────────────────────────────
+
+model ParentTeacherSlot {
+  id        String   @id @default(cuid())
+  teacherId String
+  teacher   User     @relation("TeacherSlots", fields: [teacherId], references: [id])
+  startsAt  DateTime
+  duration  Int      @default(10)
+  isBooked  Boolean  @default(false)
+  location  String?
+  createdAt DateTime @default(now())
+
+  booking ParentTeacherBooking?
+
+  @@index([teacherId, startsAt])
+  @@index([isBooked, startsAt])
+}
+
+model ParentTeacherBooking {
+  id        String            @id @default(cuid())
+  slotId    String            @unique
+  slot      ParentTeacherSlot @relation(fields: [slotId], references: [id], onDelete: Cascade)
+  parentId  String
+  parent    User              @relation("ParentBookings", fields: [parentId], references: [id])
+  studentId String
+  note      String?
+  createdAt DateTime          @default(now())
+
+  @@index([parentId])
+}
+
+// ── Digitale Hefte ─────────────────────────────────────────
+
+model Notebook {
+  id        String         @id @default(cuid())
+  userId    String
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  subject   String?
+  color     String         @default("#6366f1")
+  icon      String         @default("📓")
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  pages NotebookPage[]
+
+  @@index([userId])
+}
+
+model NotebookPage {
+  id         String   @id @default(cuid())
+  notebookId String
+  notebook   Notebook @relation(fields: [notebookId], references: [id], onDelete: Cascade)
+  title      String   @default("Neue Seite")
+  content    String   @default("[]")
+  order      Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([notebookId])
+}
+
+// ── Vokabeltrainer ─────────────────────────────────────────
+
+model VocabList {
+  id        String       @id @default(cuid())
+  userId    String
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  langFrom  String       @default("Deutsch")
+  langTo    String       @default("Englisch")
+  subject   String?
+  isPublic  Boolean      @default(false)
+  color     String       @default("#6366f1")
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  entries VocabEntry[]
+
+  @@index([userId])
+}
+
+model VocabEntry {
+  id          String    @id @default(cuid())
+  listId      String
+  list        VocabList @relation(fields: [listId], references: [id], onDelete: Cascade)
+  word        String
+  translation String
+  example     String?
+  hint        String?
+  nextReview  DateTime  @default(now())
+  interval    Int       @default(1)
+  easeFactor  Float     @default(2.5)
+  repetitions Int       @default(0)
+  streak      Int       @default(0)
+  createdAt   DateTime  @default(now())
+
+  @@index([listId])
+  @@index([nextReview])
+}
+
 // ── Audit Log ──────────────────────────────────────────────
 
 model AuditLog {
-  id         String   @id @default(cuid())
-  schoolId   String?
-  actorId    String?
-  targetId   String?
-  action     String
-  details    String?
-  ip         String?
-  createdAt  DateTime @default(now())
+  id        String   @id @default(cuid())
+  schoolId  String?
+  actorId   String?
+  targetId  String?
+  action    String
+  details   String?
+  ip        String?
+  createdAt DateTime @default(now())
 
   @@index([schoolId, createdAt])
   @@index([actorId, createdAt])
