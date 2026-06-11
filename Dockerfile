@@ -79,7 +79,9 @@ COPY --from=builder /app/prisma                ./prisma
 COPY --from=builder /app/node_modules/.prisma  ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma  ./node_modules/@prisma
 # Prisma CLI — needed by entrypoint for db push
-COPY --from=builder /app/node_modules/prisma   ./node_modules/prisma
+COPY --from=builder /app/node_modules/prisma          ./node_modules/prisma
+# @prisma/config (Prisma 6) depends on the `effect` FP library — not traced by Next.js NFT
+COPY --from=builder /app/node_modules/effect          ./node_modules/effect
 
 # Entrypoint script handles migrations before starting the server
 COPY docker-entrypoint.sh ./
