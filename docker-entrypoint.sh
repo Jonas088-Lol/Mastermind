@@ -22,6 +22,20 @@ until node -e "
 done
 echo "✓ Database reachable."
 
+# Fix known NOT NULL violations before db push.
+# If a column exists but has NULL values, Prisma refuses to make it required.
+node -e "
+const { PrismaClient } = require('@prisma/client');
+const p = new PrismaClient();
+(async () => {
+  try {
+    const n = await p.\$executeRawUnsafe('UPDATE \"School\" SET \"featureSettings\" = \'{}\'::jsonb WHERE \"featureSettings\" IS NULL');
+    if (n > 0) console.log('Fixed ' + n + ' School rows with NULL featureSettings');
+  } catch(e) { /* column may not exist yet — ok */ }
+  await p.\$disconnect();
+})().catch(() => {});
+" 2>/dev/null || true
+
 # Sync schema directly from schema.prisma (bypasses SQLite migration files).
 # Uses --accept-data-loss so it never hangs waiting for interactive confirmation.
 echo "⏳ Syncing database schema (db push)..."
