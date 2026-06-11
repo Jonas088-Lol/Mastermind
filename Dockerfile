@@ -80,8 +80,10 @@ COPY --from=builder /app/node_modules/.prisma  ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma  ./node_modules/@prisma
 # Prisma CLI — needed by entrypoint for db push
 COPY --from=builder /app/node_modules/prisma          ./node_modules/prisma
-# @prisma/config (Prisma 6) depends on the `effect` FP library — not traced by Next.js NFT
+# @prisma/config (Prisma 6) depends on effect → fast-check → pure-rand (not traced by NFT)
 COPY --from=builder /app/node_modules/effect          ./node_modules/effect
+COPY --from=builder /app/node_modules/fast-check      ./node_modules/fast-check
+COPY --from=builder /app/node_modules/pure-rand       ./node_modules/pure-rand
 
 # Entrypoint script handles migrations before starting the server
 COPY docker-entrypoint.sh ./
