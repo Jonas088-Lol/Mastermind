@@ -38,16 +38,16 @@ ENV NEXT_PUBLIC_APP_URL="https://example.com"
 
 RUN npm run build
 
-# Bundle seed.ts to self-contained CJS so the runner can seed without tsx/tsc.
-# esbuild is a dependency of tsx (devDep) and available here in the builder.
-# --external:@prisma/client keeps the Prisma import as-is (present in runner).
-RUN node_modules/.bin/esbuild prisma/seed.ts \
-    --bundle \
-    --platform=node \
-    --target=node22 \
-    --format=cjs \
-    --outfile=prisma/seed.cjs \
-    --external:@prisma/client
+# Bundle seed.ts → seed.cjs (no TypeScript tooling needed at runtime).
+# esbuild ships with tsx (devDep). Fall back gracefully if unavailable.
+RUN if [ -f node_modules/.bin/esbuild ]; then \
+      node_modules/.bin/esbuild prisma/seed.ts \
+        --bundle --platform=node --target=node22 --format=cjs \
+        --outfile=prisma/seed.cjs --external:@prisma/client \
+      && echo "✓ seed.cjs compiled"; \
+    else \
+      echo "⚠ esbuild not found — seed will be skipped at runtime"; \
+    fi
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Stage 3 — runner: minimal production image

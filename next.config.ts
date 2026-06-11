@@ -10,7 +10,9 @@ const isProd = process.env.NODE_ENV === "production";
  */
 const csp = [
   "default-src 'self'",
-  "script-src 'self'" + (isProd ? "" : " 'unsafe-eval' 'unsafe-inline'"),
+  // Next.js always needs 'unsafe-inline' for its hydration scripts — even in prod.
+  // Use 'unsafe-eval' only in dev (Turbopack source maps).
+  "script-src 'self' 'unsafe-inline'" + (isProd ? "" : " 'unsafe-eval'"),
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self' data:",
