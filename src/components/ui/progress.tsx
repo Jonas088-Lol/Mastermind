@@ -27,11 +27,11 @@ export function Progress({
       role="progressbar"
       aria-valuenow={value}
       aria-valuemax={max}
-      className={cn("h-1.5 w-full overflow-hidden bg-surface-2", className)}
+      className={cn("h-2 w-full overflow-hidden rounded-full bg-surface-2", className)}
       {...props}
     >
       <div
-        className={cn("h-full transition-[width] duration-500", tones[tone])}
+        className={cn("h-full rounded-full transition-[width] duration-500", tones[tone])}
         style={{ width: `${pct}%` }}
       />
     </div>

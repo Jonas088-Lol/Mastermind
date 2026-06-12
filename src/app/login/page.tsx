@@ -14,16 +14,12 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ClientRedirect } from "@/components/ClientRedirect";
 import { BrandLogo } from "@/components/BrandLogo";
 import {
   ACCOUNTS,
   DEMO_PASSWORDS,
-  ROLE_HOME,
   ROLE_LABEL,
   type Role,
-  effectiveRole,
-  getSession,
 } from "@/lib/session";
 import {
   loginAsRole,
@@ -62,9 +58,6 @@ const demoTiles: {
 export default async function LoginPage({ searchParams }: LoginPageProps) {
   const { error, method, sent } = await searchParams;
   const useMagicLink = method === "magic";
-
-  const session = await getSession();
-  if (session) return <ClientRedirect to={ROLE_HOME[effectiveRole(session)]} />;
 
   return (
     <div className="grid min-h-dvh lg:grid-cols-2">

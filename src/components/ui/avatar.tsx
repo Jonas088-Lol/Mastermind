@@ -27,7 +27,7 @@ export function Avatar({ name, size = "md", src, className, ...props }: AvatarPr
   return (
     <div
       className={cn(
-        "grid place-items-center bg-surface-2 font-semibold text-fg ring-1 ring-border",
+        "grid place-items-center overflow-hidden rounded-full bg-brand/10 font-semibold text-brand ring-1 ring-border",
         sizes[size],
         className
       )}
