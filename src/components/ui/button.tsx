@@ -3,26 +3,31 @@ import { type ComponentProps, forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
 const button = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold transition-[background-color,color,border-color,box-shadow,transform] outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-brand/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:opacity-50 rounded-lg select-none",
   {
     variants: {
       variant: {
         primary:
-          "bg-brand text-brand-fg hover:bg-brand-dark hover:shadow-[0_12px_40px_-12px_hsl(var(--brand)/0.45)] hover:-translate-y-px active:translate-y-0",
+          "bg-brand text-white shadow-sm hover:bg-brand-dark hover:shadow-md active:scale-[0.97]",
         secondary:
-          "bg-surface text-fg border border-border hover:border-fg/30",
+          "bg-surface-2 text-fg border border-border hover:border-border-strong hover:bg-surface active:scale-[0.97]",
         outline:
-          "border border-border-strong text-fg hover:bg-surface",
+          "border border-border-strong text-fg bg-bg hover:bg-surface hover:border-brand/40 active:scale-[0.97]",
         ghost:
-          "text-fg hover:bg-surface",
+          "text-fg hover:bg-surface active:scale-[0.97]",
         link:
-          "text-brand underline-offset-4 hover:underline px-0",
+          "text-brand underline-offset-4 hover:underline px-0 h-auto",
+        danger:
+          "bg-danger text-white hover:bg-danger/90 shadow-sm active:scale-[0.97]",
       },
       size: {
-        sm: "h-9 px-3 text-xs",
-        md: "h-11 px-5",
-        lg: "h-12 px-6 text-base",
-        icon: "h-11 w-11",
+        xs: "h-7 px-2.5 text-[11px] rounded-md",
+        sm: "h-9 px-3.5 text-xs",
+        md: "h-11 px-5 text-sm",
+        lg: "h-12 px-6 text-[15px]",
+        xl: "h-14 px-8 text-base",
+        icon: "h-10 w-10 p-0",
+        "icon-sm": "h-8 w-8 p-0 rounded-md",
       },
     },
     defaultVariants: {

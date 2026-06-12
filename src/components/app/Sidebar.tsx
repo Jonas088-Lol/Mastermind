@@ -68,25 +68,25 @@ const ICONS = {
   gift: Gift,
   grid: Grid3X3,
   home: Home,
+  languages: Languages,
   layers: Layers,
   lineChart: LineChart,
   messageSquare: MessageSquare,
+  package: Package,
+  pencilLine: PencilLine,
+  refreshCw: RefreshCw,
+  search: Search,
   settings: Settings,
   shield: Shield,
+  shoppingBag: ShoppingBag,
   sparkles: Sparkles,
   star: Star,
   sun: Sun,
   coins: Coins,
-  package: Package,
-  languages: Languages,
-  pencilLine: PencilLine,
-  refreshCw: RefreshCw,
-  search: Search,
-  shoppingBag: ShoppingBag,
-  timer: Timer,
   swords: Swords,
   tag: Tag,
   target: Target,
+  timer: Timer,
   trendingUp: TrendingUp,
   trophy: Trophy,
   userCheck: UserCheck,
@@ -109,9 +109,7 @@ export interface SidebarProps {
   items: NavItem[];
   bottomItems?: NavItem[];
   rootHref: string;
-  /** School logo URL — overrides the platform default logo */
   logoSrc?: string | null;
-  /** Alt text for the logo (school name) */
   logoAlt?: string;
 }
 
@@ -119,15 +117,17 @@ export function Sidebar({ items, bottomItems = [], rootHref, logoSrc, logoAlt }:
   const pathname = usePathname();
 
   return (
-    <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-border bg-bg lg:flex">
+    <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-border bg-surface/60 backdrop-blur-sm lg:flex">
+      {/* Logo */}
       <Link
         href={rootHref}
-        className="flex h-16 items-center gap-2 border-b border-border px-5 font-bold tracking-tight"
+        className="flex h-16 items-center gap-2.5 border-b border-border px-5 font-bold tracking-tight"
       >
         <BrandLogo height="h-7" showName src={logoSrc} alt={logoAlt} />
       </Link>
 
-      <nav className="flex-1 overflow-y-auto p-3" aria-label="Hauptnavigation">
+      {/* Nav */}
+      <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Hauptnavigation">
         <ul className="space-y-0.5">
           {items.map((item) => (
             <NavLink key={item.href} item={item} active={isActive(pathname, item)} />
@@ -135,8 +135,9 @@ export function Sidebar({ items, bottomItems = [], rootHref, logoSrc, logoAlt }:
         </ul>
       </nav>
 
+      {/* Bottom items */}
       {bottomItems.length > 0 && (
-        <div className="border-t border-border p-3">
+        <div className="border-t border-border px-3 py-3">
           <ul className="space-y-0.5">
             {bottomItems.map((item) => (
               <NavLink key={item.href} item={item} active={isActive(pathname, item)} />
@@ -160,19 +161,27 @@ function NavLink({ item, active }: { item: NavItem; active: boolean }) {
       <Link
         href={item.href}
         className={cn(
-          "group flex items-center gap-3 px-3 py-2 text-sm font-medium transition-colors",
+          "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150",
           active
-            ? "bg-fg text-bg"
-            : "text-muted-fg hover:bg-surface hover:text-fg"
+            ? "bg-brand/10 text-brand"
+            : "text-muted-fg hover:bg-surface-2 hover:text-fg"
         )}
       >
-        <Icon className="size-4 shrink-0" strokeWidth={1.75} />
+        <Icon
+          className={cn(
+            "size-4 shrink-0 transition-colors",
+            active ? "text-brand" : "text-muted-fg group-hover:text-fg"
+          )}
+          strokeWidth={1.75}
+        />
         <span className="flex-1 truncate">{item.label}</span>
         {item.badge && (
           <span
             className={cn(
-              "px-1.5 py-px font-mono text-[10px] font-semibold",
-              active ? "bg-bg/15 text-bg" : "bg-surface-2 text-muted-fg"
+              "rounded-full px-1.5 py-0.5 font-mono text-[10px] font-bold",
+              active
+                ? "bg-brand/15 text-brand"
+                : "bg-brand text-white"
             )}
           >
             {item.badge}

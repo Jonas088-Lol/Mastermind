@@ -1,5 +1,4 @@
 import { Check } from "lucide-react";
-import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -24,7 +23,7 @@ const plans = [
     description: "Der Standard für ambitionierte Schulen.",
     price: "9",
     suffix: "€ / User · Jahr",
-    seats: "unbegrenzte Accounts",
+    seats: "Unbegrenzte Accounts",
     features: [
       "Alles aus Basic",
       "KI-Tutor + Aufgaben-Generator",
@@ -43,7 +42,7 @@ const plans = [
     seats: "Multi-Tenant + White-Label",
     features: [
       "Alles aus Pro",
-      "SSO (SAML/SCIM)",
+      "SSO (SAML / SCIM)",
       "Custom Branding & Domain",
       "Dedicated DPA & SLA",
       "Persönlicher CSM",
@@ -55,29 +54,34 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="preise" className="border-b border-border section">
-      <Container>
+    <section id="preise" className="section bg-surface/50">
+      <div className="container-px mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Preise</span>
-          <h2 className="mt-4 text-4xl sm:text-5xl">Faire Preise. Keine Überraschungen.</h2>
-          <p className="mt-5 text-lg text-muted-fg">
+          <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl">
+            Faire Preise.
+            <br className="hidden sm:block" />
+            Keine Überraschungen.
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-muted-fg sm:text-lg">
             Pilotphase 30 Tage gratis · Jährliche Abrechnung · Jederzeit kündbar.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:mt-16 lg:grid-cols-3">
           {plans.map((p) => (
             <article
               key={p.name}
               className={cn(
-                "relative flex flex-col border bg-bg p-8 transition-all",
+                "relative flex flex-col rounded-2xl border p-7 transition-all duration-200",
                 p.highlight
-                  ? "border-brand shadow-[0_24px_60px_-20px_hsl(var(--brand)/0.35)]"
-                  : "border-border hover:border-border-strong"
+                  ? "border-brand bg-bg shadow-lg ring-1 ring-brand/20"
+                  : "border-border bg-bg shadow-sm hover:shadow-md hover:border-border-strong"
               )}
+              style={p.highlight ? { boxShadow: "var(--shadow-brand)" } : { boxShadow: "var(--shadow-sm)" }}
             >
               {p.highlight && (
-                <span className="absolute -top-3 left-8 bg-brand px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-brand-fg">
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-brand px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
                   Empfohlen
                 </span>
               )}
@@ -87,32 +91,34 @@ export function Pricing() {
                 <p className="mt-1.5 text-sm text-muted-fg">{p.description}</p>
               </div>
 
-              <div className="mt-7 border-y border-border py-6">
+              <div className="mt-6 border-t border-border pt-6">
                 <p className="font-mono text-4xl font-bold tracking-tight">
                   {p.price}
                   {p.suffix && (
-                    <span className="ml-1 align-baseline text-sm font-normal text-muted-fg">
+                    <span className="ml-1.5 align-baseline text-sm font-normal text-muted-fg">
                       {p.suffix}
                     </span>
                   )}
                 </p>
-                <p className="mt-2 text-xs uppercase tracking-wider text-muted-fg">
+                <p className="mt-1.5 text-xs font-medium uppercase tracking-wider text-muted-fg">
                   {p.seats}
                 </p>
               </div>
 
-              <ul className="mt-6 space-y-2.5">
+              <ul className="mt-6 flex-1 space-y-2.5">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm">
-                    <Check className="mt-0.5 size-4 shrink-0 text-brand" strokeWidth={2.5} />
-                    <span>{f}</span>
+                    <div className="mt-0.5 grid size-4.5 shrink-0 place-items-center rounded-full bg-success/12 text-success">
+                      <Check className="size-3" strokeWidth={2.5} />
+                    </div>
+                    {f}
                   </li>
                 ))}
               </ul>
 
               <Button
-                className="mt-8"
-                variant={p.highlight ? "primary" : "outline"}
+                className="mt-7 w-full"
+                variant={p.highlight ? "primary" : "secondary"}
                 size="lg"
               >
                 {p.cta}
@@ -121,11 +127,11 @@ export function Pricing() {
           ))}
         </div>
 
-        <p className="mx-auto mt-10 max-w-xl text-center text-xs text-muted-fg">
+        <p className="mx-auto mt-8 max-w-xl text-center text-xs text-muted-fg">
           Schüler-Premium separat ab 7,99 € / Monat — buchbar zusätzlich zu jedem
           Schulpaket. Preise inkl. 19 % MwSt., Hosting in Deutschland.
         </p>
-      </Container>
+      </div>
     </section>
   );
 }

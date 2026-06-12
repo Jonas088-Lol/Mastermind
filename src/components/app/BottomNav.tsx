@@ -159,10 +159,10 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
     <>
       <nav
         aria-label="Untere Navigation"
-        className="sticky bottom-0 z-40 border-t border-border bg-bg/95 backdrop-blur supports-backdrop-filter:bg-bg/80 lg:hidden"
+        className="sticky bottom-0 z-40 border-t border-border bg-bg/90 backdrop-blur-lg supports-backdrop-filter:bg-bg/80 lg:hidden"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
-        <ul className="grid grid-cols-5">
+        <ul className="grid grid-cols-5 px-1">
           {displayItems.map((item) => {
             const Icon = ICONS[item.icon];
             const active = isActive(pathname, item);
@@ -171,26 +171,27 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
                 <Link
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "relative flex flex-col items-center gap-0.5 px-1 py-2.5 text-[10px] font-semibold uppercase tracking-wider transition-colors",
-                    active ? "text-fg" : "text-muted-fg"
-                  )}
+                  className="relative flex flex-col items-center gap-0.5 px-1 py-3 transition-colors"
                 >
-                  {active && (
-                    <span className="absolute inset-x-2 top-0 h-0.5 bg-brand" aria-hidden="true" />
-                  )}
-                  <span className="relative">
+                  <span
+                    className={cn(
+                      "relative grid size-10 place-items-center rounded-2xl transition-all duration-200",
+                      active ? "bg-brand/12 text-brand" : "text-muted-fg"
+                    )}
+                  >
                     <Icon className="size-5" strokeWidth={1.75} />
                     {item.badge && (
                       <span
-                        className="absolute -right-2 -top-1 grid min-w-3.5 place-items-center bg-brand px-1 font-mono text-[9px] font-bold leading-tight text-brand-fg"
+                        className="absolute -right-1 -top-1 grid min-w-3.5 place-items-center rounded-full bg-brand px-1 font-mono text-[8px] font-bold leading-tight text-white"
                         aria-label={`${item.badge} ungelesen`}
                       >
                         {item.badge}
                       </span>
                     )}
                   </span>
-                  <span className="truncate max-w-full">{item.label}</span>
+                  <span className={cn("truncate text-[10px] font-semibold", active ? "text-brand" : "text-muted-fg")}>
+                    {item.label}
+                  </span>
                 </Link>
               </li>
             );
@@ -203,10 +204,12 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
                 onClick={() => setMoreOpen(true)}
                 aria-label="Alle Navigation anzeigen"
                 aria-expanded={moreOpen}
-                className="relative flex w-full flex-col items-center gap-0.5 px-1 py-2.5 text-[10px] font-semibold uppercase tracking-wider text-muted-fg transition-colors"
+                className="flex w-full flex-col items-center gap-0.5 px-1 py-3 text-muted-fg transition-colors"
               >
-                <LayoutGrid className="size-5" strokeWidth={1.75} />
-                <span>Mehr</span>
+                <span className="grid size-10 place-items-center rounded-2xl transition-all duration-200 hover:bg-surface-2">
+                  <LayoutGrid className="size-5" strokeWidth={1.75} />
+                </span>
+                <span className="text-[10px] font-semibold">Mehr</span>
               </button>
             </li>
           )}
@@ -220,29 +223,29 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
           aria-label="Alle Navigation"
           aria-modal="true"
           className={cn(
-            "fixed inset-0 z-50 flex flex-col bg-bg transition-transform duration-200 ease-out lg:hidden",
+            "fixed inset-0 z-50 flex flex-col bg-bg/95 backdrop-blur-xl transition-transform duration-300 ease-out lg:hidden",
             moreOpen ? "translate-y-0" : "translate-y-full pointer-events-none"
           )}
           style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
         >
           {/* Header */}
           <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
+            <span className="text-xs font-bold uppercase tracking-widest text-muted-fg">
               Navigation
             </span>
             <button
               type="button"
               onClick={() => setMoreOpen(false)}
               aria-label="Schließen"
-              className="grid size-9 place-items-center text-muted-fg transition-colors hover:text-fg"
+              className="grid size-9 place-items-center rounded-xl text-muted-fg transition-colors hover:bg-surface hover:text-fg"
             >
               <X className="size-5" />
             </button>
           </div>
 
           {/* Scrollable item list */}
-          <nav className="flex-1 overflow-y-auto" aria-label="Alle Seiten">
-            <ul className="divide-y divide-border">
+          <nav className="flex-1 overflow-y-auto p-3" aria-label="Alle Seiten">
+            <ul className="space-y-0.5">
               {moreItems.map((item) => {
                 const Icon = getIcon(item.icon);
                 const active = isActive(pathname, item);
@@ -252,20 +255,22 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "flex items-center gap-4 px-5 py-3.5 text-sm font-medium transition-colors",
-                        active ? "bg-fg text-bg" : "text-fg hover:bg-surface"
+                        "flex items-center gap-3.5 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-150",
+                        active
+                          ? "bg-brand/10 text-brand"
+                          : "text-fg hover:bg-surface"
                       )}
                     >
                       <Icon
-                        className={cn("size-4 shrink-0", active ? "text-bg" : "text-muted-fg")}
+                        className={cn("size-4 shrink-0", active ? "text-brand" : "text-muted-fg")}
                         strokeWidth={1.75}
                       />
                       <span className="flex-1">{item.label}</span>
                       {item.badge && (
                         <span
                           className={cn(
-                            "px-1.5 py-px font-mono text-[10px] font-bold",
-                            active ? "bg-bg/20 text-bg" : "bg-brand text-brand-fg"
+                            "rounded-full px-1.5 py-0.5 font-mono text-[10px] font-bold",
+                            active ? "bg-brand/15 text-brand" : "bg-brand text-white"
                           )}
                         >
                           {item.badge}

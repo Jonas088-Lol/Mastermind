@@ -1,51 +1,57 @@
 @import "tailwindcss";
 
 /* =========================================================
-   MasterMind Design System
-   Sharp · Premium · Apple/Tesla/Notion
-   Alle Farben in HSL · Tokens via @theme
+   MasterMind Design System v2
+   Modern · Rounded · Premium
    ========================================================= */
 
 @layer base {
   :root {
     /* Brand */
-    --brand: 232 78% 56%;
+    --brand: 235 85% 60%;
     --brand-fg: 0 0% 100%;
-    --brand-glow: 232 90% 64%;
-    --brand-dark: 232 78% 46%;
+    --brand-glow: 235 90% 68%;
+    --brand-dark: 235 85% 50%;
 
-    /* Accent — sparsam, nur AI/Highlights */
-    --accent: 162 84% 48%;
-    --accent-fg: 222 22% 11%;
+    /* Accent */
+    --accent: 162 84% 44%;
+    --accent-fg: 0 0% 100%;
 
     /* Surface — Light */
     --bg: 0 0% 100%;
-    --fg: 222 22% 11%;
-    --surface: 210 20% 98%;
-    --surface-2: 210 16% 96%;
-    --border: 220 14% 90%;
-    --border-strong: 220 14% 80%;
-    --muted-fg: 220 9% 46%;
+    --fg: 224 20% 12%;
+    --surface: 220 20% 98%;
+    --surface-2: 220 18% 95%;
+    --border: 220 16% 90%;
+    --border-strong: 220 14% 78%;
+    --muted-fg: 220 10% 50%;
 
     /* Status */
-    --success: 152 76% 40%;
-    --warning: 38 92% 50%;
-    --danger: 0 84% 60%;
-    --info: 212 90% 56%;
+    --success: 152 72% 38%;
+    --warning: 38 92% 48%;
+    --danger: 0 80% 58%;
+    --info: 212 88% 54%;
 
-    /* Layout */
-    --radius: 2px;
-    --radius-lg: 4px;
+    /* Shadows */
+    --shadow-sm: 0 1px 3px hsl(224 20% 12% / 0.06), 0 1px 2px hsl(224 20% 12% / 0.04);
+    --shadow: 0 4px 12px hsl(224 20% 12% / 0.08), 0 2px 4px hsl(224 20% 12% / 0.04);
+    --shadow-lg: 0 12px 32px hsl(224 20% 12% / 0.10), 0 4px 8px hsl(224 20% 12% / 0.06);
+    --shadow-brand: 0 8px 32px hsl(235 85% 60% / 0.30);
   }
 
   [data-theme="dark"] {
-    --bg: 222 24% 7%;
-    --fg: 210 16% 96%;
-    --surface: 222 22% 11%;
-    --surface-2: 222 18% 14%;
-    --border: 222 14% 18%;
-    --border-strong: 222 14% 28%;
-    --muted-fg: 220 9% 64%;
+    --bg: 224 22% 8%;
+    --fg: 214 18% 94%;
+    --surface: 224 20% 12%;
+    --surface-2: 224 18% 16%;
+    --border: 224 16% 20%;
+    --border-strong: 224 14% 30%;
+    --muted-fg: 220 10% 56%;
+
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.20), 0 1px 2px hsl(0 0% 0% / 0.12);
+    --shadow: 0 4px 12px hsl(0 0% 0% / 0.25), 0 2px 4px hsl(0 0% 0% / 0.12);
+    --shadow-lg: 0 12px 32px hsl(0 0% 0% / 0.30), 0 4px 8px hsl(0 0% 0% / 0.16);
+    --shadow-brand: 0 8px 32px hsl(235 85% 60% / 0.25);
   }
 }
 
@@ -77,11 +83,16 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
-  /* Radius */
-  --radius-none: 0;
-  --radius-sm: 2px;
-  --radius: 2px;
-  --radius-lg: 4px;
+  /* Radius — modern, rounded */
+  --radius-none: 0px;
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
 }
 
 @layer base {
@@ -111,17 +122,20 @@
   h1, h2, h3, h4 {
     font-weight: 700;
     letter-spacing: -0.025em;
-    line-height: 1.1;
+    line-height: 1.15;
   }
 
   ::selection {
-    background: hsl(var(--brand) / 0.25);
+    background: hsl(var(--brand) / 0.2);
   }
 }
 
 @layer components {
   .container-px {
-    padding-inline: 1.5rem;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .container-px { padding-inline: 1.75rem; }
   }
   @media (min-width: 768px) {
     .container-px { padding-inline: 2.5rem; }
@@ -131,8 +145,9 @@
   }
 
   .section {
-    padding-block: 5rem;
+    padding-block: 4rem;
   }
+  @media (min-width: 640px) { .section { padding-block: 6rem; } }
   @media (min-width: 768px) { .section { padding-block: 7rem; } }
   @media (min-width: 1024px) { .section { padding-block: 8rem; } }
 
@@ -140,55 +155,85 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     color: hsl(var(--brand));
-  }
-
-  .accent-bar {
-    display: block;
-    width: 2.5rem;
-    height: 2px;
-    background: hsl(var(--brand));
+    background: hsl(var(--brand) / 0.08);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
   }
 
   .grid-bg {
     background-image:
-      linear-gradient(to right, hsl(var(--border) / 0.6) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border) / 0.6) 1px, transparent 1px);
-    background-size: 64px 64px;
+      linear-gradient(to right, hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .card-elevated {
+    background: hsl(var(--bg));
+    border: 1px solid hsl(var(--border));
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
+  }
+  .card-elevated:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    border-color: hsl(var(--border-strong));
   }
 
   .premium-card {
     background: hsl(var(--surface));
     border: 1px solid hsl(var(--border));
-    transition: border-color 200ms cubic-bezier(0.22, 1, 0.36, 1),
-                transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
-                box-shadow 200ms cubic-bezier(0.22, 1, 0.36, 1);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
   }
   .premium-card:hover {
-    border-color: hsl(var(--brand));
+    border-color: hsl(var(--brand) / 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px -12px hsl(222 22% 11% / 0.12);
+    box-shadow: var(--shadow-brand);
   }
 
   .glow-on-hover {
-    transition: box-shadow 250ms cubic-bezier(0.22, 1, 0.36, 1),
-                transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: box-shadow 250ms ease, transform 250ms ease;
   }
   .glow-on-hover:hover {
-    box-shadow: 0 12px 40px -12px hsl(var(--brand) / 0.45);
+    box-shadow: var(--shadow-brand);
     transform: translateY(-1px);
+  }
+
+  /* Gradient mesh backgrounds */
+  .mesh-bg {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, hsl(var(--brand) / 0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(var(--accent) / 0.05) 0%, transparent 60%);
   }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.animate-fade-in { animation: fade-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in  { animation: fade-in  0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-slide-up { animation: slide-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-scale-in { animation: scale-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -197,9 +242,8 @@
   }
 }
 
-/* ── Mobile / Native App ────────────────────────────────────────────────── */
+/* ── Mobile / Native App ─────────────────────────────────── */
 
-/* Safe area insets — handles iPhone notch, Dynamic Island, Android nav bar */
 :root {
   --safe-top:    env(safe-area-inset-top,    0px);
   --safe-right:  env(safe-area-inset-right,  0px);
@@ -207,7 +251,6 @@
   --safe-left:   env(safe-area-inset-left,   0px);
 }
 
-/* Class to apply on top-level containers */
 .safe-top    { padding-top:    var(--safe-top);    }
 .safe-bottom { padding-bottom: var(--safe-bottom); }
 .safe-left   { padding-left:   var(--safe-left);   }
@@ -219,59 +262,46 @@
   padding-right:  var(--safe-right);
 }
 
-/* Ensure full-screen on mobile without address bar showing content under */
 html {
   height: -webkit-fill-available;
 }
 body {
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  /* Prevent pull-to-refresh on Chrome Android when app is installed */
   overscroll-behavior-y: contain;
 }
 
-/* Touch optimization: faster tap response */
 * {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
 
-/* Prevent text selection on UI elements (buttons, nav links) */
 button, a, [role="button"] {
   -webkit-user-select: none;
   user-select: none;
 }
 
-/* Allow selection in content areas */
 p, span, input, textarea, [contenteditable] {
   -webkit-user-select: text;
   user-select: text;
 }
 
-/* Smooth scroll on iOS */
 .scroll-smooth {
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
 
-/* Bottom navigation safe area for iPhone home indicator */
 .bottom-nav-safe {
   padding-bottom: calc(0.75rem + var(--safe-bottom));
 }
 
-/* Capacitor WebView — hide scrollbar but keep scroll */
 ::-webkit-scrollbar { display: none; }
 * { scrollbar-width: none; }
 
-/* Dark mode on Android status bar area */
 @media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-  }
+  :root { color-scheme: dark; }
 }
 
-
-/* ── Safe area — PWA standalone mode ────────────────────────── */
 @supports (padding-top: env(safe-area-inset-top)) {
   @media all and (display-mode: standalone) {
     .safe-top {
@@ -284,17 +314,15 @@ p, span, input, textarea, [contenteditable] {
   }
 }
 
-/* ── Worksheet print / PDF export ──────────────────────────── */
+/* ── Print ─────────────────────────────────────────────── */
 @media print {
   body { background: white !important; color: black !important; }
 
-  /* Hide nav, sidebar, buttons, timer */
   nav, aside, header:not(.ws-print-header),
   [data-print-hide],
   .ws-timer, .ws-tts-btn, .ws-hint-btn,
   .ws-nav-footer, .ws-progress-dots { display: none !important; }
 
-  /* Worksheet container */
   .ws-print-container {
     max-width: 100% !important;
     margin: 0 !important;
@@ -303,10 +331,8 @@ p, span, input, textarea, [contenteditable] {
     border: none !important;
   }
 
-  /* Show all items on one page, no pagination */
   .ws-item-page { display: block !important; page-break-inside: avoid; }
 
-  /* Inputs: show as underline fields */
   .ws-print-container input[type="text"],
   .ws-print-container input[type="number"],
   .ws-print-container textarea {
@@ -317,12 +343,10 @@ p, span, input, textarea, [contenteditable] {
     -webkit-print-color-adjust: exact;
   }
 
-  /* Canvas drawing areas: show border */
   .ws-print-container canvas {
     border: 1px solid #ccc !important;
   }
 
-  /* Force colors for badges / feedback */
   .ws-correct { background-color: #d1fae5 !important; -webkit-print-color-adjust: exact; }
   .ws-wrong   { background-color: #fee2e2 !important; -webkit-print-color-adjust: exact; }
 

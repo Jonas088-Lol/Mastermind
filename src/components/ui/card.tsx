@@ -5,22 +5,28 @@ export function Card({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
       className={cn(
-        "border border-border bg-bg",
+        "rounded-2xl border border-border bg-bg shadow-sm",
         className
       )}
+      style={{ boxShadow: "var(--shadow-sm)" }}
       {...props}
     />
   );
 }
 
 export function CardHeader({ className, ...props }: ComponentProps<"div">) {
-  return <div className={cn("flex items-start justify-between gap-3 p-5", className)} {...props} />;
+  return (
+    <div
+      className={cn("flex items-start justify-between gap-3 px-5 pt-5 pb-3", className)}
+      {...props}
+    />
+  );
 }
 
 export function CardTitle({ className, ...props }: ComponentProps<"h3">) {
   return (
     <h3
-      className={cn("text-sm font-semibold uppercase tracking-wider text-muted-fg", className)}
+      className={cn("text-sm font-semibold text-fg", className)}
       {...props}
     />
   );
@@ -33,7 +39,10 @@ export function CardBody({ className, ...props }: ComponentProps<"div">) {
 export function CardFooter({ className, ...props }: ComponentProps<"div">) {
   return (
     <div
-      className={cn("flex items-center justify-between border-t border-border px-5 py-3", className)}
+      className={cn(
+        "flex items-center justify-between border-t border-border px-5 py-3.5 rounded-b-2xl",
+        className
+      )}
       {...props}
     />
   );

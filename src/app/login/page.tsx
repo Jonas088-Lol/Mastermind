@@ -30,6 +30,7 @@ import {
   loginWithCredentials,
   requestMagicLink,
 } from "./actions";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Anmelden",
@@ -66,62 +67,67 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   if (session) return <ClientRedirect to={ROLE_HOME[effectiveRole(session)]} />;
 
   return (
-    <div className="grid min-h-screen lg:grid-cols-2">
-      {/* LEFT: marketing context */}
-      <aside className="hidden flex-col justify-between border-r border-border bg-fg p-10 text-bg lg:flex">
-        <Link href="/" className="flex items-center gap-2 font-bold tracking-tight">
+    <div className="grid min-h-dvh lg:grid-cols-2">
+      {/* LEFT: branding panel */}
+      <aside className="relative hidden flex-col justify-between overflow-hidden bg-brand p-10 text-white lg:flex">
+        <div className="pointer-events-none absolute inset-0 opacity-20"
+          style={{ background: "radial-gradient(ellipse at 30% 20%, white 0%, transparent 60%)" }}
+        />
+        <Link href="/" className="relative flex items-center gap-2 font-bold tracking-tight">
           <BrandLogo height="h-8" showName variant="inverted" />
         </Link>
 
-        <div className="max-w-md">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-glow">
+        <div className="relative max-w-md">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/70">
             Eine Plattform für Schule
           </p>
-          <h1 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight xl:text-5xl">
+          <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight xl:text-5xl">
             Lernen, Verwaltung und KI in einer Plattform.
           </h1>
-          <p className="mt-5 max-w-sm text-sm text-bg/70">
-            Server in Deutschland · DSGVO-konform · 30-Min-Onboarding für deine Schule.
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
+            Server in Deutschland · DSGVO-konform · 30-Min-Onboarding.
           </p>
         </div>
 
-        <ul className="space-y-2.5 text-sm text-bg/80">
-          <li className="flex items-center gap-2">
-            <ShieldCheck className="size-4 text-brand-glow" />
-            Hosting Frankfurt am Main · AVV in 24 h
-          </li>
-          <li className="flex items-center gap-2">
-            <ShieldCheck className="size-4 text-brand-glow" />
-            SSO mit Microsoft, Google, Apple
-          </li>
-          <li className="flex items-center gap-2">
-            <ShieldCheck className="size-4 text-brand-glow" />
-            2FA · Audit-Logs · Datenexport jederzeit
-          </li>
+        <ul className="relative space-y-2.5 text-sm text-white/80">
+          {[
+            "Hosting Frankfurt am Main · AVV in 24 h",
+            "SSO mit Microsoft, Google, Apple",
+            "2FA · Audit-Logs · Datenexport jederzeit",
+          ].map((t) => (
+            <li key={t} className="flex items-center gap-2.5">
+              <ShieldCheck className="size-4 text-white/60 shrink-0" />
+              {t}
+            </li>
+          ))}
         </ul>
       </aside>
 
       {/* RIGHT: auth */}
-      <main className="flex min-h-screen flex-col px-6 py-10 sm:px-10 lg:px-14">
+      <main className="flex min-h-dvh flex-col bg-surface/30 px-5 py-8 sm:px-8 lg:px-12">
         <Link href="/" className="flex items-center gap-2 font-bold tracking-tight lg:hidden">
           <BrandLogo height="h-8" showName />
         </Link>
 
-        <div className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center py-10">
+        <div className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center py-8">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight">Anmelden</h2>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Anmelden</h2>
             <p className="mt-2 text-sm text-muted-fg">
               Mit deinem Schul-Account oder einem Demo-Zugang einloggen.
             </p>
           </div>
 
-          <div className="mt-6 grid grid-cols-2 gap-px border border-border bg-border">
+          {/* Method toggle */}
+          <div className="mt-6 grid grid-cols-2 gap-1 rounded-xl bg-surface-2 p-1">
             <Link
               href="/login"
               aria-pressed={!useMagicLink}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-colors ${
-                !useMagicLink ? "bg-fg text-bg" : "bg-bg text-muted-fg hover:bg-surface"
-              }`}
+              className={cn(
+                "flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold transition-all",
+                !useMagicLink
+                  ? "bg-bg text-fg shadow-sm"
+                  : "text-muted-fg hover:text-fg"
+              )}
             >
               <Lock className="size-3.5" />
               Passwort
@@ -129,88 +135,57 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             <Link
               href="/login?method=magic"
               aria-pressed={useMagicLink}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-colors ${
-                useMagicLink ? "bg-fg text-bg" : "bg-bg text-muted-fg hover:bg-surface"
-              }`}
+              className={cn(
+                "flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-xs font-semibold transition-all",
+                useMagicLink
+                  ? "bg-bg text-fg shadow-sm"
+                  : "text-muted-fg hover:text-fg"
+              )}
             >
               <Mail className="size-3.5" />
               Magic-Link
             </Link>
           </div>
 
+          {/* Error alerts */}
           {error === "invalid" && (
-            <div
-              role="alert"
-              className="mt-6 flex items-start gap-3 border border-danger/40 bg-danger/6 p-3 text-sm text-danger"
-            >
+            <div role="alert" className="mt-5 flex items-start gap-3 rounded-xl border border-danger/30 bg-danger/6 px-4 py-3 text-sm text-danger">
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
               <div>
                 <p className="font-semibold">E-Mail oder Passwort falsch</p>
-                <p className="mt-0.5 text-xs text-danger/80">
-                  Tipp: Schau in die Demo-Account-Liste unten oder nutze einen
-                  Quick-Login.
-                </p>
+                <p className="mt-0.5 text-xs text-danger/80">Nutze einen Quick-Login unten oder überprüfe deine Zugangsdaten.</p>
               </div>
             </div>
           )}
-
           {error === "rate-limit" && (
-            <div
-              role="alert"
-              className="mt-6 flex items-start gap-3 border border-warning/40 bg-warning/6 p-3 text-sm text-warning"
-            >
+            <div role="alert" className="mt-5 flex items-start gap-3 rounded-xl border border-warning/30 bg-warning/6 px-4 py-3 text-sm text-warning">
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
               <p>Zu viele Login-Versuche. Bitte warte ein paar Minuten.</p>
             </div>
           )}
-
-          {(error === "2fa-expired" ||
-            error === "2fa-not-active" ||
-            error === "2fa-rate-limit") && (
-            <div
-              role="alert"
-              className="mt-6 flex items-start gap-3 border border-warning/40 bg-warning/6 p-3 text-sm text-warning"
-            >
+          {(error === "2fa-expired" || error === "2fa-not-active" || error === "2fa-rate-limit") && (
+            <div role="alert" className="mt-5 flex items-start gap-3 rounded-xl border border-warning/30 bg-warning/6 px-4 py-3 text-sm text-warning">
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
-              <p>
-                {error === "2fa-rate-limit"
-                  ? "Zu viele 2FA-Versuche. Bitte erneut anmelden."
-                  : "2FA-Vorgang abgelaufen — bitte erneut anmelden."}
-              </p>
+              <p>{error === "2fa-rate-limit" ? "Zu viele 2FA-Versuche." : "2FA-Vorgang abgelaufen — bitte erneut anmelden."}</p>
             </div>
           )}
-
           {sent === "1" && useMagicLink && (
-            <div
-              role="status"
-              className="mt-6 flex items-start gap-3 border border-success/40 bg-success/6 p-3 text-sm text-success"
-            >
+            <div role="status" className="mt-5 flex items-start gap-3 rounded-xl border border-success/30 bg-success/6 px-4 py-3 text-sm text-success">
               <Mail className="mt-0.5 size-4 shrink-0" />
               <div>
                 <p className="font-semibold">Link gesendet</p>
-                <p className="mt-0.5 text-xs text-success/80">
-                  Schau in dein E-Mail-Postfach. Der Link gilt 15 Minuten.
-                </p>
+                <p className="mt-0.5 text-xs text-success/80">Schau in dein E-Mail-Postfach. Der Link gilt 15 Minuten.</p>
               </div>
             </div>
           )}
 
+          {/* Forms */}
           {useMagicLink ? (
-            <form action={requestMagicLink} className="mt-6 space-y-4">
+            <form action={requestMagicLink} className="mt-5 space-y-4">
               <div className="space-y-1.5">
                 <Label htmlFor="email-magic">E-Mail</Label>
-                <Input
-                  id="email-magic"
-                  name="email"
-                  type="email"
-                  inputMode="email"
-                  autoComplete="email"
-                  required
-                  placeholder="lukas@schule.de"
-                />
-                <p className="text-xs text-muted-fg">
-                  Wir schicken dir einen Anmelde-Link — kein Passwort nötig.
-                </p>
+                <Input id="email-magic" name="email" type="email" inputMode="email" autoComplete="email" required placeholder="lukas@schule.de" className="h-12 text-base" />
+                <p className="text-xs text-muted-fg">Wir schicken dir einen Anmelde-Link — kein Passwort nötig.</p>
               </div>
               <Button type="submit" size="lg" className="w-full">
                 <Mail className="size-4" />
@@ -218,38 +193,19 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               </Button>
             </form>
           ) : (
-            <form action={loginWithCredentials} className="mt-6 space-y-4">
+            <form action={loginWithCredentials} className="mt-5 space-y-4">
               <div className="space-y-1.5">
                 <Label htmlFor="email">E-Mail</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  inputMode="email"
-                  autoComplete="email"
-                  required
-                  placeholder="lukas@schule.de"
-                  defaultValue=""
-                />
+                <Input id="email" name="email" type="email" inputMode="email" autoComplete="email" required placeholder="lukas@schule.de" className="h-12 text-base" />
               </div>
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Passwort</Label>
-                  <Link
-                    href="/login/passwort-vergessen"
-                    className="text-[11px] font-medium text-muted-fg transition-colors hover:text-fg"
-                  >
-                    Passwort vergessen?
+                  <Link href="/login/passwort-vergessen" className="text-xs font-medium text-muted-fg hover:text-brand transition-colors">
+                    Vergessen?
                   </Link>
                 </div>
-                <Input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  placeholder="••••••••"
-                />
+                <Input id="password" name="password" type="password" autoComplete="current-password" required placeholder="••••••••" className="h-12 text-base" />
               </div>
               <Button type="submit" size="lg" className="w-full">
                 Anmelden
@@ -258,37 +214,36 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             </form>
           )}
 
-          <div className="my-8 flex items-center gap-3">
+          {/* Demo quick-logins */}
+          <div className="my-6 flex items-center gap-3">
             <span className="h-px flex-1 bg-border" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-fg">
-              oder Demo-Quick-Login
-            </span>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-muted-fg">Demo-Login</span>
             <span className="h-px flex-1 bg-border" />
           </div>
 
-          <div className="grid gap-2">
+          <div className="space-y-2">
             {demoTiles.map((t) => (
               <form key={t.role} action={loginAsRole.bind(null, t.role)}>
                 <button
                   type="submit"
-                  className={`group flex w-full items-center gap-3 border bg-bg px-3 py-2.5 text-left transition-colors ${
+                  className={cn(
+                    "group flex w-full items-center gap-3 rounded-xl border px-3.5 py-3 text-left transition-all duration-150",
                     t.primary
-                      ? "border-brand/50 bg-linear-to-r from-brand/6 to-transparent hover:border-brand"
-                      : "border-border hover:border-brand"
-                  }`}
+                      ? "border-brand/30 bg-brand/5 hover:border-brand/50 hover:bg-brand/8"
+                      : "border-border bg-bg hover:border-brand/30 hover:bg-surface"
+                  )}
                 >
-                  <span
-                    className={`grid size-8 shrink-0 place-items-center ${
-                      t.primary ? "bg-brand text-brand-fg" : "bg-surface text-fg"
-                    }`}
-                  >
+                  <span className={cn(
+                    "grid size-9 shrink-0 place-items-center rounded-xl",
+                    t.primary ? "bg-brand text-white" : "bg-surface-2 text-fg"
+                  )}>
                     {t.icon}
                   </span>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
                       <p className="text-sm font-semibold">{ROLE_LABEL[t.role]}</p>
                       {t.primary && (
-                        <span className="bg-brand px-1.5 py-px font-mono text-[9px] font-bold uppercase tracking-wider text-brand-fg">
+                        <span className="rounded-full bg-brand px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
                           Empfohlen
                         </span>
                       )}
@@ -301,41 +256,28 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             ))}
           </div>
 
-          <details className="mt-6 border border-dashed border-border">
-            <summary className="cursor-pointer list-none px-4 py-3 text-xs font-semibold uppercase tracking-wider text-muted-fg transition-colors hover:bg-surface">
+          <details className="mt-5 rounded-xl border border-dashed border-border">
+            <summary className="cursor-pointer list-none rounded-xl px-4 py-3 text-xs font-semibold text-muted-fg transition-colors hover:bg-surface">
               Demo-Zugangsdaten anzeigen
             </summary>
             <ul className="divide-y divide-border border-t border-border">
               {ACCOUNTS.map((a) => (
-                <li
-                  key={a.email}
-                  className="grid grid-cols-2 gap-2 px-4 py-2 font-mono text-[11px]"
-                >
+                <li key={a.email} className="grid grid-cols-2 gap-2 px-4 py-2 font-mono text-[11px]">
                   <span className="truncate text-fg">{a.email}</span>
                   <span className="truncate text-muted-fg">
-                    {DEMO_PASSWORDS[a.email] ?? "—"}{" "}
-                    <span className="ml-2 text-[10px] uppercase">
-                      {ROLE_LABEL[a.role]}
-                    </span>
+                    {DEMO_PASSWORDS[a.email] ?? "—"}
+                    <span className="ml-2 text-[10px] uppercase">{ROLE_LABEL[a.role]}</span>
                   </span>
                 </li>
               ))}
             </ul>
           </details>
 
-          <p className="mt-8 text-center text-xs text-muted-fg">
+          <p className="mt-6 text-center text-xs text-muted-fg">
             Mit der Anmeldung akzeptierst du unsere{" "}
-            <Link href="/legal/agb" className="underline underline-offset-2 hover:text-fg">
-              AGB
-            </Link>{" "}
-            und{" "}
-            <Link
-              href="/legal/datenschutz"
-              className="underline underline-offset-2 hover:text-fg"
-            >
-              Datenschutzerklärung
-            </Link>
-            .
+            <Link href="/legal/agb" className="text-brand underline-offset-2 hover:underline">AGB</Link>
+            {" "}und{" "}
+            <Link href="/legal/datenschutz" className="text-brand underline-offset-2 hover:underline">Datenschutzerklärung</Link>.
           </p>
         </div>
       </main>
