@@ -59,7 +59,7 @@ export default async function ElternThreadPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 px-5 py-6 min-h-[400px]">
+      <div className="flex flex-col gap-4 px-5 py-6 min-h-100">
         {thread.messages.map((msg) => {
           const isOwn = msg.sender.id === session.userId;
           return (
@@ -74,7 +74,9 @@ export default async function ElternThreadPage({ params }: Props) {
                 <div
                   className={cn(
                     "border border-border px-4 py-3 text-sm leading-relaxed",
-                    isOwn ? "bg-brand text-brand-fg border-brand" : "bg-bg"
+                    isOwn
+                      ? "rounded-2xl rounded-tr-sm bg-brand text-brand-fg border-brand"
+                      : "rounded-2xl rounded-tl-sm bg-bg"
                   )}
                 >
                   {msg.content}
@@ -97,12 +99,12 @@ export default async function ElternThreadPage({ params }: Props) {
             name="content"
             rows={2}
             placeholder="Nachricht schreiben…"
-            className="flex-1 resize-none border border-border bg-surface px-3 py-2 text-sm placeholder:text-muted-fg focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+            className="flex-1 resize-none rounded-xl border border-border bg-surface px-3 py-2 text-sm placeholder:text-muted-fg focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
             required
           />
           <button
             type="submit"
-            className="flex shrink-0 items-center gap-2 bg-brand px-4 py-2.5 text-sm font-semibold text-brand-fg transition-opacity hover:opacity-90"
+            className="flex shrink-0 items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-brand-fg transition-opacity hover:opacity-90"
           >
             <Send className="size-4" />
             Senden

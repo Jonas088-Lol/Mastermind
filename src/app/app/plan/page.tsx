@@ -26,7 +26,7 @@ const DEFAULT_PERIOD_TIMES = [
   "15:00 – 15:45",
 ];
 
-const DAY_LABELS = ["Mo", "Di", "Mi", "Do", "Fr"];
+const DAY_LABELS = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"];
 
 interface PageProps {
   searchParams: Promise<{ week?: string }>;
@@ -170,7 +170,7 @@ export default async function PlanPage({ searchParams }: PageProps) {
                   key={label}
                   className={cn(
                     "border-l border-border px-3 py-3 text-center",
-                    todayDayOfWeek !== null && i + 1 === todayDayOfWeek && "bg-brand/[0.05]"
+                    todayDayOfWeek !== null && i + 1 === todayDayOfWeek && "bg-brand/8"
                   )}
                 >
                   <p className={cn(
@@ -180,6 +180,11 @@ export default async function PlanPage({ searchParams }: PageProps) {
                     {label}
                   </p>
                   <p className="mt-0.5 font-mono text-xs">{weekDates[i]}</p>
+                  {todayDayOfWeek !== null && i + 1 === todayDayOfWeek && (
+                    <span className="mt-1 inline-block rounded-full bg-brand px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
+                      Heute
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -201,7 +206,7 @@ export default async function PlanPage({ searchParams }: PageProps) {
                       key={dayIdx}
                       className={cn(
                         "border-l border-border p-2",
-                        todayDayOfWeek !== null && dayIdx + 1 === todayDayOfWeek && "bg-brand/[0.03]"
+                        todayDayOfWeek !== null && dayIdx + 1 === todayDayOfWeek && "bg-brand/3"
                       )}
                     >
                       {entry && <PeriodCell entry={entry} />}
@@ -228,13 +233,14 @@ export default async function PlanPage({ searchParams }: PageProps) {
                     </div>
                     <span className="font-mono text-xs text-muted-fg">{dayEntries.length} Stunden</span>
                   </CardHeader>
-                  <CardBody className="!px-0 !pb-0">
+                  <CardBody className="px-0! pb-0!">
                     <ol className="divide-y divide-border border-t border-border">
                       {dayEntries.map((e) => (
                         <li key={e.id} className="flex items-center gap-4 px-5 py-3 text-sm">
-                          <span className="w-12 font-mono text-[10px] text-muted-fg">
+                          <span className="w-14 shrink-0 font-mono text-[10px] leading-snug text-muted-fg">
                             {e.period}.<br />
-                            {PERIOD_TIMES[e.period - 1]?.split(" – ")[0]}
+                            {PERIOD_TIMES[e.period - 1]?.split(" – ")[0]}<br />
+                            {PERIOD_TIMES[e.period - 1]?.split(" – ")[1]}
                           </span>
                           <div className="min-w-0 flex-1">
                             <p className="font-semibold">{e.subject.name}</p>
@@ -263,16 +269,16 @@ export default async function PlanPage({ searchParams }: PageProps) {
 function PeriodCell({ entry }: { entry: NonNullable<Awaited<ReturnType<typeof prisma.timetableEntry.findFirst>>> & { subject: { name: string; shortName: string; color: string }; teacher: { name: string } } }) {
   return (
     <div
-      className="relative h-full min-h-[60px] overflow-hidden border border-border p-2"
+      className="relative h-full min-h-15 overflow-hidden rounded-lg border border-border p-2"
       style={{ backgroundColor: entry.subject.color + "15" }}
     >
       <span
-        className="absolute inset-y-0 left-0 w-1"
+        className="absolute inset-y-0 left-0 w-1 rounded-l-lg"
         style={{ backgroundColor: entry.subject.color }}
       />
-      <p className="pl-1.5 text-[11px] font-bold leading-tight">{entry.subject.name}</p>
-      <p className="mt-0.5 truncate pl-1.5 text-[10px] text-muted-fg">{entry.room ?? "—"}</p>
-      <p className="truncate pl-1.5 text-[10px] text-muted-fg">{entry.teacher.name}</p>
+      <p className="pl-2 text-xs font-bold leading-tight">{entry.subject.name}</p>
+      <p className="mt-0.5 truncate pl-2 text-[11px] text-muted-fg">{entry.room ?? "—"}</p>
+      <p className="truncate pl-2 text-[11px] text-muted-fg">{entry.teacher.name}</p>
     </div>
   );
 }
