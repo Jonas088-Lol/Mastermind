@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ServiceWorkerRegister } from "@/components/ServiceWorkerRegister";
 import { AppInit } from "@/components/AppInit";
+import { GateClearer } from "@/components/GateClearer";
 import "./globals.css";
 
 const inter = Inter({
@@ -69,6 +70,7 @@ export default function RootLayout({
         <ThemeProvider>{children}</ThemeProvider>
         <ServiceWorkerRegister />
         <AppInit />
+        <GateClearer />
       </body>
     </html>
   );

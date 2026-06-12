@@ -17,11 +17,11 @@ export async function loginGate(formData: FormData) {
 
   const jar = await cookies();
   jar.set(GATE_COOKIE, gateToken(), {
-    httpOnly: true,
+    httpOnly: false, // JS needs to clear it on beforeunload (reload → gate)
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
-    // Session cookie — expires when browser is closed
+    // Session cookie — also cleared by GateClearer on every page reload
   });
 
   redirect("/");
