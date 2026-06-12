@@ -16,7 +16,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 // ── Write mode ─────────────────────────────────────────────────────
 function WriteMode({ cards, onClose }: { cards: Card[]; onClose: () => void }) {
-  const deck = shuffle(cards);
+  const [deck] = useState(() => shuffle(cards));
   const [idx, setIdx] = useState(0);
   const [input, setInput] = useState("");
   const [checked, setChecked] = useState<"correct" | "almost" | "wrong" | null>(null);
