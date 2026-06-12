@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lock } from "lucide-react";
+import { Lock, Wrench } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { loginGate } from "./actions";
 
@@ -18,16 +18,29 @@ export default async function GatePage({
         {/* Logo */}
         <div className="flex flex-col items-center gap-3">
           <BrandLogo className="h-12 w-auto" />
-          <p className="text-sm text-muted-foreground text-center">
-            Bitte melde dich an, um fortzufahren.
-          </p>
+        </div>
+
+        {/* Maintenance notice */}
+        <div className="rounded-xl border border-amber-200 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/40 px-5 py-4 flex gap-3 items-start">
+          <Wrench className="h-5 w-5 text-amber-600 dark:text-amber-400 mt-0.5 shrink-0" />
+          <div className="space-y-1">
+            <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">
+              Wartungsarbeiten
+            </p>
+            <p className="text-sm text-amber-700 dark:text-amber-400">
+              Die Plattform befindet sich derzeit in der Entwicklung und ist nur
+              für autorisierte Tester zugänglich. Wir arbeiten mit Hochdruck
+              daran, MasterMind so schnell wie möglich für alle verfügbar zu
+              machen.
+            </p>
+          </div>
         </div>
 
         {/* Card */}
         <div className="rounded-2xl border bg-card p-8 shadow-lg space-y-6">
           <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
             <Lock className="h-4 w-4" />
-            <span>Zugangsbereich</span>
+            <span>Autorisierter Zugang</span>
           </div>
 
           {error && (
