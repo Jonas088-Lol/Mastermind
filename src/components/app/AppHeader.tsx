@@ -25,7 +25,7 @@ export function AppHeader({
   appName,
 }: AppHeaderProps) {
   return (
-    <header className="safe-top flex h-16 items-center gap-4 border-b border-border bg-bg/85 px-6 backdrop-blur supports-[backdrop-filter]:bg-bg/70">
+    <header className="safe-top flex h-14 items-center gap-2 border-b border-border bg-bg/85 px-4 backdrop-blur supports-backdrop-filter:bg-bg/70 sm:h-16 sm:gap-4 sm:px-6">
       <Link
         href="/search"
         className="group flex flex-1 max-w-md items-center gap-2 border border-border bg-surface px-3 py-1.5 text-left text-sm text-muted-fg transition-colors hover:border-border-strong hover:text-fg"
@@ -49,7 +49,7 @@ export function AppHeader({
         {coinBalance !== undefined && (
           <Link
             href="/app/coins"
-            className="flex items-center gap-1 rounded px-2 py-1 text-sm font-semibold text-amber-600 hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-amber-900/20 transition-colors"
+            className="hidden items-center gap-1 rounded px-2 py-1 text-sm font-semibold text-amber-600 hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-amber-900/20 transition-colors sm:flex"
             title="Münzen"
           >
             <span>🪙</span>
@@ -64,7 +64,7 @@ export function AppHeader({
             <p className="font-semibold">{user.name}</p>
             <p className="text-muted-fg">{user.subtitle}</p>
           </div>
-          <form action={logout}>
+          <form action={logout} className="hidden sm:block">
             <button
               type="submit"
               aria-label="Abmelden"

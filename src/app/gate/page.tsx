@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Lock, Wrench } from "lucide-react";
+import { Lock, Wrench, ArrowRight } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 import { loginGate } from "./actions";
 
 export const metadata: Metadata = { title: "Zugang · MasterMind" };
@@ -13,86 +16,85 @@ export default async function GatePage({
   const { error } = await searchParams;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted px-4">
-      <div className="w-full max-w-sm space-y-8">
+    <div className="flex min-h-dvh flex-col items-center justify-center bg-bg px-5 py-12 sm:px-6">
+      <div className="w-full max-w-90 space-y-8">
+
         {/* Logo */}
-        <div className="flex flex-col items-center gap-3">
-          <BrandLogo className="h-12 w-auto" />
+        <div className="flex justify-center">
+          <BrandLogo height="h-9" showName />
         </div>
 
         {/* Maintenance notice */}
-        <div className="rounded-xl border border-amber-200 bg-amber-50 dark:border-amber-800 dark:bg-amber-950/40 px-5 py-4 flex gap-3 items-start">
-          <Wrench className="h-5 w-5 text-amber-600 dark:text-amber-400 mt-0.5 shrink-0" />
-          <div className="space-y-1">
-            <p className="text-sm font-semibold text-amber-800 dark:text-amber-300">
+        <div className="flex items-start gap-3 border border-warning/30 bg-warning/6 px-4 py-3">
+          <Wrench className="mt-0.5 size-4 shrink-0 text-warning" />
+          <div className="space-y-0.5">
+            <p className="text-xs font-semibold uppercase tracking-wider text-warning">
               Wartungsarbeiten
             </p>
-            <p className="text-sm text-amber-700 dark:text-amber-400">
-              Die Plattform befindet sich derzeit in der Entwicklung und ist nur
-              für autorisierte Tester zugänglich. Wir arbeiten mit Hochdruck
-              daran, MasterMind so schnell wie möglich für alle verfügbar zu
-              machen.
+            <p className="text-xs leading-relaxed text-muted-fg">
+              Die Plattform befindet sich in der Entwicklung und ist nur für
+              autorisierte Tester zugänglich.
             </p>
           </div>
         </div>
 
-        {/* Card */}
-        <div className="rounded-2xl border bg-card p-8 shadow-lg space-y-6">
-          <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-            <Lock className="h-4 w-4" />
-            <span>Autorisierter Zugang</span>
+        {/* Login card */}
+        <div className="border border-border bg-surface px-6 py-7">
+          <div className="mb-6 flex items-center gap-2">
+            <Lock className="size-4 text-muted-fg" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-muted-fg">
+              Autorisierter Zugang
+            </span>
           </div>
 
           {error && (
-            <p className="text-sm text-destructive bg-destructive/10 rounded-lg px-3 py-2">
+            <div
+              role="alert"
+              className="mb-5 flex items-start gap-2.5 border border-danger/40 bg-danger/6 px-3 py-2.5 text-xs text-danger"
+            >
+              <Lock className="mt-0.5 size-3.5 shrink-0" />
               Benutzername oder Passwort falsch.
-            </p>
+            </div>
           )}
 
-          <form action={loginGate} className="space-y-4">
+          <form action={loginGate} className="space-y-5">
             <div className="space-y-1.5">
-              <label
-                htmlFor="username"
-                className="text-sm font-medium leading-none"
-              >
-                Benutzername
-              </label>
-              <input
+              <Label htmlFor="username">Benutzername</Label>
+              <Input
                 id="username"
                 name="username"
                 type="text"
                 autoComplete="username"
                 autoFocus
                 required
-                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                placeholder="Admin"
+                className="h-12 text-base"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label
-                htmlFor="password"
-                className="text-sm font-medium leading-none"
-              >
-                Passwort
-              </label>
-              <input
+              <Label htmlFor="password">Passwort</Label>
+              <Input
                 id="password"
                 name="password"
                 type="password"
                 autoComplete="current-password"
                 required
-                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                placeholder="••••••••"
+                className="h-12 text-base"
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full h-10 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
-            >
+            <Button type="submit" size="lg" className="w-full">
               Anmelden
-            </button>
+              <ArrowRight className="size-4" />
+            </Button>
           </form>
         </div>
+
+        <p className="text-center text-[11px] text-muted-fg">
+          MasterMind · Nur für interne Tests
+        </p>
       </div>
     </div>
   );

@@ -58,10 +58,10 @@ export default async function PlattformLayout({
             unreadCount={3}
           />
         </div>
-        <main className="flex-1 px-6 py-8 pb-24 lg:px-10 lg:py-10 lg:pb-10">
+        <main className="flex-1 px-4 py-6 pb-24 lg:px-10 lg:py-10 lg:pb-10">
           {children}
         </main>
-        <BottomNav items={plattformBottomItems} />
+        <BottomNav items={plattformBottomItems} moreItems={plattformNavItems} />
       </div>
     </div>
   );

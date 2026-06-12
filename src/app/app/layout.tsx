@@ -151,10 +151,10 @@ export default async function AppLayout({
           )}
           <AppHeader user={displayUser(session)} unreadCount={unreadCount} notifications={notifications} coinBalance={userData?.coins ?? 0} appName={appName} />
         </div>
-        <main className="flex-1 px-6 py-8 pb-24 lg:px-10 lg:py-10 lg:pb-10">
+        <main className="flex-1 px-4 py-6 pb-24 lg:px-10 lg:py-10 lg:pb-10">
           {children}
         </main>
-        <BottomNav items={mobileNavItems} />
+        <BottomNav items={mobileNavItems} moreItems={[...navItems, ...bottomItems]} />
         <InstallPrompt />
         <AppShell />
       </div>
