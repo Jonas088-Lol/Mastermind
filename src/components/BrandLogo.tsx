@@ -55,13 +55,26 @@ export function BrandLogo({
   }
 
   if (!failed) {
+    if (!showName) {
+      return (
+        <img
+          src={imgSrc}
+          alt={alt}
+          className={`${height} w-auto max-w-45 object-contain object-left ${className ?? ""}`}
+          onError={handleError}
+        />
+      );
+    }
     return (
-      <img
-        src={imgSrc}
-        alt={alt}
-        className={`${height} w-auto max-w-45 object-contain object-left ${className ?? ""}`}
-        onError={handleError}
-      />
+      <span className={`flex items-center gap-2.5 ${className ?? ""}`}>
+        <img
+          src={imgSrc}
+          alt={alt}
+          className={`${height} w-auto max-w-10 object-contain object-left shrink-0`}
+          onError={handleError}
+        />
+        <span className="text-base font-bold tracking-tight">MasterMind</span>
+      </span>
     );
   }
 
