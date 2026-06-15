@@ -35,7 +35,9 @@ export function middleware(req: NextRequest) {
   if (!GATE_SKIP.some((p) => pathname.startsWith(p))) {
     const gateToken = req.cookies.get(GATE_COOKIE)?.value;
     if (!isGateValid(gateToken)) {
-      return NextResponse.redirect(new URL("/gate", req.url));
+      const gateUrl = new URL("/gate", req.url);
+      if (pathname !== "/") gateUrl.searchParams.set("redirect", pathname);
+      return NextResponse.redirect(gateUrl);
     }
   }
 

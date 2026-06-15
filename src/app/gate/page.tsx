@@ -11,9 +11,9 @@ export const metadata: Metadata = { title: "Zugang · MasterMind" };
 export default async function GatePage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string }>;
+  searchParams: Promise<{ error?: string; redirect?: string }>;
 }) {
-  const { error } = await searchParams;
+  const { error, redirect } = await searchParams;
 
   return (
     <div className="flex min-h-dvh flex-col items-center justify-center bg-bg px-5 py-12 sm:px-6">
@@ -58,6 +58,7 @@ export default async function GatePage({
           )}
 
           <form action={loginGate} className="space-y-5">
+            {redirect && <input type="hidden" name="redirect" value={redirect} />}
             <div className="space-y-1.5">
               <Label htmlFor="username">Benutzername</Label>
               <Input
