@@ -17,6 +17,7 @@ import { fetchNotifications } from "@/lib/notifications";
 import { prisma } from "@/lib/db/client";
 import { InstallPrompt } from "@/components/app/InstallPrompt";
 import { AppShell } from "@/components/app/AppShell";
+import { MasterSpaceModal } from "@/components/masterspace/MasterSpaceModal";
 
 const bottomItems: NavItem[] = [
   { href: "/app/profil", label: "Profil", icon: "userCircle" },
@@ -104,7 +105,7 @@ export default async function AppLayout({
     { href: "/app/plan",           label: "Stundenplan",   icon: "calendar"      },
     { href: "/app/fehlzeiten",     label: "Fehlzeiten",    icon: "calendarX"     },
     { href: "/app/nachrichten",    label: "Nachrichten",   icon: "messageSquare", badge: unreadThreads > 0 ? String(unreadThreads) : undefined },
-    { href: "/app/masterspace",    label: "MasterSpace",   icon: "compass" },
+    { href: "/app/masterspace",    label: "MasterSpace",   icon: "compass",  modal: "masterspace" },
     // ── Gamification ─────────────────────────────────
     { href: "/app/ranking",        label: "Ranking",       icon: "trophy"        },
     { href: "/app/quests",         label: "Quests",        icon: "zap"           },
@@ -130,7 +131,7 @@ export default async function AppLayout({
   const mobileNavItems: BottomNavItem[] = [
     { href: "/app", label: "Start", icon: "home", exact: true },
     { href: "/app/uebungen", label: "Übungen", icon: "brain" },
-    { href: "/app/masterspace", label: "Space", icon: "compass" },
+    { href: "/app/masterspace", label: "Space", icon: "compass", modal: "masterspace" },
     { href: "/app/aufgaben", label: "Aufgaben", icon: "checkSquare", badge: pendingAssignments > 0 ? String(pendingAssignments) : undefined },
     { href: "/app/tutor", label: "Tutor", icon: "sparkles" },
   ];
@@ -158,6 +159,7 @@ export default async function AppLayout({
         <BottomNav items={mobileNavItems} moreItems={[...navItems, ...bottomItems]} />
         <InstallPrompt />
         <AppShell />
+        <MasterSpaceModal />
       </div>
     </div>
   );

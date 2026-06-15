@@ -111,6 +111,7 @@ export type BottomNavItem = {
   icon: BottomNavIcon;
   badge?: string;
   exact?: boolean;
+  modal?: string;
 };
 
 export type MoreNavItem = {
@@ -119,6 +120,7 @@ export type MoreNavItem = {
   icon: string;
   badge?: string;
   exact?: boolean;
+  modal?: string;
 };
 
 export interface BottomNavProps {
@@ -168,33 +170,48 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
           {displayItems.map((item) => {
             const Icon = ICONS[item.icon];
             const active = isActive(pathname, item);
+            const inner = (
+              <>
+                <span
+                  className={cn(
+                    "relative grid size-10 place-items-center rounded-2xl transition-all duration-200",
+                    active ? "bg-brand/12 text-brand" : "text-muted-fg"
+                  )}
+                >
+                  <Icon className="size-5" strokeWidth={1.75} />
+                  {item.badge && (
+                    <span
+                      className="absolute -right-1 -top-1 grid min-w-3.5 place-items-center rounded-full bg-brand px-1 font-mono text-[8px] font-bold leading-tight text-white"
+                      aria-label={`${item.badge} ungelesen`}
+                    >
+                      {item.badge}
+                    </span>
+                  )}
+                </span>
+                <span className={cn("truncate text-[10px] font-semibold", active ? "text-brand" : "text-muted-fg")}>
+                  {item.label}
+                </span>
+              </>
+            );
             return (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className="relative flex flex-col items-center gap-0.5 px-1 py-3 transition-colors"
-                >
-                  <span
-                    className={cn(
-                      "relative grid size-10 place-items-center rounded-2xl transition-all duration-200",
-                      active ? "bg-brand/12 text-brand" : "text-muted-fg"
-                    )}
+                {item.modal ? (
+                  <button
+                    type="button"
+                    onClick={() => window.dispatchEvent(new CustomEvent("ms:open"))}
+                    className="relative flex w-full flex-col items-center gap-0.5 px-1 py-3 transition-colors"
                   >
-                    <Icon className="size-5" strokeWidth={1.75} />
-                    {item.badge && (
-                      <span
-                        className="absolute -right-1 -top-1 grid min-w-3.5 place-items-center rounded-full bg-brand px-1 font-mono text-[8px] font-bold leading-tight text-white"
-                        aria-label={`${item.badge} ungelesen`}
-                      >
-                        {item.badge}
-                      </span>
-                    )}
-                  </span>
-                  <span className={cn("truncate text-[10px] font-semibold", active ? "text-brand" : "text-muted-fg")}>
-                    {item.label}
-                  </span>
-                </Link>
+                    {inner}
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className="relative flex flex-col items-center gap-0.5 px-1 py-3 transition-colors"
+                  >
+                    {inner}
+                  </Link>
+                )}
               </li>
             );
           })}
@@ -251,34 +268,51 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
               {moreItems.map((item) => {
                 const Icon = getIcon(item.icon);
                 const active = isActive(pathname, item);
+                const itemCls = cn(
+                  "flex items-center gap-3.5 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-150",
+                  active ? "bg-brand/10 text-brand" : "text-fg hover:bg-surface"
+                );
+                const itemInner = (
+                  <>
+                    <Icon
+                      className={cn("size-4 shrink-0", active ? "text-brand" : "text-muted-fg")}
+                      strokeWidth={1.75}
+                    />
+                    <span className="flex-1">{item.label}</span>
+                    {item.badge && (
+                      <span
+                        className={cn(
+                          "rounded-full px-1.5 py-0.5 font-mono text-[10px] font-bold",
+                          active ? "bg-brand/15 text-brand" : "bg-brand text-white"
+                        )}
+                      >
+                        {item.badge}
+                      </span>
+                    )}
+                  </>
+                );
                 return (
                   <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      aria-current={active ? "page" : undefined}
-                      className={cn(
-                        "flex items-center gap-3.5 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-150",
-                        active
-                          ? "bg-brand/10 text-brand"
-                          : "text-fg hover:bg-surface"
-                      )}
-                    >
-                      <Icon
-                        className={cn("size-4 shrink-0", active ? "text-brand" : "text-muted-fg")}
-                        strokeWidth={1.75}
-                      />
-                      <span className="flex-1">{item.label}</span>
-                      {item.badge && (
-                        <span
-                          className={cn(
-                            "rounded-full px-1.5 py-0.5 font-mono text-[10px] font-bold",
-                            active ? "bg-brand/15 text-brand" : "bg-brand text-white"
-                          )}
-                        >
-                          {item.badge}
-                        </span>
-                      )}
-                    </Link>
+                    {item.modal ? (
+                      <button
+                        type="button"
+                        className={cn(itemCls, "w-full text-left")}
+                        onClick={() => {
+                          setMoreOpen(false);
+                          window.dispatchEvent(new CustomEvent("ms:open"));
+                        }}
+                      >
+                        {itemInner}
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        aria-current={active ? "page" : undefined}
+                        className={itemCls}
+                      >
+                        {itemInner}
+                      </Link>
+                    )}
                   </li>
                 );
               })}

@@ -107,6 +107,7 @@ export type NavItem = {
   icon: IconKey;
   badge?: string;
   exact?: boolean;
+  modal?: string;
 };
 
 export interface SidebarProps {
@@ -160,37 +161,51 @@ function isActive(pathname: string, item: NavItem) {
 
 function NavLink({ item, active }: { item: NavItem; active: boolean }) {
   const Icon = ICONS[item.icon];
+  const cls = cn(
+    "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150",
+    active ? "bg-brand/10 text-brand" : "text-muted-fg hover:bg-surface-2 hover:text-fg"
+  );
+  const inner = (
+    <>
+      <Icon
+        className={cn(
+          "size-4 shrink-0 transition-colors",
+          active ? "text-brand" : "text-muted-fg group-hover:text-fg"
+        )}
+        strokeWidth={1.75}
+      />
+      <span className="flex-1 truncate">{item.label}</span>
+      {item.badge && (
+        <span
+          className={cn(
+            "rounded-full px-1.5 py-0.5 font-mono text-[10px] font-bold",
+            active ? "bg-brand/15 text-brand" : "bg-brand text-white"
+          )}
+        >
+          {item.badge}
+        </span>
+      )}
+    </>
+  );
+
+  if (item.modal) {
+    return (
+      <li>
+        <button
+          type="button"
+          className={cn(cls, "w-full text-left")}
+          onClick={() => window.dispatchEvent(new CustomEvent("ms:open"))}
+        >
+          {inner}
+        </button>
+      </li>
+    );
+  }
+
   return (
     <li>
-      <Link
-        href={item.href}
-        className={cn(
-          "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150",
-          active
-            ? "bg-brand/10 text-brand"
-            : "text-muted-fg hover:bg-surface-2 hover:text-fg"
-        )}
-      >
-        <Icon
-          className={cn(
-            "size-4 shrink-0 transition-colors",
-            active ? "text-brand" : "text-muted-fg group-hover:text-fg"
-          )}
-          strokeWidth={1.75}
-        />
-        <span className="flex-1 truncate">{item.label}</span>
-        {item.badge && (
-          <span
-            className={cn(
-              "rounded-full px-1.5 py-0.5 font-mono text-[10px] font-bold",
-              active
-                ? "bg-brand/15 text-brand"
-                : "bg-brand text-white"
-            )}
-          >
-            {item.badge}
-          </span>
-        )}
+      <Link href={item.href} className={cls}>
+        {inner}
       </Link>
     </li>
   );
