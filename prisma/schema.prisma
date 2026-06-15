@@ -25,6 +25,8 @@ model School {
   accentColor      String?
   brandName        String?  // Anzeigename (falls abweichend vom Schulnamen)
   featureSettings  String   @default("{}")  // JSON: { disabled: string[], windows: Record<string, {from: string, to: string}> }
+  mailboxAddress   String?  // Schul-E-Mail-Adresse für das Postfach (z.B. info@schule.de)
+  mailboxName      String?  // Anzeigename für ausgehende Mails
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
@@ -45,6 +47,7 @@ model School {
   schoolEvents     SchoolEvent[]
   substitutions    SubstitutionEntry[]
   consentForms     ConsentForm[]
+  mailboxEmails    MailboxEmail[]
 }
 
 model SsoConfig {
@@ -177,6 +180,7 @@ model User {
   parentBookings       ParentTeacherBooking[] @relation("ParentBookings")
   substitutionsAbsent  SubstitutionEntry[]  @relation("AbsentTeacher")
   substitutionsCovering SubstitutionEntry[] @relation("SubstituteTeacher")
+  mailboxEmails         MailboxEmail[]
 
   @@index([role])
   @@index([schoolId])
@@ -1467,4 +1471,38 @@ model AuditLog {
   @@index([schoolId, createdAt])
   @@index([actorId, createdAt])
   @@index([action, createdAt])
+}
+
+// ── Postfach ───────────────────────────────────────────────
+
+model MailboxEmail {
+  id          String   @id @default(cuid())
+  schoolId    String
+  school      School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+
+  direction   String   // "inbound" | "outbound"
+
+  fromAddress String
+  fromName    String?
+  toAddress   String
+  toName      String?
+  subject     String
+  bodyText    String
+  bodyHtml    String?
+
+  // E-Mail-Threading via RFC 5322 Header
+  messageId   String?
+  inReplyTo   String?
+  threadKey   String?  // erster messageId im Thread — gruppiert Antworten
+
+  readAt      DateTime?
+  sentAt      DateTime @default(now())
+
+  // Welcher Admin hat die Mail gesendet/empfangen
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([schoolId, direction, sentAt])
+  @@index([threadKey])
+  @@index([userId])
 }

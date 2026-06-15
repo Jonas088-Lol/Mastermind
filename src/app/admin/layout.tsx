@@ -25,6 +25,7 @@ const adminNavItems: NavItem[] = [
   { href: "/admin/notenspiegel",  label: "Noten",        icon: "barChart3" },
   { href: "/admin/abgaben",       label: "Abgaben",      icon: "clipboardEdit" },
   { href: "/admin/nachrichten",   label: "Nachrichten",  icon: "messageSquare" },
+  { href: "/admin/postfach",      label: "Postfach",     icon: "mail" },
   { href: "/admin/fehlzeiten",    label: "Fehlzeiten",   icon: "calendarX" },
   { href: "/admin/elternverwaltung", label: "Elternverwaltung", icon: "users" },
   { href: "/admin/gamification",  label: "Gamification", icon: "zap" },

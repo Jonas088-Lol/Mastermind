@@ -16,6 +16,7 @@ export interface EmailMessage {
   subject: string;
   text: string;
   html?: string;
+  from?: string;  // überschreibt EMAIL_FROM (z.B. für Postfach-Mails)
 }
 
 export interface SendResult {
@@ -44,7 +45,7 @@ async function sendEmailOnce(msg: EmailMessage): Promise<SendResult> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: fromAddress(),
+      from: msg.from ?? fromAddress(),
       to: [msg.to],
       subject: msg.subject,
       text: msg.text,
