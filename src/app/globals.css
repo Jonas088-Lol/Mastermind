@@ -7,51 +7,51 @@
 
 @layer base {
   :root {
-    /* Brand */
-    --brand: 235 85% 60%;
+    /* Brand — teal-green matching logo gradient midpoint */
+    --brand: 172 72% 40%;
     --brand-fg: 0 0% 100%;
-    --brand-glow: 235 90% 68%;
-    --brand-dark: 235 85% 50%;
+    --brand-glow: 172 78% 52%;
+    --brand-dark: 172 72% 32%;
 
-    /* Accent */
-    --accent: 162 84% 44%;
+    /* Accent — lime-green from logo top */
+    --accent: 142 65% 45%;
     --accent-fg: 0 0% 100%;
 
-    /* Surface — Light */
+    /* Surface — Light (bg = white, same as logo.png background) */
     --bg: 0 0% 100%;
-    --fg: 224 20% 12%;
-    --surface: 220 20% 98%;
-    --surface-2: 220 18% 95%;
-    --border: 220 16% 90%;
-    --border-strong: 220 14% 78%;
-    --muted-fg: 220 10% 50%;
+    --fg: 172 14% 12%;
+    --surface: 168 30% 97%;
+    --surface-2: 168 22% 94%;
+    --border: 168 20% 88%;
+    --border-strong: 168 16% 74%;
+    --muted-fg: 168 8% 48%;
 
     /* Status */
-    --success: 152 72% 38%;
+    --success: 142 65% 36%;
     --warning: 38 92% 48%;
     --danger: 0 80% 58%;
-    --info: 212 88% 54%;
+    --info: 199 90% 48%;
 
     /* Shadows */
-    --shadow-sm: 0 1px 3px hsl(224 20% 12% / 0.06), 0 1px 2px hsl(224 20% 12% / 0.04);
-    --shadow: 0 4px 12px hsl(224 20% 12% / 0.08), 0 2px 4px hsl(224 20% 12% / 0.04);
-    --shadow-lg: 0 12px 32px hsl(224 20% 12% / 0.10), 0 4px 8px hsl(224 20% 12% / 0.06);
-    --shadow-brand: 0 8px 32px hsl(235 85% 60% / 0.30);
+    --shadow-sm: 0 1px 3px hsl(172 14% 12% / 0.06), 0 1px 2px hsl(172 14% 12% / 0.04);
+    --shadow: 0 4px 12px hsl(172 14% 12% / 0.08), 0 2px 4px hsl(172 14% 12% / 0.04);
+    --shadow-lg: 0 12px 32px hsl(172 14% 12% / 0.10), 0 4px 8px hsl(172 14% 12% / 0.06);
+    --shadow-brand: 0 8px 32px hsl(172 72% 40% / 0.28);
   }
 
   [data-theme="dark"] {
-    --bg: 224 22% 8%;
-    --fg: 214 18% 94%;
-    --surface: 224 20% 12%;
-    --surface-2: 224 18% 16%;
-    --border: 224 16% 20%;
-    --border-strong: 224 14% 30%;
-    --muted-fg: 220 10% 56%;
+    --bg: 172 20% 7%;
+    --fg: 168 15% 94%;
+    --surface: 172 18% 11%;
+    --surface-2: 172 16% 15%;
+    --border: 172 14% 20%;
+    --border-strong: 172 12% 28%;
+    --muted-fg: 168 8% 54%;
 
-    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.20), 0 1px 2px hsl(0 0% 0% / 0.12);
-    --shadow: 0 4px 12px hsl(0 0% 0% / 0.25), 0 2px 4px hsl(0 0% 0% / 0.12);
-    --shadow-lg: 0 12px 32px hsl(0 0% 0% / 0.30), 0 4px 8px hsl(0 0% 0% / 0.16);
-    --shadow-brand: 0 8px 32px hsl(235 85% 60% / 0.25);
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.22), 0 1px 2px hsl(0 0% 0% / 0.14);
+    --shadow: 0 4px 12px hsl(0 0% 0% / 0.28), 0 2px 4px hsl(0 0% 0% / 0.14);
+    --shadow-lg: 0 12px 32px hsl(0 0% 0% / 0.32), 0 4px 8px hsl(0 0% 0% / 0.18);
+    --shadow-brand: 0 8px 32px hsl(172 72% 40% / 0.28);
   }
 }
 
@@ -209,8 +209,9 @@
   /* Gradient mesh backgrounds */
   .mesh-bg {
     background:
-      radial-gradient(ellipse 80% 60% at 20% 10%, hsl(var(--brand) / 0.07) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(var(--accent) / 0.05) 0%, transparent 60%);
+      radial-gradient(ellipse 80% 60% at 20% 10%, hsl(var(--brand) / 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(var(--accent) / 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 60% 20%, hsl(199 90% 48% / 0.04) 0%, transparent 55%);
   }
 }
 
