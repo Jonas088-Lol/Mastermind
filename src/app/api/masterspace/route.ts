@@ -44,7 +44,6 @@ export async function GET() {
       include: {
         channels: {
           orderBy: { position: "asc" },
-          include: { _count: { select: { voiceParticipants: true } } },
         },
         _count: { select: { members: true } },
       },

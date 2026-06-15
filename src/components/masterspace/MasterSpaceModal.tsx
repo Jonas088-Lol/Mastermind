@@ -67,7 +67,7 @@ type SpaceChannel = {
   name: string;
   type: string;
   position: number;
-  _count?: { voiceParticipants: number };
+  voiceCount?: number;
 };
 
 type SpaceSummary = {
@@ -1542,7 +1542,7 @@ export function MasterSpaceModal() {
                             {/* Voice channels */}
                             {channels.filter((c) => c.type === "voice").map((ch) => {
                               const inThisVoice = voiceChannelId === ch.id;
-                              const count = ch._count?.voiceParticipants ?? 0;
+                              const count = ch.voiceCount ?? 0;
                               return (
                                 <button
                                   key={ch.id}
