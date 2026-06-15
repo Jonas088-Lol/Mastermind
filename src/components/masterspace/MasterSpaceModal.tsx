@@ -37,6 +37,7 @@ import {
   UserCheck,
   UserX,
   Circle,
+  TabletSmartphone,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -90,10 +91,18 @@ type OverviewData = {
   myId: string;
 };
 
+type MemberActivity = {
+  currentActivity: string;
+  isActive: boolean;
+  tabFocused: boolean;
+  tabSwitches: number;
+  lastHeartbeat: string;
+} | null;
+
 type SpaceMember = {
   userId: string;
   role: string;
-  user: { id: string; name: string; lastSeenAt?: string | null };
+  user: { id: string; name: string; lastSeenAt?: string | null; activity?: MemberActivity };
 };
 
 type SpaceDetail = {
@@ -1832,7 +1841,7 @@ export function MasterSpaceModal() {
 
           {/* Right members panel (xl+) */}
           {view === "channel" && space && (
-            <div className="hidden w-44 shrink-0 flex-col border-l border-border bg-surface xl:flex">
+            <div className="hidden w-52 shrink-0 flex-col border-l border-border bg-surface xl:flex">
               <div className="flex h-12 items-center gap-2 border-b border-border px-3">
                 <Users className="size-4 text-muted-fg" />
                 <p className="text-sm font-semibold">Mitglieder</p>
@@ -1841,6 +1850,21 @@ export function MasterSpaceModal() {
               <div className="flex-1 overflow-y-auto py-2">
                 {space.members.map((m) => {
                   const online = isOnline(m.user.lastSeenAt);
+                  const act = m.user.activity;
+                  // Determine status label
+                  let statusDot = "bg-muted-fg/30";
+                  let statusText = "";
+                  if (act) {
+                    if (act.isActive && act.tabFocused) { statusDot = "bg-green-500"; statusText = act.currentActivity; }
+                    else if (online) { statusDot = "bg-yellow-400"; statusText = "Inaktiv"; }
+                    else { statusDot = "bg-muted-fg/30"; statusText = "Offline"; }
+                  } else if (online) {
+                    statusDot = "bg-green-500";
+                  }
+
+                  // Tab-switch indicator: >5 switches = caution, >15 = warning
+                  const tabWarn = act && act.tabSwitches > 15 ? "text-danger" : act && act.tabSwitches > 5 ? "text-warning" : "text-muted-fg";
+
                   return (
                     <button
                       key={m.userId}
@@ -1848,13 +1872,29 @@ export function MasterSpaceModal() {
                       disabled={m.userId === myId}
                       title={m.userId !== myId ? `DM an ${m.user.name}` : undefined}
                       className={cn(
-                        "mx-2 flex w-[calc(100%-16px)] items-center gap-2 rounded-xl px-2 py-1.5 text-left transition-colors",
+                        "mx-2 mb-0.5 flex w-[calc(100%-16px)] flex-col rounded-xl px-2 py-2 text-left transition-colors",
                         m.userId !== myId && "hover:bg-muted"
                       )}
                     >
-                      <Avatar name={m.user.name} isMe={m.userId === myId} online={online} size="sm" />
-                      <span className="truncate text-xs font-medium">{m.userId === myId ? "Du" : m.user.name}</span>
-                      {m.role === "owner" && <Crown className="ml-auto size-3 shrink-0 text-warning" />}
+                      <div className="flex items-center gap-2">
+                        <Avatar name={m.user.name} isMe={m.userId === myId} online={online} size="sm" />
+                        <span className="flex-1 truncate text-xs font-medium">{m.userId === myId ? "Du" : m.user.name}</span>
+                        {m.role === "owner" && <Crown className="size-3 shrink-0 text-warning" />}
+                      </div>
+                      {/* Activity row */}
+                      {act && (
+                        <div className="mt-1 ml-7 flex items-center gap-1.5">
+                          <span className={cn("size-1.5 shrink-0 rounded-full", statusDot)} />
+                          <span className="flex-1 truncate text-[10px] text-muted-fg">{statusText}</span>
+                        </div>
+                      )}
+                      {/* Tab switch count (only show if >0 and has consent) */}
+                      {act && act.tabSwitches > 0 && (
+                        <div className="mt-0.5 ml-7 flex items-center gap-1">
+                          <TabletSmartphone className={cn("size-2.5 shrink-0", tabWarn)} />
+                          <span className={cn("text-[10px]", tabWarn)}>{act.tabSwitches}× Tab-Wechsel</span>
+                        </div>
+                      )}
                     </button>
                   );
                 })}

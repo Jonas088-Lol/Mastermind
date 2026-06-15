@@ -27,12 +27,14 @@ import { DeviceLogoutButton } from "./DeviceLogout";
 import { logoutAllDevices, changePassword, deleteOwnAccount } from "./actions";
 import { LangSelector } from "./LangSelector";
 import { PushSubscribeToggle } from "@/components/app/PushSubscribeToggle";
+import { PrivacySettings } from "@/components/app/PrivacySettings";
 
 export const metadata: Metadata = { title: "Einstellungen" };
 
 const SECTIONS = [
   { id: "account", label: "Account", icon: Key },
   { id: "benachrichtigungen", label: "Benachrichtigungen", icon: Bell },
+  { id: "datenschutz", label: "Datenschutz", icon: Shield },
   { id: "privatsphaere", label: "Privatsphäre", icon: Eye },
   { id: "darstellung", label: "Darstellung", icon: Palette },
   { id: "sprache", label: "Sprache", icon: Globe },
@@ -272,6 +274,18 @@ export default async function EinstellungenPage() {
                     storageKey="mm_notification_prefs"
                   />
                 </div>
+              </CardBody>
+            </Card>
+          </section>
+
+          {/* ── Datenschutz & Einwilligung ──────────────── */}
+          <section id="datenschutz">
+            <Card>
+              <CardHeader>
+                <CardTitle>Datenschutz & Aktivitätsverfolgung</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <PrivacySettings />
               </CardBody>
             </Card>
           </section>

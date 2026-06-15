@@ -185,6 +185,9 @@ model User {
 
   lastSeenAt       DateTime?
 
+  userConsent      UserConsent?
+  activitySessions ActivitySession[]
+
   ownedSpaces      Space[]              @relation("OwnedSpaces")
   spaceMemberships SpaceMember[]
   spaceMessages    SpaceMessage[]       @relation("SpaceMessages")
@@ -1614,6 +1617,41 @@ model DirectMessage {
 
   @@index([conversationId, sentAt])
   @@index([authorId])
+}
+
+// ── Aktivitätsverfolgung & Einwilligung ────────────────────────────────────
+
+model UserConsent {
+  id               String    @id @default(cuid())
+  userId           String    @unique
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  activityTracking Boolean   @default(false) // Tab-Wechsel, Aktivzeit, aktuelle Seite
+  version          String    @default("1.0") // Einwilligungsversion
+  consentedAt      DateTime?
+  revokedAt        DateTime?
+  ipAddress        String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model ActivitySession {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sessionDate     String   // YYYY-MM-DD
+  currentPage     String   @default("")
+  currentActivity String   @default("") // lesbare Beschreibung
+  isActive        Boolean  @default(false)
+  tabFocused      Boolean  @default(true)
+  tabSwitches     Int      @default(0)
+  activeSeconds   Int      @default(0)
+  lastHeartbeat   DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([userId, sessionDate])
+  @@index([userId])
+  @@index([sessionDate])
 }
 
 model VoiceParticipant {

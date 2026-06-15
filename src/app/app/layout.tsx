@@ -18,6 +18,8 @@ import { prisma } from "@/lib/db/client";
 import { InstallPrompt } from "@/components/app/InstallPrompt";
 import { AppShell } from "@/components/app/AppShell";
 import { MasterSpaceModal } from "@/components/masterspace/MasterSpaceModal";
+import { ConsentBanner } from "@/components/app/ConsentBanner";
+import { ActivityTracker } from "@/components/app/ActivityTracker";
 
 const bottomItems: NavItem[] = [
   { href: "/app/profil", label: "Profil", icon: "userCircle" },
@@ -37,7 +39,7 @@ export default async function AppLayout({
 
   const isPrivate = !session.schoolId;
 
-  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData, unreadThreads, branding] = await Promise.all([
+  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData, unreadThreads, branding, userConsent] = await Promise.all([
     fetchNotifications(session.userId),
     prisma.flashcard.count({
       where: { deck: { userId: session.userId }, nextReviewAt: { lte: new Date() } },
@@ -68,6 +70,7 @@ export default async function AppLayout({
       },
     }).catch(() => 0),
     getSchoolBranding(session),
+    prisma.userConsent.findUnique({ where: { userId: session.userId }, select: { activityTracking: true } }),
   ]);
 
   const navItems: NavItem[] = isPrivate ? [
@@ -160,6 +163,8 @@ export default async function AppLayout({
         <InstallPrompt />
         <AppShell />
         <MasterSpaceModal />
+        <ConsentBanner />
+        <ActivityTracker hasConsent={userConsent?.activityTracking ?? false} />
       </div>
     </div>
   );
