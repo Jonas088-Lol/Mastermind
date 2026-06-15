@@ -27,7 +27,7 @@ export async function createSubstitution(formData: FormData): Promise<void> {
 
   if (!dateStr || !classId || isNaN(period)) return;
 
-  await prisma.substitutionEntry.create({
+  const entry = await prisma.substitutionEntry.create({
     data: {
       schoolId: session.schoolId ?? "",
       date: new Date(dateStr),
@@ -40,7 +40,45 @@ export async function createSubstitution(formData: FormData): Promise<void> {
       type,
       room: room || undefined,
     },
+    include: { class: { select: { name: true } } },
   });
 
+  // Notify all students of the affected class
+  const dateLabel = new Date(dateStr).toLocaleDateString("de-DE", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  });
+  const typeLabel = type === "cancelled" ? "Ausfall" : "Vertretung";
+  const subjectLabel = subjectName ? ` – ${subjectName}` : "";
+
+  const students = await prisma.user.findMany({
+    where: { classId, role: "student" },
+    select: { id: true },
+  });
+
+  if (students.length > 0) {
+    await prisma.appNotification.createMany({
+      data: students.map((s) => ({
+        userId: s.id,
+        type: "substitution",
+        title: `${typeLabel}${subjectLabel}`,
+        body: `${entry.class.name} · ${period}. Stunde · ${dateLabel}`,
+        linkUrl: "/app/plan",
+      })),
+    });
+  }
+
   revalidatePath("/admin/vertretungsplan");
+  revalidatePath("/app/plan");
+}
+
+export async function deleteSubstitution(id: string): Promise<void> {
+  const session = await requireAdmin();
+  if (!session) return;
+
+  await prisma.substitutionEntry.delete({ where: { id } });
+
+  revalidatePath("/admin/vertretungsplan");
+  revalidatePath("/app/plan");
 }

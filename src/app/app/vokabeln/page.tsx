@@ -85,8 +85,8 @@ export default async function VokabelnPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {/* New list form */}
         <details className="group">
-          <summary className="flex min-h-44 cursor-pointer list-none flex-col items-center justify-center gap-3 border-2 border-dashed border-border transition-all hover:border-brand hover:bg-brand/3">
-            <div className="grid size-12 place-items-center border-2 border-border bg-surface text-muted-fg group-open:border-brand group-open:bg-brand group-open:text-brand-fg">
+          <summary className="flex min-h-44 cursor-pointer list-none flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-border transition-all hover:border-brand hover:bg-brand/3">
+            <div className="grid size-12 place-items-center rounded-xl border-2 border-border bg-surface text-muted-fg group-open:border-brand group-open:bg-brand group-open:text-brand-fg">
               <Plus className="size-5" strokeWidth={1.5} />
             </div>
             <div className="text-center">
@@ -94,7 +94,7 @@ export default async function VokabelnPage() {
               <p className="text-xs text-muted-fg">Beliebige Sprachen & Fächer</p>
             </div>
           </summary>
-          <form action={createVocabList} className="space-y-3 border-2 border-t-0 border-brand/30 bg-bg p-4">
+          <form action={createVocabList} className="space-y-3 rounded-b-2xl border-2 border-t-0 border-brand/30 bg-bg p-4">
             <div className="space-y-1">
               <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">Name *</label>
               <input name="title" required placeholder="z. B. Englisch Unit 4" className="h-9 w-full border border-border bg-surface px-3 text-sm focus:border-brand focus:outline-none" />
@@ -145,7 +145,7 @@ export default async function VokabelnPage() {
             <Link
               key={list.id}
               href={`/app/vokabeln/${list.id}`}
-              className="group flex flex-col gap-0 border border-border bg-bg transition-shadow hover:shadow-md"
+              className="group flex flex-col gap-0 overflow-hidden rounded-2xl border border-border bg-bg transition-shadow hover:shadow-md"
             >
               {/* Header strip */}
               <div className="flex items-center justify-between px-4 py-3" style={{ backgroundColor: list.color + "22", borderBottom: `2px solid ${list.color}40` }}>

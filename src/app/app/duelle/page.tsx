@@ -131,7 +131,7 @@ export default async function DuellePage() {
                 <select
                   name="challengedId"
                   required
-                  className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
+                  className="h-10 rounded-xl border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
                 >
                   <option value="">Mitschüler wählen…</option>
                   {classmates.map((c) => (
@@ -144,7 +144,7 @@ export default async function DuellePage() {
                 <select
                   name="topicId"
                   required
-                  className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
+                  className="h-10 rounded-xl border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
                 >
                   <option value="">Thema wählen…</option>
                   {topics.map((t) => (
@@ -160,7 +160,7 @@ export default async function DuellePage() {
                   name="message"
                   type="text"
                   placeholder="z. B. Mal sehen wer besser ist!"
-                  className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
+                  className="h-10 rounded-xl border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
                 />
               </div>
               <button
@@ -208,7 +208,7 @@ export default async function DuellePage() {
                           </button>
                         </form>
                         <form action={declineDuel.bind(null, d.id)}>
-                          <button type="submit" className="flex items-center gap-1 border border-border px-3 py-1.5 text-xs font-semibold text-muted-fg hover:text-fg">
+                          <button type="submit" className="flex items-center gap-1 rounded-xl border border-border px-3 py-1.5 text-xs font-semibold text-muted-fg hover:text-fg">
                             <XCircle className="size-3" /> Ablehnen
                           </button>
                         </form>

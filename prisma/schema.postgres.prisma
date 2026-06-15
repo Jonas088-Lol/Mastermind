@@ -199,6 +199,7 @@ model User {
   voicePresences   VoiceParticipant[]
   friendsSent      Friendship[]         @relation("FriendsSent")
   friendsReceived  Friendship[]         @relation("FriendsReceived")
+  personalEvents   PersonalEvent[]
 
   @@index([role])
   @@index([schoolId])
@@ -1683,4 +1684,21 @@ model Friendship {
   @@unique([requesterId, addresseeId])
   @@index([requesterId])
   @@index([addresseeId])
+}
+
+model PersonalEvent {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String
+  description String?
+  startAt     DateTime
+  endAt       DateTime?
+  allDay      Boolean   @default(false)
+  color       String    @default("#6366f1")
+  category    String    @default("personal")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([userId, startAt])
 }

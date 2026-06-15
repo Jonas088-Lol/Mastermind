@@ -187,7 +187,7 @@ export default async function CoinsPage() {
         </div>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
           {EARN_WAYS.map(({ icon, label, amount }) => (
-            <div key={label} className="flex items-center gap-3 border border-border bg-bg px-3 py-2.5">
+            <div key={label} className="flex items-center gap-3 rounded-2xl border border-border bg-bg px-3 py-2.5">
               <span className="shrink-0 text-lg leading-none">{icon}</span>
               <div className="min-w-0 flex-1">
                 <p className="truncate text-xs font-medium">{label}</p>

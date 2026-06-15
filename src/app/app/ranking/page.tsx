@@ -149,7 +149,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
             key={tab.key}
             href={tabHref(tab.key)}
             className={cn(
-              "border px-3 py-1.5 text-xs font-semibold transition-colors",
+              "rounded-xl border px-3 py-1.5 text-xs font-semibold transition-colors",
               activeTab === tab.key
                 ? "border-fg bg-fg text-bg"
                 : "border-border text-muted-fg hover:border-fg/30 hover:text-fg",
@@ -192,7 +192,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
               const isMe = u.id === session.userId;
               const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
               return (
-                <li key={u.id} className={cn("flex items-center gap-3 border px-4 py-3", isMe && "border-brand/40 bg-brand/[0.03]")}>
+                <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
                   <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
                   <Avatar name={u.name} size="sm" />
                   <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
@@ -218,7 +218,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
               const isMe = u.id === session.userId;
               const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
               return (
-                <li key={u.id} className={cn("flex items-center gap-3 border px-4 py-3", isMe && "border-brand/40 bg-brand/[0.03]")}>
+                <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
                   <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
                   <Avatar name={u.name} size="sm" />
                   <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
@@ -244,7 +244,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
               const isMe = u.id === session.userId;
               const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
               return (
-                <li key={u.id} className={cn("flex items-center gap-3 border px-4 py-3", isMe && "border-brand/40 bg-brand/[0.03]")}>
+                <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
                   <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
                   <Avatar name={u.name} size="sm" />
                   <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
@@ -280,7 +280,7 @@ function XpLeaderboard({
         const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
 
         return (
-          <li key={u.id} className={cn("border px-4 py-3", isMe && "border-brand/40 bg-brand/[0.03]")}>
+          <li key={u.id} className={cn("rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
             <div className="flex items-center gap-3">
               <span className="w-8 shrink-0 text-center font-mono text-sm font-bold text-muted-fg">
                 {medal ?? `#${i + 1}`}

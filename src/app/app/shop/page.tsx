@@ -121,7 +121,7 @@ export default async function ShopPage({ searchParams }: PageProps) {
 
       {/* Active boosters banner */}
       {activeBoosters.length > 0 && (
-        <div className="border border-warning/40 bg-warning/[0.05] p-4">
+        <div className="rounded-2xl border border-warning/40 bg-warning/5 p-4">
           <div className="mb-2 flex items-center gap-2">
             <Zap className="size-4 text-warning" />
             <span className="text-sm font-semibold text-warning">Aktive Booster</span>
@@ -166,7 +166,7 @@ export default async function ShopPage({ searchParams }: PageProps) {
 
       {/* Items grid */}
       {filteredItems.length === 0 ? (
-        <div className="flex flex-col items-center gap-3 border border-border bg-surface py-16 text-center">
+        <div className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-surface py-16 text-center">
           <ShoppingBag className="size-10 text-muted-fg/40" strokeWidth={1} />
           <p className="text-lg font-bold">Keine Artikel gefunden</p>
           <p className="text-sm text-muted-fg">In dieser Kategorie gibt es aktuell keine Artikel</p>
@@ -184,7 +184,7 @@ export default async function ShopPage({ searchParams }: PageProps) {
               <div
                 key={item.id}
                 className={cn(
-                  "flex flex-col gap-3 border-2 bg-bg p-4 transition-colors",
+                  "flex flex-col gap-3 rounded-2xl border-2 bg-bg p-4 transition-colors",
                   border,
                 )}
               >

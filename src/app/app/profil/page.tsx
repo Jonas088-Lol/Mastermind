@@ -212,7 +212,7 @@ export default async function ProfilPage() {
         <Stat label="Achievements" value={String(earnedCount)} suffix={`/ ${ACHIEVEMENTS.length}`} icon={Sparkles} tone="text-info" />
       </section>
 
-      <section className="border bg-gradient-to-r from-brand/[0.08] to-transparent p-5" style={{ borderColor: `${rank.color}40` }}>
+      <section className="rounded-2xl border bg-gradient-to-r from-brand/[0.08] to-transparent p-5" style={{ borderColor: `${rank.color}40` }}>
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="text-xl">{rank.icon}</span>

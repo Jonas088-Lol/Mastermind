@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, ClipboardList, FileCheck, Home, Shield, UserCircle, Users } from "lucide-react";
+import { BookOpen, ClipboardList, FileCheck, Home, Monitor, Shield, UserCircle, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const items = [
@@ -13,6 +13,7 @@ const items = [
   { href: "/sekretariat/neuanmeldung", label: "Neuanmeldung", icon: UserCircle },
   { href: "/sekretariat/zeugnisse", label: "Zeugnisse", icon: FileCheck },
   { href: "/sekretariat/atteste", label: "Atteste", icon: Shield },
+  { href: "/sekretariat/anzeigetafel", label: "Anzeigetafel", icon: Monitor },
 ];
 
 export function SekretariatNav() {
