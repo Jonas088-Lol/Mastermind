@@ -183,12 +183,17 @@ model User {
   substitutionsCovering SubstitutionEntry[] @relation("SubstituteTeacher")
   mailboxEmails         MailboxEmail[]
 
+  lastSeenAt       DateTime?
+
   ownedSpaces      Space[]              @relation("OwnedSpaces")
   spaceMemberships SpaceMember[]
   spaceMessages    SpaceMessage[]       @relation("SpaceMessages")
   dmsAsA           DirectConversation[] @relation("DMsAsA")
   dmsAsB           DirectConversation[] @relation("DMsAsB")
   sentDirectMsgs   DirectMessage[]      @relation("SentDirectMessages")
+  voicePresences   VoiceParticipant[]
+  friendsSent      Friendship[]         @relation("FriendsSent")
+  friendsReceived  Friendship[]         @relation("FriendsReceived")
 
   @@index([role])
   @@index([schoolId])
@@ -1543,10 +1548,12 @@ model SpaceChannel {
   spaceId   String
   space     Space    @relation(fields: [spaceId], references: [id], onDelete: Cascade)
   name      String
+  type      String   @default("text") // "text" | "voice"
   position  Int      @default(0)
   createdAt DateTime @default(now())
 
-  messages  SpaceMessage[]
+  messages          SpaceMessage[]
+  voiceParticipants VoiceParticipant[]
 
   @@index([spaceId, position])
 }
@@ -1607,4 +1614,35 @@ model DirectMessage {
 
   @@index([conversationId, sentAt])
   @@index([authorId])
+}
+
+model VoiceParticipant {
+  id              String       @id @default(cuid())
+  channelId       String
+  channel         SpaceChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  userId          String
+  user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  isMuted         Boolean      @default(false)
+  isDeaf          Boolean      @default(false)
+  isSharingScreen Boolean      @default(false)
+  joinedAt        DateTime     @default(now())
+
+  @@unique([channelId, userId])
+  @@index([channelId])
+  @@index([userId])
+}
+
+model Friendship {
+  id          String   @id @default(cuid())
+  requesterId String
+  requester   User     @relation("FriendsSent", fields: [requesterId], references: [id], onDelete: Cascade)
+  addresseeId String
+  addressee   User     @relation("FriendsReceived", fields: [addresseeId], references: [id], onDelete: Cascade)
+  status      String   @default("pending") // "pending" | "accepted" | "declined"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([requesterId, addresseeId])
+  @@index([requesterId])
+  @@index([addresseeId])
 }

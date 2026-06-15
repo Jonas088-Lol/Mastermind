@@ -12,6 +12,8 @@ async function requireSession() {
   return session;
 }
 
+// ── Space & Channels ──────────────────────────────────────────────────────
+
 export async function createSpaceModal(
   formData: FormData
 ): Promise<{ spaceId: string; channelId: string } | null> {
@@ -30,13 +32,19 @@ export async function createSpaceModal(
       name,
       description: description || null,
       emoji: emoji || "🏠",
-      channels: { create: [{ name: "allgemein", position: 0 }] },
+      channels: {
+        create: [
+          { name: "allgemein", type: "text", position: 0 },
+          { name: "sprache", type: "voice", position: 1 },
+        ],
+      },
       members: { create: [{ userId: session.userId, role: "owner" }] },
     },
-    select: { id: true, channels: { select: { id: true }, take: 1 } },
+    select: { id: true, channels: { select: { id: true, type: true }, orderBy: { position: "asc" } } },
   });
 
-  return { spaceId: space.id, channelId: space.channels[0]?.id ?? "" };
+  const textChannel = space.channels.find((c) => c.type === "text");
+  return { spaceId: space.id, channelId: textChannel?.id ?? space.channels[0]?.id ?? "" };
 }
 
 export async function joinSpaceModal(
@@ -57,7 +65,7 @@ export async function joinSpaceModal(
   });
 
   const firstChannel = await prisma.spaceChannel.findFirst({
-    where: { spaceId },
+    where: { spaceId, type: "text" },
     orderBy: { position: "asc" },
   });
 
@@ -75,6 +83,7 @@ export async function createChannelModal(
     .toLowerCase()
     .replace(/\s+/g, "-")
     .slice(0, 40);
+  const type = String(formData.get("type") ?? "text") === "voice" ? "voice" : "text";
   if (!spaceId || !name) return null;
 
   const membership = await prisma.spaceMember.findFirst({
@@ -87,12 +96,14 @@ export async function createChannelModal(
     orderBy: { position: "desc" },
   });
   const channel = await prisma.spaceChannel.create({
-    data: { spaceId, name, position: (last?.position ?? -1) + 1 },
+    data: { spaceId, name, type, position: (last?.position ?? -1) + 1 },
     select: { id: true },
   });
 
   return { channelId: channel.id };
 }
+
+// ── Messages ──────────────────────────────────────────────────────────────
 
 export async function sendChannelMessageModal(
   channelId: string,
@@ -152,4 +163,132 @@ export async function sendDmModal(recipientId: string, content: string): Promise
   await prisma.directMessage.create({
     data: { conversationId: convo.id, authorId: session.userId, content: trimmed },
   });
+}
+
+// ── Voice ─────────────────────────────────────────────────────────────────
+
+export async function joinVoiceModal(channelId: string): Promise<void> {
+  const session = await requireSession();
+
+  const channel = await prisma.spaceChannel.findUnique({
+    where: { id: channelId, type: "voice" },
+    select: { spaceId: true },
+  });
+  if (!channel) return;
+
+  const membership = await prisma.spaceMember.findFirst({
+    where: { spaceId: channel.spaceId, userId: session.userId },
+  });
+  if (!membership) return;
+
+  await prisma.voiceParticipant.upsert({
+    where: { channelId_userId: { channelId, userId: session.userId } },
+    update: { joinedAt: new Date() },
+    create: { channelId, userId: session.userId },
+  });
+}
+
+export async function leaveVoiceModal(channelId: string): Promise<void> {
+  const session = await requireSession();
+  await prisma.voiceParticipant.deleteMany({
+    where: { channelId, userId: session.userId },
+  });
+}
+
+export async function leaveAllVoiceModal(): Promise<void> {
+  const session = await requireSession();
+  await prisma.voiceParticipant.deleteMany({
+    where: { userId: session.userId },
+  });
+}
+
+export async function setMuteModal(channelId: string, isMuted: boolean): Promise<void> {
+  const session = await requireSession();
+  await prisma.voiceParticipant.updateMany({
+    where: { channelId, userId: session.userId },
+    data: { isMuted },
+  });
+}
+
+export async function setDeafModal(channelId: string, isDeaf: boolean): Promise<void> {
+  const session = await requireSession();
+  await prisma.voiceParticipant.updateMany({
+    where: { channelId, userId: session.userId },
+    data: { isDeaf },
+  });
+}
+
+export async function setScreenShareModal(
+  channelId: string,
+  isSharingScreen: boolean
+): Promise<void> {
+  const session = await requireSession();
+  await prisma.voiceParticipant.updateMany({
+    where: { channelId, userId: session.userId },
+    data: { isSharingScreen },
+  });
+}
+
+// ── Friends ───────────────────────────────────────────────────────────────
+
+export async function sendFriendRequestModal(
+  addresseeId: string
+): Promise<{ ok: boolean; message?: string }> {
+  const session = await requireSession();
+  if (addresseeId === session.userId) return { ok: false, message: "Du kannst dich nicht selbst hinzufügen" };
+
+  // Check if already exists in either direction
+  const existing = await prisma.friendship.findFirst({
+    where: {
+      OR: [
+        { requesterId: session.userId, addresseeId },
+        { requesterId: addresseeId, addresseeId: session.userId },
+      ],
+    },
+  });
+  if (existing) {
+    if (existing.status === "accepted") return { ok: false, message: "Bereits befreundet" };
+    if (existing.status === "pending") return { ok: false, message: "Anfrage bereits gesendet" };
+  }
+
+  await prisma.friendship.create({
+    data: { requesterId: session.userId, addresseeId },
+  });
+  return { ok: true };
+}
+
+export async function acceptFriendModal(friendshipId: string): Promise<void> {
+  const session = await requireSession();
+  await prisma.friendship.updateMany({
+    where: { id: friendshipId, addresseeId: session.userId, status: "pending" },
+    data: { status: "accepted" },
+  });
+}
+
+export async function declineFriendModal(friendshipId: string): Promise<void> {
+  const session = await requireSession();
+  await prisma.friendship.deleteMany({
+    where: {
+      id: friendshipId,
+      OR: [{ addresseeId: session.userId }, { requesterId: session.userId }],
+    },
+  });
+}
+
+export async function searchUsersModal(
+  query: string
+): Promise<{ id: string; name: string }[]> {
+  const session = await requireSession();
+  if (!query.trim() || !session.schoolId) return [];
+
+  const users = await prisma.user.findMany({
+    where: {
+      schoolId: session.schoolId,
+      id: { not: session.userId },
+      name: { contains: query.trim() },
+    },
+    select: { id: true, name: true },
+    take: 10,
+  });
+  return users;
 }

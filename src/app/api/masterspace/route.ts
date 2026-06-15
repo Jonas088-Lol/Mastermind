@@ -35,11 +35,17 @@ export async function GET() {
     });
   }
 
+  // Touch lastSeenAt so friends can see online status
+  void prisma.user.update({ where: { id: session.userId }, data: { lastSeenAt: new Date() } }).catch(() => null);
+
   const [mySpaces, publicSpaces, dmConversations] = await Promise.all([
     prisma.space.findMany({
       where: { schoolId: session.schoolId, members: { some: { userId: session.userId } } },
       include: {
-        channels: { orderBy: { position: "asc" } },
+        channels: {
+          orderBy: { position: "asc" },
+          include: { _count: { select: { voiceParticipants: true } } },
+        },
         _count: { select: { members: true } },
       },
       orderBy: { updatedAt: "desc" },

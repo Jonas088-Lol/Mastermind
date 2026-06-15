@@ -17,9 +17,12 @@ export async function GET(
     prisma.space.findUnique({
       where: { id: spaceId },
       include: {
-        channels: { orderBy: { position: "asc" } },
+        channels: {
+          orderBy: { position: "asc" },
+          include: { _count: { select: { voiceParticipants: true } } },
+        },
         members: {
-          include: { user: { select: { id: true, name: true } } },
+          include: { user: { select: { id: true, name: true, lastSeenAt: true } } },
           orderBy: { joinedAt: "asc" },
         },
       },
