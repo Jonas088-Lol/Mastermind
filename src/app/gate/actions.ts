@@ -2,17 +2,14 @@
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { GATE_COOKIE, makeGateToken } from "@/lib/gate";
+import { GATE_COOKIE, GATE_USER, GATE_PASS, makeGateToken } from "@/lib/gate";
 
 export async function loginGate(formData: FormData) {
   const username = formData.get("username")?.toString().trim() ?? "";
   const password = formData.get("password")?.toString() ?? "";
   const redirectTo = formData.get("redirect")?.toString() ?? "/";
 
-  const validUser = process.env.GATE_USER ?? "Admin";
-  const validPass = process.env.GATE_PASS ?? "";
-
-  if (!validPass || username !== validUser || password !== validPass) {
+  if (username !== GATE_USER || password !== GATE_PASS) {
     const errorUrl =
       redirectTo !== "/"
         ? `/gate?error=1&redirect=${encodeURIComponent(redirectTo)}`
