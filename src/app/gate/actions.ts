@@ -2,7 +2,7 @@
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { GATE_COOKIE, gateToken } from "@/lib/gate";
+import { GATE_COOKIE, makeGateToken } from "@/lib/gate";
 
 export async function loginGate(formData: FormData) {
   const username = formData.get("username")?.toString().trim() ?? "";
@@ -13,20 +13,22 @@ export async function loginGate(formData: FormData) {
   const validPass = process.env.GATE_PASS ?? "";
 
   if (!validPass || username !== validUser || password !== validPass) {
-    const errorUrl = redirectTo !== "/" ? `/gate?error=1&redirect=${encodeURIComponent(redirectTo)}` : "/gate?error=1";
+    const errorUrl =
+      redirectTo !== "/"
+        ? `/gate?error=1&redirect=${encodeURIComponent(redirectTo)}`
+        : "/gate?error=1";
     redirect(errorUrl);
   }
 
   const jar = await cookies();
-  jar.set(GATE_COOKIE, gateToken(), {
+  jar.set(GATE_COOKIE, makeGateToken(), {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
-    maxAge: 60 * 60 * 24 * 30, // 30 Tage
+    maxAge: 60 * 60 * 24 * 30,
   });
 
-  // Sicherheitscheck: nur relative Pfade erlaubt
   const destination = redirectTo.startsWith("/") ? redirectTo : "/";
   redirect(destination);
 }

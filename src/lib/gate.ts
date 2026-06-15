@@ -1,12 +1,11 @@
-// Gate access wall — shared between middleware (Edge) and server actions (Node)
 export const GATE_COOKIE = "mm_gate";
 
 export function isGateValid(token: string | undefined): boolean {
-  const secret = process.env.GATE_TOKEN;
-  if (!secret || !token) return false;
-  return token === secret;
+  const pass = process.env.GATE_PASS;
+  if (!pass || !token) return false;
+  return token === `gate:${pass}`;
 }
 
-export function gateToken(): string {
-  return process.env.GATE_TOKEN ?? "";
+export function makeGateToken(): string {
+  return `gate:${process.env.GATE_PASS ?? ""}`;
 }
