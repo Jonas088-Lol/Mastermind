@@ -7,8 +7,19 @@ import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 export const metadata: Metadata = { title: "Stundenplan · Eltern" };
 
 const DAY_NAMES = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"];
-const DAY_NAMES_SHORT = ["Mo", "Di", "Mi", "Do", "Fr"];
 const MAX_PERIOD = 8;
+
+const DEFAULT_PERIOD_TIMES = [
+  "08:00 – 08:45",
+  "08:50 – 09:35",
+  "09:50 – 10:35",
+  "10:40 – 11:25",
+  "11:35 – 12:20",
+  "12:25 – 13:10",
+  "13:25 – 14:10",
+  "14:15 – 15:00",
+  "15:00 – 15:45",
+];
 
 export default async function ElternStundenplanPage() {
   const session = await getSession();
@@ -130,8 +141,14 @@ export default async function ElternStundenplanPage() {
                     <tbody>
                       {periods.map((period, pIdx) => (
                         <tr key={period} className={pIdx % 2 === 0 ? "" : "bg-muted/30"}>
-                          <td className="border-b border-r border-border px-3 py-2 text-center font-mono text-xs font-semibold text-muted-fg last-of-type:border-b-0">
-                            {period}.
+                          <td className="border-b border-r border-border px-3 py-2 text-center align-top font-mono text-xs font-semibold text-muted-fg last-of-type:border-b-0">
+                            <span className="block">{period}.</span>
+                            <span className="block text-[10px] font-normal text-muted-fg/70">
+                              {DEFAULT_PERIOD_TIMES[period - 1]?.split(" – ")[0]}
+                            </span>
+                            <span className="block text-[10px] font-normal text-muted-fg/70">
+                              {DEFAULT_PERIOD_TIMES[period - 1]?.split(" – ")[1]}
+                            </span>
                           </td>
                           {Array.from({ length: 5 }, (_, dayIdx) => {
                             const dayNum = dayIdx + 1;
@@ -186,14 +203,14 @@ export default async function ElternStundenplanPage() {
                         className={isToday ? "border-brand/40 ring-1 ring-brand/20" : ""}
                       >
                         <CardHeader>
-                          <CardTitle className="text-sm">{DAY_NAMES_SHORT[idx]}</CardTitle>
+                          <CardTitle className="text-sm">{DAY_NAMES[idx]}</CardTitle>
                           {isToday && (
                             <span className="rounded bg-brand px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-brand-fg">
                               Heute
                             </span>
                           )}
                         </CardHeader>
-                        <CardBody className="!px-0 !pb-0">
+                        <CardBody className="px-0! pb-0!">
                           {dayEntries.length === 0 ? (
                             <p className="border-t border-border px-4 py-3 text-xs text-muted-fg">
                               Frei
@@ -202,8 +219,10 @@ export default async function ElternStundenplanPage() {
                             <ol className="divide-y divide-border border-t border-border">
                               {dayEntries.map((e) => (
                                 <li key={e.id} className="flex items-start gap-2 px-4 py-2.5 text-xs">
-                                  <span className="mt-0.5 w-4 shrink-0 font-mono text-muted-fg">
-                                    {e.period}.
+                                  <span className="w-14 shrink-0 font-mono leading-snug text-muted-fg">
+                                    {e.period}.<br />
+                                    {DEFAULT_PERIOD_TIMES[e.period - 1]?.split(" – ")[0]}<br />
+                                    {DEFAULT_PERIOD_TIMES[e.period - 1]?.split(" – ")[1]}
                                   </span>
                                   <span
                                     className="mt-1 inline-block size-1.5 shrink-0 rounded-sm"
