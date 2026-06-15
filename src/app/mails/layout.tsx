@@ -1,11 +1,8 @@
-import { redirect } from "next/navigation";
 import type { Metadata } from "next";
-import { effectiveRole, getSession } from "@/lib/session";
 
 export const metadata: Metadata = { title: "Postfach · Konvertis" };
 
-export default async function MailsLayout({ children }: { children: React.ReactNode }) {
-  const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
+// Auth-Check passiert in page.tsx — nicht hier, damit /mails/login keine Schleife erzeugt
+export default function MailsLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

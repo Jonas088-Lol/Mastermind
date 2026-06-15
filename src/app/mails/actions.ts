@@ -1,32 +1,49 @@
 "use server";
 
+import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
-import { effectiveRole, getSession } from "@/lib/session";
+import { MAIL_COOKIE, isMailSessionValid } from "@/lib/mail-session";
 import { sendEmail } from "@/lib/email";
 
+async function requireMailAuth() {
+  const jar = await cookies();
+  const token = jar.get(MAIL_COOKIE)?.value;
+  if (!isMailSessionValid(token)) redirect("/mails/login");
+}
+
+async function getMailSchoolId(): Promise<string | null> {
+  const slug = process.env.MAIL_SCHOOL_SLUG;
+  const school = slug
+    ? await prisma.school.findUnique({ where: { slug }, select: { id: true } })
+    : await prisma.school.findFirst({ where: { mailboxAddress: { not: null } }, select: { id: true } })
+      ?? await prisma.school.findFirst({ select: { id: true } });
+  return school?.id ?? null;
+}
+
 export async function markRead(emailId: string): Promise<void> {
-  const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") return;
+  await requireMailAuth();
+  const schoolId = await getMailSchoolId();
+  if (!schoolId) return;
   await prisma.mailboxEmail.updateMany({
-    where: { id: emailId, schoolId: session.schoolId ?? "" },
+    where: { id: emailId, schoolId },
     data: { readAt: new Date() },
   });
 }
 
 export async function sendReply(formData: FormData): Promise<void> {
-  const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
-  if (!session.schoolId) return;
+  await requireMailAuth();
+  const schoolId = await getMailSchoolId();
+  if (!schoolId) return;
 
   const emailId = String(formData.get("emailId") ?? "").trim();
   const body = String(formData.get("body") ?? "").trim();
   if (!emailId || !body) return;
 
   const [original, school] = await Promise.all([
-    prisma.mailboxEmail.findFirst({ where: { id: emailId, schoolId: session.schoolId } }),
-    prisma.school.findUnique({ where: { id: session.schoolId }, select: { mailboxAddress: true, mailboxName: true } }),
+    prisma.mailboxEmail.findFirst({ where: { id: emailId, schoolId } }),
+    prisma.school.findUnique({ where: { id: schoolId }, select: { mailboxAddress: true, mailboxName: true } }),
   ]);
   if (!original || !school?.mailboxAddress) return;
 
@@ -39,7 +56,7 @@ export async function sendReply(formData: FormData): Promise<void> {
 
   await prisma.mailboxEmail.create({
     data: {
-      schoolId: session.schoolId,
+      schoolId,
       direction: "outbound",
       fromAddress: school.mailboxAddress,
       fromName: school.mailboxName ?? null,
@@ -49,7 +66,6 @@ export async function sendReply(formData: FormData): Promise<void> {
       inReplyTo: original.messageId ?? null,
       threadKey: original.threadKey ?? original.messageId ?? original.id,
       readAt: new Date(),
-      userId: session.userId,
     },
   });
 
@@ -57,9 +73,9 @@ export async function sendReply(formData: FormData): Promise<void> {
 }
 
 export async function sendNew(formData: FormData): Promise<void> {
-  const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
-  if (!session.schoolId) return;
+  await requireMailAuth();
+  const schoolId = await getMailSchoolId();
+  if (!schoolId) return;
 
   const to = String(formData.get("to") ?? "").trim();
   const subject = String(formData.get("subject") ?? "").trim();
@@ -67,7 +83,7 @@ export async function sendNew(formData: FormData): Promise<void> {
   if (!to || !subject || !body) return;
 
   const school = await prisma.school.findUnique({
-    where: { id: session.schoolId },
+    where: { id: schoolId },
     select: { mailboxAddress: true, mailboxName: true },
   });
   if (!school?.mailboxAddress) return;
@@ -79,7 +95,7 @@ export async function sendNew(formData: FormData): Promise<void> {
   const messageId = result.id ? `<${result.id}@resend.dev>` : null;
   await prisma.mailboxEmail.create({
     data: {
-      schoolId: session.schoolId,
+      schoolId,
       direction: "outbound",
       fromAddress: school.mailboxAddress,
       fromName: school.mailboxName ?? null,
@@ -89,7 +105,6 @@ export async function sendNew(formData: FormData): Promise<void> {
       messageId,
       threadKey: messageId,
       readAt: new Date(),
-      userId: session.userId,
     },
   });
 
@@ -97,23 +112,27 @@ export async function sendNew(formData: FormData): Promise<void> {
 }
 
 export async function deleteMail(emailId: string): Promise<void> {
-  const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") return;
-  await prisma.mailboxEmail.deleteMany({ where: { id: emailId, schoolId: session.schoolId ?? "" } });
+  await requireMailAuth();
+  const schoolId = await getMailSchoolId();
+  if (!schoolId) return;
+  await prisma.mailboxEmail.deleteMany({ where: { id: emailId, schoolId } });
   revalidatePath("/mails");
 }
 
 export async function saveSettings(formData: FormData): Promise<void> {
-  const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
-  if (!session.schoolId) return;
+  await requireMailAuth();
+  const schoolId = await getMailSchoolId();
+  if (!schoolId) return;
 
   const mailboxAddress = String(formData.get("mailboxAddress") ?? "").trim().toLowerCase();
   const mailboxName = String(formData.get("mailboxName") ?? "").trim();
 
   await prisma.school.update({
-    where: { id: session.schoolId },
-    data: { mailboxAddress: mailboxAddress || null, mailboxName: mailboxName || null },
+    where: { id: schoolId },
+    data: {
+      mailboxAddress: mailboxAddress || null,
+      mailboxName: mailboxName || null,
+    },
   });
 
   revalidatePath("/mails");

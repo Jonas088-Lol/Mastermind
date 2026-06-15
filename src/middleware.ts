@@ -9,6 +9,7 @@ const BYPASS_COOKIE = "mm_maint_bypass";
 // Paths that skip the gate entirely
 const GATE_SKIP = [
   "/gate",
+  "/mails/login",
   "/_next/",
   "/favicon",
   "/brand/",

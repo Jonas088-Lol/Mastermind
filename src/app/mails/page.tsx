@@ -12,9 +12,10 @@ import {
   PenSquare,
 } from "lucide-react";
 import Link from "next/link";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
-import { effectiveRole, getSession } from "@/lib/session";
+import { MAIL_COOKIE, isMailSessionValid } from "@/lib/mail-session";
 import { cn } from "@/lib/utils";
 import { markRead, sendReply, sendNew, deleteMail, saveSettings } from "./actions";
 
@@ -25,9 +26,19 @@ export default async function MailsPage({
 }: {
   searchParams: Promise<{ tab?: string; id?: string; saved?: string }>;
 }) {
-  const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
-  if (!session.schoolId) redirect("/login");
+  // Eigenständige Auth — kein App-Login nötig
+  const jar = await cookies();
+  const token = jar.get(MAIL_COOKIE)?.value;
+  if (!isMailSessionValid(token)) redirect("/mails/login");
+
+  // Schule ermitteln: MAIL_SCHOOL_SLUG env-var, sonst erste Schule mit Mailbox
+  const schoolSlug = process.env.MAIL_SCHOOL_SLUG;
+  const schoolBase = await (schoolSlug
+    ? prisma.school.findUnique({ where: { slug: schoolSlug }, select: { id: true } })
+    : prisma.school.findFirst({ where: { mailboxAddress: { not: null } }, select: { id: true } })
+      ?? prisma.school.findFirst({ select: { id: true } }));
+  if (!schoolBase) redirect("/mails/login");
+  const schoolId = schoolBase.id;
 
   const { tab: tabParam, id: selectedId, saved } = await searchParams;
   const tab: Tab =
@@ -38,13 +49,13 @@ export default async function MailsPage({
 
   const [school, emails, unread] = await Promise.all([
     prisma.school.findUnique({
-      where: { id: session.schoolId },
+      where: { id: schoolId },
       select: { mailboxAddress: true, mailboxName: true },
     }),
     tab === "eingang" || tab === "gesendet"
       ? prisma.mailboxEmail.findMany({
           where: {
-            schoolId: session.schoolId,
+            schoolId,
             direction: tab === "gesendet" ? "outbound" : "inbound",
           },
           orderBy: { sentAt: "desc" },
@@ -52,7 +63,7 @@ export default async function MailsPage({
         })
       : Promise.resolve([]),
     prisma.mailboxEmail.count({
-      where: { schoolId: session.schoolId, direction: "inbound", readAt: null },
+      where: { schoolId, direction: "inbound", readAt: null },
     }),
   ]);
 
@@ -61,7 +72,7 @@ export default async function MailsPage({
   let thread: typeof emails = [];
   if (selectedId && (tab === "eingang" || tab === "gesendet")) {
     selectedEmail = await prisma.mailboxEmail.findFirst({
-      where: { id: selectedId, schoolId: session.schoolId },
+      where: { id: selectedId, schoolId },
     });
     if (selectedEmail) {
       if (selectedEmail.direction === "inbound" && !selectedEmail.readAt) {
@@ -69,7 +80,7 @@ export default async function MailsPage({
       }
       thread = selectedEmail.threadKey
         ? await prisma.mailboxEmail.findMany({
-            where: { schoolId: session.schoolId, threadKey: selectedEmail.threadKey },
+            where: { schoolId, threadKey: selectedEmail.threadKey },
             orderBy: { sentAt: "asc" },
           })
         : [selectedEmail];
