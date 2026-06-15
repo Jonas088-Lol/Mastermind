@@ -63,8 +63,8 @@ export function Hero() {
         </div>
 
         {/* App mockup */}
-        <div className="animate-slide-up mx-auto max-w-2xl px-2 pb-12 sm:pb-16 lg:max-w-4xl lg:pb-20">
-          <div className="premium-card overflow-hidden">
+        <div className="animate-slide-up animate-delay-400 mx-auto max-w-2xl px-2 pb-12 sm:pb-16 lg:max-w-4xl lg:pb-20">
+          <div className="premium-card animate-float overflow-hidden">
             {/* Browser chrome */}
             <div className="flex items-center gap-1.5 border-b border-border bg-surface-2 px-4 py-3">
               <span className="size-3 rounded-full bg-danger/60" />

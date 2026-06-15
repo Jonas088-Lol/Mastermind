@@ -6,6 +6,7 @@ import {
   MessageSquare,
   Sparkles,
 } from "lucide-react";
+import { AnimateOnScroll } from "./AnimateOnScroll";
 
 const features = [
   {
@@ -50,7 +51,7 @@ export function Features() {
   return (
     <section id="funktionen" className="section">
       <div className="container-px mx-auto max-w-7xl">
-        <div className="mx-auto max-w-2xl text-center">
+        <AnimateOnScroll animation="fade-up" className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Funktionen</span>
           <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl">
             Drei Tools.
@@ -61,14 +62,15 @@ export function Features() {
             Schluss mit unnötig vielen Apps zum Lernen.
             MasterMind bündelt alles, was eine moderne Schule braucht.
           </p>
-        </div>
+        </AnimateOnScroll>
 
         <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f, i) => (
-            <article
+            <AnimateOnScroll
               key={f.title}
+              animation="fade-up"
+              delay={i * 90}
               className="card-elevated group p-6 sm:p-7"
-              style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className={`inline-grid size-11 place-items-center rounded-2xl ${f.color}`}>
                 <f.icon className="size-5" strokeWidth={1.75} />
@@ -77,7 +79,7 @@ export function Features() {
               <p className="mt-2 text-sm leading-relaxed text-muted-fg">
                 {f.body}
               </p>
-            </article>
+            </AnimateOnScroll>
           ))}
         </div>
       </div>

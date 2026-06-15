@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { AnimateOnScroll } from "./AnimateOnScroll";
 
 const plans = [
   {
@@ -56,7 +57,7 @@ export function Pricing() {
   return (
     <section id="preise" className="section bg-surface/50">
       <div className="container-px mx-auto max-w-7xl">
-        <div className="mx-auto max-w-2xl text-center">
+        <AnimateOnScroll animation="fade-up" className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Preise</span>
           <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl">
             Faire Preise.
@@ -66,14 +67,19 @@ export function Pricing() {
           <p className="mt-5 text-base leading-relaxed text-muted-fg sm:text-lg">
             Pilotphase 30 Tage gratis · Jährliche Abrechnung · Jederzeit kündbar.
           </p>
-        </div>
+        </AnimateOnScroll>
 
         <div className="mt-12 grid gap-5 sm:mt-16 lg:grid-cols-3">
-          {plans.map((p) => (
-            <article
+          {plans.map((p, i) => (
+            <AnimateOnScroll
               key={p.name}
+              animation={p.highlight ? "scale-up" : "fade-up"}
+              delay={i * 100}
+              className="flex flex-col"
+            >
+            <article
               className={cn(
-                "relative flex flex-col rounded-2xl border p-7 transition-all duration-200",
+                "relative flex flex-col flex-1 rounded-2xl border p-7 transition-[box-shadow,border-color] duration-200",
                 p.highlight
                   ? "border-brand bg-bg shadow-lg ring-1 ring-brand/20"
                   : "border-border bg-bg shadow-sm hover:shadow-md hover:border-border-strong"
@@ -124,6 +130,7 @@ export function Pricing() {
                 {p.cta}
               </Button>
             </article>
+            </AnimateOnScroll>
           ))}
         </div>
 
