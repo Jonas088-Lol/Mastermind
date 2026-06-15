@@ -92,7 +92,7 @@ export function FileUploadClient({ assignmentId, disabled, existingFiles = [] }:
           <a
             key={f.id}
             href={`/api/files/${f.id}?download=1`}
-            className="flex items-center gap-3 border border-border bg-bg px-3 py-2 text-sm transition-colors hover:bg-surface"
+            className="flex items-center gap-3 rounded-xl border border-border bg-bg px-3 py-2 text-sm transition-colors hover:bg-surface"
           >
             <Paperclip className="size-4 shrink-0 text-muted-fg" strokeWidth={1.75} />
             <span className="flex-1 truncate font-medium">{f.filename}</span>
@@ -113,7 +113,7 @@ export function FileUploadClient({ assignmentId, disabled, existingFiles = [] }:
       {uploads.length > 0 && (
         <div className="flex flex-col gap-1.5">
           {uploads.map((f) => (
-            <div key={f.id} className="flex items-center gap-3 border border-success/30 bg-success/5 px-3 py-2 text-sm">
+            <div key={f.id} className="flex items-center gap-3 rounded-xl border border-success/30 bg-success/5 px-3 py-2 text-sm">
               <CheckCircle2 className="size-4 shrink-0 text-success" strokeWidth={1.75} />
               <span className="flex-1 truncate">{f.filename}</span>
               <span className="text-xs text-muted-fg">{formatBytes(f.size)}</span>
@@ -123,7 +123,7 @@ export function FileUploadClient({ assignmentId, disabled, existingFiles = [] }:
       )}
 
       {uploading && (
-        <div className="flex items-center gap-3 border border-border px-3 py-2 text-sm">
+        <div className="flex items-center gap-3 rounded-xl border border-border px-3 py-2 text-sm">
           <Loader2 className="size-4 animate-spin text-brand" />
           <div className="flex-1">
             <div className="h-1.5 w-full bg-surface">
@@ -135,7 +135,7 @@ export function FileUploadClient({ assignmentId, disabled, existingFiles = [] }:
       )}
 
       {error && (
-        <div className="flex items-center gap-2 border border-danger/30 bg-danger/5 px-3 py-2 text-sm text-danger">
+        <div className="flex items-center gap-2 rounded-xl border border-danger/30 bg-danger/5 px-3 py-2 text-sm text-danger">
           <AlertCircle className="size-4 shrink-0" />
           {error}
         </div>
@@ -145,7 +145,7 @@ export function FileUploadClient({ assignmentId, disabled, existingFiles = [] }:
         type="button"
         disabled={uploading}
         onClick={() => inputRef.current?.click()}
-        className="flex items-center gap-2 border border-dashed border-border bg-bg px-4 py-3 text-sm text-muted-fg hover:border-brand hover:text-fg disabled:cursor-not-allowed disabled:opacity-50"
+        className="flex items-center gap-2 rounded-xl border border-dashed border-border bg-bg px-4 py-3 text-sm text-muted-fg hover:border-brand hover:text-fg disabled:cursor-not-allowed disabled:opacity-50"
       >
         <Upload className="size-4" />
         Datei hochladen (max. 10 GB)

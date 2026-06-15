@@ -5,6 +5,7 @@ import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { updateSubject, deleteSubject } from "./actions";
+import { SUBJECT_CATEGORIES } from "../neu/page";
 
 interface PageParams { params: Promise<{ id: string }> }
 
@@ -39,36 +40,63 @@ export default async function FachBearbeitenPage({ params }: PageParams) {
       </header>
 
       <form action={updateSubject.bind(null, id)} className="flex flex-col gap-5">
+        {/* Fachtyp */}
+        <div className="flex flex-col gap-2">
+          <label className="text-sm font-semibold">Fachtyp</label>
+          <div className="flex flex-wrap gap-2">
+            {SUBJECT_CATEGORIES.map((cat) => (
+              <label key={cat.value} className="cursor-pointer">
+                <input
+                  type="radio"
+                  name="category"
+                  value={cat.value}
+                  defaultChecked={(subject.category ?? "allgemein") === cat.value}
+                  className="peer sr-only"
+                />
+                <span className="inline-flex items-center rounded-xl border border-border px-3 py-1.5 text-xs font-semibold text-muted-fg transition-colors peer-checked:border-brand peer-checked:bg-brand/10 peer-checked:text-brand">
+                  {cat.label}
+                </span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        {/* Name */}
         <div className="flex flex-col gap-1.5">
           <label htmlFor="name" className="text-sm font-semibold">Fachname *</label>
           <input
             id="name" name="name" type="text" required defaultValue={subject.name}
-            className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+            className="h-10 rounded-xl border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           />
         </div>
 
+        {/* Kürzel */}
         <div className="flex flex-col gap-1.5">
           <label htmlFor="shortName" className="text-sm font-semibold">Kürzel *</label>
           <input
             id="shortName" name="shortName" type="text" required maxLength={4} defaultValue={subject.shortName}
-            className="h-10 w-24 border border-border bg-bg px-3 text-sm font-mono uppercase focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+            className="h-10 w-24 rounded-xl border border-border bg-bg px-3 text-sm font-mono uppercase focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           />
         </div>
 
+        {/* Farbe */}
         <div className="flex flex-col gap-2">
           <label className="text-sm font-semibold">Farbe</label>
           <div className="flex flex-wrap gap-2">
             {PRESET_COLORS.map((c) => (
               <label key={c} className="relative cursor-pointer">
                 <input type="radio" name="color" value={c} className="sr-only" defaultChecked={subject.color === c} />
-                <span className="block size-8 border-2 border-transparent ring-offset-1 has-[:checked]:ring-2 has-[:checked]:ring-brand" style={{ backgroundColor: c }} />
+                <span
+                  className="block size-8 rounded-lg border-2 border-transparent ring-offset-1 has-checked:ring-2 has-checked:ring-brand"
+                  style={{ backgroundColor: c }}
+                />
               </label>
             ))}
           </div>
         </div>
 
         <div className="flex items-center gap-3 pt-2">
-          <button type="submit" className="bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90">
+          <button type="submit" className="rounded-xl bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90">
             Speichern
           </button>
           <Link href="/admin/faecher" className="text-sm text-muted-fg hover:text-fg">
@@ -77,7 +105,7 @@ export default async function FachBearbeitenPage({ params }: PageParams) {
         </div>
       </form>
 
-      <div className="border border-danger/30 p-4">
+      <div className="rounded-2xl border border-danger/30 p-4">
         <p className="text-sm font-semibold text-danger">Fach löschen</p>
         <p className="mt-1 text-xs text-muted-fg">
           Dieses Fach hat {subject._count.assignments} Aufgaben und {subject._count.timetableEntries} Stundenplan-Einträge.
@@ -86,7 +114,7 @@ export default async function FachBearbeitenPage({ params }: PageParams) {
         <form action={deleteSubject.bind(null, id)} className="mt-3">
           <button
             type="submit"
-            className="border border-danger px-4 py-1.5 text-xs font-semibold text-danger hover:bg-danger hover:text-white"
+            className="rounded-xl border border-danger px-4 py-1.5 text-xs font-semibold text-danger hover:bg-danger hover:text-white"
           >
             Fach löschen
           </button>

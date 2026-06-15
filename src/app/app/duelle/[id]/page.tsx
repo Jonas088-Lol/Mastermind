@@ -56,7 +56,7 @@ export default async function DuelPage({ params }: PageParams) {
         <Link href="/app/duelle" className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-fg hover:text-fg">
           <ArrowLeft className="size-3.5" /> Alle Duelle
         </Link>
-        <div className="border border-border p-8 text-center">
+        <div className="rounded-2xl border border-border p-8 text-center">
           <p className="text-5xl">{won ? "🏆" : draw ? "🤝" : "😤"}</p>
           <h1 className="mt-4 text-2xl font-bold">{won ? "Gewonnen!" : draw ? "Unentschieden!" : "Verloren!"}</h1>
           <p className="mt-2 text-muted-fg">{duel.topic.title}</p>
@@ -86,7 +86,7 @@ export default async function DuelPage({ params }: PageParams) {
         <Link href="/app/duelle" className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-fg hover:text-fg">
           <ArrowLeft className="size-3.5" /> Alle Duelle
         </Link>
-        <div className="border border-border p-8 text-center">
+        <div className="rounded-2xl border border-border p-8 text-center">
           <p className="text-3xl">⏳</p>
           <h1 className="mt-3 text-xl font-bold">Warte auf Antwort</h1>
           <p className="mt-2 text-sm text-muted-fg">{opponent.name} muss die Herausforderung noch annehmen.</p>
@@ -102,7 +102,7 @@ export default async function DuelPage({ params }: PageParams) {
         <Link href="/app/duelle" className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-fg hover:text-fg">
           <ArrowLeft className="size-3.5" /> Alle Duelle
         </Link>
-        <div className="border border-border p-8 text-center">
+        <div className="rounded-2xl border border-border p-8 text-center">
           <p className="text-3xl">✅</p>
           <h1 className="mt-3 text-xl font-bold">Quiz abgeschlossen</h1>
           <p className="mt-2 text-sm text-muted-fg">Dein Score: <strong>{myScore}</strong></p>

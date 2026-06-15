@@ -64,7 +64,7 @@ export default async function WorksheetAssignmentPage({ params }: PageProps) {
             {assignment.worksheet.title}
           </h1>
         </header>
-        <div className="border border-border bg-bg p-8 text-center">
+        <div className="rounded-2xl border border-border bg-bg p-8 text-center">
           <p className="text-lg font-semibold">Bereits abgegeben</p>
           {existingSubmission?.score !== null &&
             existingSubmission?.maxScore !== null &&

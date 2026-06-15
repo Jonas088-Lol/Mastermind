@@ -308,6 +308,7 @@ model Subject {
   name      String // "Mathematik"
   shortName String // "M"
   color     String @default("#6366f1")
+  category  String @default("allgemein")
   schoolId  String
   school    School @relation(fields: [schoolId], references: [id])
 

@@ -31,7 +31,7 @@ export function WorksheetPlayerPage({
   };
 
   return (
-    <div className="border border-border bg-bg">
+    <div className="rounded-2xl border border-border bg-bg">
       <WorksheetPlayer
         worksheet={worksheet}
         existingAnswers={existingAnswers}

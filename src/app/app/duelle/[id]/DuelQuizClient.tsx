@@ -61,7 +61,7 @@ export function DuelQuizClient({ questions, handleComplete }: Props) {
       </div>
 
       {/* Question */}
-      <div className="border border-border p-5">
+      <div className="rounded-2xl border border-border p-5">
         <p className="text-base font-semibold leading-snug">{q.question}</p>
       </div>
 
@@ -77,7 +77,7 @@ export function DuelQuizClient({ questions, handleComplete }: Props) {
               disabled={checked}
               onClick={() => !checked && setSelected(String(i))}
               className={cn(
-                "w-full border px-4 py-3 text-left text-sm font-medium transition-colors",
+                "w-full rounded-xl border px-4 py-3 text-left text-sm font-medium transition-colors",
                 checked && isRight && "border-success bg-success/10 text-success",
                 checked && isSelected && !isRight && "border-danger bg-danger/10 text-danger",
                 !checked && isSelected && "border-brand bg-brand/10",
@@ -92,7 +92,7 @@ export function DuelQuizClient({ questions, handleComplete }: Props) {
 
       {/* Explanation */}
       {checked && q.explanation && (
-        <div className="border border-border bg-surface px-4 py-3 text-sm text-muted-fg">
+        <div className="rounded-xl border border-border bg-surface px-4 py-3 text-sm text-muted-fg">
           {q.explanation}
         </div>
       )}

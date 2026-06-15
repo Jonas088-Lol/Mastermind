@@ -1,4 +1,4 @@
-import { ArrowRight, BookOpen, Plus } from "lucide-react";
+import { ArrowRight, BookOpen, Plus, Tag } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
@@ -127,6 +127,12 @@ export default async function AdminFaecherPage() {
                       <div className="flex items-center gap-2">
                         <p className="font-semibold">{s.name}</p>
                         <Badge variant="outline">{s.shortName}</Badge>
+                        {s.category && s.category !== "allgemein" && (
+                          <span className="inline-flex items-center gap-1 rounded-md bg-surface px-1.5 py-0.5 text-[10px] font-medium text-muted-fg">
+                            <Tag className="size-2.5" strokeWidth={1.75} />
+                            {s.category}
+                          </span>
+                        )}
                       </div>
                       <p className="mt-0.5 text-xs text-muted-fg">
                         {uniqueTeachers} {uniqueTeachers === 1 ? "Lehrer" : "Lehrer"} ·{" "}

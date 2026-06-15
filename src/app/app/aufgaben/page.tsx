@@ -125,7 +125,7 @@ export default async function AufgabenPage({ searchParams }: PageProps) {
         </Link>
       </header>
 
-      <section className="flex flex-col gap-3 border border-border bg-bg p-4 sm:flex-row sm:items-center sm:gap-6">
+      <section className="flex flex-col gap-3 rounded-2xl border border-border bg-bg p-4 sm:flex-row sm:items-center sm:gap-6">
         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-fg">
           <Filter className="size-3.5" />
           Filter
@@ -176,7 +176,7 @@ export default async function AufgabenPage({ searchParams }: PageProps) {
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
                         <span
-                          className="inline-flex items-center px-1.5 py-0.5 text-[11px] font-semibold"
+                          className="inline-flex items-center rounded-md px-1.5 py-0.5 text-[11px] font-semibold"
                           style={{ backgroundColor: a.subject.color + "22", color: a.subject.color }}
                         >
                           {a.subject.shortName}
@@ -236,8 +236,8 @@ function FilterChip({ href, active, children }: { href: string; active: boolean;
       className={cn(
         "px-2.5 py-1 text-xs font-medium transition-colors",
         active
-          ? "bg-fg text-bg"
-          : "border border-border bg-bg text-muted-fg hover:border-fg/30 hover:text-fg"
+          ? "rounded-xl bg-fg text-bg"
+          : "rounded-xl border border-border bg-bg text-muted-fg hover:border-fg/30 hover:text-fg"
       )}
     >
       {children}

@@ -71,7 +71,7 @@ export default async function BossPage() {
         </p>
       </header>
 
-      <div className="grid gap-px border border-border bg-border sm:grid-cols-3">
+      <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
         {[
           { icon: "👾", title: "Was sind Boss-Battles?", text: "Ein mächtiger Gegner bedroht die Klasse! Alle Schüler greifen gemeinsam an, indem sie Quizfragen richtig beantworten. Jede richtige Antwort verursacht Schaden." },
           { icon: "💥", title: "Schaden & HP", text: "Dein Schaden hängt von Schwierigkeit und korrekten Antworten ab. Je mehr du beiträgst, desto höher dein Anteil an der XP-Belohnung." },
@@ -203,7 +203,7 @@ export default async function BossPage() {
       {pastBattles.length > 0 && (
         <section>
           <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-fg">Vergangene Kämpfe</h2>
-          <div className="divide-y divide-border border border-border">
+          <div className="divide-y divide-border overflow-hidden rounded-2xl border border-border">
             {pastBattles.map((battle) => {
               const myDmg = battle.participants[0]?.damage ?? 0;
               return (

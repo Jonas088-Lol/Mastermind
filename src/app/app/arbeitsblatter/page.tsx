@@ -96,22 +96,22 @@ export default async function ArbeitsblatterPage() {
 
       {/* Stats row */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="border border-border bg-bg p-4 text-center">
+        <div className="rounded-2xl border border-border bg-bg p-4 text-center">
           <p className="text-2xl font-bold">{total}</p>
           <p className="mt-0.5 text-xs text-muted-fg">Gesamt</p>
         </div>
-        <div className="border border-border bg-bg p-4 text-center">
+        <div className="rounded-2xl border border-border bg-bg p-4 text-center">
           <p className="text-2xl font-bold text-success">{completed}</p>
           <p className="mt-0.5 text-xs text-muted-fg">Abgegeben</p>
         </div>
-        <div className="border border-border bg-bg p-4 text-center">
+        <div className="rounded-2xl border border-border bg-bg p-4 text-center">
           <p className="text-2xl font-bold text-brand">{open}</p>
           <p className="mt-0.5 text-xs text-muted-fg">Offen</p>
         </div>
       </div>
 
       {assignments.length === 0 ? (
-        <div className="grid place-items-center border border-border bg-bg p-16 text-center">
+        <div className="grid place-items-center rounded-2xl border border-border bg-bg p-16 text-center">
           <FileText className="size-10 text-muted-fg" strokeWidth={1.5} />
           <p className="mt-4 text-base font-semibold">Noch keine Arbeitsblätter zugewiesen</p>
           <p className="mt-1 text-sm text-muted-fg">
@@ -130,7 +130,7 @@ export default async function ArbeitsblatterPage() {
               <Link
                 key={a.id}
                 href={`/app/arbeitsblatter/${a.id}`}
-                className="group flex flex-col border border-border bg-bg transition-colors hover:border-brand/40 hover:bg-surface"
+                className="group flex flex-col rounded-2xl border border-border bg-bg transition-colors hover:border-brand/40 hover:bg-surface"
               >
                 <div className="flex flex-1 flex-col gap-3 p-4">
                   <div className="flex flex-wrap items-center gap-1.5">

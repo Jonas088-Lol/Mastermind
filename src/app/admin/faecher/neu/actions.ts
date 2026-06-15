@@ -13,11 +13,12 @@ export async function createSubject(formData: FormData): Promise<void> {
   const name = (formData.get("name") as string | null)?.trim() ?? "";
   const shortName = (formData.get("shortName") as string | null)?.trim().toUpperCase() ?? "";
   const color = (formData.get("color") as string | null)?.trim() ?? "#6366f1";
+  const category = (formData.get("category") as string | null)?.trim() || "allgemein";
 
   if (!name || !shortName) return;
 
   await prisma.subject.create({
-    data: { name, shortName, color, schoolId: session.schoolId },
+    data: { name, shortName, color, category, schoolId: session.schoolId },
   });
 
   revalidatePath("/admin/faecher");

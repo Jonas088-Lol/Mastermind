@@ -222,7 +222,7 @@ export default async function AufgabeDetailPage({ params }: Props) {
                     : "Schreibe deine Antwort hier…"
                 }
                 className={cn(
-                  "resize-y border border-border bg-surface px-3 py-2 text-sm leading-relaxed placeholder:text-muted-fg focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand",
+                  "resize-y rounded-xl border border-border bg-surface px-3 py-2 text-sm leading-relaxed placeholder:text-muted-fg focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand",
                   isReadOnly && "cursor-not-allowed opacity-60"
                 )}
               />
