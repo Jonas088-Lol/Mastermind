@@ -1,0 +1,47 @@
+"use server";
+
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+import { prisma } from "@/lib/db/client";
+import { effectiveRole, getSession } from "@/lib/session";
+
+async function requireStudent() {
+  const session = await getSession();
+  if (!session) redirect("/login");
+  if (effectiveRole(session) !== "student") redirect("/");
+  return session;
+}
+
+export async function createDocument(): Promise<void> {
+  const session = await requireStudent();
+  const doc = await prisma.document.create({
+    data: { userId: session.userId },
+  });
+  redirect(`/app/dokumente/${doc.id}`);
+}
+
+export async function renameDocument(documentId: string, title: string): Promise<void> {
+  const session = await requireStudent();
+  const doc = await prisma.document.findUnique({ where: { id: documentId } });
+  if (!doc || doc.userId !== session.userId) return;
+  await prisma.document.update({
+    where: { id: documentId },
+    data: { title: title.trim() || "Unbenanntes Dokument" },
+  });
+  revalidatePath("/app/dokumente");
+}
+
+export async function saveDocumentContent(documentId: string, content: string): Promise<void> {
+  const session = await requireStudent();
+  const doc = await prisma.document.findUnique({ where: { id: documentId } });
+  if (!doc || doc.userId !== session.userId) return;
+  await prisma.document.update({ where: { id: documentId }, data: { content } });
+}
+
+export async function deleteDocument(documentId: string): Promise<void> {
+  const session = await requireStudent();
+  const doc = await prisma.document.findUnique({ where: { id: documentId } });
+  if (!doc || doc.userId !== session.userId) redirect("/app/dokumente");
+  await prisma.document.delete({ where: { id: documentId } });
+  redirect("/app/dokumente");
+}

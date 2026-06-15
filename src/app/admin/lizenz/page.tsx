@@ -1,8 +1,10 @@
 import {
   ArrowLeft,
+  Check,
   CheckCircle2,
   CircleDollarSign,
   KeyRound,
+  Package,
   Users,
   XCircle,
 } from "lucide-react";
@@ -14,6 +16,8 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { DLC_FEATURES, DLC_CATEGORIES, getEnabledDlcs, enterpriseTotalPrice, PRO_MONTHLY_PRICE, BASIC_MONTHLY_PRICE } from "@/lib/features";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Lizenz · Admin" };
 
@@ -61,7 +65,7 @@ export default async function LizenzPage() {
   const [school, userCount] = await Promise.all([
     prisma.school.findUnique({
       where: { id: schoolId },
-      select: { name: true, plan: true, seats: true, createdAt: true },
+      select: { name: true, plan: true, seats: true, createdAt: true, featureSettings: true },
     }),
     prisma.user.count({ where: { schoolId } }),
   ]);
@@ -164,7 +168,52 @@ export default async function LizenzPage() {
         </CardBody>
       </Card>
 
-      {nextPlan && (
+      {/* Enterprise DLC overview */}
+      {school.plan === "enterprise" && (() => {
+        const enabled = getEnabledDlcs(school.featureSettings);
+        const total = enterpriseTotalPrice(enabled);
+        return (
+          <Card>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <Package className="size-4 text-warning" />
+                <CardTitle>Enterprise DLCs</CardTitle>
+              </div>
+              <span className="text-sm font-semibold text-warning">{total.toFixed(2)} €/Monat</span>
+            </CardHeader>
+            <CardBody className="space-y-4">
+              {DLC_CATEGORIES.map((cat) => {
+                const catFeatures = DLC_FEATURES.filter((f) => f.category === cat);
+                return (
+                  <div key={cat}>
+                    <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-muted-fg">{cat}</p>
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      {catFeatures.map((f) => {
+                        const active = enabled.includes(f.id);
+                        return (
+                          <div key={f.id} className={cn(
+                            "flex items-center gap-2 rounded-xl border px-3 py-2 text-xs",
+                            active ? "border-brand/25 bg-brand/3" : "border-border bg-surface opacity-50"
+                          )}>
+                            <Check className={cn("size-3.5 shrink-0", active ? "text-brand" : "text-muted-fg")} />
+                            <span className={cn("font-medium", !active && "text-muted-fg")}>{f.name}</span>
+                            <span className="ml-auto text-muted-fg">{f.pricePerMonth.toFixed(2)} €</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+              <p className="text-xs text-muted-fg">
+                DLCs werden vom Schulträger verwaltet. Wende dich an den Träger, um Features zu ändern.
+              </p>
+            </CardBody>
+          </Card>
+        );
+      })()}
+
+      {nextPlan && school.plan !== "enterprise" && (
         <Card>
           <CardHeader>
             <CardTitle>Upgrade auf {nextPlanLabel}</CardTitle>
@@ -180,10 +229,12 @@ export default async function LizenzPage() {
                   </li>
                 ))}
             </ul>
-            <p className="text-sm text-muted-fg">
-              Für ein Upgrade wende dich an den Plattform-Support oder sende eine Nachricht
-              über das Support-Portal.
-            </p>
+            <div className="rounded-2xl border border-border bg-surface p-4 text-sm">
+              <p className="font-semibold">Pro-Plan: {PRO_MONTHLY_PRICE.toFixed(2)} €/Monat</p>
+              <p className="mt-1 text-muted-fg">
+                Enthält alle Features außer SSO. Günstiger als alle Enterprise-DLCs einzeln.
+              </p>
+            </div>
           </CardBody>
         </Card>
       )}

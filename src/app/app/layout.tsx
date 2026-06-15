@@ -76,6 +76,9 @@ export default async function AppLayout({
   const navItems: NavItem[] = isPrivate ? [
     { href: "/app",               label: "Dashboard",    icon: "home",         exact: true },
     { href: "/app/heft",          label: "Hefte",        icon: "pencilLine"    },
+    { href: "/app/dokumente",     label: "Dokumente",    icon: "fileText"      },
+    { href: "/app/tabellen",      label: "Tabellen",     icon: "grid"          },
+    { href: "/app/praesentationen", label: "Präsentationen", icon: "monitor"   },
     { href: "/app/vokabeln",      label: "Vokabeln",     icon: "languages"     },
     { href: "/app/uebungen",      label: "Übungen",      icon: "brain"         },
     { href: "/app/karteikarten",  label: "Karteikarten", icon: "layers",       badge: dueFlashcards > 0 ? String(dueFlashcards) : undefined },
@@ -96,6 +99,9 @@ export default async function AppLayout({
     // ── Lernen (Kern) ──────────────────────────────────
     { href: "/app",                label: "Dashboard",     icon: "home",         exact: true },
     { href: "/app/heft",           label: "Hefte",         icon: "pencilLine"    },
+    { href: "/app/dokumente",      label: "Dokumente",     icon: "fileText"      },
+    { href: "/app/tabellen",       label: "Tabellen",      icon: "grid"          },
+    { href: "/app/praesentationen", label: "Präsentationen", icon: "monitor"    },
     { href: "/app/vokabeln",       label: "Vokabeln",      icon: "languages"     },
     { href: "/app/uebungen",       label: "Übungen",       icon: "brain"         },
     { href: "/app/karteikarten",   label: "Karteikarten",  icon: "layers",       badge: dueFlashcards > 0 ? String(dueFlashcards) : undefined },
