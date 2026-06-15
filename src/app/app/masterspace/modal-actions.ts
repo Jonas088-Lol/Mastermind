@@ -118,6 +118,25 @@ export async function sendChannelMessageModal(
   });
 }
 
+export async function editMessageModal(messageId: string, content: string): Promise<void> {
+  const session = await requireSession();
+  const trimmed = content.trim().slice(0, 2000);
+  if (!messageId || !trimmed) return;
+
+  await prisma.spaceMessage.updateMany({
+    where: { id: messageId, authorId: session.userId },
+    data: { content: trimmed, editedAt: new Date() },
+  });
+}
+
+export async function deleteMessageModal(messageId: string): Promise<void> {
+  const session = await requireSession();
+
+  await prisma.spaceMessage.deleteMany({
+    where: { id: messageId, authorId: session.userId },
+  });
+}
+
 export async function sendDmModal(recipientId: string, content: string): Promise<void> {
   const session = await requireSession();
   const trimmed = content.trim().slice(0, 2000);
