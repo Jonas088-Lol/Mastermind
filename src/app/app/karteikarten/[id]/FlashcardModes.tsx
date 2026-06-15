@@ -21,17 +21,39 @@ function WriteMode({ cards, onClose }: { cards: Card[]; onClose: () => void }) {
   const [input, setInput] = useState("");
   const [checked, setChecked] = useState<"correct" | "almost" | "wrong" | null>(null);
   const [score, setScore] = useState(0);
-  const [done, setDone] = useState(false);
 
-  const cur = deck[idx];
-  if (!cur || done) {
+  // define handlers before any conditional return so closures are always fresh
+  function check() {
+    const card = deck[idx];
+    if (!card) return;
+    const a = input.trim().toLowerCase();
+    const b = card.back.trim().toLowerCase();
+    const result: "correct" | "almost" | "wrong" =
+      a === b ? "correct"
+      : a.length >= 2 && (b.includes(a) || a === b.split(" ")[0]) ? "almost"
+      : "wrong";
+    setChecked(result);
+    if (result !== "wrong") setScore(s => s + 1);
+  }
+
+  function next() {
+    setIdx(i => i + 1);
+    setInput("");
+    setChecked(null);
+  }
+
+  // done is derived — no separate state needed
+  if (idx >= deck.length) {
     return (
       <div className="flex flex-col items-center gap-4 py-8 text-center">
         <p className="text-2xl font-bold">{score}/{deck.length} richtig</p>
-        <p className="text-muted-fg">{Math.round((score/deck.length)*100)}% korrekt</p>
+        <p className="text-muted-fg">{Math.round((score / deck.length) * 100)}% korrekt</p>
         <div className="flex gap-3">
           <button onClick={onClose} className="border border-border px-4 py-2 text-sm hover:bg-surface">Zurück</button>
-          <button onClick={() => { setIdx(0); setInput(""); setChecked(null); setScore(0); setDone(false); }} className="flex items-center gap-1.5 bg-fg px-4 py-2 text-sm text-bg hover:opacity-90">
+          <button
+            onClick={() => { setIdx(0); setInput(""); setChecked(null); setScore(0); }}
+            className="flex items-center gap-1.5 bg-fg px-4 py-2 text-sm text-bg hover:opacity-90"
+          >
             <RotateCcw className="size-3.5" /> Nochmal
           </button>
         </div>
@@ -39,18 +61,7 @@ function WriteMode({ cards, onClose }: { cards: Card[]; onClose: () => void }) {
     );
   }
 
-  function check() {
-    const a = input.trim().toLowerCase();
-    const b = cur.back.trim().toLowerCase();
-    const result = a === b ? "correct" : (b.includes(a) || a.includes(b.split(" ")[0])) ? "almost" : "wrong";
-    setChecked(result);
-    if (result === "correct" || result === "almost") setScore(s => s + 1);
-  }
-
-  function next() {
-    if (idx + 1 >= deck.length) setDone(true);
-    else { setIdx(i => i + 1); setInput(""); setChecked(null); }
-  }
+  const card = deck[idx];
 
   return (
     <div className="space-y-4">
@@ -61,7 +72,7 @@ function WriteMode({ cards, onClose }: { cards: Card[]; onClose: () => void }) {
 
       <div className="border border-border p-6 text-center">
         <p className="text-xs text-muted-fg mb-2">Wie lautet die Rückseite?</p>
-        <p className="text-2xl font-bold">{cur.front}</p>
+        <p className="text-2xl font-bold">{card.front}</p>
       </div>
 
       {checked === null ? (
@@ -79,12 +90,14 @@ function WriteMode({ cards, onClose }: { cards: Card[]; onClose: () => void }) {
       ) : (
         <div className={`border-2 p-4 space-y-2 ${checked === "correct" ? "border-success bg-success/10" : checked === "almost" ? "border-warning bg-warning/10" : "border-danger bg-danger/10"}`}>
           <div className="flex items-center gap-2">
-            {checked === "correct" ? <CheckCircle2 className="size-4 text-success" /> : checked === "almost" ? <CheckCircle2 className="size-4 text-warning" /> : <XCircle className="size-4 text-danger" />}
+            {checked !== "wrong"
+              ? <CheckCircle2 className={`size-4 ${checked === "correct" ? "text-success" : "text-warning"}`} />
+              : <XCircle className="size-4 text-danger" />}
             <span className={`text-sm font-semibold ${checked === "correct" ? "text-success" : checked === "almost" ? "text-warning" : "text-danger"}`}>
               {checked === "correct" ? "Richtig!" : checked === "almost" ? "Fast richtig" : "Falsch"}
             </span>
           </div>
-          {checked !== "correct" && <p className="text-sm">Richtig: <strong>{cur.back}</strong></p>}
+          {checked !== "correct" && <p className="text-sm">Richtig: <strong>{card.back}</strong></p>}
           {checked === "almost" && <p className="text-xs text-muted-fg">Deine Antwort: {input}</p>}
           <button onClick={next} className="flex items-center gap-1 text-sm font-semibold text-muted-fg hover:text-fg">
             Weiter <ChevronRight className="size-4" />
