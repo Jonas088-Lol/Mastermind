@@ -50,6 +50,7 @@ model School {
   substitutions    SubstitutionEntry[]
   consentForms     ConsentForm[]
   mailboxEmails    MailboxEmail[]
+  spaces           Space[]
 }
 
 model SsoConfig {
@@ -183,6 +184,13 @@ model User {
   substitutionsAbsent     SubstitutionEntry[]     @relation("AbsentTeacher")
   substitutionsCovering   SubstitutionEntry[]     @relation("SubstituteTeacher")
   mailboxEmails           MailboxEmail[]
+
+  ownedSpaces      Space[]              @relation("OwnedSpaces")
+  spaceMemberships SpaceMember[]
+  spaceMessages    SpaceMessage[]       @relation("SpaceMessages")
+  dmsAsA           DirectConversation[] @relation("DMsAsA")
+  dmsAsB           DirectConversation[] @relation("DMsAsB")
+  sentDirectMsgs   DirectMessage[]      @relation("SentDirectMessages")
 
   @@index([role])
   @@index([schoolId])
@@ -1505,4 +1513,98 @@ model MailboxEmail {
   @@index([schoolId, direction, sentAt])
   @@index([threadKey])
   @@index([userId])
+}
+
+// ── MasterSpace ────────────────────────────────────────────
+
+model Space {
+  id          String   @id @default(cuid())
+  schoolId    String
+  school      School   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  ownerId     String
+  owner       User     @relation("OwnedSpaces", fields: [ownerId], references: [id])
+
+  name        String
+  description String?
+  emoji       String   @default("🏠")
+  isPublic    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  channels    SpaceChannel[]
+  members     SpaceMember[]
+
+  @@index([schoolId])
+  @@index([ownerId])
+}
+
+model SpaceChannel {
+  id        String   @id @default(cuid())
+  spaceId   String
+  space     Space    @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+  name      String
+  position  Int      @default(0)
+  createdAt DateTime @default(now())
+
+  messages  SpaceMessage[]
+
+  @@index([spaceId, position])
+}
+
+model SpaceMember {
+  id       String   @id @default(cuid())
+  spaceId  String
+  space    Space    @relation(fields: [spaceId], references: [id], onDelete: Cascade)
+  userId   String
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role     String   @default("member")
+  joinedAt DateTime @default(now())
+
+  @@unique([spaceId, userId])
+  @@index([userId])
+  @@index([spaceId])
+}
+
+model SpaceMessage {
+  id        String       @id @default(cuid())
+  channelId String
+  channel   SpaceChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+  authorId  String
+  author    User         @relation("SpaceMessages", fields: [authorId], references: [id])
+  content   String
+  sentAt    DateTime     @default(now())
+  editedAt  DateTime?
+
+  @@index([channelId, sentAt])
+  @@index([authorId])
+}
+
+model DirectConversation {
+  id        String   @id @default(cuid())
+  userAId   String
+  userA     User     @relation("DMsAsA", fields: [userAId], references: [id], onDelete: Cascade)
+  userBId   String
+  userB     User     @relation("DMsAsB", fields: [userBId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  messages  DirectMessage[]
+
+  @@unique([userAId, userBId])
+  @@index([userAId])
+  @@index([userBId])
+}
+
+model DirectMessage {
+  id             String             @id @default(cuid())
+  conversationId String
+  conversation   DirectConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  authorId       String
+  author         User               @relation("SentDirectMessages", fields: [authorId], references: [id])
+  content        String
+  sentAt         DateTime           @default(now())
+  readAt         DateTime?
+
+  @@index([conversationId, sentAt])
+  @@index([authorId])
 }

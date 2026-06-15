@@ -104,6 +104,7 @@ export default async function AppLayout({
     { href: "/app/plan",           label: "Stundenplan",   icon: "calendar"      },
     { href: "/app/fehlzeiten",     label: "Fehlzeiten",    icon: "calendarX"     },
     { href: "/app/nachrichten",    label: "Nachrichten",   icon: "messageSquare", badge: unreadThreads > 0 ? String(unreadThreads) : undefined },
+    { href: "/app/masterspace",    label: "MasterSpace",   icon: "compass" },
     // ── Gamification ─────────────────────────────────
     { href: "/app/ranking",        label: "Ranking",       icon: "trophy"        },
     { href: "/app/quests",         label: "Quests",        icon: "zap"           },
@@ -129,8 +130,8 @@ export default async function AppLayout({
   const mobileNavItems: BottomNavItem[] = [
     { href: "/app", label: "Start", icon: "home", exact: true },
     { href: "/app/uebungen", label: "Übungen", icon: "brain" },
+    { href: "/app/masterspace", label: "Space", icon: "compass" },
     { href: "/app/aufgaben", label: "Aufgaben", icon: "checkSquare", badge: pendingAssignments > 0 ? String(pendingAssignments) : undefined },
-    { href: "/app/karteikarten", label: "Karten", icon: "layers", badge: dueFlashcards > 0 ? String(dueFlashcards) : undefined },
     { href: "/app/tutor", label: "Tutor", icon: "sparkles" },
   ];
 
