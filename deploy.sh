@@ -3,13 +3,15 @@ set -e
 
 echo "=== MasterMind Deploy ==="
 
-# Load all variables from .env
-if [ -f .env ]; then
-  set -a
-  # shellcheck disable=SC1091
-  source .env
-  set +a
-fi
+# Load variables from .env and .env.production
+for envfile in .env .env.production; do
+  if [ -f "$envfile" ]; then
+    set -a
+    # shellcheck disable=SC1090
+    source "$envfile"
+    set +a
+  fi
+done
 
 # Try common postgres URL variable names in priority order
 FOUND_URL="${DATABASE_URL:-${POSTGRES_URL:-${POSTGRES_PRISMA_URL:-${POSTGRES_CONNECTION_STRING:-${DB_URL:-${PG_URL:-${DIRECT_URL:-}}}}}}}"
