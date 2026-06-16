@@ -16,9 +16,24 @@ done
 # Try common postgres URL variable names in priority order
 FOUND_URL="${DATABASE_URL:-${POSTGRES_URL:-${POSTGRES_PRISMA_URL:-${POSTGRES_CONNECTION_STRING:-${DB_URL:-${PG_URL:-${DIRECT_URL:-}}}}}}}"
 
-# If still empty, try to find any variable that starts with postgres:// or postgresql://
-if [ -z "$FOUND_URL" ] && [ -f .env ]; then
-  FOUND_URL=$(grep -v '^#' .env | grep -oP '(postgresql|postgres)://[^\s"'\'']+' | head -1 || true)
+# If still empty, scan .env files for any postgres:// URL value
+if [ -z "$FOUND_URL" ]; then
+  for envfile in .env .env.production .env.local; do
+    if [ -f "$envfile" ]; then
+      FOUND_URL=$(grep -v '^#' "$envfile" | grep -oP '(postgresql|postgres)://[^\s"'\'']+' | head -1 || true)
+      [ -n "$FOUND_URL" ] && break
+    fi
+  done
+fi
+
+# If still empty, try to construct from individual POSTGRES_* parts
+if [ -z "$FOUND_URL" ] && [ -n "$POSTGRES_PASSWORD" ]; then
+  PG_USER="${POSTGRES_USER:-${PGUSER:-postgres}}"
+  PG_HOST="${POSTGRES_HOST:-${PGHOST:-localhost}}"
+  PG_PORT="${POSTGRES_PORT:-${PGPORT:-5432}}"
+  PG_DB="${POSTGRES_DB:-${PGDATABASE:-mastermind}}"
+  FOUND_URL="postgresql://${PG_USER}:${POSTGRES_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DB}"
+  echo "⚠️  URL aus Einzelvariablen gebaut: ${FOUND_URL:0:50}..."
 fi
 
 if [ -z "$FOUND_URL" ]; then
