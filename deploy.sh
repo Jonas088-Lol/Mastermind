@@ -71,7 +71,7 @@ npx prisma@6.19.3 db push --schema prisma/schema.postgres.prisma
 # ── 8. Next.js Build ──────────────────────────────────────────────────────
 echo ""
 echo "--- Next.js Build ---"
-npm run build
+NODE_OPTIONS="--max-old-space-size=1536" npm run build
 
 # ── 9. PM2 Restart ────────────────────────────────────────────────────────
 echo ""
