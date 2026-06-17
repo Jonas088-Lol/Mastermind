@@ -11,13 +11,10 @@ const trustBadges = [
 
 export function Cta() {
   return (
-    <section
-      className="border-b border-gray-100"
-      style={{ background: "hsl(168,30%,97%)" }}
-    >
+    <section className="border-b border-border bg-surface">
       <Container className="section flex flex-col items-center text-center">
         <AnimateOnScroll animation="fade-up">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl">
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl">
             Bereit für die Schule
             <br />
             von morgen?
@@ -25,7 +22,7 @@ export function Cta() {
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="fade-up" delay={80} className="mt-5">
-          <p className="max-w-md text-base leading-relaxed text-gray-500 sm:text-lg">
+          <p className="max-w-md text-base leading-relaxed text-muted-fg sm:text-lg">
             Starte die 30-Tage-Pilotphase. Kein Risiko, keine Kreditkarte.
           </p>
         </AnimateOnScroll>
@@ -34,8 +31,7 @@ export function Cta() {
           <div className="flex flex-col items-center gap-3 sm:flex-row">
             <Button
               size="lg"
-              className="w-full sm:w-auto"
-              style={{ background: "hsl(172,72%,40%)", color: "#fff" }}
+              className="w-full bg-brand text-brand-fg hover:bg-brand-dark sm:w-auto"
             >
               Pilot anfragen
               <ArrowRight className="size-4" />
@@ -43,7 +39,7 @@ export function Cta() {
             <Button
               size="lg"
               variant="outline"
-              className="w-full border-gray-200 text-gray-700 hover:bg-white sm:w-auto"
+              className="w-full sm:w-auto"
             >
               Whitepaper laden →
             </Button>
@@ -52,10 +48,10 @@ export function Cta() {
 
         {/* Trust micro-badges */}
         <AnimateOnScroll animation="fade-up" delay={240} className="mt-8">
-          <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-gray-400">
+          <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-muted-fg">
             {trustBadges.map((badge) => (
-              <span key={badge} className="flex items-center gap-1.5">
-                <span style={{ color: "hsl(172,72%,40%)" }}>✓</span>
+              <span key={badge} className="flex items-center gap-1.5 rounded-full">
+                <span className="text-brand">✓</span>
                 {badge}
               </span>
             ))}

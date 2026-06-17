@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+import { AnimateOnScroll } from "./AnimateOnScroll";
 
 const audiences = [
   {
@@ -82,38 +83,41 @@ export function UseCases() {
   return (
     <section id="fuer-schulen" className="border-b border-border section bg-surface">
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
+        <AnimateOnScroll animation="fade-up" className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Für jede Rolle</span>
           <h2 className="mt-4 text-4xl sm:text-5xl">
             Eine Plattform.
             <br />
             Vier echte Workflows.
           </h2>
-        </div>
+        </AnimateOnScroll>
 
         {/* Tab buttons */}
-        <div className="mt-12 flex justify-center">
-          <div className="inline-flex rounded-2xl border border-border bg-bg p-1.5 gap-1">
-            {audiences.map((a, i) => (
-              <button
-                key={a.role}
-                type="button"
-                onClick={() => setActiveTab(i)}
-                className={cn(
-                  "rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-150",
-                  activeTab === i ? a.tabActive : a.tabIdle
-                )}
-              >
-                <span className="mr-1.5">{a.emoji}</span>
-                {a.role}
-              </button>
-            ))}
+        <AnimateOnScroll animation="fade-up" delay={100}>
+          <div className="mt-12 flex justify-center">
+            <div className="inline-flex rounded-2xl border border-border bg-bg p-1.5 gap-1">
+              {audiences.map((a, i) => (
+                <button
+                  key={a.role}
+                  type="button"
+                  onClick={() => setActiveTab(i)}
+                  className={cn(
+                    "rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-150",
+                    activeTab === i ? a.tabActive : a.tabIdle
+                  )}
+                >
+                  <span className="mr-1.5">{a.emoji}</span>
+                  {a.role}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        </AnimateOnScroll>
 
         {/* Tab content */}
+        <AnimateOnScroll animation="fade-up" delay={200}>
         <div className="mt-8 mx-auto max-w-3xl">
-          <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+          <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-sm">
             <div className="flex flex-col sm:flex-row">
               {/* Left: emoji illustration */}
               <div
@@ -154,6 +158,7 @@ export function UseCases() {
             </div>
           </div>
         </div>
+        </AnimateOnScroll>
       </Container>
     </section>
   );

@@ -99,7 +99,7 @@ export function Gamification() {
           {features.map((f, i) => (
             <AnimateOnScroll key={f.title} animation="fade-up" delay={i * 70}>
               <article
-                className={`rounded-2xl border-b-4 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${f.borderColor}`}
+                className={`rounded-2xl border-b-4 bg-surface p-7 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${f.borderColor}`}
               >
                 <span className="text-4xl leading-none">{f.icon}</span>
                 <h3 className="mt-4 text-lg font-bold">{f.title}</h3>
@@ -123,19 +123,19 @@ export function Gamification() {
               </p>
               <ul className="mt-5 space-y-2 text-sm text-muted-fg">
                 <li className="flex items-center gap-2">
-                  <span className="text-blue-600">◆</span> 50+ Gegenstände in 6
+                  <span className="text-brand">◆</span> 50+ Gegenstände in 6
                   Kategorien
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-blue-600">◆</span> Limitierte
+                  <span className="text-brand">◆</span> Limitierte
                   Saisonalgegenstände
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-blue-600">◆</span> Münz-Pakete per Stripe
+                  <span className="text-brand">◆</span> Münz-Pakete per Stripe
                   kaufbar
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-blue-600">◆</span> Booster aktiv im Header
+                  <span className="text-brand">◆</span> Booster aktiv im Header
                   sichtbar
                 </li>
               </ul>
@@ -147,7 +147,7 @@ export function Gamification() {
               {shopPreview.map((item) => (
                 <div
                   key={item.name + item.desc}
-                  className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm"
+                  className="overflow-hidden rounded-2xl border border-border bg-surface shadow-sm"
                 >
                   {/* Rarity gradient header */}
                   <div
@@ -162,7 +162,7 @@ export function Gamification() {
                       <span className="font-mono text-sm font-bold">
                         {item.price}
                       </span>
-                      <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-600">
+                      <span className="rounded-full bg-brand/10 px-2 py-0.5 text-[10px] font-semibold text-brand">
                         {item.rarity}
                       </span>
                     </div>

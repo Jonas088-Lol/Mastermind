@@ -7,14 +7,14 @@
 
 @layer base {
   :root {
-    /* Brand — teal-green matching logo gradient midpoint */
-    --brand: 172 72% 40%;
+    /* Brand — #2FC5E7 cyan */
+    --brand: 191 77% 55%;
     --brand-fg: 0 0% 100%;
-    --brand-glow: 172 78% 52%;
-    --brand-dark: 172 72% 32%;
+    --brand-glow: 191 82% 68%;
+    --brand-dark: 191 65% 42%;
 
-    /* Accent — lime-green from logo top */
-    --accent: 142 65% 45%;
+    /* Accent — slightly deeper cyan */
+    --accent: 191 65% 45%;
     --accent-fg: 0 0% 100%;
 
     /* Surface — Light (#EDF6FF background) */

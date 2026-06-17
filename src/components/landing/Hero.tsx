@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, CheckCircle2, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DashboardPreviewModal } from "@/components/landing/DashboardPreviewModal";
 
@@ -10,250 +10,230 @@ export function Hero() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-white">
-        {/* Radial teal glow at top center */}
+      <section className="relative overflow-hidden">
+        {/* Mesh background */}
+        <div aria-hidden className="mesh-bg pointer-events-none absolute inset-0" />
+
+        {/* Radial brand glow blob */}
         <div
           aria-hidden
           className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-150 w-225 rounded-full"
           style={{
             background:
-              "radial-gradient(ellipse at center, hsl(172,72%,40%,0.08) 0%, transparent 70%)",
+              "radial-gradient(ellipse at center, hsl(var(--brand) / 0.10) 0%, transparent 70%)",
           }}
         />
 
         <div className="container-px relative mx-auto max-w-7xl">
-          {/* ─── Centered headline block ─── */}
-          <div className="flex flex-col items-center pt-20 pb-12 text-center sm:pt-28 sm:pb-16 lg:pt-36 lg:pb-20">
-            {/* Eyebrow */}
-            <div className="animate-fade-in inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-1.5 text-xs font-semibold text-gray-500 shadow-sm">
-              <span
-                className="inline-block size-1.5 rounded-full"
-                style={{ background: "hsl(172,72%,40%)" }}
-              />
-              KI-gestütztes Schulmanagement
-            </div>
+          <div className="grid items-center gap-12 pt-16 pb-8 lg:grid-cols-2 lg:gap-20 lg:pt-28 lg:pb-16">
 
-            {/* Main headline */}
-            <h1 className="animate-fade-in animate-delay-100 mt-8 max-w-4xl text-5xl font-bold leading-[1.08] tracking-tight text-gray-900 sm:text-6xl lg:text-7xl xl:text-8xl">
-              Die Schule der
-              <br />
-              <span style={{ color: "hsl(172,72%,40%)" }}>Zukunft.</span>
-            </h1>
+            {/* ─── LEFT: text ─── */}
+            <div className="flex flex-col">
+              {/* Eyebrow badge */}
+              <div className="animate-fade-in inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-semibold text-muted-fg shadow-sm">
+                <Sparkles className="size-3.5 text-brand" />
+                KI-gestütztes Schulmanagement
+              </div>
 
-            {/* Subheadline */}
-            <p className="animate-fade-in animate-delay-200 mt-6 max-w-xl text-base leading-relaxed text-gray-500 sm:text-lg">
-              KI-Tutor. Gamification. Echtzeit-Noten. —{" "}
-              <span className="text-gray-700">Eine Plattform für alle.</span>
-            </p>
+              {/* H1 */}
+              <h1 className="animate-fade-in animate-delay-100 mt-8 text-5xl font-bold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
+                Die Schule der
+                <br />
+                <span className="text-brand">Zukunft.</span>
+              </h1>
 
-            {/* CTAs */}
-            <div className="animate-fade-in animate-delay-300 mt-10 flex flex-col items-center gap-3 sm:flex-row">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto"
-                style={{ background: "hsl(172,72%,40%)", color: "#fff" }}
+              {/* Subtext */}
+              <p className="animate-fade-in animate-delay-200 mt-6 max-w-md text-base leading-relaxed text-muted-fg sm:text-lg">
+                KI-Tutor. Gamification. Echtzeit-Noten. —{" "}
+                <span className="text-fg">Eine Plattform für alle.</span>
+              </p>
+
+              {/* CTA buttons */}
+              <div className="animate-fade-in animate-delay-300 mt-10 flex flex-col gap-3 sm:flex-row">
+                <Button size="lg" className="w-full bg-brand text-brand-fg hover:bg-brand-dark sm:w-auto">
+                  Schule kostenlos testen
+                  <ArrowRight className="size-4" />
+                </Button>
+                <Button size="lg" variant="secondary" className="w-full sm:w-auto">
+                  30-Min-Demo buchen
+                </Button>
+              </div>
+
+              {/* "App live erleben" */}
+              <button
+                type="button"
+                onClick={() => setModalOpen(true)}
+                className="animate-fade-in animate-delay-300 mt-5 w-fit text-sm font-medium text-muted-fg underline-offset-4 transition-colors hover:text-fg hover:underline"
               >
-                Schule kostenlos testen
-                <ArrowRight className="size-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="w-full border-gray-200 text-gray-700 hover:bg-gray-50 sm:w-auto">
-                30-Min-Demo buchen
-              </Button>
+                App live erleben →
+              </button>
+
+              {/* Trust badges */}
+              <div className="animate-fade-in animate-delay-300 mt-10 flex flex-wrap items-center gap-5 text-xs text-muted-fg sm:text-sm">
+                {[
+                  "Server in Deutschland",
+                  "DSGVO-konform",
+                  "AVV in 24 h",
+                  "SSO & 2FA",
+                ].map((label) => (
+                  <div key={label} className="flex items-center gap-1.5">
+                    <CheckCircle2 className="size-3.5 shrink-0 text-brand" />
+                    {label}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* "App live erleben" text link */}
-            <button
-              type="button"
-              onClick={() => setModalOpen(true)}
-              className="animate-fade-in animate-delay-300 mt-5 text-sm font-medium text-gray-400 underline-offset-4 transition-colors hover:text-gray-700 hover:underline"
-            >
-              App live erleben →
-            </button>
-
-            {/* Trust badges */}
-            <div className="animate-fade-in animate-delay-300 mt-10 flex flex-wrap items-center justify-center gap-5 text-xs text-gray-400 sm:text-sm">
-              {[
-                "Server in Deutschland",
-                "DSGVO-konform",
-                "AVV in 24 h",
-                "SSO & 2FA",
-              ].map((label) => (
-                <div key={label} className="flex items-center gap-1.5">
-                  <CheckCircle2
-                    className="size-3.5 shrink-0"
-                    style={{ color: "hsl(172,72%,40%)" }}
-                  />
-                  {label}
+            {/* ─── RIGHT: app mockup ─── */}
+            <div className="relative animate-slide-up animate-delay-400">
+              {/* Floating top-right card: rank */}
+              <div className="absolute -top-4 -right-4 z-10 flex items-center gap-2.5 rounded-2xl border border-border bg-surface px-4 py-3 shadow-lg">
+                <span className="text-xl">🏆</span>
+                <div>
+                  <p className="text-xs font-bold text-fg">Rang: Silber III</p>
+                  <p className="text-[11px] text-muted-fg">Top 15% der Schule</p>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
 
-          {/* ─── Browser-frame mockup ─── */}
-          <div className="animate-slide-up animate-delay-400 mx-auto max-w-4xl pb-16 sm:pb-20 lg:pb-28">
-            {/* Subtle grid pattern behind mockup */}
-            <div className="grid-bg relative rounded-2xl p-px">
-              <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-2xl shadow-gray-200/60">
-                {/* Browser chrome */}
-                <div className="flex items-center gap-1.5 border-b border-gray-100 bg-gray-50 px-4 py-3">
-                  <span className="size-3 rounded-full bg-red-300" />
-                  <span className="size-3 rounded-full bg-yellow-300" />
-                  <span className="size-3 rounded-full bg-green-300" />
-                  <div className="ml-4 flex-1">
-                    <div className="mx-auto max-w-xs rounded-md bg-white px-3 py-1 text-center font-mono text-[11px] text-gray-400 shadow-sm">
-                      mastermind.app/app
+              {/* Floating bottom-left card: XP */}
+              <div className="absolute -bottom-4 -left-4 z-10 flex items-center gap-2.5 rounded-2xl border border-border bg-surface px-4 py-3 shadow-lg">
+                <span className="text-xl">📊</span>
+                <div>
+                  <p className="text-xs font-bold text-fg">Klasse</p>
+                  <p className="text-[11px] text-muted-fg">2.340 XP gesammelt</p>
+                </div>
+              </div>
+
+              {/* Browser-frame mockup */}
+              <div className="animate-float grid-bg relative rounded-2xl p-px">
+                <div className="overflow-hidden rounded-2xl border border-border shadow-lg">
+                  {/* Browser chrome */}
+                  <div className="flex items-center gap-1.5 border-b border-border bg-surface-2 px-4 py-3">
+                    <span className="size-3 rounded-full bg-red-300" />
+                    <span className="size-3 rounded-full bg-yellow-300" />
+                    <span className="size-3 rounded-full bg-green-300" />
+                    <div className="ml-4 flex-1">
+                      <div className="mx-auto max-w-xs rounded-md bg-surface px-3 py-1 text-center font-mono text-[11px] text-muted-fg shadow-sm">
+                        mastermind.app/app
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* App content */}
-                <div className="grid gap-0 bg-white md:grid-cols-[200px_1fr]">
-                  {/* Sidebar */}
-                  <aside className="hidden border-r border-gray-100 bg-gray-50/50 md:block">
-                    <div className="border-b border-gray-100 px-4 py-3.5">
-                      <div
-                        className="h-5 w-24 rounded-lg"
-                        style={{ background: "hsl(172,72%,40%,0.15)" }}
-                      />
-                    </div>
-                    <div className="space-y-1 p-3">
-                      {["Dashboard", "Übungen", "Aufgaben", "Karteikarten", "KI-Tutor", "Noten", "Ranking"].map(
-                        (item, i) => (
-                          <div
-                            key={item}
-                            className={`flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-xs font-medium ${
-                              i === 0
-                                ? "text-[hsl(172,72%,40%)]"
-                                : "text-gray-400"
-                            }`}
-                            style={
-                              i === 0
-                                ? { background: "hsl(172,72%,40%,0.1)" }
-                                : {}
-                            }
-                          >
+                  {/* App content */}
+                  <div className="grid gap-0 bg-surface md:grid-cols-[200px_1fr]">
+                    {/* Sidebar */}
+                    <aside className="hidden border-r border-border bg-surface-2/50 md:block">
+                      <div className="border-b border-border px-4 py-3.5">
+                        <div className="h-5 w-24 rounded-lg bg-brand/15" />
+                      </div>
+                      <div className="space-y-1 p-3">
+                        {["Dashboard", "Übungen", "Aufgaben", "Karteikarten", "KI-Tutor", "Noten", "Ranking"].map(
+                          (item, i) => (
                             <div
-                              className="size-2 rounded-full"
-                              style={{
-                                background:
-                                  i === 0
-                                    ? "hsl(172,72%,40%)"
-                                    : "hsl(0,0%,80%)",
-                              }}
-                            />
-                            {item}
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </aside>
-
-                  {/* Main content */}
-                  <div className="bg-white p-4 sm:p-6">
-                    <div className="mb-5 flex items-center justify-between">
-                      <div>
-                        <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
-                          Donnerstag, 12. Juni
-                        </p>
-                        <p className="mt-0.5 text-xl font-bold text-gray-900">
-                          Hi Lukas 👋
-                        </p>
+                              key={item}
+                              className={`flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-xs font-medium ${
+                                i === 0
+                                  ? "bg-brand/10 text-brand"
+                                  : "text-muted-fg"
+                              }`}
+                            >
+                              <div
+                                className={`size-2 rounded-full ${
+                                  i === 0 ? "bg-brand" : "bg-border"
+                                }`}
+                              />
+                              {item}
+                            </div>
+                          )
+                        )}
                       </div>
-                      <div className="hidden items-center gap-2 sm:flex">
-                        <div
-                          className="size-8 rounded-full"
-                          style={{ background: "hsl(172,72%,40%,0.15)" }}
-                        />
-                      </div>
-                    </div>
+                    </aside>
 
-                    {/* Stats */}
-                    <div className="mb-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-                      {[
-                        {
-                          label: "Streak",
-                          value: "14 🔥",
-                          gradient: "from-orange-400 to-orange-500",
-                        },
-                        {
-                          label: "XP heute",
-                          value: "+320",
-                          gradient: "from-teal-400 to-teal-600",
-                        },
-                        {
-                          label: "Münzen",
-                          value: "480 🪙",
-                          gradient: "from-yellow-400 to-yellow-500",
-                        },
-                        {
-                          label: "Ø Note",
-                          value: "2,3",
-                          gradient: "from-green-400 to-green-500",
-                        },
-                      ].map((s) => (
-                        <div
-                          key={s.label}
-                          className="overflow-hidden rounded-xl border border-gray-100 bg-white p-3 shadow-sm"
-                        >
-                          <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">
-                            {s.label}
+                    {/* Main content */}
+                    <div className="bg-surface p-4 sm:p-6">
+                      <div className="mb-5 flex items-center justify-between">
+                        <div>
+                          <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">
+                            Donnerstag, 12. Juni
                           </p>
-                          <p
-                            className={`mt-1 bg-linear-to-r ${s.gradient} bg-clip-text font-mono text-base font-bold text-transparent`}
-                          >
-                            {s.value}
+                          <p className="mt-0.5 text-xl font-bold text-fg">
+                            Hi Lukas 👋
                           </p>
                         </div>
-                      ))}
-                    </div>
-
-                    {/* AI suggestion */}
-                    <div
-                      className="rounded-xl border p-4"
-                      style={{
-                        borderColor: "hsl(172,72%,40%,0.2)",
-                        background: "hsl(172,72%,40%,0.05)",
-                      }}
-                    >
-                      <div className="flex items-center gap-2">
-                        <Zap
-                          className="size-3.5"
-                          style={{ color: "hsl(172,72%,40%)" }}
-                        />
-                        <p
-                          className="text-[11px] font-bold uppercase tracking-wider"
-                          style={{ color: "hsl(172,72%,40%)" }}
-                        >
-                          KI-Vorschlag
-                        </p>
+                        <div className="hidden items-center gap-2 sm:flex">
+                          <div className="size-8 rounded-full bg-brand/15" />
+                        </div>
                       </div>
-                      <p className="mt-2 text-sm font-medium leading-snug text-gray-700">
-                        Du hattest in{" "}
-                        <span style={{ color: "hsl(172,72%,40%)" }}>
-                          Mathe
-                        </span>{" "}
-                        eine 3,5. 10 Min. Übung jetzt können die nächste
-                        Klassenarbeit verbessern.
-                      </p>
-                      <div className="mt-3 flex items-center gap-2">
-                        <div
-                          className="h-1.5 flex-1 overflow-hidden rounded-full"
-                          style={{ background: "hsl(172,72%,40%,0.15)" }}
-                        >
+
+                      {/* Stat cards */}
+                      <div className="mb-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                        {[
+                          {
+                            label: "Streak",
+                            value: "14 🔥",
+                            gradient: "from-orange-400 to-orange-500",
+                          },
+                          {
+                            label: "XP heute",
+                            value: "+320",
+                            gradient: "from-teal-400 to-teal-600",
+                          },
+                          {
+                            label: "Münzen",
+                            value: "480 🪙",
+                            gradient: "from-yellow-400 to-yellow-500",
+                          },
+                          {
+                            label: "Ø Note",
+                            value: "2,3",
+                            gradient: "from-green-400 to-green-500",
+                          },
+                        ].map((s) => (
                           <div
-                            className="h-full w-2/3 rounded-full"
-                            style={{ background: "hsl(172,72%,40%)" }}
-                          />
+                            key={s.label}
+                            className="overflow-hidden rounded-xl border border-border bg-surface-2/40 p-3 shadow-sm"
+                          >
+                            <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+                              {s.label}
+                            </p>
+                            <p
+                              className={`mt-1 bg-linear-to-r ${s.gradient} bg-clip-text font-mono text-base font-bold text-transparent`}
+                            >
+                              {s.value}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* KI-Vorschlag card */}
+                      <div className="rounded-xl border border-brand/20 bg-brand/5 p-4">
+                        <div className="flex items-center gap-2">
+                          <Zap className="size-3.5 text-brand" />
+                          <p className="text-[11px] font-bold uppercase tracking-wider text-brand">
+                            KI-Vorschlag
+                          </p>
                         </div>
-                        <span className="text-[11px] text-gray-400">
-                          Übung starten →
-                        </span>
+                        <p className="mt-2 text-sm font-medium leading-snug text-fg">
+                          Du hattest in{" "}
+                          <span className="text-brand">Mathe</span>{" "}
+                          eine 3,5. 10 Min. Übung jetzt können die nächste
+                          Klassenarbeit verbessern.
+                        </p>
+                        <div className="mt-3 flex items-center gap-2">
+                          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-brand/15">
+                            <div className="h-full w-2/3 rounded-full bg-brand" />
+                          </div>
+                          <span className="text-[11px] text-muted-fg">
+                            Übung starten →
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>

@@ -39,7 +39,7 @@ export function Navbar() {
         className={cn(
           "sticky top-0 z-50 w-full transition-all duration-200",
           scrolled
-            ? "border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-lg"
+            ? "border-b border-border bg-surface/90 shadow-sm backdrop-blur-lg"
             : "bg-transparent"
         )}
       >
@@ -61,7 +61,7 @@ export function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-lg px-3.5 py-2 text-sm font-medium text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg"
               >
                 {l.label}
               </Link>
@@ -70,19 +70,19 @@ export function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Link
               href="/login"
               className={cn(
                 buttonVariants({ variant: "ghost", size: "sm" }),
-                "hidden text-gray-600 hover:text-gray-900 sm:inline-flex"
+                "hidden text-muted-fg hover:text-fg sm:inline-flex"
               )}
             >
               Anmelden
             </Link>
             <Button
               size="sm"
-              className="hidden text-white sm:inline-flex"
-              style={{ background: "hsl(172,72%,40%)" }}
+              className="hidden bg-brand text-brand-fg hover:bg-brand-dark sm:inline-flex"
             >
               Kostenlos testen
             </Button>
@@ -92,7 +92,7 @@ export function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={open}
-              className="grid size-9 place-items-center rounded-lg text-gray-700 transition-colors hover:bg-gray-100 md:hidden"
+              className="grid size-9 place-items-center rounded-lg text-fg transition-colors hover:bg-surface-2 md:hidden"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -103,7 +103,7 @@ export function Navbar() {
       {/* Mobile menu overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-40 flex flex-col bg-white transition-all duration-300 ease-out md:hidden",
+          "fixed inset-0 z-40 flex flex-col bg-surface transition-all duration-300 ease-out md:hidden",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
         style={{ paddingTop: "64px" }}
@@ -118,7 +118,7 @@ export function Navbar() {
               href={l.href}
               onClick={() => setOpen(false)}
               className={cn(
-                "flex items-center rounded-xl px-4 py-3.5 text-base font-medium text-gray-800 transition-colors hover:bg-gray-50",
+                "flex items-center rounded-xl px-4 py-3.5 text-base font-medium text-fg transition-colors hover:bg-surface-2",
                 open &&
                   `animate-slide-up animate-delay-${
                     i === 0 ? "100" : i === 1 ? "200" : "300"
@@ -128,7 +128,7 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
-          <div className="mt-4 flex flex-col gap-2.5 border-t border-gray-100 pt-4">
+          <div className="mt-4 flex flex-col gap-2.5 border-t border-border pt-4">
             <div className="flex items-center justify-between pb-1">
               <span className="text-sm text-gray-400">Darstellung</span>
               <ThemeToggle />
@@ -145,8 +145,7 @@ export function Navbar() {
             </Link>
             <Button
               size="lg"
-              className="w-full text-white"
-              style={{ background: "hsl(172,72%,40%)" }}
+              className="w-full bg-brand text-brand-fg hover:bg-brand-dark"
               onClick={() => setOpen(false)}
             >
               Kostenlos testen
