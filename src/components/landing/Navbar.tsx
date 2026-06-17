@@ -69,7 +69,7 @@ export function Navbar() {
             >
               Anmelden
             </Link>
-            <Button size="sm" className="hidden sm:inline-flex">
+            <Button size="sm" className="hidden bg-blue-600 text-white hover:bg-blue-700 sm:inline-flex">
               Demo buchen
             </Button>
             {/* Mobile hamburger */}
@@ -116,7 +116,7 @@ export function Navbar() {
             >
               Anmelden
             </Link>
-            <Button size="lg" className="w-full" onClick={() => setOpen(false)}>
+            <Button size="lg" className="w-full bg-blue-600 text-white hover:bg-blue-700" onClick={() => setOpen(false)}>
               Demo buchen
             </Button>
           </div>

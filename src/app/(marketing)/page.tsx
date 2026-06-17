@@ -1,6 +1,6 @@
 import { Hero } from "@/components/landing/Hero";
 import { Trust } from "@/components/landing/Trust";
-import { Features } from "@/components/landing/Features";
+import { FeatureShowcase } from "@/components/landing/FeatureShowcase";
 import { Gamification } from "@/components/landing/Gamification";
 import { UseCases } from "@/components/landing/UseCases";
 import { Pricing } from "@/components/landing/Pricing";
@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <Trust />
-      <Features />
+      <FeatureShowcase />
       <Gamification />
       <UseCases />
       <Pricing />
