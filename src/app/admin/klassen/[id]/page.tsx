@@ -132,7 +132,7 @@ export default async function AdminKlasseDetailPage({ params }: PageProps) {
                 </form>
               )}
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {klass.students.length === 0 ? (
                 <p className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                   Noch keine Schüler zugewiesen.
@@ -172,7 +172,7 @@ export default async function AdminKlasseDetailPage({ params }: PageProps) {
             <CardHeader>
               <CardTitle>Lehrer & Fächer</CardTitle>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {klass.teacherSubjectClasses.length === 0 ? (
                 <p className="border-t border-border px-5 py-4 text-sm text-muted-fg">Noch nicht zugewiesen.</p>
               ) : (

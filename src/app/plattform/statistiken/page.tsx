@@ -191,7 +191,7 @@ export default async function PlattformStatistikenPage() {
             Alle anzeigen →
           </Link>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {recentSchools.length === 0 ? (
             <p className="border-t border-border px-5 py-6 text-sm text-muted-fg">Noch keine Schulen registriert.</p>
           ) : (

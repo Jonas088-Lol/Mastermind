@@ -128,7 +128,7 @@ export default async function SaisonPage() {
 
       {/* ── CTA: buy season pass if not yet enrolled ── */}
       {!hasPremium && (
-        <Card className="border-warning/40 bg-warning/[0.04]">
+        <Card className="border-warning/40 bg-warning/4">
           <CardBody className="flex flex-col gap-4 py-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-4">
               <span className="text-3xl leading-none">🎟️</span>
@@ -207,7 +207,7 @@ export default async function SaisonPage() {
 
           {/* Premium track */}
           <div className="bg-bg">
-            <div className="flex items-center gap-2 border-b border-border bg-warning/[0.06] px-4 py-3">
+            <div className="flex items-center gap-2 border-b border-border bg-warning/6 px-4 py-3">
               <span className="text-base">⭐</span>
               <p className="text-xs font-semibold uppercase tracking-wider text-warning">Premium</p>
               {!hasPremium && (
@@ -260,7 +260,7 @@ export default async function SaisonPage() {
                 className={cn(
                   "flex items-center gap-4 border px-4 py-3",
                   isUnlocked
-                    ? "border-success/30 bg-success/[0.04]"
+                    ? "border-success/30 bg-success/4"
                     : "border-border opacity-60",
                 )}
               >
@@ -307,8 +307,8 @@ export default async function SaisonPage() {
                 title={tier.reward}
                 className={cn(
                   "flex flex-col items-center gap-1 bg-bg p-2 text-center",
-                  isUnlocked && "bg-success/[0.04]",
-                  isCurrent  && "bg-brand/[0.06] ring-1 ring-inset ring-brand/30",
+                  isUnlocked && "bg-success/4",
+                  isCurrent  && "bg-brand/6 ring-1 ring-inset ring-brand/30",
                   !isUnlocked && !isCurrent && "opacity-40",
                 )}
               >

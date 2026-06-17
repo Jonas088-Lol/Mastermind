@@ -172,7 +172,7 @@ export default async function ElternAufgabenPage() {
             </div>
 
             <Card>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border">
                   {list.map((a) => {
                     const dueDate = a.dueAt.toLocaleDateString("de-DE", {

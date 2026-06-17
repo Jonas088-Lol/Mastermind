@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { redirect } from "next/navigation";
+import { awardCoins } from "@/lib/coins";
 
 async function requireSession() {
   const session = await getSession();
@@ -153,6 +154,12 @@ export async function sendDmModal(recipientId: string, content: string): Promise
   const trimmed = content.trim().slice(0, 2000);
   if (!recipientId || !trimmed || recipientId === session.userId) return;
 
+  const recipientExists = await prisma.user.findUnique({
+    where: { id: recipientId, schoolId: session.schoolId ?? "" },
+    select: { id: true },
+  });
+  if (!recipientExists) return;
+
   const [a, b] = [session.userId, recipientId].sort();
   const convo = await prisma.directConversation.upsert({
     where: { userAId_userBId: { userAId: a, userBId: b } },
@@ -237,6 +244,12 @@ export async function sendFriendRequestModal(
   const session = await requireSession();
   if (addresseeId === session.userId) return { ok: false, message: "Du kannst dich nicht selbst hinzufügen" };
 
+  const addresseeExists = await prisma.user.findUnique({
+    where: { id: addresseeId, schoolId: session.schoolId ?? "" },
+    select: { id: true },
+  });
+  if (!addresseeExists) return { ok: false, message: "Benutzer nicht gefunden" };
+
   // Check if already exists in either direction
   const existing = await prisma.friendship.findFirst({
     where: {
@@ -259,10 +272,20 @@ export async function sendFriendRequestModal(
 
 export async function acceptFriendModal(friendshipId: string): Promise<void> {
   const session = await requireSession();
-  await prisma.friendship.updateMany({
-    where: { id: friendshipId, addresseeId: session.userId, status: "pending" },
+  const friendship = await prisma.friendship.findUnique({
+    where: { id: friendshipId },
+    select: { requesterId: true, addresseeId: true, status: true },
+  });
+  if (!friendship || friendship.addresseeId !== session.userId || friendship.status !== "pending") return;
+
+  await prisma.friendship.update({
+    where: { id: friendshipId },
     data: { status: "accepted" },
   });
+
+  // Award coins to both users for making a new friend
+  awardCoins(session.userId, "freund_eingeladen", undefined, friendshipId).catch(() => undefined);
+  awardCoins(friendship.requesterId, "freund_eingeladen", undefined, friendshipId).catch(() => undefined);
 }
 
 export async function declineFriendModal(friendshipId: string): Promise<void> {

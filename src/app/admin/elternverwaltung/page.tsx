@@ -18,7 +18,7 @@ export default async function AdminElternverwaltungPage() {
     where: { id: session.userId },
     select: { schoolId: true },
   });
-  const schoolId = adminUser!.schoolId!;
+  const schoolId = adminUser?.schoolId ?? session.schoolId ?? "";
 
   const [links, parents, students] = await Promise.all([
     prisma.parentStudentLink.findMany({
@@ -77,7 +77,7 @@ export default async function AdminElternverwaltungPage() {
         <CardHeader>
           <CardTitle>Eltern-Kind-Verknüpfungen</CardTitle>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {groupedLinks.length === 0 ? (
             <p className="px-5 py-8 text-center text-sm text-muted-fg">
               Noch keine Verknüpfungen vorhanden.

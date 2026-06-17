@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { awardXp } from "@/lib/xp";
+import { awardCoins } from "@/lib/coins";
 import { incrementQuestProgress } from "@/lib/quests";
 
 export async function submitAssignment(formData: FormData) {
@@ -16,6 +17,14 @@ export async function submitAssignment(formData: FormData) {
   const assignmentId = String(formData.get("assignmentId") ?? "");
   const content = String(formData.get("content") ?? "");
   if (!assignmentId) throw new Error("assignmentId fehlt");
+
+  const assignment = await prisma.assignment.findUnique({
+    where: { id: assignmentId },
+    select: { classId: true },
+  });
+  if (!assignment || assignment.classId !== session.classId) {
+    throw new Error("Aufgabe nicht gefunden");
+  }
 
   await prisma.submission.upsert({
     where: { assignmentId_studentId: { assignmentId, studentId: session.userId } },
@@ -32,6 +41,14 @@ export async function submitAssignment(formData: FormData) {
       submittedAt: new Date(),
     },
   });
+
+  // Award first-submission coin bonus (once per student, lifetime)
+  const priorSubmissions = await prisma.submission.count({
+    where: { studentId: session.userId, assignmentId: { not: assignmentId } },
+  });
+  if (priorSubmissions === 0) {
+    awardCoins(session.userId, "erste_aufgabe_semester", undefined, assignmentId).catch(() => undefined);
+  }
 
   await awardXp(session.userId, "aufgabe_abgabe", assignmentId);
   await incrementQuestProgress(session.userId, "submission");

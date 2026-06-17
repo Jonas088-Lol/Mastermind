@@ -87,7 +87,7 @@ export default async function AttestePage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {pending.map((a) => (
-                  <tr key={a.id} className="bg-warning/[0.03] hover:bg-surface">
+                  <tr key={a.id} className="bg-warning/3 hover:bg-surface">
                     <td className="px-5 py-3 font-medium">{a.student.name}</td>
                     <td className="px-5 py-3 font-mono text-xs text-muted-fg">
                       {a.student.klasse ?? "—"}

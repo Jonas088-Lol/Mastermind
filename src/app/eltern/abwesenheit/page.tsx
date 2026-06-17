@@ -107,7 +107,7 @@ export default async function ElternAbwesenheitPage() {
           <CardTitle>Bisherige Meldungen</CardTitle>
           <span className="font-mono text-xs text-muted-fg">{absences.length} gesamt</span>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {absences.length === 0 ? (
             <p className="px-5 py-6 text-sm text-muted-fg">Noch keine Abwesenheiten gemeldet.</p>
           ) : (

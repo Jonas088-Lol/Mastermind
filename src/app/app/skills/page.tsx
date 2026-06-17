@@ -84,8 +84,8 @@ export default async function SkillsPage() {
                             key={node.slug}
                             className={cn(
                               "flex flex-col gap-3 border p-4 transition-colors",
-                              isUnlocked && "border-success/40 bg-success/[0.04]",
-                              canUnlock  && "border-brand/40 bg-brand/[0.02]",
+                              isUnlocked && "border-success/40 bg-success/4",
+                              canUnlock  && "border-brand/40 bg-brand/2",
                               isLocked   && "border-border opacity-40",
                               !isUnlocked && !canUnlock && !isLocked && "border-border",
                             )}

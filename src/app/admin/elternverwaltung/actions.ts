@@ -12,6 +12,15 @@ export async function linkParentToStudent(formData: FormData): Promise<void> {
   const studentId = formData.get("studentId") as string;
   if (!parentId || !studentId) return;
 
+  // Verify both parent and student belong to admin's school
+  const [parent, student] = await Promise.all([
+    prisma.user.findUnique({ where: { id: parentId }, select: { schoolId: true, role: true } }),
+    prisma.user.findUnique({ where: { id: studentId }, select: { schoolId: true, role: true } }),
+  ]);
+  const schoolId = session.schoolId ?? "";
+  if (!parent || parent.schoolId !== schoolId || parent.role !== "parent") return;
+  if (!student || student.schoolId !== schoolId || student.role !== "student") return;
+
   await prisma.parentStudentLink.upsert({
     where: { parentId_studentId: { parentId, studentId } },
     create: { parentId, studentId },

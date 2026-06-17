@@ -135,7 +135,7 @@ export default async function PostfachPage({
                 href={`/admin/postfach/${email.id}`}
                 className={cn(
                   "flex items-start gap-4 px-5 py-4 transition-colors hover:bg-surface",
-                  isUnread && "bg-brand/[0.03]"
+                  isUnread && "bg-brand/3"
                 )}
               >
                 {/* Avatar-Platzhalter */}

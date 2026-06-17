@@ -117,6 +117,13 @@ export async function sendDirectMessage(formData: FormData): Promise<void> {
   const content = String(formData.get("content") ?? "").trim().slice(0, 2000);
   if (!recipientId || !content || recipientId === session.userId) return;
 
+  // Verify recipient is in the same school
+  const recipient = await prisma.user.findUnique({
+    where: { id: recipientId },
+    select: { schoolId: true },
+  });
+  if (!recipient || recipient.schoolId !== session.schoolId) return;
+
   const [a, b] = [session.userId, recipientId].sort();
   const convo = await prisma.directConversation.upsert({
     where: { userAId_userBId: { userAId: a, userBId: b } },

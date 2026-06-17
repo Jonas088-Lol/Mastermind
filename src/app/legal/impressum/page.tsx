@@ -85,7 +85,7 @@ export default function ImpressumPage() {
         </p>
       </Section>
 
-      <p className="border-l-2 border-warning bg-warning/[0.06] p-4 text-xs text-muted-fg">
+      <p className="border-l-2 border-warning bg-warning/6 p-4 text-xs text-muted-fg">
         Dieses Impressum enthält Platzhalter und muss vor Inverkehrbringung mit
         den realen Firmendaten (HRB-Nummer, Geschäftsführung, USt-ID, Telefon)
         ausgefüllt und juristisch geprüft werden.

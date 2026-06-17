@@ -143,7 +143,7 @@ export default async function KarteikartenPage() {
       </section>
 
       {totalDue > 0 && (
-        <section className="border border-brand/40 bg-gradient-to-r from-brand/[0.08] to-transparent">
+        <section className="border border-brand/40 bg-gradient-to-r from-brand/8 to-transparent">
           <div className="flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-4">
               <div className="grid size-12 shrink-0 place-items-center bg-brand text-brand-fg">

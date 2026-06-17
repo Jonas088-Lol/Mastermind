@@ -193,7 +193,7 @@ export default async function LernfortschrittPage() {
                     <CardTitle>Zuletzt abgeschlossene Quests</CardTitle>
                   </div>
                 </CardHeader>
-                <CardBody className="!px-0 !pb-0">
+                <CardBody className="px-0! pb-0!">
                   <ul className="divide-y divide-border border-t border-border">
                     {student.userQuests.map((uq) => (
                       <li key={uq.id} className="flex items-center gap-4 px-5 py-3 text-sm">
@@ -230,7 +230,7 @@ export default async function LernfortschrittPage() {
                     <CardTitle>Letzte XP-Einträge</CardTitle>
                   </div>
                 </CardHeader>
-                <CardBody className="!px-0 !pb-0">
+                <CardBody className="px-0! pb-0!">
                   <ul className="divide-y divide-border border-t border-border">
                     {student.xpLogs.map((log) => (
                       <li key={log.id} className="flex items-center gap-4 px-5 py-3 text-sm">

@@ -17,7 +17,7 @@ export async function confirmAttest(absenceId: string): Promise<void> {
   const session = await requireSecretary();
 
   await prisma.absence.update({
-    where: { id: absenceId },
+    where: { id: absenceId, schoolId: session.schoolId ?? "" },
     data: {
       status: "confirmed",
       confirmedById: session.userId,
@@ -32,7 +32,7 @@ export async function rejectAttest(absenceId: string): Promise<void> {
   const session = await requireSecretary();
 
   await prisma.absence.update({
-    where: { id: absenceId },
+    where: { id: absenceId, schoolId: session.schoolId ?? "" },
     data: {
       status: "rejected",
       confirmedById: session.userId,

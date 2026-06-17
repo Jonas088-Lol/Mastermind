@@ -106,7 +106,7 @@ Sei präzise und motivierend. Max. 400 Wörter.`;
         <Sparkles className="ml-auto size-5 text-brand" />
       </header>
 
-      <div className="flex gap-3 border border-border bg-brand/[0.04] p-4 text-sm text-muted-fg">
+      <div className="flex gap-3 border border-border bg-brand/4 p-4 text-sm text-muted-fg">
         <Brain className="mt-0.5 size-4 shrink-0 text-brand" strokeWidth={1.75} />
         <p>
           Dieser Plan wurde basierend auf deinen offenen Aufgaben ({openAssignments.length}) und

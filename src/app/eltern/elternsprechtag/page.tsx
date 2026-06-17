@@ -164,7 +164,7 @@ export default async function ElternsprechtPage() {
               </div>
               <span className="text-xs text-muted-fg">{slots.length} freie Slots</span>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {slots.map((slot) => (
                   <li key={slot.id} className="flex items-center gap-4 px-5 py-3.5 text-sm">
@@ -189,10 +189,14 @@ export default async function ElternsprechtPage() {
                     {firstChild ? (
                       <form
                         action={bookSlot.bind(null, slot.id, firstChild.id)}
+                        className="flex flex-col items-end gap-2"
                       >
-                        {links.length > 1 && (
-                          <input type="hidden" name="studentId" value={firstChild.id} />
-                        )}
+                        <textarea
+                          name="note"
+                          rows={2}
+                          placeholder="Nachricht an Lehrkraft (optional)"
+                          className="w-full resize-none rounded-lg border border-border bg-surface px-2.5 py-1.5 text-xs text-fg placeholder:text-muted-fg focus:border-brand focus:outline-none"
+                        />
                         <button
                           type="submit"
                           className="shrink-0 bg-fg px-3 py-1.5 text-xs font-semibold text-bg transition-opacity hover:opacity-80"

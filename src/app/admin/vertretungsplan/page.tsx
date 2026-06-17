@@ -337,7 +337,7 @@ export default async function AdminVertretungsplanPage({ searchParams }: PagePro
                 </div>
                 <Badge variant="info">{dayEntries.length}</Badge>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <div className="border-t border-border">
                   <table className="w-full text-sm">
                     <thead>

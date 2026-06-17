@@ -15,7 +15,7 @@ export async function claimDailyLoginReward(): Promise<void> {
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },
-    select: { lastLoginDate: true, totalDailyLogins: true },
+    select: { lastLoginDate: true, totalDailyLogins: true, streak: true },
   });
 
   if (!user || user.lastLoginDate === today) return;
@@ -43,6 +43,11 @@ export async function claimDailyLoginReward(): Promise<void> {
 
   await incrementQuestProgress(session.userId, "login");
   await awardCoins(session.userId, "daily_login_reward", COIN_REWARDS.daily_login_reward);
+
+  // Award streak bonus when the user has already established a streak (streak > 0 before today)
+  if ((user.streak ?? 0) > 1) {
+    awardCoins(session.userId, "daily_streak_bonus").catch(() => undefined);
+  }
 
   revalidatePath("/app/tagesbelohnung");
 }

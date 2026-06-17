@@ -13,7 +13,7 @@ export async function acceptSubmission(submissionId: string, grade: number, comm
     where: { id: submissionId },
     include: { assignment: { select: { subjectId: true, teacherId: true, title: true } } },
   });
-  if (!sub) return;
+  if (!sub || sub.assignment.teacherId !== session.userId) return;
 
   await prisma.submission.update({
     where: { id: submissionId },

@@ -50,7 +50,7 @@ export default async function SchuelerFehlzeitenPage() {
           <CardTitle>Meine Fehlzeiten</CardTitle>
           <span className="font-mono text-xs text-muted-fg">{absences.length} Einträge</span>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {absences.length === 0 ? (
             <p className="px-5 py-6 text-sm text-muted-fg">Noch keine Fehlzeiten eingetragen.</p>
           ) : (

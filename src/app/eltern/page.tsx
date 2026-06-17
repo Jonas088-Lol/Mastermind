@@ -266,7 +266,7 @@ export default async function ElternPage({ searchParams }: PageProps) {
                 <ArrowRight className="size-3.5" />
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {allGrades.length === 0 ? (
                 <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                   Noch keine Noten eingetragen.
@@ -313,7 +313,7 @@ export default async function ElternPage({ searchParams }: PageProps) {
                   </p>
                 </div>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {absences.slice(0, 8).map((a) => (
                     <li key={a.id} className="flex items-center gap-4 px-5 py-3 text-sm">
@@ -357,7 +357,7 @@ export default async function ElternPage({ searchParams }: PageProps) {
                 <ArrowRight className="size-3.5" />
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {student.timetableEntries.length === 0 ? (
                 <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                   Kein Stundenplan für heute.
@@ -392,7 +392,7 @@ export default async function ElternPage({ searchParams }: PageProps) {
               <CardTitle>Nachrichten</CardTitle>
               {unreadCount > 0 && <Badge variant="brand">{unreadCount}</Badge>}
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <div className="border-t border-border px-5 py-4">
                 <Link
                   href="/eltern/nachrichten"
@@ -414,7 +414,7 @@ export default async function ElternPage({ searchParams }: PageProps) {
                   <p className="mt-1 text-sm text-muted-fg">für {student.name.split(" ")[0]}</p>
                 </div>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {upcomingAssignments.map((a) => {
                     const daysLeft = Math.ceil(
@@ -454,8 +454,8 @@ export default async function ElternPage({ searchParams }: PageProps) {
           )}
 
           {/* Schnell-Aktionen */}
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
-            <CardBody className="!p-5">
+          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+            <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <CalendarClock className="size-4 text-brand" strokeWidth={1.75} />
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand">Schnellzugriff</p>

@@ -66,7 +66,7 @@ export default async function TwoFactorLoginPage({ searchParams }: PageProps) {
         {error === "invalid" && (
           <div
             role="alert"
-            className="mt-6 flex items-start gap-3 border border-danger/40 bg-danger/[0.06] p-3 text-sm text-danger"
+            className="mt-6 flex items-start gap-3 border border-danger/40 bg-danger/6 p-3 text-sm text-danger"
           >
             <AlertCircle className="mt-0.5 size-4 shrink-0" />
             <p>

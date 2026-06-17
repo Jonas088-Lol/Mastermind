@@ -150,7 +150,7 @@ export default async function KorrekturDetailPage({ params }: PageProps) {
             </div>
             <span className="text-xs text-muted-fg">{files.length} {files.length === 1 ? "Datei" : "Dateien"}</span>
           </CardHeader>
-          <CardBody className="!p-0">
+          <CardBody className="p-0!">
             <ul className="divide-y divide-border">
               {files.map((f) => (
                 <li key={f.id}>
@@ -171,7 +171,7 @@ export default async function KorrekturDetailPage({ params }: PageProps) {
       )}
 
       {/* Grade section */}
-      <Card className={cn(isGraded && "border-success/30 bg-success/[0.03]")}>
+      <Card className={cn(isGraded && "border-success/30 bg-success/3")}>
         <CardHeader>
           <CardTitle>Bewertung</CardTitle>
           {isGraded && currentGrade != null && (

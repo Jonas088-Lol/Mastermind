@@ -152,7 +152,7 @@ export default async function AbwesenheitPage({ searchParams }: PageProps) {
             </div>
             <Badge variant="warning">{pending.length} offen</Badge>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {pending.map((a) => (
                 <li key={a.id} className="flex items-start gap-4 px-5 py-4">
@@ -208,7 +208,7 @@ export default async function AbwesenheitPage({ searchParams }: PageProps) {
               <p className="mt-1 text-sm text-muted-fg">Bestätigte und abgelehnte Abwesenheiten</p>
             </div>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {[...confirmed, ...rejected].map((a) => (
                 <li key={a.id} className="flex items-start gap-4 px-5 py-3.5">

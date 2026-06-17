@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db/client";
 import { levelFromXp } from "@/lib/xp";
+import { awardCoins } from "@/lib/coins";
 
 export interface Achievement {
   slug: string;
@@ -85,6 +86,10 @@ export async function checkAndAwardAchievements(userId: string): Promise<string[
         })
       )
     );
+    // Award coins for each newly unlocked achievement (fire-and-forget)
+    for (const slug of newSlugs) {
+      awardCoins(userId, "achievement_unlock", undefined, slug).catch(() => undefined);
+    }
   }
 
   return newSlugs;

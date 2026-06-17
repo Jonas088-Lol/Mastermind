@@ -35,6 +35,13 @@ export async function claimQuestReward(questId: string): Promise<void> {
   // Award coins for quest completion
   await awardCoins(session.userId, "quest_reward", COIN_REWARDS.quest_reward, questId);
 
+  // Extra bonus for weekly / monthly quests
+  if (userQuest.quest.type === "weekly") {
+    awardCoins(session.userId, "weekly_quest_bonus", undefined, questId).catch(() => undefined);
+  } else if (userQuest.quest.type === "monthly") {
+    awardCoins(session.userId, "monthly_quest_bonus", undefined, questId).catch(() => undefined);
+  }
+
   // Award title reward if applicable
   if (userQuest.quest.titleReward) {
     await prisma.userTitle.upsert({

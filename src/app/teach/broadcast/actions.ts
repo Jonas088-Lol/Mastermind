@@ -23,6 +23,11 @@ export async function sendTeacherBroadcast(formData: FormData): Promise<void> {
 
   if (targetType === "class") {
     if (!classId) return;
+    // Verify teacher teaches this class
+    const tsc = await prisma.teacherSubjectClass.findFirst({
+      where: { teacherId: session.userId, classId },
+    });
+    if (!tsc) return;
     const students = await prisma.user.findMany({
       where: { classId, role: "student" },
       select: { id: true },

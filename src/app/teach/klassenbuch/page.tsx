@@ -200,7 +200,7 @@ export default async function KlassenbuchPage({ searchParams }: PageProps) {
             </p>
           </div>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {lessons.length === 0 ? (
             <div className="grid place-items-center border-t border-border p-12 text-center">
               <ClipboardList className="size-8 text-muted-fg" strokeWidth={1.5} />
@@ -333,7 +333,7 @@ export default async function KlassenbuchPage({ searchParams }: PageProps) {
           </Link>
         </CardHeader>
         {incidents.length > 0 && (
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {incidents.map((inc) => {
                 const tone =

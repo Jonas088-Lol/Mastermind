@@ -312,7 +312,7 @@ export default async function KalenderPage({ searchParams }: PageProps) {
               key={dayIdx}
               className={cn(
                 "flex flex-col gap-2 border border-border p-3",
-                isToday ? "border-brand/60 bg-brand/[0.03]" : "bg-bg"
+                isToday ? "border-brand/60 bg-brand/3" : "bg-bg"
               )}
             >
               {/* Day header */}
@@ -346,7 +346,7 @@ export default async function KalenderPage({ searchParams }: PageProps) {
               {dayTimetable.map((e) => (
                 <div
                   key={e.id}
-                  className="border-l-2 border-blue-500 bg-blue-500/[0.08] pl-2.5 py-1.5 text-xs"
+                  className="border-l-2 border-blue-500 bg-blue-500/8 pl-2.5 py-1.5 text-xs"
                 >
                   <p className="font-semibold leading-tight">{e.subject.name}</p>
                   <p className="text-muted-fg">
@@ -361,7 +361,7 @@ export default async function KalenderPage({ searchParams }: PageProps) {
                 <Link
                   key={a.id}
                   href={`/teach/aufgaben/${a.id}`}
-                  className="border-l-2 border-amber-500 bg-amber-500/[0.08] pl-2.5 py-1.5 text-xs hover:bg-amber-500/[0.14] transition-colors"
+                  className="border-l-2 border-amber-500 bg-amber-500/8 pl-2.5 py-1.5 text-xs hover:bg-amber-500/14 transition-colors"
                 >
                   <p className="font-semibold leading-tight">
                     Abgabe: {a.title}
@@ -376,7 +376,7 @@ export default async function KalenderPage({ searchParams }: PageProps) {
               {dayEvents.map((ev) => (
                 <div
                   key={ev.id}
-                  className="border-l-2 border-green-500 bg-green-500/[0.08] pl-2.5 py-1.5 text-xs"
+                  className="border-l-2 border-green-500 bg-green-500/8 pl-2.5 py-1.5 text-xs"
                 >
                   <p className="font-semibold leading-tight">{ev.title}</p>
                   <p className="text-muted-fg">
@@ -395,7 +395,7 @@ export default async function KalenderPage({ searchParams }: PageProps) {
               {daySubstitutions.map((s) => (
                 <div
                   key={s.id}
-                  className="border-l-2 border-red-500 bg-red-500/[0.08] pl-2.5 py-1.5 text-xs"
+                  className="border-l-2 border-red-500 bg-red-500/8 pl-2.5 py-1.5 text-xs"
                 >
                   <div className="flex items-center gap-1">
                     <AlertTriangle className="size-3 text-red-500" />
@@ -488,7 +488,7 @@ export default async function KalenderPage({ searchParams }: PageProps) {
                 </span>
               </CardHeader>
               {totalItems > 0 && (
-                <CardBody className="!px-0 !pb-0">
+                <CardBody className="px-0! pb-0!">
                   <ul className="divide-y divide-border border-t border-border">
                     {dayTimetable.map((e) => (
                       <li

@@ -64,6 +64,11 @@ const EARN_WAYS = [
   { reason: "heft_seite_erstellt",    icon: "📓", label: "Heft-Seite erstellt",     amount: COIN_REWARDS.heft_seite_erstellt },
   { reason: "freund_eingeladen",      icon: "👥", label: "Freund eingeladen",       amount: COIN_REWARDS.freund_eingeladen },
   { reason: "klasse_platz_1_woche",   icon: "🥇", label: "Platz 1 Klassen-Ranking",amount: COIN_REWARDS.klasse_platz_1_woche },
+  { reason: "note_geteilt",           icon: "📝", label: "Notiz teilen",            amount: COIN_REWARDS.note_geteilt },
+  { reason: "aufgabe_bewertet",       icon: "✅", label: "Aufgabe bewertet",        amount: COIN_REWARDS.aufgabe_bewertet },
+  { reason: "duel_participate",       icon: "⚔️", label: "An Duell teilnehmen",     amount: COIN_REWARDS.duel_participate },
+  { reason: "profil_foto_gesetzt",    icon: "🖼️", label: "Profilfoto hochladen",    amount: COIN_REWARDS.profil_foto_gesetzt },
+  { reason: "erste_aufgabe_semester", icon: "🎯", label: "Erste Aufgabe im Semester",amount: COIN_REWARDS.erste_aufgabe_semester },
 ] as const;
 
 const COIN_PACKS = [
@@ -143,7 +148,7 @@ export default async function CoinsPage() {
       </header>
 
       {/* Balance Card */}
-      <div className="border border-warning/30 bg-warning/[0.03] p-6">
+      <div className="border border-warning/30 bg-warning/3 p-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
             <span className="text-5xl leading-none">🪙</span>
@@ -211,7 +216,7 @@ export default async function CoinsPage() {
               className={cn(
                 "relative flex flex-col gap-3 border p-4 transition-colors",
                 pack.highlight
-                  ? "border-warning/50 bg-warning/[0.04]"
+                  ? "border-warning/50 bg-warning/4"
                   : "border-border bg-bg",
               )}
             >

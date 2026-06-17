@@ -316,7 +316,7 @@ export default async function AdminPage() {
                 </p>
               </div>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {adminTasks.length === 0 ? (
                 <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
                   Keine offenen Vorgänge. Alles in Ordnung.
@@ -399,7 +399,7 @@ export default async function AdminPage() {
                 <ArrowRight className="size-3.5" />
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {rawAuditEntries.length === 0 ? (
                 <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
                   Noch keine Aktivitäten aufgezeichnet.
@@ -436,8 +436,8 @@ export default async function AdminPage() {
         </div>
 
         <div className="space-y-6">
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
-            <CardBody className="!p-5">
+          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+            <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <KeyRound className="size-4 text-brand" strokeWidth={1.75} />
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand">
@@ -483,7 +483,7 @@ export default async function AdminPage() {
                 Verwalten
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {integrations.map((i) => (
                   <li

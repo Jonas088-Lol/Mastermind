@@ -49,6 +49,7 @@ export default async function BossPage() {
       isActive: false,
       currentHp: 0,
       OR: [{ schoolId: null }, { schoolId: session.schoolId ?? "" }],
+      participants: { some: { userId: session.userId } },
     },
     take: 5,
     orderBy: { endAt: "desc" },
@@ -174,7 +175,7 @@ export default async function BossPage() {
                           key={p.id}
                           className={cn(
                             "flex items-center gap-3 px-3 py-2",
-                            isMe ? "bg-brand/[0.06]" : "bg-surface",
+                            isMe ? "bg-brand/6" : "bg-surface",
                           )}
                         >
                           <span className="w-6 text-center font-mono text-sm font-bold text-muted-fg">
@@ -202,7 +203,7 @@ export default async function BossPage() {
       {/* Past battles */}
       {pastBattles.length > 0 && (
         <section>
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-fg">Vergangene Kämpfe</h2>
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-fg">Meine Kämpfe</h2>
           <div className="divide-y divide-border overflow-hidden rounded-2xl border border-border">
             {pastBattles.map((battle) => {
               const myDmg = battle.participants[0]?.damage ?? 0;

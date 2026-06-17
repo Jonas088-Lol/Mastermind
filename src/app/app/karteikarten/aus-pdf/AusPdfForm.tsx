@@ -21,7 +21,7 @@ export function AusPdfForm({ subjects }: Props) {
   return (
     <form action={action} className="space-y-4">
       {error && (
-        <div className="border-l-2 border-danger bg-danger/[0.06] px-4 py-3 text-sm text-danger">
+        <div className="border-l-2 border-danger bg-danger/6 px-4 py-3 text-sm text-danger">
           {error.error}
         </div>
       )}

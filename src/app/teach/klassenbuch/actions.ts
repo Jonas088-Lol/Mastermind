@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { logger } from "@/lib/logger";
 import { pushToUsers } from "@/lib/push";
-import { getSession } from "@/lib/session";
+import { effectiveRole, getSession } from "@/lib/session";
 
 export async function updateAttendance(
   recordId: string | null,
@@ -13,7 +13,14 @@ export async function updateAttendance(
   status: string
 ) {
   const session = await getSession();
-  if (!session) throw new Error("Unauthorized");
+  if (!session || effectiveRole(session) !== "teacher") throw new Error("Unauthorized");
+
+  // Verify teacher owns the lesson
+  const lesson = await prisma.lessonLog.findUnique({
+    where: { id: lessonId },
+    select: { teacherId: true },
+  });
+  if (!lesson || lesson.teacherId !== session.userId) throw new Error("Unauthorized");
 
   if (recordId) {
     await prisma.attendanceRecord.update({
@@ -36,7 +43,15 @@ export async function updateAttendance(
 
 export async function signLesson(lessonId: string) {
   const session = await getSession();
-  if (!session) return;
+  if (!session || effectiveRole(session) !== "teacher") return;
+
+  // Verify teacher owns the lesson
+  const lesson = await prisma.lessonLog.findUnique({
+    where: { id: lessonId },
+    select: { teacherId: true },
+  });
+  if (!lesson || lesson.teacherId !== session.userId) return;
+
   await prisma.lessonLog.update({
     where: { id: lessonId },
     data: { signedAt: new Date() },
@@ -46,7 +61,7 @@ export async function signLesson(lessonId: string) {
 
 export async function createIncident(formData: FormData) {
   const session = await getSession();
-  if (!session) throw new Error("Unauthorized");
+  if (!session || effectiveRole(session) !== "teacher") throw new Error("Unauthorized");
 
   const classId = String(formData.get("classId") ?? "").trim();
   const studentId = String(formData.get("studentId") ?? "").trim();
@@ -56,6 +71,12 @@ export async function createIncident(formData: FormData) {
   if (!classId || !studentId || !type || !text) {
     throw new Error("Alle Felder sind Pflicht");
   }
+
+  // Verify teacher teaches in this class
+  const tsc = await prisma.teacherSubjectClass.findFirst({
+    where: { teacherId: session.userId, classId },
+  });
+  if (!tsc) throw new Error("Unauthorized");
 
   await prisma.classbookIncident.create({
     data: {

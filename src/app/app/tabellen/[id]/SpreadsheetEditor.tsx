@@ -110,6 +110,33 @@ function evaluateCell(key: string, cells: Record<string, CellData>, depth = 0): 
       if (fn === "MAX")     return nums.length > 0 ? String(Math.max(...nums)) : "0";
       if (fn === "COUNT")   return String(nums.length);
     }
+    if (fn === "IF") {
+      // Split args by commas respecting nested parens
+      const splitArgs = (s: string): string[] => {
+        const parts: string[] = []; let d = 0, start = 0;
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] === "(") d++;
+          else if (s[i] === ")") d--;
+          else if (s[i] === "," && d === 0) { parts.push(s.slice(start, i).trim()); start = i + 1; }
+        }
+        parts.push(s.slice(start).trim());
+        return parts;
+      };
+      const [cond, valTrue = "0", valFalse = "0"] = splitArgs(args);
+      const resolveRefs = (arg: string) => arg.replace(/[A-Z]+\d+/g, (ref) => {
+        const val = evaluateCell(cellRefToKey(ref), cells, depth + 1);
+        const num = Number(val);
+        return isNaN(num) ? `"${val}"` : String(num);
+      });
+      try {
+        // eslint-disable-next-line no-new-func
+        const condResult = new Function(`return Boolean(${resolveRefs(cond)})`)() as boolean;
+        const raw = (condResult ? valTrue : valFalse).replace(/^"(.*)"$/, "$1");
+        if (/^[A-Z]+\d+$/.test(raw)) return evaluateCell(cellRefToKey(raw), cells, depth + 1);
+        const num = Number(raw);
+        return isNaN(num) ? raw : String(r(num));
+      } catch { return "#ERR"; }
+    }
   }
   const resolved = expr.replace(/[A-Z]+\d+/g, (ref) => {
     const val = evaluateCell(cellRefToKey(ref), cells, depth + 1);

@@ -164,7 +164,7 @@ export default async function AdminSicherheitPage({ searchParams }: PageProps) {
         </CardHeader>
         <CardBody className="space-y-5">
           {newToken && (
-            <div className="border border-success bg-success/[0.06] p-4">
+            <div className="border border-success bg-success/6 p-4">
               <p className="mb-1 text-xs font-semibold text-success">
                 Token &bdquo;{tokenName}&ldquo; erstellt — einmalig sichtbar
               </p>

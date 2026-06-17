@@ -344,7 +344,7 @@ function SlideCanvas({ slide, onUpdate, presenting }: CanvasProps) {
             { icon: <Italic className="size-3" />, key: "italic" as const, val: el.italic },
             { icon: <Underline className="size-3" />, key: "underline" as const, val: el.underline },
           ].map(({ icon, key, val }) => (
-            <button key={key} type="button" onClick={() => upEl(el.id, { [key]: !val })}
+            <button key={key} type="button" onClick={() => upEl(el.id, { [key]: val! })}
               className={`grid size-6 place-items-center rounded transition-colors ${val ? "bg-brand/15 text-brand" : "text-gray-600 hover:bg-gray-100"}`}>
               {icon}
             </button>

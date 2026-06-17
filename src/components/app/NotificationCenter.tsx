@@ -230,7 +230,7 @@ function NotificationRow({
   const Icon = KIND_ICON[n.kind];
   const wrapClass = cn(
     "flex items-start gap-3 px-5 py-4 transition-colors hover:bg-surface",
-    n.unread && "bg-brand/[0.04]"
+    n.unread && "bg-brand/4"
   );
 
   const inner = (

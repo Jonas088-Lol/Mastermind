@@ -10,6 +10,9 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { FeatureMockup } from "@/components/marketing/FeatureMockup";
+
+type MockupKey = "chat" | "dashboard" | "grades" | "flashcard" | "assignment" | "analytics" | "admin" | "security" | "learning";
 
 export const metadata: Metadata = {
   title: "Für Schulen | MasterMind",
@@ -17,10 +20,11 @@ export const metadata: Metadata = {
     "MasterMind für Schulen: vollständige Schulplattform mit DSGVO-Konformität, SSO, Reporting und API — alles aus einer Hand.",
 };
 
-const sections = [
+const sections: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }>; title: string; bullets: string[]; mockup: MockupKey }[] = [
   {
     icon: School,
     title: "Schul-Administration",
+    mockup: "admin",
     bullets: [
       "Klassen, Fächer und Stundenpläne zentral verwalten",
       "Stundenplan-Import aus Untis in weniger als 5 Minuten",
@@ -30,6 +34,7 @@ const sections = [
   {
     icon: ShieldCheck,
     title: "DSGVO-Konformität",
+    mockup: "security",
     bullets: [
       "Hosting ausschließlich auf ISO-27001-zertifizierten Servern in Frankfurt",
       "AVV-Abschluss innerhalb von 24 Stunden nach Vertragsschluss",
@@ -39,6 +44,7 @@ const sections = [
   {
     icon: KeyRound,
     title: "SSO & Anmeldung",
+    mockup: "admin",
     bullets: [
       "SAML 2.0 und SCIM für Microsoft Azure AD, Google Workspace und mehr",
       "Zwei-Faktor-Authentifizierung für alle Benutzerkonten",
@@ -48,6 +54,7 @@ const sections = [
   {
     icon: LineChart,
     title: "Reporting & Analytics",
+    mockup: "analytics",
     bullets: [
       "Schulweite Lernstands-Übersicht für die Schulleitung",
       "Fach- und Klassenvergleiche als Export oder Live-Dashboard",
@@ -57,6 +64,7 @@ const sections = [
   {
     icon: Code2,
     title: "API & Integrationen",
+    mockup: "dashboard",
     bullets: [
       "REST-API für eigene Anpassungen und Drittsysteme",
       "Webhooks für Echtzeit-Benachrichtigungen an Schulverwaltungs-Software",
@@ -129,9 +137,7 @@ export default function FuerSchulenPage() {
                   </ul>
                 </div>
                 <div className="flex-1">
-                  <div className="flex aspect-video w-full items-center justify-center border border-border bg-surface text-sm text-muted-fg">
-                    Screenshot Platzhalter — {s.title}
-                  </div>
+                  <FeatureMockup variant={s.mockup} />
                 </div>
               </div>
             ))}

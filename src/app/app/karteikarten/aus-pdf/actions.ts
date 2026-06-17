@@ -75,11 +75,20 @@ ${truncated}`;
     return { error: "Keine Lernkarten generiert. Bitte erneut versuchen." };
   }
 
+  let resolvedSubjectId: string | null = subjectId;
+  if (resolvedSubjectId) {
+    const subject = await prisma.subject.findUnique({
+      where: { id: resolvedSubjectId },
+      select: { schoolId: true },
+    });
+    if (!subject || subject.schoolId !== session.schoolId) resolvedSubjectId = null;
+  }
+
   const deck = await prisma.flashcardDeck.create({
     data: {
       name: deckName,
       userId: session.userId,
-      ...(subjectId ? { subjectId } : {}),
+      ...(resolvedSubjectId ? { subjectId: resolvedSubjectId } : {}),
       cards: {
         create: cards.slice(0, 30).map((c) => ({
           front: String(c.front ?? "").slice(0, 500),

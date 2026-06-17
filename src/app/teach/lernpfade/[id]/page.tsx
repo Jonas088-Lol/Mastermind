@@ -162,7 +162,7 @@ export default async function LernpfadDetailPage({ params }: PageProps) {
                 </button>
               </form>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {mod.questions.length > 0 && (
                 <ul className="divide-y divide-border border-t border-border">
                   {mod.questions.map((q) => {

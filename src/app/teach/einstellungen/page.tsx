@@ -230,7 +230,7 @@ export default async function TeachEinstellungenPage() {
                   <p className="mt-1 text-sm text-muted-fg">{user?.sessions.length ?? 0} aktive Sessions</p>
                 </div>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 {!user?.sessions.length ? (
                   <p className="border-t border-border px-5 py-4 text-sm text-muted-fg">Keine Sessions.</p>
                 ) : (
@@ -304,7 +304,7 @@ function DataAction({ icon, label, detail, danger }: { icon: React.ReactNode; la
   return (
     <button
       type="button"
-      className={`group flex items-start gap-3 bg-bg p-5 text-left transition-colors ${danger ? "hover:bg-danger/[0.04]" : "hover:bg-surface"}`}
+      className={`group flex items-start gap-3 bg-bg p-5 text-left transition-colors ${danger ? "hover:bg-danger/4" : "hover:bg-surface"}`}
     >
       <span className={`grid size-9 shrink-0 place-items-center transition-colors ${danger ? "bg-danger/10 text-danger group-hover:bg-danger group-hover:text-bg" : "bg-surface text-fg group-hover:bg-fg group-hover:text-bg"}`}>
         {icon}

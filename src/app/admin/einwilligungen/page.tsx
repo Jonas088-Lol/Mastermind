@@ -152,7 +152,7 @@ export default async function AdminEinwilligungenPage({ searchParams }: PageProp
           <CardHeader>
             <CardTitle>Alle Formulare</CardTitle>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {forms.map((form) => {
                 const responseCount = form.responses.length;

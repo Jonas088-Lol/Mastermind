@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { awardCoins } from "@/lib/coins";
 
 export async function createNotebook(formData: FormData) {
   const session = await getSession();
@@ -67,6 +68,8 @@ export async function createPage(notebookId: string) {
       order: count,
     },
   });
+
+  awardCoins(session.userId, "heft_seite_erstellt").catch(() => undefined);
 
   redirect(`/app/heft/${notebookId}/${page.id}`);
 }

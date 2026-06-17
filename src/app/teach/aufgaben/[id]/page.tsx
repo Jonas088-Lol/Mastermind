@@ -151,7 +151,7 @@ export default async function TeachAufgabeDetailPage({ params }: PageProps) {
       {/* Stats row */}
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         <Card>
-          <CardBody className="!py-4">
+          <CardBody className="py-4!">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">
               Schüler
             </p>
@@ -160,7 +160,7 @@ export default async function TeachAufgabeDetailPage({ params }: PageProps) {
         </Card>
 
         <Card>
-          <CardBody className="!py-4">
+          <CardBody className="py-4!">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">
               Eingereicht
             </p>
@@ -174,7 +174,7 @@ export default async function TeachAufgabeDetailPage({ params }: PageProps) {
         </Card>
 
         <Card>
-          <CardBody className="!py-4">
+          <CardBody className="py-4!">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">
               Bewertet
             </p>
@@ -188,7 +188,7 @@ export default async function TeachAufgabeDetailPage({ params }: PageProps) {
         </Card>
 
         <Card>
-          <CardBody className="!py-4">
+          <CardBody className="py-4!">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">
               Ø Note
             </p>
@@ -226,7 +226,7 @@ export default async function TeachAufgabeDetailPage({ params }: PageProps) {
             {assignment.submissions.length} Einträge
           </span>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {assignment.submissions.length === 0 ? (
             <div className="border-t border-border px-5 py-10 text-center">
               <p className="text-sm text-muted-fg">

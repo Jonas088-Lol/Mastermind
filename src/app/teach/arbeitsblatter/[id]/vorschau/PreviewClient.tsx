@@ -20,7 +20,7 @@ export function PreviewClient({ worksheet }: Props) {
   return (
     <div className="flex flex-col gap-0">
       {/* Preview banner */}
-      <div className="flex items-center justify-center border-b border-warning/40 bg-warning/[0.08] px-4 py-2 text-center text-sm text-warning">
+      <div className="flex items-center justify-center border-b border-warning/40 bg-warning/8 px-4 py-2 text-center text-sm text-warning">
         Vorschau-Modus — Antworten werden nicht gespeichert
       </div>
 

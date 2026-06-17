@@ -3,11 +3,11 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
-import { getSession } from "@/lib/session";
+import { effectiveRole, getSession } from "@/lib/session";
 
 export async function createLesson(formData: FormData) {
   const session = await getSession();
-  if (!session) throw new Error("Unauthorized");
+  if (!session || effectiveRole(session) !== "teacher") throw new Error("Unauthorized");
 
   const classId = String(formData.get("classId") ?? "").trim();
   const subjectId = String(formData.get("subjectId") ?? "").trim();
@@ -19,6 +19,12 @@ export async function createLesson(formData: FormData) {
   if (!classId || !subjectId || !period || !topic) {
     throw new Error("Klasse, Fach, Stunde und Thema sind Pflicht");
   }
+
+  // Verify teacher teaches this subject in this class
+  const tsc = await prisma.teacherSubjectClass.findFirst({
+    where: { teacherId: session.userId, classId, subjectId },
+  });
+  if (!tsc) throw new Error("Unauthorized");
 
   const lessonDate = dateStr ? new Date(dateStr) : new Date();
 

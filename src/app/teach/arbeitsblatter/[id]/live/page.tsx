@@ -115,7 +115,7 @@ export default function WorksheetLivePage() {
         <CardHeader>
           <CardTitle>Schüler · {totalStudents}</CardTitle>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {progress.length === 0 ? (
             <p className="border-t border-border px-5 py-6 text-sm text-muted-fg">
               Noch kein Schüler hat begonnen.

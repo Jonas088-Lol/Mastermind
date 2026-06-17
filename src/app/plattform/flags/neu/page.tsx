@@ -30,7 +30,7 @@ export default async function NeuerFlagPage({ searchParams }: PageProps) {
       </header>
 
       {error && (
-        <div className="border-l-2 border-danger bg-danger/[0.06] px-4 py-3 text-sm text-danger">
+        <div className="border-l-2 border-danger bg-danger/6 px-4 py-3 text-sm text-danger">
           {decodeURIComponent(error)}
         </div>
       )}

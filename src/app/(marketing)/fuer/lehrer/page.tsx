@@ -10,6 +10,9 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { FeatureMockup } from "@/components/marketing/FeatureMockup";
+
+type MockupKey = "chat" | "dashboard" | "grades" | "flashcard" | "assignment" | "analytics" | "admin" | "security" | "learning";
 
 export const metadata: Metadata = {
   title: "Für Lehrer | MasterMind",
@@ -17,10 +20,11 @@ export const metadata: Metadata = {
     "MasterMind für Lehrkräfte: Aufgaben erstellen, KI-Vorkorrektur, Notenmanagement, Klassenanalyse und Broadcast — weniger Verwaltung, mehr Unterricht.",
 };
 
-const sections = [
+const sections: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }>; title: string; bullets: string[]; mockup: MockupKey }[] = [
   {
     icon: ClipboardList,
     title: "Aufgaben erstellen — in Minuten",
+    mockup: "assignment",
     bullets: [
       "Hausaufgaben, Tests und Projekte mit wenigen Klicks erstellen",
       "KI-Aufgaben-Generator: Thema eingeben, fertige Aufgabe erhalten",
@@ -30,6 +34,7 @@ const sections = [
   {
     icon: Sparkles,
     title: "KI-Vorkorrektur",
+    mockup: "chat",
     bullets: [
       "KI bewertet Abgaben nach deinen Kriterien vor — du hast die Endkontrolle",
       "Automatische Rückmeldungs-Texte für jeden Schüler individualisiert",
@@ -39,6 +44,7 @@ const sections = [
   {
     icon: BarChart2,
     title: "Notenmanagement",
+    mockup: "grades",
     bullets: [
       "Alle Noten zentral erfassen — schriftlich, mündlich, praktisch",
       "Gewichtung und Notenschlüssel frei konfigurierbar",
@@ -48,6 +54,7 @@ const sections = [
   {
     icon: Users,
     title: "Klassenanalyse",
+    mockup: "analytics",
     bullets: [
       "Kompetenz-Heatmap zeigt Lernlücken in der Klasse auf einen Blick",
       "Differenzierung leicht gemacht: Gruppen nach Leistungsstand filtern",
@@ -57,6 +64,7 @@ const sections = [
   {
     icon: Bell,
     title: "Broadcast & Kommunikation",
+    mockup: "dashboard",
     bullets: [
       "Klassen-Nachrichten und Erinnerungen per Push oder E-Mail",
       "Eltern-Kommunikation DSGVO-konform direkt in MasterMind",
@@ -128,9 +136,7 @@ export default function FuerLehrerPage() {
                   </ul>
                 </div>
                 <div className="flex-1">
-                  <div className="flex aspect-video w-full items-center justify-center border border-border bg-surface text-sm text-muted-fg">
-                    Screenshot Platzhalter — {s.title}
-                  </div>
+                  <FeatureMockup variant={s.mockup} />
                 </div>
               </div>
             ))}

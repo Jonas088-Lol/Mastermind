@@ -107,7 +107,7 @@ export default async function StreaksPage() {
       </header>
 
       {/* Section 1 — Hero streak card */}
-      <Card className="border-warning/40 bg-warning/[0.02]">
+      <Card className="border-warning/40 bg-warning/2">
         <CardBody className="py-8">
           <div className="flex flex-col items-center gap-5 text-center">
             <div className="flex items-baseline gap-2">
@@ -167,7 +167,7 @@ export default async function StreaksPage() {
                 "flex flex-col items-center gap-2 border py-3",
                 isToday && "border-brand/40",
                 hasLogin
-                  ? "bg-success/[0.06] border-success/30"
+                  ? "bg-success/6 border-success/30"
                   : "bg-surface border-border opacity-60"
               )}
             >
@@ -242,7 +242,7 @@ export default async function StreaksPage() {
                     className={cn(
                       "flex items-center gap-3 border px-4 py-2.5",
                       done
-                        ? "border-success/30 bg-success/[0.04]"
+                        ? "border-success/30 bg-success/4"
                         : "border-border opacity-50"
                     )}
                   >

@@ -48,8 +48,17 @@ export async function gradeCard(cardId: string, rating: number) {
     data: { interval, easeFactor, repetitions, nextReviewAt },
   });
 
-  await awardXp(session.userId, "karteikarte_session", cardId);
+  // Only award XP for a "good" rating and only once per card per day
   if (rating > 0) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const alreadyAwarded = await prisma.xpLog.findFirst({
+      where: { userId: session.userId, reason: "karteikarte_session", referenceId: cardId, createdAt: { gte: today } },
+      select: { id: true },
+    });
+    if (!alreadyAwarded) {
+      await awardXp(session.userId, "karteikarte_session", cardId);
+    }
     await incrementQuestProgress(session.userId, "flashcard");
   }
 }

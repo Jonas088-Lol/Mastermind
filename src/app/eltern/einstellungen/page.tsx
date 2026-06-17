@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Bell, Link2, Lock, User } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { PushSubscribeToggle } from "@/components/app/PushSubscribeToggle";
 import { changePassword, updateNotifPrefs, updateProfile } from "./actions";
 
 export const metadata: Metadata = { title: "Einstellungen · Eltern" };
@@ -92,7 +92,7 @@ export default async function ElternEinstellungenPage() {
             <CardTitle>Verknüpfte Kinder</CardTitle>
           </div>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {links.length === 0 ? (
             <p className="border-t border-border px-5 py-6 text-sm text-muted-fg">
               Kein Kind mit deinem Konto verknüpft.
@@ -204,25 +204,11 @@ export default async function ElternEinstellungenPage() {
             <Button type="submit" variant="outline" size="sm">Einstellungen speichern</Button>
           </form>
 
-          {/* Push-Benachrichtigungen — Platzhalter */}
           <div className="mt-6 border-t border-border pt-5">
             <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-fg">
               Push-Benachrichtigungen
             </p>
-            <ul className="space-y-3 text-sm">
-              {[
-                { label: "Browser-Push (E-Mail-Zusammenfassung)" },
-                { label: "Mobilgerät / App-Push" },
-              ].map(({ label }) => (
-                <li key={label} className="flex items-center justify-between">
-                  <span className="text-muted-fg">{label}</span>
-                  <div className="flex items-center gap-2">
-                    <Badge variant="outline">Kommt bald</Badge>
-                    <input type="checkbox" disabled className="size-4 cursor-not-allowed opacity-40" />
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <PushSubscribeToggle />
           </div>
         </CardBody>
       </Card>

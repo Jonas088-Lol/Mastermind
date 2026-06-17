@@ -18,12 +18,25 @@ export async function saveBulkAttendance(formData: FormData): Promise<void> {
   const date = new Date(dateStr);
   if (isNaN(date.getTime())) return;
 
+  // Verify teacher teaches this class
+  const tsc = await prisma.teacherSubjectClass.findFirst({
+    where: { teacherId: session.userId, classId },
+  });
+  if (!tsc) return;
+
+  // Get the valid student roster for this class
+  const classStudents = await prisma.user.findMany({
+    where: { classId, role: "student" },
+    select: { id: true },
+  });
+  const validStudentIds = new Set(classStudents.map((s) => s.id));
+
   const dayStart = new Date(date);
   dayStart.setHours(0, 0, 0, 0);
   const dayEnd = new Date(dayStart.getTime() + 86_400_000);
 
-  // Collect all student statuses from form
-  const studentIds = (formData.getAll("studentId") as string[]).filter(Boolean);
+  // Collect all student statuses from form, only for valid class members
+  const studentIds = (formData.getAll("studentId") as string[]).filter((id) => validStudentIds.has(id));
   if (studentIds.length === 0) return;
 
   // Delete existing standalone records for this day (lessonId = null)

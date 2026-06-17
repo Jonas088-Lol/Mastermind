@@ -69,7 +69,7 @@ export default async function AdminAbgabenPage() {
           <CardTitle>Offene Korrekturen</CardTitle>
           <Badge variant={pending.length > 0 ? "warning" : "success"}>{pending.length} offen</Badge>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {pending.length === 0 ? (
             <div className="flex flex-col items-center gap-3 border-t border-border px-5 py-12 text-center">
               <ClipboardEdit className="size-8 text-muted-fg/40" strokeWidth={1.5} />

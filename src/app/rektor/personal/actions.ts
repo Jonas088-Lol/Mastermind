@@ -14,6 +14,9 @@ export async function updateStaffRole(userId: string, newRole: string): Promise<
   const validRoles = ["teacher", "admin", "secretary", "rector", "vice_rector"];
   if (!validRoles.includes(newRole)) return;
 
-  await prisma.user.update({ where: { id: userId }, data: { role: newRole } });
+  await prisma.user.updateMany({
+    where: { id: userId, schoolId: session.schoolId ?? "" },
+    data: { role: newRole },
+  });
   revalidatePath("/rektor/personal");
 }

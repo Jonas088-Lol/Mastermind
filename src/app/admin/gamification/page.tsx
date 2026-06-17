@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { Swords, Gift, Trophy } from "lucide-react";
+import { Swords, Gift, Trophy, Medal } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,7 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { BOSS_TEMPLATES } from "@/lib/game";
-import { spawnBossBattle, createSeason, endBossBattle } from "./actions";
+import { spawnBossBattle, createSeason, endBossBattle, awardWeeklyClassRankings } from "./actions";
 
 export const metadata: Metadata = { title: "Gamification · Admin" };
 
@@ -52,7 +52,7 @@ export default async function AdminGamificationPage() {
             <Badge variant="success">{activeBattles.length} aktiv</Badge>
           )}
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {activeBattles.length === 0 ? (
             <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
               Kein aktiver Boss. Starte einen unten.
@@ -151,7 +151,7 @@ export default async function AdminGamificationPage() {
         </CardHeader>
         <CardBody>
           {activeSeason ? (
-            <div className="mb-6 border border-success/30 bg-success/[0.03] p-4">
+            <div className="mb-6 border border-success/30 bg-success/3 p-4">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-bold">{activeSeason.name}</p>
@@ -206,13 +206,32 @@ export default async function AdminGamificationPage() {
         </CardBody>
       </Card>
 
+      {/* Weekly ranking award */}
+      <Card>
+        <CardHeader>
+          <div>
+            <CardTitle>Wochensieger-Belohnung</CardTitle>
+            <p className="mt-1 text-sm text-muted-fg">Verleiht dem XP-Klassenersten der letzten Woche 40 Coins</p>
+          </div>
+          <Medal className="size-5 text-warning" strokeWidth={1.75} />
+        </CardHeader>
+        <CardBody>
+          <form action={awardWeeklyClassRankings}>
+            <Button type="submit" variant="secondary">
+              <Medal className="size-4 text-warning" />
+              Wochensieger belohnen
+            </Button>
+          </form>
+        </CardBody>
+      </Card>
+
       {/* Past battles */}
       {recentBattles.length > 0 && (
         <Card>
           <CardHeader>
             <CardTitle>Vergangene Battles</CardTitle>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {recentBattles.map((battle) => (
                 <li key={battle.id} className="flex items-center gap-4 px-5 py-3">

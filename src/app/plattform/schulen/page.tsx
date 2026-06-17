@@ -124,7 +124,7 @@ export default async function SchulenPage({ searchParams }: PageProps) {
           <CardTitle>{schools.length} Schulen</CardTitle>
           <span className="font-mono text-xs text-muted-fg">sortiert nach Plan · alphabetisch</span>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {schools.length === 0 ? (
             <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
               {q || plan ? "Keine Schulen gefunden." : "Noch keine Schulen registriert."}

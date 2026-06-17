@@ -219,7 +219,7 @@ export default async function AdminBerichtePage() {
             </div>
             <BarChart3 className="size-5 text-muted-fg" strokeWidth={1.75} />
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             {subjectAverages.length === 0 ? (
               <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                 Noch keine Noten erfasst.
@@ -227,7 +227,7 @@ export default async function AdminBerichtePage() {
             ) : (
               <ul className="divide-y divide-border border-t border-border">
                 {subjectAverages.map((s) => {
-                  const avg = s.avg!;
+                  const avg = s.avg ?? 0;
                   const isGood = avg <= 2.5;
                   const isMid = avg <= 3.5;
                   return (
@@ -267,7 +267,7 @@ export default async function AdminBerichtePage() {
             </div>
             <Users className="size-5 text-muted-fg" strokeWidth={1.75} />
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             {classAverages.length === 0 ? (
               <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                 Noch keine Notendaten vorhanden.
@@ -275,7 +275,7 @@ export default async function AdminBerichtePage() {
             ) : (
               <ul className="divide-y divide-border border-t border-border">
                 {classAverages.map((c, i) => {
-                  const avg = c.avg!;
+                  const avg = c.avg ?? 0;
                   return (
                     <li key={c.name} className="flex items-center gap-4 px-5 py-3">
                       <span className="font-mono text-sm font-bold text-muted-fg w-5 text-center">

@@ -296,7 +296,7 @@ function QuestCard({
       className={cn(
         "flex flex-col gap-3 border p-4 transition-colors",
         isClaimed  && "border-border opacity-60",
-        canClaim   && "border-warning/50 bg-warning/[0.03]",
+        canClaim   && "border-warning/50 bg-warning/3",
         !isCompleted && !isClaimed && "border-border bg-bg",
       )}
     >
@@ -384,7 +384,7 @@ function HiddenSection({
               key={uq.id}
               className={cn(
                 "flex flex-col gap-3 border p-4",
-                canClaim ? "border-warning/50 bg-warning/[0.03]" : "border-border bg-bg",
+                canClaim ? "border-warning/50 bg-warning/3" : "border-border bg-bg",
               )}
             >
               <div className="flex items-start gap-3">

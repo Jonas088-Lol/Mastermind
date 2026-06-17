@@ -71,8 +71,12 @@ export async function assignStudent(classId: string, formData: FormData): Promis
 export async function removeStudent(classId: string, userId: string): Promise<void> {
   const session = await guardAdmin();
 
-  const klass = await prisma.schoolClass.findUnique({ where: { id: classId }, select: { schoolId: true } });
+  const [klass, student] = await Promise.all([
+    prisma.schoolClass.findUnique({ where: { id: classId }, select: { schoolId: true } }),
+    prisma.user.findUnique({ where: { id: userId }, select: { schoolId: true, role: true } }),
+  ]);
   if (!klass || klass.schoolId !== session.schoolId) return;
+  if (!student || student.schoolId !== session.schoolId || student.role !== "student") return;
 
   await prisma.user.update({ where: { id: userId }, data: { classId: null } });
   revalidatePath(`/admin/klassen/${classId}`);

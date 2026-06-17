@@ -20,7 +20,7 @@ export default async function TagesbelohnungPage() {
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },
-    select: { lastLoginDate: true, totalDailyLogins: true, xp: true },
+    select: { lastLoginDate: true, totalDailyLogins: true, xp: true, streak: true },
   });
 
   const alreadyClaimed = user?.lastLoginDate === today;
@@ -39,6 +39,8 @@ export default async function TagesbelohnungPage() {
 
   // Which day index is "today's claimable" vs "already claimed"
   const claimableDay = alreadyClaimed ? null : (totalLogins === 0 ? 1 : ((totalLogins) % LOGIN_REWARD_SCHEDULE.length) + 1);
+  const currentStreak = user?.streak ?? 0;
+  const streakBonusCoins = 10; // COIN_REWARDS.daily_streak_bonus
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">
@@ -51,7 +53,7 @@ export default async function TagesbelohnungPage() {
       </header>
 
       {/* Claim card */}
-      <Card className={cn(alreadyClaimed ? "border-border" : "border-warning/40 bg-warning/[0.02]")}>
+      <Card className={cn(alreadyClaimed ? "border-border" : "border-warning/40 bg-warning/2")}>
         <CardBody className="flex flex-col items-center gap-6 py-10 text-center">
           {alreadyClaimed ? (
             <>
@@ -66,9 +68,14 @@ export default async function TagesbelohnungPage() {
               <Sun className="size-12 text-warning" strokeWidth={1.5} />
               <div>
                 <p className="text-lg font-bold">Tagesbonus verfügbar!</p>
-                <p className="mt-1 text-sm text-muted-fg">Tag {claimableDay} · +{LOGIN_REWARD_SCHEDULE[(claimableDay ?? 1) - 1]?.xp ?? 20} XP</p>
-                {LOGIN_REWARD_SCHEDULE[(claimableDay ?? 1) - 1]?.bonus && (
+                <p className="mt-1 text-sm text-muted-fg">Tag {claimableDay} · +{LOGIN_REWARD_SCHEDULE[(claimableDay ?? 1) - 1]?.xp ?? 20} XP · +5 🪙</p>
+                {currentStreak > 1 && (
                   <p className="mt-1 text-xs font-semibold text-warning">
+                    🔥 Streak-Bonus: +{streakBonusCoins} 🪙 extra (Tag {currentStreak + 1})
+                  </p>
+                )}
+                {LOGIN_REWARD_SCHEDULE[(claimableDay ?? 1) - 1]?.bonus && (
+                  <p className="mt-1 text-xs font-semibold text-brand">
                     {LOGIN_REWARD_SCHEDULE[(claimableDay ?? 1) - 1]?.bonus}
                   </p>
                 )}
@@ -89,8 +96,12 @@ export default async function TagesbelohnungPage() {
         <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-fg">7-Tage-Zyklus</h2>
         <div className="grid grid-cols-7 gap-1">
           {LOGIN_REWARD_SCHEDULE.map((reward) => {
-            const isPast = reward.day < dayInCycle && alreadyClaimed;
-            const isToday = reward.day === claimableDay;
+            const isPast = alreadyClaimed
+              ? reward.day < dayInCycle
+              : reward.day < (claimableDay ?? 1);
+            const isToday = alreadyClaimed
+              ? reward.day === dayInCycle
+              : reward.day === claimableDay;
             const isFuture = !isPast && !isToday;
 
             return (
@@ -98,15 +109,16 @@ export default async function TagesbelohnungPage() {
                 key={reward.day}
                 className={cn(
                   "flex flex-col items-center gap-1.5 border p-2 text-center",
-                  isToday  && "border-warning/60 bg-warning/[0.06]",
-                  isPast   && "border-success/30 bg-success/[0.04] opacity-70",
+                  isToday && alreadyClaimed  && "border-success/40 bg-success/6",
+                  isToday && !alreadyClaimed && "border-warning/60 bg-warning/6",
+                  isPast   && "border-success/30 bg-success/4 opacity-70",
                   isFuture && "border-border opacity-50",
                 )}
               >
                 <span className="text-lg leading-none">{reward.icon}</span>
                 <span className="text-[10px] font-semibold text-muted-fg">T{reward.day}</span>
                 <span className="font-mono text-[10px] font-bold text-warning">+{reward.xp}</span>
-                {isPast && <CheckCircle2 className="size-3 text-success" />}
+                {(isPast || (isToday && alreadyClaimed)) && <CheckCircle2 className="size-3 text-success" />}
               </div>
             );
           })}

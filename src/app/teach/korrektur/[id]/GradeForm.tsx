@@ -138,7 +138,7 @@ export function GradeForm({
           type="button"
           onClick={handleAiSuggest}
           disabled={aiLoading || !submissionContent?.trim()}
-          className="inline-flex items-center gap-1.5 border border-brand/40 bg-brand/[0.06] px-3 py-1.5 text-xs font-semibold text-brand transition-colors hover:bg-brand/10 disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex items-center gap-1.5 border border-brand/40 bg-brand/6 px-3 py-1.5 text-xs font-semibold text-brand transition-colors hover:bg-brand/10 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {aiLoading ? <Loader2 className="size-3.5 animate-spin" /> : <Sparkles className="size-3.5" />}
           {aiLoading ? "KI korrigiert…" : "KI-Vorschlag"}
@@ -147,7 +147,7 @@ export function GradeForm({
 
       {/* AI result panel */}
       {aiResult && (
-        <div className="space-y-2 border border-brand/30 bg-brand/[0.04] p-3 text-xs">
+        <div className="space-y-2 border border-brand/30 bg-brand/4 p-3 text-xs">
           <div className="flex items-center justify-between">
             <span className="font-semibold text-brand">
               KI-Vorschlag: Note {aiResult.grade.toFixed(1).replace(".", ",")}

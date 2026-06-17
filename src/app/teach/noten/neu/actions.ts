@@ -28,12 +28,26 @@ export async function saveGrade(formData: FormData): Promise<void> {
 
   const date = dateStr ? new Date(dateStr) : new Date();
 
+  // Verify the student belongs to a class the teacher teaches this subject in
+  const student = await prisma.user.findUnique({
+    where: { id: studentId },
+    select: { schoolId: true, classId: true, role: true },
+  });
+  if (!student || student.schoolId !== session.schoolId || student.role !== "student") return;
+
+  if (student.classId) {
+    const tsc = await prisma.teacherSubjectClass.findFirst({
+      where: { teacherId: session.userId, subjectId, classId: student.classId },
+    });
+    if (!tsc) return;
+  }
+
   const subject = await prisma.subject.findUnique({
     where: { id: subjectId },
     select: { name: true },
   });
 
-  await prisma.grade.create({
+  const grade = await prisma.grade.create({
     data: {
       studentId,
       teacherId: session.userId,
@@ -44,6 +58,7 @@ export async function saveGrade(formData: FormData): Promise<void> {
       comment,
       date,
     },
+    select: { id: true },
   });
 
   const gradeLabel = value.toFixed(1).replace(".", ",");
@@ -62,7 +77,7 @@ export async function saveGrade(formData: FormData): Promise<void> {
         body: `${subjectName}: ${gradeLabel}`,
       },
     }),
-    awardXp(studentId, "aufgabe_bewertet", `grade-${Date.now()}`),
+    awardXp(studentId, "aufgabe_bewertet", grade.id),
   ]);
 
   revalidatePath(`/teach/klassen/${classSlug}`);

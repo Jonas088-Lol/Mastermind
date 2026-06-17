@@ -143,7 +143,7 @@ export default async function ElternNotenPage() {
                       </p>
                     </div>
                   </CardHeader>
-                  <CardBody className="!px-0 !pb-0">
+                  <CardBody className="px-0! pb-0!">
                     <ul className="divide-y divide-border border-t border-border">
                       {sg.grades.map((g) => (
                         <li key={g.id} className="flex items-center gap-4 px-5 py-3 text-sm">

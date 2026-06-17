@@ -256,7 +256,7 @@ export default async function AdminSchulkalenderPage({ searchParams }: PageProps
                   </div>
                   <span className="text-xs text-muted-fg">{dayEvents.length} Termin{dayEvents.length !== 1 ? "e" : ""}</span>
                 </CardHeader>
-                <CardBody className="!px-0 !pb-0">
+                <CardBody className="px-0! pb-0!">
                   <ul className="divide-y divide-border border-t border-border">
                     {dayEvents.map((ev) => (
                       <li key={ev.id} className="flex items-start gap-4 px-5 py-3.5">

@@ -131,7 +131,7 @@ export default function AgbPage() {
         </p>
       </Section>
 
-      <p className="border-l-2 border-warning bg-warning/[0.06] p-4 text-xs text-muted-fg">
+      <p className="border-l-2 border-warning bg-warning/6 p-4 text-xs text-muted-fg">
         Diese AGB sind ein erster Entwurf zur Demonstration der Plattform­struktur.
         Vor Inverkehrbringung der Plattform müssen sie von einer Rechts­anwältin
         bzw. einem Rechtsanwalt geprüft und an die konkreten Geschäfts­bedingungen

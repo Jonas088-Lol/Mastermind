@@ -203,7 +203,7 @@ export default async function WorksheetErgebnissePage({ params }: PageProps) {
           <CardHeader>
             <CardTitle>Zuweisungen ({worksheet.assignments.length})</CardTitle>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border text-left text-xs font-medium uppercase tracking-wider text-muted-fg">
@@ -268,7 +268,7 @@ export default async function WorksheetErgebnissePage({ params }: PageProps) {
         <CardHeader>
           <CardTitle>Schülerergebnisse ({flatSubmissions.length})</CardTitle>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {flatSubmissions.length === 0 ? (
             <div className="border-t border-border px-5 py-8 text-center text-sm text-muted-fg">
               Noch keine Abgaben vorhanden.

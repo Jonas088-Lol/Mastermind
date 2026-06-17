@@ -172,8 +172,8 @@ export default async function KompetenzenPage() {
 
       {/* AI Suggestion */}
       {rows.length > 0 && (
-        <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
-          <CardBody className="!p-5">
+        <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+          <CardBody className="p-5!">
             <div className="flex items-center gap-2">
               <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
               <p className="text-xs font-semibold uppercase tracking-wider text-brand">KI-Empfehlung</p>

@@ -85,7 +85,7 @@ export default async function NachrichtenPage() {
                 href={`/app/nachrichten/${p.thread.id}`}
                 className={cn(
                   "flex items-start gap-4 px-5 py-4 transition-colors hover:bg-surface",
-                  isUnread && "bg-brand/[0.03]"
+                  isUnread && "bg-brand/3"
                 )}
               >
                 <Avatar name={displayName} size="sm" className="mt-0.5 shrink-0" />

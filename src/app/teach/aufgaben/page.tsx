@@ -84,7 +84,7 @@ export default async function TeachAufgabenPage() {
           <CardTitle>Alle Aufgaben</CardTitle>
           <span className="font-mono text-xs text-muted-fg">{rows.length} Aufgaben</span>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {rows.length === 0 ? (
             <div className="grid place-items-center border-t border-border p-12 text-center">
               <ClipboardList className="size-8 text-muted-fg" strokeWidth={1.5} />

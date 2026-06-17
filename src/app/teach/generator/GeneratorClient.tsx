@@ -411,7 +411,7 @@ export function GeneratorClient({ tscList, recentAssignments, quotaUsed, quotaLi
                   </p>
                 )}
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <div className="border-t border-border bg-surface px-5 py-3 text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
                   Aufgaben
                 </div>
@@ -511,7 +511,7 @@ export function GeneratorClient({ tscList, recentAssignments, quotaUsed, quotaLi
           <CardTitle>Letzte Aufgaben</CardTitle>
           <span className="font-mono text-xs text-muted-fg">{quotaUsed} von {quotaLimit} Anfragen verbraucht</span>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {recentAssignments.length === 0 ? (
             <p className="border-t border-border px-5 py-8 text-center text-sm text-muted-fg">
               Noch keine Aufgaben erstellt.

@@ -235,7 +235,7 @@ export default async function DashboardPage() {
                 </Button>
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {upcomingAssignments.length === 0 ? (
                 <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                   Keine offenen Aufgaben in den nächsten 7 Tagen. 🎉
@@ -292,7 +292,7 @@ export default async function DashboardPage() {
                 </Button>
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {todayEntries.length === 0 ? (
                 <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                   Kein Stundenplan für heute.
@@ -327,8 +327,8 @@ export default async function DashboardPage() {
         </div>
 
         <div className="space-y-6">
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
-            <CardBody className="!p-5">
+          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+            <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand">KI-Vorschlag</p>
@@ -359,7 +359,7 @@ export default async function DashboardPage() {
 
           {/* Gamification quick access */}
           <Card>
-            <CardBody className="!p-5">
+            <CardBody className="p-5!">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="text-xl">{rank.icon}</span>
@@ -375,7 +375,7 @@ export default async function DashboardPage() {
                   href="/app/quests"
                   className={cn(
                     "flex items-center justify-between px-3 py-2 text-sm transition-colors hover:bg-surface",
-                    pendingQuestClaims > 0 ? "bg-warning/[0.05]" : "bg-surface",
+                    pendingQuestClaims > 0 ? "bg-warning/5" : "bg-surface",
                   )}
                 >
                   <span className="flex items-center gap-2">
@@ -387,7 +387,7 @@ export default async function DashboardPage() {
                   )}
                 </Link>
                 {activeBoss && (
-                  <Link href="/app/boss" className="flex items-center justify-between bg-danger/[0.04] px-3 py-2 text-sm transition-colors hover:bg-danger/[0.07]">
+                  <Link href="/app/boss" className="flex items-center justify-between bg-danger/4 px-3 py-2 text-sm transition-colors hover:bg-danger/7">
                     <span className="flex items-center gap-2">
                       <Swords className="size-3.5 text-danger" />
                       <span>{activeBoss.icon} {activeBoss.name}</span>
@@ -396,7 +396,7 @@ export default async function DashboardPage() {
                   </Link>
                 )}
                 {dailyBonusAvailable && (
-                  <Link href="/app/tagesbelohnung" className="flex items-center justify-between bg-success/[0.04] px-3 py-2 text-sm transition-colors hover:bg-success/[0.07]">
+                  <Link href="/app/tagesbelohnung" className="flex items-center justify-between bg-success/4 px-3 py-2 text-sm transition-colors hover:bg-success/7">
                     <span className="flex items-center gap-2">
                       <span>☀️</span>
                       Tagesbonus
@@ -413,7 +413,7 @@ export default async function DashboardPage() {
               <CardHeader>
                 <CardTitle>Letzte Noten</CardTitle>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {recentGrades.map((g) => (
                     <li key={g.id} className="flex items-center gap-3 px-5 py-3">
@@ -447,10 +447,10 @@ export default async function DashboardPage() {
             <Card className={cn(
               "border-warning/40",
               dailyChallengeCompleted
-                ? "bg-gradient-to-br from-success/[0.06] to-transparent border-success/40"
-                : "bg-gradient-to-br from-warning/[0.06] to-transparent"
+                ? "bg-gradient-to-br from-success/6 to-transparent border-success/40"
+                : "bg-gradient-to-br from-warning/6 to-transparent"
             )}>
-              <CardBody className="!p-5">
+              <CardBody className="p-5!">
                 <div className="flex items-center gap-2">
                   <Swords className={cn("size-4", dailyChallengeCompleted ? "text-success" : "text-warning")} strokeWidth={1.75} />
                   <p className={cn("text-xs font-semibold uppercase tracking-wider", dailyChallengeCompleted ? "text-success" : "text-warning")}>
@@ -480,8 +480,8 @@ export default async function DashboardPage() {
             </Card>
           )}
 
-          <Card className={cn(dailyGoalReached && "border-success/40 bg-gradient-to-br from-success/[0.06] to-transparent")}>
-            <CardBody className="!p-5">
+          <Card className={cn(dailyGoalReached && "border-success/40 bg-gradient-to-br from-success/6 to-transparent")}>
+            <CardBody className="p-5!">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Zap className={cn("size-4", dailyGoalReached ? "text-success" : "text-brand")} strokeWidth={1.75} />

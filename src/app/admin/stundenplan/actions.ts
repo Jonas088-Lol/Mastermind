@@ -55,7 +55,7 @@ export async function saveTimetableEntry(formData: FormData): Promise<void> {
 export async function deleteTimetableEntry(entryId: string): Promise<void> {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "admin") return;
-  await prisma.timetableEntry.delete({ where: { id: entryId } });
+  await prisma.timetableEntry.deleteMany({ where: { id: entryId, schoolId: session.schoolId ?? "" } });
   revalidatePath("/admin/stundenplan");
 }
 

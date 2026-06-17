@@ -151,7 +151,7 @@ export default async function AufgabenPage({ searchParams }: PageProps) {
           <CardTitle>{filterLabel(filter)}</CardTitle>
           <span className="font-mono text-xs text-muted-fg">{filtered.length} Aufgaben</span>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {filtered.length === 0 ? (
             <div className="grid place-items-center border-t border-border p-12 text-center">
               <CheckCircle2 className="size-8 text-success" strokeWidth={1.5} />
@@ -170,7 +170,7 @@ export default async function AufgabenPage({ searchParams }: PageProps) {
                     key={a.id}
                     className={cn(
                       "grid grid-cols-1 gap-3 px-5 py-4 transition-colors hover:bg-surface lg:grid-cols-[1fr_auto_auto] lg:items-center lg:gap-4",
-                      st === "late" && "bg-danger/[0.04]"
+                      st === "late" && "bg-danger/4"
                     )}
                   >
                     <div className="min-w-0 flex-1">

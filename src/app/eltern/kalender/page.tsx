@@ -224,7 +224,7 @@ export default async function KalenderPage({
         <section key={monthKey} className="flex flex-col gap-4">
           <h2 className="text-base font-semibold capitalize">{label}</h2>
           <Card>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {Array.from(weeks.entries())
                 .sort(([a], [b]) => a - b)
                 .map(([week, events]) => (

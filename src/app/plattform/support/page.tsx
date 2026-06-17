@@ -71,7 +71,7 @@ export default async function PlattformSupportPage() {
               <CardTitle>Support-Tickets</CardTitle>
               <Badge variant={open > 0 ? "warning" : "success"}>{open} offen</Badge>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <div className="border-t border-border bg-surface px-5 py-3">
                 <p className="text-xs text-muted-fg">
                   Tickets werden über{" "}
@@ -142,7 +142,7 @@ export default async function PlattformSupportPage() {
               </div>
               <Badge variant="success">Alle Systeme aktiv</Badge>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {STATUS_SERVICES.map((svc) => (
                   <li key={svc.name} className="flex items-center justify-between px-5 py-3">
@@ -271,7 +271,7 @@ export default async function PlattformSupportPage() {
                 <CardTitle>Kontaktdaten</CardTitle>
               </div>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {CONTACTS.map((c) => (
                   <li key={c.role} className="px-5 py-3.5">

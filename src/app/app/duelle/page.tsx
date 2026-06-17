@@ -183,7 +183,7 @@ export default async function DuellePage() {
             </div>
             {pending.length > 0 && <Badge variant="warning">{pending.length}</Badge>}
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             {pending.length === 0 ? (
               <p className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                 Keine offenen Herausforderungen.
@@ -232,7 +232,7 @@ export default async function DuellePage() {
             </div>
             <Badge variant="brand">{active.length}</Badge>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {active.map((d) => {
                 const { opponent, isChallenger } = duelLabel(d);
@@ -272,7 +272,7 @@ export default async function DuellePage() {
               <p className="mt-1 text-sm text-muted-fg">{completed.length} Duelle gespielt</p>
             </div>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {completed.map((d) => {
                 const { opponent, isChallenger } = duelLabel(d);

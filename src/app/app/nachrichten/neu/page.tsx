@@ -17,9 +17,15 @@ const ROLE_LABEL: Record<string, string> = {
 
 const ROLE_ORDER = ["teacher", "student", "parent", "admin"];
 
-export default async function NeueNachrichtPage() {
+interface PageProps {
+  searchParams: Promise<{ to?: string }>;
+}
+
+export default async function NeueNachrichtPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
+
+  const { to: preSelectedId } = await searchParams;
 
   const senderRole = effectiveRole(session);
 
@@ -67,6 +73,7 @@ export default async function NeueNachrichtPage() {
             id="recipientId"
             name="recipientId"
             required
+            defaultValue={preSelectedId ?? ""}
             className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           >
             <option value="">Empfänger auswählen…</option>

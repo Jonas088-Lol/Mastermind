@@ -649,14 +649,14 @@ function ResultScreen({
 
       {/* Stats cards */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="flex flex-col items-center gap-1 border border-success/30 bg-success/[0.04] p-4 text-center">
+        <div className="flex flex-col items-center gap-1 border border-success/30 bg-success/4 p-4 text-center">
           <CheckCircle2 className="size-5 text-success" />
           <span className="text-2xl font-black text-success">{correct}</span>
           <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
             Richtig
           </span>
         </div>
-        <div className="flex flex-col items-center gap-1 border border-danger/30 bg-danger/[0.04] p-4 text-center">
+        <div className="flex flex-col items-center gap-1 border border-danger/30 bg-danger/4 p-4 text-center">
           <XCircle className="size-5 text-danger" />
           <span className="text-2xl font-black text-danger">{wrong}</span>
           <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">

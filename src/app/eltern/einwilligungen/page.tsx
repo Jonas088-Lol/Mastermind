@@ -104,7 +104,7 @@ export default async function EinwilligungenPage() {
                   )}
                 </div>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {links.map(({ student }) => {
                     const response = form.responses.find(

@@ -98,7 +98,7 @@ export default async function TemplatesPage() {
                     )}
                   </div>
                 </CardHeader>
-                <CardBody className="flex flex-1 flex-col justify-between !pt-0">
+                <CardBody className="flex flex-1 flex-col justify-between pt-0!">
                   <div className="flex flex-wrap gap-4 text-xs text-muted-fg">
                     <span className="flex items-center gap-1">
                       <Layers className="size-3.5" />

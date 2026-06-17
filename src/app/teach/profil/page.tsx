@@ -170,7 +170,7 @@ export default async function TeachProfilPage() {
                 <p className="text-sm text-muted-fg">Noch keine Klassen zugeordnet.</p>
               </CardBody>
             ) : (
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {classes.map((k) => (
                     <li

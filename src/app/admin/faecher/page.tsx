@@ -87,7 +87,7 @@ export default async function AdminFaecherPage() {
           </div>
           <BookOpen className="size-4 text-muted-fg" strokeWidth={1.75} />
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {subjects.length === 0 ? (
             <div className="border-t border-border px-5 py-10 text-center text-sm text-muted-fg">
               Noch keine Fächer angelegt.{" "}

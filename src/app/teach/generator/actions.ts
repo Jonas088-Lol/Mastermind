@@ -54,6 +54,14 @@ export async function sendToClass(
 ): Promise<void> {
   const session = await getSession();
   if (!session) throw new Error("Unauthorized");
+  const role = effectiveRole(session);
+  if (role !== "teacher" && role !== "super") throw new Error("Unauthorized");
+
+  const tsc = await prisma.teacherSubjectClass.findFirst({
+    where: { teacherId: session.userId, classId, subjectId },
+  });
+  if (!tsc) throw new Error("Unauthorized");
+
   await prisma.assignment.create({
     data: {
       title,

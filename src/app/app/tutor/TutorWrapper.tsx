@@ -53,7 +53,7 @@ export function TutorWrapper({
         />
 
         <Card>
-          <div className="!p-4 p-4">
+          <div className="p-4">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">
               Quota
             </p>
@@ -67,7 +67,7 @@ export function TutorWrapper({
               KI-Anfragen diese Woche · Reset Mo 00:00
             </p>
             {!isAiConfigured && (
-              <p className="mt-3 border-l-2 border-warning bg-warning/[0.06] px-3 py-2 text-[10px] uppercase tracking-wider text-warning">
+              <p className="mt-3 border-l-2 border-warning bg-warning/6 px-3 py-2 text-[10px] uppercase tracking-wider text-warning">
                 Mock-Modus · ANTHROPIC_API_KEY nicht gesetzt
               </p>
             )}

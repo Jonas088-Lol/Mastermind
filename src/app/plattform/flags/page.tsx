@@ -97,7 +97,7 @@ export default async function FlagsPage({ searchParams }: PageProps) {
           <CardTitle>{flags.length} Flags</CardTitle>
           <span className="font-mono text-xs text-muted-fg">sortiert nach Update</span>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {flags.length === 0 ? (
             <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">Keine Flags für diese Filterung.</p>
           ) : (

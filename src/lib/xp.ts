@@ -69,6 +69,19 @@ export async function awardXp(
     });
   }
 
+  // One-time streak milestone coin awards (7-day and 30-day streaks)
+  const prevStreak = user?.streak ?? 0;
+  if (prevStreak < 7 && newStreak >= 7) {
+    awardCoins(userId, "streak_7_tage").catch((err) => {
+      logger.error("xp: streak_7_tage coin failed", err, { userId });
+    });
+  }
+  if (prevStreak < 30 && newStreak >= 30) {
+    awardCoins(userId, "streak_30_tage").catch((err) => {
+      logger.error("xp: streak_30_tage coin failed", err, { userId });
+    });
+  }
+
   // Fire-and-forget achievement check (non-blocking)
   checkAndAwardAchievements(userId).catch((err) => {
     logger.error("xp: achievement check failed", err, { userId });

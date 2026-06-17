@@ -82,7 +82,7 @@ export default async function ArbeitsblatterPage() {
                   )}
                 </div>
               </CardHeader>
-              <CardBody className="flex flex-1 flex-col justify-between !pt-0">
+              <CardBody className="flex flex-1 flex-col justify-between pt-0!">
                 <div className="flex gap-4 text-xs text-muted-fg">
                   <span>
                     <span className="font-semibold text-fg">{w._count.items}</span> Items

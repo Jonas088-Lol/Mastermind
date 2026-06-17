@@ -278,7 +278,7 @@ export function TutorChat({
       </ol>
 
       {error && (
-        <div className="border-t border-danger/40 bg-danger/[0.06] px-5 py-2 text-xs text-danger">
+        <div className="border-t border-danger/40 bg-danger/6 px-5 py-2 text-xs text-danger">
           {error}
         </div>
       )}

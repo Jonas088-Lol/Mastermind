@@ -611,7 +611,7 @@ export function BlockEditor({ pageId, initialContent, onSave, className = "" }: 
 
       {/* Math symbol palette */}
       {mathPaletteOpen && (
-        <div className="mb-3 flex flex-wrap gap-1 border border-brand/30 bg-brand/[0.04] p-2">
+        <div className="mb-3 flex flex-wrap gap-1 border border-brand/30 bg-brand/4 p-2">
           <span className="w-full text-[10px] font-semibold uppercase tracking-wider text-muted-fg mb-1">
             Symbole — klicken zum Einfügen
           </span>

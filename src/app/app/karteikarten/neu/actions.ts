@@ -14,11 +14,23 @@ export async function createDeck(formData: FormData) {
 
   if (!name) throw new Error("Deck-Name ist erforderlich");
 
+  // Verify the subject belongs to the user's school before linking
+  let resolvedSubjectId: string | null = subjectId || null;
+  if (resolvedSubjectId) {
+    const subject = await prisma.subject.findUnique({
+      where: { id: resolvedSubjectId },
+      select: { schoolId: true },
+    });
+    if (!subject || subject.schoolId !== session.schoolId) {
+      resolvedSubjectId = null;
+    }
+  }
+
   await prisma.flashcardDeck.create({
     data: {
       name,
       userId: session.userId,
-      subjectId: subjectId || null,
+      subjectId: resolvedSubjectId,
     },
   });
 

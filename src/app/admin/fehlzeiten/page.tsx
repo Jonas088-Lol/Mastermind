@@ -83,7 +83,7 @@ export default async function AdminFehlzeitenPage({ searchParams }: PageProps) {
     const params = new URLSearchParams();
     if (newStatus) params.set("status", newStatus);
     if (newClassId !== undefined ? newClassId : classIdFilter) {
-      params.set("classId", newClassId !== undefined ? newClassId : classIdFilter!);
+      params.set("classId", newClassId !== undefined ? newClassId : classIdFilter ?? "");
     }
     const q = params.toString();
     return `/admin/fehlzeiten${q ? `?${q}` : ""}`;
@@ -190,7 +190,7 @@ export default async function AdminFehlzeitenPage({ searchParams }: PageProps) {
                 </div>
                 <Badge variant="warning">{pending.length} offen</Badge>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {pending.map((a) => (
                     <li key={a.id} className="flex items-start gap-4 px-5 py-4">
@@ -242,7 +242,7 @@ export default async function AdminFehlzeitenPage({ searchParams }: PageProps) {
               <CardHeader>
                 <CardTitle>Bearbeitet</CardTitle>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {[...confirmed, ...rejected].map((a) => (
                     <li key={a.id} className="flex items-start gap-4 px-5 py-3.5">

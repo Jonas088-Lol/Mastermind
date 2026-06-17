@@ -19,6 +19,7 @@ export default async function CommunityNotizenPage() {
   const notes = await prisma.note.findMany({
     where: {
       OR: [{ isPublic: true }, { authorId: session.userId }],
+      author: { schoolId: session.schoolId ?? "" },
     },
     include: { author: { select: { name: true } } },
     orderBy: { createdAt: "desc" },
@@ -49,7 +50,7 @@ export default async function CommunityNotizenPage() {
             return (
               <li key={n.id}>
                 <Card className="transition-colors hover:bg-surface">
-                  <CardBody className="!p-5">
+                  <CardBody className="p-5!">
                     <div className="flex items-start gap-4">
                       <div className="grid size-10 shrink-0 place-items-center bg-surface">
                         <StickyNote className="size-5 text-brand" strokeWidth={1.5} />

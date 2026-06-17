@@ -134,7 +134,7 @@ export default async function ErfolgePage() {
                     className={cn(
                       "flex gap-3 bg-bg p-4",
                       !isEarned && "opacity-40",
-                      isEarned && a.rarity === "epic" && "bg-gradient-to-br from-brand/[0.06] to-transparent",
+                      isEarned && a.rarity === "epic" && "bg-gradient-to-br from-brand/6 to-transparent",
                     )}
                   >
                     <div

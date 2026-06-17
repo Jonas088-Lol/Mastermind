@@ -42,7 +42,7 @@ export function TutorSidebar({
         <CardHeader>
           <CardTitle>Schnellstart</CardTitle>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           <ul className="divide-y divide-border border-t border-border">
             {QUICK_PROMPTS.map((q) => (
               <li key={q.label}>
@@ -72,7 +72,7 @@ export function TutorSidebar({
         <CardHeader>
           <CardTitle>Letzte Themen</CardTitle>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {recentTopics.length === 0 ? (
             <p className="border-t border-border px-5 py-6 text-center text-sm text-muted-fg">
               Noch keine Themen gespeichert.

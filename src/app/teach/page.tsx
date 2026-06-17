@@ -240,7 +240,7 @@ export default async function TeachDashboardPage() {
                 </Button>
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {pendingSubmissions.length === 0 ? (
                 <div className="border-t border-border px-5 py-8 text-center text-sm text-muted-fg">
                   Keine offenen Korrekturen. 🎉
@@ -292,7 +292,7 @@ export default async function TeachDashboardPage() {
                 </Button>
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {weekAssignments.length === 0 ? (
                 <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                   Diese Woche keine fälligen Aufgaben.
@@ -336,7 +336,7 @@ export default async function TeachDashboardPage() {
                 </Button>
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {classes.map((c) => (
                   <li key={c.id} className="flex items-center gap-4 px-5 py-3.5 transition-colors hover:bg-surface">
@@ -369,7 +369,7 @@ export default async function TeachDashboardPage() {
               </div>
               <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {[
                   { label: "KA-Generator", desc: "Klassenarbeiten in Minuten", href: "/teach/generator", icon: Sparkles },
@@ -400,7 +400,7 @@ export default async function TeachDashboardPage() {
               <CardTitle>Heute · {today_day_label(TODAY_DOW)}</CardTitle>
               <span className="font-mono text-xs text-muted-fg">{todayEntries.length} Stunden</span>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {todayEntries.length === 0 ? (
                 <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
                   Heute kein Unterricht.
@@ -425,7 +425,7 @@ export default async function TeachDashboardPage() {
 
           {unreadCount > 0 && (
             <Card className="border-brand/40">
-              <CardBody className="!p-5">
+              <CardBody className="p-5!">
                 <div className="flex items-center gap-2">
                   <span className="size-2 rounded-full bg-brand" />
                   <p className="text-xs font-semibold uppercase tracking-wider text-brand">
@@ -458,7 +458,7 @@ export default async function TeachDashboardPage() {
               </div>
               <CalendarClock className="size-4 text-muted-fg" strokeWidth={1.75} />
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {weekSlots.length === 0 ? (
                 <div className="border-t border-border px-5 py-5 text-sm text-muted-fg">
                   Diese Woche keine gebuchten Termine.
@@ -499,7 +499,7 @@ export default async function TeachDashboardPage() {
                   </Button>
                 </Link>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {recentIncidents.map((inc) => (
                     <li key={inc.id} className="flex items-start gap-3 px-5 py-3">
@@ -530,7 +530,7 @@ export default async function TeachDashboardPage() {
             <CardHeader>
               <CardTitle>Schnellzugriff</CardTitle>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {[
                   { label: "Broadcast senden", desc: "Klassen & Eltern benachrichtigen", href: "/teach/broadcast", icon: Megaphone },
@@ -555,8 +555,8 @@ export default async function TeachDashboardPage() {
             </CardBody>
           </Card>
 
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
-            <CardBody className="!p-5">
+          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+            <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand">KI-Assistent</p>

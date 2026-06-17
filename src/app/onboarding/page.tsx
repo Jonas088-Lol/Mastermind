@@ -169,7 +169,7 @@ function TeacherActivatePage({
         <Card>
           <CardBody>
             {error && (
-              <div className="mb-5 border-l-2 border-danger bg-danger/[0.06] px-4 py-3 text-sm text-danger">
+              <div className="mb-5 border-l-2 border-danger bg-danger/6 px-4 py-3 text-sm text-danger">
                 {decodeURIComponent(error)}
               </div>
             )}
@@ -275,7 +275,7 @@ function StudentActivatePage({
         <Card>
           <CardBody>
             {error && (
-              <div className="mb-5 border-l-2 border-danger bg-danger/[0.06] px-4 py-3 text-sm text-danger">
+              <div className="mb-5 border-l-2 border-danger bg-danger/6 px-4 py-3 text-sm text-danger">
                 {decodeURIComponent(error)}
               </div>
             )}
@@ -582,8 +582,8 @@ function Step2({ plan: currentPlan }: { plan?: string }) {
               className={cn(
                 "flex flex-col gap-4 bg-bg p-6",
                 p.recommended && !isSelected &&
-                  "border-l-2 border-l-brand bg-gradient-to-b from-brand/[0.04] to-transparent",
-                isSelected && "border-l-2 border-l-success bg-gradient-to-b from-success/[0.04] to-transparent"
+                  "border-l-2 border-l-brand bg-gradient-to-b from-brand/4 to-transparent",
+                isSelected && "border-l-2 border-l-success bg-gradient-to-b from-success/4 to-transparent"
               )}
             >
               <div className="flex items-center gap-2">
@@ -652,7 +652,7 @@ function Step3({ plan, sso: currentSso, schulname }: { plan?: string; sso?: stri
                 key={p.name}
                 className={cn(
                   "flex items-center gap-4 p-4 transition-colors hover:bg-surface",
-                  isActive && "border-l-2 border-l-brand bg-brand/[0.04]"
+                  isActive && "border-l-2 border-l-brand bg-brand/4"
                 )}
               >
                 <ShieldCheck
@@ -676,7 +676,7 @@ function Step3({ plan, sso: currentSso, schulname }: { plan?: string; sso?: stri
             );
           })}
         </ul>
-        <p className="border-l-2 border-warning bg-warning/[0.06] px-4 py-3 text-xs text-muted-fg">
+        <p className="border-l-2 border-warning bg-warning/6 px-4 py-3 text-xs text-muted-fg">
           2-Faktor-Authentifizierung wird für alle Lehrer- und Admin-Accounts
           standardmäßig erzwungen.
         </p>
@@ -781,7 +781,7 @@ function Step4() {
           <p className="mt-3 text-xs text-muted-fg">
             So sieht deine Schule auf jeder Anmelde-Seite aus.
           </p>
-          <p className="mt-4 border-l-2 border-brand bg-brand/[0.06] px-3 py-2 text-xs text-muted-fg">
+          <p className="mt-4 border-l-2 border-brand bg-brand/6 px-3 py-2 text-xs text-muted-fg">
             Logo, Farbe und Subdomain werden nach der Einrichtung im Admin-Panel unter <strong>Branding</strong> konfiguriert.
           </p>
         </CardBody>
@@ -799,7 +799,7 @@ function Step5({ error, plan, schulname }: { error?: string; plan?: string; schu
         </CardHeader>
         <CardBody>
           {error && (
-            <div className="mb-5 border-l-2 border-danger bg-danger/[0.06] px-4 py-3 text-sm text-danger">
+            <div className="mb-5 border-l-2 border-danger bg-danger/6 px-4 py-3 text-sm text-danger">
               {decodeURIComponent(error)}
             </div>
           )}

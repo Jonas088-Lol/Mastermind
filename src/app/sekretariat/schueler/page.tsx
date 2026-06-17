@@ -119,19 +119,16 @@ export default async function SchuelerPage({
         </p>
       )}
 
-      {/* Bulk actions placeholder */}
+      {/* Bulk actions */}
       <div className="flex items-center gap-3 border border-dashed border-border px-4 py-3">
         <span className="text-xs font-semibold uppercase tracking-wider text-muted-fg">Sammelaktionen</span>
-        <button
-          type="button"
-          disabled
-          className={cn(buttonVariants({ variant: "outline", size: "sm" }), "cursor-not-allowed opacity-50")}
-          title="Kommt bald"
+        <Link
+          href="/sekretariat/schueler/email-alle"
+          className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
         >
           <Mail className="size-3.5" />
           E-Mail an alle senden
-        </button>
-        <span className="text-xs text-muted-fg">Kommt bald</span>
+        </Link>
       </div>
 
       <div className="border border-border">

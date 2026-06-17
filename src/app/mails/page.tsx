@@ -193,7 +193,7 @@ export default async function MailsPage({
                           className={cn(
                             "flex flex-col gap-0.5 border-b border-border px-4 py-3 transition-colors",
                             isSelected ? "bg-brand/10" : "hover:bg-surface",
-                            isUnread && !isSelected && "bg-brand/[0.03]"
+                            isUnread && !isSelected && "bg-brand/3"
                           )}
                         >
                           <div className="flex items-center justify-between gap-2">

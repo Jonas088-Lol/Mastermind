@@ -279,7 +279,7 @@ export default async function NutzerDetailPage({ params }: { params: Promise<{ i
               Verknüpfte Eltern
             </CardTitle>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {user.studentParents.map((link) => (
                 <li key={link.id} className="flex items-center gap-3 px-5 py-3 text-sm">
@@ -301,7 +301,7 @@ export default async function NutzerDetailPage({ params }: { params: Promise<{ i
       {user.teacherSubjectClasses.length > 0 && (
         <Card>
           <CardHeader><CardTitle>Unterrichtet</CardTitle></CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {user.teacherSubjectClasses.map((tsc, i) => (
                 <li key={i} className="flex items-center gap-3 px-5 py-3 text-sm">
@@ -319,7 +319,7 @@ export default async function NutzerDetailPage({ params }: { params: Promise<{ i
       {user.sessions.length > 0 && (
         <Card>
           <CardHeader><CardTitle>Letzte Sitzungen</CardTitle></CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {user.sessions.map((s, i) => (
                 <li key={i} className="flex items-center gap-4 px-5 py-3 text-sm">

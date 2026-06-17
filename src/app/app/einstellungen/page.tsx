@@ -377,7 +377,7 @@ export default async function EinstellungenPage() {
                   </Button>
                 </form>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {sessions.map((s) => {
                     const isCurrent = s.token === currentToken;
@@ -425,7 +425,7 @@ export default async function EinstellungenPage() {
                   </a>
 
                   <details className="group bg-bg">
-                    <summary className="flex cursor-pointer list-none items-start gap-3 p-5 transition-colors hover:bg-danger/[0.04]">
+                    <summary className="flex cursor-pointer list-none items-start gap-3 p-5 transition-colors hover:bg-danger/4">
                       <span className="grid size-9 shrink-0 place-items-center bg-danger/10 text-danger transition-colors group-open:bg-danger group-open:text-bg">
                         <Trash2 className="size-4" />
                       </span>

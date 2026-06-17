@@ -13,6 +13,18 @@ export async function respondToConsent(
   const session = await getSession();
   if (!session || effectiveRole(session) !== "parent") redirect("/login");
 
+  // Verify parent is linked to this student
+  const link = await prisma.parentStudentLink.findUnique({
+    where: { parentId_studentId: { parentId: session.userId, studentId } },
+  });
+  if (!link) return;
+
+  // Verify the consent form belongs to the parent's school
+  const form = await prisma.consentForm.findFirst({
+    where: { id: formId, schoolId: session.schoolId ?? "" },
+  });
+  if (!form) return;
+
   await prisma.consentResponse.upsert({
     where: {
       formId_parentId_studentId: {

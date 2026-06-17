@@ -441,7 +441,7 @@ function ClassSection({
                 Top Schüler
               </CardTitle>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {cls.topStudents.length === 0 ? (
                 <p className="px-5 py-3 text-sm text-muted-fg">Keine Daten.</p>
               ) : (

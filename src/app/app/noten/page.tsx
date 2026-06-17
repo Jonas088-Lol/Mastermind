@@ -20,6 +20,16 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Noten" };
 
+function currentSchoolPeriod(): string {
+  const now = new Date();
+  const month = now.getMonth() + 1; // 1-based
+  const year = now.getFullYear();
+  // School year starts in September; Halbjahr 1 = Sep–Jan, Halbjahr 2 = Feb–Aug
+  const schoolYearStart = month >= 9 ? year : year - 1;
+  const halbjahr = month >= 2 && month <= 8 ? 2 : 1;
+  return `Halbjahr ${halbjahr} · Schuljahr ${schoolYearStart}/${String(schoolYearStart + 1).slice(2)}`;
+}
+
 const TYPE_DE: Record<string, string> = {
   klausur: "Klassenarbeit",
   test: "Test",
@@ -89,7 +99,7 @@ export default async function NotenPage() {
       <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
-            Halbjahr 2 · Schuljahr 2025/26
+            {currentSchoolPeriod()}
           </p>
           <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Noten-Übersicht</h1>
           <p className="mt-1 text-sm text-muted-fg">
@@ -128,7 +138,7 @@ export default async function NotenPage() {
                 {subjects.length} Fächer · sortiert nach Note
               </span>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {sorted.map((s) => (
                   <li
@@ -151,14 +161,14 @@ export default async function NotenPage() {
                         <div className="flex flex-col gap-1">
                           <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">Schriftlich</p>
                           <p className="font-mono text-base font-bold tabular-nums">{fmt(s.writtenAvg)}</p>
-                          <Progress value={60} className="h-1" />
+                          <Progress value={Math.round(((6 - s.writtenAvg) / 5) * 100)} className="h-1" />
                         </div>
                       )}
                       {s.oralAvg !== null && (
                         <div className="flex flex-col gap-1">
                           <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">Mündlich</p>
                           <p className="font-mono text-base font-bold tabular-nums">{fmt(s.oralAvg)}</p>
-                          <Progress value={40} className="h-1" />
+                          <Progress value={Math.round(((6 - s.oralAvg) / 5) * 100)} className="h-1" />
                         </div>
                       )}
                     </div>
@@ -191,7 +201,7 @@ export default async function NotenPage() {
               <CardHeader>
                 <CardTitle>Letzte Bewertungen</CardTitle>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {grades.slice(0, 8).map((g) => (
                     <li
@@ -226,8 +236,8 @@ export default async function NotenPage() {
               </CardBody>
             </Card>
 
-            <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
-              <CardBody className="!p-5">
+            <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+              <CardBody className="p-5!">
                 <div className="flex items-center gap-2">
                   <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
                   <p className="text-xs font-semibold uppercase tracking-wider text-brand">

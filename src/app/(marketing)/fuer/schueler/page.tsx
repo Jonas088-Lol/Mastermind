@@ -10,6 +10,9 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { FeatureMockup } from "@/components/marketing/FeatureMockup";
+
+type MockupKey = "chat" | "dashboard" | "grades" | "flashcard" | "assignment" | "analytics" | "admin" | "security" | "learning";
 
 export const metadata: Metadata = {
   title: "Für Schüler | MasterMind",
@@ -17,10 +20,11 @@ export const metadata: Metadata = {
     "MasterMind für Schüler: KI-Tutor, Gamification, Lernpfade, Karteikarten und Notentracking — lerne smarter, nicht härter.",
 };
 
-const sections = [
+const sections: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }>; title: string; bullets: string[]; mockup: MockupKey }[] = [
   {
     icon: Brain,
     title: "KI-Tutor — Erklärungen auf Knopfdruck",
+    mockup: "chat",
     bullets: [
       "Frag den KI-Tutor jederzeit — er erklärt Aufgaben Schritt für Schritt",
       "Anpassung an deinen Wissensstand: einfachere oder tiefere Erklärungen",
@@ -30,6 +34,7 @@ const sections = [
   {
     icon: Trophy,
     title: "Gamification — Lernen mit Spaß",
+    mockup: "dashboard",
     bullets: [
       "Sammle XP für jede abgeschlossene Aufgabe und jedes Quiz",
       "Halte deinen Tagesstreak am Laufen — bis zu ×2 XP-Booster",
@@ -39,6 +44,7 @@ const sections = [
   {
     icon: Layers,
     title: "Personalisierte Lernpfade",
+    mockup: "learning",
     bullets: [
       "MasterMind erkennt, wo du Lücken hast, und schlägt das richtige Thema vor",
       "Spaced Repetition sorgt für nachhaltiges Merken statt kurzfristigem Bulimie-Lernen",
@@ -48,6 +54,7 @@ const sections = [
   {
     icon: BookOpen,
     title: "Karteikarten-System",
+    mockup: "flashcard",
     bullets: [
       "Erstelle Karteikarten direkt aus deinen Heften oder vom KI-Tutor generiert",
       "Automatische Wiederholungs-Intervalle nach Lernstand",
@@ -57,6 +64,7 @@ const sections = [
   {
     icon: BarChart2,
     title: "Notentracking",
+    mockup: "grades",
     bullets: [
       "Alle Noten auf einen Blick — nach Fach sortiert und als Zeitreihe",
       "Durchschnitts-Berechnung und Prognosefunktion für die nächste Arbeit",
@@ -128,9 +136,7 @@ export default function FuerSchuelerPage() {
                   </ul>
                 </div>
                 <div className="flex-1">
-                  <div className="flex aspect-video w-full items-center justify-center border border-border bg-surface text-sm text-muted-fg">
-                    Screenshot Platzhalter — {s.title}
-                  </div>
+                  <FeatureMockup variant={s.mockup} />
                 </div>
               </div>
             ))}

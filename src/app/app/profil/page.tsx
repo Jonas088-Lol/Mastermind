@@ -212,7 +212,7 @@ export default async function ProfilPage() {
         <Stat label="Achievements" value={String(earnedCount)} suffix={`/ ${ACHIEVEMENTS.length}`} icon={Sparkles} tone="text-info" />
       </section>
 
-      <section className="rounded-2xl border bg-gradient-to-r from-brand/[0.08] to-transparent p-5" style={{ borderColor: `${rank.color}40` }}>
+      <section className="rounded-2xl border bg-gradient-to-r from-brand/8 to-transparent p-5" style={{ borderColor: `${rank.color}40` }}>
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="text-xl">{rank.icon}</span>
@@ -382,7 +382,7 @@ export default async function ProfilPage() {
         {/* Quick links */}
         <Card>
           <CardHeader><CardTitle>Schnellzugriff</CardTitle></CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {[
                 { href: "/app/lernplan", label: "KI-Lernplan generieren", emoji: "🤖" },
@@ -425,7 +425,7 @@ export default async function ProfilPage() {
           <CardHeader>
             <CardTitle>Aktive Booster</CardTitle>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             {activeBoosters.length === 0 ? (
               <div className="px-5 py-4">
                 <p className="text-sm text-muted-fg">Kein aktiver Booster.</p>
@@ -468,7 +468,7 @@ export default async function ProfilPage() {
                 <Badge variant="success">{earnedCount} verdient</Badge>
               )}
             </CardHeader>
-            <CardBody className="!p-0">
+            <CardBody className="p-0!">
               <div className="grid gap-px border-t border-border bg-border md:grid-cols-2">
                 {ACHIEVEMENTS.map((a) => {
                   const earned = earnedSlugs.has(a.slug);
@@ -478,7 +478,7 @@ export default async function ProfilPage() {
                       className={cn(
                         "flex gap-3 bg-bg p-4 transition-opacity",
                         !earned && "opacity-40",
-                        earned && a.rarity === "epic" && "bg-gradient-to-br from-brand/[0.06] to-transparent",
+                        earned && a.rarity === "epic" && "bg-gradient-to-br from-brand/6 to-transparent",
                       )}
                     >
                       <div className={cn(
@@ -510,7 +510,7 @@ export default async function ProfilPage() {
           <CardHeader>
             <CardTitle>Letzte Aktivität</CardTitle>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             {recentActivity.length === 0 ? (
               <p className="px-5 py-4 text-sm text-muted-fg">Noch keine Aktivität.</p>
             ) : (

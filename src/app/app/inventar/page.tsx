@@ -102,7 +102,7 @@ export default async function InventarPage() {
               return (
                 <div
                   key={booster.id}
-                  className="flex flex-col gap-3 border border-warning/40 bg-warning/[0.03] p-4"
+                  className="flex flex-col gap-3 border border-warning/40 bg-warning/3 p-4"
                 >
                   <div className="flex items-start gap-3">
                     <span className="text-2xl leading-none">{icon}</span>

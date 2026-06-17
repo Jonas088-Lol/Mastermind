@@ -5,6 +5,7 @@ import path from "path";
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { awardCoins } from "@/lib/coins";
 
 export async function uploadAvatar(formData: FormData): Promise<void> {
   const session = await getSession();
@@ -23,10 +24,20 @@ export async function uploadAvatar(formData: FormData): Promise<void> {
   const bytes = await file.arrayBuffer();
   await writeFile(dest, Buffer.from(bytes));
 
+  const hadAvatar = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: { avatarUrl: true },
+  });
+
   await prisma.user.update({
     where: { id: session.userId },
     data: { avatarUrl: `/uploads/avatars/${filename}` },
   });
+
+  // Award coins for first-time avatar upload
+  if (!hadAvatar?.avatarUrl) {
+    awardCoins(session.userId, "profil_foto_gesetzt").catch(() => undefined);
+  }
 
   revalidatePath("/app/profil");
 }

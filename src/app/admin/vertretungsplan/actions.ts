@@ -77,7 +77,7 @@ export async function deleteSubstitution(id: string): Promise<void> {
   const session = await requireAdmin();
   if (!session) return;
 
-  await prisma.substitutionEntry.delete({ where: { id } });
+  await prisma.substitutionEntry.delete({ where: { id, schoolId: session.schoolId ?? "" } });
 
   revalidatePath("/admin/vertretungsplan");
   revalidatePath("/app/plan");

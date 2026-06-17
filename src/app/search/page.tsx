@@ -154,7 +154,7 @@ async function search(userId: string, role: string, q: string): Promise<Hit[]> {
       hits.push({
         title: d.name,
         body: `${d._count.cards} Karten${d.subject ? " · " + d.subject.name : ""}`,
-        href: `/app/karteikarten`,
+        href: `/app/karteikarten/${d.id}`,
         scope: "Karteikarten",
         icon: Layers,
       });
@@ -163,7 +163,7 @@ async function search(userId: string, role: string, q: string): Promise<Hit[]> {
       hits.push({
         title: p.title,
         body: `${p.subject.name}${p.description ? " · " + p.description.slice(0, 60) : ""}`,
-        href: `/app/lernen`,
+        href: `/app/lernen/${p.id}`,
         scope: "Lernpfad",
         icon: BookOpen,
       });
@@ -201,7 +201,7 @@ async function search(userId: string, role: string, q: string): Promise<Hit[]> {
         title: s.name,
         body: `Klasse ${s.schoolClass?.name ?? "—"}`,
         href: s.schoolClass?.name
-          ? `/teach/klassen/${encodeURIComponent(s.schoolClass.name)}`
+          ? `/teach/klassen/${encodeURIComponent(s.schoolClass.name)}/schueler/${s.id}`
           : `/teach/klassen`,
         scope: "Schüler",
         icon: Users,
@@ -220,25 +220,9 @@ async function search(userId: string, role: string, q: string): Promise<Hit[]> {
       hits.push({
         title: a.title,
         body: `${a.subject.name} · ${a.class.name} · fällig ${a.dueAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" })}`,
-        href: `/teach/korrektur`,
+        href: `/teach/aufgaben/${a.id}`,
         scope: "Aufgabe",
         icon: CheckSquare,
-      });
-    }
-
-    // Teacher's own flashcard decks
-    const decks = await prisma.flashcardDeck.findMany({
-      where: { userId, name: { contains: q } },
-      select: { id: true, name: true, subject: { select: { name: true } }, _count: { select: { cards: true } } },
-      take: 5,
-    });
-    for (const d of decks) {
-      hits.push({
-        title: d.name,
-        body: `${d._count.cards} Karten${d.subject ? " · " + d.subject.name : ""}`,
-        href: `/teach/karteikarten`,
-        scope: "Karteikarten",
-        icon: Layers,
       });
     }
   }

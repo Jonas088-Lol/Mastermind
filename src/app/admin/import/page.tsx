@@ -38,7 +38,7 @@ export default async function ImportPage({ searchParams }: PageProps) {
       </header>
 
       {hasResult && (
-        <div className="border border-success/40 bg-success/[0.06] px-5 py-4">
+        <div className="border border-success/40 bg-success/6 px-5 py-4">
           <p className="text-sm font-semibold text-success">
             Import abgeschlossen
           </p>

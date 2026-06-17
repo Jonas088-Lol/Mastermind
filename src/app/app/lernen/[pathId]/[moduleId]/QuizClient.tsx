@@ -125,7 +125,7 @@ export function QuizClient({ pathId, moduleId, moduleTitle, questions }: Props) 
               className={cn(
                 "flex w-full items-center gap-4 border px-5 py-4 text-left text-sm font-medium transition-colors",
                 !answered && !isSelected && "border-border bg-bg hover:border-brand hover:bg-surface",
-                !answered && isSelected && "border-brand bg-brand/[0.08]",
+                !answered && isSelected && "border-brand bg-brand/8",
                 answered && variant === "success" && "border-success bg-success/10 text-success",
                 answered && variant === "danger" && "border-danger bg-danger/10 text-danger",
                 answered && !isSelected && variant === "default" && "border-border bg-bg opacity-50",

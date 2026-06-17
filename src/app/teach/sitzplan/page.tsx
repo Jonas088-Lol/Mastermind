@@ -235,7 +235,7 @@ function SeatingGrid({
                 key={`${rowIdx}-${colIdx}`}
                 className={cn(
                   "flex min-h-[64px] flex-col items-center justify-center border border-border p-1.5 text-center text-xs",
-                  student ? "bg-brand/[0.08]" : "bg-surface"
+                  student ? "bg-brand/8" : "bg-surface"
                 )}
               >
                 {student ? (

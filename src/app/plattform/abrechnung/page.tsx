@@ -155,7 +155,7 @@ export default async function AbrechnungPage() {
             <p className="mt-1 text-sm text-muted-fg">{totalSchools} registriert</p>
           </div>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {schools.length === 0 ? (
             <p className="border-t border-border px-5 py-6 text-sm text-muted-fg">Noch keine Schulen registriert.</p>
           ) : (

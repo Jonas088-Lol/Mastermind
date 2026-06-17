@@ -159,7 +159,7 @@ export default async function PlattformPage() {
                 <ArrowRight className="size-3.5" />
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {schools.length === 0 ? (
                 <p className="px-5 py-6 text-sm text-muted-fg">Noch keine Schulen registriert.</p>
               ) : (
@@ -179,7 +179,7 @@ export default async function PlattformPage() {
                 <p className="mt-1 text-sm text-muted-fg">Neueste Schulen & Nutzer</p>
               </div>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {activityItems.length === 0 ? (
                 <p className="px-5 py-4 text-sm text-muted-fg">Noch keine Aktivität.</p>
               ) : (
@@ -214,7 +214,7 @@ export default async function PlattformPage() {
                 {health.every((h) => h.status === "ok") ? "OK" : "Warnung"}
               </Badge>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {health.map((h) => (
                   <HealthRow key={h.name} item={h} />
@@ -251,8 +251,8 @@ export default async function PlattformPage() {
             <QuickTile href="/app" icon={<HelpCircle className="size-4" />} label="Schüler-App" hint="Lernbereich" />
           </div>
 
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
-            <CardBody className="!p-5">
+          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+            <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <Zap className="size-4 text-brand" strokeWidth={1.75} />
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand">Plattform-Status</p>

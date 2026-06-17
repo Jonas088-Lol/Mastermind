@@ -69,7 +69,7 @@ export function TwoFactorSetup({ initiallyEnabled }: TwoFactorSetupProps) {
 
   if (enabled && phase === "idle") {
     return (
-      <div className="flex flex-col gap-4 border border-success/40 bg-success/[0.04] p-5">
+      <div className="flex flex-col gap-4 border border-success/40 bg-success/4 p-5">
         <div className="flex items-start gap-3">
           <ShieldCheck className="mt-0.5 size-4 shrink-0 text-success" strokeWidth={1.75} />
           <div className="flex-1">
@@ -105,7 +105,7 @@ export function TwoFactorSetup({ initiallyEnabled }: TwoFactorSetupProps) {
               type="submit"
               variant="outline"
               size="md"
-              className="text-danger border-danger/40 hover:bg-danger/[0.06]"
+              className="text-danger border-danger/40 hover:bg-danger/6"
             >
               <ShieldOff className="size-3.5" />
               Deaktivieren
@@ -149,7 +149,7 @@ export function TwoFactorSetup({ initiallyEnabled }: TwoFactorSetupProps) {
 
   // setup phase — show secret + verify form
   return (
-    <div className="flex flex-col gap-5 border border-brand/40 bg-brand/[0.04] p-5">
+    <div className="flex flex-col gap-5 border border-brand/40 bg-brand/4 p-5">
       <div>
         <p className="text-xs font-semibold uppercase tracking-wider text-brand">
           Schritt 1 · Authenticator einrichten

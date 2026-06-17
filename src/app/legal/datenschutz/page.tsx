@@ -169,7 +169,7 @@ export default function DatenschutzPage() {
         </p>
       </Section>
 
-      <p className="border-l-2 border-warning bg-warning/[0.06] p-4 text-xs text-muted-fg">
+      <p className="border-l-2 border-warning bg-warning/6 p-4 text-xs text-muted-fg">
         Diese Datenschutzerklärung ist ein erster Entwurf zur Demonstration der
         Plattform­struktur. Vor Inverkehrbringung muss sie durch eine:n
         Datenschutz­beauftragte:n und Fachjurist:in geprüft und an die konkrete

@@ -74,7 +74,7 @@ export default async function ElternFehlzeitenPage() {
                 </div>
                 <span className="font-mono text-xs text-muted-fg">{list.length} Einträge</span>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 {list.length === 0 ? (
                   <p className="px-5 py-6 text-sm text-muted-fg">Keine Fehlzeiten eingetragen.</p>
                 ) : (

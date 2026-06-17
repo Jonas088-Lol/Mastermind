@@ -152,7 +152,7 @@ export default async function NotificationsPage() {
                           {items.map((n) => {
                             const { Icon, tone } = meta;
                             const content = (
-                              <li key={n.id} className="flex items-start gap-4 bg-brand/[0.03] px-4 py-3.5">
+                              <li key={n.id} className="flex items-start gap-4 bg-brand/3 px-4 py-3.5">
                                 <span className={cn("mt-0.5 shrink-0", tone)}>
                                   <Icon className="size-4" strokeWidth={1.75} />
                                 </span>

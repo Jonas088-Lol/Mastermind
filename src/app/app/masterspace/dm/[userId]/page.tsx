@@ -21,7 +21,7 @@ export default async function DmPage({
   if (recipientId === session.userId) redirect("/app/masterspace");
 
   const recipient = await prisma.user.findUnique({
-    where: { id: recipientId },
+    where: { id: recipientId, schoolId: session.schoolId ?? "" },
     select: { id: true, name: true },
   });
   if (!recipient) notFound();
@@ -48,7 +48,7 @@ export default async function DmPage({
           <ChevronLeft className="size-4 text-muted-fg" />
         </Link>
         <div className="flex size-7 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand">
-          {recipient.name[0].toUpperCase()}
+          {(recipient.name[0] ?? "?").toUpperCase()}
         </div>
         <p className="font-semibold">{recipient.name}</p>
         <span className="text-xs text-muted-fg">Direktnachricht</span>
@@ -59,7 +59,7 @@ export default async function DmPage({
         {messages.length === 0 ? (
           <div className="flex h-full flex-col items-center justify-center gap-2 text-center text-muted-fg">
             <div className="flex size-12 items-center justify-center rounded-full bg-brand/10 text-xl font-bold text-brand">
-              {recipient.name[0].toUpperCase()}
+              {(recipient.name[0] ?? "?").toUpperCase()}
             </div>
             <p className="text-sm">
               Beginn deiner Unterhaltung mit <strong>{recipient.name}</strong>
@@ -80,7 +80,7 @@ export default async function DmPage({
                       "flex size-8 shrink-0 items-center justify-center rounded-full text-xs font-bold",
                       isMe ? "bg-brand/10 text-brand" : "bg-muted text-muted-fg"
                     )}>
-                      {msg.author.name[0].toUpperCase()}
+                      {(msg.author.name[0] ?? "?").toUpperCase()}
                     </div>
                   ) : (
                     <div className="w-8 shrink-0" />

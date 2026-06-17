@@ -15,6 +15,12 @@ export async function bookSlot(
 
   const note = (formData.get("note") as string | null) ?? undefined;
 
+  // Verify the parent is linked to this student
+  const link = await prisma.parentStudentLink.findUnique({
+    where: { parentId_studentId: { parentId: session.userId, studentId } },
+  });
+  if (!link) throw new Error("Kein Zugriff auf dieses Kind.");
+
   // Verify the slot is still free
   const slot = await prisma.parentTeacherSlot.findUnique({ where: { id: slotId } });
   if (!slot || slot.isBooked) {

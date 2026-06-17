@@ -3,7 +3,6 @@ import {
   Crown,
   FileText,
   Flame,
-  Heart,
   Plus,
   Sparkles,
   TrendingUp,
@@ -46,7 +45,7 @@ export default async function CommunityPage() {
   const [dbNotes, threads, leaderboardUsers, activeTodayCount, publicNotesCount, maxStreakResult, school] =
     await Promise.all([
       prisma.note.findMany({
-        where: { isPublic: true },
+        where: { isPublic: true, author: { schoolId: schoolId ?? "" } },
         include: { author: { select: { name: true } } },
         orderBy: { createdAt: "desc" },
         take: 10,
@@ -77,7 +76,7 @@ export default async function CommunityPage() {
       prisma.session.count({
         where: { createdAt: { gte: startOfDay }, ...(schoolId ? { user: { schoolId } } : {}) },
       }),
-      prisma.note.count({ where: { isPublic: true } }),
+      prisma.note.count({ where: { isPublic: true, author: { schoolId: schoolId ?? "" } } }),
       prisma.user.aggregate({ _max: { streak: true }, where: schoolId ? { schoolId } : {} }),
       schoolId ? prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } }) : Promise.resolve(null),
     ]);
@@ -115,10 +114,6 @@ export default async function CommunityPage() {
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Link href="/app/community/notizen/neu" className={buttonVariants({ variant: "outline", size: "sm" })}>
-            <Plus className="size-3.5" />
-            Lerngruppe
-          </Link>
           <Link href="/app/community/notizen/neu" className={buttonVariants({ size: "sm" })}>
             <Plus className="size-3.5" />
             Notiz teilen
@@ -144,7 +139,7 @@ export default async function CommunityPage() {
                 <ArrowRight className="size-3.5" />
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {dbNotes.length === 0 ? (
                 <div className="px-5 py-8 text-center">
                   <FileText className="mx-auto size-8 text-muted-fg" strokeWidth={1.5} />
@@ -183,7 +178,7 @@ export default async function CommunityPage() {
                 <ArrowRight className="size-3.5" />
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {groups.length === 0 ? (
                 <div className="border-t border-border px-5 py-8 text-center text-sm text-muted-fg">
                   Noch keine Nachrichten. Schreibe deiner Klasse!
@@ -200,8 +195,8 @@ export default async function CommunityPage() {
         </div>
 
         <aside className="space-y-6">
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
-            <CardBody className="!p-5">
+          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+            <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand">
@@ -212,8 +207,7 @@ export default async function CommunityPage() {
                 Helfe 3 Klassenkameraden mit einer Antwort
               </p>
               <p className="mt-2 text-sm text-muted-fg">
-                Belohnung: <span className="font-semibold text-fg">+250 XP</span> ·
-                noch 4 Tage · 1 von 3 erledigt.
+                Belohnung: <span className="font-semibold text-fg">+250 XP</span>
               </p>
               <Link href="/app/aufgaben" className={buttonVariants({ className: "mt-5 w-full" })}>
                 Challenge öffnen
@@ -227,7 +221,7 @@ export default async function CommunityPage() {
               <CardTitle>Schul-Ranking</CardTitle>
               <Badge variant="outline">XP</Badge>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {leaderboardUsers.length === 0 ? (
                 <p className="border-t border-border px-5 py-4 text-sm text-muted-fg">Noch keine XP-Daten.</p>
               ) : (
@@ -238,7 +232,7 @@ export default async function CommunityPage() {
                     return (
                       <li
                         key={u.id}
-                        className={cn("flex items-center gap-3 px-5 py-2.5", isMe && "bg-brand/[0.06]")}
+                        className={cn("flex items-center gap-3 px-5 py-2.5", isMe && "bg-brand/6")}
                       >
                         <span
                           className={cn(
@@ -268,7 +262,7 @@ export default async function CommunityPage() {
                     );
                   })}
                   {myRank >= leaderboardUsers.length && (
-                    <li className="flex items-center gap-3 bg-brand/[0.06] px-5 py-2.5">
+                    <li className="flex items-center gap-3 bg-brand/6 px-5 py-2.5">
                       <span className="grid size-7 shrink-0 place-items-center bg-surface font-mono text-xs font-bold text-muted-fg">
                         {myRank + 1}
                       </span>
@@ -350,11 +344,6 @@ function DbNoteRow({ note }: { note: DbNote }) {
         <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-fg">
           {note.author.name} · {dateStr}
         </p>
-      </div>
-      <div className="hidden flex-col items-end gap-1 lg:flex">
-        <span className="flex items-center gap-1 text-xs text-muted-fg">
-          <Heart className="size-3" />0
-        </span>
       </div>
     </div>
   );

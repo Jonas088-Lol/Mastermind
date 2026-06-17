@@ -229,7 +229,7 @@ export default async function StudentProfilePage({ params }: PageParams) {
             </div>
             {pending > 0 && <Badge variant="warning">{pending} ausstehend</Badge>}
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <div className="grid grid-cols-3 border-t border-border">
               {[
                 { label: "Bestätigt", value: confirmed, tone: "text-success" },
@@ -275,7 +275,7 @@ export default async function StudentProfilePage({ params }: PageParams) {
             <p className="mt-1 text-sm text-muted-fg">{submissions.length} Abgaben</p>
           </div>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {submissions.length === 0 ? (
             <p className="border-t border-border px-5 py-6 text-sm text-muted-fg">Noch keine Abgaben.</p>
           ) : (
@@ -321,7 +321,7 @@ export default async function StudentProfilePage({ params }: PageParams) {
             </div>
             <span className="font-mono text-2xl font-bold">{overallAvgStr}</span>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {grades.slice(0, 15).map((g) => (
                 <li key={g.id} className="flex items-center gap-4 px-5 py-2.5">

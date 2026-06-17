@@ -113,7 +113,7 @@ export default async function PlattformSicherheitPage() {
           </div>
           <Badge variant={activeSessions > 0 ? "brand" : "outline"}>{activeSessions} aktiv</Badge>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {schoolsWithSessions.length === 0 ? (
             <p className="border-t border-border px-5 py-4 text-sm text-muted-fg">
               Keine aktiven Sessions gefunden.
@@ -206,7 +206,7 @@ export default async function PlattformSicherheitPage() {
           </div>
           <Badge variant="success">{checks.filter((c) => c.ok).length}/{checks.length}</Badge>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           <ul className="divide-y divide-border border-t border-border">
             {checks.map((c) => (
               <li key={c.label} className="flex items-center gap-3 px-5 py-3">
@@ -230,7 +230,7 @@ export default async function PlattformSicherheitPage() {
           </div>
           <Badge variant="outline">Konfiguration via ENV</Badge>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           <ul className="divide-y divide-border border-t border-border">
             {securitySettings.map((s) => (
               <li key={s.label} className="flex items-center justify-between px-5 py-3">

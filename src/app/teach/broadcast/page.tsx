@@ -194,7 +194,7 @@ export default async function TeacherBroadcastPage({ searchParams }: PageProps) 
             </div>
             <Badge variant="neutral">{recentBroadcasts.length}</Badge>
           </CardHeader>
-          <CardBody className="!px-0 !pb-0">
+          <CardBody className="px-0! pb-0!">
             <ul className="divide-y divide-border border-t border-border">
               {recentBroadcasts.map((n) => (
                 <li key={n.id} className="px-5 py-3.5">

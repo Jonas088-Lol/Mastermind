@@ -218,7 +218,7 @@ export default async function AdminAuditPage({ searchParams }: PageProps) {
             Append-only
           </Badge>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {filtered.length === 0 ? (
             <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
               Keine Einträge für diesen Filter.

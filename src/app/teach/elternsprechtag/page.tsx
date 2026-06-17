@@ -118,7 +118,7 @@ export default async function ElternsprechtagPage() {
                   </div>
                   <Badge variant="outline">{freeSlots.length} frei</Badge>
                 </CardHeader>
-                <CardBody className="!px-0 !pb-0">
+                <CardBody className="px-0! pb-0!">
                   <ul className="divide-y divide-border border-t border-border">
                     {freeSlots.map((slot) => (
                       <li
@@ -176,7 +176,7 @@ export default async function ElternsprechtagPage() {
                   </div>
                   <Badge variant="success">{bookedSlots.length} gebucht</Badge>
                 </CardHeader>
-                <CardBody className="!px-0 !pb-0">
+                <CardBody className="px-0! pb-0!">
                   <ul className="divide-y divide-border border-t border-border">
                     {bookedSlots.map((slot) => {
                       const parentName = slot.booking?.parent.name ?? "—";

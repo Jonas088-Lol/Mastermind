@@ -279,7 +279,7 @@ export default async function LeistungsentwicklungPage({
                   <CardTitle>Fachübersicht</CardTitle>
                   <span className="text-xs text-muted-fg">{subjects.length} Fächer</span>
                 </CardHeader>
-                <CardBody className="!px-0 !pb-0">
+                <CardBody className="px-0! pb-0!">
                   <ul className="divide-y divide-border border-t border-border">
                     {subjects.map((sg) => (
                       <li key={sg.id} className="flex items-center gap-4 px-5 py-3 text-sm">
@@ -309,7 +309,7 @@ export default async function LeistungsentwicklungPage({
                 <CardHeader>
                   <CardTitle>Letzte 10 Noten</CardTitle>
                 </CardHeader>
-                <CardBody className="!px-0 !pb-0">
+                <CardBody className="px-0! pb-0!">
                   <ul className="divide-y divide-border border-t border-border">
                     {recent10.map((g) => (
                       <li key={g.id} className="flex items-center gap-4 px-5 py-3 text-sm">

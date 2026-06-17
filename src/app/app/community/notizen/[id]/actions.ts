@@ -18,7 +18,8 @@ export async function deleteNote(noteId: string): Promise<void> {
   const { effectiveRole } = await import("@/lib/session");
   const role = effectiveRole(session);
   const isOwner = note.authorId === session.userId;
-  const isModerator = role === "teacher" || role === "admin" || role === "super";
+  const isSameSchool = note.author.schoolId === session.schoolId;
+  const isModerator = (role === "teacher" || role === "admin" || role === "super") && isSameSchool;
 
   if (!isOwner && !isModerator) return;
 

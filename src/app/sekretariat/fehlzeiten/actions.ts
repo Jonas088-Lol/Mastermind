@@ -17,7 +17,7 @@ export async function confirmAbsence(absenceId: string): Promise<void> {
   if (!session) return;
 
   await prisma.absence.update({
-    where: { id: absenceId },
+    where: { id: absenceId, schoolId: session.schoolId ?? "" },
     data: {
       status: "confirmed",
       confirmedById: session.userId,
@@ -33,7 +33,7 @@ export async function rejectAbsence(absenceId: string): Promise<void> {
   if (!session) return;
 
   await prisma.absence.update({
-    where: { id: absenceId },
+    where: { id: absenceId, schoolId: session.schoolId ?? "" },
     data: {
       status: "rejected",
       confirmedById: session.userId,

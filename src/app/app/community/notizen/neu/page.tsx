@@ -38,7 +38,9 @@ async function createNote(formData: FormData) {
     },
   });
 
-  await awardXp(session.userId, "note_geteilt", note.id);
+  if (isPublic) {
+    await awardXp(session.userId, "note_geteilt", note.id);
+  }
 
   revalidatePath("/app/community/notizen");
   revalidatePath("/app/community");

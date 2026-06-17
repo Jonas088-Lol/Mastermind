@@ -40,11 +40,16 @@ export default async function ClassDetailPage({ params }: PageParams) {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "teacher") redirect("/");
 
-  const schoolClass = await prisma.schoolClass.findFirst({
-    where: { name: decodeURIComponent(slug) },
-    include: { students: { select: { id: true, name: true, xp: true } } },
+  // Also verify the teacher teaches in this class
+  const tscCheck = await prisma.teacherSubjectClass.findFirst({
+    where: {
+      teacherId: session.userId,
+      class: { name: decodeURIComponent(slug), schoolId: session.schoolId ?? "" },
+    },
+    include: { class: { include: { students: { select: { id: true, name: true, xp: true } } } } },
   });
-  if (!schoolClass) notFound();
+  if (!tscCheck) notFound();
+  const schoolClass = tscCheck.class;
 
   const studentIds = schoolClass.students.map((s) => s.id);
   const now = new Date();
@@ -214,7 +219,7 @@ export default async function ClassDetailPage({ params }: PageParams) {
                 <p className="mt-1 text-sm text-muted-fg">{students.length} Schüler · sortiert nach Note</p>
               </div>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <div className="hidden border-t border-border bg-surface px-5 py-2 text-[10px] font-semibold uppercase tracking-wider text-muted-fg sm:grid sm:grid-cols-[1fr_auto_auto] sm:gap-4">
                 <span>Schüler</span>
                 <span className="w-16 text-right">Ø-Note</span>
@@ -263,7 +268,7 @@ export default async function ClassDetailPage({ params }: PageParams) {
                 <ArrowRight className="size-3.5" />
               </Link>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               <ul className="divide-y divide-border border-t border-border">
                 {assignments.map((a) => {
                   const submitted = a.submissions.filter((s) => ["submitted", "graded"].includes(s.status)).length;
@@ -329,8 +334,8 @@ export default async function ClassDetailPage({ params }: PageParams) {
 
         <div className="space-y-6">
           {/* AI suggestion */}
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.08] to-transparent">
-            <CardBody className="!p-5">
+          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+            <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand">KI-Vorschlag</p>
@@ -359,7 +364,7 @@ export default async function ClassDetailPage({ params }: PageParams) {
                 <CardTitle>Risiko-Schüler</CardTitle>
                 <Badge variant="danger">{students.filter((s) => s.average !== null && s.average >= 4).length}</Badge>
               </CardHeader>
-              <CardBody className="!px-0 !pb-0">
+              <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {students.filter((s) => s.average !== null && s.average >= 4).map((s) => (
                     <li key={s.id} className="flex items-center gap-3 px-5 py-3">
@@ -380,7 +385,7 @@ export default async function ClassDetailPage({ params }: PageParams) {
             <CardHeader>
               <CardTitle>Anstehend</CardTitle>
             </CardHeader>
-            <CardBody className="!px-0 !pb-0">
+            <CardBody className="px-0! pb-0!">
               {assignments.filter((a) => a.dueAt > now).length === 0 ? (
                 <p className="px-5 py-4 text-sm text-muted-fg">Keine anstehenden Abgaben.</p>
               ) : (

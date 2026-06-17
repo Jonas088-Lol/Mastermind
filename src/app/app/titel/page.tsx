@@ -103,8 +103,8 @@ export default async function TitelPage() {
               key={title.slug}
               className={cn(
                 "flex flex-col gap-3 border p-4 transition-colors",
-                isEquipped && "border-brand/50 bg-brand/[0.04]",
-                isOwned && !isEquipped && "border-success/30 bg-success/[0.02]",
+                isEquipped && "border-brand/50 bg-brand/4",
+                isOwned && !isEquipped && "border-success/30 bg-success/2",
                 !isOwned && "border-border opacity-50",
               )}
             >

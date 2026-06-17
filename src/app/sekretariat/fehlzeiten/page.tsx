@@ -77,7 +77,7 @@ export default async function FehlzeitenPage() {
               {absences.map((a) => {
                 const st = STATUS[a.status] ?? STATUS.pending;
                 return (
-                  <tr key={a.id} className={cn("hover:bg-surface", a.status === "pending" && "bg-warning/[0.03]")}>
+                  <tr key={a.id} className={cn("hover:bg-surface", a.status === "pending" && "bg-warning/3")}>
                     <td className="px-5 py-3 font-mono text-xs">{formatRange(a.fromDate, a.toDate)}</td>
                     <td className="px-5 py-3 font-medium">{a.student.name}</td>
                     <td className="px-5 py-3 font-mono text-xs text-muted-fg">

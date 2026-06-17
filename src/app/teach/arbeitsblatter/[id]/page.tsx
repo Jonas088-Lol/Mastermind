@@ -208,7 +208,7 @@ export default async function WorksheetDetailPage({ params }: PageProps) {
         <CardHeader>
           <CardTitle>Items ({worksheet.items.length})</CardTitle>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {worksheet.items.length === 0 ? (
             <div className="border-t border-border px-5 py-8 text-center text-sm text-muted-fg">
               Noch keine Items. Füge unten ein Item hinzu.

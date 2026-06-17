@@ -185,7 +185,7 @@ export default async function NutzerPage({ searchParams }: PageProps) {
       </section>
 
       {unverifiedCount > 0 && !role && !status && !q && (
-        <section className="border border-warning/40 bg-warning/[0.06]">
+        <section className="border border-warning/40 bg-warning/6">
           <div className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start gap-3">
               <Mail className="mt-0.5 size-4 shrink-0 text-warning" strokeWidth={1.75} />
@@ -207,7 +207,7 @@ export default async function NutzerPage({ searchParams }: PageProps) {
           <CardTitle>{users.length} Nutzer{users.length === 100 ? "+" : ""}</CardTitle>
           <span className="font-mono text-xs text-muted-fg">sortiert nach Rolle · alphabetisch</span>
         </CardHeader>
-        <CardBody className="!px-0 !pb-0">
+        <CardBody className="px-0! pb-0!">
           {users.length === 0 ? (
             <p className="border-t border-border px-5 py-8 text-sm text-muted-fg">
               Keine Nutzer gefunden.
@@ -261,8 +261,8 @@ export default async function NutzerPage({ searchParams }: PageProps) {
         </CardBody>
       </Card>
 
-      <Card className="border-brand/40 bg-gradient-to-br from-brand/[0.06] to-transparent">
-        <CardBody className="!p-5">
+      <Card className="border-brand/40 bg-gradient-to-br from-brand/6 to-transparent">
+        <CardBody className="p-5!">
           <div className="flex items-center gap-2">
             <ShieldCheck className="size-4 text-brand" strokeWidth={1.75} />
             <p className="text-xs font-semibold uppercase tracking-wider text-brand">2FA-Rollout</p>

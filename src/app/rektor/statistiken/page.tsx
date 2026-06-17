@@ -167,7 +167,7 @@ export default async function StatistikenPage() {
               </thead>
               <tbody className="divide-y divide-border">
                 {absenceRanking.map((s, i) => (
-                  <tr key={i} className={cn("hover:bg-surface", s.count >= 3 && "bg-warning/[0.03]")}>
+                  <tr key={i} className={cn("hover:bg-surface", s.count >= 3 && "bg-warning/3")}>
                     <td className="px-5 py-2.5 font-medium">{s.name}</td>
                     <td className="px-5 py-2.5 text-muted-fg">{s.class}</td>
                     <td className={cn("px-5 py-2.5 text-right font-mono font-bold", s.count >= 3 ? "text-danger" : "text-fg")}>

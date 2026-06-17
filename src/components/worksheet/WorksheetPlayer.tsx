@@ -299,7 +299,7 @@ export function WorksheetPlayer({
 
         {/* Hint */}
         {hintsShown.has(item.id) && item.hint && (
-          <div className="mb-4 flex items-start gap-2 border-l-2 border-warning bg-warning/[0.06] px-3 py-2 text-sm text-muted-fg">
+          <div className="mb-4 flex items-start gap-2 border-l-2 border-warning bg-warning/6 px-3 py-2 text-sm text-muted-fg">
             <HelpCircle className="mt-0.5 size-4 shrink-0 text-warning" />
             {item.hint}
           </div>
