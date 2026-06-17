@@ -39,7 +39,16 @@ export function Hero() {
               <h1 className="animate-fade-in animate-delay-100 mt-8 text-5xl font-bold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
                 Die Schule der
                 <br />
-                <span className="text-brand">Zukunft.</span>
+                <span
+                  style={{
+                    background: "linear-gradient(-45deg, #EDF6FF 0%, #CBEAFF 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  Zukunft.
+                </span>
               </h1>
 
               {/* Subtext */}
@@ -50,11 +59,19 @@ export function Hero() {
 
               {/* CTA buttons */}
               <div className="animate-fade-in animate-delay-300 mt-10 flex flex-col gap-3 sm:flex-row">
-                <Button size="lg" className="w-full bg-brand text-brand-fg hover:bg-brand-dark sm:w-auto">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto border-0 text-gray-900 font-bold hover:opacity-90"
+                  style={{ background: "linear-gradient(-45deg, #EDF6FF 0%, #CBEAFF 100%)" }}
+                >
                   Schule kostenlos testen
                   <ArrowRight className="size-4" />
                 </Button>
-                <Button size="lg" variant="secondary" className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto border-0 text-gray-900 font-bold hover:opacity-90"
+                  style={{ background: "linear-gradient(-45deg, #EDF6FF 0%, #CBEAFF 100%)" }}
+                >
                   30-Min-Demo buchen
                 </Button>
               </div>

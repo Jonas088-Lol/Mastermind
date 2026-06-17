@@ -79,8 +79,7 @@ export function Gamification() {
   return (
     <section
       id="gamification"
-      className="section"
-      style={{ background: "linear-gradient(to bottom, #EDF6FF, white)" }}
+      className="section bg-bg"
     >
       <Container>
         <AnimateOnScroll animation="fade-up" className="mx-auto max-w-2xl text-center">

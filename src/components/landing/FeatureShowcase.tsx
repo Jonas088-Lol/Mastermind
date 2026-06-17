@@ -1,17 +1,38 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Brain, Sparkles, CalendarDays, MessageSquare, BarChart2, Trophy } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 
-const features = [
+// Single rainbow gradient across the page — each card shows its slice
+// 6 cards → background-size: 600%, positions stepped by 20% each
+const RAINBOW = "linear-gradient(to right, #2FC5E7, #4B9EF5, #8B5CF6, #EC4899, #F97316, #10B981)";
+function headerStyle(index: number): React.CSSProperties {
+  return {
+    background: RAINBOW,
+    backgroundSize: "600% 100%",
+    backgroundPosition: `${index * 20}% 0%`,
+  };
+}
+
+// Accent colors matching the rainbow position of each card
+const ACCENTS = ["#2FC5E7", "#4B9EF5", "#8B5CF6", "#EC4899", "#F97316", "#10B981"] as const;
+
+const features: {
+  id: string;
+  Icon: LucideIcon;
+  textAccent: string;
+  title: string;
+  tagline: string;
+  body: string;
+  mockup: "learning" | "task" | "schedule" | "comms" | "heatmap" | "game";
+}[] = [
   {
     id: "lernpfade",
-    icon: "🧠",
-    gradient: "from-blue-500 to-blue-600",
-    lightBg: "bg-blue-50",
-    textAccent: "text-blue-600",
+    Icon: Brain,
+    textAccent: ACCENTS[0],
     title: "Adaptive Lernpfade",
     tagline: "KI erkennt, wo du stehst",
     body: "KI erkennt Schwächen und passt den Stoff an. Spaced-Repetition für nachhaltiges Lernen statt Bulimie.",
@@ -19,10 +40,8 @@ const features = [
   },
   {
     id: "aufgaben",
-    icon: "✨",
-    gradient: "from-violet-500 to-purple-600",
-    lightBg: "bg-violet-50",
-    textAccent: "text-violet-600",
+    Icon: Sparkles,
+    textAccent: ACCENTS[1],
     title: "KI-Aufgaben-Generator",
     tagline: "Klassenarbeit in 3 Minuten",
     body: "Lehrer erstellen Klassenarbeiten in Minuten. Niveaustufen, Lernziel-Mapping, automatische Korrektur-Hinweise.",
@@ -30,10 +49,8 @@ const features = [
   },
   {
     id: "stundenplan",
-    icon: "📅",
-    gradient: "from-sky-500 to-cyan-600",
-    lightBg: "bg-sky-50",
-    textAccent: "text-sky-600",
+    Icon: CalendarDays,
+    textAccent: ACCENTS[2],
     title: "Stundenplan & Vertretung",
     tagline: "Untis-Import in 5 Minuten",
     body: "Untis-Import in 5 Minuten. Vertretungsplan, Klassenbuch, Fehlzeiten — alles digital, alles synchron.",
@@ -41,10 +58,8 @@ const features = [
   },
   {
     id: "kommunikation",
-    icon: "💬",
-    gradient: "from-emerald-500 to-green-600",
-    lightBg: "bg-emerald-50",
-    textAccent: "text-emerald-600",
+    Icon: MessageSquare,
+    textAccent: ACCENTS[3],
     title: "Klare Kommunikation",
     tagline: "Kein Mail-Chaos mehr",
     body: "Kanäle pro Klasse, Eltern-Bereich, Krankmeldungen mit Signatur. Kein Mail-Chaos mehr.",
@@ -52,10 +67,8 @@ const features = [
   },
   {
     id: "heatmap",
-    icon: "📊",
-    gradient: "from-orange-500 to-amber-500",
-    lightBg: "bg-orange-50",
-    textAccent: "text-orange-600",
+    Icon: BarChart2,
+    textAccent: ACCENTS[4],
     title: "Kompetenz-Heatmaps",
     tagline: "Klassen-Überblick in 30 Sek",
     body: "Jeder Lehrer sieht in 30 Sekunden, wo die Klasse steht — pro Schüler, pro Lernziel, pro Lehrplan-Code.",
@@ -63,18 +76,16 @@ const features = [
   },
   {
     id: "gamification",
-    icon: "🏆",
-    gradient: "from-rose-500 to-pink-600",
-    lightBg: "bg-rose-50",
-    textAccent: "text-rose-600",
+    Icon: Trophy,
+    textAccent: ACCENTS[5],
     title: "Gamification mit Sinn",
     tagline: "XP, Badges, echte Motivation",
     body: "XP, Streaks, Badges — gekoppelt an echten Lernfortschritt, nicht an Login-Häufigkeit.",
     mockup: "game",
   },
-] as const;
+];
 
-type MockupKey = (typeof features)[number]["mockup"];
+type MockupKey = "learning" | "task" | "schedule" | "comms" | "heatmap" | "game";
 
 function MockupPreview({ mockup }: { mockup: MockupKey }) {
   switch (mockup) {
@@ -296,26 +307,26 @@ export function FeatureShowcase() {
               <button
                 type="button"
                 onClick={() => setActiveIndex(i)}
-                className="group w-full rounded-2xl border border-border bg-white text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                className="group w-full rounded-2xl border border-border bg-surface text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
               >
-                {/* Gradient header */}
+                {/* Rainbow gradient header — each card shows its slice of the full rainbow */}
                 <div
-                  className={cn(
-                    "flex h-18 items-center justify-center rounded-t-2xl bg-gradient-to-r",
-                    f.gradient
-                  )}
+                  className="flex h-20 items-center justify-center rounded-t-2xl"
+                  style={headerStyle(i)}
                 >
-                  <span className="text-5xl">{f.icon}</span>
+                  <div className="grid size-12 place-items-center rounded-2xl bg-white/20 backdrop-blur-sm">
+                    <f.Icon className="size-6 text-white" strokeWidth={1.75} />
+                  </div>
                 </div>
 
                 {/* Card body */}
                 <div className="p-5">
                   <h3 className="text-base font-bold">{f.title}</h3>
-                  <p className={cn("mt-0.5 text-xs font-semibold", f.textAccent)}>{f.tagline}</p>
+                  <p className="mt-0.5 text-xs font-semibold" style={{ color: f.textAccent }}>{f.tagline}</p>
                   <p className="mt-2 text-sm leading-relaxed text-muted-fg line-clamp-2">
                     {f.body}
                   </p>
-                  <p className={cn("mt-4 text-xs font-semibold", f.textAccent)}>
+                  <p className="mt-4 text-xs font-semibold" style={{ color: f.textAccent }}>
                     Details anzeigen →
                   </p>
                 </div>
@@ -332,17 +343,17 @@ export function FeatureShowcase() {
           onClick={close}
         >
           <div
-            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
+            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-surface shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal gradient header */}
+            {/* Modal gradient header — shows the card's rainbow slice */}
             <div
-              className={cn(
-                "relative flex h-40 items-center justify-center rounded-t-3xl bg-gradient-to-r",
-                active.gradient
-              )}
+              className="relative flex h-40 items-center justify-center rounded-t-3xl"
+              style={headerStyle(activeIndex!)}
             >
-              <span className="text-6xl">{active.icon}</span>
+              <div className="grid size-20 place-items-center rounded-3xl bg-white/20 backdrop-blur-sm">
+                {active.Icon && <active.Icon className="size-10 text-white" strokeWidth={1.5} />}
+              </div>
               <button
                 type="button"
                 onClick={close}
@@ -356,7 +367,7 @@ export function FeatureShowcase() {
             {/* Modal body */}
             <div className="p-6 sm:p-8">
               <h3 className="text-2xl font-bold">{active.title}</h3>
-              <p className={cn("mt-1 text-sm font-semibold", active.textAccent)}>
+              <p className="mt-1 text-sm font-semibold" style={{ color: active.textAccent }}>
                 {active.tagline}
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-fg">{active.body}</p>
