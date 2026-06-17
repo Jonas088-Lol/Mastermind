@@ -28,7 +28,9 @@ export function Navbar() {
   useEffect(() => {
     if (open) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   return (
@@ -37,23 +39,29 @@ export function Navbar() {
         className={cn(
           "sticky top-0 z-50 w-full transition-all duration-200",
           scrolled
-            ? "border-b border-border bg-bg/90 backdrop-blur-lg shadow-sm"
+            ? "border-b border-gray-100 bg-white/90 shadow-sm backdrop-blur-lg"
             : "bg-transparent"
         )}
       >
         <div className="container-px mx-auto flex h-16 max-w-7xl items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold tracking-tight">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-bold tracking-tight"
+          >
             <BrandLogo height="h-8" showName />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Hauptnavigation">
+          <nav
+            className="hidden items-center gap-1 md:flex"
+            aria-label="Hauptnavigation"
+          >
             {navLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg"
+                className="rounded-lg px-3.5 py-2 text-sm font-medium text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-900"
               >
                 {l.label}
               </Link>
@@ -62,15 +70,21 @@ export function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-2">
-            <ThemeToggle />
             <Link
               href="/login"
-              className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "hidden sm:inline-flex")}
+              className={cn(
+                buttonVariants({ variant: "ghost", size: "sm" }),
+                "hidden text-gray-600 hover:text-gray-900 sm:inline-flex"
+              )}
             >
               Anmelden
             </Link>
-            <Button size="sm" className="hidden bg-blue-600 text-white hover:bg-blue-700 sm:inline-flex">
-              Demo buchen
+            <Button
+              size="sm"
+              className="hidden text-white sm:inline-flex"
+              style={{ background: "hsl(172,72%,40%)" }}
+            >
+              Kostenlos testen
             </Button>
             {/* Mobile hamburger */}
             <button
@@ -78,7 +92,7 @@ export function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={open}
-              className="grid size-9 place-items-center rounded-lg text-fg transition-colors hover:bg-surface md:hidden"
+              className="grid size-9 place-items-center rounded-lg text-gray-700 transition-colors hover:bg-gray-100 md:hidden"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -89,35 +103,53 @@ export function Navbar() {
       {/* Mobile menu overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-40 flex flex-col bg-bg transition-all duration-300 ease-out md:hidden",
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          "fixed inset-0 z-40 flex flex-col bg-white transition-all duration-300 ease-out md:hidden",
+          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
         style={{ paddingTop: "64px" }}
       >
-        <nav className="flex flex-col gap-1 p-5" aria-label="Mobile Navigation">
+        <nav
+          className="flex flex-col gap-1 p-5"
+          aria-label="Mobile Navigation"
+        >
           {navLinks.map((l, i) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
               className={cn(
-                "flex items-center rounded-xl px-4 py-3.5 text-base font-medium text-fg transition-colors hover:bg-surface",
-                open && `animate-slide-up animate-delay-${i === 0 ? "100" : i === 1 ? "200" : "300"}`
+                "flex items-center rounded-xl px-4 py-3.5 text-base font-medium text-gray-800 transition-colors hover:bg-gray-50",
+                open &&
+                  `animate-slide-up animate-delay-${
+                    i === 0 ? "100" : i === 1 ? "200" : "300"
+                  }`
               )}
             >
               {l.label}
             </Link>
           ))}
-          <div className="mt-4 flex flex-col gap-2.5 border-t border-border pt-4">
+          <div className="mt-4 flex flex-col gap-2.5 border-t border-gray-100 pt-4">
+            <div className="flex items-center justify-between pb-1">
+              <span className="text-sm text-gray-400">Darstellung</span>
+              <ThemeToggle />
+            </div>
             <Link
               href="/login"
               onClick={() => setOpen(false)}
-              className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "w-full")}
+              className={cn(
+                buttonVariants({ variant: "secondary", size: "lg" }),
+                "w-full"
+              )}
             >
               Anmelden
             </Link>
-            <Button size="lg" className="w-full bg-blue-600 text-white hover:bg-blue-700" onClick={() => setOpen(false)}>
-              Demo buchen
+            <Button
+              size="lg"
+              className="w-full text-white"
+              style={{ background: "hsl(172,72%,40%)" }}
+              onClick={() => setOpen(false)}
+            >
+              Kostenlos testen
             </Button>
           </div>
         </nav>
