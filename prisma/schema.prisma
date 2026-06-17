@@ -379,6 +379,7 @@ model Assignment {
   dueAt       DateTime
   type        String      @default("homework") // homework | test | project | exam
   maxPoints   Int?
+  coverEmoji  String?
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
   teacherId   String

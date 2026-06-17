@@ -178,51 +178,92 @@ export default async function DashboardPage() {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
-      <header className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
-            {todayDate}
-          </p>
-          <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
-            Hi {firstName} 👋
-          </h1>
-          <p className="mt-1 text-sm text-muted-fg">
-            Du hast{" "}
-            <span className="font-semibold text-fg">{openCount} offene Aufgaben</span> in den
-            nächsten 7 Tagen.
-          </p>
+
+      {/* ── Hero greeting banner ── */}
+      <header className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#EDF6FF] to-[#dbeeff] px-6 py-8 shadow-sm sm:px-10">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-5">
+            <span className="text-5xl leading-none drop-shadow-sm">{rank.icon}</span>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">
+                {todayDate}
+              </p>
+              <h1 className="mt-1 text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
+                Hi {firstName} 👋
+              </h1>
+              <p className="mt-1 text-sm text-slate-500">
+                Du hast{" "}
+                <span className="font-semibold text-slate-700">{openCount} offene Aufgaben</span> in den
+                nächsten 7 Tagen.
+              </p>
+            </div>
+          </div>
+          <Link href="/app/plan">
+            <Button variant="outline" size="sm" className="shrink-0 border-blue-200 bg-white/70 hover:bg-white">
+              Stundenplan
+              <ArrowRight className="size-3.5" />
+            </Button>
+          </Link>
         </div>
-        <Link href="/app/plan">
-          <Button variant="outline" size="sm">
-            Stundenplan
-            <ArrowRight className="size-3.5" />
-          </Button>
-        </Link>
+        {/* Decorative blobs */}
+        <span className="pointer-events-none absolute -right-8 -top-8 size-40 rounded-full bg-blue-100/60 blur-3xl" />
+        <span className="pointer-events-none absolute -bottom-6 right-24 size-28 rounded-full bg-sky-200/40 blur-2xl" />
       </header>
 
-      <section className="grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-4">
-        {[
-          { label: "Streak", value: streak > 0 ? String(streak) : "0", suffix: "Tage", icon: Flame, tone: "text-warning" },
-          { label: "XP diese Woche", value: weeklyXp > 0 ? `+${weeklyXp}` : "0", suffix: `${currentXp} gesamt`, icon: Zap, tone: "text-brand" },
-          { label: "KI-Anfragen", value: String(quotaUsed), suffix: `/ ${quotaMax}`, icon: Sparkles, tone: "text-info" },
-          { label: "Ø-Note", value: avgGrade ? avgGrade.toFixed(1).replace(".", ",") : "—", suffix: "alle Fächer", icon: Trophy, tone: "text-success" },
-        ].map((s) => (
-          <div key={s.label} className="bg-bg p-5">
-            <div className="flex items-center justify-between">
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">{s.label}</p>
-              <s.icon className={cn("size-4", s.tone)} strokeWidth={1.75} />
-            </div>
-            <p className="mt-3 font-mono text-3xl font-bold tracking-tight">
-              {s.value}
-              <span className="ml-2 align-baseline text-xs font-medium text-muted-fg">{s.suffix}</span>
-            </p>
+      {/* ── Stat cards ── */}
+      <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+        {/* Streak */}
+        <div className="flex flex-col gap-3 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 p-5 shadow-sm ring-1 ring-orange-100">
+          <div className="flex items-center justify-between">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-orange-400">Streak</p>
+            <Flame className="size-4 text-orange-500" strokeWidth={1.75} />
           </div>
-        ))}
+          <p className="font-mono text-3xl font-bold tracking-tight text-orange-600">
+            {streak > 0 ? String(streak) : "0"}
+            <span className="ml-2 align-baseline text-xs font-medium text-orange-400">Tage</span>
+          </p>
+        </div>
+
+        {/* XP */}
+        <div className="flex flex-col gap-3 rounded-2xl bg-gradient-to-br from-teal-50 to-emerald-50 p-5 shadow-sm ring-1 ring-teal-100">
+          <div className="flex items-center justify-between">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-teal-500">XP diese Woche</p>
+            <Zap className="size-4 text-teal-600" strokeWidth={1.75} />
+          </div>
+          <p className="font-mono text-3xl font-bold tracking-tight text-teal-700">
+            {weeklyXp > 0 ? `+${weeklyXp}` : "0"}
+            <span className="ml-2 align-baseline text-xs font-medium text-teal-400">{currentXp} gesamt</span>
+          </p>
+        </div>
+
+        {/* KI */}
+        <div className="flex flex-col gap-3 rounded-2xl bg-gradient-to-br from-blue-50 to-sky-50 p-5 shadow-sm ring-1 ring-blue-100">
+          <div className="flex items-center justify-between">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-400">KI-Anfragen</p>
+            <Sparkles className="size-4 text-blue-500" strokeWidth={1.75} />
+          </div>
+          <p className="font-mono text-3xl font-bold tracking-tight text-blue-700">
+            {String(quotaUsed)}
+            <span className="ml-2 align-baseline text-xs font-medium text-blue-400">/ {quotaMax}</span>
+          </p>
+        </div>
+
+        {/* Grade */}
+        <div className="flex flex-col gap-3 rounded-2xl bg-gradient-to-br from-green-50 to-lime-50 p-5 shadow-sm ring-1 ring-green-100">
+          <div className="flex items-center justify-between">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-green-500">Ø-Note</p>
+            <Trophy className="size-4 text-green-600" strokeWidth={1.75} />
+          </div>
+          <p className="font-mono text-3xl font-bold tracking-tight text-green-700">
+            {avgGrade ? avgGrade.toFixed(1).replace(".", ",") : "—"}
+            <span className="ml-2 align-baseline text-xs font-medium text-green-400">alle Fächer</span>
+          </p>
+        </div>
       </section>
 
       <div className="grid gap-6 xl:grid-cols-3">
         <div className="space-y-6 xl:col-span-2">
-          <Card>
+          <Card className="rounded-2xl shadow-sm">
             <CardHeader>
               <div>
                 <CardTitle>Bald fällig</CardTitle>
@@ -245,18 +286,18 @@ export default async function DashboardPage() {
                   {upcomingAssignments.map((a) => {
                     const daysLeft = Math.floor((a.dueAt.getTime() - now.getTime()) / 86_400_000);
                     return (
-                      <li key={a.id}>
+                      <li key={a.id} style={{ borderLeftColor: a.subject.color }} className="border-l-4">
                         <Link
                           href={`/app/aufgaben/${a.id}`}
                           className="flex items-center gap-4 px-5 py-3.5 transition-colors hover:bg-surface"
                         >
-                          <span className="grid size-5 shrink-0 place-items-center border border-border-strong text-border-strong">
+                          <span className="grid size-5 shrink-0 place-items-center rounded border border-border-strong text-border-strong">
                             <CheckSquare className="size-3" />
                           </span>
                           <div className="min-w-0 flex-1">
                             <div className="flex items-center gap-2">
                               <span
-                                className="inline-flex items-center px-1.5 py-0.5 text-[11px] font-semibold"
+                                className="inline-flex items-center rounded px-1.5 py-0.5 text-[11px] font-semibold"
                                 style={{ backgroundColor: a.subject.color + "22", color: a.subject.color }}
                               >
                                 {a.subject.shortName}
@@ -277,7 +318,7 @@ export default async function DashboardPage() {
             </CardBody>
           </Card>
 
-          <Card>
+          <Card className="rounded-2xl shadow-sm">
             <CardHeader>
               <div>
                 <CardTitle>Heute · {DAY_NAMES[TODAY_DOW - 1]}</CardTitle>
@@ -302,11 +343,12 @@ export default async function DashboardPage() {
                   {todayEntries.map((e) => (
                     <li
                       key={e.id}
-                      className="flex items-center gap-4 px-5 py-3 text-sm transition-colors hover:bg-surface"
+                      style={{ borderLeftColor: e.subject.color }}
+                      className="flex items-center gap-4 border-l-4 px-5 py-3 text-sm transition-colors hover:bg-surface"
                     >
                       <span className="w-6 font-mono text-xs text-muted-fg">{e.period}.</span>
                       <span
-                        className="flex size-2 shrink-0"
+                        className="flex size-2.5 shrink-0 rounded-full"
                         style={{ backgroundColor: e.subject.color }}
                       />
                       <div className="min-w-0 flex-1">
@@ -327,7 +369,7 @@ export default async function DashboardPage() {
         </div>
 
         <div className="space-y-6">
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+          <Card className="rounded-2xl border-brand/40 bg-gradient-to-br from-brand/8 to-transparent shadow-sm">
             <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
@@ -358,23 +400,24 @@ export default async function DashboardPage() {
           </Card>
 
           {/* Gamification quick access */}
-          <Card>
+          <Card className="rounded-2xl shadow-sm">
             <CardBody className="p-5!">
+              {/* Rank hero */}
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="text-xl">{rank.icon}</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-5xl leading-none drop-shadow-sm">{rank.icon}</span>
                   <div>
-                    <p className="text-sm font-bold" style={{ color: rank.color }}>{rank.nameDE}</p>
-                    <p className="text-[11px] text-muted-fg">Level {level} · {currentXp.toLocaleString("de-DE")} XP</p>
+                    <p className="text-lg font-extrabold leading-tight" style={{ color: rank.color }}>{rank.nameDE}</p>
+                    <p className="text-xs text-muted-fg">Level {level} · {currentXp.toLocaleString("de-DE")} XP</p>
                   </div>
                 </div>
                 <Link href="/app/ranking" className="text-xs text-muted-fg hover:text-fg">Ranking →</Link>
               </div>
-              <div className="mt-4 space-y-1.5">
+              <div className="mt-5 space-y-1.5">
                 <Link
                   href="/app/quests"
                   className={cn(
-                    "flex items-center justify-between px-3 py-2 text-sm transition-colors hover:bg-surface",
+                    "flex items-center justify-between rounded-xl px-3 py-2.5 text-sm transition-colors hover:bg-surface",
                     pendingQuestClaims > 0 ? "bg-warning/5" : "bg-surface",
                   )}
                 >
@@ -387,7 +430,7 @@ export default async function DashboardPage() {
                   )}
                 </Link>
                 {activeBoss && (
-                  <Link href="/app/boss" className="flex items-center justify-between bg-danger/4 px-3 py-2 text-sm transition-colors hover:bg-danger/7">
+                  <Link href="/app/boss" className="flex items-center justify-between rounded-xl bg-danger/4 px-3 py-2.5 text-sm transition-colors hover:bg-danger/7">
                     <span className="flex items-center gap-2">
                       <Swords className="size-3.5 text-danger" />
                       <span>{activeBoss.icon} {activeBoss.name}</span>
@@ -396,7 +439,7 @@ export default async function DashboardPage() {
                   </Link>
                 )}
                 {dailyBonusAvailable && (
-                  <Link href="/app/tagesbelohnung" className="flex items-center justify-between bg-success/4 px-3 py-2 text-sm transition-colors hover:bg-success/7">
+                  <Link href="/app/tagesbelohnung" className="flex items-center justify-between rounded-xl bg-success/4 px-3 py-2.5 text-sm transition-colors hover:bg-success/7">
                     <span className="flex items-center gap-2">
                       <span>☀️</span>
                       Tagesbonus
@@ -409,14 +452,18 @@ export default async function DashboardPage() {
           </Card>
 
           {recentGrades.length > 0 && (
-            <Card>
+            <Card className="rounded-2xl shadow-sm">
               <CardHeader>
                 <CardTitle>Letzte Noten</CardTitle>
               </CardHeader>
               <CardBody className="px-0! pb-0!">
                 <ul className="divide-y divide-border border-t border-border">
                   {recentGrades.map((g) => (
-                    <li key={g.id} className="flex items-center gap-3 px-5 py-3">
+                    <li
+                      key={g.id}
+                      style={{ borderLeftColor: g.subject.color }}
+                      className="flex items-center gap-3 border-l-4 px-5 py-3"
+                    >
                       <span
                         className="inline-block size-2.5 shrink-0 rounded-full"
                         style={{ backgroundColor: g.subject.color }}
@@ -445,6 +492,7 @@ export default async function DashboardPage() {
 
           {dailyTopic && (
             <Card className={cn(
+              "rounded-2xl shadow-sm",
               "border-warning/40",
               dailyChallengeCompleted
                 ? "bg-gradient-to-br from-success/6 to-transparent border-success/40"
@@ -480,7 +528,7 @@ export default async function DashboardPage() {
             </Card>
           )}
 
-          <Card className={cn(dailyGoalReached && "border-success/40 bg-gradient-to-br from-success/6 to-transparent")}>
+          <Card className={cn("rounded-2xl shadow-sm", dailyGoalReached && "border-success/40 bg-gradient-to-br from-success/6 to-transparent")}>
             <CardBody className="p-5!">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -507,7 +555,7 @@ export default async function DashboardPage() {
           </Card>
 
           {recentAchievements.length > 0 && (
-            <Card>
+            <Card className="rounded-2xl shadow-sm">
               <CardHeader>
                 <CardTitle>Neue Achievements</CardTitle>
                 <Badge variant="success">+{recentAchievements.length}</Badge>

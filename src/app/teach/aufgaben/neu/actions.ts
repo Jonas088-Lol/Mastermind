@@ -19,6 +19,7 @@ export async function createAssignment(formData: FormData): Promise<void> {
   const dueAtRaw = (formData.get("dueAt") as string | null)?.trim() ?? "";
   const description = (formData.get("description") as string | null)?.trim() || null;
   const maxPointsRaw = (formData.get("maxPoints") as string | null)?.trim() ?? "";
+  const coverEmoji = (formData.get("coverEmoji") as string | null)?.trim() || null;
   const submissionMode = (formData.get("submissionMode") as string | null)?.trim() || "text";
   const gradingMode = (formData.get("gradingMode") as string | null)?.trim() || "points";
   const publishMode = (formData.get("publishMode") as string | null)?.trim() || "now";
@@ -60,6 +61,7 @@ export async function createAssignment(formData: FormData): Promise<void> {
       dueAt,
       type,
       maxPoints: maxPoints && !isNaN(maxPoints) ? maxPoints : null,
+      coverEmoji,
       teacherId: session.userId,
       classId,
       subjectId,

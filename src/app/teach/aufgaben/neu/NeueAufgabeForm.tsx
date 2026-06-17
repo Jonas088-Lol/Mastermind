@@ -24,8 +24,11 @@ const TYPES = [
   { value: "klausur", label: "Online-Klausur" },
 ];
 
+const COVER_EMOJIS = ["📝", "✏️", "📐", "🔬", "🧮", "📖", "🌍", "🎨", "🏃", "🎵", "💻", "🔭", "⚗️", "📊", "🧬", "📚"];
+
 export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
   const [selectedClassId, setSelectedClassId] = useState(classes[0]?.id ?? "");
+  const [selectedEmoji, setSelectedEmoji] = useState("📝");
   const [isPending, startTransition] = useTransition();
   const [aiOn, setAiOn] = useState(true);
   const [lateOn, setLateOn] = useState(true);
@@ -53,6 +56,28 @@ export function NeueAufgabeForm({ classes }: { classes: ClassOption[] }) {
           <div className="space-y-1.5">
             <Label htmlFor="title">Titel *</Label>
             <Input id="title" name="title" placeholder="z. B. Aufgabe 6 — Quadratische Gleichungen" required />
+          </div>
+
+          <div className="space-y-2">
+            <Label>Cover-Emoji (Deckblatt-Bild)</Label>
+            <input type="hidden" name="coverEmoji" value={selectedEmoji} />
+            <div className="flex flex-wrap gap-2">
+              {COVER_EMOJIS.map((emoji) => (
+                <button
+                  key={emoji}
+                  type="button"
+                  onClick={() => setSelectedEmoji(emoji)}
+                  className={`grid size-10 place-items-center text-xl border transition-all ${
+                    selectedEmoji === emoji
+                      ? "border-brand bg-brand/10 ring-2 ring-brand/30"
+                      : "border-border bg-surface hover:border-brand/40"
+                  }`}
+                >
+                  {emoji}
+                </button>
+              ))}
+            </div>
+            <p className="text-xs text-muted-fg">Wird als Deckblatt-Icon auf der Aufgabenkarte angezeigt.</p>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2">

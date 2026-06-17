@@ -1,65 +1,27 @@
-import {
-  ArrowRight,
-  CalendarClock,
-  CheckCircle2,
-  Filter,
-  Sparkles,
-} from "lucide-react";
+import { BookOpen, CheckCircle2, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
-import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
+import { AssignmentCard } from "@/components/app/AssignmentCard";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Aufgaben" };
 
-interface PageProps {
-  searchParams: Promise<{ status?: string }>;
-}
-
-const TYPE_LABEL: Record<string, string> = {
-  homework: "Hausaufgabe",
-  test: "Test / KA",
-  project: "Projekt",
-  exam: "Prüfung",
-};
-
-const STATUS_LABEL: Record<string, string> = {
-  open: "Offen",
-  submitted: "Abgegeben",
-  graded: "Bewertet",
-  late: "Verspätet",
-};
-
-function formatDue(dueAt: Date): string {
-  const now = new Date();
-  const diff = Math.floor((dueAt.getTime() - now.getTime()) / 86_400_000);
-  const dateStr = dueAt.toLocaleDateString("de-DE", { day: "numeric", month: "short" });
-  if (diff < 0) return `überfällig · ${dateStr}`;
-  if (diff === 0) return `Heute · ${dateStr}`;
-  if (diff === 1) return `Morgen · ${dateStr}`;
-  if (diff <= 7) return `in ${diff} Tagen · ${dateStr}`;
-  return dateStr;
-}
-
-export default async function AufgabenPage({ searchParams }: PageProps) {
+export default async function AufgabenPage() {
   const session = await getSession();
   if (!session) redirect("/login");
   const role = effectiveRole(session);
   if (role !== "student") redirect("/");
 
-  const { status } = await searchParams;
-  const filter = (status ?? "alle") as "alle" | "offen" | "erledigt" | "spät";
-
   const classId = session.classId;
   if (!classId) {
     return (
       <div className="mx-auto flex max-w-7xl flex-col gap-8">
-        <p className="text-muted-fg">Kein Klasse zugewiesen. Bitte wende dich an deinen Admin.</p>
+        <p className="text-muted-fg">
+          Keine Klasse zugewiesen. Bitte wende dich an deinen Admin.
+        </p>
       </div>
     );
   }
@@ -71,6 +33,7 @@ export default async function AufgabenPage({ searchParams }: PageProps) {
       teacher: { select: { name: true } },
       submissions: {
         where: { studentId: session.userId },
+        select: { status: true, submittedAt: true },
         take: 1,
       },
     },
@@ -79,168 +42,173 @@ export default async function AufgabenPage({ searchParams }: PageProps) {
 
   type AssignmentRow = (typeof assignments)[number];
 
-  function getStatus(a: AssignmentRow): "open" | "due-soon" | "submitted" | "graded" | "late" {
+  function getStatus(
+    a: AssignmentRow
+  ): "open" | "submitted" | "graded" | "late" {
     const sub = a.submissions[0];
     if (sub?.status === "graded") return "graded";
     if (sub?.status === "submitted") return "submitted";
-    const now = new Date();
-    const diff = (a.dueAt.getTime() - now.getTime()) / 86_400_000;
-    if (!sub && diff < 0) return "late";
-    if (diff <= 1) return "due-soon";
+    const isLate = !sub && a.dueAt < new Date();
+    if (isLate) return "late";
     return "open";
   }
 
-  const rows = assignments.map((a) => ({ ...a, computedStatus: getStatus(a) }));
+  // Compute status for each assignment
+  const rows = assignments.map((a) => ({
+    ...a,
+    computedStatus: getStatus(a),
+    submittedAt: a.submissions[0]?.submittedAt ?? null,
+  }));
 
-  const filtered = rows.filter((a) => {
-    if (filter === "offen") return a.computedStatus === "open" || a.computedStatus === "due-soon";
-    if (filter === "erledigt") return a.computedStatus === "submitted" || a.computedStatus === "graded";
-    if (filter === "spät") return a.computedStatus === "late";
-    return true;
-  });
-
+  // Stats
   const counts = {
-    alle: rows.length,
-    offen: rows.filter((a) => a.computedStatus === "open" || a.computedStatus === "due-soon").length,
-    erledigt: rows.filter((a) => a.computedStatus === "submitted" || a.computedStatus === "graded").length,
-    spät: rows.filter((a) => a.computedStatus === "late").length,
+    open: rows.filter((a) => a.computedStatus === "open").length,
+    submitted: rows.filter((a) => a.computedStatus === "submitted").length,
+    graded: rows.filter((a) => a.computedStatus === "graded").length,
+    late: rows.filter((a) => a.computedStatus === "late").length,
   };
 
+  // Group by subject — keep insertion order (already ordered by dueAt)
+  const bySubject = new Map<
+    string,
+    {
+      subject: { name: string; shortName: string; color: string };
+      assignments: typeof rows;
+    }
+  >();
+
+  for (const a of rows) {
+    if (!bySubject.has(a.subjectId)) {
+      bySubject.set(a.subjectId, { subject: a.subject, assignments: [] });
+    }
+    bySubject.get(a.subjectId)!.assignments.push(a);
+  }
+
+  // Sort subjects: those with open/late assignments first, then the rest
+  const sortedSubjects = [...bySubject.entries()].sort(([, a], [, b]) => {
+    const hasUrgentA = a.assignments.some(
+      (x) => x.computedStatus === "open" || x.computedStatus === "late"
+    );
+    const hasUrgentB = b.assignments.some(
+      (x) => x.computedStatus === "open" || x.computedStatus === "late"
+    );
+    if (hasUrgentA && !hasUrgentB) return -1;
+    if (!hasUrgentA && hasUrgentB) return 1;
+    return 0;
+  });
+
   return (
-    <div className="mx-auto flex max-w-7xl flex-col gap-8">
+    <div className="mx-auto flex max-w-7xl flex-col gap-10">
+      {/* Page header */}
       <header className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
             Schule · {session.klasse ?? "—"}
           </p>
-          <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Aufgaben</h1>
+          <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">
+            Aufgaben
+          </h1>
           <p className="mt-1 text-sm text-muted-fg">
-            <span className="font-semibold text-fg">{counts.offen} offen</span> ·{" "}
-            {counts.erledigt} erledigt · {counts.spät} verspätet
+            <span className="font-semibold text-fg">{counts.open} offen</span>{" "}
+            ·{" "}
+            <span
+              className={
+                counts.late > 0 ? "font-semibold text-danger" : undefined
+              }
+            >
+              {counts.late} verspätet
+            </span>{" "}
+            · {counts.submitted} abgegeben · {counts.graded} bewertet
           </p>
         </div>
-        <Link href="/app/lernplan" className={buttonVariants({ variant: "outline", size: "sm" })}>
+        <Link
+          href="/app/lernplan"
+          className={buttonVariants({ variant: "outline", size: "sm" })}
+        >
           <Sparkles className="size-3.5" />
           KI-Lernplan generieren
         </Link>
       </header>
 
-      <section className="flex flex-col gap-3 rounded-2xl border border-border bg-bg p-4 sm:flex-row sm:items-center sm:gap-6">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-muted-fg">
-          <Filter className="size-3.5" />
-          Filter
+      {/* Empty state */}
+      {rows.length === 0 && (
+        <div className="grid place-items-center rounded-2xl border border-border bg-bg p-16 text-center">
+          <CheckCircle2 className="size-10 text-success" strokeWidth={1.5} />
+          <p className="mt-4 text-base font-semibold">Keine Aufgaben</p>
+          <p className="mt-1 max-w-sm text-sm text-muted-fg">
+            Es wurden noch keine Aufgaben für deine Klasse erstellt.
+          </p>
         </div>
-        <div className="flex flex-wrap items-center gap-1.5">
-          <FilterChip href="/app/aufgaben" active={filter === "alle"}>
-            Alle ({counts.alle})
-          </FilterChip>
-          <FilterChip href="/app/aufgaben?status=offen" active={filter === "offen"}>
-            Offen ({counts.offen})
-          </FilterChip>
-          <FilterChip href="/app/aufgaben?status=erledigt" active={filter === "erledigt"}>
-            Erledigt ({counts.erledigt})
-          </FilterChip>
-          <FilterChip href="/app/aufgaben?status=sp%C3%A4t" active={filter === "spät"}>
-            Verspätet ({counts.spät})
-          </FilterChip>
-        </div>
-      </section>
+      )}
 
-      <Card>
-        <CardHeader>
-          <CardTitle>{filterLabel(filter)}</CardTitle>
-          <span className="font-mono text-xs text-muted-fg">{filtered.length} Aufgaben</span>
-        </CardHeader>
-        <CardBody className="px-0! pb-0!">
-          {filtered.length === 0 ? (
-            <div className="grid place-items-center border-t border-border p-12 text-center">
-              <CheckCircle2 className="size-8 text-success" strokeWidth={1.5} />
-              <p className="mt-4 text-base font-semibold">Nichts in dieser Sicht</p>
-              <p className="mt-1 max-w-sm text-sm text-muted-fg">
-                Wechsle zu einem anderen Filter oder hol dir einen KI-Lernplan.
+      {/* Subject sections */}
+      {sortedSubjects.map(([subjectId, { subject, assignments: subAssignments }]) => (
+        <section key={subjectId} className="flex flex-col gap-4">
+          {/* Subject header bar */}
+          <div
+            className="flex items-center gap-3 rounded-xl px-4 py-3"
+            style={{ backgroundColor: subject.color + "18" }}
+          >
+            <span
+              className="grid size-8 shrink-0 place-items-center rounded-lg text-sm font-bold text-white"
+              style={{ backgroundColor: subject.color }}
+            >
+              {subject.shortName.slice(0, 2)}
+            </span>
+            <div className="flex-1 min-w-0">
+              <h2 className="text-sm font-bold" style={{ color: subject.color }}>
+                {subject.name}
+              </h2>
+              <p className="text-[11px] text-muted-fg">
+                {subAssignments.length}{" "}
+                {subAssignments.length === 1 ? "Aufgabe" : "Aufgaben"}
+                {subAssignments.filter((a) => a.computedStatus === "open").length > 0 && (
+                  <>
+                    {" "}
+                    ·{" "}
+                    <span className="text-amber-600 font-semibold">
+                      {subAssignments.filter((a) => a.computedStatus === "open").length} offen
+                    </span>
+                  </>
+                )}
+                {subAssignments.filter((a) => a.computedStatus === "late").length > 0 && (
+                  <>
+                    {" "}
+                    ·{" "}
+                    <span className="text-danger font-semibold">
+                      {subAssignments.filter((a) => a.computedStatus === "late").length} verspätet
+                    </span>
+                  </>
+                )}
               </p>
             </div>
-          ) : (
-            <ul className="divide-y divide-border border-t border-border">
-              {filtered.map((a) => {
-                const st = a.computedStatus;
-                const isDone = st === "submitted" || st === "graded";
-                return (
-                  <li
-                    key={a.id}
-                    className={cn(
-                      "grid grid-cols-1 gap-3 px-5 py-4 transition-colors hover:bg-surface lg:grid-cols-[1fr_auto_auto] lg:items-center lg:gap-4",
-                      st === "late" && "bg-danger/4"
-                    )}
-                  >
-                    <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span
-                          className="inline-flex items-center rounded-md px-1.5 py-0.5 text-[11px] font-semibold"
-                          style={{ backgroundColor: a.subject.color + "22", color: a.subject.color }}
-                        >
-                          {a.subject.shortName}
-                        </span>
-                        <Badge variant="outline">{TYPE_LABEL[a.type] ?? a.type}</Badge>
-                        {st === "late" && <Badge variant="danger">Verspätet</Badge>}
-                        {st === "graded" && <Badge variant="success">Bewertet</Badge>}
-                        {st === "submitted" && <Badge variant="info">Abgegeben</Badge>}
-                      </div>
-                      <p className={cn("mt-1.5 text-sm font-semibold", isDone && "text-muted-fg line-through")}>
-                        {a.title}
-                      </p>
-                      <p className="mt-0.5 flex items-center gap-1.5 text-xs text-muted-fg">
-                        <CalendarClock className="size-3" />
-                        {formatDue(a.dueAt)}
-                        <span>·</span>
-                        <span>{a.teacher.name}</span>
-                      </p>
-                    </div>
+            <BookOpen className="size-4 shrink-0 text-muted-fg" />
+          </div>
 
-                    <span className="hidden font-mono text-[10px] uppercase tracking-wider text-muted-fg lg:block">
-                      {STATUS_LABEL[st] ?? st}
-                    </span>
-
-                    {!isDone && st !== "late" && (
-                      <Link
-                        href={`/app/aufgaben/${a.id}`}
-                        className={buttonVariants({ size: "sm", variant: st === "due-soon" ? "primary" : "secondary" })}
-                      >
-                        Starten
-                        <ArrowRight className="size-3.5" />
-                      </Link>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          )}
-        </CardBody>
-      </Card>
+          {/* Assignment grid */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {subAssignments.map((a) => (
+              <AssignmentCard
+                key={a.id}
+                assignment={{
+                  id: a.id,
+                  title: a.title,
+                  description: a.description,
+                  type: a.type,
+                  dueAt: a.dueAt,
+                  maxPoints: a.maxPoints,
+                  coverEmoji: a.coverEmoji,
+                  subject: a.subject,
+                  teacher: a.teacher,
+                }}
+                status={a.computedStatus}
+                submittedAt={a.submittedAt}
+                href={`/app/aufgaben/${a.id}`}
+              />
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
-  );
-}
-
-function filterLabel(filter: string) {
-  if (filter === "offen") return "Offene Aufgaben";
-  if (filter === "erledigt") return "Erledigte Aufgaben";
-  if (filter === "spät") return "Verspätete Aufgaben";
-  return "Alle Aufgaben";
-}
-
-function FilterChip({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      aria-pressed={active}
-      className={cn(
-        "px-2.5 py-1 text-xs font-medium transition-colors",
-        active
-          ? "rounded-xl bg-fg text-bg"
-          : "rounded-xl border border-border bg-bg text-muted-fg hover:border-fg/30 hover:text-fg"
-      )}
-    >
-      {children}
-    </Link>
   );
 }

@@ -17,14 +17,14 @@
     --accent: 142 65% 45%;
     --accent-fg: 0 0% 100%;
 
-    /* Surface — Light (bg = white, same as logo.png background) */
-    --bg: 0 0% 100%;
-    --fg: 172 14% 12%;
-    --surface: 168 30% 97%;
-    --surface-2: 168 22% 94%;
-    --border: 168 20% 88%;
-    --border-strong: 168 16% 74%;
-    --muted-fg: 168 8% 48%;
+    /* Surface — Light (#EDF6FF background) */
+    --bg: 210 100% 96.5%;
+    --fg: 215 30% 14%;
+    --surface: 210 60% 99%;
+    --surface-2: 210 40% 94%;
+    --border: 210 35% 87%;
+    --border-strong: 210 28% 72%;
+    --muted-fg: 210 12% 48%;
 
     /* Status */
     --success: 142 65% 36%;
