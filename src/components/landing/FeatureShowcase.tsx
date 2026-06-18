@@ -91,25 +91,25 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
   switch (mockup) {
     case "learning":
       return (
-        <div className="rounded-2xl border border-blue-100 bg-blue-50 p-4 space-y-3">
+        <div className="rounded-2xl border border-border bg-surface-2 p-4 space-y-3">
           <div className="flex items-center gap-2">
             <span>📖</span>
-            <p className="text-sm font-semibold">Thema: Quadratische Gleichungen</p>
+            <p className="text-sm font-semibold text-fg">Thema: Quadratische Gleichungen</p>
           </div>
           <div>
             <div className="mb-1 flex items-center justify-between text-xs text-muted-fg">
               <span>Fortschritt</span>
-              <span className="font-bold text-blue-600">73 %</span>
+              <span className="font-bold text-brand">73 %</span>
             </div>
-            <div className="h-2 rounded-full bg-blue-100">
-              <div className="h-2 w-[73%] rounded-full bg-blue-500" />
+            <div className="h-2 rounded-full bg-border">
+              <div className="h-2 w-[73%] rounded-full bg-brand" />
             </div>
           </div>
           <div className="flex flex-wrap gap-2">
             {["Karteikarte 1", "Karteikarte 2", "Karteikarte 3"].map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-white border border-blue-200 px-3 py-1 text-xs font-medium text-blue-700"
+                className="rounded-full bg-surface border border-border px-3 py-1 text-xs font-medium text-fg"
               >
                 {tag}
               </span>
@@ -120,16 +120,16 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
 
     case "task":
       return (
-        <div className="rounded-2xl border border-violet-100 bg-violet-50 p-4 space-y-3">
+        <div className="rounded-2xl border border-border bg-surface-2 p-4 space-y-3">
           <textarea
             readOnly
-            className="w-full resize-none rounded-xl border border-violet-200 bg-white p-3 text-xs text-fg focus:outline-none"
+            className="w-full resize-none rounded-xl border border-border bg-surface p-3 text-xs text-fg focus:outline-none"
             rows={2}
             value="Erstelle 5 Aufgaben zu quadratischen Gleichungen für Klasse 9..."
           />
           <button
             type="button"
-            className="w-full rounded-xl bg-violet-600 py-2 text-xs font-bold text-white"
+            className="w-full rounded-xl bg-brand py-2 text-xs font-bold text-brand-fg"
           >
             ✨ Generieren
           </button>
@@ -138,7 +138,7 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
               (item) => (
                 <div
                   key={item}
-                  className="rounded-xl border border-violet-100 bg-white px-3 py-2 text-xs text-fg"
+                  className="rounded-xl border border-border bg-surface px-3 py-2 text-xs text-fg"
                 >
                   {item}
                 </div>
@@ -150,11 +150,11 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
 
     case "schedule":
       return (
-        <div className="rounded-2xl border border-sky-100 bg-sky-50 p-4">
+        <div className="rounded-2xl border border-border bg-surface-2 p-4">
           <div className="grid grid-cols-3 gap-2">
             {["Mo", "Di", "Mi"].map((day) => (
               <div key={day} className="space-y-2">
-                <p className="text-center text-xs font-bold text-sky-700">{day}</p>
+                <p className="text-center text-xs font-bold text-brand">{day}</p>
                 {(
                   day === "Mo"
                     ? ["Mathe", "Deutsch", "Sport"]
@@ -164,7 +164,7 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
                 ).map((subj) => (
                   <div
                     key={subj}
-                    className="rounded-lg bg-white border border-sky-200 px-2 py-1.5 text-center text-[11px] font-medium text-sky-800"
+                    className="rounded-lg bg-surface border border-border px-2 py-1.5 text-center text-[11px] font-medium text-fg"
                   >
                     {subj}
                   </div>
@@ -177,17 +177,17 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
 
     case "comms":
       return (
-        <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-4 space-y-3">
+        <div className="rounded-2xl border border-border bg-surface-2 p-4 space-y-3">
           <div className="flex justify-start">
-            <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-white border border-emerald-200 px-3 py-2">
-              <p className="text-[11px] font-semibold text-emerald-700">Frau Müller (Lehrerin)</p>
+            <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-surface border border-border px-3 py-2">
+              <p className="text-[11px] font-semibold text-brand">Frau Müller (Lehrerin)</p>
               <p className="text-xs text-fg mt-0.5">Klausur nächste Woche: Themen 5–8. Lernzettel im Kurs.</p>
             </div>
           </div>
           <div className="flex justify-end">
-            <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-emerald-600 px-3 py-2">
-              <p className="text-[11px] font-semibold text-emerald-100">Elternteil</p>
-              <p className="text-xs text-white mt-0.5">Lukas ist heute krank. Krankmeldung anhängen ✓</p>
+            <div className="max-w-[80%] rounded-2xl rounded-tr-sm bg-brand px-3 py-2">
+              <p className="text-[11px] font-semibold text-brand-fg/80">Elternteil</p>
+              <p className="text-xs text-brand-fg mt-0.5">Lukas ist heute krank. Krankmeldung anhängen ✓</p>
             </div>
           </div>
         </div>
@@ -195,8 +195,8 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
 
     case "heatmap":
       return (
-        <div className="rounded-2xl border border-orange-100 bg-orange-50 p-4">
-          <p className="mb-3 text-xs font-bold text-orange-700">Klasse 9b — Lernstand</p>
+        <div className="rounded-2xl border border-border bg-surface-2 p-4">
+          <p className="mb-3 text-xs font-bold text-fg">Klasse 9b — Lernstand</p>
           <div className="grid grid-cols-5 gap-1.5">
             {[
               "bg-green-400", "bg-green-500", "bg-yellow-400", "bg-green-300", "bg-red-400",
@@ -218,13 +218,13 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
 
     case "game":
       return (
-        <div className="rounded-2xl border border-rose-100 bg-rose-50 p-4 space-y-3">
+        <div className="rounded-2xl border border-border bg-surface-2 p-4 space-y-3">
           <div className="flex items-center gap-3">
             <span className="text-3xl">🥈</span>
             <div>
-              <p className="text-xs font-bold text-rose-700">Silber III</p>
-              <div className="mt-1 h-2 w-32 rounded-full bg-rose-200">
-                <div className="h-2 w-[60%] rounded-full bg-rose-500" />
+              <p className="text-xs font-bold text-fg">Silber III</p>
+              <div className="mt-1 h-2 w-32 rounded-full bg-border">
+                <div className="h-2 w-[60%] rounded-full bg-brand" />
               </div>
               <p className="mt-0.5 text-[10px] text-muted-fg">1.820 / 3.000 XP bis Gold I</p>
             </div>
@@ -235,8 +235,8 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
               { done: true, label: "Streak aufrechterhalten" },
               { done: false, label: "10 Karteikarten wiederholt" },
             ].map((q) => (
-              <div key={q.label} className="flex items-center gap-2 rounded-xl bg-white border border-rose-200 px-3 py-2">
-                <div className={cn("size-4 rounded-full border-2 grid place-items-center shrink-0", q.done ? "bg-rose-500 border-rose-500" : "border-rose-300")}>
+              <div key={q.label} className="flex items-center gap-2 rounded-xl bg-surface border border-border px-3 py-2">
+                <div className={cn("size-4 rounded-full border-2 grid place-items-center shrink-0", q.done ? "bg-brand border-brand" : "border-border-strong")}>
                   {q.done && <span className="text-[9px] text-white font-bold">✓</span>}
                 </div>
                 <p className="text-xs text-fg">{q.label}</p>

@@ -41,7 +41,7 @@ export function Hero() {
                 <br />
                 <span
                   style={{
-                    background: "linear-gradient(-45deg, #EDF6FF 0%, #CBEAFF 100%)",
+                    background: "linear-gradient(-45deg, #6EE7B7 0%, #93C5FD 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
@@ -62,7 +62,7 @@ export function Hero() {
                 <Button
                   size="lg"
                   className="w-full sm:w-auto border-0 text-gray-900 font-bold hover:opacity-90"
-                  style={{ background: "linear-gradient(-45deg, #EDF6FF 0%, #CBEAFF 100%)" }}
+                  style={{ background: "linear-gradient(-45deg, #6EE7B7 0%, #93C5FD 100%)" }}
                 >
                   Schule kostenlos testen
                   <ArrowRight className="size-4" />
@@ -70,7 +70,7 @@ export function Hero() {
                 <Button
                   size="lg"
                   className="w-full sm:w-auto border-0 text-gray-900 font-bold hover:opacity-90"
-                  style={{ background: "linear-gradient(-45deg, #EDF6FF 0%, #CBEAFF 100%)" }}
+                  style={{ background: "linear-gradient(-45deg, #6EE7B7 0%, #93C5FD 100%)" }}
                 >
                   30-Min-Demo buchen
                 </Button>
@@ -80,9 +80,11 @@ export function Hero() {
               <button
                 type="button"
                 onClick={() => setModalOpen(true)}
-                className="animate-fade-in animate-delay-300 mt-5 w-fit text-sm font-medium text-muted-fg underline-offset-4 transition-colors hover:text-fg hover:underline"
+                className="animate-fade-in animate-delay-300 mt-5 inline-flex w-fit items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-sm font-semibold text-fg shadow-sm transition-all hover:-translate-y-px hover:border-brand/40 hover:shadow-md"
               >
-                App live erleben →
+                <Sparkles className="size-4 text-brand" />
+                App live erleben
+                <ArrowRight className="size-3.5 text-muted-fg" />
               </button>
 
               {/* Trust badges */}

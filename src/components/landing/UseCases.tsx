@@ -1,21 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, GraduationCap, BookOpen, Building2, Users } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 
-const audiences = [
+const RAINBOW = "linear-gradient(to right, #2FC5E7, #4B9EF5, #8B5CF6, #EC4899, #F97316, #10B981)";
+
+const audiences: {
+  role: string;
+  Icon: LucideIcon;
+  rainbowPos: number;
+  tabActive: string;
+  tabIdle: string;
+  headline: string;
+  points: string[];
+}[] = [
   {
     role: "Schüler",
-    emoji: "🎓",
-    accent: "blue",
-    tabActive: "bg-blue-50 text-blue-600 border-b-2 border-blue-500",
+    Icon: GraduationCap,
+    rainbowPos: 0,
+    tabActive: "bg-brand/10 text-brand border-b-2 border-brand",
     tabIdle: "text-muted-fg hover:text-fg hover:bg-surface",
-    checkColor: "text-blue-500",
-    badgeBg: "bg-blue-50",
-    badgeText: "text-blue-700",
     headline: "Lernen, das wirklich hängen bleibt",
     points: [
       "KI-Tutor erklärt jede Aufgabe Schritt für Schritt",
@@ -25,13 +33,10 @@ const audiences = [
   },
   {
     role: "Lehrer",
-    emoji: "👩‍🏫",
-    accent: "green",
-    tabActive: "bg-emerald-50 text-emerald-600 border-b-2 border-emerald-500",
+    Icon: BookOpen,
+    rainbowPos: 2,
+    tabActive: "bg-brand/10 text-brand border-b-2 border-brand",
     tabIdle: "text-muted-fg hover:text-fg hover:bg-surface",
-    checkColor: "text-emerald-500",
-    badgeBg: "bg-emerald-50",
-    badgeText: "text-emerald-700",
     headline: "Spart stundenlange Arbeit pro Woche",
     points: [
       "Aufgaben & Klassenarbeiten in Minuten generiert",
@@ -42,13 +47,10 @@ const audiences = [
   },
   {
     role: "Schulleitung",
-    emoji: "🏫",
-    accent: "amber",
-    tabActive: "bg-amber-50 text-amber-600 border-b-2 border-amber-500",
+    Icon: Building2,
+    rainbowPos: 4,
+    tabActive: "bg-brand/10 text-brand border-b-2 border-brand",
     tabIdle: "text-muted-fg hover:text-fg hover:bg-surface",
-    checkColor: "text-amber-500",
-    badgeBg: "bg-amber-50",
-    badgeText: "text-amber-700",
     headline: "Volle Kontrolle, sauberes Setup",
     points: [
       "Untis-Import in 5 Minuten — nicht in 5 Tagen",
@@ -59,13 +61,10 @@ const audiences = [
   },
   {
     role: "Eltern",
-    emoji: "👨‍👩‍👧",
-    accent: "purple",
-    tabActive: "bg-violet-50 text-violet-600 border-b-2 border-violet-500",
+    Icon: Users,
+    rainbowPos: 5,
+    tabActive: "bg-brand/10 text-brand border-b-2 border-brand",
     tabIdle: "text-muted-fg hover:text-fg hover:bg-surface",
-    checkColor: "text-violet-500",
-    badgeBg: "bg-violet-50",
-    badgeText: "text-violet-700",
     headline: "Endlich überblickbar",
     points: [
       "Eine App für alle Kinder — Noten, Termine, Nachrichten",
@@ -75,6 +74,14 @@ const audiences = [
     ],
   },
 ];
+
+function iconPanelStyle(pos: number): React.CSSProperties {
+  return {
+    background: RAINBOW,
+    backgroundSize: "600% 100%",
+    backgroundPosition: `${pos * 20}% 0%`,
+  };
+}
 
 export function UseCases() {
   const [activeTab, setActiveTab] = useState(0);
@@ -102,11 +109,11 @@ export function UseCases() {
                   type="button"
                   onClick={() => setActiveTab(i)}
                   className={cn(
-                    "rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-150",
+                    "inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-150",
                     activeTab === i ? a.tabActive : a.tabIdle
                   )}
                 >
-                  <span className="mr-1.5">{a.emoji}</span>
+                  <a.Icon className="size-4 shrink-0" strokeWidth={1.75} />
                   {a.role}
                 </button>
               ))}
@@ -116,48 +123,40 @@ export function UseCases() {
 
         {/* Tab content */}
         <AnimateOnScroll animation="fade-up" delay={200}>
-        <div className="mt-8 mx-auto max-w-3xl">
-          <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-sm">
-            <div className="flex flex-col sm:flex-row">
-              {/* Left: emoji illustration */}
-              <div
-                className={cn(
-                  "flex items-center justify-center sm:w-52 shrink-0 py-10 sm:py-0 rounded-t-3xl sm:rounded-t-none sm:rounded-l-3xl",
-                  current.badgeBg
-                )}
-              >
-                <span className="text-7xl">{current.emoji}</span>
-              </div>
-
-              {/* Right: content */}
-              <div className="flex flex-col justify-center p-7 sm:p-10">
-                <span
-                  className={cn(
-                    "inline-block self-start rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest",
-                    current.badgeBg,
-                    current.badgeText
-                  )}
+          <div className="mt-8 mx-auto max-w-3xl">
+            <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-sm">
+              <div className="flex flex-col sm:flex-row">
+                {/* Left: icon illustration with rainbow gradient */}
+                <div
+                  className="flex items-center justify-center sm:w-52 shrink-0 py-10 sm:py-0 rounded-t-3xl sm:rounded-t-none sm:rounded-l-3xl"
+                  style={iconPanelStyle(current.rainbowPos)}
                 >
-                  Für {current.role}
-                </span>
-                <h3 className="mt-3 text-2xl font-bold tracking-tight">
-                  {current.headline}
-                </h3>
-                <ul className="mt-6 space-y-3">
-                  {current.points.map((p) => (
-                    <li key={p} className="flex items-start gap-2.5 text-sm">
-                      <Check
-                        className={cn("mt-0.5 size-4 shrink-0", current.checkColor)}
-                        strokeWidth={2.5}
-                      />
-                      <span className="text-muted-fg">{p}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <current.Icon className="size-20 text-white" strokeWidth={1.25} />
+                </div>
+
+                {/* Right: content */}
+                <div className="flex flex-col justify-center p-7 sm:p-10">
+                  <span className="inline-block self-start rounded-full bg-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand">
+                    Für {current.role}
+                  </span>
+                  <h3 className="mt-3 text-2xl font-bold tracking-tight">
+                    {current.headline}
+                  </h3>
+                  <ul className="mt-6 space-y-3">
+                    {current.points.map((p) => (
+                      <li key={p} className="flex items-start gap-2.5 text-sm">
+                        <Check
+                          className="mt-0.5 size-4 shrink-0 text-brand"
+                          strokeWidth={2.5}
+                        />
+                        <span className="text-muted-fg">{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         </AnimateOnScroll>
       </Container>
     </section>

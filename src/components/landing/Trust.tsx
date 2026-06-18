@@ -18,10 +18,10 @@ const stats = [
 
 export function Trust() {
   return (
-    <section className="border-y border-gray-100 bg-white py-16">
+    <section className="border-y border-border bg-bg py-16">
       <Container>
         <AnimateOnScroll animation="fade-in">
-          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-gray-400">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-muted-fg">
             Vertraut von führenden Schulen in Deutschland
           </p>
 
@@ -30,7 +30,7 @@ export function Trust() {
             {partners.map((p) => (
               <span
                 key={p}
-                className="rounded-full border border-gray-200 bg-white px-4 py-2 text-xs font-medium text-gray-400"
+                className="rounded-full border border-border bg-surface px-4 py-2 text-xs font-medium text-muted-fg"
               >
                 {p}
               </span>
@@ -46,13 +46,10 @@ export function Trust() {
                 delay={i * 80}
                 className="flex flex-col items-center gap-1"
               >
-                <span
-                  className="text-4xl font-bold tracking-tight sm:text-5xl"
-                  style={{ color: "hsl(172,72%,40%)" }}
-                >
+                <span className="text-4xl font-bold tracking-tight text-brand sm:text-5xl">
                   {s.value}
                 </span>
-                <span className="text-sm text-gray-400">{s.label}</span>
+                <span className="text-sm text-muted-fg">{s.label}</span>
               </AnimateOnScroll>
             ))}
           </div>
