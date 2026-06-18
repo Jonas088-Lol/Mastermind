@@ -59,6 +59,7 @@ export default async function TeachLayout({
     { href: "/teach", label: "Dashboard", icon: "home", exact: true },
     { href: "/teach/klassen", label: "Klassen", icon: "users" },
     { href: "/teach/aufgaben", label: "Aufgaben", icon: "checkSquare" },
+    { href: "/teach/hausaufgaben", label: "Hausaufgaben", icon: "bookOpen" },
     { href: "/teach/korrektur", label: "Korrektur", icon: "clipboardEdit", badge: corrBadge },
     { href: "/teach/noten", label: "Noten", icon: "lineChart" },
     { href: "/teach/plan", label: "Stundenplan", icon: "calendar" },

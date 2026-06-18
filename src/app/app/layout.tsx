@@ -109,6 +109,7 @@ export default async function AppLayout({
     { href: "/app/tutor",          label: "KI-Tutor",      icon: "sparkles"      },
     // ── Schule ────────────────────────────────────────
     { href: "/app/aufgaben",       label: "Aufgaben",      icon: "checkSquare",  badge: pendingAssignments > 0 ? String(pendingAssignments) : undefined },
+    { href: "/app/hausaufgaben",   label: "Hausaufgaben",  icon: "bookOpen"      },
     { href: "/app/arbeitsblatter", label: "Arbeitsblätter",icon: "fileText"      },
     { href: "/app/noten",          label: "Noten",         icon: "award"         },
     { href: "/app/plan",           label: "Stundenplan",   icon: "calendar"      },
