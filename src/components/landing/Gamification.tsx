@@ -1,5 +1,6 @@
 import { Zap, Flame, Coins, ShoppingBag, Swords, Trophy } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { CoinIcon } from "@/components/ui/CoinIcon";
 import { Container } from "@/components/ui/container";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 
@@ -46,10 +47,10 @@ const features: { Icon: LucideIcon; title: string; body: string }[] = [
 ];
 
 const shopPreview = [
-  { icon: "🚀", name: "XP-Booster ×2", desc: "1 Stunde",        price: "90 🪙",  rarity: "Selten",       pos: 0 },
-  { icon: "💎", name: "XP-Booster ×2", desc: "24 Stunden",      price: "350 🪙", rarity: "Episch",       pos: 2 },
-  { icon: "🛡️", name: "Streak-Schutz", desc: "3 Tage",          price: "200 🪙", rarity: "Ungewöhnlich", pos: 4 },
-  { icon: "👑", name: "Kronen-Badge",  desc: "Profil-Dekoration",price: "300 🪙", rarity: "Selten",       pos: 1 },
+  { icon: "🚀", name: "XP-Booster ×2", desc: "1 Stunde",        price: 90,  rarity: "Selten",       pos: 0 },
+  { icon: "💎", name: "XP-Booster ×2", desc: "24 Stunden",      price: 350, rarity: "Episch",       pos: 2 },
+  { icon: "🛡️", name: "Streak-Schutz", desc: "3 Tage",          price: 200, rarity: "Ungewöhnlich", pos: 4 },
+  { icon: "👑", name: "Kronen-Badge",  desc: "Profil-Dekoration",price: 300, rarity: "Selten",       pos: 1 },
 ];
 
 function shopHeaderStyle(pos: number): React.CSSProperties {
@@ -148,7 +149,8 @@ export function Gamification() {
                     <p className="text-sm font-bold">{item.name}</p>
                     <p className="text-xs text-muted-fg">{item.desc}</p>
                     <div className="mt-3 flex items-center justify-between">
-                      <span className="font-mono text-sm font-bold">
+                      <span className="inline-flex items-center gap-1 font-mono text-sm font-bold">
+                        <CoinIcon className="size-3.5 text-warning" />
                         {item.price}
                       </span>
                       <span className="rounded-full bg-brand/10 px-2 py-0.5 text-[10px] font-semibold text-brand">

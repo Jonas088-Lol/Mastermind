@@ -6,6 +6,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { NotificationCenter, type NotificationItem } from "@/components/app/NotificationCenter";
 import { logout } from "@/app/login/actions";
+import { CoinIcon } from "@/components/ui/CoinIcon";
 
 export interface AppHeaderProps {
   user: { name: string; subtitle: string };
@@ -53,7 +54,7 @@ export function AppHeader({
             className="hidden items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-sm font-semibold text-amber-600 transition-colors hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-amber-950/30 sm:flex"
             title="Münzen"
           >
-            <span>🪙</span>
+            <CoinIcon className="size-4 text-amber-500" />
             <span>{coinBalance.toLocaleString("de-DE")}</span>
           </Link>
         )}

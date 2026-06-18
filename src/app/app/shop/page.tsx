@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ShoppingBag, Zap } from "lucide-react";
+import { CoinIcon } from "@/components/ui/CoinIcon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
@@ -113,7 +114,7 @@ export default async function ShopPage({ searchParams }: PageProps) {
           </p>
         </div>
         <div className="flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2">
-          <span className="text-lg">🪙</span>
+          <CoinIcon className="size-5 text-warning" />
           <span className="font-mono text-lg font-bold">{balance.toLocaleString("de-DE")}</span>
           <span className="text-sm text-muted-fg">Münzen</span>
         </div>
@@ -227,7 +228,7 @@ export default async function ShopPage({ searchParams }: PageProps) {
                     </div>
                   ) : (
                     <div className="flex items-center gap-1">
-                      <span className="text-base">🪙</span>
+                      <CoinIcon className="size-4 text-warning" />
                       <span
                         className={cn(
                           "font-mono text-sm font-bold",

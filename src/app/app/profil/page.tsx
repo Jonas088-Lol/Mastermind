@@ -8,6 +8,7 @@ import {
   Trophy,
   Zap,
 } from "lucide-react";
+import { CoinIcon } from "@/components/ui/CoinIcon";
 import { AvatarUploadButton } from "./AvatarUpload";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -413,7 +414,7 @@ export default async function ProfilPage() {
             </Link>
           </CardHeader>
           <CardBody>
-            <p className="font-mono text-4xl font-bold">🪙 {user.coins}</p>
+            <p className="flex items-center gap-2 font-mono text-4xl font-bold"><CoinIcon className="size-9 text-warning" />{user.coins.toLocaleString("de-DE")}</p>
             <div className="mt-3 flex gap-2">
               <Link href="/app/shop" className={buttonVariants({ variant: "outline", size: "sm" })}>Shop</Link>
               <Link href="/app/inventar" className={buttonVariants({ variant: "outline", size: "sm" })}>Inventar</Link>

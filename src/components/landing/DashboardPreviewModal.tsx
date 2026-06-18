@@ -1,21 +1,27 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import {
+  X, ChevronLeft, ChevronRight,
+  Home, CheckSquare, Brain, Sparkles, Layers, Award, Trophy, ShoppingBag,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { CoinIcon } from "@/components/ui/CoinIcon";
 import { cn } from "@/lib/utils";
 
-const SCREENS = [
-  { id: "dashboard", label: "Dashboard", icon: "🏠" },
-  { id: "aufgaben",  label: "Aufgaben",  icon: "📋" },
-  { id: "uebungen",  label: "Übungen",   icon: "🧠" },
-  { id: "ki-tutor",  label: "KI-Tutor",  icon: "✨" },
-  { id: "karten",    label: "Karteikarten", icon: "🃏" },
-  { id: "noten",     label: "Noten",     icon: "📊" },
-  { id: "ranking",   label: "Ranking",   icon: "🏆" },
-  { id: "shop",      label: "Shop",      icon: "🛒" },
-] as const;
+const SCREENS: { id: string; label: string; Icon: LucideIcon }[] = [
+  { id: "dashboard", label: "Dashboard",    Icon: Home         },
+  { id: "aufgaben",  label: "Aufgaben",     Icon: CheckSquare  },
+  { id: "uebungen",  label: "Übungen",      Icon: Brain        },
+  { id: "ki-tutor",  label: "KI-Tutor",     Icon: Sparkles     },
+  { id: "karten",    label: "Karteikarten", Icon: Layers       },
+  { id: "noten",     label: "Noten",        Icon: Award        },
+  { id: "ranking",   label: "Ranking",      Icon: Trophy       },
+  { id: "shop",      label: "Shop",         Icon: ShoppingBag  },
+];
 
-type ScreenId = (typeof SCREENS)[number]["id"];
+type ScreenId = "dashboard" | "aufgaben" | "uebungen" | "ki-tutor" | "karten" | "noten" | "ranking" | "shop";
 
 /* ─── Screen mockups (design-token aware) ────────────────────────── */
 
@@ -29,14 +35,17 @@ function DashboardScreen() {
       {/* Stat cards — plain style matching the real dashboard */}
       <div className="grid grid-cols-4 gap-3">
         {[
-          { label: "Streak",  value: "14 🔥" },
-          { label: "XP",      value: "+320"  },
-          { label: "Münzen",  value: "480 🪙" },
-          { label: "Ø Note",  value: "2,3"   },
+          { label: "Streak",  value: "14 🔥", coin: false },
+          { label: "XP",      value: "+320",  coin: false },
+          { label: "Münzen",  value: "480",   coin: true  },
+          { label: "Ø Note",  value: "2,3",   coin: false },
         ].map((s) => (
           <div key={s.label} className="rounded-xl border border-border bg-surface-2 p-3">
             <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">{s.label}</p>
-            <p className="mt-1 font-mono text-sm font-bold text-fg">{s.value}</p>
+            <p className="mt-1 inline-flex items-center gap-1 font-mono text-sm font-bold text-fg">
+              {s.value}
+              {s.coin && <CoinIcon className="size-3.5 text-warning" />}
+            </p>
           </div>
         ))}
       </div>
@@ -309,7 +318,7 @@ function ShopScreen() {
       <div className="flex items-center justify-between">
         <p className="text-lg font-bold text-fg">Shop</p>
         <div className="flex items-center gap-1.5 rounded-xl bg-warning/10 px-3 py-1.5 text-sm font-bold text-warning">
-          🪙 480
+          <CoinIcon className="size-4" /> 480
         </div>
       </div>
       <div className="grid grid-cols-2 gap-3">
@@ -332,7 +341,7 @@ function ShopScreen() {
               </div>
               <p className="text-[10px] text-muted-fg">{item.desc}</p>
               <div className="mt-2 flex items-center justify-between">
-                <span className="font-mono text-xs font-bold text-warning">🪙 {item.price}</span>
+                <span className="inline-flex items-center gap-0.5 font-mono text-xs font-bold text-warning"><CoinIcon className="size-3.5" /> {item.price}</span>
                 <div className="rounded-lg bg-brand px-2 py-1 text-[9px] font-bold text-brand-fg">Kaufen</div>
               </div>
             </div>
@@ -398,7 +407,7 @@ export function DashboardPreviewModal({ open, onClose }: Props) {
   if (!open) return null;
 
   const activeScreen = SCREENS[activeIndex];
-  const ScreenComponent = SCREEN_COMPONENTS[activeScreen.id];
+  const ScreenComponent = SCREEN_COMPONENTS[activeScreen.id as ScreenId];
 
   return (
     <div
@@ -435,10 +444,13 @@ export function DashboardPreviewModal({ open, onClose }: Props) {
           {/* Sidebar */}
           <aside className="hidden w-48 shrink-0 flex-col border-r border-border bg-surface-2 sm:flex">
             <div className="border-b border-border px-4 py-3">
-              <div className="flex items-center gap-2">
-                <div className="size-5 rounded bg-brand" />
-                <span className="text-xs font-bold text-fg">MasterMind</span>
-              </div>
+              <Image
+                src="/brand/logo.png"
+                alt="MasterMind"
+                width={120}
+                height={28}
+                className="h-6 w-auto object-contain"
+              />
             </div>
             <nav className="flex-1 space-y-0.5 p-2">
               {SCREENS.map((screen, i) => (
@@ -452,7 +464,7 @@ export function DashboardPreviewModal({ open, onClose }: Props) {
                       : "text-muted-fg hover:bg-surface hover:text-fg"
                   )}
                 >
-                  <span className="text-sm">{screen.icon}</span>
+                  <screen.Icon className="size-3.5 shrink-0" strokeWidth={1.75} />
                   {screen.label}
                   {i === activeIndex && (
                     <div className="ml-auto size-1.5 rounded-full bg-brand" />

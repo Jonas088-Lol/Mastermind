@@ -8,6 +8,7 @@ import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { LOGIN_REWARD_SCHEDULE } from "@/lib/game";
 import { cn } from "@/lib/utils";
 import { claimDailyLoginReward } from "./actions";
+import { CoinIcon } from "@/components/ui/CoinIcon";
 
 export const metadata: Metadata = { title: "Tagesbonus · MasterMind" };
 
@@ -68,10 +69,10 @@ export default async function TagesbelohnungPage() {
               <Sun className="size-12 text-warning" strokeWidth={1.5} />
               <div>
                 <p className="text-lg font-bold">Tagesbonus verfügbar!</p>
-                <p className="mt-1 text-sm text-muted-fg">Tag {claimableDay} · +{LOGIN_REWARD_SCHEDULE[(claimableDay ?? 1) - 1]?.xp ?? 20} XP · +5 🪙</p>
+                <p className="mt-1 inline-flex items-center gap-1 text-sm text-muted-fg">Tag {claimableDay} · +{LOGIN_REWARD_SCHEDULE[(claimableDay ?? 1) - 1]?.xp ?? 20} XP · +5 <CoinIcon className="size-3.5 text-warning" /></p>
                 {currentStreak > 1 && (
                   <p className="mt-1 text-xs font-semibold text-warning">
-                    🔥 Streak-Bonus: +{streakBonusCoins} 🪙 extra (Tag {currentStreak + 1})
+                    🔥 Streak-Bonus: +{streakBonusCoins} <CoinIcon className="inline-block size-3.5 align-text-bottom text-warning" /> extra (Tag {currentStreak + 1})
                   </p>
                 )}
                 {LOGIN_REWARD_SCHEDULE[(claimableDay ?? 1) - 1]?.bonus && (

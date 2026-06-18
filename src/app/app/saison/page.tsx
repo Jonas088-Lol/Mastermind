@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Gift, ShoppingBag, Trophy } from "lucide-react";
+import { CoinIcon } from "@/components/ui/CoinIcon";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
@@ -137,7 +138,7 @@ export default async function SaisonPage() {
                 <p className="mt-0.5 text-sm text-muted-fg">
                   Schalte die Premium-Belohnungsspur frei und sammle exklusive Titel & Power-Ups.
                 </p>
-                <p className="mt-1 text-xs font-semibold text-warning">500 🪙 Münzen</p>
+                <p className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-warning">500 <CoinIcon className="size-3.5" /> Münzen</p>
               </div>
             </div>
             <Link

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DashboardPreviewModal } from "@/components/landing/DashboardPreviewModal";
+import { CoinIcon } from "@/components/ui/CoinIcon";
 
 export function Hero() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -187,26 +188,10 @@ export function Hero() {
                       {/* Stat cards */}
                       <div className="mb-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
                         {[
-                          {
-                            label: "Streak",
-                            value: "14 🔥",
-                            gradient: "from-orange-400 to-orange-500",
-                          },
-                          {
-                            label: "XP heute",
-                            value: "+320",
-                            gradient: "from-teal-400 to-teal-600",
-                          },
-                          {
-                            label: "Münzen",
-                            value: "480 🪙",
-                            gradient: "from-yellow-400 to-yellow-500",
-                          },
-                          {
-                            label: "Ø Note",
-                            value: "2,3",
-                            gradient: "from-green-400 to-green-500",
-                          },
+                          { label: "Streak",   value: "14 🔥", gradient: "from-orange-400 to-orange-500", coin: false },
+                          { label: "XP heute", value: "+320",  gradient: "from-teal-400 to-teal-600",    coin: false },
+                          { label: "Münzen",   value: "480",   gradient: "from-yellow-400 to-yellow-500", coin: true  },
+                          { label: "Ø Note",   value: "2,3",   gradient: "from-green-400 to-green-500",  coin: false },
                         ].map((s) => (
                           <div
                             key={s.label}
@@ -215,11 +200,12 @@ export function Hero() {
                             <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
                               {s.label}
                             </p>
-                            <p
-                              className={`mt-1 bg-linear-to-r ${s.gradient} bg-clip-text font-mono text-base font-bold text-transparent`}
-                            >
-                              {s.value}
-                            </p>
+                            <div className="mt-1 inline-flex items-center gap-1 font-mono text-base font-bold">
+                              <span className={`bg-linear-to-r ${s.gradient} bg-clip-text text-transparent`}>
+                                {s.value}
+                              </span>
+                              {s.coin && <CoinIcon className="size-4 text-yellow-500" />}
+                            </div>
                           </div>
                         ))}
                       </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowDownLeft, ArrowUpRight, ShoppingBag, TrendingUp } from "lucide-react";
+import { CoinIcon } from "@/components/ui/CoinIcon";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { COIN_REWARDS } from "@/lib/coins";
@@ -151,7 +152,7 @@ export default async function CoinsPage() {
       <div className="border border-warning/30 bg-warning/3 p-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
-            <span className="text-5xl leading-none">🪙</span>
+            <CoinIcon className="size-12 text-warning" />
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">Kontostand</p>
               <p className="mt-0.5 text-4xl font-bold tabular-nums">
@@ -196,7 +197,7 @@ export default async function CoinsPage() {
               <span className="shrink-0 text-lg leading-none">{icon}</span>
               <div className="min-w-0 flex-1">
                 <p className="truncate text-xs font-medium">{label}</p>
-                <p className="mt-0.5 text-xs font-bold text-warning">+{amount} 🪙</p>
+                <p className="mt-0.5 flex items-center gap-1 text-xs font-bold text-warning">+{amount} <CoinIcon className="size-3" /></p>
               </div>
             </div>
           ))}
@@ -266,7 +267,7 @@ export default async function CoinsPage() {
 
         {coinLogs.length === 0 ? (
           <div className="flex flex-col items-center justify-center gap-3 border border-dashed border-border py-12 text-center">
-            <span className="text-4xl leading-none opacity-30">🪙</span>
+            <CoinIcon className="size-10 text-warning opacity-30" />
             <div>
               <p className="font-semibold text-muted-fg">Noch keine Transaktionen</p>
               <p className="mt-1 text-sm text-muted-fg/70">
@@ -305,7 +306,7 @@ export default async function CoinsPage() {
                         isPositive ? "text-success" : "text-danger",
                       )}
                     >
-                      {isPositive ? "+" : ""}{log.amount.toLocaleString("de-DE")} 🪙
+                      <span className="inline-flex items-center gap-1">{isPositive ? "+" : ""}{log.amount.toLocaleString("de-DE")} <CoinIcon className="size-3.5 align-middle" /></span>
                     </span>
                     <span className="whitespace-nowrap text-right text-xs text-muted-fg">
                       {formatDate(log.createdAt)}

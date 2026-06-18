@@ -180,12 +180,12 @@ export default async function DashboardPage() {
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
 
       {/* ── Hero greeting banner ── */}
-      <header className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#EDF6FF] to-[#dbeeff] px-6 py-8 shadow-sm sm:px-10">
+      <header className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#BBF7D0] to-[#BAE6FD] px-6 py-8 shadow-sm sm:px-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-5">
             <span className="text-5xl leading-none drop-shadow-sm">{rank.icon}</span>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-600">
                 {todayDate}
               </p>
               <h1 className="mt-1 text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
@@ -198,15 +198,16 @@ export default async function DashboardPage() {
               </p>
             </div>
           </div>
-          <Link href="/app/plan">
-            <Button variant="outline" size="sm" className="shrink-0 border-blue-200 bg-white/70 hover:bg-white">
-              Stundenplan
-              <ArrowRight className="size-3.5" />
-            </Button>
+          <Link
+            href="/app/plan"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-white/60 bg-white/60 px-3.5 py-2 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur-sm transition-colors hover:bg-white/80"
+          >
+            Stundenplan
+            <ArrowRight className="size-3.5" />
           </Link>
         </div>
         {/* Decorative blobs */}
-        <span className="pointer-events-none absolute -right-8 -top-8 size-40 rounded-full bg-blue-100/60 blur-3xl" />
+        <span className="pointer-events-none absolute -right-8 -top-8 size-40 rounded-full bg-emerald-200/50 blur-3xl" />
         <span className="pointer-events-none absolute -bottom-6 right-24 size-28 rounded-full bg-sky-200/40 blur-2xl" />
       </header>
 
