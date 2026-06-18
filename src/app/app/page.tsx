@@ -213,50 +213,50 @@ export default async function DashboardPage() {
       {/* ── Stat cards ── */}
       <section className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {/* Streak */}
-        <div className="flex flex-col gap-3 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 p-5 shadow-sm ring-1 ring-orange-100">
+        <div className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5 shadow-sm">
           <div className="flex items-center justify-between">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-orange-400">Streak</p>
-            <Flame className="size-4 text-orange-500" strokeWidth={1.75} />
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">Streak</p>
+            <Flame className="size-4 text-muted-fg" strokeWidth={1.75} />
           </div>
-          <p className="font-mono text-3xl font-bold tracking-tight text-orange-600">
+          <p className="font-mono text-3xl font-bold tracking-tight text-fg">
             {streak > 0 ? String(streak) : "0"}
-            <span className="ml-2 align-baseline text-xs font-medium text-orange-400">Tage</span>
+            <span className="ml-2 align-baseline text-xs font-medium text-muted-fg">Tage</span>
           </p>
         </div>
 
         {/* XP */}
-        <div className="flex flex-col gap-3 rounded-2xl bg-gradient-to-br from-teal-50 to-emerald-50 p-5 shadow-sm ring-1 ring-teal-100">
+        <div className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5 shadow-sm">
           <div className="flex items-center justify-between">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-teal-500">XP diese Woche</p>
-            <Zap className="size-4 text-teal-600" strokeWidth={1.75} />
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">XP diese Woche</p>
+            <Zap className="size-4 text-muted-fg" strokeWidth={1.75} />
           </div>
-          <p className="font-mono text-3xl font-bold tracking-tight text-teal-700">
+          <p className="font-mono text-3xl font-bold tracking-tight text-fg">
             {weeklyXp > 0 ? `+${weeklyXp}` : "0"}
-            <span className="ml-2 align-baseline text-xs font-medium text-teal-400">{currentXp} gesamt</span>
+            <span className="ml-2 align-baseline text-xs font-medium text-muted-fg">{currentXp} gesamt</span>
           </p>
         </div>
 
         {/* KI */}
-        <div className="flex flex-col gap-3 rounded-2xl bg-gradient-to-br from-blue-50 to-sky-50 p-5 shadow-sm ring-1 ring-blue-100">
+        <div className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5 shadow-sm">
           <div className="flex items-center justify-between">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-blue-400">KI-Anfragen</p>
-            <Sparkles className="size-4 text-blue-500" strokeWidth={1.75} />
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">KI-Anfragen</p>
+            <Sparkles className="size-4 text-muted-fg" strokeWidth={1.75} />
           </div>
-          <p className="font-mono text-3xl font-bold tracking-tight text-blue-700">
+          <p className="font-mono text-3xl font-bold tracking-tight text-fg">
             {String(quotaUsed)}
-            <span className="ml-2 align-baseline text-xs font-medium text-blue-400">/ {quotaMax}</span>
+            <span className="ml-2 align-baseline text-xs font-medium text-muted-fg">/ {quotaMax}</span>
           </p>
         </div>
 
         {/* Grade */}
-        <div className="flex flex-col gap-3 rounded-2xl bg-gradient-to-br from-green-50 to-lime-50 p-5 shadow-sm ring-1 ring-green-100">
+        <div className="flex flex-col gap-3 rounded-2xl border border-border bg-surface p-5 shadow-sm">
           <div className="flex items-center justify-between">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-green-500">Ø-Note</p>
-            <Trophy className="size-4 text-green-600" strokeWidth={1.75} />
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">Ø-Note</p>
+            <Trophy className="size-4 text-muted-fg" strokeWidth={1.75} />
           </div>
-          <p className="font-mono text-3xl font-bold tracking-tight text-green-700">
+          <p className="font-mono text-3xl font-bold tracking-tight text-fg">
             {avgGrade ? avgGrade.toFixed(1).replace(".", ",") : "—"}
-            <span className="ml-2 align-baseline text-xs font-medium text-green-400">alle Fächer</span>
+            <span className="ml-2 align-baseline text-xs font-medium text-muted-fg">alle Fächer</span>
           </p>
         </div>
       </section>

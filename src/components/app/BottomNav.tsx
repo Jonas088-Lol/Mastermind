@@ -157,6 +157,12 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
     };
   }, [moreOpen]);
 
+  useEffect(() => {
+    const onScroll = () => setMoreOpen(false);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const displayItems = moreItems ? items.slice(0, 4) : items.slice(0, 5);
 
   return (
