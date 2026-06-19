@@ -16,7 +16,6 @@ export async function GET(
   });
   if (!battle) return NextResponse.json({ error: "Boss not active" }, { status: 404 });
 
-  // Find random MC question for this boss's subject + grade
   const where = {
     type: "mc",
     topic: {
@@ -25,32 +24,38 @@ export async function GET(
     },
   };
 
+  let q;
   const count = await prisma.exerciseQuestion.count({ where });
   if (count === 0) {
-    // Fallback: any MC question
     const fallbackCount = await prisma.exerciseQuestion.count({ where: { type: "mc" } });
     if (fallbackCount === 0) return NextResponse.json({ error: "No questions" }, { status: 404 });
     const skip = Math.floor(Math.random() * fallbackCount);
-    const q = await prisma.exerciseQuestion.findFirst({ where: { type: "mc" }, skip, include: { topic: { select: { subject: true, grade: true } } } });
-    if (!q) return NextResponse.json({ error: "No questions" }, { status: 404 });
-    return NextResponse.json(sanitize(q));
+    q = await prisma.exerciseQuestion.findFirst({
+      where: { type: "mc" },
+      skip,
+      include: { topic: { select: { subject: true, grade: true } } },
+    });
+  } else {
+    const skip = Math.floor(Math.random() * count);
+    q = await prisma.exerciseQuestion.findFirst({
+      where,
+      skip,
+      include: { topic: { select: { subject: true, grade: true } } },
+    });
   }
 
-  const skip = Math.floor(Math.random() * count);
-  const q = await prisma.exerciseQuestion.findFirst({ where, skip, include: { topic: { select: { subject: true, grade: true } } } });
   if (!q) return NextResponse.json({ error: "No questions" }, { status: 404 });
 
-  return NextResponse.json(sanitize(q));
-}
+  // options is a JSON array of plain strings: ["Berlin", "Hamburg", ...]
+  // correct is the index as a string: "0", "1", "2", "3"
+  // We strip `correct` before sending to the client
+  const opts = q.options ? (JSON.parse(q.options) as string[]) : [];
 
-function sanitize(q: { id: string; prompt: string; options: string; topic: { subject: string; grade: number } }) {
-  const opts = JSON.parse(q.options) as Array<{ text: string; correct?: boolean }>;
-  // Strip correct flag before sending to client
-  return {
+  return NextResponse.json({
     id: q.id,
-    prompt: q.prompt,
+    question: q.question,
     subject: q.topic.subject,
     grade: q.topic.grade,
-    options: opts.map((o, i) => ({ id: i, text: o.text })),
-  };
+    options: opts.map((text, i) => ({ id: i, text })),
+  });
 }

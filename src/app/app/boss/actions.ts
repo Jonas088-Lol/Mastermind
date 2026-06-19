@@ -42,8 +42,8 @@ export async function attackBoss(
   if (!battle) return { error: "Boss not active" };
   if (!question) return { error: "Question not found" };
 
-  const opts = JSON.parse(question.options) as Array<{ text: string; correct?: boolean }>;
-  const correct = opts[selectedOptionIndex]?.correct === true;
+  // options is a plain string[] in DB; correct is stored as the string index ("0","1","2","3")
+  const correct = String(selectedOptionIndex) === question.correct;
   const isFirstBlood = battle.firstBloodUserId === null;
 
   if (!correct) {
