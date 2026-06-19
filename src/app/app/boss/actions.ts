@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { pushToUsers } from "@/lib/push";
-import { BOSS_TIERS, type BossTier } from "@/lib/game";
+import { BOSS_TIERS, BOSS_INDEX, type BossTier } from "@/lib/game";
 import { getEventMultiplier } from "@/lib/settings";
 
 export interface AttackResult {
@@ -16,6 +16,14 @@ export interface AttackResult {
   lastHit: boolean;
   coinsEarned: number;
   isMvp?: boolean;
+  killData?: {
+    mvpName: string;
+    mvpAnswers: number;
+    totalParticipants: number;
+    bossTier: string;
+    bossName: string;
+    bossIcon: string;
+  };
 }
 
 export async function attackBoss(
@@ -91,6 +99,7 @@ export async function attackBoss(
       const participants = await tx.bossParticipant.findMany({
         where: { battleId },
         orderBy: { damage: "desc" },
+        include: { user: { select: { name: true } } },
       });
 
       participantIds = participants.map((p) => p.userId);
@@ -133,10 +142,37 @@ export async function attackBoss(
     }
   });
 
-  // Push notification after transaction (non-critical)
+  let killData: AttackResult["killData"] | undefined;
+
+  // Award boss-slayer title to MVP and build kill overlay data (non-critical, after TX)
   if (defeated && participantIds.length > 0) {
     const tier = (battle.tier as BossTier) in BOSS_TIERS ? battle.tier as BossTier : "common";
     const tierData = BOSS_TIERS[tier];
+
+    // Find matching BOSS_INDEX entry by name for title awarding
+    const indexEntry = BOSS_INDEX.find((b) => b.name === battle.name);
+    if (indexEntry && isMvp) {
+      const titleSlug = `boss_mvp_${indexEntry.slug}`;
+      await prisma.userTitle.upsert({
+        where: { userId_titleSlug: { userId: session.userId, titleSlug } },
+        create: { userId: session.userId, titleSlug, unlockedAt: new Date() },
+        update: {},
+      }).catch(() => {});
+    }
+
+    // Fetch MVP name for overlay
+    const mvpUser = await prisma.user.findUnique({ where: { id: participantIds[0] }, select: { name: true } });
+    const mvpParticipant = await prisma.bossParticipant.findFirst({ where: { battleId, isMvp: true }, select: { correctAnswers: true } });
+
+    killData = {
+      mvpName: mvpUser?.name ?? "Unbekannt",
+      mvpAnswers: mvpParticipant?.correctAnswers ?? 0,
+      totalParticipants: participantIds.length,
+      bossTier: battle.tier,
+      bossName: battle.name,
+      bossIcon: battle.icon,
+    };
+
     pushToUsers(participantIds, {
       title: `${battle.icon} Boss besiegt!`,
       body: `Der ${tierData.label}-Boss "${battle.name}" wurde vernichtet! ${isMvp ? "Du bist MVP! 👑" : ""}`,
@@ -155,5 +191,6 @@ export async function attackBoss(
     lastHit: defeated,
     coinsEarned,
     isMvp,
+    killData,
   };
 }

@@ -124,6 +124,7 @@ export default async function AppLayout({
     { href: "/app/quests",         label: "Quests",        icon: "zap"           },
     { href: "/app/duelle",         label: "Duelle",        icon: "swords"        },
     { href: "/app/boss",           label: "Boss-Battle",   icon: "swords"        },
+    { href: "/app/boss/index",     label: "Boss-Index",    icon: "bookOpen"      },
     { href: "/app/boss/bestiary",  label: "Bestiary",      icon: "swords"        },
     { href: "/app/hall-of-fame",   label: "Hall of Fame",  icon: "trophy"        },
     { href: "/app/lucky-wheel",    label: "Glücksrad",     icon: "zap"           },

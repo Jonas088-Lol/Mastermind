@@ -5,6 +5,7 @@ import { Swords, Coins, Zap, CheckCircle2, XCircle, Crown, Droplets, Skull } fro
 import { Button } from "@/components/ui/button";
 import { BOSS_TIERS, type BossTier } from "@/lib/game";
 import { attackBoss, type AttackResult } from "./actions";
+import { BossDefeatedOverlay } from "./BossDefeatedOverlay";
 import { cn } from "@/lib/utils";
 
 interface Question {
@@ -35,6 +36,7 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
   const [result, setResult] = useState<AttackResult | null>(null);
   const [hits, setHits] = useState(myCorrectAnswers);
   const [isPending, startTransition] = useTransition();
+  const [killData, setKillData] = useState<AttackResult["killData"] | null>(null);
 
   const tierData = BOSS_TIERS[(tier as BossTier) in BOSS_TIERS ? tier as BossTier : "common"];
   const hpPct = Math.round((hp / maxHp) * 100);
@@ -65,6 +67,9 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
         setHp(res.newHp);
         setHits((h) => h + 1);
       }
+      if (res.defeated && res.killData) {
+        setKillData(res.killData);
+      }
       setPhase("result");
     });
   }
@@ -81,6 +86,9 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
 
   return (
     <div className="flex flex-col gap-4">
+      {killData && (
+        <BossDefeatedOverlay data={killData} onClose={() => setKillData(null)} />
+      )}
       {/* HP Bar */}
       <div className="space-y-1.5">
         <div className="flex items-center justify-between text-sm">

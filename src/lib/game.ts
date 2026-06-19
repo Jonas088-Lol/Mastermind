@@ -30,25 +30,6 @@ export const BOSS_SUBJECTS = [
 
 export type BossSubject = typeof BOSS_SUBJECTS[number];
 
-export interface BossTemplate {
-  name: string;
-  icon: string;
-  description: string;
-  lore: string;
-  subject: BossSubject;
-}
-
-export const BOSS_TEMPLATES: BossTemplate[] = [
-  { name: "Algebra-Daemon",       icon: "👹", subject: "mathematik", description: "Ein Daemon der Gleichungen und Formeln",        lore: "Er existiert seit der Erfindung negativer Zahlen und haelt die Unbekannten gefangen." },
-  { name: "Grammatik-Gespenst",   icon: "👻", subject: "deutsch",    description: "Ein Gespenst aus falsch gesetzten Kommas",      lore: "Es erscheint immer wenn jemand die Kommaregeln ignoriert." },
-  { name: "Vokabel-Tyrann",       icon: "🐲", subject: "englisch",   description: "Der Herrscher aller verlorenen Vokabeln",       lore: "Er sammelt die Woerter, die du beim Lernen vergessen hast." },
-  { name: "Bio-Bestie",           icon: "🦎", subject: "biologie",   description: "Eine mutierte Kreatur der Zellbiologie",        lore: "Entstanden aus tausend falsch interpretierten DNA-Straengen." },
-  { name: "Physik-Phantom",       icon: "⚡", subject: "physik",     description: "Ein Geist der Naturgesetze",                   lore: "Es erscheint wenn Newton-Gesetze missachtet werden." },
-  { name: "Chemie-Chimaere",      icon: "🧪", subject: "chemie",     description: "Ein chemisches Monster aus falschen Formeln",   lore: "Geboren aus einer falsch aufgestellten Reaktionsgleichung." },
-  { name: "Geschichte-Golem",     icon: "🗿", subject: "geschichte", description: "Waechter der vergessenen Jahreszahlen",         lore: "Er erinnert sich an jedes Datum, das du vergessen hast." },
-  { name: "Code-Krake",           icon: "🐙", subject: "informatik", description: "Ein digitales Ungeheuer aus kaputtem Code",     lore: "Entstanden aus Millionen Zeilen fehlerhafter Programme." },
-];
-
 export const BOSS_GRADES = [5, 6, 7, 8, 9, 10, 11, 12] as const;
 
 // ── XP Curve ─────────────────────────────────────────────
@@ -355,30 +336,128 @@ export const LOGIN_REWARD_SCHEDULE: { day: number; xp: number; bonus: string; ic
   { day: 7, xp: 150, bonus: "Wochenbonus! ×2 XP",  icon: "🏆" },
 ];
 
-// ── Boss Battles ──────────────────────────────────────────
+// ── Boss Index (75 Bosse mit fixen Tiers) ─────────────────
 
-export interface BossTemplate {
+export interface BossIndexEntry {
+  slug: string;
   name: string;
+  icon: string;
+  tier: BossTier;
+  subject: string;
   description: string;
   lore: string;
-  subject: string;
-  gradeLevel: number;
-  maxHp: number;
-  difficulty: string;
-  xpReward: number;
-  icon: string;
 }
 
-export const BOSS_TEMPLATES: BossTemplate[] = [
-  { name: "Der Algebra-Dämon",       description: "Meister der Gleichungen",          lore: "Seit Jahrhunderten quält er Schüler mit unlösbaren Gleichungen.", subject: "Mathematik", gradeLevel: 8,  maxHp: 10000, difficulty: "hard",      xpReward: 1000, icon: "👹" },
-  { name: "Das Grammatik-Gespenst",  description: "Terrorisiert Aufsätze",            lore: "Kommas, Doppelpunkte, Gedankenstriche — sein Reich.",            subject: "Deutsch",    gradeLevel: 6,  maxHp: 8000,  difficulty: "normal",    xpReward: 750,  icon: "👻" },
-  { name: "Der Vokabel-Tyrann",      description: "König der englischen Sprache",     lore: "10.000 Vokabeln — und er kennt sie alle.",                       subject: "Englisch",   gradeLevel: 7,  maxHp: 9000,  difficulty: "hard",      xpReward: 900,  icon: "🦁" },
-  { name: "Herr der Formeln",        description: "Physikalisches Chaos",             lore: "v=s/t war erst der Anfang seiner Qualen.",                       subject: "Physik",     gradeLevel: 9,  maxHp: 12000, difficulty: "epic",      xpReward: 1500, icon: "⚡" },
-  { name: "Das Geschichts-Monster",  description: "Hüter aller Daten und Fakten",    lore: "Er hat alles erlebt. Und vergessen kommt er nicht.",             subject: "Geschichte", gradeLevel: 8,  maxHp: 8500,  difficulty: "hard",      xpReward: 850,  icon: "🐉" },
-  { name: "Der Binär-Golem",         description: "Wächter des digitalen Reichs",    lore: "01001000 01101001 — kannst du ihn entschlüsseln?",               subject: "Informatik", gradeLevel: 10, maxHp: 15000, difficulty: "legendary", xpReward: 2000, icon: "🤖" },
-  { name: "Chemie-Hydra",            description: "Meister der Elemente",             lore: "Jedes Element ist eine ihrer sieben Köpfe.",                     subject: "Chemie",     gradeLevel: 9,  maxHp: 11000, difficulty: "epic",      xpReward: 1200, icon: "🧪" },
-  { name: "Das Integral-Ungeheuer",  description: "Endboss der Analysis",             lore: "Er lebt zwischen den Grenzen von 0 und unendlich.",              subject: "Mathematik", gradeLevel: 12, maxHp: 20000, difficulty: "legendary", xpReward: 3000, icon: "∞"  },
+export const BOSS_INDEX: BossIndexEntry[] = [
+  // ─ Common (20) ─────────────────────────────────────────
+  { slug: "rechenfehler_kobold",    tier: "common",    icon: "👺", name: "Rechenfehler-Kobold",      subject: "Mathematik",  description: "Kleiner Kobold der Rechenfehler einbaut",              lore: "Er schleicht sich in Lösungsblätter und dreht Zahlen um."                           },
+  { slug: "tippfehler_geist",       tier: "common",    icon: "👻", name: "Tipp-Fehler-Geist",        subject: "Deutsch",     description: "Geist der Tippfehler in Texte zaubert",                lore: "Er erscheint in jedem Diktat und macht aus 'Strasse' 'Strase'."                     },
+  { slug: "vokabel_wicht",          tier: "common",    icon: "🤧", name: "Vokabel-Wicht",            subject: "Englisch",    description: "Kleines Wesen das Vokabeln klaut",                      lore: "Er versteckt die Wörter die du lernen solltest."                                    },
+  { slug: "komma_kobold",           tier: "common",    icon: "🍄", name: "Komma-Kobold",             subject: "Deutsch",     description: "Setzt Kommas an die falsche Stelle",                    lore: "Kein Komma ist vor ihm sicher — er liebt das Chaos."                                },
+  { slug: "additions_geist",        tier: "common",    icon: "➕", name: "Additions-Geist",          subject: "Mathematik",  description: "Addiert Zahlen falsch",                                 lore: "Er liebt es wenn Schüler im Kopf rechnen müssen."                                   },
+  { slug: "diktat_unhold",          tier: "common",    icon: "📝", name: "Diktat-Unhold",            subject: "Deutsch",     description: "Meister aller Diktatfehler",                            lore: "Jedes Diktat ist sein Werk."                                                        },
+  { slug: "bruch_popanz",           tier: "common",    icon: "🐸", name: "Bruch-Popanz",             subject: "Mathematik",  description: "Verwirrt bei Bruchrechnungen",                          lore: "Zähler und Nenner wechselt er nach Belieben."                                       },
+  { slug: "winkel_grummel",         tier: "common",    icon: "📐", name: "Winkel-Grummel",           subject: "Mathematik",  description: "Todesfeind aller Winkelberechnungen",                   lore: "90 Grad? 180 Grad? Er kümmert das nicht."                                           },
+  { slug: "einmaleins_riese",       tier: "common",    icon: "🔢", name: "Einmaleins-Riese",         subject: "Mathematik",  description: "Riesiger Durcheinander-Bringer des 1×1",                lore: "7×8=56? Nicht wenn er in der Nähe ist."                                             },
+  { slug: "aufsatz_affe",           tier: "common",    icon: "🐒", name: "Aufsatz-Affe",             subject: "Deutsch",     description: "Saboteur aller Schulaufsätze",                          lore: "Er schreibt die Einleitung um wenn du nicht hinschaust."                             },
+  { slug: "silben_schlange",        tier: "common",    icon: "🐍", name: "Silben-Schlange",          subject: "Deutsch",     description: "Zertrennt Silben an falschen Stellen",                  lore: "Sie schlängelt sich durch jeden Text und hinterlässt Chaos."                        },
+  { slug: "woerter_wirbelwind",     tier: "common",    icon: "🌪️", name: "Wörter-Wirbelwind",        subject: "Englisch",    description: "Verwirrt englische Vokabeln",                           lore: "to/two/too — alles das gleiche für ihn."                                            },
+  { slug: "natur_kobold",           tier: "common",    icon: "🌿", name: "Natur-Kobold",             subject: "Biologie",    description: "Kleiner Störer im Biologieunterricht",                  lore: "Er tauscht Pflanzenbezeichnungen aus wenn niemand hinschaut."                        },
+  { slug: "tier_troll",             tier: "common",    icon: "🐊", name: "Tier-Troll",               subject: "Biologie",    description: "Troll der Tierklassen durcheinander bringt",            lore: "Säugetier oder Reptil? Er weiß es auch nicht genau."                                },
+  { slug: "formel_faulpelz",        tier: "common",    icon: "💤", name: "Formel-Faulpelz",          subject: "Chemie",      description: "Faulpelz der chemische Formeln vergisst",               lore: "H₂O? H₃O? Wer weiß das schon — er jedenfalls nicht."                               },
+  { slug: "histoerchen_heinz",      tier: "common",    icon: "📜", name: "Histörchen-Heinz",         subject: "Geschichte",  description: "Verwechselt wichtige Jahreszahlen",                     lore: "1492 oder 1942? Egal, sagt er."                                                     },
+  { slug: "code_kueken",            tier: "common",    icon: "🐣", name: "Code-Küken",               subject: "Informatik",  description: "Anfänger-Fehlermacher im Code",                         lore: "Syntaxfehler in Zeile 1 — immer."                                                   },
+  { slug: "lese_lulatsch",          tier: "common",    icon: "📖", name: "Lese-Lulatsch",            subject: "Deutsch",     description: "Macht Textverständnis schwer",                          lore: "Er verrutscht die Sätze wenn du sie liest."                                         },
+  { slug: "zeiger_zwerg",           tier: "common",    icon: "🕐", name: "Zeiger-Zwerg",             subject: "Mathematik",  description: "Durcheinander-Bringer der Uhrzeiten",                   lore: "Viertel nach oder viertel vor? Alles das Selbe für ihn."                            },
+  { slug: "daten_wicht",            tier: "common",    icon: "💾", name: "Daten-Wicht",              subject: "Informatik",  description: "Klaut gespeicherte Daten",                              lore: "Ctrl+S hilft nicht gegen ihn."                                                      },
+  // ─ Uncommon (15) ───────────────────────────────────────
+  { slug: "algebra_kobold",         tier: "uncommon",  icon: "🧮", name: "Algebra-Kobold",           subject: "Mathematik",  description: "Verstrickt Schüler in Gleichungen",                     lore: "x=? Er weiß es, sagt es aber nie."                                                  },
+  { slug: "grammatik_gespenst",     tier: "uncommon",  icon: "👻", name: "Grammatik-Gespenst",       subject: "Deutsch",     description: "Geist der Grammatikfehler",                             lore: "Nominativ, Akkusativ — er verwechselt alles."                                       },
+  { slug: "vokabel_verdreher",      tier: "uncommon",  icon: "🌀", name: "Vokabel-Verdreher",        subject: "Englisch",    description: "Dreht englische Wortbedeutungen um",                    lore: "False friends sind sein Lieblingswerk."                                             },
+  { slug: "redewendungs_raeuber",   tier: "uncommon",  icon: "🦅", name: "Redewendungs-Räuber",      subject: "Deutsch",     description: "Klaut den Sinn von Redewendungen",                      lore: "Den Nagel auf den Kopf? Er trifft ihn nie."                                         },
+  { slug: "gleichungs_geist",       tier: "uncommon",  icon: "📊", name: "Gleichungs-Geist",         subject: "Mathematik",  description: "Geist der linearen Gleichungen",                        lore: "y=mx+b wird in seiner Nähe zu y=mx-b."                                              },
+  { slug: "bio_blender",            tier: "uncommon",  icon: "🧬", name: "Bio-Blender",              subject: "Biologie",    description: "Mischt Biologiekonzepte durcheinander",                 lore: "Mendels Erbsenversuche hat er komplett durcheinandergebracht."                      },
+  { slug: "physik_poltergeist",     tier: "uncommon",  icon: "💨", name: "Physik-Poltergeist",       subject: "Physik",      description: "Tobt in Physikstunden",                                 lore: "Kräfte, Beschleunigung — er stört alle Berechnungen."                               },
+  { slug: "element_elf",            tier: "uncommon",  icon: "🧪", name: "Element-Elf",              subject: "Chemie",      description: "Verwirrt beim Periodensystem",                          lore: "Na = Natrium? Für ihn ist das Unsinn."                                              },
+  { slug: "jahres_geist",           tier: "uncommon",  icon: "📅", name: "Jahres-Geist",             subject: "Geschichte",  description: "Verschiebt wichtige Jahreszahlen",                      lore: "1914 oder 1918? Beides falsch, laut ihm."                                           },
+  { slug: "stochastik_schreck",     tier: "uncommon",  icon: "🎲", name: "Stochastik-Schreck",       subject: "Mathematik",  description: "Macht Wahrscheinlichkeiten unmöglich",                  lore: "50%? Nein, er besteht auf 49,7%."                                                   },
+  { slug: "funktions_fresser",      tier: "uncommon",  icon: "📈", name: "Funktions-Fresser",        subject: "Mathematik",  description: "Frisst Graphen und Nullstellen auf",                    lore: "Kein Schnittpunkt ist vor ihm sicher."                                              },
+  { slug: "poesie_phantom",         tier: "uncommon",  icon: "🎭", name: "Poesie-Phantom",           subject: "Deutsch",     description: "Stört beim Analysieren von Gedichten",                  lore: "Metapher oder Metonymie? Er wechselt sie täglich."                                  },
+  { slug: "kurven_kobold",          tier: "uncommon",  icon: "📉", name: "Kurven-Kobold",            subject: "Mathematik",  description: "Verbiegt geometrische Figuren",                         lore: "Ein Kreis? Hat er zu einem Oval gemacht."                                           },
+  { slug: "algorithmen_geist",      tier: "uncommon",  icon: "🔮", name: "Algorithmen-Geist",        subject: "Informatik",  description: "Verwirrt einfache Algorithmen",                         lore: "Sortieren? Nicht in seiner Nähe."                                                   },
+  { slug: "ausdruck_ausrufer",      tier: "uncommon",  icon: "📢", name: "Ausdruck-Ausrufer",        subject: "Deutsch",     description: "Brüllt falsche Stilmittel heraus",                      lore: "Metapher! Nein — Personifikation! Er entscheidet sich nie."                         },
+  // ─ Rare (12) ───────────────────────────────────────────
+  { slug: "gleichungs_ghul",        tier: "rare",      icon: "🧟", name: "Gleichungs-Ghul",          subject: "Mathematik",  description: "Ghul der quadratischen Gleichungen",                    lore: "Er frisst Diskriminanten zum Frühstück."                                            },
+  { slug: "syntax_specter",         tier: "rare",      icon: "👁️", name: "Syntax-Specter",           subject: "Deutsch",     description: "Geisterhafter Feind aller Satzkonstruktionen",          lore: "Nebensätze sind sein Spezialgebiet."                                                },
+  { slug: "grammar_goblin",         tier: "rare",      icon: "🧌", name: "Grammar-Goblin",           subject: "Englisch",    description: "Goblin der englischen Grammatik",                       lore: "Present Perfect und Simple Past — er vertauscht sie ständig."                      },
+  { slug: "zellteilung_zombie",     tier: "rare",      icon: "🧫", name: "Zellteilung-Zombie",       subject: "Biologie",    description: "Zombie der Mitose und Meiose",                          lore: "Interphase, Prophase — er lässt sie alle vermischen."                               },
+  { slug: "wellen_wraith",          tier: "rare",      icon: "🌊", name: "Wellen-Wraith",            subject: "Physik",      description: "Geist der Wellenlehre",                                 lore: "Frequenz, Amplitude — alles gleich für ihn."                                        },
+  { slug: "reaktions_raecher",      tier: "rare",      icon: "⚗️", name: "Reaktions-Rächer",         subject: "Chemie",      description: "Rächer der unausgeglichenen Reaktionen",                lore: "Er lässt keine Reaktionsgleichung ausgeglichen."                                    },
+  { slug: "historien_horror",       tier: "rare",      icon: "🏛️", name: "Historien-Horror",         subject: "Geschichte",  description: "Horror der Geschichtsanalyse",                          lore: "Ursache und Wirkung — er dreht sie permanent um."                                   },
+  { slug: "logarithmen_lich",       tier: "rare",      icon: "💀", name: "Logarithmen-Lich",         subject: "Mathematik",  description: "Unsterblicher Feind des Logarithmus",                   lore: "log₂(8) = 3? Er besteht auf 4."                                                    },
+  { slug: "photosyn_phaenomen",     tier: "rare",      icon: "🌱", name: "Photosynthese-Phänomen",   subject: "Biologie",    description: "Phänomenales Hindernis der Biologie",                   lore: "CO₂ + H₂O + Licht → ??? Er weiß es nicht."                                         },
+  { slug: "binaer_bestie",          tier: "rare",      icon: "💻", name: "Binär-Bestie",             subject: "Informatik",  description: "Bestie des Binärsystems",                               lore: "0 und 1 — er macht daraus manchmal 2."                                              },
+  { slug: "optik_oger",             tier: "rare",      icon: "🔭", name: "Optik-Oger",               subject: "Physik",      description: "Oger der Lichtbrechung",                                lore: "Reflexion? Refraktion? Er mag beides nicht."                                        },
+  { slug: "analyse_ungeheuer",      tier: "rare",      icon: "🔬", name: "Analyse-Ungeheuer",        subject: "Deutsch",     description: "Ungeheuer das Textanalysen sabotiert",                  lore: "Struktur, Inhalt, Sprache — er bringt alles durcheinander."                         },
+  // ─ Epic (10) ───────────────────────────────────────────
+  { slug: "algebra_daemon",         tier: "epic",      icon: "👹", name: "Algebra-Daemon",           subject: "Mathematik",  description: "Mächtiger Daemon der Gleichungen und Formeln",          lore: "Er existiert seit der Erfindung negativer Zahlen und hält die Unbekannten gefangen." },
+  { slug: "grammatik_gorgon",       tier: "epic",      icon: "🐲", name: "Grammatik-Gorgon",         subject: "Deutsch",     description: "Gorgon der deutschen Grammatik",                        lore: "Ihr Blick lässt Relativsätze zu Stein werden."                                      },
+  { slug: "vokabel_vampir",         tier: "epic",      icon: "🧛", name: "Vokabel-Vampir",           subject: "Englisch",    description: "Vampir der englischen Sprache",                         lore: "Er saugt dir die Vokabeln aus dem Gedächtnis."                                      },
+  { slug: "dna_drache",             tier: "epic",      icon: "🧬", name: "DNA-Drache",               subject: "Biologie",    description: "Mächtiger Drache der Genetik",                          lore: "Seine Schuppen sind aus doppelter Helix geformt."                                   },
+  { slug: "physik_phantasm",        tier: "epic",      icon: "⚡", name: "Physik-Phantasm",          subject: "Physik",      description: "Phantastisches Wesen der Quantenphysik",                lore: "Er existiert und nicht-existiert gleichzeitig — Schrödingers Alptraum."             },
+  { slug: "chemie_chimaere",        tier: "epic",      icon: "🧪", name: "Chemie-Chimäre",           subject: "Chemie",      description: "Ein chemisches Monster aus falschen Formeln",            lore: "Entstanden aus einer falsch aufgestellten Reaktionsgleichung."                      },
+  { slug: "geschichte_golem",       tier: "epic",      icon: "🗿", name: "Geschichte-Golem",         subject: "Geschichte",  description: "Wächter der vergessenen Jahreszahlen",                  lore: "Er erinnert sich an jedes Datum, das du vergessen hast."                            },
+  { slug: "code_krake",             tier: "epic",      icon: "🐙", name: "Code-Krake",               subject: "Informatik",  description: "Ein digitales Ungeheuer aus kaputtem Code",             lore: "Entstanden aus Millionen Zeilen fehlerhafter Programme."                            },
+  { slug: "analysis_azmodan",       tier: "epic",      icon: "🌌", name: "Analysis-Azmodan",         subject: "Mathematik",  description: "Dämonenfürst der Analysis",                              lore: "Grenzwerte — er hat sie alle gesprengt."                                            },
+  { slug: "wortschatz_wyvern",      tier: "epic",      icon: "🐉", name: "Wortschatz-Wyvern",        subject: "Deutsch",     description: "Wyvern die Wortschätze frisst",                         lore: "Ihr Feueratem verbrennt Synonyme und Antonyme."                                     },
+  // ─ Legendary (7) ───────────────────────────────────────
+  { slug: "mathe_monarch",          tier: "legendary", icon: "👑", name: "Mathe-Monarch",            subject: "Mathematik",  description: "Monarch aller Mathematik-Disziplinen",                  lore: "Er regiert über alle Zahlen seit der Antike."                                       },
+  { slug: "deutsch_daemon",         tier: "legendary", icon: "📜", name: "Deutsch-Dämon",            subject: "Deutsch",     description: "Uralter Dämon der deutschen Sprache",                   lore: "Kein Aufsatz überlebt seinen Blick unbeschadet."                                    },
+  { slug: "englisch_emperor",       tier: "legendary", icon: "🦁", name: "Englisch-Emperor",         subject: "Englisch",    description: "Kaiser der englischen Sprache",                         lore: "Er hat Shakespeare erschaffen — und zerstört."                                      },
+  { slug: "bio_behemoth",           tier: "legendary", icon: "🦕", name: "Bio-Behemoth",             subject: "Biologie",    description: "Riesiges biologisches Urwesen",                         lore: "Größer als ein Dinosaurier, gefährlicher als ein Virus."                            },
+  { slug: "physik_phoenix",         tier: "legendary", icon: "🔥", name: "Physik-Phönix",            subject: "Physik",      description: "Unsterblicher Vogel der Physik",                        lore: "Er verbrennt und entsteht aus den Gleichungen immer wieder neu."                    },
+  { slug: "chemie_cerberus",        tier: "legendary", icon: "🐕", name: "Chemie-Cerberus",          subject: "Chemie",      description: "Dreiköpfiger Wächter der Chemie",                       lore: "Drei Köpfe: Anorganik, Organik, Biochemie."                                         },
+  { slug: "informatik_imperator",   tier: "legendary", icon: "🤖", name: "Informatik-Imperator",     subject: "Informatik",  description: "Kaiser des digitalen Zeitalters",                       lore: "Er hat das erste Computerprogramm korrumpiert."                                     },
+  // ─ Mythic (6) ──────────────────────────────────────────
+  { slug: "der_grosse_rechner",     tier: "mythic",    icon: "🌠", name: "Der Große Rechner",        subject: "Mathematik",  description: "Mythisches Rechenwesen aus uralter Zeit",               lore: "Er hat Pi erfunden — und macht es nun irrational für immer."                        },
+  { slug: "der_schwarze_dichter",   tier: "mythic",    icon: "🖤", name: "Der Schwarze Dichter",     subject: "Deutsch",     description: "Mythischer Dichter der Finsternis",                     lore: "Seine Verse löschen Erinnerungen aus."                                              },
+  { slug: "the_last_linguist",      tier: "mythic",    icon: "🌐", name: "The Last Linguist",        subject: "Englisch",    description: "The final guardian of language",                        lore: "He has spoken every tongue — and forgotten them all."                               },
+  { slug: "die_zellenmutter",       tier: "mythic",    icon: "🦠", name: "Die Zellenmutter",         subject: "Biologie",    description: "Urmutter aller Zellen",                                 lore: "Sie hat das erste Leben erschaffen — und kann es auslöschen."                       },
+  { slug: "der_quantenriese",       tier: "mythic",    icon: "⚛️", name: "Der Quantenriese",         subject: "Physik",      description: "Gigant der Quantenphysik",                              lore: "Er existiert in allen Zuständen gleichzeitig."                                      },
+  { slug: "das_perioden_phantom",   tier: "mythic",    icon: "🔮", name: "Das Perioden-Phantom",     subject: "Chemie",      description: "Geisterhafter Hüter des Periodensystems",               lore: "Er wohnt zwischen den Elementen — unsichtbar aber allgegenwärtig."                  },
+  // ─ Secret (5) ──────────────────────────────────────────
+  { slug: "omega_prime",            tier: "secret",    icon: "🌟", name: "OMEGA-PRIME",              subject: "Alle Fächer", description: "Der ultimative Endgegner aller Schüler",                lore: "Er wurde aus dem Scheitern jedes Schülers aller Zeiten geboren."                    },
+  { slug: "der_dunkle_lehrer",      tier: "secret",    icon: "👨‍🏫", name: "Der Dunkle Lehrer",        subject: "Alle Fächer", description: "Ein Lehrer der das Böse verkörpert",                    lore: "Er gibt immer eine 6 — egal wie gut du bist."                                       },
+  { slug: "erzfeind_des_wissens",   tier: "secret",    icon: "📚", name: "Erzfeind des Wissens",     subject: "Alle Fächer", description: "Urzeitlicher Feind allen Lernens",                      lore: "Er war schon vor dem ersten Buch da."                                               },
+  { slug: "die_pruefungs_gottheit", tier: "secret",    icon: "📋", name: "Die Prüfungs-Gottheit",    subject: "Alle Fächer", description: "Gottheit aller Prüfungsangst",                          lore: "Sie erschafft Prüfungen die niemand bestehen kann."                                 },
+  { slug: "mastermind_boss",        tier: "secret",    icon: "🧠", name: "MASTERMIND",               subject: "Alle Fächer", description: "Der Boss hinter allen Bossen",                          lore: "Das System selbst ist der wahre Endgegner."                                         },
 ];
+
+const TIER_TO_TITLE_RARITY: Record<BossTier, Title["rarity"]> = {
+  common:    "common",
+  uncommon:  "uncommon",
+  rare:      "rare",
+  epic:      "epic",
+  legendary: "legendary",
+  mythic:    "mythic",
+  secret:    "mythic",
+};
+
+export function getBossSlayerTitles(): Title[] {
+  return BOSS_INDEX.map((boss) => ({
+    slug:        `boss_mvp_${boss.slug}`,
+    name:        `${boss.name}-Bezwinger`,
+    description: `${boss.name} als MVP-Kill besiegt`,
+    color:       BOSS_TIERS[boss.tier].color,
+    rarity:      TIER_TO_TITLE_RARITY[boss.tier],
+    unlockHint:  `${boss.name} besiegen und MVP sein`,
+    icon:        boss.icon,
+  }));
+}
+
+export function getAllTitles(): Title[] {
+  return [...ALL_TITLES, ...getBossSlayerTitles()];
+}
 
 // ── Skill Trees ───────────────────────────────────────────
 
@@ -435,5 +514,5 @@ export function formatXp(xp: number): string {
 }
 
 export function getTitleBySlug(slug: string): Title | undefined {
-  return ALL_TITLES.find((t) => t.slug === slug);
+  return getAllTitles().find((t) => t.slug === slug);
 }

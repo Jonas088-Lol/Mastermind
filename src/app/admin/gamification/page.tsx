@@ -7,7 +7,7 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
-import { BOSS_TEMPLATES, BOSS_TIERS, BOSS_GRADES, type BossTier } from "@/lib/game";
+import { BOSS_INDEX, BOSS_TIERS, BOSS_GRADES, type BossTier } from "@/lib/game";
 import { spawnBossBattle, createSeason, endBossBattle, awardWeeklyClassRankings } from "./actions";
 import { CommandField } from "./CommandField";
 
@@ -120,24 +120,17 @@ export default async function AdminGamificationPage() {
         <CardBody>
           <form action={spawnBossBattle} className="space-y-4">
             <div className="grid gap-3 sm:grid-cols-2">
-              <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">Boss-Vorlage</label>
-                <select name="template" className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm" required>
-                  {BOSS_TEMPLATES.map((t) => (
-                    <option key={t.name} value={t.name}>
-                      {t.icon} {t.name} ({t.subject})
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">Tier (Schwierigkeit)</label>
-                <select name="tier" className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm">
-                  {(Object.entries(BOSS_TIERS) as [BossTier, typeof BOSS_TIERS[BossTier]][]).map(([key, t]) => (
-                    <option key={key} value={key}>
-                      {t.label} — {t.hp} HP · {t.coinReward} Münzen · {t.xpReward} XP
-                    </option>
+              <div className="sm:col-span-2">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">Boss aus Index wählen</label>
+                <select name="bossSlug" className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm" required>
+                  {(["common","uncommon","rare","epic","legendary","mythic","secret"] as BossTier[]).map((tier) => (
+                    <optgroup key={tier} label={`── ${BOSS_TIERS[tier].label} ──`}>
+                      {BOSS_INDEX.filter((b) => b.tier === tier).map((b) => (
+                        <option key={b.slug} value={b.slug}>
+                          {b.icon} {b.name} ({b.subject})
+                        </option>
+                      ))}
+                    </optgroup>
                   ))}
                 </select>
               </div>
@@ -223,7 +216,7 @@ export default async function AdminGamificationPage() {
               </div>
               <div>
                 <label className="mb-1.5 block text-xs font-semibold text-muted-fg">Dauer (Tage)</label>
-                <input type="number" name="durationDays" min="7" max="365" defaultValue="30"
+                <input type="number" name="durationDays" min="7" max="365" defaultValue="90"
                   className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm" />
               </div>
             </div>

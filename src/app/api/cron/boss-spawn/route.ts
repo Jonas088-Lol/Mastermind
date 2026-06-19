@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { pushToUsers } from "@/lib/push";
 import { logger } from "@/lib/logger";
-import { randomBossTier, BOSS_TIERS, BOSS_TEMPLATES, BOSS_GRADES } from "@/lib/game";
+import { randomBossTier, BOSS_TIERS, BOSS_INDEX, BOSS_GRADES } from "@/lib/game";
 
 export async function GET(req: NextRequest) {
   const secret = req.headers.get("x-cron-secret");
@@ -23,8 +23,9 @@ export async function GET(req: NextRequest) {
   const tier = randomBossTier();
   const tierData = BOSS_TIERS[tier];
 
-  // Pick random template
-  const template = BOSS_TEMPLATES[Math.floor(Math.random() * BOSS_TEMPLATES.length)];
+  // Pick random template matching the rolled tier
+  const pool = BOSS_INDEX.filter((b) => b.tier === tier);
+  const template = pool[Math.floor(Math.random() * pool.length)] ?? BOSS_INDEX[0];
   // Pick random grade
   const gradeLevel = BOSS_GRADES[Math.floor(Math.random() * BOSS_GRADES.length)];
 

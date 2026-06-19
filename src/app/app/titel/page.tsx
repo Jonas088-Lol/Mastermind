@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardBody } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
-import { ALL_TITLES, RARITY_COLORS, RARITY_LABELS } from "@/lib/game";
+import { getAllTitles, RARITY_COLORS, RARITY_LABELS } from "@/lib/game";
 import { cn } from "@/lib/utils";
 import { equipTitle, unequipTitle } from "./actions";
 
@@ -42,7 +42,7 @@ export default async function TitelPage() {
   const equippedSlug = user?.equippedTitle;
   const equippedTitle = ALL_TITLES.find((t) => t.slug === equippedSlug);
 
-  const sortedTitles = [...ALL_TITLES].sort((a, b) => {
+  const sortedTitles = [...getAllTitles()].sort((a, b) => {
     const ownedA = ownedSlugs.has(a.slug) ? 0 : 1;
     const ownedB = ownedSlugs.has(b.slug) ? 0 : 1;
     if (ownedA !== ownedB) return ownedA - ownedB;
@@ -56,7 +56,7 @@ export default async function TitelPage() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Gamification</p>
           <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Titel</h1>
           <p className="mt-1 text-sm text-muted-fg">
-            {ownedSlugs.size} von {ALL_TITLES.length} freigeschaltet
+            {ownedSlugs.size} von {getAllTitles().length} freigeschaltet
           </p>
         </div>
         <Tag className="size-10 text-muted-fg opacity-20" strokeWidth={1} />

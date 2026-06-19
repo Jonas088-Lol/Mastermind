@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { BOSS_TEMPLATES, BOSS_TIERS, BOSS_GRADES, randomBossTier, type BossTier } from "@/lib/game";
+import { BOSS_INDEX, BOSS_TIERS, BOSS_GRADES, randomBossTier, type BossTier } from "@/lib/game";
 import { awardCoins } from "@/lib/coins";
 import { pushToUsers } from "@/lib/push";
 import { logger } from "@/lib/logger";
@@ -51,7 +51,8 @@ export async function runAdminCommand(raw: string): Promise<{ ok: boolean; messa
     if (cmd === "/bossrush") {
       const tier     = randomBossTier();
       const tierData = BOSS_TIERS[tier];
-      const template = BOSS_TEMPLATES[Math.floor(Math.random() * BOSS_TEMPLATES.length)];
+      const pool     = BOSS_INDEX.filter((b) => b.tier === tier);
+      const template = pool[Math.floor(Math.random() * pool.length)] ?? BOSS_INDEX[0];
       const grade    = BOSS_GRADES[Math.floor(Math.random() * BOSS_GRADES.length)];
       const now      = new Date();
       const battle = await prisma.bossBattle.create({
@@ -162,15 +163,14 @@ export async function spawnBossBattle(formData: FormData): Promise<void> {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "admin") return;
 
-  const templateName  = String(formData.get("template") ?? "");
-  const tier          = String(formData.get("tier") ?? "common") as BossTier;
-  const gradeLevel    = Number(formData.get("gradeLevel") ?? 10);
+  const bossSlug    = String(formData.get("bossSlug") ?? "");
+  const gradeLevel  = Number(formData.get("gradeLevel") ?? 10);
   const durationHours = Number(formData.get("durationHours") ?? 24);
 
-  const template = BOSS_TEMPLATES.find((t) => t.name === templateName);
+  const template = BOSS_INDEX.find((b) => b.slug === bossSlug);
   if (!template) return;
 
-  const safeTier = tier in BOSS_TIERS ? tier : "common";
+  const safeTier = template.tier in BOSS_TIERS ? template.tier : "common";
   const tierData = BOSS_TIERS[safeTier];
 
   const startAt = new Date();
