@@ -359,6 +359,34 @@ export default async function EinstellungenPage() {
             </Card>
           </section>
 
+          {/* ── App herunterladen ───────────────────────── */}
+          <section>
+            <Card>
+              <CardBody>
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-brand/15 text-2xl">
+                      🎓
+                    </div>
+                    <div>
+                      <p className="font-semibold">MasterMind App</p>
+                      <p className="mt-0.5 text-sm text-muted-fg">
+                        Als native App auf Android installieren
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href="/download"
+                    className="flex items-center gap-2 rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90 transition-colors sm:shrink-0"
+                  >
+                    <Smartphone className="size-4" />
+                    App herunterladen
+                  </a>
+                </div>
+              </CardBody>
+            </Card>
+          </section>
+
           {/* ── Geräte & Sessions ───────────────────────── */}
           <section id="geraete">
             <Card>
