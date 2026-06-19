@@ -150,11 +150,12 @@ export default async function AppLayout({
   const schoolDisplayName = branding?.brandName ?? branding?.name;
 
   return (
-    <div className="flex min-h-screen bg-surface">
+    <div className="flex h-screen overflow-hidden bg-surface">
       <SchoolBrandingInjector branding={branding} />
       <Sidebar items={navItems} bottomItems={bottomItems} rootHref="/app" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
-      <div className="flex min-w-0 flex-1 flex-col overflow-x-hidden">
-        <div className="sticky top-0 z-30">
+      <div className="flex min-w-0 flex-1 flex-col">
+        {/* Header — always visible, never scrolls away */}
+        <div className="shrink-0 z-30">
           {isSuper(session) && (
             <ImpersonationBar
               effective={effective}
@@ -163,9 +164,11 @@ export default async function AppLayout({
           )}
           <AppHeader user={displayUser(session)} unreadCount={unreadCount} notifications={notifications} coinBalance={userData?.coins ?? 0} appName={appName} />
         </div>
-        <main className="flex-1 min-w-0 px-4 py-6 pb-32 lg:px-10 lg:py-10 lg:pb-10">
+        {/* Only this area scrolls */}
+        <main className="flex-1 overflow-y-auto overflow-x-hidden min-w-0 px-4 py-6 lg:px-10 lg:py-10">
           {children}
         </main>
+        {/* BottomNav — always visible, never scrolls away */}
         <BottomNav items={mobileNavItems} moreItems={[...navItems, ...bottomItems]} />
         <InstallPrompt />
         <AppShell />
