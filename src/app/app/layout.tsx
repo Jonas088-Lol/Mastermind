@@ -153,7 +153,7 @@ export default async function AppLayout({
     <div className="flex min-h-screen bg-surface">
       <SchoolBrandingInjector branding={branding} />
       <Sidebar items={navItems} bottomItems={bottomItems} rootHref="/app" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
-      <div className="flex min-w-0 flex-1 flex-col">
+      <div className="flex min-w-0 flex-1 flex-col overflow-x-hidden">
         <div className="sticky top-0 z-30">
           {isSuper(session) && (
             <ImpersonationBar
@@ -163,7 +163,7 @@ export default async function AppLayout({
           )}
           <AppHeader user={displayUser(session)} unreadCount={unreadCount} notifications={notifications} coinBalance={userData?.coins ?? 0} appName={appName} />
         </div>
-        <main className="flex-1 px-4 py-6 pb-24 lg:px-10 lg:py-10 lg:pb-10">
+        <main className="flex-1 min-w-0 px-4 py-6 pb-24 lg:px-10 lg:py-10 lg:pb-10">
           {children}
         </main>
         <BottomNav items={mobileNavItems} moreItems={[...navItems, ...bottomItems]} />
