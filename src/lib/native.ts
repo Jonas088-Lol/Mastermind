@@ -147,34 +147,11 @@ async function pickFromGallery(): Promise<string | null> {
   }
 }
 
-// Register push notification listener (call once on app start)
+// Push notifications disabled (Firebase not configured)
 async function registerPushNotifications(
-  onNotification: (data: Record<string, unknown>) => void
+  _onNotification: (data: Record<string, unknown>) => void
 ): Promise<string | null> {
-  if (!isNative()) return null;
-  const { PushNotifications } = await import("@capacitor/push-notifications");
-
-  await PushNotifications.requestPermissions();
-  await PushNotifications.register();
-
-  const listener = await PushNotifications.addListener("registration", (token) => {
-    return token.value;
-  });
-
-  await PushNotifications.addListener("pushNotificationReceived", (notification) => {
-    onNotification(notification.data as Record<string, unknown>);
-  });
-
-  // Return token via Promise
-  return new Promise((resolve) => {
-    PushNotifications.addListener("registration", (token) => {
-      listener.remove();
-      resolve(token.value);
-    });
-    PushNotifications.addListener("registrationError", () => {
-      resolve(null);
-    });
-  });
+  return null;
 }
 
 // Listen for app state changes (background/foreground)
