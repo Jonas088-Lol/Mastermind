@@ -14,8 +14,10 @@ import { savePresentationSlides, renamePresentation, deletePresentation } from "
 
 // ── Types ─────────────────────────────────────────────────────────────────
 
-type ElType = "text" | "title" | "subtitle" | "image";
+type ElType = "text" | "title" | "subtitle" | "image" | "shape";
 type Align  = "left" | "center" | "right";
+type ShapeType = "rect" | "circle" | "triangle";
+type Transition = "none" | "fade" | "slide" | "zoom";
 
 interface SlideElement {
   id: string;
@@ -31,6 +33,7 @@ interface SlideElement {
   align: Align;
   bg: string;
   opacity: number;
+  shapeType?: ShapeType;
 }
 
 interface Slide {
@@ -38,7 +41,15 @@ interface Slide {
   background: string;
   elements: SlideElement[];
   notes: string;
+  transition?: Transition;
 }
+
+const TRANSITIONS: { value: Transition; label: string }[] = [
+  { value: "none",  label: "Kein Übergang" },
+  { value: "fade",  label: "Einblenden" },
+  { value: "slide", label: "Hineinschieben" },
+  { value: "zoom",  label: "Einzoomen" },
+];
 
 // ── Themes ────────────────────────────────────────────────────────────────
 
@@ -63,6 +74,7 @@ function makeElement(type: ElType, bg: string): SlideElement {
     subtitle: { x: 15, y: 48, w: 70, h: 14, content: "Untertitel eingeben", fontSize: 22, bold: false, align: "center", color: isDark ? "#9ca3af" : "#4b5563" },
     text:     { x: 15, y: 20, w: 70, h: 20, content: "Textfeld bearbeiten", fontSize: 18, bold: false, align: "left", color: baseColor },
     image:    { x: 25, y: 20, w: 50, h: 40, content: "", fontSize: 14, bold: false, align: "center", color: "#6b7280" },
+    shape:    { x: 30, y: 30, w: 40, h: 25, content: "", fontSize: 14, bold: false, align: "center", color: "#ffffff", bg: "#2FC5E7", shapeType: "rect" },
   };
   return {
     id: nanoid(), type, fontFamily: "Arial", italic: false, underline: false, bg: "transparent", opacity: 1,
@@ -271,7 +283,23 @@ function SlideCanvas({ slide, onUpdate, presenting }: CanvasProps) {
                 />
               ))}
 
-              {elem.type === "image" ? (
+              {elem.type === "shape" ? (
+                <div
+                  className="flex h-full w-full items-center justify-center"
+                  style={{
+                    backgroundColor: elem.bg !== "transparent" ? elem.bg : "#2FC5E7",
+                    borderRadius: elem.shapeType === "circle" ? "50%" : "8px",
+                    clipPath: elem.shapeType === "triangle" ? "polygon(50% 0%,0% 100%,100% 100%)" : undefined,
+                    minHeight: `${elem.h}%`,
+                  }}
+                >
+                  {elem.content && (
+                    <span style={{ color: elem.color, fontSize: `${elem.fontSize * 0.013}vw`, fontWeight: elem.bold ? "bold" : "normal" }}>
+                      {elem.content}
+                    </span>
+                  )}
+                </div>
+              ) : elem.type === "image" ? (
                 elem.content ? (
                   <img src={elem.content} alt="" className="h-full w-full object-cover" draggable={false} />
                 ) : (
@@ -365,6 +393,18 @@ function SlideCanvas({ slide, onUpdate, presenting }: CanvasProps) {
           <input type="color" value={el.bg === "transparent" ? "#ffffff" : el.bg}
             onChange={(e) => upEl(el.id, { bg: e.target.value })}
             className="size-5 cursor-pointer rounded border-0 bg-transparent p-0" title="Hintergrund" />
+          {/* Shape type selector */}
+          {el.type === "shape" && (
+            <>
+              <div className="h-4 w-px bg-gray-200" />
+              <select value={el.shapeType ?? "rect"} onChange={(e) => upEl(el.id, { shapeType: e.target.value as ShapeType })}
+                className="h-6 rounded border border-gray-200 bg-white text-[10px] text-gray-700 focus:outline-none">
+                <option value="rect">Rechteck</option>
+                <option value="circle">Kreis</option>
+                <option value="triangle">Dreieck</option>
+              </select>
+            </>
+          )}
         </div>
       )}
     </div>
@@ -458,6 +498,9 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
   // ── Presentation mode ─────────────────────────────────────────────────────
 
   if (presenting) {
+    const transAnim = current.transition === "fade"  ? "presenterFade 0.4s ease"  :
+                      current.transition === "zoom"  ? "presenterZoom 0.4s ease"  :
+                      current.transition === "slide" ? "presenterSlide 0.4s ease" : "none";
     return (
       <div ref={wrapRef} className="fixed inset-0 z-9999 flex flex-col bg-black"
         onKeyDown={(e) => {
@@ -466,7 +509,13 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
           if (e.key === "ArrowLeft"  || e.key === "ArrowUp")   setCurIdx((i) => Math.max(0, i - 1));
         }}
         tabIndex={0} autoFocus>
-        <div className="flex flex-1 items-center justify-center overflow-hidden" style={{ backgroundColor: current.background }}>
+        <style>{`
+          @keyframes presenterFade  { from { opacity:0 } to { opacity:1 } }
+          @keyframes presenterZoom  { from { opacity:0;transform:scale(0.92) } to { opacity:1;transform:scale(1) } }
+          @keyframes presenterSlide { from { opacity:0;transform:translateX(40px) } to { opacity:1;transform:translateX(0) } }
+        `}</style>
+        <div key={`slide-${curIdx}`} className="flex flex-1 items-center justify-center overflow-hidden"
+          style={{ backgroundColor: current.background, animation: transAnim }}>
           <SlideCanvas slide={current} onUpdate={updateSlide} presenting />
         </div>
         {current.notes && (
@@ -529,6 +578,18 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
                 <input type="color" value={current.background} onChange={(e) => updateSlide({ ...current, background: e.target.value })}
                   className="size-5 cursor-pointer rounded border-0 bg-transparent p-0" />
               </div>
+              <div className="mt-3 border-t border-gray-100 pt-3">
+                <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-wider text-gray-400">Folienübergang</p>
+                <div className="flex flex-col gap-1">
+                  {TRANSITIONS.map((t) => (
+                    <button key={t.value} type="button"
+                      onClick={() => updateSlide({ ...current, transition: t.value })}
+                      className={`flex items-center gap-2 rounded px-2 py-1 text-[11px] text-left transition-colors ${current.transition === t.value || (!current.transition && t.value === "none") ? "bg-brand/10 text-brand font-semibold" : "text-gray-600 hover:bg-gray-50"}`}>
+                      {t.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
         </div>
@@ -555,6 +616,10 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
         <button type="button" onClick={() => addElement("image")}
           className="flex items-center gap-1 rounded border border-gray-200 px-2 py-1 text-[11px] text-gray-600 hover:bg-gray-50">
           <Image className="size-3" strokeWidth={2} /> Bild
+        </button>
+        <button type="button" onClick={() => addElement("shape")}
+          className="flex items-center gap-1 rounded border border-gray-200 px-2 py-1 text-[11px] text-gray-600 hover:bg-gray-50">
+          <span className="size-3 rounded-sm bg-brand/40" /> Form
         </button>
       </div>
 

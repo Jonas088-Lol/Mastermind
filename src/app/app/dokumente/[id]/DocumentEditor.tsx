@@ -29,7 +29,7 @@ const HILITE_COLORS = [
   "#fef08a","#bbf7d0","#bfdbfe","#fecaca","#e9d5ff","#fed7aa","transparent",
 ];
 
-type Tab = "start" | "einfuegen" | "layout";
+type Tab = "start" | "einfuegen" | "layout" | "verweise";
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
@@ -173,9 +173,15 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
   const [showHilitePop, setShowHilitePop] = useState(false);
   const [showTablePicker, setShowTablePicker] = useState(false);
   const [tableHover, setTableHover] = useState({ r: 0, c: 0 });
+  const [showHeader, setShowHeader] = useState(false);
+  const [showFooter, setShowFooter] = useState(false);
+  const [pageNumEnabled, setPageNumEnabled] = useState(false);
+  const [footnoteCount, setFootnoteCount] = useState(0);
   const [fmt, setFmt] = useState({ bold: false, italic: false, underline: false, strike: false, jL: true, jC: false, jR: false, jF: false, ul: false, ol: false });
   const [, startTransition] = useTransition();
   const editorRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSaved = useRef<string>("");
 
@@ -236,6 +242,37 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
   function handleDelete() {
     if (!confirm(`Dokument "${title}" wirklich löschen?`)) return;
     startTransition(() => deleteDocument(documentId));
+  }
+
+  function insertTOC() {
+    if (!editorRef.current) return;
+    const headings = Array.from(editorRef.current.querySelectorAll("h1,h2,h3,h4"));
+    if (headings.length === 0) {
+      alert("Keine Überschriften gefunden. Verwende zuerst Überschrift-Formatvorlagen (Überschrift 1–4) im Start-Tab.");
+      return;
+    }
+    const items = headings.map((h) => {
+      const level = parseInt(h.tagName[1]);
+      const text = h.textContent ?? "";
+      return `<div style="margin-left:${(level - 1) * 20}px;padding:2px 0;font-size:${level === 1 ? 12 : level === 2 ? 11 : 10}pt">${text}</div>`;
+    });
+    exec("insertHTML", `<div style="border:1px solid #e5e7eb;border-radius:8px;padding:12px 16px;margin:8px 0;background:#f9fafb"><p style="font-weight:bold;font-size:12pt;margin-bottom:8px">Inhaltsverzeichnis</p>${items.join("")}</div><p><br></p>`);
+    fe();
+  }
+
+  function insertFootnote() {
+    const n = footnoteCount + 1;
+    setFootnoteCount(n);
+    exec("insertHTML", `<sup style="color:#2563eb;cursor:default" title="Fußnote ${n}">[${n}]</sup>`);
+    if (editorRef.current) {
+      const area = editorRef.current.querySelector("[data-footnotes]") as HTMLElement | null;
+      if (!area) {
+        exec("insertHTML", `<div style="margin-top:24px;padding-top:8px;border-top:1px solid #e5e7eb;font-size:9pt;color:#6b7280" data-footnotes>[${n}]&#x2003;</div>`);
+      } else {
+        area.insertAdjacentHTML("beforeend", `<br>[${n}]&#x2003;`);
+      }
+    }
+    fe();
   }
 
   const fe = () => editorRef.current?.focus();
@@ -340,6 +377,28 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
     </div>
   );
 
+  const VerweiseTab = (
+    <div className="flex flex-wrap items-center gap-1.5 px-3 py-1.5">
+      <Btn onClick={insertTOC} title="Inhaltsverzeichnis aus Überschriften generieren">
+        <span className="flex items-center gap-1 text-xs">≡ Inhaltsverzeichnis</span>
+      </Btn>
+      <Sep />
+      <Btn onClick={insertFootnote} title="Fußnote einfügen">
+        <span className="flex items-center gap-1 text-xs">Fußnote<sup className="text-[8px]">1</sup></span>
+      </Btn>
+      <Sep />
+      <Btn active={showHeader} onClick={() => setShowHeader((v) => !v)} title="Kopfzeile ein-/ausblenden">
+        <span className="text-xs">Kopfzeile</span>
+      </Btn>
+      <Btn active={showFooter} onClick={() => setShowFooter((v) => !v)} title="Fußzeile ein-/ausblenden">
+        <span className="text-xs">Fußzeile</span>
+      </Btn>
+      <Btn active={pageNumEnabled} onClick={() => { setPageNumEnabled((v) => !v); if (!showFooter) setShowFooter(true); }} title="Seitenzahl in Fußzeile anzeigen">
+        <span className="text-xs"># Seitenzahl</span>
+      </Btn>
+    </div>
+  );
+
   return (
     <div className="-mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden bg-[#f0f0f0] lg:-mx-10 lg:-mb-10 lg:-mt-10">
 
@@ -371,21 +430,36 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
       {/* Ribbon */}
       <div className="shrink-0 border-b border-gray-200 bg-white">
         <div className="flex border-b border-gray-100 px-3">
-          {(["start", "einfuegen", "layout"] as Tab[]).map((t) => (
+          {(["start", "einfuegen", "layout", "verweise"] as Tab[]).map((t) => (
             <button key={t} type="button" onMouseDown={(e) => { e.preventDefault(); setTab(t); }}
               className={`px-4 py-1.5 text-xs font-medium transition-colors ${tab === t ? "border-b-2 border-brand text-brand" : "text-gray-500 hover:text-gray-800"}`}>
-              {t === "start" ? "Start" : t === "einfuegen" ? "Einfügen" : "Layout"}
+              {t === "start" ? "Start" : t === "einfuegen" ? "Einfügen" : t === "layout" ? "Layout" : "Verweise"}
             </button>
           ))}
         </div>
         {tab === "start"     && StartTab}
         {tab === "einfuegen" && EinfuegenTab}
         {tab === "layout"    && LayoutTab}
+        {tab === "verweise"  && VerweiseTab}
       </div>
 
       {/* Page area */}
       <div className="flex-1 overflow-y-auto p-8">
         <div className="mx-auto" style={{ width: `${(794 * zoom) / 100}px`, transformOrigin: "top center" }}>
+          {/* Header */}
+          {showHeader && (
+            <div className="border-b-2 border-dashed border-blue-200 bg-white shadow-sm">
+              <div
+                ref={headerRef}
+                contentEditable
+                suppressContentEditableWarning
+                className="min-h-8 w-full focus:outline-none"
+                style={{ padding: "0.4cm 2.54cm", fontFamily: "Calibri, Arial, sans-serif", fontSize: "10pt", color: "#6b7280" }}
+              />
+            </div>
+          )}
+
+          {/* Page content */}
           <div className="w-198.5 min-h-280.75 bg-white shadow-xl print:shadow-none" style={{ fontFamily: "Calibri, Arial, sans-serif" }}>
             <div
               ref={editorRef}
@@ -399,6 +473,22 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
               style={{ padding: "2.54cm", fontSize: "12pt", lineHeight: 1.5, color: "#1a1a1a" }}
             />
           </div>
+
+          {/* Footer */}
+          {showFooter && (
+            <div className="border-t-2 border-dashed border-blue-200 bg-white shadow-sm">
+              <div
+                ref={footerRef}
+                contentEditable
+                suppressContentEditableWarning
+                className="min-h-8 w-full focus:outline-none"
+                style={{ padding: "0.3cm 2.54cm 0.4cm", fontFamily: "Calibri, Arial, sans-serif", fontSize: "10pt", color: "#6b7280" }}
+              />
+              {pageNumEnabled && (
+                <p className="pb-2 text-center text-xs text-gray-400">— Seite 1 —</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
 

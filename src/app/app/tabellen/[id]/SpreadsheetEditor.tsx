@@ -90,55 +90,326 @@ function getRangeKeys(from: string, to: string): string[] {
   return keys;
 }
 
+function splitFnArgs(s: string): string[] {
+  const parts: string[] = [];
+  let depth = 0, start = 0, inStr = false;
+  for (let i = 0; i < s.length; i++) {
+    const ch = s[i];
+    if (ch === '"') inStr = !inStr;
+    if (!inStr) {
+      if (ch === "(" || ch === "[") depth++;
+      else if (ch === ")" || ch === "]") depth--;
+      else if ((ch === "," || ch === ";") && depth === 0) {
+        parts.push(s.slice(start, i).trim());
+        start = i + 1;
+      }
+    }
+  }
+  const last = s.slice(start).trim();
+  if (last !== "") parts.push(last);
+  return parts;
+}
+
+function testCond(val: string, condStr: string): boolean {
+  const cond = condStr.trim().replace(/^["']|["']$/g, "");
+  const m = cond.match(/^(>=|<=|<>|!=|>|<|=)(.*)$/);
+  if (m) {
+    const [, op, right] = m;
+    const rv = isNaN(Number(right)) ? right : Number(right);
+    const lv = isNaN(Number(val)) ? val : Number(val);
+    if (op === ">")  return (lv as number) >  (rv as number);
+    if (op === "<")  return (lv as number) <  (rv as number);
+    if (op === ">=") return (lv as number) >= (rv as number);
+    if (op === "<=") return (lv as number) <= (rv as number);
+    if (op === "<>" || op === "!=") return lv !== rv;
+    if (op === "=")  return lv === rv;
+  }
+  const pattern = "^" + cond.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\\\*/g, ".*").replace(/\\\?/g, ".") + "$";
+  return new RegExp(pattern, "i").test(val);
+}
+
 function evaluateCell(key: string, cells: Record<string, CellData>, depth = 0): string {
   if (depth > 50) return "#LOOP";
   const cell = cells[key];
   if (!cell?.v) return "";
   const v = cell.v;
   if (!v.startsWith("=")) return v;
-  const expr = v.slice(1).toUpperCase().trim();
-  const fnMatch = expr.match(/^(SUM|AVERAGE|MIN|MAX|COUNT|IF)\((.+)\)$/);
+
+  const exprRaw = v.slice(1).trim();
+  const exprUp  = exprRaw.toUpperCase();
+
+  const resVal = (arg: string): string => {
+    const a = arg.trim();
+    if (a.startsWith('"') && a.endsWith('"')) return a.slice(1, -1);
+    if (/^[A-Z]+\d+$/i.test(a)) return evaluateCell(cellRefToKey(a.toUpperCase()), cells, depth + 1);
+    const n = Number(a);
+    return isNaN(n) ? a : String(n);
+  };
+  const resNum = (arg: string): number => Number(resVal(arg));
+
+  const getArr = (arg: string): string[] => {
+    const a = arg.trim().toUpperCase();
+    const rm = a.match(/^([A-Z]+\d+):([A-Z]+\d+)$/);
+    if (rm) return getRangeKeys(rm[1], rm[2]).map(k => evaluateCell(k, cells, depth + 1));
+    if (/^[A-Z]+\d+$/.test(a)) return [evaluateCell(cellRefToKey(a), cells, depth + 1)];
+    return [resVal(arg)];
+  };
+  const getNums = (arg: string): number[] => getArr(arg).map(Number).filter(n => !isNaN(n));
+
+  const fnMatch = exprRaw.match(/^([A-Za-zÀ-ſ]+)\(([\s\S]*)\)$/);
   if (fnMatch) {
-    const [, fn, args] = fnMatch;
-    const rangeMatch = args.match(/^([A-Z]+\d+):([A-Z]+\d+)$/);
-    if (rangeMatch && fn !== "IF") {
-      const keys = getRangeKeys(rangeMatch[1], rangeMatch[2]);
-      const nums = keys.map((k) => evaluateCell(k, cells, depth + 1)).map(Number).filter((n) => !isNaN(n));
-      if (fn === "SUM")     return String(r(nums.reduce((a, b) => a + b, 0)));
-      if (fn === "AVERAGE") return nums.length > 0 ? String(r(nums.reduce((a, b) => a + b, 0) / nums.length)) : "0";
-      if (fn === "MIN")     return nums.length > 0 ? String(Math.min(...nums)) : "0";
-      if (fn === "MAX")     return nums.length > 0 ? String(Math.max(...nums)) : "0";
-      if (fn === "COUNT")   return String(nums.length);
-    }
-    if (fn === "IF") {
-      // Split args by commas respecting nested parens
-      const splitArgs = (s: string): string[] => {
-        const parts: string[] = []; let d = 0, start = 0;
-        for (let i = 0; i < s.length; i++) {
-          if (s[i] === "(") d++;
-          else if (s[i] === ")") d--;
-          else if (s[i] === "," && d === 0) { parts.push(s.slice(start, i).trim()); start = i + 1; }
+    const fn = fnMatch[1].toUpperCase();
+    const args = splitFnArgs(fnMatch[2]);
+
+    switch (fn) {
+      // Aggregation
+      case "SUMME": case "SUM": {
+        let s = 0; for (const a of args) getNums(a).forEach(n => { s += n; }); return String(r(s));
+      }
+      case "MITTELWERT": case "AVERAGE": {
+        const ns = args.flatMap(getNums);
+        return ns.length ? String(r(ns.reduce((a, b) => a + b, 0) / ns.length)) : "0";
+      }
+      case "MIN": { const ns = args.flatMap(getNums); return ns.length ? String(Math.min(...ns)) : "0"; }
+      case "MAX": { const ns = args.flatMap(getNums); return ns.length ? String(Math.max(...ns)) : "0"; }
+      case "ANZAHL": case "COUNT": return String(args.flatMap(getNums).length);
+      case "ANZAHL2": case "COUNTA": return String(args.flatMap(getArr).filter(x => x !== "").length);
+      case "PRODUKT": case "PRODUCT": { let p = 1; args.flatMap(getNums).forEach(n => { p *= n; }); return String(r(p)); }
+
+      // Logical
+      case "WENN": case "IF": {
+        const [condArg, trueArg = "0", falseArg = "0"] = args;
+        const resolveRefs = (s: string) => s.toUpperCase().replace(/[A-Z]+\d+/g, ref => {
+          const val = evaluateCell(cellRefToKey(ref), cells, depth + 1);
+          const num = Number(val);
+          return isNaN(num) ? `"${val}"` : String(num);
+        });
+        try {
+          // eslint-disable-next-line no-new-func
+          const ok = new Function(`return Boolean(${resolveRefs(condArg)})`)() as boolean;
+          const raw = (ok ? trueArg : falseArg).trim().replace(/^"(.*)"$/, "$1");
+          if (/^[A-Z]+\d+$/i.test(raw)) return evaluateCell(cellRefToKey(raw.toUpperCase()), cells, depth + 1);
+          const num = Number(raw);
+          return isNaN(num) ? raw : String(r(num));
+        } catch { return "#ERR"; }
+      }
+      case "WENNFEHLER": case "IFERROR": {
+        const res = resVal(args[0] ?? ""); return res.startsWith("#") ? resVal(args[1] ?? '""') : res;
+      }
+      case "UND": case "AND": {
+        const ok = args.every(a => { const v2 = resVal(a); return v2 !== "" && v2 !== "0" && !/^(falsch|false)$/i.test(v2); });
+        return ok ? "WAHR" : "FALSCH";
+      }
+      case "ODER": case "OR": {
+        const ok = args.some(a => { const v2 = resVal(a); return v2 !== "" && v2 !== "0" && !/^(falsch|false)$/i.test(v2); });
+        return ok ? "WAHR" : "FALSCH";
+      }
+      case "NICHT": case "NOT": {
+        const v2 = resVal(args[0] ?? ""); const t = v2 !== "" && v2 !== "0" && !/^(falsch|false)$/i.test(v2);
+        return t ? "FALSCH" : "WAHR";
+      }
+      case "WAHR": case "TRUE":  return "WAHR";
+      case "FALSCH": case "FALSE": return "FALSCH";
+      case "ISTLEER": case "ISBLANK":   return resVal(args[0] ?? "") === "" ? "WAHR" : "FALSCH";
+      case "ISTZAHL": case "ISNUMBER": { const v2 = resVal(args[0] ?? ""); return !isNaN(Number(v2)) && v2 !== "" ? "WAHR" : "FALSCH"; }
+      case "ISTTEXT": case "ISTEXT":   { const v2 = resVal(args[0] ?? ""); return (isNaN(Number(v2)) || v2 === "") ? "WAHR" : "FALSCH"; }
+      case "ISTFEHLER": case "ISERROR": return resVal(args[0] ?? "").startsWith("#") ? "WAHR" : "FALSCH";
+
+      // Lookup & Reference
+      case "SVERWEIS": case "VLOOKUP": {
+        if (args.length < 3) return "#WERT!";
+        const lookup = resVal(args[0]);
+        const rangeStr = args[1].trim().toUpperCase();
+        const colIdx = Math.floor(resNum(args[2]));
+        const isExact = args[3] ? /^(0|falsch|false)$/i.test(resVal(args[3])) : false;
+        const rm = rangeStr.match(/^([A-Z]+)(\d+):([A-Z]+)(\d+)$/);
+        if (!rm) return "#BEZUG!";
+        const r1 = parseInt(rm[2]) - 1, c1 = colToIndex(rm[1]);
+        const r2 = parseInt(rm[4]) - 1, c2 = colToIndex(rm[3]);
+        for (let row = r1; row <= r2; row++) {
+          const cv = evaluateCell(`${row},${c1}`, cells, depth + 1);
+          const match = isExact ? cv.toLowerCase() === lookup.toLowerCase() : testCond(cv, `=${lookup}`);
+          if (match) { const tc = c1 + colIdx - 1; return tc > c2 ? "#BEZUG!" : evaluateCell(`${row},${tc}`, cells, depth + 1); }
         }
-        parts.push(s.slice(start).trim());
-        return parts;
-      };
-      const [cond, valTrue = "0", valFalse = "0"] = splitArgs(args);
-      const resolveRefs = (arg: string) => arg.replace(/[A-Z]+\d+/g, (ref) => {
-        const val = evaluateCell(cellRefToKey(ref), cells, depth + 1);
-        const num = Number(val);
-        return isNaN(num) ? `"${val}"` : String(num);
-      });
-      try {
-        // eslint-disable-next-line no-new-func
-        const condResult = new Function(`return Boolean(${resolveRefs(cond)})`)() as boolean;
-        const raw = (condResult ? valTrue : valFalse).replace(/^"(.*)"$/, "$1");
-        if (/^[A-Z]+\d+$/.test(raw)) return evaluateCell(cellRefToKey(raw), cells, depth + 1);
-        const num = Number(raw);
-        return isNaN(num) ? raw : String(r(num));
-      } catch { return "#ERR"; }
+        return "#NV";
+      }
+      case "XVERWEIS": case "XLOOKUP": {
+        if (args.length < 3) return "#WERT!";
+        const lookup = resVal(args[0]);
+        const searchVals = getArr(args[1]), returnVals = getArr(args[2]);
+        const notFound = args[3] ? resVal(args[3]) : "#NV";
+        const idx = searchVals.findIndex(sv => sv.toLowerCase() === lookup.toLowerCase());
+        return idx < 0 ? notFound : (returnVals[idx] ?? "");
+      }
+      case "INDEX": {
+        if (args.length < 2) return "#WERT!";
+        const rm = args[0].trim().toUpperCase().match(/^([A-Z]+)(\d+):([A-Z]+)(\d+)$/);
+        if (!rm) return "#BEZUG!";
+        const r1 = parseInt(rm[2]) - 1, c1 = colToIndex(rm[1]);
+        const ro = Math.floor(resNum(args[1])) - 1, co = args[2] ? Math.floor(resNum(args[2])) - 1 : 0;
+        return evaluateCell(`${r1 + ro},${c1 + co}`, cells, depth + 1);
+      }
+      case "VERGLEICH": case "MATCH": {
+        if (args.length < 2) return "#WERT!";
+        const lookup = resVal(args[0]), vals = getArr(args[1]);
+        const idx = vals.findIndex(v2 => v2.toLowerCase() === lookup.toLowerCase());
+        return idx >= 0 ? String(idx + 1) : "#NV";
+      }
+      case "WAHL": case "CHOOSE": {
+        const idx = Math.floor(resNum(args[0]));
+        return idx >= 1 && idx < args.length ? resVal(args[idx]) : "#WERT!";
+      }
+
+      // Conditional aggregation
+      case "SUMMEWENN": case "SUMIF": {
+        if (args.length < 2) return "#WERT!";
+        const rv = getArr(args[0]), crit = resVal(args[1]), sv = args[2] ? getArr(args[2]) : rv;
+        let s = 0;
+        for (let i = 0; i < rv.length; i++) { if (testCond(rv[i], crit)) { const n = Number(sv[i]); if (!isNaN(n)) s += n; } }
+        return String(r(s));
+      }
+      case "ZÄHLENWENN": case "COUNTIF": {
+        if (args.length < 2) return "#WERT!";
+        return String(getArr(args[0]).filter(v2 => testCond(v2, resVal(args[1]))).length);
+      }
+      case "MITTELWERTWENN": case "AVERAGEIF": {
+        if (args.length < 2) return "#WERT!";
+        const rv = getArr(args[0]), crit = resVal(args[1]), av = args[2] ? getArr(args[2]) : rv;
+        const matching: number[] = [];
+        for (let i = 0; i < rv.length; i++) { if (testCond(rv[i], crit)) { const n = Number(av[i]); if (!isNaN(n)) matching.push(n); } }
+        return matching.length ? String(r(matching.reduce((a, b) => a + b, 0) / matching.length)) : "0";
+      }
+
+      // Math
+      case "RUNDEN": case "ROUND":      { const n = resNum(args[0] ?? "0"), d = resNum(args[1] ?? "0"), f = Math.pow(10, d); return String(Math.round(n * f) / f); }
+      case "AUFRUNDEN": case "ROUNDUP": { const n = resNum(args[0] ?? "0"), d = resNum(args[1] ?? "0"), f = Math.pow(10, d); return String(Math.ceil(n * f) / f); }
+      case "ABRUNDEN": case "ROUNDDOWN":{ const n = resNum(args[0] ?? "0"), d = resNum(args[1] ?? "0"), f = Math.pow(10, d); return String(Math.floor(n * f) / f); }
+      case "GANZZAHL": case "INT":      return String(Math.floor(resNum(args[0] ?? "0")));
+      case "ABS":                       return String(Math.abs(resNum(args[0] ?? "0")));
+      case "VORZEICHEN": case "SIGN":   return String(Math.sign(resNum(args[0] ?? "0")));
+      case "REST": case "MOD":          return String(r(resNum(args[0] ?? "0") % resNum(args[1] ?? "1")));
+      case "WURZEL": case "SQRT":       return String(r(Math.sqrt(resNum(args[0] ?? "0"))));
+      case "POTENZ": case "POWER":      return String(r(Math.pow(resNum(args[0] ?? "0"), resNum(args[1] ?? "1"))));
+      case "EXP":    return String(r(Math.exp(resNum(args[0] ?? "0"))));
+      case "LN":     return String(r(Math.log(resNum(args[0] ?? "0"))));
+      case "LOG10":  return String(r(Math.log10(resNum(args[0] ?? "0"))));
+      case "LOG": { const base = args[1] ? resNum(args[1]) : 10; return String(r(Math.log(resNum(args[0] ?? "0")) / Math.log(base))); }
+      case "PI":     return String(Math.PI);
+      case "KGRÖSSTE": case "LARGE": { const ns = getNums(args[0] ?? "").sort((a, b) => b - a); return String(ns[resNum(args[1] ?? "1") - 1] ?? "#ZAHL!"); }
+      case "KKLEINSTE": case "SMALL": { const ns = getNums(args[0] ?? "").sort((a, b) => a - b); return String(ns[resNum(args[1] ?? "1") - 1] ?? "#ZAHL!"); }
+
+      // Text
+      case "LINKS": case "LEFT":   return resVal(args[0] ?? "").slice(0, resNum(args[1] ?? "1"));
+      case "RECHTS": case "RIGHT": { const s = resVal(args[0] ?? ""), n = resNum(args[1] ?? "1"); return s.slice(Math.max(0, s.length - n)); }
+      case "TEIL": case "MID":     { const s = resVal(args[0] ?? ""), st = resNum(args[1] ?? "1") - 1, ln = resNum(args[2] ?? "1"); return s.slice(st, st + ln); }
+      case "LÄNGE": case "LEN":    return String(resVal(args[0] ?? "").length);
+      case "GROSS": case "UPPER":  return resVal(args[0] ?? "").toUpperCase();
+      case "KLEIN": case "LOWER":  return resVal(args[0] ?? "").toLowerCase();
+      case "GROSS2": case "PROPER": return resVal(args[0] ?? "").toLowerCase().replace(/(?:^|\s)\S/g, c => c.toUpperCase());
+      case "GLÄTTEN": case "TRIM": return resVal(args[0] ?? "").trim();
+      case "VERKETTEN": case "CONCATENATE": case "CONCAT": return args.map(a => resVal(a)).join("");
+      case "TEXTVERKETTEN": case "TEXTJOIN": {
+        const delim = resVal(args[0] ?? ""), ignEmpty = /^(1|wahr|true)$/i.test(resVal(args[1] ?? "0"));
+        const vals = args.slice(2).flatMap(getArr);
+        return (ignEmpty ? vals.filter(v2 => v2 !== "") : vals).join(delim);
+      }
+      case "WECHSELN": case "SUBSTITUTE": {
+        const s = resVal(args[0] ?? ""), from = resVal(args[1] ?? ""), to = resVal(args[2] ?? "");
+        return s.split(from).join(to);
+      }
+      case "WIEDERHOLEN": case "REPT": return resVal(args[0] ?? "").repeat(Math.max(0, resNum(args[1] ?? "0")));
+      case "SUCHEN": case "SEARCH": {
+        const find = resVal(args[0] ?? ""), within = resVal(args[1] ?? ""), st = resNum(args[2] ?? "1") - 1;
+        const idx = within.toLowerCase().indexOf(find.toLowerCase(), st);
+        return idx >= 0 ? String(idx + 1) : "#WERT!";
+      }
+      case "FINDEN": case "FIND": {
+        const find = resVal(args[0] ?? ""), within = resVal(args[1] ?? ""), st = resNum(args[2] ?? "1") - 1;
+        const idx = within.indexOf(find, st);
+        return idx >= 0 ? String(idx + 1) : "#WERT!";
+      }
+      case "WERT": case "VALUE":   return String(Number(resVal(args[0] ?? "").replace(",", ".")));
+      case "TEXT":                 return String(resNum(args[0] ?? "0"));
+      case "ZEICHEN": case "CHAR": return String.fromCharCode(resNum(args[0] ?? "65"));
+      case "CODE":                 return String((resVal(args[0] ?? "") || "\0").charCodeAt(0));
+
+      // Date/Time
+      case "HEUTE": case "TODAY": {
+        const d = new Date();
+        return `${d.getDate().toString().padStart(2,"0")}.${(d.getMonth()+1).toString().padStart(2,"0")}.${d.getFullYear()}`;
+      }
+      case "JETZT": case "NOW": return new Date().toLocaleString("de-DE");
+      case "JAHR":  case "YEAR":    { const d = new Date(resVal(args[0] ?? "")); return isNaN(d.getTime()) ? "#WERT!" : String(d.getFullYear()); }
+      case "MONAT": case "MONTH":   { const d = new Date(resVal(args[0] ?? "")); return isNaN(d.getTime()) ? "#WERT!" : String(d.getMonth() + 1); }
+      case "TAG":   case "DAY":     { const d = new Date(resVal(args[0] ?? "")); return isNaN(d.getTime()) ? "#WERT!" : String(d.getDate()); }
+      case "STUNDE": case "HOUR":   { const d = new Date(resVal(args[0] ?? "")); return isNaN(d.getTime()) ? "#WERT!" : String(d.getHours()); }
+      case "MINUTE":                { const d = new Date(resVal(args[0] ?? "")); return isNaN(d.getTime()) ? "#WERT!" : String(d.getMinutes()); }
+      case "WOCHENTAG": case "WEEKDAY": { const d = new Date(resVal(args[0] ?? "")); return isNaN(d.getTime()) ? "#WERT!" : String(d.getDay() + 1); }
+
+      // Financial
+      case "BW": case "PV": {
+        if (args.length < 3) return "#WERT!";
+        const rate = resNum(args[0]), nper = resNum(args[1]), pmt = resNum(args[2]);
+        const fv = args[3] ? resNum(args[3]) : 0, type = args[4] ? resNum(args[4]) : 0;
+        if (rate === 0) return String(r(-(pmt * nper + fv)));
+        const pvF = (1 - Math.pow(1 + rate, -nper)) / rate;
+        return String(r(-(pmt * pvF * (1 + rate * type) + fv * Math.pow(1 + rate, -nper))));
+      }
+      case "ZW": case "FV": {
+        if (args.length < 3) return "#WERT!";
+        const rate = resNum(args[0]), nper = resNum(args[1]), pmt = resNum(args[2]);
+        const pv = args[3] ? resNum(args[3]) : 0, type = args[4] ? resNum(args[4]) : 0;
+        if (rate === 0) return String(r(-(pmt * nper + pv)));
+        return String(r(-(pmt * ((Math.pow(1 + rate, nper) - 1) / rate) * (1 + rate * type) + pv * Math.pow(1 + rate, nper))));
+      }
+      case "RMZ": case "PMT": {
+        if (args.length < 3) return "#WERT!";
+        const rate = resNum(args[0]), nper = resNum(args[1]), pv = resNum(args[2]);
+        const fv = args[3] ? resNum(args[3]) : 0, type = args[4] ? resNum(args[4]) : 0;
+        if (rate === 0) return String(r(-(pv + fv) / nper));
+        return String(r(-(pv * Math.pow(1 + rate, nper) + fv) * rate / ((Math.pow(1 + rate, nper) - 1) * (1 + rate * type))));
+      }
+      case "ZINS": case "RATE": {
+        if (args.length < 3) return "#WERT!";
+        const nper = resNum(args[0]), pmt = resNum(args[1]), pv = resNum(args[2]);
+        const fv = args[3] ? resNum(args[3]) : 0;
+        let rate = args[5] ? resNum(args[5]) : 0.1;
+        for (let i = 0; i < 100; i++) {
+          const pow = Math.pow(1 + rate, nper);
+          const f = pv * pow + pmt * (rate === 0 ? nper : (pow - 1) / rate) + fv;
+          const df = nper * pv * Math.pow(1 + rate, nper - 1) + (rate === 0 ? pmt * nper : pmt * ((nper * Math.pow(1 + rate, nper - 1) * rate - (pow - 1)) / (rate * rate)));
+          if (!df) break;
+          const nr = rate - f / df;
+          if (Math.abs(nr - rate) < 1e-10) { rate = nr; break; }
+          rate = nr;
+        }
+        return String(r(rate));
+      }
+      case "IKV": case "IRR": {
+        if (!args[0]) return "#WERT!";
+        const vals = getNums(args[0]);
+        let rate = args[1] ? resNum(args[1]) : 0.1;
+        for (let i = 0; i < 100; i++) {
+          let f = 0, df = 0;
+          vals.forEach((val2, j) => { const p = Math.pow(1 + rate, j); f += val2 / p; df -= j * val2 / (p * (1 + rate)); });
+          if (!df) break;
+          const nr = rate - f / df;
+          if (Math.abs(nr - rate) < 1e-10) { rate = nr; break; }
+          rate = nr;
+        }
+        return String(r(rate));
+      }
+      case "NBW": case "NPV": {
+        const rate2 = resNum(args[0] ?? "0.1");
+        return String(r(args.slice(1).flatMap(getNums).reduce((acc, v2, i) => acc + v2 / Math.pow(1 + rate2, i + 1), 0)));
+      }
+
+      default: return "#NAME?";
     }
   }
-  const resolved = expr.replace(/[A-Z]+\d+/g, (ref) => {
+
+  // Arithmetic expression with cell refs
+  const resolved = exprUp.replace(/[A-Z]+\d+/g, ref => {
     const val = evaluateCell(cellRefToKey(ref), cells, depth + 1);
     const num = Number(val);
     return isNaN(num) ? "0" : String(num);
