@@ -213,6 +213,7 @@ model User {
   @@index([role])
   @@index([schoolId])
   @@index([classId])
+  @@index([schoolId, role])
 }
 
 model BackupCode {
@@ -1175,6 +1176,8 @@ model BossParticipant {
   @@unique([userId, battleId])
   @@index([userId])
   @@index([battleId])
+  @@index([userId, damage])
+  @@index([userId, isMvp])
 }
 
 model SkillNode {

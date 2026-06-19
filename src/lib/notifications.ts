@@ -8,10 +8,9 @@ const TYPE_TO_KIND: Record<string, NotificationKind> = {
   system: "system",
 };
 
-const NOW = new Date();
-
 function relativeTime(date: Date): string {
-  const diffMs = NOW.getTime() - date.getTime();
+  const now = new Date();
+  const diffMs = now.getTime() - date.getTime();
   const diffMin = Math.floor(diffMs / 60_000);
   if (diffMin < 1) return "gerade eben";
   if (diffMin < 60) return `vor ${diffMin} Min.`;

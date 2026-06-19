@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db/client";
+import { unstable_cache } from "next/cache";
 import type { Session } from "@/lib/session";
 
 export interface SchoolBranding {
@@ -11,11 +12,9 @@ export interface SchoolBranding {
   accentColor: string | null;
 }
 
-/** Fetch school branding for the logged-in user. Returns null for private/no-school users. */
-export async function getSchoolBranding(session: Session): Promise<SchoolBranding | null> {
-  if (!session.schoolId) return null;
+async function _fetchSchoolBranding(schoolId: string): Promise<SchoolBranding | null> {
   const school = await prisma.school.findUnique({
-    where: { id: session.schoolId },
+    where: { id: schoolId },
     select: {
       id: true,
       name: true,
@@ -36,4 +35,15 @@ export async function getSchoolBranding(session: Session): Promise<SchoolBrandin
     faviconUrl: school.faviconUrl,
     accentColor: school.accentColor,
   };
+}
+
+const _cachedFetchSchoolBranding = unstable_cache(_fetchSchoolBranding, ["school-branding"], {
+  revalidate: 3600,
+  tags: ["school-branding"],
+});
+
+/** Fetch school branding for the logged-in user. Returns null for private/no-school users. */
+export async function getSchoolBranding(session: Session): Promise<SchoolBranding | null> {
+  if (!session.schoolId) return null;
+  return _cachedFetchSchoolBranding(session.schoolId);
 }

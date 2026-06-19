@@ -55,21 +55,7 @@ export default async function AppLayout({
     }),
     prisma.user.findUnique({ where: { id: session.userId }, select: { coins: true, avatarUrl: true } }),
     prisma.messageParticipant.count({
-      where: {
-        userId: session.userId,
-        thread: {
-          messages: {
-            some: {
-              senderId: { not: session.userId },
-              sentAt: { gt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
-            },
-          },
-        },
-        OR: [
-          { lastReadAt: null },
-          { thread: { updatedAt: { gt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) } } },
-        ],
-      },
+      where: { userId: session.userId, lastReadAt: null },
     }).catch(() => 0),
     getSchoolBranding(session),
     prisma.userConsent.findUnique({ where: { userId: session.userId }, select: { activityTracking: true } }),

@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db/client";
+import { unstable_cache, revalidateTag } from "next/cache";
 
 export type SettingKey =
   | "EVENT_DOUBLE_XP_UNTIL"
@@ -19,10 +20,14 @@ export async function setSetting(key: SettingKey, value: string, actorId?: strin
     create: { key, value, updatedBy: actorId },
     update: { value, updatedBy: actorId },
   });
+  // Invalidate immediately so admin sees changes right away
+  revalidateTag("global-settings", { expire: 0 });
 }
 
 export async function deleteSetting(key: SettingKey): Promise<void> {
   await prisma.globalSetting.deleteMany({ where: { key } }).catch(() => {});
+  // Invalidate immediately so admin sees changes right away
+  revalidateTag("global-settings", { expire: 0 });
 }
 
 export async function getEventMultiplier(type: "xp" | "coins"): Promise<number> {
@@ -33,14 +38,7 @@ export async function getEventMultiplier(type: "xp" | "coins"): Promise<number> 
   return 2;
 }
 
-export async function getActiveEvents(): Promise<{
-  doubleXp: boolean;
-  doubleXpUntil: Date | null;
-  doubleCoins: boolean;
-  doubleCoinsUntil: Date | null;
-  maintenance: boolean;
-  banner: string | null;
-}> {
+const _fetchActiveEvents = async () => {
   const rows = await prisma.globalSetting.findMany({
     where: {
       key: {
@@ -68,7 +66,12 @@ export async function getActiveEvents(): Promise<{
     maintenance: map["MAINTENANCE_MODE"] === "true",
     banner: map["ANNOUNCE_BANNER"] || null,
   };
-}
+};
+
+export const getActiveEvents = unstable_cache(_fetchActiveEvents, ["active-events"], {
+  revalidate: 120,
+  tags: ["global-settings"],
+});
 
 export async function isSuperAdmin(userId: string): Promise<boolean> {
   const user = await prisma.user.findUnique({

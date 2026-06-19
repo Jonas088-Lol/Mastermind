@@ -18,17 +18,17 @@ interface PageProps {
 }
 
 const TABS = [
-  { key: "klasse",  label: "Klasse",       icon: Trophy   },
-  { key: "schule",  label: "Schule",        icon: Trophy   },
-  { key: "streak",  label: "Streak",        icon: Flame    },
-  { key: "boss",    label: "Boss-Schaden",  icon: Swords   },
-  { key: "mvp",     label: "MVP",           icon: Crown    },
-  { key: "coins",   label: "Münzen",        icon: Coins    },
-  { key: "lernzeit",label: "Lernzeit",      icon: Timer    },
-  { key: "weekly",  label: "Diese Woche",   icon: Trophy   },
+  { key: "klasse",   label: "Klasse",       icon: Trophy  },
+  { key: "schule",   label: "Schule",        icon: Trophy  },
+  { key: "streak",   label: "Streak",        icon: Flame   },
+  { key: "boss",     label: "Boss-Schaden",  icon: Swords  },
+  { key: "mvp",      label: "MVP",           icon: Crown   },
+  { key: "coins",    label: "Münzen",        icon: Coins   },
+  { key: "lernzeit", label: "Lernzeit",      icon: Timer   },
+  { key: "weekly",   label: "Diese Woche",   icon: Trophy  },
 ] as const;
 
-type TabKey = typeof TABS[number]["key"];
+type TabKey = (typeof TABS)[number]["key"];
 
 export default async function RankingPage({ searchParams }: PageProps) {
   const session = await getSession();
@@ -38,132 +38,115 @@ export default async function RankingPage({ searchParams }: PageProps) {
   const { tab: tabParam } = await searchParams;
   const activeTab: TabKey = (TABS.find((t) => t.key === tabParam)?.key ?? "klasse") as TabKey;
 
-  const [
-    classmatesRaw, schoolRaw, streakRaw, bossRaw, mvpRaw,
-    coinsRaw, lernzeitRaw, weeklyRaw,
-  ] = await Promise.all([
-    // Class ranking
-    session.classId
-      ? prisma.user.findMany({
-          where: { classId: session.classId, role: "student" },
-          select: { id: true, name: true, xp: true, streak: true, equippedTitle: true, prestige: true },
-          orderBy: { xp: "desc" },
+  // Only fetch data for the active tab — saves 6-7 DB queries per page load
+  let classmatesRaw: XpUser[] = [];
+  let schoolRaw: XpUser[] = [];
+  let streakRaw: XpUser[] = [];
+  let bossRaw: { userId: string; _sum: { damage: number | null } }[] = [];
+  let mvpRaw: { userId: string; _count: { isMvp: number } }[] = [];
+  let coinsRaw: Array<XpUser & { coins: number }> = [];
+  let lernzeitRaw: { userId: string; _sum: { activeSeconds: number | null } }[] = [];
+  let weeklyRaw: { userId: string; _sum: { amount: number | null } }[] = [];
+
+  if (activeTab === "klasse" && session.classId) {
+    classmatesRaw = await prisma.user.findMany({
+      where: { classId: session.classId, role: "student" },
+      select: { id: true, name: true, xp: true, streak: true, equippedTitle: true, prestige: true },
+      orderBy: { xp: "desc" },
+    });
+  } else if (activeTab === "schule" && session.schoolId) {
+    schoolRaw = await prisma.user.findMany({
+      where: { schoolId: session.schoolId, role: "student" },
+      select: { id: true, name: true, xp: true, streak: true, equippedTitle: true, prestige: true },
+      orderBy: { xp: "desc" },
+      take: 50,
+    });
+  } else if (activeTab === "streak" && session.schoolId) {
+    streakRaw = await prisma.user.findMany({
+      where: { schoolId: session.schoolId, role: "student", streak: { gt: 0 } },
+      select: { id: true, name: true, xp: true, streak: true, equippedTitle: true, prestige: true },
+      orderBy: { streak: "desc" },
+      take: 30,
+    });
+  } else if (activeTab === "boss" && session.schoolId) {
+    bossRaw = (await prisma.bossParticipant.groupBy({
+      by: ["userId"],
+      _sum: { damage: true },
+      where: { user: { schoolId: session.schoolId } },
+      orderBy: { _sum: { damage: "desc" } },
+      take: 30,
+    })) as typeof bossRaw;
+  } else if (activeTab === "mvp" && session.schoolId) {
+    mvpRaw = (await prisma.bossParticipant.groupBy({
+      by: ["userId"],
+      _count: { isMvp: true },
+      where: { user: { schoolId: session.schoolId }, isMvp: true },
+      orderBy: { _count: { isMvp: "desc" } },
+      take: 30,
+    })) as typeof mvpRaw;
+  } else if (activeTab === "coins" && session.schoolId) {
+    coinsRaw = (await prisma.user.findMany({
+      where: { schoolId: session.schoolId, role: "student" },
+      select: { id: true, name: true, xp: true, coins: true, equippedTitle: true, prestige: true },
+      orderBy: { coins: "desc" },
+      take: 30,
+    })) as typeof coinsRaw;
+  } else if (activeTab === "lernzeit" && session.schoolId) {
+    lernzeitRaw = (await prisma.activitySession.groupBy({
+      by: ["userId"],
+      _sum: { activeSeconds: true },
+      where: { user: { schoolId: session.schoolId, role: "student" } },
+      orderBy: { _sum: { activeSeconds: "desc" } },
+      take: 30,
+    })) as typeof lernzeitRaw;
+  } else if (activeTab === "weekly" && session.schoolId) {
+    const startOfWeek = new Date();
+    startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
+    startOfWeek.setHours(0, 0, 0, 0);
+    weeklyRaw = (await prisma.xpLog.groupBy({
+      by: ["userId"],
+      _sum: { amount: true },
+      where: {
+        user: { schoolId: session.schoolId, role: "student" },
+        createdAt: { gte: startOfWeek },
+      },
+      orderBy: { _sum: { amount: "desc" } },
+      take: 30,
+    })) as typeof weeklyRaw;
+  }
+
+  // Resolve user details for aggregation-based tabs
+  const extraIds = [
+    ...bossRaw.map((r) => r.userId),
+    ...mvpRaw.map((r) => r.userId),
+    ...lernzeitRaw.map((r) => r.userId),
+    ...weeklyRaw.map((r) => r.userId),
+  ];
+  const uniqueExtraIds = [...new Set(extraIds)];
+
+  const extraUsers =
+    uniqueExtraIds.length > 0
+      ? await prisma.user.findMany({
+          where: { id: { in: uniqueExtraIds } },
+          select: { id: true, name: true, xp: true, equippedTitle: true, prestige: true },
         })
-      : [],
-
-    // School ranking
-    session.schoolId
-      ? prisma.user.findMany({
-          where: { schoolId: session.schoolId, role: "student" },
-          select: { id: true, name: true, xp: true, streak: true, equippedTitle: true, prestige: true },
-          orderBy: { xp: "desc" },
-          take: 50,
-        })
-      : [],
-
-    // Streak ranking
-    session.schoolId
-      ? prisma.user.findMany({
-          where: { schoolId: session.schoolId, role: "student", streak: { gt: 0 } },
-          select: { id: true, name: true, xp: true, streak: true, equippedTitle: true, prestige: true },
-          orderBy: { streak: "desc" },
-          take: 30,
-        })
-      : [],
-
-    // Boss damage ranking
-    session.schoolId
-      ? prisma.bossParticipant.groupBy({
-          by: ["userId"],
-          _sum: { damage: true },
-          where: { user: { schoolId: session.schoolId } },
-          orderBy: { _sum: { damage: "desc" } },
-          take: 30,
-        })
-      : [],
-
-    // MVP count ranking
-    session.schoolId
-      ? prisma.bossParticipant.groupBy({
-          by: ["userId"],
-          _count: { isMvp: true },
-          where: { user: { schoolId: session.schoolId }, isMvp: true },
-          orderBy: { _count: { isMvp: "desc" } },
-          take: 30,
-        })
-      : [],
-
-    // Coins ranking
-    session.schoolId
-      ? prisma.user.findMany({
-          where: { schoolId: session.schoolId, role: "student" },
-          select: { id: true, name: true, xp: true, coins: true, equippedTitle: true, prestige: true },
-          orderBy: { coins: "desc" },
-          take: 30,
-        })
-      : [],
-
-    // Lernzeit (activity seconds) ranking — only users with consent
-    session.schoolId
-      ? prisma.activitySession.groupBy({
-          by: ["userId"],
-          _sum: { activeSeconds: true },
-          where: { user: { schoolId: session.schoolId, role: "student" } },
-          orderBy: { _sum: { activeSeconds: "desc" } },
-          take: 30,
-        })
-      : [],
-
-    // Weekly XP ranking
-    session.schoolId
-      ? (async () => {
-          const startOfWeek = new Date();
-          startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
-          startOfWeek.setHours(0, 0, 0, 0);
-          return prisma.xpLog.groupBy({
-            by: ["userId"],
-            _sum: { amount: true },
-            where: {
-              user: { schoolId: session.schoolId, role: "student" },
-              createdAt: { gte: startOfWeek },
-            },
-            orderBy: { _sum: { amount: "desc" } },
-            take: 30,
-          });
-        })()
-      : [],
-  ]);
-
-  // Resolve user details for aggregated queries
-  const bossUserIds    = (bossRaw as { userId: string }[]).map((r) => r.userId);
-  const mvpUserIds     = (mvpRaw  as { userId: string }[]).map((r) => r.userId);
-  const lernzeitIds    = (lernzeitRaw as { userId: string }[]).map((r) => r.userId);
-  const weeklyUserIds  = (weeklyRaw  as { userId: string; _sum: { amount: number | null } }[]).map((r) => r.userId);
-
-  const allExtraIds = [...new Set([...bossUserIds, ...mvpUserIds, ...lernzeitIds, ...weeklyUserIds])];
-
-  const extraUsers = allExtraIds.length > 0
-    ? await prisma.user.findMany({
-        where: { id: { in: allExtraIds } },
-        select: { id: true, name: true, xp: true, equippedTitle: true, prestige: true },
-      })
-    : [];
+      : [];
 
   const extraUserMap = new Map(extraUsers.map((u) => [u.id, u]));
 
-  const bossLeaderboard = (bossRaw as { userId: string; _sum: { damage: number | null } }[])
+  const bossLeaderboard = bossRaw
     .map((r) => ({ user: extraUserMap.get(r.userId)!, score: r._sum.damage ?? 0 }))
     .filter((r) => r.user);
 
-  const mvpLeaderboard = (mvpRaw as { userId: string; _count: { isMvp: number } }[])
+  const mvpLeaderboard = mvpRaw
     .map((r) => ({ user: extraUserMap.get(r.userId)!, score: r._count.isMvp }))
     .filter((r) => r.user);
 
-  const lernzeitLeaderboard = (lernzeitRaw as { userId: string; _sum: { activeSeconds: number | null } }[])
+  const lernzeitLeaderboard = lernzeitRaw
     .map((r) => ({ user: extraUserMap.get(r.userId)!, seconds: r._sum.activeSeconds ?? 0 }))
     .filter((r) => r.user);
 
-  const weeklyLeaderboard = (weeklyRaw as { userId: string; _sum: { amount: number | null } }[])
+  const weeklyLeaderboard = weeklyRaw
     .map((r) => ({ user: extraUserMap.get(r.userId)!, score: r._sum.amount ?? 0 }))
     .filter((r) => r.user);
 
@@ -209,7 +192,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
           ? <Empty>Keine Klasse zugewiesen.</Empty>
           : classmatesRaw.length === 0
           ? <Empty>Keine Mitschüler gefunden.</Empty>
-          : <XpLeaderboard users={classmatesRaw as XpUser[]} currentUserId={session.userId} />
+          : <XpLeaderboard users={classmatesRaw} currentUserId={session.userId} />
       )}
 
       {/* Schul-Ranking */}
@@ -218,7 +201,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
           ? <Empty>Keine Schule zugewiesen.</Empty>
           : schoolRaw.length === 0
           ? <Empty>Keine Schüler gefunden.</Empty>
-          : <XpLeaderboard users={schoolRaw as XpUser[]} currentUserId={session.userId} />
+          : <XpLeaderboard users={schoolRaw} currentUserId={session.userId} />
       )}
 
       {/* Streak-Ranking */}
@@ -305,7 +288,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
           ? <Empty>Keine Daten.</Empty>
           : (
             <ol className="space-y-2">
-              {(coinsRaw as Array<{ id: string; name: string; xp: number; coins: number; equippedTitle: string | null; prestige: number }>).map((u, i) => {
+              {coinsRaw.map((u, i) => {
                 const isMe = u.id === session.userId;
                 const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
                 return (

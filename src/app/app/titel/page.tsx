@@ -40,7 +40,7 @@ export default async function TitelPage() {
 
   const ownedSlugs = new Set(ownedTitles.map((t) => t.titleSlug));
   const equippedSlug = user?.equippedTitle;
-  const equippedTitle = ALL_TITLES.find((t) => t.slug === equippedSlug);
+  const equippedTitle = getAllTitles().find((t) => t.slug === equippedSlug);
 
   const sortedTitles = [...getAllTitles()].sort((a, b) => {
     const ownedA = ownedSlugs.has(a.slug) ? 0 : 1;
