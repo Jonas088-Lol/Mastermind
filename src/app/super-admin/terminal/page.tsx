@@ -1,4 +1,4 @@
-import { CommandField } from "@/app/admin/gamification/CommandField";
+import { SuperCommandField } from "@/app/plattform/gamification/CommandField";
 
 export default function SuperAdminTerminalPage() {
   return (
@@ -8,7 +8,7 @@ export default function SuperAdminTerminalPage() {
         <p className="mt-1 text-sm text-white/40">Vollzugriff — alle Befehle ohne Schulbeschränkung</p>
       </div>
       <div className="max-w-3xl">
-        <CommandField />
+        <SuperCommandField />
       </div>
     </div>
   );
