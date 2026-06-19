@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Lock } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { getMaxUnlockedGrade } from "@/lib/game";
 
 const SUBJECT_META: Record<string, { label: string; icon: string; description: string }> = {
   mathematik: { label: "Mathematik", icon: "➕", description: "Brüche bis Analysis" },
-  deutsch: { label: "Deutsch", icon: "📖", description: "Grammatik, Aufsatz, Lektüre" },
-  englisch: { label: "Englisch", icon: "🌍", description: "Grammar, Vocabulary, Writing" },
-  physik: { label: "Physik", icon: "⚡", description: "Mechanik, Optik, Elektrik" },
-  chemie: { label: "Chemie", icon: "🧪", description: "Atombau bis Reaktionen" },
-  biologie: { label: "Biologie", icon: "🌱", description: "Zelle bis Evolution" },
+  deutsch:    { label: "Deutsch",    icon: "📖", description: "Grammatik, Aufsatz, Lektüre" },
+  englisch:   { label: "Englisch",   icon: "🌍", description: "Grammar, Vocabulary, Writing" },
+  physik:     { label: "Physik",     icon: "⚡", description: "Mechanik, Optik, Elektrik" },
+  chemie:     { label: "Chemie",     icon: "🧪", description: "Atombau bis Reaktionen" },
+  biologie:   { label: "Biologie",   icon: "🌱", description: "Zelle bis Evolution" },
   geschichte: { label: "Geschichte", icon: "🏛️", description: "Antike bis Moderne" },
   informatik: { label: "Informatik", icon: "💻", description: "Algorithmen bis Programmierung" },
 };
@@ -35,14 +36,23 @@ export default async function SubjectPage({ params }: PageParams) {
   const meta = SUBJECT_META[subject];
   if (!meta) notFound();
 
-  const grades = await prisma.exerciseTopic.findMany({
-    where: { subject },
-    select: { grade: true },
-    distinct: ["grade"],
-    orderBy: { grade: "asc" },
-  });
+  const [grades, unlockedNodes] = await Promise.all([
+    prisma.exerciseTopic.findMany({
+      where: { subject },
+      select: { grade: true },
+      distinct: ["grade"],
+      orderBy: { grade: "asc" },
+    }),
+    prisma.userSkillNode.findMany({
+      where: { userId: session.userId },
+      include: { node: true },
+    }),
+  ]);
 
+  const unlockedSlugs = new Set(unlockedNodes.map((un) => un.node.slug));
+  const maxGrade = getMaxUnlockedGrade(subject, unlockedSlugs);
   const gradeNums = grades.map((g) => g.grade);
+  const hasLockedGrades = gradeNums.some((g) => g > maxGrade);
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">
@@ -70,19 +80,50 @@ export default async function SubjectPage({ params }: PageParams) {
             Klassenstufe wählen
           </p>
           <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 lg:grid-cols-8">
-            {gradeNums.map((grade) => (
-              <Link
-                key={grade}
-                href={`/app/uebungen/${subject}/${grade}`}
-                className="flex flex-col items-center gap-1 border border-border bg-bg p-4 text-center transition-colors hover:border-brand hover:bg-brand/5"
-              >
-                <span className="text-2xl font-bold tracking-tight">{grade}</span>
-                <span className="text-[10px] font-medium uppercase tracking-wider text-muted-fg">
-                  Klasse
-                </span>
-              </Link>
-            ))}
+            {gradeNums.map((grade) => {
+              const locked = grade > maxGrade;
+              if (locked) {
+                return (
+                  <div
+                    key={grade}
+                    className="flex flex-col items-center gap-1 border border-border/40 bg-surface/50 p-4 text-center opacity-50 cursor-not-allowed select-none"
+                    title={`Schalte höhere Skill-Stufen frei, um Klasse ${grade} zu entsperren`}
+                  >
+                    <Lock className="size-4 text-muted-fg" />
+                    <span className="text-2xl font-bold tracking-tight text-muted-fg">{grade}</span>
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-muted-fg">
+                      Klasse
+                    </span>
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={grade}
+                  href={`/app/uebungen/${subject}/${grade}`}
+                  className="flex flex-col items-center gap-1 border border-border bg-bg p-4 text-center transition-colors hover:border-brand hover:bg-brand/5"
+                >
+                  <span className="text-2xl font-bold tracking-tight">{grade}</span>
+                  <span className="text-[10px] font-medium uppercase tracking-wider text-muted-fg">
+                    Klasse
+                  </span>
+                </Link>
+              );
+            })}
           </div>
+
+          {hasLockedGrades && (
+            <div className="mt-4 flex items-start gap-3 rounded-xl border border-amber-500/30 bg-amber-500/5 px-4 py-3">
+              <span className="mt-0.5 text-base">💡</span>
+              <p className="text-xs text-amber-700 dark:text-amber-400">
+                Höhere Klassenstufen sind gesperrt.{" "}
+                <Link href="/app/skills" className="font-bold underline underline-offset-2">
+                  Skill-Bäume
+                </Link>{" "}
+                leveln um Klasse {maxGrade + 1}–13 freizuschalten.
+              </p>
+            </div>
+          )}
         </div>
       )}
     </div>

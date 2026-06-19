@@ -18,24 +18,23 @@ export async function unlockSkillNode(
   const nodeDef = tree.find((n) => n.slug === nodeSlug);
   if (!nodeDef) return;
 
-  // Check if user has enough XP
   const user = await prisma.user.findUnique({ where: { id: session.userId }, select: { xp: true } });
   if (!user || user.xp < nodeDef.requiredXp) return;
 
-  // Check parent is unlocked
+  // Check parent is unlocked — search across all subjects (parent may be "core" in a different subject)
   if (nodeDef.parentSlug) {
     const parentNode = await prisma.skillNode.findFirst({
-      where: { slug: nodeDef.parentSlug, subject },
+      where: { slug: nodeDef.parentSlug },
     });
-    if (parentNode) {
-      const parentUnlocked = await prisma.userSkillNode.findFirst({
-        where: { userId: session.userId, nodeId: parentNode.id },
-      });
-      if (!parentUnlocked) return;
-    }
+    // If parent has never been unlocked by anyone, it doesn't exist in DB → block
+    if (!parentNode) return;
+    const parentUnlocked = await prisma.userSkillNode.findFirst({
+      where: { userId: session.userId, nodeId: parentNode.id },
+    });
+    if (!parentUnlocked) return;
   }
 
-  // Upsert the SkillNode record
+  // Upsert the SkillNode record (source of truth for slug→id mapping)
   const node = await prisma.skillNode.upsert({
     where: { subject_slug: { subject, slug: nodeSlug } },
     create: {
@@ -53,7 +52,6 @@ export async function unlockSkillNode(
     update: {},
   });
 
-  // Unlock for user
   await prisma.userSkillNode.upsert({
     where: { userId_nodeId: { userId: session.userId, nodeId: node.id } },
     create: { userId: session.userId, nodeId: node.id },
@@ -61,4 +59,5 @@ export async function unlockSkillNode(
   });
 
   revalidatePath("/app/skills");
+  revalidatePath("/app/uebungen");
 }

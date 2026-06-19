@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { Swords, Gift, Trophy, Medal } from "lucide-react";
+import { Gift, Medal, Swords } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
-import { BOSS_INDEX, BOSS_TIERS, BOSS_GRADES, type BossTier } from "@/lib/game";
-import { spawnBossBattle, createSeason, endBossBattle, awardWeeklyClassRankings } from "./actions";
-import { CommandField } from "./CommandField";
+import { BOSS_TIERS, type BossTier } from "@/lib/game";
+import { createSeason, awardWeeklyClassRankings } from "./actions";
 
 export const metadata: Metadata = { title: "Gamification · Admin" };
 
@@ -18,62 +17,48 @@ export default async function AdminGamificationPage() {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
 
-  const [activeBattles, activeSeason, recentBattles] = await Promise.all([
-    prisma.bossBattle.findMany({
-      where: { isActive: true, OR: [{ schoolId: null }, { schoolId: session.schoolId ?? "" }] },
-      include: { participants: { select: { id: true } } },
-      orderBy: { startAt: "desc" },
-    }),
+  const [activeSeason, globalBattles] = await Promise.all([
     prisma.season.findFirst({
       where: { isActive: true, OR: [{ schoolId: null }, { schoolId: session.schoolId ?? "" }] },
     }),
     prisma.bossBattle.findMany({
-      where: { isActive: false, OR: [{ schoolId: null }, { schoolId: session.schoolId ?? "" }] },
-      orderBy: { endAt: "desc" },
-      take: 5,
+      where: { isActive: true },
+      include: { participants: { select: { id: true } } },
+      orderBy: { startAt: "desc" },
     }),
   ]);
 
   return (
-    <div className="mx-auto flex max-w-4xl flex-col gap-8">
+    <div className="mx-auto flex max-w-3xl flex-col gap-8">
       <header>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schul-Admin</p>
         <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Gamification</h1>
-        <p className="mt-1 text-sm text-muted-fg">Boss-Battles starten · Saisons verwalten · Events schalten</p>
+        <p className="mt-1 text-sm text-muted-fg">Saisons verwalten · Wochensieger belohnen</p>
       </header>
 
-      {/* Command Terminal */}
-      <Card>
-        <CardHeader>
-          <div>
-            <CardTitle>Admin Command Terminal</CardTitle>
-            <p className="mt-1 text-sm text-muted-fg">Doppel-XP, Events, Boss-Rush, Coin-Vergabe und mehr</p>
-          </div>
-        </CardHeader>
-        <CardBody>
-          <CommandField />
-        </CardBody>
-      </Card>
-
-      {/* Active Boss Battles */}
+      {/* Global Boss Status (read-only) */}
       <Card>
         <CardHeader>
           <div>
             <CardTitle>Aktive Boss-Battles</CardTitle>
-            <p className="mt-1 text-sm text-muted-fg">{activeBattles.length} laufend</p>
+            <p className="mt-1 text-sm text-muted-fg">
+              {globalBattles.length === 0
+                ? "Kein aktiver Boss auf der Plattform"
+                : `${globalBattles.length} aktiv — global für alle Schüler`}
+            </p>
           </div>
-          {activeBattles.length > 0 && <Badge variant="success">{activeBattles.length} aktiv</Badge>}
+          <Swords className="size-5 text-muted-fg" strokeWidth={1.75} />
         </CardHeader>
         <CardBody className="px-0! pb-0!">
-          {activeBattles.length === 0 ? (
+          {globalBattles.length === 0 ? (
             <div className="border-t border-border px-5 py-6 text-sm text-muted-fg">
-              Kein aktiver Boss. Starte einen unten.
+              Bosse werden von Plattform-Admins gestartet und laufen global für alle Schulen.
             </div>
           ) : (
             <ul className="divide-y divide-border border-t border-border">
-              {activeBattles.map((battle) => {
-                const hpPct = Math.round((battle.currentHp / battle.maxHp) * 100);
-                const tier = (battle.tier as BossTier) in BOSS_TIERS ? battle.tier as BossTier : "common";
+              {globalBattles.map((battle) => {
+                const hpPct    = Math.round((battle.currentHp / battle.maxHp) * 100);
+                const tier     = (battle.tier as BossTier) in BOSS_TIERS ? battle.tier as BossTier : "common";
                 const tierData = BOSS_TIERS[tier];
                 return (
                   <li key={battle.id} className="flex items-center gap-4 px-5 py-4">
@@ -87,9 +72,16 @@ export default async function AdminGamificationPage() {
                         >
                           {tierData.label}
                         </span>
+                        <span className="rounded-full bg-brand/10 px-2 py-0.5 text-[10px] font-semibold text-brand">
+                          Global
+                        </span>
                       </div>
                       <div className="mt-1.5">
-                        <Progress value={hpPct} tone={hpPct > 50 ? "success" : hpPct > 25 ? "warning" : "danger"} className="h-1.5" />
+                        <Progress
+                          value={hpPct}
+                          tone={hpPct > 50 ? "success" : hpPct > 25 ? "warning" : "danger"}
+                          className="h-1.5"
+                        />
                       </div>
                       <p className="mt-1 text-[10px] text-muted-fg">
                         {battle.currentHp.toLocaleString("de-DE")} / {battle.maxHp.toLocaleString("de-DE")} HP
@@ -97,77 +89,11 @@ export default async function AdminGamificationPage() {
                         · Endet {battle.endAt.toLocaleString("de-DE", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
                       </p>
                     </div>
-                    <form action={endBossBattle.bind(null, battle.id)}>
-                      <Button type="submit" size="sm" variant="ghost">Beenden</Button>
-                    </form>
                   </li>
                 );
               })}
             </ul>
           )}
-        </CardBody>
-      </Card>
-
-      {/* Spawn Boss */}
-      <Card>
-        <CardHeader>
-          <div>
-            <CardTitle>Boss-Battle starten</CardTitle>
-            <p className="mt-1 text-sm text-muted-fg">Tier und Vorlage wählen</p>
-          </div>
-          <Swords className="size-5 text-danger" strokeWidth={1.75} />
-        </CardHeader>
-        <CardBody>
-          <form action={spawnBossBattle} className="space-y-4">
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="sm:col-span-2">
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">Boss aus Index wählen</label>
-                <select name="bossSlug" className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm" required>
-                  {(["common","uncommon","rare","epic","legendary","mythic","secret"] as BossTier[]).map((tier) => (
-                    <optgroup key={tier} label={`── ${BOSS_TIERS[tier].label} ──`}>
-                      {BOSS_INDEX.filter((b) => b.tier === tier).map((b) => (
-                        <option key={b.slug} value={b.slug}>
-                          {b.icon} {b.name} ({b.subject})
-                        </option>
-                      ))}
-                    </optgroup>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">Klassenstufe</label>
-                <select name="gradeLevel" className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm">
-                  {BOSS_GRADES.map((g) => (
-                    <option key={g} value={g}>Klasse {g}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">Dauer (Stunden)</label>
-                <input
-                  type="number" name="durationHours" min="1" max="168" defaultValue="24"
-                  className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm"
-                />
-              </div>
-            </div>
-
-            {/* Tier preview */}
-            <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-7">
-              {(Object.entries(BOSS_TIERS) as [BossTier, typeof BOSS_TIERS[BossTier]][]).map(([key, t]) => (
-                <div key={key} className="rounded-xl border p-2 text-center" style={{ borderColor: `${t.color}40`, backgroundColor: `${t.color}08` }}>
-                  <p className="text-[10px] font-black leading-tight" style={{ color: t.color }}>{t.label}</p>
-                  <p className="mt-0.5 text-[10px] text-muted-fg">{t.hp} HP</p>
-                </div>
-              ))}
-            </div>
-
-            <Button type="submit" variant="secondary">
-              <Swords className="size-4 text-danger" />
-              Boss starten
-            </Button>
-          </form>
         </CardBody>
       </Card>
 
@@ -221,7 +147,7 @@ export default async function AdminGamificationPage() {
               </div>
             </div>
             <Button type="submit" variant="secondary">
-              <Trophy className="size-4 text-warning" />
+              <Gift className="size-4 text-brand" />
               Saison starten
             </Button>
           </form>
@@ -246,36 +172,6 @@ export default async function AdminGamificationPage() {
           </form>
         </CardBody>
       </Card>
-
-      {/* Past battles */}
-      {recentBattles.length > 0 && (
-        <Card>
-          <CardHeader><CardTitle>Vergangene Battles</CardTitle></CardHeader>
-          <CardBody className="px-0! pb-0!">
-            <ul className="divide-y divide-border border-t border-border">
-              {recentBattles.map((battle) => {
-                const tier = (battle.tier as BossTier) in BOSS_TIERS ? battle.tier as BossTier : "common";
-                const tierData = BOSS_TIERS[tier];
-                return (
-                  <li key={battle.id} className="flex items-center gap-4 px-5 py-3">
-                    <span className="text-xl">{battle.icon}</span>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        <p className="text-sm font-semibold">{battle.name}</p>
-                        <span className="text-[10px] font-bold" style={{ color: tierData.color }}>{tierData.label}</span>
-                      </div>
-                      <p className="text-xs text-muted-fg">
-                        {battle.endAt.toLocaleDateString("de-DE", { day: "numeric", month: "short", year: "numeric" })}
-                      </p>
-                    </div>
-                    {battle.currentHp === 0 && <Badge variant="success">Besiegt</Badge>}
-                  </li>
-                );
-              })}
-            </ul>
-          </CardBody>
-        </Card>
-      )}
     </div>
   );
 }

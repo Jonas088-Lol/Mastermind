@@ -13,21 +13,22 @@ import {
 } from "@/lib/session";
 
 const plattformNavItems: NavItem[] = [
-  { href: "/plattform",              label: "Übersicht",   icon: "home",         exact: true },
-  { href: "/schultraeger/schulen",   label: "Schulen",     icon: "building2" },
-  { href: "/plattform/statistiken",  label: "Statistiken", icon: "barChart3" },
-  { href: "/plattform/support",      label: "Support",     icon: "messageSquare" },
-  { href: "/plattform/flags",        label: "Flags",       icon: "shield" },
-  { href: "/plattform/audit",        label: "Audit-Log",   icon: "lineChart" },
-  { href: "/plattform/kb",           label: "Wissensbasis",icon: "bookOpen" },
+  { href: "/plattform",                label: "Übersicht",    icon: "home",         exact: true },
+  { href: "/schultraeger/schulen",     label: "Schulen",      icon: "building2" },
+  { href: "/plattform/statistiken",    label: "Statistiken",  icon: "barChart3" },
+  { href: "/plattform/gamification",   label: "Gamification", icon: "swords" },
+  { href: "/plattform/support",        label: "Support",      icon: "messageSquare" },
+  { href: "/plattform/flags",          label: "Flags",        icon: "shield" },
+  { href: "/plattform/audit",          label: "Audit-Log",    icon: "lineChart" },
+  { href: "/plattform/kb",             label: "Wissensbasis", icon: "bookOpen" },
 ];
 
 const plattformBottomItems: BottomNavItem[] = [
-  { href: "/plattform",             label: "Start",   icon: "home",         exact: true },
-  { href: "/schultraeger/schulen",  label: "Schulen", icon: "building2" },
-  { href: "/plattform/statistiken", label: "Stats",   icon: "barChart3" },
-  { href: "/plattform/support",     label: "Support", icon: "messageSquare" },
-  { href: "/plattform/audit",       label: "Audit",   icon: "lineChart" },
+  { href: "/plattform",                label: "Start",   icon: "home",         exact: true },
+  { href: "/schultraeger/schulen",     label: "Schulen", icon: "building2" },
+  { href: "/plattform/statistiken",    label: "Stats",   icon: "barChart3" },
+  { href: "/plattform/gamification",   label: "Spiel",   icon: "swords" },
+  { href: "/plattform/support",        label: "Support", icon: "messageSquare" },
 ];
 
 export default async function PlattformLayout({
