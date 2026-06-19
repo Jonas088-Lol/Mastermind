@@ -102,14 +102,14 @@ export function UseCases() {
         {/* Tab buttons */}
         <AnimateOnScroll animation="fade-up" delay={100}>
           <div className="mt-12 flex justify-center">
-            <div className="inline-flex rounded-2xl border border-border bg-bg p-1.5 gap-1">
+            <div className="grid w-full grid-cols-2 gap-1 rounded-2xl border border-border bg-bg p-1.5 sm:inline-flex sm:w-auto sm:flex-row">
               {audiences.map((a, i) => (
                 <button
                   key={a.role}
                   type="button"
                   onClick={() => setActiveTab(i)}
                   className={cn(
-                    "inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-150",
+                    "inline-flex items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-semibold transition-all duration-150 sm:px-4",
                     activeTab === i ? a.tabActive : a.tabIdle
                   )}
                 >
