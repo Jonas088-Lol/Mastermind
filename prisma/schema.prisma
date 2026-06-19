@@ -126,6 +126,11 @@ model User {
   totalDailyLogins Int     @default(0)
   lastLoginDate    String?
   avatarUrl        String?
+  bio              String?
+  quote            String?
+  favoriteSubject  String?
+  isSuperAdmin     Boolean  @default(false)
+  seasonRankingEntries SeasonRankingEntry[]
 
   coins          Int     @default(0)
   streakFreezes  Int     @default(0)
@@ -1103,7 +1108,8 @@ model Season {
   endAt    DateTime
   isActive Boolean  @default(false)
 
-  passes UserSeasonPass[]
+  passes         UserSeasonPass[]
+  rankingEntries SeasonRankingEntry[]
 
   @@index([schoolId])
   @@index([isActive])
@@ -1123,22 +1129,27 @@ model UserSeasonPass {
 }
 
 model BossBattle {
-  id          String   @id @default(cuid())
-  schoolId    String?
-  school      School?  @relation(fields: [schoolId], references: [id], onDelete: Cascade)
-  name        String
-  description String
-  lore        String?
-  subject     String?
-  gradeLevel  Int?
-  maxHp       Int      @default(10000)
-  currentHp   Int      @default(10000)
-  difficulty  String   @default("hard")
-  xpReward    Int      @default(500)
-  icon        String   @default("👹")
-  startAt     DateTime
-  endAt       DateTime
-  isActive    Boolean  @default(false)
+  id               String   @id @default(cuid())
+  schoolId         String?
+  school           School?  @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+  name             String
+  description      String
+  lore             String?
+  subject          String?
+  gradeLevel       Int?
+  tier             String   @default("common")
+  maxHp            Int      @default(20)
+  currentHp        Int      @default(20)
+  difficulty       String   @default("hard")
+  coinReward       Int      @default(8)
+  mvpCoinReward    Int      @default(25)
+  xpReward         Int      @default(100)
+  icon             String   @default("👹")
+  startAt          DateTime
+  endAt            DateTime
+  isActive         Boolean  @default(false)
+  firstBloodUserId String?
+  killedByUserId   String?
 
   participants BossParticipant[]
 
@@ -1154,6 +1165,11 @@ model BossParticipant {
   battle         BossBattle @relation(fields: [battleId], references: [id], onDelete: Cascade)
   damage         Int        @default(0)
   correctAnswers Int        @default(0)
+  wrongAnswers   Int        @default(0)
+  coinsEarned    Int        @default(0)
+  isMvp          Boolean    @default(false)
+  firstBlood     Boolean    @default(false)
+  lastHit        Boolean    @default(false)
   joinedAt       DateTime   @default(now())
 
   @@unique([userId, battleId])
@@ -1794,4 +1810,34 @@ model HomeworkCompletion {
   @@unique([homeworkId, studentId])
   @@index([studentId])
   @@index([homeworkId])
+}
+
+// ── Global Settings & Events ───────────────────────────────
+
+model GlobalSetting {
+  key       String   @id
+  value     String   @default("")
+  updatedAt DateTime @updatedAt
+  updatedBy String?
+}
+
+// ── Season Ranking Archive ─────────────────────────────────
+
+model SeasonRankingEntry {
+  id        String  @id @default(cuid())
+  seasonId  String
+  season    Season  @relation(fields: [seasonId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category  String  // "xp" | "coins" | "boss" | "streak" | "mvp" | "lernzeit"
+  rank      Int
+  score     BigInt  @default(0)
+  schoolId  String?
+
+  createdAt DateTime @default(now())
+
+  @@unique([seasonId, userId, category])
+  @@index([seasonId])
+  @@index([userId])
+  @@index([category])
 }

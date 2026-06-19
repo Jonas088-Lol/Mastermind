@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { Trophy } from "lucide-react";
+import { Trophy, Coins, Crown, Timer, Flame, Swords } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardBody } from "@/components/ui/card";
@@ -18,11 +18,14 @@ interface PageProps {
 }
 
 const TABS = [
-  { key: "klasse",  label: "Klasse" },
-  { key: "schule",  label: "Schule" },
-  { key: "streak",  label: "Streak" },
-  { key: "boss",    label: "Boss" },
-  { key: "weekly",  label: "Diese Woche" },
+  { key: "klasse",  label: "Klasse",       icon: Trophy   },
+  { key: "schule",  label: "Schule",        icon: Trophy   },
+  { key: "streak",  label: "Streak",        icon: Flame    },
+  { key: "boss",    label: "Boss-Schaden",  icon: Swords   },
+  { key: "mvp",     label: "MVP",           icon: Crown    },
+  { key: "coins",   label: "Münzen",        icon: Coins    },
+  { key: "lernzeit",label: "Lernzeit",      icon: Timer    },
+  { key: "weekly",  label: "Diese Woche",   icon: Trophy   },
 ] as const;
 
 type TabKey = typeof TABS[number]["key"];
@@ -35,8 +38,10 @@ export default async function RankingPage({ searchParams }: PageProps) {
   const { tab: tabParam } = await searchParams;
   const activeTab: TabKey = (TABS.find((t) => t.key === tabParam)?.key ?? "klasse") as TabKey;
 
-  // Fetch data for all tabs in parallel
-  const [classmatesRaw, schoolRaw, streakRaw, bossRaw, weeklyRaw] = await Promise.all([
+  const [
+    classmatesRaw, schoolRaw, streakRaw, bossRaw, mvpRaw,
+    coinsRaw, lernzeitRaw, weeklyRaw,
+  ] = await Promise.all([
     // Class ranking
     session.classId
       ? prisma.user.findMany({
@@ -66,20 +71,50 @@ export default async function RankingPage({ searchParams }: PageProps) {
         })
       : [],
 
-    // Boss battle ranking (by total damage)
+    // Boss damage ranking
     session.schoolId
       ? prisma.bossParticipant.groupBy({
           by: ["userId"],
           _sum: { damage: true },
-          where: {
-            user: { schoolId: session.schoolId },
-          },
+          where: { user: { schoolId: session.schoolId } },
           orderBy: { _sum: { damage: "desc" } },
           take: 30,
         })
       : [],
 
-    // Weekly XP ranking (this week)
+    // MVP count ranking
+    session.schoolId
+      ? prisma.bossParticipant.groupBy({
+          by: ["userId"],
+          _count: { isMvp: true },
+          where: { user: { schoolId: session.schoolId }, isMvp: true },
+          orderBy: { _count: { isMvp: "desc" } },
+          take: 30,
+        })
+      : [],
+
+    // Coins ranking
+    session.schoolId
+      ? prisma.user.findMany({
+          where: { schoolId: session.schoolId, role: "student" },
+          select: { id: true, name: true, xp: true, coins: true, equippedTitle: true, prestige: true },
+          orderBy: { coins: "desc" },
+          take: 30,
+        })
+      : [],
+
+    // Lernzeit (activity seconds) ranking — only users with consent
+    session.schoolId
+      ? prisma.activitySession.groupBy({
+          by: ["userId"],
+          _sum: { activeSeconds: true },
+          where: { user: { schoolId: session.schoolId, role: "student" } },
+          orderBy: { _sum: { activeSeconds: "desc" } },
+          take: 30,
+        })
+      : [],
+
+    // Weekly XP ranking
     session.schoolId
       ? (async () => {
           const startOfWeek = new Date();
@@ -99,40 +134,48 @@ export default async function RankingPage({ searchParams }: PageProps) {
       : [],
   ]);
 
-  // For boss/weekly we need user details
-  const bossUserIds = bossRaw.map((r) => r.userId);
-  const weeklyUserIds = (weeklyRaw as Array<{ userId: string; _sum: { amount: number | null } }>).map((r) => r.userId);
+  // Resolve user details for aggregated queries
+  const bossUserIds    = (bossRaw as { userId: string }[]).map((r) => r.userId);
+  const mvpUserIds     = (mvpRaw  as { userId: string }[]).map((r) => r.userId);
+  const lernzeitIds    = (lernzeitRaw as { userId: string }[]).map((r) => r.userId);
+  const weeklyUserIds  = (weeklyRaw  as { userId: string; _sum: { amount: number | null } }[]).map((r) => r.userId);
 
-  const [bossUsers, weeklyUsers] = await Promise.all([
-    bossUserIds.length > 0
-      ? prisma.user.findMany({
-          where: { id: { in: bossUserIds } },
-          select: { id: true, name: true, xp: true, equippedTitle: true, prestige: true },
-        })
-      : [],
-    weeklyUserIds.length > 0
-      ? prisma.user.findMany({
-          where: { id: { in: weeklyUserIds } },
-          select: { id: true, name: true, xp: true, equippedTitle: true, prestige: true },
-        })
-      : [],
-  ]);
+  const allExtraIds = [...new Set([...bossUserIds, ...mvpUserIds, ...lernzeitIds, ...weeklyUserIds])];
 
-  const bossUserMap = new Map(bossUsers.map((u) => [u.id, u]));
-  const weeklyUserMap = new Map(weeklyUsers.map((u) => [u.id, u]));
+  const extraUsers = allExtraIds.length > 0
+    ? await prisma.user.findMany({
+        where: { id: { in: allExtraIds } },
+        select: { id: true, name: true, xp: true, equippedTitle: true, prestige: true },
+      })
+    : [];
 
-  const bossLeaderboard = bossRaw.map((r) => ({
-    user: bossUserMap.get(r.userId)!,
-    score: r._sum.damage ?? 0,
-  })).filter((r) => r.user);
+  const extraUserMap = new Map(extraUsers.map((u) => [u.id, u]));
 
-  const weeklyLeaderboard = (weeklyRaw as Array<{ userId: string; _sum: { amount: number | null } }>).map((r) => ({
-    user: weeklyUserMap.get(r.userId)!,
-    score: r._sum.amount ?? 0,
-  })).filter((r) => r.user);
+  const bossLeaderboard = (bossRaw as { userId: string; _sum: { damage: number | null } }[])
+    .map((r) => ({ user: extraUserMap.get(r.userId)!, score: r._sum.damage ?? 0 }))
+    .filter((r) => r.user);
+
+  const mvpLeaderboard = (mvpRaw as { userId: string; _count: { isMvp: number } }[])
+    .map((r) => ({ user: extraUserMap.get(r.userId)!, score: r._count.isMvp }))
+    .filter((r) => r.user);
+
+  const lernzeitLeaderboard = (lernzeitRaw as { userId: string; _sum: { activeSeconds: number | null } }[])
+    .map((r) => ({ user: extraUserMap.get(r.userId)!, seconds: r._sum.activeSeconds ?? 0 }))
+    .filter((r) => r.user);
+
+  const weeklyLeaderboard = (weeklyRaw as { userId: string; _sum: { amount: number | null } }[])
+    .map((r) => ({ user: extraUserMap.get(r.userId)!, score: r._sum.amount ?? 0 }))
+    .filter((r) => r.user);
 
   function tabHref(key: string) {
     return `/app/ranking?tab=${key}`;
+  }
+
+  function formatTime(seconds: number) {
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    if (h > 0) return `${h}h ${m}m`;
+    return `${m}m`;
   }
 
   return (
@@ -162,114 +205,206 @@ export default async function RankingPage({ searchParams }: PageProps) {
 
       {/* Klassen-Ranking */}
       {activeTab === "klasse" && (
-        !session.classId ? (
-          <Card><CardBody><p className="py-8 text-center text-sm text-muted-fg">Keine Klasse zugewiesen.</p></CardBody></Card>
-        ) : classmatesRaw.length === 0 ? (
-          <Card><CardBody><p className="py-8 text-center text-sm text-muted-fg">Keine Mitschüler gefunden.</p></CardBody></Card>
-        ) : (
-          <XpLeaderboard users={classmatesRaw} currentUserId={session.userId} />
-        )
+        !session.classId
+          ? <Empty>Keine Klasse zugewiesen.</Empty>
+          : classmatesRaw.length === 0
+          ? <Empty>Keine Mitschüler gefunden.</Empty>
+          : <XpLeaderboard users={classmatesRaw as XpUser[]} currentUserId={session.userId} />
       )}
 
       {/* Schul-Ranking */}
       {activeTab === "schule" && (
-        !session.schoolId ? (
-          <Card><CardBody><p className="py-8 text-center text-sm text-muted-fg">Keine Schule zugewiesen.</p></CardBody></Card>
-        ) : schoolRaw.length === 0 ? (
-          <Card><CardBody><p className="py-8 text-center text-sm text-muted-fg">Keine Schüler gefunden.</p></CardBody></Card>
-        ) : (
-          <XpLeaderboard users={schoolRaw} currentUserId={session.userId} />
-        )
+        !session.schoolId
+          ? <Empty>Keine Schule zugewiesen.</Empty>
+          : schoolRaw.length === 0
+          ? <Empty>Keine Schüler gefunden.</Empty>
+          : <XpLeaderboard users={schoolRaw as XpUser[]} currentUserId={session.userId} />
       )}
 
       {/* Streak-Ranking */}
       {activeTab === "streak" && (
-        streakRaw.length === 0 ? (
-          <Card><CardBody><p className="py-8 text-center text-sm text-muted-fg">Noch keine Streaks.</p></CardBody></Card>
-        ) : (
-          <ol className="space-y-2">
-            {streakRaw.map((u, i) => {
-              const isMe = u.id === session.userId;
-              const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
-              return (
-                <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
-                  <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
-                  <Avatar name={u.name} size="sm" />
-                  <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-base">🔥</span>
-                    <span className="font-mono font-bold">{u.streak}</span>
-                    <span className="text-xs text-muted-fg">Tage</span>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        )
+        streakRaw.length === 0
+          ? <Empty>Noch keine Streaks.</Empty>
+          : (
+            <ol className="space-y-2">
+              {streakRaw.map((u, i) => {
+                const isMe = u.id === session.userId;
+                const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
+                return (
+                  <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
+                    <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
+                    <Avatar name={u.name} size="sm" />
+                    <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
+                    <div className="flex items-center gap-1.5">
+                      <Flame className="size-4 text-orange-400" />
+                      <span className="font-mono font-bold">{u.streak}</span>
+                      <span className="text-xs text-muted-fg">Tage</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          )
       )}
 
-      {/* Boss-Ranking */}
+      {/* Boss-Schaden-Ranking */}
       {activeTab === "boss" && (
-        bossLeaderboard.length === 0 ? (
-          <Card><CardBody><p className="py-8 text-center text-sm text-muted-fg">Noch keine Boss-Kämpfe.</p></CardBody></Card>
-        ) : (
-          <ol className="space-y-2">
-            {bossLeaderboard.map(({ user: u, score }, i) => {
-              const isMe = u.id === session.userId;
-              const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
-              return (
-                <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
-                  <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
-                  <Avatar name={u.name} size="sm" />
-                  <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-base">⚔️</span>
-                    <span className="font-mono font-bold text-danger">{score.toLocaleString("de-DE")}</span>
-                    <span className="text-xs text-muted-fg">DMG</span>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        )
+        bossLeaderboard.length === 0
+          ? <Empty>Noch keine Boss-Kämpfe.</Empty>
+          : (
+            <ol className="space-y-2">
+              {bossLeaderboard.map(({ user: u, score }, i) => {
+                const isMe = u.id === session.userId;
+                const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
+                return (
+                  <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
+                    <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
+                    <Avatar name={u.name} size="sm" />
+                    <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
+                    <div className="flex items-center gap-1.5">
+                      <Swords className="size-4 text-danger" strokeWidth={1.75} />
+                      <span className="font-mono font-bold text-danger">{score.toLocaleString("de-DE")}</span>
+                      <span className="text-xs text-muted-fg">DMG</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          )
+      )}
+
+      {/* MVP-Count-Ranking */}
+      {activeTab === "mvp" && (
+        mvpLeaderboard.length === 0
+          ? <Empty>Noch keine MVP-Auszeichnungen.</Empty>
+          : (
+            <ol className="space-y-2">
+              {mvpLeaderboard.map(({ user: u, score }, i) => {
+                const isMe = u.id === session.userId;
+                const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
+                return (
+                  <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
+                    <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
+                    <Avatar name={u.name} size="sm" />
+                    <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
+                    <div className="flex items-center gap-1.5">
+                      <Crown className="size-4 text-yellow-400" />
+                      <span className="font-mono font-bold text-yellow-500">{score}×</span>
+                      <span className="text-xs text-muted-fg">MVP</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          )
+      )}
+
+      {/* Münzen-Ranking */}
+      {activeTab === "coins" && (
+        coinsRaw.length === 0
+          ? <Empty>Keine Daten.</Empty>
+          : (
+            <ol className="space-y-2">
+              {(coinsRaw as Array<{ id: string; name: string; xp: number; coins: number; equippedTitle: string | null; prestige: number }>).map((u, i) => {
+                const isMe = u.id === session.userId;
+                const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
+                return (
+                  <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
+                    <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
+                    <Avatar name={u.name} size="sm" />
+                    <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
+                    <div className="flex items-center gap-1.5">
+                      <Coins className="size-4 text-amber-400" />
+                      <span className="font-mono font-bold text-amber-500">{u.coins.toLocaleString("de-DE")}</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          )
+      )}
+
+      {/* Lernzeit-Ranking */}
+      {activeTab === "lernzeit" && (
+        lernzeitLeaderboard.length === 0
+          ? (
+            <Card>
+              <CardBody className="py-10 text-center">
+                <Timer className="mx-auto mb-3 size-8 text-muted-fg" strokeWidth={1.5} />
+                <p className="text-sm font-semibold">Keine Lernzeit-Daten</p>
+                <p className="mt-1 text-xs text-muted-fg">
+                  Nur Schüler die der Aktivitätsverfolgung zugestimmt haben erscheinen hier.
+                </p>
+              </CardBody>
+            </Card>
+          ) : (
+            <ol className="space-y-2">
+              {lernzeitLeaderboard.map(({ user: u, seconds }, i) => {
+                const isMe = u.id === session.userId;
+                const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
+                return (
+                  <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
+                    <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
+                    <Avatar name={u.name} size="sm" />
+                    <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
+                    <div className="flex items-center gap-1.5">
+                      <Timer className="size-4 text-brand" strokeWidth={1.75} />
+                      <span className="font-mono font-bold text-brand">{formatTime(seconds)}</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          )
       )}
 
       {/* Weekly-Ranking */}
       {activeTab === "weekly" && (
-        weeklyLeaderboard.length === 0 ? (
-          <Card><CardBody><p className="py-8 text-center text-sm text-muted-fg">Noch keine XP diese Woche.</p></CardBody></Card>
-        ) : (
-          <ol className="space-y-2">
-            {weeklyLeaderboard.map(({ user: u, score }, i) => {
-              const isMe = u.id === session.userId;
-              const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
-              return (
-                <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
-                  <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
-                  <Avatar name={u.name} size="sm" />
-                  <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
-                  <div className="flex items-center gap-1.5">
-                    <Trophy className="size-4 text-warning" />
-                    <span className="font-mono font-bold text-warning">{score}</span>
-                    <span className="text-xs text-muted-fg">XP</span>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        )
+        weeklyLeaderboard.length === 0
+          ? <Empty>Noch keine XP diese Woche.</Empty>
+          : (
+            <ol className="space-y-2">
+              {weeklyLeaderboard.map(({ user: u, score }, i) => {
+                const isMe = u.id === session.userId;
+                const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
+                return (
+                  <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
+                    <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
+                    <Avatar name={u.name} size="sm" />
+                    <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
+                    <div className="flex items-center gap-1.5">
+                      <Trophy className="size-4 text-warning" />
+                      <span className="font-mono font-bold text-warning">{score}</span>
+                      <span className="text-xs text-muted-fg">XP</span>
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+          )
       )}
     </div>
   );
 }
 
-function XpLeaderboard({
-  users,
-  currentUserId,
-}: {
-  users: Array<{ id: string; name: string; xp: number; streak: number; equippedTitle: string | null; prestige: number }>;
-  currentUserId: string;
-}) {
+// ── Helpers ─────────────────────────────────────────────────
+
+function Empty({ children }: { children: React.ReactNode }) {
+  return (
+    <Card><CardBody><p className="py-8 text-center text-sm text-muted-fg">{children}</p></CardBody></Card>
+  );
+}
+
+interface XpUser {
+  id: string;
+  name: string;
+  xp: number;
+  streak: number;
+  equippedTitle: string | null;
+  prestige: number;
+}
+
+function XpLeaderboard({ users, currentUserId }: { users: XpUser[]; currentUserId: string }) {
   return (
     <ol className="space-y-2">
       {users.map((u, i) => {
@@ -289,14 +424,11 @@ function XpLeaderboard({
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <p className={cn("text-sm font-medium", isMe && "font-bold")}>
-                    {u.name}
-                    {isMe && " (Du)"}
+                    {u.name}{isMe && " (Du)"}
                   </p>
                   <span className="text-sm">{rank.icon}</span>
                   <Badge variant="outline" className="text-[10px]">Lv.{level}</Badge>
-                  {u.streak > 0 && (
-                    <span className="text-xs text-muted-fg">🔥 {u.streak}</span>
-                  )}
+                  {u.streak > 0 && <span className="text-xs text-muted-fg">🔥 {u.streak}</span>}
                 </div>
                 <div className="mt-1.5">
                   <Progress value={pct} tone="brand" className="h-1" />

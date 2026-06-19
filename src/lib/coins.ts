@@ -13,6 +13,8 @@ export const COIN_REWARDS = {
   daily_streak_bonus: 10,
   boss_battle_reward: 25,
   boss_mvp_bonus:     50,
+  boss_first_blood:   10,
+  boss_last_hit:      15,
   duel_win:           20,
   duel_participate:    5,
   achievement_unlock: 10,
@@ -26,6 +28,8 @@ export const COIN_REWARDS = {
   freund_eingeladen:        25,
   profil_foto_gesetzt:       5,
   klasse_platz_1_woche:     40,
+  lucky_wheel:              10,
+  admin_grant:               0,
 } as const;
 
 export type CoinReason = keyof typeof COIN_REWARDS;

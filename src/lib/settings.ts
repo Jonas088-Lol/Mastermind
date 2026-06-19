@@ -1,0 +1,79 @@
+import { prisma } from "@/lib/db/client";
+
+export type SettingKey =
+  | "EVENT_DOUBLE_XP_UNTIL"
+  | "EVENT_DOUBLE_COINS_UNTIL"
+  | "MAINTENANCE_MODE"
+  | "SUPER_ADMIN_EMAILS"
+  | "BOSS_RUSH_ACTIVE"
+  | "ANNOUNCE_BANNER";
+
+export async function getSetting(key: SettingKey): Promise<string | null> {
+  const row = await prisma.globalSetting.findUnique({ where: { key } });
+  return row?.value ?? null;
+}
+
+export async function setSetting(key: SettingKey, value: string, actorId?: string): Promise<void> {
+  await prisma.globalSetting.upsert({
+    where: { key },
+    create: { key, value, updatedBy: actorId },
+    update: { value, updatedBy: actorId },
+  });
+}
+
+export async function deleteSetting(key: SettingKey): Promise<void> {
+  await prisma.globalSetting.deleteMany({ where: { key } }).catch(() => {});
+}
+
+export async function getEventMultiplier(type: "xp" | "coins"): Promise<number> {
+  const key = type === "xp" ? "EVENT_DOUBLE_XP_UNTIL" : "EVENT_DOUBLE_COINS_UNTIL";
+  const until = await getSetting(key as SettingKey);
+  if (!until) return 1;
+  if (new Date(until) < new Date()) return 1;
+  return 2;
+}
+
+export async function getActiveEvents(): Promise<{
+  doubleXp: boolean;
+  doubleXpUntil: Date | null;
+  doubleCoins: boolean;
+  doubleCoinsUntil: Date | null;
+  maintenance: boolean;
+  banner: string | null;
+}> {
+  const rows = await prisma.globalSetting.findMany({
+    where: {
+      key: {
+        in: [
+          "EVENT_DOUBLE_XP_UNTIL",
+          "EVENT_DOUBLE_COINS_UNTIL",
+          "MAINTENANCE_MODE",
+          "ANNOUNCE_BANNER",
+        ],
+      },
+    },
+  });
+
+  const map = Object.fromEntries(rows.map((r) => [r.key, r.value]));
+  const now = new Date();
+
+  const doubleXpUntil = map["EVENT_DOUBLE_XP_UNTIL"] ? new Date(map["EVENT_DOUBLE_XP_UNTIL"]) : null;
+  const doubleCoinsUntil = map["EVENT_DOUBLE_COINS_UNTIL"] ? new Date(map["EVENT_DOUBLE_COINS_UNTIL"]) : null;
+
+  return {
+    doubleXp: doubleXpUntil !== null && doubleXpUntil > now,
+    doubleXpUntil: doubleXpUntil && doubleXpUntil > now ? doubleXpUntil : null,
+    doubleCoins: doubleCoinsUntil !== null && doubleCoinsUntil > now,
+    doubleCoinsUntil: doubleCoinsUntil && doubleCoinsUntil > now ? doubleCoinsUntil : null,
+    maintenance: map["MAINTENANCE_MODE"] === "true",
+    banner: map["ANNOUNCE_BANNER"] || null,
+  };
+}
+
+export async function isSuperAdmin(userId: string): Promise<boolean> {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { isSuperAdmin: true },
+  });
+  return user?.isSuperAdmin === true;
+}

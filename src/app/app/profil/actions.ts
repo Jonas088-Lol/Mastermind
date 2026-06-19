@@ -41,3 +41,23 @@ export async function uploadAvatar(formData: FormData): Promise<void> {
 
   revalidatePath("/app/profil");
 }
+
+export async function updateBio(formData: FormData): Promise<void> {
+  const session = await getSession();
+  if (!session || effectiveRole(session) !== "student") return;
+
+  const bio             = String(formData.get("bio")             ?? "").slice(0, 300);
+  const quote           = String(formData.get("quote")           ?? "").slice(0, 150);
+  const favoriteSubject = String(formData.get("favoriteSubject") ?? "").slice(0, 50);
+
+  await prisma.user.update({
+    where: { id: session.userId },
+    data: {
+      bio:             bio             || null,
+      quote:           quote           || null,
+      favoriteSubject: favoriteSubject || null,
+    },
+  });
+
+  revalidatePath("/app/profil");
+}

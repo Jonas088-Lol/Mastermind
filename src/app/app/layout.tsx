@@ -20,6 +20,8 @@ import { AppShell } from "@/components/app/AppShell";
 import { MasterSpaceModal } from "@/components/masterspace/MasterSpaceModal";
 import { ConsentBanner } from "@/components/app/ConsentBanner";
 import { ActivityTracker } from "@/components/app/ActivityTracker";
+import { BossBar } from "@/components/app/BossBar";
+import { getActiveEvents } from "@/lib/settings";
 
 const bottomItems: NavItem[] = [
   { href: "/app/profil", label: "Profil", icon: "userCircle" },
@@ -39,7 +41,7 @@ export default async function AppLayout({
 
   const isPrivate = !session.schoolId;
 
-  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData, unreadThreads, branding, userConsent] = await Promise.all([
+  const [{ notifications, unreadCount }, dueFlashcards, pendingAssignments, userData, unreadThreads, branding, userConsent, events] = await Promise.all([
     fetchNotifications(session.userId),
     prisma.flashcard.count({
       where: { deck: { userId: session.userId }, nextReviewAt: { lte: new Date() } },
@@ -51,7 +53,7 @@ export default async function AppLayout({
         assignment: { dueAt: { gte: new Date() } },
       },
     }),
-    prisma.user.findUnique({ where: { id: session.userId }, select: { coins: true } }),
+    prisma.user.findUnique({ where: { id: session.userId }, select: { coins: true, avatarUrl: true } }),
     prisma.messageParticipant.count({
       where: {
         userId: session.userId,
@@ -71,6 +73,7 @@ export default async function AppLayout({
     }).catch(() => 0),
     getSchoolBranding(session),
     prisma.userConsent.findUnique({ where: { userId: session.userId }, select: { activityTracking: true } }),
+    getActiveEvents(),
   ]);
 
   const navItems: NavItem[] = isPrivate ? [
@@ -121,6 +124,9 @@ export default async function AppLayout({
     { href: "/app/quests",         label: "Quests",        icon: "zap"           },
     { href: "/app/duelle",         label: "Duelle",        icon: "swords"        },
     { href: "/app/boss",           label: "Boss-Battle",   icon: "swords"        },
+    { href: "/app/boss/bestiary",  label: "Bestiary",      icon: "swords"        },
+    { href: "/app/hall-of-fame",   label: "Hall of Fame",  icon: "trophy"        },
+    { href: "/app/lucky-wheel",    label: "Glücksrad",     icon: "zap"           },
     { href: "/app/streaks",        label: "Streaks",       icon: "flame"         },
     { href: "/app/erfolge",        label: "Erfolge",       icon: "star"          },
     { href: "/app/saison",         label: "Saison",        icon: "gift"          },
@@ -162,8 +168,19 @@ export default async function AppLayout({
               isImpersonating={isImpersonating(session)}
             />
           )}
-          <AppHeader user={displayUser(session)} unreadCount={unreadCount} notifications={notifications} coinBalance={userData?.coins ?? 0} appName={appName} />
+          <AppHeader
+            user={{ ...displayUser(session), avatarUrl: userData?.avatarUrl }}
+            unreadCount={unreadCount}
+            notifications={notifications}
+            coinBalance={userData?.coins ?? 0}
+            appName={appName}
+            doubleXp={events.doubleXp}
+            doubleCoins={events.doubleCoins}
+            eventBanner={events.banner}
+          />
         </div>
+        {/* Boss bar — shows when a boss is active */}
+        <BossBar />
         {/* Only this area scrolls */}
         <main className="flex-1 overflow-y-auto overflow-x-hidden min-w-0 px-4 py-6 lg:px-10 lg:py-10">
           {children}

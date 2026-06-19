@@ -1,5 +1,56 @@
 // Core game engine: 500-level system, rank tiers, XP curves, titles, quests, combos
 
+// ── Boss Tiers ────────────────────────────────────────────
+
+export const BOSS_TIERS = {
+  common:    { label: "Common",    color: "#9ca3af", border: "border-gray-400/50",   glow: "shadow-gray-400/20",   hp: 20,  coinReward: 8,   mvpCoinReward: 25,   xpReward: 100,  spawnWeight: 40 },
+  uncommon:  { label: "Uncommon",  color: "#22c55e", border: "border-green-400/50",  glow: "shadow-green-400/20",  hp: 40,  coinReward: 18,  mvpCoinReward: 55,   xpReward: 200,  spawnWeight: 25 },
+  rare:      { label: "Rare",      color: "#3b82f6", border: "border-blue-400/50",   glow: "shadow-blue-400/20",   hp: 70,  coinReward: 35,  mvpCoinReward: 110,  xpReward: 350,  spawnWeight: 15 },
+  epic:      { label: "Epic",      color: "#a855f7", border: "border-purple-400/50", glow: "shadow-purple-400/20", hp: 120, coinReward: 70,  mvpCoinReward: 210,  xpReward: 600,  spawnWeight: 10 },
+  legendary: { label: "Legendary", color: "#f97316", border: "border-orange-400/50", glow: "shadow-orange-400/20", hp: 200, coinReward: 140, mvpCoinReward: 420,  xpReward: 1000, spawnWeight: 6  },
+  mythic:    { label: "Mythic",    color: "#ef4444", border: "border-red-400/50",    glow: "shadow-red-400/20",    hp: 350, coinReward: 280, mvpCoinReward: 840,  xpReward: 1800, spawnWeight: 3  },
+  secret:    { label: "Secret",    color: "#eab308", border: "border-yellow-400/50", glow: "shadow-yellow-400/20", hp: 500, coinReward: 500, mvpCoinReward: 1500, xpReward: 3000, spawnWeight: 1  },
+} as const;
+
+export type BossTier = keyof typeof BOSS_TIERS;
+
+export function randomBossTier(): BossTier {
+  const total = Object.values(BOSS_TIERS).reduce((s, t) => s + t.spawnWeight, 0);
+  let roll = Math.random() * total;
+  for (const [key, val] of Object.entries(BOSS_TIERS) as [BossTier, typeof BOSS_TIERS[BossTier]][]) {
+    roll -= val.spawnWeight;
+    if (roll <= 0) return key;
+  }
+  return "common";
+}
+
+export const BOSS_SUBJECTS = [
+  "mathematik", "deutsch", "englisch", "biologie", "physik", "chemie", "geschichte", "informatik",
+] as const;
+
+export type BossSubject = typeof BOSS_SUBJECTS[number];
+
+export interface BossTemplate {
+  name: string;
+  icon: string;
+  description: string;
+  lore: string;
+  subject: BossSubject;
+}
+
+export const BOSS_TEMPLATES: BossTemplate[] = [
+  { name: "Algebra-Daemon",       icon: "👹", subject: "mathematik", description: "Ein Daemon der Gleichungen und Formeln",        lore: "Er existiert seit der Erfindung negativer Zahlen und haelt die Unbekannten gefangen." },
+  { name: "Grammatik-Gespenst",   icon: "👻", subject: "deutsch",    description: "Ein Gespenst aus falsch gesetzten Kommas",      lore: "Es erscheint immer wenn jemand die Kommaregeln ignoriert." },
+  { name: "Vokabel-Tyrann",       icon: "🐲", subject: "englisch",   description: "Der Herrscher aller verlorenen Vokabeln",       lore: "Er sammelt die Woerter, die du beim Lernen vergessen hast." },
+  { name: "Bio-Bestie",           icon: "🦎", subject: "biologie",   description: "Eine mutierte Kreatur der Zellbiologie",        lore: "Entstanden aus tausend falsch interpretierten DNA-Straengen." },
+  { name: "Physik-Phantom",       icon: "⚡", subject: "physik",     description: "Ein Geist der Naturgesetze",                   lore: "Es erscheint wenn Newton-Gesetze missachtet werden." },
+  { name: "Chemie-Chimaere",      icon: "🧪", subject: "chemie",     description: "Ein chemisches Monster aus falschen Formeln",   lore: "Geboren aus einer falsch aufgestellten Reaktionsgleichung." },
+  { name: "Geschichte-Golem",     icon: "🗿", subject: "geschichte", description: "Waechter der vergessenen Jahreszahlen",         lore: "Er erinnert sich an jedes Datum, das du vergessen hast." },
+  { name: "Code-Krake",           icon: "🐙", subject: "informatik", description: "Ein digitales Ungeheuer aus kaputtem Code",     lore: "Entstanden aus Millionen Zeilen fehlerhafter Programme." },
+];
+
+export const BOSS_GRADES = [5, 6, 7, 8, 9, 10, 11, 12] as const;
+
 // ── XP Curve ─────────────────────────────────────────────
 
 const XP_PER_LEVEL_BREAKPOINTS: [number, number, number][] = [

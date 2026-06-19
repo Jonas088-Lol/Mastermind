@@ -7,6 +7,8 @@ import {
   Sparkles,
   Trophy,
   Zap,
+  Quote,
+  BookOpen,
 } from "lucide-react";
 import { CoinIcon } from "@/components/ui/CoinIcon";
 import { AvatarUploadButton } from "./AvatarUpload";
@@ -14,6 +16,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { Avatar } from "@/components/ui/avatar";
+import { updateBio } from "./actions";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
@@ -52,7 +55,15 @@ export default async function ProfilPage() {
       totalDailyLogins: true,
       avatarUrl: true,
       coins: true,
+      bio: true,
+      quote: true,
+      favoriteSubject: true,
       school: { select: { name: true } },
+      seasonRankingEntries: {
+        orderBy: { createdAt: "desc" },
+        take: 10,
+        include: { season: { select: { name: true, number: true, startAt: true, endAt: true } } },
+      },
       studentSubmissions: {
         select: {
           id: true,
@@ -205,6 +216,68 @@ export default async function ProfilPage() {
           </Link>
         </div>
       </header>
+
+      {/* Bio + Season Badges */}
+      {(user.bio || user.quote || user.favoriteSubject || user.seasonRankingEntries.length > 0) && (
+        <section className="rounded-2xl border border-border bg-surface p-5 space-y-4">
+          {user.quote && (
+            <div className="flex gap-3">
+              <Quote className="mt-0.5 size-4 shrink-0 text-muted-fg" />
+              <p className="text-sm italic text-muted-fg">"{user.quote}"</p>
+            </div>
+          )}
+          {user.bio && <p className="text-sm leading-relaxed">{user.bio}</p>}
+          {user.favoriteSubject && (
+            <div className="flex items-center gap-2 text-sm text-muted-fg">
+              <BookOpen className="size-4" />
+              Lieblingsfach: <span className="font-semibold text-fg">{user.favoriteSubject}</span>
+            </div>
+          )}
+          {user.seasonRankingEntries.length > 0 && (
+            <div className="flex flex-wrap gap-2 pt-1">
+              {user.seasonRankingEntries.map((e) => {
+                const medal = e.rank === 1 ? "🥇" : e.rank === 2 ? "🥈" : e.rank === 3 ? "🥉" : null;
+                if (!medal) return null;
+                const cat = { xp: "XP", coins: "Münzen", boss: "Boss-DMG", mvp: "MVP", streak: "Streak", lernzeit: "Lernzeit" }[e.category] ?? e.category;
+                return (
+                  <span key={e.id} className="flex items-center gap-1.5 rounded-full border border-warning/30 bg-warning/8 px-2.5 py-1 text-xs font-semibold text-warning">
+                    {medal} Platz {e.rank} · {cat} · {e.season.name}
+                  </span>
+                );
+              })}
+            </div>
+          )}
+        </section>
+      )}
+
+      {/* Bio Edit Form */}
+      <details className="group rounded-2xl border border-border">
+        <summary className="flex cursor-pointer items-center gap-2 px-5 py-3 text-sm font-semibold text-muted-fg hover:text-fg list-none">
+          <Edit3 className="size-4" />
+          Bio & Profil bearbeiten
+        </summary>
+        <form action={updateBio} className="border-t border-border px-5 py-4 space-y-3">
+          <div>
+            <label className="mb-1 block text-xs font-semibold text-muted-fg">Über mich (max. 300 Zeichen)</label>
+            <textarea name="bio" defaultValue={user.bio ?? ""} maxLength={300} rows={3}
+              className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm resize-none outline-none focus:border-brand" />
+          </div>
+          <div>
+            <label className="mb-1 block text-xs font-semibold text-muted-fg">Lieblingsquote (max. 150 Zeichen)</label>
+            <input name="quote" type="text" defaultValue={user.quote ?? ""} maxLength={150}
+              className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm outline-none focus:border-brand" />
+          </div>
+          <div>
+            <label className="mb-1 block text-xs font-semibold text-muted-fg">Lieblingsfach</label>
+            <input name="favoriteSubject" type="text" defaultValue={user.favoriteSubject ?? ""} maxLength={50}
+              placeholder="z.B. Mathematik"
+              className="w-full rounded-xl border border-border bg-bg px-3 py-2 text-sm outline-none focus:border-brand" />
+          </div>
+          <button type="submit" className="rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90">
+            Speichern
+          </button>
+        </form>
+      </details>
 
       <section className="grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-4">
         <Stat label="Level" value={String(level)} suffix={rank.nameDE} icon={Zap} tone="text-brand" />
