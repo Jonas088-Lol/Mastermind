@@ -142,7 +142,7 @@ interface CookieEnvelope {
 }
 
 const COOKIE = "mm_session";
-const ONE_WEEK_SEC = 60 * 60 * 24 * 7;
+const ONE_WEEK_SEC = 60 * 60 * 24 * 365;
 const ONE_WEEK_MS = ONE_WEEK_SEC * 1000;
 
 function generateSessionToken(): string {

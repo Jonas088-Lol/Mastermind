@@ -1,23 +1,5 @@
-import { Hero } from "@/components/landing/Hero";
-import { Trust } from "@/components/landing/Trust";
-import { FeatureShowcase } from "@/components/landing/FeatureShowcase";
-import { Gamification } from "@/components/landing/Gamification";
-import { UseCases } from "@/components/landing/UseCases";
-import { Pricing } from "@/components/landing/Pricing";
-import { Pilot } from "@/components/landing/Pilot";
-import { Cta } from "@/components/landing/Cta";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Trust />
-      <FeatureShowcase />
-      <Gamification />
-      <UseCases />
-      <Pricing />
-      <Pilot />
-      <Cta />
-    </>
-  );
+  redirect("/login");
 }
