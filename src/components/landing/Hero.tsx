@@ -105,9 +105,9 @@ export function Hero() {
             </div>
 
             {/* ─── RIGHT: app mockup ─── */}
-            <div className="relative animate-slide-up animate-delay-400">
-              {/* Floating top-right card: rank */}
-              <div className="absolute -top-4 -right-4 z-10 flex items-center gap-2.5 rounded-2xl border border-border bg-surface px-4 py-3 shadow-lg">
+            <div className="relative animate-slide-up animate-delay-400 sm:px-4">
+              {/* Floating top-right card: rank — hidden on small screens to avoid overflow */}
+              <div className="absolute -top-4 -right-4 z-10 hidden items-center gap-2.5 rounded-2xl border border-border bg-surface px-4 py-3 shadow-lg sm:flex">
                 <span className="text-xl">🏆</span>
                 <div>
                   <p className="text-xs font-bold text-fg">Rang: Silber III</p>
@@ -115,8 +115,8 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Floating bottom-left card: XP */}
-              <div className="absolute -bottom-4 -left-4 z-10 flex items-center gap-2.5 rounded-2xl border border-border bg-surface px-4 py-3 shadow-lg">
+              {/* Floating bottom-left card: XP — hidden on small screens to avoid overflow */}
+              <div className="absolute -bottom-4 -left-4 z-10 hidden items-center gap-2.5 rounded-2xl border border-border bg-surface px-4 py-3 shadow-lg sm:flex">
                 <span className="text-xl">📊</span>
                 <div>
                   <p className="text-xs font-bold text-fg">Klasse</p>

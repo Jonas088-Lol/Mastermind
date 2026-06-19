@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Make Tailwind's dark: variant match our data-theme="dark" toggle */
+@variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /* =========================================================
    MasterMind Design System v2
    Modern · Rounded · Premium
