@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Lock } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { getMaxUnlockedGrade } from "@/lib/game";
+import { getMaxUnlockedGradeFromMastery } from "@/lib/skill-graph";
 
 const SUBJECT_META: Record<string, { label: string; icon: string; description: string }> = {
   mathematik: { label: "Mathematik", icon: "➕", description: "Brüche bis Analysis" },
@@ -36,21 +36,21 @@ export default async function SubjectPage({ params }: PageParams) {
   const meta = SUBJECT_META[subject];
   if (!meta) notFound();
 
-  const [grades, unlockedNodes] = await Promise.all([
+  const [grades, masteries] = await Promise.all([
     prisma.exerciseTopic.findMany({
       where: { subject },
       select: { grade: true },
       distinct: ["grade"],
       orderBy: { grade: "asc" },
     }),
-    prisma.userSkillNode.findMany({
-      where: { userId: session.userId },
-      include: { node: true },
+    prisma.userSkillMastery.findMany({
+      where: { userId: session.userId, masteryTier: { gte: 1 } },
+      select: { nodeSlug: true, masteryTier: true },
     }),
   ]);
 
-  const unlockedSlugs = new Set(unlockedNodes.map((un) => un.node.slug));
-  const maxGrade = getMaxUnlockedGrade(subject, unlockedSlugs);
+  const masteryMap = Object.fromEntries(masteries.map((m) => [m.nodeSlug, { tier: m.masteryTier }]));
+  const maxGrade = getMaxUnlockedGradeFromMastery(subject, masteryMap);
   const gradeNums = grades.map((g) => g.grade);
   const hasLockedGrades = gradeNums.some((g) => g > maxGrade);
 

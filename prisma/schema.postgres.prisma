@@ -149,6 +149,7 @@ model User {
   seasonPasses      UserSeasonPass[]
   bossParticipations BossParticipant[]
   userSkillNodes    UserSkillNode[]
+  skillMasteries    UserSkillMastery[] @relation("UserSkillMasteries")
 
   parentLinks    ParentStudentLink[] @relation("ParentLinks")
   studentParents ParentStudentLink[] @relation("StudentParents")
@@ -1209,6 +1210,22 @@ model UserSkillNode {
   unlockedAt DateTime  @default(now())
 
   @@unique([userId, nodeId])
+  @@index([userId])
+}
+
+// New mega skill tree — replaces the old 4-tier system
+model UserSkillMastery {
+  id            String    @id @default(cuid())
+  userId        String
+  nodeSlug      String
+  masteryTier   Int       @default(0)  // 0=locked,1=bronze,2=silber,3=gold
+  exercisesDone Int       @default(0)  // cumulative correct answers for this node
+  unlockedAt    DateTime?
+  masteredAt    DateTime?
+  updatedAt     DateTime  @updatedAt
+  user          User      @relation("UserSkillMasteries", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, nodeSlug])
   @@index([userId])
 }
 

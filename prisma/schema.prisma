@@ -147,6 +147,7 @@ model User {
   seasonPasses     UserSeasonPass[]
   bossParticipations BossParticipant[]
   userSkillNodes   UserSkillNode[]
+  skillMasteries   UserSkillMastery[] @relation("UserSkillMasteries")
 
   parentLinks   ParentStudentLink[] @relation("ParentLinks")
   studentParents ParentStudentLink[] @relation("StudentParents")
@@ -1843,4 +1844,21 @@ model SeasonRankingEntry {
   @@index([seasonId])
   @@index([userId])
   @@index([category])
+}
+
+// ── Skill Mastery ──────────────────────────────────────────
+
+model UserSkillMastery {
+  id            String    @id @default(cuid())
+  userId        String
+  nodeSlug      String
+  masteryTier   Int       @default(0)
+  exercisesDone Int       @default(0)
+  unlockedAt    DateTime?
+  masteredAt    DateTime?
+  updatedAt     DateTime  @updatedAt
+  user          User      @relation("UserSkillMasteries", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, nodeSlug])
+  @@index([userId])
 }
