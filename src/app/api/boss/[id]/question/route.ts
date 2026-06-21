@@ -42,8 +42,6 @@ export async function GET(
 
   if (!q) return NextResponse.json({ error: "No questions" }, { status: 404 });
 
-  if (!q) return NextResponse.json({ error: "No questions" }, { status: 404 });
-
   // options is a JSON array of plain strings: ["Berlin", "Hamburg", ...]
   // correct is the index as a string: "0", "1", "2", "3"
   // We strip `correct` before sending to the client
