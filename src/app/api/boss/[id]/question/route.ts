@@ -16,33 +16,31 @@ export async function GET(
   });
   if (!battle) return NextResponse.json({ error: "Boss not active" }, { status: 404 });
 
-  const where = {
-    type: "mc",
-    topic: {
-      ...(battle.subject ? { subject: battle.subject } : {}),
-      ...(battle.gradeLevel ? { grade: battle.gradeLevel } : {}),
-    },
-  };
+  // Build progressively looser filters — always staying within the boss's subject.
+  // Only fall back across all subjects if this subject has zero MC questions at all.
+  const subjectFilter = battle.subject ? { subject: battle.subject } : {};
+
+  const whereExact   = { type: "mc", topic: { ...subjectFilter, ...(battle.gradeLevel ? { grade: battle.gradeLevel } : {}) } };
+  const whereSubject = { type: "mc", topic: subjectFilter };
+  const whereAny     = { type: "mc" };
 
   let q;
-  const count = await prisma.exerciseQuestion.count({ where });
-  if (count === 0) {
-    const fallbackCount = await prisma.exerciseQuestion.count({ where: { type: "mc" } });
-    if (fallbackCount === 0) return NextResponse.json({ error: "No questions" }, { status: 404 });
-    const skip = Math.floor(Math.random() * fallbackCount);
-    q = await prisma.exerciseQuestion.findFirst({
-      where: { type: "mc" },
-      skip,
+
+  const pickRandom = async (w: typeof whereAny) => {
+    const total = await prisma.exerciseQuestion.count({ where: w });
+    if (total === 0) return null;
+    return prisma.exerciseQuestion.findFirst({
+      where: w,
+      skip: Math.floor(Math.random() * total),
       include: { topic: { select: { subject: true, grade: true } } },
     });
-  } else {
-    const skip = Math.floor(Math.random() * count);
-    q = await prisma.exerciseQuestion.findFirst({
-      where,
-      skip,
-      include: { topic: { select: { subject: true, grade: true } } },
-    });
-  }
+  };
+
+  q = await pickRandom(whereExact)
+    ?? await pickRandom(whereSubject)
+    ?? await pickRandom(whereAny);
+
+  if (!q) return NextResponse.json({ error: "No questions" }, { status: 404 });
 
   if (!q) return NextResponse.json({ error: "No questions" }, { status: 404 });
 
