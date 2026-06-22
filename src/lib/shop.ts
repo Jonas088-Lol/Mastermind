@@ -165,3 +165,56 @@ async function applyAiQuota(userId: string, amount: number) {
   });
 }
 
+// ── New ItemDef-based purchase ─────────────────────────────────────────────────
+
+export async function buyItemDef(
+  userId: string,
+  itemDefId: string,
+): Promise<{ ok: boolean; message?: string }> {
+  const item = await prisma.itemDef.findUnique({ where: { id: itemDefId } });
+  if (!item || !item.isActive) return { ok: false, message: "Item nicht gefunden" };
+
+  // Determine price
+  const price = item.priceCoins;
+  if (!price || price <= 0) return { ok: false, message: "Nicht mit Münzen kaufbar" };
+
+  const paid = await spendCoins(userId, price, "shop_purchase", item.key);
+  if (!paid) return { ok: false, message: "Nicht genug Münzen" };
+
+  const meta: Record<string, unknown> = item.meta ? JSON.parse(item.meta) : {};
+
+  // Dispatch by componentKey
+  if (item.componentKey === "boost_xp") {
+    await activateBooster(userId, item.key);
+  } else if (item.componentKey === "streak_freeze") {
+    const days = Number(meta.days ?? 1);
+    await prisma.user.update({ where: { id: userId }, data: { streakFreezes: { increment: days } } });
+  } else if (item.componentKey === "ai_quota") {
+    const amount = Number(meta.amount ?? 10);
+    await applyAiQuota(userId, amount);
+  } else {
+    // Cosmetic, gear, title — track in UserItem (upsert qty)
+    await prisma.userItem.upsert({
+      where:  { userId_itemId: { userId, itemId: item.id } },
+      create: { userId, itemId: item.id, qty: 1 },
+      update: { qty: { increment: 1 } },
+    });
+  }
+
+  return { ok: true };
+}
+
+// Icon mapping for componentKey (UI concern, kept here for server + client reuse)
+export const COMPONENT_ICON: Record<string, string> = {
+  frame_bronze:    "🥉", frame_silver:    "🥈", frame_gold:   "🥇",
+  frame_diamond:   "💎", frame_legendary: "🌟", frame_boss:   "👑",
+  bg_stars:        "🌌", bg_forest:       "🌿", bg_galaxy:    "🔭", bg_void: "🕳️",
+  pet_fox:         "🦊", pet_owl:         "🦉", pet_dragon:   "🐉", pet_mastermind: "🧠",
+  boost_xp:        "⚡",
+  streak_freeze:   "🛡️",
+  ai_quota:        "🤖",
+  gear_shield:     "🛡️", gear_sword:      "⚔️", gear_boots:   "👟",
+  gear_tome:       "📖", gear_crown:      "👑",
+  title:           "🏷️",
+};
+

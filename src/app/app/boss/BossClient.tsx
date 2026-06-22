@@ -26,13 +26,27 @@ interface BossClientProps {
   initialHp: number;
   maxHp: number;
   myCorrectAnswers: number;
+  endAtIso?: string;
 }
 
 type Phase = "idle" | "loading" | "question" | "result";
 type BossAnim = "idle" | "hit" | "defeated";
 
-export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxHp, myCorrectAnswers }: BossClientProps) {
+export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxHp, myCorrectAnswers, endAtIso }: BossClientProps) {
   const [hp, setHp] = useState(initialHp);
+  const [battleMsLeft, setBattleMsLeft] = useState(() =>
+    endAtIso ? Math.max(0, new Date(endAtIso).getTime() - Date.now()) : null
+  );
+
+  useEffect(() => {
+    if (!endAtIso) return;
+    const id = setInterval(() => {
+      const ms = Math.max(0, new Date(endAtIso).getTime() - Date.now());
+      setBattleMsLeft(ms);
+      if (ms === 0) clearInterval(id);
+    }, 10_000);
+    return () => clearInterval(id);
+  }, [endAtIso]);
   const [phase, setPhase] = useState<Phase>("idle");
   const [question, setQuestion] = useState<Question | null>(null);
   const [selected, setSelected] = useState<number | null>(null);
@@ -267,6 +281,14 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
               {hits} Treffer 💥
             </span>
           </div>
+          {battleMsLeft !== null && battleMsLeft > 0 && (
+            <p className="text-center text-[10px] font-mono text-muted-fg">
+              ⏳ {Math.floor(battleMsLeft / 3_600_000)}h {Math.floor((battleMsLeft % 3_600_000) / 60_000)}m verbleibend
+            </p>
+          )}
+          {battleMsLeft === 0 && (
+            <p className="text-center text-[10px] font-bold text-danger">⚔️ Battle beendet</p>
+          )}
         </div>
 
         {/* ── IDLE: Attack button ── */}

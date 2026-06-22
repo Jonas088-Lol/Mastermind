@@ -145,7 +145,7 @@ export default async function SchulenPage({ searchParams }: PageProps) {
                   const planLabel = PLAN_LABEL[s.plan] ?? s.plan;
                   return (
                     <li key={s.id} className="grid grid-cols-1 gap-3 px-5 py-4 transition-colors hover:bg-surface lg:grid-cols-[2fr_1fr_1fr_120px_auto] lg:items-center lg:gap-4">
-                      <div className="flex items-center gap-3">
+                      <Link href={`/plattform/schulen/${s.id}`} className="flex items-center gap-3">
                         <div className="grid size-10 shrink-0 place-items-center bg-fg text-bg">
                           <Building2 className="size-4" strokeWidth={1.75} />
                         </div>
@@ -155,7 +155,7 @@ export default async function SchulenPage({ searchParams }: PageProps) {
                             {[s.city, s.state].filter(Boolean).join(" · ")}
                           </p>
                         </div>
-                      </div>
+                      </Link>
                       <Badge variant={planTone}>{planLabel}</Badge>
                       <div>
                         <p className="font-mono text-xs font-semibold tabular-nums">

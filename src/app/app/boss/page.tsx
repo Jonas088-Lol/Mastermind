@@ -48,6 +48,14 @@ export default async function BossPage() {
     },
   });
 
+  // MVP / rarity tracker from new BossDef system
+  const bossProgress = await prisma.userBossProgress.findMany({
+    where: { userId: session.userId },
+    include: { boss: { select: { id: true, name: true, emoji: true, rarity: true, subject: true } } },
+    orderBy: { kills: "desc" },
+    take: 20,
+  });
+
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">
       {/* Header */}
@@ -62,17 +70,13 @@ export default async function BossPage() {
       </header>
 
       {/* Quick links */}
-      <div className="flex gap-2">
-        <Link
-          href="/app/boss/index"
-          className="flex items-center gap-1.5 rounded-xl border border-border bg-bg px-3 py-2 text-xs font-semibold text-muted-fg transition-colors hover:border-fg/30 hover:text-fg"
-        >
-          <BookOpen className="size-3.5" /> Boss-Index
+      <div className="flex flex-wrap gap-2">
+        <Link href="/app/boss/kompendium"
+          className="flex items-center gap-1.5 rounded-xl border border-border bg-bg px-3 py-2 text-xs font-semibold text-muted-fg transition-colors hover:border-fg/30 hover:text-fg">
+          <BookOpen className="size-3.5" /> Kompendium
         </Link>
-        <Link
-          href="/app/boss/bestiary"
-          className="flex items-center gap-1.5 rounded-xl border border-border bg-bg px-3 py-2 text-xs font-semibold text-muted-fg transition-colors hover:border-fg/30 hover:text-fg"
-        >
+        <Link href="/app/boss/bestiary"
+          className="flex items-center gap-1.5 rounded-xl border border-border bg-bg px-3 py-2 text-xs font-semibold text-muted-fg transition-colors hover:border-fg/30 hover:text-fg">
           <Swords className="size-3.5" /> Statistiken
         </Link>
       </div>
@@ -95,9 +99,6 @@ export default async function BossPage() {
         const color = tierData.color;
         const myParticipation = battle.participants.find((p) => p.userId === session.userId);
         const totalParticipants = battle.participants.length;
-        const timeLeft = battle.endAt.getTime() - Date.now();
-        const hoursLeft = Math.max(0, Math.floor(timeLeft / 3_600_000));
-        const minutesLeft = Math.max(0, Math.floor((timeLeft % 3_600_000) / 60_000));
 
         return (
           <div
@@ -143,14 +144,6 @@ export default async function BossPage() {
                 <span className="flex items-center gap-1">
                   <Users className="size-3" /> {totalParticipants} Kämpfer
                 </span>
-                {timeLeft > 0 && (
-                  <span>
-                    ⏳ Endet in{" "}
-                    <span className="font-semibold text-fg">
-                      {hoursLeft > 0 ? `${hoursLeft}h ` : ""}{minutesLeft}min
-                    </span>
-                  </span>
-                )}
                 <span>
                   MVP: <span className="font-semibold text-fg">{tierData.mvpCoinReward} Münzen</span>
                   {" · "}
@@ -169,6 +162,7 @@ export default async function BossPage() {
                 initialHp={battle.currentHp}
                 maxHp={battle.maxHp}
                 myCorrectAnswers={myParticipation?.correctAnswers ?? 0}
+                endAtIso={battle.endAt.toISOString()}
               />
             </div>
 
@@ -247,6 +241,44 @@ export default async function BossPage() {
               );
             })}
           </div>
+        </section>
+      )}
+
+      {/* Boss Progress — Rarity & MVP tracker */}
+      {bossProgress.length > 0 && (
+        <section>
+          <h2 className="mb-3 text-xs font-bold uppercase tracking-widest text-muted-fg">
+            Mein Boss-Fortschritt
+          </h2>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            {bossProgress.map((p) => {
+              const rarityColors: Record<string, string> = {
+                COMMON: "#6b7280", UNCOMMON: "#22c55e", RARE: "#3b82f6",
+                EPIC: "#a855f7", LEGENDARY: "#f97316", MYTHIC: "#ef4444", SECRET: "#fcd34d",
+              };
+              const color = rarityColors[p.boss.rarity] ?? "#6b7280";
+              return (
+                <div key={p.id}
+                  className="flex items-center gap-3 rounded-xl border p-3"
+                  style={{ borderColor: `${color}40`, background: `${color}08` }}>
+                  <span className="text-2xl shrink-0">{p.boss.emoji}</span>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-xs font-bold" style={{ color }}>{p.boss.name}</p>
+                    <p className="text-[10px] text-muted-fg">{p.boss.subject}</p>
+                    <div className="mt-1 flex gap-2 text-[10px]">
+                      <span className="text-danger font-mono">⚔️ {p.kills}×</span>
+                      {p.mvpKills > 0 && <span className="text-yellow-400 font-mono">👑 {p.mvpKills}×</span>}
+                      {p.titleUnlocked && <span className="text-brand">✓ Titel</span>}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <Link href="/app/boss/kompendium"
+            className="mt-3 block text-center text-xs text-muted-fg hover:text-fg transition-colors">
+            Alle 75 Bosse im Kompendium →
+          </Link>
         </section>
       )}
     </div>

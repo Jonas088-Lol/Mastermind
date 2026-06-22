@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { gradeSubmission } from "@/components/worksheet/GradingEngine";
+import { incrementQuestProgress } from "@/lib/quests";
+import { onExerciseComplete } from "@/lib/tree-quest-engine";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -120,6 +122,12 @@ export async function POST(req: Request) {
       referenceId: submission.id,
     },
   });
+
+  // Hook quest engine — worksheet submission counts as "submission" category
+  // and grants tree progress proportional to score (1 point per 20% score)
+  const treePoints = Math.max(1, Math.round(score / 20));
+  void incrementQuestProgress(session.userId, "submission", 1).catch(() => undefined);
+  void onExerciseComplete(session.userId, treePoints).catch(() => undefined);
 
   return NextResponse.json({ ok: true, score, maxScore: Math.round(maxScore), submissionId: submission.id });
 }

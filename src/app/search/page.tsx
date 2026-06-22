@@ -53,7 +53,7 @@ export default async function SearchPage({ searchParams }: PageProps) {
       <div className="mx-auto flex max-w-4xl flex-col gap-8">
         <header className="flex flex-col gap-5">
           <Link
-            href="/"
+            href="/app"
             className="inline-flex w-fit items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-muted-fg transition-colors hover:text-fg"
           >
             <ArrowLeft className="size-3.5" />

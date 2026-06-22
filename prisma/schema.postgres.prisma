@@ -13,6 +13,23 @@ datasource db {
 
 // ── Enums ─────────────────────────────────────────────────
 
+enum Rarity {
+  COMMON
+  UNCOMMON
+  RARE
+  EPIC
+  LEGENDARY
+  MYTHIC
+  SECRET
+}
+
+enum ItemKind {
+  COSMETIC
+  CONSUMABLE
+  GEAR
+  TITLE
+}
+
 enum Schulart {
   GRUNDSCHULE
   MITTELSCHULE
@@ -169,6 +186,7 @@ model User {
   seasonRankingEntries SeasonRankingEntry[]
 
   coins          Int      @default(0)
+  premiumCoins   Int      @default(0)
   streakFreezes  Int      @default(0)
   isPremium      Boolean  @default(false)
   premiumUntil   DateTime?
@@ -176,6 +194,10 @@ model User {
   coinLogs         CoinLog[]
   inventoryItems   UserInventoryItem[]
   userBoosters     UserBooster[]
+  bossProgress     UserBossProgress[]    @relation("UserBossProgress")
+  tierProgress     TierProgress[]        @relation("TierProgress")
+  userItems        UserItem[]            @relation("UserItems")
+  earnedAchievements UserEarnedAchievement[] @relation("UserEarnedAchievements")
 
   userQuests        UserQuest[]
   userTitles        UserTitle[]
@@ -2054,5 +2076,127 @@ model DailyActivity {
   user            User     @relation("DailyActivity", fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, day])
+  @@index([userId])
+}
+
+// ── Boss Definitions ──────────────────────────────────────
+
+model BossDef {
+  id         String   @id
+  name       String
+  subject    String
+  emoji      String
+  rarity     Rarity
+  minGrade   Int      @default(5)
+  maxGrade   Int      @default(12)
+  baseHp     Int
+  baseXp     Int
+  baseCoins  Int
+  loreShort  String   @default("")
+  custom     Boolean  @default(false)
+  mvpTarget  Int      @default(10)
+
+  progress   UserBossProgress[]
+
+  @@index([rarity])
+  @@index([subject])
+}
+
+model UserBossProgress {
+  id             String    @id @default(cuid())
+  userId         String
+  bossId         String
+  kills          Int       @default(0)
+  mvpKills       Int       @default(0)
+  titleUnlocked  Boolean   @default(false)
+  lastKillAt     DateTime?
+  user           User      @relation("UserBossProgress", fields: [userId], references: [id], onDelete: Cascade)
+  boss           BossDef   @relation(fields: [bossId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, bossId])
+  @@index([userId])
+  @@index([bossId])
+}
+
+model TierProgress {
+  id       String  @id @default(cuid())
+  userId   String
+  rarity   Rarity
+  mvpKills Int     @default(0)
+  unlocked Boolean @default(false)
+  user     User    @relation("TierProgress", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, rarity])
+  @@index([userId])
+}
+
+model ItemDef {
+  id            String    @id @default(cuid())
+  key           String    @unique
+  name          String
+  description   String    @default("")
+  kind          ItemKind
+  rarity        Rarity
+  priceCoins    Int?
+  pricePremium  Int?
+  componentKey  String
+  meta          String    @default("{}")
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+
+  listings    ShopListing[]
+  owned       UserItem[]
+
+  @@index([kind])
+  @@index([rarity])
+}
+
+model ShopListing {
+  id         String    @id @default(cuid())
+  itemId     String
+  item       ItemDef   @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  activeFrom DateTime?
+  activeTo   DateTime?
+  featured   Boolean   @default(false)
+
+  @@index([itemId])
+}
+
+model UserItem {
+  id         String   @id @default(cuid())
+  userId     String
+  itemId     String
+  equipped   Boolean  @default(false)
+  qty        Int      @default(1)
+  acquiredAt DateTime @default(now())
+  user       User     @relation("UserItems", fields: [userId], references: [id], onDelete: Cascade)
+  item       ItemDef  @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, itemId])
+  @@index([userId])
+}
+
+model AchievementDef {
+  id          String  @id @default(cuid())
+  key         String  @unique
+  name        String
+  description String
+  icon        String
+  xpReward    Int     @default(0)
+  rarity      Rarity  @default(COMMON)
+  secret      Boolean @default(false)
+
+  earned UserEarnedAchievement[]
+}
+
+model UserEarnedAchievement {
+  id            String         @id @default(cuid())
+  userId        String
+  achievementId String
+  unlockedAt    DateTime       @default(now())
+  user          User           @relation("UserEarnedAchievements", fields: [userId], references: [id], onDelete: Cascade)
+  achievement   AchievementDef @relation(fields: [achievementId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, achievementId])
   @@index([userId])
 }

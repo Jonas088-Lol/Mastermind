@@ -14,6 +14,7 @@ export interface AppHeaderProps {
   unreadCount?: number;
   notifications?: NotificationItem[];
   coinBalance?: number;
+  premiumCoinBalance?: number;
   appName?: string;
   activeBooster?: { multiplier: number; expiresAt: Date } | null;
   eventBanner?: string | null;
@@ -27,6 +28,7 @@ export function AppHeader({
   unreadCount = 0,
   notifications = [],
   coinBalance,
+  premiumCoinBalance,
   appName,
   activeBooster,
   eventBanner,
@@ -57,11 +59,11 @@ export function AppHeader({
         </div>
       )}
 
-      <header className="safe-top flex h-16 items-center gap-2 border-b border-border bg-bg/90 px-4 backdrop-blur-md supports-backdrop-filter:bg-bg/75 sm:h-18 sm:gap-4 sm:px-6">
+      <header className="safe-top flex h-15 items-center gap-2 border-b border-border bg-bg/95 px-3 backdrop-blur-md supports-backdrop-filter:bg-bg/80 sm:h-16 sm:gap-3 sm:px-5 lg:h-17 lg:gap-4 lg:px-6">
         {/* Search */}
         <Link
           href="/search"
-          className="group flex flex-1 items-center gap-2.5 rounded-xl border border-border bg-surface px-3.5 py-2.5 text-sm text-muted-fg transition-all hover:border-border-strong hover:bg-surface-2 hover:text-fg sm:max-w-sm"
+          className="group flex flex-1 items-center gap-2 rounded-xl border border-border bg-surface px-3 py-2 text-sm text-muted-fg transition-all hover:border-border-strong hover:bg-surface-2 hover:text-fg sm:gap-2.5 sm:px-3.5 sm:py-2.5 sm:max-w-sm"
           aria-label="Suche öffnen"
         >
           <Search className="size-4 shrink-0 text-muted-fg" />
@@ -77,7 +79,7 @@ export function AppHeader({
           </span>
         )}
 
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5 sm:gap-1">
           {/* Active booster indicator */}
           {activeBooster && !hasEvent && (
             <span className="hidden items-center gap-1 rounded-full bg-brand/10 px-2.5 py-1 text-xs font-bold text-brand sm:flex">
@@ -86,11 +88,23 @@ export function AppHeader({
             </span>
           )}
 
-          {/* Coins */}
+          {/* Premium Coins (💎) — desktop only */}
+          {premiumCoinBalance !== undefined && premiumCoinBalance > 0 && (
+            <Link
+              href="/app/coins"
+              className="hidden items-center gap-1 rounded-xl px-2 py-1.5 text-sm font-semibold text-cyan-500 transition-colors hover:bg-cyan-50 dark:hover:bg-cyan-950/30 sm:flex"
+              title="Premium-Münzen"
+            >
+              <span className="text-base leading-none">💎</span>
+              <span>{premiumCoinBalance.toLocaleString("de-DE")}</span>
+            </Link>
+          )}
+
+          {/* Coins — desktop only */}
           {coinBalance !== undefined && (
             <Link
               href="/app/coins"
-              className="hidden items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-sm font-semibold text-amber-600 transition-colors hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-amber-950/30 sm:flex"
+              className="hidden items-center gap-1.5 rounded-xl px-2 py-1.5 text-sm font-semibold text-amber-600 transition-colors hover:bg-amber-50 dark:text-amber-400 dark:hover:bg-amber-950/30 sm:flex"
               title="Münzen"
             >
               <CoinIcon className="size-4 text-amber-500" />
@@ -101,11 +115,30 @@ export function AppHeader({
             </Link>
           )}
 
+          {/* Mobile: coin + gem in one compact pill */}
+          {(coinBalance !== undefined || (premiumCoinBalance !== undefined && premiumCoinBalance > 0)) && (
+            <Link
+              href="/app/coins"
+              className="flex items-center gap-1.5 rounded-xl px-2 py-1 sm:hidden"
+              title="Münzen"
+            >
+              {premiumCoinBalance !== undefined && premiumCoinBalance > 0 && (
+                <span className="text-sm font-bold text-cyan-500">💎{premiumCoinBalance.toLocaleString("de-DE")}</span>
+              )}
+              {coinBalance !== undefined && (
+                <span className="flex items-center gap-1 text-sm font-bold text-amber-500">
+                  <CoinIcon className="size-3.5" />
+                  {coinBalance.toLocaleString("de-DE")}
+                </span>
+              )}
+            </Link>
+          )}
+
           <NotificationCenter unreadCount={unreadCount} notifications={notifications} />
           <ThemeToggle />
 
           {/* User avatar → links to profile */}
-          <div className="ml-1 flex items-center gap-2.5 border-l border-border pl-3">
+          <div className="ml-0.5 flex items-center gap-2 border-l border-border pl-2 sm:ml-1 sm:gap-2.5 sm:pl-3">
             <Link href="/app/profil" className="relative shrink-0 transition-transform hover:scale-105" title="Mein Profil">
               <Avatar name={user.name} src={user.avatarUrl ?? undefined} size="md" />
               {doubleXp && (
@@ -121,7 +154,7 @@ export function AppHeader({
                 type="submit"
                 aria-label="Abmelden"
                 title="Abmelden"
-                className="ml-1 grid size-8 place-items-center rounded-lg text-muted-fg transition-colors hover:bg-surface hover:text-fg"
+                className="ml-1 grid size-9 place-items-center rounded-lg text-muted-fg transition-colors hover:bg-surface hover:text-fg"
               >
                 <svg className="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />

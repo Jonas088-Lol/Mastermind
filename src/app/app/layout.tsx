@@ -53,7 +53,7 @@ export default async function AppLayout({
         assignment: { dueAt: { gte: new Date() } },
       },
     }),
-    prisma.user.findUnique({ where: { id: session.userId }, select: { coins: true, avatarUrl: true } }),
+    prisma.user.findUnique({ where: { id: session.userId }, select: { coins: true, premiumCoins: true, avatarUrl: true } }),
     prisma.messageParticipant.count({
       where: { userId: session.userId, lastReadAt: null },
     }).catch(() => 0),
@@ -75,8 +75,11 @@ export default async function AppLayout({
     { href: "/app/tutor",         label: "KI-Tutor",     icon: "sparkles"      },
     { href: "/app/noten",         label: "Meine Noten",  icon: "award"         },
     { href: "/app/community",     label: "Community",    icon: "users"         },
-    { href: "/app/ranking",       label: "Ranking",      icon: "trophy"        },
+    { href: "/app/rangliste",      label: "Rangliste",    icon: "trendingUp"    },
+    { href: "/app/ranking",       label: "Schul-Ranking",icon: "trophy"        },
     { href: "/app/duelle",        label: "Duelle",       icon: "swords"        },
+    { href: "/app/boss",          label: "Boss-Battle",  icon: "swords"        },
+    { href: "/app/boss/kompendium",label: "Kompendium",  icon: "bookMarked"    },
     { href: "/app/streaks",       label: "Streaks",      icon: "flame"         },
     { href: "/app/erfolge",       label: "Erfolge",      icon: "star"          },
     { href: "/app/quests",        label: "Quests",       icon: "zap"           },
@@ -106,13 +109,14 @@ export default async function AppLayout({
     { href: "/app/nachrichten",    label: "Nachrichten",   icon: "messageSquare", badge: unreadThreads > 0 ? String(unreadThreads) : undefined },
     { href: "/app/masterspace",    label: "MasterSpace",   icon: "compass",  modal: "masterspace" },
     // ── Gamification ─────────────────────────────────
-    { href: "/app/ranking",        label: "Ranking",       icon: "trophy"        },
-    { href: "/app/quests",         label: "Quests",        icon: "zap"           },
-    { href: "/app/duelle",         label: "Duelle",        icon: "swords"        },
-    { href: "/app/boss",           label: "Boss-Battle",   icon: "swords"        },
-    { href: "/app/boss/index",     label: "Boss-Index",    icon: "bookOpen"      },
-    { href: "/app/boss/bestiary",  label: "Bestiary",      icon: "swords"        },
-    { href: "/app/hall-of-fame",   label: "Hall of Fame",  icon: "trophy"        },
+    { href: "/app/rangliste",        label: "Rangliste",      icon: "trendingUp"    },
+    { href: "/app/ranking",         label: "Schul-Ranking",  icon: "trophy"        },
+    { href: "/app/quests",          label: "Quests",         icon: "zap"           },
+    { href: "/app/duelle",          label: "Duelle",         icon: "swords"        },
+    { href: "/app/boss",            label: "Boss-Battle",    icon: "swords"        },
+    { href: "/app/boss/kompendium", label: "Boss-Kompendium",icon: "bookMarked"    },
+    { href: "/app/boss/bestiary",   label: "Bestiary",       icon: "barChart3"     },
+    { href: "/app/hall-of-fame",    label: "Hall of Fame",   icon: "trophy"        },
     { href: "/app/lucky-wheel",    label: "Glücksrad",     icon: "zap"           },
     { href: "/app/streaks",        label: "Streaks",       icon: "flame"         },
     { href: "/app/erfolge",        label: "Erfolge",       icon: "star"          },
@@ -160,6 +164,7 @@ export default async function AppLayout({
             unreadCount={unreadCount}
             notifications={notifications}
             coinBalance={userData?.coins ?? 0}
+            premiumCoinBalance={userData?.premiumCoins ?? 0}
             appName={appName}
             doubleXp={events.doubleXp}
             doubleCoins={events.doubleCoins}

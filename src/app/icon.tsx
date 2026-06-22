@@ -8,12 +8,15 @@ export const contentType = "image/png";
 export const runtime = "nodejs";
 
 export default function Icon() {
-  // If a custom icon was dropped into public/brand/icon.png, serve it directly
-  const brandIconPath = join(process.cwd(), "public/brand/icon.png");
-  if (existsSync(brandIconPath)) {
-    return new Response(readFileSync(brandIconPath), {
-      headers: { "Content-Type": "image/png" },
-    });
+  // Priority: public/mastermind-logo.png → public/brand/icon.png → generated
+  const candidates = [
+    join(process.cwd(), "public/mastermind-logo.png"),
+    join(process.cwd(), "public/brand/icon.png"),
+  ];
+  for (const p of candidates) {
+    if (existsSync(p)) {
+      return new Response(readFileSync(p), { headers: { "Content-Type": "image/png" } });
+    }
   }
 
   // Fallback: generated "MM" icon
