@@ -47,12 +47,13 @@ enum TreeQuestType {
 // ── Tenancy ────────────────────────────────────────────────
 
 model School {
-  id          String   @id @default(cuid())
-  slug        String   @unique
-  name        String
-  city        String?
-  state       String?
-  plan        String   @default("basic")
+  id             String   @id @default(cuid())
+  slug           String   @unique
+  name           String
+  city           String?
+  state          String?
+  bundeslandCode String?
+  plan           String   @default("basic")
   seats       Int      @default(100)
   logoUrl          String?
   logoDarkUrl      String?

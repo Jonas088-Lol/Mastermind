@@ -14,16 +14,22 @@ export async function saveCurriculumSetup(formData: FormData): Promise<void> {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "student") return;
 
-  const bundeslandCode   = formData.get("bundeslandCode") as string;
+  // Bundesland comes from the school, not from the form
+  const userWithSchool = await prisma.user.findUnique({
+    where:  { id: session.userId },
+    select: { school: { select: { bundeslandCode: true } } },
+  });
+  const bundeslandCode = userWithSchool?.school?.bundeslandCode;
+  if (!bundeslandCode) return;
+
   const landkreisId      = formData.get("landkreisId")    as string;
   const schulartRaw      = formData.get("schulart")       as string;
   const jahrgangsstufe   = parseInt(formData.get("jahrgangsstufe") as string, 10);
   const displayName      = (formData.get("displayName") as string | null)?.trim() || null;
   const leaderboardOptIn = formData.get("leaderboardOptIn") === "on";
-  // Extra subjects (wahlpflicht) the user selected
   const extraSubjectIds  = formData.getAll("extraSubjectId") as string[];
 
-  if (!bundeslandCode || !schulartRaw || isNaN(jahrgangsstufe)) return;
+  if (!schulartRaw || isNaN(jahrgangsstufe)) return;
 
   let schulart: Schulart;
   try {

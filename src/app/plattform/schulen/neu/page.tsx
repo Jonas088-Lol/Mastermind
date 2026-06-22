@@ -53,8 +53,30 @@ export default async function NeueSchulePage() {
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="state">Bundesland</Label>
-                <Input id="state" name="state" placeholder="Bayern" />
+                <Label htmlFor="bundeslandCode">Bundesland</Label>
+                <select
+                  id="bundeslandCode"
+                  name="bundeslandCode"
+                  className="h-10 w-full border border-border bg-bg px-3 text-sm focus:outline-none"
+                >
+                  <option value="">— nicht angegeben —</option>
+                  <option value="BW">Baden-Württemberg</option>
+                  <option value="BY">Bayern</option>
+                  <option value="BE">Berlin</option>
+                  <option value="BB">Brandenburg</option>
+                  <option value="HB">Bremen</option>
+                  <option value="HH">Hamburg</option>
+                  <option value="HE">Hessen</option>
+                  <option value="MV">Mecklenburg-Vorpommern</option>
+                  <option value="NI">Niedersachsen</option>
+                  <option value="NW">Nordrhein-Westfalen</option>
+                  <option value="RP">Rheinland-Pfalz</option>
+                  <option value="SL">Saarland</option>
+                  <option value="SN">Sachsen</option>
+                  <option value="ST">Sachsen-Anhalt</option>
+                  <option value="SH">Schleswig-Holstein</option>
+                  <option value="TH">Thüringen</option>
+                </select>
               </div>
 
               <div className="space-y-1.5">
