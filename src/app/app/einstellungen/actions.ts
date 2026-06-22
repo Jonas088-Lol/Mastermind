@@ -58,6 +58,41 @@ export async function deleteOwnAccount(formData: FormData) {
   redirect("/login");
 }
 
+export async function redeemClassCode(formData: FormData): Promise<{ error?: string; success?: string }> {
+  const session = await getSession();
+  if (!session) return { error: "Nicht eingeloggt" };
+
+  const raw = (formData.get("code") as string | null)?.trim().toUpperCase();
+  if (!raw) return { error: "Bitte Code eingeben." };
+
+  const code = await prisma.provisioningCode.findUnique({
+    where: { code: raw },
+    include: { school: { select: { id: true } } },
+  });
+
+  if (!code) return { error: "Ungültiger Code." };
+  if (code.revoked) return { error: "Dieser Code wurde widerrufen." };
+  if (code.expiresAt && code.expiresAt < new Date()) return { error: "Dieser Code ist abgelaufen." };
+  if (code.uses >= code.maxUses) return { error: "Dieser Code ist bereits ausgeschöpft." };
+  if (code.kind !== "CLASS_JOIN") return { error: "Ungültiger Code-Typ." };
+  if (!code.classId) return { error: "Kein Kurs diesem Code zugeordnet." };
+  if (code.schoolId && code.schoolId !== session.schoolId) return { error: "Dieser Code gehört nicht zu deiner Schule." };
+
+  await prisma.$transaction([
+    prisma.user.update({
+      where: { id: session.userId },
+      data: { classId: code.classId },
+    }),
+    prisma.provisioningCode.update({
+      where: { id: code.id },
+      data: { uses: { increment: 1 } },
+    }),
+  ]);
+
+  revalidatePath("/app/einstellungen");
+  return { success: "Klasse erfolgreich beigetreten!" };
+}
+
 export async function changePassword(formData: FormData) {
   const session = await getSession();
   if (!session) throw new Error("Unauthorized");

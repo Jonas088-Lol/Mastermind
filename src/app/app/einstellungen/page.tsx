@@ -5,6 +5,7 @@ import {
   Eye,
   Globe,
   Key,
+  KeyRound,
   Laptop,
   LogOut,
   Mail,
@@ -30,11 +31,13 @@ import { LangSelector } from "./LangSelector";
 import { PushSubscribeToggle } from "@/components/app/PushSubscribeToggle";
 import { PrivacySettings } from "@/components/app/PrivacySettings";
 import { AppDownloadSection } from "./AppDownloadSection";
+import { ClassCodeRedeemer } from "./ClassCodeRedeemer";
 
 export const metadata: Metadata = { title: "Einstellungen" };
 
 const SECTIONS = [
   { id: "account", label: "Account", icon: Key },
+  { id: "klasse", label: "Klasse beitreten", icon: KeyRound },
   { id: "benachrichtigungen", label: "Benachrichtigungen", icon: Bell },
   { id: "app-download", label: "App herunterladen", icon: Download },
   { id: "datenschutz", label: "Datenschutz", icon: Shield },
@@ -126,7 +129,7 @@ export default async function EinstellungenPage() {
   const me = session
     ? await prisma.user.findUnique({
         where: { email: session.email },
-        select: { email: true, twoFactor: true, prefs: true },
+        select: { email: true, twoFactor: true, prefs: true, role: true, schoolClass: { select: { name: true } } },
       })
     : null;
 
@@ -259,6 +262,29 @@ export default async function EinstellungenPage() {
                   label="Verbundene Konten"
                   value="Kein SSO verbunden"
                 />
+              </CardBody>
+            </Card>
+          </section>
+
+          {/* ── Klasse beitreten ────────────────────────── */}
+          <section id="klasse">
+            <Card>
+              <CardHeader>
+                <CardTitle>Klasse beitreten</CardTitle>
+              </CardHeader>
+              <CardBody className="space-y-4">
+                {me?.schoolClass ? (
+                  <div className="flex items-center gap-3 rounded-xl border border-success/20 bg-success/5 px-4 py-3">
+                    <KeyRound className="size-4 shrink-0 text-success" />
+                    <div>
+                      <p className="text-sm font-semibold text-success">Klasse: {me.schoolClass.name}</p>
+                      <p className="text-xs text-muted-fg">Du bist bereits einer Klasse zugewiesen.</p>
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-sm text-muted-fg">Du bist noch keiner Klasse zugewiesen. Gib deinen Beitrittscode ein:</p>
+                )}
+                <ClassCodeRedeemer />
               </CardBody>
             </Card>
           </section>

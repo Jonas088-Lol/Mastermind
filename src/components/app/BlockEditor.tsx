@@ -200,6 +200,16 @@ function BlockRow({
     return () => { focusRef.current.delete(block.id); };
   });
 
+  // Initialize DOM content only on mount / when block id changes.
+  // We must NOT let React re-set textContent on every state update — that
+  // moves the cursor to position 0, causing characters to appear in reverse.
+  useEffect(() => {
+    if (elRef.current && elRef.current.isContentEditable) {
+      elRef.current.textContent = block.content;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [block.id]);
+
   function handleKeyDown(e: React.KeyboardEvent) {
     if (e.key === "Enter" && !e.shiftKey && block.type !== "code") {
       e.preventDefault();
@@ -228,6 +238,7 @@ function BlockRow({
       if (typeMap[txt]) {
         e.preventDefault();
         el.textContent = "";
+        onUpdate(block.id, "");
         onChangeType(block.id, typeMap[txt]);
       }
     }
@@ -342,9 +353,7 @@ function BlockRow({
           onInput={handleInput}
           onKeyDown={handleKeyDown}
           className="block w-full border border-gray-200 bg-gray-50 px-4 py-3 font-mono text-[13px] text-gray-800 focus:outline-none focus:ring-1 focus:ring-blue-400"
-        >
-          {block.content}
-        </code>
+        />
       </pre>
     );
   }
@@ -376,9 +385,7 @@ function BlockRow({
       onKeyDown={handleKeyDown}
       data-placeholder={block.content === "" ? getPlaceholder(block.type) : undefined}
       className={`min-h-[1.5em] focus:outline-none caret-brand empty:before:content-[attr(data-placeholder)] empty:before:text-muted-fg/50 ${typeClass[block.type]}`}
-    >
-      {block.content}
-    </div>
+    />
   );
 }
 

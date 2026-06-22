@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
-import { getUserTreeState } from "@/lib/tree-generator";
+import { getUserTreeState, initializeUserTree } from "@/lib/tree-generator";
 import { getUserPacingStats } from "@/lib/pacing-sim";
 import { CurriculumTreeCanvas } from "./CurriculumTreeCanvas";
 
@@ -13,33 +13,17 @@ export default async function SkillsPage() {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect(ROLE_HOME[effectiveRole(session)]);
 
-  // Check whether curriculum is set up
   const user = await prisma.user.findUnique({
     where:  { id: session.userId },
-    select: {
-      bundeslandCode:  true,
-      schulart:        true,
-      jahrgangsstufe:  true,
-      displayName:     true,
-      leaderboardOptIn:true,
-      xp:              true,
-    },
+    select: { displayName: true, leaderboardOptIn: true, xp: true },
   });
 
-  if (!user?.bundeslandCode || !user.schulart || !user.jahrgangsstufe) {
-    redirect("/app/skills/setup");
-  }
+  // All subjects in the DB — every student gets the same tree
+  const allSubjects = await prisma.subject.findMany({ select: { id: true } });
+  const subjectIds  = allSubjects.map((s) => s.id);
 
-  // Get subject IDs that this user has in their tree
-  const treeProgresses = await prisma.userTreeProgress.findMany({
-    where:   { userId: session.userId },
-    include: { node: { select: { subjectId: true } } },
-  });
-  const subjectIdSet = new Set<string>();
-  for (const tp of treeProgresses) {
-    if (tp.node.subjectId) subjectIdSet.add(tp.node.subjectId);
-  }
-  const subjectIds = [...subjectIdSet];
+  // Initialize progress rows on first visit (idempotent — skips existing rows)
+  await initializeUserTree(session.userId, subjectIds);
 
   // Load tree display state
   const { nodes, edges } = await getUserTreeState(session.userId, subjectIds);
@@ -48,7 +32,6 @@ export default async function SkillsPage() {
   const pacing = await getUserPacingStats(prisma, session.userId);
 
   const masteredCount = nodes.filter((n) => n.status === "MASTERED").length;
-  const totalCount    = nodes.filter((n) => !n.status || n.status !== "HIDDEN").length || nodes.length;
 
   return (
     <div className="flex flex-col gap-0 h-full">
@@ -57,7 +40,7 @@ export default async function SkillsPage() {
         <div>
           <p className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30">Wissens-Baum</p>
           <h1 className="text-xl font-black text-white leading-tight">
-            {user.displayName ? `${user.displayName}s Baum` : "Mein Skill-Baum"}
+            {user?.displayName ? `${user.displayName}s Baum` : "Mein Skill-Baum"}
           </h1>
         </div>
         <div className="flex items-center gap-3 text-right">
@@ -79,7 +62,7 @@ export default async function SkillsPage() {
           )}
           <div>
             <p className="text-[10px] text-white/30">XP</p>
-            <p className="text-sm font-black text-indigo-400">{user.xp.toLocaleString("de-DE")}</p>
+            <p className="text-sm font-black text-indigo-400">{(user?.xp ?? 0).toLocaleString("de-DE")}</p>
           </div>
         </div>
       </div>

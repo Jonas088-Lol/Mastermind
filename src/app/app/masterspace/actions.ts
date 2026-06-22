@@ -108,6 +108,85 @@ export async function sendSpaceMessage(formData: FormData): Promise<void> {
   revalidatePath(`/app/masterspace/${channel.spaceId}/${channelId}`);
 }
 
+// ── Message Actions ─────────────────────────────────────────
+
+export async function toggleReaction(messageId: string, emoji: string): Promise<void> {
+  const session = await requireSession();
+
+  const msg = await prisma.spaceMessage.findUnique({
+    where: { id: messageId },
+    select: { channelId: true, channel: { select: { spaceId: true } } },
+  });
+  if (!msg) return;
+
+  const membership = await prisma.spaceMember.findFirst({
+    where: { spaceId: msg.channel.spaceId, userId: session.userId },
+  });
+  if (!membership) return;
+
+  const existing = await prisma.spaceMessageReaction.findUnique({
+    where: { messageId_userId_emoji: { messageId, userId: session.userId, emoji } },
+  });
+
+  if (existing) {
+    await prisma.spaceMessageReaction.delete({ where: { id: existing.id } });
+  } else {
+    await prisma.spaceMessageReaction.create({
+      data: { messageId, userId: session.userId, emoji },
+    });
+  }
+
+  revalidatePath(`/app/masterspace/${msg.channel.spaceId}/${msg.channelId}`);
+}
+
+export async function deleteMessage(messageId: string): Promise<void> {
+  const session = await requireSession();
+
+  const msg = await prisma.spaceMessage.findUnique({
+    where: { id: messageId },
+    select: { authorId: true, channelId: true, channel: { select: { spaceId: true } } },
+  });
+  if (!msg) return;
+
+  const isAuthor = msg.authorId === session.userId;
+  const membership = msg.channel.spaceId
+    ? await prisma.spaceMember.findFirst({
+        where: { spaceId: msg.channel.spaceId, userId: session.userId, role: { in: ["owner", "admin"] } },
+      })
+    : null;
+
+  if (!isAuthor && !membership) return;
+
+  await prisma.spaceMessage.update({
+    where: { id: messageId },
+    data: { deletedAt: new Date() },
+  });
+
+  revalidatePath(`/app/masterspace/${msg.channel.spaceId}/${msg.channelId}`);
+}
+
+export async function flagMessage(messageId: string): Promise<void> {
+  const session = await requireSession();
+
+  const msg = await prisma.spaceMessage.findUnique({
+    where: { id: messageId },
+    select: { channelId: true, channel: { select: { spaceId: true } } },
+  });
+  if (!msg) return;
+
+  const membership = await prisma.spaceMember.findFirst({
+    where: { spaceId: msg.channel.spaceId, userId: session.userId },
+  });
+  if (!membership) return;
+
+  await prisma.spaceMessage.update({
+    where: { id: messageId },
+    data: { flagged: true },
+  });
+
+  revalidatePath(`/app/masterspace/${msg.channel.spaceId}/${msg.channelId}`);
+}
+
 // ── Direct Messages ─────────────────────────────────────────
 
 export async function sendDirectMessage(formData: FormData): Promise<void> {

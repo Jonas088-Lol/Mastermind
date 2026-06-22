@@ -59,6 +59,12 @@ enum TreeQuestType {
   DUEL
 }
 
+enum CodeKind {
+  SCHOOL_ACTIVATION
+  CLASS_JOIN
+  TEACHER_JOIN
+}
+
 // ── Tenancy ────────────────────────────────────────────────
 
 model School {
@@ -98,8 +104,9 @@ model School {
   schoolEvents     SchoolEvent[]
   substitutions    SubstitutionEntry[]
   consentForms     ConsentForm[]
-  mailboxEmails    MailboxEmail[]
-  spaces           Space[]
+  mailboxEmails     MailboxEmail[]
+  spaces            Space[]
+  provisioningCodes ProvisioningCode[]
 }
 
 model SsoConfig {
@@ -250,15 +257,17 @@ model User {
   userConsent      UserConsent?
   activitySessions ActivitySession[]
 
-  ownedSpaces      Space[]              @relation("OwnedSpaces")
-  spaceMemberships SpaceMember[]
-  spaceMessages    SpaceMessage[]       @relation("SpaceMessages")
-  dmsAsA           DirectConversation[] @relation("DMsAsA")
-  dmsAsB           DirectConversation[] @relation("DMsAsB")
-  sentDirectMsgs   DirectMessage[]      @relation("SentDirectMessages")
-  voicePresences   VoiceParticipant[]
-  friendsSent      Friendship[]         @relation("FriendsSent")
-  friendsReceived  Friendship[]         @relation("FriendsReceived")
+  ownedSpaces               Space[]                @relation("OwnedSpaces")
+  spaceMemberships          SpaceMember[]
+  spaceMessages             SpaceMessage[]         @relation("SpaceMessages")
+  spaceMessageReactions     SpaceMessageReaction[] @relation("SpaceMessageReactions")
+  dmsAsA                    DirectConversation[]   @relation("DMsAsA")
+  dmsAsB                    DirectConversation[]   @relation("DMsAsB")
+  sentDirectMsgs            DirectMessage[]        @relation("SentDirectMessages")
+  voicePresences            VoiceParticipant[]
+  friendsSent               Friendship[]           @relation("FriendsSent")
+  friendsReceived           Friendship[]           @relation("FriendsReceived")
+  createdProvisioningCodes  ProvisioningCode[]     @relation("CreatedProvisioningCodes")
   personalEvents   PersonalEvent[]
   documents        Document[]
   spreadsheets     Spreadsheet[]
@@ -1717,11 +1726,33 @@ model SpaceMessage {
   authorId  String
   author    User         @relation("SpaceMessages", fields: [authorId], references: [id])
   content   String
+  parentId  String?
+  parent    SpaceMessage?  @relation("Replies", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies   SpaceMessage[] @relation("Replies")
   sentAt    DateTime     @default(now())
   editedAt  DateTime?
+  deletedAt DateTime?
+  flagged   Boolean      @default(false)
+
+  reactions SpaceMessageReaction[]
 
   @@index([channelId, sentAt])
   @@index([authorId])
+  @@index([parentId])
+}
+
+model SpaceMessageReaction {
+  id        String       @id @default(cuid())
+  messageId String
+  message   SpaceMessage @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User         @relation("SpaceMessageReactions", fields: [userId], references: [id], onDelete: Cascade)
+  emoji     String
+  createdAt DateTime     @default(now())
+
+  @@unique([messageId, userId, emoji])
+  @@index([messageId])
+  @@index([userId])
 }
 
 model DirectConversation {
@@ -2239,6 +2270,29 @@ model UserEarnedAchievement {
 
   @@unique([userId, achievementId])
   @@index([userId])
+}
+
+// ── Provisioning Codes ────────────────────────────────────
+
+model ProvisioningCode {
+  id          String    @id @default(cuid())
+  code        String    @unique
+  kind        CodeKind
+  schoolId    String?
+  school      School?   @relation(fields: [schoolId], references: [id], onDelete: SetNull)
+  classId     String?
+  maxUses     Int       @default(1)
+  uses        Int       @default(0)
+  expiresAt   DateTime?
+  revoked     Boolean   @default(false)
+  note        String?
+  createdById String
+  createdBy   User      @relation("CreatedProvisioningCodes", fields: [createdById], references: [id])
+  createdAt   DateTime  @default(now())
+
+  @@index([schoolId])
+  @@index([code])
+  @@index([kind])
 }
 
 // ── Premium Wallet extension ──────────────────────────────

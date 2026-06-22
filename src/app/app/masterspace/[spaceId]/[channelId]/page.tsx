@@ -6,6 +6,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import { ChatBox } from "./ChatBox";
+import { MessageRow } from "./MessageRow";
 import { createChannel } from "../../actions";
 
 export const metadata: Metadata = { title: "MasterSpace" };
@@ -46,8 +47,11 @@ export default async function ChannelPage({
   }
 
   const messages = await prisma.spaceMessage.findMany({
-    where: { channelId },
-    include: { author: { select: { id: true, name: true } } },
+    where: { channelId, parentId: null },
+    include: {
+      author: { select: { id: true, name: true } },
+      reactions: { select: { id: true, emoji: true, userId: true } },
+    },
     orderBy: { sentAt: "asc" },
     take: 100,
   });
@@ -140,28 +144,14 @@ export default async function ChannelPage({
                 const isMe = msg.authorId === session.userId;
 
                 return (
-                  <div key={msg.id} className={cn("group flex gap-2.5", showAuthor && i > 0 && "mt-4")}>
-                    {showAuthor ? (
-                      <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-xs font-bold text-brand">
-                        {msg.author.name[0].toUpperCase()}
-                      </div>
-                    ) : (
-                      <div className="w-8 shrink-0" />
-                    )}
-                    <div className="flex-1">
-                      {showAuthor && (
-                        <div className="flex items-baseline gap-2">
-                          <span className={cn("text-sm font-semibold", isMe && "text-brand")}>
-                            {isMe ? "Du" : msg.author.name}
-                          </span>
-                          <span className="text-[10px] text-muted-fg">
-                            {msg.sentAt.toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" })}
-                          </span>
-                        </div>
-                      )}
-                      <p className="text-sm leading-relaxed">{msg.content}</p>
-                    </div>
-                  </div>
+                  <MessageRow
+                    key={msg.id}
+                    message={msg}
+                    showAuthor={showAuthor && i > 0}
+                    isMe={isMe}
+                    isSpaceAdmin={isAdmin}
+                    currentUserId={session.userId}
+                  />
                 );
               })}
             </div>

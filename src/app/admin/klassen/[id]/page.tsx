@@ -1,4 +1,4 @@
-import { ArrowLeft, Trash2, UserMinus, UserPlus } from "lucide-react";
+import { ArrowLeft, KeyRound, Trash2, UserMinus, UserPlus } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
@@ -195,6 +195,18 @@ export default async function AdminKlasseDetailPage({ params }: PageProps) {
               )}
             </CardBody>
           </Card>
+
+          <Link
+            href={`/admin/klassen/${klass.id}/codes`}
+            className="flex items-center gap-3 rounded-2xl border border-border bg-bg p-4 transition-colors hover:bg-surface"
+          >
+            <KeyRound className="size-5 shrink-0 text-brand" />
+            <div className="flex-1">
+              <p className="text-sm font-semibold">Beitrittscodes</p>
+              <p className="text-xs text-muted-fg">Schüler per Code aufnehmen</p>
+            </div>
+            <span className="text-xs text-muted-fg">→</span>
+          </Link>
 
           <Card>
             <CardHeader>

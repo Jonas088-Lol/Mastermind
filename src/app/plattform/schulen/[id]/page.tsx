@@ -1,4 +1,4 @@
-import { ArrowLeft, Building2, Users, Save } from "lucide-react";
+import { ArrowLeft, Building2, Users, Save, KeyRound } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
@@ -172,6 +172,19 @@ export default async function SchoolDetailPage({ params }: PageProps) {
           Speichern
         </button>
       </form>
+
+      {/* Codes shortcut */}
+      <Link
+        href={`/plattform/schulen/${id}/codes`}
+        className="flex items-center gap-4 rounded-2xl border border-border bg-bg p-5 transition-colors hover:bg-surface"
+      >
+        <KeyRound className="size-6 shrink-0 text-brand" strokeWidth={1.75} />
+        <div className="flex-1">
+          <p className="font-semibold">Aktivierungscodes</p>
+          <p className="text-sm text-muted-fg">Codes für den Schul-Admin ausstellen und verwalten</p>
+        </div>
+        <span className="text-xs text-muted-fg">→</span>
+      </Link>
 
       {/* Info box about skill tree */}
       <div className="rounded-2xl border border-brand/20 bg-brand/5 p-5">
