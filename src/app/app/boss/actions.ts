@@ -35,16 +35,28 @@ export async function attackBoss(
   const session = await getSession();
   if (!session || effectiveRole(session) !== "student") return { error: "Unauthorized" };
 
-  const [battle, question] = await Promise.all([
-    prisma.bossBattle.findFirst({ where: { id: battleId, isActive: true, currentHp: { gt: 0 } } }),
-    prisma.exerciseQuestion.findUnique({ where: { id: questionId } }),
-  ]);
-
+  const battle = await prisma.bossBattle.findFirst({ where: { id: battleId, isActive: true, currentHp: { gt: 0 } } });
   if (!battle) return { error: "Boss not active" };
-  if (!question) return { error: "Question not found" };
 
-  // options is a plain string[] in DB; correct is stored as the string index ("0","1","2","3")
-  const correct = String(selectedOptionIndex) === question.correct;
+  // Resolve question — check boss-custom pool first, then general pool
+  const bossQ = await prisma.bossQuestion.findUnique({ where: { id: questionId } });
+  const genQ  = bossQ ? null : await prisma.exerciseQuestion.findUnique({ where: { id: questionId } });
+
+  if (!bossQ && !genQ) return { error: "Question not found" };
+
+  // Check correctness
+  const correct = bossQ
+    ? selectedOptionIndex === bossQ.correct
+    : String(selectedOptionIndex) === genQ!.correct;
+
+  // Record seen status for boss-custom questions
+  if (bossQ) {
+    await prisma.bossQuestionSeen.upsert({
+      where: { userId_questionId: { userId: session.userId, questionId: bossQ.id } },
+      create: { userId: session.userId, questionId: bossQ.id, answeredCorrect: correct },
+      update: { answeredCorrect: correct, seenAt: new Date() },
+    }).catch(() => {});
+  }
   const isFirstBlood = battle.firstBloodUserId === null;
 
   if (!correct) {

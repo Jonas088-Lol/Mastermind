@@ -5,6 +5,7 @@ import { Swords, Coins, Crown, Droplets, Skull, Zap, Timer as TimerIcon } from "
 import { BOSS_TIERS, type BossTier } from "@/lib/game";
 import { attackBoss, type AttackResult } from "./actions";
 import { BossDefeatedOverlay } from "./BossDefeatedOverlay";
+import { BossDeathAnimation } from "./BossDeathAnimation";
 import { cn } from "@/lib/utils";
 
 const QUESTION_TIME = 20;
@@ -58,6 +59,7 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
   const [bossAnim, setBossAnim] = useState<BossAnim>("idle");
   const [timeLeft, setTimeLeft] = useState(QUESTION_TIME);
   const [showFloatingDmg, setShowFloatingDmg] = useState(false);
+  const [showDeathAnim, setShowDeathAnim] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const safeTier = (tier as BossTier) in BOSS_TIERS ? (tier as BossTier) : "common";
@@ -127,7 +129,10 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
       } else {
         setCombo(0);
       }
-      if (res.defeated && res.killData) setKillData(res.killData);
+      if (res.defeated) {
+        setShowDeathAnim(true);
+        if (res.killData) setKillData(res.killData);
+      }
       setPhase("result");
     });
   }
@@ -205,7 +210,14 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
         }
       `}</style>
 
-      {killData && <BossDefeatedOverlay data={killData} onClose={() => setKillData(null)} />}
+      {showDeathAnim && (
+        <BossDeathAnimation
+          bossIcon={bossIcon}
+          tierColor={color}
+          onComplete={() => setShowDeathAnim(false)}
+        />
+      )}
+      {!showDeathAnim && killData && <BossDefeatedOverlay data={killData} onClose={() => setKillData(null)} />}
 
       <div className="flex flex-col gap-5">
 

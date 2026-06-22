@@ -65,6 +65,7 @@ export default async function TeachLayout({
     { href: "/teach/plan", label: "Stundenplan", icon: "calendar" },
     { href: "/teach/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
     { href: "/teach/arbeitsblatter/templates", label: "Vorlagen", icon: "layers" },
+    { href: "/teach/boss", label: "Boss-Kämpfe", icon: "swords" },
     { href: "/teach/generator", label: "KI-Generator", icon: "sparkles" },
     { href: "/teach/kompetenzen", label: "Kompetenzen", icon: "lineChart" },
     { href: "/teach/lernpfade", label: "Lernpfade", icon: "layers" },

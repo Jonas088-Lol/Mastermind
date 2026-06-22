@@ -1222,13 +1222,46 @@ model BossBattle {
   startAt          DateTime
   endAt            DateTime
   isActive         Boolean  @default(false)
-  firstBloodUserId String?
-  killedByUserId   String?
+  firstBloodUserId   String?
+  killedByUserId     String?
+  createdByUserId    String?
+  useCustomQuestions Boolean @default(false)
 
   participants BossParticipant[]
+  questions    BossQuestion[]
 
   @@index([schoolId])
   @@index([isActive])
+}
+
+model BossQuestion {
+  id          String     @id @default(cuid())
+  battleId    String
+  battle      BossBattle @relation(fields: [battleId], references: [id], onDelete: Cascade)
+  question    String
+  optionA     String
+  optionB     String
+  optionC     String
+  optionD     String
+  correct     Int
+  aiGenerated Boolean    @default(false)
+  createdAt   DateTime   @default(now())
+
+  seen        BossQuestionSeen[]
+
+  @@index([battleId])
+}
+
+model BossQuestionSeen {
+  id              String       @id @default(cuid())
+  userId          String
+  questionId      String
+  answeredCorrect Boolean
+  question        BossQuestion @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  seenAt          DateTime     @default(now())
+
+  @@unique([userId, questionId])
+  @@index([userId, questionId])
 }
 
 model BossParticipant {
