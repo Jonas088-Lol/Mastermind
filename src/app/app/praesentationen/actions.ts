@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { onPptxCreated } from "@/lib/tree-quest-engine";
 
 async function requireStudent() {
   const session = await getSession();
@@ -36,6 +37,10 @@ export async function savePresentationSlides(presentationId: string, slides: str
   const pres = await prisma.presentation.findUnique({ where: { id: presentationId } });
   if (!pres || pres.userId !== session.userId) return;
   await prisma.presentation.update({ where: { id: presentationId }, data: { slides } });
+  // Count as a completed presentation if slides are non-empty
+  if (slides && slides !== "[]") {
+    onPptxCreated(session.userId).catch(() => undefined);
+  }
 }
 
 export async function deletePresentation(presentationId: string): Promise<void> {

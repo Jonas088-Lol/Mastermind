@@ -6,6 +6,7 @@ import { getSession } from "@/lib/session";
 import { awardXp } from "@/lib/xp";
 import { awardCoins } from "@/lib/coins";
 import { incrementQuestProgress } from "@/lib/quests";
+import { onExerciseComplete } from "@/lib/tree-quest-engine";
 
 export async function saveQuizResult(topicId: string, score: number): Promise<void> {
   const session = await getSession();
@@ -35,6 +36,9 @@ export async function saveQuizResult(topicId: string, score: number): Promise<vo
   // Update quest progress for exercise category (1 exercise completed)
   // Also count correct answers towards flashcard streak if score is high
   await incrementQuestProgress(session.userId, "exercise", score);
+
+  // Fire tree quest engine hook (non-blocking)
+  onExerciseComplete(session.userId, Math.round(score / 20)).catch(() => undefined);
 
   revalidatePath("/app/uebungen");
 }

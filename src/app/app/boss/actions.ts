@@ -6,6 +6,7 @@ import { effectiveRole, getSession } from "@/lib/session";
 import { pushToUsers } from "@/lib/push";
 import { BOSS_TIERS, BOSS_INDEX, type BossTier } from "@/lib/game";
 import { getEventMultiplier } from "@/lib/settings";
+import { onBossFightWin } from "@/lib/tree-quest-engine";
 
 export interface AttackResult {
   correct: boolean;
@@ -178,6 +179,8 @@ export async function attackBoss(
       body: `Der ${tierData.label}-Boss "${battle.name}" wurde vernichtet! ${isMvp ? "Du bist MVP! 👑" : ""}`,
       url: "/app/boss",
     }).catch(() => {});
+
+    onBossFightWin(session.userId).catch(() => undefined);
   }
 
   revalidatePath("/app/boss");

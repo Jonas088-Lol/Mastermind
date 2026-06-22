@@ -11,6 +11,39 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ── Enums ─────────────────────────────────────────────────
+
+enum Schulart {
+  GRUNDSCHULE
+  MITTELSCHULE
+  REALSCHULE
+  GYMNASIUM
+  WIRTSCHAFTSSCHULE
+  FOS
+  BOS
+  FOERDERSCHULE
+  GESAMTSCHULE
+}
+
+enum TreeNodeStatus {
+  HIDDEN
+  REVEALED
+  AVAILABLE
+  IN_PROGRESS
+  MASTERED
+}
+
+enum TreeQuestType {
+  EXERCISES
+  PPTX
+  BOSS_FIGHT
+  FLASHCARDS
+  STREAK
+  QUIZ
+  WORKSHEET
+  DUEL
+}
+
 // ── Tenancy ────────────────────────────────────────────────
 
 model School {
@@ -212,6 +245,21 @@ model User {
 
   teacherHomework    Homework[]           @relation("TeacherHomework")
   studentHomework    HomeworkCompletion[] @relation("StudentHomework")
+
+  // ── Curriculum / Skill Tree ──────────────────────────────
+  bundeslandCode   String?
+  landkreisId      String?
+  schulart         Schulart?
+  jahrgangsstufe   Int?
+  displayName      String?
+  leaderboardOptIn Boolean       @default(false)
+  anonymousMode    Boolean       @default(true)
+
+  bundesland       Bundesland?        @relation("UserBundesland", fields: [bundeslandCode], references: [code])
+  landkreis        Landkreis?         @relation("UserLandkreis", fields: [landkreisId], references: [id])
+  treeProgress     UserTreeProgress[] @relation("UserTreeProgress")
+  treeQuests       UserTreeQuest[]    @relation("UserTreeQuests")
+  dailyActivity    DailyActivity[]    @relation("DailyActivity")
 
   @@index([role])
   @@index([schoolId])
@@ -1859,4 +1907,151 @@ model SeasonRankingEntry {
   @@index([seasonId])
   @@index([userId])
   @@index([category])
+}
+
+// ── Geography ─────────────────────────────────────────────
+
+model Bundesland {
+  code       String      @id
+  name       String
+  landkreise Landkreis[]
+  users      User[]      @relation("UserBundesland")
+}
+
+model Landkreis {
+  id             String     @id
+  name           String
+  bundeslandCode String
+  bundesland     Bundesland @relation(fields: [bundeslandCode], references: [code])
+  users          User[]     @relation("UserLandkreis")
+
+  @@index([bundeslandCode])
+}
+
+// ── Curriculum ────────────────────────────────────────────
+
+model CurriculumSubject {
+  id         String  @id @default(cuid())
+  key        String  @unique
+  label      String
+  color      String
+  icon       String
+  order      Int     @default(0)
+
+  curriculum Curriculum[]
+  treeNodes  TreeNode[]
+}
+
+model Curriculum {
+  id             String            @id @default(cuid())
+  bundeslandCode String
+  schulart       Schulart
+  jahrgangsstufe Int
+  subjectId      String
+  subject        CurriculumSubject @relation(fields: [subjectId], references: [id])
+  wochenstunden  Int?
+  isWahlpflicht  Boolean           @default(false)
+
+  @@unique([bundeslandCode, schulart, jahrgangsstufe, subjectId])
+  @@index([bundeslandCode, schulart, jahrgangsstufe])
+}
+
+// ── Tree Nodes ────────────────────────────────────────────
+
+model TreeNode {
+  id                 String             @id @default(cuid())
+  slug               String             @unique
+  subjectId          String?
+  subject            CurriculumSubject? @relation(fields: [subjectId], references: [id])
+  title              String
+  description        String
+  tier               Int                @default(1)
+  isHub              Boolean            @default(false)
+  layoutAngle        Float?
+  layoutRadius       Float?
+  masteryTiers       Int                @default(3)
+  requiredQuestCount Int                @default(2)
+  requiredLevel      Int?
+
+  prerequisites TreeNodePrereq[]   @relation("nodePrereqs")
+  requiredBy    TreeNodePrereq[]   @relation("prereqOf")
+  progress      UserTreeProgress[]
+  quests        TreeQuest[]
+}
+
+model TreeNodePrereq {
+  id             String   @id @default(cuid())
+  nodeId         String
+  requiresNodeId String
+  node           TreeNode @relation("nodePrereqs", fields: [nodeId], references: [id], onDelete: Cascade)
+  requires       TreeNode @relation("prereqOf",    fields: [requiresNodeId], references: [id], onDelete: Cascade)
+
+  @@unique([nodeId, requiresNodeId])
+}
+
+model UserTreeProgress {
+  id          String         @id @default(cuid())
+  userId      String
+  nodeId      String
+  status      TreeNodeStatus @default(HIDDEN)
+  masteryTier Int            @default(0)
+  questsDone  Int            @default(0)
+  unlockedAt  DateTime?
+  masteredAt  DateTime?
+  updatedAt   DateTime       @updatedAt
+  user        User           @relation("UserTreeProgress", fields: [userId], references: [id], onDelete: Cascade)
+  node        TreeNode       @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, nodeId])
+  @@index([userId])
+  @@index([nodeId])
+}
+
+// ── Tree Quests ───────────────────────────────────────────
+
+model TreeQuest {
+  id          String        @id @default(cuid())
+  slug        String        @unique
+  nodeId      String
+  node        TreeNode      @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+  type        TreeQuestType
+  title       String
+  description String
+  target      Int           @default(10)
+  rewardXp    Int           @default(50)
+  sortOrder   Int           @default(0)
+
+  userQuests UserTreeQuest[]
+
+  @@index([nodeId])
+}
+
+model UserTreeQuest {
+  id          String     @id @default(cuid())
+  userId      String
+  questId     String
+  progress    Int        @default(0)
+  completedAt DateTime?
+  assignedAt  DateTime   @default(now())
+  expiresAt   DateTime?
+  user        User       @relation("UserTreeQuests", fields: [userId], references: [id], onDelete: Cascade)
+  quest       TreeQuest  @relation(fields: [questId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questId])
+  @@index([userId])
+}
+
+// ── Daily Activity (pacing cap) ───────────────────────────
+
+model DailyActivity {
+  id              String   @id @default(cuid())
+  userId          String
+  day             String
+  questsDone      Int      @default(0)
+  xpEarned        Int      @default(0)
+  treeProgressPts Int      @default(0)
+  user            User     @relation("DailyActivity", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, day])
+  @@index([userId])
 }
