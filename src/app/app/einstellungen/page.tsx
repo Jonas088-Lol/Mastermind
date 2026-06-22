@@ -29,12 +29,14 @@ import { logoutAllDevices, changePassword, deleteOwnAccount } from "./actions";
 import { LangSelector } from "./LangSelector";
 import { PushSubscribeToggle } from "@/components/app/PushSubscribeToggle";
 import { PrivacySettings } from "@/components/app/PrivacySettings";
+import { AppDownloadSection } from "./AppDownloadSection";
 
 export const metadata: Metadata = { title: "Einstellungen" };
 
 const SECTIONS = [
   { id: "account", label: "Account", icon: Key },
   { id: "benachrichtigungen", label: "Benachrichtigungen", icon: Bell },
+  { id: "app-download", label: "App herunterladen", icon: Download },
   { id: "datenschutz", label: "Datenschutz", icon: Shield },
   { id: "privatsphaere", label: "Privatsphäre", icon: Eye },
   { id: "darstellung", label: "Darstellung", icon: Palette },
@@ -275,6 +277,18 @@ export default async function EinstellungenPage() {
                     storageKey="mm_notification_prefs"
                   />
                 </div>
+              </CardBody>
+            </Card>
+          </section>
+
+          {/* ── App herunterladen ───────────────────────── */}
+          <section id="app-download">
+            <Card>
+              <CardHeader>
+                <CardTitle>App herunterladen</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <AppDownloadSection />
               </CardBody>
             </Card>
           </section>
