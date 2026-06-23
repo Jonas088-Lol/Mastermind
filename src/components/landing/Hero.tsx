@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, CheckCircle2, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2, Flame, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DashboardPreviewModal } from "@/components/landing/DashboardPreviewModal";
 import { CoinIcon } from "@/components/ui/CoinIcon";
@@ -134,7 +134,7 @@ export function Hero() {
                     <span className="size-3 rounded-full bg-green-300" />
                     <div className="ml-4 flex-1">
                       <div className="mx-auto max-w-xs rounded-md bg-surface px-3 py-1 text-center font-mono text-[11px] text-muted-fg shadow-sm">
-                        mastermind.app/app
+                        mastermind/app
                       </div>
                     </div>
                   </div>
@@ -186,25 +186,26 @@ export function Hero() {
                       </div>
 
                       {/* Stat cards */}
-                      <div className="mb-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                      <div className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
                         {[
-                          { label: "Streak",   value: "14 🔥", gradient: "from-orange-400 to-orange-500", coin: false },
-                          { label: "XP heute", value: "+320",  gradient: "from-teal-400 to-teal-600",    coin: false },
-                          { label: "Münzen",   value: "480",   gradient: "from-yellow-400 to-yellow-500", coin: true  },
-                          { label: "Ø Note",   value: "2,3",   gradient: "from-green-400 to-green-500",  coin: false },
+                          { label: "Streak",   value: "14",   gradient: "from-orange-400 to-orange-500", coin: false, flame: true  },
+                          { label: "XP Heute", value: "+320", gradient: "from-teal-400 to-teal-600",    coin: false, flame: false },
+                          { label: "Münzen",   value: "480",  gradient: "from-yellow-400 to-yellow-500", coin: true,  flame: false },
+                          { label: "Ø Note",   value: "2,3",  gradient: "from-green-400 to-green-500",  coin: false, flame: false },
                         ].map((s) => (
                           <div
                             key={s.label}
-                            className="overflow-hidden rounded-xl border border-border bg-surface-2/40 p-3 shadow-sm"
+                            className="overflow-hidden rounded-xl border border-border bg-surface-2/40 p-2.5 shadow-sm"
                           >
-                            <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+                            <p className="truncate text-[9px] font-semibold uppercase tracking-wider text-muted-fg">
                               {s.label}
                             </p>
-                            <div className="mt-1 inline-flex items-center gap-1 font-mono text-base font-bold">
+                            <div className="mt-1 flex min-w-0 items-center gap-1 font-mono text-sm font-bold">
                               <span className={`bg-linear-to-r ${s.gradient} bg-clip-text text-transparent`}>
                                 {s.value}
                               </span>
-                              {s.coin && <CoinIcon className="size-4 text-yellow-500" />}
+                              {s.flame && <Flame className="size-3.5 shrink-0 text-orange-400" strokeWidth={2} />}
+                              {s.coin && <CoinIcon className="size-3.5 shrink-0 text-yellow-500" />}
                             </div>
                           </div>
                         ))}
