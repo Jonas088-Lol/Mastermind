@@ -54,11 +54,17 @@ const gradientStyle: CSSProperties = {
 };
 
 export async function Trust() {
-  const [schuelerCount, lehrerCount, schulenCount] = await Promise.all([
-    prisma.user.count({ where: { role: "student" } }),
-    prisma.user.count({ where: { role: "teacher" } }),
-    prisma.school.count(),
-  ]);
+  let schuelerCount = 0, lehrerCount = 0, schulenCount = 0;
+
+  try {
+    [schuelerCount, lehrerCount, schulenCount] = await Promise.all([
+      prisma.user.count({ where: { role: "student" } }),
+      prisma.user.count({ where: { role: "teacher" } }),
+      prisma.school.count(),
+    ]);
+  } catch {
+    // DB unavailable (e.g. during static build) — fall back to zeros
+  }
 
   const stats = [
     { value: formatSchueler(schuelerCount), label: "Schüler"  },
