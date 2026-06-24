@@ -102,7 +102,7 @@ const PLATFORMS: Platform[] = [
     emoji: "🤖",
     title: "Android",
     desc: "Android 8.0 oder neuer",
-    note: "Einstellungen → Sicherheit → „Unbekannte Quellen" aktivieren",
+    note: 'Einstellungen → Sicherheit → "Unbekannte Quellen" aktivieren',
     items: [
       {
         label: "APK herunterladen",
