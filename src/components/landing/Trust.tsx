@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/db/client";
 import { Container } from "@/components/ui/container";
 import { AnimateOnScroll } from "./AnimateOnScroll";
-import type { CSSProperties } from "react";
+import { StatCounter } from "./StatCounter";
 
 const partners = [
   "Realschule München",
@@ -11,47 +11,6 @@ const partners = [
   "IGS Hannover",
   "Bildungswerk NRW",
 ];
-
-function fmtDE(n: number): string {
-  return n.toLocaleString("de-DE");
-}
-
-function formatMio(n: number): string {
-  return `${(n / 1_000_000).toLocaleString("de-DE", { maximumFractionDigits: 2 })}+ Mio.`;
-}
-
-function formatSchueler(n: number): string {
-  if (n < 10)          return String(n);
-  if (n < 1_000)       return `${Math.floor(n / 10) * 10}+`;
-  if (n < 10_000)      return `${fmtDE(Math.floor(n / 100) * 100)}+`;
-  if (n < 100_000)     return `${fmtDE(Math.floor(n / 1_000) * 1_000)}+`;
-  if (n < 1_000_000)   return `${fmtDE(Math.floor(n / 10_000) * 10_000)}+`;
-  return formatMio(n);
-}
-
-function formatLehrer(n: number): string {
-  if (n <= 100)        return String(n);
-  if (n < 1_000)       return `${Math.floor(n / 10) * 10}+`;
-  if (n < 10_000)      return `${fmtDE(Math.floor(n / 100) * 100)}+`;
-  if (n < 100_000)     return `${fmtDE(Math.floor(n / 1_000) * 1_000)}+`;
-  if (n < 1_000_000)   return `${fmtDE(Math.floor(n / 10_000) * 10_000)}+`;
-  return formatMio(n);
-}
-
-function formatSchulen(n: number): string {
-  if (n < 1_000)       return String(n);
-  if (n < 10_000)      return `${fmtDE(Math.floor(n / 10) * 10)}+`;
-  if (n < 100_000)     return `${fmtDE(Math.floor(n / 100) * 100)}+`;
-  if (n < 1_000_000)   return `${fmtDE(Math.floor(n / 1_000) * 1_000)}+`;
-  return formatMio(n);
-}
-
-const gradientStyle: CSSProperties = {
-  background: "linear-gradient(to right, #93C5FD, #6EE7B7)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  backgroundClip: "text",
-};
 
 export async function Trust() {
   let schuelerCount = 0, lehrerCount = 0, schulenCount = 0;
@@ -63,20 +22,19 @@ export async function Trust() {
       prisma.school.count(),
     ]);
   } catch {
-    // DB unavailable (e.g. during static build) — fall back to zeros
+    // DB unavailable during static build — falls back to zeros at runtime
   }
 
-  const stats = [
-    { value: formatSchueler(schuelerCount), label: "Schüler"  },
-    { value: formatLehrer(lehrerCount),     label: "Lehrer"   },
-    { value: formatSchulen(schulenCount),   label: "Schulen"  },
+  const stats: { count: number; label: string; category: "schueler" | "lehrer" | "schulen" }[] = [
+    { count: schuelerCount, label: "Schüler",  category: "schueler" },
+    { count: lehrerCount,   label: "Lehrer",   category: "lehrer"   },
+    { count: schulenCount,  label: "Schulen",  category: "schulen"  },
   ];
 
   return (
     <section className="border-y border-border bg-bg py-16">
       <Container>
         <AnimateOnScroll animation="fade-in">
-          {/* 1.2.1 — updated heading */}
           <p className="text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-muted-fg">
             Unsere Pilotpartner
           </p>
@@ -93,23 +51,16 @@ export async function Trust() {
             ))}
           </div>
 
-          {/* Stat counters — 1.2.2 dynamic + 1.2.3 gradient */}
+          {/* Stat counters — animated count-up, gradient numbers */}
           <div className="mt-12 flex flex-wrap items-center justify-center gap-12 sm:gap-20">
             {stats.map((s, i) => (
-              <AnimateOnScroll
+              <StatCounter
                 key={s.label}
-                animation="fade-up"
-                delay={i * 80}
-                className="flex flex-col items-center gap-1"
-              >
-                <span
-                  className="text-4xl font-bold tracking-tight sm:text-5xl"
-                  style={gradientStyle}
-                >
-                  {s.value}
-                </span>
-                <span className="text-sm text-muted-fg">{s.label}</span>
-              </AnimateOnScroll>
+                count={s.count}
+                label={s.label}
+                category={s.category}
+                delay={i * 120}
+              />
             ))}
           </div>
         </AnimateOnScroll>
