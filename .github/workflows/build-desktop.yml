@@ -103,14 +103,12 @@ jobs:
 
             | Plattform | Datei |
             |-----------|-------|
-            | Windows | `mastermind-windows-setup.exe` |
-            | macOS | `mastermind-mac.dmg` |
-            | Linux | `mastermind-linux.AppImage` |
+            | Windows | mastermind-windows-setup.exe |
+            | macOS | mastermind-mac.dmg |
+            | Linux | mastermind-linux.AppImage |
 
             ### Installation
 
-            **Windows:** Setup-Datei herunterladen und ausführen.
-            **macOS:** DMG öffnen, App in Programme ziehen.
-            **Linux:** AppImage herunterladen, ausführbar machen (`chmod +x`), starten.
-
-            > Die App lädt alle Inhalte direkt vom MasterMind-Server — Updates sind immer automatisch aktiv.
+            **Windows:** Setup-Datei herunterladen und ausfuehren.
+            **macOS:** DMG oeffnen, App in Programme ziehen.
+            **Linux:** AppImage herunterladen, ausfuehrbar machen (chmod +x), starten.
