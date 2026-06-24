@@ -49,7 +49,10 @@ self.addEventListener('fetch', (e) => {
   e.respondWith(
     fetch(request, { credentials: 'same-origin' })
       .then((res) => {
-        if (res.ok) caches.open(PAGE_CACHE).then((c) => c.put(request, res.clone()));
+        if (res.ok) {
+          const clone = res.clone();
+          caches.open(PAGE_CACHE).then((c) => c.put(request, clone));
+        }
         return res;
       })
       .catch(async () => {
