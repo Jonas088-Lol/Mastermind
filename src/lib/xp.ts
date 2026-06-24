@@ -27,13 +27,12 @@ function todayUTC(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
-export async function awardXp(
+async function awardXpCore(
   userId: string,
-  reason: XpReason,
+  amount: number,
+  reason: string,
   referenceId?: string
-): Promise<void> {
-  const base = XP_REWARDS[reason];
-  const amount = await applyBoosterToXp(base, userId);
+): Promise<{ newStreak: number; prevStreak: number }> {
   const today = todayUTC();
 
   const user = await prisma.user.findUnique({
@@ -61,6 +60,30 @@ export async function awardXp(
     }),
   ]);
 
+  return { newStreak, prevStreak: user?.streak ?? 0 };
+}
+
+/** Award a fixed XP amount with an arbitrary reason string (for skill tree rank-ups etc.) */
+export async function awardXpCustom(
+  userId: string,
+  amount: number,
+  reason: string,
+  referenceId?: string
+): Promise<void> {
+  await awardXpCore(userId, amount, reason, referenceId);
+  checkAndAwardAchievements(userId).catch(() => undefined);
+}
+
+export async function awardXp(
+  userId: string,
+  reason: XpReason,
+  referenceId?: string
+): Promise<void> {
+  const base = XP_REWARDS[reason];
+  const amount = await applyBoosterToXp(base, userId);
+
+  const { newStreak, prevStreak } = await awardXpCore(userId, amount, reason, referenceId);
+
   // Award coins for this activity (fire-and-forget)
   const coinAmount = COIN_REWARDS[reason as keyof typeof COIN_REWARDS] ?? 0;
   if (coinAmount > 0) {
@@ -70,7 +93,6 @@ export async function awardXp(
   }
 
   // One-time streak milestone coin awards (7-day and 30-day streaks)
-  const prevStreak = user?.streak ?? 0;
   if (prevStreak < 7 && newStreak >= 7) {
     awardCoins(userId, "streak_7_tage").catch((err) => {
       logger.error("xp: streak_7_tage coin failed", err, { userId });

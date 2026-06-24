@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
-import { subjectKeyFromPage } from "@/lib/skill-tree-static";
+import { subjectKeyFromPage, STATIC_TREES, getCurrentRank, rankUpXp } from "@/lib/skill-tree-static";
+import { awardXpCustom } from "@/lib/xp";
 
 export const dynamic = "force-dynamic";
 
@@ -79,16 +80,43 @@ export async function POST(req: NextRequest) {
     },
   });
 
-  // Track per-subject learning minutes when user is on an exercise page
+  // Track per-subject learning minutes and award XP on rank-up
   if (activeSecondsDelta > 0) {
     const subjectKey = subjectKeyFromPage(page);
     if (subjectKey) {
       const addedMinutes = activeSecondsDelta / 60;
+      const tree = STATIC_TREES[subjectKey];
+
+      // Read current minutes BEFORE updating to detect rank crossings
+      const existing = await prisma.userSubjectMinutes.findUnique({
+        where: { userId_subjectKey: { userId: session.userId, subjectKey } },
+        select: { totalMinutes: true },
+      });
+      const oldMinutes = existing?.totalMinutes ?? 0;
+      const newMinutes = oldMinutes + addedMinutes;
+
       await prisma.userSubjectMinutes.upsert({
         where: { userId_subjectKey: { userId: session.userId, subjectKey } },
         update: { totalMinutes: { increment: addedMinutes } },
         create: { userId: session.userId, subjectKey, totalMinutes: addedMinutes },
       });
+
+      // Award XP for each rank threshold crossed in this heartbeat
+      const oldRank = getCurrentRank(tree, oldMinutes).rank;
+      const newRank = getCurrentRank(tree, newMinutes).rank;
+      if (newRank > oldRank) {
+        for (let r = oldRank + 1; r <= newRank; r++) {
+          const xp = rankUpXp(r);
+          if (xp > 0) {
+            awardXpCustom(
+              session.userId,
+              xp,
+              `skilltree_rankup_${subjectKey}_rank${r}`,
+              subjectKey,
+            ).catch(() => undefined);
+          }
+        }
+      }
     }
   }
 

@@ -3,6 +3,14 @@
  * Thresholds in minutes. Same for every user.
  */
 
+/** XP earned when reaching rank N. Index 0 = reaching rank 2, index 10 = reaching rank 12. */
+export const RANK_XP = [100, 200, 300, 500, 750, 1000, 1500, 2000, 3000, 4000, 5000];
+
+/** XP awarded when the player ranks up to `rank` (rank 2–12). */
+export function rankUpXp(rank: number): number {
+  return RANK_XP[rank - 2] ?? 0;
+}
+
 export const SUBJECT_KEYS = [
   "mathematik",
   "deutsch",
