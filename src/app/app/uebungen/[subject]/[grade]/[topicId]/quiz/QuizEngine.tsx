@@ -23,7 +23,9 @@ interface QuizEngineProps {
   topicTitle: string;
   backHref: string;
   xpPerQuiz: number;
-  onComplete: (score: number) => Promise<void>;
+  comboEnabled?: boolean;
+  comboMasterEnabled?: boolean;
+  onComplete: (score: number, maxCombo?: number) => Promise<void>;
 }
 
 type AnswerState = "pending" | "correct" | "wrong";
@@ -33,6 +35,8 @@ export function QuizEngine({
   topicTitle,
   backHref,
   xpPerQuiz,
+  comboEnabled = false,
+  comboMasterEnabled = false,
   onComplete,
 }: QuizEngineProps) {
   const [idx, setIdx] = useState(0);
@@ -42,6 +46,8 @@ export function QuizEngine({
   const [done, setDone] = useState(false);
   const [saving, setSaving] = useState(false);
   const [hintUsed, setHintUsed] = useState(false);
+  const [combo, setCombo] = useState(0);
+  const [maxCombo, setMaxCombo] = useState(0);
 
   // Blitz timer
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
@@ -72,14 +78,24 @@ export function QuizEngine({
       const correct = checkAnswer(question, userAnswer);
       setAnswerState(correct ? "correct" : "wrong");
       setResults((prev) => [...prev, correct]);
-      // Native haptic feedback
+      if (comboEnabled) {
+        if (correct) {
+          setCombo((c) => {
+            const next = c + 1;
+            setMaxCombo((m) => Math.max(m, next));
+            return next;
+          });
+        } else {
+          setCombo(0);
+        }
+      }
       if (correct) {
         native.haptics.notification("Success").catch(() => {});
       } else {
         native.haptics.notification("Error").catch(() => {});
       }
     },
-    [answerState, question]
+    [answerState, question, comboEnabled]
   );
 
   // Keyboard shortcuts: 1/2/3/4 for MC, T/F for true_false, Enter to advance
@@ -110,7 +126,7 @@ export function QuizEngine({
     if (idx + 1 >= questions.length) {
       const score = Math.round((results.filter(Boolean).length / questions.length) * 100);
       setSaving(true);
-      await onComplete(score);
+      await onComplete(score, comboEnabled ? maxCombo : undefined);
       setSaving(false);
       setDone(true);
       return;
@@ -120,18 +136,23 @@ export function QuizEngine({
     setAnswerState("pending");
     setTimeLeft(null);
     setHintUsed(false);
-  }, [idx, questions.length, results, onComplete]);
+  }, [idx, questions.length, results, onComplete, comboEnabled, maxCombo]);
 
   if (done) {
     const correctCount = results.filter(Boolean).length;
     const score = Math.round((correctCount / questions.length) * 100);
     const xpEarned = Math.round(xpPerQuiz * (score / 100));
+    const comboBonus = comboEnabled && maxCombo >= 3
+      ? (comboMasterEnabled ? maxCombo * 30 : maxCombo * 15)
+      : 0;
     return (
       <ResultScreen
         score={score}
         correct={correctCount}
         total={questions.length}
         xpEarned={xpEarned}
+        comboBonus={comboBonus}
+        maxCombo={comboEnabled ? maxCombo : 0}
         results={results}
         backHref={backHref}
         onRetry={() => {
@@ -141,6 +162,8 @@ export function QuizEngine({
           setResults([]);
           setDone(false);
           setTimeLeft(null);
+          setCombo(0);
+          setMaxCombo(0);
         }}
       />
     );
@@ -159,6 +182,11 @@ export function QuizEngine({
             Frage {idx + 1} von {questions.length}
           </span>
           <div className="flex items-center gap-3">
+            {comboEnabled && combo >= 2 && (
+              <span className="flex items-center gap-1 font-bold text-orange-400 animate-pulse">
+                🔥 {combo}×
+              </span>
+            )}
             {isBlitz && timeLeft !== null && (
               <span
                 className={cn(
@@ -598,6 +626,8 @@ function ResultScreen({
   correct,
   total,
   xpEarned,
+  comboBonus,
+  maxCombo,
   results,
   backHref,
   onRetry,
@@ -606,6 +636,8 @@ function ResultScreen({
   correct: number;
   total: number;
   xpEarned: number;
+  comboBonus: number;
+  maxCombo: number;
   results: boolean[];
   backHref: string;
   onRetry: () => void;
@@ -648,7 +680,7 @@ function ResultScreen({
       </div>
 
       {/* Stats cards */}
-      <div className="grid grid-cols-3 gap-3">
+      <div className={cn("grid gap-3", comboBonus > 0 ? "grid-cols-2" : "grid-cols-3")}>
         <div className="flex flex-col items-center gap-1 border border-success/30 bg-success/4 p-4 text-center">
           <CheckCircle2 className="size-5 text-success" />
           <span className="text-2xl font-black text-success">{correct}</span>
@@ -663,13 +695,32 @@ function ResultScreen({
             Falsch
           </span>
         </div>
-        <div className="flex flex-col items-center gap-1 border border-brand/30 bg-brand/4 p-4 text-center">
-          <Zap className="size-5 text-brand" />
-          <span className="text-2xl font-black text-brand">+{xpEarned}</span>
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
-            XP
-          </span>
-        </div>
+        {comboBonus > 0 ? (
+          <>
+            <div className="flex flex-col items-center gap-1 border border-orange-400/30 bg-orange-400/4 p-4 text-center">
+              <span className="text-lg">🔥</span>
+              <span className="text-2xl font-black text-orange-400">{maxCombo}×</span>
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+                Best Combo
+              </span>
+            </div>
+            <div className="flex flex-col items-center gap-1 border border-brand/30 bg-brand/4 p-4 text-center">
+              <Zap className="size-5 text-brand" />
+              <span className="text-2xl font-black text-brand">+{xpEarned + comboBonus}</span>
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+                XP <span className="text-orange-400">(+{comboBonus} Combo)</span>
+              </span>
+            </div>
+          </>
+        ) : (
+          <div className="flex flex-col items-center gap-1 border border-brand/30 bg-brand/4 p-4 text-center">
+            <Zap className="size-5 text-brand" />
+            <span className="text-2xl font-black text-brand">+{xpEarned}</span>
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+              XP
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Per-question result strip */}

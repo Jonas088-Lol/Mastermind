@@ -245,6 +245,12 @@ export function SkillTreeView({ unlockedKeys, userXp, displayName }: Props) {
               <feComposite in="c" in2="blur" operator="in" result="g" />
               <feMerge><feMergeNode in="g" /><feMergeNode in="SourceGraphic" /></feMerge>
             </filter>
+            <filter id="glow-feature" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="8" result="blur" />
+              <feFlood floodColor="#f59e0b" floodOpacity="0.9" result="c" />
+              <feComposite in="c" in2="blur" operator="in" result="g" />
+              <feMerge><feMergeNode in="g" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
             <filter id="glow-select" x="-80%" y="-80%" width="260%" height="260%">
               <feGaussianBlur stdDeviation="8" result="blur" />
               <feFlood floodColor="#ffffff" floodOpacity="0.8" result="c" />
@@ -312,6 +318,19 @@ export function SkillTreeView({ unlockedKeys, userXp, displayName }: Props) {
             if (node.isHub) return <HubNode key={node.key} node={node} onClick={() => onNodeClick(node)} />;
             const state     = getNodeState(node.key, localUnlocked);
             const isSelected = selected?.key === node.key;
+            if (state === "hidden") return null;
+            if (node.nodeType === "feature") {
+              return (
+                <FeatureNode
+                  key={node.key}
+                  node={node}
+                  state={state}
+                  isSelected={isSelected}
+                  canAfford={localXp >= node.xpCost}
+                  onClick={() => onNodeClick(node)}
+                />
+              );
+            }
             return (
               <TreeNode
                 key={node.key}
@@ -337,7 +356,7 @@ export function SkillTreeView({ unlockedKeys, userXp, displayName }: Props) {
       {selected && (
         <UnlockPanel
           node={selected}
-          state={getNodeState(selected.key, localUnlocked)}
+          state={(getNodeState(selected.key, localUnlocked) as "revealed" | "unlocked")}
           canAfford={localXp >= selected.xpCost}
           userXp={localXp}
           isPending={isPending}
@@ -433,6 +452,74 @@ function TreeNode({
   );
 }
 
+// ── Feature node (gold diamond) ───────────────────────────
+const FEAT_R = 30; // half-size of diamond
+
+function FeatureNode({
+  node, state, isSelected, canAfford, onClick,
+}: {
+  node: SkillNode;
+  state: "revealed" | "unlocked";
+  isSelected: boolean;
+  canAfford: boolean;
+  onClick: () => void;
+}) {
+  const unlocked = state === "unlocked";
+  const color    = "#f59e0b";
+  const s = FEAT_R;
+  // Diamond polygon points (rotated square)
+  const pts = `${node.x},${node.y - s} ${node.x + s},${node.y} ${node.x},${node.y + s} ${node.x - s},${node.y}`;
+  const outerPts = `${node.x},${node.y - s - 10} ${node.x + s + 10},${node.y} ${node.x},${node.y + s + 10} ${node.x - s - 10},${node.y}`;
+
+  return (
+    <g onClick={onClick} style={{ cursor: "pointer" }}>
+      {/* Outer glow diamond when unlocked */}
+      {unlocked && (
+        <>
+          <polygon points={outerPts} fill={color} opacity={0.07} />
+          <polygon
+            points={`${node.x},${node.y - s - 5} ${node.x + s + 5},${node.y} ${node.x},${node.y + s + 5} ${node.x - s - 5},${node.y}`}
+            fill={color} opacity={0.12}
+          />
+        </>
+      )}
+      {/* Affordability pulse */}
+      {!unlocked && canAfford && (
+        <polygon points={outerPts} fill={color} opacity={0.14} />
+      )}
+      {/* Selection ring */}
+      {isSelected && (
+        <polygon points={outerPts} fill="none" stroke="white" strokeWidth={1.5} opacity={0.5} />
+      )}
+      {/* Main diamond */}
+      <polygon
+        points={pts}
+        fill={unlocked ? `${color}35` : "#0b0b22"}
+        stroke={unlocked ? color : canAfford ? `${color}90` : "#2a2a1a"}
+        strokeWidth={isSelected ? 2.5 : unlocked ? 2 : 1.5}
+        filter={unlocked ? "url(#glow-feature)" : isSelected ? "url(#glow-select)" : undefined}
+      />
+      {/* Icon */}
+      {unlocked ? (
+        <text x={node.x} y={node.y + 7} textAnchor="middle" fontSize={16} fill={color}>
+          {node.icon}
+        </text>
+      ) : (
+        <>
+          <text x={node.x} y={node.y + 4} textAnchor="middle" fontSize={13}
+            fill={canAfford ? color : "#3a3a1a"} opacity={canAfford ? 1 : 1}>
+            {canAfford ? node.icon : "🔒"}
+          </text>
+          <text x={node.x} y={node.y + FEAT_R + 13} textAnchor="middle" fontSize={9}
+            fill={canAfford ? color : "#3a3a1a"} opacity={canAfford ? 0.9 : 0.5}>
+            {(node.xpCost / 1000).toFixed(node.xpCost < 1000 ? 2 : 1).replace(".", ",")}k XP
+          </text>
+        </>
+      )}
+    </g>
+  );
+}
+
 // ── Unlock / detail panel ─────────────────────────────────
 function UnlockPanel({
   node, state, canAfford, userXp, isPending, onUnlock, onClose,
@@ -464,9 +551,12 @@ function UnlockPanel({
       {/* Info */}
       <div className="flex-1 min-w-0">
         <p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: node.color }}>
-          {node.subjectKey ?? "Hub"} · Tier {node.tier}
+          {node.nodeType === "feature" ? "✦ Feature" : (node.subjectKey ?? "Hub")} · Tier {node.tier}
         </p>
         <p className="text-sm font-black text-white leading-tight truncate">{node.label}</p>
+        {node.featureDesc && (
+          <p className="text-[10px] text-white/50 mt-0.5 leading-snug line-clamp-2">{node.featureDesc}</p>
+        )}
         {unlocked ? (
           <p className="text-[11px] text-white/40 mt-0.5">Bereits freigeschaltet ✓</p>
         ) : canAfford ? (

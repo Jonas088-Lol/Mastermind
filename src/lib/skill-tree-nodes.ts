@@ -26,6 +26,9 @@ export interface SkillNode {
   subjectKey:  string | null;
   isHub:       boolean;
   tier:        number;     // 0=hub, 1-4=core, 5-9=path
+  nodeType:    "subject" | "feature";
+  featureId?:  string;     // defined for feature nodes
+  featureDesc?: string;    // what the feature does
 }
 
 // ── Helpers ───────────────────────────────────────────────
@@ -65,56 +68,140 @@ function buildSubject(def: SubjectDef): SkillNode[] {
   const { key, color, angle } = def;
   const nodes: SkillNode[] = [];
 
-  // 4 core nodes
   for (let i = 0; i < 4; i++) {
     nodes.push({
-      key:        `${key}_c${i + 1}`,
-      label:      def.coreLabels[i]!,
-      icon:       def.coreIcons[i]!,
-      xpCost:     CORE_COSTS[i]!,
-      requires:   i === 0 ? ["hub"] : [`${key}_c${i}`],
-      color,
-      subjectKey: key,
-      tier:       i + 1,
-      isHub:      false,
+      key: `${key}_c${i + 1}`, label: def.coreLabels[i]!, icon: def.coreIcons[i]!,
+      xpCost: CORE_COSTS[i]!, requires: i === 0 ? ["hub"] : [`${key}_c${i}`],
+      color, subjectKey: key, tier: i + 1, isHub: false, nodeType: "subject",
       ...armXY(angle, CORE_DISTS[i]!),
     });
   }
 
-  // 5 Path-A nodes (negative perp = "left" of arm)
   for (let i = 0; i < 5; i++) {
     nodes.push({
-      key:        `${key}_a${i + 1}`,
-      label:      def.pathALabels[i]!,
-      icon:       def.pathAIcons[i]!,
-      xpCost:     PATH_COSTS[i]!,
-      requires:   [i === 0 ? `${key}_c4` : `${key}_a${i}`],
-      color,
-      subjectKey: key,
-      tier:       5 + i,
-      isHub:      false,
+      key: `${key}_a${i + 1}`, label: def.pathALabels[i]!, icon: def.pathAIcons[i]!,
+      xpCost: PATH_COSTS[i]!, requires: [i === 0 ? `${key}_c4` : `${key}_a${i}`],
+      color, subjectKey: key, tier: 5 + i, isHub: false, nodeType: "subject",
       ...armXY(angle, PATH_DISTS[i]!, -PERP[i]!),
     });
   }
 
-  // 5 Path-B nodes (positive perp = "right" of arm)
   for (let i = 0; i < 5; i++) {
     nodes.push({
-      key:        `${key}_b${i + 1}`,
-      label:      def.pathBLabels[i]!,
-      icon:       def.pathBIcons[i]!,
-      xpCost:     PATH_COSTS[i]!,
-      requires:   [i === 0 ? `${key}_c4` : `${key}_b${i}`],
-      color,
-      subjectKey: key,
-      tier:       5 + i,
-      isHub:      false,
+      key: `${key}_b${i + 1}`, label: def.pathBLabels[i]!, icon: def.pathBIcons[i]!,
+      xpCost: PATH_COSTS[i]!, requires: [i === 0 ? `${key}_c4` : `${key}_b${i}`],
+      color, subjectKey: key, tier: 5 + i, isHub: false, nodeType: "subject",
       ...armXY(angle, PATH_DISTS[i]!, PERP[i]!),
     });
   }
 
   return nodes;
 }
+
+// ── Feature nodes ─────────────────────────────────────────
+// 12 nodes placed in the gaps between subject arms.
+// Inner ring (dist=310): 8 nodes, cost 800 XP, require only hub.
+// Outer ring (dist=545): 4 nodes, cost 3000-5000 XP, require inner + subject nodes.
+
+const FEAT_COLOR = "#f59e0b";  // gold for feature nodes
+
+const FEATURE_NODES: SkillNode[] = [
+  // ── Inner ring ───────────────────────────────────────────
+  {
+    key: "feat_streak_shield", label: "Streak-Schutz", icon: "🛡️",
+    xpCost: 800, requires: ["hub"], color: FEAT_COLOR, subjectKey: null,
+    tier: 1, isHub: false, nodeType: "feature", featureId: "streak_shield",
+    featureDesc: "Schenkt dir sofort 3 Streak-Schutz-Tage",
+    ...armXY(-112.5, 310),
+  },
+  {
+    key: "feat_xp_boost", label: "XP-Booster", icon: "⚡",
+    xpCost: 800, requires: ["hub"], color: FEAT_COLOR, subjectKey: null,
+    tier: 1, isHub: false, nodeType: "feature", featureId: "xp_boost",
+    featureDesc: "Aktiviert einen ×1.2 XP-Boost für 7 Tage",
+    ...armXY(-67.5, 310),
+  },
+  {
+    key: "feat_combo", label: "Combo-Modus", icon: "🔥",
+    xpCost: 800, requires: ["hub"], color: FEAT_COLOR, subjectKey: null,
+    tier: 1, isHub: false, nodeType: "feature", featureId: "combo",
+    featureDesc: "Schaltet den Combo-Multiplikator in Quizzen frei",
+    ...armXY(-22.5, 310),
+  },
+  {
+    key: "feat_daily_coin", label: "Münzen-Sprint", icon: "💰",
+    xpCost: 800, requires: ["hub"], color: FEAT_COLOR, subjectKey: null,
+    tier: 1, isHub: false, nodeType: "feature", featureId: "daily_coin",
+    featureDesc: "Schenkt dir sofort 150 Münzen",
+    ...armXY(22.5, 310),
+  },
+  {
+    key: "feat_missions", label: "Missions++", icon: "📋",
+    xpCost: 800, requires: ["hub"], color: FEAT_COLOR, subjectKey: null,
+    tier: 1, isHub: false, nodeType: "feature", featureId: "missions",
+    featureDesc: "Schenkt dir 3 Extra-Tagesaufgaben-Slots",
+    ...armXY(67.5, 310),
+  },
+  {
+    key: "feat_timer", label: "Profi-Timer", icon: "⏱️",
+    xpCost: 800, requires: ["hub"], color: FEAT_COLOR, subjectKey: null,
+    tier: 1, isHub: false, nodeType: "feature", featureId: "timer",
+    featureDesc: "Schaltet den Profi-Pomodoro-Timer frei",
+    ...armXY(112.5, 310),
+  },
+  {
+    key: "feat_profile_frame", label: "Goldene Aura", icon: "✨",
+    xpCost: 800, requires: ["hub"], color: FEAT_COLOR, subjectKey: null,
+    tier: 1, isHub: false, nodeType: "feature", featureId: "profile_frame",
+    featureDesc: "Aktiviert einen goldenen Rahmen auf deinem Profil",
+    ...armXY(157.5, 310),
+  },
+  {
+    key: "feat_boss_buff", label: "Boss-Buff", icon: "⚔️",
+    xpCost: 800, requires: ["hub"], color: FEAT_COLOR, subjectKey: null,
+    tier: 1, isHub: false, nodeType: "feature", featureId: "boss_buff",
+    featureDesc: "Schenkt dir sofort 2 Boss-Kampf-Tickets",
+    ...armXY(-157.5, 310),
+  },
+
+  // ── Outer ring ───────────────────────────────────────────
+  {
+    key: "feat_mystery_box", label: "Geheimbox", icon: "📦",
+    xpCost: 3000,
+    requires: ["feat_streak_shield", "mathematik_c2", "physik_c2"],
+    color: FEAT_COLOR, subjectKey: null,
+    tier: 6, isHub: false, nodeType: "feature", featureId: "mystery_box",
+    featureDesc: "Öffnet sofort eine Geheimbox: 750 XP + 200 Münzen",
+    ...armXY(-112.5, 545),
+  },
+  {
+    key: "feat_combo_master", label: "Combo-Master", icon: "🌟",
+    xpCost: 3500,
+    requires: ["feat_combo", "deutsch_c2", "englisch_c2"],
+    color: FEAT_COLOR, subjectKey: null,
+    tier: 7, isHub: false, nodeType: "feature", featureId: "combo_master",
+    featureDesc: "Verdoppelt alle Combo-Boni in Quizzen",
+    ...armXY(-22.5, 545),
+  },
+  {
+    key: "feat_prestige", label: "Prestige-Aura", icon: "👑",
+    xpCost: 4000,
+    requires: ["feat_profile_frame", "informatik_c1", "geschichte_c1", "chemie_c1", "biologie_c1"],
+    color: FEAT_COLOR, subjectKey: null,
+    tier: 7, isHub: false, nodeType: "feature", featureId: "prestige",
+    featureDesc: "Aktiviert einen animierten Regenbogen-Rahmen auf deinem Profil",
+    ...armXY(157.5, 545),
+  },
+  {
+    key: "feat_mega_boost", label: "MEGA-Boost", icon: "🚀",
+    xpCost: 5000,
+    requires: ["feat_boss_buff", "mathematik_a1", "physik_a1", "informatik_a1"],
+    color: FEAT_COLOR, subjectKey: null,
+    tier: 8, isHub: false, nodeType: "feature", featureId: "mega_boost",
+    featureDesc: "Aktiviert einen ×2 XP-Boost für 24 Stunden",
+    ...armXY(-157.5, 545),
+  },
+];
 
 // ── Subject definitions ───────────────────────────────────
 
@@ -198,13 +285,14 @@ const SUBJECTS: SubjectDef[] = [
 const HUB_NODE: SkillNode = {
   key: "hub", label: "MasterMind", icon: "★",
   xpCost: 0, requires: [], color: "#f59e0b",
-  subjectKey: null, tier: 0, isHub: true,
+  subjectKey: null, tier: 0, isHub: true, nodeType: "subject",
   x: CANVAS_CTR, y: CANVAS_CTR,
 };
 
 export const SKILL_NODES: SkillNode[] = [
   HUB_NODE,
   ...SUBJECTS.flatMap(buildSubject),
+  ...FEATURE_NODES,
 ];
 
 export const SKILL_NODE_MAP = new Map<string, SkillNode>(

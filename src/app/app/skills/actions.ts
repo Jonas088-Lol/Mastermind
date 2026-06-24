@@ -54,7 +54,70 @@ export async function unlockSkillNode(
     }),
   ]);
 
+  // Apply feature effects immediately on purchase
+  if (node.nodeType === "feature" && node.featureId) {
+    await applyFeatureEffect(session.userId, node.featureId);
+  }
+
   return { ok: true, newXp: updated.xp };
+}
+
+async function applyFeatureEffect(userId: string, featureId: string): Promise<void> {
+  const now = Date.now();
+  switch (featureId) {
+    case "streak_shield":
+      // Grant 3 streak freezes
+      await prisma.user.update({
+        where: { id: userId },
+        data: { streakFreezes: { increment: 3 } },
+      });
+      break;
+
+    case "xp_boost":
+      // 1.2× XP booster for 7 days
+      await prisma.userBooster.create({
+        data: {
+          userId,
+          boosterSlug: "skill_tree_xp_boost",
+          multiplier: 1.2,
+          expiresAt: new Date(now + 7 * 24 * 60 * 60 * 1000),
+        },
+      });
+      break;
+
+    case "daily_coin":
+      // Instant 150 coin grant
+      await prisma.user.update({
+        where: { id: userId },
+        data: { coins: { increment: 150 } },
+      });
+      break;
+
+    case "mystery_box":
+      // 750 XP + 200 coins
+      await prisma.user.update({
+        where: { id: userId },
+        data: { xp: { increment: 750 }, coins: { increment: 200 } },
+      });
+      break;
+
+    case "mega_boost":
+      // ×2 XP booster for 24h
+      await prisma.userBooster.create({
+        data: {
+          userId,
+          boosterSlug: "skill_tree_mega_boost",
+          multiplier: 2.0,
+          expiresAt: new Date(now + 24 * 60 * 60 * 1000),
+        },
+      });
+      break;
+
+    // combo, combo_master, timer, profile_frame, missions, boss_buff, prestige
+    // are passive/UI features — no server-side effect needed on purchase
+    default:
+      break;
+  }
 }
 
 // ── Unlock node (first unlock = bronze tier 1 with 0 progress) ────────────────

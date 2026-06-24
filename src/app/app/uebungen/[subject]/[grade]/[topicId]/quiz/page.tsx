@@ -26,19 +26,29 @@ export default async function QuizPage({ params }: PageParams) {
 
   const grade = parseInt(gradeStr, 10);
 
-  const topic = await prisma.exerciseTopic.findUnique({
-    where: { id: topicId },
-    include: { questions: { orderBy: { order: "asc" } } },
-  });
+  const [topic, purchases] = await Promise.all([
+    prisma.exerciseTopic.findUnique({
+      where: { id: topicId },
+      include: { questions: { orderBy: { order: "asc" } } },
+    }),
+    prisma.userSkillPurchase.findMany({
+      where: { userId: session.userId },
+      select: { nodeKey: true },
+    }),
+  ]);
 
   if (!topic || topic.subject !== subject || topic.grade !== grade) notFound();
   if (topic.questions.length === 0) notFound();
 
+  const purchasedSet = new Set(purchases.map((p) => p.nodeKey));
+  const comboEnabled       = purchasedSet.has("feat_combo");
+  const comboMasterEnabled = purchasedSet.has("feat_combo_master");
+
   const backHref = `/app/uebungen/${subject}/${grade}/${topicId}`;
 
-  async function handleComplete(score: number) {
+  async function handleComplete(score: number, maxCombo?: number) {
     "use server";
-    await saveQuizResult(topicId, score);
+    await saveQuizResult(topicId, score, comboEnabled ? maxCombo : undefined);
   }
 
   return (
@@ -61,6 +71,8 @@ export default async function QuizPage({ params }: PageParams) {
         topicTitle={topic.title}
         backHref={backHref}
         xpPerQuiz={XP_REWARDS.quiz_completed}
+        comboEnabled={comboEnabled}
+        comboMasterEnabled={comboMasterEnabled}
         onComplete={handleComplete}
       />
     </div>
