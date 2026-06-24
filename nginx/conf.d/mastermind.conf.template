@@ -108,7 +108,7 @@ server {
 
     # ── API rate limiting ──────────────────────────────────────────────────
     location /api/ai/ {
-        limit_req zone=api burst=10 nodelay;
+        limit_req zone=api burst=500 nodelay;
         proxy_pass         http://nextjs;
         proxy_http_version 1.1;
         proxy_set_header   Upgrade    $http_upgrade;
@@ -122,7 +122,7 @@ server {
     }
 
     location /login {
-        limit_req zone=auth burst=3 nodelay;
+        limit_req zone=auth burst=500 nodelay;
         proxy_pass         http://nextjs;
         proxy_http_version 1.1;
         proxy_set_header   Host            $host;
@@ -132,7 +132,7 @@ server {
     }
 
     location /api/maintenance/ {
-        limit_req zone=auth burst=5 nodelay;
+        limit_req zone=auth burst=500 nodelay;
         proxy_pass         http://nextjs;
         proxy_http_version 1.1;
         proxy_set_header   Host $host;
@@ -143,7 +143,7 @@ server {
 
     # ── Default: proxy everything to Next.js ──────────────────────────────
     location / {
-        limit_req zone=general burst=30 nodelay;
+        limit_req zone=general burst=500 nodelay;
 
         proxy_pass         http://nextjs;
         proxy_http_version 1.1;
