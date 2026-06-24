@@ -41,12 +41,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "npm"
-          cache-dependency-path: electron/package-lock.json
 
       - name: Install dependencies
         working-directory: electron
-        run: npm ci
+        run: npm install
 
       - name: Set version
         working-directory: electron
@@ -56,12 +54,9 @@ jobs:
           VERSION="${VERSION#v}"
           npm version "$VERSION" --no-git-tag-version
 
-      - name: Build icon resources (Linux only)
+      - name: Install binutils (Linux deb build)
         if: matrix.platform == 'linux'
-        run: |
-          sudo apt-get install -y imagemagick
-          # Placeholder — replace resources/icon.png with real icon before building
-          echo "Icon resources should be in electron/resources/"
+        run: sudo apt-get install -y binutils
 
       - name: Build ${{ matrix.platform }}
         working-directory: electron
@@ -108,14 +103,12 @@ jobs:
 
             | Plattform | Datei |
             |-----------|-------|
-            | Windows | `mastermind-windows-setup.exe` |
-            | macOS | `mastermind-mac.dmg` |
-            | Linux | `mastermind-linux.AppImage` |
+            | Windows | mastermind-windows-setup.exe |
+            | macOS | mastermind-mac.dmg |
+            | Linux | mastermind-linux.AppImage |
 
             ### Installation
 
-            **Windows:** Setup-Datei herunterladen und ausführen.
-            **macOS:** DMG öffnen, App in Programme ziehen.
-            **Linux:** AppImage herunterladen, ausführbar machen (`chmod +x`), starten.
-
-            > Die App lädt alle Inhalte direkt vom MasterMind-Server — Updates sind immer automatisch aktiv.
+            **Windows:** Setup-Datei herunterladen und ausfuehren.
+            **macOS:** DMG oeffnen, App in Programme ziehen.
+            **Linux:** AppImage herunterladen, ausfuehrbar machen (chmod +x), starten.
