@@ -33,7 +33,14 @@
     "mobile:ios": "npx cap open ios",
     "mobile:run:android": "npx cap run android",
     "mobile:run:ios": "npx cap run ios",
-    "mobile:copy": "npx cap copy"
+    "mobile:copy": "npx cap copy",
+    "mobile:icons": "npx @capacitor/assets generate --iconBackgroundColor '#0d1117' --splashBackgroundColor '#0d1117' --logoSplashScale 0.4 --ios --android",
+    "desktop:install": "cd electron && npm install",
+    "desktop:start": "cd electron && npm start",
+    "desktop:build:win": "cd electron && npm run build:win",
+    "desktop:build:mac": "cd electron && npm run build:mac",
+    "desktop:build:linux": "cd electron && npm run build:linux",
+    "desktop:build:all": "cd electron && npm run build:all"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

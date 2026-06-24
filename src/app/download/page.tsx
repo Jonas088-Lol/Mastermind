@@ -3,14 +3,13 @@ import { DownloadPageClient } from "./DownloadPageClient";
 
 export const metadata: Metadata = {
   title: "App herunterladen · MasterMind",
-  description: "Lade die MasterMind-App für Android herunter und installiere sie in wenigen Schritten.",
+  description:
+    "MasterMind für Android, iOS, Windows, Mac und Linux — eine App, alle Plattformen. Immer aktuell, direkt vom Server.",
 };
 
-// APK URL: lege die fertige APK unter public/downloads/mastermind.apk ab
-// oder setze NEXT_PUBLIC_APK_URL auf eine externe URL.
-const APK_URL = process.env.NEXT_PUBLIC_APK_URL ?? "/downloads/mastermind.apk";
 const APP_VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? "1.0";
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://app.mastermind.app";
 
 export default function DownloadPage() {
-  return <DownloadPageClient apkUrl={APK_URL} appVersion={APP_VERSION} />;
+  return <DownloadPageClient appVersion={APP_VERSION} baseUrl={BASE_URL} />;
 }

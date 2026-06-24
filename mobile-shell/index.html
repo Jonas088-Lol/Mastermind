@@ -35,8 +35,9 @@
       animation: spin 0.75s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .logo { font-size: 22px; font-weight: 700; letter-spacing: -0.4px; }
-    .logo span { color: #6366f1; }
+    .logo-img { width: 72px; height: 72px; object-fit: contain; border-radius: 16px; }
+    .logo-text { font-size: 22px; font-weight: 700; letter-spacing: -0.4px; }
+    .logo-text span { color: #6366f1; }
     .sub { font-size: 13px; color: #8b949e; margin-top: -8px; }
     .offline {
       display: none;
@@ -66,8 +67,9 @@
 </head>
 <body>
   <div class="loader" id="loader">
+    <img class="logo-img" src="/brand/logo.png" alt="MasterMind" onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='block'" />
+    <div class="logo-text" id="logo-fallback" style="display:none">Master<span>Mind</span></div>
     <div class="spinner"></div>
-    <div class="logo">Master<span>Mind</span></div>
     <div class="sub">Verbinden…</div>
   </div>
 

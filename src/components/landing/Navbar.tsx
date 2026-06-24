@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/preise", label: "Preise" },
   { href: "/fuer/schulen", label: "Für Schulen" },
   { href: "/fuer/lehrer", label: "Für Lehrer" },
+  { href: "/download", label: "App" },
 ];
 
 export function Navbar() {

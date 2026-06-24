@@ -1,232 +1,447 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
-  Download, CheckCircle2, AlertCircle, ChevronDown, ChevronUp,
-  Smartphone, Shield, Wifi, ArrowRight,
+  Download, CheckCircle2, ArrowRight, Smartphone, Monitor,
+  Globe, Shield, Zap, RefreshCw, ChevronDown, ChevronUp,
+  ExternalLink, Apple,
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const STEPS = [
-  {
-    num: 1,
-    title: "APK herunterladen",
-    desc: 'Tippe unten auf "Android herunterladen". Die APK-Datei wird auf dein Gerät geladen (ca. 10–30 MB).',
-    icon: "⬇️",
-  },
-  {
-    num: 2,
-    title: "Installation erlauben",
-    desc: 'Android fragt beim ersten Mal: "Unbekannte Apps installieren?" → Tippe auf Einstellungen → schalte "Diese Quelle erlauben" ein → zurück → Installieren.',
-    icon: "🔓",
-  },
-  {
-    num: 3,
-    title: "Öffnen & anmelden",
-    desc: 'Tippe auf "Öffnen" oder suche MasterMind in deiner App-Liste. Melde dich mit deinen Schuldaten an.',
-    icon: "✅",
-  },
-];
+/* ─── Platform data ───────────────────────────────────────────────────────── */
 
-const FAQS = [
-  {
-    q: "Warum gibt es keine Play-Store-Version?",
-    a: "MasterMind ist eine Schul-App, die direkt für deine Schule bereitgestellt wird. Der Direktdownload ermöglicht es uns, schultypische Anpassungen (Logo, Farben, Server) ohne Verzögerungen auszuliefern.",
-  },
-  {
-    q: "Ist die APK sicher?",
-    a: "Ja. Die APK wird direkt vom Server deiner Schule ausgeliefert – dieselbe vertrauenswürdige Quelle wie die Web-App. Es werden keine Daten an Dritte übertragen.",
-  },
-  {
-    q: "Mein Android lässt die Installation nicht zu.",
-    a: "Öffne Einstellungen → Apps → Spezielle App-Zugriffe → Unbekannte Apps installieren → wähle deinen Browser → erlaube die Installation. Danach erneut versuchen.",
-  },
-  {
-    q: "Gibt es eine iPhone-Version?",
-    a: "Eine iOS-Version ist in Vorbereitung. In der Zwischenzeit kannst du die Web-App in Safari öffnen und über Teilen → Zum Home-Bildschirm als PWA installieren.",
-  },
-  {
-    q: "Wie erhalte ich Updates?",
-    a: "Die App lädt beim Start automatisch den neuesten Stand vom Server. Du musst die APK nur bei größeren nativen Updates erneut installieren – du wirst dann darüber informiert.",
-  },
-];
+type PlatformId = "android" | "ios" | "windows" | "mac" | "linux" | "pwa";
 
-interface Props {
-  apkUrl: string;
-  appVersion: string;
+interface Platform {
+  id: PlatformId;
+  label: string;
+  sublabel: string;
+  icon: React.ReactNode;
+  color: string;
+  badge?: string;
+  downloadUrl?: string;
+  downloadLabel: string;
+  storeLabel?: string;
+  storeUrl?: string;
+  instructions: string[];
+  available: boolean;
 }
 
-export function DownloadPageClient({ apkUrl, appVersion }: Props) {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+function AndroidIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+      <path d="M6.18 15.64a2.18 2.18 0 0 1-2.18-2.18V9.82a2.18 2.18 0 0 1 4.36 0v3.64a2.18 2.18 0 0 1-2.18 2.18m11.64 0a2.18 2.18 0 0 1-2.18-2.18V9.82a2.18 2.18 0 0 1 4.36 0v3.64a2.18 2.18 0 0 1-2.18 2.18M5 8.73A7 7 0 0 1 12 2a7 7 0 0 1 7 6.73H5m14.7 3.59c0-1.58.71-3 1.82-3.95A9.12 9.12 0 0 0 12 2 9.12 9.12 0 0 0 2.48 8.37c1.11.95 1.82 2.37 1.82 3.95v3.68c0 .9.54 1.67 1.32 2v1.09a1.42 1.42 0 0 0 1.41 1.41 1.42 1.42 0 0 0 1.42-1.41v-.91h6.1v.91a1.42 1.42 0 0 0 1.41 1.41 1.42 1.42 0 0 0 1.42-1.41V18c.78-.33 1.32-1.1 1.32-2v-3.68Z" />
+    </svg>
+  );
+}
+
+function WindowsIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+      <path d="M3 12V6.75l6-1.32v6.57H3zm17 0V5.25L10 3.5v8.5h10zm-17 1h6v6.43L3 18v-5zm17 0v6.5l-10-1.82V13h10z" />
+    </svg>
+  );
+}
+
+function LinuxIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+      <path d="M12.5 0c-.2 0-.4.2-.4.4l.1.4c.1.2.2.3.1.6-.1.1-.1.3 0 .4l.2.5c.2.2.2.4.2.6 0 .3-.1.6-.4.8l-.2.1c-.1.1-.2.1-.3.2l-.1.1c-.2.2-.3.4-.3.7s.1.5.2.7c.1.2.2.4.3.6.1.2.1.4 0 .6-.1.2-.2.3-.2.5 0 .1 0 .3.1.4.1.2.2.3.2.5s-.1.4-.2.5L11 8c-.3.3-.4.7-.4 1 0 .4.2.7.4 1l.2.2c.1.1.1.2.2.3 0 .2-.1.3-.2.5-.1.1-.2.3-.2.5s.1.4.3.5c.1.1.3.2.4.2.2 0 .4 0 .5-.1l.2-.1c.2-.1.3-.1.5-.2.3-.1.5-.3.6-.5.1-.3.1-.6 0-.8-.1-.3-.3-.5-.5-.6l-.3-.1c-.1-.1-.2-.1-.3-.1 0-.1 0-.2.1-.3.1-.2.1-.3.1-.5 0-.3-.1-.5-.3-.7-.2-.1-.3-.3-.3-.5s.2-.4.4-.5c.3-.1.5-.1.7-.1s.3 0 .5.1c.2 0 .3.1.5.1.3 0 .6-.1.8-.3.2-.2.3-.5.2-.8 0-.3-.2-.5-.4-.7-.1-.1-.3-.2-.3-.4 0-.1.1-.2.2-.3.2-.2.4-.4.4-.7 0-.2-.1-.4-.3-.6-.1-.1-.3-.2-.4-.2-.2 0-.3 0-.5.1l-.2.2c-.2.1-.3.3-.5.4-.2.1-.4.1-.6 0-.2 0-.3-.1-.4-.2-.2-.2-.3-.4-.3-.7 0-.2.1-.4.2-.5.1-.2.2-.3.2-.5 0-.3-.1-.5-.3-.6-.1-.1-.3-.2-.5-.2zM8 10c-.2 0-.4 0-.5.1C7 10.3 6.6 10.8 6.6 11.4c0 .3.1.6.4.9.2.2.4.4.5.7.1.2.1.5 0 .7-.1.2-.2.4-.4.5-.2.1-.4.2-.6.2-.3 0-.5-.1-.7-.3-.2-.2-.3-.4-.4-.7-.2-.6-.3-1.2-.3-1.9 0-.8.2-1.5.5-2.1.3-.6.8-1 1.4-1.1.5-.1 1.1 0 1.5.3.4.3.7.8.7 1.4 0 .3-.1.5-.3.7-.2.2-.4.3-.7.3zm8 0c-.3 0-.5-.1-.7-.3-.2-.2-.3-.4-.3-.7 0-.6.3-1.1.7-1.4.4-.3 1-.4 1.5-.3.6.1 1.1.5 1.4 1.1.3.6.5 1.3.5 2.1 0 .7-.1 1.3-.3 1.9-.1.3-.2.5-.4.7-.2.2-.4.3-.7.3-.2 0-.4-.1-.6-.2-.2-.1-.3-.3-.4-.5-.1-.2-.1-.5 0-.7.1-.3.3-.5.5-.7.3-.3.4-.6.4-.9 0-.6-.4-1.1-.9-1.3-.1-.1-.3-.1-.5-.1zm-8 6c-.4 0-.7.3-.7.7 0 1.2.4 2.3 1 3.2.6.9 1.5 1.5 2.5 1.5H13c1 0 1.9-.6 2.5-1.5.6-.9 1-2 1-3.2 0-.4-.3-.7-.7-.7H8z" />
+    </svg>
+  );
+}
+
+function getPlatforms(baseUrl: string): Platform[] {
+  return [
+    {
+      id: "android",
+      label: "Android",
+      sublabel: "APK · Android 8+",
+      icon: <AndroidIcon className="size-8" />,
+      color: "#3DDC84",
+      downloadUrl: "/downloads/mastermind.apk",
+      downloadLabel: "APK herunterladen",
+      instructions: [
+        "APK herunterladen (ca. 15–30 MB)",
+        "Wenn Android fragt: „Unbekannte Apps erlauben" → Ja",
+        "Installieren → Öffnen → Mit Schuldaten anmelden",
+      ],
+      available: true,
+    },
+    {
+      id: "ios",
+      label: "iPhone · iPad",
+      sublabel: "iOS 16+ · iPadOS 16+",
+      icon: <Apple className="size-8" />,
+      color: "#147EFB",
+      downloadLabel: "Im App Store öffnen",
+      storeLabel: "App Store",
+      storeUrl: "https://apps.apple.com",
+      instructions: [
+        "Link öffnen → App Store öffnet sich automatisch",
+        "Auf „Laden" / „Installieren" tippen",
+        "Mit Schuldaten anmelden",
+      ],
+      available: false,
+    },
+    {
+      id: "windows",
+      label: "Windows",
+      sublabel: "Windows 10 / 11 (64-Bit)",
+      icon: <WindowsIcon className="size-8" />,
+      color: "#0078D4",
+      downloadUrl: "/downloads/mastermind-windows-setup.exe",
+      downloadLabel: "Setup.exe herunterladen",
+      instructions: [
+        "Setup.exe herunterladen und starten",
+        "Windows SmartScreen-Warnung: „Trotzdem ausführen"",
+        "Installation abschließen — App startet automatisch",
+      ],
+      available: true,
+    },
+    {
+      id: "mac",
+      label: "macOS",
+      sublabel: "macOS 12 Monterey+",
+      icon: <Apple className="size-8" />,
+      color: "#555555",
+      downloadUrl: "/downloads/mastermind-mac.dmg",
+      downloadLabel: "DMG herunterladen",
+      instructions: [
+        "DMG-Datei öffnen",
+        "MasterMind in den Programme-Ordner ziehen",
+        "Beim ersten Start: Rechtsklick → Öffnen (Gatekeeper umgehen)",
+      ],
+      available: true,
+    },
+    {
+      id: "linux",
+      label: "Linux",
+      sublabel: "AppImage · Ubuntu, Debian, Arch …",
+      icon: <LinuxIcon className="size-8" />,
+      color: "#E95420",
+      downloadUrl: "/downloads/mastermind-linux.AppImage",
+      downloadLabel: "AppImage herunterladen",
+      instructions: [
+        "AppImage herunterladen",
+        "Ausführbar machen: chmod +x MasterMind-*.AppImage",
+        "Starten: ./MasterMind-*.AppImage",
+      ],
+      available: true,
+    },
+    {
+      id: "pwa",
+      label: "Browser / PWA",
+      sublabel: "Alle Plattformen · kein Download nötig",
+      icon: <Globe className="size-8" />,
+      color: "#6366F1",
+      downloadLabel: "Jetzt öffnen",
+      storeUrl: baseUrl,
+      instructions: [
+        "app.mastermind.app im Browser öffnen",
+        "Chrome/Edge: „App installieren"-Symbol in der Adressleiste",
+        "Safari iOS: Teilen → Zum Home-Bildschirm",
+      ],
+      available: true,
+    },
+  ];
+}
+
+/* ─── Feature highlights ──────────────────────────────────────────────────── */
+
+const FEATURES = [
+  {
+    icon: <Zap className="size-5 text-yellow-400" />,
+    title: "Server-First",
+    desc: "Alle Inhalte laden direkt vom Server. Keine veralteten App-Versionen mehr.",
+  },
+  {
+    icon: <RefreshCw className="size-5 text-brand" />,
+    title: "Automatisch aktuell",
+    desc: "Updates erscheinen sofort — ohne App-Store-Wartezeiten.",
+  },
+  {
+    icon: <Shield className="size-5 text-green-400" />,
+    title: "DSGVO-konform",
+    desc: "Server in Deutschland. Keine Tracking-SDKs. AVV für jede Schule.",
+  },
+];
+
+/* ─── Detect OS ───────────────────────────────────────────────────────────── */
+
+function detectOS(): PlatformId {
+  if (typeof navigator === "undefined") return "pwa";
+  const ua = navigator.userAgent.toLowerCase();
+  if (/iphone|ipad|ipod/.test(ua)) return "ios";
+  if (/android/.test(ua)) return "android";
+  if (/win/.test(ua)) return "windows";
+  if (/mac/.test(ua)) return "mac";
+  if (/linux/.test(ua)) return "linux";
+  return "pwa";
+}
+
+/* ─── Component ───────────────────────────────────────────────────────────── */
+
+interface Props {
+  appVersion: string;
+  baseUrl: string;
+}
+
+export function DownloadPageClient({ appVersion, baseUrl }: Props) {
+  const platforms = getPlatforms(baseUrl);
+  const [active, setActive] = useState<PlatformId>("android");
+  const [showAllSteps, setShowAllSteps] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const pageUrl = typeof window !== "undefined" ? window.location.href : "https://app.mastermind.app/download";
+  // Auto-detect user's OS
+  useEffect(() => {
+    setActive(detectOS());
+  }, []);
+
+  const current = platforms.find((p) => p.id === active)!;
 
   function copyLink() {
-    navigator.clipboard.writeText(pageUrl).then(() => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
   }
 
   return (
-    <div className="min-h-screen bg-[#0d1117] text-white">
+    <div className="min-h-screen bg-bg text-fg">
 
-      {/* ── Nav ──────────────────────────────────────────────────────────────── */}
-      <nav className="border-b border-white/8 px-5 py-3">
-        <div className="mx-auto flex max-w-2xl items-center justify-between">
-          <Link href="/" className="font-bold tracking-tight">
-            Master<span className="text-brand">Mind</span>
+      {/* ── Nav ─────────────────────────────────────────────────────────────── */}
+      <nav className="sticky top-0 z-20 border-b border-border bg-bg/80 backdrop-blur">
+        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-5">
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/brand/logo.png" alt="MasterMind" width={28} height={28} className="size-7 rounded-lg object-contain" />
+            <span className="text-sm font-bold tracking-tight">MasterMind</span>
           </Link>
-          <Link href="/login"
-            className="rounded-lg border border-white/15 px-3 py-1.5 text-xs font-semibold text-white/70 hover:border-brand/50 hover:text-white transition-colors">
-            Anmelden
-          </Link>
+          <div className="flex items-center gap-3">
+            <span className="hidden text-xs text-muted-fg sm:block">v{appVersion}</span>
+            <Link
+              href="/login"
+              className="rounded-lg border border-border px-3 py-1.5 text-xs font-semibold text-muted-fg hover:bg-surface hover:text-fg transition-colors"
+            >
+              Anmelden
+            </Link>
+          </div>
         </div>
       </nav>
 
-      <main className="mx-auto max-w-2xl px-5 pb-16">
+      <main className="mx-auto max-w-5xl px-5 pb-20">
 
-        {/* ── Hero ─────────────────────────────────────────────────────────── */}
-        <div className="py-12 text-center">
-          {/* App icon */}
-          <div className="mx-auto mb-6 flex size-24 items-center justify-center rounded-3xl bg-linear-to-br from-brand/80 to-brand-dark shadow-xl shadow-brand/20">
-            <span className="text-4xl">🎓</span>
+        {/* ── Hero ────────────────────────────────────────────────────────────── */}
+        <div className="py-14 text-center">
+          <div className="mx-auto mb-6 flex size-20 items-center justify-center overflow-hidden rounded-[22px] border border-border bg-surface shadow-2xl shadow-brand/10">
+            <Image src="/brand/icon.png" alt="MasterMind" width={80} height={80} className="size-full object-cover" />
           </div>
-
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
             MasterMind App
           </h1>
-          <p className="mt-2 text-white/50 text-sm font-mono">Version {appVersion}</p>
-          <p className="mt-4 text-base text-white/65 max-w-sm mx-auto leading-relaxed">
-            Die Schul-App direkt auf dein Android-Gerät — schnell installiert, immer aktuell.
+          <p className="mt-3 text-muted-fg">
+            Für jede Plattform. Immer direkt vom Server.
           </p>
-
-          {/* Download button */}
-          <a
-            href={apkUrl}
-            download="mastermind.apk"
-            className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-brand px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand/30 transition-all hover:scale-105 hover:shadow-brand/50 active:scale-95"
-          >
-            <Download className="size-5" strokeWidth={2} />
-            Android herunterladen (.apk)
-          </a>
-
-          {/* Share link */}
-          <div className="mt-5 flex items-center justify-center gap-3">
-            <button
-              type="button"
-              onClick={copyLink}
-              className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/50 hover:text-white/80 transition-colors"
-            >
-              {copied ? <CheckCircle2 className="size-3.5 text-green-400" /> : <ArrowRight className="size-3.5" />}
-              {copied ? "Link kopiert!" : "Link teilen / QR-Code"}
-            </button>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs">
+            {[
+              { color: "#3DDC84", label: "Android" },
+              { color: "#147EFB", label: "iOS" },
+              { color: "#0078D4", label: "Windows" },
+              { color: "#555555", label: "macOS" },
+              { color: "#E95420", label: "Linux" },
+              { color: "#6366F1", label: "Browser" },
+            ].map(({ color, label }) => (
+              <span
+                key={label}
+                className="rounded-full border border-border px-2.5 py-0.5 font-medium text-muted-fg"
+              >
+                {label}
+              </span>
+            ))}
           </div>
         </div>
 
-        {/* ── Badges ───────────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-3 gap-3 mb-10">
-          {[
-            { icon: <Shield className="size-4 text-green-400" />, label: "DSGVO-konform" },
-            { icon: <Wifi className="size-4 text-brand" />, label: "Immer aktuell" },
-            { icon: <Smartphone className="size-4 text-purple-400" />, label: "Android 7+" },
-          ].map(({ icon, label }) => (
-            <div key={label} className="flex flex-col items-center gap-1.5 rounded-2xl border border-white/8 bg-white/4 py-4 text-center">
-              {icon}
-              <span className="text-[11px] font-semibold text-white/60">{label}</span>
+        {/* ── Platform switcher ───────────────────────────────────────────────── */}
+        <div className="grid gap-6 lg:grid-cols-[280px_1fr]">
+
+          {/* Left: platform list */}
+          <div className="flex flex-col gap-1.5">
+            {platforms.map((p) => (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => setActive(p.id)}
+                className={cn(
+                  "flex items-center gap-3 rounded-xl border px-4 py-3 text-left transition-all",
+                  active === p.id
+                    ? "border-brand/30 bg-brand/5"
+                    : "border-border hover:bg-surface",
+                  !p.available && "opacity-50"
+                )}
+              >
+                <span
+                  className="flex size-10 shrink-0 items-center justify-center rounded-lg"
+                  style={{ color: p.color, backgroundColor: p.color + "20" }}
+                >
+                  {p.icon}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-semibold">{p.label}</span>
+                    {!p.available && (
+                      <span className="rounded-full bg-surface-2 px-1.5 py-0.5 text-[10px] font-medium text-muted-fg">
+                        bald
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-xs text-muted-fg">{p.sublabel}</span>
+                </div>
+                {active === p.id && (
+                  <div className="size-2 shrink-0 rounded-full" style={{ backgroundColor: p.color }} />
+                )}
+              </button>
+            ))}
+          </div>
+
+          {/* Right: active platform detail */}
+          <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
+            {/* Platform header */}
+            <div className="flex items-start gap-4">
+              <span
+                className="flex size-14 shrink-0 items-center justify-center rounded-2xl text-2xl"
+                style={{ color: current.color, backgroundColor: current.color + "20" }}
+              >
+                {current.icon}
+              </span>
+              <div>
+                <h2 className="text-xl font-bold">{current.label}</h2>
+                <p className="text-sm text-muted-fg">{current.sublabel}</p>
+              </div>
+            </div>
+
+            {/* Download / store button */}
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              {current.available ? (
+                <>
+                  {current.downloadUrl && (
+                    <a
+                      href={current.downloadUrl}
+                      download
+                      className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl"
+                      style={{ backgroundColor: current.color }}
+                    >
+                      <Download className="size-4" strokeWidth={2.5} />
+                      {current.downloadLabel}
+                    </a>
+                  )}
+                  {current.storeUrl && (
+                    <a
+                      href={current.storeUrl}
+                      target={current.id === "pwa" ? "_blank" : undefined}
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-bg px-6 py-3 text-sm font-semibold text-fg transition-colors hover:bg-surface"
+                    >
+                      <ExternalLink className="size-4" />
+                      {current.id === "pwa" ? "App öffnen" : current.storeLabel}
+                    </a>
+                  )}
+                </>
+              ) : (
+                <div className="flex items-center gap-3 rounded-xl border border-border bg-surface-2 px-5 py-3">
+                  <span className="text-sm text-muted-fg">Bald im {current.storeLabel}</span>
+                </div>
+              )}
+            </div>
+
+            {/* Install instructions */}
+            <div className="mt-8">
+              <button
+                type="button"
+                onClick={() => setShowAllSteps((v) => !v)}
+                className="flex items-center gap-1.5 text-xs font-semibold text-muted-fg hover:text-fg transition-colors"
+              >
+                {showAllSteps ? <ChevronUp className="size-3.5" /> : <ChevronDown className="size-3.5" />}
+                {showAllSteps ? "Anleitung ausblenden" : "Installationsanleitung"}
+              </button>
+
+              {showAllSteps && (
+                <ol className="mt-4 flex flex-col gap-3">
+                  {current.instructions.map((step, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="flex size-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold" style={{ backgroundColor: current.color + "20", color: current.color }}>
+                        {i + 1}
+                      </span>
+                      <span className="pt-0.5 text-sm text-muted-fg">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </div>
+
+            {/* PWA tip for mobile */}
+            {current.id !== "pwa" && (current.id === "android" || current.id === "ios") && (
+              <div className="mt-6 flex items-start gap-3 rounded-xl border border-border bg-surface-2 px-4 py-3">
+                <Globe className="mt-0.5 size-4 shrink-0 text-brand" />
+                <p className="text-xs text-muted-fg">
+                  <strong className="font-semibold text-fg">Tipp:</strong>{" "}
+                  Du kannst MasterMind auch direkt im Browser unter{" "}
+                  <a href={baseUrl} className="text-brand underline" target="_blank" rel="noopener noreferrer">
+                    app.mastermind.app
+                  </a>{" "}
+                  nutzen — ohne Installation.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* ── Features ──────────────────────────────────────────────────────────── */}
+        <div className="mt-16 grid gap-4 sm:grid-cols-3">
+          {FEATURES.map((f) => (
+            <div key={f.title} className="rounded-2xl border border-border bg-surface p-5">
+              <div className="mb-3 flex size-10 items-center justify-center rounded-xl bg-surface-2">
+                {f.icon}
+              </div>
+              <p className="font-semibold">{f.title}</p>
+              <p className="mt-1 text-sm text-muted-fg">{f.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* ── Installation steps ───────────────────────────────────────────── */}
-        <section className="mb-10">
-          <h2 className="mb-5 text-lg font-bold">Installation in 3 Schritten</h2>
-          <div className="flex flex-col gap-3">
-            {STEPS.map((step) => (
-              <div key={step.num} className="flex gap-4 rounded-2xl border border-white/8 bg-white/4 p-4">
-                <div className="flex shrink-0 flex-col items-center gap-2">
-                  <span className="text-2xl">{step.icon}</span>
-                  <div className="flex size-6 items-center justify-center rounded-full bg-brand/20 text-[11px] font-bold text-brand">
-                    {step.num}
-                  </div>
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-white">{step.title}</p>
-                  <p className="mt-1 text-xs leading-relaxed text-white/55">{step.desc}</p>
-                </div>
-              </div>
-            ))}
+        {/* ── Share ──────────────────────────────────────────────────────────────── */}
+        <div className="mt-16 flex flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-8 text-center">
+          <Smartphone className="size-8 text-muted-fg" />
+          <div>
+            <p className="font-semibold">Link teilen</p>
+            <p className="mt-1 text-sm text-muted-fg">
+              Schicke diesen Link an Schüler oder Eltern.
+            </p>
           </div>
-        </section>
+          <button
+            type="button"
+            onClick={copyLink}
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-bg px-4 py-2 text-sm font-medium transition-colors hover:bg-surface"
+          >
+            {copied
+              ? <CheckCircle2 className="size-4 text-green-500" />
+              : <ArrowRight className="size-4 text-muted-fg" />
+            }
+            {copied ? "Kopiert!" : "Link kopieren"}
+          </button>
+        </div>
 
-        {/* ── Android settings path ────────────────────────────────────────── */}
-        <section className="mb-10 rounded-2xl border border-yellow-500/20 bg-yellow-500/6 p-5">
-          <div className="flex items-start gap-3">
-            <AlertCircle className="mt-0.5 size-4 shrink-0 text-yellow-400" />
-            <div>
-              <p className="text-sm font-semibold text-yellow-300">Tipp: „Unbekannte Quellen" aktivieren</p>
-              <p className="mt-1 text-xs leading-relaxed text-yellow-200/60">
-                Einstellungen → Apps &amp; Benachrichtigungen → Spezielle App-Zugriffe →
-                Unbekannte Apps installieren → wähle deinen Browser → „Aus dieser Quelle zulassen" einschalten.
-                <br /><br />
-                Bei neueren Android-Versionen erscheint dieser Dialog automatisch beim Download.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ── PWA hint (iOS) ───────────────────────────────────────────────── */}
-        <section className="mb-10 rounded-2xl border border-white/8 bg-white/4 p-5">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-lg">🍎</span>
-            <p className="font-semibold text-sm">iPhone / iPad</p>
-          </div>
-          <p className="text-xs leading-relaxed text-white/55">
-            Öffne <strong className="text-white/80">app.mastermind.app</strong> in Safari → tippe auf das
-            Teilen-Symbol (□↑) → <strong className="text-white/80">„Zum Home-Bildschirm"</strong> → Hinzufügen.
-            Die App verhält sich dann wie eine native App.
-          </p>
-        </section>
-
-        {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-        <section>
-          <h2 className="mb-4 text-lg font-bold">Häufige Fragen</h2>
-          <div className="flex flex-col gap-2">
-            {FAQS.map((faq, i) => (
-              <div key={i} className="overflow-hidden rounded-2xl border border-white/8 bg-white/4">
-                <button
-                  type="button"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left text-sm font-semibold text-white/80 hover:text-white transition-colors"
-                >
-                  <span>{faq.q}</span>
-                  {openFaq === i
-                    ? <ChevronUp className="size-4 shrink-0 text-white/40" />
-                    : <ChevronDown className="size-4 shrink-0 text-white/40" />
-                  }
-                </button>
-                {openFaq === i && (
-                  <div className="border-t border-white/6 px-4 pb-4 pt-3 text-xs leading-relaxed text-white/55">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Footer ───────────────────────────────────────────────────────── */}
-        <div className="mt-12 text-center text-xs text-white/30">
+        {/* ── Footer ────────────────────────────────────────────────────────────── */}
+        <div className="mt-12 text-center text-xs text-muted-fg">
           <p>MasterMind · Schulmanagement-Plattform</p>
-          <p className="mt-1">
-            <Link href="/datenschutz" className="hover:text-white/60 transition-colors">Datenschutz</Link>
-            {" · "}
-            <Link href="/impressum" className="hover:text-white/60 transition-colors">Impressum</Link>
-            {" · "}
-            <Link href="/kontakt" className="hover:text-white/60 transition-colors">Kontakt</Link>
+          <p className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <Link href="/legal/datenschutz" className="hover:text-fg transition-colors">Datenschutz</Link>
+            <Link href="/legal/impressum" className="hover:text-fg transition-colors">Impressum</Link>
+            <Link href="/" className="hover:text-fg transition-colors">Zurück zur Startseite</Link>
           </p>
         </div>
+
       </main>
     </div>
   );
