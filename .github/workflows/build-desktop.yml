@@ -41,12 +41,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: "npm"
-          cache-dependency-path: electron/package-lock.json
 
       - name: Install dependencies
         working-directory: electron
-        run: npm ci
+        run: npm install
 
       - name: Set version
         working-directory: electron
@@ -56,12 +54,9 @@ jobs:
           VERSION="${VERSION#v}"
           npm version "$VERSION" --no-git-tag-version
 
-      - name: Build icon resources (Linux only)
+      - name: Install binutils (Linux deb build)
         if: matrix.platform == 'linux'
-        run: |
-          sudo apt-get install -y imagemagick
-          # Placeholder — replace resources/icon.png with real icon before building
-          echo "Icon resources should be in electron/resources/"
+        run: sudo apt-get install -y binutils
 
       - name: Build ${{ matrix.platform }}
         working-directory: electron
