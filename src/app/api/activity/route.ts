@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
+import { subjectKeyFromPage } from "@/lib/skill-tree-static";
 
 export const dynamic = "force-dynamic";
 
@@ -77,6 +78,19 @@ export async function POST(req: NextRequest) {
       lastHeartbeat: new Date(),
     },
   });
+
+  // Track per-subject learning minutes when user is on an exercise page
+  if (activeSecondsDelta > 0) {
+    const subjectKey = subjectKeyFromPage(page);
+    if (subjectKey) {
+      const addedMinutes = activeSecondsDelta / 60;
+      await prisma.userSubjectMinutes.upsert({
+        where: { userId_subjectKey: { userId: session.userId, subjectKey } },
+        update: { totalMinutes: { increment: addedMinutes } },
+        create: { userId: session.userId, subjectKey, totalMinutes: addedMinutes },
+      });
+    }
+  }
 
   // Also touch lastSeenAt so online status works
   await prisma.user.update({

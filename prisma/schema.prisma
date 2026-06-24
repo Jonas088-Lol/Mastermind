@@ -290,6 +290,7 @@ model User {
   treeProgress     UserTreeProgress[] @relation("UserTreeProgress")
   treeQuests       UserTreeQuest[]    @relation("UserTreeQuests")
   dailyActivity    DailyActivity[]    @relation("DailyActivity")
+  subjectMinutes   UserSubjectMinutes[] @relation("UserSubjectMinutes")
 
   @@index([role])
   @@index([schoolId])
@@ -2297,3 +2298,15 @@ model ProvisioningCode {
 
 // ── Premium Wallet extension ──────────────────────────────
 // premiumCoins stored directly on User (migration adds column)
+
+model UserSubjectMinutes {
+  id           String   @id @default(cuid())
+  userId       String
+  subjectKey   String
+  totalMinutes Float    @default(0)
+  updatedAt    DateTime @updatedAt
+  user         User     @relation("UserSubjectMinutes", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, subjectKey])
+  @@index([userId])
+}

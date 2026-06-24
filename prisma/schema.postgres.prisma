@@ -292,6 +292,7 @@ model User {
   treeProgress     UserTreeProgress[] @relation("UserTreeProgress")
   treeQuests       UserTreeQuest[]    @relation("UserTreeQuests")
   dailyActivity    DailyActivity[]    @relation("DailyActivity")
+  subjectMinutes   UserSubjectMinutes[] @relation("UserSubjectMinutes")
 
   @@index([role])
   @@index([schoolId])
@@ -2286,4 +2287,16 @@ model ProvisioningCode {
   @@index([schoolId])
   @@index([code])
   @@index([kind])
+}
+
+model UserSubjectMinutes {
+  id           String   @id @default(cuid())
+  userId       String
+  subjectKey   String
+  totalMinutes Float    @default(0)
+  updatedAt    DateTime @updatedAt
+  user         User     @relation("UserSubjectMinutes", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, subjectKey])
+  @@index([userId])
 }
