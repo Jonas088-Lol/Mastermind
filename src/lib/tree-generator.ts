@@ -71,7 +71,8 @@ export async function getUserTreeState(
   const progressMap = new Map(progressRows.map((p) => [p.nodeId, p]));
 
   // Group non-hub nodes by subjectId
-  const hub = treeNodes.find((n) => n.isHub)!;
+  const hub = treeNodes.find((n) => n.isHub);
+  if (!hub) return { nodes: [], edges: [] };
   const bySubject = new Map<string, typeof treeNodes>();
   for (const node of treeNodes) {
     if (node.isHub || !node.subjectId) continue;
