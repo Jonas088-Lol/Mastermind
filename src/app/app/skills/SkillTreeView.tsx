@@ -1,429 +1,504 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback, useTransition } from "react";
 import {
-  STATIC_TREES,
-  getCurrentRank,
-  getNextRank,
-  rankUpXp,
-  type SubjectKey,
-  type StaticRank,
-  type SubjectTree,
-  SUBJECT_KEYS,
-} from "@/lib/skill-tree-static";
+  SKILL_NODES,
+  SKILL_NODE_MAP,
+  SUBJECT_LABEL_POSITIONS,
+  CANVAS_SIZE,
+  CANVAS_CTR,
+  getNodeState,
+  type SkillNode,
+} from "@/lib/skill-tree-nodes";
+import { unlockSkillNode } from "./actions";
 
-interface SubjectProgress {
-  subjectKey: string;
-  totalMinutes: number;
-}
+// ── Constants ─────────────────────────────────────────────
+const NODE_R      = 28;   // circle radius
+const HUB_R       = 48;
+const STAR_COUNT  = 220;
 
-interface Props {
-  progress: SubjectProgress[];
-}
-
-// ── Layout constants ──────────────────────────────────────
-const CANVAS = 2400;
-const CENTER = CANVAS / 2;   // 1200
-const HUB_R   = 52;
-const NODE_R  = 30;
-const FIRST_R = 190;         // center to rank-1 node
-const SPACING = 82;          // between consecutive nodes
-const LABEL_R = FIRST_R + 11 * SPACING + 70; // subject label radius
-
-const ANGLES_DEG: Record<SubjectKey, number> = {
-  mathematik: -90,
-  deutsch:    -45,
-  englisch:     0,
-  physik:      45,
-  chemie:      90,
-  biologie:   135,
-  geschichte: 180,
-  informatik: -135,
-};
-
-function toXY(angleDeg: number, r: number) {
-  const rad = (angleDeg * Math.PI) / 180;
-  return { x: CENTER + Math.cos(rad) * r, y: CENTER + Math.sin(rad) * r };
-}
-
-// ── Star background (generated once) ─────────────────────
-const STARS = Array.from({ length: 200 }, (_, i) => ({
-  x: (((i * 137.508 + 42) % CANVAS)),
-  y: (((i * 97.3 + 17) % CANVAS)),
-  r: i % 5 === 0 ? 1.5 : 0.8,
-  o: 0.2 + (i % 10) * 0.06,
+// Precompute stars once (stable positions)
+const STARS = Array.from({ length: STAR_COUNT }, (_, i) => ({
+  x: ((i * 137.508 + i * 43) % CANVAS_SIZE + CANVAS_SIZE) % CANVAS_SIZE,
+  y: ((i * 97.31  + i * 17) % CANVAS_SIZE + CANVAS_SIZE) % CANVAS_SIZE,
+  r: i % 7 === 0 ? 1.6 : i % 3 === 0 ? 1.1 : 0.7,
+  o: 0.15 + (i % 12) * 0.05,
 }));
 
-export function SkillTreeView({ progress }: Props) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [selected, setSelected] = useState<{ subjectKey: SubjectKey; rank: StaticRank } | null>(null);
-  const progressMap = new Map(progress.map((p) => [p.subjectKey, p.totalMinutes]));
+// ── Props ─────────────────────────────────────────────────
+interface Props {
+  unlockedKeys: string[];
+  userXp:       number;
+  displayName:  string;
+}
 
-  // Center scroll on hub on mount
+// ── Component ─────────────────────────────────────────────
+export function SkillTreeView({ unlockedKeys, userXp, displayName }: Props) {
+  // Local state for optimistic updates
+  const [localUnlocked, setLocalUnlocked] = useState<Set<string>>(
+    () => new Set(unlockedKeys)
+  );
+  const [localXp, setLocalXp] = useState(userXp);
+  const [selected, setSelected]   = useState<SkillNode | null>(null);
+  const [errorMsg, setErrorMsg]    = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
+
+  // ── Pan state (no re-renders during drag) ────────────────
+  const containerRef = useRef<HTMLDivElement>(null);
+  const svgRef       = useRef<SVGSVGElement>(null);
+  const txRef        = useRef({ x: 0, y: 0 });          // current translate
+  const dragRef      = useRef<{ sx: number; sy: number; stx: number; sty: number } | null>(null);
+  const didDrag      = useRef(false);
+
+  // Center the hub on mount
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    el.scrollLeft = CENTER - el.clientWidth / 2;
-    el.scrollTop  = CENTER - el.clientHeight / 2;
+    const x = el.clientWidth  / 2 - CANVAS_CTR;
+    const y = el.clientHeight / 2 - CANVAS_CTR;
+    txRef.current = { x, y };
+    if (svgRef.current) svgRef.current.style.transform = `translate(${x}px,${y}px)`;
   }, []);
 
-  const totalMinutesAll = [...progressMap.values()].reduce((a, b) => a + b, 0);
-  const maxMinutes = SUBJECT_KEYS.length * 4800;
-  const overallPct = Math.min(100, (totalMinutesAll / maxMinutes) * 100);
-  const completedSubjects = SUBJECT_KEYS.filter((k) => (progressMap.get(k) ?? 0) >= 4800).length;
+  // ── Drag: mouse ───────────────────────────────────────────
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
+    dragRef.current = { sx: e.clientX, sy: e.clientY, stx: txRef.current.x, sty: txRef.current.y };
+    didDrag.current = false;
+  }, []);
+
+  const onMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!dragRef.current) return;
+    const dx = e.clientX - dragRef.current.sx;
+    const dy = e.clientY - dragRef.current.sy;
+    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) didDrag.current = true;
+    const nx = dragRef.current.stx + dx;
+    const ny = dragRef.current.sty + dy;
+    txRef.current = { x: nx, y: ny };
+    if (svgRef.current) svgRef.current.style.transform = `translate(${nx}px,${ny}px)`;
+  }, []);
+
+  const onMouseUp = useCallback(() => { dragRef.current = null; }, []);
+
+  // ── Drag: touch ───────────────────────────────────────────
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
+    const t = e.touches[0]!;
+    dragRef.current = { sx: t.clientX, sy: t.clientY, stx: txRef.current.x, sty: txRef.current.y };
+    didDrag.current = false;
+  }, []);
+
+  const onTouchMove = useCallback((e: React.TouchEvent) => {
+    if (!dragRef.current) return;
+    e.preventDefault();
+    const t = e.touches[0]!;
+    const dx = t.clientX - dragRef.current.sx;
+    const dy = t.clientY - dragRef.current.sy;
+    if (Math.abs(dx) > 6 || Math.abs(dy) > 6) didDrag.current = true;
+    const nx = dragRef.current.stx + dx;
+    const ny = dragRef.current.sty + dy;
+    txRef.current = { x: nx, y: ny };
+    if (svgRef.current) svgRef.current.style.transform = `translate(${nx}px,${ny}px)`;
+  }, []);
+
+  const onTouchEnd = useCallback(() => { dragRef.current = null; }, []);
+
+  // ── Node click ────────────────────────────────────────────
+  const onNodeClick = useCallback((node: SkillNode) => {
+    if (didDrag.current) return;
+    setErrorMsg(null);
+    setSelected((prev) => prev?.key === node.key ? null : node);
+  }, []);
+
+  // ── Unlock action ─────────────────────────────────────────
+  const handleUnlock = useCallback(() => {
+    if (!selected) return;
+    const cost = selected.xpCost;
+    if (localXp < cost) {
+      setErrorMsg(`Nicht genug XP — du brauchst ${cost.toLocaleString("de-DE")} XP`);
+      return;
+    }
+    // Optimistic update
+    const key = selected.key;
+    setLocalUnlocked((prev) => new Set([...prev, key]));
+    setLocalXp((prev) => prev - cost);
+    setSelected(null);
+    setErrorMsg(null);
+
+    startTransition(async () => {
+      const res = await unlockSkillNode(key);
+      if (!res.ok) {
+        // Revert
+        setLocalUnlocked((prev) => { const s = new Set(prev); s.delete(key); return s; });
+        setLocalXp((prev) => prev + cost);
+        setErrorMsg(res.error ?? "Fehler beim Freischalten");
+      } else if (res.newXp !== undefined) {
+        setLocalXp(res.newXp);
+      }
+    });
+  }, [selected, localXp]);
+
+  // ── Compute visible nodes / edges ─────────────────────────
+  const visibleNodes = SKILL_NODES.filter((n) => {
+    if (n.isHub) return true;
+    const state = getNodeState(n.key, localUnlocked);
+    return state !== "hidden";
+  });
+
+  // Edges: draw between nodes where both are at least revealed
+  const visibleEdges: Array<{ from: SkillNode; to: SkillNode; active: boolean }> = [];
+  for (const node of SKILL_NODES) {
+    if (node.isHub) continue;
+    const toState = getNodeState(node.key, localUnlocked);
+    if (toState === "hidden") continue;
+    for (const reqKey of node.requires) {
+      const fromNode = SKILL_NODE_MAP.get(reqKey);
+      if (!fromNode) continue;
+      const fromState = getNodeState(fromNode.key, localUnlocked);
+      if (fromState === "hidden") continue;
+      visibleEdges.push({
+        from:   fromNode,
+        to:     node,
+        active: localUnlocked.has(node.key) || node.isHub,
+      });
+    }
+  }
+
+  // Stats
+  const totalNodes    = SKILL_NODES.length - 1; // exclude hub
+  const unlockedCount = localUnlocked.size;
+
+  // ── Subject label text anchor ──────────────────────────────
+  function labelAnchor(angle: number) {
+    if (angle === 0)   return "start";
+    if (angle === 180 || angle === -180) return "end";
+    return "middle";
+  }
 
   return (
-    <div className="flex flex-col h-full overflow-hidden">
-      {/* Top stats bar */}
-      <div className="shrink-0 px-4 py-2 flex items-center gap-4 bg-black/20 border-b border-white/5">
+    <div className="flex flex-col h-full overflow-hidden" style={{ background: "#05050f" }}>
+      {/* Top bar */}
+      <div className="shrink-0 flex items-center gap-3 px-4 py-2 border-b border-white/5 bg-black/30">
         <div className="flex-1">
-          <div className="h-1.5 rounded-full bg-white/10 overflow-hidden">
-            <div
-              className="h-full rounded-full transition-all duration-700"
-              style={{
-                width: `${overallPct}%`,
-                background: "linear-gradient(90deg, #6366f1, #f59e0b, #22c55e)",
-              }}
-            />
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/30">Skill-Baum</p>
+          <p className="text-sm font-black text-white leading-tight">{displayName}s Baum</p>
+        </div>
+        <div className="flex items-center gap-4 text-right">
+          <div>
+            <p className="text-[10px] text-white/30">Freigeschaltet</p>
+            <p className="text-xs font-black text-white">
+              {unlockedCount}<span className="text-white/30 font-normal">/{totalNodes}</span>
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] text-white/30">XP</p>
+            <p className="text-xs font-black text-indigo-400">{localXp.toLocaleString("de-DE")}</p>
           </div>
         </div>
-        <span className="text-[11px] text-white/40 shrink-0">
-          {completedSubjects}/{SUBJECT_KEYS.length} gemeistert · {Math.round(totalMinutesAll / 60)}h
-        </span>
       </div>
 
-      {/* Scroll hint */}
-      <p className="text-center text-[10px] text-white/20 py-1 shrink-0">
-        Scrolle zum Erkunden · Tippe auf einen Rang-Knoten für Details
+      {/* Hint */}
+      <p className="text-center text-[10px] text-white/20 py-1 shrink-0 select-none">
+        Ziehen zum Navigieren · Tippen zum Freischalten
       </p>
 
-      {/* Radial tree canvas */}
+      {/* Canvas */}
       <div
         ref={containerRef}
-        className="flex-1 overflow-auto"
-        style={{ background: "radial-gradient(ellipse at center, #0d0d2b 0%, #050510 70%)" }}
+        className="flex-1 relative overflow-hidden"
+        style={{ cursor: dragRef.current ? "grabbing" : "grab" }}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
         <svg
-          width={CANVAS}
-          height={CANVAS}
-          style={{ display: "block" }}
+          ref={svgRef}
+          width={CANVAS_SIZE}
+          height={CANVAS_SIZE}
+          style={{
+            position: "absolute",
+            top: 0, left: 0,
+            userSelect: "none",
+            willChange: "transform",
+          }}
         >
           <defs>
-            {/* Glow filters per subject */}
-            {SUBJECT_KEYS.map((key) => {
-              const color = STATIC_TREES[key].color;
-              return (
-                <filter key={key} id={`glow-${key}`} x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="6" result="blur" />
-                  <feFlood floodColor={color} floodOpacity="0.6" result="color" />
-                  <feComposite in="color" in2="blur" operator="in" result="glow" />
-                  <feMerge>
-                    <feMergeNode in="glow" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              );
-            })}
+            <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stopColor="#0d0d2e" />
+              <stop offset="100%" stopColor="#050510" />
+            </radialGradient>
+
+            {/* Per-subject glow filters */}
+            {SUBJECT_LABEL_POSITIONS.map(({ key, color }) => (
+              <filter key={key} id={`glow-${key}`} x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feFlood floodColor={color} floodOpacity="0.55" result="c" />
+                <feComposite in="c" in2="blur" operator="in" result="g" />
+                <feMerge><feMergeNode in="g" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+            ))}
             <filter id="glow-hub" x="-80%" y="-80%" width="260%" height="260%">
-              <feGaussianBlur stdDeviation="12" result="blur" />
-              <feFlood floodColor="#f59e0b" floodOpacity="0.7" result="color" />
-              <feComposite in="color" in2="blur" operator="in" result="glow" />
-              <feMerge>
-                <feMergeNode in="glow" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
+              <feGaussianBlur stdDeviation="10" result="blur" />
+              <feFlood floodColor="#f59e0b" floodOpacity="0.7" result="c" />
+              <feComposite in="c" in2="blur" operator="in" result="g" />
+              <feMerge><feMergeNode in="g" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+            <filter id="glow-select" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="8" result="blur" />
+              <feFlood floodColor="#ffffff" floodOpacity="0.8" result="c" />
+              <feComposite in="c" in2="blur" operator="in" result="g" />
+              <feMerge><feMergeNode in="g" /><feMergeNode in="SourceGraphic" /></feMerge>
             </filter>
           </defs>
 
-          {/* Stars */}
+          {/* Background */}
+          <rect width={CANVAS_SIZE} height={CANVAS_SIZE} fill="url(#bg-grad)" />
           {STARS.map((s, i) => (
             <circle key={i} cx={s.x} cy={s.y} r={s.r} fill="white" opacity={s.o} />
           ))}
 
-          {/* Subject arms */}
-          {SUBJECT_KEYS.map((key) => (
-            <SubjectArm
-              key={key}
-              subjectKey={key}
-              totalMinutes={progressMap.get(key) ?? 0}
-              onNodeClick={(rank) => setSelected({ subjectKey: key, rank })}
+          {/* Edges */}
+          {visibleEdges.map((e, i) => (
+            <line
+              key={i}
+              x1={e.from.x} y1={e.from.y}
+              x2={e.to.x}   y2={e.to.y}
+              stroke={e.active ? e.to.color : "#1e1e3c"}
+              strokeWidth={e.active ? 2.5 : 1.5}
+              opacity={e.active ? 0.6 : 0.4}
+              strokeDasharray={e.active ? undefined : "5 7"}
             />
           ))}
 
-          {/* Center hub */}
-          <circle cx={CENTER} cy={CENTER} r={HUB_R + 16} fill="#f59e0b" opacity={0.08} />
-          <circle cx={CENTER} cy={CENTER} r={HUB_R + 8}  fill="#f59e0b" opacity={0.12} />
-          <circle
-            cx={CENTER} cy={CENTER} r={HUB_R}
-            fill="#0a0a1a"
-            stroke="#f59e0b"
-            strokeWidth={2.5}
-            filter="url(#glow-hub)"
-          />
-          <text
-            x={CENTER} y={CENTER - 6}
-            textAnchor="middle"
-            fontSize={20}
-            fill="#f59e0b"
-            fontWeight="900"
-          >
-            ★
-          </text>
-          <text
-            x={CENTER} y={CENTER + 14}
-            textAnchor="middle"
-            fontSize={10}
-            fill="#f59e0b"
-            opacity={0.7}
-            fontWeight="bold"
-            letterSpacing={1}
-          >
-            SKILLS
-          </text>
+          {/* Subject labels */}
+          {SUBJECT_LABEL_POSITIONS.map(({ key, label, color, x, y, angle }) => {
+            const hasAny = localUnlocked.has(`${key}_c1`);
+            return (
+              <g key={key} opacity={hasAny ? 1 : 0.35}>
+                <text
+                  x={x} y={y - 8}
+                  textAnchor={labelAnchor(angle)}
+                  dominantBaseline="middle"
+                  fontSize={13}
+                  fontWeight="bold"
+                  fill={color}
+                  letterSpacing={1.5}
+                  style={{ textTransform: "uppercase", fontFamily: "system-ui" }}
+                >
+                  {label}
+                </text>
+                <text
+                  x={x} y={y + 10}
+                  textAnchor={labelAnchor(angle)}
+                  dominantBaseline="middle"
+                  fontSize={9}
+                  fill={color}
+                  opacity={0.5}
+                  letterSpacing={0.5}
+                >
+                  {localUnlocked.has(`${key}_a5`) && localUnlocked.has(`${key}_b5`)
+                    ? "★ GEMEISTERT"
+                    : `${[...localUnlocked].filter(k => k.startsWith(key + "_")).length}/14 Knoten`
+                  }
+                </text>
+              </g>
+            );
+          })}
+
+          {/* Nodes */}
+          {visibleNodes.map((node) => {
+            if (node.isHub) return <HubNode key={node.key} node={node} onClick={() => onNodeClick(node)} />;
+            const state     = getNodeState(node.key, localUnlocked);
+            const isSelected = selected?.key === node.key;
+            return (
+              <TreeNode
+                key={node.key}
+                node={node}
+                state={state}
+                isSelected={isSelected}
+                canAfford={localXp >= node.xpCost}
+                onClick={() => onNodeClick(node)}
+              />
+            );
+          })}
         </svg>
       </div>
 
-      {/* Detail panel (slides up when a node is selected) */}
+      {/* Error toast */}
+      {errorMsg && (
+        <div className="absolute bottom-40 left-1/2 -translate-x-1/2 bg-red-500/90 text-white text-xs px-4 py-2 rounded-full shadow-lg z-50">
+          {errorMsg}
+        </div>
+      )}
+
+      {/* Detail / unlock panel */}
       {selected && (
-        <NodeDetailPanel
-          subjectKey={selected.subjectKey}
-          rank={selected.rank}
-          totalMinutes={progressMap.get(selected.subjectKey) ?? 0}
-          onClose={() => setSelected(null)}
+        <UnlockPanel
+          node={selected}
+          state={getNodeState(selected.key, localUnlocked)}
+          canAfford={localXp >= selected.xpCost}
+          userXp={localXp}
+          isPending={isPending}
+          onUnlock={handleUnlock}
+          onClose={() => { setSelected(null); setErrorMsg(null); }}
         />
       )}
     </div>
   );
 }
 
-// ── Subject arm component ─────────────────────────────────
-
-function SubjectArm({
-  subjectKey,
-  totalMinutes,
-  onNodeClick,
-}: {
-  subjectKey: SubjectKey;
-  totalMinutes: number;
-  onNodeClick: (rank: StaticRank) => void;
-}) {
-  const tree = STATIC_TREES[subjectKey];
-  const angleDeg = ANGLES_DEG[subjectKey];
-  const currentRank = getCurrentRank(tree, totalMinutes);
-
-  const nodePositions = tree.ranks.map((_, i) => toXY(angleDeg, FIRST_R + i * SPACING));
-  const labelPos = toXY(angleDeg, LABEL_R);
-
-  // Determine label text anchor based on angle
-  const labelAnchor =
-    angleDeg === 0 ? "start"
-    : angleDeg === 180 ? "end"
-    : "middle";
-
-  const labelDX =
-    angleDeg === 0 ? 8
-    : angleDeg === 180 ? -8
-    : 0;
-
+// ── Hub node ───────────────────────────────────────────────
+function HubNode({ node, onClick }: { node: SkillNode; onClick: () => void }) {
   return (
-    <g>
-      {/* Connecting lines between consecutive nodes */}
-      {tree.ranks.map((rank, i) => {
-        if (i === 0) return null;
-        const from = nodePositions[i - 1]!;
-        const to   = nodePositions[i]!;
-        const active = totalMinutes >= rank.minMinutes;
-        return (
-          <line
-            key={`line-${i}`}
-            x1={from.x} y1={from.y}
-            x2={to.x}   y2={to.y}
-            stroke={active ? tree.color : "#1e1e3a"}
-            strokeWidth={active ? 2.5 : 1.5}
-            opacity={active ? 0.7 : 1}
-          />
-        );
-      })}
-
-      {/* Line from center to first node */}
-      <line
-        x1={CENTER} y1={CENTER}
-        x2={nodePositions[0]!.x} y2={nodePositions[0]!.y}
-        stroke={tree.color}
-        strokeWidth={1.5}
-        opacity={0.25}
-        strokeDasharray="4 6"
+    <g onClick={onClick} style={{ cursor: "pointer" }}>
+      <circle cx={node.x} cy={node.y} r={HUB_R + 22} fill="#f59e0b" opacity={0.06} />
+      <circle cx={node.x} cy={node.y} r={HUB_R + 12} fill="#f59e0b" opacity={0.10} />
+      <circle
+        cx={node.x} cy={node.y} r={HUB_R}
+        fill="#0a0a1f" stroke="#f59e0b" strokeWidth={2.5}
+        filter="url(#glow-hub)"
       />
-
-      {/* Nodes */}
-      {tree.ranks.map((rank, i) => {
-        const pos = nodePositions[i]!;
-        const unlocked = totalMinutes >= rank.minMinutes;
-        const isCurrent = rank.rank === currentRank.rank && totalMinutes < 4800;
-        const isMastered = totalMinutes >= 4800 && rank.rank === 12;
-
-        return (
-          <g
-            key={rank.rank}
-            onClick={() => onNodeClick(rank)}
-            style={{ cursor: "pointer" }}
-          >
-            {/* Outer glow ring for unlocked */}
-            {(unlocked || isMastered) && (
-              <circle
-                cx={pos.x} cy={pos.y}
-                r={NODE_R + 10}
-                fill={tree.color}
-                opacity={isCurrent ? 0.18 : 0.07}
-              />
-            )}
-            {/* Pulse ring for current rank */}
-            {isCurrent && (
-              <circle
-                cx={pos.x} cy={pos.y}
-                r={NODE_R + 16}
-                fill="none"
-                stroke={tree.color}
-                strokeWidth={1.5}
-                opacity={0.3}
-              />
-            )}
-
-            {/* Main node circle */}
-            <circle
-              cx={pos.x} cy={pos.y}
-              r={NODE_R}
-              fill={unlocked ? `${tree.color}28` : "#0d0d22"}
-              stroke={unlocked ? tree.color : "#2a2a4a"}
-              strokeWidth={isCurrent ? 2.5 : 1.5}
-              filter={unlocked ? `url(#glow-${subjectKey})` : undefined}
-            />
-
-            {/* Rank icon */}
-            <text
-              x={pos.x} y={pos.y + 7}
-              textAnchor="middle"
-              fontSize={isMastered ? 20 : 14}
-              fill={unlocked ? "white" : "#3a3a5a"}
-              opacity={unlocked ? 1 : 0.5}
-            >
-              {rank.icon}
-            </text>
-
-            {/* Rank number on locked nodes */}
-            {!unlocked && (
-              <text
-                x={pos.x} y={pos.y + 7}
-                textAnchor="middle"
-                fontSize={11}
-                fill="#3a3a5a"
-              >
-                {rank.rank}
-              </text>
-            )}
-          </g>
-        );
-      })}
-
-      {/* Subject label */}
-      <text
-        x={labelPos.x + labelDX}
-        y={labelPos.y}
-        textAnchor={labelAnchor}
-        dominantBaseline="middle"
-        fontSize={13}
-        fontWeight="bold"
-        fill={tree.color}
-        letterSpacing={1}
-        style={{ textTransform: "uppercase" }}
-      >
-        {tree.label}
-      </text>
-      <text
-        x={labelPos.x + labelDX}
-        y={labelPos.y + 16}
-        textAnchor={labelAnchor}
-        dominantBaseline="middle"
-        fontSize={10}
-        fill={tree.color}
-        opacity={0.5}
-      >
-        {tree.icon} · Rang {currentRank.rank}/12
-      </text>
+      <text x={node.x} y={node.y - 6}  textAnchor="middle" fontSize={22} fill="#f59e0b">★</text>
+      <text x={node.x} y={node.y + 12} textAnchor="middle" fontSize={9}
+        fill="#f59e0b" opacity={0.7} fontWeight="bold" letterSpacing={1}>SKILLS</text>
     </g>
   );
 }
 
-// ── Node detail panel ─────────────────────────────────────
-
-function NodeDetailPanel({
-  subjectKey,
-  rank,
-  totalMinutes,
-  onClose,
+// ── Subject tree node ──────────────────────────────────────
+function TreeNode({
+  node, state, isSelected, canAfford, onClick,
 }: {
-  subjectKey: SubjectKey;
-  rank: StaticRank;
-  totalMinutes: number;
-  onClose: () => void;
+  node: SkillNode;
+  state: "revealed" | "unlocked";
+  isSelected: boolean;
+  canAfford: boolean;
+  onClick: () => void;
 }) {
-  const tree = STATIC_TREES[subjectKey];
-  const unlocked = totalMinutes >= rank.minMinutes;
-  const isCurrent = getCurrentRank(tree, totalMinutes).rank === rank.rank;
-  const nextRank = getNextRank(tree, totalMinutes);
-  const xpReward = rankUpXp(rank.rank);
+  const unlocked  = state === "unlocked";
+  const glowId    = `glow-${node.subjectKey}`;
 
-  const minH = Math.floor(rank.minMinutes / 60);
-  const minM = rank.minMinutes % 60;
-  const threshold =
-    minH > 0 ? `${minH}h${minM > 0 ? ` ${minM}min` : ""}` : `${minM}min`;
+  return (
+    <g onClick={onClick} style={{ cursor: "pointer" }}>
+      {/* Outer glow ring */}
+      {unlocked && (
+        <>
+          <circle cx={node.x} cy={node.y} r={NODE_R + 14} fill={node.color} opacity={0.08} />
+          <circle cx={node.x} cy={node.y} r={NODE_R + 7}  fill={node.color} opacity={0.12} />
+        </>
+      )}
+
+      {/* Selection ring */}
+      {isSelected && (
+        <circle cx={node.x} cy={node.y} r={NODE_R + 18}
+          fill="none" stroke="white" strokeWidth={1.5} opacity={0.5} />
+      )}
+
+      {/* Affordability pulse ring (revealed + can afford) */}
+      {!unlocked && canAfford && (
+        <circle cx={node.x} cy={node.y} r={NODE_R + 10}
+          fill={node.color} opacity={0.15} />
+      )}
+
+      {/* Main circle */}
+      <circle
+        cx={node.x} cy={node.y} r={NODE_R}
+        fill={unlocked ? `${node.color}30` : "#0b0b22"}
+        stroke={unlocked ? node.color : canAfford ? `${node.color}80` : "#232340"}
+        strokeWidth={isSelected ? 2.5 : unlocked ? 2 : 1.5}
+        filter={unlocked ? `url(#${glowId})` : isSelected ? "url(#glow-select)" : undefined}
+      />
+
+      {/* Icon / content */}
+      {unlocked ? (
+        <text x={node.x} y={node.y + 7} textAnchor="middle" fontSize={16} fill="white">
+          {node.icon}
+        </text>
+      ) : (
+        <>
+          <text x={node.x} y={node.y + 4} textAnchor="middle" fontSize={12}
+            fill={canAfford ? node.color : "#353560"} opacity={canAfford ? 0.9 : 1}>
+            {canAfford ? node.icon : "🔒"}
+          </text>
+          {/* Cost label below locked nodes */}
+          <text x={node.x} y={node.y + NODE_R + 13} textAnchor="middle" fontSize={9}
+            fill={canAfford ? node.color : "#353560"} opacity={canAfford ? 0.85 : 0.5}>
+            {(node.xpCost / 1000).toFixed(node.xpCost < 1000 ? 2 : 1).replace(".", ",")}k XP
+          </text>
+        </>
+      )}
+    </g>
+  );
+}
+
+// ── Unlock / detail panel ─────────────────────────────────
+function UnlockPanel({
+  node, state, canAfford, userXp, isPending, onUnlock, onClose,
+}: {
+  node:      SkillNode;
+  state:     "revealed" | "unlocked";
+  canAfford: boolean;
+  userXp:    number;
+  isPending: boolean;
+  onUnlock:  () => void;
+  onClose:   () => void;
+}) {
+  const unlocked = state === "unlocked";
+  const missing  = node.xpCost - userXp;
 
   return (
     <div
-      className="shrink-0 border-t border-white/10 p-4 flex gap-4 items-start"
-      style={{ background: `${tree.color}10` }}
+      className="shrink-0 border-t border-white/10 px-4 py-3 flex gap-3 items-center"
+      style={{ background: `${node.color}12` }}
     >
       {/* Icon */}
       <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl shrink-0"
-        style={{ background: `${tree.color}20`, border: `1px solid ${tree.color}40` }}
+        className="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0"
+        style={{ background: `${node.color}22`, border: `1.5px solid ${node.color}50` }}
       >
-        {unlocked ? rank.icon : "🔒"}
+        {unlocked ? node.icon : canAfford ? node.icon : "🔒"}
       </div>
 
       {/* Info */}
       <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 flex-wrap">
-          <p className="text-xs font-bold uppercase tracking-wider" style={{ color: tree.color }}>
-            {tree.label} · Rang {rank.rank}
+        <p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: node.color }}>
+          {node.subjectKey ?? "Hub"} · Tier {node.tier}
+        </p>
+        <p className="text-sm font-black text-white leading-tight truncate">{node.label}</p>
+        {unlocked ? (
+          <p className="text-[11px] text-white/40 mt-0.5">Bereits freigeschaltet ✓</p>
+        ) : canAfford ? (
+          <p className="text-[11px] mt-0.5" style={{ color: node.color }}>
+            {node.xpCost.toLocaleString("de-DE")} XP · Du hast {userXp.toLocaleString("de-DE")} XP
           </p>
-          {unlocked && (
-            <span
-              className="text-[10px] px-1.5 py-0.5 rounded-full font-bold"
-              style={{ background: `${tree.color}25`, color: tree.color }}
-            >
-              {isCurrent ? "Aktuell" : "Freigeschaltet"}
-            </span>
-          )}
-        </div>
-        <p className="text-base font-black text-white leading-tight mt-0.5">{rank.title}</p>
-        <div className="flex gap-4 mt-1.5 text-[11px] text-white/40">
-          <span>Ab {threshold} Lernzeit</span>
-          {xpReward > 0 && (
-            <span style={{ color: "#f59e0b" }}>+{xpReward.toLocaleString("de-DE")} XP beim Erreichen</span>
-          )}
-        </div>
-        {!unlocked && nextRank && (
-          <p className="text-[11px] text-white/30 mt-1">
-            Noch {Math.ceil(rank.minMinutes - totalMinutes)} min Lernzeit nötig
+        ) : (
+          <p className="text-[11px] text-red-400/80 mt-0.5">
+            Noch {missing.toLocaleString("de-DE")} XP fehlen
           </p>
         )}
       </div>
 
+      {/* Action */}
+      {!unlocked && (
+        <button
+          onClick={onUnlock}
+          disabled={!canAfford || isPending}
+          className="shrink-0 px-3 py-2 rounded-xl text-xs font-black transition-all disabled:opacity-40"
+          style={{
+            background: canAfford ? node.color : "#1a1a30",
+            color: canAfford ? "white" : "#4a4a6a",
+          }}
+        >
+          {isPending ? "..." : canAfford ? "Freischalten" : "Zu wenig XP"}
+        </button>
+      )}
+
       {/* Close */}
       <button
         onClick={onClose}
-        className="text-white/30 hover:text-white/70 text-lg leading-none shrink-0 mt-0.5"
+        className="shrink-0 text-white/30 hover:text-white/70 text-xl leading-none"
       >
         ×
       </button>

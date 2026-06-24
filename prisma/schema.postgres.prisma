@@ -293,6 +293,7 @@ model User {
   treeQuests       UserTreeQuest[]    @relation("UserTreeQuests")
   dailyActivity    DailyActivity[]    @relation("DailyActivity")
   subjectMinutes   UserSubjectMinutes[] @relation("UserSubjectMinutes")
+  skillPurchases   UserSkillPurchase[]  @relation("UserSkillPurchases")
 
   @@index([role])
   @@index([schoolId])
@@ -2298,5 +2299,16 @@ model UserSubjectMinutes {
   user         User     @relation("UserSubjectMinutes", fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, subjectKey])
+  @@index([userId])
+}
+
+model UserSkillPurchase {
+  id          String   @id @default(cuid())
+  userId      String
+  nodeKey     String
+  purchasedAt DateTime @default(now())
+  user        User     @relation("UserSkillPurchases", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, nodeKey])
   @@index([userId])
 }

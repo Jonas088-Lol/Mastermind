@@ -4,6 +4,58 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { SKILL_MAP, type MasteryLevel } from "@/lib/skill-graph";
+import { SKILL_NODE_MAP } from "@/lib/skill-tree-nodes";
+
+// ── XP-based skill tree unlock ────────────────────────────────────────────────
+export async function unlockSkillNode(
+  nodeKey: string
+): Promise<{ ok: boolean; error?: string; newXp?: number }> {
+  const session = await getSession();
+  if (!session) return { ok: false, error: "Nicht eingeloggt" };
+
+  const node = SKILL_NODE_MAP.get(nodeKey);
+  if (!node || node.isHub) return { ok: false, error: "Ungültiger Knoten" };
+
+  const [user, existing] = await Promise.all([
+    prisma.user.findUnique({ where: { id: session.userId }, select: { xp: true } }),
+    prisma.userSkillPurchase.findMany({
+      where: { userId: session.userId },
+      select: { nodeKey: true },
+    }),
+  ]);
+
+  if (!user) return { ok: false, error: "Benutzer nicht gefunden" };
+
+  const purchased = new Set(existing.map((r) => r.nodeKey));
+
+  if (purchased.has(nodeKey)) return { ok: false, error: "Bereits freigeschaltet" };
+
+  for (const req of node.requires) {
+    if (req !== "hub" && !purchased.has(req)) {
+      return { ok: false, error: "Voraussetzungen nicht erfüllt" };
+    }
+  }
+
+  if (user.xp < node.xpCost) {
+    return {
+      ok: false,
+      error: `Nicht genug XP — du brauchst ${node.xpCost.toLocaleString("de-DE")} XP`,
+    };
+  }
+
+  const [updated] = await prisma.$transaction([
+    prisma.user.update({
+      where: { id: session.userId },
+      data: { xp: { decrement: node.xpCost } },
+      select: { xp: true },
+    }),
+    prisma.userSkillPurchase.create({
+      data: { userId: session.userId, nodeKey },
+    }),
+  ]);
+
+  return { ok: true, newXp: updated.xp };
+}
 
 // ── Unlock node (first unlock = bronze tier 1 with 0 progress) ────────────────
 export async function unlockNode(slug: string): Promise<void> {
