@@ -112,7 +112,7 @@ function getPlatforms(baseUrl: string): Platform[] {
       instructions: [
         "DMG-Datei öffnen",
         "MasterMind in den Programme-Ordner ziehen",
-        "Beim ersten Start: Rechtsklick → Öffnen (Gatekeeper umgehen)",
+        "Beim ersten Start: Rechtsklick -> Oeffnen (Gatekeeper umgehen)",
       ],
       available: true,
     },
@@ -141,8 +141,8 @@ function getPlatforms(baseUrl: string): Platform[] {
       storeUrl: baseUrl,
       instructions: [
         "app.mastermind.app im Browser öffnen",
-        "Chrome/Edge: „App installieren"-Symbol in der Adressleiste",
-        "Safari iOS: Teilen → Zum Home-Bildschirm",
+        'Chrome/Edge: "App installieren"-Symbol in der Adressleiste',
+        "Safari iOS: Teilen -> Zum Home-Bildschirm",
       ],
       available: true,
     },
