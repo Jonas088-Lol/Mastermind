@@ -68,7 +68,11 @@
       "createStartMenuShortcut": true,
       "shortcutName": "MasterMind",
       "include": "installer.nsh",
-      "deleteAppDataOnUninstall": false
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "MasterMind-Setup-${arch}.${ext}"
+    },
+    "portable": {
+      "artifactName": "MasterMind-Portable.${ext}"
     },
     "mac": {
       "target": [
@@ -91,6 +95,7 @@
     },
     "dmg": {
       "title": "MasterMind ${version}",
+      "artifactName": "MasterMind-mac-${arch}.${ext}",
       "icon": "resources/icon.icns",
       "contents": [
         { "x": 410, "y": 150, "type": "link", "path": "/Applications" },
@@ -109,6 +114,7 @@
           "arch": ["x64"]
         }
       ],
+      "artifactName": "MasterMind-${arch}.${ext}",
       "icon": "resources/icon.png",
       "category": "Education",
       "description": "MasterMind — Lernplattform für Schüler und Lehrer",

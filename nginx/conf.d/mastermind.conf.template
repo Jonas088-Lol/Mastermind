@@ -50,6 +50,26 @@ server {
         access_log off;
     }
 
+    # ── App downloads — served directly (no Next.js proxy) ────────────────
+    # versions.json — short TTL, CORS for the download page
+    location = /downloads/versions.json {
+        alias /srv/downloads/versions.json;
+        default_type application/json;
+        add_header Cache-Control "public, max-age=60, must-revalidate";
+        add_header Access-Control-Allow-Origin "*";
+        access_log off;
+    }
+
+    # Binary downloads — long cache, streamed directly from disk
+    location /downloads/ {
+        alias /srv/downloads/;
+        autoindex off;
+        sendfile on;
+        tcp_nopush on;
+        add_header Cache-Control "public, max-age=604800";
+        access_log off;
+    }
+
     # Public uploads & brand assets (logos, favicons)
     location /uploads/ {
         proxy_pass         http://nextjs;

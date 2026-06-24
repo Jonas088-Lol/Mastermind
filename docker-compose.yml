@@ -156,6 +156,9 @@ services:
       - ./nginx/conf.d:/etc/nginx/templates:ro
       - certbot_webroot:/var/www/certbot:ro
       - certbot_certs:/etc/letsencrypt:ro
+      # App downloads (large binaries — served directly by nginx, not proxied through Next.js)
+      # Deploy new builds with: scp file.exe server:/srv/mastermind/downloads/
+      - ./downloads:/srv/downloads:ro
     networks:
       - internal
     healthcheck:

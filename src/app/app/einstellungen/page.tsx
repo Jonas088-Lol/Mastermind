@@ -40,7 +40,7 @@ const SECTIONS = [
   { id: "account", label: "Account", icon: Key },
   { id: "klasse", label: "Klasse beitreten", icon: KeyRound },
   { id: "benachrichtigungen", label: "Benachrichtigungen", icon: Bell },
-  { id: "app-download", label: "App herunterladen", icon: Download },
+  { id: "download", label: "Download", icon: Download },
   { id: "datenschutz", label: "Datenschutz", icon: Shield },
   { id: "privatsphaere", label: "Privatsphäre", icon: Eye },
   { id: "darstellung", label: "Darstellung", icon: Palette },
@@ -308,11 +308,11 @@ export default async function EinstellungenPage() {
             </Card>
           </section>
 
-          {/* ── App herunterladen ───────────────────────── */}
-          <section id="app-download">
+          {/* ── Download ────────────────────────────────── */}
+          <section id="download">
             <Card>
               <CardHeader>
-                <CardTitle>App herunterladen</CardTitle>
+                <CardTitle>Download</CardTitle>
               </CardHeader>
               <CardBody>
                 <AppDownloadSection />
