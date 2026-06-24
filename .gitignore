@@ -55,3 +55,14 @@ next-env.d.ts
 # Brainstorming sessions
 .superpowers/
 .claude/
+
+# Electron build output (binaries too large for git)
+/electron/dist/
+/electron/node_modules/
+
+# App download binaries (deployed via scp, not git)
+/downloads/*.exe
+/downloads/*.dmg
+/downloads/*.AppImage
+/downloads/*.deb
+/downloads/*.apk
