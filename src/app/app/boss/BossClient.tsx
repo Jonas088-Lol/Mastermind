@@ -11,6 +11,15 @@ import { cn } from "@/lib/utils";
 const QUESTION_TIME = 20;
 const LETTERS = ["A", "B", "C", "D"] as const;
 
+function shuffleOptions<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j]!, a[i]!];
+  }
+  return a;
+}
+
 interface Question {
   id: string;
   question: string;
@@ -50,6 +59,7 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
   }, [endAtIso]);
   const [phase, setPhase] = useState<Phase>("idle");
   const [question, setQuestion] = useState<Question | null>(null);
+  const [shuffledOptions, setShuffledOptions] = useState<Question["options"]>([]);
   const [selected, setSelected] = useState<number | null>(null);
   const [result, setResult] = useState<AttackResult | null>(null);
   const [hits, setHits] = useState(myCorrectAnswers);
@@ -101,6 +111,7 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
       if (!res.ok) { setPhase("idle"); return; }
       const q = (await res.json()) as Question;
       setQuestion(q);
+      setShuffledOptions(shuffleOptions(q.options));
       setSelected(null);
       setPhase("question");
     } catch {
@@ -373,7 +384,7 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
 
             {/* Options A/B/C/D */}
             <div className="grid gap-2">
-              {question.options.map((opt, i) => {
+              {shuffledOptions.map((opt, i) => {
                 const isSelected = selected === opt.id;
                 const showCorrect = isSelected && !!result?.correct;
                 const showWrong   = isSelected && result != null && !result.correct;
