@@ -49,7 +49,7 @@ export function ActivityTracker({ hasConsent }: { hasConsent: boolean }) {
   const hasConsentRef = useRef(hasConsent);
   const pathnameRef = useRef(pathname);
   const isActiveRef = useRef(false);          // mouse/keyboard in the last idle threshold
-  const tabFocusedRef = useRef(!document.hidden);
+  const tabFocusedRef = useRef(true);         // assume focused until browser confirms otherwise
   const lastActivityRef = useRef(Date.now()); // last mouse/keyboard event
   const tabSwitchesDeltaRef = useRef(0);      // tab switches since last heartbeat
   const activeSecondsDeltaRef = useRef(0);    // active seconds since last heartbeat
@@ -58,6 +58,9 @@ export function ActivityTracker({ hasConsent }: { hasConsent: boolean }) {
   useEffect(() => { pathnameRef.current = pathname; }, [pathname]);
 
   useEffect(() => {
+    // Sync actual tab focus state now that document is available
+    tabFocusedRef.current = !document.hidden;
+
     // ── Activity detection ─────────────────────────────────────────
 
     function onUserActivity() {
