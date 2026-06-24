@@ -9,6 +9,7 @@
   },
   "license": "UNLICENSED",
   "private": true,
+  "homepage": "https://app.mastermind.app",
   "scripts": {
     "start": "electron .",
     "build:win": "electron-builder --win --x64",
