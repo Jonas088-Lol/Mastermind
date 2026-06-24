@@ -34,8 +34,8 @@ const features: {
     Icon: Brain,
     textAccent: ACCENTS[0],
     title: "Adaptive Lernpfade",
-    tagline: "KI erkennt, wo du stehst",
-    body: "KI erkennt Schwächen und passt den Stoff an. Spaced-Repetition für nachhaltiges Lernen statt Bulimie.",
+    tagline: "Dein persönlicher KI-Tutor.",
+    body: "Unsere KI erkennt Schwächen von Schülern und ermöglicht gezieltes Lernen. Spaced Repetition sorgt für langfristige Lernerfolge.",
     mockup: "learning",
   },
   {
@@ -43,8 +43,8 @@ const features: {
     Icon: Sparkles,
     textAccent: ACCENTS[1],
     title: "KI-Aufgaben-Generator",
-    tagline: "Klassenarbeit in 3 Minuten",
-    body: "Lehrer erstellen Klassenarbeiten in Minuten. Niveaustufen, Lernziel-Mapping, automatische Korrektur-Hinweise.",
+    tagline: "Klassenarbeit in Rekordzeit.",
+    body: "Lehrkräfte erstellen KI-gestützt Klassenarbeiten in wenigen Minuten. Inklusive differenzierter Niveaustufen, Lernziel-Mapping und automatischer Korrekturhinweise.",
     mockup: "task",
   },
   {
@@ -52,8 +52,8 @@ const features: {
     Icon: CalendarDays,
     textAccent: ACCENTS[2],
     title: "Stundenplan & Vertretung",
-    tagline: "Untis-Import in 5 Minuten",
-    body: "Untis-Import in 5 Minuten. Vertretungsplan, Klassenbuch, Fehlzeiten — alles digital, alles synchron.",
+    tagline: "Übersicht statt Planchaos.",
+    body: "Effiziente Schulorganisation mit digitaler Stunden- und Vertretungsplanung, synchronisiertem Klassenbuch und integrierter Fehlzeitenverwaltung.",
     mockup: "schedule",
   },
   {
@@ -61,8 +61,8 @@ const features: {
     Icon: MessageSquare,
     textAccent: ACCENTS[3],
     title: "Klare Kommunikation",
-    tagline: "Kein Mail-Chaos mehr",
-    body: "Kanäle pro Klasse, Eltern-Bereich, Krankmeldungen mit Signatur. Kein Mail-Chaos mehr.",
+    tagline: "Nachrichten schnell und gezielt versenden.",
+    body: "Klassenkanäle, Privatchats und Broadcast-Nachrichten sorgen für einen gezielten Informationsaustausch. MasterSpace vereint Kommunikation und digitalen Unterricht an einem Ort.",
     mockup: "comms",
   },
   {
@@ -70,8 +70,8 @@ const features: {
     Icon: BarChart2,
     textAccent: ACCENTS[4],
     title: "Kompetenz-Heatmaps",
-    tagline: "Klassen-Überblick in 30 Sek",
-    body: "Jeder Lehrer sieht in 30 Sekunden, wo die Klasse steht — pro Schüler, pro Lernziel, pro Lehrplan-Code.",
+    tagline: "Stärken und Förderbedarf sofort erkennen.",
+    body: "Lehrkräfte erhalten in Sekunden einen Überblick über die Lernstände ihrer Klassen. Kompetenz-Heatmaps helfen dabei, Förderbedarf frühzeitig zu erkennen.",
     mockup: "heatmap",
   },
   {
@@ -79,8 +79,8 @@ const features: {
     Icon: Trophy,
     textAccent: ACCENTS[5],
     title: "Gamification mit Sinn",
-    tagline: "XP, Badges, echte Motivation",
-    body: "XP, Streaks, Badges — gekoppelt an echten Lernfortschritt, nicht an Login-Häufigkeit.",
+    tagline: "Ein Levelsystem, das Lernen belohnt.",
+    body: "Erfahrungspunkte sammeln, Level aufsteigen und Fortschritte sichtbar machen. Streaks und Rankings fördern regelmäßiges Lernen und schaffen nachhaltige Motivation durch positive Anreize.",
     mockup: "game",
   },
 ];
@@ -129,9 +129,10 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
           />
           <button
             type="button"
-            className="w-full rounded-xl bg-brand py-2 text-xs font-bold text-brand-fg"
+            className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-brand py-2 text-xs font-bold text-brand-fg"
           >
-            ✨ Generieren
+            <Sparkles className="size-3.5" strokeWidth={1.75} />
+            Generieren
           </button>
           <div className="space-y-2">
             {["Aufgabe 1: Löse x² – 5x + 6 = 0", "Aufgabe 2: Bestimme die Nullstellen…"].map(
@@ -152,13 +153,13 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
       return (
         <div className="rounded-2xl border border-border bg-surface-2 p-4">
           <div className="grid grid-cols-3 gap-2">
-            {["Mo", "Di", "Mi"].map((day) => (
+            {["Montag", "Dienstag", "Mittwoch"].map((day) => (
               <div key={day} className="space-y-2">
-                <p className="text-center text-xs font-bold text-brand">{day}</p>
+                <p className="text-center text-[10px] font-bold text-brand">{day}</p>
                 {(
-                  day === "Mo"
+                  day === "Montag"
                     ? ["Mathe", "Deutsch", "Sport"]
-                    : day === "Di"
+                    : day === "Dienstag"
                     ? ["Englisch", "Bio", "Physik"]
                     : ["Kunst", "Mathe", "Geschichte"]
                 ).map((subj) => (
@@ -286,13 +287,12 @@ export function FeatureShowcase() {
         <AnimateOnScroll animation="fade-up" className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Funktionen</span>
           <h2 className="mt-5 text-3xl sm:text-4xl lg:text-5xl">
-            Drei Tools.
-            <br />
             Eine Plattform.
+            <br />
+            Für modernes Lernen.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-fg sm:text-lg">
-            Schluss mit unnötig vielen Apps zum Lernen. MasterMind bündelt
-            alles, was eine moderne Schule braucht.
+            Schluss mit unzähligen Lernapps. MasterMind vereint alles, was modernes Lernen braucht.
           </p>
         </AnimateOnScroll>
 
