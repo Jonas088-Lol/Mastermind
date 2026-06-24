@@ -38,6 +38,8 @@ import {
   UserX,
   Circle,
   TabletSmartphone,
+  Video,
+  VideoOff,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
@@ -54,6 +56,7 @@ import {
   setMuteModal,
   setDeafModal,
   setScreenShareModal,
+  setCameraModal,
   sendFriendRequestModal,
   acceptFriendModal,
   declineFriendModal,
@@ -130,6 +133,7 @@ type VoiceParticipant = {
   isMuted: boolean;
   isDeaf: boolean;
   isSharingScreen: boolean;
+  isCameraOn: boolean;
   user: { id: string; name: string };
 };
 
@@ -444,10 +448,13 @@ function VoiceView({
   isMuted,
   isDeaf,
   isSharingScreen,
+  isCameraOn,
   screenStream,
+  cameraStream,
   onToggleMute,
   onToggleDeaf,
   onToggleScreenShare,
+  onToggleCamera,
   onLeave,
   onDm,
 }: {
@@ -457,20 +464,30 @@ function VoiceView({
   isMuted: boolean;
   isDeaf: boolean;
   isSharingScreen: boolean;
+  isCameraOn: boolean;
   screenStream: MediaStream | null;
+  cameraStream: MediaStream | null;
   onToggleMute: () => void;
   onToggleDeaf: () => void;
   onToggleScreenShare: () => void;
+  onToggleCamera: () => void;
   onLeave: () => void;
   onDm: (userId: string, name: string) => void;
 }) {
   const screenRef = useRef<HTMLVideoElement>(null);
+  const cameraRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (screenRef.current && screenStream) {
       screenRef.current.srcObject = screenStream;
     }
   }, [screenStream]);
+
+  useEffect(() => {
+    if (cameraRef.current && cameraStream) {
+      cameraRef.current.srcObject = cameraStream;
+    }
+  }, [cameraStream]);
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
@@ -484,6 +501,20 @@ function VoiceView({
             muted
             playsInline
             className="max-h-48 w-full rounded-xl object-contain"
+          />
+        </div>
+      )}
+
+      {/* Local camera preview */}
+      {isCameraOn && cameraStream && (
+        <div className="shrink-0 border-b border-border bg-black p-2">
+          <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-muted-fg">Deine Kamera</p>
+          <video
+            ref={cameraRef}
+            autoPlay
+            muted
+            playsInline
+            className="max-h-40 w-full rounded-xl object-cover"
           />
         </div>
       )}
@@ -512,7 +543,8 @@ function VoiceView({
                     isMe
                       ? "border-brand/30 bg-brand/5"
                       : "border-border bg-surface hover:border-brand/30 hover:bg-muted/30",
-                    p.isSharingScreen && "ring-2 ring-green-500/40"
+                    p.isSharingScreen && "ring-2 ring-green-500/40",
+                    p.isCameraOn && !p.isSharingScreen && "ring-2 ring-blue-400/40"
                   )}
                 >
                   <div className="relative">
@@ -534,7 +566,8 @@ function VoiceView({
                     {p.isMuted && <MicOff className="size-3 text-danger" />}
                     {p.isDeaf && <HeadphoneOff className="size-3 text-warning" />}
                     {p.isSharingScreen && <Monitor className="size-3 text-green-500" />}
-                    {!p.isMuted && !p.isDeaf && !p.isSharingScreen && (
+                    {p.isCameraOn && <Video className="size-3 text-blue-400" />}
+                    {!p.isMuted && !p.isDeaf && !p.isSharingScreen && !p.isCameraOn && (
                       <Circle className="size-2 fill-green-500 text-green-500" />
                     )}
                   </div>
@@ -588,6 +621,19 @@ function VoiceView({
           </button>
 
           <button
+            onClick={onToggleCamera}
+            title={isCameraOn ? "Kamera ausschalten" : "Kamera einschalten"}
+            className={cn(
+              "flex size-12 flex-col items-center justify-center gap-0.5 rounded-2xl border transition-all hover:opacity-90",
+              isCameraOn
+                ? "border-blue-500/30 bg-blue-500 text-white"
+                : "border-border bg-muted text-fg hover:border-brand/30"
+            )}
+          >
+            {isCameraOn ? <VideoOff className="size-5" /> : <Video className="size-5" />}
+          </button>
+
+          <button
             onClick={onLeave}
             title="Sprachkanal verlassen"
             className="flex size-12 flex-col items-center justify-center gap-0.5 rounded-2xl border border-danger/30 bg-danger text-white transition-all hover:opacity-90"
@@ -596,7 +642,7 @@ function VoiceView({
           </button>
         </div>
         <p className="mt-2 text-center text-[10px] text-muted-fg">
-          {isMuted ? "Mikrofon stumm" : "Mikrofon aktiv"} · {isDeaf ? "Audio stumm" : "Audio aktiv"}
+          {isMuted ? "Mikrofon stumm" : "Mikrofon aktiv"} · {isDeaf ? "Audio stumm" : "Audio aktiv"} · {isCameraOn ? "Kamera aktiv" : "Kamera aus"}
         </p>
       </div>
     </div>
@@ -955,9 +1001,11 @@ function VoiceBar({
   isMuted,
   isDeaf,
   isSharingScreen,
+  isCameraOn,
   onOpen,
   onToggleMute,
   onToggleDeaf,
+  onToggleCamera,
   onLeave,
 }: {
   channelName: string;
@@ -965,9 +1013,11 @@ function VoiceBar({
   isMuted: boolean;
   isDeaf: boolean;
   isSharingScreen: boolean;
+  isCameraOn: boolean;
   onOpen: () => void;
   onToggleMute: () => void;
   onToggleDeaf: () => void;
+  onToggleCamera: () => void;
   onLeave: () => void;
 }) {
   return (
@@ -1002,6 +1052,16 @@ function VoiceBar({
           )}
         >
           {isDeaf ? <HeadphoneOff className="size-4" /> : <Headphones className="size-4" />}
+        </button>
+        <button
+          onClick={onToggleCamera}
+          title={isCameraOn ? "Kamera ausschalten" : "Kamera einschalten"}
+          className={cn(
+            "rounded-lg p-1.5 transition-colors",
+            isCameraOn ? "bg-blue-500 text-white" : "text-muted-fg hover:bg-muted hover:text-fg"
+          )}
+        >
+          {isCameraOn ? <VideoOff className="size-4" /> : <Video className="size-4" />}
         </button>
         <button
           onClick={onLeave}
@@ -1058,7 +1118,9 @@ export function MasterSpaceModal() {
   const [isMuted, setIsMuted] = useState(false);
   const [isDeaf, setIsDeaf] = useState(false);
   const [isSharingScreen, setIsSharingScreen] = useState(false);
+  const [isCameraOn, setIsCameraOn] = useState(false);
   const [screenStream, setScreenStream] = useState<MediaStream | null>(null);
+  const [cameraStream, setCameraStream] = useState<MediaStream | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -1172,10 +1234,11 @@ export function MasterSpaceModal() {
     return () => { if (voicePollRef.current) clearInterval(voicePollRef.current); };
   }, [voiceChannelId, fetchVoiceParticipants]);
 
-  // Cleanup screen stream on unmount
+  // Cleanup streams on unmount
   useEffect(() => {
     return () => {
       screenStream?.getTracks().forEach((t) => t.stop());
+      cameraStream?.getTracks().forEach((t) => t.stop());
       if (voiceChannelId) leaveAllVoiceModal().catch(() => null);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1306,12 +1369,15 @@ export function MasterSpaceModal() {
     if (!voiceChannelId) return;
     screenStream?.getTracks().forEach((t) => t.stop());
     setScreenStream(null);
+    cameraStream?.getTracks().forEach((t) => t.stop());
+    setCameraStream(null);
     if (isSharingScreen) await setScreenShareModal(voiceChannelId, false).catch(() => null);
+    if (isCameraOn) await setCameraModal(voiceChannelId, false).catch(() => null);
     await leaveVoiceModal(voiceChannelId);
     setVoiceChannelId(null); setVoiceSpaceId(null);
     setVoiceChannelName(""); setVoiceSpaceName("");
     setVoiceParticipants([]);
-    setIsMuted(false); setIsDeaf(false); setIsSharingScreen(false);
+    setIsMuted(false); setIsDeaf(false); setIsSharingScreen(false); setIsCameraOn(false);
     if (view === "voice") goHome();
   }
 
@@ -1351,6 +1417,29 @@ export function MasterSpaceModal() {
         await setScreenShareModal(voiceChannelId, true);
       } catch {
         // User cancelled picker
+      }
+    }
+  }
+
+  async function toggleCamera() {
+    if (!voiceChannelId) return;
+    if (isCameraOn) {
+      cameraStream?.getTracks().forEach((t) => t.stop());
+      setCameraStream(null);
+      setIsCameraOn(false);
+      await setCameraModal(voiceChannelId, false);
+    } else {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        stream.getVideoTracks()[0]!.onended = () => {
+          setCameraStream(null); setIsCameraOn(false);
+          setCameraModal(voiceChannelId, false).catch(() => null);
+        };
+        setCameraStream(stream);
+        setIsCameraOn(true);
+        await setCameraModal(voiceChannelId, true);
+      } catch {
+        // Permission denied or no camera
       }
     }
   }
@@ -1647,9 +1736,11 @@ export function MasterSpaceModal() {
                 isMuted={isMuted}
                 isDeaf={isDeaf}
                 isSharingScreen={isSharingScreen}
+                isCameraOn={isCameraOn}
                 onOpen={() => { setView("voice"); setMobileSidebar(false); }}
                 onToggleMute={toggleMute}
                 onToggleDeaf={toggleDeaf}
+                onToggleCamera={toggleCamera}
                 onLeave={leaveVoice}
               />
             )}
@@ -1715,10 +1806,13 @@ export function MasterSpaceModal() {
                   isMuted={isMuted}
                   isDeaf={isDeaf}
                   isSharingScreen={isSharingScreen}
+                  isCameraOn={isCameraOn}
                   screenStream={screenStream}
+                  cameraStream={cameraStream}
                   onToggleMute={toggleMute}
                   onToggleDeaf={toggleDeaf}
                   onToggleScreenShare={toggleScreenShare}
+                  onToggleCamera={toggleCamera}
                   onLeave={leaveVoice}
                   onDm={goToDm}
                 />

@@ -4,6 +4,7 @@ import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
 import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
 import { SchoolBrandingInjector } from "@/components/SchoolBrandingInjector";
+import { MasterSpaceModal } from "@/components/masterspace/MasterSpaceModal";
 import {
   ROLE_HOME,
   displayUser,
@@ -80,6 +81,7 @@ export default async function TeachLayout({
     { href: "/teach/kalender", label: "Kalender", icon: "calendarDays" },
     { href: "/teach/ressourcen", label: "Ressourcen", icon: "box" },
     { href: "/teach/notenschluessel", label: "Notenschlüssel", icon: "calculator" },
+    { href: "/teach/masterspace", label: "MasterSpace", icon: "compass", modal: "masterspace" },
   ];
 
   const bottomItems: NavItem[] = [
@@ -120,6 +122,7 @@ export default async function TeachLayout({
           {children}
         </main>
         <BottomNav items={mobileNav} moreItems={[...items, ...bottomItems]} />
+        <MasterSpaceModal />
       </div>
     </div>
   );

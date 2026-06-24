@@ -236,6 +236,17 @@ export async function setScreenShareModal(
   });
 }
 
+export async function setCameraModal(
+  channelId: string,
+  isCameraOn: boolean
+): Promise<void> {
+  const session = await requireSession();
+  await prisma.voiceParticipant.updateMany({
+    where: { channelId, userId: session.userId },
+    data: { isCameraOn },
+  });
+}
+
 // ── Friends ───────────────────────────────────────────────────────────────
 
 export async function sendFriendRequestModal(

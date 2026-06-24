@@ -1834,6 +1834,7 @@ model VoiceParticipant {
   isMuted         Boolean      @default(false)
   isDeaf          Boolean      @default(false)
   isSharingScreen Boolean      @default(false)
+  isCameraOn      Boolean      @default(false)
   joinedAt        DateTime     @default(now())
 
   @@unique([channelId, userId])
