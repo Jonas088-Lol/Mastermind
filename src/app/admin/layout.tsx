@@ -38,6 +38,8 @@ const adminNavItems: NavItem[] = [
   { href: "/admin/lizenz",        label: "Lizenz",       icon: "award" },
   { href: "/admin/integrationen", label: "Integrationen",icon: "layers" },
   { href: "/admin/audit",         label: "Audit-Log",    icon: "lineChart" },
+  { href: "/admin/ressourcen",    label: "Ressourcen",   icon: "box" },
+  { href: "/admin/notenschluessel", label: "Notenschlüssel", icon: "calculator" },
 ];
 
 const adminBottomItems: BottomNavItem[] = [

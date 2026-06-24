@@ -113,6 +113,19 @@
     color-scheme: dark;
   }
 
+  /* Accessibility: font size */
+  html[data-font-size="large"]  { font-size: 112%; }
+  html[data-font-size="xlarge"] { font-size: 125%; }
+
+  /* Accessibility: reduced motion */
+  html[data-reduced-motion="true"] *,
+  html[data-reduced-motion="true"] *::before,
+  html[data-reduced-motion="true"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
   body {
     background: hsl(var(--bg));
     color: hsl(var(--fg));

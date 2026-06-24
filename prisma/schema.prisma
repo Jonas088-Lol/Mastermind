@@ -107,6 +107,8 @@ model School {
   mailboxEmails     MailboxEmail[]
   spaces            Space[]
   provisioningCodes ProvisioningCode[]
+  resources         Resource[]        @relation("SchoolResources")
+  gradeScale        GradeScale?       @relation("SchoolGradeScale")
 }
 
 model SsoConfig {
@@ -292,6 +294,7 @@ model User {
   dailyActivity    DailyActivity[]    @relation("DailyActivity")
   subjectMinutes   UserSubjectMinutes[] @relation("UserSubjectMinutes")
   skillPurchases   UserSkillPurchase[]  @relation("UserSkillPurchases")
+  resourceBookings ResourceBooking[]    @relation("UserResourceBookings")
 
   @@index([role])
   @@index([schoolId])
@@ -2321,4 +2324,59 @@ model UserSkillPurchase {
 
   @@unique([userId, nodeKey])
   @@index([userId])
+}
+
+// ── Ressourcen-Reservierung ────────────────────────────────
+model Resource {
+  id          String            @id @default(cuid())
+  schoolId    String
+  name        String
+  description String?
+  category    String            @default("sonstiges") // "raum" | "geraet" | "sonstiges"
+  icon        String?
+  color       String            @default("#6366f1")
+  bookings    ResourceBooking[]
+  school      School            @relation("SchoolResources", fields: [schoolId], references: [id], onDelete: Cascade)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@index([schoolId])
+}
+
+model ResourceBooking {
+  id         String   @id @default(cuid())
+  resourceId String
+  userId     String
+  title      String
+  startsAt   DateTime
+  endsAt     DateTime
+  note       String?
+  resource   Resource @relation(fields: [resourceId], references: [id], onDelete: Cascade)
+  user       User     @relation("UserResourceBookings", fields: [userId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+
+  @@index([resourceId])
+  @@index([userId])
+}
+
+// ── Notenschlüssel ─────────────────────────────────────────
+model GradeScale {
+  id        String            @id @default(cuid())
+  schoolId  String            @unique
+  name      String            @default("Standard-Notenschlüssel")
+  school    School            @relation("SchoolGradeScale", fields: [schoolId], references: [id], onDelete: Cascade)
+  entries   GradeScaleEntry[]
+  updatedAt DateTime          @updatedAt
+}
+
+model GradeScaleEntry {
+  id           String     @id @default(cuid())
+  gradeScaleId String
+  grade        String     // "1", "2", "3", "4", "5", "6"
+  label        String     // "Sehr gut", "Gut", etc.
+  minPercent   Float      // minimum percentage (inclusive) to achieve this grade
+  gradeScale   GradeScale @relation(fields: [gradeScaleId], references: [id], onDelete: Cascade)
+
+  @@unique([gradeScaleId, grade])
+  @@index([gradeScaleId])
 }

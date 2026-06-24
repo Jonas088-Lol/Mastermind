@@ -25,6 +25,7 @@ import { getSession } from "@/lib/session";
 import { TwoFactorSetup } from "./2fa/TwoFactorSetup";
 import { ThemeButtons } from "./ThemeButtons";
 import { ToggleSection } from "./ToggleSection";
+import { FontSizePicker } from "./FontSizePicker";
 import { DeviceLogoutButton } from "./DeviceLogout";
 import { logoutAllDevices, changePassword, deleteOwnAccount } from "./actions";
 import { LangSelector } from "./LangSelector";
@@ -362,25 +363,25 @@ export default async function EinstellungenPage() {
                     <ThemeButtons />
                   </div>
                 </div>
-                <ToggleSection
-                  items={[
-                    {
-                      key: "reduced_motion",
-                      label: "Reduzierte Bewegung",
-                      detail: "Animationen werden minimiert",
-                      icon: <Palette className="size-4" />,
-                      default: false,
-                    },
-                    {
-                      key: "larger_font",
-                      label: "Größere Schrift",
-                      detail: "+15 % für bessere Lesbarkeit",
-                      icon: <Palette className="size-4" />,
-                      default: false,
-                    },
-                  ]}
-                  storageKey="mm_display_prefs"
-                />
+                <div className="space-y-4">
+                  <ToggleSection
+                    items={[
+                      {
+                        key: "reduced_motion",
+                        label: "Reduzierte Bewegung",
+                        detail: "Animationen werden minimiert",
+                        icon: <Palette className="size-4" />,
+                        default: false,
+                      },
+                    ]}
+                    storageKey="mm_display_prefs"
+                  />
+                  <div className="border-t border-border pt-4">
+                    <p className="text-sm font-semibold mb-1">Schriftgröße</p>
+                    <p className="text-xs text-muted-fg mb-3">Passe die Schriftgröße für bessere Lesbarkeit an.</p>
+                    <FontSizePicker />
+                  </div>
+                </div>
               </CardBody>
             </Card>
           </section>

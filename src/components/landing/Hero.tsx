@@ -5,8 +5,9 @@ import { ArrowRight, CheckCircle2, Flame, Sparkles, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DashboardPreviewModal } from "@/components/landing/DashboardPreviewModal";
 import { CoinIcon } from "@/components/ui/CoinIcon";
+import { HeroGreeting } from "@/components/landing/HeroGreeting";
 
-export function Hero() {
+export function Hero({ loggedInName = null }: { loggedInName?: string | null }) {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -177,7 +178,7 @@ export function Hero() {
                             Donnerstag, 12. Juni
                           </p>
                           <p className="mt-0.5 text-xl font-bold text-fg">
-                            Hi Lukas 👋
+                            <HeroGreeting loggedInName={loggedInName} />
                           </p>
                         </div>
                         <div className="hidden items-center gap-2 sm:flex">

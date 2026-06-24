@@ -19,6 +19,7 @@ import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { prisma } from "@/lib/db/client";
+import { DashboardGreeting } from "@/components/app/DashboardGreeting";
 import { getAiQuota } from "@/lib/db/store";
 import { getSession } from "@/lib/session";
 import { levelFromXp, getRankForXp } from "@/lib/game";
@@ -188,9 +189,7 @@ export default async function DashboardPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-600">
                 {todayDate}
               </p>
-              <h1 className="mt-1 text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
-                Hi {firstName} 👋
-              </h1>
+              <DashboardGreeting firstName={firstName} />
               <p className="mt-1 text-sm text-slate-500">
                 Du hast{" "}
                 <span className="font-semibold text-slate-700">{openCount} offene Aufgaben</span> in den

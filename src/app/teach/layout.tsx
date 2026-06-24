@@ -78,6 +78,8 @@ export default async function TeachLayout({
     { href: "/teach/elternsprechtag", label: "Elternsprechtag", icon: "calendarDays" },
     { href: "/teach/statistiken", label: "Statistiken", icon: "barChart3" },
     { href: "/teach/kalender", label: "Kalender", icon: "calendarDays" },
+    { href: "/teach/ressourcen", label: "Ressourcen", icon: "box" },
+    { href: "/teach/notenschluessel", label: "Notenschlüssel", icon: "calculator" },
   ];
 
   const bottomItems: NavItem[] = [

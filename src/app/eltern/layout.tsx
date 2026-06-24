@@ -27,6 +27,7 @@ const items: NavItem[] = [
   { href: "/eltern/kalender", label: "Kalender", icon: "calendar" },
   { href: "/eltern/einwilligungen", label: "Einwilligungen", icon: "fileCheck" },
   { href: "/eltern/lernfortschritt", label: "Lernfortschritt", icon: "zap" },
+  { href: "/eltern/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
 ];
 
 const bottomItems: NavItem[] = [
