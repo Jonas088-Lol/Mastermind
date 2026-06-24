@@ -59,12 +59,12 @@ function rateGc() {
 
 function getRateLimit(pathname: string): number {
   if (pathname.startsWith("/api/auth") || pathname.startsWith("/login") || pathname.startsWith("/gate")) {
-    return 20;   // auth: 20 req / min
+    return 100;  // auth: 100 req / min
   }
   if (pathname.startsWith("/api/")) {
-    return 120;  // api: 120 req / min
+    return 300;  // api: 300 req / min
   }
-  return 250;    // general: 250 req / min
+  return 500;    // general: 500 req / min
 }
 
 function checkRateLimit(ip: string, pathname: string): FirewallResult {
