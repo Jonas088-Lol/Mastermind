@@ -28,8 +28,52 @@ const MAINTENANCE_SKIP = [
   "/maintenance",
 ];
 
+/* ── CORS ─────────────────────────────────────────────────────────────────── */
+
+const SELF = process.env.NEXT_PUBLIC_APP_URL ?? "";
+const EXTRA = (process.env.ALLOWED_ORIGINS ?? "")
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean);
+
+const CORS_ALLOWED: ReadonlySet<string> = new Set(
+  [
+    SELF,
+    "capacitor://localhost",
+    "ionic://localhost",
+    "http://localhost",
+    "http://localhost:3000",
+    "http://localhost:8100",
+    ...EXTRA,
+  ].filter(Boolean)
+);
+
+function buildCorsHeaders(origin: string | null): Record<string, string> {
+  if (!origin || !CORS_ALLOWED.has(origin)) return {};
+  return {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Requested-With",
+    "Access-Control-Allow-Credentials": "true",
+    "Access-Control-Max-Age": "86400",
+    Vary: "Origin",
+  };
+}
+
+/* ── Proxy entry ─────────────────────────────────────────────────────────── */
+
 export async function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
+  const origin = req.headers.get("origin");
+  const isApi = pathname.startsWith("/api/");
+
+  // CORS preflight — handle before firewall so OPTIONS never gets 403'd
+  if (req.method === "OPTIONS" && isApi) {
+    return new NextResponse(null, {
+      status: 204,
+      headers: buildCorsHeaders(origin),
+    });
+  }
 
   // ── Security Firewall (3 layers) ─────────────────────────────────────────
   const fw = await runFirewall(req);
@@ -88,7 +132,17 @@ export async function proxy(req: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  const res = NextResponse.next();
+
+  // Inject CORS headers on API responses (allowed origins only)
+  if (isApi) {
+    const cors = buildCorsHeaders(origin);
+    for (const [k, v] of Object.entries(cors)) {
+      res.headers.set(k, v);
+    }
+  }
+
+  return res;
 }
 
 export const config = {
