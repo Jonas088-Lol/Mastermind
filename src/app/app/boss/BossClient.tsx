@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { Swords, Coins, Crown, Droplets, Skull, Zap, Timer as TimerIcon } from "lucide-react";
 import { BOSS_TIERS, type BossTier } from "@/lib/game";
 import { attackBoss, type AttackResult } from "./actions";
@@ -43,6 +44,7 @@ type Phase = "idle" | "loading" | "question" | "result";
 type BossAnim = "idle" | "hit" | "defeated";
 
 export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxHp, myCorrectAnswers, endAtIso }: BossClientProps) {
+  const router = useRouter();
   const [hp, setHp] = useState(initialHp);
   const [battleMsLeft, setBattleMsLeft] = useState(() =>
     endAtIso ? Math.max(0, new Date(endAtIso).getTime() - Date.now()) : null
@@ -225,10 +227,23 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
         <BossDeathAnimation
           bossIcon={bossIcon}
           tierColor={color}
-          onComplete={() => setShowDeathAnim(false)}
+          onComplete={() => {
+            setShowDeathAnim(false);
+            // Falls kein Overlay folgt, direkt refreshen
+            if (!killData) router.refresh();
+          }}
         />
       )}
-      {!showDeathAnim && killData && <BossDefeatedOverlay data={killData} onClose={() => setKillData(null)} />}
+      {!showDeathAnim && killData && (
+        <BossDefeatedOverlay
+          data={killData}
+          onClose={() => {
+            setKillData(null);
+            // Jetzt erst die Seite refreshen → "Kein Boss aktiv" erscheint sanft
+            router.refresh();
+          }}
+        />
+      )}
 
       <div className="flex flex-col gap-5">
 

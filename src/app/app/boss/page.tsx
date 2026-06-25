@@ -83,7 +83,8 @@ export default async function BossPage() {
 
       {/* No active boss */}
       {activeBattles.length === 0 && (
-        <Card>
+        <Card style={{ animation: "fadeInUp 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>
+          <style>{`@keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}`}</style>
           <CardBody className="py-16 text-center">
             <span className="text-6xl">😴</span>
             <p className="mt-4 text-xl font-bold">Kein Boss aktiv</p>

@@ -195,7 +195,11 @@ export async function attackBoss(
     onBossFightWin(session.userId).catch(() => undefined);
   }
 
-  revalidatePath("/app/boss");
+  // Beim Defeat kein revalidatePath — der Client refresht nach der Todesanimation.
+  // Für normale Treffer revalidieren wir, damit das Leaderboard aktuell bleibt.
+  if (!defeated) {
+    revalidatePath("/app/boss");
+  }
 
   return {
     correct: true,
