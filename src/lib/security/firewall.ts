@@ -1,13 +1,9 @@
 /**
  * 3-Layer Security Firewall
  *
- * Runs inside Next.js proxy (middleware). Module-level state persists within
- * the Node.js process (Docker / standalone). In a multi-instance / Edge
- * deployment, pair with Redis via Upstash instead.
- *
- * Layer 1 – Rate Limiter:  per-IP sliding-window counters
+ * Layer 1 – Rate Limiter:  per-IP 10-second sliding window → 2-min block
  * Layer 2 – Pattern Scan:  URL/UA/header pattern matching (SQL-i, XSS, …)
- * Layer 3 – Anomaly Watch: auth failures, 404 storms, repeated blocks
+ * Layer 3 – Brute-Force:   repeated auth failures → extended block
  */
 
 import type { NextRequest } from "next/server";
@@ -44,17 +40,22 @@ function isWhitelisted(ip: string): boolean {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   LAYER 1 — RATE LIMITER
+   LAYER 1 — RATE LIMITER (10-second window → 2-minute block)
    ═══════════════════════════════════════════════════════════════════════════ */
+
+const RATE_WINDOW    = 10_000;          // 10 seconds
+const RATE_BLOCK_MS  = 2 * 60 * 1000;  // 2-minute block when exceeded
 
 interface RateEntry {
   count: number;
   windowStart: number;
+  blockedUntil?: number;
 }
 
-// Per-IP counters: ip → { count, windowStart }
 const rateStore = new Map<string, RateEntry>();
-const RATE_GC_INTERVAL = 5 * 60 * 1000; // clean up every 5 min
+
+// Clean up stale entries every 5 min
+const RATE_GC_INTERVAL = 5 * 60 * 1000;
 let lastRateGc = Date.now();
 
 function rateGc() {
@@ -62,43 +63,63 @@ function rateGc() {
   if (now - lastRateGc < RATE_GC_INTERVAL) return;
   lastRateGc = now;
   for (const [ip, e] of rateStore) {
-    if (now - e.windowStart > 60_000) rateStore.delete(ip);
+    const expired = now - e.windowStart > RATE_WINDOW;
+    const unblocked = !e.blockedUntil || now > e.blockedUntil;
+    if (expired && unblocked) rateStore.delete(ip);
   }
 }
 
 function getRateLimit(pathname: string): number {
   if (pathname.startsWith("/api/auth") || pathname.startsWith("/login") || pathname.startsWith("/gate")) {
-    return 100;  // auth: 100 req / min
+    return 5;   // auth: max 5 req / 10s
   }
   if (pathname.startsWith("/api/")) {
-    return 300;  // api: 300 req / min
+    return 30;  // api: max 30 req / 10s
   }
-  return 500;    // general: 500 req / min
+  return 60;   // general: max 60 req / 10s
 }
 
 function checkRateLimit(ip: string, pathname: string): FirewallResult {
   rateGc();
   const now = Date.now();
-  const limit = getRateLimit(pathname);
-  const entry = rateStore.get(ip);
+  const entry = rateStore.get(ip) ?? { count: 0, windowStart: now };
 
-  if (!entry || now - entry.windowStart > 60_000) {
-    rateStore.set(ip, { count: 1, windowStart: now });
-    return { blocked: false, ip };
-  }
-
-  entry.count++;
-  rateStore.set(ip, entry);
-
-  if (entry.count > limit) {
+  // Still in a block period from a previous burst
+  if (entry.blockedUntil && now < entry.blockedUntil) {
+    const remaining = Math.ceil((entry.blockedUntil - now) / 60_000);
     return {
       blocked: true,
       layer: 1,
-      reason: `Rate limit exceeded (${entry.count}/${limit} per min)`,
-      level: entry.count > limit * 2 ? "high" : "medium",
+      reason: `Zu viele Anfragen — blockiert fuer ${remaining} min`,
+      level: "medium",
       ip,
     };
   }
+
+  // Reset window when expired
+  if (now - entry.windowStart > RATE_WINDOW) {
+    entry.count = 1;
+    entry.windowStart = now;
+    entry.blockedUntil = undefined;
+  } else {
+    entry.count++;
+  }
+
+  const limit = getRateLimit(pathname);
+
+  if (entry.count > limit) {
+    entry.blockedUntil = now + RATE_BLOCK_MS;
+    rateStore.set(ip, entry);
+    return {
+      blocked: true,
+      layer: 1,
+      reason: `Rate limit: ${entry.count} Anfragen in 10s (Limit ${limit}) — 2 min blockiert`,
+      level: "medium",
+      ip,
+    };
+  }
+
+  rateStore.set(ip, entry);
   return { blocked: false, ip };
 }
 
@@ -128,17 +149,13 @@ function checkPatterns(req: NextRequest, ip: string): FirewallResult {
   const url = req.nextUrl.pathname + (req.nextUrl.search ?? "");
   const ua = req.headers.get("user-agent") ?? "";
 
-  // Probe path check (fast check first)
   if (PROBE_PATH_RE.test(req.nextUrl.pathname)) {
     return { blocked: true, layer: 2, reason: "Known exploit probe path", level: "high", ip };
   }
-
-  // Scanner user-agent
   if (SCANNER_UA_RE.test(ua)) {
     return { blocked: true, layer: 2, reason: "Security scanner detected", level: "high", ip };
   }
 
-  // Decode URL once for pattern checks
   let decoded = url;
   try { decoded = decodeURIComponent(url); } catch { /* keep raw */ }
 
@@ -155,7 +172,6 @@ function checkPatterns(req: NextRequest, ip: string): FirewallResult {
     return { blocked: true, layer: 2, reason: "Command injection attempt", level: "critical", ip };
   }
 
-  // Check referer/origin for obvious spam
   const referer = req.headers.get("referer") ?? "";
   if (SQL_RE.test(referer) || XSS_RE.test(referer)) {
     return { blocked: true, layer: 2, reason: "Malicious referer header", level: "high", ip };
@@ -165,93 +181,60 @@ function checkPatterns(req: NextRequest, ip: string): FirewallResult {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   LAYER 3 — ANOMALY DETECTOR
+   LAYER 3 — BRUTE-FORCE DETECTOR (nur Auth-Failures)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-interface AnomalyEntry {
+interface BruteEntry {
   authFailures: number;
-  notFoundCount: number;
-  blockCount: number;
   firstSeen: number;
   blockedUntil?: number;
 }
 
-const anomalyStore = new Map<string, AnomalyEntry>();
-const ANOMALY_GC_INTERVAL = 10 * 60 * 1000;
-let lastAnomalyGc = Date.now();
+const bruteStore = new Map<string, BruteEntry>();
+const BRUTE_GC_INTERVAL = 10 * 60 * 1000;
+let lastBruteGc = Date.now();
 
-function anomalyGc() {
+function bruteGc() {
   const now = Date.now();
-  if (now - lastAnomalyGc < ANOMALY_GC_INTERVAL) return;
-  lastAnomalyGc = now;
-  for (const [ip, e] of anomalyStore) {
-    if (now - e.firstSeen > 60 * 60 * 1000) anomalyStore.delete(ip); // 1h
+  if (now - lastBruteGc < BRUTE_GC_INTERVAL) return;
+  lastBruteGc = now;
+  for (const [ip, e] of bruteStore) {
+    const old = now - e.firstSeen > 60 * 60 * 1000;
+    const unblocked = !e.blockedUntil || now > e.blockedUntil;
+    if (old && unblocked) bruteStore.delete(ip);
   }
-}
-
-function getOrCreateAnomaly(ip: string): AnomalyEntry {
-  let e = anomalyStore.get(ip);
-  if (!e) {
-    e = { authFailures: 0, notFoundCount: 0, blockCount: 0, firstSeen: Date.now() };
-    anomalyStore.set(ip, e);
-  }
-  return e;
 }
 
 export function recordAuthFailure(ip: string): void {
-  const e = getOrCreateAnomaly(ip);
+  const e = bruteStore.get(ip) ?? { authFailures: 0, firstSeen: Date.now() };
   e.authFailures++;
-  // After 8 failures → 30-min block
+  // 8+ failed logins → 30-min block
   if (e.authFailures >= 8) {
     e.blockedUntil = Date.now() + 30 * 60 * 1000;
     sendSecurityAlert({
       ip,
-      reason: `Brute-force: ${e.authFailures} auth failures`,
+      reason: `Brute-force: ${e.authFailures} Auth-Fehler`,
       level: "critical",
       layer: 3,
       url: "/api/auth",
     }).catch(() => undefined);
   }
-  anomalyStore.set(ip, e);
+  bruteStore.set(ip, e);
 }
 
-export function recordBlockedRequest(ip: string): void {
-  const e = getOrCreateAnomaly(ip);
-  e.blockCount++;
-  anomalyStore.set(ip, e);
-}
+function checkBruteForce(ip: string): FirewallResult {
+  bruteGc();
+  const e = bruteStore.get(ip);
+  if (!e?.blockedUntil || Date.now() >= e.blockedUntil) return { blocked: false, ip };
 
-function checkAnomalies(ip: string, req: NextRequest): FirewallResult {
-  anomalyGc();
-  const e = anomalyStore.get(ip);
-  if (!e) return { blocked: false, ip };
-
-  // Check if IP is in temporary block
-  if (e.blockedUntil && Date.now() < e.blockedUntil) {
-    const remaining = Math.ceil((e.blockedUntil - Date.now()) / 60_000);
-    return {
-      blocked: true,
-      layer: 3,
-      reason: `IP temporarily blocked (${remaining} min remaining, ${e.authFailures} auth failures)`,
-      level: "critical",
-      ip,
-    };
-  }
-
-  // Too many previous blocks = escalating threat
-  if (e.blockCount >= 20) {
-    e.blockedUntil = Date.now() + 60 * 60 * 1000; // 1h
-    anomalyStore.set(ip, e);
-    return {
-      blocked: true,
-      layer: 3,
-      reason: `Repeat offender: ${e.blockCount} blocked requests`,
-      level: "critical",
-      ip,
-    };
-  }
-
-  return { blocked: false, ip };
+  const remaining = Math.ceil((e.blockedUntil - Date.now()) / 60_000);
+  return {
+    blocked: true,
+    layer: 3,
+    reason: `IP blockiert wegen Brute-Force (${remaining} min verbleibend, ${e.authFailures} Auth-Fehler)`,
+    level: "critical",
+    ip,
+  };
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -259,7 +242,7 @@ function checkAnomalies(ip: string, req: NextRequest): FirewallResult {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 const ALERT_EMAIL = "Jonas.Schwenk187@gmail.com";
-const alertCooldowns = new Map<string, number>(); // ip → last alert timestamp
+const alertCooldowns = new Map<string, number>();
 
 async function sendSecurityAlert(opts: {
   ip: string;
@@ -269,7 +252,6 @@ async function sendSecurityAlert(opts: {
   url: string;
   ua?: string;
 }): Promise<void> {
-  // Cooldown: max 1 alert per IP per 5 minutes
   const last = alertCooldowns.get(opts.ip);
   if (last && Date.now() - last < 5 * 60 * 1000) return;
   alertCooldowns.set(opts.ip, Date.now());
@@ -284,7 +266,7 @@ MasterMind Security Alert
 
 Zeit:     ${now}
 Level:    ${opts.level.toUpperCase()} ${levelEmoji}
-Layer:    ${opts.layer} (${opts.layer === 1 ? "Rate Limiter" : opts.layer === 2 ? "Pattern Scanner" : "Anomaly Detector"})
+Layer:    ${opts.layer} (${opts.layer === 1 ? "Rate Limiter" : opts.layer === 2 ? "Pattern Scanner" : "Brute-Force Detector"})
 IP:       ${opts.ip}
 Grund:    ${opts.reason}
 URL:      ${opts.url}
@@ -326,7 +308,6 @@ Wenn du diese Aktivität nicht erkennst, prüfe die Logs sofort.
    PUBLIC API — runFirewall()
    ═══════════════════════════════════════════════════════════════════════════ */
 
-// Paths to skip entirely (static assets, health checks)
 const FIREWALL_SKIP = [
   "/_next/",
   "/favicon",
@@ -343,7 +324,6 @@ const FIREWALL_SKIP = [
 export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
   const pathname = req.nextUrl.pathname;
 
-  // Skip static assets
   if (FIREWALL_SKIP.some((p) => pathname.startsWith(p))) {
     return { blocked: false, ip: getIp(req) };
   }
@@ -352,18 +332,13 @@ export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
 
   if (isWhitelisted(ip)) return { blocked: false, ip };
 
-  // Layer 3 first — check if IP is already in anomaly block
-  const anomalyCheck = checkAnomalies(ip, req);
-  if (anomalyCheck.blocked) {
-    recordBlockedRequest(ip);
-    return anomalyCheck;
-  }
+  // Layer 3 — Brute-force block (only from real auth failures)
+  const bruteCheck = checkBruteForce(ip);
+  if (bruteCheck.blocked) return bruteCheck;
 
-  // Layer 2 — pattern scan (stateless, fast)
+  // Layer 2 — Pattern scan
   const patternCheck = checkPatterns(req, ip);
   if (patternCheck.blocked) {
-    recordBlockedRequest(ip);
-    // Fire alert without awaiting
     void sendSecurityAlert({
       ip,
       reason: patternCheck.reason ?? "Pattern match",
@@ -375,10 +350,9 @@ export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
     return patternCheck;
   }
 
-  // Layer 1 — rate limit
+  // Layer 1 — Rate limit (10s window)
   const rateCheck = checkRateLimit(ip, pathname);
   if (rateCheck.blocked) {
-    recordBlockedRequest(ip);
     void sendSecurityAlert({
       ip,
       reason: rateCheck.reason ?? "Rate limit",
