@@ -34,6 +34,15 @@ function getIp(req: NextRequest): string {
   );
 }
 
+// IPs that skip all firewall checks — set FIREWALL_WHITELIST_IPS="1.2.3.4,5.6.7.8" in .env
+const WHITELIST: Set<string> = new Set(
+  (process.env.FIREWALL_WHITELIST_IPS ?? "").split(",").map((s) => s.trim()).filter(Boolean)
+);
+
+function isWhitelisted(ip: string): boolean {
+  return WHITELIST.has(ip);
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    LAYER 1 — RATE LIMITER
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -340,6 +349,8 @@ export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
   }
 
   const ip = getIp(req);
+
+  if (isWhitelisted(ip)) return { blocked: false, ip };
 
   // Layer 3 first — check if IP is already in anomaly block
   const anomalyCheck = checkAnomalies(ip, req);
