@@ -77,6 +77,11 @@ function getRateLimit(pathname: string): number {
 }
 
 function checkRateLimit(ip: string, pathname: string): FirewallResult {
+  // Allow disabling Layer 1 in dev via env flag.
+  // Layer 3 (brute-force) and ai-guard daily cap are always active.
+  if (process.env.SECURITY_RATE_LIMIT_ENABLED === "false") {
+    return { blocked: false, ip };
+  }
   rateGc();
   const now = Date.now();
   const entry = rateStore.get(ip) ?? { count: 0, windowStart: now };
