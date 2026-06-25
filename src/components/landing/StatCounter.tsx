@@ -41,7 +41,7 @@ function formatSchulen(n: number): string {
 export type StatCategory = "schueler" | "lehrer" | "schulen";
 
 function formatValue(n: number, cat: StatCategory): string {
-  const i = Math.floor(n);
+  const i = Math.round(n);
   switch (cat) {
     case "schueler": return formatSchueler(i);
     case "lehrer":   return formatLehrer(i);

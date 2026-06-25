@@ -105,11 +105,11 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
               <div className="h-2 w-[73%] rounded-full bg-brand" />
             </div>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex gap-2 overflow-x-auto">
             {["Karteikarte 1", "Karteikarte 2", "Karteikarte 3"].map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-surface border border-border px-3 py-1 text-xs font-medium text-fg"
+                className="shrink-0 rounded-full bg-surface border border-border px-3 py-1 text-xs font-medium text-fg"
               >
                 {tag}
               </span>

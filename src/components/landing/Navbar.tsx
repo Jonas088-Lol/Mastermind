@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -19,9 +19,21 @@ const navLinks = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 8);
+    const handler = () => {
+      const y = window.scrollY;
+      setScrolled(y > 8);
+      // Hide on scroll-down past 80px, reveal on scroll-up
+      if (y > 80) {
+        setHidden(y > lastScrollY.current);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY.current = y;
+    };
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -38,10 +50,11 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 w-full transition-all duration-200",
+          "sticky top-0 z-50 w-full transition-all duration-300",
           scrolled
             ? "border-b border-border bg-surface/90 shadow-sm backdrop-blur-lg"
-            : "bg-transparent"
+            : "bg-transparent",
+          hidden && !open ? "-translate-y-full" : "translate-y-0"
         )}
       >
         <div className="container-px mx-auto flex h-16 max-w-7xl items-center justify-between">
