@@ -60,6 +60,10 @@ next-env.d.ts
 /electron/dist/
 /electron/node_modules/
 
+# Android signing key (never commit — losing this breaks Play Store updates)
+/android/mastermind.keystore
+/android/keystore.properties
+
 # App download binaries (deployed via scp, not git)
 /downloads/*.exe
 /downloads/*.dmg

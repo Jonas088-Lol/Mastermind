@@ -9,7 +9,7 @@
 #
 # Verwendung:
 #   .\scripts\build-apk.ps1                         # Debug-APK
-#   .\scripts\build-apk.ps1 -BuildType release      # Release-APK (unsigned)
+#   .\scripts\build-apk.ps1 -BuildType release      # Release-APK (signiert)
 #   .\scripts\build-apk.ps1 -AppUrl https://meineschule.de
 # ===========================================================================
 
@@ -57,6 +57,54 @@ if (-not $androidHome) {
 $env:ANDROID_HOME = $androidHome
 Write-Host "[OK] Android SDK: $androidHome" -ForegroundColor Green
 
+# -- Keystore fuer Release-Build generieren ----------------------------------
+if ($BuildType -eq "release") {
+    $keystorePath = "android\mastermind.keystore"
+    $keystorePropsPath = "android\keystore.properties"
+
+    if (-not (Test-Path $keystorePath)) {
+        Write-Host ""
+        Write-Host "[...] Generiere Signatur-Keystore (einmalig)..." -ForegroundColor Yellow
+
+        # keytool aus dem JDK finden
+        $keytool = (Get-Command keytool -ErrorAction SilentlyContinue)?.Source
+        if (-not $keytool) {
+            # Android Studio JDK Fallback
+            $jbrPath = "C:\Program Files\Android\Android Studio\jbr\bin\keytool.exe"
+            if (Test-Path $jbrPath) { $keytool = $jbrPath }
+        }
+        if (-not $keytool) {
+            Write-Host "[FEHLER] keytool nicht gefunden. Java JDK installiert?" -ForegroundColor Red
+            exit 1
+        }
+
+        & $keytool -genkey -v `
+            -keystore $keystorePath `
+            -alias mastermind `
+            -keyalg RSA -keysize 2048 -validity 10000 `
+            -storepass mastermind2024 `
+            -keypass mastermind2024 `
+            -dname "CN=MasterMind, OU=App, O=MasterMind, L=DE, ST=DE, C=DE" `
+            2>&1 | Out-Null
+
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "[FEHLER] Keystore-Generierung fehlgeschlagen" -ForegroundColor Red
+            exit 1
+        }
+        Write-Host "[OK] Keystore erstellt: $keystorePath" -ForegroundColor Green
+    } else {
+        Write-Host "[OK] Keystore vorhanden: $keystorePath" -ForegroundColor Green
+    }
+
+    # keystore.properties fuer Gradle schreiben (Pfad relativ zu android/app/, wo build.gradle liegt)
+    @"
+storeFile=../mastermind.keystore
+storePassword=mastermind2024
+keyAlias=mastermind
+keyPassword=mastermind2024
+"@ | Set-Content $keystorePropsPath -Encoding UTF8
+}
+
 # -- Capacitor Sync ----------------------------------------------------------
 Write-Host ""
 Write-Host "[...] Synchronisiere Capacitor (Server: $AppUrl)..." -ForegroundColor Yellow
@@ -78,7 +126,7 @@ Push-Location android
 
 if ($BuildType -eq "release") {
     .\gradlew.bat assembleRelease
-    $apkRelativePath = "app\build\outputs\apk\release\app-release-unsigned.apk"
+    $apkRelativePath = "app\build\outputs\apk\release\app-release.apk"
 } else {
     .\gradlew.bat assembleDebug
     $apkRelativePath = "app\build\outputs\apk\debug\app-debug.apk"
