@@ -141,12 +141,14 @@ function AufgabenScreen() {
           subject: "Deutsch", short: "DE", color: "#8B5CF6",
           items: [
             { title: "Erörterung: Medienwandel", due: "Fr, 14. Jun", status: "submitted" },
+            { title: "Buchvorstellung vorbereiten", due: "Mo, 17. Jun", status: "open" },
           ],
         },
         {
           subject: "Biologie", short: "BIO", color: "#10B981",
           items: [
             { title: "Lernzettel Photosynthese", due: "Fr, 14. Jun", status: "open" },
+            { title: "Mitose-Diagramm zeichnen", due: "Di, 18. Jun", status: "open" },
           ],
         },
       ].map((subj) => {
