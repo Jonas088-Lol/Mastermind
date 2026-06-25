@@ -69,11 +69,11 @@ export default async function AdminLayout({
   const schoolDisplayName = branding?.brandName ?? branding?.name;
 
   return (
-    <div className="flex min-h-screen bg-surface">
+    <div className="flex h-screen overflow-hidden bg-surface">
       <SchoolBrandingInjector branding={branding} />
       <Sidebar items={adminNavItems} rootHref="/admin" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
       <div className="flex min-w-0 flex-1 flex-col">
-        <div className="sticky top-0 z-30">
+        <div className="shrink-0 z-30">
           {isSuper(session) && (
             <ImpersonationBar
               effective={effective}
@@ -87,10 +87,10 @@ export default async function AdminLayout({
             notifications={notifications}
           />
         </div>
-        <main className="flex-1 px-4 py-6 pb-24 lg:px-10 lg:py-10 lg:pb-10">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 lg:px-10 lg:py-10">
           {children}
         </main>
-        <BottomNav items={adminBottomItems} moreItems={adminNavItems} />
+        <BottomNav items={adminBottomItems} moreItems={adminNavItems} user={displayUser(session)} />
       </div>
     </div>
   );

@@ -60,10 +60,15 @@ export function AppHeader({
       )}
 
       <header className="safe-top flex h-15 items-center gap-2 border-b border-border bg-bg/95 px-3 backdrop-blur-md supports-backdrop-filter:bg-bg/80 sm:h-16 sm:gap-3 sm:px-5 lg:h-17 lg:gap-4 lg:px-6">
-        {/* Search */}
+        {/* Mobile title — replaces search bar on small screens */}
+        <span className="flex-1 truncate text-sm font-semibold lg:hidden">
+          {appName ?? "MasterMind"}
+        </span>
+
+        {/* Search — desktop only (mobile: in "Mehr" drawer) */}
         <Link
           href="/search"
-          className="group flex flex-1 items-center gap-2 rounded-xl border border-border bg-surface px-3 py-2 text-sm text-muted-fg transition-all hover:border-border-strong hover:bg-surface-2 hover:text-fg sm:gap-2.5 sm:px-3.5 sm:py-2.5 sm:max-w-sm"
+          className="group hidden lg:flex flex-1 items-center gap-2 rounded-xl border border-border bg-surface px-3 py-2 text-sm text-muted-fg transition-all hover:border-border-strong hover:bg-surface-2 hover:text-fg sm:gap-2.5 sm:px-3.5 sm:py-2.5 sm:max-w-sm"
           aria-label="Suche öffnen"
         >
           <Search className="size-4 shrink-0 text-muted-fg" />
@@ -137,8 +142,8 @@ export function AppHeader({
           <NotificationCenter unreadCount={unreadCount} notifications={notifications} />
           <ThemeToggle />
 
-          {/* User avatar → links to profile */}
-          <div className="ml-0.5 flex items-center gap-2 border-l border-border pl-2 sm:ml-1 sm:gap-2.5 sm:pl-3">
+          {/* User avatar → links to profile — desktop only (mobile: in "Mehr" drawer) */}
+          <div className="ml-0.5 hidden lg:flex items-center gap-2 border-l border-border pl-2 sm:ml-1 sm:gap-2.5 sm:pl-3">
             <Link href="/app/profil" className="relative shrink-0 transition-transform hover:scale-105" title="Mein Profil">
               <Avatar name={user.name} src={user.avatarUrl ?? undefined} size="md" />
               {doubleXp && (

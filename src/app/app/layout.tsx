@@ -178,7 +178,7 @@ export default async function AppLayout({
           {children}
         </main>
         {/* BottomNav — always visible, never scrolls away */}
-        <BottomNav items={mobileNavItems} moreItems={[...navItems, ...bottomItems]} />
+        <BottomNav items={mobileNavItems} moreItems={[...navItems, ...bottomItems]} user={{ ...displayUser(session), avatarUrl: userData?.avatarUrl }} />
         <InstallPrompt />
         <AppShell />
         <MasterSpaceModal />

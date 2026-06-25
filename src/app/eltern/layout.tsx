@@ -56,10 +56,10 @@ export default async function ElternLayout({
   const { notifications, unreadCount } = await fetchNotifications(session.userId);
 
   return (
-    <div className="flex min-h-screen bg-surface">
+    <div className="flex h-screen overflow-hidden bg-surface">
       <Sidebar items={items} bottomItems={bottomItems} rootHref="/eltern" />
       <div className="flex min-w-0 flex-1 flex-col">
-        <div className="sticky top-0 z-30">
+        <div className="shrink-0 z-30">
           {isSuper(session) && (
             <ImpersonationBar
               effective={effective}
@@ -73,10 +73,10 @@ export default async function ElternLayout({
             searchPlaceholder="Suchen — Nachrichten, Noten, Termine …"
           />
         </div>
-        <main className="flex-1 px-4 py-6 pb-24 lg:px-10 lg:py-10 lg:pb-10">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 lg:px-10 lg:py-10">
           {children}
         </main>
-        <BottomNav items={mobileNav} moreItems={[...items, ...bottomItems]} />
+        <BottomNav items={mobileNav} moreItems={[...items, ...bottomItems]} user={displayUser(session)} />
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -30,6 +30,7 @@ import {
   LayoutGrid,
   Layers,
   LineChart,
+  LogOut,
   Megaphone,
   MessageSquare,
   Monitor,
@@ -57,6 +58,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Avatar } from "@/components/ui/avatar";
+import { logout } from "@/app/login/actions";
 
 const ICONS = {
   award: Award,
@@ -131,8 +134,10 @@ export type MoreNavItem = {
 
 export interface BottomNavProps {
   items: BottomNavItem[];
-  /** All nav items shown in the full-screen "Mehr" drawer. When provided, only 4 primary items are shown + a "Mehr" button. */
+  /** All nav items shown in the full-screen "Mehr" drawer. */
   moreItems?: MoreNavItem[];
+  /** When provided, Search + Profile are shown at top of "Mehr" drawer and hidden from AppHeader on mobile. */
+  user?: { name: string; subtitle: string; avatarUrl?: string | null };
 }
 
 function getIcon(key: string): LucideIcon {
@@ -144,30 +149,44 @@ function isActive(pathname: string, item: { href: string; exact?: boolean }) {
   return pathname === item.href || pathname.startsWith(`${item.href}/`);
 }
 
-export function BottomNav({ items, moreItems }: BottomNavProps) {
+export function BottomNav({ items, moreItems, user }: BottomNavProps) {
   const pathname = usePathname();
   const [moreOpen, setMoreOpen] = useState(false);
+  // Scroll-based visibility: always visible initially, hides after 3s of inactivity once user has scrolled
+  const [navVisible, setNavVisible] = useState(true);
+  const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasScrolledRef = useRef(false);
 
+  // Close "Mehr" drawer on navigation
   useEffect(() => {
     setMoreOpen(false);
   }, [pathname]);
 
+  // Lock body scroll when drawer is open
   useEffect(() => {
-    if (moreOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.body.style.overflow = moreOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [moreOpen]);
 
+  // Scroll: show nav immediately, hide after 3s inactivity.
+  // capture:true catches scroll events from overflow-y-auto containers too.
   useEffect(() => {
-    const onScroll = () => setMoreOpen(false);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const onScroll = () => {
+      if (moreOpen) {
+        setMoreOpen(false);
+        return;
+      }
+      hasScrolledRef.current = true;
+      setNavVisible(true);
+      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+      hideTimerRef.current = setTimeout(() => setNavVisible(false), 3000);
+    };
+    document.addEventListener("scroll", onScroll, { passive: true, capture: true });
+    return () => {
+      document.removeEventListener("scroll", onScroll, { capture: true });
+      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+    };
+  }, [moreOpen]);
 
   const displayItems = moreItems ? items.slice(0, 4) : items.slice(0, 5);
 
@@ -176,7 +195,11 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
       <nav
         aria-label="Untere Navigation"
         className="shrink-0 z-40 border-t border-border bg-bg/90 backdrop-blur-lg supports-backdrop-filter:bg-bg/80 lg:hidden"
-        style={{ paddingBottom: "max(env(safe-area-inset-bottom), 8px)" }}
+        style={{
+          paddingBottom: "max(env(safe-area-inset-bottom), 8px)",
+          transform: (navVisible || moreOpen) ? "translateY(0)" : "translateY(100%)",
+          transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        }}
       >
         <ul className="grid grid-cols-5 px-1">
           {displayItems.map((item) => {
@@ -247,7 +270,7 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
         </ul>
       </nav>
 
-      {/* Full-screen navigation drawer */}
+      {/* Full-screen "Mehr" drawer */}
       {moreItems && (
         <div
           role="dialog"
@@ -259,11 +282,9 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
           )}
           style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
         >
-          {/* Header */}
+          {/* Drawer header */}
           <div className="flex shrink-0 items-center justify-between border-b border-border px-5 py-4">
-            <span className="text-xs font-bold uppercase tracking-widest text-muted-fg">
-              Navigation
-            </span>
+            <span className="text-xs font-bold uppercase tracking-widest text-muted-fg">Navigation</span>
             <button
               type="button"
               onClick={() => setMoreOpen(false)}
@@ -274,7 +295,50 @@ export function BottomNav({ items, moreItems }: BottomNavProps) {
             </button>
           </div>
 
-          {/* Scrollable item list */}
+          {/* Search + Profile (mobile-only, replaces header) */}
+          {user && (
+            <div className="shrink-0 border-b border-border">
+              {/* Search */}
+              <Link
+                href="/search"
+                onClick={() => setMoreOpen(false)}
+                className="flex items-center gap-3.5 px-5 py-3.5 transition-colors hover:bg-surface"
+              >
+                <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-surface-2">
+                  <Search className="size-4 text-muted-fg" />
+                </span>
+                <span className="text-sm font-medium text-fg">Suchen</span>
+              </Link>
+
+              {/* Profile */}
+              <Link
+                href="/app/profil"
+                onClick={() => setMoreOpen(false)}
+                className="flex items-center gap-3.5 px-5 py-3 transition-colors hover:bg-surface"
+              >
+                <Avatar name={user.name} src={user.avatarUrl ?? undefined} size="md" />
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-semibold">{user.name}</p>
+                  <p className="truncate text-xs text-muted-fg">{user.subtitle}</p>
+                </div>
+              </Link>
+
+              {/* Logout */}
+              <form action={logout}>
+                <button
+                  type="submit"
+                  className="flex w-full items-center gap-3.5 px-5 py-3.5 text-sm font-medium text-danger transition-colors hover:bg-surface"
+                >
+                  <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-danger/10">
+                    <LogOut className="size-4" />
+                  </span>
+                  Abmelden
+                </button>
+              </form>
+            </div>
+          )}
+
+          {/* Nav item list */}
           <nav className="flex-1 overflow-y-auto p-3" aria-label="Alle Seiten">
             <ul className="space-y-0.5">
               {moreItems.map((item) => {
