@@ -15,7 +15,7 @@
 
 param(
     [string]$Server      = "",
-    [string]$ServerPath  = "/srv/mastermind/downloads",
+    [string]$ServerPath  = "/root/Mastermind/downloads",
     [string]$LocalDir    = ""
 )
 
@@ -77,9 +77,9 @@ Write-Host ""
 Write-Host "========================================"  -ForegroundColor Cyan
 Write-Host "  Deploy abgeschlossen!"                   -ForegroundColor Cyan
 Write-Host "  Downloads erreichbar unter:"             -ForegroundColor Cyan
-Write-Host "  https://app.mastermind.app/downloads/"   -ForegroundColor Cyan
+Write-Host "  https://konvertis.de/downloads/"          -ForegroundColor Cyan
 Write-Host ""
 Write-Host "  Nginx neu starten falls noetig:"         -ForegroundColor Gray
-Write-Host "  ssh $Server 'cd /srv/mastermind && docker compose restart nginx'" -ForegroundColor Gray
+Write-Host "  ssh $Server 'cd /root/Mastermind && docker compose restart nginx'" -ForegroundColor Gray
 Write-Host "========================================"  -ForegroundColor Cyan
 Write-Host ""

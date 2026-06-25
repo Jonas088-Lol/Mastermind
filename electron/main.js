@@ -13,7 +13,7 @@ const os = require("os");
 
 // ── Config ────────────────────────────────────────────────────────────────────
 
-const SERVER_URL = process.env.MASTERMIND_SERVER_URL || "https://app.mastermind.app";
+const SERVER_URL = process.env.MASTERMIND_SERVER_URL || "https://konvertis.de";
 const APP_NAME = "MasterMind";
 const APP_VERSION = app.getVersion();
 const IS_MAC = process.platform === "darwin";
