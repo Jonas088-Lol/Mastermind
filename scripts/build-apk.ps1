@@ -19,7 +19,7 @@ param(
     [string]$AppUrl = $env:CAPACITOR_APP_URL
 )
 
-if (-not $AppUrl) { $AppUrl = "https://app.mastermind.app" }
+if (-not $AppUrl) { $AppUrl = "https://konvertis.de" }
 
 Write-Host ""
 Write-Host "==================================================" -ForegroundColor Cyan
@@ -96,19 +96,30 @@ Pop-Location
 $fullPath = "android\$apkRelativePath"
 if (Test-Path $fullPath) {
     $size = [math]::Round((Get-Item $fullPath).Length / 1MB, 1)
-    $outputName = "mastermind-$BuildType.apk"
-    Copy-Item $fullPath -Destination $outputName -Force
+
+    # Sicherstellen dass downloads/ existiert
+    $downloadsDir = Join-Path (Split-Path $PSScriptRoot) "downloads"
+    if (-not (Test-Path $downloadsDir)) { New-Item -ItemType Directory -Path $downloadsDir | Out-Null }
+
+    # Release APK heisst mastermind.apk, Debug bleibt mastermind-debug.apk
+    if ($BuildType -eq "release") {
+        $outputName = "mastermind.apk"
+    } else {
+        $outputName = "mastermind-debug.apk"
+    }
+    $outputPath = Join-Path $downloadsDir $outputName
+    Copy-Item $fullPath -Destination $outputPath -Force
 
     Write-Host ""
     Write-Host "==================================================" -ForegroundColor Green
     Write-Host "  [OK] APK erfolgreich erstellt!" -ForegroundColor Green
     Write-Host "==================================================" -ForegroundColor Green
-    Write-Host "  Datei:  $fullPath" -ForegroundColor Green
+    Write-Host "  Quelle:  $fullPath" -ForegroundColor Green
     Write-Host "  Groesse: ${size} MB" -ForegroundColor Green
-    Write-Host "  Kopiert nach: .\$outputName" -ForegroundColor Green
+    Write-Host "  Kopiert nach: downloads\$outputName" -ForegroundColor Green
     Write-Host "==================================================" -ForegroundColor Green
-    Write-Host "  Installation via USB-Debugging:" -ForegroundColor Green
-    Write-Host "  adb install $fullPath" -ForegroundColor Green
+    Write-Host "  Jetzt deployen:" -ForegroundColor Green
+    Write-Host "  .\scripts\deploy-downloads.ps1 -Server 'user@host'" -ForegroundColor Green
     Write-Host "==================================================" -ForegroundColor Green
     Write-Host ""
 } else {

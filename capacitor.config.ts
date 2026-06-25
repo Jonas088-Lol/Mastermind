@@ -2,10 +2,10 @@ import type { CapacitorConfig } from "@capacitor/cli";
 
 // Set CAPACITOR_APP_URL to your server domain, e.g.:
 //   CAPACITOR_APP_URL=https://meine-schule.de npx cap sync
-const PROD_URL = process.env.CAPACITOR_APP_URL ?? "https://app.mastermind.app";
+const PROD_URL = process.env.CAPACITOR_APP_URL ?? "https://konvertis.de";
 
 // Extract hostname from URL so allowNavigation stays consistent
-let appHostname = "app.mastermind.app";
+let appHostname = "konvertis.de";
 try {
   appHostname = new URL(PROD_URL).hostname;
 } catch {
