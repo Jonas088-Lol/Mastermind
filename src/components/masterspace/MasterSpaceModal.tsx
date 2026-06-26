@@ -449,6 +449,7 @@ function VoiceView({
   isDeaf,
   isSharingScreen,
   isCameraOn,
+  cameraError,
   screenStream,
   cameraStream,
   onToggleMute,
@@ -465,6 +466,7 @@ function VoiceView({
   isDeaf: boolean;
   isSharingScreen: boolean;
   isCameraOn: boolean;
+  cameraError: string | null;
   screenStream: MediaStream | null;
   cameraStream: MediaStream | null;
   onToggleMute: () => void;
@@ -502,6 +504,13 @@ function VoiceView({
             playsInline
             className="max-h-48 w-full rounded-xl object-contain"
           />
+        </div>
+      )}
+
+      {/* Camera error */}
+      {cameraError && (
+        <div className="shrink-0 border-b border-danger/20 bg-danger/10 px-4 py-2">
+          <p className="text-xs font-medium text-danger">{cameraError}</p>
         </div>
       )}
 
@@ -1119,6 +1128,7 @@ export function MasterSpaceModal() {
   const [isDeaf, setIsDeaf] = useState(false);
   const [isSharingScreen, setIsSharingScreen] = useState(false);
   const [isCameraOn, setIsCameraOn] = useState(false);
+  const [cameraError, setCameraError] = useState<string | null>(null);
   const [screenStream, setScreenStream] = useState<MediaStream | null>(null);
   const [cameraStream, setCameraStream] = useState<MediaStream | null>(null);
 
@@ -1427,9 +1437,15 @@ export function MasterSpaceModal() {
       cameraStream?.getTracks().forEach((t) => t.stop());
       setCameraStream(null);
       setIsCameraOn(false);
+      setCameraError(null);
       await setCameraModal(voiceChannelId, false);
     } else {
+      setCameraError(null);
       try {
+        if (!navigator.mediaDevices?.getUserMedia) {
+          setCameraError("Kamera wird in diesem Browser nicht unterstützt.");
+          return;
+        }
         const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
         stream.getVideoTracks()[0]!.onended = () => {
           setCameraStream(null); setIsCameraOn(false);
@@ -1438,8 +1454,17 @@ export function MasterSpaceModal() {
         setCameraStream(stream);
         setIsCameraOn(true);
         await setCameraModal(voiceChannelId, true);
-      } catch {
-        // Permission denied or no camera
+      } catch (err) {
+        const name = err instanceof Error ? err.name : "";
+        if (name === "NotAllowedError" || name === "PermissionDeniedError") {
+          setCameraError("Kamera-Zugriff verweigert. Bitte Berechtigung in den Einstellungen erlauben.");
+        } else if (name === "NotFoundError" || name === "DevicesNotFoundError") {
+          setCameraError("Keine Kamera gefunden.");
+        } else if (name === "NotReadableError" || name === "TrackStartError") {
+          setCameraError("Kamera wird bereits von einer anderen App verwendet.");
+        } else {
+          setCameraError("Kamera konnte nicht gestartet werden.");
+        }
       }
     }
   }
@@ -1807,6 +1832,7 @@ export function MasterSpaceModal() {
                   isDeaf={isDeaf}
                   isSharingScreen={isSharingScreen}
                   isCameraOn={isCameraOn}
+                  cameraError={cameraError}
                   screenStream={screenStream}
                   cameraStream={cameraStream}
                   onToggleMute={toggleMute}
