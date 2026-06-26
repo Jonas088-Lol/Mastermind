@@ -69,14 +69,28 @@ function rateGc() {
   }
 }
 
-function getRateLimit(pathname: string): number {
-  if (pathname.startsWith("/api/auth") || pathname.startsWith("/login") || pathname.startsWith("/gate")) {
-    return 20;   // auth: max 20 req / 10s (brute-force via auth-failure counter, not rate)
+// Separate counters so browsing the app never pollutes the auth quota.
+// "auth"    → POST to /login, POST to /gate, any /api/auth/* → 30 req/10s
+// "general" → all other requests (pages, API calls, etc.)   → 150 req/10s
+function getRateBucket(pathname: string, method: string): "auth" | "general" {
+  if (pathname.startsWith("/api/auth")) return "auth";
+  // Only count form submissions (POST/PUT) on auth pages as auth, not plain page GETs.
+  // Next.js Server Actions POST to the page route itself.
+  if (
+    method === "POST" &&
+    (pathname.startsWith("/login") || pathname.startsWith("/gate"))
+  ) {
+    return "auth";
   }
-  return 100;   // everything else: max 100 req / 10s
+  return "general";
 }
 
-function checkRateLimit(ip: string, pathname: string): FirewallResult {
+const RATE_LIMITS: Record<"auth" | "general", number> = {
+  auth:    30,   // 30 login/gate submissions per 10s per IP (covers multi-tab)
+  general: 150,  // 150 req/10s — enough for page load + all RSC prefetches
+};
+
+function checkRateLimit(ip: string, pathname: string, method: string): FirewallResult {
   // Allow disabling Layer 1 in dev via env flag.
   // Layer 3 (brute-force) and ai-guard daily cap are always active.
   if (process.env.SECURITY_RATE_LIMIT_ENABLED === "false") {
@@ -84,7 +98,10 @@ function checkRateLimit(ip: string, pathname: string): FirewallResult {
   }
   rateGc();
   const now = Date.now();
-  const entry = rateStore.get(ip) ?? { count: 0, windowStart: now };
+
+  const bucket = getRateBucket(pathname, method);
+  const storeKey = `${ip}:${bucket}`;
+  const entry = rateStore.get(storeKey) ?? { count: 0, windowStart: now };
 
   // Still in a block period from a previous burst
   if (entry.blockedUntil && now < entry.blockedUntil) {
@@ -107,21 +124,21 @@ function checkRateLimit(ip: string, pathname: string): FirewallResult {
     entry.count++;
   }
 
-  const limit = getRateLimit(pathname);
+  const limit = RATE_LIMITS[bucket];
 
   if (entry.count > limit) {
     entry.blockedUntil = now + RATE_BLOCK_MS;
-    rateStore.set(ip, entry);
+    rateStore.set(storeKey, entry);
     return {
       blocked: true,
       layer: 1,
-      reason: `Rate limit: ${entry.count} Anfragen in 10s (Limit ${limit}) — 2 min blockiert`,
+      reason: `Rate limit (${bucket}): ${entry.count} Anfragen in 10s (Limit ${limit}) — 2 min blockiert`,
       level: "medium",
       ip,
     };
   }
 
-  rateStore.set(ip, entry);
+  rateStore.set(storeKey, entry);
   return { blocked: false, ip };
 }
 
@@ -330,6 +347,14 @@ export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
     return { blocked: false, ip: getIp(req) };
   }
 
+  // Next.js Router prefetch requests are read-only GETs triggered by the browser
+  // when links become visible. They cannot cause harm and must not consume rate-limit
+  // quota — otherwise page loads with many visible links (nav + hero + features)
+  // would deplete the counter before the user clicks anything.
+  if (req.headers.get("next-router-prefetch") === "1") {
+    return { blocked: false, ip: getIp(req) };
+  }
+
   const ip = getIp(req);
 
   if (isWhitelisted(ip)) return { blocked: false, ip };
@@ -338,7 +363,7 @@ export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
   const bruteCheck = checkBruteForce(ip);
   if (bruteCheck.blocked) return bruteCheck;
 
-  // Layer 2 — Pattern scan
+  // Layer 2 — Pattern scan (runs even on prefetches that pass the header check above)
   const patternCheck = checkPatterns(req, ip);
   if (patternCheck.blocked) {
     void sendSecurityAlert({
@@ -352,8 +377,8 @@ export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
     return patternCheck;
   }
 
-  // Layer 1 — Rate limit (10s window)
-  const rateCheck = checkRateLimit(ip, pathname);
+  // Layer 1 — Rate limit (10s window, separate auth vs general bucket)
+  const rateCheck = checkRateLimit(ip, pathname, req.method);
   if (rateCheck.blocked) {
     void sendSecurityAlert({
       ip,
