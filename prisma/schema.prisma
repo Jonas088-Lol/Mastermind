@@ -2381,3 +2381,29 @@ model GradeScaleEntry {
   @@unique([gradeScaleId, grade])
   @@index([gradeScaleId])
 }
+
+// ── Fragen-Pool (KI-generiert) ──────────────────────────────
+// SQLite-Dev-Schema: antworten/loesung als JSON-String (kein Array/Json in SQLite).
+// Produktions-Schema (schema.postgres.prisma) verwendet Json + String[].
+model Frage {
+  id                 String   @id @default(cuid())
+  schulart           String
+  bundesland         String
+  jahrgangsstufe     Int
+  fach               String
+  thema              String
+  unterthema         String?
+  schwierigkeit      Int
+  schwierigkeitScore Float
+  typ                String   @default("single_choice")
+  frage              String
+  antworten          String   // JSON-encoded [{id,text,korrekt}…]
+  loesung            String   // JSON-encoded String[]
+  erklaerung         String
+  modell             String   @default("ki-generiert")
+  quelle             String   @default("ki-generiert")
+  generiertAm        DateTime @default(now())
+
+  @@index([schulart, bundesland, jahrgangsstufe, fach, thema, schwierigkeit, schwierigkeitScore])
+  @@index([fach, jahrgangsstufe, schwierigkeit])
+}

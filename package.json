@@ -40,7 +40,9 @@
     "desktop:build:win": "cd electron && npm run build:win",
     "desktop:build:mac": "cd electron && npm run build:mac",
     "desktop:build:linux": "cd electron && npm run build:linux",
-    "desktop:build:all": "cd electron && npm run build:all"
+    "desktop:build:all": "cd electron && npm run build:all",
+    "questions:generate": "tsx scripts/questions/generate-questions.ts",
+    "questions:import": "tsx scripts/questions/import-questions.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

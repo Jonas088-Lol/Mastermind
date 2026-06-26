@@ -2371,3 +2371,29 @@ model GradeScaleEntry {
   @@unique([gradeScaleId, grade])
   @@index([gradeScaleId])
 }
+
+// ── Fragen-Pool (KI-generiert) ──────────────────────────────
+// Wird über scripts/questions/generate-questions.ts befüllt.
+// Boss-Battles, Übungen und Quizzes ziehen aus diesem Pool.
+model Frage {
+  id                 String   @id @default(cuid())
+  schulart           String   // "gymnasium" | "realschule" | "mittelschule"
+  bundesland         String   // "bayern" | …
+  jahrgangsstufe     Int
+  fach               String   // "mathematik" | "deutsch" | …
+  thema              String
+  unterthema         String?
+  schwierigkeit      Int      // 1–5
+  schwierigkeitScore Float    // 0–100 (feiner Score innerhalb der Stufe)
+  typ                String   @default("single_choice")
+  frage              String
+  antworten          Json     // [{id,text,korrekt}…]
+  loesung            String[] // IDs der richtigen Antworten, z. B. ["b"]
+  erklaerung         String
+  modell             String   @default("ki-generiert")
+  quelle             String   @default("ki-generiert")
+  generiertAm        DateTime @default(now())
+
+  @@index([schulart, bundesland, jahrgangsstufe, fach, thema, schwierigkeit, schwierigkeitScore])
+  @@index([fach, jahrgangsstufe, schwierigkeit])
+}
