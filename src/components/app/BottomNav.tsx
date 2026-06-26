@@ -157,9 +157,13 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
   const hideTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const hasScrolledRef = useRef(false);
 
-  // Close "Mehr" drawer on navigation
+  // Close "Mehr" drawer on navigation — show nav briefly so it's visible on the new page
   useEffect(() => {
-    setMoreOpen(false);
+    if (moreOpen) {
+      setMoreOpen(false);
+      setNavVisible(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   // Lock body scroll when drawer is open
@@ -170,12 +174,11 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
 
   // Scroll: show nav immediately, hide after 3s inactivity.
   // capture:true catches scroll events from overflow-y-auto containers too.
+  // When "Mehr" is open we ignore scroll events — the drawer's own list is
+  // scrollable and should not accidentally close itself on scroll.
   useEffect(() => {
     const onScroll = () => {
-      if (moreOpen) {
-        setMoreOpen(false);
-        return;
-      }
+      if (moreOpen) return;
       hasScrolledRef.current = true;
       setNavVisible(true);
       if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
@@ -184,7 +187,6 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
     document.addEventListener("scroll", onScroll, { passive: true, capture: true });
     return () => {
       document.removeEventListener("scroll", onScroll, { capture: true });
-      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
     };
   }, [moreOpen]);
 
@@ -287,7 +289,7 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
             <span className="text-xs font-bold uppercase tracking-widest text-muted-fg">Navigation</span>
             <button
               type="button"
-              onClick={() => setMoreOpen(false)}
+              onClick={() => { setMoreOpen(false); setNavVisible(true); }}
               aria-label="Schließen"
               className="grid size-9 place-items-center rounded-xl text-muted-fg transition-colors hover:bg-surface hover:text-fg"
             >
