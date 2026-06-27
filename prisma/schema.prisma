@@ -1404,6 +1404,25 @@ model StripeOrder {
   @@index([sessionId])
 }
 
+// ── Mollie Payments ────────────────────────────────────────
+
+model MollieOrder {
+  id            String    @id @default(cuid())
+  userId        String
+  mollieId      String    @unique   // Mollie payment id, e.g. "tr_xxxxx"
+  productSlug   String               // "coins_100" | "coins_500" | ...
+  coinsAwarded  Int                  // total coins incl. bonus
+  amountEur     String               // decimal string, e.g. "9.99"
+  status        String    @default("open")
+  // open | pending | authorized | expired | canceled | failed | paid
+  method        String?              // "creditcard" | "paypal" | "applepay" | ...
+  createdAt     DateTime  @default(now())
+  paidAt        DateTime?
+
+  @@index([userId])
+  @@index([status])
+}
+
 // ── Schulkalender ──────────────────────────────────────────
 
 model SchoolEvent {

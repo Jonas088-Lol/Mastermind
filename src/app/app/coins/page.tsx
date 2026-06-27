@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowDownLeft, ArrowUpRight, ShoppingBag, TrendingUp } from "lucide-react";
+import { ArrowDownLeft, ArrowUpRight, CheckCircle2, Clock, ShoppingBag, TrendingUp, XCircle } from "lucide-react";
 import { CoinIcon } from "@/components/ui/CoinIcon";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
@@ -28,6 +28,8 @@ const REASON_LABELS: Record<string, string> = {
   duel_participate:    "Duell teilgenommen",
   achievement_unlock:  "Erfolg freigeschaltet",
   shop_purchase:       "Shop-Kauf",
+  mollie_purchase:     "Münz-Kauf",
+  stripe_purchase:     "Münz-Kauf (alt)",
 };
 
 function translateReason(reason: string): string {
@@ -111,10 +113,15 @@ const COIN_PACKS = [
   },
 ] as const;
 
-export default async function CoinsPage() {
+export default async function CoinsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ payment?: string }>;
+}) {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect(ROLE_HOME[effectiveRole(session)]);
+  const { payment } = await searchParams;
 
   const userId = session.userId;
 
@@ -147,6 +154,35 @@ export default async function CoinsPage() {
         </div>
         <TrendingUp className="size-10 text-warning opacity-20" strokeWidth={1} />
       </header>
+
+      {/* Payment status banner */}
+      {payment === "success" && (
+        <div className="flex items-center gap-3 rounded-2xl border border-success/30 bg-success/8 px-5 py-4">
+          <CheckCircle2 className="size-5 shrink-0 text-success" />
+          <div>
+            <p className="font-semibold text-success">Zahlung erfolgreich!</p>
+            <p className="text-sm text-muted-fg">Deine Münzen wurden deinem Konto gutgeschrieben.</p>
+          </div>
+        </div>
+      )}
+      {payment === "pending" && (
+        <div className="flex items-center gap-3 rounded-2xl border border-warning/30 bg-warning/8 px-5 py-4">
+          <Clock className="size-5 shrink-0 text-warning" />
+          <div>
+            <p className="font-semibold text-warning">Zahlung wird verarbeitet</p>
+            <p className="text-sm text-muted-fg">Die Zahlung ist noch nicht abgeschlossen. Deine Münzen werden nach Bestätigung gutgeschrieben.</p>
+          </div>
+        </div>
+      )}
+      {payment === "cancelled" && (
+        <div className="flex items-center gap-3 rounded-2xl border border-danger/30 bg-danger/8 px-5 py-4">
+          <XCircle className="size-5 shrink-0 text-danger" />
+          <div>
+            <p className="font-semibold text-danger">Zahlung abgebrochen</p>
+            <p className="text-sm text-muted-fg">Die Zahlung wurde nicht abgeschlossen. Wähle unten ein Paket, um es erneut zu versuchen.</p>
+          </div>
+        </div>
+      )}
 
       {/* Balance Card */}
       <div className="border border-warning/30 bg-warning/3 p-6">
@@ -206,9 +242,18 @@ export default async function CoinsPage() {
 
       {/* Coin Packs */}
       <section>
-        <div className="mb-3">
-          <h2 className="text-lg font-bold">Münz-Pakete</h2>
-          <p className="text-xs text-muted-fg">Direkt aufladen — sofort verfügbar</p>
+        <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 className="text-lg font-bold">Münz-Pakete</h2>
+            <p className="text-xs text-muted-fg">Direkt aufladen — sofort verfügbar</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-1.5">
+            {["Kreditkarte", "PayPal", "Apple Pay", "Google Pay"].map((m) => (
+              <span key={m} className="rounded-full border border-border bg-surface px-2.5 py-1 text-[11px] font-medium text-muted-fg">
+                {m}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {COIN_PACKS.map((pack) => (

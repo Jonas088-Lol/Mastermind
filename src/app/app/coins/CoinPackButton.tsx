@@ -17,7 +17,7 @@ export function CoinPackButton({ slug, price, highlight, disabled }: CoinPackBut
     if (disabled) return;
     setLoading(true);
     try {
-      const res = await fetch("/api/stripe/checkout", {
+      const res = await fetch("/api/mollie/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ slug }),
@@ -31,7 +31,7 @@ export function CoinPackButton({ slug, price, highlight, disabled }: CoinPackBut
     }
   }
 
-  const isDisabled = disabled || loading || !process.env.NEXT_PUBLIC_STRIPE_ENABLED;
+  const isDisabled = disabled || loading || !process.env.NEXT_PUBLIC_MOLLIE_ENABLED;
 
   return (
     <button
