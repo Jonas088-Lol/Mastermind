@@ -44,7 +44,7 @@ function isWhitelisted(ip: string): boolean {
    ═══════════════════════════════════════════════════════════════════════════ */
 
 const RATE_WINDOW    = 10_000;          // 10 seconds
-const RATE_BLOCK_MS  = 2 * 60 * 1000;  // 2-minute block when exceeded
+const RATE_BLOCK_MS  = 30 * 1000;       // 30-second block when exceeded (was 2 min — caused false positives for school NATs)
 
 interface RateEntry {
   count: number;
@@ -87,7 +87,7 @@ function getRateBucket(pathname: string, method: string): "auth" | "general" {
 
 const RATE_LIMITS: Record<"auth" | "general", number> = {
   auth:    30,   // 30 login/gate submissions per 10s per IP (covers multi-tab)
-  general: 150,  // 150 req/10s — enough for page load + all RSC prefetches
+  general: 600,  // 600 req/10s — school NATs can have 20+ students on same IP; 150 was too low
 };
 
 function checkRateLimit(ip: string, pathname: string, method: string): FirewallResult {
@@ -352,6 +352,14 @@ export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
   // quota — otherwise page loads with many visible links (nav + hero + features)
   // would deplete the counter before the user clicks anything.
   if (req.headers.get("next-router-prefetch") === "1") {
+    return { blocked: false, ip: getIp(req) };
+  }
+
+  // RSC (React Server Component) navigation requests are normal Next.js page transitions.
+  // They are browser-initiated, cannot carry attack payloads in a meaningful way,
+  // and excluding them from rate-limiting prevents false-positive blocks when a user
+  // navigates quickly between pages (e.g. landing → login).
+  if (req.headers.get("rsc") === "1") {
     return { blocked: false, ip: getIp(req) };
   }
 

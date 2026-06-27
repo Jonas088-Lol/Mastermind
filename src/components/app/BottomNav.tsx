@@ -172,21 +172,24 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
     return () => { document.body.style.overflow = ""; };
   }, [moreOpen]);
 
-  // Scroll: show nav immediately, hide after 3s inactivity.
+  // Scroll + touch: show nav immediately, hide after 3s inactivity.
   // capture:true catches scroll events from overflow-y-auto containers too.
-  // When "Mehr" is open we ignore scroll events — the drawer's own list is
-  // scrollable and should not accidentally close itself on scroll.
+  // touchmove covers mobile scroll on iOS/Android where document-scroll may not fire.
+  // When "Mehr" is open we ignore scroll/touch events — the drawer itself is
+  // scrollable and we don't want it to accidentally trigger hide logic.
   useEffect(() => {
-    const onScroll = () => {
+    const onActivity = () => {
       if (moreOpen) return;
       hasScrolledRef.current = true;
       setNavVisible(true);
       if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
       hideTimerRef.current = setTimeout(() => setNavVisible(false), 3000);
     };
-    document.addEventListener("scroll", onScroll, { passive: true, capture: true });
+    document.addEventListener("scroll",     onActivity, { passive: true, capture: true });
+    document.addEventListener("touchmove",  onActivity, { passive: true, capture: true });
     return () => {
-      document.removeEventListener("scroll", onScroll, { capture: true });
+      document.removeEventListener("scroll",    onActivity, { capture: true });
+      document.removeEventListener("touchmove", onActivity, { capture: true });
     };
   }, [moreOpen]);
 
@@ -289,7 +292,11 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
             <span className="text-xs font-bold uppercase tracking-widest text-muted-fg">Navigation</span>
             <button
               type="button"
-              onClick={() => { setMoreOpen(false); setNavVisible(true); }}
+              onClick={() => {
+                if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
+                setMoreOpen(false);
+                setNavVisible(true);
+              }}
               aria-label="Schließen"
               className="grid size-9 place-items-center rounded-xl text-muted-fg transition-colors hover:bg-surface hover:text-fg"
             >

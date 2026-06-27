@@ -33,28 +33,33 @@ export default async function TeachLayout({
     prisma.submission.count({
       where: { assignment: { teacherId: session.userId }, status: "submitted" },
     }),
-    prisma.messageParticipant.count({
-      where: {
-        userId: session.userId,
+    prisma.messageParticipant.findMany({
+      where: { userId: session.userId },
+      select: {
+        lastReadAt: true,
         thread: {
-          messages: {
-            some: {
-              senderId: { not: session.userId },
-              sentAt: { gt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) },
+          select: {
+            messages: {
+              where: { senderId: { not: session.userId } },
+              orderBy: { sentAt: "desc" },
+              take: 1,
+              select: { sentAt: true },
             },
           },
         },
-        OR: [
-          { lastReadAt: null },
-          { thread: { updatedAt: { gt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) } } },
-        ],
       },
     }),
     getSchoolBranding(session),
   ]);
 
+  const unreadThreadCount = unreadThreads.filter((p) => {
+    const lastMsg = p.thread.messages[0];
+    if (!lastMsg) return false;
+    return !p.lastReadAt || p.lastReadAt < lastMsg.sentAt;
+  }).length;
+
   const corrBadge = pendingCorrections > 0 ? String(pendingCorrections) : undefined;
-  const msgBadge = unreadThreads > 0 ? String(unreadThreads) : undefined;
+  const msgBadge = unreadThreadCount > 0 ? String(unreadThreadCount) : undefined;
 
   const items: NavItem[] = [
     { href: "/teach", label: "Dashboard", icon: "home", exact: true },

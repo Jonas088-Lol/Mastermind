@@ -531,7 +531,7 @@ function VoiceView({
       {/* Participants grid */}
       <div className="flex-1 overflow-y-auto p-6">
         <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-muted-fg">{channelName}</p>
-        <p className="mb-5 text-xs text-muted-fg">{participants.length} Teilnehmer · Audioübertragung benötigt WebRTC</p>
+        <p className="mb-5 text-xs text-muted-fg">{participants.length} Teilnehmer</p>
 
         {participants.length === 0 ? (
           <div className="flex flex-col items-center gap-3 py-12 text-muted-fg">
@@ -1132,11 +1132,125 @@ export function MasterSpaceModal() {
   const [screenStream, setScreenStream] = useState<MediaStream | null>(null);
   const [cameraStream, setCameraStream] = useState<MediaStream | null>(null);
 
+  // WebRTC refs — not state because mutations must not re-render
+  const localAudioRef = useRef<MediaStream | null>(null);
+  const peersRef = useRef<Map<string, RTCPeerConnection>>(new Map());
+  const signalAfterRef = useRef<number>(0);
+  const signalPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const audioElsRef = useRef<Map<string, HTMLAudioElement>>(new Map());
+  const myIdRef = useRef<string>("");
+  const voiceChannelIdRef = useRef<string | null>(null);
+  const isDeafRef = useRef<boolean>(false);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const editRef = useRef<HTMLInputElement>(null);
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const voicePollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Keep refs in sync so WebRTC callbacks don't capture stale state
+  useEffect(() => { myIdRef.current = myId; }, [myId]);
+  useEffect(() => { voiceChannelIdRef.current = voiceChannelId; }, [voiceChannelId]);
+  useEffect(() => { isDeafRef.current = isDeaf; }, [isDeaf]);
+
+  // ── WebRTC helpers ───────────────────────────────────────────────
+
+  const STUN = { iceServers: [{ urls: "stun:stun.l.google.com:19302" }] };
+
+  function createPeer(remoteUserId: string, channelId: string): RTCPeerConnection {
+    const pc = new RTCPeerConnection(STUN);
+
+    // Add local audio tracks
+    if (localAudioRef.current) {
+      for (const track of localAudioRef.current.getTracks()) {
+        pc.addTrack(track, localAudioRef.current);
+      }
+    }
+
+    // Play remote audio
+    pc.ontrack = (e) => {
+      let el = audioElsRef.current.get(remoteUserId);
+      if (!el) {
+        el = new Audio();
+        el.autoplay = true;
+        audioElsRef.current.set(remoteUserId, el);
+      }
+      el.srcObject = e.streams[0] ?? null;
+      el.muted = isDeafRef.current;
+    };
+
+    // Send ICE candidates via signal API
+    pc.onicecandidate = (e) => {
+      if (!e.candidate) return;
+      fetch(`/api/masterspace/voice/${channelId}/signal`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "ice", to: remoteUserId, data: e.candidate }),
+      }).catch(() => null);
+    };
+
+    peersRef.current.set(remoteUserId, pc);
+    return pc;
+  }
+
+  async function sendOffer(remoteUserId: string, channelId: string) {
+    const pc = createPeer(remoteUserId, channelId);
+    const offer = await pc.createOffer();
+    await pc.setLocalDescription(offer);
+    await fetch(`/api/masterspace/voice/${channelId}/signal`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ type: "offer", to: remoteUserId, data: offer }),
+    });
+  }
+
+  async function handleSignals(channelId: string) {
+    const res = await fetch(
+      `/api/masterspace/voice/${channelId}/signal?after=${signalAfterRef.current}`
+    ).catch(() => null);
+    if (!res?.ok) return;
+
+    const { signals } = await res.json() as {
+      signals: Array<{ id: number; type: string; from: string; data: unknown }>;
+    };
+
+    for (const sig of signals) {
+      if (sig.id > signalAfterRef.current) signalAfterRef.current = sig.id;
+
+      if (sig.type === "offer") {
+        let pc = peersRef.current.get(sig.from);
+        if (!pc) pc = createPeer(sig.from, channelId);
+        await pc.setRemoteDescription(new RTCSessionDescription(sig.data as RTCSessionDescriptionInit));
+        const answer = await pc.createAnswer();
+        await pc.setLocalDescription(answer);
+        await fetch(`/api/masterspace/voice/${channelId}/signal`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ type: "answer", to: sig.from, data: answer }),
+        });
+      } else if (sig.type === "answer") {
+        const pc = peersRef.current.get(sig.from);
+        if (pc && pc.signalingState !== "stable") {
+          await pc.setRemoteDescription(new RTCSessionDescription(sig.data as RTCSessionDescriptionInit)).catch(() => null);
+        }
+      } else if (sig.type === "ice") {
+        const pc = peersRef.current.get(sig.from);
+        if (pc) {
+          await pc.addIceCandidate(new RTCIceCandidate(sig.data as RTCIceCandidateInit)).catch(() => null);
+        }
+      }
+    }
+  }
+
+  function closeAllPeers() {
+    for (const pc of peersRef.current.values()) pc.close();
+    peersRef.current.clear();
+    for (const el of audioElsRef.current.values()) { el.pause(); el.srcObject = null; }
+    audioElsRef.current.clear();
+    if (signalPollRef.current) clearInterval(signalPollRef.current);
+    signalPollRef.current = null;
+    signalAfterRef.current = 0;
+  }
 
   // ── Fetchers ────────────────────────────────────────────────────
 
@@ -1235,20 +1349,55 @@ export function MasterSpaceModal() {
     return () => { if (pollRef.current) clearInterval(pollRef.current); };
   }, [isOpen, view, selSpaceId, selChannelId, selDmId, fetchChannelMessages, fetchDmMessages]);
 
-  // Voice participant polling
+  // Voice participant polling + WebRTC offer initiation
+  const knownPeersRef = useRef<Set<string>>(new Set());
   useEffect(() => {
     if (voicePollRef.current) clearInterval(voicePollRef.current);
     if (!voiceChannelId) return;
     fetchVoiceParticipants(voiceChannelId);
-    voicePollRef.current = setInterval(() => fetchVoiceParticipants(voiceChannelId), 3000);
-    return () => { if (voicePollRef.current) clearInterval(voicePollRef.current); };
-  }, [voiceChannelId, fetchVoiceParticipants]);
 
-  // Cleanup streams on unmount
+    voicePollRef.current = setInterval(async () => {
+      const chanId = voiceChannelIdRef.current;
+      if (!chanId) return;
+      const res = await fetch(`/api/masterspace/voice/${chanId}`).catch(() => null);
+      if (!res?.ok) return;
+      const data: { participants: VoiceParticipant[]; myId: string } = await res.json();
+      setVoiceParticipants(data.participants ?? []);
+
+      // Initiate offers to newly discovered participants (lower userId sends offer)
+      const me = myIdRef.current;
+      for (const p of data.participants ?? []) {
+        if (p.userId === me) continue;
+        if (!knownPeersRef.current.has(p.userId)) {
+          knownPeersRef.current.add(p.userId);
+          // The participant with the lexicographically lower userId creates the offer
+          if (me < p.userId) {
+            sendOffer(p.userId, chanId).catch(() => null);
+          }
+        }
+      }
+      // Remove peers that have left
+      for (const uid of knownPeersRef.current) {
+        if (!(data.participants ?? []).some((p) => p.userId === uid)) {
+          knownPeersRef.current.delete(uid);
+          const pc = peersRef.current.get(uid);
+          if (pc) { pc.close(); peersRef.current.delete(uid); }
+          const el = audioElsRef.current.get(uid);
+          if (el) { el.pause(); el.srcObject = null; audioElsRef.current.delete(uid); }
+        }
+      }
+    }, 3000);
+    return () => { if (voicePollRef.current) clearInterval(voicePollRef.current); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [voiceChannelId]);
+
+  // Cleanup streams + WebRTC on unmount
   useEffect(() => {
     return () => {
       screenStream?.getTracks().forEach((t) => t.stop());
       cameraStream?.getTracks().forEach((t) => t.stop());
+      localAudioRef.current?.getTracks().forEach((t) => t.stop());
+      closeAllPeers();
       if (voiceChannelId) leaveAllVoiceModal().catch(() => null);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -1361,10 +1510,14 @@ export function MasterSpaceModal() {
   // ── Voice ────────────────────────────────────────────────────────
 
   async function joinVoice(spaceId: string, channelId: string, channelName: string, spaceName: string) {
-    // Leave current voice first
     if (voiceChannelId) {
+      closeAllPeers();
+      localAudioRef.current?.getTracks().forEach((t) => t.stop());
+      localAudioRef.current = null;
+      knownPeersRef.current.clear();
       await leaveVoiceModal(voiceChannelId);
     }
+
     await joinVoiceModal(channelId);
     setVoiceChannelId(channelId);
     setVoiceSpaceId(spaceId);
@@ -1373,10 +1526,30 @@ export function MasterSpaceModal() {
     setIsMuted(false); setIsDeaf(false);
     setView("voice"); setMobileSidebar(false);
     fetchVoiceParticipants(channelId);
+
+    // Capture local audio (best-effort — user may deny)
+    try {
+      if (navigator.mediaDevices?.getUserMedia) {
+        const audio = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+        localAudioRef.current = audio;
+      }
+    } catch { /* permission denied — voice still works without mic */ }
+
+    // Start signal polling
+    signalAfterRef.current = 0;
+    if (signalPollRef.current) clearInterval(signalPollRef.current);
+    signalPollRef.current = setInterval(() => {
+      const cid = voiceChannelIdRef.current;
+      if (cid) handleSignals(cid).catch(() => null);
+    }, 1000);
   }
 
   async function leaveVoice() {
     if (!voiceChannelId) return;
+    closeAllPeers();
+    localAudioRef.current?.getTracks().forEach((t) => t.stop());
+    localAudioRef.current = null;
+    knownPeersRef.current.clear();
     screenStream?.getTracks().forEach((t) => t.stop());
     setScreenStream(null);
     cameraStream?.getTracks().forEach((t) => t.stop());
@@ -1395,6 +1568,10 @@ export function MasterSpaceModal() {
     if (!voiceChannelId) return;
     const next = !isMuted;
     setIsMuted(next);
+    // Mute/unmute local audio tracks in place
+    if (localAudioRef.current) {
+      for (const t of localAudioRef.current.getAudioTracks()) t.enabled = !next;
+    }
     await setMuteModal(voiceChannelId, next);
   }
 
@@ -1402,6 +1579,8 @@ export function MasterSpaceModal() {
     if (!voiceChannelId) return;
     const next = !isDeaf;
     setIsDeaf(next);
+    // Mute/unmute all remote audio elements
+    for (const el of audioElsRef.current.values()) el.muted = next;
     await setDeafModal(voiceChannelId, next);
   }
 
@@ -1413,9 +1592,14 @@ export function MasterSpaceModal() {
       setIsSharingScreen(false);
       await setScreenShareModal(voiceChannelId, false);
     } else {
+      // getDisplayMedia is not available on mobile browsers
+      if (!navigator.mediaDevices?.getDisplayMedia) {
+        setCameraError("Bildschirmübertragung ist auf diesem Gerät nicht verfügbar.");
+        return;
+      }
       try {
         const stream = await navigator.mediaDevices.getDisplayMedia({
-          video: { displaySurface: "monitor" },
+          video: { width: { max: 1920 }, height: { max: 1080 }, frameRate: { max: 30 } },
           audio: false,
         });
         stream.getVideoTracks()[0].onended = () => {
@@ -1426,7 +1610,7 @@ export function MasterSpaceModal() {
         setIsSharingScreen(true);
         await setScreenShareModal(voiceChannelId, true);
       } catch {
-        // User cancelled picker
+        // User cancelled picker — no error shown
       }
     }
   }
@@ -1446,7 +1630,10 @@ export function MasterSpaceModal() {
           setCameraError("Kamera wird in diesem Browser nicht unterstützt.");
           return;
         }
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { width: { max: 1920 }, height: { max: 1080 }, frameRate: { max: 30 } },
+          audio: false,
+        });
         stream.getVideoTracks()[0]!.onended = () => {
           setCameraStream(null); setIsCameraOn(false);
           setCameraModal(voiceChannelId, false).catch(() => null);

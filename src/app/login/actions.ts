@@ -17,6 +17,7 @@ import {
   sendEmail,
 } from "@/lib/email";
 import { auditLog } from "@/lib/audit";
+import { checkAndAwardAchievements } from "@/lib/achievements";
 import { ipFromHeaders, rateLimit } from "@/lib/security/rate-limit";
 import {
   ROLE_HOME,
@@ -79,6 +80,7 @@ export async function loginWithCredentials(formData: FormData) {
   }
 
   await setSession({ email: account.email, realRole: account.role });
+  if (user?.id) void checkAndAwardAchievements(user.id).catch(() => undefined);
   redirect(ROLE_HOME[account.role]);
 }
 
@@ -121,6 +123,7 @@ export async function verifyLoginTwoFactor(formData: FormData) {
 
   await clearPending2FA();
   await setSession({ email: user.email, realRole: user.role as Role });
+  void checkAndAwardAchievements(pending.userId).catch(() => undefined);
   redirect(ROLE_HOME[user.role as Role]);
 }
 
