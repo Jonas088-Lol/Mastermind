@@ -42,7 +42,8 @@
     "desktop:build:linux": "cd electron && npm run build:linux",
     "desktop:build:all": "cd electron && npm run build:all",
     "questions:generate": "tsx scripts/questions/generate-questions.ts",
-    "questions:import": "tsx scripts/questions/import-questions.ts"
+    "questions:import": "tsx scripts/questions/import-questions.ts",
+    "questions:seed-bosses": "tsx scripts/questions/seed-boss-questions.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

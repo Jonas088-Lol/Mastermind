@@ -21,27 +21,19 @@ export async function GET(
   if (battle.useCustomQuestions && battle.questions.length > 0) {
     const allIds = battle.questions.map((q) => q.id);
 
-    // Which questions has this user already answered correctly?
     const seenCorrect = await prisma.bossQuestionSeen.findMany({
       where: { userId: session.userId, questionId: { in: allIds }, answeredCorrect: true },
       select: { questionId: true },
     });
     const correctIds = new Set(seenCorrect.map((s) => s.questionId));
-
-    // Remaining = not yet answered correctly
     const remaining = allIds.filter((id) => !correctIds.has(id));
-
-    // If all answered correctly, reset and serve any question (full loop)
     const pool = remaining.length > 0 ? remaining : allIds;
 
-    // Prefer previously wrong-answered ones (bring them back first)
     const seenWrong = await prisma.bossQuestionSeen.findMany({
       where: { userId: session.userId, questionId: { in: pool }, answeredCorrect: false },
       select: { questionId: true },
     });
     const wrongIds = seenWrong.map((s) => s.questionId).filter((id) => pool.includes(id));
-
-    // Pick from wrongIds first, else from full remaining pool
     const pickFrom = wrongIds.length > 0 ? wrongIds : pool;
     const pickedId = pickFrom[Math.floor(Math.random() * pickFrom.length)];
 
@@ -63,9 +55,51 @@ export async function GET(
     });
   }
 
-  // ── Path B: fall back to general question pool ───────────────────────────
+  // ── Path B: Frage-Pool (KI-generierte Fragen) ───────────────────────────
+  const fach  = (battle.subject ?? "").toLowerCase();
+  const grade = battle.gradeLevel ?? null;
+
+  // Prisma-Client kennt `frage` erst nach prisma generate — `as any` für Frage-Zugriffe
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const db = prisma as any;
+
+  const frageWhere = (mitStufe: boolean) => ({
+    fach,
+    ...(mitStufe && grade ? { jahrgangsstufe: grade } : {}),
+  });
+
+  const pickFrage = async (mitStufe: boolean) => {
+    const total = (await db.frage.count({ where: frageWhere(mitStufe) })) as number;
+    if (total === 0) return null;
+    return db.frage.findFirst({
+      where: frageWhere(mitStufe),
+      skip: Math.floor(Math.random() * total),
+    }) as Promise<Record<string, unknown> | null>;
+  };
+
+  const frageQ = (fach ? (await pickFrage(true) ?? await pickFrage(false)) : null);
+
+  if (frageQ) {
+    const rawAntworten = frageQ.antworten;
+    const antworten = (
+      Array.isArray(rawAntworten)
+        ? rawAntworten
+        : JSON.parse(rawAntworten as string)
+    ) as Array<{ id: string; text: string; korrekt: boolean }>;
+
+    return NextResponse.json({
+      id: `fq_${frageQ.id as string}`,
+      question: frageQ.frage as string,
+      subject: battle.subject ?? "Allgemein",
+      grade: frageQ.jahrgangsstufe as number,
+      source: "frage",
+      options: antworten.map((a, i) => ({ id: i, text: a.text })),
+    });
+  }
+
+  // ── Path B fallback: ExerciseQuestion-Pool ───────────────────────────────
   const subjectFilter = battle.subject ? { subject: battle.subject } : {};
-  const whereExact   = { type: "mc", topic: { ...subjectFilter, ...(battle.gradeLevel ? { grade: battle.gradeLevel } : {}) } };
+  const whereExact   = { type: "mc", topic: { ...subjectFilter, ...(grade ? { grade } : {}) } };
   const whereSubject = { type: "mc", topic: subjectFilter };
   const whereAny     = { type: "mc" };
 

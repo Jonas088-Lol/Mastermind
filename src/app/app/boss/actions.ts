@@ -38,16 +38,31 @@ export async function attackBoss(
   const battle = await prisma.bossBattle.findFirst({ where: { id: battleId, isActive: true, currentHp: { gt: 0 } } });
   if (!battle) return { error: "Boss not active" };
 
-  // Resolve question — check boss-custom pool first, then general pool
-  const bossQ = await prisma.bossQuestion.findUnique({ where: { id: questionId } });
-  const genQ  = bossQ ? null : await prisma.exerciseQuestion.findUnique({ where: { id: questionId } });
+  // Resolve question — boss-custom pool → Frage-Pool (fq_ prefix) → general pool
+  const isFrage   = questionId.startsWith("fq_");
+  const realId    = isFrage ? questionId.slice(3) : questionId;
 
-  if (!bossQ && !genQ) return { error: "Question not found" };
+  const bossQ  = !isFrage ? await prisma.bossQuestion.findUnique({ where: { id: realId } }) : null;
+  const genQ   = (!isFrage && !bossQ) ? await prisma.exerciseQuestion.findUnique({ where: { id: realId } }) : null;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const frageQ = isFrage ? await (prisma as any).frage.findUnique({ where: { id: realId } }) as Record<string, unknown> | null : null;
+
+  if (!bossQ && !genQ && !frageQ) return { error: "Question not found" };
 
   // Check correctness
   const correct = bossQ
     ? selectedOptionIndex === bossQ.correct
-    : String(selectedOptionIndex) === genQ!.correct;
+    : genQ
+    ? String(selectedOptionIndex) === genQ.correct
+    : (() => {
+        const letter  = String.fromCharCode(97 + selectedOptionIndex); // 0→"a", 1→"b", …
+        const loesung = (
+          Array.isArray(frageQ!.loesung)
+            ? frageQ!.loesung
+            : JSON.parse(frageQ!.loesung as string)
+        ) as string[];
+        return loesung.includes(letter);
+      })();
 
   // Record seen status for boss-custom questions
   if (bossQ) {
@@ -57,6 +72,7 @@ export async function attackBoss(
       update: { answeredCorrect: correct, seenAt: new Date() },
     }).catch(() => {});
   }
+  // frageQ: no per-user seen tracking needed (pool is large enough to randomise)
   const isFirstBlood = battle.firstBloodUserId === null;
 
   if (!correct) {
