@@ -2426,3 +2426,53 @@ model Frage {
   @@index([schulart, bundesland, jahrgangsstufe, fach, thema, schwierigkeit, schwierigkeitScore])
   @@index([fach, jahrgangsstufe, schwierigkeit])
 }
+
+// ── Drive (Schul-eigener File-Storage) ────────────────────
+
+model DriveFile {
+  id         String   @id @default(cuid())
+  name       String
+  mimeType   String
+  size       Int
+  path       String   // relative path: "drive/[userId]/[filename]"
+  userId     String
+  schoolId   String?
+  isPublic   Boolean  @default(false) // true = sichtbar für alle Schulnutzer
+  createdAt  DateTime @default(now())
+
+  @@index([userId])
+  @@index([schoolId])
+}
+
+// ── Canva Einbettungen ─────────────────────────────────────
+
+model CanvaEmbed {
+  id        String   @id @default(cuid())
+  title     String
+  embedUrl  String
+  userId    String
+  schoolId  String?
+  isPublic  Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([schoolId])
+}
+
+// ── Schulinterne Lernzettel (Wiki) ────────────────────────
+
+model SchoolWikiEntry {
+  id         String   @id @default(cuid())
+  title      String
+  content    String   @default("")
+  subject    String?
+  tags       String   @default("") // komma-getrennte Tags
+  authorId   String
+  schoolId   String
+  viewCount  Int      @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([schoolId])
+  @@index([authorId])
+}
