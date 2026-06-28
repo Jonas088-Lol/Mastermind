@@ -14,33 +14,7 @@ import {
 } from "@/lib/session";
 import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
-
-const adminNavItems: NavItem[] = [
-  { href: "/admin",               label: "Dashboard",    icon: "home",         exact: true },
-  { href: "/admin/nutzer",        label: "Nutzer",       icon: "users" },
-  { href: "/admin/import",        label: "Import",       icon: "fileCheck" },
-  { href: "/admin/klassen",       label: "Klassen",      icon: "building2" },
-  { href: "/admin/faecher",       label: "Fächer",       icon: "bookOpen" },
-  { href: "/admin/stundenplan",   label: "Stundenplan",  icon: "calendar" },
-  { href: "/admin/notenspiegel",  label: "Noten",        icon: "barChart3" },
-  { href: "/admin/abgaben",       label: "Abgaben",      icon: "clipboardEdit" },
-  { href: "/admin/nachrichten",   label: "Nachrichten",  icon: "messageSquare" },
-  { href: "/admin/postfach",      label: "Postfach",     icon: "mail" },
-  { href: "/admin/fehlzeiten",    label: "Fehlzeiten",   icon: "calendarX" },
-  { href: "/admin/elternverwaltung", label: "Elternverwaltung", icon: "users" },
-  { href: "/admin/gamification",  label: "Gamification", icon: "zap" },
-  { href: "/admin/vertretungsplan", label: "Vertretungsplan", icon: "refreshCw" },
-  { href: "/admin/schulkalender",   label: "Schulkalender",   icon: "calendar" },
-  { href: "/admin/einwilligungen",  label: "Einwilligungen",  icon: "fileCheck" },
-  { href: "/admin/berichte",        label: "Berichte",        icon: "barChart3" },
-  { href: "/admin/branding",      label: "Branding",     icon: "sparkles" },
-  { href: "/admin/sicherheit",    label: "Sicherheit",   icon: "shield" },
-  { href: "/admin/lizenz",        label: "Lizenz",       icon: "award" },
-  { href: "/admin/integrationen", label: "Integrationen",icon: "layers" },
-  { href: "/admin/audit",         label: "Audit-Log",    icon: "lineChart" },
-  { href: "/admin/ressourcen",    label: "Ressourcen",   icon: "box" },
-  { href: "/admin/notenschluessel", label: "Notenschlüssel", icon: "calculator" },
-];
+import { prisma } from "@/lib/db/client";
 
 const adminBottomItems: BottomNavItem[] = [
   { href: "/admin",              label: "Start",   icon: "home",      exact: true },
@@ -61,10 +35,57 @@ export default async function AdminLayout({
   const effective = effectiveRole(session);
   if (effective !== "admin") redirect(ROLE_HOME[effective]);
 
-  const [{ notifications, unreadCount }, branding] = await Promise.all([
+  const [{ notifications, unreadCount }, branding, unreadMessages] = await Promise.all([
     fetchNotifications(session.userId),
     getSchoolBranding(session),
+    prisma.messageParticipant.findMany({
+      where: { userId: session.userId },
+      select: {
+        lastReadAt: true,
+        thread: {
+          select: {
+            messages: {
+              orderBy: { sentAt: "desc" },
+              take: 1,
+              select: { sentAt: true, senderId: true },
+            },
+          },
+        },
+      },
+    }).then((ps) =>
+      ps.filter((p) => {
+        const last = p.thread.messages[0];
+        return last && last.senderId !== session.userId && (!p.lastReadAt || p.lastReadAt < last.sentAt);
+      }).length
+    ).catch(() => 0),
   ]);
+
+  const adminNavItems: NavItem[] = [
+    { href: "/admin",               label: "Dashboard",    icon: "home",         exact: true },
+    { href: "/admin/nutzer",        label: "Nutzer",       icon: "users" },
+    { href: "/admin/import",        label: "Import",       icon: "fileCheck" },
+    { href: "/admin/klassen",       label: "Klassen",      icon: "building2" },
+    { href: "/admin/faecher",       label: "Fächer",       icon: "bookOpen" },
+    { href: "/admin/stundenplan",   label: "Stundenplan",  icon: "calendar" },
+    { href: "/admin/notenspiegel",  label: "Noten",        icon: "barChart3" },
+    { href: "/admin/abgaben",       label: "Abgaben",      icon: "clipboardEdit" },
+    { href: "/admin/nachrichten",   label: "Nachrichten",  icon: "messageSquare", badge: unreadMessages > 0 ? String(unreadMessages) : undefined },
+    { href: "/admin/postfach",      label: "Postfach",     icon: "mail" },
+    { href: "/admin/fehlzeiten",    label: "Fehlzeiten",   icon: "calendarX" },
+    { href: "/admin/elternverwaltung", label: "Elternverwaltung", icon: "users" },
+    { href: "/admin/gamification",  label: "Gamification", icon: "zap" },
+    { href: "/admin/vertretungsplan", label: "Vertretungsplan", icon: "refreshCw" },
+    { href: "/admin/schulkalender",   label: "Schulkalender",   icon: "calendar" },
+    { href: "/admin/einwilligungen",  label: "Einwilligungen",  icon: "fileCheck" },
+    { href: "/admin/berichte",        label: "Berichte",        icon: "barChart3" },
+    { href: "/admin/branding",      label: "Branding",     icon: "sparkles" },
+    { href: "/admin/sicherheit",    label: "Sicherheit",   icon: "shield" },
+    { href: "/admin/lizenz",        label: "Lizenz",       icon: "award" },
+    { href: "/admin/integrationen", label: "Integrationen",icon: "layers" },
+    { href: "/admin/audit",         label: "Audit-Log",    icon: "lineChart" },
+    { href: "/admin/ressourcen",    label: "Ressourcen",   icon: "box" },
+    { href: "/admin/notenschluessel", label: "Notenschlüssel", icon: "calculator" },
+  ];
 
   const schoolDisplayName = branding?.brandName ?? branding?.name;
 

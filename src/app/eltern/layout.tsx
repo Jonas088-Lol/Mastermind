@@ -12,23 +12,7 @@ import {
   isSuper,
 } from "@/lib/session";
 import { fetchNotifications } from "@/lib/notifications";
-
-const items: NavItem[] = [
-  { href: "/eltern", label: "Übersicht", icon: "home", exact: true },
-  { href: "/eltern/nachrichten", label: "Nachrichten", icon: "messageSquare" },
-  { href: "/eltern/noten", label: "Noten", icon: "award" },
-  { href: "/eltern/stundenplan", label: "Stundenplan", icon: "calendar" },
-  { href: "/eltern/aufgaben", label: "Aufgaben", icon: "checkSquare" },
-  { href: "/eltern/hausaufgaben", label: "Hausaufgaben", icon: "bookOpen" },
-  { href: "/eltern/abwesenheit", label: "Abwesenheit", icon: "clipboardEdit" },
-  { href: "/eltern/fehlzeiten", label: "Fehlzeiten", icon: "calendarX" },
-  { href: "/eltern/leistungsentwicklung", label: "Leistung", icon: "trendingUp" },
-  { href: "/eltern/elternsprechtag", label: "Sprechtag", icon: "calendarDays" },
-  { href: "/eltern/kalender", label: "Kalender", icon: "calendar" },
-  { href: "/eltern/einwilligungen", label: "Einwilligungen", icon: "fileCheck" },
-  { href: "/eltern/lernfortschritt", label: "Lernfortschritt", icon: "zap" },
-  { href: "/eltern/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
-];
+import { prisma } from "@/lib/db/client";
 
 const bottomItems: NavItem[] = [
   { href: "/eltern/einstellungen", label: "Einstellungen", icon: "settings" },
@@ -53,7 +37,46 @@ export default async function ElternLayout({
   const effective = effectiveRole(session);
   if (effective !== "parent") redirect(ROLE_HOME[effective]);
 
-  const { notifications, unreadCount } = await fetchNotifications(session.userId);
+  const [{ notifications, unreadCount }, unreadMessages] = await Promise.all([
+    fetchNotifications(session.userId),
+    prisma.messageParticipant.findMany({
+      where: { userId: session.userId },
+      select: {
+        lastReadAt: true,
+        thread: {
+          select: {
+            messages: {
+              orderBy: { sentAt: "desc" },
+              take: 1,
+              select: { sentAt: true, senderId: true },
+            },
+          },
+        },
+      },
+    }).then((ps) =>
+      ps.filter((p) => {
+        const last = p.thread.messages[0];
+        return last && last.senderId !== session.userId && (!p.lastReadAt || p.lastReadAt < last.sentAt);
+      }).length
+    ).catch(() => 0),
+  ]);
+
+  const items: NavItem[] = [
+    { href: "/eltern", label: "Übersicht", icon: "home", exact: true },
+    { href: "/eltern/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: unreadMessages > 0 ? String(unreadMessages) : undefined },
+    { href: "/eltern/noten", label: "Noten", icon: "award" },
+    { href: "/eltern/stundenplan", label: "Stundenplan", icon: "calendar" },
+    { href: "/eltern/aufgaben", label: "Aufgaben", icon: "checkSquare" },
+    { href: "/eltern/hausaufgaben", label: "Hausaufgaben", icon: "bookOpen" },
+    { href: "/eltern/abwesenheit", label: "Abwesenheit", icon: "clipboardEdit" },
+    { href: "/eltern/fehlzeiten", label: "Fehlzeiten", icon: "calendarX" },
+    { href: "/eltern/leistungsentwicklung", label: "Leistung", icon: "trendingUp" },
+    { href: "/eltern/elternsprechtag", label: "Sprechtag", icon: "calendarDays" },
+    { href: "/eltern/kalender", label: "Kalender", icon: "calendar" },
+    { href: "/eltern/einwilligungen", label: "Einwilligungen", icon: "fileCheck" },
+    { href: "/eltern/lernfortschritt", label: "Lernfortschritt", icon: "zap" },
+    { href: "/eltern/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
+  ];
 
   return (
     <div className="flex h-screen overflow-hidden bg-surface">

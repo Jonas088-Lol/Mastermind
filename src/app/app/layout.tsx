@@ -54,9 +54,13 @@ export default async function AppLayout({
       },
     }),
     prisma.user.findUnique({ where: { id: session.userId }, select: { coins: true, premiumCoins: true, avatarUrl: true } }),
-    prisma.messageParticipant.count({
-      where: { userId: session.userId, lastReadAt: null },
-    }).catch(() => 0),
+    prisma.messageParticipant.findMany({
+      where: { userId: session.userId },
+      select: { lastReadAt: true, thread: { select: { messages: { orderBy: { sentAt: "desc" }, take: 1, select: { sentAt: true, senderId: true } } } } },
+    }).then((ps) => ps.filter((p) => {
+      const last = p.thread.messages[0];
+      return last && last.senderId !== session.userId && (!p.lastReadAt || p.lastReadAt < last.sentAt);
+    }).length).catch(() => 0),
     getSchoolBranding(session),
     prisma.userConsent.findUnique({ where: { userId: session.userId }, select: { activityTracking: true } }),
     getActiveEvents(),

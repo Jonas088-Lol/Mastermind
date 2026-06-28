@@ -57,4 +57,10 @@ export async function markThreadRead(threadId: string, userId: string) {
   await prisma.messageParticipant
     .update({ where: { threadId_userId: { threadId, userId } }, data: { lastReadAt: new Date() } })
     .catch(() => undefined);
+
+  // Revalidate all nachrichten list pages so the unread badge updates immediately
+  revalidatePath("/app/nachrichten");
+  revalidatePath("/teach/nachrichten");
+  revalidatePath("/eltern/nachrichten");
+  revalidatePath("/admin/nachrichten");
 }
