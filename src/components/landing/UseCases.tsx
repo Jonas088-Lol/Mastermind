@@ -16,6 +16,7 @@ const audiences: {
   tabActive: string;
   tabIdle: string;
   headline: string;
+  subheadline: string;
   points: string[];
 }[] = [
   {
@@ -24,11 +25,13 @@ const audiences: {
     rainbowPos: 0,
     tabActive: "bg-brand/10 text-brand border-b-2 border-brand",
     tabIdle: "text-muted-fg hover:text-fg hover:bg-surface",
-    headline: "Lernen, das wirklich hängen bleibt",
+    headline: "Für Schüler",
+    subheadline: "Nachhaltig statt auswendig lernen.",
     points: [
       "KI-Tutor erklärt jede Aufgabe Schritt für Schritt",
-      "Karteikarten mit Spaced-Repetition für Klausuren",
-      "Streaks und Lerngruppen halten dich am Ball",
+      "Spaced Repetition festigt Wissen langfristig",
+      "Streaks und Belohnungen fördern regelmäßiges Lernen",
+      "Interaktive Übungen fördern selbstständiges Lernen",
     ],
   },
   {
@@ -37,26 +40,28 @@ const audiences: {
     rainbowPos: 2,
     tabActive: "bg-brand/10 text-brand border-b-2 border-brand",
     tabIdle: "text-muted-fg hover:text-fg hover:bg-surface",
-    headline: "Spart stundenlange Arbeit pro Woche",
+    headline: "Für Lehrer",
+    subheadline: "Mehr Zeit für das Wesentliche.",
     points: [
-      "Aufgaben & Klassenarbeiten in Minuten generiert",
-      "Auto-Korrektur-Vorschläge — du behältst die Kontrolle",
-      "Live-Heatmap: Lernstand der Klasse auf einen Blick",
-      "Kommunikation gebündelt — keine unnötigen Extra-Apps",
+      "Aufgaben und Klassenarbeiten in wenigen Minuten erstellen",
+      "Noten, Kompetenzen und Lernstände übersichtlich zusammengeführt",
+      "Kompetenz-Heatmaps schaffen sofortigen Überblick",
+      "KI übernimmt den ersten Korrekturdurchgang",
     ],
   },
   {
-    role: "Schulleitung",
+    role: "Schulverwaltung",
     Icon: Building2,
     rainbowPos: 4,
     tabActive: "bg-brand/10 text-brand border-b-2 border-brand",
     tabIdle: "text-muted-fg hover:text-fg hover:bg-surface",
-    headline: "Volle Kontrolle, sauberes Setup",
+    headline: "Für Schulverwaltungen",
+    subheadline: "Eine Plattform für die gesamte Schule.",
     points: [
-      "Untis-Import in 5 Minuten — nicht in 5 Tagen",
-      "DSGVO-konform aus Deutschland, AVV in 24 h",
-      "SSO mit Microsoft/Google, SCIM-Provisioning",
-      "Reporting für Schulträger und Eltern-Beirat",
+      "Zentrale Steuerung aller Schulprozesse",
+      "Planung, Kommunikation und Verwaltung vereint",
+      "Flexible Rollen- und Rechteverwaltung",
+      "Effiziente Prozesse für den gesamten Schulalltag",
     ],
   },
   {
@@ -65,12 +70,13 @@ const audiences: {
     rainbowPos: 5,
     tabActive: "bg-brand/10 text-brand border-b-2 border-brand",
     tabIdle: "text-muted-fg hover:text-fg hover:bg-surface",
-    headline: "Endlich überblickbar",
+    headline: "Für Eltern",
+    subheadline: "Immer den Überblick behalten.",
     points: [
-      "Eine App für alle Kinder — Noten, Termine, Nachrichten",
-      "Krankmeldung mit zwei Klicks (signiert, prüfbar)",
-      "Push, wenn wirklich was Wichtiges passiert",
-      "Kein Klassen-Chat-Chaos mehr",
+      "Alle Informationen in einer App",
+      "Krankmeldungen in wenigen Klicks übermitteln",
+      "Klare Kommunikation ohne Nachrichtenchaos",
+      "Sprechstunden schnell und unkompliziert vereinbaren",
     ],
   },
 ];
@@ -126,21 +132,23 @@ export function UseCases() {
           <div className="mt-8 mx-auto max-w-3xl">
             <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-sm">
               <div className="flex flex-col sm:flex-row">
-                {/* Left: icon illustration with rainbow gradient */}
+                {/* Left: icon panel with rainbow gradient + Landing-Symboldesign icon */}
                 <div
                   className="flex items-center justify-center sm:w-52 shrink-0 py-10 sm:py-0 rounded-t-3xl sm:rounded-t-none sm:rounded-l-3xl"
                   style={iconPanelStyle(current.rainbowPos)}
                 >
-                  <current.Icon className="size-20 text-white" strokeWidth={1.25} />
+                  <div className="grid size-20 place-items-center rounded-3xl bg-white/20 backdrop-blur-sm">
+                    <current.Icon className="size-10 text-white" strokeWidth={1.5} />
+                  </div>
                 </div>
 
                 {/* Right: content */}
                 <div className="flex flex-col justify-center p-7 sm:p-10">
                   <span className="inline-block self-start rounded-full bg-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-brand">
-                    Für {current.role}
+                    {current.headline}
                   </span>
                   <h3 className="mt-3 text-2xl font-bold tracking-tight">
-                    {current.headline}
+                    {current.subheadline}
                   </h3>
                   <ul className="mt-6 space-y-3">
                     {current.points.map((p) => (
