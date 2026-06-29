@@ -40,10 +40,9 @@ export default async function TeachLayout({
         thread: {
           select: {
             messages: {
-              where: { senderId: { not: session.userId } },
               orderBy: { sentAt: "desc" },
               take: 1,
-              select: { sentAt: true },
+              select: { sentAt: true, senderId: true },
             },
           },
         },
@@ -52,9 +51,11 @@ export default async function TeachLayout({
     getSchoolBranding(session),
   ]);
 
+  // Identical logic to the list page: skip if last message is own, then compare lastReadAt
   const unreadThreadCount = unreadThreads.filter((p) => {
     const lastMsg = p.thread.messages[0];
     if (!lastMsg) return false;
+    if (lastMsg.senderId === session.userId) return false;
     return !p.lastReadAt || p.lastReadAt < lastMsg.sentAt;
   }).length;
 

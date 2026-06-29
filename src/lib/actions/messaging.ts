@@ -51,6 +51,11 @@ export async function sendMessage(formData: FormData) {
   }
 
   revalidatePath(backHref);
+  // Revalidate layout badges for all roles so the unread count stays correct
+  revalidatePath("/app", "layout");
+  revalidatePath("/teach", "layout");
+  revalidatePath("/eltern", "layout");
+  revalidatePath("/admin", "layout");
 }
 
 export async function markThreadRead(threadId: string, userId: string) {
@@ -58,9 +63,13 @@ export async function markThreadRead(threadId: string, userId: string) {
     .update({ where: { threadId_userId: { threadId, userId } }, data: { lastReadAt: new Date() } })
     .catch(() => undefined);
 
-  // Revalidate all nachrichten list pages so the unread badge updates immediately
+  // Revalidate list pages AND their layout segments so the sidebar badge updates immediately
   revalidatePath("/app/nachrichten");
   revalidatePath("/teach/nachrichten");
   revalidatePath("/eltern/nachrichten");
   revalidatePath("/admin/nachrichten");
+  revalidatePath("/app", "layout");
+  revalidatePath("/teach", "layout");
+  revalidatePath("/eltern", "layout");
+  revalidatePath("/admin", "layout");
 }
