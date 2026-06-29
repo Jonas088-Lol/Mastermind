@@ -2476,3 +2476,59 @@ model SchoolWikiEntry {
   @@index([schoolId])
   @@index([authorId])
 }
+
+// ── MasterTask ─────────────────────────────────────────────
+
+model MasterTask {
+  id           String   @id @default(cuid())
+  title        String
+  description  String?
+  subject      String?
+  dueAt        DateTime?
+  // Buchseiten / Material
+  bookName     String?
+  bookPageFrom Int?
+  bookPageTo   Int?
+  exerciseNr   String?  // z.B. "3a, 3b, 4"
+  teacherId    String
+  classId      String
+  schoolId     String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  files      MasterTaskFile[]
+  progress   MasterTaskProgress[]
+
+  @@index([classId])
+  @@index([teacherId])
+  @@index([schoolId])
+}
+
+model MasterTaskFile {
+  id        String   @id @default(cuid())
+  taskId    String
+  task      MasterTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  name      String
+  path      String
+  mimeType  String
+  size      Int
+  createdAt DateTime @default(now())
+
+  @@index([taskId])
+}
+
+model MasterTaskProgress {
+  id             String     @id @default(cuid())
+  taskId         String
+  task           MasterTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  studentId      String
+  status         String     @default("todo") // todo | in_progress | done
+  comment        String?
+  submissionPath String?
+  submissionName String?
+  updatedAt      DateTime   @updatedAt
+
+  @@unique([taskId, studentId])
+  @@index([studentId])
+  @@index([taskId])
+}
