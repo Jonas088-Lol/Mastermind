@@ -36,7 +36,7 @@ export const DLC_FEATURES: DlcFeature[] = [
   { id: "sso",            name: "SSO / Entra ID",      description: "Single Sign-On Integration",         category: "Enterprise",   pricePerMonth: 3.99, enterpriseOnly: true },
 ];
 
-export const DLC_CATEGORIES = Array.from(new Set(DLC_FEATURES.map((f) => f.category)));
+export const DLC_CATEGORIES = Array.from(new Set(DLC_FEATURES.map((f) => f.category))); 
 
 // Features included in Basic plan
 const BASIC_FEATURES = new Set(["karteikarten", "uebungen", "heft", "nachrichten", "vokabeln"]);
