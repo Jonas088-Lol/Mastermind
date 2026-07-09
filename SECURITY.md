@@ -110,3 +110,46 @@ if (!guard.ok) {
 }
 // guard.model is the validated/fallback model name
 ```
+
+---
+
+## Schwachstellen melden (Security Contact)
+
+Sicherheitslücken bitte **vertraulich** melden — nicht als öffentliches Issue:
+- E-Mail: **jonas.schwenk187@gmail.com** (Betreff `SECURITY`)
+- Bitte Beschreibung, Reproduktionsschritte und Impact angeben.
+- Wir bestätigen den Eingang und halten dich über den Fix auf dem Laufenden.
+
+Unterstützte Version: der aktuelle `master`-Branch / die Produktions-Deployment.
+
+## Härtungs-Phasen (Runbooks)
+
+Die schrittweise Server-/App-Härtung ist dokumentiert unter `docs/security/`:
+
+| Phase | Thema | Doku |
+|---|---|---|
+| 1 | Perimeter (SSH, sysctl, ufw-Cloudflare, Origin-444, auditd) | `docs/security/phase1-perimeter.md` |
+| 2 | Layer-7-WAF (ModSecurity DetectionOnly, Rate-Limits, real_ip) | `docs/security/waf-tuning.md`, `docs/security/cloudflare-waf.md` |
+| 3–8 | Redis-Passwort, gitleaks, Fail2ban, Field-Encryption, DB-Rollen | `docs/data-protection.md` |
+| DSGVO | Betroffenenrechte, Consent, Retention | `docs/data-protection.md` |
+| Incident | Reaktionsplan bei Breach | `docs/runbook-incident-response.md` |
+
+## Betroffenenrechte (DSGVO)
+
+- **Selbst-Export (Art. 15/20):** `GET /api/me/export` — jeder Nutzer lädt
+  seine Daten als JSON. Implementierung: `src/lib/privacy/data-subject.ts`.
+- **Löschung (Art. 17):** `deleteOwnAccount` → `eraseUser()` — löscht
+  persönliche Inhalte, anonymisiert aufbewahrungspflichtige Belege.
+- **Retention:** `GET /api/cron/retention` (Cron) — anonymisiert lange inaktive
+  Konten. Default Dry-Run; scharf via `RETENTION_DRY_RUN=false`.
+
+## Setup-Skripte (Server)
+
+| Skript | Zweck |
+|---|---|
+| `scripts/harden-os.sh` | sysctl, auto-updates, auditd, SSH-Config |
+| `scripts/ufw-cloudflare.sh` | 80/443 nur von Cloudflare |
+| `scripts/nginx-cloudflare-realip.sh` | echte Client-IP hinter Cloudflare |
+| `scripts/setup-fail2ban.sh` | dynamisches IP-Banning |
+| `scripts/install-git-hooks.sh` | gitleaks Pre-Commit (lokal, Windows/Linux) |
+| `scripts/backup-db.sh` / `restore-test.sh` | verschlüsselte Backups + Restore-Test |

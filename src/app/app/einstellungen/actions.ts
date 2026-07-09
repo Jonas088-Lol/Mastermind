@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { getSession, invalidateOtherSessions } from "@/lib/session";
 import { hashPassword, verifyPassword } from "@/lib/auth/passwords";
+import { eraseUser } from "@/lib/privacy/data-subject";
 
 export async function updatePref(key: string, formData: FormData) {
   const session = await getSession();
@@ -50,11 +51,9 @@ export async function deleteOwnAccount(formData: FormData) {
   if (!session) return;
   const confirm = formData.get("confirm") as string;
   if (confirm !== "LÖSCHEN") return;
-  await prisma.session.deleteMany({ where: { userId: session.userId } });
-  await prisma.user.update({
-    where: { id: session.userId },
-    data: { email: `deleted_${session.userId}@deleted.invalid`, name: "Gelöschter Nutzer", passwordHash: "" },
-  });
+  // Kaskadierende Löschung + Anonymisierung (Art. 17 DSGVO) über den zentralen
+  // Dienst — löscht persönliche Inhalte, anonymisiert aufbewahrungspflichtige.
+  await eraseUser(session.userId);
   redirect("/login");
 }
 
