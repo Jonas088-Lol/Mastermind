@@ -1,7 +1,7 @@
 import { randomBytes, createHash } from "node:crypto";
 import { cookies, headers } from "next/headers";
 import { signSession, verifySession } from "@/lib/auth/cookies";
-import { verifyPassword } from "@/lib/auth/passwords";
+import { verifyPassword, hashPassword, needsRehash } from "@/lib/auth/passwords";
 import { prisma } from "@/lib/db/client";
 
 export type Role =
@@ -108,7 +108,7 @@ export async function validateCredentials(
   const trimmed = email.trim().toLowerCase();
   const user = await prisma.user.findUnique({
     where: { email: trimmed },
-    select: { email: true, role: true, passwordHash: true },
+    select: { id: true, email: true, role: true, passwordHash: true },
   });
   if (!user) {
     await verifyPassword(password, DUMMY_HASH);
@@ -117,6 +117,15 @@ export async function validateCredentials(
   const ok = await verifyPassword(password, user.passwordHash);
   if (!ok) return null;
   if (!ROLES.includes(user.role as Role)) return null;
+
+  // Passwort-Hash bei Bedarf transparent auf aktuelle Kosten-Parameter heben.
+  if (needsRehash(user.passwordHash)) {
+    const fresh = await hashPassword(password);
+    await prisma.user
+      .update({ where: { id: user.id }, data: { passwordHash: fresh } })
+      .catch(() => undefined);
+  }
+
   return { email: user.email, role: user.role as Role };
 }
 

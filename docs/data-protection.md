@@ -54,8 +54,40 @@ Verbindliche Zuordnung in Code: `src/lib/privacy/classification.ts`.
 
 ## 5. Technische & organisatorische Maßnahmen (TOM, Art. 32) — Kurzstand
 
-- Passwörter: scrypt + timingSafeEqual. Session-Tokens in DB nur SHA-256-gehasht.
+- Passwörter: scrypt (N=32768), versioniert, transparentes Re-Hashing beim
+  Login. Session-Tokens in DB nur SHA-256-gehasht.
+- **Verschlüsselung in transit:** nginx erzwingt HTTPS (HTTP→301), TLS 1.2/1.3,
+  moderne Cipher-Suites, HSTS `max-age=31536000; includeSubDomains; preload`,
+  OCSP-Stapling. Empfehlung: reines TLS 1.3, sobald keine Alt-WebViews mehr
+  bedient werden müssen (`nginx/conf.d/mastermind.conf`).
+- **Verschlüsselung at rest (Feld-Ebene):** `src/lib/privacy/field-encryption.ts`
+  — AES-256-GCM, HKDF-abgeleitete Feldschlüssel, Key-Versionierung/Rotation.
+  Aktiv für `User.twoFactorSecret` und `SsoConfig.clientSecret` (sobald
+  `FIELD_ENCRYPTION_KEYS`/`ACTIVE` gesetzt). Re-Encrypt/Rotation:
+  `scripts/reencrypt-fields.ts`.
+- **Volume-Verschlüsselung (Disk):** ⚖️ mit ZAP-Hosting klären (LUKS auf dem
+  VServer). Feld-Encryption schützt die sensibelsten Spalten unabhängig davon.
+- Interne Verbindungen App↔Postgres↔Redis: privates Docker-Netz, nicht
+  exponiert. Postgres derzeit `sslmode=disable` (intern) — bei getrennten Hosts
+  TLS aktivieren.
 - Rate-Limiting (Redis) auf Login/Registrierung/Reset/AI. HMAC-Gate.
 - Security-Header (CSP, HSTS, X-Frame-Options) via `next.config.ts`.
 - Postgres/Redis nicht öffentlich exponiert, Container non-root.
 - Audit-Log für sicherheitsrelevante Events (`AuditLog`).
+
+### Field-Encryption: Was verschlüsselt wird — und was nicht
+
+Bewusst NUR selten gelesene Geheimnisse (2FA-Secret, SSO-Client-Secret).
+Nicht field-verschlüsselt werden durchsuchbare/häufig gelesene Felder wie
+E-Mail oder Name — dort würde Verschlüsselung Suche/Joins brechen und bringt
+gegenüber Disk- + Transport-Verschlüsselung wenig. Passwörter werden **nie**
+verschlüsselt, sondern gehasht.
+
+### ENV für Field-Encryption
+
+```
+FIELD_ENCRYPTION_KEYS="v1:<base64-32-byte-key>"
+FIELD_ENCRYPTION_ACTIVE="v1"
+```
+Key erzeugen: `node -e "console.log('v1:'+require('crypto').randomBytes(32).toString('base64'))"`
+Rotation: neuen Key `v2:` ergänzen, `ACTIVE=v2` setzen, `reencrypt-fields.cjs --write` laufen lassen, danach `v1` entfernen.

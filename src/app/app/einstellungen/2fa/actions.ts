@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { generateTotpSecret, verifyTotp } from "@/lib/auth/totp";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { TwoFactorSecret } from "@/lib/privacy/field-encryption";
 
 export interface StartSetupResult {
   ok: boolean;
@@ -49,7 +50,7 @@ export async function confirmTwoFactorSetup(formData: FormData) {
 
   await prisma.user.update({
     where: { email: session.email },
-    data: { twoFactor: true, twoFactorSecret: secret },
+    data: { twoFactor: true, twoFactorSecret: TwoFactorSecret.encrypt(secret) },
   });
 
   revalidatePath("/app/einstellungen");
@@ -68,7 +69,7 @@ export async function disableTwoFactor(formData: FormData) {
   if (!user || !user.twoFactor || !user.twoFactorSecret) {
     redirect("/app/einstellungen?error=2fa-not-active");
   }
-  if (!verifyTotp(user.twoFactorSecret, code)) {
+  if (!verifyTotp(TwoFactorSecret.decrypt(user.twoFactorSecret)!, code)) {
     redirect("/app/einstellungen?error=2fa-code-invalid");
   }
 

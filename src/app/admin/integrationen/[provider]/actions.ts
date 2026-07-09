@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { SsoClientSecret } from "@/lib/privacy/field-encryption";
 
 const ALLOWED_PROVIDERS = ["entra", "google"] as const;
 type Provider = (typeof ALLOWED_PROVIDERS)[number];
@@ -27,10 +28,11 @@ export async function saveSsoConfig(provider: Provider, formData: FormData): Pro
 
   if (!clientId || !clientSecret) return;
 
+  const encSecret = SsoClientSecret.encrypt(clientSecret)!;
   await prisma.ssoConfig.upsert({
     where: { schoolId_provider: { schoolId: session.schoolId, provider } },
-    create: { schoolId: session.schoolId, provider, clientId, clientSecret, tenantId, enabled },
-    update: { clientId, tenantId, enabled, ...(clientSecret !== "••••••••" ? { clientSecret } : {}) },
+    create: { schoolId: session.schoolId, provider, clientId, clientSecret: encSecret, tenantId, enabled },
+    update: { clientId, tenantId, enabled, ...(clientSecret !== "••••••••" ? { clientSecret: encSecret } : {}) },
   });
 
   revalidatePath("/admin/integrationen");

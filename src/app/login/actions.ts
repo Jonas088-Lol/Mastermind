@@ -10,6 +10,7 @@ import {
 } from "@/lib/auth/pending-2fa";
 import { consumeToken, createToken } from "@/lib/auth/tokens";
 import { verifyTotp } from "@/lib/auth/totp";
+import { TwoFactorSecret } from "@/lib/privacy/field-encryption";
 import { prisma } from "@/lib/db/client";
 import {
   magicLinkEmail,
@@ -117,7 +118,7 @@ export async function verifyLoginTwoFactor(formData: FormData) {
     redirect("/login?error=2fa-not-active");
   }
 
-  if (!verifyTotp(user.twoFactorSecret, code)) {
+  if (!verifyTotp(TwoFactorSecret.decrypt(user.twoFactorSecret)!, code)) {
     redirect("/login/2fa?error=invalid");
   }
 
