@@ -97,14 +97,21 @@ export async function proxy(req: NextRequest) {
   }
 
   // ── CSRF-Schutz für state-changing API-Requests ──────────────────────────
-  // Cross-Site-Requests mit Cookies (SameSite=Lax deckt Top-Level-Navigation
-  // ab, aber nicht alle Fälle). Wenn ein Origin-Header gesetzt ist und NICHT in
-  // der Allowlist steht, wird die schreibende Anfrage abgelehnt. Webhooks
-  // (Mollie/Resend/Stripe) senden keinen Origin und sind über eigene Secrets
-  // gesichert — sie dürfen ohne Origin passieren.
+  // Ein Same-Origin-Request (die eigene Seite ruft die eigene API) ist nie
+  // CSRF — dafür vergleichen wir den Origin-Host mit dem Host-Header der
+  // Anfrage. Nur wenn der Origin von einem ANDEREN Host kommt UND nicht in der
+  // Allowlist steht, wird die schreibende Anfrage abgelehnt. Webhooks senden
+  // keinen Origin und sind über eigene Secrets gesichert.
   const WRITE_METHODS = new Set(["POST", "PUT", "PATCH", "DELETE"]);
   if (isApi && WRITE_METHODS.has(req.method) && origin) {
-    if (!CORS_ALLOWED.has(origin)) {
+    let sameOrigin = false;
+    try {
+      const originHost = new URL(origin).host;
+      const requestHost = req.headers.get("host") ?? "";
+      sameOrigin = originHost === requestHost;
+    } catch { /* ungültiger Origin-Header → als fremd behandeln */ }
+
+    if (!sameOrigin && !CORS_ALLOWED.has(origin)) {
       return new NextResponse(
         JSON.stringify({ error: "CSRF: Origin nicht erlaubt" }),
         { status: 403, headers: { "Content-Type": "application/json" } }
