@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { auditLog } from "@/lib/audit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -93,6 +94,13 @@ export async function GET() {
 
   const csv = [header, ...rows].join("\n");
   const date = new Date().toISOString().slice(0, 10);
+
+  await auditLog({
+    action: "data.export",
+    actorId: session.userId,
+    schoolId,
+    details: { kind: "audit-log-export", rows: rows.length },
+  }).catch(() => undefined);
 
   return new Response(csv, {
     headers: {

@@ -12,7 +12,9 @@ export type AuditAction =
   | "api_token.created"
   | "api_token.revoked"
   | "school.settings_changed"
-  | "exam.tab_switch";
+  | "exam.tab_switch"
+  | "data.export"
+  | "data.deletion_request";
 
 export async function auditLog(opts: {
   action: AuditAction;

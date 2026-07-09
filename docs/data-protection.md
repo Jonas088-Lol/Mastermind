@@ -75,6 +75,24 @@ Verbindliche Zuordnung in Code: `src/lib/privacy/classification.ts`.
 - Postgres/Redis nicht öffentlich exponiert, Container non-root.
 - Audit-Log für sicherheitsrelevante Events (`AuditLog`).
 
+### Datenbank-Sicherheit (Phase 3)
+
+- **Least Privilege:** `db/roles.sql` legt getrennte Rollen an — `mm_migrate`
+  (DDL), `mm_app` (nur DML), `mm_readonly` (nur SELECT). Umstellung: App auf
+  `mm_app`, Migrationen auf `mm_migrate`.
+- **SQL-Injection:** ausgeschlossen — einziger Raw-Query ist `SELECT 1`
+  (Health-Check). Alle anderen Zugriffe parametrisiert über Prisma.
+- **Row-Level Security:** Policy-Skizze in `db/rls-policies.sql` +
+  Kontext-Injektion `src/lib/db/rls-context.ts` (`withRlsContext`). Noch NICHT
+  scharfgeschaltet — erst App-weite Kontext-Übergabe nötig. Defense-in-Depth
+  zusätzlich zur App-Autorisierung.
+- **Backups:** `scripts/backup-db.sh` verschlüsselt mit age
+  (`BACKUP_AGE_RECIPIENT`), Retention über `KEEP_DAYS`. Wöchentlicher
+  Restore-Test `scripts/restore-test.sh`. Backups = PII → gleiche Schutzstufe.
+- **Audit-Trail:** `AuditLog` deckt Rollenänderung, Löschung, 2FA-Reset,
+  Impersonation, Token, **Datenexport** ab. DB-seitig append-only via Trigger
+  (`db/roles.sql`) — UPDATE/DELETE blockiert.
+
 ### Field-Encryption: Was verschlüsselt wird — und was nicht
 
 Bewusst NUR selten gelesene Geheimnisse (2FA-Secret, SSO-Client-Secret).
