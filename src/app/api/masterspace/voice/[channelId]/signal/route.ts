@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
 import { prisma } from "@/lib/db/client";
+import { parseObject, oneOf, str } from "@/lib/security/validate";
 
 export const dynamic = "force-dynamic";
 
@@ -56,19 +57,28 @@ export async function POST(
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  const body = await req.json() as { type: string; to: string; data: unknown };
-  if (!["offer", "answer", "ice"].includes(body.type)) {
-    return NextResponse.json({ error: "Invalid type" }, { status: 400 });
+  const raw = await req.json().catch(() => null);
+  const parsed = parseObject(raw, {
+    type: oneOf(["offer", "answer", "ice"] as const),
+    to: str({ min: 1, max: 64 }),
+  });
+  if (!parsed.ok) {
+    return NextResponse.json({ error: parsed.error }, { status: 400 });
+  }
+  // data ist ein opakes WebRTC-Payload (SDP/ICE) — Größe begrenzen gegen Abuse.
+  const data = (raw as { data?: unknown }).data;
+  if (JSON.stringify(data ?? null).length > 16_000) {
+    return NextResponse.json({ error: "Payload zu groß" }, { status: 413 });
   }
 
   gc();
   const signal: Signal = {
     id: nextId++,
     channelId,
-    type: body.type as Signal["type"],
+    type: parsed.value.type,
     from: session.userId,
-    to: body.to,
-    data: body.data,
+    to: parsed.value.to,
+    data,
     createdAt: Date.now(),
   };
   signals.push(signal);

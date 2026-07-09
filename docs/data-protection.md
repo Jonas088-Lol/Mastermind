@@ -93,6 +93,26 @@ Verbindliche Zuordnung in Code: `src/lib/privacy/classification.ts`.
   Impersonation, Token, **Datenexport** ab. DB-seitig append-only via Trigger
   (`db/roles.sql`) — UPDATE/DELETE blockiert.
 
+### Application-Layer Security (Phase 4)
+
+- **XSS:** eingehende Mails über `sanitize-html.ts` (Phase 0). YouTube-Embeds
+  nur noch mit validierter Video-ID — beliebige URLs werden nicht mehr in
+  iframes eingebettet.
+- **CSRF:** `proxy.ts` lehnt state-changing API-Requests (POST/PUT/PATCH/DELETE)
+  mit fremdem Origin ab (Allowlist). Server Actions haben Next.js' eingebauten
+  Origin-Schutz. Webhooks (kein Origin, eigene Secrets) bleiben erlaubt.
+- **SSRF:** aktuell keine Fläche (Server-Fetches nur an feste Hosts). Guard
+  `src/lib/security/safe-fetch.ts` für künftige nutzergesteuerte URLs —
+  blockt private/link-local IPs, Cloud-Metadata, Nicht-http-Schemata,
+  Auto-Redirects.
+- **Input-Validierung:** dependency-freier Validator `src/lib/security/validate.ts`
+  (`parseObject`/`parseForm`, deny-by-default, Feld-Whitelist). Exemplarisch auf
+  die WebRTC-Signal-Route angewandt.
+- **Mass-Assignment:** geprüft — kein Prisma-Write reicht ganze Request-Bodies
+  durch; überall explizite Feld-Objekte. Kein Handlungsbedarf.
+- **CSP:** `script-src 'unsafe-inline'` bleibt (Next.js braucht es ohne
+  Nonce-Umbau) — bekannte Rest-Schwäche, dokumentiert für späteren Nonce-Umbau.
+
 ### Field-Encryption: Was verschlüsselt wird — und was nicht
 
 Bewusst NUR selten gelesene Geheimnisse (2FA-Secret, SSO-Client-Secret).

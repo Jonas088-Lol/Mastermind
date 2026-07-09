@@ -106,8 +106,8 @@ export default async function TopicPage({ params }: PageParams) {
         ))}
       </div>
 
-      {/* Video Lektion */}
-      {lesson?.videoUrl && (
+      {/* Video Lektion — nur eingebettet, wenn es eine valide YouTube-URL ist */}
+      {lesson?.videoUrl && getYouTubeEmbed(lesson.videoUrl) && (
         <section className="border border-border overflow-hidden">
           <div className="flex items-center gap-2 border-b border-border bg-surface px-5 py-3">
             <Play className="size-4 text-brand" strokeWidth={1.75} />
@@ -115,7 +115,7 @@ export default async function TopicPage({ params }: PageParams) {
           </div>
           <div className="aspect-video w-full">
             <iframe
-              src={getYouTubeEmbed(lesson.videoUrl)}
+              src={getYouTubeEmbed(lesson.videoUrl)!}
               className="h-full w-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -206,10 +206,12 @@ export default async function TopicPage({ params }: PageParams) {
   );
 }
 
-function getYouTubeEmbed(url: string): string {
+// Liefert eine sichere YouTube-nocookie-Embed-URL oder null. Nicht-YouTube-URLs
+// werden NICHT eingebettet (verhindert, dass beliebige URLs in einem iframe
+// landen). Nur die 11-stellige Video-ID wird übernommen.
+function getYouTubeEmbed(url: string): string | null {
   const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([A-Za-z0-9_-]{11})/);
-  if (match) return `https://www.youtube-nocookie.com/embed/${match[1]}`;
-  return url;
+  return match ? `https://www.youtube-nocookie.com/embed/${match[1]}` : null;
 }
 
 function MarkdownContent({ content }: { content: string }) {

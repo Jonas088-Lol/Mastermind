@@ -96,6 +96,22 @@ export async function proxy(req: NextRequest) {
     );
   }
 
+  // ── CSRF-Schutz für state-changing API-Requests ──────────────────────────
+  // Cross-Site-Requests mit Cookies (SameSite=Lax deckt Top-Level-Navigation
+  // ab, aber nicht alle Fälle). Wenn ein Origin-Header gesetzt ist und NICHT in
+  // der Allowlist steht, wird die schreibende Anfrage abgelehnt. Webhooks
+  // (Mollie/Resend/Stripe) senden keinen Origin und sind über eigene Secrets
+  // gesichert — sie dürfen ohne Origin passieren.
+  const WRITE_METHODS = new Set(["POST", "PUT", "PATCH", "DELETE"]);
+  if (isApi && WRITE_METHODS.has(req.method) && origin) {
+    if (!CORS_ALLOWED.has(origin)) {
+      return new NextResponse(
+        JSON.stringify({ error: "CSRF: Origin nicht erlaubt" }),
+        { status: 403, headers: { "Content-Type": "application/json" } }
+      );
+    }
+  }
+
   // Record auth failures (called after failed login — see login actions.ts)
   // The app sets a header x-auth-failed: 1 on 401 responses; we detect it here
   // to feed Layer 3 data without needing a DB query in proxy.
