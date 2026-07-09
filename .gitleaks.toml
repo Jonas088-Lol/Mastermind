@@ -8,8 +8,11 @@ useDefault = true
 
 [[rules]]
 id = "mastermind-session-secret"
-description = "SESSION_SECRET / lange Hex-Secrets"
-regex = '''(?i)(session_secret|gate_pass|cron_secret|field_encryption_keys|redis_password)\s*[:=]\s*['\"]?[A-Za-z0-9+/=_-]{16,}'''
+description = "SESSION_SECRET / lange Hex-Secrets (nur der WERT, nicht der Name)"
+# secretGroup=1 → nur die erfasste Gruppe (der Wert) gilt als Secret, nicht
+# der ganze Match. Mindestens 24 Zeichen, damit kurze Platzhalter durchfallen.
+regex = '''(?i)(?:session_secret|gate_pass|cron_secret|field_encryption_keys|redis_password)\s*[:=]\s*['"]?([A-Za-z0-9+/=_-]{24,})['"]?'''
+secretGroup = 1
 tags = ["secret", "mastermind"]
 
 [[rules]]
@@ -30,4 +33,7 @@ regexes = [
   '''change-me''',
   '''placeholder''',
   '''ewt4qrpqUuuXU2JUVCNQt2ZVJ6CCyYTUnVo3vgG4rjw=''',  # Beispiel-Key in .env.example-Doku
+  # Build-/CI-Platzhalter — bewusst KEINE echten Secrets:
+  '''ci-only-secret-do-not-use-in-prod''',
+  '''build-time-placeholder-32chars!!''',
 ]
