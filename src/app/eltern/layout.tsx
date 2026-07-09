@@ -18,14 +18,6 @@ const bottomItems: NavItem[] = [
   { href: "/eltern/einstellungen", label: "Einstellungen", icon: "settings" },
 ];
 
-const mobileNav: BottomNavItem[] = [
-  { href: "/eltern", label: "Start", icon: "home", exact: true },
-  { href: "/eltern/nachrichten", label: "Nachrichten", icon: "messageSquare" },
-  { href: "/eltern/noten", label: "Noten", icon: "award" },
-  { href: "/eltern/stundenplan", label: "Stundenplan", icon: "calendar" },
-  { href: "/eltern/aufgaben", label: "Aufgaben", icon: "checkSquare" },
-];
-
 export default async function ElternLayout({
   children,
 }: {
@@ -60,6 +52,14 @@ export default async function ElternLayout({
       }).length
     ).catch(() => 0),
   ]);
+
+  const mobileNav: BottomNavItem[] = [
+    { href: "/eltern", label: "Start", icon: "home", exact: true },
+    { href: "/eltern/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: unreadMessages > 0 ? String(unreadMessages) : undefined },
+    { href: "/eltern/noten", label: "Noten", icon: "award" },
+    { href: "/eltern/stundenplan", label: "Stundenplan", icon: "calendar" },
+    { href: "/eltern/aufgaben", label: "Aufgaben", icon: "checkSquare" },
+  ];
 
   const items: NavItem[] = [
     { href: "/eltern", label: "Übersicht", icon: "home", exact: true },

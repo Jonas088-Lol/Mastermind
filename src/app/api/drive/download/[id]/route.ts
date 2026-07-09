@@ -24,12 +24,13 @@ export async function GET(
     return new NextResponse("Forbidden", { status: 403 });
   }
 
-  // Prevent path traversal — path must start with "drive/"
-  if (!file.path.startsWith("drive/")) {
+  // Normalize path — strip any leading slash or "uploads/" prefix, then ensure it starts with "drive/"
+  const normalized = file.path.replace(/^[\\/]+/, "").replace(/^uploads[\\/]/, "");
+  if (!normalized.startsWith("drive/")) {
     return new NextResponse("Invalid path", { status: 400 });
   }
 
-  const abs = join(UPLOAD_DIR, file.path);
+  const abs = join(UPLOAD_DIR, normalized);
   let buffer: Buffer;
   try {
     buffer = await readFile(abs);
@@ -37,7 +38,7 @@ export async function GET(
     return new NextResponse("Datei nicht gefunden", { status: 404 });
   }
 
-  return new NextResponse(buffer as unknown as BodyInit, {
+  return new NextResponse(buffer, {
     headers: {
       "Content-Type": file.mimeType,
       "Content-Disposition": `attachment; filename="${encodeURIComponent(file.name)}"`,

@@ -62,13 +62,14 @@ export default async function TeachNeueNachrichtPage({ searchParams }: PageProps
             id="recipientId"
             name="recipientId"
             required
+            defaultValue={preselectedId ?? ""}
             className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           >
             <option value="">Empfänger auswählen…</option>
             {ROLE_ORDER.filter((r) => byRole.has(r)).map((role) => (
               <optgroup key={role} label={ROLE_LABEL[role] ?? role}>
                 {byRole.get(role)!.map((u) => (
-                  <option key={u.id} value={u.id} selected={u.id === preselectedId}>
+                  <option key={u.id} value={u.id}>
                     {u.name}{u.klasse ? ` (${u.klasse})` : ""}
                   </option>
                 ))}

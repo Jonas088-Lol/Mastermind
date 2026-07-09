@@ -4,9 +4,10 @@ import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { Avatar } from "@/components/ui/avatar";
 import { prisma } from "@/lib/db/client";
-import { sendMessage, markThreadRead } from "@/lib/actions/messaging";
+import { sendMessage } from "@/lib/actions/messaging";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { MarkReadOnMount } from "@/components/app/MarkReadOnMount";
 
 interface Props {
   params: Promise<{ threadId: string }>;
@@ -43,10 +44,10 @@ export default async function TeachThreadPage({ params }: Props) {
   });
   if (!thread) notFound();
 
-  await markThreadRead(threadId, session.userId);
-
   return (
-    <div className="mx-auto flex max-w-4xl flex-col">
+    <>
+      <MarkReadOnMount threadId={threadId} />
+      <div className="mx-auto flex max-w-4xl flex-col">
       <div className="sticky top-0 z-10 flex items-center gap-3 border-b border-border bg-bg px-5 py-4">
         <Link href="/teach/nachrichten" className="text-muted-fg hover:text-fg">
           <ArrowLeft className="size-4" />
@@ -112,5 +113,6 @@ export default async function TeachThreadPage({ params }: Props) {
         </form>
       </div>
     </div>
+    </>
   );
 }

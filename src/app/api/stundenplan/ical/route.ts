@@ -1,20 +1,36 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
-import { getSession } from "@/lib/session";
+import { effectiveRole, getSession } from "@/lib/session";
 
 export async function GET() {
   const session = await getSession();
-  if (!session || !session.classId) {
+  if (!session) {
     return new NextResponse("Unauthorized", { status: 401 });
   }
 
-  const entries = await prisma.timetableEntry.findMany({
-    where: { classId: session.classId },
-    include: {
-      subject: { select: { name: true } },
-      teacher: { select: { name: true } },
-    },
-  });
+  const role = effectiveRole(session);
+
+  // Teachers export the lessons they teach; students/parents export their class's lessons
+  let entries;
+  if (role === "teacher" || role === "admin") {
+    entries = await prisma.timetableEntry.findMany({
+      where: { teacherId: session.userId },
+      include: {
+        subject: { select: { name: true } },
+        teacher: { select: { name: true } },
+      },
+    });
+  } else if (session.classId) {
+    entries = await prisma.timetableEntry.findMany({
+      where: { classId: session.classId },
+      include: {
+        subject: { select: { name: true } },
+        teacher: { select: { name: true } },
+      },
+    });
+  } else {
+    return new NextResponse("Keiner Klasse zugeordnet", { status: 403 });
+  }
 
   // Build iCal format (VCALENDAR)
   // For a weekly repeating timetable, generate VEVENT for each entry for the next 52 weeks

@@ -435,7 +435,7 @@ export const BOSS_INDEX: BossIndexEntry[] = [
 
 const TIER_TO_TITLE_RARITY: Record<BossTier, Title["rarity"]> = {
   common:    "common",
-  uncommon:  "uncommon",
+  uncommon:  "uncommon", 
   rare:      "rare",
   epic:      "epic",
   legendary: "legendary",

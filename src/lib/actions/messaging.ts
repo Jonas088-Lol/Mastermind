@@ -58,9 +58,13 @@ export async function sendMessage(formData: FormData) {
   revalidatePath("/admin", "layout");
 }
 
-export async function markThreadRead(threadId: string, userId: string) {
+export async function markThreadRead(threadId: string, userId?: string) {
+  const session = await getSession();
+  const uid = userId ?? session?.userId;
+  if (!uid) return;
+
   await prisma.messageParticipant
-    .update({ where: { threadId_userId: { threadId, userId } }, data: { lastReadAt: new Date() } })
+    .update({ where: { threadId_userId: { threadId, userId: uid } }, data: { lastReadAt: new Date() } })
     .catch(() => undefined);
 
   // Revalidate list pages AND their layout segments so the sidebar badge updates immediately

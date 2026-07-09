@@ -481,6 +481,7 @@ function VoiceView({
   isSharingScreen,
   isCameraOn,
   cameraError,
+  screenShareError,
   screenStream,
   cameraStream,
   remoteStreams,
@@ -499,6 +500,7 @@ function VoiceView({
   isSharingScreen: boolean;
   isCameraOn: boolean;
   cameraError: string | null;
+  screenShareError: string | null;
   screenStream: MediaStream | null;
   cameraStream: MediaStream | null;
   remoteStreams: Map<string, MediaStream>;
@@ -550,6 +552,12 @@ function VoiceView({
       {cameraError && (
         <div className="shrink-0 border-b border-danger/20 bg-danger/10 px-4 py-2">
           <p className="text-xs font-medium text-danger">{cameraError}</p>
+        </div>
+      )}
+
+      {screenShareError && (
+        <div className="shrink-0 border-b border-danger/20 bg-danger/10 px-4 py-2">
+          <p className="text-xs font-medium text-danger">{screenShareError}</p>
         </div>
       )}
 
@@ -1179,6 +1187,7 @@ export function MasterSpaceModal() {
   const [isSharingScreen, setIsSharingScreen] = useState(false);
   const [isCameraOn, setIsCameraOn] = useState(false);
   const [cameraError, setCameraError] = useState<string | null>(null);
+  const [screenShareError, setScreenShareError] = useState<string | null>(null);
   const [screenStream, setScreenStream] = useState<MediaStream | null>(null);
   const [cameraStream, setCameraStream] = useState<MediaStream | null>(null);
 
@@ -1189,15 +1198,15 @@ export function MasterSpaceModal() {
   const localAudioRef   = useRef<MediaStream | null>(null);
   const cameraStreamRef = useRef<MediaStream | null>(null);
   const screenStreamRef = useRef<MediaStream | null>(null);
-  const peersRef        = useRef<Map<string, RTCPeerConnection>>(new Map());
+  const peersRef        = useRef<Map<string, { pc: RTCPeerConnection; chanId: string }>>(new Map());
   const signalAfterRef  = useRef<number>(0);
   const signalPollRef   = useRef<ReturnType<typeof setInterval> | null>(null);
   const myIdRef         = useRef<string>("");
   const voiceChannelIdRef = useRef<string | null>(null);
-  const isDeafRef       = useRef<boolean>(false);
+  const isDeafRef       = useRef<boolean>(isDeaf);
   // Stable function refs so interval callbacks never capture stale closures
   const rtcFnRef = useRef<{
-    createPeer: (uid: string, chanId: string) => RTCPeerConnection;
+    createPeer: (uid: string, chanId: string) => { pc: RTCPeerConnection; chanId: string };
     sendOffer:  (uid: string, chanId: string) => Promise<void>;
     handleSignals: (chanId: string) => Promise<void>;
     closeAllPeers: () => void;
@@ -1239,9 +1248,9 @@ export function MasterSpaceModal() {
       }).catch(() => null);
     }
 
-    function createPeer(remoteUserId: string, chanId: string): RTCPeerConnection {
+    function createPeer(remoteUserId: string, chanId: string): { pc: RTCPeerConnection; chanId: string } {
       // Close any existing connection to this peer
-      peersRef.current.get(remoteUserId)?.close();
+      peersRef.current.get(remoteUserId)?.pc.close();
 
       const pc = new RTCPeerConnection(STUN);
 
@@ -1284,11 +1293,19 @@ export function MasterSpaceModal() {
           audioEl.srcObject = new MediaStream([t]);
           audioEl.autoplay = true;
           audioEl.muted = isDeafRef.current;
+          audioEl.setAttribute("data-rtc", "true");
           // Store so we can mute/unmute on deaf toggle
           // key: remoteUserId + track.id
           (audioEl as HTMLAudioElement & { _rtcKey?: string })._rtcKey = `${remoteUserId}:${t.id}`;
           document.body.appendChild(audioEl);
           audioEl.play().catch(() => null);
+
+          // Clean up this audio element when the track ends (peer disconnected)
+          t.onended = () => {
+            audioEl.pause();
+            audioEl.srcObject = null;
+            audioEl.remove();
+          };
         }
       };
 
@@ -1313,12 +1330,12 @@ export function MasterSpaceModal() {
         if (pc.connectionState === "failed") pc.restartIce();
       };
 
-      peersRef.current.set(remoteUserId, pc);
-      return pc;
+      peersRef.current.set(remoteUserId, { pc, chanId });
+      return { pc, chanId };
     }
 
     async function sendOffer(remoteUserId: string, chanId: string) {
-      const pc = createPeer(remoteUserId, chanId);
+      const { pc } = createPeer(remoteUserId, chanId);
       try {
         const offer = await pc.createOffer();
         await pc.setLocalDescription(offer);
@@ -1340,9 +1357,10 @@ export function MasterSpaceModal() {
         if (sig.id > signalAfterRef.current) signalAfterRef.current = sig.id;
 
         if (sig.type === "offer") {
-          let pc = peersRef.current.get(sig.from);
+          let entry = peersRef.current.get(sig.from);
+          let pc = entry?.pc;
           if (!pc || pc.signalingState === "closed") {
-            pc = createPeer(sig.from, chanId);
+            pc = createPeer(sig.from, chanId).pc;
           }
           try {
             await pc.setRemoteDescription(new RTCSessionDescription(sig.data as RTCSessionDescriptionInit));
@@ -1352,7 +1370,7 @@ export function MasterSpaceModal() {
           } catch { /* ignore races */ }
 
         } else if (sig.type === "answer") {
-          const pc = peersRef.current.get(sig.from);
+          const pc = peersRef.current.get(sig.from)?.pc;
           if (pc && pc.signalingState === "have-local-offer") {
             await pc.setRemoteDescription(
               new RTCSessionDescription(sig.data as RTCSessionDescriptionInit)
@@ -1360,7 +1378,7 @@ export function MasterSpaceModal() {
           }
 
         } else if (sig.type === "ice") {
-          const pc = peersRef.current.get(sig.from);
+          const pc = peersRef.current.get(sig.from)?.pc;
           if (pc && pc.remoteDescription) {
             await pc.addIceCandidate(
               new RTCIceCandidate(sig.data as RTCIceCandidateInit)
@@ -1371,7 +1389,7 @@ export function MasterSpaceModal() {
     }
 
     function closeAllPeers() {
-      for (const pc of peersRef.current.values()) pc.close();
+      for (const { pc } of peersRef.current.values()) pc.close();
       peersRef.current.clear();
       // Remove all hidden audio elements
       document.querySelectorAll("audio[data-rtc]").forEach((el) => el.remove());
@@ -1382,18 +1400,34 @@ export function MasterSpaceModal() {
     }
 
     // Add a new track to all existing peer connections (triggers renegotiation)
-    function addTrackToPeers(track: MediaStreamTrack, stream: MediaStream) {
-      for (const pc of peersRef.current.values()) {
+    async function addTrackToPeers(track: MediaStreamTrack, stream: MediaStream) {
+      for (const [remoteUserId, { pc, chanId }] of peersRef.current) {
         const alreadyAdded = pc.getSenders().some((s) => s.track?.id === track.id);
         if (!alreadyAdded) pc.addTrack(track, stream);
+        // Only the offerer (lower userId) triggers renegotiation
+        if (pc.signalingState === "stable" && myIdRef.current < remoteUserId) {
+          try {
+            const offer = await pc.createOffer();
+            await pc.setLocalDescription(offer);
+            await postSignal(chanId, remoteUserId, "offer", pc.localDescription);
+          } catch { /* ignore races */ }
+        }
       }
     }
 
-    // Remove a track from all existing peer connections
-    function removeTrackFromPeers(track: MediaStreamTrack) {
-      for (const pc of peersRef.current.values()) {
+    // Remove a track from all existing peer connections (triggers renegotiation)
+    async function removeTrackFromPeers(track: MediaStreamTrack) {
+      for (const [remoteUserId, { pc, chanId }] of peersRef.current) {
         const sender = pc.getSenders().find((s) => s.track?.id === track.id);
         if (sender) pc.removeTrack(sender);
+        // Only the offerer (lower userId) triggers renegotiation
+        if (pc.signalingState === "stable" && myIdRef.current < remoteUserId) {
+          try {
+            const offer = await pc.createOffer();
+            await pc.setLocalDescription(offer);
+            await postSignal(chanId, remoteUserId, "offer", pc.localDescription);
+          } catch { /* ignore races */ }
+        }
       }
     }
 
@@ -1538,8 +1572,8 @@ export function MasterSpaceModal() {
       for (const uid of knownPeersRef.current) {
         if (!(data.participants ?? []).some((p) => p.userId === uid)) {
           knownPeersRef.current.delete(uid);
-          const pc = peersRef.current.get(uid);
-          if (pc) { pc.close(); peersRef.current.delete(uid); }
+          const entry = peersRef.current.get(uid);
+          if (entry) { entry.pc.close(); peersRef.current.delete(uid); }
           setRemoteStreams((prev) => { const m = new Map(prev); m.delete(uid); return m; });
         }
       }
@@ -1758,15 +1792,17 @@ export function MasterSpaceModal() {
       }
       setScreenStream(null);
       setIsSharingScreen(false);
+      setScreenShareError(null);
       await setScreenShareModal(voiceChannelId, false);
     } else {
       if (!navigator.mediaDevices?.getDisplayMedia) {
-        setCameraError("Bildschirmübertragung ist auf diesem Gerät nicht verfügbar.");
+        setScreenShareError("Bildschirmübertragung ist auf diesem Gerät nicht verfügbar.");
         return;
       }
+      setScreenShareError(null);
       try {
         const stream = await navigator.mediaDevices.getDisplayMedia({
-          video: { width: { max: 1920 }, height: { max: 1080 }, frameRate: { max: 30 } },
+          video: true,
           audio: false,
         });
         // Push tracks to all existing peer connections (triggers renegotiation)
@@ -1808,7 +1844,7 @@ export function MasterSpaceModal() {
           return;
         }
         const stream = await navigator.mediaDevices.getUserMedia({
-          video: { width: { max: 1920 }, height: { max: 1080 }, frameRate: { max: 30 } },
+          video: { facingMode: "user" },
           audio: false,
         });
         // Push camera tracks to all existing peers
@@ -2201,6 +2237,7 @@ export function MasterSpaceModal() {
                   isSharingScreen={isSharingScreen}
                   isCameraOn={isCameraOn}
                   cameraError={cameraError}
+                  screenShareError={screenShareError}
                   screenStream={screenStream}
                   cameraStream={cameraStream}
                   remoteStreams={remoteStreams}
