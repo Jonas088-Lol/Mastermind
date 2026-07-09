@@ -113,7 +113,6 @@ export default async function AppLayout({
     { href: "/app/fehlzeiten",     label: "Fehlzeiten",    icon: "calendarX"     },
     { href: "/app/nachrichten",    label: "Nachrichten",   icon: "messageSquare", badge: unreadThreads > 0 ? String(unreadThreads) : undefined },
     { href: "/app/drive",          label: "Drive",          icon: "hardDrive"     },
-    { href: "/app/canva",          label: "Canva",          icon: "pencil"        },
     { href: "/app/lernzettel",     label: "Lernzettel",     icon: "bookOpen"      },
     { href: "/app/masterspace",    label: "MasterSpace",   icon: "compass",  modal: "masterspace" },
     // ── Gamification ─────────────────────────────────

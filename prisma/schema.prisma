@@ -2444,21 +2444,6 @@ model DriveFile {
   @@index([schoolId])
 }
 
-// ── Canva Einbettungen ─────────────────────────────────────
-
-model CanvaEmbed {
-  id        String   @id @default(cuid())
-  title     String
-  embedUrl  String
-  userId    String
-  schoolId  String?
-  isPublic  Boolean  @default(false)
-  createdAt DateTime @default(now())
-
-  @@index([userId])
-  @@index([schoolId])
-}
-
 // ── Schulinterne Lernzettel (Wiki) ────────────────────────
 
 model SchoolWikiEntry {
