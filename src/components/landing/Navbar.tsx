@@ -96,7 +96,7 @@ export function Navbar() {
             </Link>
             <Button
               size="sm"
-              className="hidden bg-brand text-brand-fg hover:bg-brand-dark sm:inline-flex"
+              className="pastel-cta hidden sm:inline-flex"
             >
               Kostenlos testen
             </Button>
@@ -159,7 +159,7 @@ export function Navbar() {
             </Link>
             <Button
               size="lg"
-              className="w-full bg-brand text-brand-fg hover:bg-brand-dark"
+              className="pastel-cta w-full"
               onClick={() => setOpen(false)}
             >
               Kostenlos testen

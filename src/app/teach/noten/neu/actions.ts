@@ -18,6 +18,7 @@ export async function saveGrade(formData: FormData): Promise<void> {
   const classSlug = (formData.get("classSlug") as string | null)?.trim() ?? "";
   const rawValue = (formData.get("value") as string | null)?.trim() ?? "";
   const type = (formData.get("type") as string | null)?.trim() ?? "test";
+  const topic = (formData.get("topic") as string | null)?.trim() || null;
   const comment = (formData.get("comment") as string | null)?.trim() || null;
   const dateStr = (formData.get("date") as string | null)?.trim() ?? "";
 
@@ -55,6 +56,7 @@ export async function saveGrade(formData: FormData): Promise<void> {
       value,
       weight: 1.0,
       type,
+      topic,
       comment,
       date,
     },

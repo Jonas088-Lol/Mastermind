@@ -31,7 +31,7 @@ export function Cta() {
           <div className="flex flex-col items-center gap-3 sm:flex-row">
             <Button
               size="lg"
-              className="w-full bg-brand text-brand-fg hover:bg-brand-dark sm:w-auto"
+              className="pastel-cta w-full sm:w-auto"
             >
               Pilot anfragen
               <ArrowRight className="size-4" />

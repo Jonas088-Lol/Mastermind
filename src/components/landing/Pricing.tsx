@@ -79,15 +79,15 @@ export function Pricing() {
             >
             <article
               className={cn(
-                "relative flex flex-col flex-1 rounded-2xl border p-7 transition-[box-shadow,border-color] duration-200",
+                "relative flex flex-col flex-1 rounded-2xl p-7 transition-[box-shadow,border-color] duration-200",
                 p.highlight
-                  ? "border-brand bg-bg shadow-lg ring-1 ring-brand/20"
-                  : "border-border bg-bg shadow-sm hover:shadow-md hover:border-border-strong"
+                  ? "pastel-frame bg-bg shadow-lg"
+                  : "border border-border bg-bg shadow-sm hover:shadow-md hover:border-border-strong"
               )}
-              style={p.highlight ? { boxShadow: "var(--shadow-brand)" } : { boxShadow: "var(--shadow-sm)" }}
+              style={p.highlight ? { boxShadow: "0 8px 30px rgba(140, 210, 225, 0.25)" } : { boxShadow: "var(--shadow-sm)" }}
             >
               {p.highlight && (
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-brand px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+                <span className="pastel-badge absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-wider">
                   Empfohlen
                 </span>
               )}
@@ -123,7 +123,7 @@ export function Pricing() {
               </ul>
 
               <Button
-                className="mt-7 w-full"
+                className={cn("mt-7 w-full", p.highlight && "pastel-cta")}
                 variant={p.highlight ? "primary" : "secondary"}
                 size="lg"
               >

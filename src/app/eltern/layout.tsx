@@ -67,6 +67,7 @@ export default async function ElternLayout({
     { href: "/eltern/noten", label: "Noten", icon: "award" },
     { href: "/eltern/stundenplan", label: "Stundenplan", icon: "calendar" },
     { href: "/eltern/aufgaben", label: "Aufgaben", icon: "checkSquare" },
+    { href: "/eltern/uebungen", label: "Übungen", icon: "brain" },
     { href: "/eltern/hausaufgaben", label: "Hausaufgaben", icon: "bookOpen" },
     { href: "/eltern/abwesenheit", label: "Abwesenheit", icon: "clipboardEdit" },
     { href: "/eltern/fehlzeiten", label: "Fehlzeiten", icon: "calendarX" },

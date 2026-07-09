@@ -12,6 +12,7 @@ export async function saveBulkGrades(formData: FormData): Promise<void> {
   const subjectId = formData.get("subjectId") as string;
   const classId = formData.get("classId") as string;
   const gradeType = (formData.get("gradeType") as string) || "test";
+  const topic = (formData.get("topic") as string | null)?.trim() || null;
   const dateStr = formData.get("date") as string;
   const date = dateStr ? new Date(dateStr) : new Date();
 
@@ -55,6 +56,7 @@ export async function saveBulkGrades(formData: FormData): Promise<void> {
           value,
           weight: 1.0,
           type: gradeType,
+          topic,
           date,
           comment: null,
         },

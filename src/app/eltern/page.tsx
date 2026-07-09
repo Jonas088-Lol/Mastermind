@@ -221,6 +221,8 @@ export default async function ElternPage({ searchParams }: PageProps) {
           icon={GraduationCap}
           tone="text-brand"
           suffix="alle Fächer"
+          href="/eltern/noten/verlauf"
+          hrefLabel="Verlauf ansehen"
         />
         <Stat
           label="Anwesenheit"
@@ -491,12 +493,16 @@ function Stat({
   icon: Icon,
   tone,
   suffix,
+  href,
+  hrefLabel,
 }: {
   label: string;
   value: string;
   icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
   tone: string;
   suffix: string;
+  href?: string;
+  hrefLabel?: string;
 }) {
   return (
     <div className="bg-bg p-5">
@@ -506,6 +512,11 @@ function Stat({
       </div>
       <p className="mt-3 font-mono text-3xl font-bold tracking-tight">{value}</p>
       <p className="mt-1 text-xs text-muted-fg">{suffix}</p>
+      {href && (
+        <Link href={href} className="mt-1.5 inline-block text-xs font-medium text-brand hover:underline">
+          {hrefLabel ?? "Mehr"}
+        </Link>
+      )}
     </div>
   );
 }

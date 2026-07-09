@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { TrendingUp } from "lucide-react";
 import { redirect } from "next/navigation";
+import { buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
@@ -48,9 +51,18 @@ export default async function ElternNotenPage() {
 
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-10">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schule</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Noten</h1>
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schule</p>
+          <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Noten</h1>
+        </div>
+        <Link
+          href="/eltern/noten/verlauf"
+          className={buttonVariants({ variant: "outline", size: "sm" })}
+        >
+          <TrendingUp className="size-3.5" />
+          Notenverlauf
+        </Link>
       </header>
 
       {links.length === 0 && (

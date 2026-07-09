@@ -109,13 +109,22 @@ export default async function NotenPage() {
             {best && <> · Bestes Fach: {best.subject.name}</>}
           </p>
         </div>
-        <Link
-          href="/app/noten/zeugnis"
-          className={buttonVariants({ variant: "outline", size: "sm" })}
-        >
-          <Download className="size-3.5" />
-          Zeugnis-Vorschau
-        </Link>
+        <div className="flex flex-wrap gap-2">
+          <Link
+            href="/app/noten/verlauf"
+            className={buttonVariants({ variant: "outline", size: "sm" })}
+          >
+            <TrendingUp className="size-3.5" />
+            Notenverlauf
+          </Link>
+          <Link
+            href="/app/noten/zeugnis"
+            className={buttonVariants({ variant: "outline", size: "sm" })}
+          >
+            <Download className="size-3.5" />
+            Zeugnis-Vorschau
+          </Link>
+        </div>
       </header>
 
       {subjects.length === 0 && (

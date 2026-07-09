@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Download, LayoutList, Plus, Trash2 } from "lucide-react";
+import { ArrowRight, Download, LayoutList, Plus, Trash2, TrendingUp } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
@@ -83,7 +83,14 @@ export default async function TeachNotenPage() {
           <h1 className="mt-1 text-3xl font-bold tracking-tight">Noten</h1>
           <p className="mt-1 text-sm text-muted-fg">{grades.length} Einträge insgesamt</p>
         </div>
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex shrink-0 flex-wrap items-center gap-2">
+          <Link
+            href="/teach/noten/verlauf"
+            className="flex items-center gap-2 border border-border px-4 py-2 text-sm font-medium text-muted-fg transition-colors hover:border-fg/30 hover:text-fg"
+          >
+            <TrendingUp className="size-4" />
+            Verlauf
+          </Link>
           <Link
             href="/teach/noten/bulk"
             className="flex items-center gap-2 border border-border px-4 py-2 text-sm font-medium text-muted-fg transition-colors hover:border-fg/30 hover:text-fg"

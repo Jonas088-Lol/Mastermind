@@ -51,8 +51,7 @@ export function Pilot() {
                 href="/onboarding"
                 className={buttonVariants({
                   size: "lg",
-                  className:
-                    "mt-8 w-full sm:w-auto bg-brand text-brand-fg hover:bg-brand-dark",
+                  className: "pastel-cta mt-8 w-full sm:w-auto",
                 })}
               >
                 Pilotphase starten

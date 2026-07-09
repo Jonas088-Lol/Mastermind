@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { TeacherExerciseCard, type TeacherExerciseItem } from "./TeacherExerciseCard";
 
 export const metadata: Metadata = { title: "Übungen" };
 
@@ -42,6 +43,33 @@ export default async function UebungenPage() {
     progressMap[row.topicId] = row._count.topicId;
   }
 
+  // Aufgaben der eigenen Lehrkräfte für die Klasse des Schülers
+  const student = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: { classId: true },
+  });
+  const teacherExercises: TeacherExerciseItem[] = student?.classId
+    ? (
+        await prisma.teacherExercise.findMany({
+          where: { classId: student.classId },
+          include: {
+            teacher: { select: { name: true } },
+            completions: { where: { studentId: session.userId }, select: { id: true } },
+          },
+          orderBy: { createdAt: "desc" },
+        })
+      ).map((ex) => ({
+        id: ex.id,
+        title: ex.title,
+        description: ex.description,
+        subject: ex.subject,
+        topic: ex.topic,
+        teacherName: ex.teacher.name,
+        createdAt: ex.createdAt.toISOString(),
+        done: ex.completions.length > 0,
+      }))
+    : [];
+
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-8">
       <header>
@@ -53,6 +81,16 @@ export default async function UebungenPage() {
           Lerne mit interaktiven Aufgaben — wähle ein Fach und dann eine Klassenstufe.
         </p>
       </header>
+
+      {/* Aufgaben der Lehrkräfte — über den vorgefertigten Übungen */}
+      {teacherExercises.length > 0 && (
+        <section className="flex flex-col gap-3">
+          <h2 className="text-lg font-bold">Aufgaben deiner Lehrkräfte</h2>
+          {teacherExercises.map((ex) => (
+            <TeacherExerciseCard key={ex.id} exercise={ex} />
+          ))}
+        </section>
+      )}
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {SUBJECTS.map((s) => {

@@ -63,16 +63,14 @@ export function Hero({ loggedInName = null }: { loggedInName?: string | null }) 
               <div className="animate-fade-in animate-delay-300 mt-10 flex flex-col gap-3 sm:flex-row">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto border-0 text-gray-900 font-bold hover:opacity-90"
-                  style={{ background: "linear-gradient(-45deg, #6EE7B7 0%, #93C5FD 100%)" }}
+                  className="pastel-cta w-full font-bold sm:w-auto"
                 >
                   Schule kostenlos testen
                   <ArrowRight className="size-4" />
                 </Button>
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto border-0 text-gray-900 font-bold hover:opacity-90"
-                  style={{ background: "linear-gradient(-45deg, #6EE7B7 0%, #93C5FD 100%)" }}
+                  className="pastel-cta w-full font-bold sm:w-auto"
                 >
                   30-Min-Demo buchen
                 </Button>

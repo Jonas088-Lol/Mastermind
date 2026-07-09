@@ -113,6 +113,15 @@ export default async function BulkNotenPage({ searchParams }: PageProps) {
                 className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
               />
             </div>
+            <div className="flex flex-col gap-1.5 sm:col-span-2">
+              <label className="text-sm font-semibold">Thema <span className="font-normal text-muted-fg">(optional — Basis für die Kompetenz-Heatmap)</span></label>
+              <input
+                name="topic"
+                type="text"
+                placeholder="z. B. Bruchrechnung"
+                className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-2">

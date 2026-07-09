@@ -18,6 +18,7 @@ import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { CompetenceHeatmap } from "@/components/grades/CompetenceHeatmap";
 
 export const metadata: Metadata = { title: "Kompetenzen" };
 
@@ -121,6 +122,55 @@ export default async function KompetenzenPage() {
   const totalStudents = [...new Set(unique.flatMap((t) => t.class.students.map((s) => s.id)))].length;
   const atRiskCount = rows.filter((r) => r.avgPct < 50).length;
 
+  // ── Themen-Heatmap: Noten mit Thema → Kompetenz pro Schüler und Thema ──
+  const topicGrades = await prisma.grade.findMany({
+    where: {
+      teacherId: session.userId,
+      topic: { not: null },
+      student: { classId: { in: classIds } },
+    },
+    select: {
+      value: true,
+      topic: true,
+      student: { select: { id: true, name: true, classId: true } },
+    },
+  });
+
+  const heatmapsByClass = classIds
+    .map((classId) => {
+      const className = unique.find((t) => t.classId === classId)?.class.name ?? "?";
+      const classGrades = topicGrades.filter((g) => g.student.classId === classId);
+      const topics = [...new Set(classGrades.map((g) => g.topic!))].sort();
+      const studentMap = new Map<string, string>();
+      for (const g of classGrades) studentMap.set(g.student.id, g.student.name);
+
+      const heatRows = [...studentMap.entries()]
+        .sort((a, b) => a[1].localeCompare(b[1]))
+        .map(([studentId, name]) => ({
+          label: name,
+          cells: topics.map((topic) => {
+            const vals = classGrades
+              .filter((g) => g.student.id === studentId && g.topic === topic)
+              .map((g) => g.value);
+            return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+          }),
+        }));
+
+      // Klassen-Durchschnitt als erste Zeile
+      if (heatRows.length > 0) {
+        heatRows.unshift({
+          label: "Ø Klasse",
+          cells: topics.map((topic) => {
+            const vals = classGrades.filter((g) => g.topic === topic).map((g) => g.value);
+            return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+          }),
+        });
+      }
+
+      return { classId, className, topics, heatRows };
+    })
+    .filter((h) => h.topics.length > 0);
+
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
       <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -137,6 +187,21 @@ export default async function KompetenzenPage() {
           </p>
         </div>
       </header>
+
+      {/* Kompetenz-Heatmap pro Klasse — Farben anhand der Themen-Noten */}
+      {heatmapsByClass.length > 0 && (
+        <section className="flex flex-col gap-5">
+          {heatmapsByClass.map((h) => (
+            <div key={h.classId}>
+              <h2 className="mb-2 text-sm font-bold">Klasse {h.className} — Lernstand nach Thema</h2>
+              <CompetenceHeatmap topics={h.topics} rows={h.heatRows} />
+            </div>
+          ))}
+        </section>
+      )}
+      {heatmapsByClass.length === 0 && (
+        <CompetenceHeatmap topics={[]} rows={[]} />
+      )}
 
       {/* Overview stats */}
       <section className="grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-4">

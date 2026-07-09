@@ -17,6 +17,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
+import { CompetenceHeatmap } from "@/components/grades/CompetenceHeatmap";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 
@@ -108,6 +109,23 @@ export default async function StudentProfilePage({ params }: PageParams) {
     }))
     .sort((a, b) => a.avg - b.avg);
 
+  // Kompetenz-Heatmap: Themen-Noten → Fach × Thema
+  const topicGrades = grades.filter((g) => g.topic);
+  const heatTopics = [...new Set(topicGrades.map((g) => g.topic!))].sort();
+  const heatSubjects = [...new Set(topicGrades.map((g) => g.subject.name))].sort();
+  const topicHeatmap = {
+    topics: heatTopics,
+    rows: heatSubjects.map((subjName) => ({
+      label: subjName,
+      cells: heatTopics.map((topic) => {
+        const vals = topicGrades
+          .filter((g) => g.subject.name === subjName && g.topic === topic)
+          .map((g) => g.value);
+        return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+      }),
+    })),
+  };
+
   // Absence counts
   const confirmed = recentAbsences.filter((a) => a.status === "confirmed").length;
   const pending = recentAbsences.filter((a) => a.status === "pending").length;
@@ -175,6 +193,14 @@ export default async function StudentProfilePage({ params }: PageParams) {
           </div>
         ))}
       </section>
+
+      {/* Kompetenz-Heatmap — Themen-Noten dieses Schülers */}
+      {topicHeatmap.topics.length > 0 && (
+        <section>
+          <h2 className="mb-2 text-sm font-bold">Kompetenzen nach Thema</h2>
+          <CompetenceHeatmap topics={topicHeatmap.topics} rows={topicHeatmap.rows} rowHeader="Fach" />
+        </section>
+      )}
 
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Noten nach Fach */}

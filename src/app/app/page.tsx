@@ -6,6 +6,7 @@ import {
   Flame,
   Swords,
   Sparkles,
+  TrendingUp,
   Trophy,
   Zap,
 } from "lucide-react";
@@ -258,6 +259,13 @@ export default async function DashboardPage() {
             {avgGrade ? avgGrade.toFixed(1).replace(".", ",") : "—"}
             <span className="ml-2 align-baseline text-xs font-medium text-muted-fg">alle Fächer</span>
           </p>
+          <Link
+            href="/app/noten/verlauf"
+            className="inline-flex w-fit items-center gap-1 text-xs font-medium text-brand hover:underline"
+          >
+            <TrendingUp className="size-3" />
+            Verlauf ansehen
+          </Link>
         </div>
       </section>
 
