@@ -54,7 +54,9 @@ services:
     image: redis:7-alpine
     container_name: mastermind_redis
     restart: unless-stopped
-    command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru", "--save", ""]
+    # Passwortschutz (Defense in Depth — auch im internen Netz). protected-mode
+    # bleibt an; --save "" = keine Persistenz auf Platte (nur Cache/Rate-Limits).
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD:?REDIS_PASSWORD is required}", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru", "--save", ""]
     volumes:
       - redis_data:/data
     networks:
@@ -67,7 +69,7 @@ services:
         reservations:
           memory: 64M
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -94,7 +96,7 @@ services:
       DATABASE_URL: postgresql://${POSTGRES_USER:-mastermind}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-mastermind}?sslmode=disable&connection_limit=10
 
       # Redis (for rate limiting via Upstash-compatible interface)
-      REDIS_URL: redis://redis:6379
+      REDIS_URL: redis://:${REDIS_PASSWORD}@redis:6379
 
       # Required secrets
       SESSION_SECRET:        ${SESSION_SECRET:?SESSION_SECRET is required}
@@ -176,6 +178,8 @@ services:
       - ./nginx/conf.d:/etc/nginx/templates:ro
       # Cloudflare real_ip ranges (von scripts/nginx-cloudflare-realip.sh generiert)
       - ./nginx/cloudflare-realip.conf:/etc/nginx/cloudflare-realip.conf:ro
+      # nginx-Logs auf den Host, damit Fail2ban sie lesen kann (Phase 8)
+      - /var/log/nginx:/var/log/nginx
       - certbot_webroot:/var/www/certbot:ro
       - certbot_certs:/etc/letsencrypt:ro
       # App downloads (large binaries — served directly by nginx, not proxied through Next.js)

@@ -1,0 +1,33 @@
+# gitleaks-Konfiguration für MasterMind
+# Scannt auf versehentlich committete Secrets. Ergänzt die Standard-Regeln.
+title = "MasterMind gitleaks config"
+
+[extend]
+# Basis: die eingebauten gitleaks-Standardregeln
+useDefault = true
+
+[[rules]]
+id = "mastermind-session-secret"
+description = "SESSION_SECRET / lange Hex-Secrets"
+regex = '''(?i)(session_secret|gate_pass|cron_secret|field_encryption_keys|redis_password)\s*[:=]\s*['\"]?[A-Za-z0-9+/=_-]{16,}'''
+tags = ["secret", "mastermind"]
+
+[[rules]]
+id = "anthropic-key"
+description = "Anthropic API Key"
+regex = '''sk-ant-[A-Za-z0-9_-]{20,}'''
+tags = ["key", "anthropic"]
+
+[allowlist]
+description = "Bekannte Nicht-Secrets (Platzhalter, Beispiele)"
+# .env.example enthält bewusst Platzhalter ("change-me"), keine echten Secrets.
+paths = [
+  '''\.env\.example$''',
+  '''\.gitleaks\.toml$''',
+  '''docs/.*\.md$''',
+]
+regexes = [
+  '''change-me''',
+  '''placeholder''',
+  '''ewt4qrpqUuuXU2JUVCNQt2ZVJ6CCyYTUnVo3vgG4rjw=''',  # Beispiel-Key in .env.example-Doku
+]

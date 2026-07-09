@@ -1,0 +1,47 @@
+# ── Fail2ban Jails für MasterMind ──────────────────────────────────────────
+# Ziel: /etc/fail2ban/jail.local
+#
+# WARUM Fail2ban zusätzlich zu ufw/Cloudflare/nginx-Rate-Limits: Es reagiert
+# DYNAMISCH — wer wiederholt gegen die WAF/Auth läuft, wird auf IP-Ebene
+# temporär komplett gesperrt (nicht nur einzelne Requests gedrosselt).
+#
+# ⚠ Wichtig hinter Cloudflare: die echte Client-IP steht in den nginx-Logs nur,
+# wenn real_ip konfiguriert ist (Phase 2) — sonst würde Fail2ban die
+# Cloudflare-IP bannen. Deshalb liest der nginx-Filter das Log NACH real_ip.
+
+[DEFAULT]
+# Nach Ablauf automatisch entbannen
+bantime  = 1h
+findtime = 10m
+maxretry = 5
+# Backend: systemd-journal falls verfügbar, sonst polling
+backend  = auto
+# Eigene IP(s) nie bannen — deine Admin-IP hier eintragen!
+ignoreip = 127.0.0.1/8 ::1 172.16.0.0/12
+
+# ── SSH-Brute-Force ─────────────────────────────────────────────────────────
+[sshd]
+enabled  = true
+port     = 2222
+maxretry = 3
+bantime  = 2h
+
+# ── nginx: wiederholte 4xx/limit_req-Treffer (Scraping, Fuzzing) ───────────
+[nginx-limit-req]
+enabled  = true
+port     = http,https
+filter   = nginx-limit-req
+logpath  = /var/log/nginx/error.log
+maxretry = 10
+findtime = 5m
+bantime  = 1h
+
+# ── nginx: viele 444/403 (Origin-Scan, Angriffsversuche) ───────────────────
+[nginx-bad-request]
+enabled  = true
+port     = http,https
+filter   = nginx-bad-request
+logpath  = /var/log/nginx/access.log
+maxretry = 15
+findtime = 5m
+bantime  = 2h

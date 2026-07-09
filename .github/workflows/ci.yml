@@ -16,6 +16,20 @@ env:
   SESSION_SECRET: ci-only-secret-do-not-use-in-prod
 
 jobs:
+  # Secret-Scan: eigener Job, damit ein Fund unabhängig vom Build auffällt.
+  gitleaks:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # volle History scannen
+      - name: gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITLEAKS_CONFIG: .gitleaks.toml
+
   lint-and-build:
     name: Lint, Type-Check, Build
     runs-on: ubuntu-latest
