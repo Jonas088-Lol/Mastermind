@@ -124,7 +124,6 @@ export default async function AppLayout({
     { href: "/app/boss/kompendium", label: "Boss-Kompendium",icon: "bookMarked"    },
     { href: "/app/boss/bestiary",   label: "Bestiary",       icon: "barChart3"     },
     { href: "/app/hall-of-fame",    label: "Hall of Fame",   icon: "trophy"        },
-    { href: "/app/lucky-wheel",    label: "Glücksrad",     icon: "zap"           },
     { href: "/app/streaks",        label: "Streaks",       icon: "flame"         },
     { href: "/app/erfolge",        label: "Erfolge",       icon: "star"          },
     { href: "/app/saison",         label: "Saison",        icon: "gift"          },

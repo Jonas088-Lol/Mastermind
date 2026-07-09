@@ -8,7 +8,8 @@ import {
   useTransition,
 } from "react";
 import { Bold, Italic, Underline, Highlighter, AlignLeft, AlignCenter, AlignRight } from "lucide-react";
-import { nanoid } from "@/lib/utils";
+import { nanoid, cn } from "@/lib/utils";
+import { evaluateExpression } from "@/lib/math/evaluate";
 
 // ── Inline formatting toolbar ──────────────────────────────────────
 function FormatToolbar() {
@@ -192,6 +193,7 @@ function BlockRow({
 }: BlockRowProps) {
   const elRef = useRef<HTMLElement>(null);
   const mathInputRef = useRef<HTMLTextAreaElement>(null);
+  const [calcResult, setCalcResult] = useState<{ ok: boolean; text: string } | null>(null);
 
   // Register in parent's focus map
   useEffect(() => {
@@ -274,20 +276,47 @@ function BlockRow({
 
   // Math block
   if (block.type === "math") {
+    function handleCalc() {
+      const r = evaluateExpression(block.content);
+      if (r.ok) {
+        setCalcResult({ ok: true, text: r.value.toLocaleString("de-DE", { maximumFractionDigits: 10 }) });
+      } else {
+        setCalcResult({ ok: false, text: r.error });
+      }
+    }
     return (
       <div className="group relative rounded border border-border bg-surface p-3 my-1">
         <KaTeXBlock latex={block.content} />
         <textarea
           ref={mathInputRef as React.RefObject<HTMLTextAreaElement>}
           value={block.content}
-          onChange={(e) => onUpdate(block.id, e.target.value)}
+          onChange={(e) => { onUpdate(block.id, e.target.value); setCalcResult(null); }}
           onKeyDown={(e) => {
             if (e.key === "Escape") onArrowDown(block.id);
           }}
-          placeholder="LaTeX eingeben, z.B. x^2 + y^2 = r^2"
+          placeholder="LaTeX oder Rechnung, z.B. 2+3*4 oder \frac{10}{2}"
           rows={2}
           className="mt-2 w-full resize-none border-0 border-t border-border bg-transparent pt-2 font-mono text-xs text-muted-fg focus:outline-none focus:ring-0 placeholder:text-muted-fg/50"
         />
+        <div className="mt-2 flex items-center gap-2 border-t border-border pt-2">
+          <button
+            type="button"
+            onClick={handleCalc}
+            className="rounded bg-brand/10 px-2.5 py-1 text-xs font-semibold text-brand transition-colors hover:bg-brand/20"
+          >
+            = Ausrechnen
+          </button>
+          {calcResult && (
+            <span
+              className={cn(
+                "font-mono text-xs",
+                calcResult.ok ? "font-bold text-success" : "text-danger"
+              )}
+            >
+              {calcResult.ok ? `= ${calcResult.text}` : calcResult.text}
+            </span>
+          )}
+        </div>
       </div>
     );
   }

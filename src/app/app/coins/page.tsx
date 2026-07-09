@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowDownLeft, ArrowUpRight, CheckCircle2, Clock, ShoppingBag, TrendingUp, XCircle } from "lucide-react";
+import { ArrowDownLeft, ArrowUpRight, ShoppingBag, TrendingUp } from "lucide-react";
 import { CoinIcon } from "@/components/ui/CoinIcon";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { COIN_REWARDS } from "@/lib/coins";
 import { cn } from "@/lib/utils";
-import { CoinPackButton } from "./CoinPackButton";
 
 export const metadata: Metadata = { title: "Münzen · MasterMind" };
 
@@ -74,54 +73,10 @@ const EARN_WAYS = [
   { reason: "erste_aufgabe_semester", icon: "🎯", label: "Erste Aufgabe im Semester",amount: COIN_REWARDS.erste_aufgabe_semester },
 ] as const;
 
-const COIN_PACKS = [
-  {
-    slug: "coins_100",
-    coins: 100,
-    price: "0,99 €",
-    bonus: null,
-    icon: "🪙",
-    highlight: false,
-    label: "Starter",
-  },
-  {
-    slug: "coins_500",
-    coins: 500,
-    price: "3,99 €",
-    bonus: "+50 Bonus",
-    icon: "💰",
-    highlight: false,
-    label: "Popular",
-  },
-  {
-    slug: "coins_2000",
-    coins: 2000,
-    price: "9,99 €",
-    bonus: "+300 Bonus",
-    icon: "💎",
-    highlight: true,
-    label: "Bestes Angebot",
-  },
-  {
-    slug: "coins_5000",
-    coins: 5000,
-    price: "19,99 €",
-    bonus: "+1000 Bonus",
-    icon: "👑",
-    highlight: false,
-    label: "Whale",
-  },
-] as const;
-
-export default async function CoinsPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ payment?: string }>;
-}) {
+export default async function CoinsPage() {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect(ROLE_HOME[effectiveRole(session)]);
-  const { payment } = await searchParams;
 
   const userId = session.userId;
 
@@ -154,35 +109,6 @@ export default async function CoinsPage({
         </div>
         <TrendingUp className="size-10 text-warning opacity-20" strokeWidth={1} />
       </header>
-
-      {/* Payment status banner */}
-      {payment === "success" && (
-        <div className="flex items-center gap-3 rounded-2xl border border-success/30 bg-success/8 px-5 py-4">
-          <CheckCircle2 className="size-5 shrink-0 text-success" />
-          <div>
-            <p className="font-semibold text-success">Zahlung erfolgreich!</p>
-            <p className="text-sm text-muted-fg">Deine Münzen wurden deinem Konto gutgeschrieben.</p>
-          </div>
-        </div>
-      )}
-      {payment === "pending" && (
-        <div className="flex items-center gap-3 rounded-2xl border border-warning/30 bg-warning/8 px-5 py-4">
-          <Clock className="size-5 shrink-0 text-warning" />
-          <div>
-            <p className="font-semibold text-warning">Zahlung wird verarbeitet</p>
-            <p className="text-sm text-muted-fg">Die Zahlung ist noch nicht abgeschlossen. Deine Münzen werden nach Bestätigung gutgeschrieben.</p>
-          </div>
-        </div>
-      )}
-      {payment === "cancelled" && (
-        <div className="flex items-center gap-3 rounded-2xl border border-danger/30 bg-danger/8 px-5 py-4">
-          <XCircle className="size-5 shrink-0 text-danger" />
-          <div>
-            <p className="font-semibold text-danger">Zahlung abgebrochen</p>
-            <p className="text-sm text-muted-fg">Die Zahlung wurde nicht abgeschlossen. Wähle unten ein Paket, um es erneut zu versuchen.</p>
-          </div>
-        </div>
-      )}
 
       {/* Balance Card */}
       <div className="border border-warning/30 bg-warning/3 p-6">
@@ -235,64 +161,6 @@ export default async function CoinsPage({
                 <p className="truncate text-xs font-medium">{label}</p>
                 <p className="mt-0.5 flex items-center gap-1 text-xs font-bold text-warning">+{amount} <CoinIcon className="size-3" /></p>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Coin Packs */}
-      <section>
-        <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h2 className="text-lg font-bold">Münz-Pakete</h2>
-            <p className="text-xs text-muted-fg">Direkt aufladen — sofort verfügbar</p>
-          </div>
-          <div className="flex flex-wrap items-center gap-1.5">
-            {["Kreditkarte", "PayPal", "Apple Pay", "Google Pay"].map((m) => (
-              <span key={m} className="rounded-full border border-border bg-surface px-2.5 py-1 text-[11px] font-medium text-muted-fg">
-                {m}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {COIN_PACKS.map((pack) => (
-            <div
-              key={pack.coins}
-              className={cn(
-                "relative flex flex-col gap-3 border p-4 transition-colors",
-                pack.highlight
-                  ? "border-warning/50 bg-warning/4"
-                  : "border-border bg-bg",
-              )}
-            >
-              {pack.highlight && (
-                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-warning px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-warning-fg">
-                  {pack.label}
-                </span>
-              )}
-              {!pack.highlight && (
-                <span className="absolute -top-2.5 left-3 whitespace-nowrap rounded bg-surface-2 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-fg border border-border">
-                  {pack.label}
-                </span>
-              )}
-              <div className="flex items-center gap-3 pt-1">
-                <span className="text-3xl leading-none">{pack.icon}</span>
-                <div>
-                  <p className="text-xl font-bold tabular-nums">
-                    {pack.coins.toLocaleString("de-DE")}
-                  </p>
-                  <p className="text-xs text-muted-fg">Münzen</p>
-                </div>
-              </div>
-              {pack.bonus && (
-                <p className="text-xs font-semibold text-success">{pack.bonus}</p>
-              )}
-              <CoinPackButton
-                slug={pack.slug}
-                price={pack.price}
-                highlight={pack.highlight}
-              />
             </div>
           ))}
         </div>
