@@ -1,13 +1,9 @@
 import {
   AlertCircle,
   ArrowRight,
-  GraduationCap,
   Lock,
   Mail,
   ShieldCheck,
-  Sparkles,
-  UserCog,
-  Users,
 } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -16,13 +12,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { BrandLogo } from "@/components/BrandLogo";
 import {
-  ACCOUNTS,
-  DEMO_PASSWORDS,
-  ROLE_LABEL,
-  type Role,
-} from "@/lib/session";
-import {
-  loginAsRole,
   loginWithCredentials,
   requestMagicLink,
 } from "./actions";
@@ -36,24 +25,6 @@ export const metadata: Metadata = {
 interface LoginPageProps {
   searchParams: Promise<{ error?: string; method?: string; sent?: string }>;
 }
-
-const demoTiles: {
-  role: Role;
-  description: string;
-  icon: React.ReactNode;
-  primary?: boolean;
-}[] = [
-  {
-    role: "super",
-    description: "Sieht alles · wechselt jede Sicht im Header",
-    icon: <Sparkles className="size-4" />,
-    primary: true,
-  },
-  { role: "admin", description: "Realschule München", icon: <UserCog className="size-4" /> },
-  { role: "teacher", description: "Mathe · Physik · 4 Klassen", icon: <Users className="size-4" /> },
-  { role: "student", description: "Klasse 9b · Realschule", icon: <GraduationCap className="size-4" /> },
-  { role: "parent", description: "Mutter von Lukas", icon: <Users className="size-4" /> },
-];
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
   const { error, method, sent } = await searchParams;
@@ -206,65 +177,6 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               </Button>
             </form>
           )}
-
-          {/* Demo quick-logins */}
-          <div className="my-6 flex items-center gap-3">
-            <span className="h-px flex-1 bg-border" />
-            <span className="text-[10px] font-bold uppercase tracking-widest text-muted-fg">Demo-Login</span>
-            <span className="h-px flex-1 bg-border" />
-          </div>
-
-          <div className="space-y-2">
-            {demoTiles.map((t) => (
-              <form key={t.role} action={loginAsRole.bind(null, t.role)}>
-                <button
-                  type="submit"
-                  className={cn(
-                    "group flex w-full items-center gap-3 rounded-xl border px-3.5 py-3 text-left transition-all duration-150",
-                    t.primary
-                      ? "border-brand/30 bg-brand/5 hover:border-brand/50 hover:bg-brand/8"
-                      : "border-border bg-bg hover:border-brand/30 hover:bg-surface"
-                  )}
-                >
-                  <span className={cn(
-                    "grid size-9 shrink-0 place-items-center rounded-xl",
-                    t.primary ? "bg-brand text-white" : "bg-surface-2 text-fg"
-                  )}>
-                    {t.icon}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm font-semibold">{ROLE_LABEL[t.role]}</p>
-                      {t.primary && (
-                        <span className="rounded-full bg-brand px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">
-                          Empfohlen
-                        </span>
-                      )}
-                    </div>
-                    <p className="truncate text-xs text-muted-fg">{t.description}</p>
-                  </div>
-                  <ArrowRight className="size-4 text-muted-fg transition-colors group-hover:text-brand" />
-                </button>
-              </form>
-            ))}
-          </div>
-
-          <details className="mt-5 rounded-xl border border-dashed border-border">
-            <summary className="cursor-pointer list-none rounded-xl px-4 py-3 text-xs font-semibold text-muted-fg transition-colors hover:bg-surface">
-              Demo-Zugangsdaten anzeigen
-            </summary>
-            <ul className="divide-y divide-border border-t border-border">
-              {ACCOUNTS.map((a) => (
-                <li key={a.email} className="grid grid-cols-2 gap-2 px-4 py-2 font-mono text-[11px]">
-                  <span className="truncate text-fg">{a.email}</span>
-                  <span className="truncate text-muted-fg">
-                    {DEMO_PASSWORDS[a.email] ?? "—"}
-                    <span className="ml-2 text-[10px] uppercase">{ROLE_LABEL[a.role]}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </details>
 
           <p className="mt-6 text-center text-xs text-muted-fg">
             Mit der Anmeldung akzeptierst du unsere{" "}

@@ -26,7 +26,6 @@ import {
   type Role,
   clearSession,
   effectiveRole,
-  findFirstUserWithRole,
   getSession,
   isSuper,
   setSession,
@@ -133,13 +132,6 @@ export async function verifyLoginTwoFactor(formData: FormData) {
 export async function cancelTwoFactorLogin() {
   await clearPending2FA();
   redirect("/login");
-}
-
-export async function loginAsRole(role: Role) {
-  const account = await findFirstUserWithRole(role);
-  if (!account) throw new Error("Kein Demo-Account für diese Rolle in der DB");
-  await setSession({ email: account.email, realRole: account.role });
-  redirect(ROLE_HOME[account.role]);
 }
 
 export async function switchView(formData: FormData) {

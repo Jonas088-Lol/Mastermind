@@ -54,7 +54,7 @@ RUN if [ -f node_modules/.bin/esbuild ]; then \
 
 # Admin-Setup-Skripte → .cjs (für ersten Login nach frischem DB-Setup)
 RUN if [ -f node_modules/.bin/esbuild ]; then \
-      for s in create-admin purge-demo-accounts; do \
+      for s in create-admin purge-demo-accounts seed-demo-testers; do \
         node_modules/.bin/esbuild scripts/$s.ts \
           --bundle --platform=node --target=node22 --format=cjs \
           --outfile=scripts/$s.cjs --external:@prisma/client || true; \
