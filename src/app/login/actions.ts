@@ -134,6 +134,41 @@ export async function cancelTwoFactorLogin() {
   redirect("/login");
 }
 
+// Demo-Quick-Login: meldet gezielt in einen der demo.*-Wegwerf-Accounts an
+// (KEIN "erster User dieser Rolle" — das könnte echte Konten treffen).
+// Über ENV DISABLE_DEMO_LOGIN=true abschaltbar.
+const DEMO_LOGIN_EMAILS: Record<string, string> = {
+  super:          "demo.super@konvertis.de",
+  admin:          "demo.admin@konvertis.de",
+  rector:         "demo.schulleiter@konvertis.de",
+  vice_rector:    "demo.konrektor@konvertis.de",
+  secretary:      "demo.sekretariat@konvertis.de",
+  teacher:        "demo.lehrer@konvertis.de",
+  student:        "demo.schueler@konvertis.de",
+  parent:         "demo.eltern@konvertis.de",
+  school_company: "demo.traeger@konvertis.de",
+};
+
+export async function loginAsDemoRole(role: string) {
+  if (process.env.DISABLE_DEMO_LOGIN === "true") {
+    redirect("/login?error=demo-disabled");
+  }
+  const email = DEMO_LOGIN_EMAILS[role];
+  if (!email) redirect("/login?error=invalid");
+
+  // Nur einloggen, wenn der Demo-Account wirklich existiert und die Rolle passt.
+  const user = await prisma.user.findUnique({
+    where: { email },
+    select: { role: true },
+  });
+  if (!user || user.role !== role) {
+    redirect("/login?error=demo-missing");
+  }
+
+  await setSession({ email, realRole: user.role as Role });
+  redirect(ROLE_HOME[user.role as Role]);
+}
+
 export async function switchView(formData: FormData) {
   const session = await getSession();
   if (!session) redirect("/login");

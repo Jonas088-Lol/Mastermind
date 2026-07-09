@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { BrandLogo } from "@/components/BrandLogo";
 import {
   loginWithCredentials,
+  loginAsDemoRole,
   requestMagicLink,
 } from "./actions";
 import { cn } from "@/lib/utils";
@@ -25,6 +26,19 @@ export const metadata: Metadata = {
 interface LoginPageProps {
   searchParams: Promise<{ error?: string; method?: string; sent?: string }>;
 }
+
+// Demo-Quick-Login-Kacheln — jede meldet in einen demo.*-Wegwerf-Account an.
+const DEMO_TILES: { role: string; label: string; icon: string }[] = [
+  { role: "super",          label: "Plattform-Admin", icon: "✨" },
+  { role: "admin",          label: "Schul-Admin",     icon: "🏫" },
+  { role: "rector",         label: "Schulleiter",     icon: "🎓" },
+  { role: "vice_rector",    label: "Konrektor",       icon: "🎓" },
+  { role: "secretary",      label: "Sekretariat",     icon: "📋" },
+  { role: "teacher",        label: "Lehrkraft",       icon: "👩‍🏫" },
+  { role: "student",        label: "Schüler",         icon: "🎒" },
+  { role: "parent",         label: "Elternteil",      icon: "👪" },
+  { role: "school_company", label: "Schulträger",     icon: "🏢" },
+];
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {
   const { error, method, sent } = await searchParams;
@@ -127,6 +141,14 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               <p>Zu viele Login-Versuche. Bitte warte ein paar Minuten.</p>
             </div>
           )}
+          {(error === "demo-missing" || error === "demo-disabled") && (
+            <div role="alert" className="mt-5 flex items-start gap-3 rounded-xl border border-warning/30 bg-warning/6 px-4 py-3 text-sm text-warning">
+              <AlertCircle className="mt-0.5 size-4 shrink-0" />
+              <p>{error === "demo-disabled"
+                ? "Demo-Login ist deaktiviert."
+                : "Demo-Accounts noch nicht angelegt. Führe das Seed-Skript aus."}</p>
+            </div>
+          )}
           {(error === "2fa-expired" || error === "2fa-not-active" || error === "2fa-rate-limit") && (
             <div role="alert" className="mt-5 flex items-start gap-3 rounded-xl border border-warning/30 bg-warning/6 px-4 py-3 text-sm text-warning">
               <AlertCircle className="mt-0.5 size-4 shrink-0" />
@@ -177,6 +199,28 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               </Button>
             </form>
           )}
+
+          {/* Demo quick-logins (nur Demo-Wegwerf-Accounts) */}
+          <div className="my-6 flex items-center gap-3">
+            <span className="h-px flex-1 bg-border" />
+            <span className="text-[10px] font-bold uppercase tracking-widest text-muted-fg">Demo-Login</span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+
+          <div className="grid grid-cols-2 gap-2">
+            {DEMO_TILES.map((t) => (
+              <form key={t.role} action={loginAsDemoRole.bind(null, t.role)}>
+                <button
+                  type="submit"
+                  className="flex w-full items-center gap-2.5 rounded-xl border border-border bg-bg px-3 py-2.5 text-left transition-colors hover:border-brand/30 hover:bg-surface"
+                >
+                  <span className="text-lg leading-none">{t.icon}</span>
+                  <span className="min-w-0 flex-1 truncate text-sm font-semibold">{t.label}</span>
+                  <ArrowRight className="size-3.5 shrink-0 text-muted-fg" />
+                </button>
+              </form>
+            ))}
+          </div>
 
           <p className="mt-6 text-center text-xs text-muted-fg">
             Mit der Anmeldung akzeptierst du unsere{" "}
