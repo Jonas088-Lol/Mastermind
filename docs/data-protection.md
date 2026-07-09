@@ -133,6 +133,22 @@ Verbindliche Zuordnung in Code: `src/lib/privacy/classification.ts`.
 - **MFA:** TOTP vorhanden (2FA-Secret jetzt field-verschlüsselt, Phase 2).
   Optional-für-alle; verpflichtend für Lehrer/Admin ist noch nicht erzwungen.
 
+### Secrets Management (Phase 6)
+
+- **ENV-Boot-Validierung:** `src/lib/config/env.ts`, eingebunden via
+  `src/instrumentation.ts` (läuft beim Serverstart, Node-Runtime). In
+  Produktion **Fail-Fast**: Server startet nicht bei fehlendem/unsicherem
+  SESSION_SECRET, Platzhalter-Gate-Passwort, aktivem Demo-Seed oder fehlendem
+  Rate-Limit-Backend. In Dev nur Warnung.
+- **Git-History:** gescannt — keine echten API-Keys/Private-Keys committet,
+  `.env*` war nie im Git. Die alten schwachen Hardcodes (Gate-PW, Seed-PW)
+  existieren in alten Commits, sind aber durch Phase 0/5 entwertet
+  (Gate=HMAC+ENV, Seed blockiert). History-Rewrite optional.
+- **Prod/Staging-Trennung:** dokumentiert in `.env.example` — getrennte
+  Secrets pflicht, kein Prod-Key in Staging.
+- **Rotation:** Field-Encryption-Keys über `scripts/reencrypt-fields.ts`;
+  Session-Secret-Wechsel loggt alle Nutzer aus (akzeptabel).
+
 ### Field-Encryption: Was verschlüsselt wird — und was nicht
 
 Bewusst NUR selten gelesene Geheimnisse (2FA-Secret, SSO-Client-Secret).
