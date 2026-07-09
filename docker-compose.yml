@@ -174,6 +174,8 @@ services:
       # conf.d is mounted as templates/ — nginx image runs envsubst on *.template files
       # and writes the result to /etc/nginx/conf.d/ at startup
       - ./nginx/conf.d:/etc/nginx/templates:ro
+      # Cloudflare real_ip ranges (von scripts/nginx-cloudflare-realip.sh generiert)
+      - ./nginx/cloudflare-realip.conf:/etc/nginx/cloudflare-realip.conf:ro
       - certbot_webroot:/var/www/certbot:ro
       - certbot_certs:/etc/letsencrypt:ro
       # App downloads (large binaries — served directly by nginx, not proxied through Next.js)
