@@ -23,74 +23,82 @@ export const metadata: Metadata = {
 const features = [
   {
     icon: Brain,
+    color: "text-brand bg-brand/10",
     title: "KI-Tutor",
     bullets: [
-      "Personalisierte Erklärungen je nach Wissensstand",
-      "Sofortige Antworten auf Fragen — rund um die Uhr",
-      "Adaptives Frage-Antwort-Training mit Spaced Repetition",
+      "Personalisierte Erklärungen passend zum Lernstand",
+      "Jederzeit sofort verständliche Antworten und Erklärungen",
+      "Jede KI-Anfrage wird pseudonymisiert",
     ],
   },
   {
     icon: ClipboardList,
+    color: "text-purple-500 bg-purple-50 dark:bg-purple-950/30",
     title: "Aufgaben-Management",
     bullets: [
-      "Hausaufgaben, Tests und Projekte in einer Ansicht",
-      "KI-Vorkorrektur spart Lehrkräften bis zu 60 % Zeit",
-      "Automatische Erinnerungen für Schüler vor Abgabeschluss",
+      "Hausaufgaben, Tests und Projekte auf einen Blick",
+      "Automatische Vorkorrekturen entlasten Lehrkräfte",
+      "Automatische Erinnerungen vor jeder Abgabe",
     ],
   },
   {
     icon: BarChart2,
+    color: "text-sky-500 bg-sky-50 dark:bg-sky-950/30",
     title: "Notenübersicht",
     bullets: [
-      "Kompetenz-Heatmap pro Schüler und Lernziel",
-      "Notenentwicklung als Zeitreihe visualisiert",
-      "Export als PDF für Elterngespräche",
+      "Zentrale Übersicht für alle Noten und Bewertungen",
+      "Die Notenentwicklung graphisch auf einen Blick verfolgen",
+      "Kompetenzen übersichtlich visualisieren",
     ],
   },
   {
     icon: Trophy,
-    title: "Gamification — XP, Streaks & Duelle",
+    color: "text-orange-500 bg-orange-50 dark:bg-orange-950/30",
+    title: "Gamification",
     bullets: [
-      "Erfahrungspunkte für jede abgeschlossene Aufgabe",
-      "Tagesstreaks motivieren zu regelmäßigem Lernen",
-      "Klassen-Duelle und Ranglisten für gesunden Wettbewerb",
+      "Fortschritte werden mit Erfahrungspunkten belohnt",
+      "Tagesstreaks fördern regelmäßige Lerngewohnheiten",
+      "Klassen-Duelle fördern Motivation und Teamgeist",
     ],
   },
   {
     icon: BookOpen,
+    color: "text-emerald-500 bg-emerald-50 dark:bg-emerald-950/30",
     title: "Hefte & Karteikarten",
     bullets: [
-      "Block-Editor mit Mathe-Formeln, Tabellen und Zeichnen",
-      "Karteikarten-System mit automatischer Wiederholung",
-      "Hefte pro Fach — direkt mit Übungen verknüpft",
+      "Digitale Hefte für jedes Unterrichtsfach",
+      "Passende Hefteinträge direkt mit Übungen verknüpft",
+      "Intelligente Wiederholungen für nachhaltiges Lernen",
     ],
   },
   {
     icon: Users,
+    color: "text-pink-500 bg-pink-50 dark:bg-pink-950/30",
     title: "Eltern-Kommunikation",
     bullets: [
-      "Krankmeldungen digital mit Unterschrift",
-      "Push-Benachrichtigungen fur neue Aufgaben und Noten",
-      "Elterngesprach-Buchung direkt in der App",
+      "Krankmeldungen in wenigen Klicks übermitteln",
+      "Elterngespräche mit wenigen Klicks online buchen",
+      "Rechtzeitig an wichtige Abgaben erinnert werden",
     ],
   },
   {
     icon: School,
+    color: "text-indigo-500 bg-indigo-50 dark:bg-indigo-950/30",
     title: "Klassenmanagement",
     bullets: [
-      "Stundenplan-Import aus Untis in 5 Minuten",
-      "Digitales Klassenbuch mit Fehlzeiten-Tracking",
-      "Vertretungsplan automatisch synchronisiert",
+      "Stundenpläne flexibel importieren oder erstellen",
+      "Wichtige Informationen mit einem Klick versenden",
+      "Nutzer mit wenigen Klicks einladen",
     ],
   },
   {
     icon: ShieldCheck,
+    color: "text-teal-600 bg-teal-50 dark:bg-teal-950/30",
     title: "DSGVO-konform",
     bullets: [
-      "Hosting ausschließlich auf Servern in Frankfurt am Main",
-      "AVV-Abschluss innerhalb von 24 Stunden",
-      "Kein Tracking, keine Werbung, kein Datenverkauf",
+      "Sichere Datenhaltung auf Servern in Deutschland",
+      "Datenschutzdokumente ohne lange Wartezeiten",
+      "Kein Tracking, kein Datenverkauf",
     ],
   },
 ];
@@ -102,31 +110,18 @@ export default function FunktionenPage() {
       <section className="border-b border-border section">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <span className="eyebrow">
-              <span className="inline-block size-1.5 bg-brand" />
-              Funktionen
-            </span>
+            <span className="eyebrow">Funktionen</span>
             <h1 className="mt-4 text-4xl sm:text-5xl">
-              Alles was Schulen brauchen — in einer Plattform
+              Eine Plattform.
+              <br />
+              Für modernes Lernen.
             </h1>
             <p className="mt-5 text-lg text-muted-fg">
-              MasterMind vereint Lern-App, Schulverwaltung und KI-Tutor. Keine fünf
-              verschiedenen Tools — eine Plattform, die für Schüler, Lehrkräfte und
-              Schulleitungen funktioniert.
+              MasterMind vereint Lernen, Kommunikation, Schulverwaltung, künstliche
+              Intelligenz und digitale Werkzeuge auf einer zentralen Plattform.
+              Entwickelt für Schüler, Lehrkräfte und Schulleitungen. Alles, was der
+              Schulalltag braucht.
             </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link href="/register">
-                <Button size="lg" className="glow-on-hover">
-                  Kostenlos testen
-                  <ArrowRight className="size-4" />
-                </Button>
-              </Link>
-              <Link href="/preise">
-                <Button size="lg" variant="outline">
-                  Preise ansehen
-                </Button>
-              </Link>
-            </div>
           </div>
         </Container>
       </section>
@@ -141,8 +136,8 @@ export default function FunktionenPage() {
                 className="flex flex-col gap-4 bg-bg p-7 transition-colors hover:bg-surface"
               >
                 <div className="flex items-center gap-3">
-                  <div className="grid size-9 shrink-0 place-items-center border border-border bg-surface">
-                    <f.icon className="size-4 text-brand" strokeWidth={1.75} />
+                  <div className={`inline-grid size-11 shrink-0 place-items-center rounded-2xl ${f.color}`}>
+                    <f.icon className="size-5" strokeWidth={1.75} />
                   </div>
                   <h2 className="text-base font-bold leading-snug">{f.title}</h2>
                 </div>
