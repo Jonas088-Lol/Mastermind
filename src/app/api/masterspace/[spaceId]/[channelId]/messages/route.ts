@@ -20,7 +20,10 @@ export async function GET(
 
   const messages = await prisma.spaceMessage.findMany({
     where: { channelId },
-    include: { author: { select: { id: true, name: true } } },
+    include: {
+      author: { select: { id: true, name: true } },
+      parent: { select: { id: true, content: true, author: { select: { name: true } } } },
+    },
     orderBy: { sentAt: "asc" },
     take: 100,
   });

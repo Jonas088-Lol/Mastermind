@@ -12,6 +12,7 @@ export async function sendMessage(formData: FormData) {
   const threadId = String(formData.get("threadId") ?? "").trim();
   const content = String(formData.get("content") ?? "").trim();
   const backHref = String(formData.get("backHref") ?? "/app/nachrichten");
+  const replyToId = String(formData.get("replyToId") ?? "").trim() || null;
 
   if (!threadId || !content) return;
 
@@ -28,8 +29,18 @@ export async function sendMessage(formData: FormData) {
   if (!thread) return;
   if (session.schoolId && thread.schoolId && thread.schoolId !== session.schoolId) return;
 
+  // Reply target must belong to the same thread
+  let validReplyToId: string | null = null;
+  if (replyToId) {
+    const target = await prisma.message.findUnique({
+      where: { id: replyToId },
+      select: { threadId: true },
+    });
+    if (target?.threadId === threadId) validReplyToId = replyToId;
+  }
+
   await prisma.$transaction([
-    prisma.message.create({ data: { threadId, senderId: session.userId, content } }),
+    prisma.message.create({ data: { threadId, senderId: session.userId, content, replyToId: validReplyToId } }),
     prisma.messageThread.update({ where: { id: threadId }, data: { updatedAt: new Date() } }),
   ]);
 
@@ -56,6 +67,50 @@ export async function sendMessage(formData: FormData) {
   revalidatePath("/teach", "layout");
   revalidatePath("/eltern", "layout");
   revalidatePath("/admin", "layout");
+}
+
+export async function editThreadMessage(messageId: string, content: string) {
+  const session = await getSession();
+  if (!session) return;
+  const trimmed = content.trim();
+  if (!messageId || !trimmed) return;
+
+  // Only the sender may edit their own message
+  const msg = await prisma.message.updateMany({
+    where: { id: messageId, senderId: session.userId },
+    data: { content: trimmed, editedAt: new Date() },
+  });
+  if (msg.count === 0) return;
+
+  revalidateMessagePages();
+}
+
+export async function deleteThreadMessage(messageId: string) {
+  const session = await getSession();
+  if (!session) return;
+  if (!messageId) return;
+
+  // Detach replies pointing at this message, then delete (sender only)
+  const owned = await prisma.message.findFirst({
+    where: { id: messageId, senderId: session.userId },
+    select: { id: true },
+  });
+  if (!owned) return;
+
+  await prisma.$transaction([
+    prisma.message.updateMany({ where: { replyToId: messageId }, data: { replyToId: null } }),
+    prisma.message.delete({ where: { id: messageId } }),
+  ]);
+
+  revalidateMessagePages();
+}
+
+// Revalidate list pages + dynamic thread pages for all roles
+function revalidateMessagePages() {
+  for (const base of ["/app", "/teach", "/eltern", "/admin"]) {
+    revalidatePath(`${base}/nachrichten`);
+    revalidatePath(`${base}/nachrichten/[threadId]`, "page");
+  }
 }
 
 export async function markThreadRead(threadId: string, userId?: string) {

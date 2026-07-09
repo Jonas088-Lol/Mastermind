@@ -23,8 +23,9 @@ import {
   Search,
   Pencil,
   Trash2,
+  Reply,
   Check,
-  Hash,
+  MessageCircleMore,
   Volume2,
   Mic,
   MicOff,
@@ -125,6 +126,7 @@ type Message = {
   author: { id?: string; name: string };
   sentAt: string;
   editedAt?: string | null;
+  parent?: { id: string; content: string; author: { name: string } } | null;
 };
 
 type VoiceParticipant = {
@@ -921,6 +923,7 @@ function MessageList({
   searchQuery,
   onEdit,
   onDelete,
+  onReply,
 }: {
   messages: Message[];
   myId: string;
@@ -930,8 +933,17 @@ function MessageList({
   searchQuery: string;
   onEdit: (msg: Message) => void;
   onDelete: (id: string) => void;
+  onReply?: (msg: Message) => void;
 }) {
   const [hovered, setHovered] = useState<string | null>(null);
+  // Long-press support for touch devices — press ~450ms to open the action bar
+  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  function handleTouchStart(msgId: string) {
+    longPressTimer.current = setTimeout(() => setHovered(msgId), 450);
+  }
+  function cancelLongPress() {
+    if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; }
+  }
 
   const filtered = searchQuery
     ? messages.filter((m) => m.content.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -980,6 +992,9 @@ function MessageList({
               className="group relative flex gap-2.5 px-4 py-0.5 hover:bg-muted/30"
               onMouseEnter={() => setHovered(msg.id)}
               onMouseLeave={() => setHovered(null)}
+              onTouchStart={() => handleTouchStart(msg.id)}
+              onTouchEnd={cancelLongPress}
+              onTouchMove={cancelLongPress}
             >
               {showHeader ? (
                 <Avatar name={msg.author.name} isMe={isMe} />
@@ -987,6 +1002,13 @@ function MessageList({
                 <div className="w-8 shrink-0" />
               )}
               <div className="min-w-0 flex-1">
+                {msg.parent && (
+                  <div className="mb-0.5 flex items-center gap-1.5 text-[11px] text-muted-fg">
+                    <Reply className="size-3 shrink-0 -scale-x-100" />
+                    <span className="font-semibold shrink-0">{msg.parent.author.name}</span>
+                    <span className="truncate opacity-70">{msg.parent.content}</span>
+                  </div>
+                )}
                 {showHeader && (
                   <div className="mb-0.5 flex items-baseline gap-2">
                     <span className={cn("text-sm font-semibold", isMe ? "text-brand" : "text-fg")}>
@@ -998,14 +1020,23 @@ function MessageList({
                 <p className="text-sm leading-relaxed">{msg.content}</p>
                 {msg.editedAt && <span className="text-[10px] text-muted-fg">(bearbeitet)</span>}
               </div>
-              {hovered === msg.id && isMe && (
+              {hovered === msg.id && (
                 <div className="absolute right-4 top-0 -translate-y-1/2 flex items-center gap-1 rounded-lg border border-border bg-surface px-1.5 py-1 shadow-md">
-                  <button onClick={() => onEdit(msg)} title="Bearbeiten" className="rounded p-1 text-muted-fg hover:bg-muted hover:text-fg">
-                    <Pencil className="size-3.5" />
-                  </button>
-                  <button onClick={() => onDelete(msg.id)} title="Löschen" className="rounded p-1 text-muted-fg hover:bg-danger hover:text-white">
-                    <Trash2 className="size-3.5" />
-                  </button>
+                  {onReply && (
+                    <button onClick={() => { onReply(msg); setHovered(null); }} title="Antworten" className="rounded p-1 text-muted-fg hover:bg-muted hover:text-fg">
+                      <Reply className="size-3.5" />
+                    </button>
+                  )}
+                  {isMe && (
+                    <>
+                      <button onClick={() => onEdit(msg)} title="Bearbeiten" className="rounded p-1 text-muted-fg hover:bg-muted hover:text-fg">
+                        <Pencil className="size-3.5" />
+                      </button>
+                      <button onClick={() => onDelete(msg.id)} title="Löschen" className="rounded p-1 text-muted-fg hover:bg-danger hover:text-white">
+                        <Trash2 className="size-3.5" />
+                      </button>
+                    </>
+                  )}
                 </div>
               )}
             </div>
@@ -1174,6 +1205,7 @@ export function MasterSpaceModal() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearch, setShowSearch] = useState(false);
   const [editingMsg, setEditingMsg] = useState<Message | null>(null);
+  const [replyTo, setReplyTo] = useState<Message | null>(null);
   const [editInput, setEditInput] = useState("");
 
   // Voice state
@@ -1505,13 +1537,14 @@ export function MasterSpaceModal() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         if (editingMsg) { setEditingMsg(null); return; }
+        if (replyTo) { setReplyTo(null); return; }
         if (showSearch) { setShowSearch(false); setSearchQuery(""); return; }
         setIsMinimized(true);
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [isOpen, isMinimized, editingMsg, showSearch]);
+  }, [isOpen, isMinimized, editingMsg, replyTo, showSearch]);
 
   useEffect(() => {
     document.body.style.overflow = isOpen && !isMinimized ? "hidden" : "";
@@ -1615,7 +1648,7 @@ export function MasterSpaceModal() {
     setSelSpaceId(spaceId); setSelChannelId(channelId);
     setView("channel"); setMessages([]);
     setMobileSidebar(false); setSearchQuery(""); setShowSearch(false);
-    setEditingMsg(null);
+    setEditingMsg(null); setReplyTo(null);
     setExpandedIds((prev) => new Set([...prev, spaceId]));
     fetchChannelMessages(spaceId, channelId);
     if (selSpaceId !== spaceId) fetchSpaceDetail(spaceId);
@@ -1654,7 +1687,9 @@ export function MasterSpaceModal() {
     setInput("");
     textareaRef.current?.focus();
     if (view === "channel" && selSpaceId && selChannelId) {
-      sendChannelMessageModal(selChannelId, content).then(() => fetchChannelMessages(selSpaceId, selChannelId));
+      const parentId = replyTo?.id;
+      setReplyTo(null);
+      sendChannelMessageModal(selChannelId, content, parentId).then(() => fetchChannelMessages(selSpaceId, selChannelId));
     } else if (view === "dm" && selDmId) {
       sendDmModal(selDmId, content).then(() => fetchDmMessages(selDmId));
     }
@@ -2051,7 +2086,7 @@ export function MasterSpaceModal() {
                                     active ? "bg-brand/10 font-semibold text-brand" : "text-muted-fg hover:bg-muted hover:text-fg"
                                   )}
                                 >
-                                  <Hash className={cn("size-3.5 shrink-0", active ? "text-brand" : "text-muted-fg/50")} />
+                                  <MessageCircleMore className={cn("size-3.5 shrink-0", active ? "text-brand" : "text-muted-fg/50")} />
                                   <span className="truncate">{ch.name}</span>
                                 </button>
                               );
@@ -2255,7 +2290,7 @@ export function MasterSpaceModal() {
                   <button onClick={() => setMobileSidebar(true)} className="mr-1 rounded-lg p-1 text-muted-fg hover:bg-muted sm:hidden">
                     <ArrowLeft className="size-4" />
                   </button>
-                  <Hash className="size-4 text-muted-fg" />
+                  <MessageCircleMore className="size-4 text-muted-fg" />
                   <p className="flex-1 truncate text-sm font-semibold">{channelName}</p>
 
                   {memberAvatars.length > 0 && (
@@ -2305,14 +2340,25 @@ export function MasterSpaceModal() {
                   <MessageList
                     messages={messages}
                     myId={myId}
-                    emptyIcon={<div className="flex size-12 items-center justify-center rounded-2xl bg-brand/10"><Hash className="size-6 text-brand" strokeWidth={1.5} /></div>}
+                    emptyIcon={<div className="flex size-12 items-center justify-center rounded-2xl bg-brand/10"><MessageCircleMore className="size-6 text-brand" strokeWidth={1.5} /></div>}
                     emptyText={`Schreib die erste Nachricht in #${channelName}`}
                     endRef={messagesEndRef}
                     searchQuery={searchQuery}
                     onEdit={(msg) => { setEditingMsg(msg); setEditInput(msg.content); }}
                     onDelete={handleDelete}
+                    onReply={(msg) => { setReplyTo(msg); textareaRef.current?.focus(); }}
                   />
                 </div>
+
+                {replyTo && !editingMsg && (
+                  <div className="flex items-center gap-2 shrink-0 border-t border-brand/30 bg-brand/5 px-4 py-2">
+                    <Reply className="size-3.5 shrink-0 text-brand -scale-x-100" />
+                    <p className="min-w-0 flex-1 truncate text-xs text-muted-fg">
+                      Antwort an <span className="font-semibold text-fg">{replyTo.authorId === myId ? "Dich" : replyTo.author.name}</span>: {replyTo.content}
+                    </p>
+                    <button onClick={() => setReplyTo(null)} className="rounded p-1 text-muted-fg hover:bg-muted hover:text-fg"><X className="size-3.5" /></button>
+                  </div>
+                )}
 
                 {editingMsg && (
                   <div className="shrink-0 border-t border-warning/30 bg-warning/5 px-4 py-2">

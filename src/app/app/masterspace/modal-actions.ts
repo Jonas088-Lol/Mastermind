@@ -108,7 +108,8 @@ export async function createChannelModal(
 
 export async function sendChannelMessageModal(
   channelId: string,
-  content: string
+  content: string,
+  parentId?: string
 ): Promise<void> {
   const session = await requireSession();
   const trimmed = content.trim().slice(0, 2000);
@@ -125,8 +126,18 @@ export async function sendChannelMessageModal(
   });
   if (!membership) return;
 
+  // Reply target must exist in the same channel
+  let validParentId: string | undefined;
+  if (parentId) {
+    const parent = await prisma.spaceMessage.findUnique({
+      where: { id: parentId },
+      select: { channelId: true },
+    });
+    if (parent?.channelId === channelId) validParentId = parentId;
+  }
+
   await prisma.spaceMessage.create({
-    data: { channelId, authorId: session.userId, content: trimmed },
+    data: { channelId, authorId: session.userId, content: trimmed, parentId: validParentId },
   });
 }
 
