@@ -1,8 +1,32 @@
-# ── HTTP → HTTPS redirect ─────────────────────────────────────────────────
+# ── Origin-Schutz: direkte IP-/Fremd-Host-Zugriffe abweisen ────────────────
+# WARUM: Ein Angreifer, der die Server-IP kennt, könnte Cloudflare umgehen und
+# die App direkt aufrufen. Requests, deren Host-Header NICHT unsere Domain ist
+# (also IP-Aufrufe, Scanner, Bots), werden mit 444 (Verbindung ohne Antwort
+# schließen) verworfen — sowohl auf 80 als auch 443. Zusammen mit der
+# ufw-Cloudflare-Regel (nur CF darf 80/443) ist das Defense in Depth.
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+    server_name _;
+
+    # Selbstsigniertes Fallback-Zertifikat, damit der TLS-Handshake für den
+    # Abbruch überhaupt zustande kommt (Certbot-Cert nur für die echte Domain).
+    ssl_certificate     /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
+
+    # ACME-Challenge muss auch hier durch (für Zertifikatserneuerung)
+    location /.well-known/acme-challenge/ { root /var/www/certbot; }
+
+    location / { return 444; }
+}
+
+# ── HTTP → HTTPS redirect (nur für die echte Domain) ───────────────────────
 server {
     listen 80;
     listen [::]:80;
-    server_name _;
+    server_name ${DOMAIN} www.${DOMAIN};
 
     # Certbot ACME challenge (Let's Encrypt SSL)
     location /.well-known/acme-challenge/ {

@@ -1,0 +1,12 @@
+# Ziel: /etc/systemd/system/ufw-cloudflare.service
+# Aktualisiert die ufw-Regeln für Cloudflare-Ranges (wird vom Timer getriggert).
+[Unit]
+Description=Update ufw rules for current Cloudflare IP ranges
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# Pfad ggf. an dein Deploy-Verzeichnis anpassen
+ExecStart=/bin/bash /root/Mastermind/scripts/ufw-cloudflare.sh
+# Bei Netzwerk-Fehler nicht die bestehenden Regeln zerstören (Skript bricht selbst ab)

@@ -1,0 +1,12 @@
+# Ziel: /etc/systemd/system/ufw-cloudflare.timer
+# Wöchentliche Aktualisierung der Cloudflare-Origin-Firewallregeln.
+[Unit]
+Description=Weekly refresh of Cloudflare ufw rules
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+RandomizedDelaySec=1h
+
+[Install]
+WantedBy=timers.target
