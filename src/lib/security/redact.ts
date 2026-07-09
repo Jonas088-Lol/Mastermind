@@ -39,3 +39,16 @@ export function maskUserAgent(ua: string | null | undefined): string {
   if (!ua) return "(kein)";
   return ua.slice(0, 40);
 }
+
+/**
+ * Deterministisches Pseudonym aus einer User-ID für Analytics/Statistik.
+ * Gleiche ID → gleiches Pseudonym (Kohorten-Analyse möglich), aber ohne
+ * Rückschluss auf Klarname/E-Mail. Mit SESSION_SECRET gesalzen, damit das
+ * Pseudonym nicht extern reproduzierbar ist (Art. 4 Nr. 5 — Pseudonymisierung).
+ */
+export function pseudonymId(userId: string): string {
+  // Lazy require, damit dieses Modul auch in Edge-Kontexten importierbar bleibt.
+  const { createHmac } = require("node:crypto") as typeof import("node:crypto");
+  const secret = process.env.SESSION_SECRET ?? "mm-pseudonym-dev-salt";
+  return createHmac("sha256", secret).update(`analytics:${userId}`).digest("hex").slice(0, 16);
+}

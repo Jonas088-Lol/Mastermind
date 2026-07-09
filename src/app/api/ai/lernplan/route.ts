@@ -40,7 +40,7 @@ async function buildContext(userId: string): Promise<string> {
   const now = new Date();
   const in14days = new Date(now.getTime() + 14 * 86_400_000);
 
-  const [grades, assignments, user] = await Promise.all([
+  const [grades, assignments] = await Promise.all([
     prisma.grade.findMany({
       where: { studentId: userId },
       include: { subject: { select: { name: true } } },
@@ -57,10 +57,6 @@ async function buildContext(userId: string): Promise<string> {
         submissions: { where: { studentId: userId }, select: { status: true } },
       },
       orderBy: { dueAt: "asc" },
-    }),
-    prisma.user.findUnique({
-      where: { id: userId },
-      select: { name: true },
     }),
   ]);
 
@@ -79,7 +75,9 @@ async function buildContext(userId: string): Promise<string> {
     .sort((a, b) => b.avg - a.avg); // worst first
 
   const today = now.toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" });
-  const lines: string[] = [`Heute: ${today}`, `Schüler: ${user?.name ?? "Unbekannt"}`];
+  // Kein Klarname Richtung KI-Anbieter — für den Lernplan nicht erforderlich
+  // (Datenminimierung, Art. 5 Abs. 1 lit. c DSGVO).
+  const lines: string[] = [`Heute: ${today}`];
 
   if (subjectAvgs.length > 0) {
     lines.push("\nNotenübersicht (Durchschnitt, aufsteigend = besser):");
