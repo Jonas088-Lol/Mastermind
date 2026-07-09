@@ -1,5 +1,15 @@
+import { createHmac, timingSafeEqual } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
+import { sanitizeHtml } from "@/lib/security/sanitize-html";
+
+// Timing-sicherer Vergleich zweier Strings
+function safeEqual(a: string, b: string): boolean {
+  const ba = Buffer.from(a);
+  const bb = Buffer.from(b);
+  if (ba.length !== bb.length) return false;
+  return timingSafeEqual(ba, bb);
+}
 
 // Resend sendet POST an diesen Endpunkt wenn eine E-Mail eingeht.
 // Docs: https://resend.com/docs/dashboard/emails/inbound
@@ -27,18 +37,34 @@ function extractName(address: string): { name: string | null; email: string } {
 }
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
-  // Optionaler Shared-Secret-Schutz
+  // Shared-Secret ist PFLICHT. Ohne Konfiguration wird der Endpunkt geschlossen,
+  // damit niemand anonym gefälschte Mails in Schul-Postfächer injizieren kann.
   const secret = process.env.RESEND_INBOUND_SECRET;
-  if (secret) {
-    const sig = req.headers.get("resend-signature") ?? req.headers.get("x-resend-signature");
-    if (sig !== secret) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+  if (!secret) {
+    return NextResponse.json({ error: "Inbound not configured" }, { status: 503 });
+  }
+
+  // Raw-Body lesen (für HMAC-Verifikation nötig, bevor wir JSON parsen)
+  const rawBody = await req.text();
+
+  const provided =
+    req.headers.get("x-inbound-signature") ??
+    req.headers.get("resend-signature") ??
+    req.headers.get("x-resend-signature") ??
+    "";
+
+  // Zwei akzeptierte Formen:
+  //  (a) HMAC-SHA256 über den Raw-Body, hex — empfohlen
+  //  (b) direktes Shared-Secret im Header — Fallback für einfache Setups
+  const expectedHmac = createHmac("sha256", secret).update(rawBody).digest("hex");
+  const authorized = safeEqual(provided, expectedHmac) || safeEqual(provided, secret);
+  if (!authorized) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   let payload: ResendInboundPayload;
   try {
-    payload = (await req.json()) as ResendInboundPayload;
+    payload = JSON.parse(rawBody) as ResendInboundPayload;
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
@@ -85,7 +111,9 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       toAddress,
       subject: subject ?? "(kein Betreff)",
       bodyText: text ?? "",
-      bodyHtml: html ?? null,
+      // HTML bereits beim Speichern säubern (Defense-in-Depth; die Render-Seiten
+      // sanitizen zusätzlich). Verhindert Stored XSS aus eingehenden Mails.
+      bodyHtml: html ? sanitizeHtml(html) : null,
       messageId,
       inReplyTo,
       threadKey,

@@ -1,13 +1,19 @@
 /**
- * Rate-Limiter — serverless-safe.
+ * Rate-Limiter — persistent & multi-instanz-fähig.
  *
- * - Mit UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN: Upstash Redis
- *   (sliding-window, funktioniert über alle Vercel-Funktions-Instanzen).
- * - Ohne Env-Vars: In-Memory-Fallback (nur für lokale Entwicklung geeignet).
+ * Backend-Reihenfolge:
+ *  1. Upstash Redis (REST) — wenn UPSTASH_REDIS_REST_URL/TOKEN gesetzt.
+ *  2. TCP-Redis via ioredis — wenn REDIS_URL gesetzt (self-hosted Container).
+ *  3. In-Memory-Fallback — nur für lokale Entwicklung (nicht persistent).
+ *
+ * In Produktion MUSS 1 oder 2 verfügbar sein, sonst greift der Missbrauchs-
+ * schutz (Login-Brute-Force, KI-Kosten) nur pro Prozess und übersteht keinen
+ * Neustart.
  */
 
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
+import IORedis from "ioredis";
 
 export interface RateLimitOptions {
   /** Logischer Namespace (z. B. "ai-tutor", "login") */
@@ -58,6 +64,83 @@ function getRedisLimiter(
   });
   limiterCache.set(cacheKey, limiter);
   return limiter;
+}
+
+// ── TCP-Redis (ioredis, self-hosted Container) ────────────
+
+let ioredisClient: IORedis | null | undefined;
+
+function getIoRedis(): IORedis | null {
+  if (ioredisClient !== undefined) return ioredisClient;
+  const url = process.env.REDIS_URL;
+  if (!url) {
+    ioredisClient = null;
+    return null;
+  }
+  try {
+    ioredisClient = new IORedis(url, {
+      maxRetriesPerRequest: 1,
+      enableOfflineQueue: false,
+      lazyConnect: false,
+      // Bei Verbindungsfehler nicht endlos loggen
+      retryStrategy: (times) => (times > 3 ? null : Math.min(times * 200, 1000)),
+    });
+    ioredisClient.on("error", () => { /* Fehler still schlucken — Fallback greift */ });
+    return ioredisClient;
+  } catch {
+    ioredisClient = null;
+    return null;
+  }
+}
+
+// Atomares Sliding-Window per Lua: alte Einträge entfernen, zählen, ggf. hinzufügen.
+// KEYS[1]=bucket, ARGV[1]=nowMs, ARGV[2]=windowMs, ARGV[3]=limit, ARGV[4]=member
+const SLIDING_WINDOW_LUA = `
+local key = KEYS[1]
+local now = tonumber(ARGV[1])
+local window = tonumber(ARGV[2])
+local limit = tonumber(ARGV[3])
+local member = ARGV[4]
+redis.call('ZREMRANGEBYSCORE', key, 0, now - window)
+local count = redis.call('ZCARD', key)
+if count >= limit then
+  local oldest = redis.call('ZRANGE', key, 0, 0, 'WITHSCORES')
+  local resetAt = now + window
+  if oldest[2] then resetAt = tonumber(oldest[2]) + window end
+  return {0, 0, resetAt}
+end
+redis.call('ZADD', key, now, member)
+redis.call('PEXPIRE', key, window)
+return {1, limit - count - 1, now + window}
+`;
+
+async function ioredisRateLimit(
+  client: IORedis,
+  opts: RateLimitOptions
+): Promise<RateLimitResult> {
+  const now = Date.now();
+  const windowMs = opts.windowSec * 1000;
+  const key = `mm:rl:${opts.scope}:${opts.key}`;
+  const member = `${now}-${Math.floor(now * 1000) % 1000}`;
+
+  const res = (await client.eval(
+    SLIDING_WINDOW_LUA,
+    1,
+    key,
+    String(now),
+    String(windowMs),
+    String(opts.limit),
+    member
+  )) as [number, number, number];
+
+  const ok = res[0] === 1;
+  const resetMs = res[2];
+  return {
+    ok,
+    remaining: res[1],
+    resetMs,
+    retryAfterSec: ok ? 0 : Math.max(1, Math.ceil((resetMs - now) / 1000)),
+  };
 }
 
 // ── In-Memory-Fallback (Dev) ──────────────────────────────
@@ -114,21 +197,34 @@ function inMemoryRateLimit(opts: RateLimitOptions): RateLimitResult {
 export async function rateLimit(
   opts: RateLimitOptions
 ): Promise<RateLimitResult> {
+  // 1. Upstash REST
   const limiter = getRedisLimiter(opts.scope, opts.limit, opts.windowSec);
-
-  if (!limiter) {
-    // Kein Redis konfiguriert → In-Memory-Fallback (Dev only)
-    return inMemoryRateLimit(opts);
+  if (limiter) {
+    const { success, remaining, reset } = await limiter.limit(opts.key);
+    const now = Date.now();
+    return {
+      ok: success,
+      remaining,
+      resetMs: reset,
+      retryAfterSec: success ? 0 : Math.max(1, Math.ceil((reset - now) / 1000)),
+    };
   }
 
-  const { success, remaining, reset } = await limiter.limit(opts.key);
-  const now = Date.now();
-  return {
-    ok: success,
-    remaining,
-    resetMs: reset,
-    retryAfterSec: success ? 0 : Math.max(1, Math.ceil((reset - now) / 1000)),
-  };
+  // 2. TCP-Redis (self-hosted Container)
+  const io = getIoRedis();
+  if (io) {
+    try {
+      return await ioredisRateLimit(io, opts);
+    } catch {
+      // Redis nicht erreichbar → auf In-Memory zurückfallen (fail-open mit Log)
+      if (process.env.NODE_ENV === "production") {
+        console.warn(`[rate-limit] Redis unreachable, falling back to in-memory for scope=${opts.scope}`);
+      }
+    }
+  }
+
+  // 3. In-Memory (Dev / Notfall)
+  return inMemoryRateLimit(opts);
 }
 
 /**

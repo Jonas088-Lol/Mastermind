@@ -17,6 +17,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { MAIL_COOKIE, isMailSessionValid } from "@/lib/mail-session";
 import { cn } from "@/lib/utils";
+import { sanitizeHtml } from "@/lib/security/sanitize-html";
 import { markRead, sendReply, sendNew, deleteMail, saveSettings } from "./actions";
 
 type Tab = "eingang" | "gesendet" | "neu" | "einstellungen";
@@ -281,7 +282,7 @@ export default async function MailsPage({
                             {msg.bodyHtml ? (
                               <div
                                 className="prose prose-sm max-w-none text-sm"
-                                dangerouslySetInnerHTML={{ __html: msg.bodyHtml }}
+                                dangerouslySetInnerHTML={{ __html: sanitizeHtml(msg.bodyHtml) }}
                               />
                             ) : (
                               <pre className="whitespace-pre-wrap font-sans text-sm leading-relaxed text-fg">

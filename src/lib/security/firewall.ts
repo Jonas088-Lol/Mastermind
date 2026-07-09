@@ -7,6 +7,7 @@
  */
 
 import type { NextRequest } from "next/server";
+import { maskIp } from "@/lib/security/redact";
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */
 
@@ -300,7 +301,11 @@ Wenn du diese Aktivität nicht erkennst, prüfe die Logs sofort.
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.warn(`[Firewall] ALERT (no email configured): ${subject}\n${body}`);
+    // Kein Mail-Provider: nur maskierte Kurzinfo ins Log, keine vollständige
+    // IP / kein User-Agent / keine URL im Klartext.
+    console.warn(
+      `[Firewall] ALERT L${opts.layer}/${opts.level} ip=${maskIp(opts.ip)} reason=${opts.reason} (Mail nicht konfiguriert)`
+    );
     return;
   }
 

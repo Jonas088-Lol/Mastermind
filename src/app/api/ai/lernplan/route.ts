@@ -3,6 +3,7 @@ import { effectiveRole, getSession } from "@/lib/session";
 import { chatStream, isAiConfigured } from "@/lib/ai";
 import { prisma } from "@/lib/db/client";
 import { ipFromHeaders, rateLimit } from "@/lib/security/rate-limit";
+import { incrementAiQuota } from "@/lib/db/store";
 
 export const runtime = "nodejs";
 
@@ -140,6 +141,15 @@ export async function POST(req: Request) {
     return NextResponse.json(
       { error: "IP-Rate-Limit erreicht." },
       { status: 429, headers: { "Retry-After": String(ipLimit.retryAfterSec) } }
+    );
+  }
+
+  // Persistente KI-Quota (Anthropic-Kostenschutz), wie bei /api/ai/tutor.
+  const quota = await incrementAiQuota(session.email);
+  if (quota.exceeded) {
+    return NextResponse.json(
+      { error: "KI-Kontingent erreicht", used: quota.used, limit: quota.limit },
+      { status: 429 }
     );
   }
 

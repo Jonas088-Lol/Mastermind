@@ -5,6 +5,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { BOSS_TIERS, type BossTier } from "@/lib/game";
 import { chat } from "@/lib/ai";
+import { guardAiAction } from "@/lib/security/ai-action-guard";
 
 interface ParsedQuestion {
   question: string;
@@ -105,6 +106,8 @@ export async function createBossBattle(formData: FormData) {
   // AI-generate questions if requested and AI is configured
   let aiQuestions: ParsedQuestion[] = [];
   if (useAI && subject && gradeLevel) {
+    const guard = await guardAiAction({ userId: session.userId, email: session.email, scope: "boss-questions", limit: 10 });
+    if (guard) return guard;
     aiQuestions = await generateBossQuestions(subject, gradeLevel, name, aiCount);
   }
 

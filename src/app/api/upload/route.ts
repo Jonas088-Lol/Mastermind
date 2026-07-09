@@ -43,6 +43,22 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: "Datei zu groß (max. 10 GB)" }, { status: 413 });
   }
 
+  // Assignment-Zuordnung prüfen: nur an ein Assignment der eigenen Klasse
+  // anhängen (verhindert das Anhängen an fremde Aufgaben — IDOR).
+  if (assignmentId) {
+    const me = await prisma.user.findUnique({
+      where: { id: session.userId },
+      select: { classId: true },
+    });
+    const assignment = await prisma.assignment.findUnique({
+      where: { id: assignmentId },
+      select: { classId: true },
+    });
+    if (!assignment || !me?.classId || assignment.classId !== me.classId) {
+      return Response.json({ error: "Aufgabe nicht zugänglich" }, { status: 403 });
+    }
+  }
+
   // Ensure upload dir exists
   const userDir = join(UPLOAD_DIR, session.userId);
   await mkdir(userDir, { recursive: true });

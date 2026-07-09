@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { chat } from "@/lib/ai";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { guardAiAction } from "@/lib/security/ai-action-guard";
 
 const MAX_TEXT_CHARS = 12000;
 
@@ -24,6 +25,9 @@ export async function generateCardsFromPdf(formData: FormData): Promise<{ error:
   if (!file || file.size === 0) return { error: "Bitte eine PDF-Datei hochladen." };
   if (file.size > 10 * 1024 * 1024) return { error: "Datei zu groß (max. 10 MB)." };
   if (!deckName) return { error: "Bitte einen Namen für das Deck angeben." };
+
+  const guard = await guardAiAction({ userId: session.userId, email: session.email, scope: "pdf-cards", limit: 8 });
+  if (guard) return guard;
 
   const buffer = Buffer.from(await file.arrayBuffer());
 

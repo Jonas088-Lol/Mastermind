@@ -6,6 +6,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { sanitizeHtml } from "@/lib/security/sanitize-html";
 import { markAsRead, replyToEmail, deleteEmail } from "./actions";
 
 export const metadata: Metadata = { title: "E-Mail · Admin" };
@@ -98,7 +99,7 @@ export default async function PostfachDetailPage({
                 {msg.bodyHtml ? (
                   <div
                     className="prose prose-sm max-w-none text-sm"
-                    dangerouslySetInnerHTML={{ __html: msg.bodyHtml }}
+                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(msg.bodyHtml) }}
                   />
                 ) : (
                   <pre className="whitespace-pre-wrap font-sans text-sm text-fg">

@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
 import { chat } from "@/lib/ai";
+import { guardAiAction } from "@/lib/security/ai-action-guard";
 
 type QuizResult = {
   questions: { question: string; options: string[]; correct: number; explanation: string }[];
@@ -20,6 +21,9 @@ export async function generateQuizFromPage(pageId: string): Promise<QuizResult> 
   if (!page || page.notebook.userId !== session.userId) {
     return { error: "Keine Berechtigung." };
   }
+
+  const guard = await guardAiAction({ userId: session.userId, email: session.email, scope: "heft-quiz", limit: 15 });
+  if (guard) return guard;
 
   // Extract text from block content
   let text = "";

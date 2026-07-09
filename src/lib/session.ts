@@ -1,4 +1,4 @@
-import { randomBytes } from "node:crypto";
+import { randomBytes, createHash } from "node:crypto";
 import { cookies, headers } from "next/headers";
 import { signSession, verifySession } from "@/lib/auth/cookies";
 import { verifyPassword } from "@/lib/auth/passwords";
@@ -16,6 +16,18 @@ export type Role =
   | "school_company";
 
 export const ROLES: Role[] = ["student", "teacher", "parent", "admin", "super", "secretary", "rector", "vice_rector", "school_company"];
+
+/**
+ * Rollen, die ein Schul-Admin einem Nutzer seiner Schule zuweisen darf.
+ * Bewusst OHNE "super" und "school_company" — plattformweite Rollen dürfen
+ * niemals über die Schul-Admin-Oberfläche vergeben werden (Privilege Escalation).
+ */
+export const ASSIGNABLE_BY_ADMIN: Role[] = ["student", "teacher", "parent", "secretary", "rector", "vice_rector", "admin"];
+
+/** Prüft, ob ein Wert eine gültige, vom Admin vergebbare Rolle ist. */
+export function isAssignableRole(value: unknown): value is Role {
+  return typeof value === "string" && (ASSIGNABLE_BY_ADMIN as string[]).includes(value);
+}
 
 /** Rollen, in die ein super-User wechseln kann */
 export const VIEW_ROLES: Role[] = ["student", "teacher", "parent", "admin", "secretary", "rector", "vice_rector"];
@@ -153,6 +165,15 @@ function generateSessionToken(): string {
     .replaceAll("=", "");
 }
 
+/**
+ * Der rohe Session-Token liegt nur im (HMAC-signierten) Cookie. In der DB wird
+ * ausschließlich der SHA-256-Hash gespeichert — ein DB-Leak allein erlaubt so
+ * keine Session-Übernahme.
+ */
+function hashSessionToken(token: string): string {
+  return createHash("sha256").update(token).digest("hex");
+}
+
 async function clientHints(): Promise<{ ip?: string; ua?: string }> {
   const h = await headers();
   const ip =
@@ -170,7 +191,7 @@ export async function getSession(): Promise<Session | null> {
   if (!envelope?.sid) return null;
 
   const row = await prisma.session.findUnique({
-    where: { token: envelope.sid },
+    where: { token: hashSessionToken(envelope.sid) },
     select: {
       id: true,
       userId: true,
@@ -231,7 +252,7 @@ export async function setSession(input: SetSessionInput): Promise<void> {
   // Existing session löschen — wir geben immer einen neuen Token aus.
   if (previous?.sid) {
     await prisma.session
-      .delete({ where: { token: previous.sid } })
+      .delete({ where: { token: hashSessionToken(previous.sid) } })
       .catch(() => undefined);
   }
 
@@ -250,7 +271,7 @@ export async function setSession(input: SetSessionInput): Promise<void> {
   await prisma.session.create({
     data: {
       userId: user.id,
-      token,
+      token: hashSessionToken(token),
       expiresAt: new Date(Date.now() + ONE_WEEK_MS),
       ipAddress: ip,
       userAgent: ua,
@@ -272,7 +293,7 @@ export async function clearSession() {
   const envelope = verifySession<CookieEnvelope>(store.get(COOKIE)?.value);
   if (envelope?.sid) {
     await prisma.session
-      .delete({ where: { token: envelope.sid } })
+      .delete({ where: { token: hashSessionToken(envelope.sid) } })
       .catch(() => undefined);
   }
   store.delete(COOKIE);

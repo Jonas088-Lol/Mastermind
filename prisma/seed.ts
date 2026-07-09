@@ -13,7 +13,28 @@ const S = {
 const now = new Date("2026-05-05");
 const d = (days: number) => new Date(now.getTime() + days * 86_400_000);
 
+/**
+ * Der Demo-Seed legt Accounts mit bekannten Passwörtern an (u.a. einen
+ * `super`-Admin) und überschreibt bei jedem Lauf die Passwort-Hashes
+ * bestehender Nutzer. Er darf niemals gegen eine produktive Datenbank laufen.
+ */
+function assertSeedAllowed(): void {
+  const allowed = process.env.ALLOW_DEMO_SEED === "true";
+  const isProd = process.env.NODE_ENV === "production";
+
+  if (isProd || !allowed) {
+    console.error(
+      "✖ Demo-Seed blockiert.\n" +
+        `  NODE_ENV=${process.env.NODE_ENV ?? "(unset)"}, ALLOW_DEMO_SEED=${process.env.ALLOW_DEMO_SEED ?? "(unset)"}\n` +
+        "  Der Seed erstellt Konten mit bekannten Passwörtern und überschreibt\n" +
+        "  bestehende. Nur für lokale Entwicklung: ALLOW_DEMO_SEED=true npm run db:seed"
+    );
+    process.exit(1);
+  }
+}
+
 async function main() {
+  assertSeedAllowed();
   console.log("Seeding MasterMind dev database…");
 
   // ── School ──────────────────────────────────────────────────

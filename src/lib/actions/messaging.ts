@@ -113,13 +113,14 @@ function revalidateMessagePages() {
   }
 }
 
-export async function markThreadRead(threadId: string, userId?: string) {
+export async function markThreadRead(threadId: string) {
+  // Nur die eigene Teilnahme darf als gelesen markiert werden. Kein userId-
+  // Parameter von außen — sonst könnte man fremde lastReadAt manipulieren (IDOR).
   const session = await getSession();
-  const uid = userId ?? session?.userId;
-  if (!uid) return;
+  if (!session) return;
 
   await prisma.messageParticipant
-    .update({ where: { threadId_userId: { threadId, userId: uid } }, data: { lastReadAt: new Date() } })
+    .update({ where: { threadId_userId: { threadId, userId: session.userId } }, data: { lastReadAt: new Date() } })
     .catch(() => undefined);
 
   // Revalidate list pages AND their layout segments so the sidebar badge updates immediately

@@ -49,14 +49,19 @@ else
   echo "  Tip: run 'docker compose exec app node /prisma-cli/node_modules/prisma/build/index.js db push --schema ./prisma/schema.prisma --accept-data-loss' manually."
 fi
 
-# Seed initial demo data (idempotent — all writes use upsert).
-if [ -f "prisma/seed.cjs" ]; then
-  echo "⏳ Seeding initial data..."
+# Demo-Seed: NUR auf ausdrückliche Anforderung.
+# Der Seed legt Konten mit bekannten Passwörtern an (inkl. eines super-Admins)
+# und überschreibt bestehende Passwort-Hashes. Er darf niemals automatisch
+# gegen eine produktive Datenbank laufen.
+if [ "$ALLOW_DEMO_SEED" = "true" ] && [ -f "prisma/seed.cjs" ]; then
+  echo "⚠ ALLOW_DEMO_SEED=true — seeding demo data with KNOWN passwords."
   if node prisma/seed.cjs; then
     echo "✓ Seed done."
   else
-    echo "⚠ Seed failed — demo data may be incomplete. Check logs above."
+    echo "⚠ Seed failed — check logs above."
   fi
+else
+  echo "✓ Demo seed skipped (set ALLOW_DEMO_SEED=true to enable — never in production)."
 fi
 
 # Start Next.js standalone server

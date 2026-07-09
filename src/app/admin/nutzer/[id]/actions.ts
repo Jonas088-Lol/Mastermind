@@ -5,19 +5,35 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { auditLog } from "@/lib/audit";
 import { sendEmail, twoFactorResetEmail } from "@/lib/email";
-import { effectiveRole, getSession } from "@/lib/session";
+import { effectiveRole, getSession, isAssignableRole } from "@/lib/session";
 
 export async function updateUserRole(userId: string, formData: FormData): Promise<void> {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "admin") redirect("/admin");
 
-  const role = formData.get("role") as string;
-  if (!role) return;
+  const role = formData.get("role");
+  // Nur vom Admin vergebbare Rollen zulassen — verhindert Eskalation auf
+  // "super" / "school_company" über ein manipuliertes Formularfeld.
+  if (!isAssignableRole(role)) return;
 
-  const target = await prisma.user.findUnique({ where: { id: userId } });
+  const target = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { id: true, schoolId: true, role: true },
+  });
   if (!target || target.schoolId !== session.schoolId) return;
 
+  // Ein bestehender plattformweiter Account darf nicht vom Schul-Admin
+  // umgeschrieben werden (weder hoch- noch herabgestuft).
+  if (target.role === "super" || target.role === "school_company") return;
+
   await prisma.user.update({ where: { id: userId }, data: { role } });
+  await auditLog({
+    action: "user.role_changed",
+    actorId: session.userId,
+    targetId: userId,
+    schoolId: session.schoolId ?? undefined,
+    details: { newRole: role, oldRole: target.role },
+  }).catch(() => undefined);
   revalidatePath(`/admin/nutzer/${userId}`);
 }
 

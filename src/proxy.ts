@@ -114,7 +114,7 @@ export async function proxy(req: NextRequest) {
     // ── Access gate (web only) ────────────────────────────────────────────
     if (!GATE_SKIP.some((p) => pathname.startsWith(p))) {
       const gateToken = req.cookies.get(GATE_COOKIE)?.value;
-      if (!isGateValid(gateToken)) {
+      if (!(await isGateValid(gateToken))) {
         const gateUrl = new URL("/gate", req.url);
         if (pathname !== "/") gateUrl.searchParams.set("redirect", pathname);
         return NextResponse.redirect(gateUrl);

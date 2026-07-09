@@ -9,7 +9,9 @@ const MAX_SIZE = 100 * 1024 * 1024; // 100 MB per file
 
 const ALLOWED_TYPES = [
   "application/pdf",
-  "image/jpeg", "image/png", "image/gif", "image/webp", "image/svg+xml",
+  // SVG bewusst NICHT erlaubt: kann eingebettetes JavaScript enthalten und
+  // wäre bei direkter Auslieferung ein XSS-Vektor.
+  "image/jpeg", "image/png", "image/gif", "image/webp",
   "video/mp4", "video/webm",
   "audio/mpeg", "audio/mp4", "audio/ogg", "audio/wav",
   "application/zip", "application/x-zip-compressed",

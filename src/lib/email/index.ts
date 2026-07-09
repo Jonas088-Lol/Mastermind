@@ -9,6 +9,8 @@
  * verifizieren, `EMAIL_FROM` und `EMAIL_REPLY_TO` setzen.
  */
 
+import { maskEmail } from "@/lib/security/redact";
+
 const RESEND_URL = "https://api.resend.com/emails";
 
 export interface EmailMessage {
@@ -63,9 +65,16 @@ async function sendEmailOnce(msg: EmailMessage): Promise<SendResult> {
 
 export async function sendEmail(msg: EmailMessage, maxAttempts = 3): Promise<SendResult> {
   if (!isEmailConfigured()) {
+    // In Produktion NIEMALS Empfänger + Body (Magic-/Reset-Links!) ins Log
+    // schreiben. Fehlt der Mail-Provider in Prod, ist das ein Konfigurationsfehler.
+    if (process.env.NODE_ENV === "production") {
+      console.error("[email] Kein Mail-Provider konfiguriert — E-Mail NICHT versendet.");
+      return { ok: false, error: "Email provider not configured" };
+    }
+    // Nur in Dev: Empfänger maskiert, Body zur lokalen Ansicht.
     console.log(
-      `\n────── E-Mail (Console-Transport) ──────\n` +
-        `To:      ${msg.to}\n` +
+      `\n────── E-Mail (Console-Transport, DEV) ──────\n` +
+        `To:      ${maskEmail(msg.to)}\n` +
         `From:    ${fromAddress()}\n` +
         `Subject: ${msg.subject}\n` +
         `\n${msg.text}\n` +
