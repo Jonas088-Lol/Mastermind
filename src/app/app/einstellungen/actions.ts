@@ -2,7 +2,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
-import { getSession } from "@/lib/session";
+import { getSession, invalidateOtherSessions } from "@/lib/session";
 import { hashPassword, verifyPassword } from "@/lib/auth/passwords";
 
 export async function updatePref(key: string, formData: FormData) {
@@ -117,6 +117,9 @@ export async function changePassword(formData: FormData) {
     where: { id: session.userId },
     data: { passwordHash: newHash },
   });
+
+  // Alle anderen Sitzungen beenden — die aktuelle bleibt aktiv.
+  await invalidateOtherSessions(session.userId);
 
   revalidatePath("/app/einstellungen");
 }

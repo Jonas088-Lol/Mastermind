@@ -113,6 +113,26 @@ Verbindliche Zuordnung in Code: `src/lib/privacy/classification.ts`.
 - **CSP:** `script-src 'unsafe-inline'` bleibt (Next.js braucht es ohne
   Nonce-Umbau) — bekannte Rest-Schwäche, dokumentiert für späteren Nonce-Umbau.
 
+### Auth & RBAC (Phase 5)
+
+- **Zentrale Guards:** `src/lib/auth/guard.ts` — `requireSession`/`requireRole`
+  (Actions, redirect) und `apiSession`/`apiRole` (Routes, Response) plus
+  `ownsOrSameSchool` gegen IDOR. Einheitliche Autorisierung inkl. effectiveRole.
+- **Session-Invalidierung:** Passwort-Reset killt ALLE Sessions;
+  Passwort-Änderung (app/teach/eltern) killt alle AUSSER der aktuellen
+  (`invalidateOtherSessions`/`invalidateAllSessions` in `session.ts`).
+- **Brute-Force:** zweistufig — pro IP+E-Mail (8/10min) UND pro Konto
+  IP-unabhängig (20/30min, gegen verteilte Angriffe). Plus 3-Layer-Firewall,
+  langsames scrypt, keine User-Enumeration.
+- **Alter/Elternzustimmung (Art. 8):** Modell `AgeVerification` + `User.birthDate`,
+  Logik in `src/lib/privacy/age-consent.ts` (Age-Band-Ableitung, Consent-Records
+  mit Zeitstempel/Version/Methode, `hasValidConsent`). Altersgrenze DE=16.
+  ⚖️ Verifikationsmethode und rechtssichere Ausgestaltung von DSB/Anwalt zu
+  klären — hier nur der technische Rahmen. Age-Gate-UI und Einbindung in den
+  Registrierungs-Flow noch offen.
+- **MFA:** TOTP vorhanden (2FA-Secret jetzt field-verschlüsselt, Phase 2).
+  Optional-für-alle; verpflichtend für Lehrer/Admin ist noch nicht erzwungen.
+
 ### Field-Encryption: Was verschlüsselt wird — und was nicht
 
 Bewusst NUR selten gelesene Geheimnisse (2FA-Secret, SSO-Client-Secret).

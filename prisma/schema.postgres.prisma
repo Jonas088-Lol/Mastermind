@@ -283,6 +283,10 @@ model User {
   teacherExercises           TeacherExercise[]           @relation("TeacherExercises")
   teacherExerciseCompletions TeacherExerciseCompletion[] @relation("TeacherExerciseCompletions")
 
+  // ── Alter / Einwilligung (Art. 8 DSGVO) ──────────────────
+  birthDate        DateTime?          // für Altersprüfung; optional
+  ageVerification  AgeVerification?
+
   // ── Curriculum / Skill Tree ──────────────────────────────
   bundeslandCode   String?
   landkreisId      String?
@@ -1866,6 +1870,35 @@ model UserConsent {
   ipAddress        String?
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
+}
+
+// Altersnachweis + Elternzustimmung nach Art. 8 DSGVO.
+// Bei Nutzern unter der Altersgrenze (DE: 16) ist die Verarbeitung nur mit
+// Zustimmung der/des Erziehungsberechtigten rechtmäßig. Dieses Modell hält
+// den technischen Nachweis (Zeitpunkt, Version, Methode, wer zugestimmt hat).
+// ⚖️ Die konkrete rechtssichere Ausgestaltung (Verifikationsmethode) ist
+// anwaltlich/DSB zu prüfen — hier wird nur der technische Rahmen bereitgestellt.
+model AgeVerification {
+  id                String    @id @default(cuid())
+  userId            String    @unique
+  user              User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Selbst angegebenes Alter / Altersklasse beim Age-Gate
+  declaredAgeBand   String    // "under16" | "16plus" | "adult"
+  isMinor           Boolean   @default(true)
+
+  // Elternzustimmung (nur relevant wenn isMinor)
+  parentConsent     Boolean   @default(false)
+  parentEmail       String?
+  parentConsentAt   DateTime?
+  consentMethod     String?   // "email_confirmation" | "school_verified" | "parent_account"
+  consentVersion    String    @default("1.0")
+
+  ipAddress         String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  @@index([isMinor, parentConsent])
 }
 
 model ActivitySession {

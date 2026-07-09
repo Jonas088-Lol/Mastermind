@@ -308,6 +308,33 @@ export async function clearSession() {
   store.delete(COOKIE);
 }
 
+/**
+ * Beendet ALLE DB-Sessions eines Nutzers. Nach Passwort-Reset/-Änderung, damit
+ * mit dem alten Passwort erlangte Sessions sofort ungültig werden.
+ */
+export async function invalidateAllSessions(userId: string): Promise<void> {
+  await prisma.session.deleteMany({ where: { userId } }).catch(() => undefined);
+}
+
+/**
+ * Beendet alle Sessions eines Nutzers AUSSER der aktuellen. Für Passwort-
+ * Änderung durch den eingeloggten Nutzer selbst (er bleibt eingeloggt, alle
+ * anderen Geräte/Sitzungen fliegen raus).
+ */
+export async function invalidateOtherSessions(userId: string): Promise<void> {
+  const store = await cookies();
+  const envelope = verifySession<CookieEnvelope>(store.get(COOKIE)?.value);
+  const currentHash = envelope?.sid ? hashSessionToken(envelope.sid) : null;
+  await prisma.session
+    .deleteMany({
+      where: {
+        userId,
+        ...(currentHash ? { token: { not: currentHash } } : {}),
+      },
+    })
+    .catch(() => undefined);
+}
+
 /** Effektive Rolle: falls super eine viewAs gesetzt hat, gilt diese. */
 export function effectiveRole(s: Session): Role {
   if (s.viewAs) return s.viewAs;

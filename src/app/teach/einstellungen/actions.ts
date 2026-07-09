@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { hashPassword, verifyPassword } from "@/lib/auth/passwords";
 import { prisma } from "@/lib/db/client";
-import { getSession } from "@/lib/session";
+import { getSession, invalidateOtherSessions } from "@/lib/session";
 
 async function getPrefs(userId: string): Promise<Record<string, boolean | string>> {
   const user = await prisma.user.findUnique({ where: { id: userId }, select: { prefs: true } });
@@ -60,6 +60,8 @@ export async function changePassword(formData: FormData): Promise<void> {
     where: { id: session.userId },
     data: { passwordHash: await hashPassword(newPw) },
   });
+
+  await invalidateOtherSessions(session.userId);
 
   revalidatePath("/teach/einstellungen");
 }

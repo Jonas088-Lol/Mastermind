@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { hashPassword, verifyPassword } from "@/lib/auth/passwords";
 import { prisma } from "@/lib/db/client";
-import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { ROLE_HOME, effectiveRole, getSession, invalidateOtherSessions } from "@/lib/session";
 
 async function requireParent() {
   const session = await getSession();
@@ -57,6 +57,8 @@ export async function changePassword(formData: FormData): Promise<void> {
     where: { id: session.userId },
     data: { passwordHash: newHash },
   });
+
+  await invalidateOtherSessions(session.userId);
 
   revalidatePath("/eltern/einstellungen");
 }

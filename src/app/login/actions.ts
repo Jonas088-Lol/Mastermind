@@ -53,15 +53,17 @@ export async function loginWithCredentials(formData: FormData) {
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
   const password = String(formData.get("password") ?? "");
 
-  // 8 Versuche pro IP + E-Mail in 10 Minuten — passwordhashing ist langsam,
-  // also Brute-Force-Schutz auch bei korrekter IP-Hygiene wichtig.
-  const limit = await rateLimit({
-    scope: "login",
-    key: `${await ip()}:${email}`,
-    limit: 8,
-    windowSec: 600,
-  });
-  if (!limit.ok) {
+  // Zweistufiger Brute-Force-Schutz:
+  //  (1) pro IP+E-Mail: 8/10min — normaler Missbrauch.
+  //  (2) pro E-Mail (IP-unabhängig): 20/30min — verteilter Angriff auf EIN
+  //      Konto über viele IPs (Account-Lockout).
+  const ipAddr = await ip();
+  const perIp = await rateLimit({ scope: "login", key: `${ipAddr}:${email}`, limit: 8, windowSec: 600 });
+  if (!perIp.ok) {
+    redirect("/login?error=rate-limit");
+  }
+  const perAccount = await rateLimit({ scope: "login-account", key: email, limit: 20, windowSec: 1800 });
+  if (!perAccount.ok) {
     redirect("/login?error=rate-limit");
   }
 
