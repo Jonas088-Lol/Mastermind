@@ -117,6 +117,26 @@ services:
       VAPID_EMAIL:                   ${VAPID_EMAIL:-}
       UPSTASH_REDIS_REST_URL:        ${UPSTASH_REDIS_REST_URL:-}
       UPSTASH_REDIS_REST_TOKEN:      ${UPSTASH_REDIS_REST_TOKEN:-}
+      # Zugangs-Gate ("Coming Soon"-Schutz)
+      GATE_USER:                     ${GATE_USER:-Admin}
+      GATE_PASS:                     ${GATE_PASS:?GATE_PASS is required}
+      GATE_SECRET:                   ${GATE_SECRET:-}
+      # Cron / Wartung / Mail-Inbound
+      CRON_SECRET:                   ${CRON_SECRET:-}
+      RESEND_INBOUND_SECRET:         ${RESEND_INBOUND_SECRET:-}
+      # Demo-Seed-Schutz (muss in Prod false sein)
+      ALLOW_DEMO_SEED:               ${ALLOW_DEMO_SEED:-false}
+      # Field-Level-Encryption (2FA-/SSO-Secrets)
+      FIELD_ENCRYPTION_KEYS:         ${FIELD_ENCRYPTION_KEYS:-}
+      FIELD_ENCRYPTION_ACTIVE:       ${FIELD_ENCRYPTION_ACTIVE:-}
+      # KI-Kostenschutz / Rate-Limiting
+      AI_DAILY_CAP_PER_USER:         ${AI_DAILY_CAP_PER_USER:-50}
+      SECURITY_RATE_LIMIT_ENABLED:   ${SECURITY_RATE_LIMIT_ENABLED:-true}
+      FIREWALL_WHITELIST_IPS:        ${FIREWALL_WHITELIST_IPS:-}
+      # Backups
+      BACKUP_AGE_RECIPIENT:          ${BACKUP_AGE_RECIPIENT:-}
+      # CORS
+      ALLOWED_ORIGINS:               ${ALLOWED_ORIGINS:-}
     volumes:
       # Persist uploaded files (logos, favicons, user uploads) across container restarts
       - uploads_data:/app/public/uploads
