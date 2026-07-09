@@ -52,6 +52,16 @@ RUN if [ -f node_modules/.bin/esbuild ]; then \
       echo "⚠ esbuild not found — seed will be skipped at runtime"; \
     fi
 
+# Admin-Setup-Skripte → .cjs (für ersten Login nach frischem DB-Setup)
+RUN if [ -f node_modules/.bin/esbuild ]; then \
+      for s in create-admin purge-demo-accounts; do \
+        node_modules/.bin/esbuild scripts/$s.ts \
+          --bundle --platform=node --target=node22 --format=cjs \
+          --outfile=scripts/$s.cjs --external:@prisma/client || true; \
+      done; \
+      echo "✓ admin scripts compiled"; \
+    fi
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Stage 3 — runner: minimal production image
 # ─────────────────────────────────────────────────────────────────────────────
@@ -78,6 +88,9 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static     ./.next/static
 COPY --from=builder /app/prisma                ./prisma
 COPY --from=builder /app/node_modules/.prisma  ./node_modules/.prisma
 COPY --from=builder /app/node_modules/@prisma  ./node_modules/@prisma
+
+# Admin-Setup-Skripte (create-admin.cjs, purge-demo-accounts.cjs)
+COPY --from=builder /app/scripts                ./scripts
 
 # Install Prisma CLI with its complete transitive dep tree into an isolated
 # directory. npm install at build time → no missing-module whack-a-mole at runtime.
