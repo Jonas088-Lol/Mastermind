@@ -1,33 +1,66 @@
 import { redirect } from "next/navigation";
-import { effectiveRole, getSession } from "@/lib/session";
+import { Sidebar, type NavItem } from "@/components/app/Sidebar";
 import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
-import { SchultraegerNav } from "./SchultraegerNav";
+import { AppHeader } from "@/components/app/AppHeader";
+import { ImpersonationBar } from "@/components/ImpersonationBar";
+import { SchoolBrandingInjector } from "@/components/SchoolBrandingInjector";
+import {
+  displayUser,
+  effectiveRole,
+  getSession,
+  isImpersonating,
+  isSuper,
+} from "@/lib/session";
+import { getSchoolBranding } from "@/lib/school-branding";
+import { fetchNotifications } from "@/lib/notifications";
 
-const schultraegerBottomItems: BottomNavItem[] = [
-  { href: "/schultraeger",             label: "Start",       icon: "home",      exact: true },
+const navItems: NavItem[] = [
+  { href: "/schultraeger",             label: "Übersicht",   icon: "home", exact: true },
   { href: "/schultraeger/schulen",     label: "Schulen",     icon: "building2" },
   { href: "/schultraeger/statistiken", label: "Statistiken", icon: "barChart3" },
   { href: "/schultraeger/lizenzen",    label: "Lizenzen",    icon: "fileText" },
   { href: "/schultraeger/abrechnung",  label: "Abrechnung",  icon: "coins" },
 ];
 
+const bottomNav: BottomNavItem[] = [
+  { href: "/schultraeger",             label: "Start",       icon: "home", exact: true },
+  { href: "/schultraeger/schulen",     label: "Schulen",     icon: "building2" },
+  { href: "/schultraeger/statistiken", label: "Statistiken", icon: "barChart3" },
+  { href: "/schultraeger/lizenzen",    label: "Lizenzen",    icon: "fileText" },
+];
+
 export default async function SchultraegerLayout({ children }: { children: React.ReactNode }) {
   const session = await getSession();
   if (!session) redirect("/login");
-  const role = effectiveRole(session);
-  if (role !== "school_company" && role !== "super") redirect("/login");
+  const effective = effectiveRole(session);
+  if (effective !== "school_company" && effective !== "super") redirect("/login");
+
+  const [{ notifications, unreadCount }, branding] = await Promise.all([
+    fetchNotifications(session.userId),
+    getSchoolBranding(session),
+  ]);
+  const schoolDisplayName = branding?.brandName ?? branding?.name;
 
   return (
-    <div className="flex min-h-screen bg-surface">
-      <SchultraegerNav />
+    <div className="flex h-screen overflow-hidden bg-surface">
+      <SchoolBrandingInjector branding={branding} />
+      <Sidebar items={navItems} rootHref="/schultraeger" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-30 border-b border-border bg-bg px-6 py-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">Schulträger-Portal</p>
-        </header>
-        <main className="flex-1 px-4 py-6 pb-24 lg:px-10 lg:py-10 lg:pb-10">
+        <div className="shrink-0 z-30">
+          {isSuper(session) && (
+            <ImpersonationBar effective={effective} isImpersonating={isImpersonating(session)} />
+          )}
+          <AppHeader
+            user={displayUser(session)}
+            searchPlaceholder="Suchen — Schulen, Lizenzen, Statistiken …"
+            unreadCount={unreadCount}
+            notifications={notifications}
+          />
+        </div>
+        <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 lg:px-10 lg:py-10">
           {children}
         </main>
-        <BottomNav items={schultraegerBottomItems} />
+        <BottomNav items={bottomNav} moreItems={navItems} user={displayUser(session)} />
       </div>
     </div>
   );

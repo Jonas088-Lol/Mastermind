@@ -1,10 +1,31 @@
 import { redirect } from "next/navigation";
-import { effectiveRole, getSession } from "@/lib/session";
+import { Sidebar, type NavItem } from "@/components/app/Sidebar";
 import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
-import { RektorNav } from "./RektorNav";
+import { AppHeader } from "@/components/app/AppHeader";
+import { ImpersonationBar } from "@/components/ImpersonationBar";
+import { SchoolBrandingInjector } from "@/components/SchoolBrandingInjector";
+import {
+  displayUser,
+  effectiveRole,
+  getSession,
+  isImpersonating,
+  isSuper,
+} from "@/lib/session";
+import { getSchoolBranding } from "@/lib/school-branding";
+import { fetchNotifications } from "@/lib/notifications";
 
-const rektorBottomItems: BottomNavItem[] = [
-  { href: "/rektor",             label: "Start",       icon: "home",      exact: true },
+const navItems: NavItem[] = [
+  { href: "/rektor",             label: "Übersicht",          icon: "home", exact: true },
+  { href: "/rektor/statistiken", label: "Statistiken",        icon: "barChart3" },
+  { href: "/rektor/personal",    label: "Personal",           icon: "users" },
+  { href: "/rektor/mannschaften",label: "Mannschaften",       icon: "shield" },
+  { href: "/rektor/schuljahr",   label: "Schuljahresplanung", icon: "calendarDays" },
+  { href: "/rektor/evaluation",  label: "Evaluation",         icon: "lineChart" },
+  { href: "/rektor/broadcast",   label: "Broadcast",          icon: "megaphone" },
+];
+
+const bottomNav: BottomNavItem[] = [
+  { href: "/rektor",             label: "Start",       icon: "home", exact: true },
   { href: "/rektor/statistiken", label: "Statistiken", icon: "barChart3" },
   { href: "/rektor/personal",    label: "Personal",    icon: "users" },
   { href: "/rektor/broadcast",   label: "Broadcast",   icon: "megaphone" },
@@ -13,27 +34,42 @@ const rektorBottomItems: BottomNavItem[] = [
 export default async function RektorLayout({ children }: { children: React.ReactNode }) {
   const session = await getSession();
   if (!session) redirect("/login");
-  const role = effectiveRole(session);
+  const effective = effectiveRole(session);
   if (
-    role !== "rector" &&
-    role !== "vice_rector" &&
-    role !== "admin" &&
-    role !== "super"
+    effective !== "rector" &&
+    effective !== "vice_rector" &&
+    effective !== "admin" &&
+    effective !== "super"
   ) {
     redirect("/login");
   }
 
+  const [{ notifications, unreadCount }, branding] = await Promise.all([
+    fetchNotifications(session.userId),
+    getSchoolBranding(session),
+  ]);
+  const schoolDisplayName = branding?.brandName ?? branding?.name;
+
   return (
-    <div className="flex min-h-screen bg-surface">
-      <RektorNav />
+    <div className="flex h-screen overflow-hidden bg-surface">
+      <SchoolBrandingInjector branding={branding} />
+      <Sidebar items={navItems} rootHref="/rektor" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
       <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-30 border-b border-border bg-bg px-6 py-4">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">Schulleitung</p>
-        </header>
-        <main className="flex-1 px-4 py-6 pb-24 lg:px-10 lg:py-10 lg:pb-10">
+        <div className="shrink-0 z-30">
+          {isSuper(session) && (
+            <ImpersonationBar effective={effective} isImpersonating={isImpersonating(session)} />
+          )}
+          <AppHeader
+            user={displayUser(session)}
+            searchPlaceholder="Suchen — Personal, Klassen, Statistiken …"
+            unreadCount={unreadCount}
+            notifications={notifications}
+          />
+        </div>
+        <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 lg:px-10 lg:py-10">
           {children}
         </main>
-        <BottomNav items={rektorBottomItems} />
+        <BottomNav items={bottomNav} moreItems={navItems} user={displayUser(session)} />
       </div>
     </div>
   );
