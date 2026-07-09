@@ -12,11 +12,13 @@
 export const GATE_COOKIE = "mm_gate";
 
 // Credentials & Secret ausschließlich aus ENV. Fallbacks nur für lokale Dev.
-const GATE_USER = process.env.GATE_USER ?? "admin";
-const GATE_PASS = process.env.GATE_PASS ?? "dev";
+// WICHTIG: || statt ?? — leere ENV-Strings ("" aus docker-compose ${VAR:-})
+// müssen ebenfalls auf den Fallback fallen, sonst leerer HMAC-Key → Crash.
+const GATE_USER = process.env.GATE_USER || "admin";
+const GATE_PASS = process.env.GATE_PASS || "dev";
 const GATE_SECRET =
-  process.env.GATE_SECRET ??
-  process.env.SESSION_SECRET ??
+  process.env.GATE_SECRET ||
+  process.env.SESSION_SECRET ||
   "mastermind-dev-gate-secret-change-me";
 
 const TOKEN_TTL_MS = 1000 * 60 * 60 * 24 * 30; // 30 Tage

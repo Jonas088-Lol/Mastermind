@@ -49,6 +49,6 @@ export function maskUserAgent(ua: string | null | undefined): string {
 export function pseudonymId(userId: string): string {
   // Lazy require, damit dieses Modul auch in Edge-Kontexten importierbar bleibt.
   const { createHmac } = require("node:crypto") as typeof import("node:crypto");
-  const secret = process.env.SESSION_SECRET ?? "mm-pseudonym-dev-salt";
+  const secret = process.env.SESSION_SECRET || "mm-pseudonym-dev-salt";
   return createHmac("sha256", secret).update(`analytics:${userId}`).digest("hex").slice(0, 16);
 }

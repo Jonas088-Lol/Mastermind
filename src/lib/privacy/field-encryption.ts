@@ -44,7 +44,7 @@ function loadKeys(): { keys: KeyMap; active: string | null } {
     keys.set(version, key);
   }
 
-  const active = process.env.FIELD_ENCRYPTION_ACTIVE ?? (keys.size ? [...keys.keys()].pop()! : null);
+  const active = process.env.FIELD_ENCRYPTION_ACTIVE || (keys.size ? [...keys.keys()].pop()! : null);
   cachedKeys = keys;
   cachedActive = active;
   return { keys, active };
