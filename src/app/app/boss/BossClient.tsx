@@ -43,6 +43,21 @@ interface BossClientProps {
 type Phase = "idle" | "loading" | "question" | "result";
 type BossAnim = "idle" | "hit" | "defeated";
 
+// Format remaining ms as "2d 3h 15m 42s" — days shown only when > 0,
+// smaller units always shown so the countdown visibly ticks
+function formatTimeLeft(ms: number): string {
+  const totalSec = Math.floor(ms / 1000);
+  const days = Math.floor(totalSec / 86_400);
+  const hours = Math.floor((totalSec % 86_400) / 3_600);
+  const minutes = Math.floor((totalSec % 3_600) / 60);
+  const seconds = totalSec % 60;
+  const parts: string[] = [];
+  if (days > 0) parts.push(`${days}d`);
+  if (days > 0 || hours > 0) parts.push(`${hours}h`);
+  parts.push(`${minutes}m`, `${seconds}s`);
+  return parts.join(" ");
+}
+
 export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxHp, myCorrectAnswers, endAtIso }: BossClientProps) {
   const router = useRouter();
   const [hp, setHp] = useState(initialHp);
@@ -56,7 +71,7 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
       const ms = Math.max(0, new Date(endAtIso).getTime() - Date.now());
       setBattleMsLeft(ms);
       if (ms === 0) clearInterval(id);
-    }, 10_000);
+    }, 1_000);
     return () => clearInterval(id);
   }, [endAtIso]);
   const [phase, setPhase] = useState<Phase>("idle");
@@ -321,7 +336,7 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
           </div>
           {battleMsLeft !== null && battleMsLeft > 0 && (
             <p className="text-center text-[10px] font-mono text-muted-fg">
-              ⏳ {Math.floor(battleMsLeft / 3_600_000)}h {Math.floor((battleMsLeft % 3_600_000) / 60_000)}m verbleibend
+              ⏳ {formatTimeLeft(battleMsLeft)} verbleibend
             </p>
           )}
           {battleMsLeft === 0 && (

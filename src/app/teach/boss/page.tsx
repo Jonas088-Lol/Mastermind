@@ -13,7 +13,7 @@ export default async function TeachBossPage() {
 
   const battles = await prisma.bossBattle.findMany({
     where: { createdByUserId: session.userId },
-    orderBy: { createdAt: "desc" },
+    orderBy: { startAt: "desc" },
     include: {
       _count: { select: { participants: true, questions: true } },
     },
