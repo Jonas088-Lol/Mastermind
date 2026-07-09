@@ -36,6 +36,8 @@ docs/
 
 # Test / scripts that aren't needed at runtime
 scripts/seed*.ts
+# ... außer dem Demo-Tester-Seed (wird im Container zu .cjs kompiliert)
+!scripts/seed-demo-testers.ts
 scripts/generate-vapid.mjs
 
 # CI / deployment config not needed inside image

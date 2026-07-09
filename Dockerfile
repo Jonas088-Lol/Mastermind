@@ -53,14 +53,14 @@ RUN if [ -f node_modules/.bin/esbuild ]; then \
     fi
 
 # Admin-Setup-Skripte → .cjs (für ersten Login nach frischem DB-Setup)
-RUN if [ -f node_modules/.bin/esbuild ]; then \
-      for s in create-admin purge-demo-accounts seed-demo-testers; do \
-        node_modules/.bin/esbuild scripts/$s.ts \
-          --bundle --platform=node --target=node22 --format=cjs \
-          --outfile=scripts/$s.cjs --external:@prisma/client || true; \
-      done; \
-      echo "✓ admin scripts compiled"; \
-    fi
+# Kein "|| true" — ein Compile-Fehler soll den Build stoppen, nicht still
+# fehlende Skripte hinterlassen.
+RUN for s in create-admin purge-demo-accounts seed-demo-testers; do \
+      node_modules/.bin/esbuild scripts/$s.ts \
+        --bundle --platform=node --target=node22 --format=cjs \
+        --outfile=scripts/$s.cjs --external:@prisma/client; \
+      echo "✓ compiled scripts/$s.cjs"; \
+    done
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Stage 3 — runner: minimal production image
