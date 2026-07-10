@@ -42,17 +42,58 @@ export async function sendPushNotification(
 
 export const vapidPublicKey = VAPID_PUBLIC;
 
+// Native FCM/APNs tokens are stored via /api/push/native-token with
+// p256dh set to the platform name instead of a real web-push key.
+const NATIVE_PLATFORMS = new Set(["android", "ios", "native"]);
+function isNativeSub(s: { p256dh: string }): boolean {
+  return NATIVE_PLATFORMS.has(s.p256dh);
+}
+
 export async function pushToUsers(
   userIds: string[],
   payload: { title: string; body: string; url?: string }
 ): Promise<void> {
-  if (!VAPID_PUBLIC || !VAPID_PRIVATE || userIds.length === 0) return;
+  if (userIds.length === 0) return;
   const { prisma } = await import("@/lib/db/client");
   const subs = await prisma.pushSubscription.findMany({
     where: { userId: { in: userIds } },
     select: { endpoint: true, p256dh: true, auth: true },
   });
-  const results = await Promise.allSettled(subs.map((s) => sendPushNotification(s, payload)));
-  const failed = results.filter((r) => r.status === "rejected" || (r.status === "fulfilled" && !r.value)).length;
-  if (failed > 0) logger.warn("push: some notifications failed", { total: subs.length, failed });
+  if (subs.length === 0) return;
+
+  const nativeSubs = subs.filter(isNativeSub);
+  const webSubs = subs.filter((s) => !isNativeSub(s));
+
+  // ── Native push via FCM ──────────────────────────────────────────────────
+  const expiredTokens: string[] = [];
+  if (nativeSubs.length > 0) {
+    const { sendFcm } = await import("@/lib/fcm");
+    await Promise.allSettled(
+      nativeSubs.map(async (s) => {
+        const { expired } = await sendFcm(s.endpoint, payload);
+        if (expired) expiredTokens.push(s.endpoint);
+      })
+    );
+    if (expiredTokens.length > 0) {
+      await prisma.pushSubscription
+        .deleteMany({ where: { endpoint: { in: expiredTokens } } })
+        .catch(() => {});
+    }
+  }
+
+  // ── Web push via VAPID ───────────────────────────────────────────────────
+  let webFailed = 0;
+  if (webSubs.length > 0 && VAPID_PUBLIC && VAPID_PRIVATE) {
+    const results = await Promise.allSettled(webSubs.map((s) => sendPushNotification(s, payload)));
+    webFailed = results.filter((r) => r.status === "rejected" || (r.status === "fulfilled" && !r.value)).length;
+  }
+
+  if (webFailed > 0 || expiredTokens.length > 0) {
+    logger.warn("push: some notifications failed", {
+      web: webSubs.length,
+      webFailed,
+      native: nativeSubs.length,
+      nativeExpired: expiredTokens.length,
+    });
+  }
 }

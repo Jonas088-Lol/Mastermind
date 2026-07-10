@@ -147,11 +147,47 @@ async function pickFromGallery(): Promise<string | null> {
   }
 }
 
-// Push notifications disabled (Firebase not configured)
+// Register for native push (FCM on Android, APNs on iOS) and return the device token.
+// Returns null on web or if the user denies permission.
 async function registerPushNotifications(
-  _onNotification: (data: Record<string, unknown>) => void
+  onNotification: (data: Record<string, unknown>) => void
 ): Promise<string | null> {
-  return null;
+  if (!isNative()) return null;
+  const { PushNotifications } = await import("@capacitor/push-notifications");
+
+  // Ask for permission (no-op if already granted).
+  let perm = await PushNotifications.checkPermissions();
+  if (perm.receive === "prompt" || perm.receive === "prompt-with-rationale") {
+    perm = await PushNotifications.requestPermissions();
+  }
+  if (perm.receive !== "granted") return null;
+
+  // Deliver foreground notifications to the caller.
+  await PushNotifications.addListener("pushNotificationReceived", (notif) => {
+    onNotification({ ...notif.data, title: notif.title, body: notif.body });
+  });
+  // When the user taps a notification, navigate to its url if provided.
+  await PushNotifications.addListener("pushNotificationActionPerformed", (action) => {
+    const url = action.notification.data?.url;
+    if (typeof url === "string" && url.startsWith("/")) {
+      window.location.href = url;
+    }
+  });
+
+  // The token arrives asynchronously via the "registration" event.
+  return new Promise<string | null>((resolve) => {
+    let settled = false;
+    const finish = (value: string | null) => {
+      if (settled) return;
+      settled = true;
+      resolve(value);
+    };
+    PushNotifications.addListener("registration", (token) => finish(token.value));
+    PushNotifications.addListener("registrationError", () => finish(null));
+    PushNotifications.register().catch(() => finish(null));
+    // Safety timeout so init() never hangs if the platform is silent.
+    setTimeout(() => finish(null), 10000);
+  });
 }
 
 // Listen for app state changes (background/foreground)
