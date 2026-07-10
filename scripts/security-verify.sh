@@ -30,8 +30,12 @@ fi
 
 echo "[4] Offene Ports (lokal)"
 if command -v ss >/dev/null; then
-  ss -tlnp 2>/dev/null | grep -qE ':5432' && bad "Postgres lauscht extern?!" || ok "Postgres nicht extern"
-  ss -tlnp 2>/dev/null | grep -qE ':6379' && bad "Redis lauscht extern?!" || ok "Redis nicht extern"
+  # Nur ECHTE externe Bindung ist ein Problem (0.0.0.0 / [::] / öffentliche IP).
+  # localhost (127.0.0.1 / [::1]) und Docker-intern (172.x) sind sicher.
+  ss -tlnp 2>/dev/null | grep -E ':5432' | grep -qE '0\.0\.0\.0:5432|\[::\]:5432' \
+    && bad "Postgres lauscht extern (0.0.0.0)!" || ok "Postgres nur localhost/intern"
+  ss -tlnp 2>/dev/null | grep -E ':6379' | grep -qE '0\.0\.0\.0:6379|\[::\]:6379' \
+    && bad "Redis lauscht extern (0.0.0.0)!" || ok "Redis nur localhost/intern"
 fi
 
 echo "[5] Firewall & Fail2ban"
