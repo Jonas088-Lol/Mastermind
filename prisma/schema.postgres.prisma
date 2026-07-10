@@ -309,6 +309,10 @@ model User {
   @@index([schoolId])
   @@index([classId])
   @@index([schoolId, role])
+  // Leaderboards (Ranking sortiert schulweit nach xp/coins/streak)
+  @@index([schoolId, xp])
+  @@index([schoolId, coins])
+  @@index([schoolId, streak])
 }
 
 model BackupCode {

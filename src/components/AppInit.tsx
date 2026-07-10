@@ -27,8 +27,9 @@ export function AppInit() {
       );
 
       // 3. Register push notifications and send token to server
-      const token = await native.push.register((data) => {
-        console.log("[Push] Notification received in foreground:", data);
+      const token = await native.push.register(() => {
+        // Vordergrund-Benachrichtigung empfangen — hier könnte künftig ein
+        // In-App-Toast erscheinen. Bewusst kein Logging in Produktion.
       });
 
       if (token) {

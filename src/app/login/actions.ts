@@ -119,7 +119,14 @@ export async function verifyLoginTwoFactor(formData: FormData) {
     redirect("/login?error=2fa-not-active");
   }
 
-  if (!verifyTotp(TwoFactorSecret.decrypt(user.twoFactorSecret)!, code)) {
+  // Zuerst TOTP prüfen; schlägt das fehl, einen Backup-Code akzeptieren
+  // (Wiederherstellung, wenn das Authenticator-Gerät verloren ging).
+  let verified = verifyTotp(TwoFactorSecret.decrypt(user.twoFactorSecret)!, code);
+  if (!verified) {
+    const { consumeBackupCode } = await import("@/lib/auth/backup-codes");
+    verified = await consumeBackupCode(pending.userId, code);
+  }
+  if (!verified) {
     redirect("/login/2fa?error=invalid");
   }
 

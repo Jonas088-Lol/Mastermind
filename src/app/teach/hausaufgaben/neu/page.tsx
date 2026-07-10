@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { SubmitButton } from "@/components/ui/SubmitButton";
 import { createHomework } from "./actions";
 
 export const metadata: Metadata = { title: "Neue Hausaufgabe" };
@@ -151,12 +152,12 @@ export default async function NeueHausaufgabePage() {
           </div>
         </label>
 
-        <button
-          type="submit"
+        <SubmitButton
+          pendingText="Erstelle…"
           className="mt-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-brand-fg shadow-sm transition-opacity hover:opacity-90"
         >
           Hausaufgabe erstellen
-        </button>
+        </SubmitButton>
       </form>
     </div>
   );

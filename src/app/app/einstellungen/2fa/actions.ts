@@ -34,27 +34,37 @@ export async function startTwoFactorSetup(): Promise<StartSetupResult> {
   };
 }
 
-export async function confirmTwoFactorSetup(formData: FormData) {
+export interface ConfirmSetupResult {
+  ok: boolean;
+  backupCodes?: string[];
+  error?: string;
+}
+
+export async function confirmTwoFactorSetup(
+  formData: FormData
+): Promise<ConfirmSetupResult> {
   const session = await getSession();
-  if (!session) redirect("/login");
+  if (!session) return { ok: false, error: "Nicht angemeldet" };
 
   const secret = String(formData.get("secret") ?? "");
   const code = String(formData.get("code") ?? "");
 
-  if (!secret || !code) {
-    redirect("/app/einstellungen?error=missing-2fa");
-  }
-  if (!verifyTotp(secret, code)) {
-    redirect("/app/einstellungen?error=2fa-code-invalid");
-  }
+  if (!secret || !code) return { ok: false, error: "Code fehlt" };
+  if (!verifyTotp(secret, code)) return { ok: false, error: "Code ungültig" };
 
-  await prisma.user.update({
+  const user = await prisma.user.update({
     where: { email: session.email },
     data: { twoFactor: true, twoFactorSecret: TwoFactorSecret.encrypt(secret) },
+    select: { id: true },
   });
 
+  // Backup-Codes generieren und EINMALIG zurückgeben (Wiederherstellung, falls
+  // das Authenticator-Gerät verloren geht).
+  const { regenerateBackupCodes } = await import("@/lib/auth/backup-codes");
+  const backupCodes = await regenerateBackupCodes(user.id);
+
   revalidatePath("/app/einstellungen");
-  redirect("/app/einstellungen?ok=2fa-on");
+  return { ok: true, backupCodes };
 }
 
 export async function disableTwoFactor(formData: FormData) {
@@ -73,10 +83,15 @@ export async function disableTwoFactor(formData: FormData) {
     redirect("/app/einstellungen?error=2fa-code-invalid");
   }
 
-  await prisma.user.update({
+  const updated = await prisma.user.update({
     where: { email: session.email },
     data: { twoFactor: false, twoFactorSecret: null },
+    select: { id: true },
   });
+
+  // Verwaiste Backup-Codes entfernen.
+  const { clearBackupCodes } = await import("@/lib/auth/backup-codes");
+  await clearBackupCodes(updated.id);
 
   revalidatePath("/app/einstellungen");
   // Wenn ein Lehrer/Admin 2FA deaktiviert, wird das normalerweise

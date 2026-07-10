@@ -14,6 +14,7 @@ import {
 } from "@/lib/session";
 import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
+import { enforceStaff2FA } from "@/lib/auth/require-2fa";
 import { prisma } from "@/lib/db/client";
 
 const adminBottomItems: BottomNavItem[] = [
@@ -34,6 +35,8 @@ export default async function AdminLayout({
 
   const effective = effectiveRole(session);
   if (effective !== "admin") redirect(ROLE_HOME[effective]);
+
+  await enforceStaff2FA();
 
   const [{ notifications, unreadCount }, branding, unreadMessages] = await Promise.all([
     fetchNotifications(session.userId),

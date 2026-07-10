@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Timer, Zap, Lightbulb } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { native } from "@/lib/native";
+import { safeJsonParse } from "@/lib/safe-json";
 
 export interface QuizQuestion {
   id: string;
@@ -108,7 +109,7 @@ export function QuizEngine({
       if (question.type === "mc" || question.type === "blitz") {
         const n = parseInt(e.key, 10);
         if (n >= 1 && n <= 4) {
-          const opts = JSON.parse(question.options ?? "[]") as string[];
+          const opts = safeJsonParse<string[]>(question.options, []);
           if (opts[n - 1]) handleSubmit(String(n - 1));
         }
       }
@@ -325,7 +326,7 @@ function AnswerInput({
 }) {
   const { type, options: optionsJson } = question;
   const options = optionsJson
-    ? (JSON.parse(optionsJson) as string[] | { left: string[]; right: string[] })
+    ? safeJsonParse<string[] | { left: string[]; right: string[] }>(optionsJson, [])
     : null;
 
   if (type === "mc" || type === "blitz") {
@@ -365,7 +366,7 @@ function AnswerInput({
   }
 
   if (type === "fill_blank") {
-    const correctArr = JSON.parse(question.correct) as string[];
+    const correctArr = safeJsonParse<string[]>(question.correct, []);
     const blanks = correctArr.length;
     const [values, setValues] = useState<string[]>(Array(blanks).fill(""));
 
@@ -576,7 +577,7 @@ function FeedbackArea({
   question: QuizQuestion;
 }) {
   const opts = question.options
-    ? (JSON.parse(question.options) as string[] | { left: string[]; right: string[] })
+    ? safeJsonParse<string[] | { left: string[]; right: string[] }>(question.options, [])
     : null;
 
   let correctLabel = "";
@@ -586,7 +587,7 @@ function FeedbackArea({
   } else if (question.type === "true_false") {
     correctLabel = correctAnswer === "true" ? "Wahr" : "Falsch";
   } else if (question.type === "fill_blank") {
-    correctLabel = (JSON.parse(correctAnswer) as string[]).join(", ");
+    correctLabel = safeJsonParse<string[]>(correctAnswer, []).join(", ");
   }
 
   return (
@@ -776,23 +777,23 @@ function checkAnswer(question: QuizQuestion, userAnswer: string): boolean {
   }
 
   if (type === "fill_blank") {
-    const correctArr = JSON.parse(correct) as string[];
-    const userArr = JSON.parse(userAnswer) as string[];
-    return correctArr.every(
+    const correctArr = safeJsonParse<string[]>(correct, []);
+    const userArr = safeJsonParse<string[]>(userAnswer, []);
+    return correctArr.length > 0 && correctArr.every(
       (c, i) => (userArr[i] ?? "").trim().toLowerCase() === c.trim().toLowerCase()
     );
   }
 
   if (type === "order") {
-    const correctOrder = JSON.parse(correct) as number[];
-    const userOrder = JSON.parse(userAnswer) as number[];
-    return JSON.stringify(userOrder) === JSON.stringify(correctOrder);
+    const correctOrder = safeJsonParse<number[]>(correct, []);
+    const userOrder = safeJsonParse<number[]>(userAnswer, []);
+    return correctOrder.length > 0 && JSON.stringify(userOrder) === JSON.stringify(correctOrder);
   }
 
   if (type === "match") {
-    const correctPairs = JSON.parse(correct) as number[];
-    const userPairs = JSON.parse(userAnswer) as (number | null)[];
-    return correctPairs.every((c, i) => userPairs[i] === c);
+    const correctPairs = safeJsonParse<number[]>(correct, []);
+    const userPairs = safeJsonParse<(number | null)[]>(userAnswer, []);
+    return correctPairs.length > 0 && correctPairs.every((c, i) => userPairs[i] === c);
   }
 
   return false;

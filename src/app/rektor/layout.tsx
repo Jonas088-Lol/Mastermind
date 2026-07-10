@@ -13,6 +13,7 @@ import {
 } from "@/lib/session";
 import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
+import { enforceStaff2FA } from "@/lib/auth/require-2fa";
 
 const navItems: NavItem[] = [
   { href: "/rektor",             label: "Übersicht",          icon: "home", exact: true },
@@ -43,6 +44,8 @@ export default async function RektorLayout({ children }: { children: React.React
   ) {
     redirect("/login");
   }
+
+  await enforceStaff2FA();
 
   const [{ notifications, unreadCount }, branding] = await Promise.all([
     fetchNotifications(session.userId),

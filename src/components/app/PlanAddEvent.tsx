@@ -15,6 +15,7 @@ export function PlanAddEvent({ defaultDate }: { defaultDate?: string }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [title, setTitle] = useState("");
   const [date, setDate] = useState(defaultDate ?? new Date().toISOString().slice(0, 10));
   const [time, setTime] = useState("");
@@ -25,6 +26,7 @@ export function PlanAddEvent({ defaultDate }: { defaultDate?: string }) {
     e.preventDefault();
     if (!title.trim() || !date) return;
     setSaving(true);
+    setError(null);
 
     const startAt = allDay
       ? new Date(date + "T00:00:00").toISOString()
@@ -32,11 +34,18 @@ export function PlanAddEvent({ defaultDate }: { defaultDate?: string }) {
 
     const color = CATEGORIES.find((c) => c.key === category)?.color ?? "#6366f1";
 
-    await fetch("/api/personal-events", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ title: title.trim(), startAt, allDay, color, category }),
-    });
+    try {
+      const res = await fetch("/api/personal-events", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: title.trim(), startAt, allDay, color, category }),
+      });
+      if (!res.ok) throw new Error("Speichern fehlgeschlagen");
+    } catch {
+      setSaving(false);
+      setError("Termin konnte nicht gespeichert werden. Bitte erneut versuchen.");
+      return;
+    }
 
     setSaving(false);
     setOpen(false);
@@ -63,7 +72,7 @@ export function PlanAddEvent({ defaultDate }: { defaultDate?: string }) {
                 <Calendar className="size-4 text-brand" />
                 <h2 className="text-sm font-bold">Neuer Termin</h2>
               </div>
-              <button onClick={() => setOpen(false)} className="rounded-lg p-1 hover:bg-surface">
+              <button onClick={() => setOpen(false)} aria-label="Schließen" className="rounded-lg p-1 hover:bg-surface">
                 <X className="size-4 text-muted-fg" />
               </button>
             </div>
@@ -131,6 +140,10 @@ export function PlanAddEvent({ defaultDate }: { defaultDate?: string }) {
                 </div>
               </div>
 
+              {error && (
+                <p className="text-xs text-danger">{error}</p>
+              )}
+
               <div className="flex gap-2 pt-1">
                 <button
                   type="button"
@@ -158,11 +171,16 @@ export function PlanAddEvent({ defaultDate }: { defaultDate?: string }) {
 export function DeleteEventButton({ id }: { id: string }) {
   const router = useRouter();
   async function del() {
-    await fetch(`/api/personal-events?id=${id}`, { method: "DELETE" });
+    try {
+      const res = await fetch(`/api/personal-events?id=${id}`, { method: "DELETE" });
+      if (!res.ok) return; // Fehler: nichts entfernen, Liste bleibt unverändert
+    } catch {
+      return;
+    }
     router.refresh();
   }
   return (
-    <button onClick={del} className="rounded p-0.5 text-muted-fg opacity-0 transition-opacity hover:text-danger group-hover:opacity-100">
+    <button onClick={del} aria-label="Termin löschen" className="rounded p-0.5 text-muted-fg opacity-0 transition-opacity hover:text-danger group-hover:opacity-100">
       <X className="size-3" />
     </button>
   );

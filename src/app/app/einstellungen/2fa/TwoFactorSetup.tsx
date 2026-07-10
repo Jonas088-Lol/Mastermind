@@ -19,7 +19,7 @@ import {
   startTwoFactorSetup,
 } from "./actions";
 
-type Phase = "idle" | "setup" | "confirming";
+type Phase = "idle" | "setup" | "codes";
 
 export interface TwoFactorSetupProps {
   initiallyEnabled: boolean;
@@ -32,7 +32,25 @@ export function TwoFactorSetup({ initiallyEnabled }: TwoFactorSetupProps) {
   const [otpauthUrl, setOtpauthUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [code, setCode] = useState("");
+  const [backupCodes, setBackupCodes] = useState<string[] | null>(null);
   const [pending, startTransition] = useTransition();
+
+  function confirm() {
+    setError(null);
+    startTransition(async () => {
+      const fd = new FormData();
+      fd.set("secret", secret ?? "");
+      fd.set("code", code);
+      const res = await confirmTwoFactorSetup(fd);
+      if (!res.ok) {
+        setError(res.error ?? "Code ungültig");
+        return;
+      }
+      setBackupCodes(res.backupCodes ?? []);
+      setPhase("codes");
+    });
+  }
 
   async function start() {
     setError(null);
@@ -147,6 +165,51 @@ export function TwoFactorSetup({ initiallyEnabled }: TwoFactorSetupProps) {
     );
   }
 
+  if (phase === "codes" && backupCodes) {
+    return (
+      <div className="flex flex-col gap-5 border border-success/40 bg-success/4 p-5">
+        <div className="flex items-start gap-3">
+          <ShieldCheck className="mt-0.5 size-4 shrink-0 text-success" strokeWidth={1.75} />
+          <div>
+            <p className="text-sm font-semibold">2FA aktiviert — Backup-Codes sichern</p>
+            <p className="mt-0.5 text-xs text-muted-fg">
+              Bewahre diese Codes sicher auf (Passwortmanager/ausdrucken). Jeder
+              Code funktioniert <strong>einmal</strong>, falls du dein Handy
+              verlierst. Sie werden <strong>nur jetzt</strong> angezeigt.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-2">
+          {backupCodes.map((c) => (
+            <code key={c} className="border border-border bg-bg px-3 py-2 text-center font-mono text-sm tracking-widest">
+              {c}
+            </code>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              navigator.clipboard?.writeText(backupCodes.join("\n")).catch(() => {});
+              setCopied(true);
+              window.setTimeout(() => setCopied(false), 1500);
+            }}
+          >
+            {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
+            Alle kopieren
+          </Button>
+          <Button type="button" size="sm" onClick={() => { window.location.href = "/app/einstellungen?ok=2fa-on"; }}>
+            Ich habe die Codes gespeichert
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   // setup phase — show secret + verify form
   return (
     <div className="flex flex-col gap-5 border border-brand/40 bg-brand/4 p-5">
@@ -203,8 +266,7 @@ export function TwoFactorSetup({ initiallyEnabled }: TwoFactorSetupProps) {
         <p className="text-xs font-semibold uppercase tracking-wider text-brand">
           Schritt 2 · Code aus der App eingeben
         </p>
-        <form action={confirmTwoFactorSetup} className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end">
-          <input type="hidden" name="secret" value={secret ?? ""} />
+        <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end">
           <div className="flex-1 space-y-1.5">
             <Label htmlFor="setup-code">6-stelliger Code</Label>
             <Input
@@ -215,15 +277,22 @@ export function TwoFactorSetup({ initiallyEnabled }: TwoFactorSetupProps) {
               maxLength={6}
               placeholder="123 456"
               autoComplete="one-time-code"
-              required
+              value={code}
+              onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))}
               autoFocus
             />
           </div>
-          <Button type="submit" size="md">
+          <Button type="button" size="md" onClick={confirm} disabled={pending || code.length !== 6}>
             <ShieldCheck className="size-3.5" />
-            Bestätigen + aktivieren
+            {pending ? "…" : "Bestätigen + aktivieren"}
           </Button>
-        </form>
+        </div>
+        {error && (
+          <p className="mt-2 flex items-center gap-2 text-xs text-danger">
+            <AlertCircle className="size-3" />
+            {error}
+          </p>
+        )}
       </div>
 
       <button

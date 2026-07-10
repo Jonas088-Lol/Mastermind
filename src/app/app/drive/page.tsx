@@ -77,7 +77,15 @@ export default function DrivePage() {
 
   async function deleteFile(id: string, name: string) {
     if (!confirm(`"${name}" wirklich löschen?`)) return;
-    await fetch(`/api/drive/files/${id}`, { method: "DELETE" });
+    try {
+      const res = await fetch(`/api/drive/files/${id}`, { method: "DELETE" });
+      if (!res.ok) throw new Error();
+    } catch {
+      // Nur bei Erfolg aus der Liste nehmen — sonst würde die Datei fälschlich
+      // verschwinden, obwohl sie serverseitig noch existiert.
+      void loadFiles();
+      return;
+    }
     startTransition(() => setFiles((f) => f.filter((x) => x.id !== id)));
   }
 

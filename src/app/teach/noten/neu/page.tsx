@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { SubmitButton } from "@/components/ui/SubmitButton";
 import { saveGrade } from "./actions";
 
 export const metadata: Metadata = { title: "Note eintragen" };
@@ -147,12 +148,12 @@ export default async function NoteNeuPage({ searchParams }: PageProps) {
           />
         </div>
 
-        <button
-          type="submit"
+        <SubmitButton
+          pendingText="Speichere…"
           className="bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90"
         >
           Note speichern
-        </button>
+        </SubmitButton>
       </form>
     </div>
   );

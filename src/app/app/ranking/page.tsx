@@ -6,8 +6,53 @@ import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardBody } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+
+// Schulweite Ranglisten-Aggregationen sind für alle Schüler einer Schule
+// identisch und müssen nicht sekundenaktuell sein → 60s cachen (entlastet die
+// DB bei vielen gleichzeitigen Aufrufen). Key = Schul-ID.
+const cachedBossRaw = unstable_cache(
+  async (schoolId: string) =>
+    (await prisma.bossParticipant.groupBy({
+      by: ["userId"], _sum: { damage: true },
+      where: { user: { schoolId } },
+      orderBy: { _sum: { damage: "desc" } }, take: 30,
+    } as unknown as Parameters<typeof prisma.bossParticipant.groupBy>[0])) as unknown as { userId: string; _sum: { damage: number | null } }[],
+  ["ranking-boss"], { revalidate: 60 }
+);
+const cachedMvpRaw = unstable_cache(
+  async (schoolId: string) =>
+    (await prisma.bossParticipant.groupBy({
+      by: ["userId"], _count: { isMvp: true },
+      where: { user: { schoolId }, isMvp: true },
+      orderBy: { _count: { isMvp: "desc" } }, take: 30,
+    } as unknown as Parameters<typeof prisma.bossParticipant.groupBy>[0])) as unknown as { userId: string; _count: { isMvp: number } }[],
+  ["ranking-mvp"], { revalidate: 60 }
+);
+const cachedLernzeitRaw = unstable_cache(
+  async (schoolId: string) =>
+    (await prisma.activitySession.groupBy({
+      by: ["userId"], _sum: { activeSeconds: true },
+      where: { user: { schoolId, role: "student" } },
+      orderBy: { _sum: { activeSeconds: "desc" } }, take: 30,
+    } as unknown as Parameters<typeof prisma.activitySession.groupBy>[0])) as unknown as { userId: string; _sum: { activeSeconds: number | null } }[],
+  ["ranking-lernzeit"], { revalidate: 60 }
+);
+const cachedWeeklyRaw = unstable_cache(
+  async (schoolId: string) => {
+    const startOfWeek = new Date();
+    startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
+    startOfWeek.setHours(0, 0, 0, 0);
+    return (await prisma.xpLog.groupBy({
+      by: ["userId"], _sum: { amount: true },
+      where: { user: { schoolId, role: "student" }, createdAt: { gte: startOfWeek } },
+      orderBy: { _sum: { amount: "desc" } }, take: 30,
+    } as unknown as Parameters<typeof prisma.xpLog.groupBy>[0])) as unknown as { userId: string; _sum: { amount: number | null } }[];
+  },
+  ["ranking-weekly"], { revalidate: 60 }
+);
 import { levelFromXp, getRankForXp, formatXp, xpProgressInLevel } from "@/lib/game";
 import { cn } from "@/lib/utils";
 
@@ -69,21 +114,9 @@ export default async function RankingPage({ searchParams }: PageProps) {
       take: 30,
     });
   } else if (activeTab === "boss" && session.schoolId) {
-    bossRaw = (await prisma.bossParticipant.groupBy({
-      by: ["userId"],
-      _sum: { damage: true },
-      where: { user: { schoolId: session.schoolId } },
-      orderBy: { _sum: { damage: "desc" } },
-      take: 30,
-    } as unknown as Parameters<typeof prisma.bossParticipant.groupBy>[0])) as unknown as typeof bossRaw;
+    bossRaw = await cachedBossRaw(session.schoolId);
   } else if (activeTab === "mvp" && session.schoolId) {
-    mvpRaw = (await prisma.bossParticipant.groupBy({
-      by: ["userId"],
-      _count: { isMvp: true },
-      where: { user: { schoolId: session.schoolId }, isMvp: true },
-      orderBy: { _count: { isMvp: "desc" } },
-      take: 30,
-    } as unknown as Parameters<typeof prisma.bossParticipant.groupBy>[0])) as unknown as typeof mvpRaw;
+    mvpRaw = await cachedMvpRaw(session.schoolId);
   } else if (activeTab === "coins" && session.schoolId) {
     coinsRaw = (await prisma.user.findMany({
       where: { schoolId: session.schoolId, role: "student" },
@@ -92,27 +125,9 @@ export default async function RankingPage({ searchParams }: PageProps) {
       take: 30,
     })) as typeof coinsRaw;
   } else if (activeTab === "lernzeit" && session.schoolId) {
-    lernzeitRaw = (await prisma.activitySession.groupBy({
-      by: ["userId"],
-      _sum: { activeSeconds: true },
-      where: { user: { schoolId: session.schoolId, role: "student" } },
-      orderBy: { _sum: { activeSeconds: "desc" } },
-      take: 30,
-    } as unknown as Parameters<typeof prisma.activitySession.groupBy>[0])) as unknown as typeof lernzeitRaw;
+    lernzeitRaw = await cachedLernzeitRaw(session.schoolId);
   } else if (activeTab === "weekly" && session.schoolId) {
-    const startOfWeek = new Date();
-    startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
-    startOfWeek.setHours(0, 0, 0, 0);
-    weeklyRaw = (await prisma.xpLog.groupBy({
-      by: ["userId"],
-      _sum: { amount: true },
-      where: {
-        user: { schoolId: session.schoolId, role: "student" },
-        createdAt: { gte: startOfWeek },
-      },
-      orderBy: { _sum: { amount: "desc" } },
-      take: 30,
-    } as unknown as Parameters<typeof prisma.xpLog.groupBy>[0])) as unknown as typeof weeklyRaw;
+    weeklyRaw = await cachedWeeklyRaw(session.schoolId);
   }
 
   // Resolve user details for aggregation-based tabs

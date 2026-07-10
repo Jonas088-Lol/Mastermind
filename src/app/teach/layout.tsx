@@ -15,6 +15,7 @@ import {
 } from "@/lib/session";
 import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
+import { enforceStaff2FA } from "@/lib/auth/require-2fa";
 import { prisma } from "@/lib/db/client";
 
 export default async function TeachLayout({
@@ -27,6 +28,8 @@ export default async function TeachLayout({
 
   const effective = effectiveRole(session);
   if (effective !== "teacher") redirect(ROLE_HOME[effective]);
+
+  await enforceStaff2FA();
 
   const [{ notifications, unreadCount }, pendingCorrections, unreadThreads, branding] = await Promise.all([
     fetchNotifications(session.userId),
