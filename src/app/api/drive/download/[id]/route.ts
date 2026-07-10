@@ -43,6 +43,8 @@ export async function GET(
       "Content-Type": file.mimeType,
       "Content-Disposition": `attachment; filename="${encodeURIComponent(file.name)}"`,
       "Content-Length": String(buffer.length),
+      // Verhindert MIME-Sniffing durch den Browser (XSS-Schutz bei Uploads).
+      "X-Content-Type-Options": "nosniff",
     },
   });
 }

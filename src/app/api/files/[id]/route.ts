@@ -53,6 +53,7 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
         ? `attachment; filename="${record.filename}"`
         : `inline; filename="${record.filename}"`,
       "Cache-Control": "private, max-age=3600",
+      "X-Content-Type-Options": "nosniff",
     },
   });
 }

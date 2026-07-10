@@ -47,7 +47,22 @@ export async function uploadHomeworkFile(formData: FormData): Promise<void> {
   const MAX_SIZE = 20 * 1024 * 1024; // 20 MB
   if (file.size > MAX_SIZE) return;
 
-  const ext = file.name.split(".").pop()?.toLowerCase() ?? "bin";
+  // Typ-Whitelist; Extension aus dem MIME-Typ ableiten (nicht aus dem Dateinamen).
+  const HW_EXT: Record<string, string> = {
+    "application/pdf": "pdf",
+    "image/png": "png",
+    "image/jpeg": "jpg",
+    "image/webp": "webp",
+    "image/heic": "heic",
+    "text/plain": "txt",
+    "application/msword": "doc",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": "docx",
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation": "pptx",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": "xlsx",
+  };
+  const ext = HW_EXT[file.type];
+  if (!ext) return;
+
   const safeName = `hw_${homeworkId}_${session.userId}_${Date.now()}.${ext}`;
   const uploadDir = join(process.cwd(), "uploads", "homework");
   await mkdir(uploadDir, { recursive: true });

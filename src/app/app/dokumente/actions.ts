@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { rateLimit } from "@/lib/security/rate-limit";
 
 async function requireStudent() {
   const session = await getSession();
@@ -14,6 +15,9 @@ async function requireStudent() {
 
 export async function createDocument(): Promise<void> {
   const session = await requireStudent();
+  // Missbrauchsschutz: max. 30 neue Dokumente/Stunde (verhindert Dauer-Anlegen).
+  const rl = await rateLimit({ scope: "create-doc", key: session.userId, limit: 30, windowSec: 3600 });
+  if (!rl.ok) redirect("/app/dokumente");
   const doc = await prisma.document.create({
     data: { userId: session.userId },
   });
@@ -26,7 +30,7 @@ export async function renameDocument(documentId: string, title: string): Promise
   if (!doc || doc.userId !== session.userId) return;
   await prisma.document.update({
     where: { id: documentId },
-    data: { title: title.trim() || "Unbenanntes Dokument" },
+    data: { title: title.trim().slice(0, 200) || "Unbenanntes Dokument" },
   });
   revalidatePath("/app/dokumente");
 }

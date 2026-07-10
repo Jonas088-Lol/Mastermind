@@ -4,17 +4,25 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
+import { rateLimit } from "@/lib/security/rate-limit";
+
+/** Maximale Nachrichtenlänge (Schutz vor riesigen Payloads). */
+export const MESSAGE_MAX_CHARS = 5000;
 
 export async function sendMessage(formData: FormData) {
   const session = await getSession();
   if (!session) redirect("/login");
 
   const threadId = String(formData.get("threadId") ?? "").trim();
-  const content = String(formData.get("content") ?? "").trim();
+  const content = String(formData.get("content") ?? "").trim().slice(0, MESSAGE_MAX_CHARS);
   const backHref = String(formData.get("backHref") ?? "/app/nachrichten");
   const replyToId = String(formData.get("replyToId") ?? "").trim() || null;
 
   if (!threadId || !content) return;
+
+  // Spam-Schutz: max. 20 Nachrichten / Minute pro Nutzer.
+  const rl = await rateLimit({ scope: "msg-send", key: session.userId, limit: 20, windowSec: 60 });
+  if (!rl.ok) return;
 
   const participant = await prisma.messageParticipant.findUnique({
     where: { threadId_userId: { threadId, userId: session.userId } },

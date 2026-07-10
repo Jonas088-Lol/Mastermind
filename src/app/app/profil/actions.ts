@@ -17,7 +17,14 @@ export async function uploadAvatar(formData: FormData): Promise<void> {
   const MAX_SIZE = 5 * 1024 * 1024; // 5 MB
   if (file.size > MAX_SIZE) return;
 
-  const ext = file.type === "image/png" ? "png" : file.type === "image/webp" ? "webp" : "jpg";
+  // Nur Bild-Typen erlauben (Avatare werden direkt statisch ausgeliefert).
+  const AVATAR_EXT: Record<string, string> = {
+    "image/png": "png",
+    "image/jpeg": "jpg",
+    "image/webp": "webp",
+  };
+  const ext = AVATAR_EXT[file.type];
+  if (!ext) return;
   const filename = `${session.userId}.${ext}`;
   const dest = path.join(process.cwd(), "public", "uploads", "avatars", filename);
 

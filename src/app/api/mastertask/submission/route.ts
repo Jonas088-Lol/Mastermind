@@ -1,27 +1,58 @@
 import { writeFile, mkdir } from "fs/promises";
-import { join, extname } from "path";
+import { join } from "path";
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
+import { rateLimit, ipFromHeaders } from "@/lib/security/rate-limit";
 
 const UPLOAD_DIR = join(process.cwd(), "uploads", "mastertask-submissions");
 const MAX_SIZE = 50 * 1024 * 1024; // 50 MB
+
+// Erlaubte Abgabe-Typen → sichere Extension (aus MIME abgeleitet, nicht aus dem
+// Dateinamen — verhindert Spoofing und Path-Traversal über die Endung).
+const ALLOWED: Record<string, string> = {
+  "application/pdf": "pdf",
+  "image/png": "png",
+  "image/jpeg": "jpg",
+  "image/webp": "webp",
+  "image/heic": "heic",
+  "text/plain": "txt",
+  "application/msword": "doc",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document": "docx",
+  "application/vnd.openxmlformats-officedocument.presentationml.presentation": "pptx",
+  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": "xlsx",
+};
 
 // POST /api/mastertask/submission?taskId=xxx — student uploads submission file
 export async function POST(req: NextRequest) {
   const session = await getSession();
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
+  // Rate-Limit gegen Missbrauch/Speicherfüllung
+  const rl = await rateLimit({ scope: "mastertask-submission", key: session.userId || ipFromHeaders(req.headers), limit: 20, windowSec: 600 });
+  if (!rl.ok) return NextResponse.json({ error: "Zu viele Uploads. Bitte kurz warten." }, { status: 429 });
+
   const taskId = req.nextUrl.searchParams.get("taskId");
   if (!taskId) return NextResponse.json({ error: "taskId fehlt" }, { status: 400 });
+
+  // Aufgabe muss existieren und zur Schule des Schülers gehören — verhindert das
+  // Ablegen von Dateien in beliebige Ordner (Path-Traversal über taskId).
+  const task = await prisma.masterTask.findUnique({ where: { id: taskId }, select: { schoolId: true } });
+  if (!task || (session.schoolId && task.schoolId !== session.schoolId)) {
+    return NextResponse.json({ error: "Aufgabe nicht gefunden" }, { status: 404 });
+  }
 
   const formData = await req.formData();
   const file = formData.get("file") as File | null;
   if (!file) return NextResponse.json({ error: "Keine Datei" }, { status: 400 });
   if (file.size > MAX_SIZE) return NextResponse.json({ error: "Datei zu groß (max. 50 MB)" }, { status: 413 });
 
-  const ext = extname(file.name).toLowerCase();
-  const unique = `${Date.now()}_${crypto.randomUUID().slice(0, 8)}${ext}`;
+  const ext = ALLOWED[file.type];
+  if (!ext) {
+    return NextResponse.json({ error: "Dateityp nicht erlaubt (PDF, Bild, Office-Dokument oder Text)" }, { status: 415 });
+  }
+
+  const unique = `${Date.now()}_${crypto.randomUUID().slice(0, 8)}.${ext}`;
   const dir = join(UPLOAD_DIR, taskId, session.userId);
   await mkdir(dir, { recursive: true });
   await writeFile(join(dir, unique), Buffer.from(await file.arrayBuffer()));

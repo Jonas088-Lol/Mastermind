@@ -7,7 +7,13 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 
-const ALLOWED_IMAGE_TYPES = ["image/png", "image/jpeg", "image/svg+xml", "image/webp"];
+// SVG bewusst NICHT erlaubt — SVG kann <script> enthalten und wird direkt
+// statisch ausgeliefert (stored XSS). Nur Rastergrafiken.
+const ALLOWED_IMAGE_TYPES: Record<string, string> = {
+  "image/png": "png",
+  "image/jpeg": "jpg",
+  "image/webp": "webp",
+};
 const MAX_LOGO_SIZE = 2 * 1024 * 1024; // 2 MB
 
 async function saveUploadedFile(
@@ -16,7 +22,8 @@ async function saveUploadedFile(
   schoolId: string,
   suffix = "",
 ): Promise<string> {
-  const ext = file.name.split(".").pop()?.toLowerCase() ?? "png";
+  // Extension aus dem (validierten) MIME-Typ ableiten, nicht aus file.name.
+  const ext = ALLOWED_IMAGE_TYPES[file.type] ?? "png";
   const dir = join(process.cwd(), "public", "uploads", subfolder);
   await mkdir(dir, { recursive: true });
   const filename = `${schoolId}${suffix}.${ext}`;
@@ -50,8 +57,8 @@ export async function saveBranding(formData: FormData): Promise<void> {
   }
 
   if (logoFile && logoFile.size > 0) {
-    if (!ALLOWED_IMAGE_TYPES.includes(logoFile.type)) {
-      throw new Error("Logo: nur PNG, JPEG, SVG oder WebP erlaubt");
+    if (!(logoFile.type in ALLOWED_IMAGE_TYPES)) {
+      throw new Error("Logo: nur PNG, JPEG oder WebP erlaubt");
     }
     if (logoFile.size > MAX_LOGO_SIZE) {
       throw new Error("Logo: max. 2 MB");
@@ -60,8 +67,8 @@ export async function saveBranding(formData: FormData): Promise<void> {
   }
 
   if (logoDarkFile && logoDarkFile.size > 0) {
-    if (!ALLOWED_IMAGE_TYPES.includes(logoDarkFile.type)) {
-      throw new Error("Dark Logo: nur PNG, JPEG, SVG oder WebP erlaubt");
+    if (!(logoDarkFile.type in ALLOWED_IMAGE_TYPES)) {
+      throw new Error("Dark Logo: nur PNG, JPEG oder WebP erlaubt");
     }
     if (logoDarkFile.size > MAX_LOGO_SIZE) {
       throw new Error("Dark Logo: max. 2 MB");
@@ -70,8 +77,8 @@ export async function saveBranding(formData: FormData): Promise<void> {
   }
 
   if (faviconFile && faviconFile.size > 0) {
-    if (!ALLOWED_IMAGE_TYPES.includes(faviconFile.type) && faviconFile.type !== "image/x-icon") {
-      throw new Error("Favicon: nur PNG, SVG oder ICO erlaubt");
+    if (!(faviconFile.type in ALLOWED_IMAGE_TYPES)) {
+      throw new Error("Favicon: nur PNG, JPEG oder WebP erlaubt");
     }
     if (faviconFile.size > MAX_LOGO_SIZE) {
       throw new Error("Favicon: max. 2 MB");

@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { rateLimit } from "@/lib/security/rate-limit";
 
 async function requireStudent() {
   const session = await getSession();
@@ -14,6 +15,9 @@ async function requireStudent() {
 
 export async function createSpreadsheet(): Promise<void> {
   const session = await requireStudent();
+  // Missbrauchsschutz: max. 30 neue Tabellen/Stunde.
+  const rl = await rateLimit({ scope: "create-sheet", key: session.userId, limit: 30, windowSec: 3600 });
+  if (!rl.ok) redirect("/app/tabellen");
   const sheet = await prisma.spreadsheet.create({
     data: { userId: session.userId },
   });
@@ -26,7 +30,7 @@ export async function renameSpreadsheet(spreadsheetId: string, title: string): P
   if (!sheet || sheet.userId !== session.userId) return;
   await prisma.spreadsheet.update({
     where: { id: spreadsheetId },
-    data: { title: title.trim() || "Unbenannte Tabelle" },
+    data: { title: title.trim().slice(0, 200) || "Unbenannte Tabelle" },
   });
   revalidatePath("/app/tabellen");
 }
