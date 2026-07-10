@@ -19,7 +19,7 @@
 set -euo pipefail
 
 BUILD_TYPE="${1:-debug}"
-APP_URL="${CAPACITOR_APP_URL:-https://app.mastermind.app}"
+APP_URL="${CAPACITOR_APP_URL:-https://konvertis.de}"
 
 echo ""
 echo "╔══════════════════════════════════════════════════╗"

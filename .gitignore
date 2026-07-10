@@ -42,6 +42,17 @@ yarn-error.log*
 /ios
 /android
 
+# App-Signing-Secrets — NIEMALS committen
+*.keystore
+*.jks
+keystore.properties
+*.mobileprovision
+*.p12
+/build-output
+*.apk
+*.aab
+*.ipa
+
 # prisma local sqlite
 /prisma/dev.db
 /prisma/dev.db-journal
