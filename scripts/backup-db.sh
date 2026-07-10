@@ -14,6 +14,17 @@
 set -euo pipefail
 
 APP_DIR="${APP_DIR:-/opt/mastermind}"
+
+# ENV zuerst laden (DB-Credentials UND Backup-Einstellungen), damit die aus der
+# .env.production stammenden BACKUP_-Werte auch beim systemd-Timer greifen.
+ENV_FILE="$APP_DIR/.env.production"
+if [ -f "$ENV_FILE" ]; then
+  set -a
+  # shellcheck disable=SC1090
+  source <(grep -E '^(POSTGRES_|DATABASE_|BACKUP_|KEEP_DAYS)' "$ENV_FILE")
+  set +a
+fi
+
 BACKUP_DIR="${BACKUP_DIR:-$APP_DIR/backups}"
 KEEP_DAYS="${KEEP_DAYS:-14}"
 AGE_RECIPIENT="${BACKUP_AGE_RECIPIENT:-}"
@@ -22,15 +33,6 @@ if [ -n "$AGE_RECIPIENT" ]; then
   BACKUP_FILE="$BACKUP_DIR/mastermind_${TIMESTAMP}.sql.gz.age"
 else
   BACKUP_FILE="$BACKUP_DIR/mastermind_${TIMESTAMP}.sql.gz"
-fi
-
-# Load env vars for DB credentials
-ENV_FILE="$APP_DIR/.env.production"
-if [ -f "$ENV_FILE" ]; then
-  set -a
-  # shellcheck disable=SC1090
-  source <(grep -E '^(POSTGRES_|DATABASE_)' "$ENV_FILE")
-  set +a
 fi
 
 DB_NAME="${POSTGRES_DB:-mastermind}"

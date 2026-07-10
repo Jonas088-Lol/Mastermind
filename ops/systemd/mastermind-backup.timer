@@ -1,0 +1,12 @@
+# Ziel: /etc/systemd/system/mastermind-backup.timer
+# Tägliches DB-Backup um 03:00 Uhr.
+[Unit]
+Description=Tägliches MasterMind-DB-Backup um 03:00
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+Persistent=true          # verpasste Backups (Server war aus) werden nachgeholt
+RandomizedDelaySec=5min  # kleiner Jitter, nicht exakt 03:00:00
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,15 @@
+# Ziel: /etc/systemd/system/mastermind-backup.service
+# Verschlüsseltes Postgres-Backup (wird vom Timer um 03:00 getriggert).
+[Unit]
+Description=MasterMind verschlüsseltes DB-Backup
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+# Pfad an dein Deploy-Verzeichnis anpassen (Hetzner: z.B. /opt/mastermind)
+Environment=APP_DIR=/opt/mastermind
+ExecStart=/bin/bash /opt/mastermind/scripts/backup-db.sh
+# Logs landen im Journal: journalctl -u mastermind-backup
+StandardOutput=journal
+StandardError=journal
