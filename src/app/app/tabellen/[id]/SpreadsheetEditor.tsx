@@ -9,6 +9,47 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { saveSpreadsheetData, renameSpreadsheet, deleteSpreadsheet } from "../actions";
+import { evaluateExpression } from "@/lib/math/evaluate";
+
+// ── Sichere Bedingungs-Auswertung für WENN/IF (kein new Function/eval) ───────
+// Erwartet einen bereits ref-aufgelösten Ausdruck, z.B. `5>3` oder `"a"="a"`.
+function evalConditionSide(s: string): number | string {
+  const t = s.trim();
+  const q = t.match(/^"([\s\S]*)"$/);
+  if (q) return q[1];
+  const r = evaluateExpression(t);
+  return r.ok ? r.value : t.replace(/^"|"$/g, "");
+}
+function safeCondition(cond: string): boolean {
+  const m = cond.match(/^([\s\S]+?)\s*(>=|<=|<>|!=|==|=|>|<)\s*([\s\S]+)$/);
+  if (!m) {
+    const v = evalConditionSide(cond);
+    return typeof v === "number" ? v !== 0 : v !== "" && !/^(falsch|false)$/i.test(v);
+  }
+  const lhs = evalConditionSide(m[1]);
+  const rhs = evalConditionSide(m[3]);
+  const op = m[2];
+  if (typeof lhs === "number" && typeof rhs === "number") {
+    switch (op) {
+      case ">":  return lhs > rhs;
+      case "<":  return lhs < rhs;
+      case ">=": return lhs >= rhs;
+      case "<=": return lhs <= rhs;
+      case "=": case "==": return lhs === rhs;
+      case "<>": case "!=": return lhs !== rhs;
+    }
+  }
+  const ls = String(lhs), rs = String(rhs);
+  switch (op) {
+    case "=": case "==": return ls === rs;
+    case "<>": case "!=": return ls !== rs;
+    case ">":  return ls > rs;
+    case "<":  return ls < rs;
+    case ">=": return ls >= rs;
+    case "<=": return ls <= rs;
+  }
+  return false;
+}
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
@@ -185,8 +226,7 @@ function evaluateCell(key: string, cells: Record<string, CellData>, depth = 0): 
           return isNaN(num) ? `"${val}"` : String(num);
         });
         try {
-          // eslint-disable-next-line no-new-func
-          const ok = new Function(`return Boolean(${resolveRefs(condArg)})`)() as boolean;
+          const ok = safeCondition(resolveRefs(condArg));
           const raw = (ok ? trueArg : falseArg).trim().replace(/^"(.*)"$/, "$1");
           if (/^[A-Z]+\d+$/i.test(raw)) return evaluateCell(cellRefToKey(raw.toUpperCase()), cells, depth + 1);
           const num = Number(raw);

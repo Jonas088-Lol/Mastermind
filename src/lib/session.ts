@@ -152,6 +152,8 @@ export interface Session {
   schoolId?: string;
   realRole: Role;
   viewAs?: Role;
+  /** Plattform-weiter Super-Admin (aus User.isSuperAdmin) */
+  isSuperAdmin: boolean;
   /** Server-Side Session-ID (DB) */
   sid: string;
   /** Issued-At, Sekunden seit Epoch */
@@ -207,7 +209,7 @@ export async function getSession(): Promise<Session | null> {
       expiresAt: true,
       viewAs: true,
       createdAt: true,
-      user: { select: { id: true, email: true, name: true, role: true, klasse: true, classId: true, schoolId: true } },
+      user: { select: { id: true, email: true, name: true, role: true, klasse: true, classId: true, schoolId: true, isSuperAdmin: true } },
     },
   });
   if (!row) return null;
@@ -242,6 +244,7 @@ export async function getSession(): Promise<Session | null> {
     schoolId: row.user.schoolId ?? undefined,
     realRole: row.user.role as Role,
     viewAs,
+    isSuperAdmin: row.user.isSuperAdmin === true,
     sid: envelope.sid,
     iat: Math.floor(row.createdAt.getTime() / 1000),
   };

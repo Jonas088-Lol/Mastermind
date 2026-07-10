@@ -140,7 +140,7 @@ function getPlatforms(baseUrl: string): Platform[] {
       downloadLabel: "Jetzt öffnen",
       storeUrl: baseUrl,
       instructions: [
-        "app.mastermind.app im Browser öffnen",
+        "konvertis.de im Browser öffnen",
         'Chrome/Edge: "App installieren"-Symbol in der Adressleiste',
         "Safari iOS: Teilen -> Zum Home-Bildschirm",
       ],
@@ -388,7 +388,7 @@ export function DownloadPageClient({ appVersion, baseUrl }: Props) {
                   <strong className="font-semibold text-fg">Tipp:</strong>{" "}
                   Du kannst MasterMind auch direkt im Browser unter{" "}
                   <a href={baseUrl} className="text-brand underline" target="_blank" rel="noopener noreferrer">
-                    app.mastermind.app
+                    konvertis.de
                   </a>{" "}
                   nutzen — ohne Installation.
                 </p>

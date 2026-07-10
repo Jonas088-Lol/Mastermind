@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server";
+import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db/client";
 import { pushToUsers } from "@/lib/push";
 import { logger } from "@/lib/logger";
@@ -58,7 +59,9 @@ export async function GET(req: NextRequest) {
     mvpTop.forEach((r, i) => entries.push({ seasonId: season.id, userId: r.userId, category: "mvp", rank: i + 1, score: BigInt(r._count.isMvp), schoolId: season.schoolId ?? null }));
 
     if (entries.length > 0) {
-      await prisma.seasonRankingEntry.createMany({ data: entries, skipDuplicates: true });
+      // skipDuplicates gibt es nur beim Postgres-Client (Produktion); der lokale
+      // SQLite-Client kennt es nicht → Cast, Laufzeitverhalten bleibt gleich.
+      await prisma.seasonRankingEntry.createMany({ data: entries, skipDuplicates: true } as Prisma.SeasonRankingEntryCreateManyArgs);
     }
 
     // Deactivate season

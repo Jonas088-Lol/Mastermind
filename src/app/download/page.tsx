@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const APP_VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? "1.0";
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://app.mastermind.app";
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://konvertis.de";
 
 export default function DownloadPage() {
   return <DownloadPageClient appVersion={APP_VERSION} baseUrl={BASE_URL} />;

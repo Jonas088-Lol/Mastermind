@@ -106,3 +106,44 @@ systemctl list-timers | grep mastermind
 - SSH-Passwort ganz abschalten: `docs/security/ssh-setup.md` (falls Key nicht
   schon beim Server-Erstellen hinterlegt wurde).
 - ModSecurity-WAF scharf schalten: `docs/security/waf-tuning.md`.
+
+---
+
+## 10. Umschalt-Tag (Go-Live-Checkliste mit minimaler Ausfallzeit)
+
+Reihenfolge für den eigentlichen Wechsel alt → Hetzner, ohne Datenverlust:
+
+**Vorab (Tage vorher)**
+- [ ] Neuer Server läuft komplett (Schritte 1–9), App unter der Hetzner-IP
+      erreichbar (per `/etc/hosts`-Test oder Test-Subdomain prüfen).
+- [ ] DNS-TTL der Domain auf **300 s (5 Min)** senken – damit die spätere
+      Umstellung schnell greift.
+- [ ] Ein voller Testlauf der Migration (Backup einspielen, einloggen,
+      Kernfunktionen klicken) auf dem neuen Server.
+
+**Am Umschalt-Tag**
+1. [ ] **Wartungsmodus alt an:** `MAINTENANCE_MODE=true` auf dem alten Server
+       → verhindert neue Schreibzugriffe während der Übernahme.
+2. [ ] **Finales Backup** auf dem alten Server erstellen (`scripts/backup-db.sh`).
+3. [ ] Backup auf Hetzner kopieren und einspielen (Abschnitt 6).
+4. [ ] Kurzer Rauchtest auf Hetzner: Login, eine Note/Hausaufgabe sichtbar,
+       Datei-Upload, Push-Registrierung.
+5. [ ] **DNS umstellen:** A-/AAAA-Record (bzw. Cloudflare-Origin) auf die
+       Hetzner-IP zeigen lassen. Bei Cloudflare bleibt Proxy „orange".
+6. [ ] Warten bis DNS greift (wegen TTL 300 s meist < 5 Min), dann über die
+       echte Domain testen.
+7. [ ] **Wartungsmodus neu aus:** `MAINTENANCE_MODE=false` auf Hetzner.
+8. [ ] `bash scripts/security-verify.sh DEINE-DOMAIN.de` gegen die Live-Domain.
+9. [ ] Backup-Timer und Cron-Jobs laufen (`systemctl list-timers | grep mastermind`).
+
+**Rollback (falls etwas klemmt)**
+- Solange DNS noch niedrig steht: A-Record zurück auf den alten Server,
+  `MAINTENANCE_MODE=false` alt. Da der alte Stand seit dem finalen Backup
+  eingefroren war (Wartungsmodus), gehen keine Daten verloren.
+
+**Nachlauf (1–2 Wochen)**
+- [ ] Alten Server erst abschalten, wenn Hetzner stabil läuft und mind. ein
+      erfolgreiches verschlüsseltes Backup dort erstellt wurde.
+- [ ] DNS-TTL wieder erhöhen (z. B. 3600 s).
+- [ ] `CAPACITOR_APP_URL` der App bleibt gleich (zeigt auf die Domain, nicht die
+      IP) → **die veröffentlichte App muss NICHT neu gebaut werden.**

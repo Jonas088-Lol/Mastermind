@@ -3,11 +3,12 @@ import { cn } from "@/lib/utils";
 
 interface AvatarProps extends ComponentProps<"div"> {
   name: string;
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
   src?: string;
 }
 
 const sizes = {
+  xs: "size-6 text-[9px]",
   sm: "size-7 text-[10px]",
   md: "size-9 text-xs",
   lg: "size-11 text-sm",

@@ -13,15 +13,21 @@ export default async function TeachMasterTaskDetailPage({
   const session = await getSession();
   if (!session || effectiveRole(session) !== "teacher") redirect("/login");
 
-  const task = await prisma.masterTask.findUnique({
+  const taskRow = await prisma.masterTask.findUnique({
     where: { id },
     include: {
-      class: { select: { id: true, name: true } },
       files: { orderBy: { createdAt: "asc" } },
     },
   });
 
-  if (!task || task.teacherId !== session.userId) notFound();
+  if (!taskRow || taskRow.teacherId !== session.userId) notFound();
+
+  // MasterTask.classId verweist auf SchoolClass ohne Prisma-Relation.
+  const cls = await prisma.schoolClass.findUnique({
+    where: { id: taskRow.classId },
+    select: { id: true, name: true },
+  });
+  const task = { ...taskRow, class: cls ?? { id: taskRow.classId, name: "—" } };
 
   // Get all students in the class + their progress
   const [students, progressRecords] = await Promise.all([

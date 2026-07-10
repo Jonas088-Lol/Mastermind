@@ -7,14 +7,22 @@ export default async function TeachMasterTaskPage() {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "teacher") redirect("/login");
 
-  const tasks = await prisma.masterTask.findMany({
+  const taskRows = await prisma.masterTask.findMany({
     where: { teacherId: session.userId },
     include: {
-      class: { select: { name: true } },
       _count: { select: { files: true, progress: true } },
     },
     orderBy: { createdAt: "desc" },
   });
+
+  // MasterTask.classId verweist auf SchoolClass ohne Prisma-Relation → separat holen.
+  const classIds = [...new Set(taskRows.map((t) => t.classId))];
+  const classes = await prisma.schoolClass.findMany({
+    where: { id: { in: classIds } },
+    select: { id: true, name: true },
+  });
+  const classNameById = new Map(classes.map((c) => [c.id, c.name]));
+  const tasks = taskRows.map((t) => ({ ...t, className: classNameById.get(t.classId) ?? "—" }));
 
   return (
     <div className="space-y-6">
@@ -47,7 +55,7 @@ export default async function TeachMasterTaskPage() {
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
                   <h2 className="font-semibold truncate">{task.title}</h2>
-                  <p className="text-xs text-muted-foreground mt-0.5">Klasse {task.class.name}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Klasse {task.className}</p>
                 </div>
                 {task.dueAt && (
                   <span className="text-xs text-muted-foreground shrink-0">

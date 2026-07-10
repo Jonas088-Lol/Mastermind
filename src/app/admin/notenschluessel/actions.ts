@@ -13,7 +13,7 @@ export async function saveGradeScale(formData: FormData): Promise<void> {
   const name = (formData.get("name") as string | null)?.trim() || "Notenschlüssel";
 
   // Collect entries — expect fields: grade_1..6 and minPercent_1..6
-  const entries: { grade: number; label: string; minPercent: number }[] = [];
+  const entries: { grade: string; label: string; minPercent: number }[] = [];
   for (let g = 1; g <= 6; g++) {
     const label = (formData.get(`label_${g}`) as string | null)?.trim() || String(g);
     const minPercentRaw = formData.get(`minPercent_${g}`) as string | null;

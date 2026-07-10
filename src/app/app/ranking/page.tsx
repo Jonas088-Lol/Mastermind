@@ -75,7 +75,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
       where: { user: { schoolId: session.schoolId } },
       orderBy: { _sum: { damage: "desc" } },
       take: 30,
-    })) as typeof bossRaw;
+    } as unknown as Parameters<typeof prisma.bossParticipant.groupBy>[0])) as unknown as typeof bossRaw;
   } else if (activeTab === "mvp" && session.schoolId) {
     mvpRaw = (await prisma.bossParticipant.groupBy({
       by: ["userId"],
@@ -83,7 +83,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
       where: { user: { schoolId: session.schoolId }, isMvp: true },
       orderBy: { _count: { isMvp: "desc" } },
       take: 30,
-    })) as typeof mvpRaw;
+    } as unknown as Parameters<typeof prisma.bossParticipant.groupBy>[0])) as unknown as typeof mvpRaw;
   } else if (activeTab === "coins" && session.schoolId) {
     coinsRaw = (await prisma.user.findMany({
       where: { schoolId: session.schoolId, role: "student" },
@@ -98,7 +98,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
       where: { user: { schoolId: session.schoolId, role: "student" } },
       orderBy: { _sum: { activeSeconds: "desc" } },
       take: 30,
-    })) as typeof lernzeitRaw;
+    } as unknown as Parameters<typeof prisma.activitySession.groupBy>[0])) as unknown as typeof lernzeitRaw;
   } else if (activeTab === "weekly" && session.schoolId) {
     const startOfWeek = new Date();
     startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay());
@@ -112,7 +112,7 @@ export default async function RankingPage({ searchParams }: PageProps) {
       },
       orderBy: { _sum: { amount: "desc" } },
       take: 30,
-    })) as typeof weeklyRaw;
+    } as unknown as Parameters<typeof prisma.xpLog.groupBy>[0])) as unknown as typeof weeklyRaw;
   }
 
   // Resolve user details for aggregation-based tabs
