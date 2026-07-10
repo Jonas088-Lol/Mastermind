@@ -7,7 +7,7 @@ import { getSession } from "@/lib/session";
 import { rateLimit } from "@/lib/security/rate-limit";
 
 /** Maximale Nachrichtenlänge (Schutz vor riesigen Payloads). */
-export const MESSAGE_MAX_CHARS = 5000;
+const MESSAGE_MAX_CHARS = 5000;
 
 export async function sendMessage(formData: FormData) {
   const session = await getSession();
