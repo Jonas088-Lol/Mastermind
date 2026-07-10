@@ -64,7 +64,7 @@ Antworte NUR als JSON-Array im Format:
 TEXT:
 ${truncated}`;
 
-  const raw = await chat({ messages: [{ role: "user", content: prompt }], maxTokens: 2000 });
+  const raw = await chat({ messages: [{ role: "user", content: prompt }], maxTokens: 2000, cache: true });
 
   let cards: Karte[] = [];
   try {

@@ -228,6 +228,37 @@ export async function rateLimit(
 }
 
 /**
+ * Redis-Liveness für den Health-Check. Pingt das konfigurierte Backend.
+ * Kein Redis konfiguriert (Dev) → ok:true, backend:null (kein Fehler).
+ */
+export async function redisHealth(): Promise<{
+  ok: boolean;
+  backend: "upstash" | "ioredis" | null;
+  latencyMs: number | null;
+}> {
+  const start = Date.now();
+  const up = getRedis();
+  if (up) {
+    try {
+      await up.ping();
+      return { ok: true, backend: "upstash", latencyMs: Date.now() - start };
+    } catch {
+      return { ok: false, backend: "upstash", latencyMs: null };
+    }
+  }
+  const io = getIoRedis();
+  if (io) {
+    try {
+      await io.ping();
+      return { ok: true, backend: "ioredis", latencyMs: Date.now() - start };
+    } catch {
+      return { ok: false, backend: "ioredis", latencyMs: null };
+    }
+  }
+  return { ok: true, backend: null, latencyMs: null };
+}
+
+/**
  * Extrahiert eine sinnvolle Key-ID aus den Request-Headers.
  */
 export function ipFromHeaders(headers: Headers): string {

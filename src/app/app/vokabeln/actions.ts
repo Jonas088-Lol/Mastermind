@@ -132,7 +132,7 @@ Antworte NUR als JSON-Array:
 [{"word":"${list.langFrom === "Deutsch" ? "deutsches Wort" : "Wort"}","translation":"${list.langTo === "Englisch" ? "English translation" : "Übersetzung"}","example":"Beispielsatz (optional)"}]`;
 
   try {
-    const raw = await chat({ messages: [{ role: "user", content: prompt }], maxTokens: 1500 });
+    const raw = await chat({ messages: [{ role: "user", content: prompt }], maxTokens: 1500, cache: true });
     const match = raw.match(/\[[\s\S]*\]/);
     if (!match) return { error: "KI-Antwort konnte nicht verarbeitet werden." };
 

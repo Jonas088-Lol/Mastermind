@@ -44,6 +44,12 @@ export interface ChatOptions {
    * nur für komplexe Reasoning-Aufgaben sinnvoll. Default: aus (günstig).
    */
   thinking?: boolean;
+  /**
+   * Antwort zwischenspeichern und bei identischer Anfrage wiederverwenden.
+   * Nur für deterministische Generierung (Quiz, Vokabeln …), NIE für Tutor-Chat
+   * oder Benotung. Nur in `chat()` wirksam, nicht beim Streaming.
+   */
+  cache?: boolean;
   signal?: AbortSignal;
 }
 
@@ -153,9 +159,29 @@ export async function* chatStream(
  * Nützlich für Server-Actions ohne UI-Streaming.
  */
 export async function chat(opts: ChatOptions): Promise<string> {
+  // Cache-Lookup (nur bei opts.cache und echtem API-Betrieb — Mock nie cachen)
+  let key: string | null = null;
+  if (opts.cache && isAiConfigured()) {
+    const { aiCacheKey, aiCacheGet } = await import("@/lib/ai/cache");
+    key = aiCacheKey({
+      model: opts.model ?? DEFAULT_MODEL,
+      maxTokens: opts.maxTokens ?? null,
+      thinking: opts.thinking ?? false,
+      system: opts.system ?? null,
+      messages: opts.messages,
+    });
+    const hit = await aiCacheGet(key);
+    if (hit !== null) return hit;
+  }
+
   let out = "";
   for await (const chunk of chatStream(opts)) {
     out += chunk;
+  }
+
+  if (key && out.trim().length > 0) {
+    const { aiCacheSet } = await import("@/lib/ai/cache");
+    await aiCacheSet(key, out);
   }
   return out;
 }

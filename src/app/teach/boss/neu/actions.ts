@@ -43,6 +43,7 @@ Antworte NUR mit einem JSON-Array ohne Erklärung oder Markdown-Blöcke:
   const raw = await chat({
     messages: [{ role: "user", content: prompt }],
     maxTokens: 4000,
+    cache: true,
   });
 
   // Extract JSON array from response

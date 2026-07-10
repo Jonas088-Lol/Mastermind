@@ -75,8 +75,10 @@ function tokenize(input: string): Token[] | null {
   return tokens;
 }
 
-const PRECEDENCE: Record<string, number> = { "+": 1, "-": 1, "*": 2, "/": 2, "^": 3 };
-const RIGHT_ASSOC = new Set(["^"]);
+// "u-" = unäre Negation (höchste Präzedenz, rechts-assoziativ), damit z. B.
+// 3*-2 korrekt als 3*(-2) = -6 gerechnet wird, nicht (3*0)-2.
+const PRECEDENCE: Record<string, number> = { "+": 1, "-": 1, "*": 2, "/": 2, "^": 3, "u-": 4 };
+const RIGHT_ASSOC = new Set(["^", "u-"]);
 
 /** Shunting-Yard → RPN, dann auswerten. */
 export function evaluateExpression(raw: string): EvalResult {
@@ -89,14 +91,14 @@ export function evaluateExpression(raw: string): EvalResult {
   const tokens = tokenize(expr);
   if (!tokens) return { ok: false, error: "Ungültiger Ausdruck" };
 
-  // Unäres Minus in (0 - x) umwandeln
+  // Unäres Minus als eigenen Operator "u-" markieren (statt 0 - x), damit die
+  // Präzedenz stimmt: 3*-2 = 3*(-2) = -6, nicht (3*0)-2 = -2.
   const norm: Token[] = [];
   for (let i = 0; i < tokens.length; i++) {
     const t = tokens[i];
     const prev = tokens[i - 1];
     if (t.type === "op" && t.value === "-" && (!prev || prev.type === "op" || prev.type === "lparen" || prev.type === "comma")) {
-      norm.push({ type: "num", value: "0" });
-      norm.push({ type: "op", value: "-" });
+      norm.push({ type: "op", value: "u-" });
     } else {
       norm.push(t);
     }
@@ -141,6 +143,10 @@ export function evaluateExpression(raw: string): EvalResult {
       const a = stack.pop();
       if (a === undefined) return { ok: false, error: "Ungültiger Ausdruck" };
       stack.push(FUNCTIONS[t.value](a));
+    } else if (t.type === "op" && t.value === "u-") {
+      const a = stack.pop();
+      if (a === undefined) return { ok: false, error: "Ungültiger Ausdruck" };
+      stack.push(-a);
     } else if (t.type === "op") {
       const b = stack.pop(), a = stack.pop();
       if (a === undefined || b === undefined) return { ok: false, error: "Ungültiger Ausdruck" };

@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
-import { rateLimit, ipFromHeaders } from "@/lib/security/rate-limit";
+import { rateLimit, ipFromHeaders, redisHealth } from "@/lib/security/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -26,8 +26,12 @@ export async function GET(req: NextRequest) {
     // error details not exposed
   }
 
-  const status = dbOk ? "ok" : "degraded";
+  const redis = await redisHealth();
+
+  // DB unten = echter Ausfall (503). Redis unten = degradiert, aber die App
+  // funktioniert dank In-Memory-Fallback weiter (200).
   const httpStatus = dbOk ? 200 : 503;
+  const status = !dbOk ? "down" : redis.ok ? "ok" : "degraded";
 
   return NextResponse.json(
     {
@@ -38,6 +42,11 @@ export async function GET(req: NextRequest) {
       db: {
         ok: dbOk,
         latency_ms: dbLatencyMs,
+      },
+      redis: {
+        ok: redis.ok,
+        backend: redis.backend,
+        latency_ms: redis.latencyMs,
       },
     },
     {

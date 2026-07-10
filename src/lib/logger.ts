@@ -26,6 +26,13 @@ export const logger = {
     if (!IS_TEST) {
       const errStr = err instanceof Error ? `${err.message}${err.stack ? `\n${err.stack}` : ""}` : String(err ?? "");
       console.error(fmt("ERROR", msg, { error: errStr, ...((meta as object) ?? {}) }));
+      // In Produktion zusätzlich eine E-Mail-Warnung (rate-limitiert, nie blockierend).
+      if (IS_PROD) {
+        const detail = meta !== undefined ? `${errStr}\n\nKontext: ${fmt("", "", meta).trim()}` : errStr;
+        import("@/lib/security/alert")
+          .then(({ alertError }) => alertError(msg, detail))
+          .catch(() => {});
+      }
     }
   },
 };

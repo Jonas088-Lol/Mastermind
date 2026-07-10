@@ -57,6 +57,9 @@ describe("sendEmail console transport", () => {
     expect(consoleSpy).toHaveBeenCalledOnce();
     const logged = consoleSpy.mock.calls[0][0] as string;
     expect(logged).toContain("My Subject");
-    expect(logged).toContain("test@example.com");
+    // Der Console-Transport maskiert die Empfängeradresse (PII-Schutz): Domain
+    // bleibt sichtbar, der lokale Teil wird verkürzt.
+    expect(logged).toContain("@example.com");
+    expect(logged).not.toContain("test@example.com");
   });
 });

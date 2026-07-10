@@ -1,62 +1,41 @@
-name: Deploy
+name: Deploy to Server
 
-# Runs on every push to main — AFTER the CI check passes
+# Deployt automatisch bei jedem Push auf master — und manuell per Button
+# (Actions-Tab → "Deploy to Server" → "Run workflow").
+#
+# Sicher: Schlägt der Docker-Build auf dem Server fehl, laufen die alten
+# Container einfach weiter — die Live-App geht nie durch einen kaputten Build
+# offline.
+#
+# Benötigte GitHub-Secrets (Repo → Settings → Secrets and variables → Actions):
+#   DEPLOY_HOST     Server-IP (z. B. 87.237.53.143)
+#   DEPLOY_USER     SSH-User (root)
+#   DEPLOY_SSH_KEY  Privater Deploy-Schlüssel (siehe docs/ops/ci-cd.md)
+#   DEPLOY_PATH     Repo-Pfad auf dem Server (z. B. /root/Mastermind)
+
 on:
   push:
-    branches: [main]
+    branches: [master]
+  workflow_dispatch:
 
 concurrency:
-  group: deploy
-  cancel-in-progress: false   # Never cancel a running deploy
+  group: deploy-production
+  cancel-in-progress: false   # laufenden Deploy nie abbrechen
 
 jobs:
-  # ── CI gate: lint + build must pass before we deploy ─────────────────────
-  lint-and-build:
-    name: Lint, Type-Check, Build
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    env:
-      DATABASE_URL: file:./prisma/ci.db
-      SESSION_SECRET: ci-only-secret-do-not-use-in-prod
-      NEXT_PUBLIC_APP_URL: https://example.com
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Generate Prisma Client
-        run: npx prisma generate
-
-      - name: Apply migrations to CI DB
-        run: npx prisma migrate deploy
-
-      - name: ESLint
-        run: npx eslint src/
-
-      - name: TypeScript build
-        run: npx next build
-
-  # ── Deploy: SSH into VPS and run deploy.sh ────────────────────────────────
   deploy:
-    name: Deploy to VPS
+    name: Deploy via SSH
     runs-on: ubuntu-latest
-    needs: lint-and-build
-    timeout-minutes: 15
-    environment: production   # optional: add manual approval in GitHub settings
-
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.2.0
+      - name: SSH deploy
+        uses: appleboy/ssh-action@v1.2.2
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          port: ${{ secrets.VPS_PORT || 22 }}
-          script: bash /opt/mastermind/scripts/deploy.sh
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          command_timeout: 20m
+          # Das Skript macht git pull, baut nur den App-Container neu und wartet
+          # auf den Health-Check (fail-safe: alter Container bleibt bei Fehler oben).
+          script: |
+            set -e
+            bash "${{ secrets.DEPLOY_PATH }}/scripts/deploy.sh"

@@ -55,7 +55,7 @@ Antworte NUR als JSON:
 [{"question":"...","options":["A","B","C","D"],"correct":0,"explanation":"..."}]`;
 
   try {
-    const raw = await chat({ messages: [{ role: "user", content: prompt }], maxTokens: 2000 });
+    const raw = await chat({ messages: [{ role: "user", content: prompt }], maxTokens: 2000, cache: true });
     const match = raw.match(/\[[\s\S]*\]/);
     if (!match) return { error: "KI-Antwort konnte nicht verarbeitet werden." };
 
