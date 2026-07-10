@@ -13,7 +13,7 @@
 set -euo pipefail
 
 CF_TAG="cf-origin"           # Kommentar-Tag zum Wiedererkennen unserer Regeln
-SSH_PORT="${SSH_PORT:-2222}" # muss zum sshd-Port passen (siehe 99-hardening.conf)
+SSH_PORT="${SSH_PORT:-22}"   # aktueller sshd-Port (Standard 22; anpassen falls geändert)
 ADMIN_IP="${ADMIN_IP:-}"     # optional: feste Admin-IP für SSH (sonst weltweit rate-limited)
 
 if [[ $EUID -ne 0 ]]; then echo "Bitte mit sudo/root ausführen." >&2; exit 1; fi

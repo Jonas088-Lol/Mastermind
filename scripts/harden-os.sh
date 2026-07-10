@@ -41,10 +41,9 @@ echo "==> sysctl-Härtung einspielen…"
 install -m 0644 "$REPO_DIR/ops/sysctl/99-hardening.conf" /etc/sysctl.d/99-hardening.conf
 sysctl --system >/dev/null
 
-echo "==> SSH-Härtung einspielen (NICHT automatisch neu gestartet!)…"
-install -m 0644 "$REPO_DIR/ops/ssh/99-hardening.conf" /etc/ssh/sshd_config.d/99-hardening.conf
-echo "   ⚠ Prüfe die Datei (AllowUsers, Port) und starte sshd MANUELL neu:"
-echo "     sshd -t && systemctl restart ssh   (zweite Session offen halten!)"
+echo "==> SSH-Härtung wird hier NICHT eingespielt (Lockout-Gefahr)."
+echo "   → SSH separat und bewusst härten: siehe docs/security/ssh-setup.md"
+echo "   (erst Key einrichten + testen, DANN Passwort-Login abschalten)"
 
 echo "==> auditd-Regeln für sensible Dateien…"
 cat > /etc/audit/rules.d/mastermind.rules <<'EOF'
