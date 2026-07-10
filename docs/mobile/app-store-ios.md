@@ -58,6 +58,29 @@ In Xcode: **Product → Archive** → **Distribute App** → App Store Connect.
 Dann in App Store Connect zum Review einreichen. Apple-Review dauert i. d. R.
 1–3 Tage.
 
+## Push auf iOS aktivieren (Firebase + APNs)
+
+Der Push-Code funktioniert für iOS identisch — es fehlen nur die
+iOS-spezifischen Zertifikate. Vorbereitet ist schon:
+- iOS-App in Firebase registriert (Bundle `app.mastermind.client`).
+- **`firebase/GoogleService-Info.plist`** liegt bereit (im Repo-Root, gitignored).
+
+Schritte auf dem Mac:
+1. Nach `npx cap add ios` die Datei in Xcode ins Projekt ziehen:
+   **`ios/App/App/GoogleService-Info.plist`** (Target „App" anhaken).
+2. In Xcode unter **Signing & Capabilities** die Capability
+   **Push Notifications** hinzufügen (+ Capability).
+3. **APNs-Schlüssel** (braucht Apple Developer Program):
+   Apple Developer → Certificates, Identifiers & Profiles → **Keys** →
+   neuer Key mit **Apple Push Notifications service (APNs)** → `.p8`-Datei laden.
+4. In der **Firebase Console → Projekteinstellungen → Cloud Messaging →
+   Apple app configuration** den `.p8`-Key hochladen (mit Key-ID + Team-ID).
+5. Fertig — der Server sendet iOS-Push über dieselbe FCM-API wie Android.
+   Kein zusätzlicher Server-Code nötig.
+
+> Ohne Schritt 3–4 baut die App, aber iOS-Push kommt nicht an. Android-Push
+> ist davon unberührt.
+
 ## Alternative ohne physischen Mac: Codemagic
 - https://codemagic.io — Cloud-Mac, baut aus dem Git-Repo iOS + Android.
 - Braucht trotzdem das Apple Developer Program + hochgeladene Zertifikate.

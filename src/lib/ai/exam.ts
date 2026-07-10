@@ -5,7 +5,7 @@
  * für Dev ohne API-Key.
  */
 
-import { chat, isAiConfigured } from "@/lib/ai";
+import { chat, isAiConfigured, MODELS } from "@/lib/ai";
 
 export interface ExamInput {
   klasse: string;
@@ -95,6 +95,7 @@ export async function aiGenerateExam(input: ExamInput): Promise<ExamResult> {
   const raw = await chat({
     system: SYSTEM_PROMPT,
     messages: [{ role: "user", content: userPrompt }],
+    model: MODELS.balanced,
     maxTokens: 6000,
   });
 

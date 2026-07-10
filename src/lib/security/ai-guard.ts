@@ -26,7 +26,8 @@ const ALLOWED_MODELS = new Set([
   "claude-opus-4-8",
 ]);
 
-export const AI_DEFAULT_MODEL = "claude-opus-4-7";
+// Günstigster Fallback (Lernapp-Default). Teurere Modelle nur explizit pro Call.
+export const AI_DEFAULT_MODEL = "claude-haiku-4-5-20251001";
 
 // Daily cap per user. Override via env var.
 function getDailyCap(): number {

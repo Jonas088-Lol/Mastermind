@@ -9,7 +9,7 @@
  * — gleiche Shape, sodass UI-Code einheitlich bleibt.
  */
 
-import { chat, isAiConfigured } from "@/lib/ai";
+import { chat, isAiConfigured, MODELS } from "@/lib/ai";
 
 export interface GradeInput {
   /** Frei formulierter Aufgabenstellung-Text */
@@ -119,6 +119,7 @@ export async function aiGradeSubmission(
   const raw = await chat({
     system: SYSTEM_PROMPT,
     messages: [{ role: "user", content: userPrompt }],
+    model: MODELS.balanced,
     maxTokens: 4000,
   });
 

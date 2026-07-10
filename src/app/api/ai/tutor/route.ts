@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { effectiveRole, getSession } from "@/lib/session";
-import { chatStream, isAiConfigured } from "@/lib/ai";
+import { chatStream, isAiConfigured, MODELS } from "@/lib/ai";
 import { prisma } from "@/lib/db/client";
 import { incrementAiQuota } from "@/lib/db/store";
 import { ipFromHeaders, rateLimit } from "@/lib/security/rate-limit";
@@ -183,6 +183,8 @@ export async function POST(req: Request) {
         for await (const chunk of chatStream({
           system: systemPrompt,
           messages: body.messages.slice(-12),
+          model: MODELS.balanced,
+          maxTokens: 2048,
         })) {
           controller.enqueue(
             encoder.encode(

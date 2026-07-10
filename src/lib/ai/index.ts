@@ -10,8 +10,22 @@
  */
 
 const API_URL = "https://api.anthropic.com/v1/messages";
-const DEFAULT_MODEL = "claude-opus-4-7";
 const ANTHROPIC_VERSION = "2023-06-01";
+
+/**
+ * Modell-Tiers nach Kosten. In einer Lernapp laufen die meisten Aufgaben
+ * (Quiz, Karteikarten, Vokabeln, Boss-Fragen) auf `fast` — das ist ~15× güns-
+ * tiger als Opus und für strukturierte Generierung völlig ausreichend.
+ * `balanced` für qualitätskritische Aufgaben (Tutor, Benotung, Klausuren),
+ * `smart` nur wenn explizit maximale Qualität gebraucht wird.
+ */
+export const MODELS = {
+  fast: "claude-haiku-4-5-20251001",
+  balanced: "claude-sonnet-4-6",
+  smart: "claude-opus-4-8",
+} as const;
+
+const DEFAULT_MODEL = MODELS.fast;
 
 export type Role = "user" | "assistant";
 
@@ -25,6 +39,11 @@ export interface ChatOptions {
   messages: ChatMessage[];
   model?: string;
   maxTokens?: number;
+  /**
+   * Erweitertes „Nachdenken" + hoher Effort. Kostet spürbar mehr Tokens und ist
+   * nur für komplexe Reasoning-Aufgaben sinnvoll. Default: aus (günstig).
+   */
+  thinking?: boolean;
   signal?: AbortSignal;
 }
 
@@ -44,12 +63,13 @@ export async function* chatStream(
     return;
   }
 
-  const body = {
+  const body: Record<string, unknown> = {
     model: opts.model ?? DEFAULT_MODEL,
-    max_tokens: opts.maxTokens ?? 64000,
+    // Kostendeckel: Output-Tokens sind der teure Teil. Aufrufer setzen ihr
+    // eigenes Limit; der Default ist bewusst niedrig, damit ein vergessenes
+    // Limit die Kosten nicht explodieren lässt.
+    max_tokens: opts.maxTokens ?? 2048,
     stream: true,
-    thinking: { type: "adaptive" as const },
-    output_config: { effort: "high" as const },
     system: opts.system
       ? [
           {
@@ -64,6 +84,12 @@ export async function* chatStream(
       content: pseudonymize(m.content),
     })),
   };
+
+  // Erweitertes Denken nur wenn explizit angefordert — spart sonst Denk-Tokens.
+  if (opts.thinking) {
+    body.thinking = { type: "adaptive" as const };
+    body.output_config = { effort: "high" as const };
+  }
 
   const res = await fetch(API_URL, {
     method: "POST",

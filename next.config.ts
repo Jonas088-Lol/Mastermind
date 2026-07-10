@@ -2,33 +2,8 @@ import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === "production";
 
-/**
- * CSP — bewusst restriktiv. Inline-Styles erlauben wir, weil Tailwind in der
- * Output-Form CSS-Variablen via style-Attribut belegt und next-themes auf
- * data-Attribute zugreift. `unsafe-inline` für Scripts ist nur in dev nötig
- * (Turbopack). In prod blocken wir es.
- */
-const csp = [
-  "default-src 'self'",
-  // Next.js always needs 'unsafe-inline' for its hydration scripts — even in prod.
-  // Use 'unsafe-eval' only in dev (Turbopack source maps).
-  "script-src 'self' 'unsafe-inline'" + (isProd ? "" : " 'unsafe-eval'"),
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
-  "font-src 'self' data:",
-  // Anthropic API + Resend
-  "connect-src 'self' https://api.anthropic.com https://api.resend.com",
-  // YouTube embeds for exercise video lessons
-  "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com",
-  "frame-ancestors 'none'",
-  "form-action 'self'",
-  "base-uri 'self'",
-  "object-src 'none'",
-  "upgrade-insecure-requests",
-].join("; ");
-
 const securityHeaders: { key: string; value: string }[] = [
-  { key: "Content-Security-Policy", value: csp },
+  // Content-Security-Policy wird in src/proxy.ts gesetzt (per-Request-Nonce-fähig).
   { key: "X-Frame-Options", value: "DENY" },
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },

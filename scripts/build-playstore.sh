@@ -29,6 +29,9 @@ fi
 echo "▶ Capacitor sync (Config → Android-Projekt)…"
 npx cap sync android
 
+# versionCode automatisch hochzählen (Play verlangt bei jedem Upload einen höheren)
+bash scripts/bump-version-code.sh
+
 echo "▶ Signiertes AAB bauen…"
 cd android
 if [[ -f ./gradlew ]]; then

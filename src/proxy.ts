@@ -60,6 +60,36 @@ function buildCorsHeaders(origin: string | null): Record<string, string> {
   };
 }
 
+/* ── Content-Security-Policy ──────────────────────────────────────────────── */
+// Zentral hier (statt next.config), damit im strikten Modus ein per-Request-Nonce
+// für Scripts gesetzt werden kann. Umschaltbar über CSP_STRICT:
+//   - CSP_STRICT != "true" (Default): script-src 'unsafe-inline' — wie bisher.
+//   - CSP_STRICT == "true": script-src 'nonce-…' 'strict-dynamic' (kein unsafe-inline).
+//     ⚠ Erzwingt dynamisches Rendering aller Seiten. Vorher testen! (siehe docs)
+const CSP_STRICT = process.env.CSP_STRICT === "true";
+const IS_DEV = process.env.NODE_ENV === "development";
+
+function buildCsp(nonce: string | null): string {
+  const scriptSrc = nonce
+    ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'${IS_DEV ? " 'unsafe-eval'" : ""}`
+    : `script-src 'self' 'unsafe-inline'${IS_DEV ? " 'unsafe-eval'" : ""}`;
+  return [
+    "default-src 'self'",
+    scriptSrc,
+    // Tailwind/next-themes brauchen Inline-Styles — bewusst erlaubt (geringes Risiko).
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: blob:",
+    "font-src 'self' data:",
+    "connect-src 'self' https://api.anthropic.com https://api.resend.com",
+    "frame-src 'self' https://www.youtube-nocookie.com https://www.youtube.com",
+    "frame-ancestors 'none'",
+    "form-action 'self'",
+    "base-uri 'self'",
+    "object-src 'none'",
+    "upgrade-insecure-requests",
+  ].join("; ");
+}
+
 /* ── Proxy entry ─────────────────────────────────────────────────────────── */
 
 export async function proxy(req: NextRequest) {
@@ -155,7 +185,24 @@ export async function proxy(req: NextRequest) {
     }
   }
 
-  const res = NextResponse.next();
+  // ── CSP-Nonce (nur im strikten Modus) ────────────────────────────────────
+  // Nonce muss VOR dem Rendern im Request-Header liegen, damit Next.js sie in
+  // seine <script>-Tags einsetzt. Der Web-Crypto-UUID ist edge-kompatibel.
+  let res: NextResponse;
+  let nonce: string | null = null;
+  if (CSP_STRICT && !isApi) {
+    nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+    const requestHeaders = new Headers(req.headers);
+    requestHeaders.set("x-nonce", nonce);
+    res = NextResponse.next({ request: { headers: requestHeaders } });
+  } else {
+    res = NextResponse.next();
+  }
+
+  // CSP auf HTML-Antworten setzen (nicht auf API — die liefern kein Dokument).
+  if (!isApi) {
+    res.headers.set("Content-Security-Policy", buildCsp(nonce));
+  }
 
   // Inject CORS headers on API responses (allowed origins only)
   if (isApi) {

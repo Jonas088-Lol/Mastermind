@@ -81,3 +81,7 @@ next-env.d.ts
 /downloads/*.AppImage
 /downloads/*.deb
 /downloads/*.apk
+
+# Firebase iOS-Config (Client-Keys — nicht ins Repo)
+/firebase/
+GoogleService-Info.plist
