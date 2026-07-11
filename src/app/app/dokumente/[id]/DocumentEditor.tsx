@@ -400,7 +400,7 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
   );
 
   return (
-    <div className="-mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden bg-[#f0f0f0] lg:-mx-10 lg:-mb-10 lg:-mt-10">
+    <div className="office-shell -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden bg-[#f0f0f0] lg:-mx-10 lg:-mb-10 lg:-mt-10">
 
       {/* Title bar */}
       <div className="flex shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-3 py-1.5 shadow-sm">
@@ -445,7 +445,7 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
 
       {/* Page area */}
       <div className="flex-1 overflow-y-auto p-8">
-        <div className="mx-auto" style={{ width: `${(794 * zoom) / 100}px`, transformOrigin: "top center" }}>
+        <div className="office-page mx-auto" style={{ width: `${(794 * zoom) / 100}px`, transformOrigin: "top center" }}>
           {/* Header */}
           {showHeader && (
             <div className="border-b-2 border-dashed border-blue-200 bg-white shadow-sm">

@@ -242,7 +242,7 @@ function SlideCanvas({ slide, onUpdate, presenting }: CanvasProps) {
     >
       <div
         ref={canvasRef}
-        className="relative shadow-2xl"
+        className="office-page relative shadow-2xl"
         style={{
           backgroundColor: slide.background,
           aspectRatio: "16/9",
@@ -532,7 +532,7 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
   }
 
   return (
-    <div ref={wrapRef} className="-mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden lg:-mx-10 lg:-mb-10 lg:-mt-10">
+    <div ref={wrapRef} className="office-shell -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden lg:-mx-10 lg:-mb-10 lg:-mt-10">
 
       {/* ── Title bar ──────────────────────────────────────────────────────── */}
       <div className="flex shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-3 py-1.5 shadow-sm">

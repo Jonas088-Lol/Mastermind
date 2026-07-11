@@ -390,7 +390,7 @@ export function PageEditor({
 
         {/* ── A4 page area ───────────────────────────────────── */}
         <div
-          className={`flex-1 overflow-y-auto print:overflow-visible ${
+          className={`office-shell flex-1 overflow-y-auto print:overflow-visible ${
             tab === "text"
               ? "bg-[#e8e8e8] dark:bg-[#1a1a2e] py-8 print:bg-transparent print:p-0"
               : "bg-surface"
@@ -400,6 +400,7 @@ export function PageEditor({
             /* A4 paper — white page with shadow like Word */
             <div
               className="
+                office-page
                 mx-auto
                 w-full max-w-198.5
                 min-h-280.75

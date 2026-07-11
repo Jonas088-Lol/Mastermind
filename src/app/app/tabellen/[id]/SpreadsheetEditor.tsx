@@ -4,11 +4,12 @@ import {
   useCallback, useEffect, useRef, useState, useTransition,
 } from "react";
 import {
-  AlignCenter, AlignLeft, AlignRight, ArrowLeft, Bold, ChevronDown,
+  AlignCenter, AlignLeft, AlignRight, ArrowLeft, BarChart3, Bold, ChevronDown,
   Download, Italic, Plus, Trash2, Underline,
 } from "lucide-react";
 import Link from "next/link";
 import { saveSpreadsheetData, renameSpreadsheet, deleteSpreadsheet } from "../actions";
+import { ChartCard, ChartDialog, extractChartData, type ChartDef } from "./SpreadsheetCharts";
 import { evaluateExpression } from "@/lib/math/evaluate";
 
 // ── Sichere Bedingungs-Auswertung für WENN/IF (kein new Function/eval) ───────
@@ -75,6 +76,7 @@ interface SheetDef {
   cells: Record<string, CellData>;
   colWidths: Record<string, number>;
   rowHeights: Record<string, number>;
+  charts?: ChartDef[];
 }
 
 interface WorkbookData {
@@ -493,6 +495,13 @@ const DEFAULT_COL_W = 90;
 const ROW_H = 22;
 const HDR_H = 24;
 const ROW_NUM_W = 42;
+// Excel-Gefühl: großes Grid. Zeilen werden virtualisiert gerendert (nur der
+// sichtbare Ausschnitt), daher kostet die Größe keine Performance.
+const MIN_ROWS = 1_000;
+const MIN_COLS = 52;
+const GROW_ROWS = 500;
+const GROW_COLS = 26;
+const OVERSCAN = 12;
 
 // ── Main component ─────────────────────────────────────────────────────────
 
@@ -515,6 +524,35 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
 
   const sheet = wb.sheets[wb.active] ?? wb.sheets[0];
   const { cols, rows, cells } = sheet;
+
+  // ── Virtuelles Grid: nur sichtbare Zeilen rendern, wächst beim Scrollen ──
+  const [scrollTop, setScrollTop] = useState(0);
+  const [viewH, setViewH] = useState(600);
+  const [extraRows, setExtraRows] = useState(0);
+  const [extraCols, setExtraCols] = useState(0);
+
+  const displayRows = Math.max(rows, MIN_ROWS) + extraRows;
+  const displayCols = Math.max(cols, MIN_COLS) + extraCols;
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const measure = () => setViewH(el.clientHeight);
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  function handleGridScroll(e: React.UIEvent<HTMLDivElement>) {
+    const el = e.currentTarget;
+    setScrollTop(el.scrollTop);
+    // Wie in Excel: am Rand wächst das Grid einfach weiter
+    if (el.scrollTop + el.clientHeight > displayRows * ROW_H - 300) setExtraRows((x) => x + GROW_ROWS);
+    if (el.scrollLeft + el.clientWidth > el.scrollWidth - 200) setExtraCols((x) => x + GROW_COLS);
+  }
+
+  const vStart = Math.max(0, Math.floor(scrollTop / ROW_H) - OVERSCAN);
+  const vEnd = Math.min(displayRows, Math.ceil((scrollTop + viewH) / ROW_H) + OVERSCAN);
 
   // ── Save ────────────────────────────────────────────────────────────────
 
@@ -593,12 +631,12 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
 
   function handleCellKey(e: React.KeyboardEvent, row: number, col: number) {
     if (editing !== null) {
-      if (e.key === "Enter")  { e.preventDefault(); commitEdit(); setSel({ r: Math.min(row + 1, rows - 1), c: col }); }
+      if (e.key === "Enter")  { e.preventDefault(); commitEdit(); setSel({ r: Math.min(row + 1, displayRows - 1), c: col }); }
       if (e.key === "Escape") { setEditing(null); }
-      if (e.key === "Tab")    { e.preventDefault(); commitEdit(); setSel({ r: row, c: Math.min(col + 1, cols - 1) }); }
+      if (e.key === "Tab")    { e.preventDefault(); commitEdit(); setSel({ r: row, c: Math.min(col + 1, displayCols - 1) }); }
       return;
     }
-    const mv = (dr: number, dc: number) => { e.preventDefault(); setSel({ r: Math.max(0, Math.min(rows - 1, row + dr)), c: Math.max(0, Math.min(cols - 1, col + dc)) }); };
+    const mv = (dr: number, dc: number) => { e.preventDefault(); setSel({ r: Math.max(0, Math.min(displayRows - 1, row + dr)), c: Math.max(0, Math.min(displayCols - 1, col + dc)) }); };
     if (e.key === "ArrowUp")    mv(-1, 0);
     if (e.key === "ArrowDown")  mv(1, 0);
     if (e.key === "ArrowLeft")  mv(0, -1);
@@ -608,6 +646,10 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
     if (e.key === "F2")     { setEditing(getRaw(row, col)); setTimeout(() => cellInputRef.current?.focus(), 0); }
     if (e.key === "Delete" || e.key === "Backspace") setCell(row, col, "");
     if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
+      // preventDefault ist Pflicht: React flusht den State synchron und fokussiert
+      // das Editier-Input noch VOR der nativen Texteingabe-Phase — ohne preventDefault
+      // fügt der Browser das Zeichen dann ein zweites Mal ein ("A" → "AA").
+      e.preventDefault();
       setEditing(e.key);
       setTimeout(() => cellInputRef.current?.focus(), 0);
     }
@@ -732,10 +774,17 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
   // ── CSV Export ────────────────────────────────────────────────────────
 
   function exportCsv() {
+    // Export bis zur letzten tatsächlich befüllten Zelle (Grid ist virtuell riesig)
+    let maxR = 0, maxC = 0;
+    Object.keys(cells).forEach((k) => {
+      const [r0, c0] = k.split(",").map(Number);
+      if (cells[k]?.v) { maxR = Math.max(maxR, r0 + 1); maxC = Math.max(maxC, c0 + 1); }
+    });
+    const expRows = Math.max(1, maxR), expCols = Math.max(1, maxC);
     const lines: string[] = [];
-    for (let rr = 0; rr < rows; rr++) {
+    for (let rr = 0; rr < expRows; rr++) {
       const row: string[] = [];
-      for (let cc = 0; cc < cols; cc++) {
+      for (let cc = 0; cc < expCols; cc++) {
         const val = getEval(rr, cc);
         row.push(val.includes(",") || val.includes('"') ? `"${val.replace(/"/g, '""')}"` : val);
       }
@@ -783,6 +832,16 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
     { label: "Datum", value: "date" },
   ];
 
+  const [chartDlg, setChartDlg] = useState(false);
+  const charts = sheet.charts ?? [];
+
+  function addChart(def: Omit<ChartDef, "id">) {
+    updateSheet({ charts: [...charts, { ...def, id: `c${Date.now().toString(36)}${Math.floor(Math.random() * 1e4)}` }] });
+  }
+  function removeChart(id: string) {
+    updateSheet({ charts: charts.filter((c) => c.id !== id) });
+  }
+
   const [fmtDrop, setFmtDrop] = useState(false);
   const fmtRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -792,7 +851,7 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
   }, []);
 
   return (
-    <div className="-mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden lg:-mx-10 lg:-mb-10 lg:-mt-10">
+    <div className="office-shell -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden lg:-mx-10 lg:-mb-10 lg:-mt-10">
 
       {/* ── Title bar ──────────────────────────────────────────────────────── */}
       <div className="flex shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-3 py-1.5 shadow-sm">
@@ -869,6 +928,12 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
             </div>
           )}
         </div>
+        <div className="mx-1 h-4 w-px bg-gray-200" />
+        {/* Chart insert */}
+        <button type="button" onClick={() => setChartDlg(true)}
+          className="flex h-6 items-center gap-1 rounded border border-gray-200 px-2 text-[10px] text-gray-600 hover:bg-gray-50" title="Diagramm einfügen">
+          <BarChart3 className="size-3" strokeWidth={1.75} /> Diagramm
+        </button>
       </div>
 
       {/* ── Formula bar ──────────────────────────────────────────────────────── */}
@@ -890,19 +955,19 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
       </div>
 
       {/* ── Grid ─────────────────────────────────────────────────────────────── */}
-      <div ref={containerRef} className="flex-1 overflow-auto bg-white">
+      <div ref={containerRef} onScroll={handleGridScroll} className="office-page flex-1 overflow-auto bg-white">
         <table className="border-collapse" style={{ tableLayout: "fixed" }}>
           <colgroup>
             <col style={{ width: ROW_NUM_W }} />
-            {Array.from({ length: cols }, (_, c) => (
+            {Array.from({ length: displayCols }, (_, c) => (
               <col key={c} style={{ width: sheet.colWidths[String(c)] ?? DEFAULT_COL_W }} />
             ))}
           </colgroup>
           <thead>
             <tr style={{ height: HDR_H }}>
-              <th className="sticky left-0 border border-gray-200 bg-gray-50 text-[10px] text-gray-400 z-20" />
-              {Array.from({ length: cols }, (_, c) => (
-                <th key={c} className="relative border border-gray-200 bg-gray-50 text-center text-[11px] font-semibold text-gray-500 select-none z-10"
+              <th className="sticky left-0 top-0 border border-gray-200 bg-gray-50 text-[10px] text-gray-400 z-30" />
+              {Array.from({ length: displayCols }, (_, c) => (
+                <th key={c} className="sticky top-0 border border-gray-200 bg-gray-50 text-center text-[11px] font-semibold text-gray-500 select-none z-20"
                   style={{ backgroundColor: sel?.c === c ? "#e8f0fe" : undefined }}>
                   {indexToCol(c)}
                   {/* resize handle */}
@@ -915,13 +980,15 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
             </tr>
           </thead>
           <tbody>
-            {Array.from({ length: rows }, (_, rr) => (
+            {/* Spacer oben: Höhe der nicht gerenderten Zeilen davor */}
+            {vStart > 0 && <tr style={{ height: vStart * ROW_H }} aria-hidden />}
+            {Array.from({ length: vEnd - vStart }, (_, vi) => vStart + vi).map((rr) => (
               <tr key={rr} style={{ height: ROW_H }}>
                 <td className="sticky left-0 z-10 border border-gray-200 bg-gray-50 text-center text-[10px] font-semibold text-gray-400 select-none"
                   style={{ backgroundColor: sel?.r === rr ? "#e8f0fe" : undefined }}>
                   {rr + 1}
                 </td>
-                {Array.from({ length: cols }, (_, cc) => {
+                {Array.from({ length: displayCols }, (_, cc) => {
                   const k = key(rr, cc);
                   const isSel = sel?.r === rr && sel?.c === cc;
                   const isEd  = isSel && editing !== null;
@@ -972,9 +1039,9 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
                           onChange={(e) => setEditing(e.target.value)}
                           onBlur={commitEdit}
                           onKeyDown={(e) => {
-                            if (e.key === "Enter") { e.preventDefault(); commitEdit(); setSel({ r: Math.min(rr + 1, rows - 1), c: cc }); }
+                            if (e.key === "Enter") { e.preventDefault(); commitEdit(); setSel({ r: Math.min(rr + 1, displayRows - 1), c: cc }); }
                             if (e.key === "Escape") setEditing(null);
-                            if (e.key === "Tab") { e.preventDefault(); commitEdit(); setSel({ r: rr, c: Math.min(cc + 1, cols - 1) }); }
+                            if (e.key === "Tab") { e.preventDefault(); commitEdit(); setSel({ r: rr, c: Math.min(cc + 1, displayCols - 1) }); }
                           }}
                           className="absolute inset-0 w-full bg-white px-1 font-mono text-[12px] focus:outline-none border-0 z-10"
                           autoFocus
@@ -987,9 +1054,34 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
                 })}
               </tr>
             ))}
+            {/* Spacer unten: restliche Zeilen bis displayRows */}
+            {vEnd < displayRows && <tr style={{ height: (displayRows - vEnd) * ROW_H }} aria-hidden />}
           </tbody>
         </table>
       </div>
+
+      {/* ── Diagramm-Leiste ──────────────────────────────────────────────────── */}
+      {charts.length > 0 && (
+        <div className="flex shrink-0 gap-3 overflow-x-auto border-t border-gray-200 bg-gray-50 p-3">
+          {charts.map((c) => (
+            <ChartCard
+              key={c.id}
+              chart={c}
+              data={extractChartData(c.range, getEval)}
+              onDelete={() => removeChart(c.id)}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* ── Diagramm-Dialog ──────────────────────────────────────────────────── */}
+      {chartDlg && (
+        <ChartDialog
+          initialRange={sel ? `A1:${indexToCol(sel.c)}${sel.r + 1}` : "A1:B5"}
+          onInsert={addChart}
+          onClose={() => setChartDlg(false)}
+        />
+      )}
 
       {/* ── Sheet tabs ────────────────────────────────────────────────────────── */}
       <div className="flex shrink-0 items-center border-t border-gray-200 bg-gray-50">
@@ -1018,7 +1110,7 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
           <Plus className="size-3.5" strokeWidth={2} />
         </button>
         <div className="px-3 font-mono text-[10px] text-gray-400">
-          {saveStatus === "saving" ? "Speichert…" : saveStatus === "unsaved" ? "●" : cols + " Sp · " + rows + " Z"}
+          {saveStatus === "saving" ? "Speichert…" : saveStatus === "unsaved" ? "●" : displayCols + " Sp · " + displayRows + " Z"}
         </div>
       </div>
 

@@ -463,3 +463,43 @@ p, span, input, textarea, [contenteditable] {
     size: A4;
   }
 }
+
+/* =========================================================
+   Office-Dark-Mode (Word, Excel, Präsentationen, Heft, Arbeitsblätter)
+   Die Editoren nutzen hart codierte Hell-Utilities (bg-white, text-gray-…).
+   Diese Overrides sind bewusst UNGELAYERT, damit sie Tailwinds
+   @layer utilities schlagen. Wirkung nur innerhalb von .office-shell:
+   - Shell (Toolbars, Leisten, Menüs) wird dunkel
+   - .office-page (das "Papier") bleibt weiß, wird aber gedimmt
+   ========================================================= */
+[data-theme="dark"] .office-shell {
+  background-color: #0d1117;
+}
+[data-theme="dark"] .office-shell .bg-\[\#f0f0f0\] {
+  background-color: #0d1117;
+}
+[data-theme="dark"] .office-shell .bg-white:not(.office-page, .office-page *) {
+  background-color: #161b22;
+}
+[data-theme="dark"] .office-shell :is(.bg-gray-50, .bg-gray-100, .bg-gray-200, .bg-neutral-50, .bg-neutral-100):not(.office-page, .office-page *) {
+  background-color: #1c2129;
+}
+[data-theme="dark"] .office-shell :is(.border-gray-100, .border-gray-200, .border-gray-300, .divide-gray-100, .divide-gray-200):not(.office-page, .office-page *) {
+  border-color: #2a313c;
+}
+[data-theme="dark"] .office-shell :is(.text-gray-500, .text-gray-600, .text-gray-700, .text-gray-800, .text-gray-900):not(.office-page, .office-page *) {
+  color: #c9d1d9;
+}
+[data-theme="dark"] .office-shell :is(.text-gray-300, .text-gray-400):not(.office-page, .office-page *) {
+  color: #8b949e;
+}
+[data-theme="dark"] .office-shell :is(.hover\:bg-gray-50, .hover\:bg-gray-100, .hover\:bg-white):not(.office-page, .office-page *):hover {
+  background-color: #262d38;
+}
+[data-theme="dark"] .office-shell :is(.hover\:text-gray-700, .hover\:text-gray-800):not(.office-page, .office-page *):hover {
+  color: #e6edf3;
+}
+/* Das Blatt: bleibt weiß, aber gedimmt, damit es im Dunkeln nicht blendet */
+[data-theme="dark"] .office-shell .office-page {
+  filter: brightness(0.82);
+}
