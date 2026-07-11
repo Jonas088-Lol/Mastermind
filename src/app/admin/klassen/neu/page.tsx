@@ -2,9 +2,8 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { Input } from "@/components/ui/input";
 import { effectiveRole, getSession } from "@/lib/session";
-import { createClass } from "./actions";
+import { NeueKlasseForm } from "./NeueKlasseForm";
 
 export const metadata: Metadata = { title: "Klasse erstellen" };
 
@@ -24,35 +23,7 @@ export default async function NeueKlassePage() {
         </div>
       </header>
 
-      <form action={createClass} className="flex flex-col gap-5">
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="name" className="text-sm font-semibold">Klassenbezeichnung</label>
-          <Input id="name" name="name" type="text" required placeholder="z. B. 9b oder 10A" />
-          <p className="text-xs text-muted-fg">Wird automatisch in Großbuchstaben umgewandelt.</p>
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="grade" className="text-sm font-semibold">Jahrgang</label>
-          <select
-            id="grade" name="grade" required
-            className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none"
-          >
-            <option value="">Jahrgang wählen…</option>
-            {Array.from({ length: 13 }, (_, i) => i + 1).map((g) => (
-              <option key={g} value={g}>Klasse {g}</option>
-            ))}
-          </select>
-        </div>
-
-        <div className="flex items-center gap-3 pt-2">
-          <button type="submit" className="bg-fg px-5 py-2.5 text-sm font-semibold text-bg hover:bg-fg/90">
-            Klasse erstellen
-          </button>
-          <Link href="/admin/klassen" className="text-sm text-muted-fg hover:text-fg">
-            Abbrechen
-          </Link>
-        </div>
-      </form>
+      <NeueKlasseForm />
     </div>
   );
 }
