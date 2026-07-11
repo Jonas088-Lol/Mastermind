@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { safeJsonParse } from "@/lib/safe-json";
 
 export async function createLearningPath(formData: FormData): Promise<void> {
   const session = await getSession();
@@ -18,7 +19,7 @@ export async function createLearningPath(formData: FormData): Promise<void> {
 
   const modulesRaw = String(formData.get("modules") ?? "[]");
   type RawModule = { title: string; questions: { question: string; options: string[]; correct: number; explanation?: string }[] };
-  const modules: RawModule[] = JSON.parse(modulesRaw);
+  const modules: RawModule[] = safeJsonParse<RawModule[]>(modulesRaw, []);
 
   const path = await prisma.learningPath.create({
     data: {

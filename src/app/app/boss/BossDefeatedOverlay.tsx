@@ -29,6 +29,14 @@ export function BossDefeatedOverlay({ data, onClose }: BossDefeatedOverlayProps)
   const [step, setStep]       = useState(0);
   const [mvpCount, setMvpCount] = useState(0);
   const closedRef = useRef(false);
+  // onClose/mvpAnswers in Refs halten: Der Effekt darf NUR EINMAL beim Mount
+  // laufen. Mit ihnen als Dependencies würde jeder Parent-Re-Render (z. B. der
+  // sekündliche Battle-Countdown) alle Timer zurücksetzen — die Animation
+  // startet dann endlos neu und das Auto-Schließen feuert nie.
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+  const mvpAnswersRef = useRef(data.mvpAnswers);
+  mvpAnswersRef.current = data.mvpAnswers;
 
   const safeTier = (data.bossTier as BossTier) in BOSS_TIERS ? (data.bossTier as BossTier) : "common";
   const tierData = BOSS_TIERS[safeTier];
@@ -36,6 +44,7 @@ export function BossDefeatedOverlay({ data, onClose }: BossDefeatedOverlayProps)
 
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
+    const intervals: ReturnType<typeof setInterval>[] = [];
     const push = (fn: () => void, ms: number) => timers.push(setTimeout(fn, ms));
 
     push(() => setOpacity(1), 40);
@@ -48,16 +57,17 @@ export function BossDefeatedOverlay({ data, onClose }: BossDefeatedOverlayProps)
       const iv = setInterval(() => {
         c++;
         setMvpCount(c);
-        if (c >= data.mvpAnswers) clearInterval(iv);
+        if (c >= mvpAnswersRef.current) clearInterval(iv);
       }, 70);
+      intervals.push(iv);
     }, 1300);
     // Auto-dismiss after 9s
     push(() => {
-      if (!closedRef.current) { setOpacity(0); setTimeout(onClose, 450); }
+      if (!closedRef.current) { setOpacity(0); setTimeout(() => onCloseRef.current(), 450); }
     }, 9000);
 
-    return () => timers.forEach(clearTimeout);
-  }, [data.mvpAnswers, onClose]);
+    return () => { timers.forEach(clearTimeout); intervals.forEach(clearInterval); };
+  }, []);
 
   function handleClose() {
     if (closedRef.current) return;

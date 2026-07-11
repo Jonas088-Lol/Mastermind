@@ -957,7 +957,7 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
       </div>
 
       {/* ── Grid ─────────────────────────────────────────────────────────────── */}
-      <div ref={containerRef} onScroll={handleGridScroll} className="office-page flex-1 overflow-auto bg-white">
+      <div ref={containerRef} onScroll={handleGridScroll} className="sheet-grid flex-1 overflow-auto">
         <table className="border-collapse" style={{ tableLayout: "fixed" }}>
           <colgroup>
             <col style={{ width: ROW_NUM_W }} />
@@ -967,10 +967,10 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
           </colgroup>
           <thead>
             <tr style={{ height: HDR_H }}>
-              <th className="sticky left-0 top-0 border border-gray-200 bg-gray-50 text-[10px] text-gray-400 z-30" />
+              <th className="sticky left-0 top-0 border text-[10px] z-30" />
               {Array.from({ length: displayCols }, (_, c) => (
-                <th key={c} className="sticky top-0 border border-gray-200 bg-gray-50 text-center text-[11px] font-semibold text-gray-500 select-none z-20"
-                  style={{ backgroundColor: sel?.c === c ? "#e8f0fe" : undefined }}>
+                <th key={c} className="sticky top-0 border text-center text-[11px] font-semibold select-none z-20"
+                  style={{ backgroundColor: sel?.c === c ? "var(--sheet-sel)" : undefined }}>
                   {indexToCol(c)}
                   {/* resize handle */}
                   <span
@@ -986,8 +986,8 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
             {vStart > 0 && <tr style={{ height: vStart * ROW_H }} aria-hidden />}
             {Array.from({ length: vEnd - vStart }, (_, vi) => vStart + vi).map((rr) => (
               <tr key={rr} style={{ height: ROW_H }}>
-                <td className="sticky left-0 z-10 border border-gray-200 bg-gray-50 text-center text-[10px] font-semibold text-gray-400 select-none"
-                  style={{ backgroundColor: sel?.r === rr ? "#e8f0fe" : undefined }}>
+                <td className="sheet-hdr sticky left-0 z-10 border text-center text-[10px] font-semibold select-none"
+                  style={{ backgroundColor: sel?.r === rr ? "var(--sheet-sel)" : undefined }}>
                   {rr + 1}
                 </td>
                 {Array.from({ length: displayCols }, (_, cc) => {
@@ -1006,10 +1006,10 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
                     borderRightWidth:  cellDef?.bRight  ? "2px" : undefined,
                     borderBottomWidth: cellDef?.bBottom ? "2px" : undefined,
                     borderLeftWidth:   cellDef?.bLeft   ? "2px" : undefined,
-                    borderTopColor:    cellDef?.bTop    ? "#374151" : undefined,
-                    borderRightColor:  cellDef?.bRight  ? "#374151" : undefined,
-                    borderBottomColor: cellDef?.bBottom ? "#374151" : undefined,
-                    borderLeftColor:   cellDef?.bLeft   ? "#374151" : undefined,
+                    borderTopColor:    cellDef?.bTop    ? "var(--sheet-border-strong)" : undefined,
+                    borderRightColor:  cellDef?.bRight  ? "var(--sheet-border-strong)" : undefined,
+                    borderBottomColor: cellDef?.bBottom ? "var(--sheet-border-strong)" : undefined,
+                    borderLeftColor:   cellDef?.bLeft   ? "var(--sheet-border-strong)" : undefined,
                   };
                   return (
                     <td
@@ -1021,10 +1021,10 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
                       onDoubleClick={() => { setEditing(raw); setTimeout(() => cellInputRef.current?.focus(), 0); }}
                       onKeyDown={(e) => handleCellKey(e, rr, cc)}
                       onContextMenu={(e) => openCtx(e, rr, cc)}
-                      className="relative border border-gray-200 focus:outline-none cursor-default select-none overflow-hidden"
+                      className="relative border focus:outline-none cursor-default select-none overflow-hidden"
                       style={{
-                        backgroundColor: isSel ? "#e8f0fe" : (cellDef?.bg && cellDef.bg !== "#ffffff" ? cellDef.bg : undefined),
-                        color: isErr ? "#ef4444" : (cellDef?.color ?? (isFormula ? "#1d4ed8" : "#1a1a1a")),
+                        backgroundColor: isSel ? "var(--sheet-sel)" : (cellDef?.bg && cellDef.bg !== "#ffffff" ? cellDef.bg : undefined),
+                        color: isErr ? "#ef4444" : (cellDef?.color ?? (isFormula ? "var(--sheet-formula)" : "var(--sheet-fg)")),
                         fontWeight: cellDef?.bold ? "bold" : undefined,
                         fontStyle: cellDef?.italic ? "italic" : undefined,
                         textDecoration: cellDef?.under ? "underline" : undefined,
@@ -1045,7 +1045,8 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
                             if (e.key === "Escape") setEditing(null);
                             if (e.key === "Tab") { e.preventDefault(); commitEdit(); setSel({ r: rr, c: Math.min(cc + 1, displayCols - 1) }); }
                           }}
-                          className="absolute inset-0 w-full bg-white px-1 font-mono text-[12px] focus:outline-none border-0 z-10"
+                          className="absolute inset-0 w-full px-1 font-mono text-[12px] focus:outline-none border-0 z-10"
+                          style={{ backgroundColor: "var(--sheet-bg)", color: "var(--sheet-fg)" }}
                           autoFocus
                         />
                       ) : (

@@ -5,10 +5,11 @@ import { redirect } from "next/navigation";
 import { hashPassword, verifyPassword } from "@/lib/auth/passwords";
 import { prisma } from "@/lib/db/client";
 import { getSession, invalidateOtherSessions } from "@/lib/session";
+import { safeJsonParse } from "@/lib/safe-json";
 
 async function getPrefs(userId: string): Promise<Record<string, boolean | string>> {
   const user = await prisma.user.findUnique({ where: { id: userId }, select: { prefs: true } });
-  return user?.prefs ? JSON.parse(user.prefs) : {};
+  return user?.prefs ? safeJsonParse<Record<string, boolean | string>>(user.prefs, {}) : {};
 }
 
 export async function updatePref(key: string, formData: FormData): Promise<void> {

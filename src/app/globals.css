@@ -511,3 +511,41 @@ p, span, input, textarea, [contenteditable] {
     filter: none !important;
   }
 }
+
+/* =========================================================
+   Tabellen-"Brett" (Spreadsheet-Grid)
+   Hell: kräftigere Gitterlinien (waren mit border-gray-200 kaum sichtbar).
+   Dunkel (office-dim-page aktiv): ECHTES Schwarz statt gedimmtem Weiß —
+   reiner Anzeige-Effekt über CSS-Variablen, gespeichert wird nichts davon.
+   ========================================================= */
+.sheet-grid {
+  --sheet-bg: #ffffff;
+  --sheet-fg: #1a1a1a;
+  --sheet-line: #c3cad6;
+  --sheet-hdr-bg: #eef1f5;
+  --sheet-hdr-fg: #64748b;
+  --sheet-sel: #e8f0fe;
+  --sheet-formula: #1d4ed8;
+  --sheet-border-strong: #374151;
+  background-color: var(--sheet-bg);
+}
+.office-shell.office-dim-page .sheet-grid {
+  --sheet-bg: #0d1117;
+  --sheet-fg: #e6edf3;
+  --sheet-line: #30363d;
+  --sheet-hdr-bg: #161b22;
+  --sheet-hdr-fg: #8b949e;
+  --sheet-sel: #1c3a5e;
+  --sheet-formula: #79b8ff;
+  --sheet-border-strong: #c9d1d9;
+  /* echtes Schwarz — nicht dimmen */
+  filter: none !important;
+}
+.sheet-grid :is(td, th) {
+  border-color: var(--sheet-line);
+}
+.sheet-grid th,
+.sheet-grid td.sheet-hdr {
+  background-color: var(--sheet-hdr-bg);
+  color: var(--sheet-hdr-fg);
+}

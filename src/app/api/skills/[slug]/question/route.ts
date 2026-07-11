@@ -3,6 +3,7 @@ import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
 import { SKILL_MAP } from "@/lib/skill-graph";
+import { safeJsonParse } from "@/lib/safe-json";
 
 export async function GET(
   _req: NextRequest,
@@ -60,7 +61,8 @@ export async function GET(
   if (!q) q = await pickRandom({ type: "mc" });
   if (!q) return NextResponse.json({ error: "No questions available" }, { status: 404 });
 
-  const opts = q.options ? (JSON.parse(q.options) as string[]) : [];
+  const opts = q.options ? safeJsonParse<string[]>(q.options, []) : [];
+  if (opts.length < 2) return NextResponse.json({ error: "No questions available" }, { status: 404 });
 
   return NextResponse.json({
     id: q.id,
