@@ -13,6 +13,7 @@ import {
   isSuper,
 } from "@/lib/session";
 import { getSchoolBranding } from "@/lib/school-branding";
+import { getStudentFeatures } from "@/lib/student-features";
 import { fetchNotifications } from "@/lib/notifications";
 import { prisma } from "@/lib/db/client";
 import { InstallPrompt } from "@/components/app/InstallPrompt";
@@ -140,6 +141,13 @@ export default async function AppLayout({
     // ── Sonstiges ────────────────────────────────────
     { href: "/search",             label: "Suche",         icon: "search"        },
   ];
+
+  // Schülerzeitung ist für alle lesbar; Sprecher-Bereich nur mit Zusatzrolle
+  const studentFeatures = await getStudentFeatures(session.userId);
+  navItems.push({ href: "/app/zeitung", label: "Schülerzeitung", icon: "fileText" });
+  if (studentFeatures.includes("klassensprecher") || studentFeatures.includes("schuelersprecher")) {
+    navItems.push({ href: "/app/sprecher", label: "Sprecher", icon: "messageSquare" });
+  }
 
   const mobileNavItems: BottomNavItem[] = [
     { href: "/app", label: "Start", icon: "home", exact: true },

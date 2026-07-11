@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { hashPassword } from "@/lib/auth/passwords";
+import { STUDENT_FEATURES, serializeStudentFeatures } from "@/lib/student-features";
 
 export const metadata: Metadata = { title: "Nutzer einladen" };
 
@@ -21,6 +22,10 @@ async function inviteUser(formData: FormData) {
   const email = (formData.get("email") as string | null)?.trim().toLowerCase() ?? "";
   const userRole = (formData.get("role") as string | null) ?? "student";
   const klasse = (formData.get("klasse") as string | null)?.trim() || null;
+  // Zusatzrollen (mehrfach kombinierbar) — nur für Schüler-Accounts relevant
+  const features = userRole === "student"
+    ? serializeStudentFeatures(formData.getAll("features").map(String))
+    : null;
 
   if (!name || !email) return;
 
@@ -34,6 +39,7 @@ async function inviteUser(formData: FormData) {
       passwordHash,
       role: userRole,
       klasse,
+      studentFeatures: features,
       schoolId: session.schoolId ?? null,
     },
   });
@@ -126,6 +132,23 @@ export default async function NutzerNeuPage() {
             <option value="teacher">Lehrer</option>
             <option value="parent">Elternteil</option>
           </select>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+            Zusatzrollen (nur für Schüler, mehrere möglich)
+          </span>
+          <div className="flex flex-col gap-2 rounded-xl border border-border bg-bg p-3">
+            {STUDENT_FEATURES.map((f) => (
+              <label key={f.key} className="flex cursor-pointer items-start gap-2.5 text-sm">
+                <input type="checkbox" name="features" value={f.key} className="mt-0.5 size-4 accent-brand" />
+                <span>
+                  <span className="font-semibold">{f.icon} {f.label}</span>
+                  <span className="block text-xs text-muted-fg">{f.description}</span>
+                </span>
+              </label>
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-col gap-2">

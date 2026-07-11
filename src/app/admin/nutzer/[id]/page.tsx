@@ -9,7 +9,8 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { prisma } from "@/lib/db/client";
 import { ROLE_LABEL, effectiveRole, getSession } from "@/lib/session";
-import { deleteUser, linkParentToStudent, resetTwoFactor, unlinkParentFromStudent, updateUserClass, updateUserRole } from "./actions";
+import { deleteUser, linkParentToStudent, resetTwoFactor, unlinkParentFromStudent, updateStudentFeatures, updateUserClass, updateUserRole } from "./actions";
+import { STUDENT_FEATURES, parseStudentFeatures } from "@/lib/student-features";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -173,6 +174,31 @@ export default async function NutzerDetailPage({ params }: { params: Promise<{ i
                 <Button type="submit" variant="secondary" size="md">Speichern</Button>
               </form>
             </div>
+
+            {/* Schüler-Zusatzrollen (mehrfach kombinierbar) */}
+            {user.role === "student" && (
+              <div className="space-y-1.5">
+                <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-fg">
+                  <Shield className="size-3.5" /> Zusatzrollen
+                </p>
+                <form action={updateStudentFeatures.bind(null, id)} className="space-y-2 rounded-xl border border-border bg-bg p-3">
+                  {STUDENT_FEATURES.map((f) => (
+                    <label key={f.key} className="flex cursor-pointer items-start gap-2.5 text-sm">
+                      <input
+                        type="checkbox" name="features" value={f.key}
+                        defaultChecked={parseStudentFeatures((user as { studentFeatures?: string | null }).studentFeatures).includes(f.key)}
+                        className="mt-0.5 size-4 accent-brand"
+                      />
+                      <span>
+                        <span className="font-semibold">{f.icon} {f.label}</span>
+                        <span className="block text-xs text-muted-fg">{f.description}</span>
+                      </span>
+                    </label>
+                  ))}
+                  <Button type="submit" variant="secondary" size="sm">Zusatzrollen speichern</Button>
+                </form>
+              </div>
+            )}
 
             {/* Reset 2FA */}
             {user.twoFactor && (

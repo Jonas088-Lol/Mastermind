@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { CheckCircle2, XCircle, RotateCcw, ChevronRight, Lightbulb, Volume2 } from "lucide-react";
 import { recordVocabAnswer } from "../actions";
 
@@ -37,7 +37,9 @@ function shuffle<T>(arr: T[]): T[] {
 
 // ── Card flip mode ──────────────────────────────────────────────────
 function CardMode({ entries, color, onDone }: { entries: VocabEntry[]; color: string; langFrom: string; langTo: string; onDone: (correct: number, total: number) => void }) {
-  const deck = shuffle(entries);
+  // WICHTIG: nur EINMAL mischen (State-Initializer) — shuffle() im Render
+  // würde bei jedem Re-Render die gefragte Vokabel wechseln.
+  const [deck] = useState(() => shuffle(entries));
   const [idx, setIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [correct, setCorrect] = useState(0);
@@ -138,8 +140,10 @@ function CardMode({ entries, color, onDone }: { entries: VocabEntry[]; color: st
 }
 
 // ── Write mode ──────────────────────────────────────────────────────
-function WriteMode({ entries, color, onDone }: { entries: VocabEntry[]; color: string; langTo: string; onDone: (correct: number, total: number) => void }) {
-  const deck = shuffle(entries);
+function WriteMode({ entries, color, langTo, onDone }: { entries: VocabEntry[]; color: string; langTo: string; onDone: (correct: number, total: number) => void }) {
+  // Nur EINMAL mischen — sonst wechselt die gefragte Vokabel bei jedem Tastendruck
+  // und die Prüfung vergleicht gegen ein anderes Wort als das angezeigte.
+  const [deck] = useState(() => shuffle(entries));
   const [idx, setIdx] = useState(0);
   const [input, setInput] = useState("");
   const [checked, setChecked] = useState<boolean | null>(null);
@@ -181,7 +185,7 @@ function WriteMode({ entries, color, onDone }: { entries: VocabEntry[]; color: s
 
       <div className="mx-auto w-full max-w-lg space-y-6">
         <div className="border border-border bg-bg p-8 text-center">
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg mb-3">Wie heißt das auf Englisch?</p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg mb-3">Wie heißt das auf {langTo}?</p>
           <p className="text-3xl font-bold">{current.word}</p>
           {current.example && <p className="mt-2 text-sm italic text-muted-fg">„{current.example?.replace(current.translation, "___")}"</p>}
         </div>
@@ -223,17 +227,22 @@ function WriteMode({ entries, color, onDone }: { entries: VocabEntry[]; color: s
 
 // ── Quiz mode (multiple choice) ──────────────────────────────────────
 function QuizMode({ entries, color, onDone }: { entries: VocabEntry[]; color: string; onDone: (correct: number, total: number) => void }) {
-  const deck = shuffle(entries);
+  // Deck einmalig mischen; Optionen pro Frage stabil halten (useMemo an idx
+  // gebunden) — sonst springen die Antworten bei jedem Re-Render um.
+  const [deck] = useState(() => shuffle(entries));
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [correct, setCorrect] = useState(0);
 
   const current = deck[idx];
-  if (!current || entries.length < 2) return <p className="text-muted-fg">Mindestens 4 Vokabeln für Quiz-Modus nötig.</p>;
+  const options = useMemo(() => {
+    if (!current) return [];
+    const others = shuffle(entries.filter(e => e.id !== current.id)).slice(0, 3);
+    return shuffle([current, ...others]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idx]);
 
-  // Generate 3 wrong options
-  const others = shuffle(entries.filter(e => e.id !== current.id)).slice(0, 3);
-  const options = shuffle([current, ...others]);
+  if (!current || entries.length < 2) return <p className="text-muted-fg">Mindestens 4 Vokabeln für Quiz-Modus nötig.</p>;
 
   function pick(entry: VocabEntry) {
     if (selected) return;
@@ -296,13 +305,14 @@ function QuizMode({ entries, color, onDone }: { entries: VocabEntry[]; color: st
 
 // ── Match mode ──────────────────────────────────────────────────────
 function MatchMode({ entries, color, onDone }: { entries: VocabEntry[]; color: string; onDone: (correct: number, total: number) => void }) {
-  const pairs = shuffle(entries).slice(0, 8);
+  // Paare und rechte Spalte einmalig mischen — shuffle() im Render würde die
+  // Buttons bei jedem Klick neu anordnen.
+  const [pairs] = useState(() => shuffle(entries).slice(0, 8));
+  const [rights] = useState(() => shuffle([...pairs]));
   const [leftSel, setLeftSel] = useState<string | null>(null);
   const [matched, setMatched] = useState<Set<string>>(new Set());
   const [wrong, setWrong] = useState<string | null>(null);
   const [score, setScore] = useState(0);
-
-  const rights = shuffle([...pairs]);
 
   function pickRight(id: string) {
     if (!leftSel || matched.has(id) || matched.has(leftSel)) return;

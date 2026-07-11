@@ -37,6 +37,7 @@ const DEMO_TILES: { role: string; label: string; icon: string }[] = [
   { role: "teacher",        label: "Lehrkraft",       icon: "👩‍🏫" },
   { role: "student",        label: "Schüler",         icon: "🎒" },
   { role: "student2",       label: "Schüler 2",       icon: "🎒" },
+  { role: "student3",       label: "Sprecher & Zeitung", icon: "📰" },
   { role: "parent",         label: "Elternteil",      icon: "👪" },
   { role: "school_company", label: "Schulträger",     icon: "🏢" },
 ];

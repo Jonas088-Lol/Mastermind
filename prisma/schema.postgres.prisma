@@ -138,6 +138,8 @@ model User {
   passwordHash    String
   role            String
   klasse          String?
+  // Schüler-Zusatzrollen (JSON-Array): "klassensprecher" | "schuelersprecher" | "schuelerzeitung"
+  studentFeatures String?
   classId         String?
   pomodoroGoal    Int       @default(4)
   twoFactor       Boolean   @default(false)
@@ -2599,4 +2601,22 @@ model MasterTaskProgress {
   @@unique([taskId, studentId])
   @@index([studentId])
   @@index([taskId])
+}
+
+// ── Schülerzeitung ─────────────────────────────────────────
+model NewspaperArticle {
+  id         String   @id @default(cuid())
+  schoolId   String
+  authorId   String
+  authorName String
+  title      String
+  subtitle   String?
+  content    String   // Artikeltext (Absätze durch Leerzeilen)
+  coverUrl   String?  // Titelbild-URL (optional)
+  color      String?  // Akzentfarbe der Artikelkarte (optional)
+  published  Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([schoolId, createdAt])
 }

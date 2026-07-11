@@ -35,6 +35,8 @@ const TESTERS: { role: string; email: string; name: string; needsClass?: boolean
   { role: "student",        email: "demo.schueler@konvertis.de",    name: "Demo Schüler",  needsClass: true },
   // Zweiter Schüler in derselben Klasse — zum Testen von Duellen & Co.
   { role: "student",        email: "demo.schueler2@konvertis.de",   name: "Demo Schüler 2", needsClass: true, key: "student2" },
+  // Schüler mit allen Zusatzrollen: Klassensprecher + Schülersprecher + Schülerzeitung
+  { role: "student",        email: "demo.sprecher@konvertis.de",    name: "Demo Sprecher & Redaktion", needsClass: true, key: "student3" },
   { role: "parent",         email: "demo.eltern@konvertis.de",      name: "Demo Elternteil" },
   { role: "school_company", email: "demo.traeger@konvertis.de",     name: "Demo Schulträger" },
 ];
@@ -84,6 +86,14 @@ async function main() {
       select: { id: true },
     });
     ids[t.key ?? t.role] = user.id;
+  }
+
+  // ── Zusatzrollen für den Sprecher-/Redaktions-Demo-Account ──
+  if (ids.student3) {
+    await prisma.user.update({
+      where: { id: ids.student3 },
+      data: { studentFeatures: JSON.stringify(["klassensprecher", "schuelersprecher", "schuelerzeitung"]) },
+    });
   }
 
   // ── Eltern ↔ Schüler verknüpfen (sonst leere Eltern-Ansicht) ──

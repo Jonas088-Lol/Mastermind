@@ -51,6 +51,20 @@ export async function updateUserClass(userId: string, formData: FormData): Promi
   revalidatePath(`/admin/nutzer/${userId}`);
 }
 
+export async function updateStudentFeatures(userId: string, formData: FormData): Promise<void> {
+  const session = await getSession();
+  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+
+  const target = await prisma.user.findUnique({ where: { id: userId } });
+  if (!target || target.schoolId !== session.schoolId) return;
+  if (target.role !== "student") return;
+
+  const { serializeStudentFeatures } = await import("@/lib/student-features");
+  const features = serializeStudentFeatures(formData.getAll("features").map(String));
+  await prisma.user.update({ where: { id: userId }, data: { studentFeatures: features } });
+  revalidatePath(`/admin/nutzer/${userId}`);
+}
+
 export async function deleteUser(userId: string): Promise<void> {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "admin") redirect("/admin");

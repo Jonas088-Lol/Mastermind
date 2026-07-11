@@ -154,6 +154,7 @@ const DEMO_LOGINS: Record<string, { email: string; role: string }> = {
   teacher:        { email: "demo.lehrer@konvertis.de",      role: "teacher" },
   student:        { email: "demo.schueler@konvertis.de",    role: "student" },
   student2:       { email: "demo.schueler2@konvertis.de",   role: "student" },
+  student3:       { email: "demo.sprecher@konvertis.de",    role: "student" },
   parent:         { email: "demo.eltern@konvertis.de",      role: "parent" },
   school_company: { email: "demo.traeger@konvertis.de",     role: "school_company" },
 };

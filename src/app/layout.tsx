@@ -6,6 +6,7 @@ import { AppInit } from "@/components/AppInit";
 import { DisplayPrefsApplier } from "@/components/app/DisplayPrefsApplier";
 import { GateClearer } from "@/components/GateClearer";
 import "./globals.css";
+import { SpeedBoost } from "@/components/SpeedBoost";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -100,7 +101,7 @@ export default function RootLayout({
         <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/api/splash?w=2048&h=2732" />
       </head>
       <body className="min-h-screen bg-bg text-fg antialiased" suppressHydrationWarning>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>{children}<SpeedBoost /></ThemeProvider>
         <ServiceWorkerRegister />
         <AppInit />
         <DisplayPrefsApplier />

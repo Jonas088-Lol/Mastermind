@@ -6,6 +6,7 @@ import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
 import { MarkReadOnMount } from "@/components/app/MarkReadOnMount";
 import { ThreadMessages, type ThreadMsg } from "@/components/app/ThreadMessages";
+import { AutoRefresh } from "@/components/app/AutoRefresh";
 
 interface Props {
   params: Promise<{ threadId: string }>;
@@ -59,6 +60,8 @@ export default async function ThreadPage({ params }: Props) {
   return (
     <>
       <MarkReadOnMount threadId={threadId} />
+      {/* Neue Nachrichten im Thread erscheinen ohne Neuladen */}
+      <AutoRefresh seconds={4} />
       <div className="mx-auto flex max-w-4xl flex-col">
         <div className="sticky top-0 z-10 flex items-center gap-3 border-b border-border bg-bg px-5 py-4">
           <Link href="/app/nachrichten" className="text-muted-fg hover:text-fg">

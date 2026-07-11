@@ -218,7 +218,9 @@ function NavLink({ item, active }: { item: NavItem; active: boolean }) {
 
   return (
     <li>
-      <Link href={item.href} className={cls}>
+      {/* prefetch: Hauptnavigation wird schon beim Seitenaufbau vorgeladen →
+          Navigieren fühlt sich instant an */}
+      <Link href={item.href} prefetch className={cls}>
         {inner}
       </Link>
     </li>

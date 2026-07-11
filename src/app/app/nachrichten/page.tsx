@@ -7,6 +7,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { AutoRefresh } from "@/components/app/AutoRefresh";
 
 export const metadata: Metadata = { title: "Nachrichten" };
 
@@ -43,6 +44,8 @@ export default async function NachrichtenPage() {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-6">
+      {/* Neue Nachrichten erscheinen ohne Neuladen */}
+      <AutoRefresh seconds={5} />
       <header className="flex items-end justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Intern</p>
