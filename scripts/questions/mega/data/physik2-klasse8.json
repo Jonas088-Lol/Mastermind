@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 286 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "286 °C",
+   "113 °C",
+   "3 °C",
+   "13 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 286 − 273 = 13 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 28 N im Abstand 50 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "20 N",
+   "21 N",
+   "22 N",
+   "18 N"
+  ],
+  "correct": 0,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 28·50/70 = 20 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 925 hPa sind wie viel Pascal?",
+  "options": [
+   "925000 Pa",
+   "925 Pa",
+   "92500 Pa",
+   "9250 Pa"
+  ],
+  "correct": 2,
+  "explanation": "1 hPa = 100 Pa, also 925 hPa = 92500 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 125 hPa sind wie viel Pascal?",
+  "options": [
+   "125 Pa",
+   "1250 Pa",
+   "12500 Pa",
+   "125000 Pa"
+  ],
+  "correct": 2,
+  "explanation": "1 hPa = 100 Pa, also 125 hPa = 12500 Pa."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 36 N im Abstand 30 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 40 cm?",
+  "options": [
+   "28 N",
+   "27 N",
+   "29 N",
+   "24 N"
+  ],
+  "correct": 1,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 36·30/40 = 27 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 4 m² herrscht der Druck 28 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "118 N",
+   "112 N",
+   "80 N",
+   "97 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 28 Pa · 4 m² = 112 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter dem Einfallswinkel 55° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "55°",
+   "45°",
+   "90°",
+   "35°"
+  ],
+  "correct": 0,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 55°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 26 °C und 80 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "55 °C",
+   "48 °C",
+   "53 °C",
+   "56 °C"
+  ],
+  "correct": 2,
+  "explanation": "Bei gleichen Massen: T_m = (26 + 80) / 2 = 53 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Eine Kraft von 10 N wirkt auf eine Fläche von 5 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "5 N/cm²",
+   "1 N/cm²",
+   "2 N/cm²",
+   "3 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 10 N / 5 cm² = 2 N/cm²."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 1900 N wirkt auf eine Fläche von 50 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "53 N/cm²",
+   "38 N/cm²",
+   "25 N/cm²",
+   "20 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 1900 N / 50 cm² = 38 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 12 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "385 K",
+   "275 K",
+   "285 K",
+   "12 K"
+  ],
+  "correct": 2,
+  "explanation": "T(K) = 12 + 273 = 285 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Welche Linse steckt (vereinfacht) im menschlichen Auge?",
+  "options": [
+   "eine Sammellinse",
+   "ein Hohlspiegel",
+   "eine Zerstreuungslinse",
+   "ein Prisma"
+  ],
+  "correct": 0,
+  "explanation": "Die Augenlinse ist eine verformbare Sammellinse."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 800 hPa sind wie viel Pascal?",
+  "options": [
+   "80000 Pa",
+   "800000 Pa",
+   "800 Pa",
+   "8000 Pa"
+  ],
+  "correct": 0,
+  "explanation": "1 hPa = 100 Pa, also 800 hPa = 80000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 800 N wirkt auf eine Fläche von 20 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "53 N/cm²",
+   "28 N/cm²",
+   "50 N/cm²",
+   "40 N/cm²"
+  ],
+  "correct": 3,
+  "explanation": "p = F/A = 800 N / 20 cm² = 40 N/cm²."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter 33° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "33°",
+   "147°",
+   "57°",
+   "43°"
+  ],
+  "correct": 2,
+  "explanation": "Zum Lot gemessen: 90° − 33° = 57°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter dem Einfallswinkel 75° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "65°",
+   "90°",
+   "15°",
+   "75°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 75°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 51 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "314 K",
+   "324 K",
+   "51 K",
+   "424 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 51 + 273 = 324 K."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 240 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "-43 °C",
+   "-33 °C",
+   "240 °C",
+   "67 °C"
+  ],
+  "correct": 1,
+  "explanation": "ϑ(°C) = 240 − 273 = -33 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Rechne um: 425 hPa sind wie viel Pascal?",
+  "options": [
+   "4250 Pa",
+   "425 Pa",
+   "42500 Pa",
+   "425000 Pa"
+  ],
+  "correct": 2,
+  "explanation": "1 hPa = 100 Pa, also 425 hPa = 42500 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 12 °C und 90 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "45 °C",
+   "51 °C",
+   "50 °C",
+   "55 °C"
+  ],
+  "correct": 1,
+  "explanation": "Bei gleichen Massen: T_m = (12 + 90) / 2 = 51 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Hebel im Gleichgewicht: F₁ = 60 N wirkt bei 100 cm. In welchem Abstand muss F₂ = 40 N angreifen?",
+  "options": [
+   "150 cm",
+   "147 cm",
+   "100 cm",
+   "124 cm"
+  ],
+  "correct": 0,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 60·100/40 = 150 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Auf einer Fläche von 4 m² herrscht der Druck 24 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "127 N",
+   "119 N",
+   "73 N",
+   "96 N"
+  ],
+  "correct": 3,
+  "explanation": "F = p·A = 24 Pa · 4 m² = 96 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 13 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "286 K",
+   "386 K",
+   "13 K",
+   "276 K"
+  ],
+  "correct": 0,
+  "explanation": "T(K) = 13 + 273 = 286 K."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 15 N wirkt bei 80 cm. In welchem Abstand muss F₂ = 40 N angreifen?",
+  "options": [
+   "21 cm",
+   "30 cm",
+   "34 cm",
+   "24 cm"
+  ],
+  "correct": 1,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 15·80/40 = 30 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 875 hPa sind wie viel Pascal?",
+  "options": [
+   "875000 Pa",
+   "87500 Pa",
+   "8750 Pa",
+   "875 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 875 hPa = 87500 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 600 hPa sind wie viel Pascal?",
+  "options": [
+   "6000 Pa",
+   "600 Pa",
+   "600000 Pa",
+   "60000 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 600 hPa = 60000 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 214 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "214 °C",
+   "-69 °C",
+   "-59 °C",
+   "41 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 214 − 273 = -59 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Wie lautet das Reflexionsgesetz?",
+  "options": [
+   "Der Reflexionswinkel ist immer 90°",
+   "Einfallswinkel = Reflexionswinkel",
+   "Der Reflexionswinkel ist immer kleiner",
+   "Einfallswinkel = 2 · Reflexionswinkel"
+  ],
+  "correct": 1,
+  "explanation": "Beim Spiegel gilt: Einfallswinkel = Reflexionswinkel (zum Lot gemessen)."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 8 m² herrscht der Druck 10 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "77 N",
+   "80 N",
+   "91 N",
+   "67 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 10 Pa · 8 m² = 80 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 55° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "55°",
+   "90°",
+   "45°",
+   "35°"
+  ],
+  "correct": 0,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 55°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 25 N wirkt bei 70 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "24 cm",
+   "35 cm",
+   "29 cm",
+   "39 cm"
+  ],
+  "correct": 1,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 25·70/50 = 35 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 76° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "66°",
+   "14°",
+   "90°",
+   "76°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 76°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Auf einer Fläche von 10 m² herrscht der Druck 30 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "240 N",
+   "385 N",
+   "320 N",
+   "300 N"
+  ],
+  "correct": 3,
+  "explanation": "F = p·A = 30 Pa · 10 m² = 300 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 100 hPa sind wie viel Pascal?",
+  "options": [
+   "100000 Pa",
+   "10000 Pa",
+   "100 Pa",
+   "1000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 100 hPa = 10000 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 66 °C und 76 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "66 °C",
+   "71 °C",
+   "73 °C",
+   "69 °C"
+  ],
+  "correct": 1,
+  "explanation": "Bei gleichen Massen: T_m = (66 + 76) / 2 = 71 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 64° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "90°",
+   "54°",
+   "64°",
+   "26°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 64°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 31° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "59°",
+   "41°",
+   "149°",
+   "31°"
+  ],
+  "correct": 0,
+  "explanation": "Zum Lot gemessen: 90° − 31° = 59°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 48 N im Abstand 25 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 30 cm?",
+  "options": [
+   "40 N",
+   "29 N",
+   "44 N",
+   "42 N"
+  ],
+  "correct": 0,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 48·25/30 = 40 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 900 hPa sind wie viel Pascal?",
+  "options": [
+   "900 Pa",
+   "90000 Pa",
+   "900000 Pa",
+   "9000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 900 hPa = 90000 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Welches Bild erzeugt ein ebener Spiegel?",
+  "options": [
+   "ein aufrechtes, seitenvertauschtes, gleich großes Scheinbild",
+   "gar kein Bild",
+   "ein vergrößertes reelles Bild",
+   "ein verkleinertes, umgekehrtes Bild"
+  ],
+  "correct": 0,
+  "explanation": "Der ebene Spiegel erzeugt ein virtuelles, gleich großes Bild hinter dem Spiegel."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 30 N wirkt bei 40 cm. In welchem Abstand muss F₂ = 100 N angreifen?",
+  "options": [
+   "13 cm",
+   "9 cm",
+   "12 cm",
+   "11 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 30·40/100 = 12 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 79° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "90°",
+   "11°",
+   "79°",
+   "69°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 79°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 56 N im Abstand 30 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 80 cm?",
+  "options": [
+   "22 N",
+   "23 N",
+   "25 N",
+   "21 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 56·30/80 = 21 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 144 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "407 K",
+   "417 K",
+   "517 K",
+   "144 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 144 + 273 = 417 K."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: -25 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "-25 K",
+   "248 K",
+   "238 K",
+   "348 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = -25 + 273 = 248 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Wie nennt man den Abstand zwischen Linse und Brennpunkt?",
+  "options": [
+   "Radius",
+   "Gegenstandsweite",
+   "Bildweite",
+   "Brennweite"
+  ],
+  "correct": 3,
+  "explanation": "Die Brennweite f ist der Abstand Linsenmitte–Brennpunkt."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 60° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "70°",
+   "60°",
+   "30°",
+   "120°"
+  ],
+  "correct": 2,
+  "explanation": "Zum Lot gemessen: 90° − 60° = 30°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 72 °C und 56 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "66 °C",
+   "58 °C",
+   "64 °C",
+   "57 °C"
+  ],
+  "correct": 2,
+  "explanation": "Bei gleichen Massen: T_m = (72 + 56) / 2 = 64 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 42° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "90°",
+   "48°",
+   "84°",
+   "42°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 42°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter 30° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "30°",
+   "40°",
+   "60°",
+   "150°"
+  ],
+  "correct": 2,
+  "explanation": "Zum Lot gemessen: 90° − 30° = 60°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 10 m² herrscht der Druck 17 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "170 N",
+   "218 N",
+   "150 N",
+   "204 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 17 Pa · 10 m² = 170 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: -26 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "237 K",
+   "-26 K",
+   "347 K",
+   "247 K"
+  ],
+  "correct": 3,
+  "explanation": "T(K) = -26 + 273 = 247 K."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Auf einer Fläche von 4 m² herrscht der Druck 38 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "152 N",
+   "169 N",
+   "122 N",
+   "102 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 38 Pa · 4 m² = 152 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Rechne um: 200 hPa sind wie viel Pascal?",
+  "options": [
+   "200 Pa",
+   "200000 Pa",
+   "2000 Pa",
+   "20000 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 200 hPa = 20000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 375 N wirkt auf eine Fläche von 25 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "15 N/cm²",
+   "23 N/cm²",
+   "20 N/cm²",
+   "19 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 375 N / 25 cm² = 15 N/cm²."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 144 N wirkt auf eine Fläche von 4 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "49 N/cm²",
+   "37 N/cm²",
+   "34 N/cm²",
+   "36 N/cm²"
+  ],
+  "correct": 3,
+  "explanation": "p = F/A = 144 N / 4 cm² = 36 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 245 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "-28 °C",
+   "245 °C",
+   "-38 °C",
+   "72 °C"
+  ],
+  "correct": 0,
+  "explanation": "ϑ(°C) = 245 − 273 = -28 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Rechne um: 875 hPa sind wie viel Pascal?",
+  "options": [
+   "875 Pa",
+   "87500 Pa",
+   "8750 Pa",
+   "875000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 875 hPa = 87500 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Gleich viel Wasser von 78 °C und 52 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "65 °C",
+   "69 °C",
+   "64 °C",
+   "60 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (78 + 52) / 2 = 65 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: -23 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "240 K",
+   "250 K",
+   "-23 K",
+   "350 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = -23 + 273 = 250 K."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 35 N wirkt bei 90 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "59 cm",
+   "51 cm",
+   "76 cm",
+   "63 cm"
+  ],
+  "correct": 3,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 35·90/50 = 63 cm."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 442 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "442 °C",
+   "269 °C",
+   "169 °C",
+   "159 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 442 − 273 = 169 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 50 hPa sind wie viel Pascal?",
+  "options": [
+   "50 Pa",
+   "5000 Pa",
+   "50000 Pa",
+   "500 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 50 hPa = 5000 Pa."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 24 N im Abstand 35 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 30 cm?",
+  "options": [
+   "34 N",
+   "29 N",
+   "33 N",
+   "28 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 24·35/30 = 28 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Rechne um: 975 hPa sind wie viel Pascal?",
+  "options": [
+   "97500 Pa",
+   "975 Pa",
+   "975000 Pa",
+   "9750 Pa"
+  ],
+  "correct": 0,
+  "explanation": "1 hPa = 100 Pa, also 975 hPa = 97500 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 278 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "105 °C",
+   "5 °C",
+   "-5 °C",
+   "278 °C"
+  ],
+  "correct": 1,
+  "explanation": "ϑ(°C) = 278 − 273 = 5 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 5 m² herrscht der Druck 13 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "72 N",
+   "66 N",
+   "78 N",
+   "65 N"
+  ],
+  "correct": 3,
+  "explanation": "F = p·A = 13 Pa · 5 m² = 65 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 355 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "182 °C",
+   "355 °C",
+   "82 °C",
+   "72 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 355 − 273 = 82 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 40 °C und 62 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "51 °C",
+   "53 °C",
+   "46 °C",
+   "49 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (40 + 62) / 2 = 51 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter 60° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "60°",
+   "120°",
+   "30°",
+   "70°"
+  ],
+  "correct": 2,
+  "explanation": "Zum Lot gemessen: 90° − 60° = 30°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 10 m² herrscht der Druck 30 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "300 N",
+   "384 N",
+   "339 N",
+   "246 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 30 Pa · 10 m² = 300 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Rechne um: 800 hPa sind wie viel Pascal?",
+  "options": [
+   "8000 Pa",
+   "800 Pa",
+   "800000 Pa",
+   "80000 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 800 hPa = 80000 Pa."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 24 N im Abstand 45 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 20 cm?",
+  "options": [
+   "37 N",
+   "54 N",
+   "39 N",
+   "72 N"
+  ],
+  "correct": 1,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 24·45/20 = 54 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 32 °C und 46 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "33 °C",
+   "43 °C",
+   "34 °C",
+   "39 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (32 + 46) / 2 = 39 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 50 N wirkt bei 70 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "50 cm",
+   "51 cm",
+   "70 cm",
+   "56 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 50·70/50 = 70 cm."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 115 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "488 K",
+   "388 K",
+   "378 K",
+   "115 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 115 + 273 = 388 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 22° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "158°",
+   "32°",
+   "22°",
+   "68°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 22° = 68°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 20 N wirkt bei 30 cm. In welchem Abstand muss F₂ = 40 N angreifen?",
+  "options": [
+   "10 cm",
+   "19 cm",
+   "15 cm",
+   "12 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 20·30/40 = 15 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Mit welcher Linse korrigiert man Weitsichtigkeit?",
+  "options": [
+   "mit einem Prisma",
+   "mit einer Sammellinse",
+   "mit einer Zerstreuungslinse",
+   "gar nicht"
+  ],
+  "correct": 1,
+  "explanation": "Weitsichtige benötigen Sammellinsen (positive Brechkraft)."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 290 N wirkt auf eine Fläche von 10 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "29 N/cm²",
+   "28 N/cm²",
+   "39 N/cm²",
+   "38 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 290 N / 10 cm² = 29 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Gleich viel Wasser von 48 °C und 94 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "73 °C",
+   "72 °C",
+   "75 °C",
+   "71 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (48 + 94) / 2 = 71 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 66° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "56°",
+   "90°",
+   "24°",
+   "66°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 66°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Gleich viel Wasser von 40 °C und 46 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "43 °C",
+   "41 °C",
+   "39 °C",
+   "51 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (40 + 46) / 2 = 43 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 483 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "483 °C",
+   "210 °C",
+   "310 °C",
+   "200 °C"
+  ],
+  "correct": 1,
+  "explanation": "ϑ(°C) = 483 − 273 = 210 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 18° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "162°",
+   "28°",
+   "18°",
+   "72°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 18° = 72°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 63° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "117°",
+   "27°",
+   "63°",
+   "73°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 63° = 27°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 62 °C und 84 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "79 °C",
+   "73 °C",
+   "81 °C",
+   "70 °C"
+  ],
+  "correct": 1,
+  "explanation": "Bei gleichen Massen: T_m = (62 + 84) / 2 = 73 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 50 N wirkt bei 80 cm. In welchem Abstand muss F₂ = 20 N angreifen?",
+  "options": [
+   "177 cm",
+   "184 cm",
+   "200 cm",
+   "155 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 50·80/20 = 200 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 50° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "60°",
+   "50°",
+   "130°",
+   "40°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 50° = 40°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Wie nennt man den Abstand zwischen Linse und Brennpunkt?",
+  "options": [
+   "Bildweite",
+   "Radius",
+   "Brennweite",
+   "Gegenstandsweite"
+  ],
+  "correct": 2,
+  "explanation": "Die Brennweite f ist der Abstand Linsenmitte–Brennpunkt."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 426 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "153 °C",
+   "143 °C",
+   "426 °C",
+   "253 °C"
+  ],
+  "correct": 0,
+  "explanation": "ϑ(°C) = 426 − 273 = 153 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 30 N wirkt auf eine Fläche von 10 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "3 N/cm²",
+   "4 N/cm²",
+   "2 N/cm²",
+   "6 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 30 N / 10 cm² = 3 N/cm²."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 10° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "80°",
+   "10°",
+   "90°",
+   "20°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 10°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 35 N wirkt bei 50 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "35 cm",
+   "41 cm",
+   "37 cm",
+   "38 cm"
+  ],
+  "correct": 0,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 35·50/50 = 35 cm."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 2 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "265 K",
+   "375 K",
+   "275 K",
+   "2 K"
+  ],
+  "correct": 2,
+  "explanation": "T(K) = 2 + 273 = 275 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Wie ist eine Zerstreuungslinse geformt?",
+  "options": [
+   "in der Mitte dicker als am Rand",
+   "überall gleich dick",
+   "kugelförmig",
+   "in der Mitte dünner als am Rand"
+  ],
+  "correct": 3,
+  "explanation": "Konkavlinsen sind in der Mitte dünner (Zerstreuungslinse)."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 80 N wirkt auf eine Fläche von 5 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "15 N/cm²",
+   "16 N/cm²",
+   "9 N/cm²",
+   "11 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 80 N / 5 cm² = 16 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Gleich viel Wasser von 36 °C und 94 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "68 °C",
+   "71 °C",
+   "73 °C",
+   "65 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (36 + 94) / 2 = 65 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 450 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "277 °C",
+   "167 °C",
+   "177 °C",
+   "450 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 450 − 273 = 177 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter dem Einfallswinkel 32° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "58°",
+   "90°",
+   "32°",
+   "64°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 32°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: -25 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "348 K",
+   "238 K",
+   "-25 K",
+   "248 K"
+  ],
+  "correct": 3,
+  "explanation": "T(K) = -25 + 273 = 248 K."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 412 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "239 °C",
+   "129 °C",
+   "412 °C",
+   "139 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 412 − 273 = 139 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: -7 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "-7 K",
+   "256 K",
+   "366 K",
+   "266 K"
+  ],
+  "correct": 3,
+  "explanation": "T(K) = -7 + 273 = 266 K."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 100 hPa sind wie viel Pascal?",
+  "options": [
+   "1000 Pa",
+   "100 Pa",
+   "10000 Pa",
+   "100000 Pa"
+  ],
+  "correct": 2,
+  "explanation": "1 hPa = 100 Pa, also 100 hPa = 10000 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 38 °C und 86 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "69 °C",
+   "57 °C",
+   "68 °C",
+   "62 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (38 + 86) / 2 = 62 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 68° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "68°",
+   "22°",
+   "112°",
+   "78°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 68° = 22°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 35 N wirkt bei 40 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "28 cm",
+   "30 cm",
+   "22 cm",
+   "23 cm"
+  ],
+  "correct": 0,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 35·40/50 = 28 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 79° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "11°",
+   "69°",
+   "79°",
+   "90°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 79°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Rechne um: 75 hPa sind wie viel Pascal?",
+  "options": [
+   "75 Pa",
+   "75000 Pa",
+   "750 Pa",
+   "7500 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 75 hPa = 7500 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 222 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "-51 °C",
+   "49 °C",
+   "222 °C",
+   "-61 °C"
+  ],
+  "correct": 0,
+  "explanation": "ϑ(°C) = 222 − 273 = -51 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 42 °C und 66 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "54 °C",
+   "51 °C",
+   "48 °C",
+   "52 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (42 + 66) / 2 = 54 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 99 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "99 K",
+   "372 K",
+   "362 K",
+   "472 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 99 + 273 = 372 K."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Hebel im Gleichgewicht: F₁ = 25 N wirkt bei 60 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "30 cm",
+   "33 cm",
+   "39 cm",
+   "25 cm"
+  ],
+  "correct": 0,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 25·60/50 = 30 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Wie lautet das Reflexionsgesetz?",
+  "options": [
+   "Der Reflexionswinkel ist immer 90°",
+   "Einfallswinkel = 2 · Reflexionswinkel",
+   "Der Reflexionswinkel ist immer kleiner",
+   "Einfallswinkel = Reflexionswinkel"
+  ],
+  "correct": 3,
+  "explanation": "Beim Spiegel gilt: Einfallswinkel = Reflexionswinkel (zum Lot gemessen)."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 500 hPa sind wie viel Pascal?",
+  "options": [
+   "500 Pa",
+   "50000 Pa",
+   "500000 Pa",
+   "5000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 500 hPa = 50000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 850 N wirkt auf eine Fläche von 50 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "17 N/cm²",
+   "21 N/cm²",
+   "10 N/cm²",
+   "13 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 850 N / 50 cm² = 17 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 28 N im Abstand 45 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "14 N",
+   "16 N",
+   "18 N",
+   "13 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 28·45/70 = 18 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 74 N wirkt auf eine Fläche von 2 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "32 N/cm²",
+   "53 N/cm²",
+   "44 N/cm²",
+   "37 N/cm²"
+  ],
+  "correct": 3,
+  "explanation": "p = F/A = 74 N / 2 cm² = 37 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 40 N wirkt bei 60 cm. In welchem Abstand muss F₂ = 20 N angreifen?",
+  "options": [
+   "105 cm",
+   "156 cm",
+   "120 cm",
+   "138 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 40·60/20 = 120 cm."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: -31 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "242 K",
+   "232 K",
+   "342 K",
+   "-31 K"
+  ],
+  "correct": 0,
+  "explanation": "T(K) = -31 + 273 = 242 K."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 30 N wirkt bei 70 cm. In welchem Abstand muss F₂ = 100 N angreifen?",
+  "options": [
+   "16 cm",
+   "21 cm",
+   "20 cm",
+   "26 cm"
+  ],
+  "correct": 1,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 30·70/100 = 21 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Auf einer Fläche von 3 m² herrscht der Druck 35 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "105 N",
+   "92 N",
+   "77 N",
+   "88 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 35 Pa · 3 m² = 105 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter 28° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "152°",
+   "62°",
+   "28°",
+   "38°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 28° = 62°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 4 m² herrscht der Druck 43 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "172 N",
+   "116 N",
+   "224 N",
+   "164 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 43 Pa · 4 m² = 172 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Gleich viel Wasser von 12 °C und 44 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "36 °C",
+   "34 °C",
+   "33 °C",
+   "28 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (12 + 44) / 2 = 28 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 359 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "359 °C",
+   "186 °C",
+   "86 °C",
+   "76 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 359 − 273 = 86 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Eine Kraft von 20 N wirkt auf eine Fläche von 5 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "4 N/cm²",
+   "7 N/cm²",
+   "6 N/cm²",
+   "3 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 20 N / 5 cm² = 4 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 5 N im Abstand 40 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 50 cm?",
+  "options": [
+   "2 N",
+   "4 N",
+   "1 N",
+   "6 N"
+  ],
+  "correct": 1,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 5·40/50 = 4 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Mit welcher Linse korrigiert man Weitsichtigkeit?",
+  "options": [
+   "mit einer Zerstreuungslinse",
+   "gar nicht",
+   "mit einem Prisma",
+   "mit einer Sammellinse"
+  ],
+  "correct": 3,
+  "explanation": "Weitsichtige benötigen Sammellinsen (positive Brechkraft)."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 26 °C und 54 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "35 °C",
+   "41 °C",
+   "40 °C",
+   "48 °C"
+  ],
+  "correct": 2,
+  "explanation": "Bei gleichen Massen: T_m = (26 + 54) / 2 = 40 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 11 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "11 K",
+   "384 K",
+   "274 K",
+   "284 K"
+  ],
+  "correct": 3,
+  "explanation": "T(K) = 11 + 273 = 284 K."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 18 °C und 82 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "50 °C",
+   "49 °C",
+   "56 °C",
+   "42 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (18 + 82) / 2 = 50 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Wie breitet sich Licht in einem gleichförmigen Medium aus?",
+  "options": [
+   "geradlinig",
+   "spiralförmig",
+   "in Kurven",
+   "nur nach oben"
+  ],
+  "correct": 0,
+  "explanation": "Licht breitet sich geradlinig aus (Lichtstrahl-Modell)."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Eine Kraft von 350 N wirkt auf eine Fläche von 25 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "11 N/cm²",
+   "13 N/cm²",
+   "14 N/cm²",
+   "9 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 350 N / 25 cm² = 14 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 28 N im Abstand 30 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "9 N",
+   "15 N",
+   "12 N",
+   "8 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 28·30/70 = 12 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 27 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "290 K",
+   "400 K",
+   "27 K",
+   "300 K"
+  ],
+  "correct": 3,
+  "explanation": "T(K) = 27 + 273 = 300 K."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 660 N wirkt auf eine Fläche von 20 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "48 N/cm²",
+   "31 N/cm²",
+   "33 N/cm²",
+   "24 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 660 N / 20 cm² = 33 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 275 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "102 °C",
+   "2 °C",
+   "-8 °C",
+   "275 °C"
+  ],
+  "correct": 1,
+  "explanation": "ϑ(°C) = 275 − 273 = 2 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Hebel im Gleichgewicht: F₁ = 25 N wirkt bei 50 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "33 cm",
+   "26 cm",
+   "31 cm",
+   "25 cm"
+  ],
+  "correct": 3,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 25·50/50 = 25 cm."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 20 N wirkt bei 60 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "18 cm",
+   "21 cm",
+   "29 cm",
+   "24 cm"
+  ],
+  "correct": 3,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 20·60/50 = 24 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 2 m² herrscht der Druck 47 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "76 N",
+   "94 N",
+   "79 N",
+   "125 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 47 Pa · 2 m² = 94 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 340 N wirkt auf eine Fläche von 20 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "11 N/cm²",
+   "17 N/cm²",
+   "22 N/cm²",
+   "10 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 340 N / 20 cm² = 17 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Gleich viel Wasser von 28 °C und 92 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "62 °C",
+   "68 °C",
+   "60 °C",
+   "54 °C"
+  ],
+  "correct": 2,
+  "explanation": "Bei gleichen Massen: T_m = (28 + 92) / 2 = 60 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 275 N wirkt auf eine Fläche von 25 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "14 N/cm²",
+   "11 N/cm²",
+   "9 N/cm²",
+   "17 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 275 N / 25 cm² = 11 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 41 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "414 K",
+   "304 K",
+   "314 K",
+   "41 K"
+  ],
+  "correct": 2,
+  "explanation": "T(K) = 41 + 273 = 314 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter 63° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "73°",
+   "27°",
+   "117°",
+   "63°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 63° = 27°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 54 °C und 64 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "58 °C",
+   "61 °C",
+   "59 °C",
+   "60 °C"
+  ],
+  "correct": 2,
+  "explanation": "Bei gleichen Massen: T_m = (54 + 64) / 2 = 59 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 60 N wirkt bei 30 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "25 cm",
+   "26 cm",
+   "27 cm",
+   "36 cm"
+  ],
+  "correct": 3,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 60·30/50 = 36 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 8 m² herrscht der Druck 13 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "133 N",
+   "104 N",
+   "120 N",
+   "93 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 13 Pa · 8 m² = 104 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 975 hPa sind wie viel Pascal?",
+  "options": [
+   "9750 Pa",
+   "975000 Pa",
+   "97500 Pa",
+   "975 Pa"
+  ],
+  "correct": 2,
+  "explanation": "1 hPa = 100 Pa, also 975 hPa = 97500 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 58° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "48°",
+   "58°",
+   "32°",
+   "90°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 58°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 20 °C und 42 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "23 °C",
+   "24 °C",
+   "34 °C",
+   "31 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (20 + 42) / 2 = 31 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 25° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "25°",
+   "90°",
+   "65°",
+   "50°"
+  ],
+  "correct": 0,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 25°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 35° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "35°",
+   "55°",
+   "45°",
+   "145°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 35° = 55°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 66 °C und 42 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "54 °C",
+   "58 °C",
+   "62 °C",
+   "49 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (66 + 42) / 2 = 54 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 350 N wirkt auf eine Fläche von 10 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "19 N/cm²",
+   "35 N/cm²",
+   "31 N/cm²",
+   "28 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 350 N / 10 cm² = 35 N/cm²."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Auf einer Fläche von 4 m² herrscht der Druck 3 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "13 N",
+   "12 N",
+   "14 N",
+   "11 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 3 Pa · 4 m² = 12 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 284 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "11 °C",
+   "111 °C",
+   "284 °C",
+   "1 °C"
+  ],
+  "correct": 0,
+  "explanation": "ϑ(°C) = 284 − 273 = 11 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 45 N wirkt bei 100 cm. In welchem Abstand muss F₂ = 100 N angreifen?",
+  "options": [
+   "39 cm",
+   "45 cm",
+   "51 cm",
+   "42 cm"
+  ],
+  "correct": 1,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 45·100/100 = 45 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 53° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "90°",
+   "37°",
+   "43°",
+   "53°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 53°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 49 N im Abstand 50 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "29 N",
+   "40 N",
+   "28 N",
+   "35 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 49·50/70 = 35 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 20 N wirkt bei 60 cm. In welchem Abstand muss F₂ = 40 N angreifen?",
+  "options": [
+   "30 cm",
+   "20 cm",
+   "32 cm",
+   "33 cm"
+  ],
+  "correct": 0,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 20·60/40 = 30 cm."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 55 N wirkt bei 90 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "130 cm",
+   "85 cm",
+   "107 cm",
+   "99 cm"
+  ],
+  "correct": 3,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 55·90/50 = 99 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 43° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "43°",
+   "53°",
+   "137°",
+   "47°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 43° = 47°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 150 N wirkt auf eine Fläche von 10 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "23 N/cm²",
+   "20 N/cm²",
+   "15 N/cm²",
+   "10 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 150 N / 10 cm² = 15 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 71 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "344 K",
+   "334 K",
+   "444 K",
+   "71 K"
+  ],
+  "correct": 0,
+  "explanation": "T(K) = 71 + 273 = 344 K."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 413 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "413 °C",
+   "240 °C",
+   "130 °C",
+   "140 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 413 − 273 = 140 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 399 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "226 °C",
+   "116 °C",
+   "126 °C",
+   "399 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 399 − 273 = 126 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 133 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "133 K",
+   "396 K",
+   "406 K",
+   "506 K"
+  ],
+  "correct": 2,
+  "explanation": "T(K) = 133 + 273 = 406 K."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 775 hPa sind wie viel Pascal?",
+  "options": [
+   "7750 Pa",
+   "77500 Pa",
+   "775 Pa",
+   "775000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 775 hPa = 77500 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter 57° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "123°",
+   "33°",
+   "67°",
+   "57°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 57° = 33°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 75° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "15°",
+   "65°",
+   "90°",
+   "75°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 75°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Auf einer Fläche von 8 m² herrscht der Druck 8 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "71 N",
+   "64 N",
+   "59 N",
+   "44 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 8 Pa · 8 m² = 64 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Auf einer Fläche von 8 m² herrscht der Druck 47 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "376 N",
+   "278 N",
+   "346 N",
+   "436 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 47 Pa · 8 m² = 376 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wie groß ist die Lichtgeschwindigkeit im Vakuum ungefähr?",
+  "options": [
+   "3 000 km/s",
+   "30 000 000 km/s",
+   "300 000 km/s",
+   "300 km/s"
+  ],
+  "correct": 2,
+  "explanation": "c ≈ 300 000 km/s = 3·10⁸ m/s."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 1800 N wirkt auf eine Fläche von 50 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "35 N/cm²",
+   "25 N/cm²",
+   "36 N/cm²",
+   "45 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 1800 N / 50 cm² = 36 N/cm²."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Welche Linse bündelt parallele Lichtstrahlen in einem Punkt?",
+  "options": [
+   "die Zerstreuungslinse (Konkavlinse)",
+   "der Hohlspiegel bündelt nie",
+   "die Planplatte",
+   "die Sammellinse (Konvexlinse)"
+  ],
+  "correct": 3,
+  "explanation": "Eine Sammellinse vereinigt parallele Strahlen im Brennpunkt."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 88 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "88 K",
+   "361 K",
+   "461 K",
+   "351 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 88 + 273 = 361 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter dem Einfallswinkel 65° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "25°",
+   "55°",
+   "65°",
+   "90°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 65°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 220 N wirkt auf eine Fläche von 10 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "29 N/cm²",
+   "25 N/cm²",
+   "23 N/cm²",
+   "22 N/cm²"
+  ],
+  "correct": 3,
+  "explanation": "p = F/A = 220 N / 10 cm² = 22 N/cm²."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 150 hPa sind wie viel Pascal?",
+  "options": [
+   "15000 Pa",
+   "150000 Pa",
+   "1500 Pa",
+   "150 Pa"
+  ],
+  "correct": 0,
+  "explanation": "1 hPa = 100 Pa, also 150 hPa = 15000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Auf einer Fläche von 4 m² herrscht der Druck 38 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "181 N",
+   "183 N",
+   "152 N",
+   "137 N"
+  ],
+  "correct": 2,
+  "explanation": "F = p·A = 38 Pa · 4 m² = 152 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Auf einer Fläche von 8 m² herrscht der Druck 8 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "67 N",
+   "64 N",
+   "63 N",
+   "58 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 8 Pa · 8 m² = 64 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 8 N im Abstand 15 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 30 cm?",
+  "options": [
+   "3 N",
+   "4 N",
+   "7 N",
+   "1 N"
+  ],
+  "correct": 1,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 8·15/30 = 4 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 550 hPa sind wie viel Pascal?",
+  "options": [
+   "5500 Pa",
+   "550000 Pa",
+   "550 Pa",
+   "55000 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 550 hPa = 55000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Auf einer Fläche von 3 m² herrscht der Druck 34 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "102 N",
+   "133 N",
+   "111 N",
+   "104 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 34 Pa · 3 m² = 102 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 100 N im Abstand 55 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 50 cm?",
+  "options": [
+   "144 N",
+   "110 N",
+   "138 N",
+   "101 N"
+  ],
+  "correct": 1,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 100·55/50 = 110 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 437 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "264 °C",
+   "437 °C",
+   "154 °C",
+   "164 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 437 − 273 = 164 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 29° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "61°",
+   "58°",
+   "29°",
+   "90°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 29°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 56 °C und 76 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "72 °C",
+   "69 °C",
+   "62 °C",
+   "66 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (56 + 76) / 2 = 66 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 500 N wirkt auf eine Fläche von 20 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "14 N/cm²",
+   "12 N/cm²",
+   "25 N/cm²",
+   "18 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 500 N / 20 cm² = 25 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 416 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "133 °C",
+   "243 °C",
+   "416 °C",
+   "143 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 416 − 273 = 143 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Eine Kraft von 48 N wirkt auf eine Fläche von 2 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "34 N/cm²",
+   "24 N/cm²",
+   "23 N/cm²",
+   "32 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 48 N / 2 cm² = 24 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 27 N im Abstand 10 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 30 cm?",
+  "options": [
+   "11 N",
+   "12 N",
+   "9 N",
+   "7 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 27·10/30 = 9 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 58 N wirkt auf eine Fläche von 2 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "29 N/cm²",
+   "26 N/cm²",
+   "43 N/cm²",
+   "20 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 58 N / 2 cm² = 29 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 8 N im Abstand 25 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 50 cm?",
+  "options": [
+   "3 N",
+   "7 N",
+   "4 N",
+   "2 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 8·25/50 = 4 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 33° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "33°",
+   "43°",
+   "147°",
+   "57°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 33° = 57°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 14 N im Abstand 40 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "7 N",
+   "9 N",
+   "8 N",
+   "6 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 14·40/70 = 8 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 35 N wirkt bei 90 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "63 cm",
+   "66 cm",
+   "82 cm",
+   "53 cm"
+  ],
+  "correct": 0,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 35·90/50 = 63 cm."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 10 °C und 82 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "46 °C",
+   "45 °C",
+   "40 °C",
+   "53 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (10 + 82) / 2 = 46 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 60 °C und 46 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "49 °C",
+   "59 °C",
+   "47 °C",
+   "53 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (60 + 46) / 2 = 53 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 24 N im Abstand 5 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 40 cm?",
+  "options": [
+   "3 N",
+   "5 N",
+   "1 N",
+   "4 N"
+  ],
+  "correct": 0,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 24·5/40 = 3 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 19° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "19°",
+   "90°",
+   "71°",
+   "38°"
+  ],
+  "correct": 0,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 19°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 112 N im Abstand 25 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "34 N",
+   "44 N",
+   "43 N",
+   "40 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 112·25/70 = 40 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Wie breitet sich Licht in einem gleichförmigen Medium aus?",
+  "options": [
+   "in Kurven",
+   "nur nach oben",
+   "spiralförmig",
+   "geradlinig"
+  ],
+  "correct": 3,
+  "explanation": "Licht breitet sich geradlinig aus (Lichtstrahl-Modell)."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: -10 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "363 K",
+   "-10 K",
+   "263 K",
+   "253 K"
+  ],
+  "correct": 2,
+  "explanation": "T(K) = -10 + 273 = 263 K."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 525 hPa sind wie viel Pascal?",
+  "options": [
+   "525000 Pa",
+   "525 Pa",
+   "52500 Pa",
+   "5250 Pa"
+  ],
+  "correct": 2,
+  "explanation": "1 hPa = 100 Pa, also 525 hPa = 52500 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 30° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "40°",
+   "30°",
+   "150°",
+   "60°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 30° = 60°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Eine Kraft von 240 N wirkt auf eine Fläche von 10 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "20 N/cm²",
+   "16 N/cm²",
+   "24 N/cm²",
+   "12 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 240 N / 10 cm² = 24 N/cm²."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wie breitet sich Licht in einem gleichförmigen Medium aus?",
+  "options": [
+   "in Kurven",
+   "nur nach oben",
+   "geradlinig",
+   "spiralförmig"
+  ],
+  "correct": 2,
+  "explanation": "Licht breitet sich geradlinig aus (Lichtstrahl-Modell)."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 103 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "376 K",
+   "103 K",
+   "366 K",
+   "476 K"
+  ],
+  "correct": 0,
+  "explanation": "T(K) = 103 + 273 = 376 K."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 200 hPa sind wie viel Pascal?",
+  "options": [
+   "200 Pa",
+   "20000 Pa",
+   "2000 Pa",
+   "200000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 200 hPa = 20000 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 58° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "32°",
+   "68°",
+   "58°",
+   "122°"
+  ],
+  "correct": 0,
+  "explanation": "Zum Lot gemessen: 90° − 58° = 32°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 73° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "17°",
+   "73°",
+   "83°",
+   "107°"
+  ],
+  "correct": 0,
+  "explanation": "Zum Lot gemessen: 90° − 73° = 17°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 50 N wirkt bei 100 cm. In welchem Abstand muss F₂ = 100 N angreifen?",
+  "options": [
+   "46 cm",
+   "60 cm",
+   "50 cm",
+   "62 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 50·100/100 = 50 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter 48° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "58°",
+   "42°",
+   "132°",
+   "48°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 48° = 42°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 148 N wirkt auf eine Fläche von 4 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "36 N/cm²",
+   "37 N/cm²",
+   "48 N/cm²",
+   "41 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 148 N / 4 cm² = 37 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: -6 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "267 K",
+   "367 K",
+   "257 K",
+   "-6 K"
+  ],
+  "correct": 0,
+  "explanation": "T(K) = -6 + 273 = 267 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 77° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "90°",
+   "77°",
+   "67°",
+   "13°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 77°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 35 N wirkt bei 60 cm. In welchem Abstand muss F₂ = 100 N angreifen?",
+  "options": [
+   "15 cm",
+   "17 cm",
+   "25 cm",
+   "21 cm"
+  ],
+  "correct": 3,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 35·60/100 = 21 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter dem Einfallswinkel 41° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "49°",
+   "41°",
+   "90°",
+   "82°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 41°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 71° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "19°",
+   "71°",
+   "61°",
+   "90°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 71°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 108 N im Abstand 35 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 60 cm?",
+  "options": [
+   "47 N",
+   "71 N",
+   "45 N",
+   "63 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 108·35/60 = 63 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Auf einer Fläche von 2 m² herrscht der Druck 39 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "74 N",
+   "78 N",
+   "95 N",
+   "64 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 39 Pa · 2 m² = 78 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 1100 N wirkt auf eine Fläche von 50 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "26 N/cm²",
+   "22 N/cm²",
+   "12 N/cm²",
+   "19 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 1100 N / 50 cm² = 22 N/cm²."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 450 hPa sind wie viel Pascal?",
+  "options": [
+   "450000 Pa",
+   "450 Pa",
+   "4500 Pa",
+   "45000 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 450 hPa = 45000 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 38 °C und 84 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "65 °C",
+   "61 °C",
+   "58 °C",
+   "67 °C"
+  ],
+  "correct": 1,
+  "explanation": "Bei gleichen Massen: T_m = (38 + 84) / 2 = 61 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 40 N wirkt bei 100 cm. In welchem Abstand muss F₂ = 20 N angreifen?",
+  "options": [
+   "226 cm",
+   "230 cm",
+   "172 cm",
+   "200 cm"
+  ],
+  "correct": 3,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 40·100/20 = 200 cm."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 410 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "127 °C",
+   "237 °C",
+   "410 °C",
+   "137 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 410 − 273 = 137 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 76 N wirkt auf eine Fläche von 4 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "19 N/cm²",
+   "14 N/cm²",
+   "22 N/cm²",
+   "10 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 76 N / 4 cm² = 19 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 258 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "-25 °C",
+   "85 °C",
+   "258 °C",
+   "-15 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 258 − 273 = -15 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 74 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "337 K",
+   "447 K",
+   "347 K",
+   "74 K"
+  ],
+  "correct": 2,
+  "explanation": "T(K) = 74 + 273 = 347 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter dem Einfallswinkel 51° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "39°",
+   "90°",
+   "51°",
+   "41°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 51°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 112 N im Abstand 5 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 80 cm?",
+  "options": [
+   "7 N",
+   "8 N",
+   "9 N",
+   "5 N"
+  ],
+  "correct": 0,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 112·5/80 = 7 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 4 m² herrscht der Druck 46 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "218 N",
+   "215 N",
+   "184 N",
+   "165 N"
+  ],
+  "correct": 2,
+  "explanation": "F = p·A = 46 Pa · 4 m² = 184 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 226 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "53 °C",
+   "226 °C",
+   "-47 °C",
+   "-57 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 226 − 273 = -47 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 76 N wirkt auf eine Fläche von 4 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "10 N/cm²",
+   "9 N/cm²",
+   "19 N/cm²",
+   "24 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 76 N / 4 cm² = 19 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 403 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "230 °C",
+   "120 °C",
+   "130 °C",
+   "403 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 403 − 273 = 130 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 138 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "401 K",
+   "411 K",
+   "138 K",
+   "511 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 138 + 273 = 411 K."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 740 N wirkt auf eine Fläche von 20 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "36 N/cm²",
+   "25 N/cm²",
+   "27 N/cm²",
+   "37 N/cm²"
+  ],
+  "correct": 3,
+  "explanation": "p = F/A = 740 N / 20 cm² = 37 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Gleich viel Wasser von 56 °C und 64 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "55 °C",
+   "68 °C",
+   "64 °C",
+   "60 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (56 + 64) / 2 = 60 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 71° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "19°",
+   "109°",
+   "71°",
+   "81°"
+  ],
+  "correct": 0,
+  "explanation": "Zum Lot gemessen: 90° − 71° = 19°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 80 °C und 70 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "75 °C",
+   "72 °C",
+   "77 °C",
+   "83 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (80 + 70) / 2 = 75 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 320 N wirkt auf eine Fläche von 20 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "24 N/cm²",
+   "8 N/cm²",
+   "16 N/cm²",
+   "12 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 320 N / 20 cm² = 16 N/cm²."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 75° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "105°",
+   "75°",
+   "15°",
+   "85°"
+  ],
+  "correct": 2,
+  "explanation": "Zum Lot gemessen: 90° − 75° = 15°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 466 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "193 °C",
+   "293 °C",
+   "466 °C",
+   "183 °C"
+  ],
+  "correct": 0,
+  "explanation": "ϑ(°C) = 466 − 273 = 193 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 60 N wirkt bei 60 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "61 cm",
+   "62 cm",
+   "72 cm",
+   "53 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 60·60/50 = 72 cm."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 61 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "334 K",
+   "61 K",
+   "434 K",
+   "324 K"
+  ],
+  "correct": 0,
+  "explanation": "T(K) = 61 + 273 = 334 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 63° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "27°",
+   "63°",
+   "90°",
+   "53°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 63°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 140 N im Abstand 45 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "109 N",
+   "88 N",
+   "66 N",
+   "90 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 140·45/70 = 90 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Hebel im Gleichgewicht: F₁ = 30 N wirkt bei 20 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "14 cm",
+   "13 cm",
+   "12 cm",
+   "16 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 30·20/50 = 12 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Rechne um: 275 hPa sind wie viel Pascal?",
+  "options": [
+   "27500 Pa",
+   "275 Pa",
+   "275000 Pa",
+   "2750 Pa"
+  ],
+  "correct": 0,
+  "explanation": "1 hPa = 100 Pa, also 275 hPa = 27500 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 298 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "298 °C",
+   "15 °C",
+   "125 °C",
+   "25 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 298 − 273 = 25 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 35 N wirkt bei 30 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "20 cm",
+   "27 cm",
+   "21 cm",
+   "22 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 35·30/50 = 21 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Rechne um: 450 hPa sind wie viel Pascal?",
+  "options": [
+   "450000 Pa",
+   "450 Pa",
+   "45000 Pa",
+   "4500 Pa"
+  ],
+  "correct": 2,
+  "explanation": "1 hPa = 100 Pa, also 450 hPa = 45000 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 11° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "11°",
+   "90°",
+   "22°",
+   "79°"
+  ],
+  "correct": 0,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 11°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Auf einer Fläche von 2 m² herrscht der Druck 12 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "25 N",
+   "17 N",
+   "24 N",
+   "20 N"
+  ],
+  "correct": 2,
+  "explanation": "F = p·A = 12 Pa · 2 m² = 24 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 49° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "90°",
+   "39°",
+   "49°",
+   "41°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 49°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 101 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "374 K",
+   "101 K",
+   "474 K",
+   "364 K"
+  ],
+  "correct": 0,
+  "explanation": "T(K) = 101 + 273 = 374 K."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 24 N im Abstand 50 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 80 cm?",
+  "options": [
+   "14 N",
+   "18 N",
+   "15 N",
+   "10 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 24·50/80 = 15 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 352 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "352 °C",
+   "179 °C",
+   "69 °C",
+   "79 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 352 − 273 = 79 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 675 hPa sind wie viel Pascal?",
+  "options": [
+   "675000 Pa",
+   "6750 Pa",
+   "675 Pa",
+   "67500 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 675 hPa = 67500 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter dem Einfallswinkel 28° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "90°",
+   "62°",
+   "28°",
+   "56°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 28°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Auf einer Fläche von 4 m² herrscht der Druck 34 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "169 N",
+   "133 N",
+   "136 N",
+   "180 N"
+  ],
+  "correct": 2,
+  "explanation": "F = p·A = 34 Pa · 4 m² = 136 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 6 N im Abstand 55 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 30 cm?",
+  "options": [
+   "8 N",
+   "7 N",
+   "11 N",
+   "9 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 6·55/30 = 11 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Hebel im Gleichgewicht: F₁ = 55 N wirkt bei 30 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "44 cm",
+   "33 cm",
+   "35 cm",
+   "41 cm"
+  ],
+  "correct": 1,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 55·30/50 = 33 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Rechne um: 250 hPa sind wie viel Pascal?",
+  "options": [
+   "250 Pa",
+   "2500 Pa",
+   "250000 Pa",
+   "25000 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 250 hPa = 25000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 525 hPa sind wie viel Pascal?",
+  "options": [
+   "5250 Pa",
+   "52500 Pa",
+   "525000 Pa",
+   "525 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 525 hPa = 52500 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Was passiert mit Licht beim Übergang von Luft in Glas?",
+  "options": [
+   "es ändert seine Richtung nie",
+   "es wird zum Lot hin gebrochen",
+   "es wird immer vollständig reflektiert",
+   "es wird vom Lot weg gebrochen"
+  ],
+  "correct": 1,
+  "explanation": "Beim Übergang ins optisch dichtere Medium wird Licht zum Lot hin gebrochen."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 9 N im Abstand 50 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 30 cm?",
+  "options": [
+   "13 N",
+   "15 N",
+   "18 N",
+   "11 N"
+  ],
+  "correct": 1,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 9·50/30 = 15 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Rechne um: 500 hPa sind wie viel Pascal?",
+  "options": [
+   "5000 Pa",
+   "50000 Pa",
+   "500000 Pa",
+   "500 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 500 hPa = 50000 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 33° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "66°",
+   "57°",
+   "33°",
+   "90°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 33°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 150 N wirkt auf eine Fläche von 5 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "15 N/cm²",
+   "30 N/cm²",
+   "42 N/cm²",
+   "33 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 150 N / 5 cm² = 30 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 112 N im Abstand 35 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 80 cm?",
+  "options": [
+   "44 N",
+   "63 N",
+   "58 N",
+   "49 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 112·35/80 = 49 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 45 N wirkt bei 70 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "71 cm",
+   "63 cm",
+   "74 cm",
+   "44 cm"
+  ],
+  "correct": 1,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 45·70/50 = 63 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter dem Einfallswinkel 74° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "74°",
+   "90°",
+   "16°",
+   "64°"
+  ],
+  "correct": 0,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 74°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 975 N wirkt auf eine Fläche von 25 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "33 N/cm²",
+   "57 N/cm²",
+   "39 N/cm²",
+   "52 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 975 N / 25 cm² = 39 N/cm²."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 700 hPa sind wie viel Pascal?",
+  "options": [
+   "700 Pa",
+   "70000 Pa",
+   "7000 Pa",
+   "700000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 700 hPa = 70000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Rechne um: 500 hPa sind wie viel Pascal?",
+  "options": [
+   "5000 Pa",
+   "50000 Pa",
+   "500000 Pa",
+   "500 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 500 hPa = 50000 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 67° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "113°",
+   "67°",
+   "77°",
+   "23°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 67° = 23°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter dem Einfallswinkel 13° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "77°",
+   "26°",
+   "90°",
+   "13°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 13°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 9 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "9 K",
+   "282 K",
+   "382 K",
+   "272 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 9 + 273 = 282 K."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 20 N wirkt bei 90 cm. In welchem Abstand muss F₂ = 20 N angreifen?",
+  "options": [
+   "90 cm",
+   "120 cm",
+   "99 cm",
+   "87 cm"
+  ],
+  "correct": 0,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 20·90/20 = 90 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 3 m² herrscht der Druck 48 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "144 N",
+   "189 N",
+   "126 N",
+   "109 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 48 Pa · 3 m² = 144 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 17° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "17°",
+   "27°",
+   "163°",
+   "73°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 17° = 73°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 29° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "29°",
+   "58°",
+   "61°",
+   "90°"
+  ],
+  "correct": 0,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 29°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 311 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "138 °C",
+   "311 °C",
+   "28 °C",
+   "38 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 311 − 273 = 38 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Gleich viel Wasser von 14 °C und 96 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "59 °C",
+   "55 °C",
+   "50 °C",
+   "63 °C"
+  ],
+  "correct": 1,
+  "explanation": "Bei gleichen Massen: T_m = (14 + 96) / 2 = 55 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Eine Kraft von 30 N wirkt auf eine Fläche von 5 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "4 N/cm²",
+   "9 N/cm²",
+   "8 N/cm²",
+   "6 N/cm²"
+  ],
+  "correct": 3,
+  "explanation": "p = F/A = 30 N / 5 cm² = 6 N/cm²."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Was passiert mit Licht beim Übergang von Luft in Glas?",
+  "options": [
+   "es wird vom Lot weg gebrochen",
+   "es ändert seine Richtung nie",
+   "es wird immer vollständig reflektiert",
+   "es wird zum Lot hin gebrochen"
+  ],
+  "correct": 3,
+  "explanation": "Beim Übergang ins optisch dichtere Medium wird Licht zum Lot hin gebrochen."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Wie nennt man den Punkt, in dem eine Sammellinse parallele Strahlen vereinigt?",
+  "options": [
+   "Scheitelpunkt",
+   "Knotenpunkt",
+   "Mittelpunkt",
+   "Brennpunkt"
+  ],
+  "correct": 3,
+  "explanation": "Der Brennpunkt (Fokus) liegt im Abstand der Brennweite f."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 68 °C und 48 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "66 °C",
+   "58 °C",
+   "61 °C",
+   "63 °C"
+  ],
+  "correct": 1,
+  "explanation": "Bei gleichen Massen: T_m = (68 + 48) / 2 = 58 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 14 °C und 58 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "36 °C",
+   "31 °C",
+   "29 °C",
+   "35 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (14 + 58) / 2 = 36 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 32° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "42°",
+   "32°",
+   "148°",
+   "58°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 32° = 58°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 145 N wirkt auf eine Fläche von 5 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "18 N/cm²",
+   "38 N/cm²",
+   "29 N/cm²",
+   "22 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 145 N / 5 cm² = 29 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 24 N im Abstand 50 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 60 cm?",
+  "options": [
+   "14 N",
+   "20 N",
+   "27 N",
+   "19 N"
+  ],
+  "correct": 1,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 24·50/60 = 20 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 25 N wirkt bei 90 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "43 cm",
+   "58 cm",
+   "42 cm",
+   "45 cm"
+  ],
+  "correct": 3,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 25·90/50 = 45 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 37° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "53°",
+   "74°",
+   "90°",
+   "37°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 37°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 68 °C und 48 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "58 °C",
+   "56 °C",
+   "61 °C",
+   "57 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (68 + 48) / 2 = 58 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter dem Einfallswinkel 61° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "90°",
+   "61°",
+   "29°",
+   "51°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 61°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 34 °C und 74 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "54 °C",
+   "49 °C",
+   "61 °C",
+   "60 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (34 + 74) / 2 = 54 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 18 N im Abstand 50 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 30 cm?",
+  "options": [
+   "30 N",
+   "38 N",
+   "26 N",
+   "21 N"
+  ],
+  "correct": 0,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 18·50/30 = 30 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 325 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "325 °C",
+   "42 °C",
+   "52 °C",
+   "152 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 325 − 273 = 52 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter 41° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "49°",
+   "41°",
+   "139°",
+   "51°"
+  ],
+  "correct": 0,
+  "explanation": "Zum Lot gemessen: 90° − 41° = 49°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 375 hPa sind wie viel Pascal?",
+  "options": [
+   "375000 Pa",
+   "37500 Pa",
+   "375 Pa",
+   "3750 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 375 hPa = 37500 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 33° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "57°",
+   "90°",
+   "33°",
+   "66°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 33°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 50 °C und 62 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "56 °C",
+   "48 °C",
+   "64 °C",
+   "51 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (50 + 62) / 2 = 56 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Auf einer Fläche von 8 m² herrscht der Druck 42 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "336 N",
+   "332 N",
+   "396 N",
+   "305 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 42 Pa · 8 m² = 336 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter dem Einfallswinkel 34° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "56°",
+   "34°",
+   "90°",
+   "68°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 34°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 60° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "60°",
+   "30°",
+   "120°",
+   "70°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 60° = 30°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 434 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "434 °C",
+   "161 °C",
+   "261 °C",
+   "151 °C"
+  ],
+  "correct": 1,
+  "explanation": "ϑ(°C) = 434 − 273 = 161 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 40 N wirkt bei 20 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "13 cm",
+   "16 cm",
+   "11 cm",
+   "19 cm"
+  ],
+  "correct": 1,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 40·20/50 = 16 cm."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 16 N im Abstand 55 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 40 cm?",
+  "options": [
+   "29 N",
+   "15 N",
+   "27 N",
+   "22 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 16·55/40 = 22 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Wie ist eine Zerstreuungslinse geformt?",
+  "options": [
+   "überall gleich dick",
+   "in der Mitte dicker als am Rand",
+   "in der Mitte dünner als am Rand",
+   "kugelförmig"
+  ],
+  "correct": 2,
+  "explanation": "Konkavlinsen sind in der Mitte dünner (Zerstreuungslinse)."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Welche Linse steckt (vereinfacht) im menschlichen Auge?",
+  "options": [
+   "ein Prisma",
+   "ein Hohlspiegel",
+   "eine Zerstreuungslinse",
+   "eine Sammellinse"
+  ],
+  "correct": 3,
+  "explanation": "Die Augenlinse ist eine verformbare Sammellinse."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Eine Kraft von 360 N wirkt auf eine Fläche von 10 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "36 N/cm²",
+   "28 N/cm²",
+   "53 N/cm²",
+   "25 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 360 N / 10 cm² = 36 N/cm²."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter dem Einfallswinkel 72° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "18°",
+   "90°",
+   "72°",
+   "62°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 72°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Rechne um: 525 hPa sind wie viel Pascal?",
+  "options": [
+   "525 Pa",
+   "52500 Pa",
+   "5250 Pa",
+   "525000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 525 hPa = 52500 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: -43 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "230 K",
+   "330 K",
+   "220 K",
+   "-43 K"
+  ],
+  "correct": 0,
+  "explanation": "T(K) = -43 + 273 = 230 K."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 70 N wirkt auf eine Fläche von 5 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "14 N/cm²",
+   "11 N/cm²",
+   "19 N/cm²",
+   "18 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 70 N / 5 cm² = 14 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 9 N im Abstand 20 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 60 cm?",
+  "options": [
+   "6 N",
+   "5 N",
+   "3 N",
+   "1 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 9·20/60 = 3 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter 74° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "84°",
+   "16°",
+   "74°",
+   "106°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 74° = 16°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 45 N wirkt bei 70 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "68 cm",
+   "63 cm",
+   "55 cm",
+   "42 cm"
+  ],
+  "correct": 1,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 45·70/50 = 63 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 74° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "16°",
+   "64°",
+   "74°",
+   "90°"
+  ],
+  "correct": 2,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 74°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 35 N im Abstand 30 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "19 N",
+   "10 N",
+   "15 N",
+   "12 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 35·30/70 = 15 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 13° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "26°",
+   "13°",
+   "77°",
+   "90°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 13°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 489 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "489 °C",
+   "206 °C",
+   "316 °C",
+   "216 °C"
+  ],
+  "correct": 3,
+  "explanation": "ϑ(°C) = 489 − 273 = 216 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 2 m² herrscht der Druck 36 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "91 N",
+   "69 N",
+   "72 N",
+   "82 N"
+  ],
+  "correct": 2,
+  "explanation": "F = p·A = 36 Pa · 2 m² = 72 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Hebel im Gleichgewicht: F₁ = 25 N wirkt bei 60 cm. In welchem Abstand muss F₂ = 100 N angreifen?",
+  "options": [
+   "17 cm",
+   "15 cm",
+   "14 cm",
+   "19 cm"
+  ],
+  "correct": 1,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 25·60/100 = 15 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Auf einer Fläche von 2 m² herrscht der Druck 44 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "97 N",
+   "88 N",
+   "74 N",
+   "61 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 44 Pa · 2 m² = 88 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 70 N im Abstand 15 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "12 N",
+   "10 N",
+   "17 N",
+   "15 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 70·15/70 = 15 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 30 °C und 92 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "61 °C",
+   "60 °C",
+   "64 °C",
+   "58 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (30 + 92) / 2 = 61 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Gleich viel Wasser von 16 °C und 62 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "40 °C",
+   "39 °C",
+   "42 °C",
+   "38 °C"
+  ],
+  "correct": 1,
+  "explanation": "Bei gleichen Massen: T_m = (16 + 62) / 2 = 39 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 80 N im Abstand 10 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 80 cm?",
+  "options": [
+   "10 N",
+   "13 N",
+   "7 N",
+   "12 N"
+  ],
+  "correct": 0,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 80·10/80 = 10 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter dem Einfallswinkel 35° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "55°",
+   "35°",
+   "90°",
+   "70°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 35°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 43° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "137°",
+   "47°",
+   "43°",
+   "53°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 43° = 47°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 500 N wirkt auf eine Fläche von 50 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "10 N/cm²",
+   "9 N/cm²",
+   "7 N/cm²",
+   "12 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 500 N / 50 cm² = 10 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 42 °C und 52 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "47 °C",
+   "55 °C",
+   "51 °C",
+   "53 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (42 + 52) / 2 = 47 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Gleich viel Wasser von 68 °C und 88 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "81 °C",
+   "70 °C",
+   "82 °C",
+   "78 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (68 + 88) / 2 = 78 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 65° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "75°",
+   "25°",
+   "115°",
+   "65°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 65° = 25°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 22 °C und 66 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "39 °C",
+   "40 °C",
+   "44 °C",
+   "49 °C"
+  ],
+  "correct": 2,
+  "explanation": "Bei gleichen Massen: T_m = (22 + 66) / 2 = 44 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 425 hPa sind wie viel Pascal?",
+  "options": [
+   "4250 Pa",
+   "42500 Pa",
+   "425000 Pa",
+   "425 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 425 hPa = 42500 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter dem Einfallswinkel 71° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "61°",
+   "71°",
+   "19°",
+   "90°"
+  ],
+  "correct": 1,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 71°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 30 N wirkt auf eine Fläche von 2 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "12 N/cm²",
+   "15 N/cm²",
+   "11 N/cm²",
+   "13 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 30 N / 2 cm² = 15 N/cm²."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter dem Einfallswinkel 37° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "37°",
+   "74°",
+   "53°",
+   "90°"
+  ],
+  "correct": 0,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 37°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 20 °C und 94 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "56 °C",
+   "52 °C",
+   "53 °C",
+   "57 °C"
+  ],
+  "correct": 3,
+  "explanation": "Bei gleichen Massen: T_m = (20 + 94) / 2 = 57 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter 72° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "82°",
+   "108°",
+   "72°",
+   "18°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 72° = 18°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Eine Kraft von 1950 N wirkt auf eine Fläche von 50 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "39 N/cm²",
+   "57 N/cm²",
+   "38 N/cm²",
+   "41 N/cm²"
+  ],
+  "correct": 0,
+  "explanation": "p = F/A = 1950 N / 50 cm² = 39 N/cm²."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 45 N wirkt bei 60 cm. In welchem Abstand muss F₂ = 100 N angreifen?",
+  "options": [
+   "27 cm",
+   "29 cm",
+   "33 cm",
+   "24 cm"
+  ],
+  "correct": 0,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 45·60/100 = 27 cm."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 16 N im Abstand 55 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 20 cm?",
+  "options": [
+   "36 N",
+   "44 N",
+   "52 N",
+   "58 N"
+  ],
+  "correct": 1,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 16·55/20 = 44 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 400 hPa sind wie viel Pascal?",
+  "options": [
+   "400 Pa",
+   "40000 Pa",
+   "400000 Pa",
+   "4000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 400 hPa = 40000 Pa."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 54 N im Abstand 55 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 30 cm?",
+  "options": [
+   "99 N",
+   "119 N",
+   "78 N",
+   "110 N"
+  ],
+  "correct": 0,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 54·55/30 = 99 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: -4 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "369 K",
+   "259 K",
+   "269 K",
+   "-4 K"
+  ],
+  "correct": 2,
+  "explanation": "T(K) = -4 + 273 = 269 K."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 11 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "384 K",
+   "284 K",
+   "274 K",
+   "11 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 11 + 273 = 284 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter dem Einfallswinkel 33° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "33°",
+   "66°",
+   "90°",
+   "57°"
+  ],
+  "correct": 0,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 33°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 37 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "410 K",
+   "37 K",
+   "300 K",
+   "310 K"
+  ],
+  "correct": 3,
+  "explanation": "T(K) = 37 + 273 = 310 K."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Hebel im Gleichgewicht: F₁ = 50 N wirkt bei 100 cm. In welchem Abstand muss F₂ = 20 N angreifen?",
+  "options": [
+   "215 cm",
+   "203 cm",
+   "250 cm",
+   "207 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 50·100/20 = 250 cm."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 49 N im Abstand 10 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "4 N",
+   "10 N",
+   "7 N",
+   "6 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 49·10/70 = 7 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 480 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "480 °C",
+   "197 °C",
+   "207 °C",
+   "307 °C"
+  ],
+  "correct": 2,
+  "explanation": "ϑ(°C) = 480 − 273 = 207 °C."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Rechne um: 7 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "380 K",
+   "270 K",
+   "7 K",
+   "280 K"
+  ],
+  "correct": 3,
+  "explanation": "T(K) = 7 + 273 = 280 K."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 308 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "25 °C",
+   "35 °C",
+   "308 °C",
+   "135 °C"
+  ],
+  "correct": 1,
+  "explanation": "ϑ(°C) = 308 − 273 = 35 °C."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Wie groß ist die Lichtgeschwindigkeit im Vakuum ungefähr?",
+  "options": [
+   "30 000 000 km/s",
+   "300 000 km/s",
+   "3 000 km/s",
+   "300 km/s"
+  ],
+  "correct": 1,
+  "explanation": "c ≈ 300 000 km/s = 3·10⁸ m/s."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 650 hPa sind wie viel Pascal?",
+  "options": [
+   "650 Pa",
+   "6500 Pa",
+   "650000 Pa",
+   "65000 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 650 hPa = 65000 Pa."
+ },
+ {
+  "topic": "Optik",
+  "question": "Ein Lichtstrahl trifft unter 33° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "43°",
+   "33°",
+   "57°",
+   "147°"
+  ],
+  "correct": 2,
+  "explanation": "Zum Lot gemessen: 90° − 33° = 57°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Hebel im Gleichgewicht: F₁ = 25 N wirkt bei 50 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "25 cm",
+   "28 cm",
+   "23 cm",
+   "26 cm"
+  ],
+  "correct": 0,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 25·50/50 = 25 cm."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Wähle die richtige Antwort. Rechne um: 36 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "409 K",
+   "309 K",
+   "36 K",
+   "299 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 36 + 273 = 309 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter dem Einfallswinkel 70° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "60°",
+   "90°",
+   "20°",
+   "70°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 70°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Eine Kraft von 340 N wirkt auf eine Fläche von 20 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "16 N/cm²",
+   "17 N/cm²",
+   "26 N/cm²",
+   "19 N/cm²"
+  ],
+  "correct": 1,
+  "explanation": "p = F/A = 340 N / 20 cm² = 17 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 418 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "145 °C",
+   "245 °C",
+   "418 °C",
+   "135 °C"
+  ],
+  "correct": 0,
+  "explanation": "ϑ(°C) = 418 − 273 = 145 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Rechne um: 850 hPa sind wie viel Pascal?",
+  "options": [
+   "850000 Pa",
+   "8500 Pa",
+   "850 Pa",
+   "85000 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 850 hPa = 85000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Auf einer Fläche von 5 m² herrscht der Druck 41 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "237 N",
+   "137 N",
+   "214 N",
+   "205 N"
+  ],
+  "correct": 3,
+  "explanation": "F = p·A = 41 Pa · 5 m² = 205 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Rechne um: 350 hPa sind wie viel Pascal?",
+  "options": [
+   "350000 Pa",
+   "3500 Pa",
+   "35000 Pa",
+   "350 Pa"
+  ],
+  "correct": 2,
+  "explanation": "1 hPa = 100 Pa, also 350 hPa = 35000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Auf einer Fläche von 2 m² herrscht der Druck 30 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "67 N",
+   "41 N",
+   "65 N",
+   "60 N"
+  ],
+  "correct": 3,
+  "explanation": "F = p·A = 30 Pa · 2 m² = 60 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Hebel im Gleichgewicht: F₁ = 25 N wirkt bei 60 cm. In welchem Abstand muss F₂ = 100 N angreifen?",
+  "options": [
+   "16 cm",
+   "18 cm",
+   "15 cm",
+   "11 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 25·60/100 = 15 cm."
+ },
+ {
+  "topic": "Optik",
+  "question": "Aufgabe: Ein Lichtstrahl trifft unter 66° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "66°",
+   "114°",
+   "24°",
+   "76°"
+  ],
+  "correct": 2,
+  "explanation": "Zum Lot gemessen: 90° − 66° = 24°."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Was zerlegt weißes Licht in seine Spektralfarben?",
+  "options": [
+   "eine Blende",
+   "ein Prisma",
+   "ein ebener Spiegel",
+   "ein schwarzer Körper"
+  ],
+  "correct": 1,
+  "explanation": "Ein Prisma bricht die Farben unterschiedlich stark (Dispersion)."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Eine Kraft von 640 N wirkt auf eine Fläche von 20 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "20 N/cm²",
+   "37 N/cm²",
+   "39 N/cm²",
+   "32 N/cm²"
+  ],
+  "correct": 3,
+  "explanation": "p = F/A = 640 N / 20 cm² = 32 N/cm²."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Auf einer Fläche von 5 m² herrscht der Druck 43 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "160 N",
+   "215 N",
+   "259 N",
+   "214 N"
+  ],
+  "correct": 1,
+  "explanation": "F = p·A = 43 Pa · 5 m² = 215 N."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Rechne um: 240 K sind wie viel Grad Celsius (0 °C ≈ 273 K)?",
+  "options": [
+   "-43 °C",
+   "-33 °C",
+   "67 °C",
+   "240 °C"
+  ],
+  "correct": 1,
+  "explanation": "ϑ(°C) = 240 − 273 = -33 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Wähle die richtige Antwort. Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 96 N im Abstand 35 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 80 cm?",
+  "options": [
+   "46 N",
+   "42 N",
+   "34 N",
+   "53 N"
+  ],
+  "correct": 1,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 96·35/80 = 42 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Rechne um: 600 hPa sind wie viel Pascal?",
+  "options": [
+   "6000 Pa",
+   "600 Pa",
+   "600000 Pa",
+   "60000 Pa"
+  ],
+  "correct": 3,
+  "explanation": "1 hPa = 100 Pa, also 600 hPa = 60000 Pa."
+ },
+ {
+  "topic": "Druck",
+  "question": "Aufgabe: Auf einer Fläche von 5 m² herrscht der Druck 8 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "40 N",
+   "44 N",
+   "32 N",
+   "34 N"
+  ],
+  "correct": 0,
+  "explanation": "F = p·A = 8 Pa · 5 m² = 40 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Wie lautet das Reflexionsgesetz?",
+  "options": [
+   "Der Reflexionswinkel ist immer kleiner",
+   "Der Reflexionswinkel ist immer 90°",
+   "Einfallswinkel = Reflexionswinkel",
+   "Einfallswinkel = 2 · Reflexionswinkel"
+  ],
+  "correct": 2,
+  "explanation": "Beim Spiegel gilt: Einfallswinkel = Reflexionswinkel (zum Lot gemessen)."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Aufgabe: Gleich viel Wasser von 46 °C und 66 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "48 °C",
+   "56 °C",
+   "61 °C",
+   "54 °C"
+  ],
+  "correct": 1,
+  "explanation": "Bei gleichen Massen: T_m = (46 + 66) / 2 = 56 °C."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 14 N im Abstand 25 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 70 cm?",
+  "options": [
+   "4 N",
+   "2 N",
+   "5 N",
+   "7 N"
+  ],
+  "correct": 2,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 14·25/70 = 5 N."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Teste dein Wissen: Ein Hebel ist im Gleichgewicht. Links wirkt die Kraft F₁ = 3 N im Abstand 60 cm vom Drehpunkt. Welche Kraft F₂ wirkt rechts im Abstand 30 cm?",
+  "options": [
+   "5 N",
+   "8 N",
+   "4 N",
+   "6 N"
+  ],
+  "correct": 3,
+  "explanation": "Hebelgesetz: F₁·l₁ = F₂·l₂ → F₂ = 3·60/30 = 6 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Wähle die richtige Antwort. Ein Lichtstrahl trifft unter 66° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "76°",
+   "66°",
+   "114°",
+   "24°"
+  ],
+  "correct": 3,
+  "explanation": "Zum Lot gemessen: 90° − 66° = 24°."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 14 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "277 K",
+   "287 K",
+   "14 K",
+   "387 K"
+  ],
+  "correct": 1,
+  "explanation": "T(K) = 14 + 273 = 287 K."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter dem Einfallswinkel 67° (zum Lot) auf einen ebenen Spiegel. Wie groß ist der Reflexionswinkel?",
+  "options": [
+   "23°",
+   "57°",
+   "90°",
+   "67°"
+  ],
+  "correct": 3,
+  "explanation": "Reflexionsgesetz: Einfallswinkel = Reflexionswinkel = 67°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Rechne um: 550 hPa sind wie viel Pascal?",
+  "options": [
+   "5500 Pa",
+   "55000 Pa",
+   "550 Pa",
+   "550000 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 550 hPa = 55000 Pa."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Rechne um: 81 °C sind wie viel Kelvin (gerundet, 0 °C ≈ 273 K)?",
+  "options": [
+   "454 K",
+   "81 K",
+   "344 K",
+   "354 K"
+  ],
+  "correct": 3,
+  "explanation": "T(K) = 81 + 273 = 354 K."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Eine Kraft von 360 N wirkt auf eine Fläche von 10 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "31 N/cm²",
+   "41 N/cm²",
+   "43 N/cm²",
+   "36 N/cm²"
+  ],
+  "correct": 3,
+  "explanation": "p = F/A = 360 N / 10 cm² = 36 N/cm²."
+ },
+ {
+  "topic": "Wärmelehre",
+  "question": "Teste dein Wissen: Gleich viel Wasser von 44 °C und 50 °C wird gemischt. Welche Mischtemperatur stellt sich (ohne Verluste) ein?",
+  "options": [
+   "47 °C",
+   "53 °C",
+   "50 °C",
+   "46 °C"
+  ],
+  "correct": 0,
+  "explanation": "Bei gleichen Massen: T_m = (44 + 50) / 2 = 47 °C."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Auf einer Fläche von 3 m² herrscht der Druck 7 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "26 N",
+   "20 N",
+   "19 N",
+   "21 N"
+  ],
+  "correct": 3,
+  "explanation": "F = p·A = 7 Pa · 3 m² = 21 N."
+ },
+ {
+  "topic": "Druck",
+  "question": "Auf einer Fläche von 5 m² herrscht der Druck 7 Pa. Welche Kraft wirkt insgesamt (F = p·A)?",
+  "options": [
+   "42 N",
+   "40 N",
+   "35 N",
+   "44 N"
+  ],
+  "correct": 2,
+  "explanation": "F = p·A = 7 Pa · 5 m² = 35 N."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 38° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "48°",
+   "52°",
+   "142°",
+   "38°"
+  ],
+  "correct": 1,
+  "explanation": "Zum Lot gemessen: 90° − 38° = 52°."
+ },
+ {
+  "topic": "Hebelgesetz",
+  "question": "Aufgabe: Hebel im Gleichgewicht: F₁ = 60 N wirkt bei 50 cm. In welchem Abstand muss F₂ = 50 N angreifen?",
+  "options": [
+   "49 cm",
+   "80 cm",
+   "60 cm",
+   "66 cm"
+  ],
+  "correct": 2,
+  "explanation": "F₁·l₁ = F₂·l₂ → l₂ = 60·50/50 = 60 cm."
+ },
+ {
+  "topic": "Druck",
+  "question": "Wähle die richtige Antwort. Eine Kraft von 32 N wirkt auf eine Fläche von 2 cm². Wie groß ist der Druck p = F/A?",
+  "options": [
+   "18 N/cm²",
+   "22 N/cm²",
+   "16 N/cm²",
+   "15 N/cm²"
+  ],
+  "correct": 2,
+  "explanation": "p = F/A = 32 N / 2 cm² = 16 N/cm²."
+ },
+ {
+  "topic": "Optik",
+  "question": "Teste dein Wissen: Ein Lichtstrahl trifft unter 34° zur Spiegelfläche auf einen Spiegel. Wie groß ist der Einfallswinkel zum Lot?",
+  "options": [
+   "146°",
+   "44°",
+   "56°",
+   "34°"
+  ],
+  "correct": 2,
+  "explanation": "Zum Lot gemessen: 90° − 34° = 56°."
+ },
+ {
+  "topic": "Druck",
+  "question": "Teste dein Wissen: Rechne um: 550 hPa sind wie viel Pascal?",
+  "options": [
+   "550000 Pa",
+   "55000 Pa",
+   "5500 Pa",
+   "550 Pa"
+  ],
+  "correct": 1,
+  "explanation": "1 hPa = 100 Pa, also 550 hPa = 55000 Pa."
+ }
+]

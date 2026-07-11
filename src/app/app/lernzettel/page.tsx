@@ -10,13 +10,14 @@ export const metadata: Metadata = { title: "Schulinterne Lernzettel" };
 export default async function LernzettelPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; subject?: string }>;
+  searchParams: Promise<{ q?: string; subject?: string; sort?: string }>;
 }) {
   const session = await getSession();
   if (!session) redirect("/login");
   if (!session.schoolId) redirect("/app");
 
-  const { q, subject } = await searchParams;
+  const { q, subject, sort } = await searchParams;
+  const sortByTitle = sort === "titel";
 
   const entries = await prisma.schoolWikiEntry.findMany({
     where: {
@@ -28,7 +29,7 @@ export default async function LernzettelPage({
       ]} : {}),
       ...(subject ? { subject } : {}),
     },
-    orderBy: { updatedAt: "desc" },
+    orderBy: sortByTitle ? { title: "asc" } : { updatedAt: "desc" },
     select: {
       id: true, title: true, subject: true, tags: true,
       viewCount: true, createdAt: true, updatedAt: true,
@@ -52,7 +53,7 @@ export default async function LernzettelPage({
             <BookOpen className="size-7 text-brand" strokeWidth={1.5} />
             Lernzettel
           </h1>
-          <p className="mt-1 text-sm text-muted-fg">{entries.length} Einträge</p>
+          <p className="mt-1 text-sm text-muted-fg">{entries.length} Lernzettel</p>
         </div>
         <Link
           href="/app/lernzettel/neu"
@@ -84,13 +85,21 @@ export default async function LernzettelPage({
             <option key={s.subject} value={s.subject!}>{s.subject}</option>
           ))}
         </select>
+        <select
+          name="sort"
+          defaultValue={sortByTitle ? "titel" : ""}
+          className="rounded-xl border border-border bg-surface px-3 py-2.5 text-sm focus:border-brand focus:outline-none"
+        >
+          <option value="">Zuletzt bearbeitet</option>
+          <option value="titel">Titel A–Z</option>
+        </select>
         <button
           type="submit"
           className="rounded-xl bg-muted px-4 py-2.5 text-sm font-semibold transition-colors hover:bg-muted/70"
         >
           Suchen
         </button>
-        {(q || subject) && (
+        {(q || subject || sortByTitle) && (
           <Link href="/app/lernzettel" className="rounded-xl border border-border px-4 py-2.5 text-sm text-muted-fg hover:bg-muted transition-colors">
             Zurücksetzen
           </Link>

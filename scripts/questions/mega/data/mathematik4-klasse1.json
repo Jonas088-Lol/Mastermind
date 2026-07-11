@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „Viertel nach 12“ als Uhrzeit?",
+  "options": [
+   "00:00 Uhr",
+   "01:15 Uhr",
+   "00:15 Uhr",
+   "00:30 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„Viertel nach 12“ entspricht 00:15 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 1,26 € und 2,12 €. Was kostet alles zusammen?",
+  "options": [
+   "3,38 €",
+   "3,21 €",
+   "3,67 €",
+   "2,52 €"
+  ],
+  "correct": 0,
+  "explanation": "1,26 € + 2,12 € = 3,38 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 7, 8, 9, 10, ___",
+  "options": [
+   "13",
+   "9",
+   "8",
+   "11"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +1 gerechnet, also 10 + 1 = 11."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 5, 10, 15, 20, ___",
+  "options": [
+   "25",
+   "19",
+   "24",
+   "30"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +5 gerechnet, also 20 + 5 = 25."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 11:42 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "12:57 Uhr",
+   "10:57 Uhr",
+   "11:07 Uhr",
+   "11:57 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "702 + 15 Minuten = 11:57 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 11:22 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "13:07 Uhr",
+   "12:17 Uhr",
+   "12:07 Uhr",
+   "11:07 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "682 + 45 Minuten = 12:07 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 3,41 €. Du zahlst mit 5 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,32 €",
+   "1,69 €",
+   "1,59 €",
+   "2,59 €"
+  ],
+  "correct": 2,
+  "explanation": "5,00 € − 3,41 € = 1,59 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 5 m?",
+  "options": [
+   "500 mm",
+   "50000 mm",
+   "1005 mm",
+   "5000 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 1000 mm, also 5 m = 5000 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 5,70 € und 0,58 €. Was kostet alles zusammen?",
+  "options": [
+   "6,51 €",
+   "11,40 €",
+   "6,13 €",
+   "6,28 €"
+  ],
+  "correct": 3,
+  "explanation": "5,70 € + 0,58 € = 6,28 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel m sind 1 km?",
+  "options": [
+   "1001 m",
+   "100 m",
+   "10000 m",
+   "1000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 1 km = 1000 m."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 6, 11, 16, 21, ___",
+  "options": [
+   "33",
+   "26",
+   "20",
+   "22"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +5 gerechnet, also 21 + 5 = 26."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „3 Uhr“ als Uhrzeit?",
+  "options": [
+   "03:15 Uhr",
+   "03:00 Uhr",
+   "04:00 Uhr",
+   "03:45 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„3 Uhr“ entspricht 03:00 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 06:36 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "05:51 Uhr",
+   "06:51 Uhr",
+   "07:51 Uhr",
+   "06:01 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "396 + 15 Minuten = 06:51 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „Viertel vor 9“ als Uhrzeit?",
+  "options": [
+   "08:00 Uhr",
+   "08:30 Uhr",
+   "09:45 Uhr",
+   "08:45 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "„Viertel vor 9“ entspricht 08:45 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 6,13 € und 6,57 €. Was kostet alles zusammen?",
+  "options": [
+   "12,70 €",
+   "12,57 €",
+   "12,26 €",
+   "13,01 €"
+  ],
+  "correct": 0,
+  "explanation": "6,13 € + 6,57 € = 12,70 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 12:46 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "12:01 Uhr",
+   "14:01 Uhr",
+   "13:11 Uhr",
+   "13:01 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "766 + 15 Minuten = 13:01 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 2,44 €. Du zahlst mit 6 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,56 €",
+   "4,56 €",
+   "3,84 €",
+   "3,35 €"
+  ],
+  "correct": 0,
+  "explanation": "6,00 € − 2,44 € = 3,56 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 7,86 €. Du zahlst mit 9 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,48 €",
+   "2,14 €",
+   "0,85 €",
+   "1,14 €"
+  ],
+  "correct": 3,
+  "explanation": "9,00 € − 7,86 € = 1,14 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 8,83 €. Du zahlst mit 13 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,40 €",
+   "4,17 €",
+   "5,17 €",
+   "3,96 €"
+  ],
+  "correct": 1,
+  "explanation": "13,00 € − 8,83 € = 4,17 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel mm sind 5 cm?",
+  "options": [
+   "50 mm",
+   "15 mm",
+   "5 mm",
+   "500 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 cm = 10 mm, also 5 cm = 50 mm."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel mm sind 9 m?",
+  "options": [
+   "90000 mm",
+   "1009 mm",
+   "900 mm",
+   "9000 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 1000 mm, also 9 m = 9000 mm."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 7, 9, 11, 13, ___",
+  "options": [
+   "15",
+   "19",
+   "10",
+   "13"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +2 gerechnet, also 13 + 2 = 15."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel m sind 1 km?",
+  "options": [
+   "10000 m",
+   "1000 m",
+   "100 m",
+   "1001 m"
+  ],
+  "correct": 1,
+  "explanation": "1 km = 1000 m, also 1 km = 1000 m."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 5,19 € und 7,07 €. Was kostet alles zusammen?",
+  "options": [
+   "12,67 €",
+   "10,38 €",
+   "12,14 €",
+   "12,26 €"
+  ],
+  "correct": 3,
+  "explanation": "5,19 € + 7,07 € = 12,26 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „halb 10“ als Uhrzeit?",
+  "options": [
+   "09:15 Uhr",
+   "10:30 Uhr",
+   "09:30 Uhr",
+   "09:45 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„halb 10“ entspricht 09:30 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 0,84 €. Du zahlst mit 2 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,08 €",
+   "1,16 €",
+   "2,16 €",
+   "1,52 €"
+  ],
+  "correct": 1,
+  "explanation": "2,00 € − 0,84 € = 1,16 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 7,12 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "2,88 €",
+   "2,56 €",
+   "3,26 €",
+   "3,88 €"
+  ],
+  "correct": 0,
+  "explanation": "10,00 € − 7,12 € = 2,88 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 3 m?",
+  "options": [
+   "300 mm",
+   "1003 mm",
+   "3000 mm",
+   "30000 mm"
+  ],
+  "correct": 2,
+  "explanation": "1 m = 1000 mm, also 3 m = 3000 mm."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel m sind 8 km?",
+  "options": [
+   "800 m",
+   "80000 m",
+   "1008 m",
+   "8000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 8 km = 8000 m."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel m sind 2 km?",
+  "options": [
+   "20000 m",
+   "2000 m",
+   "1002 m",
+   "200 m"
+  ],
+  "correct": 1,
+  "explanation": "1 km = 1000 m, also 2 km = 2000 m."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 13, 15, 17, 19, ___",
+  "options": [
+   "21",
+   "24",
+   "20",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +2 gerechnet, also 19 + 2 = 21."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 2,79 € und 1,22 €. Was kostet alles zusammen?",
+  "options": [
+   "3,94 €",
+   "4,18 €",
+   "5,58 €",
+   "4,01 €"
+  ],
+  "correct": 3,
+  "explanation": "2,79 € + 1,22 € = 4,01 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 20:43 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "21:23 Uhr",
+   "21:13 Uhr",
+   "20:13 Uhr",
+   "22:13 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "1243 + 30 Minuten = 21:13 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 0,24 € und 4,66 €. Was kostet alles zusammen?",
+  "options": [
+   "4,80 €",
+   "5,06 €",
+   "0,48 €",
+   "4,90 €"
+  ],
+  "correct": 3,
+  "explanation": "0,24 € + 4,66 € = 4,90 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 18:44 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "19:39 Uhr",
+   "18:29 Uhr",
+   "19:29 Uhr",
+   "20:29 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "1124 + 45 Minuten = 19:29 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel mm sind 8 m?",
+  "options": [
+   "1008 mm",
+   "80000 mm",
+   "800 mm",
+   "8000 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 1000 mm, also 8 m = 8000 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 8,17 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "2,83 €",
+   "3,05 €",
+   "3,83 €",
+   "2,75 €"
+  ],
+  "correct": 0,
+  "explanation": "11,00 € − 8,17 € = 2,83 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 7,65 € und 5,71 €. Was kostet alles zusammen?",
+  "options": [
+   "13,36 €",
+   "13,23 €",
+   "15,30 €",
+   "13,66 €"
+  ],
+  "correct": 0,
+  "explanation": "7,65 € + 5,71 € = 13,36 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 19:18 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "19:03 Uhr",
+   "21:03 Uhr",
+   "20:03 Uhr",
+   "20:13 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "1158 + 45 Minuten = 20:03 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 7,14 € und 4,74 €. Was kostet alles zusammen?",
+  "options": [
+   "14,28 €",
+   "12,19 €",
+   "11,88 €",
+   "11,80 €"
+  ],
+  "correct": 2,
+  "explanation": "7,14 € + 4,74 € = 11,88 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 7, 9, 11, 13, ___",
+  "options": [
+   "17",
+   "10",
+   "15",
+   "19"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +2 gerechnet, also 13 + 2 = 15."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel cm sind 5 m?",
+  "options": [
+   "50 cm",
+   "500 cm",
+   "5000 cm",
+   "105 cm"
+  ],
+  "correct": 1,
+  "explanation": "1 m = 100 cm, also 5 m = 500 cm."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „Viertel vor 6“ als Uhrzeit?",
+  "options": [
+   "05:30 Uhr",
+   "05:00 Uhr",
+   "05:45 Uhr",
+   "06:45 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„Viertel vor 6“ entspricht 05:45 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „7 Uhr“ als Uhrzeit?",
+  "options": [
+   "08:00 Uhr",
+   "07:00 Uhr",
+   "07:45 Uhr",
+   "07:15 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„7 Uhr“ entspricht 07:00 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „halb 11“ als Uhrzeit?",
+  "options": [
+   "11:30 Uhr",
+   "10:45 Uhr",
+   "10:30 Uhr",
+   "10:15 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„halb 11“ entspricht 10:30 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 7,21 € und 4,99 €. Was kostet alles zusammen?",
+  "options": [
+   "12,11 €",
+   "12,20 €",
+   "14,42 €",
+   "12,55 €"
+  ],
+  "correct": 1,
+  "explanation": "7,21 € + 4,99 € = 12,20 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel mm sind 7 cm?",
+  "options": [
+   "70 mm",
+   "17 mm",
+   "700 mm",
+   "7 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 cm = 10 mm, also 7 cm = 70 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 1,48 €. Du zahlst mit 3 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,16 €",
+   "1,52 €",
+   "2,52 €",
+   "1,93 €"
+  ],
+  "correct": 1,
+  "explanation": "3,00 € − 1,48 € = 1,52 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 5,79 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,43 €",
+   "6,21 €",
+   "5,21 €",
+   "5,02 €"
+  ],
+  "correct": 2,
+  "explanation": "11,00 € − 5,79 € = 5,21 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel m sind 6 km?",
+  "options": [
+   "60000 m",
+   "1006 m",
+   "6000 m",
+   "600 m"
+  ],
+  "correct": 2,
+  "explanation": "1 km = 1000 m, also 6 km = 6000 m."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 12, 14, 16, 18, ___",
+  "options": [
+   "24",
+   "21",
+   "25",
+   "20"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +2 gerechnet, also 18 + 2 = 20."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 7,05 € und 6,06 €. Was kostet alles zusammen?",
+  "options": [
+   "13,11 €",
+   "13,04 €",
+   "13,34 €",
+   "14,10 €"
+  ],
+  "correct": 0,
+  "explanation": "7,05 € + 6,06 € = 13,11 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „halb 6“ als Uhrzeit?",
+  "options": [
+   "05:45 Uhr",
+   "05:15 Uhr",
+   "05:30 Uhr",
+   "06:30 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„halb 6“ entspricht 05:30 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 15:29 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "15:44 Uhr",
+   "16:44 Uhr",
+   "15:54 Uhr",
+   "14:44 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "929 + 15 Minuten = 15:44 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 10, 13, 16, 19, ___",
+  "options": [
+   "22",
+   "20",
+   "19",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +3 gerechnet, also 19 + 3 = 22."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 5,93 €. Du zahlst mit 8 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,07 €",
+   "2,07 €",
+   "1,98 €",
+   "2,51 €"
+  ],
+  "correct": 1,
+  "explanation": "8,00 € − 5,93 € = 2,07 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 6,50 € und 4,24 €. Was kostet alles zusammen?",
+  "options": [
+   "13,00 €",
+   "10,74 €",
+   "10,68 €",
+   "10,87 €"
+  ],
+  "correct": 1,
+  "explanation": "6,50 € + 4,24 € = 10,74 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 16:14 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "16:39 Uhr",
+   "16:29 Uhr",
+   "15:29 Uhr",
+   "17:29 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "974 + 15 Minuten = 16:29 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 12, 15, 18, 21, ___",
+  "options": [
+   "27",
+   "24",
+   "22",
+   "20"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +3 gerechnet, also 21 + 3 = 24."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 7,34 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,01 €",
+   "2,66 €",
+   "3,66 €",
+   "2,55 €"
+  ],
+  "correct": 1,
+  "explanation": "10,00 € − 7,34 € = 2,66 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 5,33 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,67 €",
+   "6,07 €",
+   "6,67 €",
+   "5,63 €"
+  ],
+  "correct": 0,
+  "explanation": "11,00 € − 5,33 € = 5,67 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 6,60 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,51 €",
+   "4,40 €",
+   "4,31 €",
+   "5,40 €"
+  ],
+  "correct": 1,
+  "explanation": "11,00 € − 6,60 € = 4,40 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 15, 20, 25, 30, ___",
+  "options": [
+   "38",
+   "39",
+   "35",
+   "40"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +5 gerechnet, also 30 + 5 = 35."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 4,29 €. Du zahlst mit 8 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,21 €",
+   "3,71 €",
+   "3,64 €",
+   "4,71 €"
+  ],
+  "correct": 1,
+  "explanation": "8,00 € − 4,29 € = 3,71 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 10, 11, 12, 13, ___",
+  "options": [
+   "13",
+   "14",
+   "16",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +1 gerechnet, also 13 + 1 = 14."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 8,27 €. Du zahlst mit 14 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,73 €",
+   "5,66 €",
+   "6,73 €",
+   "5,92 €"
+  ],
+  "correct": 0,
+  "explanation": "14,00 € − 8,27 € = 5,73 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 7,58 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "2,33 €",
+   "3,42 €",
+   "2,42 €",
+   "2,47 €"
+  ],
+  "correct": 2,
+  "explanation": "10,00 € − 7,58 € = 2,42 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 09:15 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "10:10 Uhr",
+   "11:00 Uhr",
+   "10:00 Uhr",
+   "09:00 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "555 + 45 Minuten = 10:00 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 12:03 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "13:18 Uhr",
+   "12:28 Uhr",
+   "12:18 Uhr",
+   "11:18 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "723 + 15 Minuten = 12:18 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „Viertel nach 2“ als Uhrzeit?",
+  "options": [
+   "02:30 Uhr",
+   "02:00 Uhr",
+   "03:15 Uhr",
+   "02:15 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "„Viertel nach 2“ entspricht 02:15 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 8, 9, 10, 11, ___",
+  "options": [
+   "11",
+   "15",
+   "13",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +1 gerechnet, also 11 + 1 = 12."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 4,44 € und 5,90 €. Was kostet alles zusammen?",
+  "options": [
+   "10,34 €",
+   "10,70 €",
+   "10,27 €",
+   "8,88 €"
+  ],
+  "correct": 0,
+  "explanation": "4,44 € + 5,90 € = 10,34 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 7,55 € und 5,80 €. Was kostet alles zusammen?",
+  "options": [
+   "13,49 €",
+   "15,10 €",
+   "13,19 €",
+   "13,35 €"
+  ],
+  "correct": 3,
+  "explanation": "7,55 € + 5,80 € = 13,35 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 2,14 €. Du zahlst mit 7 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,86 €",
+   "5,13 €",
+   "4,77 €",
+   "5,86 €"
+  ],
+  "correct": 0,
+  "explanation": "7,00 € − 2,14 € = 4,86 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 11, 16, 21, 26, ___",
+  "options": [
+   "26",
+   "23",
+   "36",
+   "31"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +5 gerechnet, also 26 + 5 = 31."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 10, 11, 12, 13, ___",
+  "options": [
+   "17",
+   "15",
+   "14",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +1 gerechnet, also 13 + 1 = 14."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 20:16 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "21:11 Uhr",
+   "22:01 Uhr",
+   "20:01 Uhr",
+   "21:01 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "1216 + 45 Minuten = 21:01 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 9, 10, 11, 12, ___",
+  "options": [
+   "14",
+   "13",
+   "11",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +1 gerechnet, also 12 + 1 = 13."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel m sind 3 km?",
+  "options": [
+   "3000 m",
+   "300 m",
+   "1003 m",
+   "30000 m"
+  ],
+  "correct": 0,
+  "explanation": "1 km = 1000 m, also 3 km = 3000 m."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 15:05 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "15:00 Uhr",
+   "16:50 Uhr",
+   "14:50 Uhr",
+   "15:50 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "905 + 45 Minuten = 15:50 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 3,56 € und 0,70 €. Was kostet alles zusammen?",
+  "options": [
+   "4,59 €",
+   "4,11 €",
+   "7,12 €",
+   "4,26 €"
+  ],
+  "correct": 3,
+  "explanation": "3,56 € + 0,70 € = 4,26 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 07:14 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "06:59 Uhr",
+   "08:59 Uhr",
+   "07:09 Uhr",
+   "07:59 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "434 + 45 Minuten = 07:59 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 1,92 € und 7,23 €. Was kostet alles zusammen?",
+  "options": [
+   "9,15 €",
+   "3,84 €",
+   "9,02 €",
+   "9,51 €"
+  ],
+  "correct": 0,
+  "explanation": "1,92 € + 7,23 € = 9,15 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel mm sind 5 cm?",
+  "options": [
+   "50 mm",
+   "15 mm",
+   "5 mm",
+   "500 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 cm = 10 mm, also 5 cm = 50 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 8,64 €. Du zahlst mit 12 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,36 €",
+   "4,36 €",
+   "3,63 €",
+   "3,23 €"
+  ],
+  "correct": 0,
+  "explanation": "12,00 € − 8,64 € = 3,36 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 3,83 € und 5,21 €. Was kostet alles zusammen?",
+  "options": [
+   "9,04 €",
+   "8,93 €",
+   "7,66 €",
+   "9,21 €"
+  ],
+  "correct": 0,
+  "explanation": "3,83 € + 5,21 € = 9,04 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 3,10 € und 4,19 €. Was kostet alles zusammen?",
+  "options": [
+   "6,20 €",
+   "7,67 €",
+   "7,29 €",
+   "7,16 €"
+  ],
+  "correct": 2,
+  "explanation": "3,10 € + 4,19 € = 7,29 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel mm sind 3 cm?",
+  "options": [
+   "300 mm",
+   "3 mm",
+   "30 mm",
+   "13 mm"
+  ],
+  "correct": 2,
+  "explanation": "1 cm = 10 mm, also 3 cm = 30 mm."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „halb 1“ als Uhrzeit?",
+  "options": [
+   "00:45 Uhr",
+   "01:30 Uhr",
+   "00:30 Uhr",
+   "00:15 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„halb 1“ entspricht 00:30 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel m sind 4 km?",
+  "options": [
+   "4000 m",
+   "1004 m",
+   "40000 m",
+   "400 m"
+  ],
+  "correct": 0,
+  "explanation": "1 km = 1000 m, also 4 km = 4000 m."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 4,89 € und 2,36 €. Was kostet alles zusammen?",
+  "options": [
+   "7,25 €",
+   "7,71 €",
+   "7,08 €",
+   "9,78 €"
+  ],
+  "correct": 0,
+  "explanation": "4,89 € + 2,36 € = 7,25 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel m sind 5 km?",
+  "options": [
+   "1005 m",
+   "500 m",
+   "50000 m",
+   "5000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 5 km = 5000 m."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 13:37 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "13:22 Uhr",
+   "14:32 Uhr",
+   "15:22 Uhr",
+   "14:22 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "817 + 45 Minuten = 14:22 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 0,47 € und 1,84 €. Was kostet alles zusammen?",
+  "options": [
+   "2,31 €",
+   "0,94 €",
+   "2,58 €",
+   "2,22 €"
+  ],
+  "correct": 0,
+  "explanation": "0,47 € + 1,84 € = 2,31 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 5,46 € und 6,31 €. Was kostet alles zusammen?",
+  "options": [
+   "11,77 €",
+   "10,92 €",
+   "11,60 €",
+   "11,82 €"
+  ],
+  "correct": 0,
+  "explanation": "5,46 € + 6,31 € = 11,77 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 0,27 € und 6,15 €. Was kostet alles zusammen?",
+  "options": [
+   "0,54 €",
+   "6,48 €",
+   "6,42 €",
+   "6,26 €"
+  ],
+  "correct": 2,
+  "explanation": "0,27 € + 6,15 € = 6,42 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 5,85 € und 0,29 €. Was kostet alles zusammen?",
+  "options": [
+   "11,70 €",
+   "6,14 €",
+   "6,04 €",
+   "6,25 €"
+  ],
+  "correct": 1,
+  "explanation": "5,85 € + 0,29 € = 6,14 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „Viertel nach 1“ als Uhrzeit?",
+  "options": [
+   "01:15 Uhr",
+   "01:30 Uhr",
+   "01:00 Uhr",
+   "02:15 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„Viertel nach 1“ entspricht 01:15 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel cm sind 5 m?",
+  "options": [
+   "105 cm",
+   "5000 cm",
+   "50 cm",
+   "500 cm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 100 cm, also 5 m = 500 cm."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 3, 6, 9, 12, ___",
+  "options": [
+   "14",
+   "16",
+   "20",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +3 gerechnet, also 12 + 3 = 15."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 5,35 € und 3,48 €. Was kostet alles zusammen?",
+  "options": [
+   "8,83 €",
+   "10,70 €",
+   "8,92 €",
+   "8,70 €"
+  ],
+  "correct": 0,
+  "explanation": "5,35 € + 3,48 € = 8,83 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 4, 5, 6, 7, ___",
+  "options": [
+   "8",
+   "6",
+   "4",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +1 gerechnet, also 7 + 1 = 8."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 13, 18, 23, 28, ___",
+  "options": [
+   "33",
+   "25",
+   "29",
+   "27"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +5 gerechnet, also 28 + 5 = 33."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 5,95 €. Du zahlst mit 7 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,39 €",
+   "1,05 €",
+   "2,05 €",
+   "0,99 €"
+  ],
+  "correct": 1,
+  "explanation": "7,00 € − 5,95 € = 1,05 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „Viertel vor 1“ als Uhrzeit?",
+  "options": [
+   "00:45 Uhr",
+   "00:30 Uhr",
+   "00:00 Uhr",
+   "01:45 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„Viertel vor 1“ entspricht 00:45 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 7,52 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,48 €",
+   "4,48 €",
+   "3,26 €",
+   "3,80 €"
+  ],
+  "correct": 0,
+  "explanation": "11,00 € − 7,52 € = 3,48 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 20:20 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "21:50 Uhr",
+   "20:50 Uhr",
+   "19:50 Uhr",
+   "20:00 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "1220 + 30 Minuten = 20:50 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 7,55 € und 7,97 €. Was kostet alles zusammen?",
+  "options": [
+   "15,10 €",
+   "15,45 €",
+   "15,52 €",
+   "15,68 €"
+  ],
+  "correct": 2,
+  "explanation": "7,55 € + 7,97 € = 15,52 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 13, 18, 23, 28, ___",
+  "options": [
+   "38",
+   "37",
+   "27",
+   "33"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +5 gerechnet, also 28 + 5 = 33."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel m sind 3 km?",
+  "options": [
+   "3000 m",
+   "30000 m",
+   "300 m",
+   "1003 m"
+  ],
+  "correct": 0,
+  "explanation": "1 km = 1000 m, also 3 km = 3000 m."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 0,52 € und 7,49 €. Was kostet alles zusammen?",
+  "options": [
+   "7,83 €",
+   "1,04 €",
+   "8,21 €",
+   "8,01 €"
+  ],
+  "correct": 3,
+  "explanation": "0,52 € + 7,49 € = 8,01 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 2,23 €. Du zahlst mit 3 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,77 €",
+   "0,97 €",
+   "0,77 €",
+   "0,43 €"
+  ],
+  "correct": 2,
+  "explanation": "3,00 € − 2,23 € = 0,77 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 6,62 € und 3,22 €. Was kostet alles zusammen?",
+  "options": [
+   "10,20 €",
+   "13,24 €",
+   "9,84 €",
+   "9,76 €"
+  ],
+  "correct": 2,
+  "explanation": "6,62 € + 3,22 € = 9,84 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 3,08 € und 0,24 €. Was kostet alles zusammen?",
+  "options": [
+   "3,32 €",
+   "3,17 €",
+   "6,16 €",
+   "3,41 €"
+  ],
+  "correct": 0,
+  "explanation": "3,08 € + 0,24 € = 3,32 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 1,04 € und 6,11 €. Was kostet alles zusammen?",
+  "options": [
+   "2,08 €",
+   "7,32 €",
+   "7,03 €",
+   "7,15 €"
+  ],
+  "correct": 3,
+  "explanation": "1,04 € + 6,11 € = 7,15 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 14:21 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "13:51 Uhr",
+   "14:01 Uhr",
+   "15:51 Uhr",
+   "14:51 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "861 + 30 Minuten = 14:51 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 18:14 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "18:29 Uhr",
+   "17:29 Uhr",
+   "19:29 Uhr",
+   "18:39 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "1094 + 15 Minuten = 18:29 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel cm sind 5 m?",
+  "options": [
+   "500 cm",
+   "50 cm",
+   "105 cm",
+   "5000 cm"
+  ],
+  "correct": 0,
+  "explanation": "1 m = 100 cm, also 5 m = 500 cm."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 8, 9, 10, 11, ___",
+  "options": [
+   "10",
+   "16",
+   "12",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +1 gerechnet, also 11 + 1 = 12."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel mm sind 6 cm?",
+  "options": [
+   "600 mm",
+   "6 mm",
+   "60 mm",
+   "16 mm"
+  ],
+  "correct": 2,
+  "explanation": "1 cm = 10 mm, also 6 cm = 60 mm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 15:27 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "16:22 Uhr",
+   "17:12 Uhr",
+   "16:12 Uhr",
+   "15:12 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "927 + 45 Minuten = 16:12 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 13:30 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "12:45 Uhr",
+   "13:55 Uhr",
+   "13:45 Uhr",
+   "14:45 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "810 + 15 Minuten = 13:45 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 3,45 €. Du zahlst mit 9 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "6,02 €",
+   "5,52 €",
+   "6,55 €",
+   "5,55 €"
+  ],
+  "correct": 3,
+  "explanation": "9,00 € − 3,45 € = 5,55 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 10:39 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "11:09 Uhr",
+   "10:09 Uhr",
+   "11:19 Uhr",
+   "12:09 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "639 + 30 Minuten = 11:09 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 12:10 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "12:40 Uhr",
+   "11:40 Uhr",
+   "12:50 Uhr",
+   "13:40 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "730 + 30 Minuten = 12:40 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 12:06 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "11:21 Uhr",
+   "12:21 Uhr",
+   "12:31 Uhr",
+   "13:21 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "726 + 15 Minuten = 12:21 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 9 m?",
+  "options": [
+   "1009 mm",
+   "9000 mm",
+   "90000 mm",
+   "900 mm"
+  ],
+  "correct": 1,
+  "explanation": "1 m = 1000 mm, also 9 m = 9000 mm."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „halb 11“ als Uhrzeit?",
+  "options": [
+   "10:30 Uhr",
+   "11:30 Uhr",
+   "10:15 Uhr",
+   "10:45 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„halb 11“ entspricht 10:30 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 15:18 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "16:03 Uhr",
+   "15:03 Uhr",
+   "16:13 Uhr",
+   "17:03 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "918 + 45 Minuten = 16:03 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 18:27 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "17:57 Uhr",
+   "18:07 Uhr",
+   "19:57 Uhr",
+   "18:57 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "1107 + 30 Minuten = 18:57 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel cm sind 5 m?",
+  "options": [
+   "5000 cm",
+   "50 cm",
+   "500 cm",
+   "105 cm"
+  ],
+  "correct": 2,
+  "explanation": "1 m = 100 cm, also 5 m = 500 cm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 18:28 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "18:13 Uhr",
+   "19:13 Uhr",
+   "19:23 Uhr",
+   "20:13 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "1108 + 45 Minuten = 19:13 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „Viertel vor 12“ als Uhrzeit?",
+  "options": [
+   "12:45 Uhr",
+   "11:45 Uhr",
+   "11:30 Uhr",
+   "11:00 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„Viertel vor 12“ entspricht 11:45 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „Viertel vor 2“ als Uhrzeit?",
+  "options": [
+   "01:45 Uhr",
+   "02:45 Uhr",
+   "01:00 Uhr",
+   "01:30 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„Viertel vor 2“ entspricht 01:45 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel mm sind 4 cm?",
+  "options": [
+   "14 mm",
+   "4 mm",
+   "400 mm",
+   "40 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 cm = 10 mm, also 4 cm = 40 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 6,45 € und 0,44 €. Was kostet alles zusammen?",
+  "options": [
+   "6,75 €",
+   "6,89 €",
+   "12,90 €",
+   "7,32 €"
+  ],
+  "correct": 1,
+  "explanation": "6,45 € + 0,44 € = 6,89 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 3,23 € und 2,58 €. Was kostet alles zusammen?",
+  "options": [
+   "6,46 €",
+   "5,81 €",
+   "5,73 €",
+   "5,86 €"
+  ],
+  "correct": 1,
+  "explanation": "3,23 € + 2,58 € = 5,81 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 0,67 €. Du zahlst mit 1 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "0,33 €",
+   "0,34 €",
+   "1,33 €",
+   "0,29 €"
+  ],
+  "correct": 0,
+  "explanation": "1,00 € − 0,67 € = 0,33 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 14:11 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "14:51 Uhr",
+   "13:41 Uhr",
+   "14:41 Uhr",
+   "15:41 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "851 + 30 Minuten = 14:41 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 7,49 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,51 €",
+   "2,73 €",
+   "2,20 €",
+   "2,51 €"
+  ],
+  "correct": 3,
+  "explanation": "10,00 € − 7,49 € = 2,51 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 10, 12, 14, 16, ___",
+  "options": [
+   "14",
+   "18",
+   "21",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +2 gerechnet, also 16 + 2 = 18."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „Viertel nach 8“ als Uhrzeit?",
+  "options": [
+   "08:15 Uhr",
+   "09:15 Uhr",
+   "08:00 Uhr",
+   "08:30 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„Viertel nach 8“ entspricht 08:15 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 6,12 €. Du zahlst mit 7 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,88 €",
+   "0,69 €",
+   "1,21 €",
+   "0,88 €"
+  ],
+  "correct": 3,
+  "explanation": "7,00 € − 6,12 € = 0,88 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 1 cm?",
+  "options": [
+   "11 mm",
+   "1 mm",
+   "100 mm",
+   "10 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 cm = 10 mm, also 1 cm = 10 mm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 18:46 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "19:41 Uhr",
+   "18:31 Uhr",
+   "19:31 Uhr",
+   "20:31 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "1126 + 45 Minuten = 19:31 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 18:25 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "17:55 Uhr",
+   "18:05 Uhr",
+   "19:55 Uhr",
+   "18:55 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "1105 + 30 Minuten = 18:55 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 6,83 €. Du zahlst mit 12 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "6,17 €",
+   "5,27 €",
+   "5,12 €",
+   "5,17 €"
+  ],
+  "correct": 3,
+  "explanation": "12,00 € − 6,83 € = 5,17 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 6,55 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,33 €",
+   "5,45 €",
+   "4,71 €",
+   "4,45 €"
+  ],
+  "correct": 3,
+  "explanation": "11,00 € − 6,55 € = 4,45 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 15, 18, 21, 24, ___",
+  "options": [
+   "33",
+   "32",
+   "28",
+   "27"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +3 gerechnet, also 24 + 3 = 27."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel cm sind 2 m?",
+  "options": [
+   "102 cm",
+   "2000 cm",
+   "20 cm",
+   "200 cm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 100 cm, also 2 m = 200 cm."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „5 Uhr“ als Uhrzeit?",
+  "options": [
+   "05:00 Uhr",
+   "05:45 Uhr",
+   "06:00 Uhr",
+   "05:15 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„5 Uhr“ entspricht 05:00 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 5,78 € und 1,10 €. Was kostet alles zusammen?",
+  "options": [
+   "6,88 €",
+   "7,27 €",
+   "6,73 €",
+   "11,56 €"
+  ],
+  "correct": 0,
+  "explanation": "5,78 € + 1,10 € = 6,88 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 8, 13, 18, 23, ___",
+  "options": [
+   "36",
+   "28",
+   "30",
+   "34"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +5 gerechnet, also 23 + 5 = 28."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „Viertel vor 7“ als Uhrzeit?",
+  "options": [
+   "06:45 Uhr",
+   "07:45 Uhr",
+   "06:00 Uhr",
+   "06:30 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„Viertel vor 7“ entspricht 06:45 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 4 cm?",
+  "options": [
+   "40 mm",
+   "400 mm",
+   "14 mm",
+   "4 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 cm = 10 mm, also 4 cm = 40 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 4,75 € und 6,57 €. Was kostet alles zusammen?",
+  "options": [
+   "11,20 €",
+   "11,32 €",
+   "9,50 €",
+   "11,85 €"
+  ],
+  "correct": 1,
+  "explanation": "4,75 € + 6,57 € = 11,32 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel mm sind 8 cm?",
+  "options": [
+   "80 mm",
+   "18 mm",
+   "800 mm",
+   "8 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 cm = 10 mm, also 8 cm = 80 mm."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „Viertel vor 4“ als Uhrzeit?",
+  "options": [
+   "03:30 Uhr",
+   "04:45 Uhr",
+   "03:00 Uhr",
+   "03:45 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "„Viertel vor 4“ entspricht 03:45 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 8, 6, 4, 2, ___",
+  "options": [
+   "0",
+   "1",
+   "-5",
+   "-4"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils -2 gerechnet, also 2 − 2 = 0."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 6 cm?",
+  "options": [
+   "60 mm",
+   "6 mm",
+   "16 mm",
+   "600 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 cm = 10 mm, also 6 cm = 60 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 7,94 € und 0,98 €. Was kostet alles zusammen?",
+  "options": [
+   "15,88 €",
+   "8,78 €",
+   "8,98 €",
+   "8,92 €"
+  ],
+  "correct": 3,
+  "explanation": "7,94 € + 0,98 € = 8,92 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „8 Uhr“ als Uhrzeit?",
+  "options": [
+   "08:45 Uhr",
+   "09:00 Uhr",
+   "08:00 Uhr",
+   "08:15 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„8 Uhr“ entspricht 08:00 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 13, 16, 19, 22, ___",
+  "options": [
+   "29",
+   "23",
+   "25",
+   "28"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +3 gerechnet, also 22 + 3 = 25."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 7,77 €. Du zahlst mit 9 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "0,84 €",
+   "2,23 €",
+   "1,23 €",
+   "1,34 €"
+  ],
+  "correct": 2,
+  "explanation": "9,00 € − 7,77 € = 1,23 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 12:02 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "13:32 Uhr",
+   "12:32 Uhr",
+   "11:32 Uhr",
+   "12:42 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "722 + 30 Minuten = 12:32 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „Viertel nach 4“ als Uhrzeit?",
+  "options": [
+   "04:00 Uhr",
+   "04:15 Uhr",
+   "04:30 Uhr",
+   "05:15 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„Viertel nach 4“ entspricht 04:15 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel m sind 5 km?",
+  "options": [
+   "50000 m",
+   "500 m",
+   "1005 m",
+   "5000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 5 km = 5000 m."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 15:43 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "15:08 Uhr",
+   "15:58 Uhr",
+   "14:58 Uhr",
+   "16:58 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "943 + 15 Minuten = 15:58 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 7, 9, 11, 13, ___",
+  "options": [
+   "15",
+   "19",
+   "13",
+   "18"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +2 gerechnet, also 13 + 2 = 15."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 0,35 € und 1,37 €. Was kostet alles zusammen?",
+  "options": [
+   "0,70 €",
+   "1,72 €",
+   "2,11 €",
+   "1,54 €"
+  ],
+  "correct": 1,
+  "explanation": "0,35 € + 1,37 € = 1,72 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „8 Uhr“ als Uhrzeit?",
+  "options": [
+   "08:45 Uhr",
+   "08:15 Uhr",
+   "08:00 Uhr",
+   "09:00 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„8 Uhr“ entspricht 08:00 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 19:19 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "18:49 Uhr",
+   "19:49 Uhr",
+   "19:59 Uhr",
+   "20:49 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "1159 + 30 Minuten = 19:49 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 09:27 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "09:07 Uhr",
+   "09:57 Uhr",
+   "10:57 Uhr",
+   "08:57 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "567 + 30 Minuten = 09:57 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 10, 8, 6, 4, ___",
+  "options": [
+   "2",
+   "-3",
+   "4",
+   "-2"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils -2 gerechnet, also 4 − 2 = 2."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 7,57 € und 7,16 €. Was kostet alles zusammen?",
+  "options": [
+   "15,25 €",
+   "15,14 €",
+   "14,73 €",
+   "14,63 €"
+  ],
+  "correct": 2,
+  "explanation": "7,57 € + 7,16 € = 14,73 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 5,23 € und 2,40 €. Was kostet alles zusammen?",
+  "options": [
+   "7,51 €",
+   "7,63 €",
+   "7,72 €",
+   "10,46 €"
+  ],
+  "correct": 1,
+  "explanation": "5,23 € + 2,40 € = 7,63 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 8,45 €. Du zahlst mit 12 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,55 €",
+   "4,55 €",
+   "3,47 €",
+   "3,72 €"
+  ],
+  "correct": 0,
+  "explanation": "12,00 € − 8,45 € = 3,55 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 4, 7, 10, 13, ___",
+  "options": [
+   "20",
+   "16",
+   "13",
+   "22"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +3 gerechnet, also 13 + 3 = 16."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 1,53 € und 7,62 €. Was kostet alles zusammen?",
+  "options": [
+   "3,06 €",
+   "9,07 €",
+   "9,26 €",
+   "9,15 €"
+  ],
+  "correct": 3,
+  "explanation": "1,53 € + 7,62 € = 9,15 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 15, 20, 25, 30, ___",
+  "options": [
+   "37",
+   "41",
+   "35",
+   "27"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +5 gerechnet, also 30 + 5 = 35."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 10, 12, 14, 16, ___",
+  "options": [
+   "18",
+   "19",
+   "16",
+   "13"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +2 gerechnet, also 16 + 2 = 18."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 10, 13, 16, 19, ___",
+  "options": [
+   "21",
+   "23",
+   "22",
+   "16"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +3 gerechnet, also 19 + 3 = 22."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „4 Uhr“ als Uhrzeit?",
+  "options": [
+   "04:15 Uhr",
+   "04:45 Uhr",
+   "05:00 Uhr",
+   "04:00 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "„4 Uhr“ entspricht 04:00 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 6,76 € und 4,15 €. Was kostet alles zusammen?",
+  "options": [
+   "11,37 €",
+   "10,91 €",
+   "10,78 €",
+   "13,52 €"
+  ],
+  "correct": 1,
+  "explanation": "6,76 € + 4,15 € = 10,91 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „Viertel vor 9“ als Uhrzeit?",
+  "options": [
+   "08:45 Uhr",
+   "09:45 Uhr",
+   "08:30 Uhr",
+   "08:00 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„Viertel vor 9“ entspricht 08:45 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 7,10 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,61 €",
+   "4,11 €",
+   "3,90 €",
+   "4,90 €"
+  ],
+  "correct": 2,
+  "explanation": "11,00 € − 7,10 € = 3,90 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 17:27 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "17:52 Uhr",
+   "17:42 Uhr",
+   "16:42 Uhr",
+   "18:42 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "1047 + 15 Minuten = 17:42 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „Viertel vor 3“ als Uhrzeit?",
+  "options": [
+   "02:00 Uhr",
+   "03:45 Uhr",
+   "02:30 Uhr",
+   "02:45 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "„Viertel vor 3“ entspricht 02:45 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 9, 11, 13, 15, ___",
+  "options": [
+   "22",
+   "18",
+   "16",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +2 gerechnet, also 15 + 2 = 17."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 17:29 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "19:14 Uhr",
+   "18:14 Uhr",
+   "17:14 Uhr",
+   "18:24 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "1049 + 45 Minuten = 18:14 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „halb 10“ als Uhrzeit?",
+  "options": [
+   "09:15 Uhr",
+   "09:30 Uhr",
+   "09:45 Uhr",
+   "10:30 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„halb 10“ entspricht 09:30 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 10, 13, 16, 19, ___",
+  "options": [
+   "17",
+   "25",
+   "22",
+   "26"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +3 gerechnet, also 19 + 3 = 22."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 2,81 € und 0,28 €. Was kostet alles zusammen?",
+  "options": [
+   "2,96 €",
+   "3,09 €",
+   "5,62 €",
+   "3,36 €"
+  ],
+  "correct": 1,
+  "explanation": "2,81 € + 0,28 € = 3,09 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 09:07 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "09:32 Uhr",
+   "08:22 Uhr",
+   "09:22 Uhr",
+   "10:22 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "547 + 15 Minuten = 09:22 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 18:04 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "18:49 Uhr",
+   "19:49 Uhr",
+   "18:59 Uhr",
+   "17:49 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "1084 + 45 Minuten = 18:49 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 13, 11, 9, 7, ___",
+  "options": [
+   "5",
+   "8",
+   "2",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils -2 gerechnet, also 7 − 2 = 5."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 12, 13, 14, 15, ___",
+  "options": [
+   "15",
+   "16",
+   "20",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +1 gerechnet, also 15 + 1 = 16."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 7, 10, 13, 16, ___",
+  "options": [
+   "24",
+   "15",
+   "17",
+   "19"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +3 gerechnet, also 16 + 3 = 19."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 2,51 €. Du zahlst mit 3 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "0,69 €",
+   "1,49 €",
+   "0,18 €",
+   "0,49 €"
+  ],
+  "correct": 3,
+  "explanation": "3,00 € − 2,51 € = 0,49 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 1,23 € und 6,10 €. Was kostet alles zusammen?",
+  "options": [
+   "7,33 €",
+   "7,24 €",
+   "7,88 €",
+   "2,46 €"
+  ],
+  "correct": 0,
+  "explanation": "1,23 € + 6,10 € = 7,33 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 4,71 €. Du zahlst mit 5 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,29 €",
+   "0,75 €",
+   "0,29 €",
+   "0,00 €"
+  ],
+  "correct": 2,
+  "explanation": "5,00 € − 4,71 € = 0,29 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „8 Uhr“ als Uhrzeit?",
+  "options": [
+   "08:45 Uhr",
+   "08:00 Uhr",
+   "08:15 Uhr",
+   "09:00 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„8 Uhr“ entspricht 08:00 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 5,40 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,60 €",
+   "6,08 €",
+   "6,60 €",
+   "5,54 €"
+  ],
+  "correct": 0,
+  "explanation": "11,00 € − 5,40 € = 5,60 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 5,98 €. Du zahlst mit 8 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,02 €",
+   "1,92 €",
+   "2,20 €",
+   "2,02 €"
+  ],
+  "correct": 3,
+  "explanation": "8,00 € − 5,98 € = 2,02 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 19:28 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "19:53 Uhr",
+   "18:43 Uhr",
+   "20:43 Uhr",
+   "19:43 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "1168 + 15 Minuten = 19:43 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „Viertel vor 8“ als Uhrzeit?",
+  "options": [
+   "08:45 Uhr",
+   "07:45 Uhr",
+   "07:00 Uhr",
+   "07:30 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„Viertel vor 8“ entspricht 07:45 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 0,63 € und 6,91 €. Was kostet alles zusammen?",
+  "options": [
+   "7,54 €",
+   "7,67 €",
+   "7,41 €",
+   "1,26 €"
+  ],
+  "correct": 0,
+  "explanation": "0,63 € + 6,91 € = 7,54 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 15, 16, 17, 18, ___",
+  "options": [
+   "19",
+   "20",
+   "18",
+   "15"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +1 gerechnet, also 18 + 1 = 19."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 7, 8, 9, 10, ___",
+  "options": [
+   "8",
+   "9",
+   "7",
+   "11"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +1 gerechnet, also 10 + 1 = 11."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 15, 16, 17, 18, ___",
+  "options": [
+   "18",
+   "20",
+   "19",
+   "22"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +1 gerechnet, also 18 + 1 = 19."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel mm sind 1 cm?",
+  "options": [
+   "100 mm",
+   "11 mm",
+   "10 mm",
+   "1 mm"
+  ],
+  "correct": 2,
+  "explanation": "1 cm = 10 mm, also 1 cm = 10 mm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 13:29 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "14:44 Uhr",
+   "13:44 Uhr",
+   "13:54 Uhr",
+   "12:44 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "809 + 15 Minuten = 13:44 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „4 Uhr“ als Uhrzeit?",
+  "options": [
+   "04:00 Uhr",
+   "04:45 Uhr",
+   "04:15 Uhr",
+   "05:00 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„4 Uhr“ entspricht 04:00 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel mm sind 7 m?",
+  "options": [
+   "1007 mm",
+   "700 mm",
+   "7000 mm",
+   "70000 mm"
+  ],
+  "correct": 2,
+  "explanation": "1 m = 1000 mm, also 7 m = 7000 mm."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 13, 16, 19, 22, ___",
+  "options": [
+   "25",
+   "22",
+   "19",
+   "26"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +3 gerechnet, also 22 + 3 = 25."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 11:29 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "13:14 Uhr",
+   "12:14 Uhr",
+   "12:24 Uhr",
+   "11:14 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "689 + 45 Minuten = 12:14 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 20:04 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "21:19 Uhr",
+   "20:29 Uhr",
+   "20:19 Uhr",
+   "19:19 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "1204 + 15 Minuten = 20:19 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 1, 3, 5, 7, ___",
+  "options": [
+   "14",
+   "9",
+   "6",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +2 gerechnet, also 7 + 2 = 9."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 7,79 € und 0,88 €. Was kostet alles zusammen?",
+  "options": [
+   "15,58 €",
+   "8,67 €",
+   "9,11 €",
+   "8,58 €"
+  ],
+  "correct": 1,
+  "explanation": "7,79 € + 0,88 € = 8,67 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 15:10 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "14:55 Uhr",
+   "15:55 Uhr",
+   "15:05 Uhr",
+   "16:55 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "910 + 45 Minuten = 15:55 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 14:13 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "13:58 Uhr",
+   "14:58 Uhr",
+   "15:58 Uhr",
+   "14:08 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "853 + 45 Minuten = 14:58 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel mm sind 7 m?",
+  "options": [
+   "70000 mm",
+   "700 mm",
+   "7000 mm",
+   "1007 mm"
+  ],
+  "correct": 2,
+  "explanation": "1 m = 1000 mm, also 7 m = 7000 mm."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel cm sind 8 m?",
+  "options": [
+   "800 cm",
+   "80 cm",
+   "108 cm",
+   "8000 cm"
+  ],
+  "correct": 0,
+  "explanation": "1 m = 100 cm, also 8 m = 800 cm."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel cm sind 3 m?",
+  "options": [
+   "103 cm",
+   "3000 cm",
+   "30 cm",
+   "300 cm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 100 cm, also 3 m = 300 cm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 7,38 € und 5,92 €. Was kostet alles zusammen?",
+  "options": [
+   "14,76 €",
+   "13,43 €",
+   "13,16 €",
+   "13,30 €"
+  ],
+  "correct": 3,
+  "explanation": "7,38 € + 5,92 € = 13,30 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel m sind 9 km?",
+  "options": [
+   "1009 m",
+   "9000 m",
+   "90000 m",
+   "900 m"
+  ],
+  "correct": 1,
+  "explanation": "1 km = 1000 m, also 9 km = 9000 m."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 0,93 €. Du zahlst mit 2 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,07 €",
+   "1,38 €",
+   "0,68 €",
+   "2,07 €"
+  ],
+  "correct": 0,
+  "explanation": "2,00 € − 0,93 € = 1,07 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 2,80 €. Du zahlst mit 3 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,20 €",
+   "0,20 €",
+   "0,51 €",
+   "0,09 €"
+  ],
+  "correct": 1,
+  "explanation": "3,00 € − 2,80 € = 0,20 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 09:07 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "10:37 Uhr",
+   "09:37 Uhr",
+   "09:47 Uhr",
+   "08:37 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "547 + 30 Minuten = 09:37 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 5, 7, 9, 11, ___",
+  "options": [
+   "15",
+   "8",
+   "13",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +2 gerechnet, also 11 + 2 = 13."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 20:50 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "22:35 Uhr",
+   "21:35 Uhr",
+   "20:35 Uhr",
+   "21:45 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "1250 + 45 Minuten = 21:35 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 8, 11, 14, 17, ___",
+  "options": [
+   "19",
+   "18",
+   "26",
+   "20"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +3 gerechnet, also 17 + 3 = 20."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „Viertel nach 12“ als Uhrzeit?",
+  "options": [
+   "00:15 Uhr",
+   "00:30 Uhr",
+   "00:00 Uhr",
+   "01:15 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„Viertel nach 12“ entspricht 00:15 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 06:11 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "06:51 Uhr",
+   "05:41 Uhr",
+   "06:41 Uhr",
+   "07:41 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "371 + 30 Minuten = 06:41 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 06:46 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "07:16 Uhr",
+   "08:16 Uhr",
+   "07:26 Uhr",
+   "06:16 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "406 + 30 Minuten = 07:16 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 1 m?",
+  "options": [
+   "100 mm",
+   "1001 mm",
+   "1000 mm",
+   "10000 mm"
+  ],
+  "correct": 2,
+  "explanation": "1 m = 1000 mm, also 1 m = 1000 mm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 07:20 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "07:45 Uhr",
+   "06:35 Uhr",
+   "08:35 Uhr",
+   "07:35 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "440 + 15 Minuten = 07:35 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „Viertel nach 5“ als Uhrzeit?",
+  "options": [
+   "06:15 Uhr",
+   "05:00 Uhr",
+   "05:15 Uhr",
+   "05:30 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„Viertel nach 5“ entspricht 05:15 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 3,10 € und 7,16 €. Was kostet alles zusammen?",
+  "options": [
+   "10,26 €",
+   "10,75 €",
+   "10,18 €",
+   "6,20 €"
+  ],
+  "correct": 0,
+  "explanation": "3,10 € + 7,16 € = 10,26 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 3, 8, 13, 18, ___",
+  "options": [
+   "29",
+   "23",
+   "22",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +5 gerechnet, also 18 + 5 = 23."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wie schreibt man „halb 1“ als Uhrzeit?",
+  "options": [
+   "00:30 Uhr",
+   "00:15 Uhr",
+   "01:30 Uhr",
+   "00:45 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„halb 1“ entspricht 00:30 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 20:30 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "21:45 Uhr",
+   "19:45 Uhr",
+   "20:55 Uhr",
+   "20:45 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "1230 + 15 Minuten = 20:45 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 8,29 €. Du zahlst mit 14 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "6,71 €",
+   "5,71 €",
+   "6,06 €",
+   "5,45 €"
+  ],
+  "correct": 1,
+  "explanation": "14,00 € − 8,29 € = 5,71 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 9, 12, 15, 18, ___",
+  "options": [
+   "25",
+   "20",
+   "27",
+   "21"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +3 gerechnet, also 18 + 3 = 21."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 2,45 € und 0,31 €. Was kostet alles zusammen?",
+  "options": [
+   "4,90 €",
+   "2,87 €",
+   "2,70 €",
+   "2,76 €"
+  ],
+  "correct": 3,
+  "explanation": "2,45 € + 0,31 € = 2,76 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „7 Uhr“ als Uhrzeit?",
+  "options": [
+   "07:00 Uhr",
+   "07:45 Uhr",
+   "07:15 Uhr",
+   "08:00 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„7 Uhr“ entspricht 07:00 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „9 Uhr“ als Uhrzeit?",
+  "options": [
+   "09:15 Uhr",
+   "10:00 Uhr",
+   "09:00 Uhr",
+   "09:45 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„9 Uhr“ entspricht 09:00 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 3,98 € und 3,48 €. Was kostet alles zusammen?",
+  "options": [
+   "7,35 €",
+   "7,96 €",
+   "7,80 €",
+   "7,46 €"
+  ],
+  "correct": 3,
+  "explanation": "3,98 € + 3,48 € = 7,46 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 13:54 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "13:24 Uhr",
+   "14:24 Uhr",
+   "14:34 Uhr",
+   "15:24 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "834 + 30 Minuten = 14:24 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 7,66 € und 0,56 €. Was kostet alles zusammen?",
+  "options": [
+   "8,33 €",
+   "8,22 €",
+   "15,32 €",
+   "8,09 €"
+  ],
+  "correct": 1,
+  "explanation": "7,66 € + 0,56 € = 8,22 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 15, 18, 21, 24, ___",
+  "options": [
+   "22",
+   "23",
+   "27",
+   "30"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +3 gerechnet, also 24 + 3 = 27."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel mm sind 7 cm?",
+  "options": [
+   "7 mm",
+   "70 mm",
+   "17 mm",
+   "700 mm"
+  ],
+  "correct": 1,
+  "explanation": "1 cm = 10 mm, also 7 cm = 70 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 2,06 €. Du zahlst mit 4 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "2,94 €",
+   "1,94 €",
+   "1,88 €",
+   "2,34 €"
+  ],
+  "correct": 1,
+  "explanation": "4,00 € − 2,06 € = 1,94 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 14, 15, 16, 17, ___",
+  "options": [
+   "22",
+   "17",
+   "18",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +1 gerechnet, also 17 + 1 = 18."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 4,46 €. Du zahlst mit 6 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,54 €",
+   "1,49 €",
+   "1,77 €",
+   "2,54 €"
+  ],
+  "correct": 0,
+  "explanation": "6,00 € − 4,46 € = 1,54 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 3, 5, 7, 9, ___",
+  "options": [
+   "12",
+   "14",
+   "11",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +2 gerechnet, also 9 + 2 = 11."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 4,47 € und 3,61 €. Was kostet alles zusammen?",
+  "options": [
+   "8,08 €",
+   "8,60 €",
+   "7,99 €",
+   "8,94 €"
+  ],
+  "correct": 0,
+  "explanation": "4,47 € + 3,61 € = 8,08 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 7 cm?",
+  "options": [
+   "70 mm",
+   "7 mm",
+   "700 mm",
+   "17 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 cm = 10 mm, also 7 cm = 70 mm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 13:32 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "12:47 Uhr",
+   "13:57 Uhr",
+   "13:47 Uhr",
+   "14:47 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "812 + 15 Minuten = 13:47 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel m sind 2 km?",
+  "options": [
+   "200 m",
+   "20000 m",
+   "1002 m",
+   "2000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 2 km = 2000 m."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel cm sind 1 m?",
+  "options": [
+   "101 cm",
+   "10 cm",
+   "1000 cm",
+   "100 cm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 100 cm, also 1 m = 100 cm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 5,81 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,08 €",
+   "5,19 €",
+   "4,29 €",
+   "4,19 €"
+  ],
+  "correct": 3,
+  "explanation": "10,00 € − 5,81 € = 4,19 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel mm sind 9 m?",
+  "options": [
+   "900 mm",
+   "90000 mm",
+   "1009 mm",
+   "9000 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 1000 mm, also 9 m = 9000 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 5,89 € und 4,15 €. Was kostet alles zusammen?",
+  "options": [
+   "11,78 €",
+   "10,04 €",
+   "10,27 €",
+   "9,93 €"
+  ],
+  "correct": 1,
+  "explanation": "5,89 € + 4,15 € = 10,04 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel m sind 4 km?",
+  "options": [
+   "40000 m",
+   "4000 m",
+   "1004 m",
+   "400 m"
+  ],
+  "correct": 1,
+  "explanation": "1 km = 1000 m, also 4 km = 4000 m."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 7,35 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,83 €",
+   "3,65 €",
+   "3,61 €",
+   "4,65 €"
+  ],
+  "correct": 1,
+  "explanation": "11,00 € − 7,35 € = 3,65 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 10, 15, 20, 25, ___",
+  "options": [
+   "27",
+   "26",
+   "30",
+   "38"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +5 gerechnet, also 25 + 5 = 30."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 6,10 € und 5,52 €. Was kostet alles zusammen?",
+  "options": [
+   "11,44 €",
+   "11,81 €",
+   "11,62 €",
+   "12,20 €"
+  ],
+  "correct": 2,
+  "explanation": "6,10 € + 5,52 € = 11,62 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 3,03 € und 1,16 €. Was kostet alles zusammen?",
+  "options": [
+   "4,10 €",
+   "6,06 €",
+   "4,19 €",
+   "4,26 €"
+  ],
+  "correct": 2,
+  "explanation": "3,03 € + 1,16 € = 4,19 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 5,28 € und 2,49 €. Was kostet alles zusammen?",
+  "options": [
+   "7,86 €",
+   "10,56 €",
+   "7,69 €",
+   "7,77 €"
+  ],
+  "correct": 3,
+  "explanation": "5,28 € + 2,49 € = 7,77 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 14, 12, 10, 8, ___",
+  "options": [
+   "4",
+   "10",
+   "1",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils -2 gerechnet, also 8 − 2 = 6."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 14:17 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "14:42 Uhr",
+   "15:32 Uhr",
+   "14:32 Uhr",
+   "13:32 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "857 + 15 Minuten = 14:32 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel m sind 9 km?",
+  "options": [
+   "90000 m",
+   "1009 m",
+   "900 m",
+   "9000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 9 km = 9000 m."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 0,73 €. Du zahlst mit 6 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,27 €",
+   "6,27 €",
+   "5,65 €",
+   "5,24 €"
+  ],
+  "correct": 0,
+  "explanation": "6,00 € − 0,73 € = 5,27 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel m sind 5 km?",
+  "options": [
+   "5000 m",
+   "1005 m",
+   "500 m",
+   "50000 m"
+  ],
+  "correct": 0,
+  "explanation": "1 km = 1000 m, also 5 km = 5000 m."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 6,09 € und 6,99 €. Was kostet alles zusammen?",
+  "options": [
+   "13,15 €",
+   "12,18 €",
+   "13,08 €",
+   "12,95 €"
+  ],
+  "correct": 2,
+  "explanation": "6,09 € + 6,99 € = 13,08 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 2,11 €. Du zahlst mit 3 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "0,53 €",
+   "1,89 €",
+   "1,39 €",
+   "0,89 €"
+  ],
+  "correct": 3,
+  "explanation": "3,00 € − 2,11 € = 0,89 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel m sind 6 km?",
+  "options": [
+   "6000 m",
+   "60000 m",
+   "1006 m",
+   "600 m"
+  ],
+  "correct": 0,
+  "explanation": "1 km = 1000 m, also 6 km = 6000 m."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 3,51 €. Du zahlst mit 4 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "0,49 €",
+   "0,10 €",
+   "1,49 €",
+   "0,55 €"
+  ],
+  "correct": 0,
+  "explanation": "4,00 € − 3,51 € = 0,49 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „Viertel vor 12“ als Uhrzeit?",
+  "options": [
+   "11:30 Uhr",
+   "11:45 Uhr",
+   "11:00 Uhr",
+   "12:45 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„Viertel vor 12“ entspricht 11:45 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel m sind 8 km?",
+  "options": [
+   "1008 m",
+   "80000 m",
+   "8000 m",
+   "800 m"
+  ],
+  "correct": 2,
+  "explanation": "1 km = 1000 m, also 8 km = 8000 m."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 09:27 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "09:42 Uhr",
+   "10:42 Uhr",
+   "08:42 Uhr",
+   "09:52 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "567 + 15 Minuten = 09:42 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „Viertel nach 1“ als Uhrzeit?",
+  "options": [
+   "02:15 Uhr",
+   "01:00 Uhr",
+   "01:30 Uhr",
+   "01:15 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "„Viertel nach 1“ entspricht 01:15 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 11, 12, 13, 14, ___",
+  "options": [
+   "16",
+   "17",
+   "12",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils +1 gerechnet, also 14 + 1 = 15."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 1,35 € und 6,62 €. Was kostet alles zusammen?",
+  "options": [
+   "8,50 €",
+   "7,86 €",
+   "7,97 €",
+   "2,70 €"
+  ],
+  "correct": 2,
+  "explanation": "1,35 € + 6,62 € = 7,97 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel mm sind 9 cm?",
+  "options": [
+   "9 mm",
+   "90 mm",
+   "900 mm",
+   "19 mm"
+  ],
+  "correct": 1,
+  "explanation": "1 cm = 10 mm, also 9 cm = 90 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 5,40 € und 2,96 €. Was kostet alles zusammen?",
+  "options": [
+   "10,80 €",
+   "8,36 €",
+   "8,46 €",
+   "8,24 €"
+  ],
+  "correct": 1,
+  "explanation": "5,40 € + 2,96 € = 8,36 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 09:38 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "09:53 Uhr",
+   "08:53 Uhr",
+   "09:03 Uhr",
+   "10:53 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "578 + 15 Minuten = 09:53 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 17:09 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "18:54 Uhr",
+   "17:04 Uhr",
+   "17:54 Uhr",
+   "16:54 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "1029 + 45 Minuten = 17:54 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 2,47 € und 7,90 €. Was kostet alles zusammen?",
+  "options": [
+   "10,19 €",
+   "4,94 €",
+   "10,37 €",
+   "10,95 €"
+  ],
+  "correct": 2,
+  "explanation": "2,47 € + 7,90 € = 10,37 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 7, 5, 3, 1, ___",
+  "options": [
+   "-2",
+   "2",
+   "4",
+   "-1"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils -2 gerechnet, also 1 − 2 = -1."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 12:06 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "11:21 Uhr",
+   "13:21 Uhr",
+   "12:21 Uhr",
+   "12:31 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "726 + 15 Minuten = 12:21 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 4,98 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,02 €",
+   "5,17 €",
+   "4,67 €",
+   "6,02 €"
+  ],
+  "correct": 0,
+  "explanation": "10,00 € − 4,98 € = 5,02 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 3,05 € und 3,64 €. Was kostet alles zusammen?",
+  "options": [
+   "6,10 €",
+   "6,54 €",
+   "6,69 €",
+   "6,76 €"
+  ],
+  "correct": 2,
+  "explanation": "3,05 € + 3,64 € = 6,69 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 9, 11, 13, 15, ___",
+  "options": [
+   "19",
+   "17",
+   "14",
+   "18"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +2 gerechnet, also 15 + 2 = 17."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 1,78 €. Du zahlst mit 6 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,22 €",
+   "4,54 €",
+   "4,22 €",
+   "3,82 €"
+  ],
+  "correct": 2,
+  "explanation": "6,00 € − 1,78 € = 4,22 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 4,57 €. Du zahlst mit 9 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,61 €",
+   "4,40 €",
+   "4,43 €",
+   "5,43 €"
+  ],
+  "correct": 2,
+  "explanation": "9,00 € − 4,57 € = 4,43 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 06:04 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "07:19 Uhr",
+   "06:29 Uhr",
+   "06:19 Uhr",
+   "05:19 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "364 + 15 Minuten = 06:19 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 8, 6, 4, 2, ___",
+  "options": [
+   "1",
+   "0",
+   "-1",
+   "-4"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils -2 gerechnet, also 2 − 2 = 0."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 6,25 €. Du zahlst mit 12 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "6,06 €",
+   "5,54 €",
+   "5,75 €",
+   "6,75 €"
+  ],
+  "correct": 2,
+  "explanation": "12,00 € − 6,25 € = 5,75 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 16:31 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "17:16 Uhr",
+   "16:16 Uhr",
+   "18:16 Uhr",
+   "17:26 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "991 + 45 Minuten = 17:16 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „5 Uhr“ als Uhrzeit?",
+  "options": [
+   "05:15 Uhr",
+   "06:00 Uhr",
+   "05:45 Uhr",
+   "05:00 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "„5 Uhr“ entspricht 05:00 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 7,09 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "2,91 €",
+   "2,79 €",
+   "3,20 €",
+   "3,91 €"
+  ],
+  "correct": 0,
+  "explanation": "10,00 € − 7,09 € = 2,91 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 12, 10, 8, 6, ___",
+  "options": [
+   "8",
+   "5",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils -2 gerechnet, also 6 − 2 = 4."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 6,24 €. Du zahlst mit 12 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,51 €",
+   "5,76 €",
+   "6,76 €",
+   "5,80 €"
+  ],
+  "correct": 1,
+  "explanation": "12,00 € − 6,24 € = 5,76 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 5, 3, 1, -1, ___",
+  "options": [
+   "-6",
+   "-3",
+   "0",
+   "-8"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils -2 gerechnet, also -1 − 2 = -3."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 16:55 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "17:25 Uhr",
+   "16:25 Uhr",
+   "18:25 Uhr",
+   "17:35 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "1015 + 30 Minuten = 17:25 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 16:34 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "16:59 Uhr",
+   "16:49 Uhr",
+   "17:49 Uhr",
+   "15:49 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "994 + 15 Minuten = 16:49 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 7,64 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "2,33 €",
+   "2,51 €",
+   "3,36 €",
+   "2,36 €"
+  ],
+  "correct": 3,
+  "explanation": "10,00 € − 7,64 € = 2,36 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „Viertel nach 1“ als Uhrzeit?",
+  "options": [
+   "01:00 Uhr",
+   "02:15 Uhr",
+   "01:15 Uhr",
+   "01:30 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„Viertel nach 1“ entspricht 01:15 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 1,07 € und 5,06 €. Was kostet alles zusammen?",
+  "options": [
+   "5,98 €",
+   "6,47 €",
+   "2,14 €",
+   "6,13 €"
+  ],
+  "correct": 3,
+  "explanation": "1,07 € + 5,06 € = 6,13 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel mm sind 6 m?",
+  "options": [
+   "60000 mm",
+   "6000 mm",
+   "600 mm",
+   "1006 mm"
+  ],
+  "correct": 1,
+  "explanation": "1 m = 1000 mm, also 6 m = 6000 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 6,46 €. Du zahlst mit 7 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,00 €",
+   "0,54 €",
+   "0,50 €",
+   "1,54 €"
+  ],
+  "correct": 1,
+  "explanation": "7,00 € − 6,46 € = 0,54 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 10, 8, 6, 4, ___",
+  "options": [
+   "3",
+   "7",
+   "2",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils -2 gerechnet, also 4 − 2 = 2."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 5, 8, 11, 14, ___",
+  "options": [
+   "20",
+   "13",
+   "17",
+   "16"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +3 gerechnet, also 14 + 3 = 17."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 16:13 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "17:28 Uhr",
+   "16:38 Uhr",
+   "16:28 Uhr",
+   "15:28 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "973 + 15 Minuten = 16:28 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 0,96 €. Du zahlst mit 6 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "6,04 €",
+   "5,04 €",
+   "4,99 €",
+   "5,26 €"
+  ],
+  "correct": 1,
+  "explanation": "6,00 € − 0,96 € = 5,04 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 1,54 €. Du zahlst mit 5 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,31 €",
+   "3,46 €",
+   "4,46 €",
+   "3,69 €"
+  ],
+  "correct": 1,
+  "explanation": "5,00 € − 1,54 € = 3,46 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „halb 2“ als Uhrzeit?",
+  "options": [
+   "01:30 Uhr",
+   "01:15 Uhr",
+   "02:30 Uhr",
+   "01:45 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„halb 2“ entspricht 01:30 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 2,36 € und 6,50 €. Was kostet alles zusammen?",
+  "options": [
+   "8,86 €",
+   "4,72 €",
+   "8,94 €",
+   "8,77 €"
+  ],
+  "correct": 0,
+  "explanation": "2,36 € + 6,50 € = 8,86 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 0,58 € und 5,11 €. Was kostet alles zusammen?",
+  "options": [
+   "1,16 €",
+   "5,58 €",
+   "5,69 €",
+   "6,03 €"
+  ],
+  "correct": 2,
+  "explanation": "0,58 € + 5,11 € = 5,69 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 2,71 €. Du zahlst mit 8 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,74 €",
+   "6,29 €",
+   "5,15 €",
+   "5,29 €"
+  ],
+  "correct": 3,
+  "explanation": "8,00 € − 2,71 € = 5,29 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 12:08 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "11:38 Uhr",
+   "12:48 Uhr",
+   "13:38 Uhr",
+   "12:38 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "728 + 30 Minuten = 12:38 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „halb 2“ als Uhrzeit?",
+  "options": [
+   "01:45 Uhr",
+   "01:30 Uhr",
+   "01:15 Uhr",
+   "02:30 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„halb 2“ entspricht 01:30 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 1,55 €. Du zahlst mit 7 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,63 €",
+   "5,44 €",
+   "6,45 €",
+   "5,45 €"
+  ],
+  "correct": 3,
+  "explanation": "7,00 € − 1,55 € = 5,45 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „Viertel vor 10“ als Uhrzeit?",
+  "options": [
+   "09:45 Uhr",
+   "10:45 Uhr",
+   "09:00 Uhr",
+   "09:30 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„Viertel vor 10“ entspricht 09:45 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 6,45 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,55 €",
+   "3,16 €",
+   "3,55 €",
+   "3,93 €"
+  ],
+  "correct": 2,
+  "explanation": "10,00 € − 6,45 € = 3,55 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 6,59 € und 6,38 €. Was kostet alles zusammen?",
+  "options": [
+   "13,18 €",
+   "13,48 €",
+   "12,87 €",
+   "12,97 €"
+  ],
+  "correct": 3,
+  "explanation": "6,59 € + 6,38 € = 12,97 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 8,42 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,58 €",
+   "2,58 €",
+   "1,46 €",
+   "1,65 €"
+  ],
+  "correct": 0,
+  "explanation": "10,00 € − 8,42 € = 1,58 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel m sind 8 km?",
+  "options": [
+   "1008 m",
+   "80000 m",
+   "800 m",
+   "8000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 8 km = 8000 m."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 8,81 €. Du zahlst mit 10 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,14 €",
+   "1,64 €",
+   "1,19 €",
+   "2,19 €"
+  ],
+  "correct": 2,
+  "explanation": "10,00 € − 8,81 € = 1,19 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 08:52 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "09:07 Uhr",
+   "10:07 Uhr",
+   "08:07 Uhr",
+   "09:17 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "532 + 15 Minuten = 09:07 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 5,98 € und 6,89 €. Was kostet alles zusammen?",
+  "options": [
+   "12,71 €",
+   "11,96 €",
+   "12,94 €",
+   "12,87 €"
+  ],
+  "correct": 3,
+  "explanation": "5,98 € + 6,89 € = 12,87 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 4,56 €. Du zahlst mit 6 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "2,44 €",
+   "1,47 €",
+   "1,15 €",
+   "1,44 €"
+  ],
+  "correct": 3,
+  "explanation": "6,00 € − 4,56 € = 1,44 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 6,08 €. Du zahlst mit 9 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,19 €",
+   "2,81 €",
+   "3,92 €",
+   "2,92 €"
+  ],
+  "correct": 3,
+  "explanation": "9,00 € − 6,08 € = 2,92 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „Viertel nach 3“ als Uhrzeit?",
+  "options": [
+   "03:00 Uhr",
+   "04:15 Uhr",
+   "03:30 Uhr",
+   "03:15 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "„Viertel nach 3“ entspricht 03:15 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 18:30 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "19:25 Uhr",
+   "20:15 Uhr",
+   "19:15 Uhr",
+   "18:15 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "1110 + 45 Minuten = 19:15 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 1, 6, 11, 16, ___",
+  "options": [
+   "21",
+   "25",
+   "13",
+   "27"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +5 gerechnet, also 16 + 5 = 21."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 2,03 €. Du zahlst mit 6 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,97 €",
+   "3,61 €",
+   "4,43 €",
+   "3,97 €"
+  ],
+  "correct": 3,
+  "explanation": "6,00 € − 2,03 € = 3,97 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 1,82 € und 6,86 €. Was kostet alles zusammen?",
+  "options": [
+   "8,50 €",
+   "3,64 €",
+   "8,88 €",
+   "8,68 €"
+  ],
+  "correct": 3,
+  "explanation": "1,82 € + 6,86 € = 8,68 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 6 m?",
+  "options": [
+   "6000 mm",
+   "60000 mm",
+   "1006 mm",
+   "600 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 m = 1000 mm, also 6 m = 6000 mm."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 5,01 € und 6,42 €. Was kostet alles zusammen?",
+  "options": [
+   "11,29 €",
+   "11,43 €",
+   "10,02 €",
+   "11,59 €"
+  ],
+  "correct": 1,
+  "explanation": "5,01 € + 6,42 € = 11,43 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 8 cm?",
+  "options": [
+   "80 mm",
+   "800 mm",
+   "8 mm",
+   "18 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 cm = 10 mm, also 8 cm = 80 mm."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wähle die richtige Antwort. Wie viel cm sind 1 m?",
+  "options": [
+   "10 cm",
+   "100 cm",
+   "101 cm",
+   "1000 cm"
+  ],
+  "correct": 1,
+  "explanation": "1 m = 100 cm, also 1 m = 100 cm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 13:03 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "13:58 Uhr",
+   "13:48 Uhr",
+   "14:48 Uhr",
+   "12:48 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "783 + 45 Minuten = 13:48 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Du kaufst zwei Dinge für 0,91 € und 0,94 €. Was kostet alles zusammen?",
+  "options": [
+   "1,82 €",
+   "2,45 €",
+   "1,79 €",
+   "1,85 €"
+  ],
+  "correct": 3,
+  "explanation": "0,91 € + 0,94 € = 1,85 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel mm sind 3 m?",
+  "options": [
+   "3000 mm",
+   "1003 mm",
+   "300 mm",
+   "30000 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 m = 1000 mm, also 3 m = 3000 mm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 14:52 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "14:22 Uhr",
+   "15:22 Uhr",
+   "15:32 Uhr",
+   "16:22 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "892 + 30 Minuten = 15:22 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 8,23 €. Du zahlst mit 9 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "0,77 €",
+   "1,77 €",
+   "0,75 €",
+   "0,88 €"
+  ],
+  "correct": 0,
+  "explanation": "9,00 € − 8,23 € = 0,77 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 14, 17, 20, 23, ___",
+  "options": [
+   "26",
+   "23",
+   "32",
+   "29"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +3 gerechnet, also 23 + 3 = 26."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 08:51 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "08:06 Uhr",
+   "09:16 Uhr",
+   "10:06 Uhr",
+   "09:06 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "531 + 15 Minuten = 09:06 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 11, 9, 7, 5, ___",
+  "options": [
+   "0",
+   "8",
+   "3",
+   "-1"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils -2 gerechnet, also 5 − 2 = 3."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 15:47 Uhr. Wie spät ist es in 45 Minuten?",
+  "options": [
+   "15:32 Uhr",
+   "17:32 Uhr",
+   "16:32 Uhr",
+   "16:42 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "947 + 45 Minuten = 16:32 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 13:47 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "14:17 Uhr",
+   "15:17 Uhr",
+   "14:27 Uhr",
+   "13:17 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "827 + 30 Minuten = 14:17 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 08:07 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "07:22 Uhr",
+   "08:32 Uhr",
+   "09:22 Uhr",
+   "08:22 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "487 + 15 Minuten = 08:22 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 17:22 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "17:37 Uhr",
+   "17:47 Uhr",
+   "16:37 Uhr",
+   "18:37 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "1042 + 15 Minuten = 17:37 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Aufgabe: Wie viel mm sind 2 cm?",
+  "options": [
+   "12 mm",
+   "2 mm",
+   "200 mm",
+   "20 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 cm = 10 mm, also 2 cm = 20 mm."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 3, 1, -1, -3, ___",
+  "options": [
+   "-5",
+   "-9",
+   "-1",
+   "-2"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils -2 gerechnet, also -3 − 2 = -5."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Du kaufst zwei Dinge für 3,60 € und 4,68 €. Was kostet alles zusammen?",
+  "options": [
+   "8,14 €",
+   "8,87 €",
+   "7,20 €",
+   "8,28 €"
+  ],
+  "correct": 3,
+  "explanation": "3,60 € + 4,68 € = 8,28 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 10, 15, 20, 25, ___",
+  "options": [
+   "30",
+   "33",
+   "38",
+   "22"
+  ],
+  "correct": 0,
+  "explanation": "Es wird jeweils +5 gerechnet, also 25 + 5 = 30."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „Viertel nach 10“ als Uhrzeit?",
+  "options": [
+   "11:15 Uhr",
+   "10:00 Uhr",
+   "10:15 Uhr",
+   "10:30 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "„Viertel nach 10“ entspricht 10:15 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 1,24 €. Du zahlst mit 4 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "2,61 €",
+   "3,76 €",
+   "2,93 €",
+   "2,76 €"
+  ],
+  "correct": 3,
+  "explanation": "4,00 € − 1,24 € = 2,76 €."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 19:07 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "20:37 Uhr",
+   "19:47 Uhr",
+   "18:37 Uhr",
+   "19:37 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "1147 + 30 Minuten = 19:37 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 8,25 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,75 €",
+   "2,90 €",
+   "2,75 €",
+   "2,70 €"
+  ],
+  "correct": 2,
+  "explanation": "11,00 € − 8,25 € = 2,75 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 4,34 € und 5,00 €. Was kostet alles zusammen?",
+  "options": [
+   "9,40 €",
+   "8,68 €",
+   "9,26 €",
+   "9,34 €"
+  ],
+  "correct": 3,
+  "explanation": "4,34 € + 5,00 € = 9,34 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Wie viel mm sind 6 cm?",
+  "options": [
+   "6 mm",
+   "16 mm",
+   "600 mm",
+   "60 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 cm = 10 mm, also 6 cm = 60 mm."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Aufgabe: Setze die Zahlenfolge fort: 6, 4, 2, 0, ___",
+  "options": [
+   "3",
+   "-6",
+   "2",
+   "-2"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils -2 gerechnet, also 0 − 2 = -2."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 7,59 € und 5,80 €. Was kostet alles zusammen?",
+  "options": [
+   "13,39 €",
+   "13,23 €",
+   "13,95 €",
+   "15,18 €"
+  ],
+  "correct": 0,
+  "explanation": "7,59 € + 5,80 € = 13,39 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 12, 10, 8, 6, ___",
+  "options": [
+   "8",
+   "3",
+   "0",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils -2 gerechnet, also 6 − 2 = 4."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „halb 9“ als Uhrzeit?",
+  "options": [
+   "08:15 Uhr",
+   "08:30 Uhr",
+   "08:45 Uhr",
+   "09:30 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„halb 9“ entspricht 08:30 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 0,25 € und 0,69 €. Was kostet alles zusammen?",
+  "options": [
+   "0,50 €",
+   "1,31 €",
+   "0,78 €",
+   "0,94 €"
+  ],
+  "correct": 3,
+  "explanation": "0,25 € + 0,69 € = 0,94 €."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel mm sind 4 cm?",
+  "options": [
+   "14 mm",
+   "400 mm",
+   "4 mm",
+   "40 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 cm = 10 mm, also 4 cm = 40 mm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Aufgabe: Es ist 19:45 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "19:15 Uhr",
+   "21:15 Uhr",
+   "20:15 Uhr",
+   "20:25 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "1185 + 30 Minuten = 20:15 Uhr."
+ },
+ {
+  "topic": "Längen",
+  "question": "Teste dein Wissen: Wie viel cm sind 6 m?",
+  "options": [
+   "600 cm",
+   "6000 cm",
+   "106 cm",
+   "60 cm"
+  ],
+  "correct": 0,
+  "explanation": "1 m = 100 cm, also 6 m = 600 cm."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Wähle die richtige Antwort. Es ist 07:06 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "06:36 Uhr",
+   "07:46 Uhr",
+   "07:36 Uhr",
+   "08:36 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "426 + 30 Minuten = 07:36 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Du kaufst zwei Dinge für 6,74 € und 6,12 €. Was kostet alles zusammen?",
+  "options": [
+   "12,86 €",
+   "13,09 €",
+   "13,48 €",
+   "12,74 €"
+  ],
+  "correct": 0,
+  "explanation": "6,74 € + 6,12 € = 12,86 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 2, 4, 6, 8, ___",
+  "options": [
+   "14",
+   "10",
+   "12",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +2 gerechnet, also 8 + 2 = 10."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Setze die Zahlenfolge fort: 6, 9, 12, 15, ___",
+  "options": [
+   "24",
+   "18",
+   "23",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils +3 gerechnet, also 15 + 3 = 18."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Teste dein Wissen: Setze die Zahlenfolge fort: 1, -1, -3, -5, ___",
+  "options": [
+   "-5",
+   "-7",
+   "-11",
+   "-9"
+  ],
+  "correct": 1,
+  "explanation": "Es wird jeweils -2 gerechnet, also -5 − 2 = -7."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 20:08 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "21:38 Uhr",
+   "20:38 Uhr",
+   "20:48 Uhr",
+   "19:38 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "1208 + 30 Minuten = 20:38 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Wähle die richtige Antwort. Wie schreibt man „5 Uhr“ als Uhrzeit?",
+  "options": [
+   "05:00 Uhr",
+   "05:45 Uhr",
+   "05:15 Uhr",
+   "06:00 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„5 Uhr“ entspricht 05:00 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „Viertel nach 6“ als Uhrzeit?",
+  "options": [
+   "06:00 Uhr",
+   "06:15 Uhr",
+   "07:15 Uhr",
+   "06:30 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„Viertel nach 6“ entspricht 06:15 Uhr."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 9, 7, 5, 3, ___",
+  "options": [
+   "-4",
+   "3",
+   "4",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "Es wird jeweils -2 gerechnet, also 3 − 2 = 1."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 13:40 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "13:55 Uhr",
+   "12:55 Uhr",
+   "13:05 Uhr",
+   "14:55 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "820 + 15 Minuten = 13:55 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „Viertel vor 2“ als Uhrzeit?",
+  "options": [
+   "01:30 Uhr",
+   "01:45 Uhr",
+   "01:00 Uhr",
+   "02:45 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„Viertel vor 2“ entspricht 01:45 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 06:08 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "06:33 Uhr",
+   "07:23 Uhr",
+   "06:23 Uhr",
+   "05:23 Uhr"
+  ],
+  "correct": 2,
+  "explanation": "368 + 15 Minuten = 06:23 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 5,22 € und 2,07 €. Was kostet alles zusammen?",
+  "options": [
+   "7,47 €",
+   "10,44 €",
+   "7,29 €",
+   "7,13 €"
+  ],
+  "correct": 2,
+  "explanation": "5,22 € + 2,07 € = 7,29 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 2,56 €. Du zahlst mit 8 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "5,13 €",
+   "5,44 €",
+   "5,84 €",
+   "6,44 €"
+  ],
+  "correct": 1,
+  "explanation": "8,00 € − 2,56 € = 5,44 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Aufgabe: Wie schreibt man „halb 9“ als Uhrzeit?",
+  "options": [
+   "08:30 Uhr",
+   "09:30 Uhr",
+   "08:15 Uhr",
+   "08:45 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "„halb 9“ entspricht 08:30 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Es ist 20:52 Uhr. Wie spät ist es in 30 Minuten?",
+  "options": [
+   "21:22 Uhr",
+   "21:32 Uhr",
+   "20:22 Uhr",
+   "22:22 Uhr"
+  ],
+  "correct": 0,
+  "explanation": "1252 + 30 Minuten = 21:22 Uhr."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „3 Uhr“ als Uhrzeit?",
+  "options": [
+   "04:00 Uhr",
+   "03:45 Uhr",
+   "03:15 Uhr",
+   "03:00 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "„3 Uhr“ entspricht 03:00 Uhr."
+ },
+ {
+  "topic": "Uhrzeit rechnen",
+  "question": "Teste dein Wissen: Es ist 19:42 Uhr. Wie spät ist es in 15 Minuten?",
+  "options": [
+   "20:57 Uhr",
+   "18:57 Uhr",
+   "19:07 Uhr",
+   "19:57 Uhr"
+  ],
+  "correct": 3,
+  "explanation": "1182 + 15 Minuten = 19:57 Uhr."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Du kaufst zwei Dinge für 3,56 € und 3,46 €. Was kostet alles zusammen?",
+  "options": [
+   "7,02 €",
+   "7,43 €",
+   "7,12 €",
+   "6,83 €"
+  ],
+  "correct": 0,
+  "explanation": "3,56 € + 3,46 € = 7,02 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 5,72 €. Du zahlst mit 6 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "1,28 €",
+   "0,00 €",
+   "0,28 €",
+   "0,32 €"
+  ],
+  "correct": 2,
+  "explanation": "6,00 € − 5,72 € = 0,28 €."
+ },
+ {
+  "topic": "Zahlenfolgen",
+  "question": "Wähle die richtige Antwort. Setze die Zahlenfolge fort: 2, 4, 6, 8, ___",
+  "options": [
+   "9",
+   "14",
+   "10",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Es wird jeweils +2 gerechnet, also 8 + 2 = 10."
+ },
+ {
+  "topic": "Geld",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 4,59 €. Du zahlst mit 8 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "3,41 €",
+   "3,80 €",
+   "4,41 €",
+   "3,40 €"
+  ],
+  "correct": 0,
+  "explanation": "8,00 € − 4,59 € = 3,41 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Aufgabe: Eine Ware kostet 1,94 €. Du zahlst mit 6 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,06 €",
+   "4,48 €",
+   "3,70 €",
+   "5,06 €"
+  ],
+  "correct": 0,
+  "explanation": "6,00 € − 1,94 € = 4,06 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Eine Ware kostet 8,10 €. Du zahlst mit 14 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "6,34 €",
+   "5,62 €",
+   "5,90 €",
+   "6,90 €"
+  ],
+  "correct": 2,
+  "explanation": "14,00 € − 8,10 € = 5,90 €."
+ },
+ {
+  "topic": "Geld",
+  "question": "Teste dein Wissen: Eine Ware kostet 7,49 €. Du zahlst mit 11 €. Wie viel Wechselgeld bekommst du?",
+  "options": [
+   "4,51 €",
+   "3,51 €",
+   "3,33 €",
+   "3,86 €"
+  ],
+  "correct": 1,
+  "explanation": "11,00 € − 7,49 € = 3,51 €."
+ },
+ {
+  "topic": "Uhrzeit",
+  "question": "Teste dein Wissen: Wie schreibt man „halb 9“ als Uhrzeit?",
+  "options": [
+   "08:15 Uhr",
+   "08:30 Uhr",
+   "09:30 Uhr",
+   "08:45 Uhr"
+  ],
+  "correct": 1,
+  "explanation": "„halb 9“ entspricht 08:30 Uhr."
+ }
+]

@@ -3,6 +3,7 @@ import {
   ArrowRight,
   Award,
   Download,
+  MoveRight,
   Sparkles,
   TrendingDown,
   TrendingUp,
@@ -14,6 +15,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import ZielRechner from "./ZielRechner";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
@@ -86,7 +88,17 @@ export default async function NotenPage() {
     const oralGs = s.grades.filter((g) => g.type === "muendlich");
     const writtenAvg = writtenGs.length ? weightedAvg(writtenGs) : null;
     const oralAvg = oralGs.length ? weightedAvg(oralGs) : null;
-    return { ...s, avg, writtenAvg, oralAvg };
+    // Trend: Ø der letzten 3 Noten vs. Ø der Noten davor (grades sind date-desc sortiert)
+    const recent = s.grades.slice(0, 3);
+    const older = s.grades.slice(3);
+    let trend: "up" | "down" | "flat" | null = null;
+    if (older.length > 0 && recent.length > 0) {
+      const recentAvg = recent.reduce((sum, g) => sum + g.value, 0) / recent.length;
+      const olderAvg = older.reduce((sum, g) => sum + g.value, 0) / older.length;
+      const diff = recentAvg - olderAvg; // kleiner = besser
+      trend = diff < -0.15 ? "up" : diff > 0.15 ? "down" : "flat";
+    }
+    return { ...s, avg, writtenAvg, oralAvg, trend };
   });
 
   const sorted = [...subjects].sort((a, b) => a.avg - b.avg);
@@ -161,6 +173,24 @@ export default async function NotenPage() {
                           style={{ backgroundColor: s.subject.color }}
                         />
                         <p className="text-base font-bold tracking-tight">{s.subject.name}</p>
+                        {s.trend === "up" && (
+                          <span className="flex items-center gap-1 text-xs font-semibold text-success" title="Ø der letzten 3 Noten besser als davor">
+                            <TrendingUp className="size-3.5" />
+                            Aufwärts
+                          </span>
+                        )}
+                        {s.trend === "down" && (
+                          <span className="flex items-center gap-1 text-xs font-semibold text-danger" title="Ø der letzten 3 Noten schlechter als davor">
+                            <TrendingDown className="size-3.5" />
+                            Abwärts
+                          </span>
+                        )}
+                        {s.trend === "flat" && (
+                          <span className="flex items-center gap-1 text-xs font-semibold text-muted-fg" title="Ø der letzten 3 Noten etwa gleich wie davor">
+                            <MoveRight className="size-3.5" />
+                            Stabil
+                          </span>
+                        )}
                       </div>
                       <p className="mt-0.5 text-xs text-muted-fg">{s.teacher}</p>
                     </div>
@@ -204,6 +234,14 @@ export default async function NotenPage() {
               </ul>
             </CardBody>
           </Card>
+
+          <ZielRechner
+            faecher={subjects.map((s) => ({
+              id: s.subject.id,
+              name: s.subject.name,
+              values: s.grades.map((g) => g.value),
+            }))}
+          />
 
           <section className="grid gap-6 lg:grid-cols-2">
             <Card>

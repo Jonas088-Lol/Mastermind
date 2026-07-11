@@ -1,10 +1,10 @@
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft, Eye, Pencil, Trash2, Tag, BookOpen } from "lucide-react";
+import { ArrowLeft, Copy, Eye, Pencil, Trash2, Tag, BookOpen } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { deleteWikiEntry, incrementViewCount } from "../actions";
+import { deleteWikiEntry, duplicateWikiEntry, incrementViewCount } from "../actions";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -61,6 +61,16 @@ export default async function LernzettelDetailPage({ params }: Props) {
           <ArrowLeft className="size-4" />
         </Link>
         <span className="flex-1 text-sm text-muted-fg">Schul-Wiki</span>
+        {canEdit && (
+          <form action={async () => { "use server"; await duplicateWikiEntry(id); }}>
+            <button
+              type="submit"
+              className="flex items-center gap-1.5 rounded-xl border border-border px-3 py-1.5 text-xs font-semibold text-muted-fg hover:bg-muted transition-colors"
+            >
+              <Copy className="size-3.5" /> Duplizieren
+            </button>
+          </form>
+        )}
         {canEdit && (
           <Link
             href={`/app/lernzettel/${id}/bearbeiten`}

@@ -6,6 +6,7 @@ import {
   ArrowLeft,
   ChevronDown,
   ChevronUp,
+  Copy,
   FileText,
   MoreHorizontal,
   Pencil,
@@ -24,6 +25,8 @@ import {
   createPage,
   deletePage,
   deleteNotebook,
+  duplicatePage,
+  movePage,
 } from "../../actions";
 
 interface Page {
@@ -96,6 +99,14 @@ export function PageEditor({
 
   function handleNewPage() {
     startTransition(() => createPage(notebookId));
+  }
+
+  function handleDuplicatePage(page: Page) {
+    startTransition(() => duplicatePage(page.id));
+  }
+
+  function handleMovePage(page: Page, direction: "up" | "down") {
+    startTransition(() => movePage(page.id, direction));
   }
 
   function handleDeletePage(page: Page) {
@@ -205,6 +216,32 @@ export function PageEditor({
 
                       {/* Page actions (hover) */}
                       <span className="ml-auto hidden shrink-0 items-center gap-0.5 group-hover:flex">
+                        <button
+                          type="button"
+                          onClick={(e) => { e.preventDefault(); handleMovePage(page, "up"); }}
+                          disabled={idx === 0}
+                          className="grid size-5 place-items-center text-muted-fg hover:text-fg disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:text-muted-fg"
+                          title="Nach oben verschieben"
+                        >
+                          <ChevronUp className="size-2.5" strokeWidth={2} />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={(e) => { e.preventDefault(); handleMovePage(page, "down"); }}
+                          disabled={idx === allPages.length - 1}
+                          className="grid size-5 place-items-center text-muted-fg hover:text-fg disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:text-muted-fg"
+                          title="Nach unten verschieben"
+                        >
+                          <ChevronDown className="size-2.5" strokeWidth={2} />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={(e) => { e.preventDefault(); handleDuplicatePage(page); }}
+                          className="grid size-5 place-items-center text-muted-fg hover:text-fg"
+                          title="Seite duplizieren"
+                        >
+                          <Copy className="size-2.5" strokeWidth={2} />
+                        </button>
                         <button
                           type="button"
                           onClick={(e) => { e.preventDefault(); startPageRename(page); }}

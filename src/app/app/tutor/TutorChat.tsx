@@ -17,6 +17,51 @@ import { cn } from "@/lib/utils";
 
 type Role = "user" | "assistant";
 
+const SUBJECTS = [
+  "Allgemein",
+  "Mathe",
+  "Deutsch",
+  "Englisch",
+  "Biologie",
+  "Chemie",
+  "Physik",
+  "Geschichte",
+  "Erdkunde",
+] as const;
+
+const PRESETS: { label: string; prompt: string }[] = [
+  {
+    label: "🧒 Erklär's mir einfach",
+    prompt:
+      "Erkläre mir das folgende Thema so einfach wie möglich, als wäre ich deutlich jünger. Nutze Alltagsbeispiele und kurze Sätze. Thema: ",
+  },
+  {
+    label: "📝 Frag mich ab (Quiz)",
+    prompt:
+      "Frag mich mit einem kurzen Quiz ab: Stelle mir nacheinander 5 Fragen zum folgenden Thema, warte jeweils auf meine Antwort und gib mir danach Feedback. Thema: ",
+  },
+  {
+    label: "🧮 Rechne Schritt für Schritt vor",
+    prompt:
+      "Rechne mir die folgende Aufgabe Schritt für Schritt vor und erkläre bei jedem Schritt kurz, warum du ihn machst. Aufgabe: ",
+  },
+  {
+    label: "📖 Fasse zusammen",
+    prompt:
+      "Fasse mir das folgende Thema oder den folgenden Text kompakt zusammen: erst 3 Kernaussagen als Stichpunkte, dann eine kurze Zusammenfassung in eigenen Worten. Thema/Text: ",
+  },
+  {
+    label: "🇬🇧 Auf Englisch üben",
+    prompt:
+      "Lass uns auf Englisch üben: Führe eine einfache Unterhaltung mit mir auf Englisch und korrigiere meine Fehler freundlich auf Deutsch. Thema: ",
+  },
+  {
+    label: "🎯 Prüfungsmodus (streng)",
+    prompt:
+      "Prüfungsmodus: Stelle mir anspruchsvolle Prüfungsfragen zum folgenden Thema, bewerte meine Antworten streng aber fair und sage mir am Ende, wo ich noch Lücken habe. Thema: ",
+  },
+];
+
 interface Message {
   id: string;
   role: Role;
@@ -48,6 +93,7 @@ export function TutorChat({
   const [error, setError] = useState<string | null>(null);
   const [quotaUsed, setQuotaUsed] = useState(initialQuotaUsed);
   const [configured, setConfigured] = useState(isAiConfigured);
+  const [subject, setSubject] = useState<string>("Allgemein");
   const scrollRef = useRef<HTMLOListElement>(null);
   const abortRef = useRef<AbortController | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -215,6 +261,12 @@ export function TutorChat({
     }
   }
 
+  function applyPreset(prompt: string) {
+    const prefix = subject !== "Allgemein" ? `Fach: ${subject} — ` : "";
+    setInput(prefix + prompt);
+    textareaRef.current?.focus();
+  }
+
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     void send(input);
@@ -284,6 +336,42 @@ export function TutorChat({
       )}
 
       <div className="border-t border-border bg-bg p-3">
+        {messages.length === 0 && (
+          <div className="mb-3 space-y-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <label
+                htmlFor="tutor-subject"
+                className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg"
+              >
+                Fach
+              </label>
+              <select
+                id="tutor-subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                className="rounded-xl border border-border bg-surface px-2 py-1 text-xs text-fg focus:outline-none focus:border-fg/30"
+              >
+                {SUBJECTS.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {PRESETS.map((p) => (
+                <button
+                  key={p.label}
+                  type="button"
+                  onClick={() => applyPreset(p.prompt)}
+                  className="rounded-xl border border-border bg-surface px-3 py-1.5 text-xs text-fg transition-colors hover:border-fg/30 hover:bg-surface-2"
+                >
+                  {p.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         <form
           onSubmit={onSubmit}
           className="border border-border bg-surface focus-within:border-fg/30"

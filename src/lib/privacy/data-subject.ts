@@ -40,8 +40,8 @@ export async function exportUserData(userId: string): Promise<Record<string, unk
     prisma.homeworkCompletion.findMany({ where: { studentId: userId }, select: { done: true, doneAt: true } }).catch(() => []),
     prisma.userConsent.findUnique({ where: { userId } }).catch(() => null),
     prisma.ageVerification.findUnique({ where: { userId } }).catch(() => null),
-    prisma.coinLog.findMany({ where: { userId }, select: { amount: true, reason: true, createdAt: true } }).catch(() => []),
-    prisma.xpLog.findMany({ where: { userId }, select: { amount: true, reason: true, createdAt: true } }).catch(() => []),
+    prisma.coinLog.findMany({ where: { userId }, select: { amount: true, reason: true, createdAt: true }, orderBy: { createdAt: "desc" }, take: 1000 }).catch(() => []),
+    prisma.xpLog.findMany({ where: { userId }, select: { amount: true, reason: true, createdAt: true }, orderBy: { createdAt: "desc" }, take: 1000 }).catch(() => []),
     prisma.userAchievement.findMany({ where: { userId }, select: { unlockedAt: true } }).catch(() => []),
   ]);
 

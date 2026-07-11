@@ -92,6 +92,29 @@ export default async function UebungenPage() {
         </section>
       )}
 
+      <div className="grid gap-3 sm:grid-cols-2">
+        <Link
+          href="/app/uebungen/stats"
+          className="group flex flex-col gap-3 border bg-violet-500/10 p-5 text-violet-600 transition-all hover:shadow-md border-violet-200 dark:border-violet-800 dark:text-violet-400"
+        >
+          <span className="text-3xl">📊</span>
+          <div>
+            <p className="font-bold">Meine Statistik</p>
+            <p className="mt-0.5 text-xs opacity-70">Deine Quote, Fächer-Vergleich und Aktivität</p>
+          </div>
+        </Link>
+        <Link
+          href="/app/uebungen/wiederholen"
+          className="group flex flex-col gap-3 border bg-rose-500/10 p-5 text-rose-600 transition-all hover:shadow-md border-rose-200 dark:border-rose-800 dark:text-rose-400"
+        >
+          <span className="text-3xl">🔁</span>
+          <div>
+            <p className="font-bold">Fehler wiederholen</p>
+            <p className="mt-0.5 text-xs opacity-70">Zuletzt falsch beantwortete Fragen üben</p>
+          </div>
+        </Link>
+      </div>
+
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {SUBJECTS.map((s) => {
           const total = countMap[s.key] ?? 0;

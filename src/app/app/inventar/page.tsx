@@ -29,6 +29,17 @@ const RARITY_BORDER: Record<string, string> = {
   mythic:    "border-danger/40",
 };
 
+// Anzeige-Reihenfolge + deutsche Labels der Item-Kategorien
+const CATEGORY_SECTIONS: { key: string; label: string; hint: string }[] = [
+  { key: "cosmetic",      label: "Kosmetik",          hint: "Rahmen, Hintergründe, Badges & mehr" },
+  { key: "title",         label: "Titel",             hint: "Freigeschaltete Profil-Titel" },
+  { key: "powerup",       label: "Power-Ups",         hint: "Einmalige Verbrauchsgegenstände" },
+  { key: "booster",       label: "Booster",           hint: "Gekaufte XP-Booster" },
+  { key: "streak_freeze", label: "Streak-Schutz",     hint: "Schutz-Gegenstände" },
+  { key: "bundle",        label: "Pakete",            hint: "Gekaufte Bundles" },
+  { key: "sonstiges",     label: "Sonstiges",         hint: "Weitere Gegenstände" },
+];
+
 function timeLeft(expiresAt: Date, now: Date): string {
   const ms = expiresAt.getTime() - now.getTime();
   if (ms <= 0) return "Abgelaufen";
@@ -66,6 +77,17 @@ export default async function InventarPage() {
 
   const streakFreezes = user?.streakFreezes ?? 0;
   const totalItems = inventoryItems.reduce((sum, i) => sum + i.quantity, 0);
+
+  // Gruppierung nach Shop-Kategorie
+  const grouped = new Map<string, typeof inventoryItems>();
+  for (const item of inventoryItems) {
+    const def = SHOP_ITEMS.find((s) => s.slug === item.itemSlug);
+    const key = def?.category ?? "sonstiges";
+    const list = grouped.get(key) ?? [];
+    list.push(item);
+    grouped.set(key, list);
+  }
+  const sections = CATEGORY_SECTIONS.filter((c) => (grouped.get(c.key)?.length ?? 0) > 0);
 
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-8">
@@ -188,8 +210,21 @@ export default async function InventarPage() {
             </Link>
           </div>
         ) : (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {inventoryItems.map((item) => {
+          <div className="flex flex-col gap-6">
+            {sections.map((section) => {
+              const items = grouped.get(section.key)!;
+              const sectionQty = items.reduce((sum, i) => sum + i.quantity, 0);
+              return (
+                <div key={section.key}>
+                  <div className="mb-2 flex items-center gap-2">
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-muted-fg">{section.label}</h3>
+                    <span className="inline-flex items-center rounded-full bg-surface-2 px-2 py-0.5 font-mono text-[10px] font-bold text-muted-fg">
+                      {sectionQty}
+                    </span>
+                    <span className="hidden text-xs text-muted-fg/70 sm:inline">· {section.hint}</span>
+                  </div>
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    {items.map((item) => {
               const def = SHOP_ITEMS.find((s) => s.slug === item.itemSlug);
               const name = def?.name ?? item.itemSlug;
               const icon = def?.icon ?? "📦";
@@ -240,6 +275,10 @@ export default async function InventarPage() {
                     {isExpired && (
                       <span className="text-[10px] text-danger">Abgelaufen</span>
                     )}
+                  </div>
+                </div>
+              );
+            })}
                   </div>
                 </div>
               );

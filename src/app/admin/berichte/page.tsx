@@ -297,24 +297,42 @@ export default async function AdminBerichtePage() {
         </Card>
       </div>
 
-      {/* Export Notice */}
+      {/* Daten-Export */}
       <Card>
         <CardHeader>
           <div>
-            <CardTitle>Datenexport</CardTitle>
+            <CardTitle>Daten-Export</CardTitle>
             <p className="mt-1 text-sm text-muted-fg">
-              Exportiere Berichte als CSV oder PDF
+              Schuldaten als CSV herunterladen (für Excel geeignet)
             </p>
           </div>
           <Download className="size-5 text-muted-fg" strokeWidth={1.75} />
         </CardHeader>
-        <CardBody>
-          <div className="flex items-center gap-3 rounded border border-dashed border-border bg-surface px-4 py-4">
-            <Download className="size-4 shrink-0 text-muted-fg" strokeWidth={1.75} />
-            <p className="text-sm text-muted-fg">
-              <span className="font-semibold text-fg">CSV-Export</span> in Kürze verfügbar — Notenübersichten, Abgabestatistiken und Fehlzeitenreports können dann direkt heruntergeladen werden.
-            </p>
+        <CardBody className="flex flex-col gap-4">
+          <div className="grid gap-3 sm:grid-cols-3">
+            {[
+              { href: "/api/admin/export/nutzer", label: "Nutzerliste", sub: "Name, E-Mail, Rolle, Klasse" },
+              { href: "/api/admin/export/noten", label: "Noten", sub: "Schüler, Fach, Note, Art" },
+              { href: "/api/admin/export/fehlzeiten", label: "Fehlzeiten", sub: "Anwesenheit & Gründe" },
+            ].map((e) => (
+              <a
+                key={e.href}
+                href={e.href}
+                download
+                className="flex items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3 transition-colors hover:border-brand"
+              >
+                <Download className="size-4 shrink-0 text-brand" strokeWidth={1.75} />
+                <span className="min-w-0">
+                  <span className="block text-sm font-semibold text-fg">{e.label}</span>
+                  <span className="block truncate text-[11px] text-muted-fg">{e.sub}</span>
+                </span>
+              </a>
+            ))}
           </div>
+          <p className="text-[11px] text-muted-fg">
+            Hinweis: Die Exporte enthalten personenbezogene Daten. Bitte DSGVO-konform behandeln —
+            nur für schulische Zwecke verwenden, sicher speichern und nach Gebrauch löschen.
+          </p>
         </CardBody>
       </Card>
     </div>

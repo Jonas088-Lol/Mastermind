@@ -73,6 +73,32 @@ export async function deleteWikiEntry(id: string) {
   redirect("/app/lernzettel");
 }
 
+export async function duplicateWikiEntry(id: string) {
+  const session = await getSession();
+  if (!session || !session.schoolId) redirect("/login");
+
+  const entry = await prisma.schoolWikiEntry.findUnique({ where: { id } });
+  if (!entry || entry.schoolId !== session.schoolId) return;
+
+  const role = effectiveRole(session);
+  const canDuplicate = entry.authorId === session.userId || role === "admin" || role === "teacher";
+  if (!canDuplicate) return;
+
+  const copy = await prisma.schoolWikiEntry.create({
+    data: {
+      title: `${entry.title} (Kopie)`.slice(0, 200),
+      content: entry.content,
+      subject: entry.subject,
+      tags: entry.tags,
+      authorId: session.userId,
+      schoolId: session.schoolId,
+    },
+  });
+
+  revalidatePath("/app/lernzettel");
+  redirect(`/app/lernzettel/${copy.id}`);
+}
+
 export async function incrementViewCount(id: string) {
   await prisma.schoolWikiEntry.update({
     where: { id },

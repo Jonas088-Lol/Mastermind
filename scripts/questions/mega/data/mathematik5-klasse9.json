@@ -1,0 +1,6002 @@
+[
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x − 6)²",
+  "options": [
+   "x² − 12x − 36",
+   "x² − 36",
+   "x² + 12x + 36",
+   "x² − 12x + 36"
+  ],
+  "correct": 3,
+  "explanation": "2. binomische Formel: (x − 6)² = x² − 2·6·x + 6² = x² − 12x + 36."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 2x + 3?",
+  "options": [
+   "(1 | 3)",
+   "(2 | 5)",
+   "(1 | 5)",
+   "(1 | 6)"
+  ],
+  "correct": 2,
+  "explanation": "f(1) = 2 · 1 + 3 = 5, also liegt (1 | 5) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √8 · √32",
+  "options": [
+   "16",
+   "20",
+   "18",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "√8 · √32 = √(8 · 32) = √256 = 16."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 12 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "24 cm",
+   "26 cm",
+   "28 cm",
+   "33 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 12/3 = 7 · 4 = 28 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 69²",
+  "options": [
+   "4761",
+   "4763",
+   "4831",
+   "4759"
+  ],
+  "correct": 0,
+  "explanation": "69² = (70 − 1)² = 4900 − 140 + 1 = 4761."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 17²",
+  "options": [
+   "283",
+   "309",
+   "289",
+   "295"
+  ],
+  "correct": 2,
+  "explanation": "17² = (20 − 3)² = 400 − 120 + 9 = 289."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x − 9)²",
+  "options": [
+   "x² − 81",
+   "x² − 18x − 81",
+   "x² − 18x + 81",
+   "x² + 18x + 81"
+  ],
+  "correct": 2,
+  "explanation": "2. binomische Formel: (x − 9)² = x² − 2·9·x + 9² = x² − 18x + 81."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 15 cm, ZB = 8 cm. Wie lang ist ZB'?",
+  "options": [
+   "19 cm",
+   "24 cm",
+   "26 cm",
+   "21 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 8 · 15/5 = 8 · 3 = 24 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 10 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "10 cm",
+   "14 cm",
+   "11 cm",
+   "15 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 10/2 = 3 · 5 = 15 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x + 5)²",
+  "options": [
+   "x² + 25",
+   "x² + 10x + 25",
+   "x² + 10x + 10",
+   "x² + 5x + 25"
+  ],
+  "correct": 1,
+  "explanation": "1. binomische Formel: (x + 5)² = x² + 2·5·x + 5² = x² + 10x + 25."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -1x − 8?",
+  "options": [
+   "(0 | -8)",
+   "(0 | -10)",
+   "(0 | -7)",
+   "(1 | -8)"
+  ],
+  "correct": 0,
+  "explanation": "f(0) = -1 · 0 − 8 = -8, also liegt (0 | -8) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -3x − 5?",
+  "options": [
+   "(-6 | 14)",
+   "(-6 | 13)",
+   "(-6 | 11)",
+   "(-5 | 13)"
+  ],
+  "correct": 1,
+  "explanation": "f(-6) = -3 · -6 − 5 = 13, also liegt (-6 | 13) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 52²",
+  "options": [
+   "2708",
+   "2700",
+   "2704",
+   "2754"
+  ],
+  "correct": 2,
+  "explanation": "52² = (50 + 2)² = 2500 + 200 + 4 = 2704."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 8)²",
+  "options": [
+   "x² + 16x + 64",
+   "x² + 16x + 16",
+   "x² + 8x + 64",
+   "x² + 64"
+  ],
+  "correct": 0,
+  "explanation": "1. binomische Formel: (x + 8)² = x² + 2·8·x + 8² = x² + 16x + 64."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-4 | 12) und Q(-3 | 10). Wie groß ist die Steigung m?",
+  "options": [
+   "1",
+   "-4",
+   "3",
+   "-2"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (10 − (12)) / (-3 − (-4)) = -2/1 = -2."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 53²",
+  "options": [
+   "2809",
+   "2815",
+   "2859",
+   "2803"
+  ],
+  "correct": 0,
+  "explanation": "53² = (50 + 3)² = 2500 + 300 + 9 = 2809."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -3x + 5?",
+  "options": [
+   "(-1 | 9)",
+   "(-1 | 6)",
+   "(-1 | 8)",
+   "(0 | 8)"
+  ],
+  "correct": 2,
+  "explanation": "f(-1) = -3 · -1 + 5 = 8, also liegt (-1 | 8) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √400 : √16",
+  "options": [
+   "5",
+   "2",
+   "8",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "√400 : √16 = √(400 / 16) = √25 = 5."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -2x − 4?",
+  "options": [
+   "(-1 | -1)",
+   "(0 | -2)",
+   "(-1 | -4)",
+   "(-1 | -2)"
+  ],
+  "correct": 3,
+  "explanation": "f(-1) = -2 · -1 − 4 = -2, also liegt (-1 | -2) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 8 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "33 cm",
+   "29 cm",
+   "28 cm",
+   "22 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 8/2 = 7 · 4 = 28 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-5 | 14) und Q(-3 | 10). Wie groß ist die Steigung m?",
+  "options": [
+   "-3",
+   "2",
+   "0",
+   "-2"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (10 − (14)) / (-3 − (-5)) = -4/2 = -2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 4x + 7?",
+  "options": [
+   "(6 | 31)",
+   "(7 | 31)",
+   "(6 | 32)",
+   "(6 | 29)"
+  ],
+  "correct": 0,
+  "explanation": "f(6) = 4 · 6 + 7 = 31, also liegt (6 | 31) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 24 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "17 cm",
+   "25 cm",
+   "20 cm",
+   "16 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 24/6 = 5 · 4 = 20 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(1 | 2) und Q(4 | 5). Wie groß ist die Steigung m?",
+  "options": [
+   "1",
+   "-2",
+   "0",
+   "-4"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (5 − (2)) / (4 − (1)) = 3/3 = 1."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x + 9)²",
+  "options": [
+   "x² + 81",
+   "x² + 18x + 81",
+   "x² + 18x + 18",
+   "x² + 9x + 81"
+  ],
+  "correct": 1,
+  "explanation": "1. binomische Formel: (x + 9)² = x² + 2·9·x + 9² = x² + 18x + 81."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(3 | 11) und Q(7 | 19). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "-1",
+   "0",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (19 − (11)) / (7 − (3)) = 8/4 = 2."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 2)(x − 2)",
+  "options": [
+   "x² − 4x + 4",
+   "x² + 4",
+   "x² − 4",
+   "x² − 4x − 4"
+  ],
+  "correct": 2,
+  "explanation": "3. binomische Formel: (x + 2)(x − 2) = x² − 2² = x² − 4."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 3x − 6?",
+  "options": [
+   "(-2 | -11)",
+   "(-2 | -14)",
+   "(-1 | -12)",
+   "(-2 | -12)"
+  ],
+  "correct": 3,
+  "explanation": "f(-2) = 3 · -2 − 6 = -12, also liegt (-2 | -12) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 16 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "12 cm",
+   "8 cm",
+   "16 cm",
+   "6 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 16/4 = 3 · 4 = 12 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = 3x + 2?",
+  "options": [
+   "(2 | 6)",
+   "(3 | 8)",
+   "(2 | 8)",
+   "(2 | 9)"
+  ],
+  "correct": 2,
+  "explanation": "f(2) = 3 · 2 + 2 = 8, also liegt (2 | 8) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(0 | -3) und Q(2 | -9). Wie groß ist die Steigung m?",
+  "options": [
+   "-3",
+   "4",
+   "-1",
+   "-2"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-9 − (-3)) / (2 − (0)) = -6/2 = -3."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 2x − 2?",
+  "options": [
+   "(3 | 2)",
+   "(3 | 5)",
+   "(3 | 4)",
+   "(4 | 4)"
+  ],
+  "correct": 2,
+  "explanation": "f(3) = 2 · 3 − 2 = 4, also liegt (3 | 4) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 12)(x − 12)",
+  "options": [
+   "x² − 24x − 144",
+   "x² − 144",
+   "x² + 144",
+   "x² − 24x + 144"
+  ],
+  "correct": 1,
+  "explanation": "3. binomische Formel: (x + 12)(x − 12) = x² − 12² = x² − 144."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √3 · √12",
+  "options": [
+   "8",
+   "2",
+   "9",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "√3 · √12 = √(3 · 12) = √36 = 6."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 93²",
+  "options": [
+   "8643",
+   "8649",
+   "8739",
+   "8655"
+  ],
+  "correct": 1,
+  "explanation": "93² = (90 + 3)² = 8100 + 540 + 9 = 8649."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 10 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "42 cm",
+   "45 cm",
+   "50 cm",
+   "51 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 10/2 = 9 · 5 = 45 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 36 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "24 cm",
+   "28 cm",
+   "23 cm",
+   "33 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 36/9 = 7 · 4 = 28 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 1x + 7?",
+  "options": [
+   "(0 | 5)",
+   "(0 | 7)",
+   "(0 | 8)",
+   "(1 | 7)"
+  ],
+  "correct": 1,
+  "explanation": "f(0) = 1 · 0 + 7 = 7, also liegt (0 | 7) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √2 · √128",
+  "options": [
+   "16",
+   "19",
+   "12",
+   "18"
+  ],
+  "correct": 0,
+  "explanation": "√2 · √128 = √(2 · 128) = √256 = 16."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x − 12)²",
+  "options": [
+   "x² − 144",
+   "x² + 24x + 144",
+   "x² − 24x − 144",
+   "x² − 24x + 144"
+  ],
+  "correct": 3,
+  "explanation": "2. binomische Formel: (x − 12)² = x² − 2·12·x + 12² = x² − 24x + 144."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 18 cm, ZB = 4 cm. Wie lang ist ZB'?",
+  "options": [
+   "5 cm",
+   "12 cm",
+   "8 cm",
+   "6 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 4 · 18/9 = 4 · 2 = 8 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 28²",
+  "options": [
+   "784",
+   "780",
+   "788",
+   "814"
+  ],
+  "correct": 0,
+  "explanation": "28² = (30 − 2)² = 900 − 120 + 4 = 784."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 2x − 6?",
+  "options": [
+   "(-5 | -18)",
+   "(-6 | -17)",
+   "(-6 | -18)",
+   "(-6 | -20)"
+  ],
+  "correct": 2,
+  "explanation": "f(-6) = 2 · -6 − 6 = -18, also liegt (-6 | -18) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √144 : √4",
+  "options": [
+   "6",
+   "4",
+   "3",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "√144 : √4 = √(144 / 4) = √36 = 6."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 10 cm, ZB = 8 cm. Wie lang ist ZB'?",
+  "options": [
+   "36 cm",
+   "37 cm",
+   "40 cm",
+   "46 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 8 · 10/2 = 8 · 5 = 40 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 9)²",
+  "options": [
+   "x² + 18x + 81",
+   "x² + 9x + 81",
+   "x² + 81",
+   "x² + 18x + 18"
+  ],
+  "correct": 0,
+  "explanation": "1. binomische Formel: (x + 9)² = x² + 2·9·x + 9² = x² + 18x + 81."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √196 : √4",
+  "options": [
+   "8",
+   "6",
+   "7",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "√196 : √4 = √(196 / 4) = √49 = 7."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 18²",
+  "options": [
+   "344",
+   "324",
+   "328",
+   "320"
+  ],
+  "correct": 1,
+  "explanation": "18² = (20 − 2)² = 400 − 80 + 4 = 324."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 101²",
+  "options": [
+   "10201",
+   "10301",
+   "10199",
+   "10203"
+  ],
+  "correct": 0,
+  "explanation": "101² = (100 + 1)² = 10000 + 200 + 1 = 10201."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-4 | -10) und Q(0 | 2). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "3",
+   "2",
+   "-3"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (2 − (-10)) / (0 − (-4)) = 12/4 = 3."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 88²",
+  "options": [
+   "7740",
+   "7744",
+   "7834",
+   "7748"
+  ],
+  "correct": 1,
+  "explanation": "88² = (90 − 2)² = 8100 − 360 + 4 = 7744."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √8 · √32",
+  "options": [
+   "17",
+   "12",
+   "14",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "√8 · √32 = √(8 · 32) = √256 = 16."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 9)(x − 9)",
+  "options": [
+   "x² − 18x − 81",
+   "x² − 81",
+   "x² + 81",
+   "x² − 18x + 81"
+  ],
+  "correct": 1,
+  "explanation": "3. binomische Formel: (x + 9)(x − 9) = x² − 9² = x² − 81."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √4 · √36",
+  "options": [
+   "15",
+   "8",
+   "12",
+   "10"
+  ],
+  "correct": 2,
+  "explanation": "√4 · √36 = √(4 · 36) = √144 = 12."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 18 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "16 cm",
+   "18 cm",
+   "14 cm",
+   "19 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 18/9 = 9 · 2 = 18 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 16 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "42 cm",
+   "31 cm",
+   "36 cm",
+   "40 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 16/4 = 9 · 4 = 36 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 23²",
+  "options": [
+   "549",
+   "529",
+   "535",
+   "523"
+  ],
+  "correct": 1,
+  "explanation": "23² = (20 + 3)² = 400 + 120 + 9 = 529."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 39²",
+  "options": [
+   "1561",
+   "1521",
+   "1523",
+   "1519"
+  ],
+  "correct": 1,
+  "explanation": "39² = (40 − 1)² = 1600 − 80 + 1 = 1521."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x − 5)²",
+  "options": [
+   "x² − 25",
+   "x² + 10x + 25",
+   "x² − 10x + 25",
+   "x² − 10x − 25"
+  ],
+  "correct": 2,
+  "explanation": "2. binomische Formel: (x − 5)² = x² − 2·5·x + 5² = x² − 10x + 25."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 6 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "10 cm",
+   "14 cm",
+   "19 cm",
+   "8 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 6/3 = 7 · 2 = 14 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √6 · √54",
+  "options": [
+   "17",
+   "20",
+   "18",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "√6 · √54 = √(6 · 54) = √324 = 18."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -1x − 6?",
+  "options": [
+   "(-2 | -4)",
+   "(-2 | -6)",
+   "(-2 | -3)",
+   "(-1 | -4)"
+  ],
+  "correct": 0,
+  "explanation": "f(-2) = -1 · -2 − 6 = -4, also liegt (-2 | -4) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √4 · √100",
+  "options": [
+   "24",
+   "20",
+   "21",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "√4 · √100 = √(4 · 100) = √400 = 20."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 8 cm, ZB = 6 cm. Wie lang ist ZB'?",
+  "options": [
+   "18 cm",
+   "11 cm",
+   "7 cm",
+   "12 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 6 · 8/4 = 6 · 2 = 12 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 20 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "45 cm",
+   "42 cm",
+   "46 cm",
+   "40 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 20/4 = 9 · 5 = 45 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -1x + 1?",
+  "options": [
+   "(5 | -3)",
+   "(5 | -4)",
+   "(6 | -4)",
+   "(5 | -6)"
+  ],
+  "correct": 1,
+  "explanation": "f(5) = -1 · 5 + 1 = -4, also liegt (5 | -4) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √144 : √16",
+  "options": [
+   "1",
+   "5",
+   "3",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "√144 : √16 = √(144 / 16) = √9 = 3."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(2 | 1) und Q(4 | 3). Wie groß ist die Steigung m?",
+  "options": [
+   "4",
+   "-1",
+   "0",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (3 − (1)) / (4 − (2)) = 2/2 = 1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-5 | 20) und Q(-1 | 8). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "-3",
+   "4",
+   "-1"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (8 − (20)) / (-1 − (-5)) = -12/4 = -3."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √4 · √25",
+  "options": [
+   "10",
+   "12",
+   "11",
+   "14"
+  ],
+  "correct": 0,
+  "explanation": "√4 · √25 = √(4 · 25) = √100 = 10."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -1x − 1?",
+  "options": [
+   "(2 | -5)",
+   "(2 | -3)",
+   "(3 | -3)",
+   "(2 | -2)"
+  ],
+  "correct": 1,
+  "explanation": "f(2) = -1 · 2 − 1 = -3, also liegt (2 | -3) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 15 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "20 cm",
+   "19 cm",
+   "9 cm",
+   "15 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 15/5 = 5 · 3 = 15 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 8 cm, ZB = 6 cm. Wie lang ist ZB'?",
+  "options": [
+   "12 cm",
+   "11 cm",
+   "13 cm",
+   "15 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 6 · 8/4 = 6 · 2 = 12 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -1x + 7?",
+  "options": [
+   "(-4 | 12)",
+   "(-5 | 12)",
+   "(-5 | 13)",
+   "(-5 | 10)"
+  ],
+  "correct": 1,
+  "explanation": "f(-5) = -1 · -5 + 7 = 12, also liegt (-5 | 12) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(1 | -7) und Q(5 | -15). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "3",
+   "-3",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-15 − (-7)) / (5 − (1)) = -8/4 = -2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -3x + 6?",
+  "options": [
+   "(-6 | 24)",
+   "(-6 | 22)",
+   "(-6 | 25)",
+   "(-5 | 24)"
+  ],
+  "correct": 0,
+  "explanation": "f(-6) = -3 · -6 + 6 = 24, also liegt (-6 | 24) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 57²",
+  "options": [
+   "3255",
+   "3249",
+   "3243",
+   "3309"
+  ],
+  "correct": 1,
+  "explanation": "57² = (60 − 3)² = 3600 − 360 + 9 = 3249."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 47²",
+  "options": [
+   "2209",
+   "2203",
+   "2215",
+   "2259"
+  ],
+  "correct": 0,
+  "explanation": "47² = (50 − 3)² = 2500 − 300 + 9 = 2209."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 15 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "7 cm",
+   "10 cm",
+   "12 cm",
+   "11 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 15/3 = 2 · 5 = 10 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 6 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "16 cm",
+   "15 cm",
+   "9 cm",
+   "18 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 6/2 = 5 · 3 = 15 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 77²",
+  "options": [
+   "5923",
+   "6009",
+   "5935",
+   "5929"
+  ],
+  "correct": 3,
+  "explanation": "77² = (80 − 3)² = 6400 − 480 + 9 = 5929."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √225 : √9",
+  "options": [
+   "2",
+   "4",
+   "5",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "√225 : √9 = √(225 / 9) = √25 = 5."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x − 4)²",
+  "options": [
+   "x² − 8x + 16",
+   "x² + 8x + 16",
+   "x² − 16",
+   "x² − 8x − 16"
+  ],
+  "correct": 0,
+  "explanation": "2. binomische Formel: (x − 4)² = x² − 2·4·x + 4² = x² − 8x + 16."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -1x − 6?",
+  "options": [
+   "(3 | -8)",
+   "(2 | -7)",
+   "(2 | -8)",
+   "(2 | -10)"
+  ],
+  "correct": 2,
+  "explanation": "f(2) = -1 · 2 − 6 = -8, also liegt (2 | -8) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 77²",
+  "options": [
+   "5929",
+   "5923",
+   "6009",
+   "5935"
+  ],
+  "correct": 0,
+  "explanation": "77² = (80 − 3)² = 6400 − 480 + 9 = 5929."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 6 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "27 cm",
+   "32 cm",
+   "29 cm",
+   "23 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 6/2 = 9 · 3 = 27 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-5 | 6) und Q(-3 | 4). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "2",
+   "-1",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (4 − (6)) / (-3 − (-5)) = -2/2 = -1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √5 · √20",
+  "options": [
+   "8",
+   "12",
+   "11",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "√5 · √20 = √(5 · 20) = √100 = 10."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 7)(x − 7)",
+  "options": [
+   "x² − 14x + 49",
+   "x² + 49",
+   "x² − 14x − 49",
+   "x² − 49"
+  ],
+  "correct": 3,
+  "explanation": "3. binomische Formel: (x + 7)(x − 7) = x² − 7² = x² − 49."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 3x + 7?",
+  "options": [
+   "(-4 | -8)",
+   "(-5 | -7)",
+   "(-5 | -10)",
+   "(-5 | -8)"
+  ],
+  "correct": 3,
+  "explanation": "f(-5) = 3 · -5 + 7 = -8, also liegt (-5 | -8) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 4)(x − 4)",
+  "options": [
+   "x² − 8x − 16",
+   "x² + 16",
+   "x² − 16",
+   "x² − 8x + 16"
+  ],
+  "correct": 2,
+  "explanation": "3. binomische Formel: (x + 4)(x − 4) = x² − 4² = x² − 16."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 16 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "10 cm",
+   "5 cm",
+   "13 cm",
+   "8 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 16/4 = 2 · 4 = 8 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -3x?",
+  "options": [
+   "(1 | 0)",
+   "(0 | -2)",
+   "(0 | 0)",
+   "(0 | 1)"
+  ],
+  "correct": 2,
+  "explanation": "f(0) = -3 · 0 = 0, also liegt (0 | 0) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-1 | 4) und Q(2 | 1). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "4",
+   "2",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (1 − (4)) / (2 − (-1)) = -3/3 = -1."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 12 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "3 cm",
+   "5 cm",
+   "12 cm",
+   "8 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 12/3 = 2 · 4 = 8 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 12)²",
+  "options": [
+   "x² + 144",
+   "x² + 24x + 144",
+   "x² + 24x + 24",
+   "x² + 12x + 144"
+  ],
+  "correct": 1,
+  "explanation": "1. binomische Formel: (x + 12)² = x² + 2·12·x + 12² = x² + 24x + 144."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 1x − 6?",
+  "options": [
+   "(-4 | -12)",
+   "(-4 | -9)",
+   "(-3 | -10)",
+   "(-4 | -10)"
+  ],
+  "correct": 3,
+  "explanation": "f(-4) = 1 · -4 − 6 = -10, also liegt (-4 | -10) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 18 cm, ZB = 6 cm. Wie lang ist ZB'?",
+  "options": [
+   "12 cm",
+   "8 cm",
+   "18 cm",
+   "10 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 6 · 18/9 = 6 · 2 = 12 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -1x + 7?",
+  "options": [
+   "(-3 | 11)",
+   "(-4 | 12)",
+   "(-4 | 11)",
+   "(-4 | 9)"
+  ],
+  "correct": 2,
+  "explanation": "f(-4) = -1 · -4 + 7 = 11, also liegt (-4 | 11) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-3 | 11) und Q(-2 | 8). Wie groß ist die Steigung m?",
+  "options": [
+   "-3",
+   "1",
+   "-1",
+   "-4"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (8 − (11)) / (-2 − (-3)) = -3/1 = -3."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 1x + 4?",
+  "options": [
+   "(2 | 4)",
+   "(3 | 6)",
+   "(2 | 6)",
+   "(2 | 7)"
+  ],
+  "correct": 2,
+  "explanation": "f(2) = 1 · 2 + 4 = 6, also liegt (2 | 6) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 32 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "8 cm",
+   "12 cm",
+   "14 cm",
+   "9 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 32/8 = 3 · 4 = 12 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √4 · √100",
+  "options": [
+   "16",
+   "20",
+   "18",
+   "21"
+  ],
+  "correct": 1,
+  "explanation": "√4 · √100 = √(4 · 100) = √400 = 20."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 3)(x − 3)",
+  "options": [
+   "x² − 9",
+   "x² + 9",
+   "x² − 6x − 9",
+   "x² − 6x + 9"
+  ],
+  "correct": 0,
+  "explanation": "3. binomische Formel: (x + 3)(x − 3) = x² − 3² = x² − 9."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √6 · √6",
+  "options": [
+   "6",
+   "10",
+   "7",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "√6 · √6 = √(6 · 6) = √36 = 6."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √400 : √16",
+  "options": [
+   "7",
+   "8",
+   "4",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "√400 : √16 = √(400 / 16) = √25 = 5."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √2 · √72",
+  "options": [
+   "9",
+   "11",
+   "12",
+   "14"
+  ],
+  "correct": 2,
+  "explanation": "√2 · √72 = √(2 · 72) = √144 = 12."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 19²",
+  "options": [
+   "361",
+   "381",
+   "359",
+   "363"
+  ],
+  "correct": 0,
+  "explanation": "19² = (20 − 1)² = 400 − 40 + 1 = 361."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 43²",
+  "options": [
+   "1889",
+   "1849",
+   "1843",
+   "1855"
+  ],
+  "correct": 1,
+  "explanation": "43² = (40 + 3)² = 1600 + 240 + 9 = 1849."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-4 | -12) und Q(0 | -4). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "-3"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-4 − (-12)) / (0 − (-4)) = 8/4 = 2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-2 | 5) und Q(0 | 1). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "1",
+   "-2",
+   "-3"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (1 − (5)) / (0 − (-2)) = -4/2 = -2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 1x + 6?",
+  "options": [
+   "(-1 | 4)",
+   "(-2 | 5)",
+   "(-2 | 2)",
+   "(-2 | 4)"
+  ],
+  "correct": 3,
+  "explanation": "f(-2) = 1 · -2 + 6 = 4, also liegt (-2 | 4) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √3 · √27",
+  "options": [
+   "10",
+   "7",
+   "9",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "√3 · √27 = √(3 · 27) = √81 = 9."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 71²",
+  "options": [
+   "5039",
+   "5111",
+   "5041",
+   "5043"
+  ],
+  "correct": 2,
+  "explanation": "71² = (70 + 1)² = 4900 + 140 + 1 = 5041."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 6 cm, ZB = 8 cm. Wie lang ist ZB'?",
+  "options": [
+   "18 cm",
+   "16 cm",
+   "19 cm",
+   "14 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 8 · 6/3 = 8 · 2 = 16 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 30 cm, ZB = 6 cm. Wie lang ist ZB'?",
+  "options": [
+   "27 cm",
+   "28 cm",
+   "30 cm",
+   "25 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 6 · 30/6 = 6 · 5 = 30 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √6 · √54",
+  "options": [
+   "19",
+   "18",
+   "16",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "√6 · √54 = √(6 · 54) = √324 = 18."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 87²",
+  "options": [
+   "7569",
+   "7563",
+   "7575",
+   "7659"
+  ],
+  "correct": 0,
+  "explanation": "87² = (90 − 3)² = 8100 − 540 + 9 = 7569."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √100 : √4",
+  "options": [
+   "7",
+   "3",
+   "6",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "√100 : √4 = √(100 / 4) = √25 = 5."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 29²",
+  "options": [
+   "841",
+   "839",
+   "843",
+   "871"
+  ],
+  "correct": 0,
+  "explanation": "29² = (30 − 1)² = 900 − 60 + 1 = 841."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 27 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "12 cm",
+   "1 cm",
+   "6 cm",
+   "4 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 27/9 = 2 · 3 = 6 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 10)²",
+  "options": [
+   "x² + 10x + 100",
+   "x² + 20x + 20",
+   "x² + 20x + 100",
+   "x² + 100"
+  ],
+  "correct": 2,
+  "explanation": "1. binomische Formel: (x + 10)² = x² + 2·10·x + 10² = x² + 20x + 100."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x + 11)(x − 11)",
+  "options": [
+   "x² − 22x − 121",
+   "x² − 121",
+   "x² + 121",
+   "x² − 22x + 121"
+  ],
+  "correct": 1,
+  "explanation": "3. binomische Formel: (x + 11)(x − 11) = x² − 11² = x² − 121."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 4)²",
+  "options": [
+   "x² + 4x + 16",
+   "x² + 8x + 8",
+   "x² + 8x + 16",
+   "x² + 16"
+  ],
+  "correct": 2,
+  "explanation": "1. binomische Formel: (x + 4)² = x² + 2·4·x + 4² = x² + 8x + 16."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 15 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "13 cm",
+   "8 cm",
+   "11 cm",
+   "9 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 15/5 = 3 · 3 = 9 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 15 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "45 cm",
+   "39 cm",
+   "51 cm",
+   "50 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 15/3 = 9 · 5 = 45 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √324 : √4",
+  "options": [
+   "10",
+   "9",
+   "7",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "√324 : √4 = √(324 / 4) = √81 = 9."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √64 : √4",
+  "options": [
+   "4",
+   "5",
+   "7",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "√64 : √4 = √(64 / 4) = √16 = 4."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 47²",
+  "options": [
+   "2259",
+   "2209",
+   "2203",
+   "2215"
+  ],
+  "correct": 1,
+  "explanation": "47² = (50 − 3)² = 2500 − 300 + 9 = 2209."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √4 · √49",
+  "options": [
+   "15",
+   "16",
+   "13",
+   "14"
+  ],
+  "correct": 3,
+  "explanation": "√4 · √49 = √(4 · 49) = √196 = 14."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x − 3)²",
+  "options": [
+   "x² − 9",
+   "x² + 6x + 9",
+   "x² − 6x − 9",
+   "x² − 6x + 9"
+  ],
+  "correct": 3,
+  "explanation": "2. binomische Formel: (x − 3)² = x² − 2·3·x + 3² = x² − 6x + 9."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √2 · √8",
+  "options": [
+   "1",
+   "8",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "√2 · √8 = √(2 · 8) = √16 = 4."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √36 : √4",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "√36 : √4 = √(36 / 4) = √9 = 3."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √2 · √50",
+  "options": [
+   "6",
+   "10",
+   "12",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "√2 · √50 = √(2 · 50) = √100 = 10."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 43²",
+  "options": [
+   "1849",
+   "1855",
+   "1889",
+   "1843"
+  ],
+  "correct": 0,
+  "explanation": "43² = (40 + 3)² = 1600 + 240 + 9 = 1849."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √5 · √20",
+  "options": [
+   "10",
+   "7",
+   "9",
+   "14"
+  ],
+  "correct": 0,
+  "explanation": "√5 · √20 = √(5 · 20) = √100 = 10."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 6 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "12 cm",
+   "2 cm",
+   "6 cm",
+   "5 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 6/2 = 2 · 3 = 6 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √2 · √98",
+  "options": [
+   "14",
+   "13",
+   "12",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "√2 · √98 = √(2 · 98) = √196 = 14."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √900 : √9",
+  "options": [
+   "11",
+   "10",
+   "9",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "√900 : √9 = √(900 / 9) = √100 = 10."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 5)(x − 5)",
+  "options": [
+   "x² − 25",
+   "x² + 25",
+   "x² − 10x + 25",
+   "x² − 10x − 25"
+  ],
+  "correct": 0,
+  "explanation": "3. binomische Formel: (x + 5)(x − 5) = x² − 5² = x² − 25."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 3x + 1?",
+  "options": [
+   "(4 | 14)",
+   "(4 | 13)",
+   "(4 | 11)",
+   "(5 | 13)"
+  ],
+  "correct": 1,
+  "explanation": "f(4) = 3 · 4 + 1 = 13, also liegt (4 | 13) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 4x − 6?",
+  "options": [
+   "(1 | -2)",
+   "(2 | -2)",
+   "(1 | -1)",
+   "(1 | -4)"
+  ],
+  "correct": 0,
+  "explanation": "f(1) = 4 · 1 − 6 = -2, also liegt (1 | -2) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x − 10)²",
+  "options": [
+   "x² − 20x + 100",
+   "x² + 20x + 100",
+   "x² − 100",
+   "x² − 20x − 100"
+  ],
+  "correct": 0,
+  "explanation": "2. binomische Formel: (x − 10)² = x² − 2·10·x + 10² = x² − 20x + 100."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-5 | -7) und Q(-3 | -5). Wie groß ist die Steigung m?",
+  "options": [
+   "-3",
+   "-2",
+   "1",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-5 − (-7)) / (-3 − (-5)) = 2/2 = 1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(2 | -9) und Q(5 | -18). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "-3",
+   "4",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-18 − (-9)) / (5 − (2)) = -9/3 = -3."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = 1x + 2?",
+  "options": [
+   "(-3 | -2)",
+   "(-4 | -2)",
+   "(-4 | -4)",
+   "(-4 | -1)"
+  ],
+  "correct": 1,
+  "explanation": "f(-4) = 1 · -4 + 2 = -2, also liegt (-4 | -2) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 45 cm, ZB = 4 cm. Wie lang ist ZB'?",
+  "options": [
+   "18 cm",
+   "16 cm",
+   "14 cm",
+   "20 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 4 · 45/9 = 4 · 5 = 20 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 32 cm, ZB = 6 cm. Wie lang ist ZB'?",
+  "options": [
+   "24 cm",
+   "27 cm",
+   "26 cm",
+   "19 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 6 · 32/8 = 6 · 4 = 24 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √400 : √4",
+  "options": [
+   "9",
+   "10",
+   "8",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "√400 : √4 = √(400 / 4) = √100 = 10."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(3 | 7) und Q(6 | 13). Wie groß ist die Steigung m?",
+  "options": [
+   "4",
+   "1",
+   "0",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (13 − (7)) / (6 − (3)) = 6/3 = 2."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x + 4)²",
+  "options": [
+   "x² + 4x + 16",
+   "x² + 8x + 8",
+   "x² + 8x + 16",
+   "x² + 16"
+  ],
+  "correct": 2,
+  "explanation": "1. binomische Formel: (x + 4)² = x² + 2·4·x + 4² = x² + 8x + 16."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 51²",
+  "options": [
+   "2601",
+   "2651",
+   "2599",
+   "2603"
+  ],
+  "correct": 0,
+  "explanation": "51² = (50 + 1)² = 2500 + 100 + 1 = 2601."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √144 : √4",
+  "options": [
+   "7",
+   "9",
+   "6",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "√144 : √4 = √(144 / 4) = √36 = 6."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-1 | -2) und Q(0 | -3). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "-3",
+   "3",
+   "-1"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-3 − (-2)) / (0 − (-1)) = -1/1 = -1."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 8 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "6 cm",
+   "10 cm",
+   "14 cm",
+   "12 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 8/4 = 5 · 2 = 10 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 10 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "8 cm",
+   "7 cm",
+   "4 cm",
+   "10 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 10/5 = 2 · 2 = 4 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 1x − 7?",
+  "options": [
+   "(5 | -2)",
+   "(5 | -4)",
+   "(6 | -2)",
+   "(5 | -1)"
+  ],
+  "correct": 0,
+  "explanation": "f(5) = 1 · 5 − 7 = -2, also liegt (5 | -2) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √441 : √9",
+  "options": [
+   "5",
+   "7",
+   "8",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "√441 : √9 = √(441 / 9) = √49 = 7."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 8 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "15 cm",
+   "18 cm",
+   "13 cm",
+   "17 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 8/4 = 9 · 2 = 18 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √36 : √4",
+  "options": [
+   "2",
+   "5",
+   "3",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "√36 : √4 = √(36 / 4) = √9 = 3."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √6 · √24",
+  "options": [
+   "11",
+   "8",
+   "14",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "√6 · √24 = √(6 · 24) = √144 = 12."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -1x + 5?",
+  "options": [
+   "(-3 | 8)",
+   "(-2 | 8)",
+   "(-3 | 9)",
+   "(-3 | 6)"
+  ],
+  "correct": 0,
+  "explanation": "f(-3) = -1 · -3 + 5 = 8, also liegt (-3 | 8) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x − 1)²",
+  "options": [
+   "x² − 1",
+   "x² − 2x + 1",
+   "x² − 2x − 1",
+   "x² + 2x + 1"
+  ],
+  "correct": 1,
+  "explanation": "2. binomische Formel: (x − 1)² = x² − 2·1·x + 1² = x² − 2x + 1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(1 | -6) und Q(5 | -14). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "4",
+   "2",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-14 − (-6)) / (5 − (1)) = -8/4 = -2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 20 cm, ZB = 8 cm. Wie lang ist ZB'?",
+  "options": [
+   "30 cm",
+   "32 cm",
+   "28 cm",
+   "31 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 8 · 20/5 = 8 · 4 = 32 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(3 | -10) und Q(6 | -16). Wie groß ist die Steigung m?",
+  "options": [
+   "1",
+   "-4",
+   "2",
+   "-2"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-16 − (-10)) / (6 − (3)) = -6/3 = -2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 4x + 5?",
+  "options": [
+   "(0 | 1)",
+   "(-1 | 1)",
+   "(-1 | -1)",
+   "(-1 | 2)"
+  ],
+  "correct": 1,
+  "explanation": "f(-1) = 4 · -1 + 5 = 1, also liegt (-1 | 1) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(1 | -1) und Q(5 | -13). Wie groß ist die Steigung m?",
+  "options": [
+   "4",
+   "0",
+   "-3",
+   "-4"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-13 − (-1)) / (5 − (1)) = -12/4 = -3."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 12 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "27 cm",
+   "31 cm",
+   "25 cm",
+   "26 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 12/4 = 9 · 3 = 27 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 48²",
+  "options": [
+   "2300",
+   "2304",
+   "2308",
+   "2354"
+  ],
+  "correct": 1,
+  "explanation": "48² = (50 − 2)² = 2500 − 200 + 4 = 2304."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 3x + 2?",
+  "options": [
+   "(-5 | -16)",
+   "(-6 | -18)",
+   "(-6 | -15)",
+   "(-6 | -16)"
+  ],
+  "correct": 3,
+  "explanation": "f(-6) = 3 · -6 + 2 = -16, also liegt (-6 | -16) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(0 | -1) und Q(2 | -7). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "-4",
+   "-3",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-7 − (-1)) / (2 − (0)) = -6/2 = -3."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 22²",
+  "options": [
+   "480",
+   "488",
+   "484",
+   "504"
+  ],
+  "correct": 2,
+  "explanation": "22² = (20 + 2)² = 400 + 80 + 4 = 484."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -1x − 8?",
+  "options": [
+   "(5 | -13)",
+   "(5 | -12)",
+   "(5 | -15)",
+   "(6 | -13)"
+  ],
+  "correct": 0,
+  "explanation": "f(5) = -1 · 5 − 8 = -13, also liegt (5 | -13) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √900 : √25",
+  "options": [
+   "6",
+   "7",
+   "8",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "√900 : √25 = √(900 / 25) = √36 = 6."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-1 | -7) und Q(3 | 1). Wie groß ist die Steigung m?",
+  "options": [
+   "-4",
+   "3",
+   "2",
+   "-1"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (1 − (-7)) / (3 − (-1)) = 8/4 = 2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 18 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "3 cm",
+   "9 cm",
+   "10 cm",
+   "4 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 18/9 = 2 · 2 = 4 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -2x + 6?",
+  "options": [
+   "(6 | -8)",
+   "(7 | -6)",
+   "(6 | -6)",
+   "(6 | -5)"
+  ],
+  "correct": 2,
+  "explanation": "f(6) = -2 · 6 + 6 = -6, also liegt (6 | -6) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -2x − 2?",
+  "options": [
+   "(7 | -14)",
+   "(6 | -16)",
+   "(6 | -13)",
+   "(6 | -14)"
+  ],
+  "correct": 3,
+  "explanation": "f(6) = -2 · 6 − 2 = -14, also liegt (6 | -14) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-2 | 4) und Q(1 | -2). Wie groß ist die Steigung m?",
+  "options": [
+   "-4",
+   "1",
+   "-2",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-2 − (4)) / (1 − (-2)) = -6/3 = -2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 1x + 4?",
+  "options": [
+   "(-1 | 1)",
+   "(0 | 3)",
+   "(-1 | 4)",
+   "(-1 | 3)"
+  ],
+  "correct": 3,
+  "explanation": "f(-1) = 1 · -1 + 4 = 3, also liegt (-1 | 3) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 43²",
+  "options": [
+   "1843",
+   "1849",
+   "1855",
+   "1889"
+  ],
+  "correct": 1,
+  "explanation": "43² = (40 + 3)² = 1600 + 240 + 9 = 1849."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √4 · √81",
+  "options": [
+   "22",
+   "20",
+   "18",
+   "17"
+  ],
+  "correct": 2,
+  "explanation": "√4 · √81 = √(4 · 81) = √324 = 18."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √441 : √9",
+  "options": [
+   "9",
+   "7",
+   "10",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "√441 : √9 = √(441 / 9) = √49 = 7."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 3x − 4?",
+  "options": [
+   "(6 | 14)",
+   "(7 | 14)",
+   "(6 | 12)",
+   "(6 | 15)"
+  ],
+  "correct": 0,
+  "explanation": "f(6) = 3 · 6 − 4 = 14, also liegt (6 | 14) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 20 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "34 cm",
+   "35 cm",
+   "30 cm",
+   "31 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 20/4 = 7 · 5 = 35 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √1600 : √25",
+  "options": [
+   "10",
+   "7",
+   "8",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "√1600 : √25 = √(1600 / 25) = √64 = 8."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 73²",
+  "options": [
+   "5323",
+   "5329",
+   "5335",
+   "5399"
+  ],
+  "correct": 1,
+  "explanation": "73² = (70 + 3)² = 4900 + 420 + 9 = 5329."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = 1x − 8?",
+  "options": [
+   "(5 | -5)",
+   "(5 | -3)",
+   "(5 | -2)",
+   "(6 | -3)"
+  ],
+  "correct": 1,
+  "explanation": "f(5) = 1 · 5 − 8 = -3, also liegt (5 | -3) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 98²",
+  "options": [
+   "9600",
+   "9704",
+   "9604",
+   "9608"
+  ],
+  "correct": 2,
+  "explanation": "98² = (100 − 2)² = 10000 − 400 + 4 = 9604."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 1)²",
+  "options": [
+   "x² + 2x + 2",
+   "x² + 1",
+   "x² + 2x + 1",
+   "x² + 1x + 1"
+  ],
+  "correct": 2,
+  "explanation": "1. binomische Formel: (x + 1)² = x² + 2·1·x + 1² = x² + 2x + 1."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 27 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "21 cm",
+   "24 cm",
+   "15 cm",
+   "26 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 27/9 = 7 · 3 = 21 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -2x − 3?",
+  "options": [
+   "(3 | -9)",
+   "(4 | -9)",
+   "(3 | -11)",
+   "(3 | -8)"
+  ],
+  "correct": 0,
+  "explanation": "f(3) = -2 · 3 − 3 = -9, also liegt (3 | -9) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √576 : √16",
+  "options": [
+   "7",
+   "6",
+   "8",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "√576 : √16 = √(576 / 16) = √36 = 6."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 52²",
+  "options": [
+   "2754",
+   "2708",
+   "2700",
+   "2704"
+  ],
+  "correct": 3,
+  "explanation": "52² = (50 + 2)² = 2500 + 200 + 4 = 2704."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 59²",
+  "options": [
+   "3483",
+   "3481",
+   "3479",
+   "3541"
+  ],
+  "correct": 1,
+  "explanation": "59² = (60 − 1)² = 3600 − 120 + 1 = 3481."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 3)(x − 3)",
+  "options": [
+   "x² − 6x − 9",
+   "x² − 9",
+   "x² + 9",
+   "x² − 6x + 9"
+  ],
+  "correct": 1,
+  "explanation": "3. binomische Formel: (x + 3)(x − 3) = x² − 3² = x² − 9."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 22²",
+  "options": [
+   "488",
+   "480",
+   "484",
+   "504"
+  ],
+  "correct": 2,
+  "explanation": "22² = (20 + 2)² = 400 + 80 + 4 = 484."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-2 | -5) und Q(2 | 3). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "0",
+   "4",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (3 − (-5)) / (2 − (-2)) = 8/4 = 2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(1 | -1) und Q(5 | -5). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "2",
+   "0",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-5 − (-1)) / (5 − (1)) = -4/4 = -1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(1 | 3) und Q(3 | -1). Wie groß ist die Steigung m?",
+  "options": [
+   "-3",
+   "-4",
+   "2",
+   "-2"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-1 − (3)) / (3 − (1)) = -4/2 = -2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 12 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "18 cm",
+   "19 cm",
+   "14 cm",
+   "12 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 12/6 = 9 · 2 = 18 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x − 8)²",
+  "options": [
+   "x² − 64",
+   "x² + 16x + 64",
+   "x² − 16x + 64",
+   "x² − 16x − 64"
+  ],
+  "correct": 2,
+  "explanation": "2. binomische Formel: (x − 8)² = x² − 2·8·x + 8² = x² − 16x + 64."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 53²",
+  "options": [
+   "2809",
+   "2815",
+   "2803",
+   "2859"
+  ],
+  "correct": 0,
+  "explanation": "53² = (50 + 3)² = 2500 + 300 + 9 = 2809."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -3x + 1?",
+  "options": [
+   "(5 | -16)",
+   "(5 | -14)",
+   "(6 | -14)",
+   "(5 | -13)"
+  ],
+  "correct": 1,
+  "explanation": "f(5) = -3 · 5 + 1 = -14, also liegt (5 | -14) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √36 : √9",
+  "options": [
+   "4",
+   "1",
+   "3",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "√36 : √9 = √(36 / 9) = √4 = 2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 24 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "22 cm",
+   "14 cm",
+   "26 cm",
+   "20 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 24/6 = 5 · 4 = 20 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √225 : √25",
+  "options": [
+   "6",
+   "4",
+   "3",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "√225 : √25 = √(225 / 25) = √9 = 3."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-3 | -5) und Q(-2 | -3). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "4",
+   "1",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-3 − (-5)) / (-2 − (-3)) = 2/1 = 2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 40 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "20 cm",
+   "24 cm",
+   "25 cm",
+   "31 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 40/8 = 5 · 5 = 25 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 8 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "5 cm",
+   "8 cm",
+   "9 cm",
+   "14 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 8/2 = 2 · 4 = 8 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √3 · √27",
+  "options": [
+   "5",
+   "13",
+   "9",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "√3 · √27 = √(3 · 27) = √81 = 9."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √441 : √9",
+  "options": [
+   "7",
+   "10",
+   "4",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "√441 : √9 = √(441 / 9) = √49 = 7."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 8 cm, ZB = 4 cm. Wie lang ist ZB'?",
+  "options": [
+   "14 cm",
+   "4 cm",
+   "12 cm",
+   "8 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 4 · 8/4 = 4 · 2 = 8 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √400 : √25",
+  "options": [
+   "4",
+   "1",
+   "6",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "√400 : √25 = √(400 / 25) = √16 = 4."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x + 10)(x − 10)",
+  "options": [
+   "x² + 100",
+   "x² − 100",
+   "x² − 20x + 100",
+   "x² − 20x − 100"
+  ],
+  "correct": 1,
+  "explanation": "3. binomische Formel: (x + 10)(x − 10) = x² − 10² = x² − 100."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 6 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "16 cm",
+   "18 cm",
+   "22 cm",
+   "17 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 6/3 = 9 · 2 = 18 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(-4 | -9) und Q(-1 | -3). Wie groß ist die Steigung m?",
+  "options": [
+   "-3",
+   "2",
+   "1",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-3 − (-9)) / (-1 − (-4)) = 6/3 = 2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 16 cm, ZB = 4 cm. Wie lang ist ZB'?",
+  "options": [
+   "14 cm",
+   "9 cm",
+   "8 cm",
+   "11 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 4 · 16/8 = 4 · 2 = 8 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 4 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "20 cm",
+   "18 cm",
+   "23 cm",
+   "13 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 4/2 = 9 · 2 = 18 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-3 | -2) und Q(-2 | 0). Wie groß ist die Steigung m?",
+  "options": [
+   "-4",
+   "0",
+   "-1",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (0 − (-2)) / (-2 − (-3)) = 2/1 = 2."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √2 · √72",
+  "options": [
+   "12",
+   "10",
+   "8",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "√2 · √72 = √(2 · 72) = √144 = 12."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √100 : √4",
+  "options": [
+   "5",
+   "7",
+   "4",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "√100 : √4 = √(100 / 4) = √25 = 5."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √256 : √4",
+  "options": [
+   "11",
+   "9",
+   "5",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "√256 : √4 = √(256 / 4) = √64 = 8."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 20 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "28 cm",
+   "32 cm",
+   "24 cm",
+   "22 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 20/5 = 7 · 4 = 28 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 31²",
+  "options": [
+   "991",
+   "959",
+   "963",
+   "961"
+  ],
+  "correct": 3,
+  "explanation": "31² = (30 + 1)² = 900 + 60 + 1 = 961."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 47²",
+  "options": [
+   "2259",
+   "2203",
+   "2209",
+   "2215"
+  ],
+  "correct": 2,
+  "explanation": "47² = (50 − 3)² = 2500 − 300 + 9 = 2209."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 27²",
+  "options": [
+   "759",
+   "735",
+   "729",
+   "723"
+  ],
+  "correct": 2,
+  "explanation": "27² = (30 − 3)² = 900 − 180 + 9 = 729."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 2x + 1?",
+  "options": [
+   "(-4 | -7)",
+   "(-4 | -6)",
+   "(-4 | -9)",
+   "(-3 | -7)"
+  ],
+  "correct": 0,
+  "explanation": "f(-4) = 2 · -4 + 1 = -7, also liegt (-4 | -7) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 4x − 8?",
+  "options": [
+   "(-3 | -22)",
+   "(-3 | -20)",
+   "(-3 | -19)",
+   "(-2 | -20)"
+  ],
+  "correct": 1,
+  "explanation": "f(-3) = 4 · -3 − 8 = -20, also liegt (-3 | -20) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 89²",
+  "options": [
+   "8011",
+   "7923",
+   "7921",
+   "7919"
+  ],
+  "correct": 2,
+  "explanation": "89² = (90 − 1)² = 8100 − 180 + 1 = 7921."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -3x + 4?",
+  "options": [
+   "(1 | 4)",
+   "(0 | 2)",
+   "(0 | 5)",
+   "(0 | 4)"
+  ],
+  "correct": 3,
+  "explanation": "f(0) = -3 · 0 + 4 = 4, also liegt (0 | 4) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 42²",
+  "options": [
+   "1804",
+   "1764",
+   "1768",
+   "1760"
+  ],
+  "correct": 1,
+  "explanation": "42² = (40 + 2)² = 1600 + 160 + 4 = 1764."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √64 : √16",
+  "options": [
+   "5",
+   "2",
+   "3",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "√64 : √16 = √(64 / 16) = √4 = 2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(3 | -8) und Q(7 | -12). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "-1",
+   "4",
+   "-2"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-12 − (-8)) / (7 − (3)) = -4/4 = -1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 3x − 4?",
+  "options": [
+   "(2 | -1)",
+   "(1 | 0)",
+   "(1 | -1)",
+   "(1 | -3)"
+  ],
+  "correct": 2,
+  "explanation": "f(1) = 3 · 1 − 4 = -1, also liegt (1 | -1) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = 2x + 1?",
+  "options": [
+   "(4 | 9)",
+   "(5 | 9)",
+   "(4 | 10)",
+   "(4 | 7)"
+  ],
+  "correct": 0,
+  "explanation": "f(4) = 2 · 4 + 1 = 9, also liegt (4 | 9) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(3 | 0) und Q(7 | -4). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "-2",
+   "-1",
+   "-3"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-4 − (0)) / (7 − (3)) = -4/4 = -1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(3 | -6) und Q(4 | -8). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "4",
+   "-1",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-8 − (-6)) / (4 − (3)) = -2/1 = -2."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 82²",
+  "options": [
+   "6728",
+   "6720",
+   "6804",
+   "6724"
+  ],
+  "correct": 3,
+  "explanation": "82² = (80 + 2)² = 6400 + 320 + 4 = 6724."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 28²",
+  "options": [
+   "788",
+   "780",
+   "784",
+   "814"
+  ],
+  "correct": 2,
+  "explanation": "28² = (30 − 2)² = 900 − 120 + 4 = 784."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 45 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "39 cm",
+   "30 cm",
+   "35 cm",
+   "33 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 45/9 = 7 · 5 = 35 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-5 | 1) und Q(-4 | 0). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "0",
+   "1",
+   "-4"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (0 − (1)) / (-4 − (-5)) = -1/1 = -1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -2x + 2?",
+  "options": [
+   "(-5 | 12)",
+   "(-5 | 13)",
+   "(-5 | 10)",
+   "(-4 | 12)"
+  ],
+  "correct": 0,
+  "explanation": "f(-5) = -2 · -5 + 2 = 12, also liegt (-5 | 12) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √6 · √54",
+  "options": [
+   "19",
+   "18",
+   "17",
+   "20"
+  ],
+  "correct": 1,
+  "explanation": "√6 · √54 = √(6 · 54) = √324 = 18."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 2x + 8?",
+  "options": [
+   "(1 | 8)",
+   "(1 | 10)",
+   "(1 | 11)",
+   "(2 | 10)"
+  ],
+  "correct": 1,
+  "explanation": "f(1) = 2 · 1 + 8 = 10, also liegt (1 | 10) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -3x + 2?",
+  "options": [
+   "(-6 | 20)",
+   "(-6 | 18)",
+   "(-6 | 21)",
+   "(-5 | 20)"
+  ],
+  "correct": 0,
+  "explanation": "f(-6) = -3 · -6 + 2 = 20, also liegt (-6 | 20) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x − 11)²",
+  "options": [
+   "x² − 121",
+   "x² − 22x − 121",
+   "x² + 22x + 121",
+   "x² − 22x + 121"
+  ],
+  "correct": 3,
+  "explanation": "2. binomische Formel: (x − 11)² = x² − 2·11·x + 11² = x² − 22x + 121."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √4 · √25",
+  "options": [
+   "9",
+   "8",
+   "10",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "√4 · √25 = √(4 · 25) = √100 = 10."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 12 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "5 cm",
+   "6 cm",
+   "1 cm",
+   "11 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 12/4 = 2 · 3 = 6 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 99²",
+  "options": [
+   "9901",
+   "9801",
+   "9799",
+   "9803"
+  ],
+  "correct": 1,
+  "explanation": "99² = (100 − 1)² = 10000 − 200 + 1 = 9801."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √4 · √16",
+  "options": [
+   "4",
+   "5",
+   "10",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "√4 · √16 = √(4 · 16) = √64 = 8."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 22²",
+  "options": [
+   "504",
+   "484",
+   "480",
+   "488"
+  ],
+  "correct": 1,
+  "explanation": "22² = (20 + 2)² = 400 + 80 + 4 = 484."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 9)(x − 9)",
+  "options": [
+   "x² − 18x − 81",
+   "x² − 18x + 81",
+   "x² − 81",
+   "x² + 81"
+  ],
+  "correct": 2,
+  "explanation": "3. binomische Formel: (x + 9)(x − 9) = x² − 9² = x² − 81."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √1024 : √16",
+  "options": [
+   "5",
+   "11",
+   "10",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "√1024 : √16 = √(1024 / 16) = √64 = 8."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √324 : √9",
+  "options": [
+   "6",
+   "3",
+   "9",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "√324 : √9 = √(324 / 9) = √36 = 6."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 7 cm, ZA' = 21 cm, ZB = 8 cm. Wie lang ist ZB'?",
+  "options": [
+   "28 cm",
+   "24 cm",
+   "20 cm",
+   "18 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 8 · 21/7 = 8 · 3 = 24 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -2x?",
+  "options": [
+   "(4 | -8)",
+   "(5 | -8)",
+   "(4 | -10)",
+   "(4 | -7)"
+  ],
+  "correct": 0,
+  "explanation": "f(4) = -2 · 4 = -8, also liegt (4 | -8) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -3x + 3?",
+  "options": [
+   "(6 | -17)",
+   "(7 | -15)",
+   "(6 | -15)",
+   "(6 | -14)"
+  ],
+  "correct": 2,
+  "explanation": "f(6) = -3 · 6 + 3 = -15, also liegt (6 | -15) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 3x + 2?",
+  "options": [
+   "(4 | 14)",
+   "(5 | 14)",
+   "(4 | 15)",
+   "(4 | 12)"
+  ],
+  "correct": 0,
+  "explanation": "f(4) = 3 · 4 + 2 = 14, also liegt (4 | 14) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 82²",
+  "options": [
+   "6804",
+   "6724",
+   "6720",
+   "6728"
+  ],
+  "correct": 1,
+  "explanation": "82² = (80 + 2)² = 6400 + 320 + 4 = 6724."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 7 cm, ZA' = 14 cm, ZB = 6 cm. Wie lang ist ZB'?",
+  "options": [
+   "10 cm",
+   "12 cm",
+   "13 cm",
+   "6 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 6 · 14/7 = 6 · 2 = 12 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 10 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "1 cm",
+   "3 cm",
+   "4 cm",
+   "10 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 10/5 = 2 · 2 = 4 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 2x − 4?",
+  "options": [
+   "(0 | -4)",
+   "(0 | -3)",
+   "(0 | -6)",
+   "(1 | -4)"
+  ],
+  "correct": 0,
+  "explanation": "f(0) = 2 · 0 − 4 = -4, also liegt (0 | -4) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-4 | 7) und Q(-3 | 6). Wie groß ist die Steigung m?",
+  "options": [
+   "-4",
+   "1",
+   "-1",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (6 − (7)) / (-3 − (-4)) = -1/1 = -1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √4 · √64",
+  "options": [
+   "16",
+   "14",
+   "12",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "√4 · √64 = √(4 · 64) = √256 = 16."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 12 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "4 cm",
+   "8 cm",
+   "10 cm",
+   "3 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 12/6 = 2 · 2 = 4 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √576 : √16",
+  "options": [
+   "9",
+   "5",
+   "3",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "√576 : √16 = √(576 / 16) = √36 = 6."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 12)(x − 12)",
+  "options": [
+   "x² − 144",
+   "x² − 24x + 144",
+   "x² − 24x − 144",
+   "x² + 144"
+  ],
+  "correct": 0,
+  "explanation": "3. binomische Formel: (x + 12)(x − 12) = x² − 12² = x² − 144."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -2x + 2?",
+  "options": [
+   "(-2 | 8)",
+   "(-3 | 6)",
+   "(-3 | 9)",
+   "(-3 | 8)"
+  ],
+  "correct": 3,
+  "explanation": "f(-3) = -2 · -3 + 2 = 8, also liegt (-3 | 8) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 4x − 6?",
+  "options": [
+   "(7 | 18)",
+   "(6 | 18)",
+   "(6 | 19)",
+   "(6 | 16)"
+  ],
+  "correct": 1,
+  "explanation": "f(6) = 4 · 6 − 6 = 18, also liegt (6 | 18) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √2 · √8",
+  "options": [
+   "1",
+   "7",
+   "8",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "√2 · √8 = √(2 · 8) = √16 = 4."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(-3 | -2) und Q(-2 | -1). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "1",
+   "4",
+   "-4"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-1 − (-2)) / (-2 − (-3)) = 1/1 = 1."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 103²",
+  "options": [
+   "10615",
+   "10609",
+   "10709",
+   "10603"
+  ],
+  "correct": 1,
+  "explanation": "103² = (100 + 3)² = 10000 + 600 + 9 = 10609."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 83²",
+  "options": [
+   "6895",
+   "6889",
+   "6969",
+   "6883"
+  ],
+  "correct": 1,
+  "explanation": "83² = (80 + 3)² = 6400 + 480 + 9 = 6889."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-1 | -1) und Q(3 | -9). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "0",
+   "-4",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-9 − (-1)) / (3 − (-1)) = -8/4 = -2."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 47²",
+  "options": [
+   "2209",
+   "2203",
+   "2215",
+   "2259"
+  ],
+  "correct": 0,
+  "explanation": "47² = (50 − 3)² = 2500 − 300 + 9 = 2209."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √2 · √98",
+  "options": [
+   "15",
+   "12",
+   "14",
+   "17"
+  ],
+  "correct": 2,
+  "explanation": "√2 · √98 = √(2 · 98) = √196 = 14."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √5 · √45",
+  "options": [
+   "15",
+   "19",
+   "12",
+   "17"
+  ],
+  "correct": 0,
+  "explanation": "√5 · √45 = √(5 · 45) = √225 = 15."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √324 : √9",
+  "options": [
+   "4",
+   "9",
+   "5",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "√324 : √9 = √(324 / 9) = √36 = 6."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 11)²",
+  "options": [
+   "x² + 121",
+   "x² + 11x + 121",
+   "x² + 22x + 22",
+   "x² + 22x + 121"
+  ],
+  "correct": 3,
+  "explanation": "1. binomische Formel: (x + 11)² = x² + 2·11·x + 11² = x² + 22x + 121."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(0 | -4) und Q(1 | -7). Wie groß ist die Steigung m?",
+  "options": [
+   "0",
+   "-2",
+   "-3",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-7 − (-4)) / (1 − (0)) = -3/1 = -3."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √400 : √4",
+  "options": [
+   "12",
+   "7",
+   "9",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "√400 : √4 = √(400 / 4) = √100 = 10."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √64 : √4",
+  "options": [
+   "2",
+   "1",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "√64 : √4 = √(64 / 4) = √16 = 4."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -1x + 2?",
+  "options": [
+   "(-3 | 6)",
+   "(-2 | 5)",
+   "(-3 | 5)",
+   "(-3 | 3)"
+  ],
+  "correct": 2,
+  "explanation": "f(-3) = -1 · -3 + 2 = 5, also liegt (-3 | 5) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √5 · √20",
+  "options": [
+   "11",
+   "10",
+   "12",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "√5 · √20 = √(5 · 20) = √100 = 10."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(2 | 5) und Q(6 | 17). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "3",
+   "-2",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (17 − (5)) / (6 − (2)) = 12/4 = 3."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 12 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "10 cm",
+   "4 cm",
+   "6 cm",
+   "3 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 12/6 = 2 · 2 = 4 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 5)(x − 5)",
+  "options": [
+   "x² − 25",
+   "x² − 10x − 25",
+   "x² + 25",
+   "x² − 10x + 25"
+  ],
+  "correct": 0,
+  "explanation": "3. binomische Formel: (x + 5)(x − 5) = x² − 5² = x² − 25."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √64 : √4",
+  "options": [
+   "4",
+   "7",
+   "1",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "√64 : √4 = √(64 / 4) = √16 = 4."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -3x − 8?",
+  "options": [
+   "(3 | -17)",
+   "(3 | -16)",
+   "(3 | -19)",
+   "(4 | -17)"
+  ],
+  "correct": 0,
+  "explanation": "f(3) = -3 · 3 − 8 = -17, also liegt (3 | -17) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = 3x − 3?",
+  "options": [
+   "(7 | 15)",
+   "(6 | 15)",
+   "(6 | 13)",
+   "(6 | 16)"
+  ],
+  "correct": 1,
+  "explanation": "f(6) = 3 · 6 − 3 = 15, also liegt (6 | 15) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √1600 : √16",
+  "options": [
+   "12",
+   "10",
+   "9",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "√1600 : √16 = √(1600 / 16) = √100 = 10."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √144 : √16",
+  "options": [
+   "3",
+   "2",
+   "1",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "√144 : √16 = √(144 / 16) = √9 = 3."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √8 · √18",
+  "options": [
+   "10",
+   "12",
+   "16",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "√8 · √18 = √(8 · 18) = √144 = 12."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-1 | 2) und Q(3 | 10). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "-1",
+   "3",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (10 − (2)) / (3 − (-1)) = 8/4 = 2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-3 | 8) und Q(-1 | 4). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "3",
+   "0",
+   "-2"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (4 − (8)) / (-1 − (-3)) = -4/2 = -2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = 2x − 8?",
+  "options": [
+   "(4 | 0)",
+   "(5 | 0)",
+   "(4 | -2)",
+   "(4 | 1)"
+  ],
+  "correct": 0,
+  "explanation": "f(4) = 2 · 4 − 8 = 0, also liegt (4 | 0) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(3 | -4) und Q(6 | -13). Wie groß ist die Steigung m?",
+  "options": [
+   "1",
+   "-3",
+   "3",
+   "-2"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-13 − (-4)) / (6 − (3)) = -9/3 = -3."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 99²",
+  "options": [
+   "9803",
+   "9901",
+   "9799",
+   "9801"
+  ],
+  "correct": 3,
+  "explanation": "99² = (100 − 1)² = 10000 − 200 + 1 = 9801."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √2 · √8",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "√2 · √8 = √(2 · 8) = √16 = 4."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(2 | 8) und Q(6 | 16). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "-1",
+   "-4",
+   "-2"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (16 − (8)) / (6 − (2)) = 8/4 = 2."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √6 · √24",
+  "options": [
+   "8",
+   "12",
+   "15",
+   "16"
+  ],
+  "correct": 1,
+  "explanation": "√6 · √24 = √(6 · 24) = √144 = 12."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 3)²",
+  "options": [
+   "x² + 9",
+   "x² + 3x + 9",
+   "x² + 6x + 6",
+   "x² + 6x + 9"
+  ],
+  "correct": 3,
+  "explanation": "1. binomische Formel: (x + 3)² = x² + 2·3·x + 3² = x² + 6x + 9."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 8 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "5 cm",
+   "1 cm",
+   "6 cm",
+   "4 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 8/4 = 3 · 2 = 6 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √4 · √4",
+  "options": [
+   "8",
+   "2",
+   "4",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "√4 · √4 = √(4 · 4) = √16 = 4."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √225 : √9",
+  "options": [
+   "4",
+   "8",
+   "7",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "√225 : √9 = √(225 / 9) = √25 = 5."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x + 1)²",
+  "options": [
+   "x² + 2x + 2",
+   "x² + 1",
+   "x² + 1x + 1",
+   "x² + 2x + 1"
+  ],
+  "correct": 3,
+  "explanation": "1. binomische Formel: (x + 1)² = x² + 2·1·x + 1² = x² + 2x + 1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √3 · √48",
+  "options": [
+   "14",
+   "13",
+   "8",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "√3 · √48 = √(3 · 48) = √144 = 12."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-1 | 3) und Q(0 | 4). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "1",
+   "3",
+   "-4"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (4 − (3)) / (0 − (-1)) = 1/1 = 1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √576 : √16",
+  "options": [
+   "6",
+   "5",
+   "7",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "√576 : √16 = √(576 / 16) = √36 = 6."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-4 | -6) und Q(-1 | 0). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "2",
+   "4",
+   "-2"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (0 − (-6)) / (-1 − (-4)) = 6/3 = 2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 6 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "6 cm",
+   "7 cm",
+   "1 cm",
+   "4 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 6/3 = 2 · 2 = 4 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -2x + 1?",
+  "options": [
+   "(0 | -1)",
+   "(0 | 1)",
+   "(0 | 2)",
+   "(1 | 1)"
+  ],
+  "correct": 1,
+  "explanation": "f(0) = -2 · 0 + 1 = 1, also liegt (0 | 1) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-3 | 5) und Q(0 | -4). Wie groß ist die Steigung m?",
+  "options": [
+   "0",
+   "-3",
+   "-4",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-4 − (5)) / (0 − (-3)) = -9/3 = -3."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 83²",
+  "options": [
+   "6883",
+   "6889",
+   "6969",
+   "6895"
+  ],
+  "correct": 1,
+  "explanation": "83² = (80 + 3)² = 6400 + 480 + 9 = 6889."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 9 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "29 cm",
+   "30 cm",
+   "27 cm",
+   "32 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 9/3 = 9 · 3 = 27 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-5 | -7) und Q(-2 | -4). Wie groß ist die Steigung m?",
+  "options": [
+   "-4",
+   "3",
+   "1",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-4 − (-7)) / (-2 − (-5)) = 3/3 = 1."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 63²",
+  "options": [
+   "4029",
+   "3975",
+   "3969",
+   "3963"
+  ],
+  "correct": 2,
+  "explanation": "63² = (60 + 3)² = 3600 + 360 + 9 = 3969."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 20 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "9 cm",
+   "10 cm",
+   "4 cm",
+   "6 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 20/4 = 2 · 5 = 10 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(1 | -1) und Q(4 | -4). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "-3",
+   "3",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-4 − (-1)) / (4 − (1)) = -3/3 = -1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √2 · √128",
+  "options": [
+   "14",
+   "15",
+   "17",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "√2 · √128 = √(2 · 128) = √256 = 16."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -3x − 5?",
+  "options": [
+   "(6 | -25)",
+   "(6 | -22)",
+   "(6 | -23)",
+   "(7 | -23)"
+  ],
+  "correct": 2,
+  "explanation": "f(6) = -3 · 6 − 5 = -23, also liegt (6 | -23) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x − 11)²",
+  "options": [
+   "x² − 22x − 121",
+   "x² + 22x + 121",
+   "x² − 22x + 121",
+   "x² − 121"
+  ],
+  "correct": 2,
+  "explanation": "2. binomische Formel: (x − 11)² = x² − 2·11·x + 11² = x² − 22x + 121."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(-5 | 14) und Q(-2 | 8). Wie groß ist die Steigung m?",
+  "options": [
+   "0",
+   "-2",
+   "2",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (8 − (14)) / (-2 − (-5)) = -6/3 = -2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 20 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "14 cm",
+   "18 cm",
+   "13 cm",
+   "12 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 20/5 = 3 · 4 = 12 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √900 : √25",
+  "options": [
+   "8",
+   "9",
+   "6",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "√900 : √25 = √(900 / 25) = √36 = 6."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x − 9)²",
+  "options": [
+   "x² − 81",
+   "x² − 18x − 81",
+   "x² + 18x + 81",
+   "x² − 18x + 81"
+  ],
+  "correct": 3,
+  "explanation": "2. binomische Formel: (x − 9)² = x² − 2·9·x + 9² = x² − 18x + 81."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 6)(x − 6)",
+  "options": [
+   "x² − 12x − 36",
+   "x² − 36",
+   "x² + 36",
+   "x² − 12x + 36"
+  ],
+  "correct": 1,
+  "explanation": "3. binomische Formel: (x + 6)(x − 6) = x² − 6² = x² − 36."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-1 | 1) und Q(2 | 10). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "-4",
+   "3",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (10 − (1)) / (2 − (-1)) = 9/3 = 3."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 7)(x − 7)",
+  "options": [
+   "x² + 49",
+   "x² − 49",
+   "x² − 14x + 49",
+   "x² − 14x − 49"
+  ],
+  "correct": 1,
+  "explanation": "3. binomische Formel: (x + 7)(x − 7) = x² − 7² = x² − 49."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(-1 | 3) und Q(1 | -1). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "1",
+   "-2",
+   "-4"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-1 − (3)) / (1 − (-1)) = -4/2 = -2."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √8 · √50",
+  "options": [
+   "20",
+   "17",
+   "18",
+   "21"
+  ],
+  "correct": 0,
+  "explanation": "√8 · √50 = √(8 · 50) = √400 = 20."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √3 · √75",
+  "options": [
+   "15",
+   "18",
+   "13",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "√3 · √75 = √(3 · 75) = √225 = 15."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 89²",
+  "options": [
+   "8011",
+   "7919",
+   "7921",
+   "7923"
+  ],
+  "correct": 2,
+  "explanation": "89² = (90 − 1)² = 8100 − 180 + 1 = 7921."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √324 : √4",
+  "options": [
+   "12",
+   "9",
+   "7",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "√324 : √4 = √(324 / 4) = √81 = 9."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 12 cm, ZB = 6 cm. Wie lang ist ZB'?",
+  "options": [
+   "16 cm",
+   "6 cm",
+   "12 cm",
+   "11 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 6 · 12/6 = 6 · 2 = 12 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-1 | -2) und Q(2 | 1). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "1",
+   "3",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (1 − (-2)) / (2 − (-1)) = 3/3 = 1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √8 · √2",
+  "options": [
+   "5",
+   "6",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "√8 · √2 = √(8 · 2) = √16 = 4."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 11)²",
+  "options": [
+   "x² + 121",
+   "x² + 22x + 121",
+   "x² + 11x + 121",
+   "x² + 22x + 22"
+  ],
+  "correct": 1,
+  "explanation": "1. binomische Formel: (x + 11)² = x² + 2·11·x + 11² = x² + 22x + 121."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = 4x − 3?",
+  "options": [
+   "(-1 | -6)",
+   "(-1 | -7)",
+   "(-1 | -9)",
+   "(0 | -7)"
+  ],
+  "correct": 1,
+  "explanation": "f(-1) = 4 · -1 − 3 = -7, also liegt (-1 | -7) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-2 | 7) und Q(2 | 3). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "4",
+   "-1",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (3 − (7)) / (2 − (-2)) = -4/4 = -1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-2 | 2) und Q(2 | 6). Wie groß ist die Steigung m?",
+  "options": [
+   "0",
+   "1",
+   "-1",
+   "-3"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (6 − (2)) / (2 − (-2)) = 4/4 = 1."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 42²",
+  "options": [
+   "1760",
+   "1768",
+   "1764",
+   "1804"
+  ],
+  "correct": 2,
+  "explanation": "42² = (40 + 2)² = 1600 + 160 + 4 = 1764."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 15 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "9 cm",
+   "11 cm",
+   "14 cm",
+   "4 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 15/5 = 3 · 3 = 9 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 20 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "35 cm",
+   "31 cm",
+   "33 cm",
+   "40 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 20/4 = 7 · 5 = 35 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Vereinfache: √900 : √25",
+  "options": [
+   "7",
+   "9",
+   "3",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "√900 : √25 = √(900 / 25) = √36 = 6."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 30 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "10 cm",
+   "14 cm",
+   "4 cm",
+   "15 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 30/6 = 2 · 5 = 10 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 12 cm, ZB = 4 cm. Wie lang ist ZB'?",
+  "options": [
+   "15 cm",
+   "9 cm",
+   "12 cm",
+   "8 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 4 · 12/4 = 4 · 3 = 12 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(3 | 6) und Q(6 | 12). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "-1",
+   "4",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (12 − (6)) / (6 − (3)) = 6/3 = 2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -3x − 6?",
+  "options": [
+   "(-2 | -2)",
+   "(-1 | 0)",
+   "(-2 | 0)",
+   "(-2 | 1)"
+  ],
+  "correct": 2,
+  "explanation": "f(-2) = -3 · -2 − 6 = 0, also liegt (-2 | 0) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √2025 : √25",
+  "options": [
+   "7",
+   "9",
+   "10",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "√2025 : √25 = √(2025 / 25) = √81 = 9."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √144 : √9",
+  "options": [
+   "1",
+   "4",
+   "5",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "√144 : √9 = √(144 / 9) = √16 = 4."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 8 cm, ZB = 4 cm. Wie lang ist ZB'?",
+  "options": [
+   "8 cm",
+   "5 cm",
+   "14 cm",
+   "10 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 4 · 8/4 = 4 · 2 = 8 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √36 : √4",
+  "options": [
+   "6",
+   "4",
+   "3",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "√36 : √4 = √(36 / 4) = √9 = 3."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -3x − 4?",
+  "options": [
+   "(-6 | 14)",
+   "(-6 | 12)",
+   "(-6 | 15)",
+   "(-5 | 14)"
+  ],
+  "correct": 0,
+  "explanation": "f(-6) = -3 · -6 − 4 = 14, also liegt (-6 | 14) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -2x − 5?",
+  "options": [
+   "(0 | -4)",
+   "(1 | -5)",
+   "(0 | -5)",
+   "(0 | -7)"
+  ],
+  "correct": 2,
+  "explanation": "f(0) = -2 · 0 − 5 = -5, also liegt (0 | -5) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(-2 | -1) und Q(-1 | -3). Wie groß ist die Steigung m?",
+  "options": [
+   "0",
+   "-3",
+   "-2",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-3 − (-1)) / (-1 − (-2)) = -2/1 = -2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 36 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "14 cm",
+   "16 cm",
+   "23 cm",
+   "20 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 36/9 = 5 · 4 = 20 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 4)(x − 4)",
+  "options": [
+   "x² − 8x − 16",
+   "x² − 16",
+   "x² + 16",
+   "x² − 8x + 16"
+  ],
+  "correct": 1,
+  "explanation": "3. binomische Formel: (x + 4)(x − 4) = x² − 4² = x² − 16."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 12 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "14 cm",
+   "18 cm",
+   "9 cm",
+   "13 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 12/6 = 7 · 2 = 14 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x + 3)²",
+  "options": [
+   "x² + 6x + 6",
+   "x² + 6x + 9",
+   "x² + 3x + 9",
+   "x² + 9"
+  ],
+  "correct": 1,
+  "explanation": "1. binomische Formel: (x + 3)² = x² + 2·3·x + 3² = x² + 6x + 9."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 16 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "20 cm",
+   "24 cm",
+   "19 cm",
+   "22 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 16/4 = 5 · 4 = 20 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 6)²",
+  "options": [
+   "x² + 36",
+   "x² + 12x + 36",
+   "x² + 6x + 36",
+   "x² + 12x + 12"
+  ],
+  "correct": 1,
+  "explanation": "1. binomische Formel: (x + 6)² = x² + 2·6·x + 6² = x² + 12x + 36."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-5 | 4) und Q(-1 | 0). Wie groß ist die Steigung m?",
+  "options": [
+   "0",
+   "1",
+   "4",
+   "-1"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (0 − (4)) / (-1 − (-5)) = -4/4 = -1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-1 | 0) und Q(3 | -12). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "-3",
+   "-2",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-12 − (0)) / (3 − (-1)) = -12/4 = -3."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-3 | -9) und Q(1 | -1). Wie groß ist die Steigung m?",
+  "options": [
+   "-1",
+   "3",
+   "2",
+   "-3"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-1 − (-9)) / (1 − (-3)) = 8/4 = 2."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √1600 : √25",
+  "options": [
+   "6",
+   "8",
+   "9",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "√1600 : √25 = √(1600 / 25) = √64 = 8."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √2025 : √25",
+  "options": [
+   "11",
+   "9",
+   "6",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "√2025 : √25 = √(2025 / 25) = √81 = 9."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √2 · √98",
+  "options": [
+   "15",
+   "14",
+   "18",
+   "16"
+  ],
+  "correct": 1,
+  "explanation": "√2 · √98 = √(2 · 98) = √196 = 14."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-1 | -3) und Q(1 | -1). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "1",
+   "2",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-1 − (-3)) / (1 − (-1)) = 2/2 = 1."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x − 11)²",
+  "options": [
+   "x² − 121",
+   "x² + 22x + 121",
+   "x² − 22x + 121",
+   "x² − 22x − 121"
+  ],
+  "correct": 2,
+  "explanation": "2. binomische Formel: (x − 11)² = x² − 2·11·x + 11² = x² − 22x + 121."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(-5 | 17) und Q(-4 | 14). Wie groß ist die Steigung m?",
+  "options": [
+   "0",
+   "-3",
+   "2",
+   "-2"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (14 − (17)) / (-4 − (-5)) = -3/1 = -3."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 5)(x − 5)",
+  "options": [
+   "x² − 25",
+   "x² − 10x − 25",
+   "x² + 25",
+   "x² − 10x + 25"
+  ],
+  "correct": 0,
+  "explanation": "3. binomische Formel: (x + 5)(x − 5) = x² − 5² = x² − 25."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √2 · √18",
+  "options": [
+   "8",
+   "6",
+   "4",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "√2 · √18 = √(2 · 18) = √36 = 6."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 38²",
+  "options": [
+   "1444",
+   "1440",
+   "1484",
+   "1448"
+  ],
+  "correct": 0,
+  "explanation": "38² = (40 − 2)² = 1600 − 160 + 4 = 1444."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 9)(x − 9)",
+  "options": [
+   "x² + 81",
+   "x² − 18x − 81",
+   "x² − 81",
+   "x² − 18x + 81"
+  ],
+  "correct": 2,
+  "explanation": "3. binomische Formel: (x + 9)(x − 9) = x² − 9² = x² − 81."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 40 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "45 cm",
+   "41 cm",
+   "50 cm",
+   "47 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 40/8 = 9 · 5 = 45 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 9 cm, ZA' = 36 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "15 cm",
+   "20 cm",
+   "25 cm",
+   "21 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 36/9 = 5 · 4 = 20 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -3x − 4?",
+  "options": [
+   "(7 | -22)",
+   "(6 | -21)",
+   "(6 | -22)",
+   "(6 | -24)"
+  ],
+  "correct": 2,
+  "explanation": "f(6) = -3 · 6 − 4 = -22, also liegt (6 | -22) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x + 10)²",
+  "options": [
+   "x² + 10x + 100",
+   "x² + 20x + 20",
+   "x² + 20x + 100",
+   "x² + 100"
+  ],
+  "correct": 2,
+  "explanation": "1. binomische Formel: (x + 10)² = x² + 2·10·x + 10² = x² + 20x + 100."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 68²",
+  "options": [
+   "4624",
+   "4694",
+   "4620",
+   "4628"
+  ],
+  "correct": 0,
+  "explanation": "68² = (70 − 2)² = 4900 − 280 + 4 = 4624."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √1296 : √16",
+  "options": [
+   "6",
+   "9",
+   "11",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "√1296 : √16 = √(1296 / 16) = √81 = 9."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 4x?",
+  "options": [
+   "(2 | 9)",
+   "(3 | 8)",
+   "(2 | 6)",
+   "(2 | 8)"
+  ],
+  "correct": 3,
+  "explanation": "f(2) = 4 · 2 = 8, also liegt (2 | 8) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √4 · √81",
+  "options": [
+   "14",
+   "19",
+   "18",
+   "16"
+  ],
+  "correct": 2,
+  "explanation": "√4 · √81 = √(4 · 81) = √324 = 18."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-5 | -2) und Q(-3 | 0). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "1",
+   "-2",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (0 − (-2)) / (-3 − (-5)) = 2/2 = 1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √4 · √49",
+  "options": [
+   "16",
+   "11",
+   "14",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "√4 · √49 = √(4 · 49) = √196 = 14."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 4x + 5?",
+  "options": [
+   "(5 | 21)",
+   "(4 | 19)",
+   "(4 | 21)",
+   "(4 | 22)"
+  ],
+  "correct": 2,
+  "explanation": "f(4) = 4 · 4 + 5 = 21, also liegt (4 | 21) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √400 : √16",
+  "options": [
+   "5",
+   "4",
+   "6",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "√400 : √16 = √(400 / 16) = √25 = 5."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -2x − 7?",
+  "options": [
+   "(6 | -17)",
+   "(5 | -19)",
+   "(5 | -16)",
+   "(5 | -17)"
+  ],
+  "correct": 3,
+  "explanation": "f(5) = -2 · 5 − 7 = -17, also liegt (5 | -17) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x + 8)(x − 8)",
+  "options": [
+   "x² − 16x + 64",
+   "x² − 16x − 64",
+   "x² + 64",
+   "x² − 64"
+  ],
+  "correct": 3,
+  "explanation": "3. binomische Formel: (x + 8)(x − 8) = x² − 8² = x² − 64."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √4 · √49",
+  "options": [
+   "12",
+   "15",
+   "16",
+   "14"
+  ],
+  "correct": 3,
+  "explanation": "√4 · √49 = √(4 · 49) = √196 = 14."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 3)²",
+  "options": [
+   "x² + 3x + 9",
+   "x² + 6x + 9",
+   "x² + 6x + 6",
+   "x² + 9"
+  ],
+  "correct": 1,
+  "explanation": "1. binomische Formel: (x + 3)² = x² + 2·3·x + 3² = x² + 6x + 9."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 2)(x − 2)",
+  "options": [
+   "x² − 4",
+   "x² − 4x + 4",
+   "x² + 4",
+   "x² − 4x − 4"
+  ],
+  "correct": 0,
+  "explanation": "3. binomische Formel: (x + 2)(x − 2) = x² − 2² = x² − 4."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √2 · √200",
+  "options": [
+   "23",
+   "20",
+   "19",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "√2 · √200 = √(2 · 200) = √400 = 20."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √4 · √16",
+  "options": [
+   "7",
+   "8",
+   "10",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "√4 · √16 = √(4 · 16) = √64 = 8."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Welcher Punkt liegt auf dem Graphen von f(x) = -2x + 8?",
+  "options": [
+   "(-3 | 14)",
+   "(-3 | 15)",
+   "(-3 | 12)",
+   "(-2 | 14)"
+  ],
+  "correct": 0,
+  "explanation": "f(-3) = -2 · -3 + 8 = 14, also liegt (-3 | 14) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 23²",
+  "options": [
+   "549",
+   "529",
+   "535",
+   "523"
+  ],
+  "correct": 1,
+  "explanation": "23² = (20 + 3)² = 400 + 120 + 9 = 529."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 61²",
+  "options": [
+   "3723",
+   "3721",
+   "3719",
+   "3781"
+  ],
+  "correct": 1,
+  "explanation": "61² = (60 + 1)² = 3600 + 120 + 1 = 3721."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-2 | 1) und Q(-1 | 2). Wie groß ist die Steigung m?",
+  "options": [
+   "1",
+   "-3",
+   "2",
+   "-2"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (2 − (1)) / (-1 − (-2)) = 1/1 = 1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √4 · √16",
+  "options": [
+   "11",
+   "12",
+   "9",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "√4 · √16 = √(4 · 16) = √64 = 8."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 7 cm, ZA' = 21 cm, ZB = 4 cm. Wie lang ist ZB'?",
+  "options": [
+   "8 cm",
+   "13 cm",
+   "10 cm",
+   "12 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 4 · 21/7 = 4 · 3 = 12 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 72²",
+  "options": [
+   "5254",
+   "5180",
+   "5188",
+   "5184"
+  ],
+  "correct": 3,
+  "explanation": "72² = (70 + 2)² = 4900 + 280 + 4 = 5184."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -1x − 5?",
+  "options": [
+   "(3 | -10)",
+   "(3 | -8)",
+   "(3 | -7)",
+   "(4 | -8)"
+  ],
+  "correct": 1,
+  "explanation": "f(3) = -1 · 3 − 5 = -8, also liegt (3 | -8) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 4x + 7?",
+  "options": [
+   "(0 | 3)",
+   "(-1 | 3)",
+   "(-1 | 1)",
+   "(-1 | 4)"
+  ],
+  "correct": 1,
+  "explanation": "f(-1) = 4 · -1 + 7 = 3, also liegt (-1 | 3) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 18 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "26 cm",
+   "21 cm",
+   "20 cm",
+   "18 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 18/6 = 7 · 3 = 21 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = 2x + 5?",
+  "options": [
+   "(1 | 8)",
+   "(2 | 7)",
+   "(1 | 5)",
+   "(1 | 7)"
+  ],
+  "correct": 3,
+  "explanation": "f(1) = 2 · 1 + 5 = 7, also liegt (1 | 7) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(3 | -7) und Q(6 | -16). Wie groß ist die Steigung m?",
+  "options": [
+   "4",
+   "3",
+   "1",
+   "-3"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-16 − (-7)) / (6 − (3)) = -9/3 = -3."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 62²",
+  "options": [
+   "3848",
+   "3904",
+   "3840",
+   "3844"
+  ],
+  "correct": 3,
+  "explanation": "62² = (60 + 2)² = 3600 + 240 + 4 = 3844."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -3x + 2?",
+  "options": [
+   "(-4 | 17)",
+   "(-5 | 17)",
+   "(-5 | 18)",
+   "(-5 | 15)"
+  ],
+  "correct": 1,
+  "explanation": "f(-5) = -3 · -5 + 2 = 17, also liegt (-5 | 17) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √2 · √32",
+  "options": [
+   "12",
+   "8",
+   "9",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "√2 · √32 = √(2 · 32) = √64 = 8."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -1x + 4?",
+  "options": [
+   "(-6 | 8)",
+   "(-6 | 11)",
+   "(-5 | 10)",
+   "(-6 | 10)"
+  ],
+  "correct": 3,
+  "explanation": "f(-6) = -1 · -6 + 4 = 10, also liegt (-6 | 10) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = -2x + 5?",
+  "options": [
+   "(-5 | 17)",
+   "(-6 | 15)",
+   "(-6 | 17)",
+   "(-6 | 18)"
+  ],
+  "correct": 2,
+  "explanation": "f(-6) = -2 · -6 + 5 = 17, also liegt (-6 | 17) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √4 · √36",
+  "options": [
+   "9",
+   "12",
+   "14",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "√4 · √36 = √(4 · 36) = √144 = 12."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 40 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "16 cm",
+   "14 cm",
+   "9 cm",
+   "10 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 40/8 = 2 · 5 = 10 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √2 · √200",
+  "options": [
+   "21",
+   "16",
+   "20",
+   "23"
+  ],
+  "correct": 2,
+  "explanation": "√2 · √200 = √(2 · 200) = √400 = 20."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -3x + 2?",
+  "options": [
+   "(0 | 0)",
+   "(0 | 3)",
+   "(1 | 2)",
+   "(0 | 2)"
+  ],
+  "correct": 3,
+  "explanation": "f(0) = -3 · 0 + 2 = 2, also liegt (0 | 2) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(1 | -7) und Q(4 | -13). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "-3",
+   "3",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-13 − (-7)) / (4 − (1)) = -6/3 = -2."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 31²",
+  "options": [
+   "961",
+   "959",
+   "991",
+   "963"
+  ],
+  "correct": 0,
+  "explanation": "31² = (30 + 1)² = 900 + 60 + 1 = 961."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 8 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "17 cm",
+   "24 cm",
+   "20 cm",
+   "19 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 8/2 = 5 · 4 = 20 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √3 · √12",
+  "options": [
+   "7",
+   "5",
+   "10",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "√3 · √12 = √(3 · 12) = √36 = 6."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 2x − 7?",
+  "options": [
+   "(2 | -3)",
+   "(3 | -3)",
+   "(2 | -2)",
+   "(2 | -5)"
+  ],
+  "correct": 0,
+  "explanation": "f(2) = 2 · 2 − 7 = -3, also liegt (2 | -3) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x − 6)²",
+  "options": [
+   "x² − 36",
+   "x² + 12x + 36",
+   "x² − 12x + 36",
+   "x² − 12x − 36"
+  ],
+  "correct": 2,
+  "explanation": "2. binomische Formel: (x − 6)² = x² − 2·6·x + 6² = x² − 12x + 36."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Welcher Punkt liegt auf dem Graphen von f(x) = -3x − 7?",
+  "options": [
+   "(6 | -25)",
+   "(7 | -25)",
+   "(6 | -27)",
+   "(6 | -24)"
+  ],
+  "correct": 0,
+  "explanation": "f(6) = -3 · 6 − 7 = -25, also liegt (6 | -25) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 9 cm, ZB = 6 cm. Wie lang ist ZB'?",
+  "options": [
+   "18 cm",
+   "20 cm",
+   "24 cm",
+   "15 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 6 · 9/3 = 6 · 3 = 18 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Wähle die richtige Antwort. Berechne: √3 · √12",
+  "options": [
+   "7",
+   "4",
+   "6",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "√3 · √12 = √(3 · 12) = √36 = 6."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 7 cm, ZA' = 14 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "4 cm",
+   "10 cm",
+   "5 cm",
+   "3 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 14/7 = 2 · 2 = 4 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 91²",
+  "options": [
+   "8283",
+   "8371",
+   "8281",
+   "8279"
+  ],
+  "correct": 2,
+  "explanation": "91² = (90 + 1)² = 8100 + 180 + 1 = 8281."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x − 9)²",
+  "options": [
+   "x² + 18x + 81",
+   "x² − 81",
+   "x² − 18x − 81",
+   "x² − 18x + 81"
+  ],
+  "correct": 3,
+  "explanation": "2. binomische Formel: (x − 9)² = x² − 2·9·x + 9² = x² − 18x + 81."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(-4 | -4) und Q(-2 | -2). Wie groß ist die Steigung m?",
+  "options": [
+   "1",
+   "-3",
+   "3",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-2 − (-4)) / (-2 − (-4)) = 2/2 = 1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 4x + 4?",
+  "options": [
+   "(-4 | -11)",
+   "(-4 | -12)",
+   "(-4 | -14)",
+   "(-3 | -12)"
+  ],
+  "correct": 1,
+  "explanation": "f(-4) = 4 · -4 + 4 = -12, also liegt (-4 | -12) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Multipliziere aus: (x − 11)²",
+  "options": [
+   "x² − 121",
+   "x² − 22x − 121",
+   "x² + 22x + 121",
+   "x² − 22x + 121"
+  ],
+  "correct": 3,
+  "explanation": "2. binomische Formel: (x − 11)² = x² − 2·11·x + 11² = x² − 22x + 121."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x + 8)(x − 8)",
+  "options": [
+   "x² + 64",
+   "x² − 16x + 64",
+   "x² − 16x − 64",
+   "x² − 64"
+  ],
+  "correct": 3,
+  "explanation": "3. binomische Formel: (x + 8)(x − 8) = x² − 8² = x² − 64."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(0 | 3) und Q(3 | 9). Wie groß ist die Steigung m?",
+  "options": [
+   "-3",
+   "2",
+   "1",
+   "-4"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (9 − (3)) / (3 − (0)) = 6/3 = 2."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 32²",
+  "options": [
+   "1024",
+   "1054",
+   "1028",
+   "1020"
+  ],
+  "correct": 0,
+  "explanation": "32² = (30 + 2)² = 900 + 120 + 4 = 1024."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √2500 : √25",
+  "options": [
+   "13",
+   "10",
+   "9",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "√2500 : √25 = √(2500 / 25) = √100 = 10."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(0 | -5) und Q(2 | -9). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "-3",
+   "2",
+   "-1"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-9 − (-5)) / (2 − (0)) = -4/2 = -2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(2 | -7) und Q(4 | -11). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "0",
+   "-1",
+   "-2"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-11 − (-7)) / (4 − (2)) = -4/2 = -2."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 8)(x − 8)",
+  "options": [
+   "x² + 64",
+   "x² − 16x − 64",
+   "x² − 16x + 64",
+   "x² − 64"
+  ],
+  "correct": 3,
+  "explanation": "3. binomische Formel: (x + 8)(x − 8) = x² − 8² = x² − 64."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(3 | -1) und Q(5 | -3). Wie groß ist die Steigung m?",
+  "options": [
+   "0",
+   "-1",
+   "1",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-3 − (-1)) / (5 − (3)) = -2/2 = -1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(0 | 1) und Q(3 | 7). Wie groß ist die Steigung m?",
+  "options": [
+   "2",
+   "-4",
+   "-2",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (7 − (1)) / (3 − (0)) = 6/3 = 2."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √3 · √27",
+  "options": [
+   "10",
+   "5",
+   "6",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "√3 · √27 = √(3 · 27) = √81 = 9."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 4 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "9 cm",
+   "6 cm",
+   "10 cm",
+   "8 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 4/2 = 5 · 2 = 10 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(-3 | -2) und Q(0 | -5). Wie groß ist die Steigung m?",
+  "options": [
+   "1",
+   "-3",
+   "-1",
+   "-2"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-5 − (-2)) / (0 − (-3)) = -3/3 = -1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √2 · √128",
+  "options": [
+   "18",
+   "12",
+   "20",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "√2 · √128 = √(2 · 128) = √256 = 16."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(0 | 0) und Q(2 | 2). Wie groß ist die Steigung m?",
+  "options": [
+   "4",
+   "-4",
+   "3",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (2 − (0)) / (2 − (0)) = 2/2 = 1."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 4x + 1?",
+  "options": [
+   "(-2 | -7)",
+   "(-2 | -9)",
+   "(-1 | -7)",
+   "(-2 | -6)"
+  ],
+  "correct": 0,
+  "explanation": "f(-2) = 4 · -2 + 1 = -7, also liegt (-2 | -7) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Welcher Punkt liegt auf dem Graphen von f(x) = 2x + 5?",
+  "options": [
+   "(0 | 3)",
+   "(0 | 5)",
+   "(0 | 6)",
+   "(1 | 5)"
+  ],
+  "correct": 1,
+  "explanation": "f(0) = 2 · 0 + 5 = 5, also liegt (0 | 5) auf dem Graphen."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Berechne: √4 · √25",
+  "options": [
+   "13",
+   "11",
+   "7",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "√4 · √25 = √(4 · 25) = √100 = 10."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Teste dein Wissen: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 4 cm, ZA' = 16 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "15 cm",
+   "20 cm",
+   "19 cm",
+   "26 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 16/4 = 5 · 4 = 20 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 41²",
+  "options": [
+   "1681",
+   "1721",
+   "1679",
+   "1683"
+  ],
+  "correct": 0,
+  "explanation": "41² = (40 + 1)² = 1600 + 80 + 1 = 1681."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x − 4)²",
+  "options": [
+   "x² − 16",
+   "x² − 8x + 16",
+   "x² − 8x − 16",
+   "x² + 8x + 16"
+  ],
+  "correct": 1,
+  "explanation": "2. binomische Formel: (x − 4)² = x² − 2·4·x + 4² = x² − 8x + 16."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √8 · √2",
+  "options": [
+   "4",
+   "6",
+   "7",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "√8 · √2 = √(8 · 2) = √16 = 4."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 16 cm, ZB = 6 cm. Wie lang ist ZB'?",
+  "options": [
+   "12 cm",
+   "6 cm",
+   "14 cm",
+   "13 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 6 · 16/8 = 6 · 2 = 12 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 37²",
+  "options": [
+   "1375",
+   "1409",
+   "1363",
+   "1369"
+  ],
+  "correct": 3,
+  "explanation": "37² = (40 − 3)² = 1600 − 240 + 9 = 1369."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 5 cm, ZA' = 10 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "1 cm",
+   "12 cm",
+   "10 cm",
+   "6 cm"
+  ],
+  "correct": 3,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 10/5 = 3 · 2 = 6 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = 3x + 5?",
+  "options": [
+   "(-6 | -13)",
+   "(-5 | -13)",
+   "(-6 | -12)",
+   "(-6 | -15)"
+  ],
+  "correct": 0,
+  "explanation": "f(-6) = 3 · -6 + 5 = -13, also liegt (-6 | -13) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Teste dein Wissen: Eine Gerade verläuft durch P(-3 | 3) und Q(-1 | 1). Wie groß ist die Steigung m?",
+  "options": [
+   "3",
+   "-1",
+   "4",
+   "-4"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (1 − (3)) / (-1 − (-3)) = -2/2 = -1."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 7 cm, ZA' = 21 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "18 cm",
+   "14 cm",
+   "15 cm",
+   "13 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 21/7 = 5 · 3 = 15 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 29²",
+  "options": [
+   "843",
+   "841",
+   "871",
+   "839"
+  ],
+  "correct": 1,
+  "explanation": "29² = (30 − 1)² = 900 − 60 + 1 = 841."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = 4x + 8?",
+  "options": [
+   "(-5 | -16)",
+   "(-6 | -16)",
+   "(-6 | -18)",
+   "(-6 | -15)"
+  ],
+  "correct": 1,
+  "explanation": "f(-6) = 4 · -6 + 8 = -16, also liegt (-6 | -16) auf dem Graphen."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x + 1)(x − 1)",
+  "options": [
+   "x² − 1",
+   "x² − 2x + 1",
+   "x² + 1",
+   "x² − 2x − 1"
+  ],
+  "correct": 0,
+  "explanation": "3. binomische Formel: (x + 1)(x − 1) = x² − 1² = x² − 1."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √2 · √72",
+  "options": [
+   "11",
+   "16",
+   "10",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "√2 · √72 = √(2 · 72) = √144 = 12."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 3 cm, ZA' = 6 cm, ZB = 9 cm. Wie lang ist ZB'?",
+  "options": [
+   "16 cm",
+   "18 cm",
+   "14 cm",
+   "23 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 9 · 6/3 = 9 · 2 = 18 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 88²",
+  "options": [
+   "7740",
+   "7744",
+   "7834",
+   "7748"
+  ],
+  "correct": 1,
+  "explanation": "88² = (90 − 2)² = 8100 − 360 + 4 = 7744."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Berechne mit einer binomischen Formel: 93²",
+  "options": [
+   "8643",
+   "8739",
+   "8655",
+   "8649"
+  ],
+  "correct": 3,
+  "explanation": "93² = (90 + 3)² = 8100 + 540 + 9 = 8649."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √196 : √4",
+  "options": [
+   "10",
+   "5",
+   "7",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "√196 : √4 = √(196 / 4) = √49 = 7."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 30 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "35 cm",
+   "30 cm",
+   "37 cm",
+   "33 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 30/6 = 7 · 5 = 35 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 52²",
+  "options": [
+   "2704",
+   "2754",
+   "2708",
+   "2700"
+  ],
+  "correct": 0,
+  "explanation": "52² = (50 + 2)² = 2500 + 200 + 4 = 2704."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(2 | 10) und Q(4 | 16). Wie groß ist die Steigung m?",
+  "options": [
+   "0",
+   "3",
+   "-3",
+   "-1"
+  ],
+  "correct": 1,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (16 − (10)) / (4 − (2)) = 6/2 = 3."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Aufgabe: Vereinfache: √256 : √4",
+  "options": [
+   "7",
+   "11",
+   "5",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "√256 : √4 = √(256 / 4) = √64 = 8."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Berechne: √5 · √45",
+  "options": [
+   "19",
+   "15",
+   "18",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "√5 · √45 = √(5 · 45) = √225 = 15."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Aufgabe: Eine Gerade verläuft durch P(0 | -5) und Q(4 | -13). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "-3",
+   "0",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-13 − (-5)) / (4 − (0)) = -8/4 = -2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 4 cm, ZB = 7 cm. Wie lang ist ZB'?",
+  "options": [
+   "11 cm",
+   "18 cm",
+   "14 cm",
+   "12 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 7 · 4/2 = 7 · 2 = 14 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Berechne: √2 · √200",
+  "options": [
+   "16",
+   "20",
+   "21",
+   "23"
+  ],
+  "correct": 1,
+  "explanation": "√2 · √200 = √(2 · 200) = √400 = 20."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 30 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "30 cm",
+   "25 cm",
+   "28 cm",
+   "21 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 30/6 = 5 · 5 = 25 cm."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Teste dein Wissen: Vereinfache: √144 : √16",
+  "options": [
+   "2",
+   "4",
+   "5",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "√144 : √16 = √(144 / 16) = √9 = 3."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 77²",
+  "options": [
+   "5935",
+   "6009",
+   "5929",
+   "5923"
+  ],
+  "correct": 2,
+  "explanation": "77² = (80 − 3)² = 6400 − 480 + 9 = 5929."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Berechne mit einer binomischen Formel: 73²",
+  "options": [
+   "5335",
+   "5323",
+   "5399",
+   "5329"
+  ],
+  "correct": 3,
+  "explanation": "73² = (70 + 3)² = 4900 + 420 + 9 = 5329."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Multipliziere aus: (x + 12)²",
+  "options": [
+   "x² + 24x + 24",
+   "x² + 144",
+   "x² + 12x + 144",
+   "x² + 24x + 144"
+  ],
+  "correct": 3,
+  "explanation": "1. binomische Formel: (x + 12)² = x² + 2·12·x + 12² = x² + 24x + 144."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -1x?",
+  "options": [
+   "(5 | -4)",
+   "(6 | -5)",
+   "(5 | -7)",
+   "(5 | -5)"
+  ],
+  "correct": 3,
+  "explanation": "f(5) = -1 · 5 = -5, also liegt (5 | -5) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 24 cm, ZB = 8 cm. Wie lang ist ZB'?",
+  "options": [
+   "24 cm",
+   "21 cm",
+   "22 cm",
+   "25 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 8 · 24/8 = 8 · 3 = 24 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 32 cm, ZB = 8 cm. Wie lang ist ZB'?",
+  "options": [
+   "30 cm",
+   "32 cm",
+   "36 cm",
+   "29 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 8 · 32/8 = 8 · 4 = 32 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Aufgabe: Berechne mit einer binomischen Formel: 41²",
+  "options": [
+   "1681",
+   "1721",
+   "1679",
+   "1683"
+  ],
+  "correct": 0,
+  "explanation": "41² = (40 + 1)² = 1600 + 80 + 1 = 1681."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Teste dein Wissen: Multipliziere aus: (x − 1)²",
+  "options": [
+   "x² − 1",
+   "x² + 2x + 1",
+   "x² − 2x + 1",
+   "x² − 2x − 1"
+  ],
+  "correct": 2,
+  "explanation": "2. binomische Formel: (x − 1)² = x² − 2·1·x + 1² = x² − 2x + 1."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 24 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "9 cm",
+   "5 cm",
+   "10 cm",
+   "15 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 24/8 = 3 · 3 = 9 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 32 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "23 cm",
+   "20 cm",
+   "24 cm",
+   "21 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 32/8 = 5 · 4 = 20 cm."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Wähle die richtige Antwort. Berechne mit einer binomischen Formel: 71²",
+  "options": [
+   "5039",
+   "5043",
+   "5111",
+   "5041"
+  ],
+  "correct": 3,
+  "explanation": "71² = (70 + 1)² = 4900 + 140 + 1 = 5041."
+ },
+ {
+  "topic": "Binomische Formeln",
+  "question": "Multipliziere aus: (x − 12)²",
+  "options": [
+   "x² − 24x − 144",
+   "x² − 144",
+   "x² − 24x + 144",
+   "x² + 24x + 144"
+  ],
+  "correct": 2,
+  "explanation": "2. binomische Formel: (x − 12)² = x² − 2·12·x + 12² = x² − 24x + 144."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-4 | 3) und Q(0 | -5). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "-4",
+   "-3",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-5 − (3)) / (0 − (-4)) = -8/4 = -2."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(0 | 5) und Q(2 | 9). Wie groß ist die Steigung m?",
+  "options": [
+   "-2",
+   "3",
+   "2",
+   "-4"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (9 − (5)) / (2 − (0)) = 4/2 = 2."
+ },
+ {
+  "topic": "Wurzelgesetze",
+  "question": "Vereinfache: √144 : √9",
+  "options": [
+   "6",
+   "7",
+   "2",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "√144 : √9 = √(144 / 9) = √16 = 4."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -3x − 7?",
+  "options": [
+   "(-2 | -3)",
+   "(-2 | 0)",
+   "(-2 | -1)",
+   "(-1 | -1)"
+  ],
+  "correct": 2,
+  "explanation": "f(-2) = -3 · -2 − 7 = -1, also liegt (-2 | -1) auf dem Graphen."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Aufgabe: Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 8 cm, ZA' = 16 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "6 cm",
+   "5 cm",
+   "4 cm",
+   "10 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 16/8 = 3 · 2 = 6 cm."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 2 cm, ZA' = 8 cm, ZB = 3 cm. Wie lang ist ZB'?",
+  "options": [
+   "12 cm",
+   "17 cm",
+   "13 cm",
+   "18 cm"
+  ],
+  "correct": 0,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 3 · 8/2 = 3 · 4 = 12 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Eine Gerade verläuft durch P(-1 | 4) und Q(2 | -2). Wie groß ist die Steigung m?",
+  "options": [
+   "-3",
+   "-1",
+   "-2",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-2 − (4)) / (2 − (-1)) = -6/3 = -2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 7 cm, ZA' = 21 cm, ZB = 2 cm. Wie lang ist ZB'?",
+  "options": [
+   "10 cm",
+   "7 cm",
+   "6 cm",
+   "3 cm"
+  ],
+  "correct": 2,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 2 · 21/7 = 2 · 3 = 6 cm."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Wähle die richtige Antwort. Welcher Punkt liegt auf dem Graphen von f(x) = -3x + 5?",
+  "options": [
+   "(-1 | 8)",
+   "(0 | 8)",
+   "(-1 | 6)",
+   "(-1 | 9)"
+  ],
+  "correct": 0,
+  "explanation": "f(-1) = -3 · -1 + 5 = 8, also liegt (-1 | 8) auf dem Graphen."
+ },
+ {
+  "topic": "Lineare Funktionen",
+  "question": "Eine Gerade verläuft durch P(-1 | 5) und Q(3 | -3). Wie groß ist die Steigung m?",
+  "options": [
+   "-3",
+   "2",
+   "-2",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "m = (y₂ − y₁) / (x₂ − x₁) = (-3 − (5)) / (3 − (-1)) = -8/4 = -2."
+ },
+ {
+  "topic": "Strahlensätze",
+  "question": "Wähle die richtige Antwort. Zwei Strahlen von Z werden von Parallelen geschnitten. Es gilt ZA = 6 cm, ZA' = 12 cm, ZB = 5 cm. Wie lang ist ZB'?",
+  "options": [
+   "11 cm",
+   "10 cm",
+   "14 cm",
+   "9 cm"
+  ],
+  "correct": 1,
+  "explanation": "1. Strahlensatz: ZA' / ZA = ZB' / ZB, also ZB' = 5 · 12/6 = 5 · 2 = 10 cm."
+ }
+]

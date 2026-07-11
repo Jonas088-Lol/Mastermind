@@ -1,10 +1,16 @@
 import {
+  CalendarDays,
   Edit3,
   Flame,
+  Layers,
   Lock,
   Mail,
+  Medal,
   Settings,
+  Skull,
   Sparkles,
+  Swords,
+  Target,
   Trophy,
   Zap,
   Quote,
@@ -116,6 +122,60 @@ export default async function ProfilPage() {
       orderBy: { createdAt: "asc" },
     }),
   ]);
+
+  // ── "Meine Statistik": server-aggregierte Kennzahlen ──
+  const [
+    classHigherCount,
+    classTotalCount,
+    subjectAnswers,
+    totalAnswerCount,
+    correctAnswerCount,
+    flashcardSessionCount,
+    duelsCompleted,
+    duelsWon,
+    bossDamageAgg,
+  ] = await Promise.all([
+    user.classId
+      ? prisma.user.count({ where: { classId: user.classId, role: "student", xp: { gt: user.xp } } })
+      : Promise.resolve(0),
+    user.classId
+      ? prisma.user.count({ where: { classId: user.classId, role: "student" } })
+      : Promise.resolve(0),
+    prisma.exerciseAnswer.findMany({
+      where: { userId: session.userId },
+      select: { question: { select: { topic: { select: { subject: true } } } } },
+    }),
+    prisma.exerciseAnswer.count({ where: { userId: session.userId } }),
+    prisma.exerciseAnswer.count({ where: { userId: session.userId, correct: true } }),
+    prisma.xpLog.count({ where: { userId: session.userId, reason: "karteikarte_session" } }),
+    prisma.duel.count({
+      where: {
+        status: "completed",
+        OR: [{ challengerId: session.userId }, { challengedId: session.userId }],
+      },
+    }),
+    prisma.duel.count({ where: { status: "completed", winnerId: session.userId } }),
+    prisma.bossParticipant.aggregate({
+      where: { userId: session.userId },
+      _sum: { damage: true },
+    }),
+  ]);
+
+  const classRank = user.classId && classTotalCount > 0 ? classHigherCount + 1 : null;
+
+  const subjectAnswerCounts: Record<string, number> = {};
+  for (const a of subjectAnswers) {
+    const subj = a.question.topic.subject;
+    subjectAnswerCounts[subj] = (subjectAnswerCounts[subj] ?? 0) + 1;
+  }
+  const favoriteSubjectEntry = Object.entries(subjectAnswerCounts).sort(([, a], [, b]) => b - a)[0] ?? null;
+  const favoriteSubjectLabel = favoriteSubjectEntry
+    ? favoriteSubjectEntry[0].charAt(0).toUpperCase() + favoriteSubjectEntry[0].slice(1)
+    : null;
+
+  const answerQuote = totalAnswerCount > 0 ? Math.round((correctAnswerCount / totalAnswerCount) * 100) : null;
+  const duelsLost = duelsCompleted - duelsWon;
+  const totalBossDamage = bossDamageAgg._sum.damage ?? 0;
 
   const earnedSlugs = new Set(earnedAchievements.map((a) => a.slug));
 
@@ -315,6 +375,69 @@ export default async function ProfilPage() {
             {equippedTitleDef ? `Titel: ${equippedTitleDef.name}` : "Titel ausrüsten"}
           </Link>
         </p>
+      </section>
+
+      {/* ── Meine Statistik ─────────────────────────────────── */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-bold tracking-tight">Meine Statistik</h2>
+        <div className="grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-4">
+          <Stat
+            label="Mitglied seit"
+            value={user.createdAt.toLocaleDateString("de-DE", { month: "short", year: "numeric" })}
+            suffix={user.createdAt.toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" })}
+            icon={CalendarDays}
+            tone="text-muted-fg"
+          />
+          <Stat
+            label="Gesamt-XP"
+            value={formatXp(user.xp)}
+            suffix={`Level ${level}`}
+            icon={Zap}
+            tone="text-brand"
+          />
+          <Stat
+            label="Klassen-Rang"
+            value={classRank ? `#${classRank}` : "—"}
+            suffix={classRank ? `von ${classTotalCount} in der Klasse` : "Keine Klasse zugeordnet"}
+            icon={Medal}
+            tone="text-warning"
+          />
+          <Stat
+            label="Lieblingsfach"
+            value={favoriteSubjectLabel ?? "—"}
+            suffix={favoriteSubjectEntry ? `${favoriteSubjectEntry[1]} Antworten` : "Noch keine Übungen"}
+            icon={BookOpen}
+            tone="text-info"
+          />
+          <Stat
+            label="Übungs-Quote"
+            value={answerQuote !== null ? `${answerQuote}%` : "—"}
+            suffix={totalAnswerCount > 0 ? `${correctAnswerCount} von ${totalAnswerCount} richtig` : "Noch keine Antworten"}
+            icon={Target}
+            tone="text-success"
+          />
+          <Stat
+            label="Karteikarten"
+            value={String(flashcardSessionCount)}
+            suffix="Lern-Sessions"
+            icon={Layers}
+            tone="text-brand"
+          />
+          <Stat
+            label="Duell-Bilanz"
+            value={`${duelsWon} : ${duelsLost}`}
+            suffix={duelsCompleted > 0 ? `${duelsCompleted} Duelle gespielt` : "Noch keine Duelle"}
+            icon={Swords}
+            tone="text-warning"
+          />
+          <Stat
+            label="Boss-Treffer"
+            value={totalBossDamage.toLocaleString("de-DE")}
+            suffix="Schaden gesamt"
+            icon={Skull}
+            tone="text-danger"
+          />
+        </div>
       </section>
 
       {/* ── Lernstatistiken ─────────────────────────────────── */}

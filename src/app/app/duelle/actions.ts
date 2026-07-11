@@ -53,6 +53,58 @@ export async function sendChallenge(formData: FormData): Promise<void> {
   revalidatePath("/app/duelle");
 }
 
+export async function rematchDuel(duelId: string): Promise<void> {
+  const session = await getSession();
+  if (!session) redirect("/login");
+  if (effectiveRole(session) !== "student") return;
+
+  const id = duelId?.trim();
+  if (!id) return;
+
+  const duel = await prisma.duel.findUnique({
+    where: { id },
+    select: { challengerId: true, challengedId: true, topicId: true, status: true },
+  });
+  if (!duel || duel.status !== "completed") return;
+
+  const isChallenger = duel.challengerId === session.userId;
+  const isChallenged = duel.challengedId === session.userId;
+  if (!isChallenger && !isChallenged) return;
+
+  const opponentId = isChallenger ? duel.challengedId : duel.challengerId;
+
+  // Gegner muss weiterhin Schüler derselben Schule sein
+  const opponent = await prisma.user.findUnique({
+    where: { id: opponentId },
+    select: { schoolId: true, role: true },
+  });
+  if (!opponent || opponent.role !== "student" || opponent.schoolId !== session.schoolId) return;
+
+  const expiresAt = new Date(Date.now() + 48 * 60 * 60 * 1000); // 48h
+
+  await prisma.duel.create({
+    data: {
+      challengerId: session.userId,
+      challengedId: opponentId,
+      topicId: duel.topicId,
+      message: "Revanche!",
+      expiresAt,
+    },
+  });
+
+  await prisma.appNotification.create({
+    data: {
+      userId: opponentId,
+      type: "duel_challenge",
+      title: "Revanche-Herausforderung!",
+      body: `${session.name} fordert dich zur Revanche heraus.`,
+      linkUrl: "/app/duelle",
+    },
+  });
+
+  revalidatePath("/app/duelle");
+}
+
 export async function acceptDuel(duelId: string): Promise<void> {
   const session = await getSession();
   if (!session) return;

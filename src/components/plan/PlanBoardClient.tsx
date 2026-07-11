@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { Maximize2, Minimize2, RefreshCw, AlertTriangle, CalendarDays, ChevronLeft, ChevronRight, Settings, Trophy } from "lucide-react";
+import { Maximize2, Minimize2, RefreshCw, AlertTriangle, CalendarDays, ChevronLeft, ChevronRight, Megaphone, Settings, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { BoardClass, BoardEvent, BoardSubstitution, BoardTeam } from "@/lib/plan-board";
+import type { BoardAnnouncement, BoardClass, BoardEvent, BoardSubstitution, BoardTeam } from "@/lib/plan-board";
 
 /**
  * Plan-Vollbildanzeige („Anzeigetafel") — für Bildschirme/Fernseher im
@@ -19,6 +19,7 @@ interface Props {
   todayLabel: string;
   events: BoardEvent[];
   teams: BoardTeam[];
+  announcements: BoardAnnouncement[];
 }
 
 /**
@@ -29,12 +30,13 @@ interface BoardConfig {
   showPlan: boolean;
   showTermine: boolean;
   showTeams: boolean;
+  showAnkuendigungen: boolean;
   /** Sekunden pro Folie. */
   seconds: number;
 }
 
 const CONFIG_KEY = "mm-board-config";
-const DEFAULT_CONFIG: BoardConfig = { showPlan: true, showTermine: true, showTeams: true, seconds: 20 };
+const DEFAULT_CONFIG: BoardConfig = { showPlan: true, showTermine: true, showTeams: true, showAnkuendigungen: true, seconds: 20 };
 
 function loadConfig(): BoardConfig {
   try {
@@ -45,6 +47,7 @@ function loadConfig(): BoardConfig {
       showPlan: parsed.showPlan ?? true,
       showTermine: parsed.showTermine ?? true,
       showTeams: parsed.showTeams ?? true,
+      showAnkuendigungen: parsed.showAnkuendigungen ?? true,
       seconds: Math.min(120, Math.max(5, Number(parsed.seconds) || 20)),
     };
   } catch {
@@ -76,7 +79,7 @@ function substLabel(s: BoardSubstitution): string {
   return s.subjectName ?? "Vertretung";
 }
 
-export function PlanBoardClient({ classes, substitutions, periodTimes, todayLabel, events, teams }: Props) {
+export function PlanBoardClient({ classes, substitutions, periodTimes, todayLabel, events, teams, announcements }: Props) {
   const [fullscreen, setFullscreen] = useState(false);
   const [time, setTime] = useState<string | null>(null);
   const [countdown, setCountdown] = useState(90);
@@ -95,8 +98,9 @@ export function PlanBoardClient({ classes, substitutions, periodTimes, todayLabe
   }
 
   // ── Kiosk-Folien: nur aktivierte UND befüllte Folien; Fallback auf Plan ──
-  const slides: { key: "plan" | "termine" | "teams"; label: string }[] = [
+  const slides: { key: "plan" | "termine" | "teams" | "ankuendigungen"; label: string }[] = [
     ...(config.showPlan ? [{ key: "plan" as const, label: "Stundenplan & Vertretungen" }] : []),
+    ...(config.showAnkuendigungen && announcements.length > 0 ? [{ key: "ankuendigungen" as const, label: "Ankündigungen" }] : []),
     ...(config.showTermine && events.length > 0 ? [{ key: "termine" as const, label: "Termine" }] : []),
     ...(config.showTeams && teams.length > 0 ? [{ key: "teams" as const, label: "Schulmannschaften" }] : []),
   ];
@@ -234,6 +238,7 @@ export function PlanBoardClient({ classes, substitutions, periodTimes, todayLabe
                 <div className="mt-3 space-y-2">
                   {([
                     { key: "showPlan" as const, label: "Stunden- & Vertretungsplan", count: null },
+                    { key: "showAnkuendigungen" as const, label: "Ankündigungen", count: announcements.length },
                     { key: "showTermine" as const, label: "Termine", count: events.length },
                     { key: "showTeams" as const, label: "Schulmannschaften", count: teams.length },
                   ]).map((o) => (
@@ -369,6 +374,44 @@ export function PlanBoardClient({ classes, substitutions, periodTimes, todayLabe
           </table>
         </div>
       ))}
+
+      {/* ── Folie: Ankündigungen ── */}
+      {slide.key === "ankuendigungen" && (
+        <div className="flex flex-1 items-center overflow-y-auto p-4 sm:p-6">
+          <div className="mx-auto grid w-full max-w-4xl gap-4 sm:gap-5">
+            {announcements.map((a) => {
+              const accent = a.color ?? "#3b82f6";
+              return (
+                <div
+                  key={a.id}
+                  className="flex items-center gap-5 overflow-hidden rounded-2xl border bg-surface p-5 sm:gap-6 sm:p-7"
+                  style={{ borderColor: `${accent}55` }}
+                >
+                  <div className="w-1.5 self-stretch rounded-full" style={{ backgroundColor: accent }} />
+                  {a.emoji && (
+                    <span className={cn("shrink-0 text-4xl sm:text-5xl", fullscreen && "text-6xl")}>{a.emoji}</span>
+                  )}
+                  <div className="min-w-0 flex-1 text-left">
+                    <p className={cn("font-bold", fullscreen ? "text-3xl" : "text-xl sm:text-2xl")} style={{ color: accent }}>
+                      {a.title}
+                    </p>
+                    {a.body && (
+                      <p className={cn("mt-1 whitespace-pre-line text-muted-fg", fullscreen ? "text-xl" : "text-sm sm:text-base")}>
+                        {a.body}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+            {announcements.length === 0 && (
+              <div className="flex items-center justify-center gap-2 py-16 text-muted-fg">
+                <Megaphone className="size-5" /> Keine Ankündigungen.
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* ── Folie: Termine ── */}
       {slide.key === "termine" && (

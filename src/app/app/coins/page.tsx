@@ -26,6 +26,8 @@ const REASON_LABELS: Record<string, string> = {
   duel_win:            "Duell gewonnen",
   duel_participate:    "Duell teilgenommen",
   achievement_unlock:  "Erfolg freigeschaltet",
+  daily_goal:          "Tagesziel erreicht",
+  weekly_goal:         "Wochenziel erreicht",
   shop_purchase:       "Shop-Kauf",
   mollie_purchase:     "Münz-Kauf",
   stripe_purchase:     "Münz-Kauf (alt)",
@@ -70,6 +72,10 @@ const EARN_WAYS = [
   { reason: "aufgabe_bewertet",       icon: "✅", label: "Aufgabe bewertet",        amount: COIN_REWARDS.aufgabe_bewertet },
   { reason: "duel_participate",       icon: "⚔️", label: "An Duell teilnehmen",     amount: COIN_REWARDS.duel_participate },
   { reason: "profil_foto_gesetzt",    icon: "🖼️", label: "Profilfoto hochladen",    amount: COIN_REWARDS.profil_foto_gesetzt },
+  { reason: "zeitungsartikel",        icon: "📰", label: "Zeitungsartikel veröffentlicht", amount: COIN_REWARDS.zeitungsartikel },
+  { reason: "office_dokument_erstellt", icon: "📄", label: "Dokument/Tabelle/Präsentation erstellt", amount: COIN_REWARDS.office_dokument_erstellt },
+  { reason: "daily_goal",            icon: "🎯", label: "Tagesziel erreichen",     amount: COIN_REWARDS.daily_goal },
+  { reason: "weekly_goal",           icon: "🏅", label: "Wochenziel erreichen",    amount: COIN_REWARDS.weekly_goal },
   { reason: "erste_aufgabe_semester", icon: "🎯", label: "Erste Aufgabe im Semester",amount: COIN_REWARDS.erste_aufgabe_semester },
 ] as const;
 

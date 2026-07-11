@@ -1,0 +1,7202 @@
+[
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 212?",
+  "options": [
+   "11010101",
+   "11011100",
+   "11010100",
+   "11010011"
+  ],
+  "correct": 2,
+  "explanation": "212₁₀ = 11010100₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"12\" * 3) aus?",
+  "options": [
+   "1212",
+   "121212",
+   "12121212",
+   "12 12 12"
+  ],
+  "correct": 1,
+  "explanation": "\"12\" * 3 wiederholt den String 3-mal: 121212."
+ },
+ {
+  "topic": "Logik",
+  "question": "Informatik: Was gilt für „Exklusiv-Oder (XOR)“?",
+  "options": [
+   "kehrt den Wahrheitswert von a um",
+   "ist nur True, wenn a und b beide True sind",
+   "ergibt False",
+   "ist True, wenn genau einer der beiden Werte True ist"
+  ],
+  "correct": 3,
+  "explanation": "Exklusiv-Oder (XOR): ist True, wenn genau einer der beiden Werte True ist."
+ },
+ {
+  "topic": "Logik",
+  "question": "Welcher Ausdruck ergibt in Python False?",
+  "options": [
+   "not (False or False)",
+   "not (True and True)",
+   "not (True and False)",
+   "True and not False"
+  ],
+  "correct": 1,
+  "explanation": "not (True and True) ergibt False."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <h1> verwendet?",
+  "options": [
+   "enthält den sichtbaren Seiteninhalt",
+   "enthält Metadaten der Seite",
+   "kennzeichnet einen Textabsatz",
+   "ist die wichtigste Überschrift"
+  ],
+  "correct": 3,
+  "explanation": "<h1>: ist die wichtigste Überschrift."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag erzeugt eine Tabelle?",
+  "options": [
+   "<div>",
+   "<em>",
+   "<input>",
+   "<table>"
+  ],
+  "correct": 3,
+  "explanation": "<table>: erzeugt eine Tabelle."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 1101000?",
+  "options": [
+   "106",
+   "96",
+   "102",
+   "104"
+  ],
+  "correct": 3,
+  "explanation": "1101000₂ = 104₁₀."
+ },
+ {
+  "topic": "CSS",
+  "question": "Was bewirkt die CSS-Eigenschaft „height“?",
+  "options": [
+   "legt die Höhe eines Elements fest",
+   "legt die Schriftgröße fest",
+   "legt den Rahmen fest",
+   "legt den Innenabstand fest"
+  ],
+  "correct": 0,
+  "explanation": "height: legt die Höhe eines Elements fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Wofür wird das HTML-Tag <img> verwendet?",
+  "options": [
+   "erzwingt einen Zeilenumbruch",
+   "enthält Metadaten der Seite",
+   "kennzeichnet einen Textabsatz",
+   "bindet ein Bild ein"
+  ],
+  "correct": 3,
+  "explanation": "<img>: bindet ein Bild ein."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <head> verwendet?",
+  "options": [
+   "bindet ein Bild ein",
+   "enthält den sichtbaren Seiteninhalt",
+   "erzeugt eine ungeordnete Liste",
+   "enthält Metadaten der Seite"
+  ],
+  "correct": 3,
+  "explanation": "<head>: enthält Metadaten der Seite."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Haus\" + \"Baum\") aus?",
+  "options": [
+   "Haus Baum",
+   "Haus",
+   "BaumHaus",
+   "HausBaum"
+  ],
+  "correct": 3,
+  "explanation": "Die Verkettung \"Haus\" + \"Baum\" ergibt HausBaum."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(46 % 10) aus?",
+  "options": [
+   "6",
+   "5",
+   "4",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "46 % 10 = 6 (Rest der Division)."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Welche Zeit-Komplexität (Landau) hat: Insertion Sort (Worst Case)?",
+  "options": [
+   "O(log n)",
+   "O(n²)",
+   "O(n)",
+   "O(1)"
+  ],
+  "correct": 1,
+  "explanation": "Insertion Sort (Worst Case): O(n²)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „margin“?",
+  "options": [
+   "legt die Hintergrundfarbe fest",
+   "legt den Außenabstand fest",
+   "legt den Innenabstand fest",
+   "legt die Schriftgröße fest"
+  ],
+  "correct": 1,
+  "explanation": "margin: legt den Außenabstand fest."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Eigenschaft hat die Datenstruktur „Stack (Stapel)“?",
+  "options": [
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat",
+   "besteht aus Knoten und Kanten",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)"
+  ],
+  "correct": 3,
+  "explanation": "Stack (Stapel): arbeitet nach dem LIFO-Prinzip (Last In, First Out)."
+ },
+ {
+  "topic": "Logik",
+  "question": "Welcher Ausdruck ergibt in Python True?",
+  "options": [
+   "False or not True",
+   "not (True and True)",
+   "not False",
+   "not False and False"
+  ],
+  "correct": 2,
+  "explanation": "not False ergibt True."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Informatik\" + \"Baum\") aus?",
+  "options": [
+   "Informatik Baum",
+   "BaumInformatik",
+   "InformatikBaum",
+   "Baum"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Informatik\" + \"Baum\" ergibt InformatikBaum."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 175?",
+  "options": [
+   "10101110",
+   "10101111",
+   "10110001",
+   "10110000"
+  ],
+  "correct": 1,
+  "explanation": "175₁₀ = 10101111₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(6 * 8) aus?",
+  "options": [
+   "48",
+   "50",
+   "14",
+   "49"
+  ],
+  "correct": 0,
+  "explanation": "6 * 8 = 48."
+ },
+ {
+  "topic": "CSS",
+  "question": "Welche CSS-Eigenschaft legt die Textfarbe fest?",
+  "options": [
+   "font-size",
+   "margin",
+   "padding",
+   "color"
+  ],
+  "correct": 3,
+  "explanation": "color: legt die Textfarbe fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wofür wird das HTML-Tag <ol> verwendet?",
+  "options": [
+   "hebt Text (meist fett) hervor",
+   "erzeugt eine nummerierte (geordnete) Liste",
+   "enthält den sichtbaren Seiteninhalt",
+   "erzeugt einen Hyperlink (Verweis)"
+  ],
+  "correct": 1,
+  "explanation": "<ol>: erzeugt eine nummerierte (geordnete) Liste."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „text-align“?",
+  "options": [
+   "legt die Höhe eines Elements fest",
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt die Schriftgröße fest",
+   "legt den Rahmen fest"
+  ],
+  "correct": 1,
+  "explanation": "text-align: legt die horizontale Ausrichtung des Textes fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 22?",
+  "options": [
+   "10110",
+   "10101",
+   "11000",
+   "10111"
+  ],
+  "correct": 0,
+  "explanation": "22₁₀ = 10110₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Welches HTML-Tag kennzeichnet einen Textabsatz?",
+  "options": [
+   "<p>",
+   "<a>",
+   "<strong>",
+   "<div>"
+  ],
+  "correct": 0,
+  "explanation": "<p>: kennzeichnet einen Textabsatz."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag erzwingt einen Zeilenumbruch?",
+  "options": [
+   "<br>",
+   "<p>",
+   "<input>",
+   "<li>"
+  ],
+  "correct": 0,
+  "explanation": "<br>: erzwingt einen Zeilenumbruch."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Wofür wird das HTML-Tag <input> verwendet?",
+  "options": [
+   "ist ein Eingabefeld",
+   "hebt Text (meist fett) hervor",
+   "enthält den sichtbaren Seiteninhalt",
+   "bindet ein Bild ein"
+  ],
+  "correct": 0,
+  "explanation": "<input>: ist ein Eingabefeld."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(3 * 6) aus?",
+  "options": [
+   "19",
+   "18",
+   "9",
+   "-3"
+  ],
+  "correct": 1,
+  "explanation": "3 * 6 = 18."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(49 % 12) aus?",
+  "options": [
+   "0",
+   "2",
+   "3",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "49 % 12 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Hallo\" + \"Baum\") aus?",
+  "options": [
+   "HalloBaum",
+   "Hallo Baum",
+   "BaumHallo",
+   "Hallo"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Hallo\" + \"Baum\" ergibt HalloBaum."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Frage: Welche Zeit-Komplexität (Landau) hat: Quick Sort (durchschnittlich)?",
+  "options": [
+   "O(n²)",
+   "O(n)",
+   "O(log n)",
+   "O(n log n)"
+  ],
+  "correct": 3,
+  "explanation": "Quick Sort (durchschnittlich): O(n log n)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(3 ** 2) aus?",
+  "options": [
+   "9",
+   "27",
+   "6",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "3 ** 2 = 9 (Potenz)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Was bewirkt die CSS-Eigenschaft „display“?",
+  "options": [
+   "legt die Breite eines Elements fest",
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest",
+   "legt die Schriftgröße fest",
+   "legt den Außenabstand fest"
+  ],
+  "correct": 1,
+  "explanation": "display: legt das Anzeigeverhalten (z.B. block, inline, flex) fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 42?",
+  "options": [
+   "101010",
+   "101011",
+   "101100",
+   "101001"
+  ],
+  "correct": 0,
+  "explanation": "42₁₀ = 101010₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Baum\" + \"Katze\") aus?",
+  "options": [
+   "Katze",
+   "Baum",
+   "BaumKatze",
+   "KatzeBaum"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Baum\" + \"Katze\" ergibt BaumKatze."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(33 // 6) aus?",
+  "options": [
+   "6",
+   "3",
+   "5",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "33 // 6 = 5 (Ganzzahldivision)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <img> verwendet?",
+  "options": [
+   "ist ein Eingabefeld",
+   "erzeugt eine nummerierte (geordnete) Liste",
+   "bindet ein Bild ein",
+   "erzeugt eine ungeordnete Liste"
+  ],
+  "correct": 2,
+  "explanation": "<img>: bindet ein Bild ein."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Frage: Welche Zeit-Komplexität (Landau) hat: Suchen in einer Hashtabelle (durchschnittlich)?",
+  "options": [
+   "O(n²)",
+   "O(1)",
+   "O(log n)",
+   "O(n log n)"
+  ],
+  "correct": 1,
+  "explanation": "Suchen in einer Hashtabelle (durchschnittlich): O(1)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Hallo\" + \"Schule\") aus?",
+  "options": [
+   "Schule",
+   "SchuleHallo",
+   "HalloSchule",
+   "Hallo Schule"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Hallo\" + \"Schule\" ergibt HalloSchule."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Wähle die richtige Antwort. Welche Zeit-Komplexität (Landau) hat: Insertion Sort (Worst Case)?",
+  "options": [
+   "O(n²)",
+   "O(n log n)",
+   "O(1)",
+   "O(n)"
+  ],
+  "correct": 0,
+  "explanation": "Insertion Sort (Worst Case): O(n²)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Eigenschaft hat die Datenstruktur „Binärer Suchbaum“?",
+  "options": [
+   "arbeitet nach dem FIFO-Prinzip (First In, First Out)",
+   "hält kleinere Werte links, größere rechts vom Knoten",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "verbindet Elemente über Zeiger (Referenzen)"
+  ],
+  "correct": 1,
+  "explanation": "Binärer Suchbaum: hält kleinere Werte links, größere rechts vom Knoten."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Wähle die richtige Antwort. Welche Zeit-Komplexität (Landau) hat: Merge Sort?",
+  "options": [
+   "O(1)",
+   "O(n log n)",
+   "O(log n)",
+   "O(n²)"
+  ],
+  "correct": 1,
+  "explanation": "Merge Sort: O(n log n)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(31 // 11) aus?",
+  "options": [
+   "1",
+   "3",
+   "9",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "31 // 11 = 2 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Schule\" + \"Haus\") aus?",
+  "options": [
+   "SchuleHaus",
+   "Schule",
+   "Schule Haus",
+   "HausSchule"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Schule\" + \"Haus\" ergibt SchuleHaus."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Hallo\" + \"Haus\") aus?",
+  "options": [
+   "Hallo Haus",
+   "HalloHaus",
+   "HausHallo",
+   "Hallo"
+  ],
+  "correct": 1,
+  "explanation": "Die Verkettung \"Hallo\" + \"Haus\" ergibt HalloHaus."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(37 // 3) aus?",
+  "options": [
+   "11",
+   "12",
+   "1",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "37 // 3 = 12 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"xy\" * 3) aus?",
+  "options": [
+   "xy3",
+   "xy xy xy",
+   "xyxy",
+   "xyxyxy"
+  ],
+  "correct": 3,
+  "explanation": "\"xy\" * 3 wiederholt den String 3-mal: xyxyxy."
+ },
+ {
+  "topic": "Logik",
+  "question": "Frage: Was gilt für „a and b (logisches UND)“?",
+  "options": [
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "kehrt den Wahrheitswert von a um",
+   "ist nur True, wenn a und b beide True sind"
+  ],
+  "correct": 3,
+  "explanation": "a and b (logisches UND): ist nur True, wenn a und b beide True sind."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(41 // 11) aus?",
+  "options": [
+   "8",
+   "2",
+   "3",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "41 // 11 = 3 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Eigenschaft hat die Datenstruktur „Verkettete Liste“?",
+  "options": [
+   "hält kleinere Werte links, größere rechts vom Knoten",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)",
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "besteht aus Knoten und Kanten"
+  ],
+  "correct": 2,
+  "explanation": "Verkettete Liste: verbindet Elemente über Zeiger (Referenzen)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Welches HTML-Tag erzwingt einen Zeilenumbruch?",
+  "options": [
+   "<img>",
+   "<strong>",
+   "<div>",
+   "<br>"
+  ],
+  "correct": 3,
+  "explanation": "<br>: erzwingt einen Zeilenumbruch."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Eigenschaft hat die Datenstruktur „Binärer Suchbaum“?",
+  "options": [
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat",
+   "besteht aus Knoten und Kanten",
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "hält kleinere Werte links, größere rechts vom Knoten"
+  ],
+  "correct": 3,
+  "explanation": "Binärer Suchbaum: hält kleinere Werte links, größere rechts vom Knoten."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag hebt Text (meist fett) hervor?",
+  "options": [
+   "<body>",
+   "<ol>",
+   "<strong>",
+   "<title>"
+  ],
+  "correct": 2,
+  "explanation": "<strong>: hebt Text (meist fett) hervor."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(4 ** 4) aus?",
+  "options": [
+   "252",
+   "260",
+   "625",
+   "256"
+  ],
+  "correct": 3,
+  "explanation": "4 ** 4 = 256 (Potenz)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <ul> verwendet?",
+  "options": [
+   "hebt Text (meist fett) hervor",
+   "ist ein Block-Container zur Gruppierung",
+   "ist ein einzelnes Listenelement",
+   "erzeugt eine ungeordnete Liste"
+  ],
+  "correct": 3,
+  "explanation": "<ul>: erzeugt eine ungeordnete Liste."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(30 // 8) aus?",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "30 // 8 = 3 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(60 % 6) aus?",
+  "options": [
+   "2",
+   "10",
+   "0",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "60 % 6 = 0 (Rest der Division)."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Frage: Welche Zeit-Komplexität (Landau) hat: Lineare Suche in einer unsortierten Liste?",
+  "options": [
+   "O(n)",
+   "O(1)",
+   "O(log n)",
+   "O(n²)"
+  ],
+  "correct": 0,
+  "explanation": "Lineare Suche in einer unsortierten Liste: O(n)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(47 % 9) aus?",
+  "options": [
+   "1",
+   "2",
+   "5",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "47 % 9 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag betont Text (meist kursiv)?",
+  "options": [
+   "<strong>",
+   "<a>",
+   "<body>",
+   "<em>"
+  ],
+  "correct": 3,
+  "explanation": "<em>: betont Text (meist kursiv)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 1000010?",
+  "options": [
+   "65",
+   "68",
+   "66",
+   "64"
+  ],
+  "correct": 2,
+  "explanation": "1000010₂ = 66₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"ha\" * 3) aus?",
+  "options": [
+   "haha",
+   "hahaha",
+   "ha3",
+   "ha ha ha"
+  ],
+  "correct": 1,
+  "explanation": "\"ha\" * 3 wiederholt den String 3-mal: hahaha."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(19 % 5) aus?",
+  "options": [
+   "3",
+   "6",
+   "1",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "19 % 5 = 4 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag erzeugt eine ungeordnete Liste?",
+  "options": [
+   "<head>",
+   "<a>",
+   "<br>",
+   "<ul>"
+  ],
+  "correct": 3,
+  "explanation": "<ul>: erzeugt eine ungeordnete Liste."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Was bewirkt die CSS-Eigenschaft „width“?",
+  "options": [
+   "legt die Höhe eines Elements fest",
+   "legt die Breite eines Elements fest",
+   "legt den Rahmen fest",
+   "legt den Innenabstand fest"
+  ],
+  "correct": 1,
+  "explanation": "width: legt die Breite eines Elements fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Roboter\")) aus?",
+  "options": [
+   "9",
+   "6",
+   "8",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Das Wort \"Roboter\" hat 7 Zeichen."
+ },
+ {
+  "topic": "Logik",
+  "question": "Was gilt für „True and False“?",
+  "options": [
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ergibt False",
+   "kehrt den Wahrheitswert von a um",
+   "ergibt True"
+  ],
+  "correct": 1,
+  "explanation": "True and False: ergibt False."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 10101111?",
+  "options": [
+   "174",
+   "175",
+   "167",
+   "177"
+  ],
+  "correct": 1,
+  "explanation": "10101111₂ = 175₁₀."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „padding“?",
+  "options": [
+   "legt den Rahmen fest",
+   "legt den Außenabstand fest",
+   "legt den Innenabstand fest",
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest"
+  ],
+  "correct": 2,
+  "explanation": "padding: legt den Innenabstand fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Schule\")) aus?",
+  "options": [
+   "8",
+   "4",
+   "7",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Das Wort \"Schule\" hat 6 Zeichen."
+ },
+ {
+  "topic": "Logik",
+  "question": "Wähle die richtige Antwort. Was gilt für „a and b (logisches UND)“?",
+  "options": [
+   "ergibt False",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "ist nur True, wenn a und b beide True sind"
+  ],
+  "correct": 3,
+  "explanation": "a and b (logisches UND): ist nur True, wenn a und b beide True sind."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 100001?",
+  "options": [
+   "32",
+   "35",
+   "33",
+   "34"
+  ],
+  "correct": 2,
+  "explanation": "100001₂ = 33₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Apfel\")) aus?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Das Wort \"Apfel\" hat 5 Zeichen."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(45 // 3) aus?",
+  "options": [
+   "16",
+   "15",
+   "0",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "45 // 3 = 15 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"na\" * 4) aus?",
+  "options": [
+   "nananana",
+   "nanananana",
+   "nanana",
+   "na na na na"
+  ],
+  "correct": 0,
+  "explanation": "\"na\" * 4 wiederholt den String 4-mal: nananana."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(49 % 11) aus?",
+  "options": [
+   "4",
+   "7",
+   "5",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "49 % 11 = 5 (Rest der Division)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Eigenschaft hat die Datenstruktur „Binärbaum“?",
+  "options": [
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)",
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "besteht aus Knoten und Kanten",
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat"
+  ],
+  "correct": 3,
+  "explanation": "Binärbaum: ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Welche Zeit-Komplexität (Landau) hat: Bubble Sort (Worst Case)?",
+  "options": [
+   "O(n)",
+   "O(1)",
+   "O(log n)",
+   "O(n²)"
+  ],
+  "correct": 3,
+  "explanation": "Bubble Sort (Worst Case): O(n²)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Was bewirkt die CSS-Eigenschaft „background-color“?",
+  "options": [
+   "legt den Außenabstand fest",
+   "legt die Hintergrundfarbe fest",
+   "legt die Schriftgröße fest",
+   "legt die Höhe eines Elements fest"
+  ],
+  "correct": 1,
+  "explanation": "background-color: legt die Hintergrundfarbe fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag ist ein Eingabefeld?",
+  "options": [
+   "<ol>",
+   "<ul>",
+   "<input>",
+   "<br>"
+  ],
+  "correct": 2,
+  "explanation": "<input>: ist ein Eingabefeld."
+ },
+ {
+  "topic": "Logik",
+  "question": "Was gilt für „a or b (logisches ODER)“?",
+  "options": [
+   "kehrt den Wahrheitswert von a um",
+   "ergibt True",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ergibt False"
+  ],
+  "correct": 2,
+  "explanation": "a or b (logisches ODER): ist True, wenn mindestens einer von beiden True ist."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Informatik\")) aus?",
+  "options": [
+   "11",
+   "10",
+   "12",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "Das Wort \"Informatik\" hat 10 Zeichen."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(14 - 5) aus?",
+  "options": [
+   "10",
+   "11",
+   "19",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "14 - 5 = 9."
+ },
+ {
+  "topic": "CSS",
+  "question": "Was bewirkt die CSS-Eigenschaft „width“?",
+  "options": [
+   "legt die Höhe eines Elements fest",
+   "legt die Schriftstärke (z.B. fett) fest",
+   "legt den Außenabstand fest",
+   "legt die Breite eines Elements fest"
+  ],
+  "correct": 3,
+  "explanation": "width: legt die Breite eines Elements fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <br> verwendet?",
+  "options": [
+   "enthält den sichtbaren Seiteninhalt",
+   "hebt Text (meist fett) hervor",
+   "erzwingt einen Zeilenumbruch",
+   "ist ein Inline-Container"
+  ],
+  "correct": 2,
+  "explanation": "<br>: erzwingt einen Zeilenumbruch."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(6 ** 2) aus?",
+  "options": [
+   "49",
+   "42",
+   "30",
+   "36"
+  ],
+  "correct": 3,
+  "explanation": "6 ** 2 = 36 (Potenz)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Welches HTML-Tag erzeugt eine nummerierte (geordnete) Liste?",
+  "options": [
+   "<div>",
+   "<ol>",
+   "<em>",
+   "<a>"
+  ],
+  "correct": 1,
+  "explanation": "<ol>: erzeugt eine nummerierte (geordnete) Liste."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 10101110?",
+  "options": [
+   "172",
+   "175",
+   "173",
+   "174"
+  ],
+  "correct": 3,
+  "explanation": "10101110₂ = 174₁₀."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag enthält Metadaten der Seite?",
+  "options": [
+   "<head>",
+   "<title>",
+   "<ol>",
+   "<em>"
+  ],
+  "correct": 0,
+  "explanation": "<head>: enthält Metadaten der Seite."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Welche CSS-Eigenschaft legt die Breite eines Elements fest?",
+  "options": [
+   "width",
+   "display",
+   "font-size",
+   "height"
+  ],
+  "correct": 0,
+  "explanation": "width: legt die Breite eines Elements fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Welches HTML-Tag betont Text (meist kursiv)?",
+  "options": [
+   "<body>",
+   "<em>",
+   "<a>",
+   "<img>"
+  ],
+  "correct": 1,
+  "explanation": "<em>: betont Text (meist kursiv)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(37 % 6) aus?",
+  "options": [
+   "2",
+   "5",
+   "1",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "37 % 6 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Frage: Welche Zeit-Komplexität (Landau) hat: Alle Paare in einer Liste vergleichen (verschachtelte Schleife)?",
+  "options": [
+   "O(1)",
+   "O(n)",
+   "O(n²)",
+   "O(log n)"
+  ],
+  "correct": 2,
+  "explanation": "Alle Paare in einer Liste vergleichen (verschachtelte Schleife): O(n²)."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Informatik: Welche Zeit-Komplexität (Landau) hat: Einfügen am Ende einer dynamischen Liste (amortisiert)?",
+  "options": [
+   "O(log n)",
+   "O(n)",
+   "O(1)",
+   "O(n log n)"
+  ],
+  "correct": 2,
+  "explanation": "Einfügen am Ende einer dynamischen Liste (amortisiert): O(1)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „font-weight“?",
+  "options": [
+   "legt die Textfarbe fest",
+   "legt die Schriftstärke (z.B. fett) fest",
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt den Rahmen fest"
+  ],
+  "correct": 1,
+  "explanation": "font-weight: legt die Schriftstärke (z.B. fett) fest."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Welche CSS-Eigenschaft legt das Anzeigeverhalten (z.B. block, inline, flex) fest?",
+  "options": [
+   "text-align",
+   "margin",
+   "display",
+   "width"
+  ],
+  "correct": 2,
+  "explanation": "display: legt das Anzeigeverhalten (z.B. block, inline, flex) fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(14 % 9) aus?",
+  "options": [
+   "4",
+   "1",
+   "7",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "14 % 9 = 5 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(70 // 10) aus?",
+  "options": [
+   "6",
+   "7",
+   "8",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "70 // 10 = 7 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Python\" + \"Roboter\") aus?",
+  "options": [
+   "RoboterPython",
+   "Python",
+   "PythonRoboter",
+   "Roboter"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Python\" + \"Roboter\" ergibt PythonRoboter."
+ },
+ {
+  "topic": "Logik",
+  "question": "Wähle die richtige Antwort. Was gilt für „Exklusiv-Oder (XOR)“?",
+  "options": [
+   "ergibt True",
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "ergibt False",
+   "kehrt den Wahrheitswert von a um"
+  ],
+  "correct": 1,
+  "explanation": "Exklusiv-Oder (XOR): ist True, wenn genau einer der beiden Werte True ist."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Was bewirkt die CSS-Eigenschaft „font-size“?",
+  "options": [
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest",
+   "legt die Hintergrundfarbe fest",
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt die Schriftgröße fest"
+  ],
+  "correct": 3,
+  "explanation": "font-size: legt die Schriftgröße fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(3 ** 3) aus?",
+  "options": [
+   "24",
+   "27",
+   "30",
+   "81"
+  ],
+  "correct": 1,
+  "explanation": "3 ** 3 = 27 (Potenz)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(87 // 4) aus?",
+  "options": [
+   "21",
+   "20",
+   "3",
+   "22"
+  ],
+  "correct": 0,
+  "explanation": "87 // 4 = 21 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 1011110?",
+  "options": [
+   "94",
+   "96",
+   "93",
+   "95"
+  ],
+  "correct": 0,
+  "explanation": "1011110₂ = 94₁₀."
+ },
+ {
+  "topic": "Logik",
+  "question": "Informatik: Was gilt für „a or b (logisches ODER)“?",
+  "options": [
+   "ist True, wenn mindestens einer von beiden True ist",
+   "kehrt den Wahrheitswert von a um",
+   "ergibt False",
+   "ergibt True"
+  ],
+  "correct": 0,
+  "explanation": "a or b (logisches ODER): ist True, wenn mindestens einer von beiden True ist."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Welches HTML-Tag erzeugt ein Formular?",
+  "options": [
+   "<ul>",
+   "<input>",
+   "<table>",
+   "<form>"
+  ],
+  "correct": 3,
+  "explanation": "<form>: erzeugt ein Formular."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Datenstruktur hat feste Größe und erlaubt Zugriff per Index in O(1)?",
+  "options": [
+   "Graph",
+   "Array",
+   "Hashtabelle",
+   "Binärbaum"
+  ],
+  "correct": 1,
+  "explanation": "Array: hat feste Größe und erlaubt Zugriff per Index in O(1)."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Wähle die richtige Antwort. Welche Zeit-Komplexität (Landau) hat: Quick Sort (durchschnittlich)?",
+  "options": [
+   "O(1)",
+   "O(n log n)",
+   "O(n)",
+   "O(log n)"
+  ],
+  "correct": 1,
+  "explanation": "Quick Sort (durchschnittlich): O(n log n)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Computer\")) aus?",
+  "options": [
+   "8",
+   "7",
+   "9",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "Das Wort \"Computer\" hat 8 Zeichen."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <a> verwendet?",
+  "options": [
+   "erzwingt einen Zeilenumbruch",
+   "erzeugt eine nummerierte (geordnete) Liste",
+   "erzeugt einen Hyperlink (Verweis)",
+   "ist die wichtigste Überschrift"
+  ],
+  "correct": 2,
+  "explanation": "<a>: erzeugt einen Hyperlink (Verweis)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(6 ** 4) aus?",
+  "options": [
+   "1296",
+   "1302",
+   "7776",
+   "24"
+  ],
+  "correct": 0,
+  "explanation": "6 ** 4 = 1296 (Potenz)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 101?",
+  "options": [
+   "1100101",
+   "1100110",
+   "1100100",
+   "1100111"
+  ],
+  "correct": 0,
+  "explanation": "101₁₀ = 1100101₂."
+ },
+ {
+  "topic": "CSS",
+  "question": "Was bewirkt die CSS-Eigenschaft „margin“?",
+  "options": [
+   "legt den Außenabstand fest",
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt den Rahmen fest",
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest"
+  ],
+  "correct": 0,
+  "explanation": "margin: legt den Außenabstand fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 230?",
+  "options": [
+   "11100101",
+   "11101000",
+   "11100111",
+   "11100110"
+  ],
+  "correct": 3,
+  "explanation": "230₁₀ = 11100110₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Computer\" + \"Informatik\") aus?",
+  "options": [
+   "Computer",
+   "InformatikComputer",
+   "ComputerInformatik",
+   "Computer Informatik"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Computer\" + \"Informatik\" ergibt ComputerInformatik."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Welche Zeit-Komplexität (Landau) hat: Alle Paare in einer Liste vergleichen (verschachtelte Schleife)?",
+  "options": [
+   "O(1)",
+   "O(n log n)",
+   "O(log n)",
+   "O(n²)"
+  ],
+  "correct": 3,
+  "explanation": "Alle Paare in einer Liste vergleichen (verschachtelte Schleife): O(n²)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Datenstruktur hat feste Größe und erlaubt Zugriff per Index in O(1)?",
+  "options": [
+   "Verkettete Liste",
+   "Queue (Warteschlange)",
+   "Array",
+   "Stack (Stapel)"
+  ],
+  "correct": 2,
+  "explanation": "Array: hat feste Größe und erlaubt Zugriff per Index in O(1)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(93 // 5) aus?",
+  "options": [
+   "18",
+   "19",
+   "17",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "93 // 5 = 18 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(4 + 18) aus?",
+  "options": [
+   "24",
+   "22",
+   "23",
+   "72"
+  ],
+  "correct": 1,
+  "explanation": "4 + 18 = 22."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Wähle die richtige Antwort. Welche Zeit-Komplexität (Landau) hat: Lineare Suche in einer unsortierten Liste?",
+  "options": [
+   "O(n)",
+   "O(1)",
+   "O(n²)",
+   "O(log n)"
+  ],
+  "correct": 0,
+  "explanation": "Lineare Suche in einer unsortierten Liste: O(n)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(47 // 5) aus?",
+  "options": [
+   "8",
+   "10",
+   "9",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "47 // 5 = 9 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(77 % 9) aus?",
+  "options": [
+   "7",
+   "4",
+   "8",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "77 % 9 = 5 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 11100?",
+  "options": [
+   "28",
+   "30",
+   "27",
+   "26"
+  ],
+  "correct": 0,
+  "explanation": "11100₂ = 28₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Computer\" + \"Schule\") aus?",
+  "options": [
+   "SchuleComputer",
+   "Computer Schule",
+   "ComputerSchule",
+   "Computer"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Computer\" + \"Schule\" ergibt ComputerSchule."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(17 // 4) aus?",
+  "options": [
+   "4",
+   "5",
+   "1",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "17 // 4 = 4 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Eigenschaft hat die Datenstruktur „Verkettete Liste“?",
+  "options": [
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat"
+  ],
+  "correct": 2,
+  "explanation": "Verkettete Liste: verbindet Elemente über Zeiger (Referenzen)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(7 * 7) aus?",
+  "options": [
+   "49",
+   "50",
+   "51",
+   "14"
+  ],
+  "correct": 0,
+  "explanation": "7 * 7 = 49."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Datenstruktur hält kleinere Werte links, größere rechts vom Knoten?",
+  "options": [
+   "Verkettete Liste",
+   "Binärer Suchbaum",
+   "Stack (Stapel)",
+   "Queue (Warteschlange)"
+  ],
+  "correct": 1,
+  "explanation": "Binärer Suchbaum: hält kleinere Werte links, größere rechts vom Knoten."
+ },
+ {
+  "topic": "Logik",
+  "question": "Frage: Was gilt für „Exklusiv-Oder (XOR)“?",
+  "options": [
+   "ergibt False",
+   "ergibt True",
+   "kehrt den Wahrheitswert von a um",
+   "ist True, wenn genau einer der beiden Werte True ist"
+  ],
+  "correct": 3,
+  "explanation": "Exklusiv-Oder (XOR): ist True, wenn genau einer der beiden Werte True ist."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 110010?",
+  "options": [
+   "51",
+   "49",
+   "48",
+   "50"
+  ],
+  "correct": 3,
+  "explanation": "110010₂ = 50₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(44 % 9) aus?",
+  "options": [
+   "4",
+   "1",
+   "9",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "44 % 9 = 8 (Rest der Division)."
+ },
+ {
+  "topic": "Logik",
+  "question": "Informatik: Was gilt für „not (True and True)“?",
+  "options": [
+   "ergibt False",
+   "ergibt True",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "kehrt den Wahrheitswert von a um"
+  ],
+  "correct": 0,
+  "explanation": "not (True and True): ergibt False."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Eigenschaft hat die Datenstruktur „Hashtabelle“?",
+  "options": [
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "arbeitet nach dem FIFO-Prinzip (First In, First Out)",
+   "hält kleinere Werte links, größere rechts vom Knoten",
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)"
+  ],
+  "correct": 3,
+  "explanation": "Hashtabelle: ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(22 // 4) aus?",
+  "options": [
+   "4",
+   "2",
+   "6",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "22 // 4 = 5 (Ganzzahldivision)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Welche CSS-Eigenschaft legt die Textfarbe fest?",
+  "options": [
+   "font-weight",
+   "width",
+   "color",
+   "padding"
+  ],
+  "correct": 2,
+  "explanation": "color: legt die Textfarbe fest."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Eigenschaft hat die Datenstruktur „Graph“?",
+  "options": [
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "hält kleinere Werte links, größere rechts vom Knoten",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)",
+   "besteht aus Knoten und Kanten"
+  ],
+  "correct": 3,
+  "explanation": "Graph: besteht aus Knoten und Kanten."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"xy\" * 2) aus?",
+  "options": [
+   "xy xy",
+   "xyxy",
+   "xyxyxy",
+   "xy"
+  ],
+  "correct": 1,
+  "explanation": "\"xy\" * 2 wiederholt den String 2-mal: xyxy."
+ },
+ {
+  "topic": "Logik",
+  "question": "Wähle die richtige Antwort. Was gilt für „False or True“?",
+  "options": [
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ergibt True",
+   "kehrt den Wahrheitswert von a um",
+   "ergibt False"
+  ],
+  "correct": 1,
+  "explanation": "False or True: ergibt True."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag ist ein einzelnes Listenelement?",
+  "options": [
+   "<table>",
+   "<img>",
+   "<strong>",
+   "<li>"
+  ],
+  "correct": 3,
+  "explanation": "<li>: ist ein einzelnes Listenelement."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(100 % 4) aus?",
+  "options": [
+   "1",
+   "25",
+   "0",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "100 % 4 = 0 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 1100011?",
+  "options": [
+   "99",
+   "97",
+   "100",
+   "98"
+  ],
+  "correct": 0,
+  "explanation": "1100011₂ = 99₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(9 - 14) aus?",
+  "options": [
+   "-5",
+   "-3",
+   "-6",
+   "23"
+  ],
+  "correct": 0,
+  "explanation": "9 - 14 = -5."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(2 ** 2) aus?",
+  "options": [
+   "4",
+   "8",
+   "9",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "2 ** 2 = 4 (Potenz)."
+ },
+ {
+  "topic": "Logik",
+  "question": "Frage: Was gilt für „a or b (logisches ODER)“?",
+  "options": [
+   "ergibt False",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "kehrt den Wahrheitswert von a um"
+  ],
+  "correct": 1,
+  "explanation": "a or b (logisches ODER): ist True, wenn mindestens einer von beiden True ist."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Informatik: Welche Zeit-Komplexität (Landau) hat: Quick Sort (durchschnittlich)?",
+  "options": [
+   "O(n log n)",
+   "O(1)",
+   "O(log n)",
+   "O(n²)"
+  ],
+  "correct": 0,
+  "explanation": "Quick Sort (durchschnittlich): O(n log n)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(32 // 8) aus?",
+  "options": [
+   "3",
+   "5",
+   "0",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "32 // 8 = 4 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Datenstruktur hat feste Größe und erlaubt Zugriff per Index in O(1)?",
+  "options": [
+   "Binärer Suchbaum",
+   "Verkettete Liste",
+   "Hashtabelle",
+   "Array"
+  ],
+  "correct": 3,
+  "explanation": "Array: hat feste Größe und erlaubt Zugriff per Index in O(1)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(34 // 11) aus?",
+  "options": [
+   "1",
+   "2",
+   "4",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "34 // 11 = 3 (Ganzzahldivision)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Welche CSS-Eigenschaft legt die Hintergrundfarbe fest?",
+  "options": [
+   "font-weight",
+   "height",
+   "text-align",
+   "background-color"
+  ],
+  "correct": 3,
+  "explanation": "background-color: legt die Hintergrundfarbe fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 96?",
+  "options": [
+   "1011111",
+   "1100100",
+   "1100001",
+   "1100000"
+  ],
+  "correct": 3,
+  "explanation": "96₁₀ = 1100000₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag ist ein Block-Container zur Gruppierung?",
+  "options": [
+   "<li>",
+   "<em>",
+   "<div>",
+   "<p>"
+  ],
+  "correct": 2,
+  "explanation": "<div>: ist ein Block-Container zur Gruppierung."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Datenstruktur ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat?",
+  "options": [
+   "Hashtabelle",
+   "Stack (Stapel)",
+   "Verkettete Liste",
+   "Binärbaum"
+  ],
+  "correct": 3,
+  "explanation": "Binärbaum: ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <li> verwendet?",
+  "options": [
+   "ist die wichtigste Überschrift",
+   "ist ein einzelnes Listenelement",
+   "erzeugt einen Hyperlink (Verweis)",
+   "kennzeichnet einen Textabsatz"
+  ],
+  "correct": 1,
+  "explanation": "<li>: ist ein einzelnes Listenelement."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 97?",
+  "options": [
+   "1100001",
+   "1100011",
+   "1100000",
+   "1100010"
+  ],
+  "correct": 0,
+  "explanation": "97₁₀ = 1100001₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(6 ** 3) aus?",
+  "options": [
+   "1296",
+   "210",
+   "216",
+   "343"
+  ],
+  "correct": 2,
+  "explanation": "6 ** 3 = 216 (Potenz)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(11 + 14) aus?",
+  "options": [
+   "25",
+   "154",
+   "27",
+   "-3"
+  ],
+  "correct": 0,
+  "explanation": "11 + 14 = 25."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Roboter\" + \"Haus\") aus?",
+  "options": [
+   "Roboter",
+   "Roboter Haus",
+   "Haus",
+   "RoboterHaus"
+  ],
+  "correct": 3,
+  "explanation": "Die Verkettung \"Roboter\" + \"Haus\" ergibt RoboterHaus."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(30 // 10) aus?",
+  "options": [
+   "4",
+   "3",
+   "0",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "30 // 10 = 3 (Ganzzahldivision)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Welche CSS-Eigenschaft legt den Innenabstand fest?",
+  "options": [
+   "margin",
+   "padding",
+   "font-size",
+   "font-weight"
+  ],
+  "correct": 1,
+  "explanation": "padding: legt den Innenabstand fest."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Datenstruktur ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)?",
+  "options": [
+   "Hashtabelle",
+   "Array",
+   "Graph",
+   "Stack (Stapel)"
+  ],
+  "correct": 0,
+  "explanation": "Hashtabelle: ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Welches HTML-Tag erzeugt ein Formular?",
+  "options": [
+   "<p>",
+   "<title>",
+   "<form>",
+   "<input>"
+  ],
+  "correct": 2,
+  "explanation": "<form>: erzeugt ein Formular."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 38?",
+  "options": [
+   "101000",
+   "100111",
+   "100110",
+   "100100"
+  ],
+  "correct": 2,
+  "explanation": "38₁₀ = 100110₂."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Eigenschaft hat die Datenstruktur „Array“?",
+  "options": [
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "besteht aus Knoten und Kanten",
+   "arbeitet nach dem FIFO-Prinzip (First In, First Out)"
+  ],
+  "correct": 1,
+  "explanation": "Array: hat feste Größe und erlaubt Zugriff per Index in O(1)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Datenstruktur hält kleinere Werte links, größere rechts vom Knoten?",
+  "options": [
+   "Binärbaum",
+   "Binärer Suchbaum",
+   "Verkettete Liste",
+   "Stack (Stapel)"
+  ],
+  "correct": 1,
+  "explanation": "Binärer Suchbaum: hält kleinere Werte links, größere rechts vom Knoten."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 1100000?",
+  "options": [
+   "96",
+   "98",
+   "94",
+   "95"
+  ],
+  "correct": 0,
+  "explanation": "1100000₂ = 96₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(84 % 8) aus?",
+  "options": [
+   "5",
+   "4",
+   "10",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "84 % 8 = 4 (Rest der Division)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Eigenschaft hat die Datenstruktur „Verkettete Liste“?",
+  "options": [
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "besteht aus Knoten und Kanten",
+   "hält kleinere Werte links, größere rechts vom Knoten",
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat"
+  ],
+  "correct": 0,
+  "explanation": "Verkettete Liste: verbindet Elemente über Zeiger (Referenzen)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"ha\" * 4) aus?",
+  "options": [
+   "hahahahaha",
+   "hahahaha",
+   "ha ha ha ha",
+   "hahaha"
+  ],
+  "correct": 1,
+  "explanation": "\"ha\" * 4 wiederholt den String 4-mal: hahahaha."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Datenstruktur arbeitet nach dem FIFO-Prinzip (First In, First Out)?",
+  "options": [
+   "Binärer Suchbaum",
+   "Queue (Warteschlange)",
+   "Stack (Stapel)",
+   "Verkettete Liste"
+  ],
+  "correct": 1,
+  "explanation": "Queue (Warteschlange): arbeitet nach dem FIFO-Prinzip (First In, First Out)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Was bewirkt die CSS-Eigenschaft „color“?",
+  "options": [
+   "legt den Rahmen fest",
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt den Innenabstand fest",
+   "legt die Textfarbe fest"
+  ],
+  "correct": 3,
+  "explanation": "color: legt die Textfarbe fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(1 * 13) aus?",
+  "options": [
+   "14",
+   "13",
+   "12",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "1 * 13 = 13."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Informatik\" + \"Computer\") aus?",
+  "options": [
+   "InformatikComputer",
+   "Informatik",
+   "Informatik Computer",
+   "Computer"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Informatik\" + \"Computer\" ergibt InformatikComputer."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag ist die wichtigste Überschrift?",
+  "options": [
+   "<h1>",
+   "<div>",
+   "<table>",
+   "<li>"
+  ],
+  "correct": 0,
+  "explanation": "<h1>: ist die wichtigste Überschrift."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Welche Dezimalzahl entspricht der Binärzahl 1011010?",
+  "options": [
+   "88",
+   "91",
+   "82",
+   "90"
+  ],
+  "correct": 3,
+  "explanation": "1011010₂ = 90₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 156?",
+  "options": [
+   "10011101",
+   "10011100",
+   "10011110",
+   "10011011"
+  ],
+  "correct": 1,
+  "explanation": "156₁₀ = 10011100₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(100 // 9) aus?",
+  "options": [
+   "10",
+   "12",
+   "11",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "100 // 9 = 11 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(75 % 11) aus?",
+  "options": [
+   "8",
+   "9",
+   "2",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "75 % 11 = 9 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Baum\")) aus?",
+  "options": [
+   "3",
+   "6",
+   "4",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Das Wort \"Baum\" hat 4 Zeichen."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Informatik: Welche Zeit-Komplexität (Landau) hat: Suchen in einer Hashtabelle (durchschnittlich)?",
+  "options": [
+   "O(1)",
+   "O(n²)",
+   "O(log n)",
+   "O(n log n)"
+  ],
+  "correct": 0,
+  "explanation": "Suchen in einer Hashtabelle (durchschnittlich): O(1)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Welche CSS-Eigenschaft legt das Anzeigeverhalten (z.B. block, inline, flex) fest?",
+  "options": [
+   "padding",
+   "font-size",
+   "display",
+   "margin"
+  ],
+  "correct": 2,
+  "explanation": "display: legt das Anzeigeverhalten (z.B. block, inline, flex) fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Welches HTML-Tag enthält den sichtbaren Seiteninhalt?",
+  "options": [
+   "<form>",
+   "<head>",
+   "<body>",
+   "<ol>"
+  ],
+  "correct": 2,
+  "explanation": "<body>: enthält den sichtbaren Seiteninhalt."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Was bewirkt die CSS-Eigenschaft „text-align“?",
+  "options": [
+   "legt die Schriftstärke (z.B. fett) fest",
+   "legt den Innenabstand fest",
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt die Breite eines Elements fest"
+  ],
+  "correct": 2,
+  "explanation": "text-align: legt die horizontale Ausrichtung des Textes fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(96 % 9) aus?",
+  "options": [
+   "6",
+   "7",
+   "3",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "96 % 9 = 6 (Rest der Division)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Eigenschaft hat die Datenstruktur „Array“?",
+  "options": [
+   "hält kleinere Werte links, größere rechts vom Knoten",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)"
+  ],
+  "correct": 1,
+  "explanation": "Array: hat feste Größe und erlaubt Zugriff per Index in O(1)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wofür wird das HTML-Tag <img> verwendet?",
+  "options": [
+   "bindet ein Bild ein",
+   "erzeugt eine ungeordnete Liste",
+   "ist ein Block-Container zur Gruppierung",
+   "enthält Metadaten der Seite"
+  ],
+  "correct": 0,
+  "explanation": "<img>: bindet ein Bild ein."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 1000?",
+  "options": [
+   "6",
+   "9",
+   "7",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "1000₂ = 8₁₀."
+ },
+ {
+  "topic": "Logik",
+  "question": "Was gilt für „not (True and True)“?",
+  "options": [
+   "kehrt den Wahrheitswert von a um",
+   "ergibt False",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ergibt True"
+  ],
+  "correct": 1,
+  "explanation": "not (True and True): ergibt False."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Baum\" + \"Python\") aus?",
+  "options": [
+   "Baum Python",
+   "Python",
+   "Baum",
+   "BaumPython"
+  ],
+  "correct": 3,
+  "explanation": "Die Verkettung \"Baum\" + \"Python\" ergibt BaumPython."
+ },
+ {
+  "topic": "CSS",
+  "question": "Was bewirkt die CSS-Eigenschaft „background-color“?",
+  "options": [
+   "legt die Höhe eines Elements fest",
+   "legt die Breite eines Elements fest",
+   "legt die Schriftstärke (z.B. fett) fest",
+   "legt die Hintergrundfarbe fest"
+  ],
+  "correct": 3,
+  "explanation": "background-color: legt die Hintergrundfarbe fest."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Datenstruktur arbeitet nach dem LIFO-Prinzip (Last In, First Out)?",
+  "options": [
+   "Graph",
+   "Binärbaum",
+   "Binärer Suchbaum",
+   "Stack (Stapel)"
+  ],
+  "correct": 3,
+  "explanation": "Stack (Stapel): arbeitet nach dem LIFO-Prinzip (Last In, First Out)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Katze\" + \"Python\") aus?",
+  "options": [
+   "Katze Python",
+   "KatzePython",
+   "Python",
+   "PythonKatze"
+  ],
+  "correct": 1,
+  "explanation": "Die Verkettung \"Katze\" + \"Python\" ergibt KatzePython."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Computer\" + \"Haus\") aus?",
+  "options": [
+   "Computer Haus",
+   "HausComputer",
+   "ComputerHaus",
+   "Computer"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Computer\" + \"Haus\" ergibt ComputerHaus."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(67 // 11) aus?",
+  "options": [
+   "5",
+   "7",
+   "1",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "67 // 11 = 6 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Katze\")) aus?",
+  "options": [
+   "6",
+   "4",
+   "7",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "Das Wort \"Katze\" hat 5 Zeichen."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 11010101?",
+  "options": [
+   "214",
+   "211",
+   "209",
+   "213"
+  ],
+  "correct": 3,
+  "explanation": "11010101₂ = 213₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(59 % 12) aus?",
+  "options": [
+   "12",
+   "1",
+   "13",
+   "11"
+  ],
+  "correct": 3,
+  "explanation": "59 % 12 = 11 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <span> verwendet?",
+  "options": [
+   "bindet ein Bild ein",
+   "enthält Metadaten der Seite",
+   "ist die wichtigste Überschrift",
+   "ist ein Inline-Container"
+  ],
+  "correct": 3,
+  "explanation": "<span>: ist ein Inline-Container."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Welche Dezimalzahl entspricht der Binärzahl 1110100?",
+  "options": [
+   "118",
+   "124",
+   "116",
+   "115"
+  ],
+  "correct": 2,
+  "explanation": "1110100₂ = 116₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(95 % 4) aus?",
+  "options": [
+   "2",
+   "5",
+   "3",
+   "23"
+  ],
+  "correct": 2,
+  "explanation": "95 % 4 = 3 (Rest der Division)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Welche CSS-Eigenschaft legt die Höhe eines Elements fest?",
+  "options": [
+   "color",
+   "text-align",
+   "border",
+   "height"
+  ],
+  "correct": 3,
+  "explanation": "height: legt die Höhe eines Elements fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 100101?",
+  "options": [
+   "38",
+   "37",
+   "33",
+   "35"
+  ],
+  "correct": 1,
+  "explanation": "100101₂ = 37₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 186?",
+  "options": [
+   "10111011",
+   "10111100",
+   "10111001",
+   "10111010"
+  ],
+  "correct": 3,
+  "explanation": "186₁₀ = 10111010₂."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Welche CSS-Eigenschaft legt die horizontale Ausrichtung des Textes fest?",
+  "options": [
+   "text-align",
+   "width",
+   "height",
+   "padding"
+  ],
+  "correct": 0,
+  "explanation": "text-align: legt die horizontale Ausrichtung des Textes fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 10011010?",
+  "options": [
+   "158",
+   "154",
+   "153",
+   "152"
+  ],
+  "correct": 1,
+  "explanation": "10011010₂ = 154₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Welche Dezimalzahl entspricht der Binärzahl 11001111?",
+  "options": [
+   "205",
+   "208",
+   "207",
+   "209"
+  ],
+  "correct": 2,
+  "explanation": "11001111₂ = 207₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(8 - 12) aus?",
+  "options": [
+   "-4",
+   "96",
+   "-3",
+   "-5"
+  ],
+  "correct": 0,
+  "explanation": "8 - 12 = -4."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(55 // 5) aus?",
+  "options": [
+   "0",
+   "12",
+   "10",
+   "11"
+  ],
+  "correct": 3,
+  "explanation": "55 // 5 = 11 (Ganzzahldivision)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „display“?",
+  "options": [
+   "legt die Textfarbe fest",
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest",
+   "legt die Schriftstärke (z.B. fett) fest",
+   "legt den Innenabstand fest"
+  ],
+  "correct": 1,
+  "explanation": "display: legt das Anzeigeverhalten (z.B. block, inline, flex) fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(5 ** 3) aus?",
+  "options": [
+   "216",
+   "625",
+   "130",
+   "125"
+  ],
+  "correct": 3,
+  "explanation": "5 ** 3 = 125 (Potenz)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(19 % 6) aus?",
+  "options": [
+   "2",
+   "3",
+   "1",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "19 % 6 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(71 % 11) aus?",
+  "options": [
+   "6",
+   "4",
+   "7",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "71 % 11 = 5 (Rest der Division)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Welche CSS-Eigenschaft legt den Innenabstand fest?",
+  "options": [
+   "padding",
+   "display",
+   "background-color",
+   "color"
+  ],
+  "correct": 0,
+  "explanation": "padding: legt den Innenabstand fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <title> verwendet?",
+  "options": [
+   "erzwingt einen Zeilenumbruch",
+   "ist die wichtigste Überschrift",
+   "erzeugt einen Hyperlink (Verweis)",
+   "legt den Titel im Browser-Tab fest"
+  ],
+  "correct": 3,
+  "explanation": "<title>: legt den Titel im Browser-Tab fest."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Welche Zeit-Komplexität (Landau) hat: Suchen in einer Hashtabelle (durchschnittlich)?",
+  "options": [
+   "O(n)",
+   "O(n²)",
+   "O(1)",
+   "O(n log n)"
+  ],
+  "correct": 2,
+  "explanation": "Suchen in einer Hashtabelle (durchschnittlich): O(1)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(67 // 2) aus?",
+  "options": [
+   "1",
+   "33",
+   "32",
+   "34"
+  ],
+  "correct": 1,
+  "explanation": "67 // 2 = 33 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Python\")) aus?",
+  "options": [
+   "6",
+   "8",
+   "4",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Das Wort \"Python\" hat 6 Zeichen."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Wofür wird das HTML-Tag <em> verwendet?",
+  "options": [
+   "enthält den sichtbaren Seiteninhalt",
+   "erzeugt ein Formular",
+   "ist ein einzelnes Listenelement",
+   "betont Text (meist kursiv)"
+  ],
+  "correct": 3,
+  "explanation": "<em>: betont Text (meist kursiv)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Haus\")) aus?",
+  "options": [
+   "2",
+   "5",
+   "3",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Das Wort \"Haus\" hat 4 Zeichen."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(9 % 5) aus?",
+  "options": [
+   "5",
+   "4",
+   "1",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "9 % 5 = 4 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(9 // 3) aus?",
+  "options": [
+   "3",
+   "2",
+   "4",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "9 // 3 = 3 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(10 * 20) aus?",
+  "options": [
+   "200",
+   "199",
+   "30",
+   "202"
+  ],
+  "correct": 0,
+  "explanation": "10 * 20 = 200."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag ist ein Block-Container zur Gruppierung?",
+  "options": [
+   "<h1>",
+   "<input>",
+   "<div>",
+   "<li>"
+  ],
+  "correct": 2,
+  "explanation": "<div>: ist ein Block-Container zur Gruppierung."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 114?",
+  "options": [
+   "1110001",
+   "1110010",
+   "1110100",
+   "1110000"
+  ],
+  "correct": 1,
+  "explanation": "114₁₀ = 1110010₂."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Eigenschaft hat die Datenstruktur „Verkettete Liste“?",
+  "options": [
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat",
+   "arbeitet nach dem FIFO-Prinzip (First In, First Out)",
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)"
+  ],
+  "correct": 0,
+  "explanation": "Verkettete Liste: verbindet Elemente über Zeiger (Referenzen)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(18 * 4) aus?",
+  "options": [
+   "72",
+   "71",
+   "14",
+   "73"
+  ],
+  "correct": 0,
+  "explanation": "18 * 4 = 72."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(3 ** 4) aus?",
+  "options": [
+   "78",
+   "12",
+   "243",
+   "81"
+  ],
+  "correct": 3,
+  "explanation": "3 ** 4 = 81 (Potenz)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(len(\"Hallo\")) aus?",
+  "options": [
+   "7",
+   "4",
+   "6",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "Das Wort \"Hallo\" hat 5 Zeichen."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 101010?",
+  "options": [
+   "43",
+   "44",
+   "42",
+   "40"
+  ],
+  "correct": 2,
+  "explanation": "101010₂ = 42₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(63 % 6) aus?",
+  "options": [
+   "10",
+   "3",
+   "5",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "63 % 6 = 3 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 148?",
+  "options": [
+   "10010011",
+   "10010101",
+   "10010100",
+   "10010110"
+  ],
+  "correct": 2,
+  "explanation": "148₁₀ = 10010100₂."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 10100001?",
+  "options": [
+   "162",
+   "160",
+   "163",
+   "161"
+  ],
+  "correct": 3,
+  "explanation": "10100001₂ = 161₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Welche Dezimalzahl entspricht der Binärzahl 101101?",
+  "options": [
+   "47",
+   "46",
+   "44",
+   "45"
+  ],
+  "correct": 3,
+  "explanation": "101101₂ = 45₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 1110111?",
+  "options": [
+   "118",
+   "117",
+   "115",
+   "119"
+  ],
+  "correct": 3,
+  "explanation": "1110111₂ = 119₁₀."
+ },
+ {
+  "topic": "Logik",
+  "question": "Frage: Was gilt für „not a (Negation)“?",
+  "options": [
+   "ergibt True",
+   "ergibt False",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "kehrt den Wahrheitswert von a um"
+  ],
+  "correct": 3,
+  "explanation": "not a (Negation): kehrt den Wahrheitswert von a um."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(70 // 7) aus?",
+  "options": [
+   "10",
+   "11",
+   "0",
+   "9"
+  ],
+  "correct": 0,
+  "explanation": "70 // 7 = 10 (Ganzzahldivision)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Welche CSS-Eigenschaft legt den Rahmen fest?",
+  "options": [
+   "width",
+   "border",
+   "margin",
+   "font-size"
+  ],
+  "correct": 1,
+  "explanation": "border: legt den Rahmen fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(90 % 4) aus?",
+  "options": [
+   "4",
+   "2",
+   "22",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "90 % 4 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(1 - 11) aus?",
+  "options": [
+   "11",
+   "12",
+   "-10",
+   "-8"
+  ],
+  "correct": 2,
+  "explanation": "1 - 11 = -10."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Computer\" + \"Katze\") aus?",
+  "options": [
+   "ComputerKatze",
+   "Computer Katze",
+   "Katze",
+   "KatzeComputer"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Computer\" + \"Katze\" ergibt ComputerKatze."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(82 // 8) aus?",
+  "options": [
+   "9",
+   "10",
+   "2",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "82 // 8 = 10 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(5 ** 4) aus?",
+  "options": [
+   "3125",
+   "20",
+   "625",
+   "1296"
+  ],
+  "correct": 2,
+  "explanation": "5 ** 4 = 625 (Potenz)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(56 // 12) aus?",
+  "options": [
+   "5",
+   "4",
+   "3",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "56 // 12 = 4 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Computer\" + \"Python\") aus?",
+  "options": [
+   "Computer",
+   "ComputerPython",
+   "PythonComputer",
+   "Computer Python"
+  ],
+  "correct": 1,
+  "explanation": "Die Verkettung \"Computer\" + \"Python\" ergibt ComputerPython."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Katze\" + \"Schule\") aus?",
+  "options": [
+   "Schule",
+   "SchuleKatze",
+   "KatzeSchule",
+   "Katze"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Katze\" + \"Schule\" ergibt KatzeSchule."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(18 * 16) aus?",
+  "options": [
+   "289",
+   "290",
+   "288",
+   "287"
+  ],
+  "correct": 2,
+  "explanation": "18 * 16 = 288."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(91 % 3) aus?",
+  "options": [
+   "2",
+   "1",
+   "0",
+   "30"
+  ],
+  "correct": 1,
+  "explanation": "91 % 3 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(51 % 6) aus?",
+  "options": [
+   "3",
+   "8",
+   "2",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "51 % 6 = 3 (Rest der Division)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Was bewirkt die CSS-Eigenschaft „padding“?",
+  "options": [
+   "legt den Innenabstand fest",
+   "legt die Schriftgröße fest",
+   "legt die Breite eines Elements fest",
+   "legt die Hintergrundfarbe fest"
+  ],
+  "correct": 0,
+  "explanation": "padding: legt den Innenabstand fest."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Eigenschaft hat die Datenstruktur „Graph“?",
+  "options": [
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "hält kleinere Werte links, größere rechts vom Knoten",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "besteht aus Knoten und Kanten"
+  ],
+  "correct": 3,
+  "explanation": "Graph: besteht aus Knoten und Kanten."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(17 // 11) aus?",
+  "options": [
+   "1",
+   "2",
+   "6",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "17 // 11 = 1 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(33 % 3) aus?",
+  "options": [
+   "0",
+   "11",
+   "3",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "33 % 3 = 0 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 18?",
+  "options": [
+   "10001",
+   "10010",
+   "10011",
+   "10100"
+  ],
+  "correct": 1,
+  "explanation": "18₁₀ = 10010₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(19 // 7) aus?",
+  "options": [
+   "2",
+   "1",
+   "5",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "19 // 7 = 2 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(83 % 3) aus?",
+  "options": [
+   "4",
+   "1",
+   "2",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "83 % 3 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <img> verwendet?",
+  "options": [
+   "enthält den sichtbaren Seiteninhalt",
+   "hebt Text (meist fett) hervor",
+   "erzeugt eine Tabelle",
+   "bindet ein Bild ein"
+  ],
+  "correct": 3,
+  "explanation": "<img>: bindet ein Bild ein."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Welche Dezimalzahl entspricht der Binärzahl 1100110?",
+  "options": [
+   "100",
+   "103",
+   "102",
+   "101"
+  ],
+  "correct": 2,
+  "explanation": "1100110₂ = 102₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(13 * 7) aus?",
+  "options": [
+   "93",
+   "91",
+   "20",
+   "92"
+  ],
+  "correct": 1,
+  "explanation": "13 * 7 = 91."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Hallo\" + \"Katze\") aus?",
+  "options": [
+   "Katze",
+   "KatzeHallo",
+   "Hallo",
+   "HalloKatze"
+  ],
+  "correct": 3,
+  "explanation": "Die Verkettung \"Hallo\" + \"Katze\" ergibt HalloKatze."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(77 % 10) aus?",
+  "options": [
+   "7",
+   "8",
+   "6",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "77 % 10 = 7 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(64 % 3) aus?",
+  "options": [
+   "0",
+   "1",
+   "2",
+   "21"
+  ],
+  "correct": 1,
+  "explanation": "64 % 3 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(44 // 5) aus?",
+  "options": [
+   "8",
+   "9",
+   "4",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "44 // 5 = 8 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 150?",
+  "options": [
+   "10011000",
+   "10010110",
+   "10010101",
+   "10010100"
+  ],
+  "correct": 1,
+  "explanation": "150₁₀ = 10010110₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(32 // 11) aus?",
+  "options": [
+   "10",
+   "2",
+   "1",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "32 // 11 = 2 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Hallo\" + \"Apfel\") aus?",
+  "options": [
+   "Hallo",
+   "Apfel",
+   "HalloApfel",
+   "Hallo Apfel"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Hallo\" + \"Apfel\" ergibt HalloApfel."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(58 // 12) aus?",
+  "options": [
+   "10",
+   "5",
+   "3",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "58 // 12 = 4 (Ganzzahldivision)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag erzwingt einen Zeilenumbruch?",
+  "options": [
+   "<p>",
+   "<br>",
+   "<h1>",
+   "<table>"
+  ],
+  "correct": 1,
+  "explanation": "<br>: erzwingt einen Zeilenumbruch."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"12\" * 4) aus?",
+  "options": [
+   "12 12 12 12",
+   "124",
+   "1212121212",
+   "12121212"
+  ],
+  "correct": 3,
+  "explanation": "\"12\" * 4 wiederholt den String 4-mal: 12121212."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 48?",
+  "options": [
+   "110000",
+   "101111",
+   "110010",
+   "110001"
+  ],
+  "correct": 0,
+  "explanation": "48₁₀ = 110000₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wofür wird das HTML-Tag <title> verwendet?",
+  "options": [
+   "enthält den sichtbaren Seiteninhalt",
+   "legt den Titel im Browser-Tab fest",
+   "ist ein Eingabefeld",
+   "erzeugt eine ungeordnete Liste"
+  ],
+  "correct": 1,
+  "explanation": "<title>: legt den Titel im Browser-Tab fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(46 % 4) aus?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "46 % 4 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Welche CSS-Eigenschaft legt den Rahmen fest?",
+  "options": [
+   "background-color",
+   "border",
+   "padding",
+   "width"
+  ],
+  "correct": 1,
+  "explanation": "border: legt den Rahmen fest."
+ },
+ {
+  "topic": "Logik",
+  "question": "Informatik: Was gilt für „False or True“?",
+  "options": [
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "ist nur True, wenn a und b beide True sind",
+   "kehrt den Wahrheitswert von a um",
+   "ergibt True"
+  ],
+  "correct": 3,
+  "explanation": "False or True: ergibt True."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"12\" * 2) aus?",
+  "options": [
+   "121212",
+   "1212",
+   "12 12",
+   "122"
+  ],
+  "correct": 1,
+  "explanation": "\"12\" * 2 wiederholt den String 2-mal: 1212."
+ },
+ {
+  "topic": "Logik",
+  "question": "Wähle die richtige Antwort. Was gilt für „not a (Negation)“?",
+  "options": [
+   "ergibt True",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "kehrt den Wahrheitswert von a um",
+   "ist nur True, wenn a und b beide True sind"
+  ],
+  "correct": 2,
+  "explanation": "not a (Negation): kehrt den Wahrheitswert von a um."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Datenstruktur arbeitet nach dem LIFO-Prinzip (Last In, First Out)?",
+  "options": [
+   "Array",
+   "Stack (Stapel)",
+   "Graph",
+   "Binärbaum"
+  ],
+  "correct": 1,
+  "explanation": "Stack (Stapel): arbeitet nach dem LIFO-Prinzip (Last In, First Out)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(72 // 9) aus?",
+  "options": [
+   "0",
+   "9",
+   "8",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "72 // 9 = 8 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Apfel\" + \"Katze\") aus?",
+  "options": [
+   "KatzeApfel",
+   "ApfelKatze",
+   "Katze",
+   "Apfel"
+  ],
+  "correct": 1,
+  "explanation": "Die Verkettung \"Apfel\" + \"Katze\" ergibt ApfelKatze."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Informatik: Welche Zeit-Komplexität (Landau) hat: Merge Sort?",
+  "options": [
+   "O(n log n)",
+   "O(1)",
+   "O(n)",
+   "O(log n)"
+  ],
+  "correct": 0,
+  "explanation": "Merge Sort: O(n log n)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Welche CSS-Eigenschaft legt die Schriftstärke (z.B. fett) fest?",
+  "options": [
+   "font-weight",
+   "padding",
+   "margin",
+   "height"
+  ],
+  "correct": 0,
+  "explanation": "font-weight: legt die Schriftstärke (z.B. fett) fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Katze\" + \"Informatik\") aus?",
+  "options": [
+   "KatzeInformatik",
+   "Katze Informatik",
+   "Katze",
+   "Informatik"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Katze\" + \"Informatik\" ergibt KatzeInformatik."
+ },
+ {
+  "topic": "Logik",
+  "question": "Was gilt für „a and b (logisches UND)“?",
+  "options": [
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "ergibt False",
+   "kehrt den Wahrheitswert von a um",
+   "ist nur True, wenn a und b beide True sind"
+  ],
+  "correct": 3,
+  "explanation": "a and b (logisches UND): ist nur True, wenn a und b beide True sind."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Roboter\" + \"Hallo\") aus?",
+  "options": [
+   "RoboterHallo",
+   "HalloRoboter",
+   "Hallo",
+   "Roboter Hallo"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Roboter\" + \"Hallo\" ergibt RoboterHallo."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Datenstruktur besteht aus Knoten und Kanten?",
+  "options": [
+   "Graph",
+   "Queue (Warteschlange)",
+   "Hashtabelle",
+   "Stack (Stapel)"
+  ],
+  "correct": 0,
+  "explanation": "Graph: besteht aus Knoten und Kanten."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Eigenschaft hat die Datenstruktur „Stack (Stapel)“?",
+  "options": [
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "besteht aus Knoten und Kanten"
+  ],
+  "correct": 1,
+  "explanation": "Stack (Stapel): arbeitet nach dem LIFO-Prinzip (Last In, First Out)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(23 // 2) aus?",
+  "options": [
+   "11",
+   "12",
+   "1",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "23 // 2 = 11 (Ganzzahldivision)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Welche CSS-Eigenschaft legt die Schriftgröße fest?",
+  "options": [
+   "font-size",
+   "display",
+   "border",
+   "color"
+  ],
+  "correct": 0,
+  "explanation": "font-size: legt die Schriftgröße fest."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Welche CSS-Eigenschaft legt die Schriftgröße fest?",
+  "options": [
+   "margin",
+   "width",
+   "color",
+   "font-size"
+  ],
+  "correct": 3,
+  "explanation": "font-size: legt die Schriftgröße fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Wofür wird das HTML-Tag <table> verwendet?",
+  "options": [
+   "ist ein Inline-Container",
+   "betont Text (meist kursiv)",
+   "erzeugt eine Tabelle",
+   "kennzeichnet einen Textabsatz"
+  ],
+  "correct": 2,
+  "explanation": "<table>: erzeugt eine Tabelle."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(64 // 9) aus?",
+  "options": [
+   "1",
+   "6",
+   "7",
+   "8"
+  ],
+  "correct": 2,
+  "explanation": "64 // 9 = 7 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 11001011?",
+  "options": [
+   "203",
+   "204",
+   "201",
+   "202"
+  ],
+  "correct": 0,
+  "explanation": "11001011₂ = 203₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(17 + 20) aus?",
+  "options": [
+   "36",
+   "38",
+   "340",
+   "37"
+  ],
+  "correct": 3,
+  "explanation": "17 + 20 = 37."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Eigenschaft hat die Datenstruktur „Array“?",
+  "options": [
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "besteht aus Knoten und Kanten",
+   "hält kleinere Werte links, größere rechts vom Knoten"
+  ],
+  "correct": 1,
+  "explanation": "Array: hat feste Größe und erlaubt Zugriff per Index in O(1)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 241?",
+  "options": [
+   "11110000",
+   "11110001",
+   "11110011",
+   "11110010"
+  ],
+  "correct": 1,
+  "explanation": "241₁₀ = 11110001₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(4 ** 2) aus?",
+  "options": [
+   "12",
+   "64",
+   "25",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "4 ** 2 = 16 (Potenz)."
+ },
+ {
+  "topic": "Logik",
+  "question": "Wähle die richtige Antwort. Was gilt für „not (True and True)“?",
+  "options": [
+   "ergibt False",
+   "ist nur True, wenn a und b beide True sind",
+   "kehrt den Wahrheitswert von a um",
+   "ist True, wenn genau einer der beiden Werte True ist"
+  ],
+  "correct": 0,
+  "explanation": "not (True and True): ergibt False."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 118?",
+  "options": [
+   "1110110",
+   "1110111",
+   "1110101",
+   "1111110"
+  ],
+  "correct": 0,
+  "explanation": "118₁₀ = 1110110₂."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Eigenschaft hat die Datenstruktur „Queue (Warteschlange)“?",
+  "options": [
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "besteht aus Knoten und Kanten",
+   "arbeitet nach dem FIFO-Prinzip (First In, First Out)",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)"
+  ],
+  "correct": 2,
+  "explanation": "Queue (Warteschlange): arbeitet nach dem FIFO-Prinzip (First In, First Out)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 202?",
+  "options": [
+   "11001100",
+   "11001010",
+   "11001001",
+   "11001011"
+  ],
+  "correct": 1,
+  "explanation": "202₁₀ = 11001010₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wofür wird das HTML-Tag <table> verwendet?",
+  "options": [
+   "erzeugt ein Formular",
+   "enthält Metadaten der Seite",
+   "kennzeichnet einen Textabsatz",
+   "erzeugt eine Tabelle"
+  ],
+  "correct": 3,
+  "explanation": "<table>: erzeugt eine Tabelle."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(52 % 12) aus?",
+  "options": [
+   "6",
+   "5",
+   "3",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "52 % 12 = 4 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(7 + 14) aus?",
+  "options": [
+   "21",
+   "-7",
+   "22",
+   "23"
+  ],
+  "correct": 0,
+  "explanation": "7 + 14 = 21."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 38?",
+  "options": [
+   "100110",
+   "101000",
+   "100010",
+   "100111"
+  ],
+  "correct": 0,
+  "explanation": "38₁₀ = 100110₂."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 129?",
+  "options": [
+   "10000011",
+   "10000001",
+   "10000000",
+   "10000010"
+  ],
+  "correct": 1,
+  "explanation": "129₁₀ = 10000001₂."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Welche Dezimalzahl entspricht der Binärzahl 11011?",
+  "options": [
+   "25",
+   "29",
+   "28",
+   "27"
+  ],
+  "correct": 3,
+  "explanation": "11011₂ = 27₁₀."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Eigenschaft hat die Datenstruktur „Stack (Stapel)“?",
+  "options": [
+   "arbeitet nach dem FIFO-Prinzip (First In, First Out)",
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)",
+   "hält kleinere Werte links, größere rechts vom Knoten"
+  ],
+  "correct": 2,
+  "explanation": "Stack (Stapel): arbeitet nach dem LIFO-Prinzip (Last In, First Out)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Datenstruktur verbindet Elemente über Zeiger (Referenzen)?",
+  "options": [
+   "Stack (Stapel)",
+   "Hashtabelle",
+   "Binärer Suchbaum",
+   "Verkettete Liste"
+  ],
+  "correct": 3,
+  "explanation": "Verkettete Liste: verbindet Elemente über Zeiger (Referenzen)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Welche CSS-Eigenschaft legt die Breite eines Elements fest?",
+  "options": [
+   "width",
+   "height",
+   "padding",
+   "text-align"
+  ],
+  "correct": 0,
+  "explanation": "width: legt die Breite eines Elements fest."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Was bewirkt die CSS-Eigenschaft „width“?",
+  "options": [
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt die Breite eines Elements fest",
+   "legt den Innenabstand fest",
+   "legt die Hintergrundfarbe fest"
+  ],
+  "correct": 1,
+  "explanation": "width: legt die Breite eines Elements fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"na\" * 2) aus?",
+  "options": [
+   "nanana",
+   "na2",
+   "na na",
+   "nana"
+  ],
+  "correct": 3,
+  "explanation": "\"na\" * 2 wiederholt den String 2-mal: nana."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(76 % 11) aus?",
+  "options": [
+   "11",
+   "6",
+   "10",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "76 % 11 = 10 (Rest der Division)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Datenstruktur ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)?",
+  "options": [
+   "Hashtabelle",
+   "Graph",
+   "Array",
+   "Queue (Warteschlange)"
+  ],
+  "correct": 0,
+  "explanation": "Hashtabelle: ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"na\" * 3) aus?",
+  "options": [
+   "nana",
+   "nanana",
+   "na na na",
+   "na3"
+  ],
+  "correct": 1,
+  "explanation": "\"na\" * 3 wiederholt den String 3-mal: nanana."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Welche Zeit-Komplexität (Landau) hat: Merge Sort?",
+  "options": [
+   "O(n)",
+   "O(n²)",
+   "O(log n)",
+   "O(n log n)"
+  ],
+  "correct": 3,
+  "explanation": "Merge Sort: O(n log n)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 83?",
+  "options": [
+   "1010100",
+   "1010001",
+   "1010011",
+   "1010010"
+  ],
+  "correct": 2,
+  "explanation": "83₁₀ = 1010011₂."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 11000100?",
+  "options": [
+   "195",
+   "196",
+   "194",
+   "197"
+  ],
+  "correct": 1,
+  "explanation": "11000100₂ = 196₁₀."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Was bewirkt die CSS-Eigenschaft „padding“?",
+  "options": [
+   "legt die Höhe eines Elements fest",
+   "legt den Rahmen fest",
+   "legt den Innenabstand fest",
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest"
+  ],
+  "correct": 2,
+  "explanation": "padding: legt den Innenabstand fest."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Welche CSS-Eigenschaft legt die Höhe eines Elements fest?",
+  "options": [
+   "font-weight",
+   "font-size",
+   "height",
+   "border"
+  ],
+  "correct": 2,
+  "explanation": "height: legt die Höhe eines Elements fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(87 % 12) aus?",
+  "options": [
+   "5",
+   "9",
+   "4",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "87 % 12 = 3 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(51 // 11) aus?",
+  "options": [
+   "4",
+   "7",
+   "5",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "51 // 11 = 4 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Eigenschaft hat die Datenstruktur „Hashtabelle“?",
+  "options": [
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "besteht aus Knoten und Kanten",
+   "hält kleinere Werte links, größere rechts vom Knoten"
+  ],
+  "correct": 0,
+  "explanation": "Hashtabelle: ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Datenstruktur besteht aus Knoten und Kanten?",
+  "options": [
+   "Queue (Warteschlange)",
+   "Stack (Stapel)",
+   "Graph",
+   "Binärer Suchbaum"
+  ],
+  "correct": 2,
+  "explanation": "Graph: besteht aus Knoten und Kanten."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Welche Zeit-Komplexität (Landau) hat: Binäre Suche in einem sortierten Array?",
+  "options": [
+   "O(1)",
+   "O(n)",
+   "O(n²)",
+   "O(log n)"
+  ],
+  "correct": 3,
+  "explanation": "Binäre Suche in einem sortierten Array: O(log n)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(77 % 7) aus?",
+  "options": [
+   "0",
+   "11",
+   "2",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "77 % 7 = 0 (Rest der Division)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Was bewirkt die CSS-Eigenschaft „border“?",
+  "options": [
+   "legt den Rahmen fest",
+   "legt die Textfarbe fest",
+   "legt die Höhe eines Elements fest",
+   "legt die Hintergrundfarbe fest"
+  ],
+  "correct": 0,
+  "explanation": "border: legt den Rahmen fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(50 // 4) aus?",
+  "options": [
+   "11",
+   "12",
+   "2",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "50 // 4 = 12 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(17 * 18) aus?",
+  "options": [
+   "35",
+   "308",
+   "306",
+   "-1"
+  ],
+  "correct": 2,
+  "explanation": "17 * 18 = 306."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(4 ** 3) aus?",
+  "options": [
+   "256",
+   "68",
+   "64",
+   "125"
+  ],
+  "correct": 2,
+  "explanation": "4 ** 3 = 64 (Potenz)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 200?",
+  "options": [
+   "11001000",
+   "11001010",
+   "11000111",
+   "11001001"
+  ],
+  "correct": 0,
+  "explanation": "200₁₀ = 11001000₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(12 % 10) aus?",
+  "options": [
+   "3",
+   "4",
+   "1",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "12 % 10 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 215?",
+  "options": [
+   "11010110",
+   "11010101",
+   "11010111",
+   "11011000"
+  ],
+  "correct": 2,
+  "explanation": "215₁₀ = 11010111₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(13 - 15) aus?",
+  "options": [
+   "-3",
+   "-1",
+   "28",
+   "-2"
+  ],
+  "correct": 3,
+  "explanation": "13 - 15 = -2."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Informatik: Welche Zeit-Komplexität (Landau) hat: Alle Paare in einer Liste vergleichen (verschachtelte Schleife)?",
+  "options": [
+   "O(1)",
+   "O(n)",
+   "O(log n)",
+   "O(n²)"
+  ],
+  "correct": 3,
+  "explanation": "Alle Paare in einer Liste vergleichen (verschachtelte Schleife): O(n²)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wofür wird das HTML-Tag <strong> verwendet?",
+  "options": [
+   "ist die wichtigste Überschrift",
+   "betont Text (meist kursiv)",
+   "ist ein Block-Container zur Gruppierung",
+   "hebt Text (meist fett) hervor"
+  ],
+  "correct": 3,
+  "explanation": "<strong>: hebt Text (meist fett) hervor."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(39 % 5) aus?",
+  "options": [
+   "1",
+   "6",
+   "5",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "39 % 5 = 4 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 101111?",
+  "options": [
+   "46",
+   "47",
+   "49",
+   "39"
+  ],
+  "correct": 1,
+  "explanation": "101111₂ = 47₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(83 // 6) aus?",
+  "options": [
+   "14",
+   "12",
+   "5",
+   "13"
+  ],
+  "correct": 3,
+  "explanation": "83 // 6 = 13 (Ganzzahldivision)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <input> verwendet?",
+  "options": [
+   "ist ein Eingabefeld",
+   "hebt Text (meist fett) hervor",
+   "ist ein einzelnes Listenelement",
+   "enthält den sichtbaren Seiteninhalt"
+  ],
+  "correct": 0,
+  "explanation": "<input>: ist ein Eingabefeld."
+ },
+ {
+  "topic": "Logik",
+  "question": "Was gilt für „Exklusiv-Oder (XOR)“?",
+  "options": [
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "ergibt False",
+   "ist nur True, wenn a und b beide True sind",
+   "kehrt den Wahrheitswert von a um"
+  ],
+  "correct": 0,
+  "explanation": "Exklusiv-Oder (XOR): ist True, wenn genau einer der beiden Werte True ist."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Datenstruktur hält kleinere Werte links, größere rechts vom Knoten?",
+  "options": [
+   "Array",
+   "Verkettete Liste",
+   "Binärer Suchbaum",
+   "Binärbaum"
+  ],
+  "correct": 2,
+  "explanation": "Binärer Suchbaum: hält kleinere Werte links, größere rechts vom Knoten."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 99?",
+  "options": [
+   "1100101",
+   "1100100",
+   "1100011",
+   "1100010"
+  ],
+  "correct": 2,
+  "explanation": "99₁₀ = 1100011₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(13 * 15) aus?",
+  "options": [
+   "195",
+   "194",
+   "196",
+   "-2"
+  ],
+  "correct": 0,
+  "explanation": "13 * 15 = 195."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <br> verwendet?",
+  "options": [
+   "ist die wichtigste Überschrift",
+   "erzwingt einen Zeilenumbruch",
+   "bindet ein Bild ein",
+   "ist ein einzelnes Listenelement"
+  ],
+  "correct": 1,
+  "explanation": "<br>: erzwingt einen Zeilenumbruch."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Welche CSS-Eigenschaft legt das Anzeigeverhalten (z.B. block, inline, flex) fest?",
+  "options": [
+   "font-weight",
+   "display",
+   "text-align",
+   "width"
+  ],
+  "correct": 1,
+  "explanation": "display: legt das Anzeigeverhalten (z.B. block, inline, flex) fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(47 // 12) aus?",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "47 // 12 = 3 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Apfel\" + \"Haus\") aus?",
+  "options": [
+   "ApfelHaus",
+   "Haus",
+   "HausApfel",
+   "Apfel"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Apfel\" + \"Haus\" ergibt ApfelHaus."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(25 // 2) aus?",
+  "options": [
+   "11",
+   "1",
+   "12",
+   "13"
+  ],
+  "correct": 2,
+  "explanation": "25 // 2 = 12 (Ganzzahldivision)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag hebt Text (meist fett) hervor?",
+  "options": [
+   "<table>",
+   "<span>",
+   "<strong>",
+   "<em>"
+  ],
+  "correct": 2,
+  "explanation": "<strong>: hebt Text (meist fett) hervor."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Welches HTML-Tag ist ein Eingabefeld?",
+  "options": [
+   "<input>",
+   "<form>",
+   "<h1>",
+   "<body>"
+  ],
+  "correct": 0,
+  "explanation": "<input>: ist ein Eingabefeld."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(69 % 6) aus?",
+  "options": [
+   "4",
+   "3",
+   "2",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "69 % 6 = 3 (Rest der Division)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Welche CSS-Eigenschaft legt die Hintergrundfarbe fest?",
+  "options": [
+   "color",
+   "background-color",
+   "padding",
+   "text-align"
+  ],
+  "correct": 1,
+  "explanation": "background-color: legt die Hintergrundfarbe fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 66?",
+  "options": [
+   "1000000",
+   "1000010",
+   "1000001",
+   "1000011"
+  ],
+  "correct": 1,
+  "explanation": "66₁₀ = 1000010₂."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Wähle die richtige Antwort. Welche Zeit-Komplexität (Landau) hat: Suchen in einer Hashtabelle (durchschnittlich)?",
+  "options": [
+   "O(1)",
+   "O(n)",
+   "O(n²)",
+   "O(n log n)"
+  ],
+  "correct": 0,
+  "explanation": "Suchen in einer Hashtabelle (durchschnittlich): O(1)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(15 // 12) aus?",
+  "options": [
+   "0",
+   "3",
+   "1",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "15 // 12 = 1 (Ganzzahldivision)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag enthält den sichtbaren Seiteninhalt?",
+  "options": [
+   "<form>",
+   "<li>",
+   "<span>",
+   "<body>"
+  ],
+  "correct": 3,
+  "explanation": "<body>: enthält den sichtbaren Seiteninhalt."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Eigenschaft hat die Datenstruktur „Array“?",
+  "options": [
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "besteht aus Knoten und Kanten",
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)"
+  ],
+  "correct": 0,
+  "explanation": "Array: hat feste Größe und erlaubt Zugriff per Index in O(1)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Welche CSS-Eigenschaft legt die horizontale Ausrichtung des Textes fest?",
+  "options": [
+   "background-color",
+   "font-weight",
+   "text-align",
+   "width"
+  ],
+  "correct": 2,
+  "explanation": "text-align: legt die horizontale Ausrichtung des Textes fest."
+ },
+ {
+  "topic": "Logik",
+  "question": "Frage: Was gilt für „not (True and True)“?",
+  "options": [
+   "kehrt den Wahrheitswert von a um",
+   "ergibt False",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ist nur True, wenn a und b beide True sind"
+  ],
+  "correct": 1,
+  "explanation": "not (True and True): ergibt False."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(1 + 15) aus?",
+  "options": [
+   "17",
+   "16",
+   "18",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "1 + 15 = 16."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(86 // 7) aus?",
+  "options": [
+   "11",
+   "13",
+   "2",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "86 // 7 = 12 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(55 % 2) aus?",
+  "options": [
+   "27",
+   "3",
+   "1",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "55 % 2 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Welche CSS-Eigenschaft legt die Breite eines Elements fest?",
+  "options": [
+   "margin",
+   "width",
+   "color",
+   "font-weight"
+  ],
+  "correct": 1,
+  "explanation": "width: legt die Breite eines Elements fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 8?",
+  "options": [
+   "1000",
+   "111",
+   "1001",
+   "1100"
+  ],
+  "correct": 0,
+  "explanation": "8₁₀ = 1000₂."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 178?",
+  "options": [
+   "10110100",
+   "10110001",
+   "10110011",
+   "10110010"
+  ],
+  "correct": 3,
+  "explanation": "178₁₀ = 10110010₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(19 - 11) aus?",
+  "options": [
+   "30",
+   "8",
+   "209",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "19 - 11 = 8."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(28 // 7) aus?",
+  "options": [
+   "0",
+   "5",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "28 // 7 = 4 (Ganzzahldivision)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Was bewirkt die CSS-Eigenschaft „text-align“?",
+  "options": [
+   "legt die Textfarbe fest",
+   "legt die Schriftstärke (z.B. fett) fest",
+   "legt die Breite eines Elements fest",
+   "legt die horizontale Ausrichtung des Textes fest"
+  ],
+  "correct": 3,
+  "explanation": "text-align: legt die horizontale Ausrichtung des Textes fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Welches HTML-Tag ist die wichtigste Überschrift?",
+  "options": [
+   "<input>",
+   "<h1>",
+   "<strong>",
+   "<ol>"
+  ],
+  "correct": 1,
+  "explanation": "<h1>: ist die wichtigste Überschrift."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Welche CSS-Eigenschaft legt das Anzeigeverhalten (z.B. block, inline, flex) fest?",
+  "options": [
+   "font-size",
+   "display",
+   "font-weight",
+   "border"
+  ],
+  "correct": 1,
+  "explanation": "display: legt das Anzeigeverhalten (z.B. block, inline, flex) fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 253?",
+  "options": [
+   "11111100",
+   "11111101",
+   "11111110",
+   "11111111"
+  ],
+  "correct": 1,
+  "explanation": "253₁₀ = 11111101₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(28 % 12) aus?",
+  "options": [
+   "2",
+   "5",
+   "6",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "28 % 12 = 4 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 11101110?",
+  "options": [
+   "240",
+   "239",
+   "236",
+   "238"
+  ],
+  "correct": 3,
+  "explanation": "11101110₂ = 238₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(1 + 17) aus?",
+  "options": [
+   "20",
+   "-16",
+   "18",
+   "17"
+  ],
+  "correct": 2,
+  "explanation": "1 + 17 = 18."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 11010?",
+  "options": [
+   "24",
+   "27",
+   "28",
+   "26"
+  ],
+  "correct": 3,
+  "explanation": "11010₂ = 26₁₀."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <table> verwendet?",
+  "options": [
+   "erzeugt eine nummerierte (geordnete) Liste",
+   "enthält den sichtbaren Seiteninhalt",
+   "erzeugt eine Tabelle",
+   "betont Text (meist kursiv)"
+  ],
+  "correct": 2,
+  "explanation": "<table>: erzeugt eine Tabelle."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 112?",
+  "options": [
+   "1111000",
+   "1110010",
+   "1110001",
+   "1110000"
+  ],
+  "correct": 3,
+  "explanation": "112₁₀ = 1110000₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(60 // 4) aus?",
+  "options": [
+   "15",
+   "14",
+   "0",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "60 // 4 = 15 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 9?",
+  "options": [
+   "1000",
+   "1010",
+   "1001",
+   "1011"
+  ],
+  "correct": 2,
+  "explanation": "9₁₀ = 1001₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Haus\" + \"Informatik\") aus?",
+  "options": [
+   "HausInformatik",
+   "Haus",
+   "Haus Informatik",
+   "InformatikHaus"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Haus\" + \"Informatik\" ergibt HausInformatik."
+ },
+ {
+  "topic": "Logik",
+  "question": "Wähle die richtige Antwort. Was gilt für „True and False“?",
+  "options": [
+   "kehrt den Wahrheitswert von a um",
+   "ergibt True",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ergibt False"
+  ],
+  "correct": 3,
+  "explanation": "True and False: ergibt False."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Welche Zeit-Komplexität (Landau) hat: Lineare Suche in einer unsortierten Liste?",
+  "options": [
+   "O(1)",
+   "O(log n)",
+   "O(n)",
+   "O(n²)"
+  ],
+  "correct": 2,
+  "explanation": "Lineare Suche in einer unsortierten Liste: O(n)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Welche CSS-Eigenschaft legt den Innenabstand fest?",
+  "options": [
+   "padding",
+   "width",
+   "text-align",
+   "height"
+  ],
+  "correct": 0,
+  "explanation": "padding: legt den Innenabstand fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 10100100?",
+  "options": [
+   "160",
+   "163",
+   "164",
+   "166"
+  ],
+  "correct": 2,
+  "explanation": "10100100₂ = 164₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Welche Dezimalzahl entspricht der Binärzahl 10001010?",
+  "options": [
+   "138",
+   "130",
+   "137",
+   "136"
+  ],
+  "correct": 0,
+  "explanation": "10001010₂ = 138₁₀."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Eigenschaft hat die Datenstruktur „Binärer Suchbaum“?",
+  "options": [
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat",
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "hält kleinere Werte links, größere rechts vom Knoten"
+  ],
+  "correct": 3,
+  "explanation": "Binärer Suchbaum: hält kleinere Werte links, größere rechts vom Knoten."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(7 - 18) aus?",
+  "options": [
+   "-9",
+   "-11",
+   "-12",
+   "25"
+  ],
+  "correct": 1,
+  "explanation": "7 - 18 = -11."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"ab\" * 3) aus?",
+  "options": [
+   "ababab",
+   "ab ab ab",
+   "ab3",
+   "abab"
+  ],
+  "correct": 0,
+  "explanation": "\"ab\" * 3 wiederholt den String 3-mal: ababab."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag enthält Metadaten der Seite?",
+  "options": [
+   "<li>",
+   "<a>",
+   "<div>",
+   "<head>"
+  ],
+  "correct": 3,
+  "explanation": "<head>: enthält Metadaten der Seite."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Datenstruktur ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat?",
+  "options": [
+   "Binärbaum",
+   "Stack (Stapel)",
+   "Queue (Warteschlange)",
+   "Graph"
+  ],
+  "correct": 0,
+  "explanation": "Binärbaum: ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 31?",
+  "options": [
+   "100001",
+   "100000",
+   "11111",
+   "11110"
+  ],
+  "correct": 2,
+  "explanation": "31₁₀ = 11111₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Wofür wird das HTML-Tag <br> verwendet?",
+  "options": [
+   "ist ein einzelnes Listenelement",
+   "betont Text (meist kursiv)",
+   "erzeugt eine Tabelle",
+   "erzwingt einen Zeilenumbruch"
+  ],
+  "correct": 3,
+  "explanation": "<br>: erzwingt einen Zeilenumbruch."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <input> verwendet?",
+  "options": [
+   "erzeugt einen Hyperlink (Verweis)",
+   "erzeugt ein Formular",
+   "ist ein Eingabefeld",
+   "ist ein Block-Container zur Gruppierung"
+  ],
+  "correct": 2,
+  "explanation": "<input>: ist ein Eingabefeld."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <p> verwendet?",
+  "options": [
+   "legt den Titel im Browser-Tab fest",
+   "kennzeichnet einen Textabsatz",
+   "erzeugt eine ungeordnete Liste",
+   "ist die wichtigste Überschrift"
+  ],
+  "correct": 1,
+  "explanation": "<p>: kennzeichnet einen Textabsatz."
+ },
+ {
+  "topic": "Logik",
+  "question": "Frage: Was gilt für „True and False“?",
+  "options": [
+   "ergibt True",
+   "kehrt den Wahrheitswert von a um",
+   "ergibt False",
+   "ist True, wenn mindestens einer von beiden True ist"
+  ],
+  "correct": 2,
+  "explanation": "True and False: ergibt False."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 132?",
+  "options": [
+   "10000100",
+   "10000101",
+   "10000011",
+   "10000110"
+  ],
+  "correct": 0,
+  "explanation": "132₁₀ = 10000100₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(80 // 4) aus?",
+  "options": [
+   "21",
+   "19",
+   "20",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "80 // 4 = 20 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(59 // 6) aus?",
+  "options": [
+   "5",
+   "8",
+   "9",
+   "10"
+  ],
+  "correct": 2,
+  "explanation": "59 // 6 = 9 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(22 % 11) aus?",
+  "options": [
+   "11",
+   "0",
+   "1",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "22 % 11 = 0 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(11 + 7) aus?",
+  "options": [
+   "19",
+   "4",
+   "18",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "11 + 7 = 18."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(12 * 3) aus?",
+  "options": [
+   "38",
+   "15",
+   "36",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "12 * 3 = 36."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(55 % 10) aus?",
+  "options": [
+   "5",
+   "4",
+   "7",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "55 % 10 = 5 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(13 + 8) aus?",
+  "options": [
+   "23",
+   "22",
+   "21",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "13 + 8 = 21."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(15 * 5) aus?",
+  "options": [
+   "74",
+   "10",
+   "75",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "15 * 5 = 75."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Eigenschaft hat die Datenstruktur „Graph“?",
+  "options": [
+   "besteht aus Knoten und Kanten",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)",
+   "verbindet Elemente über Zeiger (Referenzen)"
+  ],
+  "correct": 0,
+  "explanation": "Graph: besteht aus Knoten und Kanten."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Datenstruktur ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat?",
+  "options": [
+   "Hashtabelle",
+   "Binärbaum",
+   "Binärer Suchbaum",
+   "Graph"
+  ],
+  "correct": 1,
+  "explanation": "Binärbaum: ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Roboter\" + \"Computer\") aus?",
+  "options": [
+   "Roboter Computer",
+   "ComputerRoboter",
+   "RoboterComputer",
+   "Roboter"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Roboter\" + \"Computer\" ergibt RoboterComputer."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 11000000?",
+  "options": [
+   "194",
+   "192",
+   "193",
+   "190"
+  ],
+  "correct": 1,
+  "explanation": "11000000₂ = 192₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 10011001?",
+  "options": [
+   "155",
+   "154",
+   "153",
+   "151"
+  ],
+  "correct": 2,
+  "explanation": "10011001₂ = 153₁₀."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Wähle die richtige Antwort. Welche Zeit-Komplexität (Landau) hat: Alle Paare in einer Liste vergleichen (verschachtelte Schleife)?",
+  "options": [
+   "O(n log n)",
+   "O(log n)",
+   "O(n²)",
+   "O(n)"
+  ],
+  "correct": 2,
+  "explanation": "Alle Paare in einer Liste vergleichen (verschachtelte Schleife): O(n²)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 10011001?",
+  "options": [
+   "152",
+   "154",
+   "155",
+   "153"
+  ],
+  "correct": 3,
+  "explanation": "10011001₂ = 153₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(19 // 3) aus?",
+  "options": [
+   "6",
+   "1",
+   "5",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "19 // 3 = 6 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(5 ** 2) aus?",
+  "options": [
+   "25",
+   "20",
+   "125",
+   "36"
+  ],
+  "correct": 0,
+  "explanation": "5 ** 2 = 25 (Potenz)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(20 % 3) aus?",
+  "options": [
+   "2",
+   "1",
+   "6",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "20 % 3 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(87 // 11) aus?",
+  "options": [
+   "6",
+   "7",
+   "8",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "87 // 11 = 7 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 1100?",
+  "options": [
+   "14",
+   "12",
+   "11",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "1100₂ = 12₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(39 % 9) aus?",
+  "options": [
+   "3",
+   "6",
+   "2",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "39 % 9 = 3 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 179?",
+  "options": [
+   "10110011",
+   "10110101",
+   "10110100",
+   "10110001"
+  ],
+  "correct": 0,
+  "explanation": "179₁₀ = 10110011₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(17 % 10) aus?",
+  "options": [
+   "1",
+   "3",
+   "9",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "17 % 10 = 7 (Rest der Division)."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Wähle die richtige Antwort. Welche Zeit-Komplexität (Landau) hat: Zugriff auf ein Array-Element per Index?",
+  "options": [
+   "O(n log n)",
+   "O(n²)",
+   "O(n)",
+   "O(1)"
+  ],
+  "correct": 3,
+  "explanation": "Zugriff auf ein Array-Element per Index: O(1)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(65 // 3) aus?",
+  "options": [
+   "20",
+   "2",
+   "22",
+   "21"
+  ],
+  "correct": 3,
+  "explanation": "65 // 3 = 21 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(5 * 5) aus?",
+  "options": [
+   "27",
+   "25",
+   "10",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "5 * 5 = 25."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <em> verwendet?",
+  "options": [
+   "betont Text (meist kursiv)",
+   "ist ein Block-Container zur Gruppierung",
+   "hebt Text (meist fett) hervor",
+   "ist ein einzelnes Listenelement"
+  ],
+  "correct": 0,
+  "explanation": "<em>: betont Text (meist kursiv)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Welches HTML-Tag enthält Metadaten der Seite?",
+  "options": [
+   "<ul>",
+   "<head>",
+   "<body>",
+   "<div>"
+  ],
+  "correct": 1,
+  "explanation": "<head>: enthält Metadaten der Seite."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(2 ** 3) aus?",
+  "options": [
+   "10",
+   "6",
+   "8",
+   "27"
+  ],
+  "correct": 2,
+  "explanation": "2 ** 3 = 8 (Potenz)."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Welche Zeit-Komplexität (Landau) hat: Einfügen am Ende einer dynamischen Liste (amortisiert)?",
+  "options": [
+   "O(log n)",
+   "O(n²)",
+   "O(n)",
+   "O(1)"
+  ],
+  "correct": 3,
+  "explanation": "Einfügen am Ende einer dynamischen Liste (amortisiert): O(1)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Was bewirkt die CSS-Eigenschaft „border“?",
+  "options": [
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest",
+   "legt den Rahmen fest",
+   "legt die Hintergrundfarbe fest",
+   "legt die Schriftstärke (z.B. fett) fest"
+  ],
+  "correct": 1,
+  "explanation": "border: legt den Rahmen fest."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Was bewirkt die CSS-Eigenschaft „display“?",
+  "options": [
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest",
+   "legt die Höhe eines Elements fest",
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt die Hintergrundfarbe fest"
+  ],
+  "correct": 0,
+  "explanation": "display: legt das Anzeigeverhalten (z.B. block, inline, flex) fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 120?",
+  "options": [
+   "1111000",
+   "1111010",
+   "1110111",
+   "1111001"
+  ],
+  "correct": 0,
+  "explanation": "120₁₀ = 1111000₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(63 // 6) aus?",
+  "options": [
+   "11",
+   "10",
+   "3",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "63 // 6 = 10 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Schule\" + \"Computer\") aus?",
+  "options": [
+   "Computer",
+   "Schule Computer",
+   "Schule",
+   "SchuleComputer"
+  ],
+  "correct": 3,
+  "explanation": "Die Verkettung \"Schule\" + \"Computer\" ergibt SchuleComputer."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Hallo\" + \"Python\") aus?",
+  "options": [
+   "Hallo Python",
+   "Hallo",
+   "PythonHallo",
+   "HalloPython"
+  ],
+  "correct": 3,
+  "explanation": "Die Verkettung \"Hallo\" + \"Python\" ergibt HalloPython."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"ab\" * 4) aus?",
+  "options": [
+   "ab ab ab ab",
+   "ab4",
+   "ababababab",
+   "abababab"
+  ],
+  "correct": 3,
+  "explanation": "\"ab\" * 4 wiederholt den String 4-mal: abababab."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(10 - 8) aus?",
+  "options": [
+   "3",
+   "1",
+   "2",
+   "18"
+  ],
+  "correct": 2,
+  "explanation": "10 - 8 = 2."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Datenstruktur verbindet Elemente über Zeiger (Referenzen)?",
+  "options": [
+   "Binärer Suchbaum",
+   "Stack (Stapel)",
+   "Verkettete Liste",
+   "Hashtabelle"
+  ],
+  "correct": 2,
+  "explanation": "Verkettete Liste: verbindet Elemente über Zeiger (Referenzen)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Frage: Welche Eigenschaft hat die Datenstruktur „Queue (Warteschlange)“?",
+  "options": [
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "arbeitet nach dem FIFO-Prinzip (First In, First Out)",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)",
+   "besteht aus Knoten und Kanten"
+  ],
+  "correct": 1,
+  "explanation": "Queue (Warteschlange): arbeitet nach dem FIFO-Prinzip (First In, First Out)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Eigenschaft hat die Datenstruktur „Stack (Stapel)“?",
+  "options": [
+   "besteht aus Knoten und Kanten",
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "hält kleinere Werte links, größere rechts vom Knoten",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)"
+  ],
+  "correct": 3,
+  "explanation": "Stack (Stapel): arbeitet nach dem LIFO-Prinzip (Last In, First Out)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 235?",
+  "options": [
+   "11101101",
+   "11101011",
+   "11101100",
+   "11101010"
+  ],
+  "correct": 1,
+  "explanation": "235₁₀ = 11101011₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag erzeugt eine nummerierte (geordnete) Liste?",
+  "options": [
+   "<a>",
+   "<head>",
+   "<ol>",
+   "<body>"
+  ],
+  "correct": 2,
+  "explanation": "<ol>: erzeugt eine nummerierte (geordnete) Liste."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Wofür wird das HTML-Tag <h1> verwendet?",
+  "options": [
+   "hebt Text (meist fett) hervor",
+   "erzeugt ein Formular",
+   "bindet ein Bild ein",
+   "ist die wichtigste Überschrift"
+  ],
+  "correct": 3,
+  "explanation": "<h1>: ist die wichtigste Überschrift."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „width“?",
+  "options": [
+   "legt die Breite eines Elements fest",
+   "legt die Textfarbe fest",
+   "legt den Rahmen fest",
+   "legt die Schriftgröße fest"
+  ],
+  "correct": 0,
+  "explanation": "width: legt die Breite eines Elements fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(50 % 11) aus?",
+  "options": [
+   "5",
+   "6",
+   "8",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "50 % 11 = 6 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Welches HTML-Tag ist ein Inline-Container?",
+  "options": [
+   "<ol>",
+   "<span>",
+   "<img>",
+   "<head>"
+  ],
+  "correct": 1,
+  "explanation": "<span>: ist ein Inline-Container."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Baum\" + \"Apfel\") aus?",
+  "options": [
+   "ApfelBaum",
+   "BaumApfel",
+   "Baum",
+   "Baum Apfel"
+  ],
+  "correct": 1,
+  "explanation": "Die Verkettung \"Baum\" + \"Apfel\" ergibt BaumApfel."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 10110011?",
+  "options": [
+   "178",
+   "181",
+   "180",
+   "179"
+  ],
+  "correct": 3,
+  "explanation": "10110011₂ = 179₁₀."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Wofür wird das HTML-Tag <span> verwendet?",
+  "options": [
+   "kennzeichnet einen Textabsatz",
+   "ist ein Block-Container zur Gruppierung",
+   "enthält Metadaten der Seite",
+   "ist ein Inline-Container"
+  ],
+  "correct": 3,
+  "explanation": "<span>: ist ein Inline-Container."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 10101100?",
+  "options": [
+   "172",
+   "174",
+   "171",
+   "170"
+  ],
+  "correct": 0,
+  "explanation": "10101100₂ = 172₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(99 % 2) aus?",
+  "options": [
+   "49",
+   "0",
+   "3",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "99 % 2 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Welches HTML-Tag erzeugt eine ungeordnete Liste?",
+  "options": [
+   "<h1>",
+   "<img>",
+   "<ul>",
+   "<head>"
+  ],
+  "correct": 2,
+  "explanation": "<ul>: erzeugt eine ungeordnete Liste."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag ist ein einzelnes Listenelement?",
+  "options": [
+   "<ol>",
+   "<head>",
+   "<strong>",
+   "<li>"
+  ],
+  "correct": 3,
+  "explanation": "<li>: ist ein einzelnes Listenelement."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Welche CSS-Eigenschaft legt die horizontale Ausrichtung des Textes fest?",
+  "options": [
+   "height",
+   "text-align",
+   "padding",
+   "background-color"
+  ],
+  "correct": 1,
+  "explanation": "text-align: legt die horizontale Ausrichtung des Textes fest."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Datenstruktur arbeitet nach dem FIFO-Prinzip (First In, First Out)?",
+  "options": [
+   "Stack (Stapel)",
+   "Queue (Warteschlange)",
+   "Array",
+   "Binärer Suchbaum"
+  ],
+  "correct": 1,
+  "explanation": "Queue (Warteschlange): arbeitet nach dem FIFO-Prinzip (First In, First Out)."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Welche Zeit-Komplexität (Landau) hat: Quick Sort (durchschnittlich)?",
+  "options": [
+   "O(n)",
+   "O(1)",
+   "O(n log n)",
+   "O(n²)"
+  ],
+  "correct": 2,
+  "explanation": "Quick Sort (durchschnittlich): O(n log n)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 4?",
+  "options": [
+   "11",
+   "101",
+   "110",
+   "100"
+  ],
+  "correct": 3,
+  "explanation": "4₁₀ = 100₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(80 % 11) aus?",
+  "options": [
+   "8",
+   "2",
+   "5",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "80 % 11 = 3 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(88 // 3) aus?",
+  "options": [
+   "30",
+   "1",
+   "29",
+   "28"
+  ],
+  "correct": 2,
+  "explanation": "88 // 3 = 29 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(37 % 12) aus?",
+  "options": [
+   "1",
+   "0",
+   "3",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "37 % 12 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 1001010?",
+  "options": [
+   "74",
+   "72",
+   "75",
+   "73"
+  ],
+  "correct": 0,
+  "explanation": "1001010₂ = 74₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 40?",
+  "options": [
+   "101001",
+   "100111",
+   "101000",
+   "101010"
+  ],
+  "correct": 2,
+  "explanation": "40₁₀ = 101000₂."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Datenstruktur verbindet Elemente über Zeiger (Referenzen)?",
+  "options": [
+   "Hashtabelle",
+   "Array",
+   "Binärbaum",
+   "Verkettete Liste"
+  ],
+  "correct": 3,
+  "explanation": "Verkettete Liste: verbindet Elemente über Zeiger (Referenzen)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 162?",
+  "options": [
+   "10100011",
+   "10100010",
+   "10100001",
+   "10100100"
+  ],
+  "correct": 1,
+  "explanation": "162₁₀ = 10100010₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(5 * 11) aus?",
+  "options": [
+   "-6",
+   "54",
+   "55",
+   "16"
+  ],
+  "correct": 2,
+  "explanation": "5 * 11 = 55."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"ab\" * 2) aus?",
+  "options": [
+   "ab ab",
+   "ababab",
+   "ab",
+   "abab"
+  ],
+  "correct": 3,
+  "explanation": "\"ab\" * 2 wiederholt den String 2-mal: abab."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(27 // 4) aus?",
+  "options": [
+   "6",
+   "3",
+   "5",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "27 // 4 = 6 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 10110001?",
+  "options": [
+   "177",
+   "175",
+   "176",
+   "178"
+  ],
+  "correct": 0,
+  "explanation": "10110001₂ = 177₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 110011?",
+  "options": [
+   "50",
+   "53",
+   "49",
+   "51"
+  ],
+  "correct": 3,
+  "explanation": "110011₂ = 51₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(35 // 7) aus?",
+  "options": [
+   "4",
+   "6",
+   "5",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "35 // 7 = 5 (Ganzzahldivision)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag kennzeichnet einen Textabsatz?",
+  "options": [
+   "<img>",
+   "<body>",
+   "<form>",
+   "<p>"
+  ],
+  "correct": 3,
+  "explanation": "<p>: kennzeichnet einen Textabsatz."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(17 % 7) aus?",
+  "options": [
+   "5",
+   "3",
+   "2",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "17 % 7 = 3 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(14 // 2) aus?",
+  "options": [
+   "7",
+   "8",
+   "0",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "14 // 2 = 7 (Ganzzahldivision)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „background-color“?",
+  "options": [
+   "legt die Textfarbe fest",
+   "legt die Hintergrundfarbe fest",
+   "legt die Höhe eines Elements fest",
+   "legt die Breite eines Elements fest"
+  ],
+  "correct": 1,
+  "explanation": "background-color: legt die Hintergrundfarbe fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Wofür wird das HTML-Tag <p> verwendet?",
+  "options": [
+   "erzeugt eine nummerierte (geordnete) Liste",
+   "enthält Metadaten der Seite",
+   "kennzeichnet einen Textabsatz",
+   "legt den Titel im Browser-Tab fest"
+  ],
+  "correct": 2,
+  "explanation": "<p>: kennzeichnet einen Textabsatz."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 10000001?",
+  "options": [
+   "128",
+   "129",
+   "127",
+   "131"
+  ],
+  "correct": 1,
+  "explanation": "10000001₂ = 129₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(49 % 8) aus?",
+  "options": [
+   "7",
+   "6",
+   "1",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "49 % 8 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 3?",
+  "options": [
+   "101",
+   "10",
+   "100",
+   "11"
+  ],
+  "correct": 3,
+  "explanation": "3₁₀ = 11₂."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Welche CSS-Eigenschaft legt die Höhe eines Elements fest?",
+  "options": [
+   "border",
+   "text-align",
+   "height",
+   "font-size"
+  ],
+  "correct": 2,
+  "explanation": "height: legt die Höhe eines Elements fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 176?",
+  "options": [
+   "10110010",
+   "10101111",
+   "10110001",
+   "10110000"
+  ],
+  "correct": 3,
+  "explanation": "176₁₀ = 10110000₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <p> verwendet?",
+  "options": [
+   "ist ein einzelnes Listenelement",
+   "ist ein Block-Container zur Gruppierung",
+   "ist die wichtigste Überschrift",
+   "kennzeichnet einen Textabsatz"
+  ],
+  "correct": 3,
+  "explanation": "<p>: kennzeichnet einen Textabsatz."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(39 // 10) aus?",
+  "options": [
+   "4",
+   "9",
+   "2",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "39 // 10 = 3 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Eigenschaft hat die Datenstruktur „Binärbaum“?",
+  "options": [
+   "hält kleinere Werte links, größere rechts vom Knoten",
+   "besteht aus Knoten und Kanten",
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat",
+   "arbeitet nach dem FIFO-Prinzip (First In, First Out)"
+  ],
+  "correct": 2,
+  "explanation": "Binärbaum: ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(91 // 5) aus?",
+  "options": [
+   "18",
+   "17",
+   "19",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "91 // 5 = 18 (Ganzzahldivision)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Welches HTML-Tag kennzeichnet einen Textabsatz?",
+  "options": [
+   "<body>",
+   "<p>",
+   "<li>",
+   "<img>"
+  ],
+  "correct": 1,
+  "explanation": "<p>: kennzeichnet einen Textabsatz."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <ol> verwendet?",
+  "options": [
+   "hebt Text (meist fett) hervor",
+   "erzeugt eine nummerierte (geordnete) Liste",
+   "erzwingt einen Zeilenumbruch",
+   "ist ein Inline-Container"
+  ],
+  "correct": 1,
+  "explanation": "<ol>: erzeugt eine nummerierte (geordnete) Liste."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Welche CSS-Eigenschaft legt den Außenabstand fest?",
+  "options": [
+   "margin",
+   "padding",
+   "color",
+   "text-align"
+  ],
+  "correct": 0,
+  "explanation": "margin: legt den Außenabstand fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(53 // 9) aus?",
+  "options": [
+   "5",
+   "6",
+   "4",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "53 // 9 = 5 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(93 // 9) aus?",
+  "options": [
+   "11",
+   "9",
+   "10",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "93 // 9 = 10 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(86 % 4) aus?",
+  "options": [
+   "1",
+   "21",
+   "3",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "86 % 4 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 238?",
+  "options": [
+   "11101111",
+   "11101100",
+   "11101110",
+   "11101101"
+  ],
+  "correct": 2,
+  "explanation": "238₁₀ = 11101110₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <a> verwendet?",
+  "options": [
+   "enthält den sichtbaren Seiteninhalt",
+   "erzeugt einen Hyperlink (Verweis)",
+   "erzeugt eine nummerierte (geordnete) Liste",
+   "ist ein Eingabefeld"
+  ],
+  "correct": 1,
+  "explanation": "<a>: erzeugt einen Hyperlink (Verweis)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(89 // 8) aus?",
+  "options": [
+   "1",
+   "10",
+   "11",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "89 // 8 = 11 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(54 % 5) aus?",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "54 % 5 = 4 (Rest der Division)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 186?",
+  "options": [
+   "10111011",
+   "10111110",
+   "10111100",
+   "10111010"
+  ],
+  "correct": 3,
+  "explanation": "186₁₀ = 10111010₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(13 + 3) aus?",
+  "options": [
+   "39",
+   "15",
+   "17",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "13 + 3 = 16."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Hallo\" + \"Roboter\") aus?",
+  "options": [
+   "HalloRoboter",
+   "Roboter",
+   "RoboterHallo",
+   "Hallo Roboter"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Hallo\" + \"Roboter\" ergibt HalloRoboter."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(8 % 5) aus?",
+  "options": [
+   "4",
+   "2",
+   "5",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "8 % 5 = 3 (Rest der Division)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Was bewirkt die CSS-Eigenschaft „margin“?",
+  "options": [
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest",
+   "legt den Außenabstand fest",
+   "legt die Schriftstärke (z.B. fett) fest",
+   "legt die Hintergrundfarbe fest"
+  ],
+  "correct": 1,
+  "explanation": "margin: legt den Außenabstand fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Welches HTML-Tag erzeugt eine ungeordnete Liste?",
+  "options": [
+   "<input>",
+   "<ul>",
+   "<strong>",
+   "<br>"
+  ],
+  "correct": 1,
+  "explanation": "<ul>: erzeugt eine ungeordnete Liste."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(8 - 6) aus?",
+  "options": [
+   "48",
+   "2",
+   "1",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "8 - 6 = 2."
+ },
+ {
+  "topic": "Logik",
+  "question": "Was gilt für „not a (Negation)“?",
+  "options": [
+   "ergibt True",
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "ergibt False",
+   "kehrt den Wahrheitswert von a um"
+  ],
+  "correct": 3,
+  "explanation": "not a (Negation): kehrt den Wahrheitswert von a um."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Wofür wird das HTML-Tag <ol> verwendet?",
+  "options": [
+   "kennzeichnet einen Textabsatz",
+   "betont Text (meist kursiv)",
+   "enthält den sichtbaren Seiteninhalt",
+   "erzeugt eine nummerierte (geordnete) Liste"
+  ],
+  "correct": 3,
+  "explanation": "<ol>: erzeugt eine nummerierte (geordnete) Liste."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"xy\" * 4) aus?",
+  "options": [
+   "xy xy xy xy",
+   "xyxyxy",
+   "xyxyxyxyxy",
+   "xyxyxyxy"
+  ],
+  "correct": 3,
+  "explanation": "\"xy\" * 4 wiederholt den String 4-mal: xyxyxyxy."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 110110?",
+  "options": [
+   "53",
+   "62",
+   "55",
+   "54"
+  ],
+  "correct": 3,
+  "explanation": "110110₂ = 54₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(68 // 5) aus?",
+  "options": [
+   "12",
+   "3",
+   "14",
+   "13"
+  ],
+  "correct": 3,
+  "explanation": "68 // 5 = 13 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Welche Dezimalzahl entspricht der Binärzahl 11010011?",
+  "options": [
+   "210",
+   "212",
+   "211",
+   "219"
+  ],
+  "correct": 2,
+  "explanation": "11010011₂ = 211₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Informatik\" + \"Schule\") aus?",
+  "options": [
+   "Schule",
+   "InformatikSchule",
+   "Informatik Schule",
+   "Informatik"
+  ],
+  "correct": 1,
+  "explanation": "Die Verkettung \"Informatik\" + \"Schule\" ergibt InformatikSchule."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Eigenschaft hat die Datenstruktur „Binärbaum“?",
+  "options": [
+   "hat feste Größe und erlaubt Zugriff per Index in O(1)",
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)",
+   "besteht aus Knoten und Kanten"
+  ],
+  "correct": 1,
+  "explanation": "Binärbaum: ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(81 % 10) aus?",
+  "options": [
+   "1",
+   "3",
+   "9",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "81 % 10 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(51 % 7) aus?",
+  "options": [
+   "7",
+   "1",
+   "2",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "51 % 7 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(54 // 2) aus?",
+  "options": [
+   "26",
+   "28",
+   "27",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "54 // 2 = 27 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(16 - 8) aus?",
+  "options": [
+   "10",
+   "7",
+   "8",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "16 - 8 = 8."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"ha\" * 2) aus?",
+  "options": [
+   "haha",
+   "ha ha",
+   "ha",
+   "hahaha"
+  ],
+  "correct": 0,
+  "explanation": "\"ha\" * 2 wiederholt den String 2-mal: haha."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(15 % 9) aus?",
+  "options": [
+   "6",
+   "8",
+   "7",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "15 % 9 = 6 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Baum\" + \"Roboter\") aus?",
+  "options": [
+   "Baum",
+   "BaumRoboter",
+   "Baum Roboter",
+   "Roboter"
+  ],
+  "correct": 1,
+  "explanation": "Die Verkettung \"Baum\" + \"Roboter\" ergibt BaumRoboter."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 71?",
+  "options": [
+   "1001111",
+   "1000110",
+   "1001001",
+   "1000111"
+  ],
+  "correct": 3,
+  "explanation": "71₁₀ = 1000111₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wofür wird das HTML-Tag <p> verwendet?",
+  "options": [
+   "kennzeichnet einen Textabsatz",
+   "erzeugt eine Tabelle",
+   "ist ein einzelnes Listenelement",
+   "bindet ein Bild ein"
+  ],
+  "correct": 0,
+  "explanation": "<p>: kennzeichnet einen Textabsatz."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(20 + 13) aus?",
+  "options": [
+   "35",
+   "260",
+   "32",
+   "33"
+  ],
+  "correct": 3,
+  "explanation": "20 + 13 = 33."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 177?",
+  "options": [
+   "10110001",
+   "10110000",
+   "10110011",
+   "10110010"
+  ],
+  "correct": 0,
+  "explanation": "177₁₀ = 10110001₂."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Was bewirkt die CSS-Eigenschaft „font-size“?",
+  "options": [
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest",
+   "legt die Textfarbe fest",
+   "legt den Innenabstand fest",
+   "legt die Schriftgröße fest"
+  ],
+  "correct": 3,
+  "explanation": "font-size: legt die Schriftgröße fest."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Schule\" + \"Apfel\") aus?",
+  "options": [
+   "Schule",
+   "Apfel",
+   "SchuleApfel",
+   "ApfelSchule"
+  ],
+  "correct": 2,
+  "explanation": "Die Verkettung \"Schule\" + \"Apfel\" ergibt SchuleApfel."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 92?",
+  "options": [
+   "1011110",
+   "1011101",
+   "1011100",
+   "1011000"
+  ],
+  "correct": 2,
+  "explanation": "92₁₀ = 1011100₂."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 225?",
+  "options": [
+   "11100101",
+   "11100010",
+   "11100001",
+   "11100000"
+  ],
+  "correct": 2,
+  "explanation": "225₁₀ = 11100001₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(7 - 8) aus?",
+  "options": [
+   "1",
+   "-1",
+   "-2",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "7 - 8 = -1."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 111100?",
+  "options": [
+   "60",
+   "52",
+   "59",
+   "61"
+  ],
+  "correct": 0,
+  "explanation": "111100₂ = 60₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(12 // 6) aus?",
+  "options": [
+   "3",
+   "2",
+   "1",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "12 // 6 = 2 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(29 % 9) aus?",
+  "options": [
+   "7",
+   "2",
+   "3",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "29 % 9 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(6 + 14) aus?",
+  "options": [
+   "-8",
+   "84",
+   "21",
+   "20"
+  ],
+  "correct": 3,
+  "explanation": "6 + 14 = 20."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag betont Text (meist kursiv)?",
+  "options": [
+   "<li>",
+   "<img>",
+   "<ul>",
+   "<em>"
+  ],
+  "correct": 3,
+  "explanation": "<em>: betont Text (meist kursiv)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <div> verwendet?",
+  "options": [
+   "ist ein Block-Container zur Gruppierung",
+   "enthält den sichtbaren Seiteninhalt",
+   "erzeugt einen Hyperlink (Verweis)",
+   "erzeugt eine Tabelle"
+  ],
+  "correct": 0,
+  "explanation": "<div>: ist ein Block-Container zur Gruppierung."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(3 * 8) aus?",
+  "options": [
+   "24",
+   "23",
+   "-5",
+   "25"
+  ],
+  "correct": 0,
+  "explanation": "3 * 8 = 24."
+ },
+ {
+  "topic": "Logik",
+  "question": "Frage: Was gilt für „False or True“?",
+  "options": [
+   "ergibt True",
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "kehrt den Wahrheitswert von a um",
+   "ergibt False"
+  ],
+  "correct": 0,
+  "explanation": "False or True: ergibt True."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 237?",
+  "options": [
+   "11101111",
+   "11101110",
+   "11101100",
+   "11101101"
+  ],
+  "correct": 3,
+  "explanation": "237₁₀ = 11101101₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(73 // 6) aus?",
+  "options": [
+   "12",
+   "1",
+   "13",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "73 // 6 = 12 (Ganzzahldivision)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Frage: Was bewirkt die CSS-Eigenschaft „font-weight“?",
+  "options": [
+   "legt die Schriftgröße fest",
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt den Rahmen fest",
+   "legt die Schriftstärke (z.B. fett) fest"
+  ],
+  "correct": 3,
+  "explanation": "font-weight: legt die Schriftstärke (z.B. fett) fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 157?",
+  "options": [
+   "10011001",
+   "10011110",
+   "10011101",
+   "10011111"
+  ],
+  "correct": 2,
+  "explanation": "157₁₀ = 10011101₂."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „color“?",
+  "options": [
+   "legt die Textfarbe fest",
+   "legt die Breite eines Elements fest",
+   "legt die Schriftstärke (z.B. fett) fest",
+   "legt den Innenabstand fest"
+  ],
+  "correct": 0,
+  "explanation": "color: legt die Textfarbe fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 73?",
+  "options": [
+   "1001000",
+   "1001011",
+   "1001001",
+   "1001010"
+  ],
+  "correct": 2,
+  "explanation": "73₁₀ = 1001001₂."
+ },
+ {
+  "topic": "Logik",
+  "question": "Informatik: Was gilt für „True and False“?",
+  "options": [
+   "ist True, wenn mindestens einer von beiden True ist",
+   "kehrt den Wahrheitswert von a um",
+   "ergibt False",
+   "ist True, wenn genau einer der beiden Werte True ist"
+  ],
+  "correct": 2,
+  "explanation": "True and False: ergibt False."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Welche Eigenschaft hat die Datenstruktur „Graph“?",
+  "options": [
+   "besteht aus Knoten und Kanten",
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)",
+   "arbeitet nach dem FIFO-Prinzip (First In, First Out)"
+  ],
+  "correct": 0,
+  "explanation": "Graph: besteht aus Knoten und Kanten."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Eigenschaft hat die Datenstruktur „Hashtabelle“?",
+  "options": [
+   "besteht aus Knoten und Kanten",
+   "ist ein Baum, in dem jeder Knoten höchstens zwei Kinder hat",
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)"
+  ],
+  "correct": 2,
+  "explanation": "Hashtabelle: ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wie lautet die Binärdarstellung der Dezimalzahl 151?",
+  "options": [
+   "10010111",
+   "10011001",
+   "10010110",
+   "10011000"
+  ],
+  "correct": 0,
+  "explanation": "151₁₀ = 10010111₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(45 % 11) aus?",
+  "options": [
+   "10",
+   "1",
+   "0",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "45 % 11 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wofür wird das HTML-Tag <span> verwendet?",
+  "options": [
+   "ist ein Inline-Container",
+   "kennzeichnet einen Textabsatz",
+   "legt den Titel im Browser-Tab fest",
+   "hebt Text (meist fett) hervor"
+  ],
+  "correct": 0,
+  "explanation": "<span>: ist ein Inline-Container."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(49 % 3) aus?",
+  "options": [
+   "0",
+   "2",
+   "3",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "49 % 3 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "Logik",
+  "question": "Informatik: Was gilt für „not a (Negation)“?",
+  "options": [
+   "ist nur True, wenn a und b beide True sind",
+   "kehrt den Wahrheitswert von a um",
+   "ergibt False",
+   "ergibt True"
+  ],
+  "correct": 1,
+  "explanation": "not a (Negation): kehrt den Wahrheitswert von a um."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(21 % 7) aus?",
+  "options": [
+   "7",
+   "2",
+   "0",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "21 % 7 = 0 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(17 * 20) aus?",
+  "options": [
+   "341",
+   "-3",
+   "340",
+   "339"
+  ],
+  "correct": 2,
+  "explanation": "17 * 20 = 340."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag ist ein Inline-Container?",
+  "options": [
+   "<span>",
+   "<ol>",
+   "<div>",
+   "<input>"
+  ],
+  "correct": 0,
+  "explanation": "<span>: ist ein Inline-Container."
+ },
+ {
+  "topic": "CSS",
+  "question": "Wähle die richtige Antwort. Was bewirkt die CSS-Eigenschaft „color“?",
+  "options": [
+   "legt die Hintergrundfarbe fest",
+   "legt die Textfarbe fest",
+   "legt das Anzeigeverhalten (z.B. block, inline, flex) fest",
+   "legt den Rahmen fest"
+  ],
+  "correct": 1,
+  "explanation": "color: legt die Textfarbe fest."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 10110110?",
+  "options": [
+   "181",
+   "184",
+   "183",
+   "182"
+  ],
+  "correct": 3,
+  "explanation": "10110110₂ = 182₁₀."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Welche Dezimalzahl entspricht der Binärzahl 10100010?",
+  "options": [
+   "164",
+   "160",
+   "162",
+   "161"
+  ],
+  "correct": 2,
+  "explanation": "10100010₂ = 162₁₀."
+ },
+ {
+  "topic": "Logik",
+  "question": "Informatik: Was gilt für „a and b (logisches UND)“?",
+  "options": [
+   "ergibt True",
+   "ist True, wenn genau einer der beiden Werte True ist",
+   "ist nur True, wenn a und b beide True sind",
+   "kehrt den Wahrheitswert von a um"
+  ],
+  "correct": 2,
+  "explanation": "a and b (logisches UND): ist nur True, wenn a und b beide True sind."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Wofür wird das HTML-Tag <h1> verwendet?",
+  "options": [
+   "ist ein Inline-Container",
+   "ist die wichtigste Überschrift",
+   "betont Text (meist kursiv)",
+   "kennzeichnet einen Textabsatz"
+  ],
+  "correct": 1,
+  "explanation": "<h1>: ist die wichtigste Überschrift."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(2 - 4) aus?",
+  "options": [
+   "0",
+   "-2",
+   "8",
+   "-1"
+  ],
+  "correct": 1,
+  "explanation": "2 - 4 = -2."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 1110010?",
+  "options": [
+   "115",
+   "116",
+   "112",
+   "114"
+  ],
+  "correct": 3,
+  "explanation": "1110010₂ = 114₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(4 * 3) aus?",
+  "options": [
+   "14",
+   "13",
+   "7",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "4 * 3 = 12."
+ },
+ {
+  "topic": "CSS",
+  "question": "Welche CSS-Eigenschaft legt die Höhe eines Elements fest?",
+  "options": [
+   "display",
+   "height",
+   "width",
+   "padding"
+  ],
+  "correct": 1,
+  "explanation": "height: legt die Höhe eines Elements fest."
+ },
+ {
+  "topic": "Logik",
+  "question": "Wähle die richtige Antwort. Was gilt für „a or b (logisches ODER)“?",
+  "options": [
+   "kehrt den Wahrheitswert von a um",
+   "ergibt False",
+   "ist True, wenn mindestens einer von beiden True ist",
+   "ist nur True, wenn a und b beide True sind"
+  ],
+  "correct": 2,
+  "explanation": "a or b (logisches ODER): ist True, wenn mindestens einer von beiden True ist."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(20 - 5) aus?",
+  "options": [
+   "14",
+   "17",
+   "15",
+   "16"
+  ],
+  "correct": 2,
+  "explanation": "20 - 5 = 15."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <em> verwendet?",
+  "options": [
+   "ist ein Block-Container zur Gruppierung",
+   "betont Text (meist kursiv)",
+   "erzeugt einen Hyperlink (Verweis)",
+   "erzwingt einen Zeilenumbruch"
+  ],
+  "correct": 1,
+  "explanation": "<em>: betont Text (meist kursiv)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <ul> verwendet?",
+  "options": [
+   "kennzeichnet einen Textabsatz",
+   "erzeugt eine Tabelle",
+   "betont Text (meist kursiv)",
+   "erzeugt eine ungeordnete Liste"
+  ],
+  "correct": 3,
+  "explanation": "<ul>: erzeugt eine ungeordnete Liste."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Datenstruktur ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)?",
+  "options": [
+   "Queue (Warteschlange)",
+   "Hashtabelle",
+   "Array",
+   "Binärer Suchbaum"
+  ],
+  "correct": 1,
+  "explanation": "Hashtabelle: ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)."
+ },
+ {
+  "topic": "CSS",
+  "question": "Welche CSS-Eigenschaft legt den Außenabstand fest?",
+  "options": [
+   "margin",
+   "font-weight",
+   "padding",
+   "border"
+  ],
+  "correct": 0,
+  "explanation": "margin: legt den Außenabstand fest."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „font-size“?",
+  "options": [
+   "legt die Textfarbe fest",
+   "legt den Innenabstand fest",
+   "legt die Schriftstärke (z.B. fett) fest",
+   "legt die Schriftgröße fest"
+  ],
+  "correct": 3,
+  "explanation": "font-size: legt die Schriftgröße fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wofür wird das HTML-Tag <a> verwendet?",
+  "options": [
+   "erzeugt einen Hyperlink (Verweis)",
+   "hebt Text (meist fett) hervor",
+   "ist ein einzelnes Listenelement",
+   "legt den Titel im Browser-Tab fest"
+  ],
+  "correct": 0,
+  "explanation": "<a>: erzeugt einen Hyperlink (Verweis)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(25 // 5) aus?",
+  "options": [
+   "0",
+   "6",
+   "4",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "25 // 5 = 5 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Informatik: Welche Zeit-Komplexität (Landau) hat: Zugriff auf ein Array-Element per Index?",
+  "options": [
+   "O(n log n)",
+   "O(1)",
+   "O(n²)",
+   "O(n)"
+  ],
+  "correct": 1,
+  "explanation": "Zugriff auf ein Array-Element per Index: O(1)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Informatik\" + \"Apfel\") aus?",
+  "options": [
+   "InformatikApfel",
+   "Informatik Apfel",
+   "ApfelInformatik",
+   "Informatik"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Informatik\" + \"Apfel\" ergibt InformatikApfel."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 11110001?",
+  "options": [
+   "243",
+   "241",
+   "242",
+   "240"
+  ],
+  "correct": 1,
+  "explanation": "11110001₂ = 241₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(3 - 8) aus?",
+  "options": [
+   "24",
+   "11",
+   "-3",
+   "-5"
+  ],
+  "correct": 3,
+  "explanation": "3 - 8 = -5."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Welche Dezimalzahl entspricht der Binärzahl 111110?",
+  "options": [
+   "62",
+   "61",
+   "60",
+   "64"
+  ],
+  "correct": 0,
+  "explanation": "111110₂ = 62₁₀."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Baum\" + \"Schule\") aus?",
+  "options": [
+   "BaumSchule",
+   "Baum Schule",
+   "SchuleBaum",
+   "Baum"
+  ],
+  "correct": 0,
+  "explanation": "Die Verkettung \"Baum\" + \"Schule\" ergibt BaumSchule."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Was bewirkt die CSS-Eigenschaft „height“?",
+  "options": [
+   "legt die horizontale Ausrichtung des Textes fest",
+   "legt die Höhe eines Elements fest",
+   "legt die Schriftgröße fest",
+   "legt den Außenabstand fest"
+  ],
+  "correct": 1,
+  "explanation": "height: legt die Höhe eines Elements fest."
+ },
+ {
+  "topic": "CSS",
+  "question": "Informatik: Welche CSS-Eigenschaft legt die Schriftstärke (z.B. fett) fest?",
+  "options": [
+   "height",
+   "border",
+   "width",
+   "font-weight"
+  ],
+  "correct": 3,
+  "explanation": "font-weight: legt die Schriftstärke (z.B. fett) fest."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag erzeugt eine ungeordnete Liste?",
+  "options": [
+   "<ul>",
+   "<img>",
+   "<table>",
+   "<title>"
+  ],
+  "correct": 0,
+  "explanation": "<ul>: erzeugt eine ungeordnete Liste."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(20 + 11) aus?",
+  "options": [
+   "32",
+   "33",
+   "31",
+   "220"
+  ],
+  "correct": 2,
+  "explanation": "20 + 11 = 31."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(11 + 6) aus?",
+  "options": [
+   "18",
+   "19",
+   "16",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "11 + 6 = 17."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Welches HTML-Tag erzeugt eine Tabelle?",
+  "options": [
+   "<title>",
+   "<p>",
+   "<table>",
+   "<br>"
+  ],
+  "correct": 2,
+  "explanation": "<table>: erzeugt eine Tabelle."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 125?",
+  "options": [
+   "1111100",
+   "1111101",
+   "1111111",
+   "1111110"
+  ],
+  "correct": 1,
+  "explanation": "125₁₀ = 1111101₂."
+ },
+ {
+  "topic": "HTML",
+  "question": "Informatik: Welches HTML-Tag hebt Text (meist fett) hervor?",
+  "options": [
+   "<ul>",
+   "<br>",
+   "<input>",
+   "<strong>"
+  ],
+  "correct": 3,
+  "explanation": "<strong>: hebt Text (meist fett) hervor."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Welche Dezimalzahl entspricht der Binärzahl 11000111?",
+  "options": [
+   "207",
+   "200",
+   "197",
+   "199"
+  ],
+  "correct": 3,
+  "explanation": "11000111₂ = 199₁₀."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Welches HTML-Tag ist ein Eingabefeld?",
+  "options": [
+   "<input>",
+   "<strong>",
+   "<head>",
+   "<a>"
+  ],
+  "correct": 0,
+  "explanation": "<input>: ist ein Eingabefeld."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 95?",
+  "options": [
+   "1100000",
+   "1011111",
+   "1100001",
+   "1011110"
+  ],
+  "correct": 1,
+  "explanation": "95₁₀ = 1011111₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(20 % 6) aus?",
+  "options": [
+   "4",
+   "2",
+   "3",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "20 % 6 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(\"Computer\" + \"Roboter\") aus?",
+  "options": [
+   "Roboter",
+   "ComputerRoboter",
+   "Computer",
+   "RoboterComputer"
+  ],
+  "correct": 1,
+  "explanation": "Die Verkettung \"Computer\" + \"Roboter\" ergibt ComputerRoboter."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(74 % 12) aus?",
+  "options": [
+   "1",
+   "2",
+   "6",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "74 % 12 = 2 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Welches HTML-Tag erzeugt ein Formular?",
+  "options": [
+   "<input>",
+   "<span>",
+   "<ul>",
+   "<form>"
+  ],
+  "correct": 3,
+  "explanation": "<form>: erzeugt ein Formular."
+ },
+ {
+  "topic": "Laufzeit",
+  "question": "Frage: Welche Zeit-Komplexität (Landau) hat: Insertion Sort (Worst Case)?",
+  "options": [
+   "O(n log n)",
+   "O(1)",
+   "O(n²)",
+   "O(n)"
+  ],
+  "correct": 2,
+  "explanation": "Insertion Sort (Worst Case): O(n²)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Welches HTML-Tag bindet ein Bild ein?",
+  "options": [
+   "<table>",
+   "<a>",
+   "<img>",
+   "<head>"
+  ],
+  "correct": 2,
+  "explanation": "<img>: bindet ein Bild ein."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Informatik: Wie lautet die Binärdarstellung der Dezimalzahl 133?",
+  "options": [
+   "10000100",
+   "10000110",
+   "10000101",
+   "10000111"
+  ],
+  "correct": 2,
+  "explanation": "133₁₀ = 10000101₂."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Wähle die richtige Antwort. Welche Datenstruktur besteht aus Knoten und Kanten?",
+  "options": [
+   "Binärer Suchbaum",
+   "Stack (Stapel)",
+   "Queue (Warteschlange)",
+   "Graph"
+  ],
+  "correct": 3,
+  "explanation": "Graph: besteht aus Knoten und Kanten."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 204?",
+  "options": [
+   "11001101",
+   "11001110",
+   "11001100",
+   "11001011"
+  ],
+  "correct": 2,
+  "explanation": "204₁₀ = 11001100₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(12 % 6) aus?",
+  "options": [
+   "6",
+   "2",
+   "1",
+   "0"
+  ],
+  "correct": 3,
+  "explanation": "12 % 6 = 0 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Frage: Welches HTML-Tag ist ein Eingabefeld?",
+  "options": [
+   "<input>",
+   "<span>",
+   "<a>",
+   "<h1>"
+  ],
+  "correct": 0,
+  "explanation": "<input>: ist ein Eingabefeld."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <strong> verwendet?",
+  "options": [
+   "ist die wichtigste Überschrift",
+   "erzwingt einen Zeilenumbruch",
+   "hebt Text (meist fett) hervor",
+   "enthält Metadaten der Seite"
+  ],
+  "correct": 2,
+  "explanation": "<strong>: hebt Text (meist fett) hervor."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(85 // 9) aus?",
+  "options": [
+   "10",
+   "9",
+   "8",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "85 // 9 = 9 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wie lautet die Binärdarstellung der Dezimalzahl 54?",
+  "options": [
+   "110110",
+   "110010",
+   "111000",
+   "110111"
+  ],
+  "correct": 0,
+  "explanation": "54₁₀ = 110110₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(46 // 2) aus?",
+  "options": [
+   "22",
+   "0",
+   "23",
+   "24"
+  ],
+  "correct": 2,
+  "explanation": "46 // 2 = 23 (Ganzzahldivision)."
+ },
+ {
+  "topic": "Datenstrukturen",
+  "question": "Informatik: Welche Eigenschaft hat die Datenstruktur „Hashtabelle“?",
+  "options": [
+   "besteht aus Knoten und Kanten",
+   "verbindet Elemente über Zeiger (Referenzen)",
+   "ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)",
+   "arbeitet nach dem LIFO-Prinzip (Last In, First Out)"
+  ],
+  "correct": 2,
+  "explanation": "Hashtabelle: ordnet Schlüssel Werten zu, Zugriff im Schnitt O(1)."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Frage: Wie lautet die Binärdarstellung der Dezimalzahl 1?",
+  "options": [
+   "101",
+   "1",
+   "0",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "1₁₀ = 1₂."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(45 % 12) aus?",
+  "options": [
+   "11",
+   "8",
+   "9",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "45 % 12 = 9 (Rest der Division)."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(79 % 3) aus?",
+  "options": [
+   "2",
+   "3",
+   "0",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "79 % 3 = 1 (Rest der Division)."
+ },
+ {
+  "topic": "HTML",
+  "question": "Wähle die richtige Antwort. Wofür wird das HTML-Tag <table> verwendet?",
+  "options": [
+   "hebt Text (meist fett) hervor",
+   "erzeugt eine Tabelle",
+   "erzeugt eine ungeordnete Liste",
+   "legt den Titel im Browser-Tab fest"
+  ],
+  "correct": 1,
+  "explanation": "<table>: erzeugt eine Tabelle."
+ },
+ {
+  "topic": "Python-Ausgaben",
+  "question": "Was gibt print(58 // 8) aus?",
+  "options": [
+   "8",
+   "6",
+   "7",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "58 // 8 = 7 (Ganzzahldivision)."
+ }
+]

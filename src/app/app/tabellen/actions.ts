@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { rateLimit } from "@/lib/security/rate-limit";
+import { awardCoins } from "@/lib/coins";
 
 async function requireStudent() {
   const session = await getSession();
@@ -21,6 +22,7 @@ export async function createSpreadsheet(): Promise<void> {
   const sheet = await prisma.spreadsheet.create({
     data: { userId: session.userId },
   });
+  awardCoins(session.userId, "office_dokument_erstellt", undefined, sheet.id).catch(() => undefined);
   redirect(`/app/tabellen/${sheet.id}`);
 }
 

@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: Bei einer Spannung von 2 V fließt ein Strom von 0,4 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "5 Ω",
+   "15 Ω",
+   "7 Ω",
+   "3 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U / I = 2 V / 0,4 A = 5 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 10 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung U?",
+  "options": [
+   "30 V",
+   "27 V",
+   "38 V",
+   "15 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 10 Ω · 3 A = 30 V."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 250 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "750 J",
+   "1875 J",
+   "1650 J",
+   "1500 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 250 N · 6 m = 1500 J (Joule)."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 75 N über eine Strecke von s = 1,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "84,38 J",
+   "101,25 J",
+   "123,75 J",
+   "112,5 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 75 N · 1,5 m = 112,5 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 10 Ω und R₂ = 40 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "12 Ω",
+   "8 Ω",
+   "18 Ω",
+   "6 Ω"
+  ],
+  "correct": 1,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (10 · 40) / (10 + 40) = 8 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Teste dein Wissen: Ein Motor hat die Leistung P = 40 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "250 J",
+   "220 J",
+   "200 J",
+   "180 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 40 W · 5 s = 200 J."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Teste dein Wissen: Eine Kiste wird mit der Kraft F = 40 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "120 J",
+   "180 J",
+   "240 J",
+   "300 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 40 N · 6 m = 240 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 8 Ω und R₂ = 8 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "4 Ω",
+   "2 Ω",
+   "12 Ω",
+   "6 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (8 · 8) / (8 + 8) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: R₁ = 5 Ω und R₂ = 100 Ω sind in Reihe geschaltet, es fließt I = 0,2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "29,4 V",
+   "16,8 V",
+   "25,2 V",
+   "21 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 5 + 100 = 105 Ω; U = Rges · I = 105 Ω · 0,2 A = 21 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand von 22 Ω liegt die Spannung 66 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3,2 A",
+   "3 A",
+   "4 A",
+   "2,9 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U / R = 66 V / 22 Ω = 3 A."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 200 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "500 J",
+   "250 J",
+   "625 J",
+   "750 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 200 N · 2,5 m = 500 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: Ein Motor hat die Leistung P = 120 W. Welche Arbeit verrichtet er in t = 30 s?",
+  "options": [
+   "3240 J",
+   "2700 J",
+   "3600 J",
+   "3960 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 120 W · 30 s = 3600 J."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Überlege genau: Eine Kiste wird mit der Kraft F = 200 N über eine Strecke von s = 1,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "225 J",
+   "300 J",
+   "270 J",
+   "330 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 200 N · 1,5 m = 300 J (Joule)."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Überlege genau: Ein Fahrzeug fährt 10 m/s. Wie viel km/h sind das?",
+  "options": [
+   "43,2 km/h",
+   "28,8 km/h",
+   "36 km/h",
+   "39,6 km/h"
+  ],
+  "correct": 2,
+  "explanation": "Umrechnung: 10 m/s · 3,6 = 36 km/h."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 75 N über eine Strecke von s = 4 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "225 J",
+   "330 J",
+   "300 J",
+   "270 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 75 N · 4 m = 300 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. An einem Widerstand von 5 Ω liegt die Spannung 1 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "0,2 A",
+   "0,7 A",
+   "1,2 A",
+   "0,4 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U / R = 1 V / 5 Ω = 0,2 A."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 20 Ω und R₂ = 20 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "5 Ω",
+   "30 Ω",
+   "10 Ω",
+   "7,5 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (20 · 20) / (20 + 20) = 10 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Quizfrage: R₁ = 25 Ω und R₂ = 10 Ω sind in Reihe geschaltet, es fließt I = 2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "56 V",
+   "42 V",
+   "98 V",
+   "70 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 25 + 10 = 35 Ω; U = Rges · I = 35 Ω · 2 A = 70 V."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Auto fährt 144 km/h. Wie viel m/s sind das?",
+  "options": [
+   "42 m/s",
+   "40 m/s",
+   "50 m/s",
+   "38 m/s"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 144 km/h : 3,6 = 40 m/s."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: Ein Motor hat die Leistung P = 150 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "750 J",
+   "938 J",
+   "825 J",
+   "675 J"
+  ],
+  "correct": 0,
+  "explanation": "W = P · t = 150 W · 5 s = 750 J."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Teste dein Wissen: Ein Motor hat die Leistung P = 500 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "2750 J",
+   "1875 J",
+   "2500 J",
+   "2250 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 500 W · 5 s = 2500 J."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 50 N über eine Strecke von s = 1,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "56,25 J",
+   "75 J",
+   "93,75 J",
+   "37,5 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 50 N · 1,5 m = 75 J (Joule)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 50 Ω und R₂ = 50 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "105 Ω",
+   "110 Ω",
+   "80 Ω",
+   "100 Ω"
+  ],
+  "correct": 3,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 50 Ω + 50 Ω = 100 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Überlege genau: Ein Fahrzeug fährt 25 m/s. Wie viel km/h sind das?",
+  "options": [
+   "90 km/h",
+   "86,4 km/h",
+   "93,6 km/h",
+   "97,2 km/h"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 25 m/s · 3,6 = 90 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt 20 m/s. Wie viel km/h sind das?",
+  "options": [
+   "72 km/h",
+   "75,6 km/h",
+   "90 km/h",
+   "54 km/h"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 20 m/s · 3,6 = 72 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Fahrzeug fährt 10 m/s. Wie viel km/h sind das?",
+  "options": [
+   "32,4 km/h",
+   "39,6 km/h",
+   "18 km/h",
+   "36 km/h"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 10 m/s · 3,6 = 36 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Fahrzeug fährt 25 m/s. Wie viel km/h sind das?",
+  "options": [
+   "82,8 km/h",
+   "86,4 km/h",
+   "108 km/h",
+   "90 km/h"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 25 m/s · 3,6 = 90 km/h."
+ },
+ {
+  "topic": "Leistung",
+  "question": "In t = 2 s wird die Arbeit W = 240 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "60 W",
+   "144 W",
+   "180 W",
+   "120 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 240 J / 2 s = 120 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Bei einer Spannung von 30 V fließt ein Strom von 2,5 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "10 Ω",
+   "14 Ω",
+   "32 Ω",
+   "12 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U / I = 30 V / 2,5 A = 12 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt 40 m/s. Wie viel km/h sind das?",
+  "options": [
+   "162 km/h",
+   "136,8 km/h",
+   "144 km/h",
+   "140,4 km/h"
+  ],
+  "correct": 2,
+  "explanation": "Umrechnung: 40 m/s · 3,6 = 144 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Überlege genau: Ein Auto fährt 18 km/h. Wie viel m/s sind das?",
+  "options": [
+   "5 m/s",
+   "7 m/s",
+   "10 m/s",
+   "3 m/s"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 18 km/h : 3,6 = 5 m/s."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 120 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "720 J",
+   "360 J",
+   "792 J",
+   "1080 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 120 N · 6 m = 720 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 6 Ω und R₂ = 12 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "6 Ω",
+   "10 Ω",
+   "4 Ω",
+   "5 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (6 · 12) / (6 + 12) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Überlege genau: Ein Auto fährt 180 km/h. Wie viel m/s sind das?",
+  "options": [
+   "48 m/s",
+   "50 m/s",
+   "40 m/s",
+   "55 m/s"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 180 km/h : 3,6 = 50 m/s."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: R₁ = 10 Ω und R₂ = 5 Ω sind in Reihe geschaltet, es fließt I = 0,5 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "7,5 V",
+   "9 V",
+   "6 V",
+   "4,5 V"
+  ],
+  "correct": 0,
+  "explanation": "Rges = 10 + 5 = 15 Ω; U = Rges · I = 15 Ω · 0,5 A = 7,5 V."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Zwei Widerstände R₁ = 10 Ω und R₂ = 40 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "8 Ω",
+   "12 Ω",
+   "18 Ω",
+   "10 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (10 · 40) / (10 + 40) = 8 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Durch einen Widerstand von 60 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung U?",
+  "options": [
+   "180 V",
+   "135 V",
+   "162 V",
+   "198 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 60 Ω · 3 A = 180 V."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Teste dein Wissen: In t = 10 s wird die Arbeit W = 1200 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "60 W",
+   "96 W",
+   "180 W",
+   "120 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 1200 J / 10 s = 120 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: An einem Widerstand von 50 Ω liegt die Spannung 125 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2,5 A",
+   "2,3 A",
+   "2,4 A",
+   "3,5 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U / R = 125 V / 50 Ω = 2,5 A."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 10 Ω und R₂ = 50 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "80 Ω",
+   "55 Ω",
+   "60 Ω",
+   "45 Ω"
+  ],
+  "correct": 2,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 10 Ω + 50 Ω = 60 Ω."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 4 Ω und R₂ = 4 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "1 Ω",
+   "2 Ω",
+   "3 Ω",
+   "4 Ω"
+  ],
+  "correct": 1,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (4 · 4) / (4 + 4) = 2 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 200 N über eine Strecke von s = 4 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "800 J",
+   "880 J",
+   "600 J",
+   "400 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 200 N · 4 m = 800 J (Joule)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 5 Ω und R₂ = 80 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "95 Ω",
+   "70 Ω",
+   "100 Ω",
+   "85 Ω"
+  ],
+  "correct": 3,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 5 Ω + 80 Ω = 85 Ω."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Wähle die richtige Antwort. Eine Kiste wird mit der Kraft F = 120 N über eine Strecke von s = 8 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "1056 J",
+   "960 J",
+   "720 J",
+   "480 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 120 N · 8 m = 960 J (Joule)."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Wähle die richtige Antwort. Eine Kiste wird mit der Kraft F = 75 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "675 J",
+   "225 J",
+   "405 J",
+   "450 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 75 N · 6 m = 450 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. In t = 20 s wird die Arbeit W = 2400 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "180 W",
+   "96 W",
+   "120 W",
+   "60 W"
+  ],
+  "correct": 2,
+  "explanation": "P = W / t = 2400 J / 20 s = 120 W (Watt)."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Ein Fahrzeug fährt 5 m/s. Wie viel km/h sind das?",
+  "options": [
+   "21,6 km/h",
+   "10,8 km/h",
+   "18 km/h",
+   "25,2 km/h"
+  ],
+  "correct": 2,
+  "explanation": "Umrechnung: 5 m/s · 3,6 = 18 km/h."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Teste dein Wissen: Ein Motor hat die Leistung P = 150 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "825 J",
+   "750 J",
+   "563 J",
+   "675 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 150 W · 5 s = 750 J."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 6 Ω und R₂ = 3 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "1 Ω",
+   "3 Ω",
+   "2 Ω",
+   "8 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (6 · 3) / (6 + 3) = 2 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Teste dein Wissen: Ein Auto fährt 180 km/h. Wie viel m/s sind das?",
+  "options": [
+   "55 m/s",
+   "45 m/s",
+   "50 m/s",
+   "40 m/s"
+  ],
+  "correct": 2,
+  "explanation": "Umrechnung: 180 km/h : 3,6 = 50 m/s."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 40 N über eine Strecke von s = 8 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "288 J",
+   "352 J",
+   "320 J",
+   "400 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 40 N · 8 m = 320 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Bei einer Spannung von 20 V fließt ein Strom von 2 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "12 Ω",
+   "10 Ω",
+   "15 Ω",
+   "20 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 20 V / 2 A = 10 Ω."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 10 Ω und R₂ = 100 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "110 Ω",
+   "105 Ω",
+   "125 Ω",
+   "115 Ω"
+  ],
+  "correct": 0,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 10 Ω + 100 Ω = 110 Ω."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Überlege genau: Eine Kiste wird mit der Kraft F = 75 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "675 J",
+   "337,5 J",
+   "405 J",
+   "450 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 75 N · 6 m = 450 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: An einem Widerstand von 5 Ω liegt die Spannung 2,5 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "1 A",
+   "1,5 A",
+   "0,4 A",
+   "0,5 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U / R = 2,5 V / 5 Ω = 0,5 A."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Aufgabe: Einer Maschine werden 2000 J zugeführt, sie gibt 400 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "30 %",
+   "25 %",
+   "5 %",
+   "20 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 400 J / 2000 J = 0,2 = 20 %."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Wähle die richtige Antwort. Eine Maschine hat den Wirkungsgrad 50 % und erhält 200 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "90 J",
+   "110 J",
+   "125 J",
+   "100 J"
+  ],
+  "correct": 3,
+  "explanation": "Wnutz = η · Wzu = 0,5 · 200 J = 100 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Wähle die richtige Antwort. Eine Kiste wird mit der Kraft F = 150 N über eine Strecke von s = 12 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "2700 J",
+   "1350 J",
+   "1620 J",
+   "1800 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 150 N · 12 m = 1800 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: An einem Widerstand von 25 Ω liegt die Spannung 50 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "1,8 A",
+   "2,2 A",
+   "2 A",
+   "1 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U / R = 50 V / 25 Ω = 2 A."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Wähle die richtige Antwort. Eine Kiste wird mit der Kraft F = 250 N über eine Strecke von s = 1,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "412,5 J",
+   "187,5 J",
+   "375 J",
+   "468,75 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 250 N · 1,5 m = 375 J (Joule)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 25 Ω und R₂ = 40 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "75 Ω",
+   "55 Ω",
+   "65 Ω",
+   "60 Ω"
+  ],
+  "correct": 2,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 25 Ω + 40 Ω = 65 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Bei einer Spannung von 16 V fließt ein Strom von 0,4 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "45 Ω",
+   "38 Ω",
+   "50 Ω",
+   "40 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U / I = 16 V / 0,4 A = 40 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Überlege genau: Ein Auto fährt 126 km/h. Wie viel m/s sind das?",
+  "options": [
+   "35 m/s",
+   "40 m/s",
+   "25 m/s",
+   "33 m/s"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 126 km/h : 3,6 = 35 m/s."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: Ein Motor hat die Leistung P = 250 W. Welche Arbeit verrichtet er in t = 10 s?",
+  "options": [
+   "1875 J",
+   "3125 J",
+   "2500 J",
+   "2250 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 250 W · 10 s = 2500 J."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Aufgabe: Ein Fahrzeug fährt 15 m/s. Wie viel km/h sind das?",
+  "options": [
+   "57,6 km/h",
+   "46,8 km/h",
+   "54 km/h",
+   "61,2 km/h"
+  ],
+  "correct": 2,
+  "explanation": "Umrechnung: 15 m/s · 3,6 = 54 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Aufgabe: Ein Fahrzeug fährt 20 m/s. Wie viel km/h sind das?",
+  "options": [
+   "72 km/h",
+   "54 km/h",
+   "68,4 km/h",
+   "75,6 km/h"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 20 m/s · 3,6 = 72 km/h."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 250 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "687,5 J",
+   "781,25 J",
+   "562,5 J",
+   "625 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 250 N · 2,5 m = 625 J (Joule)."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Einer Maschine werden 400 J zugeführt, sie gibt 160 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "55 %",
+   "20 %",
+   "40 %",
+   "25 %"
+  ],
+  "correct": 2,
+  "explanation": "η = Wnutz / Wzu = 160 J / 400 J = 0,4 = 40 %."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Eine Maschine hat den Wirkungsgrad 40 % und erhält 200 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "70 J",
+   "80 J",
+   "105 J",
+   "90 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,4 · 200 J = 80 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 150 N über eine Strecke von s = 8 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "1080 J",
+   "1200 J",
+   "1500 J",
+   "1320 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 150 N · 8 m = 1200 J (Joule)."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Einer Maschine werden 200 J zugeführt, sie gibt 180 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "90 %",
+   "110 %",
+   "85 %",
+   "95 %"
+  ],
+  "correct": 0,
+  "explanation": "η = Wnutz / Wzu = 180 J / 200 J = 0,9 = 90 %."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. Ein Motor hat die Leistung P = 60 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "225 J",
+   "330 J",
+   "300 J",
+   "270 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 60 W · 5 s = 300 J."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Aufgabe: Ein Auto fährt 36 km/h. Wie viel m/s sind das?",
+  "options": [
+   "20 m/s",
+   "15 m/s",
+   "8 m/s",
+   "10 m/s"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 36 km/h : 3,6 = 10 m/s."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Überlege genau: Ein Fahrzeug fährt 50 m/s. Wie viel km/h sind das?",
+  "options": [
+   "176,4 km/h",
+   "180 km/h",
+   "172,8 km/h",
+   "183,6 km/h"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 50 m/s · 3,6 = 180 km/h."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Eine Maschine hat den Wirkungsgrad 40 % und erhält 800 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "288 J",
+   "240 J",
+   "320 J",
+   "400 J"
+  ],
+  "correct": 2,
+  "explanation": "Wnutz = η · Wzu = 0,4 · 800 J = 320 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Wähle die richtige Antwort. R₁ = 20 Ω und R₂ = 5 Ω sind in Reihe geschaltet, es fließt I = 0,1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "4,5 V",
+   "1,5 V",
+   "3,5 V",
+   "2,5 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 20 + 5 = 25 Ω; U = Rges · I = 25 Ω · 0,1 A = 2,5 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Bei einer Spannung von 10 V fließt ein Strom von 1 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "30 Ω",
+   "10 Ω",
+   "5 Ω",
+   "20 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 10 V / 1 A = 10 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: Bei einer Spannung von 12 V fließt ein Strom von 1 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "12 Ω",
+   "32 Ω",
+   "22 Ω",
+   "14 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U / I = 12 V / 1 A = 12 Ω."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: In t = 4 s wird die Arbeit W = 240 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "30 W",
+   "90 W",
+   "60 W",
+   "48 W"
+  ],
+  "correct": 2,
+  "explanation": "P = W / t = 240 J / 4 s = 60 W (Watt)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 15 Ω und R₂ = 60 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "55 Ω",
+   "75 Ω",
+   "70 Ω",
+   "85 Ω"
+  ],
+  "correct": 1,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 15 Ω + 60 Ω = 75 Ω."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 500 W. Welche Arbeit verrichtet er in t = 10 s?",
+  "options": [
+   "4500 J",
+   "5500 J",
+   "5000 J",
+   "3750 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 500 W · 10 s = 5000 J."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Auto fährt 54 km/h. Wie viel m/s sind das?",
+  "options": [
+   "5 m/s",
+   "15 m/s",
+   "10 m/s",
+   "17 m/s"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 54 km/h : 3,6 = 15 m/s."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Bei einer Spannung von 100 V fließt ein Strom von 1 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "100 Ω",
+   "98 Ω",
+   "80 Ω",
+   "90 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U / I = 100 V / 1 A = 100 Ω."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: Ein Motor hat die Leistung P = 500 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "2750 J",
+   "3125 J",
+   "1875 J",
+   "2500 J"
+  ],
+  "correct": 3,
+  "explanation": "W = P · t = 500 W · 5 s = 2500 J."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: Ein Motor hat die Leistung P = 250 W. Welche Arbeit verrichtet er in t = 10 s?",
+  "options": [
+   "2750 J",
+   "3125 J",
+   "2250 J",
+   "2500 J"
+  ],
+  "correct": 3,
+  "explanation": "W = P · t = 250 W · 10 s = 2500 J."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Eine Kiste wird mit der Kraft F = 75 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "206,25 J",
+   "187,5 J",
+   "140,63 J",
+   "281,25 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 75 N · 2,5 m = 187,5 J (Joule)."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Wähle die richtige Antwort. Ein Auto fährt 90 km/h. Wie viel m/s sind das?",
+  "options": [
+   "25 m/s",
+   "15 m/s",
+   "27 m/s",
+   "23 m/s"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 90 km/h : 3,6 = 25 m/s."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 20 Ω und R₂ = 5 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "24 Ω",
+   "3 Ω",
+   "2 Ω",
+   "4 Ω"
+  ],
+  "correct": 3,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (20 · 5) / (20 + 5) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: In t = 20 s wird die Arbeit W = 3000 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "120 W",
+   "75 W",
+   "180 W",
+   "150 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 3000 J / 20 s = 150 W (Watt)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 10 Ω und R₂ = 30 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "55 Ω",
+   "40 Ω",
+   "50 Ω",
+   "35 Ω"
+  ],
+  "correct": 1,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 10 Ω + 30 Ω = 40 Ω."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Quizfrage: Einer Maschine werden 200 J zugeführt, sie gibt 80 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "50 %",
+   "45 %",
+   "20 %",
+   "40 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 80 J / 200 J = 0,4 = 40 %."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Zwei Widerstände R₁ = 25 Ω und R₂ = 40 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "60 Ω",
+   "65 Ω",
+   "85 Ω",
+   "80 Ω"
+  ],
+  "correct": 1,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 25 Ω + 40 Ω = 65 Ω."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Wähle die richtige Antwort. Einer Maschine werden 500 J zugeführt, sie gibt 450 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "85 %",
+   "105 %",
+   "70 %",
+   "90 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 450 J / 500 J = 0,9 = 90 %."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: Durch einen Widerstand von 12 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung U?",
+  "options": [
+   "27 V",
+   "32 V",
+   "36 V",
+   "54 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 12 Ω · 3 A = 36 V."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: In t = 4 s wird die Arbeit W = 600 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "180 W",
+   "150 W",
+   "225 W",
+   "120 W"
+  ],
+  "correct": 1,
+  "explanation": "P = W / t = 600 J / 4 s = 150 W (Watt)."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 50 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "270 J",
+   "450 J",
+   "330 J",
+   "300 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 50 N · 6 m = 300 J (Joule)."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Überlege genau: Eine Kiste wird mit der Kraft F = 150 N über eine Strecke von s = 4 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "660 J",
+   "450 J",
+   "600 J",
+   "540 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 150 N · 4 m = 600 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Durch einen Widerstand von 22 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung U?",
+  "options": [
+   "48 V",
+   "33 V",
+   "22 V",
+   "44 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 22 Ω · 2 A = 44 V."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Eine Kiste wird mit der Kraft F = 25 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "75 J",
+   "135 J",
+   "150 J",
+   "165 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 25 N · 6 m = 150 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Bei einer Spannung von 75 V fließt ein Strom von 1,5 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "52 Ω",
+   "48 Ω",
+   "50 Ω",
+   "55 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U / I = 75 V / 1,5 A = 50 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Durch einen Widerstand von 25 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung U?",
+  "options": [
+   "113 V",
+   "37 V",
+   "94 V",
+   "75 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 25 Ω · 3 A = 75 V."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Wähle die richtige Antwort. R₁ = 100 Ω und R₂ = 50 Ω sind in Reihe geschaltet, es fließt I = 2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "420 V",
+   "300 V",
+   "360 V",
+   "240 V"
+  ],
+  "correct": 1,
+  "explanation": "Rges = 100 + 50 = 150 Ω; U = Rges · I = 150 Ω · 2 A = 300 V."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Teste dein Wissen: Eine Kiste wird mit der Kraft F = 25 N über eine Strecke von s = 1,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "57,5 J",
+   "17,5 J",
+   "47,5 J",
+   "37,5 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 25 N · 1,5 m = 37,5 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 24 Ω und R₂ = 12 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "6 Ω",
+   "10 Ω",
+   "8 Ω",
+   "12 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (24 · 12) / (24 + 12) = 8 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. Ein Motor hat die Leistung P = 25 W. Welche Arbeit verrichtet er in t = 20 s?",
+  "options": [
+   "375 J",
+   "450 J",
+   "550 J",
+   "500 J"
+  ],
+  "correct": 3,
+  "explanation": "W = P · t = 25 W · 20 s = 500 J."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: R₁ = 30 Ω und R₂ = 15 Ω sind in Reihe geschaltet, es fließt I = 0,1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "5,5 V",
+   "3,5 V",
+   "4,5 V",
+   "2,5 V"
+  ],
+  "correct": 2,
+  "explanation": "Rges = 30 + 15 = 45 Ω; U = Rges · I = 45 Ω · 0,1 A = 4,5 V."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 120 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "450 J",
+   "600 J",
+   "750 J",
+   "660 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 120 W · 5 s = 600 J."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Aufgabe: Eine Maschine hat den Wirkungsgrad 80 % und erhält 2000 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "1600 J",
+   "1200 J",
+   "1440 J",
+   "1760 J"
+  ],
+  "correct": 0,
+  "explanation": "Wnutz = η · Wzu = 0,8 · 2000 J = 1600 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Teste dein Wissen: Eine Kiste wird mit der Kraft F = 25 N über eine Strecke von s = 12 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "225 J",
+   "300 J",
+   "150 J",
+   "450 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 25 N · 12 m = 300 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: Bei einer Spannung von 180 V fließt ein Strom von 3 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "40 Ω",
+   "50 Ω",
+   "80 Ω",
+   "60 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U / I = 180 V / 3 A = 60 Ω."
+ },
+ {
+  "topic": "Leistung",
+  "question": "In t = 2 s wird die Arbeit W = 80 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "40 W",
+   "20 W",
+   "48 W",
+   "32 W"
+  ],
+  "correct": 0,
+  "explanation": "P = W / t = 80 J / 2 s = 40 W (Watt)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "R₁ = 10 Ω und R₂ = 50 Ω sind in Reihe geschaltet, es fließt I = 0,5 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "18 V",
+   "24 V",
+   "30 V",
+   "42 V"
+  ],
+  "correct": 2,
+  "explanation": "Rges = 10 + 50 = 60 Ω; U = Rges · I = 60 Ω · 0,5 A = 30 V."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Teste dein Wissen: Eine Kiste wird mit der Kraft F = 25 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "150 J",
+   "112,5 J",
+   "225 J",
+   "135 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 25 N · 6 m = 150 J (Joule)."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Aufgabe: Ein Fahrzeug fährt 5 m/s. Wie viel km/h sind das?",
+  "options": [
+   "36 km/h",
+   "18 km/h",
+   "14,4 km/h",
+   "21,6 km/h"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 5 m/s · 3,6 = 18 km/h."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 25 N über eine Strecke von s = 12 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "270 J",
+   "150 J",
+   "375 J",
+   "300 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 25 N · 12 m = 300 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Quizfrage: Zwei Widerstände R₁ = 6 Ω und R₂ = 12 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "3 Ω",
+   "6 Ω",
+   "4 Ω",
+   "10 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (6 · 12) / (6 + 12) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Wähle die richtige Antwort. Einer Maschine werden 2000 J zugeführt, sie gibt 1800 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "85 %",
+   "75 %",
+   "100 %",
+   "90 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 1800 J / 2000 J = 0,9 = 90 %."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Aufgabe: Ein Fahrzeug fährt 50 m/s. Wie viel km/h sind das?",
+  "options": [
+   "180 km/h",
+   "198 km/h",
+   "187,2 km/h",
+   "162 km/h"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 50 m/s · 3,6 = 180 km/h."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 12 Ω und R₂ = 6 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "5 Ω",
+   "16 Ω",
+   "4 Ω",
+   "3 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (12 · 6) / (12 + 6) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 12 Ω und R₂ = 4 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "4 Ω",
+   "3 Ω",
+   "15 Ω",
+   "5 Ω"
+  ],
+  "correct": 1,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (12 · 4) / (12 + 4) = 3 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Quizfrage: R₁ = 15 Ω und R₂ = 80 Ω sind in Reihe geschaltet, es fließt I = 0,1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "11,4 V",
+   "7,6 V",
+   "9,5 V",
+   "5,7 V"
+  ],
+  "correct": 2,
+  "explanation": "Rges = 15 + 80 = 95 Ω; U = Rges · I = 95 Ω · 0,1 A = 9,5 V."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Einer Maschine werden 200 J zugeführt, sie gibt 160 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "80 %",
+   "60 %",
+   "100 %",
+   "70 %"
+  ],
+  "correct": 0,
+  "explanation": "η = Wnutz / Wzu = 160 J / 200 J = 0,8 = 80 %."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Einer Maschine werden 2000 J zugeführt, sie gibt 500 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "15 %",
+   "25 %",
+   "10 %",
+   "30 %"
+  ],
+  "correct": 1,
+  "explanation": "η = Wnutz / Wzu = 500 J / 2000 J = 0,25 = 25 %."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: Bei einer Spannung von 25 V fließt ein Strom von 1 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "27 Ω",
+   "15 Ω",
+   "45 Ω",
+   "25 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U / I = 25 V / 1 A = 25 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: Bei einer Spannung von 12 V fließt ein Strom von 1 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "2 Ω",
+   "32 Ω",
+   "17 Ω",
+   "12 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U / I = 12 V / 1 A = 12 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt 5 m/s. Wie viel km/h sind das?",
+  "options": [
+   "25,2 km/h",
+   "18 km/h",
+   "14,4 km/h",
+   "10,8 km/h"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 5 m/s · 3,6 = 18 km/h."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Eine Maschine hat den Wirkungsgrad 75 % und erhält 500 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "413 J",
+   "281 J",
+   "338 J",
+   "375 J"
+  ],
+  "correct": 3,
+  "explanation": "Wnutz = η · Wzu = 0,75 · 500 J = 375 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Quizfrage: R₁ = 10 Ω und R₂ = 100 Ω sind in Reihe geschaltet, es fließt I = 1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "154 V",
+   "132 V",
+   "66 V",
+   "110 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 10 + 100 = 110 Ω; U = Rges · I = 110 Ω · 1 A = 110 V."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 100 Ω und R₂ = 100 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "50 Ω",
+   "37,5 Ω",
+   "25 Ω",
+   "75 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (100 · 100) / (100 + 100) = 50 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: In t = 60 s wird die Arbeit W = 9000 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "225 W",
+   "150 W",
+   "75 W",
+   "120 W"
+  ],
+  "correct": 1,
+  "explanation": "P = W / t = 9000 J / 60 s = 150 W (Watt)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: Ein Motor hat die Leistung P = 40 W. Welche Arbeit verrichtet er in t = 30 s?",
+  "options": [
+   "1500 J",
+   "1200 J",
+   "900 J",
+   "1080 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 40 W · 30 s = 1200 J."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: In t = 10 s wird die Arbeit W = 1200 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "60 W",
+   "120 W",
+   "96 W",
+   "180 W"
+  ],
+  "correct": 1,
+  "explanation": "P = W / t = 1200 J / 10 s = 120 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: An einem Widerstand von 20 Ω liegt die Spannung 40 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "2,5 A",
+   "2 A",
+   "2,2 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U / R = 40 V / 20 Ω = 2 A."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Eine Kiste wird mit der Kraft F = 25 N über eine Strecke von s = 4 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "90 J",
+   "150 J",
+   "125 J",
+   "100 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 25 N · 4 m = 100 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Quizfrage: Zwei Widerstände R₁ = 30 Ω und R₂ = 15 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "40 Ω",
+   "15 Ω",
+   "10 Ω",
+   "7,5 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (30 · 15) / (30 + 15) = 10 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 50 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "150 J",
+   "375 J",
+   "300 J",
+   "225 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 50 N · 6 m = 300 J (Joule)."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Quizfrage: Eine Maschine hat den Wirkungsgrad 60 % und erhält 500 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "330 J",
+   "375 J",
+   "270 J",
+   "300 J"
+  ],
+  "correct": 3,
+  "explanation": "Wnutz = η · Wzu = 0,6 · 500 J = 300 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Aufgabe: Einer Maschine werden 200 J zugeführt, sie gibt 80 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "30 %",
+   "20 %",
+   "40 %",
+   "45 %"
+  ],
+  "correct": 2,
+  "explanation": "η = Wnutz / Wzu = 80 J / 200 J = 0,4 = 40 %."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 4 Ω und R₂ = 12 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "5 Ω",
+   "3 Ω",
+   "7 Ω",
+   "4 Ω"
+  ],
+  "correct": 1,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (4 · 12) / (4 + 12) = 3 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: Bei einer Spannung von 5 V fließt ein Strom von 0,2 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "30 Ω",
+   "25 Ω",
+   "15 Ω",
+   "35 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 5 V / 0,2 A = 25 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Ein Fahrzeug fährt 20 m/s. Wie viel km/h sind das?",
+  "options": [
+   "75,6 km/h",
+   "64,8 km/h",
+   "72 km/h",
+   "79,2 km/h"
+  ],
+  "correct": 2,
+  "explanation": "Umrechnung: 20 m/s · 3,6 = 72 km/h."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 250 W. Welche Arbeit verrichtet er in t = 30 s?",
+  "options": [
+   "9375 J",
+   "6750 J",
+   "7500 J",
+   "8250 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 250 W · 30 s = 7500 J."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. An einem Widerstand von 50 Ω liegt die Spannung 125 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2,6 A",
+   "2,3 A",
+   "1,5 A",
+   "2,5 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U / R = 125 V / 50 Ω = 2,5 A."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 4 Ω und R₂ = 12 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "3 Ω",
+   "7 Ω",
+   "4 Ω",
+   "2 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (4 · 12) / (4 + 12) = 3 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 25 W. Welche Arbeit verrichtet er in t = 2 s?",
+  "options": [
+   "100 J",
+   "70 J",
+   "50 J",
+   "30 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 25 W · 2 s = 50 J."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Durch einen Widerstand von 40 Ω fließt ein Strom von 1,5 A. Wie groß ist die Spannung U?",
+  "options": [
+   "45 V",
+   "60 V",
+   "30 V",
+   "54 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 40 Ω · 1,5 A = 60 V."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Teste dein Wissen: R₁ = 50 Ω und R₂ = 50 Ω sind in Reihe geschaltet, es fließt I = 2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "280 V",
+   "120 V",
+   "200 V",
+   "240 V"
+  ],
+  "correct": 2,
+  "explanation": "Rges = 50 + 50 = 100 Ω; U = Rges · I = 100 Ω · 2 A = 200 V."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Quizfrage: Zwei Widerstände R₁ = 3 Ω und R₂ = 6 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "3 Ω",
+   "1 Ω",
+   "4 Ω",
+   "2 Ω"
+  ],
+  "correct": 3,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (3 · 6) / (3 + 6) = 2 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Teste dein Wissen: Eine Kiste wird mit der Kraft F = 250 N über eine Strecke von s = 4 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "900 J",
+   "1000 J",
+   "500 J",
+   "750 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 250 N · 4 m = 1000 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. In t = 2 s wird die Arbeit W = 240 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "120 W",
+   "60 W",
+   "180 W",
+   "96 W"
+  ],
+  "correct": 0,
+  "explanation": "P = W / t = 240 J / 2 s = 120 W (Watt)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. In t = 5 s wird die Arbeit W = 300 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "48 W",
+   "90 W",
+   "60 W",
+   "30 W"
+  ],
+  "correct": 2,
+  "explanation": "P = W / t = 300 J / 5 s = 60 W (Watt)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 60 Ω und R₂ = 10 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "90 Ω",
+   "75 Ω",
+   "65 Ω",
+   "70 Ω"
+  ],
+  "correct": 3,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 60 Ω + 10 Ω = 70 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt 15 m/s. Wie viel km/h sind das?",
+  "options": [
+   "72 km/h",
+   "54 km/h",
+   "46,8 km/h",
+   "57,6 km/h"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 15 m/s · 3,6 = 54 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Bei einer Spannung von 40 V fließt ein Strom von 2 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "20 Ω",
+   "15 Ω",
+   "30 Ω",
+   "22 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U / I = 40 V / 2 A = 20 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: An einem Widerstand von 25 Ω liegt die Spannung 12,5 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "0,5 A",
+   "1,5 A",
+   "0,3 A",
+   "0,4 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U / R = 12,5 V / 25 Ω = 0,5 A."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Teste dein Wissen: R₁ = 60 Ω und R₂ = 15 Ω sind in Reihe geschaltet, es fließt I = 0,1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "7,5 V",
+   "10,5 V",
+   "4,5 V",
+   "6 V"
+  ],
+  "correct": 0,
+  "explanation": "Rges = 60 + 15 = 75 Ω; U = Rges · I = 75 Ω · 0,1 A = 7,5 V."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 30 Ω und R₂ = 20 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "40 Ω",
+   "60 Ω",
+   "30 Ω",
+   "50 Ω"
+  ],
+  "correct": 3,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 30 Ω + 20 Ω = 50 Ω."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: R₁ = 60 Ω und R₂ = 60 Ω sind in Reihe geschaltet, es fließt I = 0,2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "33,6 V",
+   "24 V",
+   "14,4 V",
+   "19,2 V"
+  ],
+  "correct": 1,
+  "explanation": "Rges = 60 + 60 = 120 Ω; U = Rges · I = 120 Ω · 0,2 A = 24 V."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Einer Maschine werden 2000 J zugeführt, sie gibt 1000 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "60 %",
+   "70 %",
+   "50 %",
+   "55 %"
+  ],
+  "correct": 2,
+  "explanation": "η = Wnutz / Wzu = 1000 J / 2000 J = 0,5 = 50 %."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 20 Ω und R₂ = 5 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "4 Ω",
+   "24 Ω",
+   "5 Ω",
+   "2 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (20 · 5) / (20 + 5) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Ein Auto fährt 108 km/h. Wie viel m/s sind das?",
+  "options": [
+   "40 m/s",
+   "28 m/s",
+   "25 m/s",
+   "30 m/s"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 108 km/h : 3,6 = 30 m/s."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: Ein Motor hat die Leistung P = 150 W. Welche Arbeit verrichtet er in t = 60 s?",
+  "options": [
+   "9900 J",
+   "8100 J",
+   "9000 J",
+   "6750 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 150 W · 60 s = 9000 J."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 100 Ω und R₂ = 100 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "195 Ω",
+   "180 Ω",
+   "200 Ω",
+   "205 Ω"
+  ],
+  "correct": 2,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 100 Ω + 100 Ω = 200 Ω."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 250 N über eine Strecke von s = 1,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "468,75 J",
+   "337,5 J",
+   "375 J",
+   "412,5 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 250 N · 1,5 m = 375 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. In t = 30 s wird die Arbeit W = 1800 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "72 W",
+   "60 W",
+   "30 W",
+   "90 W"
+  ],
+  "correct": 1,
+  "explanation": "P = W / t = 1800 J / 30 s = 60 W (Watt)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Teste dein Wissen: R₁ = 40 Ω und R₂ = 40 Ω sind in Reihe geschaltet, es fließt I = 0,1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "9,6 V",
+   "6,4 V",
+   "4,8 V",
+   "8 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 40 + 40 = 80 Ω; U = Rges · I = 80 Ω · 0,1 A = 8 V."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. Ein Motor hat die Leistung P = 150 W. Welche Arbeit verrichtet er in t = 2 s?",
+  "options": [
+   "270 J",
+   "300 J",
+   "330 J",
+   "225 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 150 W · 2 s = 300 J."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Eine Kiste wird mit der Kraft F = 50 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "450 J",
+   "300 J",
+   "375 J",
+   "330 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 50 N · 6 m = 300 J (Joule)."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Aufgabe: Einer Maschine werden 2000 J zugeführt, sie gibt 1800 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "90 %",
+   "110 %",
+   "100 %",
+   "85 %"
+  ],
+  "correct": 0,
+  "explanation": "η = Wnutz / Wzu = 1800 J / 2000 J = 0,9 = 90 %."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Teste dein Wissen: Ein Motor hat die Leistung P = 25 W. Welche Arbeit verrichtet er in t = 2 s?",
+  "options": [
+   "70 J",
+   "30 J",
+   "50 J",
+   "100 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 25 W · 2 s = 50 J."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Zwei Widerstände R₁ = 100 Ω und R₂ = 15 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "115 Ω",
+   "135 Ω",
+   "130 Ω",
+   "125 Ω"
+  ],
+  "correct": 0,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 100 Ω + 15 Ω = 115 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 25 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung U?",
+  "options": [
+   "9,5 V",
+   "13,5 V",
+   "12,5 V",
+   "15,5 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 25 Ω · 0,5 A = 12,5 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Bei einer Spannung von 30 V fließt ein Strom von 1,5 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "22 Ω",
+   "20 Ω",
+   "15 Ω",
+   "10 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 30 V / 1,5 A = 20 Ω."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: Ein Motor hat die Leistung P = 25 W. Welche Arbeit verrichtet er in t = 60 s?",
+  "options": [
+   "1875 J",
+   "1125 J",
+   "1350 J",
+   "1500 J"
+  ],
+  "correct": 3,
+  "explanation": "W = P · t = 25 W · 60 s = 1500 J."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: Bei einer Spannung von 3 V fließt ein Strom von 0,2 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "10 Ω",
+   "15 Ω",
+   "13 Ω",
+   "20 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 3 V / 0,2 A = 15 Ω."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: In t = 60 s wird die Arbeit W = 15000 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "200 W",
+   "125 W",
+   "300 W",
+   "250 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 15000 J / 60 s = 250 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Durch einen Widerstand von 15 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung U?",
+  "options": [
+   "5,5 V",
+   "8,5 V",
+   "3,5 V",
+   "7,5 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 15 Ω · 0,5 A = 7,5 V."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: In t = 2 s wird die Arbeit W = 500 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "200 W",
+   "375 W",
+   "300 W",
+   "250 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 500 J / 2 s = 250 W (Watt)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "In t = 20 s wird die Arbeit W = 500 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "25 W",
+   "30 W",
+   "38 W",
+   "13 W"
+  ],
+  "correct": 0,
+  "explanation": "P = W / t = 500 J / 20 s = 25 W (Watt)."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Eine Maschine hat den Wirkungsgrad 40 % und erhält 800 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "240 J",
+   "288 J",
+   "352 J",
+   "320 J"
+  ],
+  "correct": 3,
+  "explanation": "Wnutz = η · Wzu = 0,4 · 800 J = 320 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Eine Kiste wird mit der Kraft F = 15 N über eine Strecke von s = 8 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "180 J",
+   "120 J",
+   "90 J",
+   "60 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 15 N · 8 m = 120 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. Ein Motor hat die Leistung P = 250 W. Welche Arbeit verrichtet er in t = 20 s?",
+  "options": [
+   "4500 J",
+   "6250 J",
+   "5500 J",
+   "5000 J"
+  ],
+  "correct": 3,
+  "explanation": "W = P · t = 250 W · 20 s = 5000 J."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Eine Maschine hat den Wirkungsgrad 50 % und erhält 2000 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "1100 J",
+   "1000 J",
+   "900 J",
+   "1250 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,5 · 2000 J = 1000 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand von 60 Ω liegt die Spannung 120 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2 A",
+   "2,1 A",
+   "1,5 A",
+   "2,2 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U / R = 120 V / 60 Ω = 2 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Durch einen Widerstand von 22 Ω fließt ein Strom von 1,5 A. Wie groß ist die Spannung U?",
+  "options": [
+   "25 V",
+   "50 V",
+   "41 V",
+   "33 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 22 Ω · 1,5 A = 33 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: Bei einer Spannung von 37,5 V fließt ein Strom von 2,5 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "17 Ω",
+   "15 Ω",
+   "35 Ω",
+   "5 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 37,5 V / 2,5 A = 15 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Aufgabe: Ein Auto fährt 54 km/h. Wie viel m/s sind das?",
+  "options": [
+   "17 m/s",
+   "15 m/s",
+   "10 m/s",
+   "20 m/s"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 54 km/h : 3,6 = 15 m/s."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Eine Kiste wird mit der Kraft F = 50 N über eine Strecke von s = 12 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "600 J",
+   "450 J",
+   "540 J",
+   "900 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 50 N · 12 m = 600 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 25 Ω fließt ein Strom von 0,4 A. Wie groß ist die Spannung U?",
+  "options": [
+   "11 V",
+   "13 V",
+   "7 V",
+   "10 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 25 Ω · 0,4 A = 10 V."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Überlege genau: Eine Kiste wird mit der Kraft F = 75 N über eine Strecke von s = 1,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "101,25 J",
+   "123,75 J",
+   "112,5 J",
+   "168,75 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 75 N · 1,5 m = 112,5 J (Joule)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Zwei Widerstände R₁ = 5 Ω und R₂ = 30 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "45 Ω",
+   "25 Ω",
+   "35 Ω",
+   "50 Ω"
+  ],
+  "correct": 2,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 5 Ω + 30 Ω = 35 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Überlege genau: Ein Auto fährt 36 km/h. Wie viel m/s sind das?",
+  "options": [
+   "20 m/s",
+   "15 m/s",
+   "12 m/s",
+   "10 m/s"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 36 km/h : 3,6 = 10 m/s."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Einer Maschine werden 800 J zugeführt, sie gibt 200 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "45 %",
+   "25 %",
+   "10 %",
+   "15 %"
+  ],
+  "correct": 1,
+  "explanation": "η = Wnutz / Wzu = 200 J / 800 J = 0,25 = 25 %."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 200 N über eine Strecke von s = 12 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "1200 J",
+   "1800 J",
+   "2160 J",
+   "2400 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 200 N · 12 m = 2400 J (Joule)."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 150 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "337,5 J",
+   "562,5 J",
+   "375 J",
+   "281,25 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 150 N · 2,5 m = 375 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: In t = 30 s wird die Arbeit W = 2250 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "113 W",
+   "38 W",
+   "60 W",
+   "75 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 2250 J / 30 s = 75 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: An einem Widerstand von 10 Ω liegt die Spannung 10 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2 A",
+   "1,2 A",
+   "1 A",
+   "1,5 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U / R = 10 V / 10 Ω = 1 A."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: Ein Motor hat die Leistung P = 60 W. Welche Arbeit verrichtet er in t = 2 s?",
+  "options": [
+   "100 J",
+   "120 J",
+   "70 J",
+   "170 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 60 W · 2 s = 120 J."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Quizfrage: Zwei Widerstände R₁ = 20 Ω und R₂ = 5 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "3 Ω",
+   "4 Ω",
+   "2 Ω",
+   "5 Ω"
+  ],
+  "correct": 1,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (20 · 5) / (20 + 5) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Wähle die richtige Antwort. Eine Maschine hat den Wirkungsgrad 80 % und erhält 200 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "144 J",
+   "160 J",
+   "176 J",
+   "120 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,8 · 200 J = 160 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Ein Fahrzeug fährt 25 m/s. Wie viel km/h sind das?",
+  "options": [
+   "86,4 km/h",
+   "97,2 km/h",
+   "82,8 km/h",
+   "90 km/h"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 25 m/s · 3,6 = 90 km/h."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Wähle die richtige Antwort. Eine Kiste wird mit der Kraft F = 120 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "540 J",
+   "720 J",
+   "900 J",
+   "648 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 120 N · 6 m = 720 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: In t = 2 s wird die Arbeit W = 120 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "48 W",
+   "90 W",
+   "60 W",
+   "30 W"
+  ],
+  "correct": 2,
+  "explanation": "P = W / t = 120 J / 2 s = 60 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: An einem Widerstand von 5 Ω liegt die Spannung 12,5 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2,4 A",
+   "2 A",
+   "2,7 A",
+   "2,5 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U / R = 12,5 V / 5 Ω = 2,5 A."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Einer Maschine werden 200 J zugeführt, sie gibt 50 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "40 %",
+   "10 %",
+   "25 %",
+   "45 %"
+  ],
+  "correct": 2,
+  "explanation": "η = Wnutz / Wzu = 50 J / 200 J = 0,25 = 25 %."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Bei einer Spannung von 45 V fließt ein Strom von 3 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "35 Ω",
+   "17 Ω",
+   "15 Ω",
+   "5 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U / I = 45 V / 3 A = 15 Ω."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "R₁ = 30 Ω und R₂ = 15 Ω sind in Reihe geschaltet, es fließt I = 0,2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "5,4 V",
+   "10,8 V",
+   "12,6 V",
+   "9 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 30 + 15 = 45 Ω; U = Rges · I = 45 Ω · 0,2 A = 9 V."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 150 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "1125 J",
+   "900 J",
+   "1350 J",
+   "675 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 150 N · 6 m = 900 J (Joule)."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Eine Kiste wird mit der Kraft F = 25 N über eine Strecke von s = 1,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "57,5 J",
+   "37,5 J",
+   "47,5 J",
+   "17,5 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 25 N · 1,5 m = 37,5 J (Joule)."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Wähle die richtige Antwort. Ein Auto fährt 108 km/h. Wie viel m/s sind das?",
+  "options": [
+   "30 m/s",
+   "35 m/s",
+   "40 m/s",
+   "28 m/s"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 108 km/h : 3,6 = 30 m/s."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. Ein Motor hat die Leistung P = 25 W. Welche Arbeit verrichtet er in t = 60 s?",
+  "options": [
+   "1650 J",
+   "1125 J",
+   "1500 J",
+   "1350 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 25 W · 60 s = 1500 J."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Ein Fahrzeug fährt 40 m/s. Wie viel km/h sind das?",
+  "options": [
+   "151,2 km/h",
+   "140,4 km/h",
+   "162 km/h",
+   "144 km/h"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 40 m/s · 3,6 = 144 km/h."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Eine Maschine hat den Wirkungsgrad 75 % und erhält 200 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "135 J",
+   "150 J",
+   "188 J",
+   "113 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,75 · 200 J = 150 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Ein Auto fährt 180 km/h. Wie viel m/s sind das?",
+  "options": [
+   "40 m/s",
+   "60 m/s",
+   "48 m/s",
+   "50 m/s"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 180 km/h : 3,6 = 50 m/s."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: In t = 60 s wird die Arbeit W = 7200 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "120 W",
+   "180 W",
+   "96 W",
+   "60 W"
+  ],
+  "correct": 0,
+  "explanation": "P = W / t = 7200 J / 60 s = 120 W (Watt)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 15 Ω und R₂ = 30 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "10 Ω",
+   "15 Ω",
+   "7,5 Ω",
+   "25 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (15 · 30) / (15 + 30) = 10 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Aufgabe: Ein Fahrzeug fährt 40 m/s. Wie viel km/h sind das?",
+  "options": [
+   "151,2 km/h",
+   "144 km/h",
+   "147,6 km/h",
+   "136,8 km/h"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 40 m/s · 3,6 = 144 km/h."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Quizfrage: Zwei Widerstände R₁ = 30 Ω und R₂ = 20 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "50 Ω",
+   "45 Ω",
+   "65 Ω",
+   "60 Ω"
+  ],
+  "correct": 0,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 30 Ω + 20 Ω = 50 Ω."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Zwei Widerstände R₁ = 20 Ω und R₂ = 50 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "70 Ω",
+   "60 Ω",
+   "90 Ω",
+   "65 Ω"
+  ],
+  "correct": 0,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 20 Ω + 50 Ω = 70 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Aufgabe: Ein Fahrzeug fährt 10 m/s. Wie viel km/h sind das?",
+  "options": [
+   "18 km/h",
+   "54 km/h",
+   "43,2 km/h",
+   "36 km/h"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 10 m/s · 3,6 = 36 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: Durch einen Widerstand von 40 Ω fließt ein Strom von 0,4 A. Wie groß ist die Spannung U?",
+  "options": [
+   "14 V",
+   "16 V",
+   "18 V",
+   "8 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 40 Ω · 0,4 A = 16 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: Bei einer Spannung von 15 V fließt ein Strom von 1,5 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "30 Ω",
+   "10 Ω",
+   "5 Ω",
+   "12 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 15 V / 1,5 A = 10 Ω."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Teste dein Wissen: Ein Motor hat die Leistung P = 60 W. Welche Arbeit verrichtet er in t = 2 s?",
+  "options": [
+   "120 J",
+   "70 J",
+   "100 J",
+   "170 J"
+  ],
+  "correct": 0,
+  "explanation": "W = P · t = 60 W · 2 s = 120 J."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Quizfrage: R₁ = 15 Ω und R₂ = 25 Ω sind in Reihe geschaltet, es fließt I = 1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "24 V",
+   "56 V",
+   "40 V",
+   "32 V"
+  ],
+  "correct": 2,
+  "explanation": "Rges = 15 + 25 = 40 Ω; U = Rges · I = 40 Ω · 1 A = 40 V."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt 40 m/s. Wie viel km/h sind das?",
+  "options": [
+   "144 km/h",
+   "136,8 km/h",
+   "162 km/h",
+   "140,4 km/h"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 40 m/s · 3,6 = 144 km/h."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Quizfrage: R₁ = 50 Ω und R₂ = 50 Ω sind in Reihe geschaltet, es fließt I = 1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "60 V",
+   "100 V",
+   "80 V",
+   "140 V"
+  ],
+  "correct": 1,
+  "explanation": "Rges = 50 + 50 = 100 Ω; U = Rges · I = 100 Ω · 1 A = 100 V."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: Ein Motor hat die Leistung P = 60 W. Welche Arbeit verrichtet er in t = 20 s?",
+  "options": [
+   "1500 J",
+   "900 J",
+   "1200 J",
+   "1080 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 60 W · 20 s = 1200 J."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Durch einen Widerstand von 50 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung U?",
+  "options": [
+   "100 V",
+   "90 V",
+   "110 V",
+   "150 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 50 Ω · 2 A = 100 V."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 100 Ω und R₂ = 5 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "105 Ω",
+   "85 Ω",
+   "90 Ω",
+   "125 Ω"
+  ],
+  "correct": 0,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 100 Ω + 5 Ω = 105 Ω."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Einer Maschine werden 800 J zugeführt, sie gibt 720 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "90 %",
+   "75 %",
+   "105 %",
+   "95 %"
+  ],
+  "correct": 0,
+  "explanation": "η = Wnutz / Wzu = 720 J / 800 J = 0,9 = 90 %."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Teste dein Wissen: Eine Kiste wird mit der Kraft F = 50 N über eine Strecke von s = 8 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "500 J",
+   "600 J",
+   "400 J",
+   "360 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 50 N · 8 m = 400 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "In t = 4 s wird die Arbeit W = 1000 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "125 W",
+   "250 W",
+   "200 W",
+   "375 W"
+  ],
+  "correct": 1,
+  "explanation": "P = W / t = 1000 J / 4 s = 250 W (Watt)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Zwei Widerstände R₁ = 4 Ω und R₂ = 12 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "4 Ω",
+   "1 Ω",
+   "5 Ω",
+   "3 Ω"
+  ],
+  "correct": 3,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (4 · 12) / (4 + 12) = 3 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Einer Maschine werden 800 J zugeführt, sie gibt 600 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "75 %",
+   "60 %",
+   "90 %",
+   "85 %"
+  ],
+  "correct": 0,
+  "explanation": "η = Wnutz / Wzu = 600 J / 800 J = 0,75 = 75 %."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: In t = 5 s wird die Arbeit W = 375 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "38 W",
+   "113 W",
+   "60 W",
+   "75 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 375 J / 5 s = 75 W (Watt)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: R₁ = 30 Ω und R₂ = 60 Ω sind in Reihe geschaltet, es fließt I = 0,1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "9 V",
+   "12,6 V",
+   "5,4 V",
+   "7,2 V"
+  ],
+  "correct": 0,
+  "explanation": "Rges = 30 + 60 = 90 Ω; U = Rges · I = 90 Ω · 0,1 A = 9 V."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Aufgabe: Einer Maschine werden 800 J zugeführt, sie gibt 400 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "45 %",
+   "40 %",
+   "35 %",
+   "50 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 400 J / 800 J = 0,5 = 50 %."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Eine Maschine hat den Wirkungsgrad 80 % und erhält 200 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "200 J",
+   "160 J",
+   "176 J",
+   "144 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,8 · 200 J = 160 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. Ein Motor hat die Leistung P = 250 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "1250 J",
+   "1125 J",
+   "938 J",
+   "1563 J"
+  ],
+  "correct": 0,
+  "explanation": "W = P · t = 250 W · 5 s = 1250 J."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 40 W. Welche Arbeit verrichtet er in t = 4 s?",
+  "options": [
+   "210 J",
+   "140 J",
+   "160 J",
+   "110 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 40 W · 4 s = 160 J."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Durch einen Widerstand von 50 Ω fließt ein Strom von 2,5 A. Wie groß ist die Spannung U?",
+  "options": [
+   "125 V",
+   "94 V",
+   "156 V",
+   "138 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 50 Ω · 2,5 A = 125 V."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Zwei Widerstände R₁ = 5 Ω und R₂ = 20 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "6 Ω",
+   "2 Ω",
+   "4 Ω",
+   "9 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (5 · 20) / (5 + 20) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Quizfrage: Zwei Widerstände R₁ = 6 Ω und R₂ = 6 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "4 Ω",
+   "9 Ω",
+   "3 Ω",
+   "2 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (6 · 6) / (6 + 6) = 3 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 12 Ω und R₂ = 24 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "20 Ω",
+   "10 Ω",
+   "4 Ω",
+   "8 Ω"
+  ],
+  "correct": 3,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (12 · 24) / (12 + 24) = 8 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 5 Ω und R₂ = 20 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "9 Ω",
+   "4 Ω",
+   "5 Ω",
+   "6 Ω"
+  ],
+  "correct": 1,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (5 · 20) / (5 + 20) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Aufgabe: Ein Auto fährt 126 km/h. Wie viel m/s sind das?",
+  "options": [
+   "33 m/s",
+   "35 m/s",
+   "25 m/s",
+   "30 m/s"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 126 km/h : 3,6 = 35 m/s."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Überlege genau: Ein Fahrzeug fährt 30 m/s. Wie viel km/h sind das?",
+  "options": [
+   "100,8 km/h",
+   "115,2 km/h",
+   "90 km/h",
+   "108 km/h"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 30 m/s · 3,6 = 108 km/h."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Quizfrage: R₁ = 80 Ω und R₂ = 5 Ω sind in Reihe geschaltet, es fließt I = 2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "102 V",
+   "136 V",
+   "170 V",
+   "204 V"
+  ],
+  "correct": 2,
+  "explanation": "Rges = 80 + 5 = 85 Ω; U = Rges · I = 85 Ω · 2 A = 170 V."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Eine Maschine hat den Wirkungsgrad 75 % und erhält 400 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "330 J",
+   "300 J",
+   "225 J",
+   "270 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,75 · 400 J = 300 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 25 W. Welche Arbeit verrichtet er in t = 60 s?",
+  "options": [
+   "1875 J",
+   "1500 J",
+   "1125 J",
+   "1350 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 25 W · 60 s = 1500 J."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: R₁ = 15 Ω und R₂ = 40 Ω sind in Reihe geschaltet, es fließt I = 2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "110 V",
+   "154 V",
+   "132 V",
+   "66 V"
+  ],
+  "correct": 0,
+  "explanation": "Rges = 15 + 40 = 55 Ω; U = Rges · I = 55 Ω · 2 A = 110 V."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt 5 m/s. Wie viel km/h sind das?",
+  "options": [
+   "21,6 km/h",
+   "18 km/h",
+   "25,2 km/h",
+   "36 km/h"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 5 m/s · 3,6 = 18 km/h."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Teste dein Wissen: In t = 4 s wird die Arbeit W = 480 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "60 W",
+   "180 W",
+   "144 W",
+   "120 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 480 J / 4 s = 120 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: An einem Widerstand von 5 Ω liegt die Spannung 15 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "4 A",
+   "2 A",
+   "3,1 A",
+   "3 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U / R = 15 V / 5 Ω = 3 A."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Eine Maschine hat den Wirkungsgrad 25 % und erhält 500 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "138 J",
+   "113 J",
+   "94 J",
+   "125 J"
+  ],
+  "correct": 3,
+  "explanation": "Wnutz = η · Wzu = 0,25 · 500 J = 125 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: In t = 20 s wird die Arbeit W = 5000 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "125 W",
+   "300 W",
+   "250 W",
+   "375 W"
+  ],
+  "correct": 2,
+  "explanation": "P = W / t = 5000 J / 20 s = 250 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Bei einer Spannung von 2 V fließt ein Strom von 0,4 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "7 Ω",
+   "5 Ω",
+   "15 Ω",
+   "10 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 2 V / 0,4 A = 5 Ω."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Eine Maschine hat den Wirkungsgrad 25 % und erhält 2000 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "500 J",
+   "450 J",
+   "625 J",
+   "550 J"
+  ],
+  "correct": 0,
+  "explanation": "Wnutz = η · Wzu = 0,25 · 2000 J = 500 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Quizfrage: Zwei Widerstände R₁ = 8 Ω und R₂ = 8 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "4 Ω",
+   "3 Ω",
+   "2 Ω",
+   "5 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (8 · 8) / (8 + 8) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 15 Ω fließt ein Strom von 0,4 A. Wie groß ist die Spannung U?",
+  "options": [
+   "5 V",
+   "4 V",
+   "6 V",
+   "7 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 15 Ω · 0,4 A = 6 V."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 12 Ω und R₂ = 24 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "10 Ω",
+   "4 Ω",
+   "20 Ω",
+   "8 Ω"
+  ],
+  "correct": 3,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (12 · 24) / (12 + 24) = 8 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Einer Maschine werden 800 J zugeführt, sie gibt 600 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "55 %",
+   "95 %",
+   "75 %",
+   "60 %"
+  ],
+  "correct": 2,
+  "explanation": "η = Wnutz / Wzu = 600 J / 800 J = 0,75 = 75 %."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Quizfrage: Zwei Widerstände R₁ = 2 Ω und R₂ = 2 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "4 Ω",
+   "3 Ω",
+   "1 Ω",
+   "2 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (2 · 2) / (2 + 2) = 1 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Auto fährt 108 km/h. Wie viel m/s sind das?",
+  "options": [
+   "28 m/s",
+   "32 m/s",
+   "25 m/s",
+   "30 m/s"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 108 km/h : 3,6 = 30 m/s."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt 50 m/s. Wie viel km/h sind das?",
+  "options": [
+   "176,4 km/h",
+   "162 km/h",
+   "180 km/h",
+   "187,2 km/h"
+  ],
+  "correct": 2,
+  "explanation": "Umrechnung: 50 m/s · 3,6 = 180 km/h."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Wähle die richtige Antwort. Einer Maschine werden 400 J zugeführt, sie gibt 160 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "60 %",
+   "35 %",
+   "55 %",
+   "40 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 160 J / 400 J = 0,4 = 40 %."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 15 N über eine Strecke von s = 12 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "135 J",
+   "162 J",
+   "180 J",
+   "198 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 15 N · 12 m = 180 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: Durch einen Widerstand von 12 Ω fließt ein Strom von 0,2 A. Wie groß ist die Spannung U?",
+  "options": [
+   "3,4 V",
+   "1,4 V",
+   "2,4 V",
+   "4,4 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 12 Ω · 0,2 A = 2,4 V."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Einer Maschine werden 400 J zugeführt, sie gibt 200 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "55 %",
+   "40 %",
+   "50 %",
+   "30 %"
+  ],
+  "correct": 2,
+  "explanation": "η = Wnutz / Wzu = 200 J / 400 J = 0,5 = 50 %."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: Durch einen Widerstand von 22 Ω fließt ein Strom von 1,5 A. Wie groß ist die Spannung U?",
+  "options": [
+   "33 V",
+   "36 V",
+   "25 V",
+   "30 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 22 Ω · 1,5 A = 33 V."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 40 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "180 J",
+   "200 J",
+   "250 J",
+   "150 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 40 W · 5 s = 200 J."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Überlege genau: Eine Kiste wird mit der Kraft F = 75 N über eine Strecke von s = 8 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "300 J",
+   "660 J",
+   "600 J",
+   "540 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 75 N · 8 m = 600 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: In t = 30 s wird die Arbeit W = 1800 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "48 W",
+   "72 W",
+   "90 W",
+   "60 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 1800 J / 30 s = 60 W (Watt)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 120 W. Welche Arbeit verrichtet er in t = 10 s?",
+  "options": [
+   "900 J",
+   "1200 J",
+   "1080 J",
+   "1500 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 120 W · 10 s = 1200 J."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: Durch einen Widerstand von 60 Ω fließt ein Strom von 0,2 A. Wie groß ist die Spannung U?",
+  "options": [
+   "12 V",
+   "15 V",
+   "18 V",
+   "6 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 60 Ω · 0,2 A = 12 V."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: R₁ = 10 Ω und R₂ = 60 Ω sind in Reihe geschaltet, es fließt I = 0,2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "16,8 V",
+   "11,2 V",
+   "8,4 V",
+   "14 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 10 + 60 = 70 Ω; U = Rges · I = 70 Ω · 0,2 A = 14 V."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Aufgabe: Einer Maschine werden 200 J zugeführt, sie gibt 120 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "75 %",
+   "70 %",
+   "45 %",
+   "60 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 120 J / 200 J = 0,6 = 60 %."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 40 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "100 J",
+   "110 J",
+   "90 J",
+   "75 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 40 N · 2,5 m = 100 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 30 Ω und R₂ = 15 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "40 Ω",
+   "7,5 Ω",
+   "10 Ω",
+   "12,5 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (30 · 15) / (30 + 15) = 10 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt 50 m/s. Wie viel km/h sind das?",
+  "options": [
+   "172,8 km/h",
+   "187,2 km/h",
+   "198 km/h",
+   "180 km/h"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 50 m/s · 3,6 = 180 km/h."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: R₁ = 15 Ω und R₂ = 20 Ω sind in Reihe geschaltet, es fließt I = 2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "84 V",
+   "70 V",
+   "42 V",
+   "56 V"
+  ],
+  "correct": 1,
+  "explanation": "Rges = 15 + 20 = 35 Ω; U = Rges · I = 35 Ω · 2 A = 70 V."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Eine Kiste wird mit der Kraft F = 15 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "90 J",
+   "99 J",
+   "67,5 J",
+   "45 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 15 N · 6 m = 90 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 20 Ω und R₂ = 20 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "10 Ω",
+   "12,5 Ω",
+   "7,5 Ω",
+   "15 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (20 · 20) / (20 + 20) = 10 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: In t = 2 s wird die Arbeit W = 300 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "150 W",
+   "75 W",
+   "180 W",
+   "225 W"
+  ],
+  "correct": 0,
+  "explanation": "P = W / t = 300 J / 2 s = 150 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: An einem Widerstand von 50 Ω liegt die Spannung 150 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2 A",
+   "3,2 A",
+   "2,8 A",
+   "3 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U / R = 150 V / 50 Ω = 3 A."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: Ein Motor hat die Leistung P = 120 W. Welche Arbeit verrichtet er in t = 2 s?",
+  "options": [
+   "300 J",
+   "180 J",
+   "216 J",
+   "240 J"
+  ],
+  "correct": 3,
+  "explanation": "W = P · t = 120 W · 2 s = 240 J."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: Ein Motor hat die Leistung P = 150 W. Welche Arbeit verrichtet er in t = 2 s?",
+  "options": [
+   "270 J",
+   "300 J",
+   "225 J",
+   "375 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 150 W · 2 s = 300 J."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Einer Maschine werden 800 J zugeführt, sie gibt 400 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "55 %",
+   "65 %",
+   "70 %",
+   "50 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 400 J / 800 J = 0,5 = 50 %."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: An einem Widerstand von 15 Ω liegt die Spannung 7,5 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "0,4 A",
+   "0,3 A",
+   "0,7 A",
+   "0,5 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U / R = 7,5 V / 15 Ω = 0,5 A."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 12 Ω und R₂ = 6 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "3 Ω",
+   "16 Ω",
+   "5 Ω",
+   "4 Ω"
+  ],
+  "correct": 3,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (12 · 6) / (12 + 6) = 4 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Eine Maschine hat den Wirkungsgrad 20 % und erhält 2000 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "360 J",
+   "400 J",
+   "300 J",
+   "500 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,2 · 2000 J = 400 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: Durch einen Widerstand von 5 Ω fließt ein Strom von 0,2 A. Wie groß ist die Spannung U?",
+  "options": [
+   "2 V",
+   "4 V",
+   "1 V",
+   "3 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 5 Ω · 0,2 A = 1 V."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Wähle die richtige Antwort. R₁ = 30 Ω und R₂ = 20 Ω sind in Reihe geschaltet, es fließt I = 0,5 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "30 V",
+   "25 V",
+   "35 V",
+   "15 V"
+  ],
+  "correct": 1,
+  "explanation": "Rges = 30 + 20 = 50 Ω; U = Rges · I = 50 Ω · 0,5 A = 25 V."
+ },
+ {
+  "topic": "Leistung",
+  "question": "In t = 60 s wird die Arbeit W = 4500 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "38 W",
+   "113 W",
+   "75 W",
+   "60 W"
+  ],
+  "correct": 2,
+  "explanation": "P = W / t = 4500 J / 60 s = 75 W (Watt)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: In t = 30 s wird die Arbeit W = 15000 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "750 W",
+   "600 W",
+   "250 W",
+   "500 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 15000 J / 30 s = 500 W (Watt)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Teste dein Wissen: In t = 5 s wird die Arbeit W = 375 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "113 W",
+   "90 W",
+   "60 W",
+   "75 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 375 J / 5 s = 75 W (Watt)."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Fahrzeug fährt 40 m/s. Wie viel km/h sind das?",
+  "options": [
+   "144 km/h",
+   "140,4 km/h",
+   "151,2 km/h",
+   "162 km/h"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 40 m/s · 3,6 = 144 km/h."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: R₁ = 10 Ω und R₂ = 100 Ω sind in Reihe geschaltet, es fließt I = 0,2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "13,2 V",
+   "26,4 V",
+   "30,8 V",
+   "22 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 10 + 100 = 110 Ω; U = Rges · I = 110 Ω · 0,2 A = 22 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: An einem Widerstand von 20 Ω liegt die Spannung 60 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "3,2 A",
+   "2 A",
+   "2,9 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U / R = 60 V / 20 Ω = 3 A."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Teste dein Wissen: Eine Kiste wird mit der Kraft F = 75 N über eine Strecke von s = 4 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "300 J",
+   "450 J",
+   "375 J",
+   "225 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 75 N · 4 m = 300 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Bei einer Spannung von 2 V fließt ein Strom von 0,2 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "15 Ω",
+   "10 Ω",
+   "12 Ω",
+   "5 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 2 V / 0,2 A = 10 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Überlege genau: Ein Fahrzeug fährt 5 m/s. Wie viel km/h sind das?",
+  "options": [
+   "10,8 km/h",
+   "14,4 km/h",
+   "18 km/h",
+   "21,6 km/h"
+  ],
+  "correct": 2,
+  "explanation": "Umrechnung: 5 m/s · 3,6 = 18 km/h."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 40 Ω und R₂ = 100 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "130 Ω",
+   "160 Ω",
+   "140 Ω",
+   "125 Ω"
+  ],
+  "correct": 2,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 40 Ω + 100 Ω = 140 Ω."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Eine Maschine hat den Wirkungsgrad 75 % und erhält 1000 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "675 J",
+   "750 J",
+   "825 J",
+   "938 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,75 · 1000 J = 750 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. Ein Motor hat die Leistung P = 250 W. Welche Arbeit verrichtet er in t = 2 s?",
+  "options": [
+   "550 J",
+   "450 J",
+   "625 J",
+   "500 J"
+  ],
+  "correct": 3,
+  "explanation": "W = P · t = 250 W · 2 s = 500 J."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: R₁ = 5 Ω und R₂ = 50 Ω sind in Reihe geschaltet, es fließt I = 2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "88 V",
+   "110 V",
+   "66 V",
+   "154 V"
+  ],
+  "correct": 1,
+  "explanation": "Rges = 5 + 50 = 55 Ω; U = Rges · I = 55 Ω · 2 A = 110 V."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 3 Ω und R₂ = 6 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "2 Ω",
+   "4 Ω",
+   "5 Ω",
+   "1 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (3 · 6) / (3 + 6) = 2 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 25 N über eine Strecke von s = 1,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "17,5 J",
+   "37,5 J",
+   "57,5 J",
+   "47,5 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 25 N · 1,5 m = 37,5 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Zwei Widerstände R₁ = 60 Ω und R₂ = 30 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "80 Ω",
+   "20 Ω",
+   "30 Ω",
+   "15 Ω"
+  ],
+  "correct": 1,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (60 · 30) / (60 + 30) = 20 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: R₁ = 20 Ω und R₂ = 40 Ω sind in Reihe geschaltet, es fließt I = 2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "72 V",
+   "120 V",
+   "144 V",
+   "96 V"
+  ],
+  "correct": 1,
+  "explanation": "Rges = 20 + 40 = 60 Ω; U = Rges · I = 60 Ω · 2 A = 120 V."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 2 Ω und R₂ = 2 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "3 Ω",
+   "4 Ω",
+   "1 Ω",
+   "2 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (2 · 2) / (2 + 2) = 1 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: An einem Widerstand von 60 Ω liegt die Spannung 60 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "1 A",
+   "0,9 A",
+   "1,5 A",
+   "1,1 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U / R = 60 V / 60 Ω = 1 A."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Wähle die richtige Antwort. Eine Kiste wird mit der Kraft F = 75 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "93,75 J",
+   "281,25 J",
+   "187,5 J",
+   "168,75 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 75 N · 2,5 m = 187,5 J (Joule)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: R₁ = 60 Ω und R₂ = 50 Ω sind in Reihe geschaltet, es fließt I = 1 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "88 V",
+   "66 V",
+   "132 V",
+   "110 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 60 + 50 = 110 Ω; U = Rges · I = 110 Ω · 1 A = 110 V."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Teste dein Wissen: Ein Motor hat die Leistung P = 250 W. Welche Arbeit verrichtet er in t = 2 s?",
+  "options": [
+   "625 J",
+   "500 J",
+   "375 J",
+   "450 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 250 W · 2 s = 500 J."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Durch einen Widerstand von 5 Ω fließt ein Strom von 2,5 A. Wie groß ist die Spannung U?",
+  "options": [
+   "18,5 V",
+   "15,5 V",
+   "12,5 V",
+   "13,5 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 5 Ω · 2,5 A = 12,5 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: An einem Widerstand von 20 Ω liegt die Spannung 50 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2,7 A",
+   "2,5 A",
+   "2,4 A",
+   "2,6 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U / R = 50 V / 20 Ω = 2,5 A."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 15 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "99 J",
+   "90 J",
+   "81 J",
+   "45 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 15 N · 6 m = 90 J (Joule)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 4 Ω und R₂ = 4 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "2 Ω",
+   "6 Ω",
+   "1 Ω",
+   "4 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (4 · 4) / (4 + 4) = 2 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. In t = 60 s wird die Arbeit W = 15000 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "250 W",
+   "300 W",
+   "125 W",
+   "375 W"
+  ],
+  "correct": 0,
+  "explanation": "P = W / t = 15000 J / 60 s = 250 W (Watt)."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Eine Maschine hat den Wirkungsgrad 30 % und erhält 800 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "300 J",
+   "180 J",
+   "264 J",
+   "240 J"
+  ],
+  "correct": 3,
+  "explanation": "Wnutz = η · Wzu = 0,3 · 800 J = 240 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: In t = 4 s wird die Arbeit W = 1000 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "250 W",
+   "125 W",
+   "200 W",
+   "300 W"
+  ],
+  "correct": 0,
+  "explanation": "P = W / t = 1000 J / 4 s = 250 W (Watt)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: Ein Motor hat die Leistung P = 75 W. Welche Arbeit verrichtet er in t = 20 s?",
+  "options": [
+   "1500 J",
+   "1350 J",
+   "1125 J",
+   "1650 J"
+  ],
+  "correct": 0,
+  "explanation": "W = P · t = 75 W · 20 s = 1500 J."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 10 Ω und R₂ = 10 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "3,75 Ω",
+   "6,25 Ω",
+   "15 Ω",
+   "5 Ω"
+  ],
+  "correct": 3,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (10 · 10) / (10 + 10) = 5 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Fahrzeug fährt 50 m/s. Wie viel km/h sind das?",
+  "options": [
+   "183,6 km/h",
+   "180 km/h",
+   "187,2 km/h",
+   "176,4 km/h"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 50 m/s · 3,6 = 180 km/h."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Einer Maschine werden 2000 J zugeführt, sie gibt 400 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "15 %",
+   "20 %",
+   "25 %",
+   "35 %"
+  ],
+  "correct": 1,
+  "explanation": "η = Wnutz / Wzu = 400 J / 2000 J = 0,2 = 20 %."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Wähle die richtige Antwort. Einer Maschine werden 200 J zugeführt, sie gibt 180 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "90 %",
+   "80 %",
+   "100 %",
+   "105 %"
+  ],
+  "correct": 0,
+  "explanation": "η = Wnutz / Wzu = 180 J / 200 J = 0,9 = 90 %."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 20 Ω und R₂ = 10 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "40 Ω",
+   "45 Ω",
+   "25 Ω",
+   "30 Ω"
+  ],
+  "correct": 3,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 20 Ω + 10 Ω = 30 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Fahrzeug fährt 5 m/s. Wie viel km/h sind das?",
+  "options": [
+   "14,4 km/h",
+   "18 km/h",
+   "25,2 km/h",
+   "21,6 km/h"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 5 m/s · 3,6 = 18 km/h."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: In t = 4 s wird die Arbeit W = 240 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "60 W",
+   "90 W",
+   "72 W",
+   "48 W"
+  ],
+  "correct": 0,
+  "explanation": "P = W / t = 240 J / 4 s = 60 W (Watt)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: Ein Motor hat die Leistung P = 120 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "450 J",
+   "600 J",
+   "750 J",
+   "540 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 120 W · 5 s = 600 J."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: Durch einen Widerstand von 22 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung U?",
+  "options": [
+   "22 V",
+   "66 V",
+   "44 V",
+   "40 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 22 Ω · 2 A = 44 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Durch einen Widerstand von 12 Ω fließt ein Strom von 1,5 A. Wie groß ist die Spannung U?",
+  "options": [
+   "13 V",
+   "18 V",
+   "23 V",
+   "9 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 12 Ω · 1,5 A = 18 V."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Einer Maschine werden 2000 J zugeführt, sie gibt 600 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "45 %",
+   "30 %",
+   "10 %",
+   "50 %"
+  ],
+  "correct": 1,
+  "explanation": "η = Wnutz / Wzu = 600 J / 2000 J = 0,3 = 30 %."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 25 Ω und R₂ = 30 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "55 Ω",
+   "35 Ω",
+   "45 Ω",
+   "65 Ω"
+  ],
+  "correct": 0,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 25 Ω + 30 Ω = 55 Ω."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: In t = 30 s wird die Arbeit W = 4500 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "75 W",
+   "120 W",
+   "150 W",
+   "180 W"
+  ],
+  "correct": 2,
+  "explanation": "P = W / t = 4500 J / 30 s = 150 W (Watt)."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Aufgabe: Einer Maschine werden 1000 J zugeführt, sie gibt 800 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "60 %",
+   "95 %",
+   "75 %",
+   "80 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 800 J / 1000 J = 0,8 = 80 %."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 6 Ω und R₂ = 6 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "5 Ω",
+   "2 Ω",
+   "3 Ω",
+   "4 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (6 · 6) / (6 + 6) = 3 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Bei einer Spannung von 44 V fließt ein Strom von 2 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "22 Ω",
+   "32 Ω",
+   "17 Ω",
+   "24 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U / I = 44 V / 2 A = 22 Ω."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Eine Maschine hat den Wirkungsgrad 20 % und erhält 500 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "125 J",
+   "110 J",
+   "100 J",
+   "75 J"
+  ],
+  "correct": 2,
+  "explanation": "Wnutz = η · Wzu = 0,2 · 500 J = 100 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: R₁ = 60 Ω und R₂ = 10 Ω sind in Reihe geschaltet, es fließt I = 0,5 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "21 V",
+   "35 V",
+   "28 V",
+   "42 V"
+  ],
+  "correct": 1,
+  "explanation": "Rges = 60 + 10 = 70 Ω; U = Rges · I = 70 Ω · 0,5 A = 35 V."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt 10 m/s. Wie viel km/h sind das?",
+  "options": [
+   "36 km/h",
+   "32,4 km/h",
+   "18 km/h",
+   "43,2 km/h"
+  ],
+  "correct": 0,
+  "explanation": "Umrechnung: 10 m/s · 3,6 = 36 km/h."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Eine Maschine hat den Wirkungsgrad 60 % und erhält 1000 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "600 J",
+   "450 J",
+   "750 J",
+   "540 J"
+  ],
+  "correct": 0,
+  "explanation": "Wnutz = η · Wzu = 0,6 · 1000 J = 600 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Überlege genau: Eine Maschine hat den Wirkungsgrad 80 % und erhält 800 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "704 J",
+   "640 J",
+   "576 J",
+   "480 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,8 · 800 J = 640 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Einer Maschine werden 800 J zugeführt, sie gibt 480 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "45 %",
+   "55 %",
+   "80 %",
+   "60 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 480 J / 800 J = 0,6 = 60 %."
+ },
+ {
+  "topic": "Leistung",
+  "question": "In t = 10 s wird die Arbeit W = 1200 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "96 W",
+   "120 W",
+   "60 W",
+   "180 W"
+  ],
+  "correct": 1,
+  "explanation": "P = W / t = 1200 J / 10 s = 120 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: An einem Widerstand von 10 Ω liegt die Spannung 20 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2 A",
+   "2,1 A",
+   "1,5 A",
+   "2,5 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U / R = 20 V / 10 Ω = 2 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Bei einer Spannung von 22,5 V fließt ein Strom von 1,5 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "20 Ω",
+   "15 Ω",
+   "13 Ω",
+   "35 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U / I = 22,5 V / 1,5 A = 15 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. Bei einer Spannung von 2,5 V fließt ein Strom von 0,5 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "5 Ω",
+   "10 Ω",
+   "15 Ω",
+   "3 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U / I = 2,5 V / 0,5 A = 5 Ω."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 15 N über eine Strecke von s = 8 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "60 J",
+   "120 J",
+   "132 J",
+   "90 J"
+  ],
+  "correct": 1,
+  "explanation": "W = F · s = 15 N · 8 m = 120 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand von 60 Ω liegt die Spannung 24 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "1,4 A",
+   "0,5 A",
+   "0,9 A",
+   "0,4 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U / R = 24 V / 60 Ω = 0,4 A."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Quizfrage: In t = 4 s wird die Arbeit W = 480 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "60 W",
+   "144 W",
+   "96 W",
+   "120 W"
+  ],
+  "correct": 3,
+  "explanation": "P = W / t = 480 J / 4 s = 120 W (Watt)."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Wähle die richtige Antwort. Eine Kiste wird mit der Kraft F = 15 N über eine Strecke von s = 12 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "270 J",
+   "198 J",
+   "180 J",
+   "135 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 15 N · 12 m = 180 J (Joule)."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Wähle die richtige Antwort. Ein Motor hat die Leistung P = 500 W. Welche Arbeit verrichtet er in t = 4 s?",
+  "options": [
+   "1800 J",
+   "1500 J",
+   "2000 J",
+   "2200 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 500 W · 4 s = 2000 J."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: R₁ = 20 Ω und R₂ = 25 Ω sind in Reihe geschaltet, es fließt I = 0,5 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "22,5 V",
+   "27 V",
+   "18 V",
+   "13,5 V"
+  ],
+  "correct": 0,
+  "explanation": "Rges = 20 + 25 = 45 Ω; U = Rges · I = 45 Ω · 0,5 A = 22,5 V."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 24 Ω und R₂ = 12 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "32 Ω",
+   "10 Ω",
+   "8 Ω",
+   "12 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (24 · 12) / (24 + 12) = 8 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Teste dein Wissen: Bei einer Spannung von 100 V fließt ein Strom von 2 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "45 Ω",
+   "30 Ω",
+   "55 Ω",
+   "50 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U / I = 100 V / 2 A = 50 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: An einem Widerstand von 22 Ω liegt die Spannung 66 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2 A",
+   "2,5 A",
+   "3,1 A",
+   "3 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U / R = 66 V / 22 Ω = 3 A."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Zwei Widerstände R₁ = 12 Ω und R₂ = 4 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "5 Ω",
+   "3 Ω",
+   "2 Ω",
+   "1 Ω"
+  ],
+  "correct": 1,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (12 · 4) / (12 + 4) = 3 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 120 W. Welche Arbeit verrichtet er in t = 60 s?",
+  "options": [
+   "6480 J",
+   "7920 J",
+   "9000 J",
+   "7200 J"
+  ],
+  "correct": 3,
+  "explanation": "W = P · t = 120 W · 60 s = 7200 J."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Aufgabe: Ein Motor hat die Leistung P = 500 W. Welche Arbeit verrichtet er in t = 5 s?",
+  "options": [
+   "3125 J",
+   "1875 J",
+   "2500 J",
+   "2250 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 500 W · 5 s = 2500 J."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: Ein Motor hat die Leistung P = 500 W. Welche Arbeit verrichtet er in t = 30 s?",
+  "options": [
+   "16500 J",
+   "18750 J",
+   "15000 J",
+   "11250 J"
+  ],
+  "correct": 2,
+  "explanation": "W = P · t = 500 W · 30 s = 15000 J."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Auto fährt 36 km/h. Wie viel m/s sind das?",
+  "options": [
+   "15 m/s",
+   "20 m/s",
+   "10 m/s",
+   "8 m/s"
+  ],
+  "correct": 2,
+  "explanation": "Umrechnung: 36 km/h : 3,6 = 10 m/s."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Teste dein Wissen: Ein Auto fährt 54 km/h. Wie viel m/s sind das?",
+  "options": [
+   "20 m/s",
+   "15 m/s",
+   "25 m/s",
+   "13 m/s"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 54 km/h : 3,6 = 15 m/s."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 100 Ω und R₂ = 100 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "75 Ω",
+   "50 Ω",
+   "62,5 Ω",
+   "37,5 Ω"
+  ],
+  "correct": 1,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (100 · 100) / (100 + 100) = 50 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Wähle die richtige Antwort. An einem Widerstand von 22 Ω liegt die Spannung 44 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2 A",
+   "1,9 A",
+   "1,8 A",
+   "1 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U / R = 44 V / 22 Ω = 2 A."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Ein Motor hat die Leistung P = 120 W. Welche Arbeit verrichtet er in t = 20 s?",
+  "options": [
+   "3000 J",
+   "2400 J",
+   "2160 J",
+   "2640 J"
+  ],
+  "correct": 1,
+  "explanation": "W = P · t = 120 W · 20 s = 2400 J."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 60 Ω und R₂ = 30 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "25 Ω",
+   "80 Ω",
+   "15 Ω",
+   "20 Ω"
+  ],
+  "correct": 3,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (60 · 30) / (60 + 30) = 20 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Quizfrage: Eine Kiste wird mit der Kraft F = 15 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "37,5 J",
+   "57,5 J",
+   "47,5 J",
+   "42,5 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 15 N · 2,5 m = 37,5 J (Joule)."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Quizfrage: Ein Auto fährt 126 km/h. Wie viel m/s sind das?",
+  "options": [
+   "37 m/s",
+   "40 m/s",
+   "25 m/s",
+   "35 m/s"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 126 km/h : 3,6 = 35 m/s."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Aufgabe: Durch einen Widerstand von 10 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung U?",
+  "options": [
+   "22 V",
+   "10 V",
+   "20 V",
+   "18 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 10 Ω · 2 A = 20 V."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Ein Auto fährt 90 km/h. Wie viel m/s sind das?",
+  "options": [
+   "20 m/s",
+   "25 m/s",
+   "23 m/s",
+   "30 m/s"
+  ],
+  "correct": 1,
+  "explanation": "Umrechnung: 90 km/h : 3,6 = 25 m/s."
+ },
+ {
+  "topic": "Leistung",
+  "question": "In t = 5 s wird die Arbeit W = 375 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "60 W",
+   "90 W",
+   "75 W",
+   "38 W"
+  ],
+  "correct": 2,
+  "explanation": "P = W / t = 375 J / 5 s = 75 W (Watt)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Überlege genau: Durch einen Widerstand von 100 Ω fließt ein Strom von 0,2 A. Wie groß ist die Spannung U?",
+  "options": [
+   "30 V",
+   "15 V",
+   "10 V",
+   "20 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 100 Ω · 0,2 A = 20 V."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: Zwei Widerstände R₁ = 50 Ω und R₂ = 30 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "60 Ω",
+   "100 Ω",
+   "75 Ω",
+   "80 Ω"
+  ],
+  "correct": 3,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 50 Ω + 30 Ω = 80 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit umrechnen",
+  "question": "Wähle die richtige Antwort. Ein Auto fährt 72 km/h. Wie viel m/s sind das?",
+  "options": [
+   "30 m/s",
+   "15 m/s",
+   "10 m/s",
+   "20 m/s"
+  ],
+  "correct": 3,
+  "explanation": "Umrechnung: 72 km/h : 3,6 = 20 m/s."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 6 Ω und R₂ = 6 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "3 Ω",
+   "5 Ω",
+   "9 Ω",
+   "2 Ω"
+  ],
+  "correct": 0,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (6 · 6) / (6 + 6) = 3 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Überlege genau: Eine Kiste wird mit der Kraft F = 250 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "312,5 J",
+   "687,5 J",
+   "562,5 J",
+   "625 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 250 N · 2,5 m = 625 J (Joule)."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Quizfrage: Eine Maschine hat den Wirkungsgrad 20 % und erhält 500 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "110 J",
+   "125 J",
+   "90 J",
+   "100 J"
+  ],
+  "correct": 3,
+  "explanation": "Wnutz = η · Wzu = 0,2 · 500 J = 100 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Quizfrage: Eine Maschine hat den Wirkungsgrad 90 % und erhält 200 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "162 J",
+   "198 J",
+   "225 J",
+   "180 J"
+  ],
+  "correct": 3,
+  "explanation": "Wnutz = η · Wzu = 0,9 · 200 J = 180 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Wähle die richtige Antwort. Eine Kiste wird mit der Kraft F = 50 N über eine Strecke von s = 12 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "900 J",
+   "750 J",
+   "540 J",
+   "600 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 50 N · 12 m = 600 J (Joule)."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Teste dein Wissen: Eine Kiste wird mit der Kraft F = 50 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "93,75 J",
+   "112,5 J",
+   "125 J",
+   "187,5 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 50 N · 2,5 m = 125 J (Joule)."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Überlege genau: Eine Kiste wird mit der Kraft F = 150 N über eine Strecke von s = 2,5 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "375 J",
+   "562,5 J",
+   "281,25 J",
+   "468,75 J"
+  ],
+  "correct": 0,
+  "explanation": "W = F · s = 150 N · 2,5 m = 375 J (Joule)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Überlege genau: R₁ = 20 Ω und R₂ = 40 Ω sind in Reihe geschaltet, es fließt I = 0,2 A. Welche Gesamtspannung liegt an?",
+  "options": [
+   "9,6 V",
+   "14,4 V",
+   "16,8 V",
+   "12 V"
+  ],
+  "correct": 3,
+  "explanation": "Rges = 20 + 40 = 60 Ω; U = Rges · I = 60 Ω · 0,2 A = 12 V."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Quizfrage: Einer Maschine werden 200 J zugeführt, sie gibt 60 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "10 %",
+   "15 %",
+   "30 %",
+   "45 %"
+  ],
+  "correct": 2,
+  "explanation": "η = Wnutz / Wzu = 60 J / 200 J = 0,3 = 30 %."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Bei einer Spannung von 60 V fließt ein Strom von 1,5 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "20 Ω",
+   "30 Ω",
+   "40 Ω",
+   "60 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U / I = 60 V / 1,5 A = 40 Ω."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 4 Ω und R₂ = 12 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "5 Ω",
+   "7 Ω",
+   "3 Ω",
+   "1 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (4 · 12) / (4 + 12) = 3 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Einer Maschine werden 2000 J zugeführt, sie gibt 800 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "40 %",
+   "60 %",
+   "55 %",
+   "45 %"
+  ],
+  "correct": 0,
+  "explanation": "η = Wnutz / Wzu = 800 J / 2000 J = 0,4 = 40 %."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Eine Kiste wird mit der Kraft F = 250 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "1875 J",
+   "750 J",
+   "1500 J",
+   "2250 J"
+  ],
+  "correct": 2,
+  "explanation": "W = F · s = 250 N · 6 m = 1500 J (Joule)."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Aufgabe: Zwei Widerstände R₁ = 15 Ω und R₂ = 25 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "60 Ω",
+   "40 Ω",
+   "25 Ω",
+   "45 Ω"
+  ],
+  "correct": 1,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 15 Ω + 25 Ω = 40 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: Bei einer Spannung von 7,5 V fließt ein Strom von 0,5 A. Wie groß ist der Widerstand R?",
+  "options": [
+   "15 Ω",
+   "17 Ω",
+   "10 Ω",
+   "5 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U / I = 7,5 V / 0,5 A = 15 Ω."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Einer Maschine werden 200 J zugeführt, sie gibt 60 J nutzbare Arbeit ab. Wie groß ist der Wirkungsgrad?",
+  "options": [
+   "45 %",
+   "35 %",
+   "50 %",
+   "30 %"
+  ],
+  "correct": 3,
+  "explanation": "η = Wnutz / Wzu = 60 J / 200 J = 0,3 = 30 %."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Teste dein Wissen: Eine Maschine hat den Wirkungsgrad 50 % und erhält 400 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "220 J",
+   "250 J",
+   "150 J",
+   "200 J"
+  ],
+  "correct": 3,
+  "explanation": "Wnutz = η · Wzu = 0,5 · 400 J = 200 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Teste dein Wissen: Eine Kiste wird mit der Kraft F = 50 N über eine Strecke von s = 6 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "225 J",
+   "450 J",
+   "375 J",
+   "300 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 50 N · 6 m = 300 J (Joule)."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Quizfrage: An einem Widerstand von 12 Ω liegt die Spannung 18 V an. Wie groß ist die Stromstärke I?",
+  "options": [
+   "1,5 A",
+   "1,7 A",
+   "1,3 A",
+   "2 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U / R = 18 V / 12 Ω = 1,5 A."
+ },
+ {
+  "topic": "Wirkungsgrad",
+  "question": "Quizfrage: Eine Maschine hat den Wirkungsgrad 20 % und erhält 200 J Energie. Wie viel nutzbare Arbeit gibt sie ab?",
+  "options": [
+   "15 J",
+   "40 J",
+   "30 J",
+   "50 J"
+  ],
+  "correct": 1,
+  "explanation": "Wnutz = η · Wzu = 0,2 · 200 J = 40 J. Der Rest geht als Wärme verloren."
+ },
+ {
+  "topic": "Leistung",
+  "question": "Überlege genau: In t = 60 s wird die Arbeit W = 3600 J verrichtet. Wie groß ist die Leistung P?",
+  "options": [
+   "60 W",
+   "90 W",
+   "72 W",
+   "48 W"
+  ],
+  "correct": 0,
+  "explanation": "P = W / t = 3600 J / 60 s = 60 W (Watt)."
+ },
+ {
+  "topic": "Parallelschaltung",
+  "question": "Teste dein Wissen: Zwei Widerstände R₁ = 15 Ω und R₂ = 30 Ω sind parallel geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "15 Ω",
+   "7,5 Ω",
+   "10 Ω",
+   "5 Ω"
+  ],
+  "correct": 2,
+  "explanation": "Parallel: Rges = (R₁ · R₂) / (R₁ + R₂) = (15 · 30) / (15 + 30) = 10 Ω — immer kleiner als der kleinste Einzelwiderstand."
+ },
+ {
+  "topic": "Reihenschaltung",
+  "question": "Wähle die richtige Antwort. Zwei Widerstände R₁ = 60 Ω und R₂ = 5 Ω sind in Reihe geschaltet. Wie groß ist der Gesamtwiderstand?",
+  "options": [
+   "80 Ω",
+   "65 Ω",
+   "45 Ω",
+   "50 Ω"
+  ],
+  "correct": 1,
+  "explanation": "In Reihe addieren sich die Widerstände: Rges = R₁ + R₂ = 60 Ω + 5 Ω = 65 Ω."
+ },
+ {
+  "topic": "Mechanische Arbeit",
+  "question": "Aufgabe: Eine Kiste wird mit der Kraft F = 250 N über eine Strecke von s = 12 m gezogen. Welche Arbeit wird verrichtet?",
+  "options": [
+   "3300 J",
+   "2250 J",
+   "1500 J",
+   "3000 J"
+  ],
+  "correct": 3,
+  "explanation": "W = F · s = 250 N · 12 m = 3000 J (Joule)."
+ }
+]

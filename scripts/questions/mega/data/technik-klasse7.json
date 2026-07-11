@@ -1,0 +1,3002 @@
+[
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 18 Zähne, das Abtriebszahnrad 54 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "3",
+   "1",
+   "5",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "i = 54 / 18 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 500 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "147 U/min",
+   "124 U/min",
+   "112 U/min",
+   "125 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 500 / 4 = 125 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 200 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "100 mm",
+   "106 mm",
+   "87 mm",
+   "86 mm"
+  ],
+  "correct": 0,
+  "explanation": "200 mm ÷ 2 = 100 mm."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Teste dein Wissen: Welcher Werkstoff ist ein Metall?",
+  "options": [
+   "Aluminium",
+   "Kunststoff",
+   "Holz",
+   "Keramik"
+  ],
+  "correct": 0,
+  "explanation": "Aluminium ist ein Leichtmetall."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Womit misst man Längen am genauesten im Werkraum?",
+  "options": [
+   "Bandmaß grob",
+   "Winkel",
+   "Zollstock ungefähr",
+   "Messschieber (Schieblehre)"
+  ],
+  "correct": 3,
+  "explanation": "Der Messschieber misst auf Zehntel-Millimeter genau."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 12 Zähne, das Abtriebszahnrad 24 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "i = 24 / 12 = 2. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 300 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "181 U/min",
+   "150 U/min",
+   "198 U/min",
+   "105 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 300 / 2 = 150 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 600 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "291 U/min",
+   "253 U/min",
+   "310 U/min",
+   "300 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 600 / 2 = 300 U/min."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Wähle die richtige Antwort. Was bedeutet der Maßstab 2:1?",
+  "options": [
+   "halb so groß",
+   "gleich groß",
+   "zehnmal kleiner",
+   "Die Zeichnung ist doppelt so groß wie das Original"
+  ],
+  "correct": 3,
+  "explanation": "2:1 ist eine Vergrößerung auf das Doppelte."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 80 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "25 mm",
+   "2 mm",
+   "16 mm",
+   "23 mm"
+  ],
+  "correct": 2,
+  "explanation": "80 mm ÷ 5 = 16 mm."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Aufgabe: Welches Material ist ein Isolator (leitet Strom NICHT)?",
+  "options": [
+   "Gummi",
+   "Kupfer",
+   "Eisen",
+   "Aluminium"
+  ],
+  "correct": 0,
+  "explanation": "Gummi ist ein elektrischer Isolator."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Aufgabe: Welcher Werkstoff leitet Strom besonders gut?",
+  "options": [
+   "Glas",
+   "Holz",
+   "Gummi",
+   "Kupfer"
+  ],
+  "correct": 3,
+  "explanation": "Kupfer ist ein sehr guter elektrischer Leiter."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Aufgabe: Welcher Werkstoff ist besonders leicht formbar (thermoplastisch) beim Erwärmen?",
+  "options": [
+   "Beton",
+   "Thermoplast (Kunststoff)",
+   "Stahl",
+   "Glas bei Zimmertemperatur"
+  ],
+  "correct": 1,
+  "explanation": "Thermoplaste werden beim Erwärmen weich und formbar."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 600 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "180 U/min",
+   "200 U/min",
+   "229 U/min",
+   "249 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 600 / 3 = 200 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 14 Zähne, das Abtriebszahnrad 28 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "4",
+   "5",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "i = 28 / 14 = 2. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 1200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "313 U/min",
+   "322 U/min",
+   "257 U/min",
+   "300 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 1200 / 4 = 300 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 14 Zähne, das Abtriebszahnrad 70 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "5",
+   "8",
+   "2",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "i = 70 / 14 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 400 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "70 U/min",
+   "131 U/min",
+   "100 U/min",
+   "75 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 400 / 4 = 100 U/min."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Welches Werkzeug prüft den rechten Winkel (90°)?",
+  "options": [
+   "Zange",
+   "Anschlagwinkel",
+   "Feile",
+   "Hammer"
+  ],
+  "correct": 1,
+  "explanation": "Der Anschlagwinkel prüft 90°-Winkel."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Teste dein Wissen: Welches Material ist ein Isolator (leitet Strom NICHT)?",
+  "options": [
+   "Aluminium",
+   "Eisen",
+   "Kupfer",
+   "Gummi"
+  ],
+  "correct": 3,
+  "explanation": "Gummi ist ein elektrischer Isolator."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Teste dein Wissen: Womit werden Werkstücke fest eingespannt?",
+  "options": [
+   "Säge",
+   "Feile",
+   "Schraubstock",
+   "Hammer"
+  ],
+  "correct": 2,
+  "explanation": "Der Schraubstock hält das Werkstück fest."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 13 Zähne, das Abtriebszahnrad 52 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "i = 52 / 13 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Wie nennt man eine Mischung aus Metallen, z. B. Messing?",
+  "options": [
+   "Legierung",
+   "Emulsion",
+   "Verbundstoff aus Holz",
+   "Elektrolyt"
+  ],
+  "correct": 0,
+  "explanation": "Messing ist eine Legierung aus Kupfer und Zink."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 250 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "50 mm",
+   "57 mm",
+   "42 mm",
+   "45 mm"
+  ],
+  "correct": 0,
+  "explanation": "250 mm ÷ 5 = 50 mm."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Aufgabe: Wofür steht in technischen Zeichnungen die gestrichelte Linie?",
+  "options": [
+   "für sichtbare Kanten",
+   "für Mittelachsen",
+   "für verdeckte (unsichtbare) Kanten",
+   "für Text"
+  ],
+  "correct": 2,
+  "explanation": "Verdeckte Kanten werden gestrichelt gezeichnet."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 90 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "15.5 mm",
+   "27.5 mm",
+   "24.5 mm",
+   "22.5 mm"
+  ],
+  "correct": 3,
+  "explanation": "90 mm ÷ 4 = 22.5 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 120 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "24 mm",
+   "37 mm",
+   "30 mm",
+   "17 mm"
+  ],
+  "correct": 0,
+  "explanation": "120 mm ÷ 5 = 24 mm."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Was bedeutet der Maßstab 2:1?",
+  "options": [
+   "Die Zeichnung ist doppelt so groß wie das Original",
+   "zehnmal kleiner",
+   "gleich groß",
+   "halb so groß"
+  ],
+  "correct": 0,
+  "explanation": "2:1 ist eine Vergrößerung auf das Doppelte."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Wähle die richtige Antwort. Welche Linienart stellt sichtbare Kanten in einer technischen Zeichnung dar?",
+  "options": [
+   "die Freihandlinie",
+   "die gestrichelte Linie",
+   "die breite Volllinie",
+   "die Strichpunktlinie"
+  ],
+  "correct": 2,
+  "explanation": "Sichtbare Kanten zeichnet man mit breiter Volllinie."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Wähle die richtige Antwort. Womit misst man Längen am genauesten im Werkraum?",
+  "options": [
+   "Bandmaß grob",
+   "Messschieber (Schieblehre)",
+   "Zollstock ungefähr",
+   "Winkel"
+  ],
+  "correct": 1,
+  "explanation": "Der Messschieber misst auf Zehntel-Millimeter genau."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Aufgabe: Wofür verwendet man in technischen Zeichnungen die Strichpunktlinie?",
+  "options": [
+   "für Schraffuren",
+   "für sichtbare Kanten",
+   "für Mittel- und Symmetrieachsen",
+   "für Maßangaben"
+  ],
+  "correct": 2,
+  "explanation": "Die Strichpunktlinie kennzeichnet Mittellinien/Achsen."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 1200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "262 U/min",
+   "207 U/min",
+   "272 U/min",
+   "240 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 1200 / 5 = 240 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 50 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "17 mm",
+   "15 mm",
+   "4 mm",
+   "5 mm"
+  ],
+  "correct": 3,
+  "explanation": "50 mm ÷ 10 = 5 mm."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Welches Werkzeug glättet und formt Holzoberflächen durch Spanabnahme?",
+  "options": [
+   "Zange",
+   "Schraubstock",
+   "Bohrer",
+   "Hobel"
+  ],
+  "correct": 3,
+  "explanation": "Der Hobel trägt dünne Späne ab und glättet Holz."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 310 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "31 mm",
+   "39 mm",
+   "23 mm",
+   "20 mm"
+  ],
+  "correct": 0,
+  "explanation": "310 mm ÷ 10 = 31 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 210 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "29 mm",
+   "26 mm",
+   "18 mm",
+   "21 mm"
+  ],
+  "correct": 3,
+  "explanation": "210 mm ÷ 10 = 21 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 11 Zähne, das Abtriebszahnrad 55 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "3",
+   "5",
+   "7",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "i = 55 / 11 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "57.66666666666667 U/min",
+   "66.66666666666667 U/min",
+   "58.66666666666667 U/min",
+   "115.66666666666667 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 200 / 3 = 66.66666666666667 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 17 Zähne, das Abtriebszahnrad 51 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "1",
+   "4",
+   "3",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "i = 51 / 17 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Aufgabe: Welches Werkzeug prüft den rechten Winkel (90°)?",
+  "options": [
+   "Hammer",
+   "Zange",
+   "Feile",
+   "Anschlagwinkel"
+  ],
+  "correct": 3,
+  "explanation": "Der Anschlagwinkel prüft 90°-Winkel."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Womit sägt man gerade Schnitte in Holz?",
+  "options": [
+   "Feile",
+   "Raspel",
+   "Hobel",
+   "Fuchsschwanz (Handsäge)"
+  ],
+  "correct": 3,
+  "explanation": "Der Fuchsschwanz ist eine Handsäge für Holz."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Teste dein Wissen: Was bedeutet der Maßstab 1:2 auf einer Zeichnung?",
+  "options": [
+   "zehnmal so groß",
+   "Die Zeichnung ist halb so groß wie das Original",
+   "doppelt so groß wie das Original",
+   "genau gleich groß"
+  ],
+  "correct": 1,
+  "explanation": "1:2 bedeutet Verkleinerung auf die Hälfte."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 18 Zähne, das Abtriebszahnrad 72 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "1",
+   "4",
+   "2",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "i = 72 / 18 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 17 Zähne, das Abtriebszahnrad 85 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "5",
+   "7",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "i = 85 / 17 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Welcher Werkstoff ist ein Metall?",
+  "options": [
+   "Keramik",
+   "Holz",
+   "Kunststoff",
+   "Aluminium"
+  ],
+  "correct": 3,
+  "explanation": "Aluminium ist ein Leichtmetall."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Wähle die richtige Antwort. Was entsteht, wenn Eisen mit Sauerstoff und Feuchtigkeit reagiert?",
+  "options": [
+   "Grünspan aus Gold",
+   "Kalk",
+   "Patina aus Silber",
+   "Rost (Korrosion)"
+  ],
+  "correct": 3,
+  "explanation": "Eisen rostet durch Korrosion."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Aufgabe: Welcher Werkstoff ist ein Naturwerkstoff?",
+  "options": [
+   "Holz",
+   "Kunststoff (PVC)",
+   "Aluminium",
+   "Stahl"
+  ],
+  "correct": 0,
+  "explanation": "Holz ist ein nachwachsender Naturwerkstoff."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Welches Werkzeug dient zum Bohren von Löchern?",
+  "options": [
+   "Hobel",
+   "Bohrmaschine / Bohrer",
+   "Feile",
+   "Zange"
+  ],
+  "correct": 1,
+  "explanation": "Mit Bohrer/Bohrmaschine erzeugt man Löcher."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Teste dein Wissen: Welches Werkzeug prüft den rechten Winkel (90°)?",
+  "options": [
+   "Feile",
+   "Zange",
+   "Anschlagwinkel",
+   "Hammer"
+  ],
+  "correct": 2,
+  "explanation": "Der Anschlagwinkel prüft 90°-Winkel."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Teste dein Wissen: Womit sägt man gerade Schnitte in Holz?",
+  "options": [
+   "Raspel",
+   "Feile",
+   "Fuchsschwanz (Handsäge)",
+   "Hobel"
+  ],
+  "correct": 2,
+  "explanation": "Der Fuchsschwanz ist eine Handsäge für Holz."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 100 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "25 mm",
+   "40 mm",
+   "10 mm",
+   "14 mm"
+  ],
+  "correct": 0,
+  "explanation": "100 mm ÷ 4 = 25 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 1000 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "187 U/min",
+   "200 U/min",
+   "212 U/min",
+   "168 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 1000 / 5 = 200 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 800 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "145 U/min",
+   "205 U/min",
+   "160 U/min",
+   "131 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 800 / 5 = 160 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 18 Zähne, das Abtriebszahnrad 72 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "6",
+   "5",
+   "1",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "i = 72 / 18 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 110 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "36.5 mm",
+   "28.5 mm",
+   "19.5 mm",
+   "27.5 mm"
+  ],
+  "correct": 3,
+  "explanation": "110 mm ÷ 4 = 27.5 mm."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Womit entfernt man Material fein und glättet Metallkanten?",
+  "options": [
+   "Feile",
+   "Hobel",
+   "Bohrer",
+   "Säge"
+  ],
+  "correct": 0,
+  "explanation": "Die Feile trägt feine Späne ab und glättet Kanten."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 14 Zähne, das Abtriebszahnrad 56 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "6",
+   "1",
+   "4",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "i = 56 / 14 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Welcher Werkstoff ist ein Naturwerkstoff?",
+  "options": [
+   "Kunststoff (PVC)",
+   "Stahl",
+   "Aluminium",
+   "Holz"
+  ],
+  "correct": 3,
+  "explanation": "Holz ist ein nachwachsender Naturwerkstoff."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 190 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "8 mm",
+   "24 mm",
+   "25 mm",
+   "19 mm"
+  ],
+  "correct": 3,
+  "explanation": "190 mm ÷ 10 = 19 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 18 Zähne, das Abtriebszahnrad 72 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "4",
+   "5",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "i = 72 / 18 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 250 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "137 mm",
+   "125 mm",
+   "111 mm",
+   "134 mm"
+  ],
+  "correct": 1,
+  "explanation": "250 mm ÷ 2 = 125 mm."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Teste dein Wissen: Welcher Werkstoff ist besonders leicht formbar (thermoplastisch) beim Erwärmen?",
+  "options": [
+   "Glas bei Zimmertemperatur",
+   "Beton",
+   "Thermoplast (Kunststoff)",
+   "Stahl"
+  ],
+  "correct": 2,
+  "explanation": "Thermoplaste werden beim Erwärmen weich und formbar."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 10 Zähne, das Abtriebszahnrad 50 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "3",
+   "5",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "i = 50 / 10 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 260 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "130 mm",
+   "126 mm",
+   "133 mm",
+   "129 mm"
+  ],
+  "correct": 0,
+  "explanation": "260 mm ÷ 2 = 130 mm."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Aufgabe: Was entsteht, wenn Eisen mit Sauerstoff und Feuchtigkeit reagiert?",
+  "options": [
+   "Kalk",
+   "Rost (Korrosion)",
+   "Patina aus Silber",
+   "Grünspan aus Gold"
+  ],
+  "correct": 1,
+  "explanation": "Eisen rostet durch Korrosion."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 300 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "75 U/min",
+   "67 U/min",
+   "102 U/min",
+   "123 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 300 / 4 = 75 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 300 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "90 mm",
+   "83 mm",
+   "75 mm",
+   "72 mm"
+  ],
+  "correct": 2,
+  "explanation": "300 mm ÷ 4 = 75 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 350 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "87.5 mm",
+   "92.5 mm",
+   "73.5 mm",
+   "96.5 mm"
+  ],
+  "correct": 0,
+  "explanation": "350 mm ÷ 4 = 87.5 mm."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Wähle die richtige Antwort. Wofür steht in technischen Zeichnungen die gestrichelte Linie?",
+  "options": [
+   "für sichtbare Kanten",
+   "für Mittelachsen",
+   "für verdeckte (unsichtbare) Kanten",
+   "für Text"
+  ],
+  "correct": 2,
+  "explanation": "Verdeckte Kanten werden gestrichelt gezeichnet."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Teste dein Wissen: Welche Linienart stellt sichtbare Kanten in einer technischen Zeichnung dar?",
+  "options": [
+   "die Freihandlinie",
+   "die breite Volllinie",
+   "die gestrichelte Linie",
+   "die Strichpunktlinie"
+  ],
+  "correct": 1,
+  "explanation": "Sichtbare Kanten zeichnet man mit breiter Volllinie."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 1100 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "256 U/min",
+   "242 U/min",
+   "220 U/min",
+   "230 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 1100 / 5 = 220 U/min."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Teste dein Wissen: Wofür steht in technischen Zeichnungen die gestrichelte Linie?",
+  "options": [
+   "für sichtbare Kanten",
+   "für Text",
+   "für Mittelachsen",
+   "für verdeckte (unsichtbare) Kanten"
+  ],
+  "correct": 3,
+  "explanation": "Verdeckte Kanten werden gestrichelt gezeichnet."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 800 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "235.66666666666669 U/min",
+   "270.6666666666667 U/min",
+   "266.6666666666667 U/min",
+   "244.66666666666669 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 800 / 3 = 266.6666666666667 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 310 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "32 mm",
+   "33 mm",
+   "31 mm",
+   "38 mm"
+  ],
+  "correct": 2,
+  "explanation": "310 mm ÷ 10 = 31 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 17 Zähne, das Abtriebszahnrad 51 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "3",
+   "5",
+   "1",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "i = 51 / 17 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 180 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "89 mm",
+   "102 mm",
+   "100 mm",
+   "90 mm"
+  ],
+  "correct": 3,
+  "explanation": "180 mm ÷ 2 = 90 mm."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Teste dein Wissen: Welcher Werkstoff ist ein Naturwerkstoff?",
+  "options": [
+   "Stahl",
+   "Kunststoff (PVC)",
+   "Aluminium",
+   "Holz"
+  ],
+  "correct": 3,
+  "explanation": "Holz ist ein nachwachsender Naturwerkstoff."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 200 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "40 mm",
+   "31 mm",
+   "29 mm",
+   "30 mm"
+  ],
+  "correct": 0,
+  "explanation": "200 mm ÷ 5 = 40 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 600 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "103 U/min",
+   "127 U/min",
+   "150 U/min",
+   "114 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 600 / 4 = 150 U/min."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Aufgabe: Was bedeutet der Maßstab 1:2 auf einer Zeichnung?",
+  "options": [
+   "zehnmal so groß",
+   "Die Zeichnung ist halb so groß wie das Original",
+   "genau gleich groß",
+   "doppelt so groß wie das Original"
+  ],
+  "correct": 1,
+  "explanation": "1:2 bedeutet Verkleinerung auf die Hälfte."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 19 Zähne, das Abtriebszahnrad 95 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "8",
+   "6",
+   "5",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "i = 95 / 19 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Welcher Werkstoff leitet Strom besonders gut?",
+  "options": [
+   "Kupfer",
+   "Holz",
+   "Glas",
+   "Gummi"
+  ],
+  "correct": 0,
+  "explanation": "Kupfer ist ein sehr guter elektrischer Leiter."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 16 Zähne, das Abtriebszahnrad 64 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "5",
+   "6",
+   "4",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "i = 64 / 16 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Wähle die richtige Antwort. Welches Werkzeug glättet und formt Holzoberflächen durch Spanabnahme?",
+  "options": [
+   "Hobel",
+   "Bohrer",
+   "Schraubstock",
+   "Zange"
+  ],
+  "correct": 0,
+  "explanation": "Der Hobel trägt dünne Späne ab und glättet Holz."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 20 Zähne, das Abtriebszahnrad 80 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "1",
+   "2",
+   "4",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "i = 80 / 20 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Wähle die richtige Antwort. Womit entfernt man Material fein und glättet Metallkanten?",
+  "options": [
+   "Feile",
+   "Säge",
+   "Hobel",
+   "Bohrer"
+  ],
+  "correct": 0,
+  "explanation": "Die Feile trägt feine Späne ab und glättet Kanten."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Aufgabe: Was bedeutet der Maßstab 2:1?",
+  "options": [
+   "halb so groß",
+   "gleich groß",
+   "Die Zeichnung ist doppelt so groß wie das Original",
+   "zehnmal kleiner"
+  ],
+  "correct": 2,
+  "explanation": "2:1 ist eine Vergrößerung auf das Doppelte."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 1200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "600 U/min",
+   "632 U/min",
+   "571 U/min",
+   "633 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 1200 / 2 = 600 U/min."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Teste dein Wissen: Welches Werkzeug glättet und formt Holzoberflächen durch Spanabnahme?",
+  "options": [
+   "Schraubstock",
+   "Hobel",
+   "Zange",
+   "Bohrer"
+  ],
+  "correct": 1,
+  "explanation": "Der Hobel trägt dünne Späne ab und glättet Holz."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Welche Linienart stellt sichtbare Kanten in einer technischen Zeichnung dar?",
+  "options": [
+   "die Freihandlinie",
+   "die Strichpunktlinie",
+   "die gestrichelte Linie",
+   "die breite Volllinie"
+  ],
+  "correct": 3,
+  "explanation": "Sichtbare Kanten zeichnet man mit breiter Volllinie."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 900 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "311 U/min",
+   "300 U/min",
+   "287 U/min",
+   "251 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 900 / 3 = 300 U/min."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Aufgabe: Wie nennt man eine Mischung aus Metallen, z. B. Messing?",
+  "options": [
+   "Elektrolyt",
+   "Emulsion",
+   "Legierung",
+   "Verbundstoff aus Holz"
+  ],
+  "correct": 2,
+  "explanation": "Messing ist eine Legierung aus Kupfer und Zink."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 390 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "110.5 mm",
+   "97.5 mm",
+   "93.5 mm",
+   "86.5 mm"
+  ],
+  "correct": 1,
+  "explanation": "390 mm ÷ 4 = 97.5 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 14 Zähne, das Abtriebszahnrad 56 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "1",
+   "4",
+   "3",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "i = 56 / 14 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Was bedeutet der Maßstab 1:2 auf einer Zeichnung?",
+  "options": [
+   "genau gleich groß",
+   "doppelt so groß wie das Original",
+   "zehnmal so groß",
+   "Die Zeichnung ist halb so groß wie das Original"
+  ],
+  "correct": 3,
+  "explanation": "1:2 bedeutet Verkleinerung auf die Hälfte."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Wofür verwendet man in technischen Zeichnungen die Strichpunktlinie?",
+  "options": [
+   "für Schraffuren",
+   "für Maßangaben",
+   "für sichtbare Kanten",
+   "für Mittel- und Symmetrieachsen"
+  ],
+  "correct": 3,
+  "explanation": "Die Strichpunktlinie kennzeichnet Mittellinien/Achsen."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 700 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "242.33333333333334 U/min",
+   "272.33333333333337 U/min",
+   "274.33333333333337 U/min",
+   "233.33333333333334 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 700 / 3 = 233.33333333333334 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 350 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "87.5 mm",
+   "93.5 mm",
+   "100.5 mm",
+   "75.5 mm"
+  ],
+  "correct": 0,
+  "explanation": "350 mm ÷ 4 = 87.5 mm."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Wähle die richtige Antwort. Was bedeutet der Maßstab 1:2 auf einer Zeichnung?",
+  "options": [
+   "doppelt so groß wie das Original",
+   "zehnmal so groß",
+   "Die Zeichnung ist halb so groß wie das Original",
+   "genau gleich groß"
+  ],
+  "correct": 2,
+  "explanation": "1:2 bedeutet Verkleinerung auf die Hälfte."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 180 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "50 mm",
+   "41 mm",
+   "36 mm",
+   "23 mm"
+  ],
+  "correct": 2,
+  "explanation": "180 mm ÷ 5 = 36 mm."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Teste dein Wissen: Was entsteht, wenn Eisen mit Sauerstoff und Feuchtigkeit reagiert?",
+  "options": [
+   "Rost (Korrosion)",
+   "Patina aus Silber",
+   "Kalk",
+   "Grünspan aus Gold"
+  ],
+  "correct": 0,
+  "explanation": "Eisen rostet durch Korrosion."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Aufgabe: Womit entfernt man Material fein und glättet Metallkanten?",
+  "options": [
+   "Hobel",
+   "Feile",
+   "Bohrer",
+   "Säge"
+  ],
+  "correct": 1,
+  "explanation": "Die Feile trägt feine Späne ab und glättet Kanten."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 60 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "19 mm",
+   "45 mm",
+   "28 mm",
+   "30 mm"
+  ],
+  "correct": 3,
+  "explanation": "60 mm ÷ 2 = 30 mm."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Aufgabe: Welches Werkzeug dient zum Bohren von Löchern?",
+  "options": [
+   "Bohrmaschine / Bohrer",
+   "Hobel",
+   "Feile",
+   "Zange"
+  ],
+  "correct": 0,
+  "explanation": "Mit Bohrer/Bohrmaschine erzeugt man Löcher."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 40 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "18 mm",
+   "10 mm",
+   "11 mm",
+   "1 mm"
+  ],
+  "correct": 1,
+  "explanation": "40 mm ÷ 4 = 10 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 20 Zähne, das Abtriebszahnrad 60 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "1",
+   "5",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "i = 60 / 20 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Teste dein Wissen: Welcher Werkstoff leitet Strom besonders gut?",
+  "options": [
+   "Gummi",
+   "Holz",
+   "Kupfer",
+   "Glas"
+  ],
+  "correct": 2,
+  "explanation": "Kupfer ist ein sehr guter elektrischer Leiter."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "55 U/min",
+   "13 U/min",
+   "26 U/min",
+   "40 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 200 / 5 = 40 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 400 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "134 U/min",
+   "100 U/min",
+   "79 U/min",
+   "116 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 400 / 4 = 100 U/min."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Wofür steht in technischen Zeichnungen die gestrichelte Linie?",
+  "options": [
+   "für sichtbare Kanten",
+   "für Mittelachsen",
+   "für verdeckte (unsichtbare) Kanten",
+   "für Text"
+  ],
+  "correct": 2,
+  "explanation": "Verdeckte Kanten werden gestrichelt gezeichnet."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 220 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "17 mm",
+   "18 mm",
+   "29 mm",
+   "22 mm"
+  ],
+  "correct": 3,
+  "explanation": "220 mm ÷ 10 = 22 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 240 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "58 mm",
+   "47 mm",
+   "63 mm",
+   "48 mm"
+  ],
+  "correct": 3,
+  "explanation": "240 mm ÷ 5 = 48 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 160 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "49 mm",
+   "40 mm",
+   "53 mm",
+   "43 mm"
+  ],
+  "correct": 1,
+  "explanation": "160 mm ÷ 4 = 40 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 180 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "50 mm",
+   "39 mm",
+   "21 mm",
+   "36 mm"
+  ],
+  "correct": 3,
+  "explanation": "180 mm ÷ 5 = 36 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 500 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "125 U/min",
+   "79 U/min",
+   "99 U/min",
+   "95 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 500 / 4 = 125 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 80 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "41 mm",
+   "42 mm",
+   "44 mm",
+   "40 mm"
+  ],
+  "correct": 3,
+  "explanation": "80 mm ÷ 2 = 40 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 290 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "21 mm",
+   "40 mm",
+   "29 mm",
+   "23 mm"
+  ],
+  "correct": 2,
+  "explanation": "290 mm ÷ 10 = 29 mm."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Teste dein Wissen: Womit entfernt man Material fein und glättet Metallkanten?",
+  "options": [
+   "Bohrer",
+   "Säge",
+   "Feile",
+   "Hobel"
+  ],
+  "correct": 2,
+  "explanation": "Die Feile trägt feine Späne ab und glättet Kanten."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Teste dein Wissen: Wie nennt man eine Mischung aus Metallen, z. B. Messing?",
+  "options": [
+   "Verbundstoff aus Holz",
+   "Emulsion",
+   "Legierung",
+   "Elektrolyt"
+  ],
+  "correct": 2,
+  "explanation": "Messing ist eine Legierung aus Kupfer und Zink."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 260 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "52 mm",
+   "50 mm",
+   "53 mm",
+   "47 mm"
+  ],
+  "correct": 0,
+  "explanation": "260 mm ÷ 5 = 52 mm."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Welches Material ist ein Isolator (leitet Strom NICHT)?",
+  "options": [
+   "Aluminium",
+   "Kupfer",
+   "Eisen",
+   "Gummi"
+  ],
+  "correct": 3,
+  "explanation": "Gummi ist ein elektrischer Isolator."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 350 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "42 mm",
+   "26 mm",
+   "35 mm",
+   "20 mm"
+  ],
+  "correct": 2,
+  "explanation": "350 mm ÷ 10 = 35 mm."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Wähle die richtige Antwort. Welche Projektionsart nutzt man in Deutschland üblich für technische Ansichten?",
+  "options": [
+   "die Dreitafelprojektion (Vorder-, Seiten-, Draufsicht)",
+   "die Isometrie ohne Maße",
+   "die Freihandskizze",
+   "die Zentralperspektive"
+  ],
+  "correct": 0,
+  "explanation": "Die Dreitafelprojektion zeigt drei senkrechte Ansichten."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 330 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "66 mm",
+   "80 mm",
+   "51 mm",
+   "78 mm"
+  ],
+  "correct": 0,
+  "explanation": "330 mm ÷ 5 = 66 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 370 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "182 mm",
+   "180 mm",
+   "185 mm",
+   "184 mm"
+  ],
+  "correct": 2,
+  "explanation": "370 mm ÷ 2 = 185 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 600 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "81 U/min",
+   "146 U/min",
+   "102 U/min",
+   "120 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 600 / 5 = 120 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 140 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "35 mm",
+   "41 mm",
+   "44 mm",
+   "36 mm"
+  ],
+  "correct": 0,
+  "explanation": "140 mm ÷ 4 = 35 mm."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Wähle die richtige Antwort. Womit werden Werkstücke fest eingespannt?",
+  "options": [
+   "Säge",
+   "Hammer",
+   "Schraubstock",
+   "Feile"
+  ],
+  "correct": 2,
+  "explanation": "Der Schraubstock hält das Werkstück fest."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 1100 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "584 U/min",
+   "533 U/min",
+   "550 U/min",
+   "509 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 1100 / 2 = 550 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 13 Zähne, das Abtriebszahnrad 65 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "5",
+   "8",
+   "2",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "i = 65 / 13 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 190 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "16 mm",
+   "19 mm",
+   "23 mm",
+   "20 mm"
+  ],
+  "correct": 1,
+  "explanation": "190 mm ÷ 10 = 19 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 280 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "29 mm",
+   "19 mm",
+   "28 mm",
+   "27 mm"
+  ],
+  "correct": 2,
+  "explanation": "280 mm ÷ 10 = 28 mm."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Aufgabe: Womit misst man Längen am genauesten im Werkraum?",
+  "options": [
+   "Winkel",
+   "Bandmaß grob",
+   "Messschieber (Schieblehre)",
+   "Zollstock ungefähr"
+  ],
+  "correct": 2,
+  "explanation": "Der Messschieber misst auf Zehntel-Millimeter genau."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 230 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "103 mm",
+   "108 mm",
+   "127 mm",
+   "115 mm"
+  ],
+  "correct": 3,
+  "explanation": "230 mm ÷ 2 = 115 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 11 Zähne, das Abtriebszahnrad 55 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "4",
+   "8",
+   "5",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "i = 55 / 11 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Wähle die richtige Antwort. Welcher Werkstoff ist ein Naturwerkstoff?",
+  "options": [
+   "Stahl",
+   "Kunststoff (PVC)",
+   "Holz",
+   "Aluminium"
+  ],
+  "correct": 2,
+  "explanation": "Holz ist ein nachwachsender Naturwerkstoff."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 800 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "200 U/min",
+   "169 U/min",
+   "197 U/min",
+   "216 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 800 / 4 = 200 U/min."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Wähle die richtige Antwort. Wie nennt man eine Mischung aus Metallen, z. B. Messing?",
+  "options": [
+   "Elektrolyt",
+   "Legierung",
+   "Verbundstoff aus Holz",
+   "Emulsion"
+  ],
+  "correct": 1,
+  "explanation": "Messing ist eine Legierung aus Kupfer und Zink."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 700 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "321 U/min",
+   "303 U/min",
+   "350 U/min",
+   "369 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 700 / 2 = 350 U/min."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Wähle die richtige Antwort. Welches Werkzeug prüft den rechten Winkel (90°)?",
+  "options": [
+   "Feile",
+   "Hammer",
+   "Anschlagwinkel",
+   "Zange"
+  ],
+  "correct": 2,
+  "explanation": "Der Anschlagwinkel prüft 90°-Winkel."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 600 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "165 U/min",
+   "164 U/min",
+   "200 U/min",
+   "150 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 600 / 3 = 200 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 700 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "233.33333333333334 U/min",
+   "199.33333333333334 U/min",
+   "214.33333333333334 U/min",
+   "225.33333333333334 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 700 / 3 = 233.33333333333334 U/min."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Aufgabe: Welcher Werkstoff ist ein Metall?",
+  "options": [
+   "Kunststoff",
+   "Aluminium",
+   "Holz",
+   "Keramik"
+  ],
+  "correct": 1,
+  "explanation": "Aluminium ist ein Leichtmetall."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 280 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "31 mm",
+   "32 mm",
+   "22 mm",
+   "28 mm"
+  ],
+  "correct": 3,
+  "explanation": "280 mm ÷ 10 = 28 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 340 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "32 mm",
+   "49 mm",
+   "28 mm",
+   "34 mm"
+  ],
+  "correct": 3,
+  "explanation": "340 mm ÷ 10 = 34 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 12 Zähne, das Abtriebszahnrad 36 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "6",
+   "3",
+   "2",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "i = 36 / 12 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Teste dein Wissen: Wofür verwendet man in technischen Zeichnungen die Strichpunktlinie?",
+  "options": [
+   "für Maßangaben",
+   "für Mittel- und Symmetrieachsen",
+   "für Schraffuren",
+   "für sichtbare Kanten"
+  ],
+  "correct": 1,
+  "explanation": "Die Strichpunktlinie kennzeichnet Mittellinien/Achsen."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 10 Zähne, das Abtriebszahnrad 40 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "6",
+   "2",
+   "5",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "i = 40 / 10 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Aufgabe: Womit sägt man gerade Schnitte in Holz?",
+  "options": [
+   "Hobel",
+   "Feile",
+   "Raspel",
+   "Fuchsschwanz (Handsäge)"
+  ],
+  "correct": 3,
+  "explanation": "Der Fuchsschwanz ist eine Handsäge für Holz."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 900 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "462 U/min",
+   "450 U/min",
+   "489 U/min",
+   "402 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 900 / 2 = 450 U/min."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Welche Projektionsart nutzt man in Deutschland üblich für technische Ansichten?",
+  "options": [
+   "die Zentralperspektive",
+   "die Isometrie ohne Maße",
+   "die Freihandskizze",
+   "die Dreitafelprojektion (Vorder-, Seiten-, Draufsicht)"
+  ],
+  "correct": 3,
+  "explanation": "Die Dreitafelprojektion zeigt drei senkrechte Ansichten."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 17 Zähne, das Abtriebszahnrad 85 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "5",
+   "6",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "i = 85 / 17 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 170 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "49 mm",
+   "34 mm",
+   "22 mm",
+   "19 mm"
+  ],
+  "correct": 1,
+  "explanation": "170 mm ÷ 5 = 34 mm."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Wähle die richtige Antwort. Welcher Werkstoff ist besonders leicht formbar (thermoplastisch) beim Erwärmen?",
+  "options": [
+   "Beton",
+   "Glas bei Zimmertemperatur",
+   "Thermoplast (Kunststoff)",
+   "Stahl"
+  ],
+  "correct": 2,
+  "explanation": "Thermoplaste werden beim Erwärmen weich und formbar."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 120 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "63 mm",
+   "58 mm",
+   "66 mm",
+   "60 mm"
+  ],
+  "correct": 3,
+  "explanation": "120 mm ÷ 2 = 60 mm."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Was entsteht, wenn Eisen mit Sauerstoff und Feuchtigkeit reagiert?",
+  "options": [
+   "Grünspan aus Gold",
+   "Kalk",
+   "Patina aus Silber",
+   "Rost (Korrosion)"
+  ],
+  "correct": 3,
+  "explanation": "Eisen rostet durch Korrosion."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 1000 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "200 U/min",
+   "211 U/min",
+   "166 U/min",
+   "204 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 1000 / 5 = 200 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 500 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "119 U/min",
+   "118 U/min",
+   "100 U/min",
+   "78 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 500 / 5 = 100 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 1000 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "503 U/min",
+   "467 U/min",
+   "500 U/min",
+   "549 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 1000 / 2 = 500 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 400 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "211 U/min",
+   "150 U/min",
+   "200 U/min",
+   "165 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 400 / 2 = 200 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 380 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "102 mm",
+   "95 mm",
+   "86 mm",
+   "108 mm"
+  ],
+  "correct": 1,
+  "explanation": "380 mm ÷ 4 = 95 mm."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Aufgabe: Welche Projektionsart nutzt man in Deutschland üblich für technische Ansichten?",
+  "options": [
+   "die Zentralperspektive",
+   "die Isometrie ohne Maße",
+   "die Dreitafelprojektion (Vorder-, Seiten-, Draufsicht)",
+   "die Freihandskizze"
+  ],
+  "correct": 2,
+  "explanation": "Die Dreitafelprojektion zeigt drei senkrechte Ansichten."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 14 Zähne, das Abtriebszahnrad 42 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "5",
+   "2",
+   "4",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "i = 42 / 14 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 500 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "103 U/min",
+   "125 U/min",
+   "154 U/min",
+   "117 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 500 / 4 = 125 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 800 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "227 U/min",
+   "200 U/min",
+   "158 U/min",
+   "218 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 800 / 4 = 200 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 600 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "199 U/min",
+   "162 U/min",
+   "200 U/min",
+   "223 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 600 / 3 = 200 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 1000 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "520 U/min",
+   "492 U/min",
+   "507 U/min",
+   "500 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 1000 / 2 = 500 U/min."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Teste dein Wissen: Welche Projektionsart nutzt man in Deutschland üblich für technische Ansichten?",
+  "options": [
+   "die Freihandskizze",
+   "die Dreitafelprojektion (Vorder-, Seiten-, Draufsicht)",
+   "die Isometrie ohne Maße",
+   "die Zentralperspektive"
+  ],
+  "correct": 1,
+  "explanation": "Die Dreitafelprojektion zeigt drei senkrechte Ansichten."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 12 Zähne, das Abtriebszahnrad 48 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "6",
+   "4",
+   "3",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "i = 48 / 12 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 800 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "397 U/min",
+   "403 U/min",
+   "438 U/min",
+   "400 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 800 / 2 = 400 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 140 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "75 mm",
+   "73 mm",
+   "72 mm",
+   "70 mm"
+  ],
+  "correct": 3,
+  "explanation": "140 mm ÷ 2 = 70 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 800 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "175 U/min",
+   "127 U/min",
+   "160 U/min",
+   "140 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 800 / 5 = 160 U/min."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Aufgabe: Womit werden Werkstücke fest eingespannt?",
+  "options": [
+   "Feile",
+   "Schraubstock",
+   "Säge",
+   "Hammer"
+  ],
+  "correct": 1,
+  "explanation": "Der Schraubstock hält das Werkstück fest."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 1100 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "366.6666666666667 U/min",
+   "398.6666666666667 U/min",
+   "410.6666666666667 U/min",
+   "358.6666666666667 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 1100 / 3 = 366.6666666666667 U/min."
+ },
+ {
+  "topic": "Werkstoffe",
+  "question": "Wähle die richtige Antwort. Welcher Werkstoff leitet Strom besonders gut?",
+  "options": [
+   "Holz",
+   "Gummi",
+   "Glas",
+   "Kupfer"
+  ],
+  "correct": 3,
+  "explanation": "Kupfer ist ein sehr guter elektrischer Leiter."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 170 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "78 mm",
+   "73 mm",
+   "91 mm",
+   "85 mm"
+  ],
+  "correct": 3,
+  "explanation": "170 mm ÷ 2 = 85 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 500 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "211.66666666666666 U/min",
+   "130.66666666666666 U/min",
+   "166.66666666666666 U/min",
+   "176.66666666666666 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 500 / 3 = 166.66666666666666 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 14 Zähne, das Abtriebszahnrad 70 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "7",
+   "4",
+   "5",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "i = 70 / 14 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 240 mm lang und wird im Maßstab 1:10 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "25 mm",
+   "38 mm",
+   "24 mm",
+   "29 mm"
+  ],
+  "correct": 2,
+  "explanation": "240 mm ÷ 10 = 24 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 1100 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "402.6666666666667 U/min",
+   "390.6666666666667 U/min",
+   "366.6666666666667 U/min",
+   "405.6666666666667 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 1100 / 3 = 366.6666666666667 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 1000 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "303.3333333333333 U/min",
+   "339.3333333333333 U/min",
+   "336.3333333333333 U/min",
+   "333.3333333333333 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 1000 / 3 = 333.3333333333333 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 14 Zähne, das Abtriebszahnrad 28 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "1",
+   "2",
+   "4",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "i = 28 / 14 = 2. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 600 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "200 U/min",
+   "197 U/min",
+   "207 U/min",
+   "243 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 600 / 3 = 200 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 1200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "333 U/min",
+   "300 U/min",
+   "279 U/min",
+   "296 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 1200 / 4 = 300 U/min."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Teste dein Wissen: Was bedeutet der Maßstab 2:1?",
+  "options": [
+   "Die Zeichnung ist doppelt so groß wie das Original",
+   "gleich groß",
+   "zehnmal kleiner",
+   "halb so groß"
+  ],
+  "correct": 0,
+  "explanation": "2:1 ist eine Vergrößerung auf das Doppelte."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 270 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "67.5 mm",
+   "53.5 mm",
+   "73.5 mm",
+   "65.5 mm"
+  ],
+  "correct": 0,
+  "explanation": "270 mm ÷ 4 = 67.5 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 150 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "20 mm",
+   "30 mm",
+   "17 mm",
+   "35 mm"
+  ],
+  "correct": 1,
+  "explanation": "150 mm ÷ 5 = 30 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 1000 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "164 U/min",
+   "175 U/min",
+   "163 U/min",
+   "200 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 1000 / 5 = 200 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 1000 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "298.3333333333333 U/min",
+   "333.3333333333333 U/min",
+   "322.3333333333333 U/min",
+   "336.3333333333333 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 1000 / 3 = 333.3333333333333 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 1000 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "250 U/min",
+   "225 U/min",
+   "208 U/min",
+   "260 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 1000 / 4 = 250 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 10 Zähne, das Abtriebszahnrad 50 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "5",
+   "7",
+   "8",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "i = 50 / 10 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Teste dein Wissen: Womit misst man Längen am genauesten im Werkraum?",
+  "options": [
+   "Bandmaß grob",
+   "Zollstock ungefähr",
+   "Winkel",
+   "Messschieber (Schieblehre)"
+  ],
+  "correct": 3,
+  "explanation": "Der Messschieber misst auf Zehntel-Millimeter genau."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 250 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "73.5 mm",
+   "69.5 mm",
+   "77.5 mm",
+   "62.5 mm"
+  ],
+  "correct": 3,
+  "explanation": "250 mm ÷ 4 = 62.5 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "66.66666666666667 U/min",
+   "114.66666666666667 U/min",
+   "59.66666666666667 U/min",
+   "29.66666666666667 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 200 / 3 = 66.66666666666667 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 1100 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "217 U/min",
+   "242 U/min",
+   "219 U/min",
+   "220 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 1100 / 5 = 220 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 90 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "45 mm",
+   "39 mm",
+   "40 mm",
+   "54 mm"
+  ],
+  "correct": 0,
+  "explanation": "90 mm ÷ 2 = 45 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "40 U/min",
+   "77 U/min",
+   "58 U/min",
+   "79 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 200 / 5 = 40 U/min."
+ },
+ {
+  "topic": "Technisches Zeichnen",
+  "question": "Aufgabe: Welche Linienart stellt sichtbare Kanten in einer technischen Zeichnung dar?",
+  "options": [
+   "die Freihandlinie",
+   "die gestrichelte Linie",
+   "die Strichpunktlinie",
+   "die breite Volllinie"
+  ],
+  "correct": 3,
+  "explanation": "Sichtbare Kanten zeichnet man mit breiter Volllinie."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 18 Zähne, das Abtriebszahnrad 72 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "7",
+   "3",
+   "4",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "i = 72 / 18 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 290 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "78.5 mm",
+   "72.5 mm",
+   "87.5 mm",
+   "85.5 mm"
+  ],
+  "correct": 1,
+  "explanation": "290 mm ÷ 4 = 72.5 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 700 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "193 U/min",
+   "175 U/min",
+   "140 U/min",
+   "158 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 700 / 4 = 175 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 270 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "64.5 mm",
+   "60.5 mm",
+   "53.5 mm",
+   "67.5 mm"
+  ],
+  "correct": 3,
+  "explanation": "270 mm ÷ 4 = 67.5 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 1100 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "366.6666666666667 U/min",
+   "377.6666666666667 U/min",
+   "381.6666666666667 U/min",
+   "351.6666666666667 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 1100 / 3 = 366.6666666666667 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 18 Zähne, das Abtriebszahnrad 90 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "5",
+   "4",
+   "7",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "i = 90 / 18 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Wähle die richtige Antwort. Womit sägt man gerade Schnitte in Holz?",
+  "options": [
+   "Fuchsschwanz (Handsäge)",
+   "Hobel",
+   "Feile",
+   "Raspel"
+  ],
+  "correct": 0,
+  "explanation": "Der Fuchsschwanz ist eine Handsäge für Holz."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 360 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "87 mm",
+   "90 mm",
+   "99 mm",
+   "98 mm"
+  ],
+  "correct": 1,
+  "explanation": "360 mm ÷ 4 = 90 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 1200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "380 U/min",
+   "442 U/min",
+   "400 U/min",
+   "373 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 1200 / 3 = 400 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 18 Zähne, das Abtriebszahnrad 90 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "6",
+   "4",
+   "5",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "i = 90 / 18 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 400 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "200 mm",
+   "196 mm",
+   "192 mm",
+   "201 mm"
+  ],
+  "correct": 0,
+  "explanation": "400 mm ÷ 2 = 200 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 1100 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "275 U/min",
+   "274 U/min",
+   "314 U/min",
+   "317 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 1100 / 4 = 275 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 15 Zähne, das Abtriebszahnrad 45 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "6",
+   "1",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "i = 45 / 15 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 400 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "242 U/min",
+   "200 U/min",
+   "245 U/min",
+   "198 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 400 / 2 = 200 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 18 Zähne, das Abtriebszahnrad 54 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "1",
+   "6",
+   "4",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "i = 54 / 18 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 100 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "5 mm",
+   "20 mm",
+   "27 mm",
+   "25 mm"
+  ],
+  "correct": 1,
+  "explanation": "100 mm ÷ 5 = 20 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 310 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "83.5 mm",
+   "77.5 mm",
+   "86.5 mm",
+   "69.5 mm"
+  ],
+  "correct": 1,
+  "explanation": "310 mm ÷ 4 = 77.5 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 130 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "33 mm",
+   "19 mm",
+   "21 mm",
+   "26 mm"
+  ],
+  "correct": 3,
+  "explanation": "130 mm ÷ 5 = 26 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 700 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "188.33333333333334 U/min",
+   "237.33333333333334 U/min",
+   "233.33333333333334 U/min",
+   "256.33333333333337 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 700 / 3 = 233.33333333333334 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 17 Zähne, das Abtriebszahnrad 68 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "2",
+   "1",
+   "7",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "i = 68 / 17 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 13 Zähne, das Abtriebszahnrad 52 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "7",
+   "1",
+   "4",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "i = 52 / 13 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 11 Zähne, das Abtriebszahnrad 55 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "5",
+   "8",
+   "4",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "i = 55 / 11 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 500 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "166.66666666666666 U/min",
+   "185.66666666666666 U/min",
+   "143.66666666666666 U/min",
+   "174.66666666666666 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 500 / 3 = 166.66666666666666 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 12 Zähne, das Abtriebszahnrad 48 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "4",
+   "6",
+   "3",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "i = 48 / 12 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "50 U/min",
+   "51 U/min",
+   "25 U/min",
+   "10 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 200 / 4 = 50 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 15 Zähne, das Abtriebszahnrad 60 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "3",
+   "6",
+   "2",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "i = 60 / 15 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 15 Zähne, das Abtriebszahnrad 75 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "6",
+   "2",
+   "3",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "i = 75 / 15 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 500 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "89 U/min",
+   "113 U/min",
+   "125 U/min",
+   "159 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 500 / 4 = 125 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 230 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "57.5 mm",
+   "51.5 mm",
+   "49.5 mm",
+   "62.5 mm"
+  ],
+  "correct": 0,
+  "explanation": "230 mm ÷ 4 = 57.5 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 12 Zähne, das Abtriebszahnrad 36 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "1",
+   "4",
+   "2",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "i = 36 / 12 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 1200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "343 U/min",
+   "254 U/min",
+   "300 U/min",
+   "255 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 1200 / 4 = 300 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 12 Zähne, das Abtriebszahnrad 60 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "7",
+   "8",
+   "5",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "i = 60 / 12 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 70 mm lang und wird im Maßstab 1:2 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "35 mm",
+   "25 mm",
+   "32 mm",
+   "22 mm"
+  ],
+  "correct": 0,
+  "explanation": "70 mm ÷ 2 = 35 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 230 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "46 mm",
+   "37 mm",
+   "31 mm",
+   "39 mm"
+  ],
+  "correct": 0,
+  "explanation": "230 mm ÷ 5 = 46 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Ein Antriebszahnrad hat 18 Zähne, das Abtriebszahnrad 54 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "i = 54 / 18 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 14 Zähne, das Abtriebszahnrad 28 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "4",
+   "1",
+   "3",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "i = 28 / 14 = 2. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 2 dreht das Antriebsrad mit 1100 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "558 U/min",
+   "597 U/min",
+   "550 U/min",
+   "596 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 1100 / 2 = 550 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 4 dreht das Antriebsrad mit 200 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "50 U/min",
+   "97 U/min",
+   "52 U/min",
+   "91 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 200 / 4 = 50 U/min."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Aufgabe: Ein Antriebszahnrad hat 11 Zähne, das Abtriebszahnrad 44 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "4",
+   "2",
+   "1",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "i = 44 / 11 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 20 Zähne, das Abtriebszahnrad 80 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "5",
+   "1",
+   "4",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "i = 80 / 20 = 4. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 3 dreht das Antriebsrad mit 800 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "277.6666666666667 U/min",
+   "266.6666666666667 U/min",
+   "301.6666666666667 U/min",
+   "233.66666666666669 U/min"
+  ],
+  "correct": 1,
+  "explanation": "n_Abtrieb = 800 / 3 = 266.6666666666667 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Werkstück ist 280 mm lang und wird im Maßstab 1:5 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "56 mm",
+   "65 mm",
+   "51 mm",
+   "46 mm"
+  ],
+  "correct": 0,
+  "explanation": "280 mm ÷ 5 = 56 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Werkstück ist 130 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "35.5 mm",
+   "32.5 mm",
+   "24.5 mm",
+   "38.5 mm"
+  ],
+  "correct": 1,
+  "explanation": "130 mm ÷ 4 = 32.5 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Werkstück ist 170 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "42.5 mm",
+   "39.5 mm",
+   "53.5 mm",
+   "38.5 mm"
+  ],
+  "correct": 0,
+  "explanation": "170 mm ÷ 4 = 42.5 mm."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 300 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "90 U/min",
+   "20 U/min",
+   "85 U/min",
+   "60 U/min"
+  ],
+  "correct": 3,
+  "explanation": "n_Abtrieb = 300 / 5 = 60 U/min."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Aufgabe: Welches Werkzeug glättet und formt Holzoberflächen durch Spanabnahme?",
+  "options": [
+   "Zange",
+   "Schraubstock",
+   "Bohrer",
+   "Hobel"
+  ],
+  "correct": 3,
+  "explanation": "Der Hobel trägt dünne Späne ab und glättet Holz."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Teste dein Wissen: Ein Antriebszahnrad hat 11 Zähne, das Abtriebszahnrad 33 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "5",
+   "4",
+   "2",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "i = 33 / 11 = 3. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Ein Antriebszahnrad hat 10 Zähne, das Abtriebszahnrad 50 Zähne. Wie groß ist die Übersetzung i (= Abtrieb/Antrieb)?",
+  "options": [
+   "7",
+   "5",
+   "3",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "i = 50 / 10 = 5. (Übersetzung ins Langsame, Drehmoment steigt.)"
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Wähle die richtige Antwort. Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 700 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "140 U/min",
+   "111 U/min",
+   "105 U/min",
+   "129 U/min"
+  ],
+  "correct": 0,
+  "explanation": "n_Abtrieb = 700 / 5 = 140 U/min."
+ },
+ {
+  "topic": "Werkzeuge",
+  "question": "Wähle die richtige Antwort. Welches Werkzeug dient zum Bohren von Löchern?",
+  "options": [
+   "Bohrmaschine / Bohrer",
+   "Feile",
+   "Zange",
+   "Hobel"
+  ],
+  "correct": 0,
+  "explanation": "Mit Bohrer/Bohrmaschine erzeugt man Löcher."
+ },
+ {
+  "topic": "Getriebe",
+  "question": "Bei einer Übersetzung i = 5 dreht das Antriebsrad mit 900 U/min. Wie schnell dreht das Abtriebsrad?",
+  "options": [
+   "173 U/min",
+   "139 U/min",
+   "180 U/min",
+   "191 U/min"
+  ],
+  "correct": 2,
+  "explanation": "n_Abtrieb = 900 / 5 = 180 U/min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Werkstück ist 330 mm lang und wird im Maßstab 1:4 gezeichnet. Wie lang ist die Zeichnung?",
+  "options": [
+   "67.5 mm",
+   "69.5 mm",
+   "82.5 mm",
+   "93.5 mm"
+  ],
+  "correct": 2,
+  "explanation": "330 mm ÷ 4 = 82.5 mm."
+ }
+]

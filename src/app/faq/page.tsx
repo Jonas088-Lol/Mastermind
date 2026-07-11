@@ -34,6 +34,18 @@ const categories: {
         q: "Wie werden Daten gespeichert?",
         a: "Alle Daten werden ausschließlich auf Servern in Deutschland (Frankfurt am Main) gespeichert. MasterMind verarbeitet personenbezogene Daten als Auftragsverarbeiter gemäß Art. 28 DSGVO. Der Auftragsverarbeitungsvertrag (AVV) wird vor der Aktivierung abgeschlossen.",
       },
+      {
+        q: "Welche Fächer deckt die Fragen-Bank ab?",
+        a: "MasterMind bringt eine integrierte Fragen-Bank für die gängigen Schulfächer mit — von Mathematik und Deutsch über Fremdsprachen bis zu den Naturwissenschaften. Die Fragen kommen unter anderem in Übungen, Duellen und Boss-Fights zum Einsatz. Lehrkräfte können den Pool jederzeit um eigene Fragen für ihre Fächer und Klassenstufen erweitern.",
+      },
+      {
+        q: "Gibt es Apps oder eine Offline-Nutzung?",
+        a: "MasterMind läuft vollständig im Browser und steht als Progressive Web App (PWA) zur Verfügung, die sich auf Smartphone, Tablet und Desktop wie eine App installieren lässt. Eine native App aus dem App Store ist nicht erforderlich. Für die Nutzung wird eine Internetverbindung benötigt; ein vollständiger Offline-Modus ist derzeit nicht Teil des Funktionsumfangs.",
+      },
+      {
+        q: "Welche Funktionen haben Eltern?",
+        a: "Eltern erhalten einen eigenen Zugang, der mit ihrem Kind verknüpft ist. Darüber können sie Krankmeldungen mit wenigen Klicks übermitteln, Termine für Elterngespräche online buchen und werden rechtzeitig an wichtige Abgaben und Termine erinnert. Einblick in Noten und Lernfortschritt erfolgt im Rahmen der von der Schule konfigurierten Freigaben.",
+      },
     ],
   },
   {
@@ -55,6 +67,14 @@ const categories: {
         q: "Wie lange dauert die Einrichtung?",
         a: "Die Grundeinrichtung mit Import der Klassen und Nutzerdaten ist in der Regel innerhalb eines Schultages abgeschlossen. Das vollständige Rollout inklusive Einweisung der Lehrkräfte dauert typischerweise ein bis zwei Wochen.",
       },
+      {
+        q: "Welche Rollen und Zusatzrollen gibt es?",
+        a: "MasterMind unterscheidet die Grundrollen Schülerinnen und Schüler, Lehrkräfte, Eltern und Schulleitung/Administration — jeweils mit passenden Rechten und Ansichten. Zusätzlich können Zusatzrollen wie Schülersprecherin oder Schülersprecher vergeben werden, die erweiterte Funktionen freischalten, etwa das Veröffentlichen von Mitteilungen an die Schulgemeinschaft.",
+      },
+      {
+        q: "Gibt es eine API für Schulträger?",
+        a: "Ja. MasterMind stellt eine REST-API bereit, über die Schulträger und Enterprise-Kunden Daten wie Nutzer und Klassen automatisiert anbinden können. Zusammen mit dem CSV-Import und der SCIM-Migration lassen sich so auch größere Schullandschaften an bestehende Verwaltungssysteme anschließen. Details und Zugangsdaten erhalten Sie über unser Enterprise-Team.",
+      },
     ],
   },
   {
@@ -67,6 +87,10 @@ const categories: {
       {
         q: "Wo werden die Daten gespeichert?",
         a: "Sämtliche Daten — inklusive Backups — werden auf zertifizierten Servern in Frankfurt am Main (Deutschland) gespeichert. Es findet keine Übertragung in Drittländer statt.",
+      },
+      {
+        q: "Wie werden Daten verschlüsselt?",
+        a: "Sämtliche Verbindungen zu MasterMind sind per TLS verschlüsselt, Daten werden auf den Servern zusätzlich verschlüsselt gespeichert (Encryption at Rest). Passwörter werden ausschließlich als sichere Hashes abgelegt und sind zu keinem Zeitpunkt im Klartext einsehbar. Anfragen an den KI-Tutor werden vor der Verarbeitung pseudonymisiert.",
       },
       {
         q: "Was passiert mit den Daten bei Kündigung?",

@@ -1,0 +1,5402 @@
+[
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Wähle die richtige Antwort. Rechne um: 7 min = ? s",
+  "options": [
+   "360 s",
+   "420 s",
+   "67 s",
+   "480 s"
+  ],
+  "correct": 1,
+  "explanation": "1 min = 60 s, also 7 · 60 = 420 s."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Tom kauft 4× Brötchen (je 0,35 €) und 3× Apfelsaft (je 1,19 €). Was muss er bezahlen?",
+  "options": [
+   "4,97 €",
+   "3,78 €",
+   "5,97 €",
+   "5,32 €"
+  ],
+  "correct": 0,
+  "explanation": "4 · 0,35 € + 3 · 1,19 € = 1,40 € + 3,57 € = 4,97 €."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Löse: Eine Ware kostet 39,00 €. Sie wird um 30 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "50,70 €",
+   "11,70 €",
+   "27,30 €",
+   "15,60 €"
+  ],
+  "correct": 2,
+  "explanation": "Rabatt: 30 % von 39,00 € = 11,70 €. Neuer Preis: 39,00 € − 11,70 € = 27,30 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Auto legt 480 km in 6 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "80 km/h",
+   "70 km/h",
+   "474 km/h",
+   "90 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s : t = 480 km : 6 h = 80 km/h."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "10000 € werden mit 2 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "10000 €",
+   "10404 €",
+   "10609 €",
+   "10400 €"
+  ],
+  "correct": 1,
+  "explanation": "K_n = K · (1 + p/100)^n = 10000 · 1,02^2 = 10404 €."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Rechne um: 4 l = ? cl",
+  "options": [
+   "40 cl",
+   "4000 cl",
+   "4 cl",
+   "400 cl"
+  ],
+  "correct": 3,
+  "explanation": "1 l = 100 cl, also 4 l = 400 cl."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Rechne um: 4 l = ? ml",
+  "options": [
+   "4000 ml",
+   "400 ml",
+   "4 ml",
+   "40000 ml"
+  ],
+  "correct": 0,
+  "explanation": "1 l = 1000 ml, also 4 l = 4000 ml."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 64 Äpfel werden gleichmäßig auf 4 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "20",
+   "16",
+   "14",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "64 : 4 = 16."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 5 Käse für je 1,99 €. Sie zahlt mit 10,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "1,05 €",
+   "0,15 €",
+   "0,05 €",
+   "0,55 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 5 · 1,99 € = 9,95 €. Rückgeld: 10,00 € − 9,95 € = 0,05 €."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 61,00 €. Sie wird um 15 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "70,15 €",
+   "51,85 €",
+   "9,15 €",
+   "42,70 €"
+  ],
+  "correct": 1,
+  "explanation": "Rabatt: 15 % von 61,00 € = 9,15 €. Neuer Preis: 61,00 € − 9,15 € = 51,85 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Löse: Ein Gebäude ist 12 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 200?",
+  "options": [
+   "12 cm",
+   "11 cm",
+   "60 cm",
+   "6 cm"
+  ],
+  "correct": 3,
+  "explanation": "12 m = 1200 cm; 1200 cm : 200 = 6 cm."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Teste dein Wissen: Rechne um: 8 h = ? s",
+  "options": [
+   "28800 s",
+   "25200 s",
+   "3608 s",
+   "32400 s"
+  ],
+  "correct": 0,
+  "explanation": "1 h = 3600 s, also 8 · 3600 = 28800 s."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Tom kauft 4× Kekse (je 1,45 €) und 1× Käse (je 1,99 €). Was muss er bezahlen?",
+  "options": [
+   "7,79 €",
+   "5,80 €",
+   "8,79 €",
+   "9,24 €"
+  ],
+  "correct": 0,
+  "explanation": "4 · 1,45 € + 1 · 1,99 € = 5,80 € + 1,99 € = 7,79 €."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Aufgabe: Rechne um: 5 m = ? mm",
+  "options": [
+   "5000 mm",
+   "500 mm",
+   "5 mm",
+   "50000 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 m = 1000 mm, also 5 m = 5000 mm."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Teste dein Wissen: Eine Ware kostet 145,00 €. Sie wird um 30 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "43,50 €",
+   "188,50 €",
+   "101,50 €",
+   "58,00 €"
+  ],
+  "correct": 2,
+  "explanation": "Rabatt: 30 % von 145,00 € = 43,50 €. Neuer Preis: 145,00 € − 43,50 € = 101,50 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Berechne 20 % von 360.",
+  "options": [
+   "72",
+   "92",
+   "67",
+   "288"
+  ],
+  "correct": 0,
+  "explanation": "20 % von 360 = 360 · 20/100 = 72."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Auto legt 300 km in 5 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "50 km/h",
+   "295 km/h",
+   "70 km/h",
+   "60 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s : t = 300 km : 5 h = 60 km/h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Lisa kauft 2 Ei für je 0,25 €. Sie zahlt mit 3,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,60 €",
+   "3,50 €",
+   "2,50 €",
+   "2,00 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 2 · 0,25 € = 0,50 €. Rückgeld: 3,00 € − 0,50 € = 2,50 €."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Aufgabe: Rechne um: 6 min = ? s",
+  "options": [
+   "66 s",
+   "420 s",
+   "300 s",
+   "360 s"
+  ],
+  "correct": 3,
+  "explanation": "1 min = 60 s, also 6 · 60 = 360 s."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Löse: Ein Gebäude ist 10 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 500?",
+  "options": [
+   "7 cm",
+   "20 cm",
+   "10 cm",
+   "2 cm"
+  ],
+  "correct": 3,
+  "explanation": "10 m = 1000 cm; 1000 cm : 500 = 2 cm."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 4 km/h. Für 16 km braucht es wie lange?",
+  "options": [
+   "5 h",
+   "3 h",
+   "4 h",
+   "8 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s : v = 16 km : 4 km/h = 4 h."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Löse: Berechne 20 % von 400.",
+  "options": [
+   "80",
+   "75",
+   "320",
+   "100"
+  ],
+  "correct": 0,
+  "explanation": "20 % von 400 = 400 · 20/100 = 80."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: In einem Bus sitzen 223 Personen, 39 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "258",
+   "264",
+   "257",
+   "262"
+  ],
+  "correct": 3,
+  "explanation": "223 + 39 = 262."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 80 Äpfel werden gleichmäßig auf 5 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "20",
+   "16",
+   "17",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "80 : 5 = 16."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Wähle die richtige Antwort. Rechne um: 9 m = ? cm",
+  "options": [
+   "9 cm",
+   "9000 cm",
+   "900 cm",
+   "90 cm"
+  ],
+  "correct": 2,
+  "explanation": "1 m = 100 cm, also 9 m = 900 cm."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Aufgabe: Eine Ware kostet 70,00 €. Sie wird um 10 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "63,00 €",
+   "77,00 €",
+   "56,00 €",
+   "7,00 €"
+  ],
+  "correct": 0,
+  "explanation": "Rabatt: 10 % von 70,00 € = 7,00 €. Neuer Preis: 70,00 € − 7,00 € = 63,00 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Lisa kauft 5 Ei für je 0,25 €. Sie zahlt mit 6,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "4,25 €",
+   "4,85 €",
+   "5,75 €",
+   "4,75 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 5 · 0,25 € = 1,25 €. Rückgeld: 6,00 € − 1,25 € = 4,75 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 108 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "10",
+   "14",
+   "9",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "108 : 9 = 12."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Tom kauft 4× Banane (je 0,30 €) und 3× Apfelsaft (je 1,19 €). Was muss er bezahlen?",
+  "options": [
+   "5,77 €",
+   "5,07 €",
+   "4,77 €",
+   "3,58 €"
+  ],
+  "correct": 2,
+  "explanation": "4 · 0,30 € + 3 · 1,19 € = 1,20 € + 3,57 € = 4,77 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 2600 € wird mit 2,50 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "32,50 €",
+   "2665 €",
+   "91 €",
+   "65 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 2600 · 2,50/100 = 65 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Lisa kauft 2 Käse für je 1,99 €. Sie zahlt mit 4,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "1,02 €",
+   "0,12 €",
+   "0,02 €",
+   "0,52 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 2 · 1,99 € = 3,98 €. Rückgeld: 4,00 € − 3,98 € = 0,02 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Auf einer Karte im Maßstab 1 : 10000 sind 8 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "800 m",
+   "80000 m",
+   "8000 m",
+   "80 m"
+  ],
+  "correct": 0,
+  "explanation": "8 cm · 10000 = 80000 cm = 800 m."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 90 km/h. Für 540 km braucht es wie lange?",
+  "options": [
+   "6 h",
+   "7 h",
+   "5 h",
+   "12 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s : v = 540 km : 90 km/h = 6 h."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Teste dein Wissen: Rechne um: 9 km = ? m",
+  "options": [
+   "900 m",
+   "90000 m",
+   "9000 m",
+   "9 m"
+  ],
+  "correct": 2,
+  "explanation": "1 km = 1000 m, also 9 km = 9000 m."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Aufgabe: Rechne um: 4 h = ? min",
+  "options": [
+   "240 min",
+   "180 min",
+   "64 min",
+   "300 min"
+  ],
+  "correct": 0,
+  "explanation": "1 h = 60 min, also 4 · 60 = 240 min."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Löse: Ein Kapital von 1500 € wird mit 2,50 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "37,50 €",
+   "52,50 €",
+   "18,75 €",
+   "1537,50 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 1500 · 2,50/100 = 37,50 €."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Wähle die richtige Antwort. 5000 € werden mit 5 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "5618 €",
+   "5500 €",
+   "5000 €",
+   "5512,50 €"
+  ],
+  "correct": 3,
+  "explanation": "K_n = K · (1 + p/100)^n = 5000 · 1,05^2 = 5512,50 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Zug fährt 3 Stunden lang mit 70 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "210 km",
+   "73 km",
+   "280 km",
+   "140 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 70 km/h · 3 h = 210 km."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Tom kauft 5× Milch (je 0,89 €) und 4× Apfelsaft (je 1,19 €). Was muss er bezahlen?",
+  "options": [
+   "10,21 €",
+   "9,21 €",
+   "10,10 €",
+   "8,02 €"
+  ],
+  "correct": 1,
+  "explanation": "5 · 0,89 € + 4 · 1,19 € = 4,45 € + 4,76 € = 9,21 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "88 Äpfel werden gleichmäßig auf 8 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "11",
+   "13",
+   "14",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "88 : 8 = 11."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Eine Ware kostet 106,00 €. Sie wird um 20 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "127,20 €",
+   "84,80 €",
+   "21,20 €",
+   "63,60 €"
+  ],
+  "correct": 1,
+  "explanation": "Rabatt: 20 % von 106,00 € = 21,20 €. Neuer Preis: 106,00 € − 21,20 € = 84,80 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Auto legt 360 km in 6 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "60 km/h",
+   "50 km/h",
+   "70 km/h",
+   "354 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s : t = 360 km : 6 h = 60 km/h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Auto legt 160 km in 2 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "90 km/h",
+   "70 km/h",
+   "158 km/h",
+   "80 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s : t = 160 km : 2 h = 80 km/h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Lisa kauft 6 Apfelsaft für je 1,19 €. Sie zahlt mit 11,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "3,36 €",
+   "3,96 €",
+   "4,86 €",
+   "3,86 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 6 · 1,19 € = 7,14 €. Rückgeld: 11,00 € − 7,14 € = 3,86 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Auto legt 180 km in 3 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "177 km/h",
+   "50 km/h",
+   "60 km/h",
+   "70 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 180 km : 3 h = 60 km/h."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Gebäude ist 16 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 200?",
+  "options": [
+   "16 cm",
+   "13 cm",
+   "8 cm",
+   "80 cm"
+  ],
+  "correct": 2,
+  "explanation": "16 m = 1600 cm; 1600 cm : 200 = 8 cm."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Löse: Ein Kapital von 2500 € wird mit 2 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "25 €",
+   "2550 €",
+   "50 €",
+   "75 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 2500 · 2/100 = 50 €."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Aufgabe: Eine Ware kostet 186,00 €. Sie wird um 10 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "18,60 €",
+   "167,40 €",
+   "148,80 €",
+   "204,60 €"
+  ],
+  "correct": 1,
+  "explanation": "Rabatt: 10 % von 186,00 € = 18,60 €. Neuer Preis: 186,00 € − 18,60 € = 167,40 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Auf einer Karte im Maßstab 1 : 10000 sind 11 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "11000 m",
+   "110000 m",
+   "110 m",
+   "1100 m"
+  ],
+  "correct": 3,
+  "explanation": "11 cm · 10000 = 110000 cm = 1100 m."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Teste dein Wissen: Wie viel Prozent sind 80 von 800?",
+  "options": [
+   "10 %",
+   "20 %",
+   "5 %",
+   "80 %"
+  ],
+  "correct": 0,
+  "explanation": "p = W/G · 100 % = 80/800 · 100 % = 10 %."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Teste dein Wissen: Wie viel Prozent sind 150 von 200?",
+  "options": [
+   "150 %",
+   "85 %",
+   "75 %",
+   "70 %"
+  ],
+  "correct": 2,
+  "explanation": "p = W/G · 100 % = 150/200 · 100 % = 75 %."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 117 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "9",
+   "16",
+   "12",
+   "13"
+  ],
+  "correct": 3,
+  "explanation": "117 : 9 = 13."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Löse: Wie viel Prozent sind 600 von 800?",
+  "options": [
+   "600 %",
+   "75 %",
+   "70 %",
+   "85 %"
+  ],
+  "correct": 1,
+  "explanation": "p = W/G · 100 % = 600/800 · 100 % = 75 %."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Löse: Rechne um: 9 m = ? mm",
+  "options": [
+   "90000 mm",
+   "9 mm",
+   "9000 mm",
+   "900 mm"
+  ],
+  "correct": 2,
+  "explanation": "1 m = 1000 mm, also 9 m = 9000 mm."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Tom kauft 5× Radiergummi (je 0,40 €) und 4× Ei (je 0,25 €). Was muss er bezahlen?",
+  "options": [
+   "4,00 €",
+   "3,00 €",
+   "3,40 €",
+   "2,75 €"
+  ],
+  "correct": 1,
+  "explanation": "5 · 0,40 € + 4 · 0,25 € = 2,00 € + 1,00 € = 3,00 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 700 € wird mit 2,50 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "717,50 €",
+   "17,50 €",
+   "8,75 €",
+   "24,50 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 700 · 2,50/100 = 17,50 €."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Löse: Rechne um: 8 l = ? cl",
+  "options": [
+   "8000 cl",
+   "800 cl",
+   "80 cl",
+   "8 cl"
+  ],
+  "correct": 1,
+  "explanation": "1 l = 100 cl, also 8 l = 800 cl."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Löse: 5000 € werden mit 2 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "5200 €",
+   "5304,50 €",
+   "5202 €",
+   "5000 €"
+  ],
+  "correct": 2,
+  "explanation": "K_n = K · (1 + p/100)^n = 5000 · 1,02^2 = 5202 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Aufgabe: Wie viel Prozent sind 375 von 500?",
+  "options": [
+   "85 %",
+   "375 %",
+   "75 %",
+   "70 %"
+  ],
+  "correct": 2,
+  "explanation": "p = W/G · 100 % = 375/500 · 100 % = 75 %."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Tom kauft 5× Stift (je 0,60 €) und 1× Ei (je 0,25 €). Was muss er bezahlen?",
+  "options": [
+   "3,25 €",
+   "3,85 €",
+   "3,00 €",
+   "4,25 €"
+  ],
+  "correct": 0,
+  "explanation": "5 · 0,60 € + 1 · 0,25 € = 3,00 € + 0,25 € = 3,25 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Teste dein Wissen: Berechne 40 % von 350.",
+  "options": [
+   "135",
+   "210",
+   "180",
+   "140"
+  ],
+  "correct": 3,
+  "explanation": "40 % von 350 = 350 · 40/100 = 140."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Eine Ware kostet 102,00 €. Sie wird um 30 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "132,60 €",
+   "40,80 €",
+   "30,60 €",
+   "71,40 €"
+  ],
+  "correct": 3,
+  "explanation": "Rabatt: 30 % von 102,00 € = 30,60 €. Neuer Preis: 102,00 € − 30,60 € = 71,40 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 60 km/h. Für 120 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "1 h",
+   "3 h",
+   "2 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s : v = 120 km : 60 km/h = 2 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einer Schachtel sind 17 Stifte. Wie viele Stifte sind in 10 Schachteln?",
+  "options": [
+   "174",
+   "172",
+   "177",
+   "170"
+  ],
+  "correct": 3,
+  "explanation": "17 · 10 = 170."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einem Bus sitzen 40 Personen, 34 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "76",
+   "74",
+   "73",
+   "72"
+  ],
+  "correct": 1,
+  "explanation": "40 + 34 = 74."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Fahrzeug fährt mit 120 km/h. Für 600 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "5 h",
+   "6 h",
+   "10 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 600 km : 120 km/h = 5 h."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Teste dein Wissen: Eine Ware kostet 50,00 €. Sie wird um 20 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "40,00 €",
+   "10,00 €",
+   "60,00 €",
+   "30,00 €"
+  ],
+  "correct": 0,
+  "explanation": "Rabatt: 20 % von 50,00 € = 10,00 €. Neuer Preis: 50,00 € − 10,00 € = 40,00 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 5 km/h. Für 15 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "2 h",
+   "3 h",
+   "6 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s : v = 15 km : 5 km/h = 3 h."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Rechne um: 3 km = ? cm",
+  "options": [
+   "30000 cm",
+   "300000 cm",
+   "3000000 cm",
+   "3 cm"
+  ],
+  "correct": 1,
+  "explanation": "1 km = 100000 cm, also 3 km = 300000 cm."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: In einer Schachtel sind 16 Stifte. Wie viele Stifte sind in 7 Schachteln?",
+  "options": [
+   "119",
+   "109",
+   "112",
+   "105"
+  ],
+  "correct": 2,
+  "explanation": "16 · 7 = 112."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Aufgabe: Rechne um: 2 h = ? s",
+  "options": [
+   "3602 s",
+   "10800 s",
+   "3600 s",
+   "7200 s"
+  ],
+  "correct": 3,
+  "explanation": "1 h = 3600 s, also 2 · 3600 = 7200 s."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Teste dein Wissen: Ein Kapital von 3400 € wird mit 2 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "102 €",
+   "68 €",
+   "34 €",
+   "3468 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 3400 · 2/100 = 68 €."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Rechne um: 2 m = ? cm",
+  "options": [
+   "200 cm",
+   "2 cm",
+   "20 cm",
+   "2000 cm"
+  ],
+  "correct": 0,
+  "explanation": "1 m = 100 cm, also 2 m = 200 cm."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Tom kauft 5× Joghurt (je 0,55 €) und 1× Brot (je 1,49 €). Was muss er bezahlen?",
+  "options": [
+   "4,79 €",
+   "2,75 €",
+   "4,24 €",
+   "5,24 €"
+  ],
+  "correct": 2,
+  "explanation": "5 · 0,55 € + 1 · 1,49 € = 2,75 € + 1,49 € = 4,24 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Lisa kauft 4 Saft für je 1,29 €. Sie zahlt mit 9,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "3,94 €",
+   "3,34 €",
+   "4,84 €",
+   "3,84 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 4 · 1,29 € = 5,16 €. Rückgeld: 9,00 € − 5,16 € = 3,84 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Zug fährt 3 Stunden lang mit 100 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "400 km",
+   "200 km",
+   "300 km",
+   "103 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 100 km/h · 3 h = 300 km."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: In einer Schachtel sind 23 Stifte. Wie viele Stifte sind in 6 Schachteln?",
+  "options": [
+   "144",
+   "148",
+   "147",
+   "138"
+  ],
+  "correct": 3,
+  "explanation": "23 · 6 = 138."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. In einer Schachtel sind 10 Stifte. Wie viele Stifte sind in 4 Schachteln?",
+  "options": [
+   "44",
+   "40",
+   "30",
+   "35"
+  ],
+  "correct": 1,
+  "explanation": "10 · 4 = 40."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Löse: Eine Ware kostet 135,00 €. Sie wird um 20 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "81,00 €",
+   "27,00 €",
+   "108,00 €",
+   "162,00 €"
+  ],
+  "correct": 2,
+  "explanation": "Rabatt: 20 % von 135,00 € = 27,00 €. Neuer Preis: 135,00 € − 27,00 € = 108,00 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 9 Äpfel werden gleichmäßig auf 3 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "4",
+   "6",
+   "3",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "9 : 3 = 3."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Tom kauft 5× Apfel (je 0,45 €) und 2× Joghurt (je 0,55 €). Was muss er bezahlen?",
+  "options": [
+   "4,35 €",
+   "3,35 €",
+   "3,80 €",
+   "2,80 €"
+  ],
+  "correct": 1,
+  "explanation": "5 · 0,45 € + 2 · 0,55 € = 2,25 € + 1,10 € = 3,35 €."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Teste dein Wissen: Eine Ware kostet 189,00 €. Sie wird um 30 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "245,70 €",
+   "132,30 €",
+   "75,60 €",
+   "56,70 €"
+  ],
+  "correct": 1,
+  "explanation": "Rabatt: 30 % von 189,00 € = 56,70 €. Neuer Preis: 189,00 € − 56,70 € = 132,30 €."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Löse: Rechne um: 7 km = ? cm",
+  "options": [
+   "700000 cm",
+   "7000000 cm",
+   "7 cm",
+   "70000 cm"
+  ],
+  "correct": 0,
+  "explanation": "1 km = 100000 cm, also 7 km = 700000 cm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Gebäude ist 70 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 500?",
+  "options": [
+   "19 cm",
+   "140 cm",
+   "14 cm",
+   "70 cm"
+  ],
+  "correct": 2,
+  "explanation": "70 m = 7000 cm; 7000 cm : 500 = 14 cm."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Teste dein Wissen: Ein Kapital von 2100 € wird mit 5 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "126 €",
+   "105 €",
+   "2205 €",
+   "52,50 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 2100 · 5/100 = 105 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 1500 € wird mit 4 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "1560 €",
+   "60 €",
+   "30 €",
+   "75 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 1500 · 4/100 = 60 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Gebäude ist 14 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 200?",
+  "options": [
+   "12 cm",
+   "70 cm",
+   "14 cm",
+   "7 cm"
+  ],
+  "correct": 3,
+  "explanation": "14 m = 1400 cm; 1400 cm : 200 = 7 cm."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 42 Äpfel werden gleichmäßig auf 3 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "10",
+   "14",
+   "13",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "42 : 3 = 14."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Löse: Rechne um: 4 hl = ? l",
+  "options": [
+   "400 l",
+   "4000 l",
+   "40 l",
+   "4 l"
+  ],
+  "correct": 0,
+  "explanation": "1 hl = 100 l, also 4 hl = 400 l."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "1000 € werden mit 2 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "1040,40 €",
+   "1060,90 €",
+   "1040 €",
+   "1000 €"
+  ],
+  "correct": 0,
+  "explanation": "K_n = K · (1 + p/100)^n = 1000 · 1,02^2 = 1040,40 €."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Teste dein Wissen: Rechne um: 4 Tag = ? h",
+  "options": [
+   "96 h",
+   "72 h",
+   "120 h",
+   "28 h"
+  ],
+  "correct": 0,
+  "explanation": "1 Tag = 24 h, also 4 · 24 = 96 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einem Bus sitzen 90 Personen, 6 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "101",
+   "96",
+   "102",
+   "92"
+  ],
+  "correct": 1,
+  "explanation": "90 + 6 = 96."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Wähle die richtige Antwort. Rechne um: 8 h = ? min",
+  "options": [
+   "540 min",
+   "420 min",
+   "480 min",
+   "68 min"
+  ],
+  "correct": 2,
+  "explanation": "1 h = 60 min, also 8 · 60 = 480 min."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Fahrzeug fährt mit 5 km/h. Für 20 km braucht es wie lange?",
+  "options": [
+   "3 h",
+   "4 h",
+   "8 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 20 km : 5 km/h = 4 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. In einem Bus sitzen 252 Personen, 17 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "268",
+   "269",
+   "265",
+   "270"
+  ],
+  "correct": 1,
+  "explanation": "252 + 17 = 269."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Wähle die richtige Antwort. Rechne um: 4 l = ? cl",
+  "options": [
+   "40 cl",
+   "4000 cl",
+   "400 cl",
+   "4 cl"
+  ],
+  "correct": 2,
+  "explanation": "1 l = 100 cl, also 4 l = 400 cl."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: In einer Schachtel sind 25 Stifte. Wie viele Stifte sind in 19 Schachteln?",
+  "options": [
+   "475",
+   "474",
+   "478",
+   "477"
+  ],
+  "correct": 0,
+  "explanation": "25 · 19 = 475."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Auf einer Karte im Maßstab 1 : 1000 sind 4 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "4000 m",
+   "400 m",
+   "4 m",
+   "40 m"
+  ],
+  "correct": 3,
+  "explanation": "4 cm · 1000 = 4000 cm = 40 m."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Tom kauft 5× Saft (je 1,29 €) und 3× Brot (je 1,49 €). Was muss er bezahlen?",
+  "options": [
+   "12,21 €",
+   "10,92 €",
+   "11,92 €",
+   "9,43 €"
+  ],
+  "correct": 1,
+  "explanation": "5 · 1,29 € + 3 · 1,49 € = 6,45 € + 4,47 € = 10,92 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Auf einer Karte im Maßstab 1 : 1000 sind 8 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "80 m",
+   "8 m",
+   "800 m",
+   "8000 m"
+  ],
+  "correct": 0,
+  "explanation": "8 cm · 1000 = 8000 cm = 80 m."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Fahrzeug fährt mit 5 km/h. Für 25 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "6 h",
+   "5 h",
+   "10 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s : v = 25 km : 5 km/h = 5 h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt mit 90 km/h. Für 180 km braucht es wie lange?",
+  "options": [
+   "1 h",
+   "2 h",
+   "4 h",
+   "3 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 180 km : 90 km/h = 2 h."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wie viel Prozent sind 150 von 200?",
+  "options": [
+   "85 %",
+   "75 %",
+   "150 %",
+   "70 %"
+  ],
+  "correct": 1,
+  "explanation": "p = W/G · 100 % = 150/200 · 100 % = 75 %."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Tom kauft 4× Heft (je 0,75 €) und 4× Stift (je 0,60 €). Was muss er bezahlen?",
+  "options": [
+   "6,15 €",
+   "6,40 €",
+   "5,40 €",
+   "4,80 €"
+  ],
+  "correct": 2,
+  "explanation": "4 · 0,75 € + 4 · 0,60 € = 3,00 € + 2,40 € = 5,40 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Zug fährt 5 Stunden lang mit 50 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "300 km",
+   "250 km",
+   "55 km",
+   "200 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 50 km/h · 5 h = 250 km."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Tom kauft 4× Heft (je 0,75 €) und 4× Kekse (je 1,45 €). Was muss er bezahlen?",
+  "options": [
+   "8,80 €",
+   "7,35 €",
+   "9,80 €",
+   "9,55 €"
+  ],
+  "correct": 0,
+  "explanation": "4 · 0,75 € + 4 · 1,45 € = 3,00 € + 5,80 € = 8,80 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Aufgabe: Wie viel Prozent sind 25 von 50?",
+  "options": [
+   "45 %",
+   "60 %",
+   "50 %",
+   "25 %"
+  ],
+  "correct": 2,
+  "explanation": "p = W/G · 100 % = 25/50 · 100 % = 50 %."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Aufgabe: Rechne um: 9 l = ? cl",
+  "options": [
+   "9000 cl",
+   "900 cl",
+   "90 cl",
+   "9 cl"
+  ],
+  "correct": 1,
+  "explanation": "1 l = 100 cl, also 9 l = 900 cl."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Auto legt 300 km in 4 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "296 km/h",
+   "75 km/h",
+   "85 km/h",
+   "65 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s : t = 300 km : 4 h = 75 km/h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: 30 Äpfel werden gleichmäßig auf 3 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "7",
+   "6",
+   "10",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "30 : 3 = 10."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Tom kauft 2× Kekse (je 1,45 €) und 4× Ei (je 0,25 €). Was muss er bezahlen?",
+  "options": [
+   "3,90 €",
+   "5,35 €",
+   "3,65 €",
+   "4,90 €"
+  ],
+  "correct": 0,
+  "explanation": "2 · 1,45 € + 4 · 0,25 € = 2,90 € + 1,00 € = 3,90 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 3 Stunden lang mit 50 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "100 km",
+   "53 km",
+   "200 km",
+   "150 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 50 km/h · 3 h = 150 km."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Aufgabe: 5000 € werden mit 4 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "5408 €",
+   "5400 €",
+   "5512,50 €",
+   "5000 €"
+  ],
+  "correct": 0,
+  "explanation": "K_n = K · (1 + p/100)^n = 5000 · 1,04^2 = 5408 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Auto legt 160 km in 2 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "70 km/h",
+   "90 km/h",
+   "158 km/h",
+   "80 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s : t = 160 km : 2 h = 80 km/h."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Wähle die richtige Antwort. 2000 € werden mit 2 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "2000 €",
+   "2080,80 €",
+   "2080 €",
+   "2121,80 €"
+  ],
+  "correct": 1,
+  "explanation": "K_n = K · (1 + p/100)^n = 2000 · 1,02^2 = 2080,80 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Aufgabe: Wie viel Prozent sind 400 von 800?",
+  "options": [
+   "60 %",
+   "45 %",
+   "400 %",
+   "50 %"
+  ],
+  "correct": 3,
+  "explanation": "p = W/G · 100 % = 400/800 · 100 % = 50 %."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Lisa kauft 6 Käse für je 1,99 €. Sie zahlt mit 15,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "3,06 €",
+   "4,06 €",
+   "3,16 €",
+   "2,56 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 6 · 1,99 € = 11,94 €. Rückgeld: 15,00 € − 11,94 € = 3,06 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Zug fährt 4 Stunden lang mit 50 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "250 km",
+   "150 km",
+   "200 km",
+   "54 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 50 km/h · 4 h = 200 km."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Teste dein Wissen: 10000 € werden mit 4 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "10816 €",
+   "11025 €",
+   "10800 €",
+   "10000 €"
+  ],
+  "correct": 0,
+  "explanation": "K_n = K · (1 + p/100)^n = 10000 · 1,04^2 = 10816 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: 120 Äpfel werden gleichmäßig auf 8 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "17",
+   "15",
+   "11",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "120 : 8 = 15."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Wähle die richtige Antwort. Rechne um: 9 l = ? ml",
+  "options": [
+   "9000 ml",
+   "9 ml",
+   "90000 ml",
+   "900 ml"
+  ],
+  "correct": 0,
+  "explanation": "1 l = 1000 ml, also 9 l = 9000 ml."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Auto legt 160 km in 4 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "50 km/h",
+   "156 km/h",
+   "40 km/h",
+   "30 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 160 km : 4 h = 40 km/h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Tom kauft 2× Joghurt (je 0,55 €) und 1× Radiergummi (je 0,40 €). Was muss er bezahlen?",
+  "options": [
+   "2,05 €",
+   "1,50 €",
+   "1,10 €",
+   "2,50 €"
+  ],
+  "correct": 1,
+  "explanation": "2 · 0,55 € + 1 · 0,40 € = 1,10 € + 0,40 € = 1,50 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Berechne 10 % von 150.",
+  "options": [
+   "10",
+   "15",
+   "25",
+   "135"
+  ],
+  "correct": 1,
+  "explanation": "10 % von 150 = 150 · 10/100 = 15."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Ein Gebäude ist 90 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 500?",
+  "options": [
+   "180 cm",
+   "90 cm",
+   "18 cm",
+   "23 cm"
+  ],
+  "correct": 2,
+  "explanation": "90 m = 9000 cm; 9000 cm : 500 = 18 cm."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einem Bus sitzen 269 Personen, 28 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "297",
+   "295",
+   "303",
+   "294"
+  ],
+  "correct": 0,
+  "explanation": "269 + 28 = 297."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Aufgabe: Berechne 5 % von 260.",
+  "options": [
+   "13",
+   "18",
+   "12",
+   "247"
+  ],
+  "correct": 0,
+  "explanation": "5 % von 260 = 260 · 5/100 = 13."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 18 Äpfel werden gleichmäßig auf 6 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "6",
+   "5",
+   "3",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "18 : 6 = 3."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Teste dein Wissen: Rechne um: 3 l = ? ml",
+  "options": [
+   "300 ml",
+   "30000 ml",
+   "3 ml",
+   "3000 ml"
+  ],
+  "correct": 3,
+  "explanation": "1 l = 1000 ml, also 3 l = 3000 ml."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 5 Brot für je 1,49 €. Sie zahlt mit 10,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,55 €",
+   "2,05 €",
+   "3,55 €",
+   "2,65 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 5 · 1,49 € = 7,45 €. Rückgeld: 10,00 € − 7,45 € = 2,55 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 100 km/h. Für 600 km braucht es wie lange?",
+  "options": [
+   "12 h",
+   "5 h",
+   "7 h",
+   "6 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s : v = 600 km : 100 km/h = 6 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 45 Äpfel werden gleichmäßig auf 3 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "16",
+   "15",
+   "14",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "45 : 3 = 15."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: In einer Schachtel sind 9 Stifte. Wie viele Stifte sind in 13 Schachteln?",
+  "options": [
+   "117",
+   "108",
+   "111",
+   "125"
+  ],
+  "correct": 0,
+  "explanation": "9 · 13 = 117."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Auf einer Karte im Maßstab 1 : 25000 sind 9 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "22500 m",
+   "225 m",
+   "2250 m",
+   "225000 m"
+  ],
+  "correct": 2,
+  "explanation": "9 cm · 25000 = 225000 cm = 2250 m."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Zug fährt 3 Stunden lang mit 60 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "63 km",
+   "180 km",
+   "120 km",
+   "240 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 60 km/h · 3 h = 180 km."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 2200 € wird mit 5 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "55 €",
+   "132 €",
+   "110 €",
+   "2310 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 2200 · 5/100 = 110 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Auto legt 320 km in 4 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "80 km/h",
+   "90 km/h",
+   "316 km/h",
+   "70 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s : t = 320 km : 4 h = 80 km/h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: In einer Schachtel sind 13 Stifte. Wie viele Stifte sind in 17 Schachteln?",
+  "options": [
+   "211",
+   "225",
+   "221",
+   "227"
+  ],
+  "correct": 2,
+  "explanation": "13 · 17 = 221."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Löse: Ein Gebäude ist 85 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 500?",
+  "options": [
+   "17 cm",
+   "85 cm",
+   "22 cm",
+   "170 cm"
+  ],
+  "correct": 0,
+  "explanation": "85 m = 8500 cm; 8500 cm : 500 = 17 cm."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wie viel Prozent sind 50 von 500?",
+  "options": [
+   "50 %",
+   "20 %",
+   "10 %",
+   "5 %"
+  ],
+  "correct": 2,
+  "explanation": "p = W/G · 100 % = 50/500 · 100 % = 10 %."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einer Schachtel sind 15 Stifte. Wie viele Stifte sind in 19 Schachteln?",
+  "options": [
+   "290",
+   "291",
+   "285",
+   "276"
+  ],
+  "correct": 2,
+  "explanation": "15 · 19 = 285."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Rechne um: 7 h = ? s",
+  "options": [
+   "3607 s",
+   "28800 s",
+   "21600 s",
+   "25200 s"
+  ],
+  "correct": 3,
+  "explanation": "1 h = 3600 s, also 7 · 3600 = 25200 s."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Fahrzeug fährt mit 120 km/h. Für 600 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "5 h",
+   "6 h",
+   "10 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 600 km : 120 km/h = 5 h."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Aufgabe: Rechne um: 2 l = ? cl",
+  "options": [
+   "20 cl",
+   "200 cl",
+   "2 cl",
+   "2000 cl"
+  ],
+  "correct": 1,
+  "explanation": "1 l = 100 cl, also 2 l = 200 cl."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Aufgabe: Wie viel Prozent sind 160 von 800?",
+  "options": [
+   "30 %",
+   "20 %",
+   "15 %",
+   "160 %"
+  ],
+  "correct": 1,
+  "explanation": "p = W/G · 100 % = 160/800 · 100 % = 20 %."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt mit 90 km/h. Für 450 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "5 h",
+   "6 h",
+   "10 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 450 km : 90 km/h = 5 h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Tom kauft 5× Ei (je 0,25 €) und 4× Milch (je 0,89 €). Was muss er bezahlen?",
+  "options": [
+   "3,92 €",
+   "4,81 €",
+   "5,81 €",
+   "5,06 €"
+  ],
+  "correct": 1,
+  "explanation": "5 · 0,25 € + 4 · 0,89 € = 1,25 € + 3,56 € = 4,81 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Fahrzeug fährt mit 80 km/h. Für 320 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "5 h",
+   "8 h",
+   "3 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s : v = 320 km : 80 km/h = 4 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: In einer Schachtel sind 3 Stifte. Wie viele Stifte sind in 6 Schachteln?",
+  "options": [
+   "18",
+   "15",
+   "23",
+   "22"
+  ],
+  "correct": 0,
+  "explanation": "3 · 6 = 18."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Eine Ware kostet 74,00 €. Sie wird um 10 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "59,20 €",
+   "66,60 €",
+   "81,40 €",
+   "7,40 €"
+  ],
+  "correct": 1,
+  "explanation": "Rabatt: 10 % von 74,00 € = 7,40 €. Neuer Preis: 74,00 € − 7,40 € = 66,60 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 4 Stunden lang mit 90 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "94 km",
+   "450 km",
+   "360 km",
+   "270 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 90 km/h · 4 h = 360 km."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Auf einer Karte im Maßstab 1 : 25000 sind 11 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "2750 m",
+   "275 m",
+   "27500 m",
+   "275000 m"
+  ],
+  "correct": 0,
+  "explanation": "11 cm · 25000 = 275000 cm = 2750 m."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 121,00 €. Sie wird um 10 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "108,90 €",
+   "133,10 €",
+   "12,10 €",
+   "96,80 €"
+  ],
+  "correct": 0,
+  "explanation": "Rabatt: 10 % von 121,00 € = 12,10 €. Neuer Preis: 121,00 € − 12,10 € = 108,90 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Lisa kauft 7 Ei für je 0,25 €. Sie zahlt mit 4,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "3,25 €",
+   "2,35 €",
+   "2,25 €",
+   "1,75 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 7 · 0,25 € = 1,75 €. Rückgeld: 4,00 € − 1,75 € = 2,25 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Lisa kauft 5 Joghurt für je 0,55 €. Sie zahlt mit 5,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,35 €",
+   "3,25 €",
+   "1,75 €",
+   "2,25 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 5 · 0,55 € = 2,75 €. Rückgeld: 5,00 € − 2,75 € = 2,25 €."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Rechne um: 4 h = ? min",
+  "options": [
+   "180 min",
+   "64 min",
+   "240 min",
+   "300 min"
+  ],
+  "correct": 2,
+  "explanation": "1 h = 60 min, also 4 · 60 = 240 min."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt mit 120 km/h. Für 360 km braucht es wie lange?",
+  "options": [
+   "6 h",
+   "3 h",
+   "2 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 360 km : 120 km/h = 3 h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 6 Brötchen für je 0,35 €. Sie zahlt mit 7,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "4,90 €",
+   "4,40 €",
+   "5,00 €",
+   "5,90 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 6 · 0,35 € = 2,10 €. Rückgeld: 7,00 € − 2,10 € = 4,90 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Aufgabe: Ein Kapital von 2400 € wird mit 3 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "96 €",
+   "72 €",
+   "36 €",
+   "2472 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 2400 · 3/100 = 72 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 2 Stunden lang mit 70 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "140 km",
+   "72 km",
+   "210 km",
+   "70 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 70 km/h · 2 h = 140 km."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Wie viel Prozent sind 12,50 von 50?",
+  "options": [
+   "25 %",
+   "13 %",
+   "20 %",
+   "35 %"
+  ],
+  "correct": 0,
+  "explanation": "p = W/G · 100 % = 12,50/50 · 100 % = 25 %."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Teste dein Wissen: Rechne um: 6 km = ? cm",
+  "options": [
+   "600000 cm",
+   "6 cm",
+   "6000000 cm",
+   "60000 cm"
+  ],
+  "correct": 0,
+  "explanation": "1 km = 100000 cm, also 6 km = 600000 cm."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Wie viel Prozent sind 125 von 500?",
+  "options": [
+   "25 %",
+   "20 %",
+   "125 %",
+   "35 %"
+  ],
+  "correct": 0,
+  "explanation": "p = W/G · 100 % = 125/500 · 100 % = 25 %."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Löse: Auf einer Karte im Maßstab 1 : 100000 sind 5 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "50000 m",
+   "500 m",
+   "5000 m",
+   "500000 m"
+  ],
+  "correct": 2,
+  "explanation": "5 cm · 100000 = 500000 cm = 5000 m."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "45 Äpfel werden gleichmäßig auf 3 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "15",
+   "11",
+   "13",
+   "19"
+  ],
+  "correct": 0,
+  "explanation": "45 : 3 = 15."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Teste dein Wissen: Ein Kapital von 1800 € wird mit 2 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "36 €",
+   "18 €",
+   "1836 €",
+   "54 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 1800 · 2/100 = 36 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 4 Stunden lang mit 100 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "500 km",
+   "400 km",
+   "104 km",
+   "300 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 100 km/h · 4 h = 400 km."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Auf einer Karte im Maßstab 1 : 1000 sind 10 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "100 m",
+   "1000 m",
+   "10 m",
+   "10000 m"
+  ],
+  "correct": 0,
+  "explanation": "10 cm · 1000 = 10000 cm = 100 m."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Auf einer Karte im Maßstab 1 : 25000 sind 4 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "100 m",
+   "100000 m",
+   "10000 m",
+   "1000 m"
+  ],
+  "correct": 3,
+  "explanation": "4 cm · 25000 = 100000 cm = 1000 m."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "In einer Schachtel sind 7 Stifte. Wie viele Stifte sind in 19 Schachteln?",
+  "options": [
+   "140",
+   "132",
+   "133",
+   "136"
+  ],
+  "correct": 2,
+  "explanation": "7 · 19 = 133."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: In einem Bus sitzen 156 Personen, 35 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "196",
+   "192",
+   "186",
+   "191"
+  ],
+  "correct": 3,
+  "explanation": "156 + 35 = 191."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Gebäude ist 360 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 2000?",
+  "options": [
+   "360 cm",
+   "180 cm",
+   "23 cm",
+   "18 cm"
+  ],
+  "correct": 3,
+  "explanation": "360 m = 36000 cm; 36000 cm : 2000 = 18 cm."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Auto legt 150 km in 3 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "40 km/h",
+   "147 km/h",
+   "50 km/h",
+   "60 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 150 km : 3 h = 50 km/h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: 16 Äpfel werden gleichmäßig auf 2 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "10",
+   "12",
+   "7",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "16 : 2 = 8."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt mit 60 km/h. Für 360 km braucht es wie lange?",
+  "options": [
+   "6 h",
+   "12 h",
+   "5 h",
+   "7 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s : v = 360 km : 60 km/h = 6 h."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Auf einer Karte im Maßstab 1 : 1000 sind 5 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "50 m",
+   "5 m",
+   "500 m",
+   "5000 m"
+  ],
+  "correct": 0,
+  "explanation": "5 cm · 1000 = 5000 cm = 50 m."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Aufgabe: Ein Kapital von 2900 € wird mit 5 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "174 €",
+   "3045 €",
+   "72,50 €",
+   "145 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 2900 · 5/100 = 145 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Zug fährt 5 Stunden lang mit 60 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "300 km",
+   "240 km",
+   "65 km",
+   "360 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 60 km/h · 5 h = 300 km."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Löse: Rechne um: 7 h = ? min",
+  "options": [
+   "360 min",
+   "420 min",
+   "67 min",
+   "480 min"
+  ],
+  "correct": 1,
+  "explanation": "1 h = 60 min, also 7 · 60 = 420 min."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einer Schachtel sind 22 Stifte. Wie viele Stifte sind in 8 Schachteln?",
+  "options": [
+   "185",
+   "184",
+   "186",
+   "176"
+  ],
+  "correct": 3,
+  "explanation": "22 · 8 = 176."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 7 Radiergummi für je 0,40 €. Sie zahlt mit 5,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,20 €",
+   "1,70 €",
+   "3,20 €",
+   "2,30 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 7 · 0,40 € = 2,80 €. Rückgeld: 5,00 € − 2,80 € = 2,20 €."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Teste dein Wissen: Rechne um: 7 h = ? s",
+  "options": [
+   "21600 s",
+   "25200 s",
+   "28800 s",
+   "3607 s"
+  ],
+  "correct": 1,
+  "explanation": "1 h = 3600 s, also 7 · 3600 = 25200 s."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wie viel Prozent sind 50 von 200?",
+  "options": [
+   "50 %",
+   "20 %",
+   "35 %",
+   "25 %"
+  ],
+  "correct": 3,
+  "explanation": "p = W/G · 100 % = 50/200 · 100 % = 25 %."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Löse: 2000 € werden mit 2 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "2080 €",
+   "2121,80 €",
+   "2080,80 €",
+   "2000 €"
+  ],
+  "correct": 2,
+  "explanation": "K_n = K · (1 + p/100)^n = 2000 · 1,02^2 = 2080,80 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: 72 Äpfel werden gleichmäßig auf 8 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "8",
+   "7",
+   "6",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "72 : 8 = 9."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: 60 Äpfel werden gleichmäßig auf 4 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "17",
+   "15",
+   "19",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "60 : 4 = 15."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einer Schachtel sind 16 Stifte. Wie viele Stifte sind in 4 Schachteln?",
+  "options": [
+   "63",
+   "64",
+   "68",
+   "54"
+  ],
+  "correct": 1,
+  "explanation": "16 · 4 = 64."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 4 Apfelsaft für je 1,19 €. Sie zahlt mit 6,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,24 €",
+   "1,34 €",
+   "0,74 €",
+   "1,24 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 4 · 1,19 € = 4,76 €. Rückgeld: 6,00 € − 4,76 € = 1,24 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "160 Äpfel werden gleichmäßig auf 8 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "17",
+   "21",
+   "23",
+   "20"
+  ],
+  "correct": 3,
+  "explanation": "160 : 8 = 20."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Auf einer Karte im Maßstab 1 : 25000 sind 9 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "2250 m",
+   "225 m",
+   "225000 m",
+   "22500 m"
+  ],
+  "correct": 0,
+  "explanation": "9 cm · 25000 = 225000 cm = 2250 m."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Löse: Rechne um: 4 km = ? cm",
+  "options": [
+   "4000000 cm",
+   "40000 cm",
+   "400000 cm",
+   "4 cm"
+  ],
+  "correct": 2,
+  "explanation": "1 km = 100000 cm, also 4 km = 400000 cm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Gebäude ist 20 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 2000?",
+  "options": [
+   "1 cm",
+   "6 cm",
+   "20 cm",
+   "10 cm"
+  ],
+  "correct": 0,
+  "explanation": "20 m = 2000 cm; 2000 cm : 2000 = 1 cm."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Lisa kauft 7 Saft für je 1,29 €. Sie zahlt mit 13,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "3,47 €",
+   "4,97 €",
+   "4,07 €",
+   "3,97 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 7 · 1,29 € = 9,03 €. Rückgeld: 13,00 € − 9,03 € = 3,97 €."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Rechne um: 7 l = ? cl",
+  "options": [
+   "700 cl",
+   "7 cl",
+   "7000 cl",
+   "70 cl"
+  ],
+  "correct": 0,
+  "explanation": "1 l = 100 cl, also 7 l = 700 cl."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "27 Äpfel werden gleichmäßig auf 3 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "6",
+   "13",
+   "9",
+   "8"
+  ],
+  "correct": 2,
+  "explanation": "27 : 3 = 9."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Teste dein Wissen: Rechne um: 3 min = ? s",
+  "options": [
+   "120 s",
+   "240 s",
+   "63 s",
+   "180 s"
+  ],
+  "correct": 3,
+  "explanation": "1 min = 60 s, also 3 · 60 = 180 s."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: In einem Bus sitzen 166 Personen, 16 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "183",
+   "188",
+   "182",
+   "178"
+  ],
+  "correct": 2,
+  "explanation": "166 + 16 = 182."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Fahrzeug fährt mit 4 km/h. Für 24 km braucht es wie lange?",
+  "options": [
+   "5 h",
+   "7 h",
+   "6 h",
+   "12 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s : v = 24 km : 4 km/h = 6 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: In einem Bus sitzen 122 Personen, 30 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "152",
+   "156",
+   "158",
+   "150"
+  ],
+  "correct": 0,
+  "explanation": "122 + 30 = 152."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Aufgabe: Rechne um: 6 h = ? s",
+  "options": [
+   "21600 s",
+   "18000 s",
+   "3606 s",
+   "25200 s"
+  ],
+  "correct": 0,
+  "explanation": "1 h = 3600 s, also 6 · 3600 = 21600 s."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Auf einer Karte im Maßstab 1 : 50000 sind 12 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "600000 m",
+   "6000 m",
+   "60000 m",
+   "600 m"
+  ],
+  "correct": 1,
+  "explanation": "12 cm · 50000 = 600000 cm = 6000 m."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Rechne um: 2 l = ? ml",
+  "options": [
+   "200 ml",
+   "2 ml",
+   "20000 ml",
+   "2000 ml"
+  ],
+  "correct": 3,
+  "explanation": "1 l = 1000 ml, also 2 l = 2000 ml."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Lisa kauft 6 Schokolade für je 0,99 €. Sie zahlt mit 7,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,06 €",
+   "1,16 €",
+   "0,56 €",
+   "1,06 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 6 · 0,99 € = 5,94 €. Rückgeld: 7,00 € − 5,94 € = 1,06 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einer Schachtel sind 3 Stifte. Wie viele Stifte sind in 5 Schachteln?",
+  "options": [
+   "19",
+   "15",
+   "18",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "3 · 5 = 15."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Löse: Ein Gebäude ist 26 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 200?",
+  "options": [
+   "26 cm",
+   "18 cm",
+   "130 cm",
+   "13 cm"
+  ],
+  "correct": 3,
+  "explanation": "26 m = 2600 cm; 2600 cm : 200 = 13 cm."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt mit 120 km/h. Für 720 km braucht es wie lange?",
+  "options": [
+   "12 h",
+   "7 h",
+   "5 h",
+   "6 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s : v = 720 km : 120 km/h = 6 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: In einem Bus sitzen 290 Personen, 15 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "301",
+   "305",
+   "307",
+   "302"
+  ],
+  "correct": 1,
+  "explanation": "290 + 15 = 305."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Aufgabe: Rechne um: 9 l = ? ml",
+  "options": [
+   "90000 ml",
+   "900 ml",
+   "9000 ml",
+   "9 ml"
+  ],
+  "correct": 2,
+  "explanation": "1 l = 1000 ml, also 9 l = 9000 ml."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einem Bus sitzen 273 Personen, 17 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "290",
+   "287",
+   "284",
+   "291"
+  ],
+  "correct": 0,
+  "explanation": "273 + 17 = 290."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "In einer Schachtel sind 21 Stifte. Wie viele Stifte sind in 8 Schachteln?",
+  "options": [
+   "177",
+   "161",
+   "158",
+   "168"
+  ],
+  "correct": 3,
+  "explanation": "21 · 8 = 168."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Auto legt 375 km in 5 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "65 km/h",
+   "75 km/h",
+   "370 km/h",
+   "85 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s : t = 375 km : 5 h = 75 km/h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Tom kauft 4× Apfelsaft (je 1,19 €) und 1× Milch (je 0,89 €). Was muss er bezahlen?",
+  "options": [
+   "6,65 €",
+   "4,76 €",
+   "6,84 €",
+   "5,65 €"
+  ],
+  "correct": 3,
+  "explanation": "4 · 1,19 € + 1 · 0,89 € = 4,76 € + 0,89 € = 5,65 €."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Aufgabe: Rechne um: 3 km = ? cm",
+  "options": [
+   "3 cm",
+   "30000 cm",
+   "300000 cm",
+   "3000000 cm"
+  ],
+  "correct": 2,
+  "explanation": "1 km = 100000 cm, also 3 km = 300000 cm."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Tom kauft 4× Brötchen (je 0,35 €) und 1× Apfel (je 0,45 €). Was muss er bezahlen?",
+  "options": [
+   "1,85 €",
+   "2,85 €",
+   "2,20 €",
+   "1,40 €"
+  ],
+  "correct": 0,
+  "explanation": "4 · 0,35 € + 1 · 0,45 € = 1,40 € + 0,45 € = 1,85 €."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Löse: Eine Ware kostet 197,00 €. Sie wird um 10 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "157,60 €",
+   "177,30 €",
+   "19,70 €",
+   "216,70 €"
+  ],
+  "correct": 1,
+  "explanation": "Rabatt: 10 % von 197,00 € = 19,70 €. Neuer Preis: 197,00 € − 19,70 € = 177,30 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wie viel Prozent sind 40 von 200?",
+  "options": [
+   "30 %",
+   "15 %",
+   "40 %",
+   "20 %"
+  ],
+  "correct": 3,
+  "explanation": "p = W/G · 100 % = 40/200 · 100 % = 20 %."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Lisa kauft 3 Radiergummi für je 0,40 €. Sie zahlt mit 4,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,80 €",
+   "3,80 €",
+   "2,90 €",
+   "2,30 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 3 · 0,40 € = 1,20 €. Rückgeld: 4,00 € − 1,20 € = 2,80 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Teste dein Wissen: Berechne 5 % von 360.",
+  "options": [
+   "18",
+   "23",
+   "342",
+   "17"
+  ],
+  "correct": 0,
+  "explanation": "5 % von 360 = 360 · 5/100 = 18."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Fahrzeug fährt mit 5 km/h. Für 30 km braucht es wie lange?",
+  "options": [
+   "6 h",
+   "7 h",
+   "12 h",
+   "5 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s : v = 30 km : 5 km/h = 6 h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Auto legt 250 km in 5 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "60 km/h",
+   "50 km/h",
+   "40 km/h",
+   "245 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s : t = 250 km : 5 h = 50 km/h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Auto legt 100 km in 2 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "98 km/h",
+   "50 km/h",
+   "60 km/h",
+   "40 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s : t = 100 km : 2 h = 50 km/h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. In einer Schachtel sind 25 Stifte. Wie viele Stifte sind in 9 Schachteln?",
+  "options": [
+   "221",
+   "225",
+   "217",
+   "220"
+  ],
+  "correct": 1,
+  "explanation": "25 · 9 = 225."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einem Bus sitzen 89 Personen, 3 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "89",
+   "88",
+   "92",
+   "93"
+  ],
+  "correct": 2,
+  "explanation": "89 + 3 = 92."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Aufgabe: Rechne um: 3 h = ? min",
+  "options": [
+   "240 min",
+   "63 min",
+   "180 min",
+   "120 min"
+  ],
+  "correct": 2,
+  "explanation": "1 h = 60 min, also 3 · 60 = 180 min."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 80 km/h. Für 240 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "2 h",
+   "6 h",
+   "3 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s : v = 240 km : 80 km/h = 3 h."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Wähle die richtige Antwort. Rechne um: 3 m = ? mm",
+  "options": [
+   "3000 mm",
+   "300 mm",
+   "3 mm",
+   "30000 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 m = 1000 mm, also 3 m = 3000 mm."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 100 km/h. Für 500 km braucht es wie lange?",
+  "options": [
+   "6 h",
+   "10 h",
+   "5 h",
+   "4 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s : v = 500 km : 100 km/h = 5 h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Aufgabe: Tom kauft 3× Saft (je 1,29 €) und 3× Käse (je 1,99 €). Was muss er bezahlen?",
+  "options": [
+   "10,84 €",
+   "9,84 €",
+   "11,13 €",
+   "7,85 €"
+  ],
+  "correct": 1,
+  "explanation": "3 · 1,29 € + 3 · 1,99 € = 3,87 € + 5,97 € = 9,84 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Lisa kauft 3 Saft für je 1,29 €. Sie zahlt mit 5,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "1,13 €",
+   "2,13 €",
+   "1,23 €",
+   "0,63 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 3 · 1,29 € = 3,87 €. Rückgeld: 5,00 € − 3,87 € = 1,13 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Aufgabe: Lisa kauft 3 Apfel für je 0,45 €. Sie zahlt mit 4,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,65 €",
+   "2,75 €",
+   "3,65 €",
+   "2,15 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 3 · 0,45 € = 1,35 €. Rückgeld: 4,00 € − 1,35 € = 2,65 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Lisa kauft 6 Stift für je 0,60 €. Sie zahlt mit 5,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "1,50 €",
+   "2,40 €",
+   "1,40 €",
+   "0,90 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 6 · 0,60 € = 3,60 €. Rückgeld: 5,00 € − 3,60 € = 1,40 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Lisa kauft 2 Milch für je 0,89 €. Sie zahlt mit 6,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "3,72 €",
+   "5,22 €",
+   "4,32 €",
+   "4,22 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 2 · 0,89 € = 1,78 €. Rückgeld: 6,00 € − 1,78 € = 4,22 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: 153 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "20",
+   "17",
+   "13",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "153 : 9 = 17."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Teste dein Wissen: Berechne 15 % von 280.",
+  "options": [
+   "238",
+   "57",
+   "42",
+   "37"
+  ],
+  "correct": 2,
+  "explanation": "15 % von 280 = 280 · 15/100 = 42."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 114 Äpfel werden gleichmäßig auf 6 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "19",
+   "16",
+   "23",
+   "21"
+  ],
+  "correct": 0,
+  "explanation": "114 : 6 = 19."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Auto legt 120 km in 2 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "70 km/h",
+   "118 km/h",
+   "60 km/h",
+   "50 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 120 km : 2 h = 60 km/h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Tom kauft 5× Milch (je 0,89 €) und 2× Joghurt (je 0,55 €). Was muss er bezahlen?",
+  "options": [
+   "5,00 €",
+   "6,55 €",
+   "6,44 €",
+   "5,55 €"
+  ],
+  "correct": 3,
+  "explanation": "5 · 0,89 € + 2 · 0,55 € = 4,45 € + 1,10 € = 5,55 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Gebäude ist 35 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 500?",
+  "options": [
+   "70 cm",
+   "12 cm",
+   "35 cm",
+   "7 cm"
+  ],
+  "correct": 3,
+  "explanation": "35 m = 3500 cm; 3500 cm : 500 = 7 cm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Gebäude ist 22 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 200?",
+  "options": [
+   "11 cm",
+   "22 cm",
+   "16 cm",
+   "110 cm"
+  ],
+  "correct": 0,
+  "explanation": "22 m = 2200 cm; 2200 cm : 200 = 11 cm."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Wie viel Prozent sind 50 von 200?",
+  "options": [
+   "50 %",
+   "20 %",
+   "25 %",
+   "35 %"
+  ],
+  "correct": 2,
+  "explanation": "p = W/G · 100 % = 50/200 · 100 % = 25 %."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Löse: Ein Kapital von 2100 € wird mit 2 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "21 €",
+   "42 €",
+   "2142 €",
+   "63 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 2100 · 2/100 = 42 €."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Eine Ware kostet 54,00 €. Sie wird um 10 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "59,40 €",
+   "5,40 €",
+   "43,20 €",
+   "48,60 €"
+  ],
+  "correct": 3,
+  "explanation": "Rabatt: 10 % von 54,00 € = 5,40 €. Neuer Preis: 54,00 € − 5,40 € = 48,60 €."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Aufgabe: Rechne um: 7 Tag = ? h",
+  "options": [
+   "31 h",
+   "192 h",
+   "144 h",
+   "168 h"
+  ],
+  "correct": 3,
+  "explanation": "1 Tag = 24 h, also 7 · 24 = 168 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: 70 Äpfel werden gleichmäßig auf 5 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "10",
+   "14",
+   "17",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "70 : 5 = 14."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Auto legt 120 km in 3 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "30 km/h",
+   "117 km/h",
+   "50 km/h",
+   "40 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s : t = 120 km : 3 h = 40 km/h."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Teste dein Wissen: 2000 € werden mit 3 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "2120 €",
+   "2000 €",
+   "2163,20 €",
+   "2121,80 €"
+  ],
+  "correct": 3,
+  "explanation": "K_n = K · (1 + p/100)^n = 2000 · 1,03^2 = 2121,80 €."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 104,00 €. Sie wird um 15 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "119,60 €",
+   "15,60 €",
+   "88,40 €",
+   "72,80 €"
+  ],
+  "correct": 2,
+  "explanation": "Rabatt: 15 % von 104,00 € = 15,60 €. Neuer Preis: 104,00 € − 15,60 € = 88,40 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Ein Gebäude ist 25 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 500?",
+  "options": [
+   "10 cm",
+   "25 cm",
+   "50 cm",
+   "5 cm"
+  ],
+  "correct": 3,
+  "explanation": "25 m = 2500 cm; 2500 cm : 500 = 5 cm."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Teste dein Wissen: Ein Kapital von 2300 € wird mit 4 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "92 €",
+   "115 €",
+   "46 €",
+   "2392 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 2300 · 4/100 = 92 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 5 Stunden lang mit 70 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "420 km",
+   "280 km",
+   "350 km",
+   "75 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 70 km/h · 5 h = 350 km."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Auto legt 180 km in 3 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "177 km/h",
+   "60 km/h",
+   "70 km/h",
+   "50 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s : t = 180 km : 3 h = 60 km/h."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Löse: Rechne um: 6 l = ? cl",
+  "options": [
+   "600 cl",
+   "6 cl",
+   "6000 cl",
+   "60 cl"
+  ],
+  "correct": 0,
+  "explanation": "1 l = 100 cl, also 6 l = 600 cl."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wie viel Prozent sind 200 von 800?",
+  "options": [
+   "20 %",
+   "35 %",
+   "200 %",
+   "25 %"
+  ],
+  "correct": 3,
+  "explanation": "p = W/G · 100 % = 200/800 · 100 % = 25 %."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. In einer Schachtel sind 20 Stifte. Wie viele Stifte sind in 4 Schachteln?",
+  "options": [
+   "78",
+   "89",
+   "83",
+   "80"
+  ],
+  "correct": 3,
+  "explanation": "20 · 4 = 80."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Fahrzeug fährt mit 60 km/h. Für 120 km braucht es wie lange?",
+  "options": [
+   "2 h",
+   "1 h",
+   "3 h",
+   "4 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s : v = 120 km : 60 km/h = 2 h."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Wähle die richtige Antwort. Rechne um: 8 h = ? s",
+  "options": [
+   "32400 s",
+   "28800 s",
+   "3608 s",
+   "25200 s"
+  ],
+  "correct": 1,
+  "explanation": "1 h = 3600 s, also 8 · 3600 = 28800 s."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Fahrzeug fährt mit 60 km/h. Für 120 km braucht es wie lange?",
+  "options": [
+   "3 h",
+   "2 h",
+   "1 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 120 km : 60 km/h = 2 h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 120 km/h. Für 480 km braucht es wie lange?",
+  "options": [
+   "8 h",
+   "4 h",
+   "3 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 480 km : 120 km/h = 4 h."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Löse: Rechne um: 6 m = ? mm",
+  "options": [
+   "6000 mm",
+   "6 mm",
+   "600 mm",
+   "60000 mm"
+  ],
+  "correct": 0,
+  "explanation": "1 m = 1000 mm, also 6 m = 6000 mm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Gebäude ist 60 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 500?",
+  "options": [
+   "120 cm",
+   "60 cm",
+   "17 cm",
+   "12 cm"
+  ],
+  "correct": 3,
+  "explanation": "60 m = 6000 cm; 6000 cm : 500 = 12 cm."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Löse: Ein Kapital von 1000 € wird mit 2,50 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "35 €",
+   "12,50 €",
+   "1025 €",
+   "25 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 1000 · 2,50/100 = 25 €."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Rechne um: 8 h = ? s",
+  "options": [
+   "28800 s",
+   "32400 s",
+   "25200 s",
+   "3608 s"
+  ],
+  "correct": 0,
+  "explanation": "1 h = 3600 s, also 8 · 3600 = 28800 s."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 5 km/h. Für 10 km braucht es wie lange?",
+  "options": [
+   "1 h",
+   "3 h",
+   "4 h",
+   "2 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s : v = 10 km : 5 km/h = 2 h."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Wie viel Prozent sind 160 von 800?",
+  "options": [
+   "160 %",
+   "20 %",
+   "15 %",
+   "30 %"
+  ],
+  "correct": 1,
+  "explanation": "p = W/G · 100 % = 160/800 · 100 % = 20 %."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 700 € wird mit 2 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "14 €",
+   "7 €",
+   "714 €",
+   "21 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 700 · 2/100 = 14 €."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Löse: Rechne um: 9 km = ? cm",
+  "options": [
+   "900000 cm",
+   "9000000 cm",
+   "9 cm",
+   "90000 cm"
+  ],
+  "correct": 0,
+  "explanation": "1 km = 100000 cm, also 9 km = 900000 cm."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Aufgabe: Lisa kauft 5 Käse für je 1,99 €. Sie zahlt mit 14,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "3,55 €",
+   "4,15 €",
+   "4,05 €",
+   "5,05 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 5 · 1,99 € = 9,95 €. Rückgeld: 14,00 € − 9,95 € = 4,05 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Löse: Auf einer Karte im Maßstab 1 : 50000 sind 10 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "5000 m",
+   "500 m",
+   "500000 m",
+   "50000 m"
+  ],
+  "correct": 0,
+  "explanation": "10 cm · 50000 = 500000 cm = 5000 m."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Fahrzeug fährt mit 5 km/h. Für 20 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "8 h",
+   "5 h",
+   "3 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s : v = 20 km : 5 km/h = 4 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einer Schachtel sind 12 Stifte. Wie viele Stifte sind in 9 Schachteln?",
+  "options": [
+   "108",
+   "109",
+   "114",
+   "98"
+  ],
+  "correct": 0,
+  "explanation": "12 · 9 = 108."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Auf einer Karte im Maßstab 1 : 10000 sind 3 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "30 m",
+   "3000 m",
+   "300 m",
+   "30000 m"
+  ],
+  "correct": 2,
+  "explanation": "3 cm · 10000 = 30000 cm = 300 m."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Rechne um: 4 hl = ? l",
+  "options": [
+   "400 l",
+   "4 l",
+   "4000 l",
+   "40 l"
+  ],
+  "correct": 0,
+  "explanation": "1 hl = 100 l, also 4 hl = 400 l."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 7 Ei für je 0,25 €. Sie zahlt mit 6,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "4,35 €",
+   "3,75 €",
+   "4,25 €",
+   "5,25 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 7 · 0,25 € = 1,75 €. Rückgeld: 6,00 € − 1,75 € = 4,25 €."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Teste dein Wissen: Rechne um: 4 m = ? mm",
+  "options": [
+   "40000 mm",
+   "4000 mm",
+   "4 mm",
+   "400 mm"
+  ],
+  "correct": 1,
+  "explanation": "1 m = 1000 mm, also 4 m = 4000 mm."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Berechne 40 % von 20.",
+  "options": [
+   "8",
+   "3",
+   "48",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "40 % von 20 = 20 · 40/100 = 8."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Aufgabe: Rechne um: 2 km = ? cm",
+  "options": [
+   "2000000 cm",
+   "2 cm",
+   "200000 cm",
+   "20000 cm"
+  ],
+  "correct": 2,
+  "explanation": "1 km = 100000 cm, also 2 km = 200000 cm."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Auf einer Karte im Maßstab 1 : 1000 sind 9 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "9 m",
+   "9000 m",
+   "90 m",
+   "900 m"
+  ],
+  "correct": 2,
+  "explanation": "9 cm · 1000 = 9000 cm = 90 m."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Tom kauft 2× Radiergummi (je 0,40 €) und 1× Käse (je 1,99 €). Was muss er bezahlen?",
+  "options": [
+   "2,79 €",
+   "0,80 €",
+   "3,79 €",
+   "3,19 €"
+  ],
+  "correct": 0,
+  "explanation": "2 · 0,40 € + 1 · 1,99 € = 0,80 € + 1,99 € = 2,79 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Auf einer Karte im Maßstab 1 : 100000 sind 10 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "1000000 m",
+   "10000 m",
+   "1000 m",
+   "100000 m"
+  ],
+  "correct": 1,
+  "explanation": "10 cm · 100000 = 1000000 cm = 10000 m."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 85 Äpfel werden gleichmäßig auf 5 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "14",
+   "20",
+   "17",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "85 : 5 = 17."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt mit 120 km/h. Für 480 km braucht es wie lange?",
+  "options": [
+   "5 h",
+   "4 h",
+   "8 h",
+   "3 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 480 km : 120 km/h = 4 h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 2 Stunden lang mit 60 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "180 km",
+   "62 km",
+   "120 km",
+   "60 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 60 km/h · 2 h = 120 km."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Zug fährt 4 Stunden lang mit 60 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "240 km",
+   "64 km",
+   "300 km",
+   "180 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 60 km/h · 4 h = 240 km."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Rechne um: 4 km = ? m",
+  "options": [
+   "40000 m",
+   "400 m",
+   "4 m",
+   "4000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 4 km = 4000 m."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Tom kauft 4× Milch (je 0,89 €) und 2× Stift (je 0,60 €). Was muss er bezahlen?",
+  "options": [
+   "5,76 €",
+   "4,76 €",
+   "4,16 €",
+   "5,65 €"
+  ],
+  "correct": 1,
+  "explanation": "4 · 0,89 € + 2 · 0,60 € = 3,56 € + 1,20 € = 4,76 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: In einem Bus sitzen 25 Personen, 12 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "41",
+   "40",
+   "37",
+   "32"
+  ],
+  "correct": 2,
+  "explanation": "25 + 12 = 37."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Auto legt 100 km in 2 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "40 km/h",
+   "50 km/h",
+   "60 km/h",
+   "98 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s : t = 100 km : 2 h = 50 km/h."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Löse: Ein Kapital von 2700 € wird mit 2,50 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "67,50 €",
+   "33,75 €",
+   "94,50 €",
+   "2767,50 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 2700 · 2,50/100 = 67,50 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Teste dein Wissen: Ein Kapital von 1500 € wird mit 2 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "1530 €",
+   "45 €",
+   "30 €",
+   "15 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 1500 · 2/100 = 30 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Zug fährt 3 Stunden lang mit 60 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "240 km",
+   "63 km",
+   "180 km",
+   "120 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 60 km/h · 3 h = 180 km."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "171 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "16",
+   "19",
+   "18",
+   "21"
+  ],
+  "correct": 1,
+  "explanation": "171 : 9 = 19."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Auto legt 120 km in 3 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "40 km/h",
+   "117 km/h",
+   "30 km/h",
+   "50 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s : t = 120 km : 3 h = 40 km/h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 5 Stunden lang mit 90 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "360 km",
+   "450 km",
+   "540 km",
+   "95 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 90 km/h · 5 h = 450 km."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Löse: Ein Gebäude ist 380 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 2000?",
+  "options": [
+   "190 cm",
+   "19 cm",
+   "380 cm",
+   "24 cm"
+  ],
+  "correct": 1,
+  "explanation": "380 m = 38000 cm; 38000 cm : 2000 = 19 cm."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. In einer Schachtel sind 10 Stifte. Wie viele Stifte sind in 18 Schachteln?",
+  "options": [
+   "185",
+   "177",
+   "183",
+   "180"
+  ],
+  "correct": 3,
+  "explanation": "10 · 18 = 180."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Auto legt 160 km in 2 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "90 km/h",
+   "70 km/h",
+   "80 km/h",
+   "158 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 160 km : 2 h = 80 km/h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "36 Äpfel werden gleichmäßig auf 6 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "6",
+   "4",
+   "8",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "36 : 6 = 6."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Lisa kauft 7 Milch für je 0,89 €. Sie zahlt mit 11,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "4,77 €",
+   "4,27 €",
+   "4,87 €",
+   "5,77 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 7 · 0,89 € = 6,23 €. Rückgeld: 11,00 € − 6,23 € = 4,77 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Aufgabe: Lisa kauft 7 Kekse für je 1,45 €. Sie zahlt mit 15,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "4,85 €",
+   "4,95 €",
+   "4,35 €",
+   "5,85 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 7 · 1,45 € = 10,15 €. Rückgeld: 15,00 € − 10,15 € = 4,85 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 7 Schokolade für je 0,99 €. Sie zahlt mit 7,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "0,57 €",
+   "0,07 €",
+   "1,07 €",
+   "0,17 €"
+  ],
+  "correct": 1,
+  "explanation": "Warenwert: 7 · 0,99 € = 6,93 €. Rückgeld: 7,00 € − 6,93 € = 0,07 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "In einer Schachtel sind 18 Stifte. Wie viele Stifte sind in 9 Schachteln?",
+  "options": [
+   "153",
+   "157",
+   "171",
+   "162"
+  ],
+  "correct": 3,
+  "explanation": "18 · 9 = 162."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt mit 80 km/h. Für 240 km braucht es wie lange?",
+  "options": [
+   "2 h",
+   "4 h",
+   "6 h",
+   "3 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s : v = 240 km : 80 km/h = 3 h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Tom kauft 2× Brötchen (je 0,35 €) und 1× Stift (je 0,60 €). Was muss er bezahlen?",
+  "options": [
+   "0,70 €",
+   "2,30 €",
+   "1,30 €",
+   "1,65 €"
+  ],
+  "correct": 2,
+  "explanation": "2 · 0,35 € + 1 · 0,60 € = 0,70 € + 0,60 € = 1,30 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Teste dein Wissen: Ein Kapital von 3600 € wird mit 2 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "36 €",
+   "3672 €",
+   "108 €",
+   "72 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 3600 · 2/100 = 72 €."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Aufgabe: Rechne um: 4 l = ? cl",
+  "options": [
+   "40 cl",
+   "400 cl",
+   "4000 cl",
+   "4 cl"
+  ],
+  "correct": 1,
+  "explanation": "1 l = 100 cl, also 4 l = 400 cl."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Löse: Wie viel Prozent sind 80 von 400?",
+  "options": [
+   "15 %",
+   "30 %",
+   "80 %",
+   "20 %"
+  ],
+  "correct": 3,
+  "explanation": "p = W/G · 100 % = 80/400 · 100 % = 20 %."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Löse: Rechne um: 5 hl = ? l",
+  "options": [
+   "50 l",
+   "5000 l",
+   "5 l",
+   "500 l"
+  ],
+  "correct": 3,
+  "explanation": "1 hl = 100 l, also 5 hl = 500 l."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Auto legt 225 km in 3 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "222 km/h",
+   "85 km/h",
+   "75 km/h",
+   "65 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 225 km : 3 h = 75 km/h."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Wähle die richtige Antwort. 5000 € werden mit 4 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "5000 €",
+   "5400 €",
+   "5408 €",
+   "5512,50 €"
+  ],
+  "correct": 2,
+  "explanation": "K_n = K · (1 + p/100)^n = 5000 · 1,04^2 = 5408 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Teste dein Wissen: Ein Kapital von 800 € wird mit 4 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "832 €",
+   "40 €",
+   "32 €",
+   "16 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 800 · 4/100 = 32 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Zug fährt 3 Stunden lang mit 70 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "210 km",
+   "140 km",
+   "73 km",
+   "280 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 70 km/h · 3 h = 210 km."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 72,00 €. Sie wird um 25 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "18,00 €",
+   "54,00 €",
+   "36,00 €",
+   "90,00 €"
+  ],
+  "correct": 1,
+  "explanation": "Rabatt: 25 % von 72,00 € = 18,00 €. Neuer Preis: 72,00 € − 18,00 € = 54,00 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "96 Äpfel werden gleichmäßig auf 6 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "16",
+   "20",
+   "17",
+   "15"
+  ],
+  "correct": 0,
+  "explanation": "96 : 6 = 16."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: 78 Äpfel werden gleichmäßig auf 6 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "16",
+   "11",
+   "13",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "78 : 6 = 13."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Aufgabe: Berechne 10 % von 300.",
+  "options": [
+   "30",
+   "270",
+   "25",
+   "40"
+  ],
+  "correct": 0,
+  "explanation": "10 % von 300 = 300 · 10/100 = 30."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Berechne 40 % von 60.",
+  "options": [
+   "36",
+   "24",
+   "64",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "40 % von 60 = 60 · 40/100 = 24."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Auto legt 160 km in 2 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "90 km/h",
+   "80 km/h",
+   "158 km/h",
+   "70 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s : t = 160 km : 2 h = 80 km/h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Auto legt 200 km in 5 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "40 km/h",
+   "195 km/h",
+   "50 km/h",
+   "30 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s : t = 200 km : 5 h = 40 km/h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 90 km/h. Für 360 km braucht es wie lange?",
+  "options": [
+   "3 h",
+   "8 h",
+   "4 h",
+   "5 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s : v = 360 km : 90 km/h = 4 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: In einer Schachtel sind 22 Stifte. Wie viele Stifte sind in 10 Schachteln?",
+  "options": [
+   "223",
+   "210",
+   "222",
+   "220"
+  ],
+  "correct": 3,
+  "explanation": "22 · 10 = 220."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: In einer Schachtel sind 9 Stifte. Wie viele Stifte sind in 17 Schachteln?",
+  "options": [
+   "153",
+   "144",
+   "148",
+   "161"
+  ],
+  "correct": 0,
+  "explanation": "9 · 17 = 153."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 84 Äpfel werden gleichmäßig auf 6 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "11",
+   "14",
+   "18",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "84 : 6 = 14."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 2 Stunden lang mit 90 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "180 km",
+   "92 km",
+   "270 km",
+   "90 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 90 km/h · 2 h = 180 km."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Lisa kauft 7 Radiergummi für je 0,40 €. Sie zahlt mit 6,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "3,30 €",
+   "3,20 €",
+   "4,20 €",
+   "2,70 €"
+  ],
+  "correct": 1,
+  "explanation": "Warenwert: 7 · 0,40 € = 2,80 €. Rückgeld: 6,00 € − 2,80 € = 3,20 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Lisa kauft 7 Brot für je 1,49 €. Sie zahlt mit 11,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "0,07 €",
+   "1,57 €",
+   "0,57 €",
+   "0,67 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 7 · 1,49 € = 10,43 €. Rückgeld: 11,00 € − 10,43 € = 0,57 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Fahrzeug fährt mit 120 km/h. Für 360 km braucht es wie lange?",
+  "options": [
+   "6 h",
+   "3 h",
+   "4 h",
+   "2 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 360 km : 120 km/h = 3 h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 5 Radiergummi für je 0,40 €. Sie zahlt mit 5,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "4,00 €",
+   "3,10 €",
+   "3,00 €",
+   "2,50 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 5 · 0,40 € = 2,00 €. Rückgeld: 5,00 € − 2,00 € = 3,00 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Fahrzeug fährt mit 5 km/h. Für 30 km braucht es wie lange?",
+  "options": [
+   "7 h",
+   "12 h",
+   "5 h",
+   "6 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s : v = 30 km : 5 km/h = 6 h."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Löse: Rechne um: 8 h = ? min",
+  "options": [
+   "420 min",
+   "68 min",
+   "540 min",
+   "480 min"
+  ],
+  "correct": 3,
+  "explanation": "1 h = 60 min, also 8 · 60 = 480 min."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einer Schachtel sind 9 Stifte. Wie viele Stifte sind in 7 Schachteln?",
+  "options": [
+   "53",
+   "63",
+   "60",
+   "70"
+  ],
+  "correct": 1,
+  "explanation": "9 · 7 = 63."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "In einer Schachtel sind 25 Stifte. Wie viele Stifte sind in 6 Schachteln?",
+  "options": [
+   "150",
+   "141",
+   "157",
+   "142"
+  ],
+  "correct": 0,
+  "explanation": "25 · 6 = 150."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 2 Käse für je 1,99 €. Sie zahlt mit 5,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "1,12 €",
+   "0,52 €",
+   "2,02 €",
+   "1,02 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 2 · 1,99 € = 3,98 €. Rückgeld: 5,00 € − 3,98 € = 1,02 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Berechne 40 % von 320.",
+  "options": [
+   "128",
+   "168",
+   "192",
+   "123"
+  ],
+  "correct": 0,
+  "explanation": "40 % von 320 = 320 · 40/100 = 128."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Rechne um: 6 l = ? cl",
+  "options": [
+   "60 cl",
+   "6 cl",
+   "600 cl",
+   "6000 cl"
+  ],
+  "correct": 2,
+  "explanation": "1 l = 100 cl, also 6 l = 600 cl."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 48 Äpfel werden gleichmäßig auf 4 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "12",
+   "11",
+   "14",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "48 : 4 = 12."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Aufgabe: Eine Ware kostet 155,00 €. Sie wird um 30 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "46,50 €",
+   "62,00 €",
+   "201,50 €",
+   "108,50 €"
+  ],
+  "correct": 3,
+  "explanation": "Rabatt: 30 % von 155,00 € = 46,50 €. Neuer Preis: 155,00 € − 46,50 € = 108,50 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Fahrzeug fährt mit 4 km/h. Für 20 km braucht es wie lange?",
+  "options": [
+   "5 h",
+   "6 h",
+   "4 h",
+   "10 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s : v = 20 km : 4 km/h = 5 h."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Rechne um: 8 m = ? cm",
+  "options": [
+   "8000 cm",
+   "800 cm",
+   "8 cm",
+   "80 cm"
+  ],
+  "correct": 1,
+  "explanation": "1 m = 100 cm, also 8 m = 800 cm."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Aufgabe: Rechne um: 5 h = ? min",
+  "options": [
+   "300 min",
+   "240 min",
+   "360 min",
+   "65 min"
+  ],
+  "correct": 0,
+  "explanation": "1 h = 60 min, also 5 · 60 = 300 min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Wähle die richtige Antwort. Auf einer Karte im Maßstab 1 : 25000 sind 7 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "1750 m",
+   "175000 m",
+   "17500 m",
+   "175 m"
+  ],
+  "correct": 0,
+  "explanation": "7 cm · 25000 = 175000 cm = 1750 m."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: In einer Schachtel sind 14 Stifte. Wie viele Stifte sind in 13 Schachteln?",
+  "options": [
+   "188",
+   "185",
+   "192",
+   "182"
+  ],
+  "correct": 3,
+  "explanation": "14 · 13 = 182."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "In einem Bus sitzen 45 Personen, 35 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "82",
+   "76",
+   "80",
+   "84"
+  ],
+  "correct": 2,
+  "explanation": "45 + 35 = 80."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Teste dein Wissen: Rechne um: 3 h = ? s",
+  "options": [
+   "14400 s",
+   "7200 s",
+   "3603 s",
+   "10800 s"
+  ],
+  "correct": 3,
+  "explanation": "1 h = 3600 s, also 3 · 3600 = 10800 s."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Aufgabe: Rechne um: 8 min = ? s",
+  "options": [
+   "480 s",
+   "540 s",
+   "68 s",
+   "420 s"
+  ],
+  "correct": 0,
+  "explanation": "1 min = 60 s, also 8 · 60 = 480 s."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 4 km/h. Für 20 km braucht es wie lange?",
+  "options": [
+   "5 h",
+   "4 h",
+   "10 h",
+   "6 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s : v = 20 km : 4 km/h = 5 h."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Aufgabe: Rechne um: 4 Tag = ? h",
+  "options": [
+   "96 h",
+   "120 h",
+   "72 h",
+   "28 h"
+  ],
+  "correct": 0,
+  "explanation": "1 Tag = 24 h, also 4 · 24 = 96 h."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Lisa kauft 2 Heft für je 0,75 €. Sie zahlt mit 3,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "1,00 €",
+   "2,50 €",
+   "1,60 €",
+   "1,50 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 2 · 0,75 € = 1,50 €. Rückgeld: 3,00 € − 1,50 € = 1,50 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Fahrzeug fährt mit 80 km/h. Für 320 km braucht es wie lange?",
+  "options": [
+   "8 h",
+   "4 h",
+   "3 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s : v = 320 km : 80 km/h = 4 h."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Teste dein Wissen: Rechne um: 8 km = ? m",
+  "options": [
+   "80000 m",
+   "800 m",
+   "8 m",
+   "8000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 8 km = 8000 m."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Zug fährt 4 Stunden lang mit 80 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "400 km",
+   "84 km",
+   "320 km",
+   "240 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 80 km/h · 4 h = 320 km."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Aufgabe: In einer Schachtel sind 14 Stifte. Wie viele Stifte sind in 15 Schachteln?",
+  "options": [
+   "220",
+   "203",
+   "205",
+   "210"
+  ],
+  "correct": 3,
+  "explanation": "14 · 15 = 210."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Fahrzeug fährt mit 5 km/h. Für 20 km braucht es wie lange?",
+  "options": [
+   "3 h",
+   "5 h",
+   "4 h",
+   "8 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s : v = 20 km : 5 km/h = 4 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: 48 Äpfel werden gleichmäßig auf 3 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "18",
+   "20",
+   "16",
+   "14"
+  ],
+  "correct": 2,
+  "explanation": "48 : 3 = 16."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 5 Stunden lang mit 80 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "85 km",
+   "480 km",
+   "400 km",
+   "320 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 80 km/h · 5 h = 400 km."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Auto legt 240 km in 4 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "60 km/h",
+   "70 km/h",
+   "236 km/h",
+   "50 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s : t = 240 km : 4 h = 60 km/h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einem Bus sitzen 208 Personen, 28 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "236",
+   "237",
+   "239",
+   "240"
+  ],
+  "correct": 0,
+  "explanation": "208 + 28 = 236."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Teste dein Wissen: Rechne um: 6 m = ? cm",
+  "options": [
+   "60 cm",
+   "6 cm",
+   "6000 cm",
+   "600 cm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 100 cm, also 6 m = 600 cm."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Löse: Rechne um: 2 m = ? mm",
+  "options": [
+   "2 mm",
+   "2000 mm",
+   "20000 mm",
+   "200 mm"
+  ],
+  "correct": 1,
+  "explanation": "1 m = 1000 mm, also 2 m = 2000 mm."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Löse: Rechne um: 6 m = ? cm",
+  "options": [
+   "60 cm",
+   "600 cm",
+   "6000 cm",
+   "6 cm"
+  ],
+  "correct": 1,
+  "explanation": "1 m = 100 cm, also 6 m = 600 cm."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Zug fährt 4 Stunden lang mit 80 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "320 km",
+   "84 km",
+   "400 km",
+   "240 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 80 km/h · 4 h = 320 km."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "In einem Bus sitzen 192 Personen, 21 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "213",
+   "210",
+   "211",
+   "208"
+  ],
+  "correct": 0,
+  "explanation": "192 + 21 = 213."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Auto legt 225 km in 3 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "85 km/h",
+   "65 km/h",
+   "75 km/h",
+   "222 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 225 km : 3 h = 75 km/h."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Rechne um: 6 h = ? s",
+  "options": [
+   "21600 s",
+   "3606 s",
+   "18000 s",
+   "25200 s"
+  ],
+  "correct": 0,
+  "explanation": "1 h = 3600 s, also 6 · 3600 = 21600 s."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 64 Äpfel werden gleichmäßig auf 8 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "8",
+   "5",
+   "6",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "64 : 8 = 8."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Berechne 10 % von 110.",
+  "options": [
+   "21",
+   "99",
+   "6",
+   "11"
+  ],
+  "correct": 3,
+  "explanation": "10 % von 110 = 110 · 10/100 = 11."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Teste dein Wissen: Berechne 25 % von 180.",
+  "options": [
+   "45",
+   "70",
+   "40",
+   "135"
+  ],
+  "correct": 0,
+  "explanation": "25 % von 180 = 180 · 25/100 = 45."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 44 Äpfel werden gleichmäßig auf 4 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "11",
+   "10",
+   "13",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "44 : 4 = 11."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Tom kauft 5× Brot (je 1,49 €) und 3× Ei (je 0,25 €). Was muss er bezahlen?",
+  "options": [
+   "9,69 €",
+   "7,95 €",
+   "9,20 €",
+   "8,20 €"
+  ],
+  "correct": 3,
+  "explanation": "5 · 1,49 € + 3 · 0,25 € = 7,45 € + 0,75 € = 8,20 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Lisa kauft 7 Schokolade für je 0,99 €. Sie zahlt mit 9,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,17 €",
+   "1,57 €",
+   "2,07 €",
+   "3,07 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 7 · 0,99 € = 6,93 €. Rückgeld: 9,00 € − 6,93 € = 2,07 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 171 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "23",
+   "21",
+   "19",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "171 : 9 = 19."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Rechne um: 3 h = ? s",
+  "options": [
+   "10800 s",
+   "7200 s",
+   "3603 s",
+   "14400 s"
+  ],
+  "correct": 0,
+  "explanation": "1 h = 3600 s, also 3 · 3600 = 10800 s."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einer Schachtel sind 22 Stifte. Wie viele Stifte sind in 7 Schachteln?",
+  "options": [
+   "146",
+   "160",
+   "154",
+   "150"
+  ],
+  "correct": 2,
+  "explanation": "22 · 7 = 154."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 99 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "11",
+   "7",
+   "14",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "99 : 9 = 11."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Tom kauft 3× Brötchen (je 0,35 €) und 2× Joghurt (je 0,55 €). Was muss er bezahlen?",
+  "options": [
+   "3,15 €",
+   "1,60 €",
+   "2,50 €",
+   "2,15 €"
+  ],
+  "correct": 3,
+  "explanation": "3 · 0,35 € + 2 · 0,55 € = 1,05 € + 1,10 € = 2,15 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "108 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "14",
+   "11",
+   "12",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "108 : 9 = 12."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Aufgabe: Lisa kauft 6 Käse für je 1,99 €. Sie zahlt mit 14,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "1,56 €",
+   "3,06 €",
+   "2,16 €",
+   "2,06 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 6 · 1,99 € = 11,94 €. Rückgeld: 14,00 € − 11,94 € = 2,06 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Auto legt 450 km in 6 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "85 km/h",
+   "444 km/h",
+   "75 km/h",
+   "65 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 450 km : 6 h = 75 km/h."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Gebäude ist 12 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 200?",
+  "options": [
+   "11 cm",
+   "12 cm",
+   "60 cm",
+   "6 cm"
+  ],
+  "correct": 3,
+  "explanation": "12 m = 1200 cm; 1200 cm : 200 = 6 cm."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Teste dein Wissen: Eine Ware kostet 141,00 €. Sie wird um 25 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "35,25 €",
+   "70,50 €",
+   "105,75 €",
+   "176,25 €"
+  ],
+  "correct": 2,
+  "explanation": "Rabatt: 25 % von 141,00 € = 35,25 €. Neuer Preis: 141,00 € − 35,25 € = 105,75 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Aufgabe: Ein Gebäude ist 60 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 2000?",
+  "options": [
+   "30 cm",
+   "60 cm",
+   "3 cm",
+   "8 cm"
+  ],
+  "correct": 2,
+  "explanation": "60 m = 6000 cm; 6000 cm : 2000 = 3 cm."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Teste dein Wissen: Berechne 40 % von 120.",
+  "options": [
+   "48",
+   "88",
+   "72",
+   "43"
+  ],
+  "correct": 0,
+  "explanation": "40 % von 120 = 120 · 40/100 = 48."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Aufgabe: Tom kauft 4× Käse (je 1,99 €) und 3× Saft (je 1,29 €). Was muss er bezahlen?",
+  "options": [
+   "13,82 €",
+   "10,54 €",
+   "11,83 €",
+   "12,83 €"
+  ],
+  "correct": 2,
+  "explanation": "4 · 1,99 € + 3 · 1,29 € = 7,96 € + 3,87 € = 11,83 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Löse: Ein Kapital von 1900 € wird mit 1 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "38 €",
+   "19 €",
+   "1919 €",
+   "9,50 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 1900 · 1/100 = 19 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Lisa kauft 5 Joghurt für je 0,55 €. Sie zahlt mit 7,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "4,25 €",
+   "3,75 €",
+   "4,35 €",
+   "5,25 €"
+  ],
+  "correct": 0,
+  "explanation": "Warenwert: 5 · 0,55 € = 2,75 €. Rückgeld: 7,00 € − 2,75 € = 4,25 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: In einem Bus sitzen 90 Personen, 14 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "108",
+   "102",
+   "106",
+   "104"
+  ],
+  "correct": 3,
+  "explanation": "90 + 14 = 104."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Aufgabe: Berechne 75 % von 380.",
+  "options": [
+   "285",
+   "280",
+   "95",
+   "360"
+  ],
+  "correct": 0,
+  "explanation": "75 % von 380 = 380 · 75/100 = 285."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 16 Äpfel werden gleichmäßig auf 4 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "4",
+   "0",
+   "2",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "16 : 4 = 4."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 84 Äpfel werden gleichmäßig auf 7 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "9",
+   "14",
+   "11",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "84 : 7 = 12."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Aufgabe: Eine Ware kostet 195,00 €. Sie wird um 10 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "214,50 €",
+   "19,50 €",
+   "175,50 €",
+   "156,00 €"
+  ],
+  "correct": 2,
+  "explanation": "Rabatt: 10 % von 195,00 € = 19,50 €. Neuer Preis: 195,00 € − 19,50 € = 175,50 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Aufgabe: Tom kauft 2× Käse (je 1,99 €) und 4× Stift (je 0,60 €). Was muss er bezahlen?",
+  "options": [
+   "7,38 €",
+   "6,38 €",
+   "5,78 €",
+   "8,37 €"
+  ],
+  "correct": 1,
+  "explanation": "2 · 1,99 € + 4 · 0,60 € = 3,98 € + 2,40 € = 6,38 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Teste dein Wissen: Ein Kapital von 3100 € wird mit 2,50 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "108,50 €",
+   "38,75 €",
+   "77,50 €",
+   "3177,50 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 3100 · 2,50/100 = 77,50 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Wähle die richtige Antwort. Tom kauft 3× Käse (je 1,99 €) und 1× Joghurt (je 0,55 €). Was muss er bezahlen?",
+  "options": [
+   "7,52 €",
+   "6,52 €",
+   "5,97 €",
+   "8,51 €"
+  ],
+  "correct": 1,
+  "explanation": "3 · 1,99 € + 1 · 0,55 € = 5,97 € + 0,55 € = 6,52 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: 63 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "7",
+   "3",
+   "6",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "63 : 9 = 7."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Eine Ware kostet 193,00 €. Sie wird um 15 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "28,95 €",
+   "221,95 €",
+   "164,05 €",
+   "135,10 €"
+  ],
+  "correct": 2,
+  "explanation": "Rabatt: 15 % von 193,00 € = 28,95 €. Neuer Preis: 193,00 € − 28,95 € = 164,05 €."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Aufgabe: Eine Ware kostet 134,00 €. Sie wird um 30 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "174,20 €",
+   "93,80 €",
+   "40,20 €",
+   "53,60 €"
+  ],
+  "correct": 1,
+  "explanation": "Rabatt: 30 % von 134,00 € = 40,20 €. Neuer Preis: 134,00 € − 40,20 € = 93,80 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Gebäude ist 60 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 500?",
+  "options": [
+   "17 cm",
+   "12 cm",
+   "60 cm",
+   "120 cm"
+  ],
+  "correct": 1,
+  "explanation": "60 m = 6000 cm; 6000 cm : 500 = 12 cm."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Aufgabe: 2000 € werden mit 5 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "2205 €",
+   "2247,20 €",
+   "2000 €",
+   "2200 €"
+  ],
+  "correct": 0,
+  "explanation": "K_n = K · (1 + p/100)^n = 2000 · 1,05^2 = 2205 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Ein Fahrzeug fährt mit 90 km/h. Für 180 km braucht es wie lange?",
+  "options": [
+   "4 h",
+   "1 h",
+   "2 h",
+   "3 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s : v = 180 km : 90 km/h = 2 h."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Löse: 5000 € werden mit 4 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "5512,50 €",
+   "5400 €",
+   "5000 €",
+   "5408 €"
+  ],
+  "correct": 3,
+  "explanation": "K_n = K · (1 + p/100)^n = 5000 · 1,04^2 = 5408 €."
+ },
+ {
+  "topic": "Zinseszins",
+  "question": "Teste dein Wissen: 10000 € werden mit 5 % pro Jahr angelegt (Zinseszins). Wie hoch ist das Kapital nach 2 Jahren?",
+  "options": [
+   "10000 €",
+   "11236 €",
+   "11025 €",
+   "11000 €"
+  ],
+  "correct": 2,
+  "explanation": "K_n = K · (1 + p/100)^n = 10000 · 1,05^2 = 11025 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einem Bus sitzen 141 Personen, 32 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "173",
+   "174",
+   "179",
+   "175"
+  ],
+  "correct": 0,
+  "explanation": "141 + 32 = 173."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Lisa kauft 2 Heft für je 0,75 €. Sie zahlt mit 6,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "4,60 €",
+   "4,50 €",
+   "5,50 €",
+   "4,00 €"
+  ],
+  "correct": 1,
+  "explanation": "Warenwert: 2 · 0,75 € = 1,50 €. Rückgeld: 6,00 € − 1,50 € = 4,50 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Lisa kauft 3 Kekse für je 1,45 €. Sie zahlt mit 8,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "4,65 €",
+   "3,75 €",
+   "3,65 €",
+   "3,15 €"
+  ],
+  "correct": 2,
+  "explanation": "Warenwert: 3 · 1,45 € = 4,35 €. Rückgeld: 8,00 € − 4,35 € = 3,65 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Löse: Ein Kapital von 3000 € wird mit 3 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "90 €",
+   "120 €",
+   "45 €",
+   "3090 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 3000 · 3/100 = 90 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Lisa kauft 4 Stift für je 0,60 €. Sie zahlt mit 5,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "2,10 €",
+   "2,60 €",
+   "2,70 €",
+   "3,60 €"
+  ],
+  "correct": 1,
+  "explanation": "Warenwert: 4 · 0,60 € = 2,40 €. Rückgeld: 5,00 € − 2,40 € = 2,60 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: 24 Äpfel werden gleichmäßig auf 3 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "6",
+   "10",
+   "8",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "24 : 3 = 8."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Löse: Wie viel Prozent sind 10 von 50?",
+  "options": [
+   "20 %",
+   "10 %",
+   "15 %",
+   "30 %"
+  ],
+  "correct": 0,
+  "explanation": "p = W/G · 100 % = 10/50 · 100 % = 20 %."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Aufgabe: Wie viel Prozent sind 10 von 50?",
+  "options": [
+   "10 %",
+   "30 %",
+   "20 %",
+   "15 %"
+  ],
+  "correct": 2,
+  "explanation": "p = W/G · 100 % = 10/50 · 100 % = 20 %."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Teste dein Wissen: Rechne um: 6 m = ? mm",
+  "options": [
+   "600 mm",
+   "6 mm",
+   "60000 mm",
+   "6000 mm"
+  ],
+  "correct": 3,
+  "explanation": "1 m = 1000 mm, also 6 m = 6000 mm."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Teste dein Wissen: Eine Ware kostet 142,00 €. Sie wird um 10 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "14,20 €",
+   "113,60 €",
+   "127,80 €",
+   "156,20 €"
+  ],
+  "correct": 2,
+  "explanation": "Rabatt: 10 % von 142,00 € = 14,20 €. Neuer Preis: 142,00 € − 14,20 € = 127,80 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Tom kauft 3× Apfel (je 0,45 €) und 2× Brot (je 1,49 €). Was muss er bezahlen?",
+  "options": [
+   "2,84 €",
+   "4,78 €",
+   "4,33 €",
+   "5,33 €"
+  ],
+  "correct": 2,
+  "explanation": "3 · 0,45 € + 2 · 1,49 € = 1,35 € + 2,98 € = 4,33 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Löse: Auf einer Karte im Maßstab 1 : 100000 sind 8 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "8000 m",
+   "800 m",
+   "80000 m",
+   "800000 m"
+  ],
+  "correct": 0,
+  "explanation": "8 cm · 100000 = 800000 cm = 8000 m."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Lisa kauft 2 Apfel für je 0,45 €. Sie zahlt mit 3,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "3,10 €",
+   "2,10 €",
+   "1,60 €",
+   "2,20 €"
+  ],
+  "correct": 1,
+  "explanation": "Warenwert: 2 · 0,45 € = 0,90 €. Rückgeld: 3,00 € − 0,90 € = 2,10 €."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Teste dein Wissen: Auf einer Karte im Maßstab 1 : 1000 sind 9 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "9000 m",
+   "90 m",
+   "9 m",
+   "900 m"
+  ],
+  "correct": 1,
+  "explanation": "9 cm · 1000 = 9000 cm = 90 m."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Zug fährt 5 Stunden lang mit 70 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "420 km",
+   "280 km",
+   "350 km",
+   "75 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 70 km/h · 5 h = 350 km."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Aufgabe: Ein Kapital von 2100 € wird mit 5 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "2205 €",
+   "126 €",
+   "52,50 €",
+   "105 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 2100 · 5/100 = 105 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Berechne 10 % von 30.",
+  "options": [
+   "3",
+   "27",
+   "13",
+   "-2"
+  ],
+  "correct": 0,
+  "explanation": "10 % von 30 = 30 · 10/100 = 3."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "In einer Schachtel sind 5 Stifte. Wie viele Stifte sind in 9 Schachteln?",
+  "options": [
+   "45",
+   "36",
+   "47",
+   "53"
+  ],
+  "correct": 0,
+  "explanation": "5 · 9 = 45."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Lisa kauft 4 Kekse für je 1,45 €. Sie zahlt mit 6,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "0,30 €",
+   "0,70 €",
+   "1,20 €",
+   "0,20 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 4 · 1,45 € = 5,80 €. Rückgeld: 6,00 € − 5,80 € = 0,20 €."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Teste dein Wissen: Rechne um: 3 h = ? min",
+  "options": [
+   "63 min",
+   "120 min",
+   "180 min",
+   "240 min"
+  ],
+  "correct": 2,
+  "explanation": "1 h = 60 min, also 3 · 60 = 180 min."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Löse: Auf einer Karte im Maßstab 1 : 50000 sind 4 cm gemessen. Welcher wirklichen Länge entspricht das?",
+  "options": [
+   "200000 m",
+   "200 m",
+   "2000 m",
+   "20000 m"
+  ],
+  "correct": 2,
+  "explanation": "4 cm · 50000 = 200000 cm = 2000 m."
+ },
+ {
+  "topic": "Maßstab",
+  "question": "Ein Gebäude ist 18 m lang. Wie lang ist es auf einem Plan im Maßstab 1 : 200?",
+  "options": [
+   "90 cm",
+   "9 cm",
+   "18 cm",
+   "14 cm"
+  ],
+  "correct": 1,
+  "explanation": "18 m = 1800 cm; 1800 cm : 200 = 9 cm."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Wähle die richtige Antwort. Ein Auto legt 240 km in 4 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "50 km/h",
+   "236 km/h",
+   "60 km/h",
+   "70 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 240 km : 4 h = 60 km/h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "27 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "1",
+   "4",
+   "3",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "27 : 9 = 3."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 2400 € wird mit 2 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "2448 €",
+   "72 €",
+   "24 €",
+   "48 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 2400 · 2/100 = 48 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Teste dein Wissen: Tom kauft 4× Radiergummi (je 0,40 €) und 2× Stift (je 0,60 €). Was muss er bezahlen?",
+  "options": [
+   "2,80 €",
+   "3,80 €",
+   "3,20 €",
+   "2,20 €"
+  ],
+  "correct": 0,
+  "explanation": "4 · 0,40 € + 2 · 0,60 € = 1,60 € + 1,20 € = 2,80 €."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Löse: Tom kauft 2× Kekse (je 1,45 €) und 4× Joghurt (je 0,55 €). Was muss er bezahlen?",
+  "options": [
+   "6,55 €",
+   "5,10 €",
+   "6,10 €",
+   "4,55 €"
+  ],
+  "correct": 1,
+  "explanation": "2 · 1,45 € + 4 · 0,55 € = 2,90 € + 2,20 € = 5,10 €."
+ },
+ {
+  "topic": "Prozent Rabatt",
+  "question": "Aufgabe: Eine Ware kostet 150,00 €. Sie wird um 30 % reduziert. Was ist der neue Preis?",
+  "options": [
+   "105,00 €",
+   "45,00 €",
+   "60,00 €",
+   "195,00 €"
+  ],
+  "correct": 0,
+  "explanation": "Rabatt: 30 % von 150,00 € = 45,00 €. Neuer Preis: 150,00 € − 45,00 € = 105,00 €."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. In einer Schachtel sind 4 Stifte. Wie viele Stifte sind in 12 Schachteln?",
+  "options": [
+   "53",
+   "57",
+   "48",
+   "45"
+  ],
+  "correct": 2,
+  "explanation": "4 · 12 = 48."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Aufgabe: Lisa kauft 3 Stift für je 0,60 €. Sie zahlt mit 2,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "1,20 €",
+   "0,30 €",
+   "0,70 €",
+   "0,20 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 3 · 0,60 € = 1,80 €. Rückgeld: 2,00 € − 1,80 € = 0,20 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Aufgabe: Ein Fahrzeug fährt mit 120 km/h. Für 240 km braucht es wie lange?",
+  "options": [
+   "2 h",
+   "1 h",
+   "3 h",
+   "4 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s : v = 240 km : 120 km/h = 2 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einem Bus sitzen 284 Personen, 13 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "297",
+   "296",
+   "301",
+   "300"
+  ],
+  "correct": 0,
+  "explanation": "284 + 13 = 297."
+ },
+ {
+  "topic": "Sachaufgabe Einkauf",
+  "question": "Lisa kauft 6 Ei für je 0,25 €. Sie zahlt mit 3,00 €. Wie viel Rückgeld bekommt sie?",
+  "options": [
+   "1,60 €",
+   "1,00 €",
+   "2,50 €",
+   "1,50 €"
+  ],
+  "correct": 3,
+  "explanation": "Warenwert: 6 · 0,25 € = 1,50 €. Rückgeld: 3,00 € − 1,50 € = 1,50 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 1000 € wird mit 3 % pro Jahr verzinst. Wie viel Zinsen fallen in einem Jahr an?",
+  "options": [
+   "30 €",
+   "40 €",
+   "15 €",
+   "1030 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 1000 · 3/100 = 30 €."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Fahrzeug fährt mit 90 km/h. Für 450 km braucht es wie lange?",
+  "options": [
+   "10 h",
+   "6 h",
+   "5 h",
+   "4 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s : v = 450 km : 90 km/h = 5 h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: 32 Äpfel werden gleichmäßig auf 8 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "4",
+   "2",
+   "0",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "32 : 8 = 4."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "36 Äpfel werden gleichmäßig auf 9 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "0",
+   "5",
+   "7",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "36 : 9 = 4."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Rechne um: 9 km = ? m",
+  "options": [
+   "9000 m",
+   "90000 m",
+   "9 m",
+   "900 m"
+  ],
+  "correct": 0,
+  "explanation": "1 km = 1000 m, also 9 km = 9000 m."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. In einem Bus sitzen 230 Personen, 40 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "270",
+   "274",
+   "265",
+   "271"
+  ],
+  "correct": 0,
+  "explanation": "230 + 40 = 270."
+ },
+ {
+  "topic": "Einheiten Länge",
+  "question": "Aufgabe: Rechne um: 5 km = ? m",
+  "options": [
+   "50000 m",
+   "500 m",
+   "5 m",
+   "5000 m"
+  ],
+  "correct": 3,
+  "explanation": "1 km = 1000 m, also 5 km = 5000 m."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Berechne 75 % von 200.",
+  "options": [
+   "145",
+   "225",
+   "50",
+   "150"
+  ],
+  "correct": 3,
+  "explanation": "75 % von 200 = 200 · 75/100 = 150."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Löse: In einem Bus sitzen 228 Personen, 18 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "248",
+   "250",
+   "249",
+   "246"
+  ],
+  "correct": 3,
+  "explanation": "228 + 18 = 246."
+ },
+ {
+  "topic": "Einheiten Zeit",
+  "question": "Teste dein Wissen: Rechne um: 2 h = ? s",
+  "options": [
+   "10800 s",
+   "3600 s",
+   "3602 s",
+   "7200 s"
+  ],
+  "correct": 3,
+  "explanation": "1 h = 3600 s, also 2 · 3600 = 7200 s."
+ },
+ {
+  "topic": "Einheiten Volumen",
+  "question": "Löse: Rechne um: 8 hl = ? l",
+  "options": [
+   "800 l",
+   "8 l",
+   "80 l",
+   "8000 l"
+  ],
+  "correct": 0,
+  "explanation": "1 hl = 100 l, also 8 hl = 800 l."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Wähle die richtige Antwort. 35 Äpfel werden gleichmäßig auf 7 Kisten verteilt. Wie viele Äpfel sind in jeder Kiste?",
+  "options": [
+   "7",
+   "5",
+   "1",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "35 : 7 = 5."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "Teste dein Wissen: In einem Bus sitzen 134 Personen, 24 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "162",
+   "164",
+   "155",
+   "158"
+  ],
+  "correct": 3,
+  "explanation": "134 + 24 = 158."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Löse: Ein Auto legt 120 km in 2 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "118 km/h",
+   "70 km/h",
+   "60 km/h",
+   "50 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s : t = 120 km : 2 h = 60 km/h."
+ },
+ {
+  "topic": "Zeit–Distanz",
+  "question": "Teste dein Wissen: Ein Auto legt 240 km in 6 Stunden zurück. Wie groß ist die Durchschnittsgeschwindigkeit?",
+  "options": [
+   "234 km/h",
+   "30 km/h",
+   "50 km/h",
+   "40 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s : t = 240 km : 6 h = 40 km/h."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "In einem Bus sitzen 172 Personen, 28 steigen zu. Wie viele sind es dann?",
+  "options": [
+   "199",
+   "197",
+   "200",
+   "195"
+  ],
+  "correct": 2,
+  "explanation": "172 + 28 = 200."
+ },
+ {
+  "topic": "Grundrechnen",
+  "question": "In einer Schachtel sind 23 Stifte. Wie viele Stifte sind in 14 Schachteln?",
+  "options": [
+   "326",
+   "328",
+   "322",
+   "327"
+  ],
+  "correct": 2,
+  "explanation": "23 · 14 = 322."
+ }
+]

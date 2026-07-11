@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 2 cm, 10 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "24 cm³",
+   "16 cm³",
+   "80 cm³",
+   "82 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 2 · 10 · 4 = 80 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 6 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "24 cm²",
+   "30 cm²",
+   "36 cm²",
+   "42 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 6² = 36 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "64 cm³",
+   "24 cm³",
+   "512 cm³",
+   "520 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 8³ = 512 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 5 → 20. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "10 → 40",
+   "10 → 41",
+   "10 → 22",
+   "10 → 80"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 4; 10 · 4 = 40."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 7 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "49 cm²",
+   "56 cm²",
+   "42 cm²",
+   "14 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 7² = 49 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 16x - 8x",
+  "options": [
+   "128x",
+   "9x",
+   "8x²",
+   "8x"
+  ],
+  "correct": 3,
+  "explanation": "16x - 8x = (16 - 8)x = 8x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Würfel hat die Kantenlänge 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "216 cm³",
+   "18 cm³",
+   "36 cm³",
+   "222 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 6³ = 216 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 6 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "3 Stunden",
+   "4 Stunden",
+   "12 Stunden",
+   "6 Stunden"
+  ],
+  "correct": 0,
+  "explanation": "Produkt konstant: 6 · 6 = 36 = 12 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 4 cm, 10 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "360 cm³",
+   "364 cm³",
+   "49 cm³",
+   "23 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 4 · 10 · 9 = 360 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 4 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 2 Arbeiter? (antiproportional)",
+  "options": [
+   "3 Stunden",
+   "12 Stunden",
+   "11 Stunden",
+   "13 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 4 · 6 = 24 = 2 · 12 ⇒ 12 Stunden."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 14 cm lang und 11 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "52 cm",
+   "48 cm",
+   "50 cm",
+   "154 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (14 + 11) = 50 cm."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 2x + 12x",
+  "options": [
+   "15x",
+   "10x",
+   "14x",
+   "14x²"
+  ],
+  "correct": 2,
+  "explanation": "2x + 12x = (2 + 12)x = 14x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 14x - 5x",
+  "options": [
+   "19x",
+   "70x",
+   "9x",
+   "9x²"
+  ],
+  "correct": 2,
+  "explanation": "14x - 5x = (14 - 5)x = 9x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 10x - 6x",
+  "options": [
+   "16x",
+   "4x",
+   "4x²",
+   "60x"
+  ],
+  "correct": 1,
+  "explanation": "10x - 6x = (10 - 6)x = 4x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 9 cm, 8 cm und 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "144 cm³",
+   "74 cm³",
+   "212 cm³",
+   "153 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 9 · 8 · 2 = 144 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 9 cm lang und 4 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "13 cm",
+   "26 cm",
+   "28 cm",
+   "24 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (9 + 4) = 26 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 10 cm, 7 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "570 cm³",
+   "412 cm³",
+   "560 cm³",
+   "78 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 10 · 7 · 8 = 560 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "4 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "5 Stunden",
+   "4 Stunden",
+   "8 Stunden",
+   "3 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 4 · 8 = 32 = 8 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 11 cm lang und 5 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "16 cm²",
+   "55 cm²",
+   "66 cm²",
+   "50 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 11 cm · 5 cm = 55 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 13 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "156 cm²",
+   "182 cm²",
+   "169 cm²",
+   "26 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 13² = 169 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 7 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "28 cm²",
+   "56 cm²",
+   "49 cm²",
+   "42 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 7² = 49 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 8x + 3y + 4x",
+  "options": [
+   "12x + 3y",
+   "15xy",
+   "15x",
+   "8x + 7y"
+  ],
+  "correct": 0,
+  "explanation": "8x + 4x = 12x; also 12x + 3y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 9x + 7y + 5x",
+  "options": [
+   "9x + 12y",
+   "14x + 7y",
+   "14x + 8y",
+   "21x"
+  ],
+  "correct": 1,
+  "explanation": "9x + 5x = 14x; also 14x + 7y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine Zahl größer als 1 zu würfeln?",
+  "options": [
+   "5/12",
+   "5/6",
+   "1/6",
+   "1/2"
+  ],
+  "correct": 1,
+  "explanation": "5 von 6 Ergebnissen sind günstig: P = 5/6 = 5/6."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: In einer Urne liegen 2 rote und 1 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/3",
+   "2/3",
+   "1",
+   "1/2"
+  ],
+  "correct": 1,
+  "explanation": "P(rot) = 2/3."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 2 · 7x",
+  "options": [
+   "15x",
+   "14x",
+   "2x + 7",
+   "14x²"
+  ],
+  "correct": 1,
+  "explanation": "2 · 7x = 14x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein Glücksrad hat 8 gleich große Felder, davon sind 7 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "1",
+   "7/9",
+   "7/8",
+   "1/8"
+  ],
+  "correct": 2,
+  "explanation": "P(Gewinn) = 7/8."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 2 → 6. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "8 → 24",
+   "8 → 25",
+   "8 → 48",
+   "8 → 10"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 3; 8 · 3 = 24."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 3 kg Äpfel kosten 6 €. Wie viel kosten 2 kg? (proportional)",
+  "options": [
+   "6 €",
+   "8 €",
+   "4 €",
+   "2 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 6/3 = 2 €; 2 kg kosten 2 · 2 = 4 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "36 cm³",
+   "216 cm³",
+   "222 cm³",
+   "18 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 6³ = 216 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 6 → 36. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 73",
+   "12 → 72",
+   "12 → 144",
+   "12 → 38"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 6; 12 · 6 = 72."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 8 · 4x",
+  "options": [
+   "8x + 4",
+   "32x²",
+   "12x",
+   "32x"
+  ],
+  "correct": 3,
+  "explanation": "8 · 4x = 32x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 7 kg Äpfel kosten 21 €. Wie viel kosten 10 kg? (proportional)",
+  "options": [
+   "30 €",
+   "33 €",
+   "27 €",
+   "31 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 21/7 = 3 €; 10 kg kosten 10 · 3 = 30 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "1000 cm³",
+   "30 cm³",
+   "1010 cm³",
+   "600 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 10³ = 1000 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 3x + 3y + 8x",
+  "options": [
+   "11x + 3y",
+   "14x",
+   "11x + 4y",
+   "14xy"
+  ],
+  "correct": 0,
+  "explanation": "3x + 8x = 11x; also 11x + 3y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein Glücksrad hat 6 gleich große Felder, davon sind 5 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "5/7",
+   "5/6",
+   "1",
+   "1/6"
+  ],
+  "correct": 1,
+  "explanation": "P(Gewinn) = 5/6."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 7 cm lang und 4 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "22 cm",
+   "24 cm",
+   "28 cm",
+   "20 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (7 + 4) = 22 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 4 cm lang und 10 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "44 cm²",
+   "14 cm²",
+   "40 cm²",
+   "28 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 4 cm · 10 cm = 40 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 10 cm, 8 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "490 cm³",
+   "86 cm³",
+   "24 cm³",
+   "480 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 10 · 8 · 6 = 480 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "30 cm²",
+   "60 cm²",
+   "17 cm²",
+   "24 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 12 · 5 / 2 = 30 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 8 cm, 2 cm und 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "17 cm³",
+   "120 cm³",
+   "172 cm³",
+   "112 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 8 · 2 · 7 = 112 cm³."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein Glücksrad hat 8 gleich große Felder, davon sind 1 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "1/4",
+   "1/9",
+   "7/8",
+   "1/8"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 1/8."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 20 cm und die Höhe h = 11 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "110 cm²",
+   "31 cm²",
+   "100 cm²",
+   "121 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 20 · 11 / 2 = 110 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 7 cm lang und 10 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "70 cm",
+   "34 cm",
+   "32 cm",
+   "17 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (7 + 10) = 34 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 20 cm und die Höhe h = 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "55 cm²",
+   "40 cm²",
+   "50 cm²",
+   "100 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 20 · 5 / 2 = 50 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 8 · 2x",
+  "options": [
+   "16x²",
+   "16x",
+   "8x + 2",
+   "10x"
+  ],
+  "correct": 1,
+  "explanation": "8 · 2x = 16x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 3x + 2y + 3x",
+  "options": [
+   "8xy",
+   "8x",
+   "6x + 2y",
+   "6x + 3y"
+  ],
+  "correct": 2,
+  "explanation": "3x + 3x = 6x; also 6x + 2y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "40 cm²",
+   "90 cm²",
+   "100 cm²",
+   "110 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 10² = 100 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: In einer Urne liegen 8 rote und 3 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/2",
+   "3/11",
+   "8/11",
+   "2/3"
+  ],
+  "correct": 2,
+  "explanation": "P(rot) = 8/11."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 2x + 9y + 6x",
+  "options": [
+   "17xy",
+   "8x + 9y",
+   "17x",
+   "8x + 10y"
+  ],
+  "correct": 1,
+  "explanation": "2x + 6x = 8x; also 8x + 9y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 11 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "22 cm²",
+   "121 cm²",
+   "44 cm²",
+   "110 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 11² = 121 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 9x + 5y + 6x",
+  "options": [
+   "20xy",
+   "20x",
+   "15x + 5y",
+   "9x + 11y"
+  ],
+  "correct": 2,
+  "explanation": "9x + 6x = 15x; also 15x + 5y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 19x - 10x",
+  "options": [
+   "9x²",
+   "9x",
+   "190x",
+   "10x"
+  ],
+  "correct": 1,
+  "explanation": "19x - 10x = (19 - 10)x = 9x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 2 · 2x",
+  "options": [
+   "5x",
+   "4x²",
+   "4x",
+   "2x + 2"
+  ],
+  "correct": 2,
+  "explanation": "2 · 2x = 4x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 5 → 20. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "15 → 23",
+   "15 → 60",
+   "15 → 61",
+   "15 → 120"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 4; 15 · 4 = 60."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 4 → 20. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "16 → 24",
+   "16 → 81",
+   "16 → 160",
+   "16 → 80"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 5; 16 · 5 = 80."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 6x + 12x",
+  "options": [
+   "72x",
+   "6x",
+   "18x",
+   "18x²"
+  ],
+  "correct": 2,
+  "explanation": "6x + 12x = (6 + 12)x = 18x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine Sechs zu würfeln?",
+  "options": [
+   "1/2",
+   "1/12",
+   "1/3",
+   "1/6"
+  ],
+  "correct": 3,
+  "explanation": "1 von 6 Ergebnissen sind günstig: P = 1/6 = 1/6."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 3 cm, 2 cm und 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "42 cm³",
+   "9 cm³",
+   "21 cm³",
+   "18 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 3 · 2 · 3 = 18 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 5 kg Äpfel kosten 35 €. Wie viel kosten 10 kg? (proportional)",
+  "options": [
+   "70 €",
+   "63 €",
+   "45 €",
+   "77 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 35/5 = 7 €; 10 kg kosten 10 · 7 = 70 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 4 cm, 4 cm und 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "11 cm³",
+   "48 cm³",
+   "19 cm³",
+   "52 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 4 · 4 · 3 = 48 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 4 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "16 → 96",
+   "16 → 49",
+   "16 → 16",
+   "16 → 48"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 3; 16 · 3 = 48."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 2x + 8y + 9x",
+  "options": [
+   "2x + 17y",
+   "19xy",
+   "19x",
+   "11x + 8y"
+  ],
+  "correct": 3,
+  "explanation": "2x + 9x = 11x; also 11x + 8y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "10 cm²",
+   "25 cm²",
+   "20 cm²",
+   "30 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 5² = 25 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 9 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "36 cm²",
+   "72 cm²",
+   "81 cm²",
+   "18 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 9² = 81 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 6 → 42. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "18 → 45",
+   "18 → 126",
+   "18 → 127",
+   "18 → 252"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 7; 18 · 7 = 126."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 9x + 9x",
+  "options": [
+   "18x",
+   "81x",
+   "18x²",
+   "0x"
+  ],
+  "correct": 0,
+  "explanation": "9x + 9x = (9 + 9)x = 18x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 4 → 16. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 96",
+   "12 → 49",
+   "12 → 48",
+   "12 → 19"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 4; 12 · 4 = 48."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 2x + 3y + 6x",
+  "options": [
+   "8x + 4y",
+   "11xy",
+   "8x + 3y",
+   "11x"
+  ],
+  "correct": 2,
+  "explanation": "2x + 6x = 8x; also 8x + 3y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 3x + 3x",
+  "options": [
+   "0x",
+   "6x",
+   "6x²",
+   "9x"
+  ],
+  "correct": 1,
+  "explanation": "3x + 3x = (3 + 3)x = 6x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 14 cm lang und 3 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "39 cm²",
+   "56 cm²",
+   "34 cm²",
+   "42 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 14 cm · 3 cm = 42 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 5 → 35. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "10 → 140",
+   "10 → 37",
+   "10 → 70",
+   "10 → 71"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 7; 10 · 7 = 70."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 7 cm, 4 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "168 cm³",
+   "17 cm³",
+   "175 cm³",
+   "188 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 7 · 4 · 6 = 168 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 3 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "12 Stunden",
+   "3 Stunden",
+   "2 Stunden",
+   "4 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 3 · 12 = 36 = 12 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "12 cm²",
+   "20 cm²",
+   "16 cm²",
+   "8 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 4² = 16 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 9 · 4x",
+  "options": [
+   "36x²",
+   "13x",
+   "37x",
+   "36x"
+  ],
+  "correct": 3,
+  "explanation": "9 · 4x = 36x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 13 cm lang und 10 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "46 cm²",
+   "23 cm²",
+   "130 cm²",
+   "143 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 13 cm · 10 cm = 130 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 13 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "26 cm²",
+   "182 cm²",
+   "52 cm²",
+   "169 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a² = 13² = 169 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 8x + 6y + 7x",
+  "options": [
+   "21xy",
+   "8x + 13y",
+   "15x + 6y",
+   "15x + 7y"
+  ],
+  "correct": 2,
+  "explanation": "8x + 7x = 15x; also 15x + 6y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine gerade Zahl zu würfeln?",
+  "options": [
+   "1/4",
+   "1/3",
+   "1/2",
+   "1/6"
+  ],
+  "correct": 2,
+  "explanation": "3 von 6 Ergebnissen sind günstig: P = 3/6 = 1/2."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 2 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "9 cm²",
+   "36 cm²",
+   "20 cm²",
+   "18 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 18 · 2 / 2 = 18 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 12x + 10x",
+  "options": [
+   "120x",
+   "22x",
+   "23x",
+   "2x"
+  ],
+  "correct": 1,
+  "explanation": "12x + 10x = (12 + 10)x = 22x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 8x + 3x",
+  "options": [
+   "11x²",
+   "5x",
+   "11x",
+   "12x"
+  ],
+  "correct": 2,
+  "explanation": "8x + 3x = (8 + 3)x = 11x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 5 → 20. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "15 → 23",
+   "15 → 120",
+   "15 → 61",
+   "15 → 60"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 4; 15 · 4 = 60."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine ungerade Zahl zu würfeln?",
+  "options": [
+   "1/6",
+   "1/2",
+   "1/4",
+   "1/3"
+  ],
+  "correct": 1,
+  "explanation": "3 von 6 Ergebnissen sind günstig: P = 3/6 = 1/2."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 4x + 2x",
+  "options": [
+   "6x",
+   "7x",
+   "8x",
+   "6x²"
+  ],
+  "correct": 0,
+  "explanation": "4x + 2x = (4 + 2)x = 6x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 7 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "28 cm²",
+   "56 cm²",
+   "49 cm²",
+   "14 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 7² = 49 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 4x + 2y + 7x",
+  "options": [
+   "13x",
+   "4x + 9y",
+   "11x + 2y",
+   "13xy"
+  ],
+  "correct": 2,
+  "explanation": "4x + 7x = 11x; also 11x + 2y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine Zahl kleiner als 5 zu würfeln?",
+  "options": [
+   "1/2",
+   "1/3",
+   "5/6",
+   "2/3"
+  ],
+  "correct": 3,
+  "explanation": "4 von 6 Ergebnissen sind günstig: P = 4/6 = 2/3."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 4 · 7x",
+  "options": [
+   "28x²",
+   "28x",
+   "4x + 7",
+   "29x"
+  ],
+  "correct": 1,
+  "explanation": "4 · 7x = 28x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein Glücksrad hat 12 gleich große Felder, davon sind 9 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "9/13",
+   "1/4",
+   "3/4",
+   "5/6"
+  ],
+  "correct": 2,
+  "explanation": "P(Gewinn) = 9/12 = 3/4."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "5 kg Äpfel kosten 30 €. Wie viel kosten 12 kg? (proportional)",
+  "options": [
+   "66 €",
+   "73 €",
+   "72 €",
+   "42 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 30/5 = 6 €; 12 kg kosten 12 · 6 = 72 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 15 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "240 cm²",
+   "60 cm²",
+   "225 cm²",
+   "30 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 15² = 225 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 5 · 6x",
+  "options": [
+   "30x",
+   "31x",
+   "30x²",
+   "5x + 6"
+  ],
+  "correct": 0,
+  "explanation": "5 · 6x = 30x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "222 cm³",
+   "216 cm³",
+   "36 cm³",
+   "18 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 6³ = 216 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 10x - 5x",
+  "options": [
+   "5x",
+   "6x",
+   "50x",
+   "5x²"
+  ],
+  "correct": 0,
+  "explanation": "10x - 5x = (10 - 5)x = 5x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 7 kg Äpfel kosten 42 €. Wie viel kosten 4 kg? (proportional)",
+  "options": [
+   "24 €",
+   "25 €",
+   "30 €",
+   "46 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 42/7 = 6 €; 4 kg kosten 4 · 6 = 24 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "36 cm³",
+   "216 cm³",
+   "18 cm³",
+   "222 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 6³ = 216 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 7x + 8x",
+  "options": [
+   "1x",
+   "56x",
+   "16x",
+   "15x"
+  ],
+  "correct": 3,
+  "explanation": "7x + 8x = (7 + 8)x = 15x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 5 kg Äpfel kosten 45 €. Wie viel kosten 10 kg? (proportional)",
+  "options": [
+   "90 €",
+   "81 €",
+   "91 €",
+   "55 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 45/5 = 9 €; 10 kg kosten 10 · 9 = 90 €."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 5x + 2y + 6x",
+  "options": [
+   "11x + 2y",
+   "11x + 3y",
+   "5x + 8y",
+   "13x"
+  ],
+  "correct": 0,
+  "explanation": "5x + 6x = 11x; also 11x + 2y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "In einer Urne liegen 2 rote und 6 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/4",
+   "2/9",
+   "3/4",
+   "1/2"
+  ],
+  "correct": 0,
+  "explanation": "P(rot) = 2/8 = 1/4."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 14x - 6x",
+  "options": [
+   "84x",
+   "8x²",
+   "20x",
+   "8x"
+  ],
+  "correct": 3,
+  "explanation": "14x - 6x = (14 - 6)x = 8x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 10 cm, 6 cm und 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "280 cm³",
+   "65 cm³",
+   "300 cm³",
+   "310 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 10 · 6 · 5 = 300 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 6 · 4x",
+  "options": [
+   "6x + 4",
+   "24x",
+   "24x²",
+   "25x"
+  ],
+  "correct": 1,
+  "explanation": "6 · 4x = 24x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 9 · 4x",
+  "options": [
+   "9x + 4",
+   "36x²",
+   "13x",
+   "36x"
+  ],
+  "correct": 3,
+  "explanation": "9 · 4x = 36x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 13x - 5x",
+  "options": [
+   "8x²",
+   "8x",
+   "18x",
+   "65x"
+  ],
+  "correct": 1,
+  "explanation": "13x - 5x = (13 - 5)x = 8x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 7 cm, 10 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "420 cm³",
+   "23 cm³",
+   "76 cm³",
+   "427 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 7 · 10 · 6 = 420 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "8 kg Äpfel kosten 32 €. Wie viel kosten 7 kg? (proportional)",
+  "options": [
+   "28 €",
+   "39 €",
+   "29 €",
+   "24 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 32/8 = 4 €; 7 kg kosten 7 · 4 = 28 €."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 3 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 49",
+   "12 → 96",
+   "12 → 48",
+   "12 → 16"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 4; 12 · 4 = 48."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 9 · 9x",
+  "options": [
+   "81x",
+   "81x²",
+   "82x",
+   "9x + 9"
+  ],
+  "correct": 0,
+  "explanation": "9 · 9x = 81x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: Ein Glücksrad hat 8 gleich große Felder, davon sind 3 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "5/8",
+   "3/8",
+   "1/2",
+   "1/3"
+  ],
+  "correct": 1,
+  "explanation": "P(Gewinn) = 3/8."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 9 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "90 cm²",
+   "36 cm²",
+   "81 cm²",
+   "18 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 9² = 81 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 4 · 3x",
+  "options": [
+   "12x",
+   "7x",
+   "12x²",
+   "13x"
+  ],
+  "correct": 0,
+  "explanation": "4 · 3x = 12x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 7 kg Äpfel kosten 63 €. Wie viel kosten 8 kg? (proportional)",
+  "options": [
+   "81 €",
+   "73 €",
+   "72 €",
+   "63 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 63/7 = 9 €; 8 kg kosten 8 · 9 = 72 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 4 cm, 7 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "224 cm³",
+   "232 cm³",
+   "19 cm³",
+   "36 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 4 · 7 · 8 = 224 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 5 kg Äpfel kosten 25 €. Wie viel kosten 8 kg? (proportional)",
+  "options": [
+   "33 €",
+   "41 €",
+   "45 €",
+   "40 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 25/5 = 5 €; 8 kg kosten 8 · 5 = 40 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 5 cm, 9 cm und 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "24 cm³",
+   "450 cm³",
+   "55 cm³",
+   "370 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 5 · 9 · 10 = 450 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "27 cm³",
+   "30 cm³",
+   "9 cm³",
+   "54 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 3³ = 27 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 4 cm lang und 7 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "32 cm²",
+   "21 cm²",
+   "28 cm²",
+   "11 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 4 cm · 7 cm = 28 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 2 · 3x",
+  "options": [
+   "6x",
+   "7x",
+   "5x",
+   "2x + 3"
+  ],
+  "correct": 0,
+  "explanation": "2 · 3x = 6x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 5 cm lang und 14 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "70 cm²",
+   "56 cm²",
+   "75 cm²",
+   "19 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 5 cm · 14 cm = 70 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 5 → 15. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "15 → 18",
+   "15 → 46",
+   "15 → 90",
+   "15 → 45"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 3; 15 · 3 = 45."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 6 → 48. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "18 → 144",
+   "18 → 145",
+   "18 → 288",
+   "18 → 51"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 8; 18 · 8 = 144."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 3 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "24 Stunden",
+   "12 Stunden",
+   "5 Stunden",
+   "6 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 3 · 12 = 36 = 6 · 6 ⇒ 6 Stunden."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: In einer Urne liegen 8 rote und 2 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/5",
+   "1/2",
+   "8/11",
+   "4/5"
+  ],
+  "correct": 3,
+  "explanation": "P(rot) = 8/10 = 4/5."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 6 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "11 Stunden",
+   "13 Stunden",
+   "12 Stunden",
+   "8 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 6 · 8 = 48 = 4 · 12 ⇒ 12 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 15 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "60 cm²",
+   "30 cm²",
+   "225 cm²",
+   "240 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 15² = 225 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 4x + 9y + 2x",
+  "options": [
+   "15xy",
+   "6x + 10y",
+   "4x + 11y",
+   "6x + 9y"
+  ],
+  "correct": 3,
+  "explanation": "4x + 2x = 6x; also 6x + 9y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine Zahl größer als 1 zu würfeln?",
+  "options": [
+   "5/6",
+   "1/6",
+   "1",
+   "5/12"
+  ],
+  "correct": 0,
+  "explanation": "5 von 6 Ergebnissen sind günstig: P = 5/6 = 5/6."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 7 cm lang und 4 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "22 cm²",
+   "35 cm²",
+   "11 cm²",
+   "28 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 7 cm · 4 cm = 28 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: In einer Urne liegen 5 rote und 3 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/2",
+   "3/4",
+   "5/9",
+   "5/8"
+  ],
+  "correct": 3,
+  "explanation": "P(rot) = 5/8."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 3x - 2x",
+  "options": [
+   "6x",
+   "x",
+   "1x²",
+   "2x"
+  ],
+  "correct": 1,
+  "explanation": "3x - 2x = (3 - 2)x = x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "7 kg Äpfel kosten 35 €. Wie viel kosten 6 kg? (proportional)",
+  "options": [
+   "35 €",
+   "30 €",
+   "25 €",
+   "31 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 35/7 = 5 €; 6 kg kosten 6 · 5 = 30 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 10 cm lang und 11 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "110 cm²",
+   "21 cm²",
+   "42 cm²",
+   "99 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 10 cm · 11 cm = 110 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine Zahl größer als 1 zu würfeln?",
+  "options": [
+   "1",
+   "5/6",
+   "5/12",
+   "1/2"
+  ],
+  "correct": 1,
+  "explanation": "5 von 6 Ergebnissen sind günstig: P = 5/6 = 5/6."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 12 cm lang und 14 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "26 cm²",
+   "168 cm²",
+   "154 cm²",
+   "180 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 12 cm · 14 cm = 168 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 10 cm lang und 6 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "54 cm²",
+   "60 cm²",
+   "32 cm²",
+   "16 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 10 cm · 6 cm = 60 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine gerade Zahl zu würfeln?",
+  "options": [
+   "1/2",
+   "1/4",
+   "1/6",
+   "2/3"
+  ],
+  "correct": 0,
+  "explanation": "3 von 6 Ergebnissen sind günstig: P = 3/6 = 1/2."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 2 · 9x",
+  "options": [
+   "11x",
+   "2x + 9",
+   "18x",
+   "19x"
+  ],
+  "correct": 2,
+  "explanation": "2 · 9x = 18x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 16x - 6x",
+  "options": [
+   "10x²",
+   "10x",
+   "22x",
+   "11x"
+  ],
+  "correct": 1,
+  "explanation": "16x - 6x = (16 - 6)x = 10x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 18x - 8x",
+  "options": [
+   "10x",
+   "10x²",
+   "11x",
+   "144x"
+  ],
+  "correct": 0,
+  "explanation": "18x - 8x = (18 - 8)x = 10x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "2 kg Äpfel kosten 16 €. Wie viel kosten 3 kg? (proportional)",
+  "options": [
+   "16 €",
+   "24 €",
+   "32 €",
+   "25 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 16/2 = 8 €; 3 kg kosten 3 · 8 = 24 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 10 cm, 5 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "410 cm³",
+   "58 cm³",
+   "400 cm³",
+   "340 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 10 · 5 · 8 = 400 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 5x + 9y + 3x",
+  "options": [
+   "8x + 10y",
+   "8x + 9y",
+   "17x",
+   "17xy"
+  ],
+  "correct": 1,
+  "explanation": "5x + 3x = 8x; also 8x + 9y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 2x + 4x",
+  "options": [
+   "8x",
+   "6x²",
+   "6x",
+   "7x"
+  ],
+  "correct": 2,
+  "explanation": "2x + 4x = (2 + 4)x = 6x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 6x + 10x",
+  "options": [
+   "4x",
+   "60x",
+   "16x",
+   "16x²"
+  ],
+  "correct": 2,
+  "explanation": "6x + 10x = (6 + 10)x = 16x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 16 cm und die Höhe h = 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "64 cm²",
+   "20 cm²",
+   "24 cm²",
+   "32 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 16 · 4 / 2 = 32 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 3x + 5y + 2x",
+  "options": [
+   "5x + 6y",
+   "10x",
+   "5x + 5y",
+   "10xy"
+  ],
+  "correct": 2,
+  "explanation": "3x + 2x = 5x; also 5x + 5y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 8 cm lang und 8 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "56 cm²",
+   "72 cm²",
+   "64 cm²",
+   "32 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 8 cm · 8 cm = 64 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 12x - 6x",
+  "options": [
+   "6x²",
+   "6x",
+   "7x",
+   "72x"
+  ],
+  "correct": 1,
+  "explanation": "12x - 6x = (12 - 6)x = 6x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 13 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "52 cm²",
+   "169 cm²",
+   "156 cm²",
+   "182 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 13² = 169 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 8 cm und die Höhe h = 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "40 cm²",
+   "25 cm²",
+   "16 cm²",
+   "20 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 8 · 5 / 2 = 20 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 2x + 10x",
+  "options": [
+   "12x²",
+   "13x",
+   "20x",
+   "12x"
+  ],
+  "correct": 3,
+  "explanation": "2x + 10x = (2 + 10)x = 12x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein Glücksrad hat 4 gleich große Felder, davon sind 3 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "1",
+   "3/4",
+   "1/4",
+   "3/5"
+  ],
+  "correct": 1,
+  "explanation": "P(Gewinn) = 3/4."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 17x - 10x",
+  "options": [
+   "7x",
+   "170x",
+   "27x",
+   "7x²"
+  ],
+  "correct": 0,
+  "explanation": "17x - 10x = (17 - 10)x = 7x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 5 → 20. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "10 → 22",
+   "10 → 41",
+   "10 → 40",
+   "10 → 80"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 4; 10 · 4 = 40."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 12 cm lang und 9 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "108 cm",
+   "21 cm",
+   "42 cm",
+   "40 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (12 + 9) = 42 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 14 cm lang und 11 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "25 cm²",
+   "143 cm²",
+   "168 cm²",
+   "154 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 14 cm · 11 cm = 154 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein Glücksrad hat 8 gleich große Felder, davon sind 5 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "5/9",
+   "3/4",
+   "3/8",
+   "5/8"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 5/8."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein Glücksrad hat 4 gleich große Felder, davon sind 3 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "3/5",
+   "1",
+   "1/4",
+   "3/4"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 3/4."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 19x - 10x",
+  "options": [
+   "9x",
+   "10x",
+   "190x",
+   "9x²"
+  ],
+  "correct": 0,
+  "explanation": "19x - 10x = (19 - 10)x = 9x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein Glücksrad hat 10 gleich große Felder, davon sind 4 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "1/2",
+   "3/5",
+   "4/11",
+   "2/5"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 4/10 = 2/5."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 6x - 2x",
+  "options": [
+   "4x²",
+   "4x",
+   "8x",
+   "5x"
+  ],
+  "correct": 1,
+  "explanation": "6x - 2x = (6 - 2)x = 4x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 4 cm und die Höhe h = 12 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "22 cm²",
+   "16 cm²",
+   "24 cm²",
+   "36 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 4 · 12 / 2 = 24 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein Glücksrad hat 8 gleich große Felder, davon sind 3 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "3/8",
+   "1/2",
+   "5/8",
+   "1/3"
+  ],
+  "correct": 0,
+  "explanation": "P(Gewinn) = 3/8."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 14 cm lang und 6 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "20 cm²",
+   "98 cm²",
+   "84 cm²",
+   "78 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 14 cm · 6 cm = 84 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 13x - 10x",
+  "options": [
+   "23x",
+   "3x²",
+   "4x",
+   "3x"
+  ],
+  "correct": 3,
+  "explanation": "13x - 10x = (13 - 10)x = 3x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 13x - 4x",
+  "options": [
+   "17x",
+   "9x²",
+   "52x",
+   "9x"
+  ],
+  "correct": 3,
+  "explanation": "13x - 4x = (13 - 4)x = 9x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "21 cm³",
+   "49 cm³",
+   "343 cm³",
+   "350 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 7³ = 343 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 5 kg Äpfel kosten 10 €. Wie viel kosten 10 kg? (proportional)",
+  "options": [
+   "20 €",
+   "22 €",
+   "18 €",
+   "21 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 10/5 = 2 €; 10 kg kosten 10 · 2 = 20 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 14 cm und die Höhe h = 2 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "16 cm²",
+   "28 cm²",
+   "7 cm²",
+   "14 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 14 · 2 / 2 = 14 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "30 cm³",
+   "9 cm³",
+   "27 cm³",
+   "54 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 3³ = 27 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 4 · 7x",
+  "options": [
+   "28x",
+   "4x + 7",
+   "11x",
+   "28x²"
+  ],
+  "correct": 0,
+  "explanation": "4 · 7x = 28x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 7x + 4y + 9x",
+  "options": [
+   "16x + 4y",
+   "7x + 13y",
+   "20x",
+   "16x + 5y"
+  ],
+  "correct": 0,
+  "explanation": "7x + 9x = 16x; also 16x + 4y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 9x + 5y + 9x",
+  "options": [
+   "18x + 5y",
+   "18x + 6y",
+   "23x",
+   "9x + 14y"
+  ],
+  "correct": 0,
+  "explanation": "9x + 9x = 18x; also 18x + 5y."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 9 cm, 3 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "20 cm³",
+   "246 cm³",
+   "225 cm³",
+   "216 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 9 · 3 · 8 = 216 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 7x + 2x",
+  "options": [
+   "5x",
+   "9x²",
+   "9x",
+   "10x"
+  ],
+  "correct": 2,
+  "explanation": "7x + 2x = (7 + 2)x = 9x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 16 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "48 cm²",
+   "27 cm²",
+   "24 cm²",
+   "16 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 16 · 3 / 2 = 24 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 18x - 9x",
+  "options": [
+   "162x",
+   "27x",
+   "9x",
+   "10x"
+  ],
+  "correct": 2,
+  "explanation": "18x - 9x = (18 - 9)x = 9x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 11x + 11x",
+  "options": [
+   "0x",
+   "23x",
+   "22x",
+   "121x"
+  ],
+  "correct": 2,
+  "explanation": "11x + 11x = (11 + 11)x = 22x."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 14 cm lang und 12 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "168 cm",
+   "50 cm",
+   "26 cm",
+   "52 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (14 + 12) = 52 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 2 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "24 cm²",
+   "14 cm²",
+   "12 cm²",
+   "6 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 12 · 2 / 2 = 12 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 6x + 3y + 6x",
+  "options": [
+   "15xy",
+   "15x",
+   "12x + 3y",
+   "6x + 9y"
+  ],
+  "correct": 2,
+  "explanation": "6x + 6x = 12x; also 12x + 3y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 6 · 5x",
+  "options": [
+   "6x + 5",
+   "30x",
+   "30x²",
+   "31x"
+  ],
+  "correct": 1,
+  "explanation": "6 · 5x = 30x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 2 cm, 3 cm und 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "8 cm³",
+   "42 cm³",
+   "9 cm³",
+   "18 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 2 · 3 · 3 = 18 cm³."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein Glücksrad hat 12 gleich große Felder, davon sind 5 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "1/2",
+   "7/12",
+   "5/13",
+   "5/12"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 5/12."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 7 cm lang und 12 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "84 cm²",
+   "38 cm²",
+   "19 cm²",
+   "91 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 7 cm · 12 cm = 84 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine Zahl kleiner als 5 zu würfeln?",
+  "options": [
+   "2/3",
+   "1/3",
+   "1/2",
+   "5/6"
+  ],
+  "correct": 0,
+  "explanation": "4 von 6 Ergebnissen sind günstig: P = 4/6 = 2/3."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 20 cm und die Höhe h = 2 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "20 cm²",
+   "40 cm²",
+   "22 cm²",
+   "10 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 20 · 2 / 2 = 20 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine Sechs zu würfeln?",
+  "options": [
+   "1/12",
+   "1/2",
+   "1/3",
+   "1/6"
+  ],
+  "correct": 3,
+  "explanation": "1 von 6 Ergebnissen sind günstig: P = 1/6 = 1/6."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: Ein Glücksrad hat 5 gleich große Felder, davon sind 3 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "2/5",
+   "3/5",
+   "1/2",
+   "4/5"
+  ],
+  "correct": 1,
+  "explanation": "P(Gewinn) = 3/5."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "In einer Urne liegen 6 rote und 4 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "7/10",
+   "2/5",
+   "3/5",
+   "6/11"
+  ],
+  "correct": 2,
+  "explanation": "P(rot) = 6/10 = 3/5."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein Glücksrad hat 10 gleich große Felder, davon sind 3 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "3/11",
+   "3/10",
+   "7/10",
+   "2/5"
+  ],
+  "correct": 1,
+  "explanation": "P(Gewinn) = 3/10."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 3 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "9 → 15",
+   "9 → 72",
+   "9 → 37",
+   "9 → 36"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 4; 9 · 4 = 36."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 4 cm lang und 4 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "12 cm²",
+   "8 cm²",
+   "16 cm²",
+   "20 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 4 cm · 4 cm = 16 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein Glücksrad hat 4 gleich große Felder, davon sind 1 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "3/4",
+   "1/2",
+   "1/4",
+   "1/5"
+  ],
+  "correct": 2,
+  "explanation": "P(Gewinn) = 1/4."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "7 kg Äpfel kosten 49 €. Wie viel kosten 4 kg? (proportional)",
+  "options": [
+   "21 €",
+   "29 €",
+   "28 €",
+   "53 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 49/7 = 7 €; 4 kg kosten 4 · 7 = 28 €."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 11 cm lang und 3 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "26 cm",
+   "28 cm",
+   "30 cm",
+   "14 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (11 + 3) = 28 cm."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 8 cm lang und 10 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "36 cm",
+   "38 cm",
+   "80 cm",
+   "18 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (8 + 10) = 36 cm."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 12x - 2x",
+  "options": [
+   "10x²",
+   "14x",
+   "11x",
+   "10x"
+  ],
+  "correct": 3,
+  "explanation": "12x - 2x = (12 - 2)x = 10x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "16 cm³",
+   "12 cm³",
+   "68 cm³",
+   "64 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a³ = 4³ = 64 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 5x + 5y + 9x",
+  "options": [
+   "19x",
+   "5x + 14y",
+   "14x + 5y",
+   "14x + 6y"
+  ],
+  "correct": 2,
+  "explanation": "5x + 9x = 14x; also 14x + 5y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 4 cm und die Höhe h = 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "14 cm²",
+   "20 cm²",
+   "30 cm²",
+   "40 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 4 · 10 / 2 = 20 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 2 · 4x",
+  "options": [
+   "2x + 4",
+   "8x²",
+   "8x",
+   "9x"
+  ],
+  "correct": 2,
+  "explanation": "2 · 4x = 8x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine gerade Zahl zu würfeln?",
+  "options": [
+   "1/3",
+   "1/6",
+   "1/2",
+   "1/4"
+  ],
+  "correct": 2,
+  "explanation": "3 von 6 Ergebnissen sind günstig: P = 3/6 = 1/2."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. In einer Urne liegen 5 rote und 8 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/2",
+   "5/13",
+   "8/13",
+   "6/13"
+  ],
+  "correct": 1,
+  "explanation": "P(rot) = 5/13."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 9x + 4y + 2x",
+  "options": [
+   "11x + 4y",
+   "15xy",
+   "11x + 5y",
+   "15x"
+  ],
+  "correct": 0,
+  "explanation": "9x + 2x = 11x; also 11x + 4y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: Ein Glücksrad hat 8 gleich große Felder, davon sind 6 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "7/8",
+   "1/4",
+   "2/3",
+   "3/4"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 6/8 = 3/4."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 4x + 8y + 3x",
+  "options": [
+   "7x + 8y",
+   "15x",
+   "7x + 9y",
+   "4x + 11y"
+  ],
+  "correct": 0,
+  "explanation": "4x + 3x = 7x; also 7x + 8y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: In einer Urne liegen 4 rote und 7 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "4/11",
+   "1/3",
+   "5/11",
+   "1/2"
+  ],
+  "correct": 0,
+  "explanation": "P(rot) = 4/11."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 6 → 18. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "24 → 22",
+   "24 → 73",
+   "24 → 72",
+   "24 → 144"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 3; 24 · 3 = 72."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 4 → 24. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 144",
+   "12 → 27",
+   "12 → 73",
+   "12 → 72"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 6; 12 · 6 = 72."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 3 cm, 7 cm und 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "142 cm³",
+   "15 cm³",
+   "26 cm³",
+   "105 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 3 · 7 · 5 = 105 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 5 · 8x",
+  "options": [
+   "41x",
+   "5x + 8",
+   "40x",
+   "13x"
+  ],
+  "correct": 2,
+  "explanation": "5 · 8x = 40x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 2 · 6x",
+  "options": [
+   "8x",
+   "12x",
+   "2x + 6",
+   "12x²"
+  ],
+  "correct": 1,
+  "explanation": "2 · 6x = 12x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 13 cm lang und 14 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "195 cm²",
+   "182 cm²",
+   "168 cm²",
+   "54 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 13 cm · 14 cm = 182 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "15 cm²",
+   "21 cm²",
+   "18 cm²",
+   "12 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 12 · 3 / 2 = 18 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "4 kg Äpfel kosten 20 €. Wie viel kosten 3 kg? (proportional)",
+  "options": [
+   "15 €",
+   "23 €",
+   "10 €",
+   "16 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 20/4 = 5 €; 3 kg kosten 3 · 5 = 15 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 20 cm und die Höhe h = 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "28 cm²",
+   "80 cm²",
+   "160 cm²",
+   "88 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 20 · 8 / 2 = 80 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 7 · 7x",
+  "options": [
+   "50x",
+   "49x²",
+   "49x",
+   "7x + 7"
+  ],
+  "correct": 2,
+  "explanation": "7 · 7x = 49x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "24 cm³",
+   "64 cm³",
+   "520 cm³",
+   "512 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a³ = 8³ = 512 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 12x + 10x",
+  "options": [
+   "22x²",
+   "120x",
+   "22x",
+   "2x"
+  ],
+  "correct": 2,
+  "explanation": "12x + 10x = (12 + 10)x = 22x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 2 kg Äpfel kosten 8 €. Wie viel kosten 9 kg? (proportional)",
+  "options": [
+   "32 €",
+   "17 €",
+   "36 €",
+   "37 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 8/2 = 4 €; 9 kg kosten 9 · 4 = 36 €."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 7 · 4x",
+  "options": [
+   "29x",
+   "28x",
+   "11x",
+   "28x²"
+  ],
+  "correct": 1,
+  "explanation": "7 · 4x = 28x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 7 kg Äpfel kosten 28 €. Wie viel kosten 5 kg? (proportional)",
+  "options": [
+   "20 €",
+   "21 €",
+   "33 €",
+   "16 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 28/7 = 4 €; 5 kg kosten 5 · 4 = 20 €."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 4x + 6y + 8x",
+  "options": [
+   "4x + 14y",
+   "12x + 7y",
+   "18xy",
+   "12x + 6y"
+  ],
+  "correct": 3,
+  "explanation": "4x + 8x = 12x; also 12x + 6y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 8x + 3y + 3x",
+  "options": [
+   "14x",
+   "11x + 4y",
+   "11x + 3y",
+   "8x + 6y"
+  ],
+  "correct": 2,
+  "explanation": "8x + 3x = 11x; also 11x + 3y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 14 cm lang und 15 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "210 cm²",
+   "29 cm²",
+   "58 cm²",
+   "195 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 14 cm · 15 cm = 210 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein Glücksrad hat 12 gleich große Felder, davon sind 11 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "1/12",
+   "11/12",
+   "1",
+   "11/13"
+  ],
+  "correct": 1,
+  "explanation": "P(Gewinn) = 11/12."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 12 cm lang und 12 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "144 cm²",
+   "132 cm²",
+   "156 cm²",
+   "48 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 12 cm · 12 cm = 144 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 3 · 8x",
+  "options": [
+   "25x",
+   "3x + 8",
+   "24x²",
+   "24x"
+  ],
+  "correct": 3,
+  "explanation": "3 · 8x = 24x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 6x + 3y + 7x",
+  "options": [
+   "16xy",
+   "13x + 4y",
+   "13x + 3y",
+   "6x + 10y"
+  ],
+  "correct": 2,
+  "explanation": "6x + 7x = 13x; also 13x + 3y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein Glücksrad hat 12 gleich große Felder, davon sind 9 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "3/4",
+   "9/13",
+   "1/4",
+   "5/6"
+  ],
+  "correct": 0,
+  "explanation": "P(Gewinn) = 9/12 = 3/4."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 2x + 6x",
+  "options": [
+   "12x",
+   "4x",
+   "8x²",
+   "8x"
+  ],
+  "correct": 3,
+  "explanation": "2x + 6x = (2 + 6)x = 8x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 2 → 10. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "4 → 12",
+   "4 → 21",
+   "4 → 20",
+   "4 → 40"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 5; 4 · 5 = 20."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine gerade Zahl zu würfeln?",
+  "options": [
+   "1/4",
+   "1/6",
+   "1/2",
+   "2/3"
+  ],
+  "correct": 2,
+  "explanation": "3 von 6 Ergebnissen sind günstig: P = 3/6 = 1/2."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "25 cm³",
+   "150 cm³",
+   "125 cm³",
+   "130 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 5³ = 125 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 10x - 9x",
+  "options": [
+   "2x",
+   "x",
+   "90x",
+   "19x"
+  ],
+  "correct": 1,
+  "explanation": "10x - 9x = (10 - 9)x = x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 2 → 14. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "4 → 29",
+   "4 → 28",
+   "4 → 56",
+   "4 → 16"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 7; 4 · 7 = 28."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 5 cm lang und 13 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "70 cm²",
+   "52 cm²",
+   "65 cm²",
+   "36 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 5 cm · 13 cm = 65 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 6x + 4y + 2x",
+  "options": [
+   "8x + 4y",
+   "8x + 5y",
+   "6x + 6y",
+   "12x"
+  ],
+  "correct": 0,
+  "explanation": "6x + 2x = 8x; also 8x + 4y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "In einer Urne liegen 1 rote und 2 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/3",
+   "1/2",
+   "2/3",
+   "1/4"
+  ],
+  "correct": 0,
+  "explanation": "P(rot) = 1/3."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 4x - 2x",
+  "options": [
+   "3x",
+   "2x",
+   "8x",
+   "2x²"
+  ],
+  "correct": 1,
+  "explanation": "4x - 2x = (4 - 2)x = 2x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "26 cm²",
+   "144 cm²",
+   "63 cm²",
+   "72 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 18 · 8 / 2 = 72 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 7x + 5y + 3x",
+  "options": [
+   "7x + 8y",
+   "10x + 5y",
+   "15x",
+   "15xy"
+  ],
+  "correct": 1,
+  "explanation": "7x + 3x = 10x; also 10x + 5y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 9 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "36 cm²",
+   "90 cm²",
+   "81 cm²",
+   "72 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 9² = 81 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 20 cm und die Höhe h = 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "24 cm²",
+   "44 cm²",
+   "80 cm²",
+   "40 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 20 · 4 / 2 = 40 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 6 cm lang und 6 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "24 cm²",
+   "12 cm²",
+   "30 cm²",
+   "36 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 6 cm · 6 cm = 36 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 12x - 5x",
+  "options": [
+   "8x",
+   "17x",
+   "7x²",
+   "7x"
+  ],
+  "correct": 3,
+  "explanation": "12x - 5x = (12 - 5)x = 7x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "32 cm²",
+   "16 cm²",
+   "56 cm²",
+   "64 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a² = 8² = 64 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 10x + 6x",
+  "options": [
+   "4x",
+   "16x",
+   "17x",
+   "60x"
+  ],
+  "correct": 1,
+  "explanation": "10x + 6x = (10 + 6)x = 16x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein Glücksrad hat 8 gleich große Felder, davon sind 3 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "5/8",
+   "1/3",
+   "3/8",
+   "1/2"
+  ],
+  "correct": 2,
+  "explanation": "P(Gewinn) = 3/8."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 2 → 16. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "6 → 49",
+   "6 → 96",
+   "6 → 19",
+   "6 → 48"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 8; 6 · 8 = 48."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 2x + 3y + 8x",
+  "options": [
+   "10x + 4y",
+   "13xy",
+   "10x + 3y",
+   "13x"
+  ],
+  "correct": 2,
+  "explanation": "2x + 8x = 10x; also 10x + 3y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: Ein Glücksrad hat 12 gleich große Felder, davon sind 5 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "7/12",
+   "1/2",
+   "5/12",
+   "5/13"
+  ],
+  "correct": 2,
+  "explanation": "P(Gewinn) = 5/12."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "In einer Urne liegen 5 rote und 7 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/2",
+   "7/12",
+   "5/13",
+   "5/12"
+  ],
+  "correct": 3,
+  "explanation": "P(rot) = 5/12."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 3x + 2x",
+  "options": [
+   "5x²",
+   "6x",
+   "1x",
+   "5x"
+  ],
+  "correct": 3,
+  "explanation": "3x + 2x = (3 + 2)x = 5x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: In einer Urne liegen 2 rote und 5 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "3/7",
+   "2/7",
+   "1/4",
+   "1/2"
+  ],
+  "correct": 1,
+  "explanation": "P(rot) = 2/7."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 20 cm und die Höhe h = 7 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "140 cm²",
+   "70 cm²",
+   "77 cm²",
+   "60 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 20 · 7 / 2 = 70 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 4 cm lang und 9 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "36 cm²",
+   "13 cm²",
+   "26 cm²",
+   "27 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 4 cm · 9 cm = 36 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "600 cm³",
+   "1000 cm³",
+   "1010 cm³",
+   "30 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 10³ = 1000 cm³."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. In einer Urne liegen 8 rote und 3 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "9/11",
+   "1/2",
+   "2/3",
+   "8/11"
+  ],
+  "correct": 3,
+  "explanation": "P(rot) = 8/11."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 8x + 4x",
+  "options": [
+   "13x",
+   "12x",
+   "12x²",
+   "4x"
+  ],
+  "correct": 1,
+  "explanation": "8x + 4x = (8 + 4)x = 12x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "8 cm³",
+   "6 cm³",
+   "4 cm³",
+   "24 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 2³ = 8 cm³."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: In einer Urne liegen 5 rote und 6 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/2",
+   "6/11",
+   "5/12",
+   "5/11"
+  ],
+  "correct": 3,
+  "explanation": "P(rot) = 5/11."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 8 · 6x",
+  "options": [
+   "14x",
+   "48x",
+   "49x",
+   "48x²"
+  ],
+  "correct": 1,
+  "explanation": "8 · 6x = 48x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 9 cm lang und 6 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "30 cm²",
+   "48 cm²",
+   "54 cm²",
+   "63 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 9 cm · 6 cm = 54 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 14 cm lang und 13 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "182 cm²",
+   "27 cm²",
+   "169 cm²",
+   "54 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 14 cm · 13 cm = 182 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 4 → 20. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "16 → 81",
+   "16 → 24",
+   "16 → 160",
+   "16 → 80"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 5; 16 · 5 = 80."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 6 cm lang und 2 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "18 cm",
+   "14 cm",
+   "16 cm",
+   "8 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (6 + 2) = 16 cm."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 12x + 5x",
+  "options": [
+   "7x",
+   "60x",
+   "17x",
+   "17x²"
+  ],
+  "correct": 2,
+  "explanation": "12x + 5x = (12 + 5)x = 17x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 9 cm lang und 15 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "144 cm²",
+   "24 cm²",
+   "135 cm²",
+   "48 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 9 cm · 15 cm = 135 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 2 → 4. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "6 → 7",
+   "6 → 24",
+   "6 → 13",
+   "6 → 12"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 2; 6 · 2 = 12."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 14x - 4x",
+  "options": [
+   "10x²",
+   "56x",
+   "18x",
+   "10x"
+  ],
+  "correct": 3,
+  "explanation": "14x - 4x = (14 - 4)x = 10x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 8 kg Äpfel kosten 56 €. Wie viel kosten 12 kg? (proportional)",
+  "options": [
+   "84 €",
+   "77 €",
+   "85 €",
+   "68 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 56/8 = 7 €; 12 kg kosten 12 · 7 = 84 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 2 cm, 8 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "130 cm³",
+   "128 cm³",
+   "24 cm³",
+   "18 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 2 · 8 · 8 = 128 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 2 cm, 6 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "110 cm³",
+   "108 cm³",
+   "21 cm³",
+   "17 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 2 · 6 · 9 = 108 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 10 cm, 6 cm und 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "65 cm³",
+   "300 cm³",
+   "21 cm³",
+   "280 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 10 · 6 · 5 = 300 cm³."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein Glücksrad hat 12 gleich große Felder, davon sind 2 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "2/13",
+   "5/6",
+   "1/4",
+   "1/6"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 2/12 = 1/6."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 5 cm lang und 10 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "32 cm",
+   "28 cm",
+   "50 cm",
+   "30 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (5 + 10) = 30 cm."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 5x + 5x",
+  "options": [
+   "0x",
+   "25x",
+   "11x",
+   "10x"
+  ],
+  "correct": 3,
+  "explanation": "5x + 5x = (5 + 5)x = 10x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 20 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "20 cm²",
+   "30 cm²",
+   "60 cm²",
+   "33 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 20 · 3 / 2 = 30 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine ungerade Zahl zu würfeln?",
+  "options": [
+   "1/6",
+   "1/2",
+   "1/4",
+   "2/3"
+  ],
+  "correct": 1,
+  "explanation": "3 von 6 Ergebnissen sind günstig: P = 3/6 = 1/2."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 9x + 4y + 4x",
+  "options": [
+   "13x + 4y",
+   "17xy",
+   "13x + 5y",
+   "9x + 8y"
+  ],
+  "correct": 0,
+  "explanation": "9x + 4x = 13x; also 13x + 4y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 3x + 2y + 8x",
+  "options": [
+   "13xy",
+   "11x + 2y",
+   "11x + 3y",
+   "13x"
+  ],
+  "correct": 1,
+  "explanation": "3x + 8x = 11x; also 11x + 2y."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "6 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 3 Arbeiter? (antiproportional)",
+  "options": [
+   "12 Stunden",
+   "48 Stunden",
+   "47 Stunden",
+   "24 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 6 · 24 = 144 = 3 · 48 ⇒ 48 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 4 cm, 9 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "306 cm³",
+   "324 cm³",
+   "22 cm³",
+   "45 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 4 · 9 · 9 = 324 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 7x + 12x",
+  "options": [
+   "19x²",
+   "5x",
+   "20x",
+   "19x"
+  ],
+  "correct": 3,
+  "explanation": "7x + 12x = (7 + 12)x = 19x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 8x + 8x",
+  "options": [
+   "16x",
+   "16x²",
+   "0x",
+   "17x"
+  ],
+  "correct": 0,
+  "explanation": "8x + 8x = (8 + 8)x = 16x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "32 cm²",
+   "16 cm²",
+   "64 cm²",
+   "72 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 8² = 64 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Würfel hat die Kantenlänge 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "68 cm³",
+   "64 cm³",
+   "96 cm³",
+   "16 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 4³ = 64 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 9x - 7x",
+  "options": [
+   "2x",
+   "16x",
+   "63x",
+   "2x²"
+  ],
+  "correct": 0,
+  "explanation": "9x - 7x = (9 - 7)x = 2x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 2x + 7y + 6x",
+  "options": [
+   "2x + 13y",
+   "15xy",
+   "8x + 8y",
+   "8x + 7y"
+  ],
+  "correct": 3,
+  "explanation": "2x + 6x = 8x; also 8x + 7y."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "21 cm³",
+   "294 cm³",
+   "49 cm³",
+   "343 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a³ = 7³ = 343 cm³."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. In einer Urne liegen 3 rote und 4 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "3/7",
+   "1/2",
+   "3/8",
+   "4/7"
+  ],
+  "correct": 0,
+  "explanation": "P(rot) = 3/7."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 9 cm, 2 cm und 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "14 cm³",
+   "54 cm³",
+   "21 cm³",
+   "102 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 9 · 2 · 3 = 54 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 14 cm und die Höhe h = 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "63 cm²",
+   "140 cm²",
+   "70 cm²",
+   "80 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 14 · 10 / 2 = 70 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 13x - 7x",
+  "options": [
+   "20x",
+   "7x",
+   "91x",
+   "6x"
+  ],
+  "correct": 3,
+  "explanation": "13x - 7x = (13 - 7)x = 6x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 6x + 2y + 3x",
+  "options": [
+   "6x + 5y",
+   "9x + 2y",
+   "11x",
+   "11xy"
+  ],
+  "correct": 1,
+  "explanation": "6x + 3x = 9x; also 9x + 2y."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 2 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "144 Stunden",
+   "4 Stunden",
+   "24 Stunden",
+   "5 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 2 · 24 = 48 = 12 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 3 cm, 4 cm und 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "164 cm³",
+   "22 cm³",
+   "17 cm³",
+   "120 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 3 · 4 · 10 = 120 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 8x + 5y + 3x",
+  "options": [
+   "16xy",
+   "11x + 5y",
+   "8x + 8y",
+   "16x"
+  ],
+  "correct": 1,
+  "explanation": "8x + 3x = 11x; also 11x + 5y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 12x + 12x",
+  "options": [
+   "25x",
+   "24x²",
+   "0x",
+   "24x"
+  ],
+  "correct": 3,
+  "explanation": "12x + 12x = (12 + 12)x = 24x."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "6 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "13 Stunden",
+   "11 Stunden",
+   "12 Stunden",
+   "48 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 6 · 24 = 144 = 12 · 12 ⇒ 12 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 11 cm lang und 5 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "55 cm²",
+   "32 cm²",
+   "66 cm²",
+   "16 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 11 cm · 5 cm = 55 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 20x - 10x",
+  "options": [
+   "10x²",
+   "30x",
+   "200x",
+   "10x"
+  ],
+  "correct": 3,
+  "explanation": "20x - 10x = (20 - 10)x = 10x."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 13 cm lang und 3 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "30 cm",
+   "34 cm",
+   "32 cm",
+   "16 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (13 + 3) = 32 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 5 → 40. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "20 → 161",
+   "20 → 160",
+   "20 → 320",
+   "20 → 44"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 8; 20 · 8 = 160."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "56 cm²",
+   "96 cm²",
+   "48 cm²",
+   "20 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 12 · 8 / 2 = 48 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "2 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "96 Stunden",
+   "24 Stunden",
+   "5 Stunden",
+   "6 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 2 · 24 = 48 = 8 · 6 ⇒ 6 Stunden."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Ein Glücksrad hat 5 gleich große Felder, davon sind 3 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "2/5",
+   "1/2",
+   "4/5",
+   "3/5"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 3/5."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 3 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "4 Stunden",
+   "6 Stunden",
+   "3 Stunden",
+   "12 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 3 · 6 = 18 = 6 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 2x + 2y + 2x",
+  "options": [
+   "2x + 4y",
+   "6xy",
+   "6x",
+   "4x + 2y"
+  ],
+  "correct": 3,
+  "explanation": "2x + 2x = 4x; also 4x + 2y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 12 cm lang und 14 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "26 cm²",
+   "154 cm²",
+   "52 cm²",
+   "168 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 12 cm · 14 cm = 168 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein Glücksrad hat 10 gleich große Felder, davon sind 2 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "2/11",
+   "3/10",
+   "4/5",
+   "1/5"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 2/10 = 1/5."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 10 cm und die Höhe h = 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "20 cm²",
+   "50 cm²",
+   "100 cm²",
+   "60 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 10 · 10 / 2 = 50 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 2 → 16. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "6 → 19",
+   "6 → 48",
+   "6 → 96",
+   "6 → 49"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 8; 6 · 8 = 48."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "3 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "4 Stunden",
+   "8 Stunden",
+   "5 Stunden",
+   "16 Stunden"
+  ],
+  "correct": 0,
+  "explanation": "Produkt konstant: 3 · 8 = 24 = 6 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 10 cm lang und 11 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "120 cm²",
+   "99 cm²",
+   "42 cm²",
+   "110 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 10 cm · 11 cm = 110 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 5x + 6x",
+  "options": [
+   "30x",
+   "1x",
+   "11x²",
+   "11x"
+  ],
+  "correct": 3,
+  "explanation": "5x + 6x = (5 + 6)x = 11x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 2x + 8y + 5x",
+  "options": [
+   "2x + 13y",
+   "15x",
+   "7x + 8y",
+   "7x + 9y"
+  ],
+  "correct": 2,
+  "explanation": "2x + 5x = 7x; also 7x + 8y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 5 cm lang und 15 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "80 cm²",
+   "60 cm²",
+   "75 cm²",
+   "20 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 5 cm · 15 cm = 75 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 2 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "2 cm²",
+   "4 cm²",
+   "8 cm²",
+   "6 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 2² = 4 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "25 cm²",
+   "30 cm²",
+   "10 cm²",
+   "20 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 5² = 25 cm²."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: In einer Urne liegen 7 rote und 6 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "8/13",
+   "6/13",
+   "7/13",
+   "1/2"
+  ],
+  "correct": 2,
+  "explanation": "P(rot) = 7/13."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein Glücksrad hat 8 gleich große Felder, davon sind 1 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "7/8",
+   "1/9",
+   "1/8",
+   "1/4"
+  ],
+  "correct": 2,
+  "explanation": "P(Gewinn) = 1/8."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. In einer Urne liegen 2 rote und 4 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/3",
+   "1/2",
+   "2/3",
+   "2/7"
+  ],
+  "correct": 0,
+  "explanation": "P(rot) = 2/6 = 1/3."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein Glücksrad hat 6 gleich große Felder, davon sind 1 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "5/6",
+   "1/7",
+   "1/3",
+   "1/6"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 1/6."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. Ein Glücksrad hat 4 gleich große Felder, davon sind 3 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "3/5",
+   "1/4",
+   "3/4",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "P(Gewinn) = 3/4."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 5 → 25. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "10 → 51",
+   "10 → 100",
+   "10 → 50",
+   "10 → 27"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 5; 10 · 5 = 50."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "9 cm³",
+   "30 cm³",
+   "54 cm³",
+   "27 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a³ = 3³ = 27 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 12 cm lang und 15 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "180 cm",
+   "56 cm",
+   "27 cm",
+   "54 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (12 + 15) = 54 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "21 cm²",
+   "18 cm²",
+   "12 cm²",
+   "15 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 12 · 3 / 2 = 18 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 4x + 3y + 3x",
+  "options": [
+   "10xy",
+   "7x + 3y",
+   "4x + 6y",
+   "10x"
+  ],
+  "correct": 1,
+  "explanation": "4x + 3x = 7x; also 7x + 3y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 4 cm und die Höhe h = 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "14 cm²",
+   "18 cm²",
+   "20 cm²",
+   "40 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 4 · 10 / 2 = 20 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 14 cm und die Höhe h = 7 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "42 cm²",
+   "49 cm²",
+   "56 cm²",
+   "98 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 14 · 7 / 2 = 49 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "32 cm²",
+   "56 cm²",
+   "16 cm²",
+   "64 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a² = 8² = 64 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "2 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "8 Stunden",
+   "4 Stunden",
+   "16 Stunden",
+   "3 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 2 · 8 = 16 = 4 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 2 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 3 Arbeiter? (antiproportional)",
+  "options": [
+   "15 Stunden",
+   "24 Stunden",
+   "17 Stunden",
+   "16 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 2 · 24 = 48 = 3 · 16 ⇒ 16 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 5 → 15. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "15 → 45",
+   "15 → 18",
+   "15 → 46",
+   "15 → 90"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 3; 15 · 3 = 45."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 5x - 3x",
+  "options": [
+   "3x",
+   "2x",
+   "2x²",
+   "8x"
+  ],
+  "correct": 1,
+  "explanation": "5x - 3x = (5 - 3)x = 2x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: Ein Glücksrad hat 8 gleich große Felder, davon sind 7 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "7/8",
+   "7/9",
+   "1/8",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "P(Gewinn) = 7/8."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 4 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 3 Arbeiter? (antiproportional)",
+  "options": [
+   "17 Stunden",
+   "16 Stunden",
+   "12 Stunden",
+   "15 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 4 · 12 = 48 = 3 · 16 ⇒ 16 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 5 cm, 3 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "65 cm³",
+   "60 cm³",
+   "94 cm³",
+   "12 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 5 · 3 · 4 = 60 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 9 cm, 9 cm und 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "819 cm³",
+   "28 cm³",
+   "810 cm³",
+   "522 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 9 · 9 · 10 = 810 cm³."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: Ein fairer Würfel wird einmal geworfen. Wie groß ist die Wahrscheinlichkeit, eine Sechs zu würfeln?",
+  "options": [
+   "1/6",
+   "1/3",
+   "1/2",
+   "1/12"
+  ],
+  "correct": 0,
+  "explanation": "1 von 6 Ergebnissen sind günstig: P = 1/6 = 1/6."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 6 cm und die Höhe h = 2 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "8 cm²",
+   "12 cm²",
+   "3 cm²",
+   "6 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 6 · 2 / 2 = 6 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 8 cm und die Höhe h = 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "64 cm²",
+   "40 cm²",
+   "32 cm²",
+   "28 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 8 · 8 / 2 = 32 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 10 cm lang und 7 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "70 cm²",
+   "17 cm²",
+   "63 cm²",
+   "34 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 10 cm · 7 cm = 70 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 10 cm lang und 12 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "46 cm",
+   "22 cm",
+   "44 cm",
+   "120 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (10 + 12) = 44 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 4 kg Äpfel kosten 16 €. Wie viel kosten 6 kg? (proportional)",
+  "options": [
+   "20 €",
+   "22 €",
+   "24 €",
+   "25 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 16/4 = 4 €; 6 kg kosten 6 · 4 = 24 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 3 cm, 9 cm und 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "135 cm³",
+   "174 cm³",
+   "138 cm³",
+   "32 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 3 · 9 · 5 = 135 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 2 cm lang und 12 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "12 cm²",
+   "28 cm²",
+   "24 cm²",
+   "14 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 2 cm · 12 cm = 24 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 5x + 9y + 9x",
+  "options": [
+   "14x + 10y",
+   "14x + 9y",
+   "5x + 18y",
+   "23x"
+  ],
+  "correct": 1,
+  "explanation": "5x + 9x = 14x; also 14x + 9y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 9x + 5y + 2x",
+  "options": [
+   "16x",
+   "9x + 7y",
+   "11x + 6y",
+   "11x + 5y"
+  ],
+  "correct": 3,
+  "explanation": "9x + 2x = 11x; also 11x + 5y."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "27 cm³",
+   "81 cm³",
+   "486 cm³",
+   "729 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a³ = 9³ = 729 cm³."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 6 · 3x",
+  "options": [
+   "18x",
+   "18x²",
+   "6x + 3",
+   "19x"
+  ],
+  "correct": 0,
+  "explanation": "6 · 3x = 18x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 11x - 2x",
+  "options": [
+   "13x",
+   "9x",
+   "9x²",
+   "22x"
+  ],
+  "correct": 1,
+  "explanation": "11x - 2x = (11 - 2)x = 9x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 5x + 7x",
+  "options": [
+   "12x²",
+   "35x",
+   "12x",
+   "2x"
+  ],
+  "correct": 2,
+  "explanation": "5x + 7x = (5 + 7)x = 12x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 7x + 10x",
+  "options": [
+   "18x",
+   "17x",
+   "3x",
+   "17x²"
+  ],
+  "correct": 1,
+  "explanation": "7x + 10x = (7 + 10)x = 17x."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 9 cm, 9 cm und 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "25 cm³",
+   "88 cm³",
+   "576 cm³",
+   "567 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 9 · 9 · 7 = 567 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Würfel hat die Kantenlänge 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "25 cm³",
+   "125 cm³",
+   "150 cm³",
+   "130 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 5³ = 125 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 6 cm und die Höhe h = 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "48 cm²",
+   "24 cm²",
+   "32 cm²",
+   "21 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 6 · 8 / 2 = 24 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 6 → 48. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 192",
+   "12 → 50",
+   "12 → 96",
+   "12 → 97"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 8; 12 · 8 = 96."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 6 → 36. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "18 → 108",
+   "18 → 39",
+   "18 → 216",
+   "18 → 109"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 6; 18 · 6 = 108."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Geometrie: In einer Urne liegen 5 rote und 1 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "1/6",
+   "5/6",
+   "5/7",
+   "1/2"
+  ],
+  "correct": 1,
+  "explanation": "P(rot) = 5/6."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 15 cm lang und 13 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "28 cm²",
+   "56 cm²",
+   "182 cm²",
+   "195 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 15 cm · 13 cm = 195 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 7x + 7x",
+  "options": [
+   "14x",
+   "14x²",
+   "15x",
+   "49x"
+  ],
+  "correct": 0,
+  "explanation": "7x + 7x = (7 + 7)x = 14x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 2x + 6y + 9x",
+  "options": [
+   "2x + 15y",
+   "11x + 6y",
+   "17x",
+   "17xy"
+  ],
+  "correct": 1,
+  "explanation": "2x + 9x = 11x; also 11x + 6y."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. In einer Urne liegen 3 rote und 7 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "7/10",
+   "3/11",
+   "3/10",
+   "2/5"
+  ],
+  "correct": 2,
+  "explanation": "P(rot) = 3/10."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "21 cm³",
+   "49 cm³",
+   "343 cm³",
+   "294 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 7³ = 343 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 6 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "60 cm²",
+   "45 cm²",
+   "108 cm²",
+   "54 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 18 · 6 / 2 = 54 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 4 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 15",
+   "12 → 36",
+   "12 → 37",
+   "12 → 72"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 3; 12 · 3 = 36."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 2x + 5y + 5x",
+  "options": [
+   "7x + 6y",
+   "12xy",
+   "12x",
+   "7x + 5y"
+  ],
+  "correct": 3,
+  "explanation": "2x + 5x = 7x; also 7x + 5y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "22 cm²",
+   "36 cm²",
+   "72 cm²",
+   "40 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 18 · 4 / 2 = 36 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 6 cm, 6 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "16 cm³",
+   "150 cm³",
+   "40 cm³",
+   "144 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 6 · 6 · 4 = 144 cm³."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein Glücksrad hat 12 gleich große Felder, davon sind 2 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "1/6",
+   "2/13",
+   "1/4",
+   "5/6"
+  ],
+  "correct": 0,
+  "explanation": "P(Gewinn) = 2/12 = 1/6."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 2 · 6x",
+  "options": [
+   "2x + 6",
+   "12x",
+   "12x²",
+   "13x"
+  ],
+  "correct": 1,
+  "explanation": "2 · 6x = 12x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "18 cm²",
+   "48 cm²",
+   "28 cm²",
+   "24 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 12 · 4 / 2 = 24 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 2 → 8. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "6 → 25",
+   "6 → 24",
+   "6 → 11",
+   "6 → 48"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 4; 6 · 4 = 24."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Mathematik: Ein Glücksrad hat 10 gleich große Felder, davon sind 6 Gewinnfelder. Wie groß ist die Gewinnwahrscheinlichkeit?",
+  "options": [
+   "2/5",
+   "6/11",
+   "7/10",
+   "3/5"
+  ],
+  "correct": 3,
+  "explanation": "P(Gewinn) = 6/10 = 3/5."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 13x - 3x",
+  "options": [
+   "16x",
+   "10x²",
+   "11x",
+   "10x"
+  ],
+  "correct": 3,
+  "explanation": "13x - 3x = (13 - 3)x = 10x."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 7 kg Äpfel kosten 56 €. Wie viel kosten 11 kg? (proportional)",
+  "options": [
+   "89 €",
+   "88 €",
+   "67 €",
+   "80 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 56/7 = 8 €; 11 kg kosten 11 · 8 = 88 €."
+ },
+ {
+  "topic": "Terme",
+  "question": "Berechne. Vereinfache den Term: 15x - 6x",
+  "options": [
+   "21x",
+   "9x",
+   "10x",
+   "90x"
+  ],
+  "correct": 1,
+  "explanation": "15x - 6x = (15 - 6)x = 9x."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 10 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "15 cm²",
+   "30 cm²",
+   "10 cm²",
+   "13 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 10 · 3 / 2 = 15 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 14 cm lang und 14 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "28 cm",
+   "54 cm",
+   "196 cm",
+   "56 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (14 + 14) = 56 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 5 cm, 2 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "90 cm³",
+   "19 cm³",
+   "95 cm³",
+   "146 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 5 · 2 · 9 = 90 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "3 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "12 Stunden",
+   "2 Stunden",
+   "3 Stunden",
+   "6 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 3 · 6 = 18 = 6 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 4x + 9x",
+  "options": [
+   "13x²",
+   "5x",
+   "14x",
+   "13x"
+  ],
+  "correct": 3,
+  "explanation": "4x + 9x = (4 + 9)x = 13x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 3x + 3y + 2x",
+  "options": [
+   "3x + 5y",
+   "8x",
+   "8xy",
+   "5x + 3y"
+  ],
+  "correct": 3,
+  "explanation": "3x + 2x = 5x; also 5x + 3y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 8x + 3x",
+  "options": [
+   "24x",
+   "11x",
+   "12x",
+   "5x"
+  ],
+  "correct": 1,
+  "explanation": "8x + 3x = (8 + 3)x = 11x."
+ },
+ {
+  "topic": "Wahrscheinlichkeit",
+  "question": "Berechne. In einer Urne liegen 7 rote und 5 blaue Kugeln. Wie groß ist die Wahrscheinlichkeit, eine rote Kugel zu ziehen?",
+  "options": [
+   "7/12",
+   "5/12",
+   "7/13",
+   "1/2"
+  ],
+  "correct": 0,
+  "explanation": "P(rot) = 7/12."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 4x + 3y + 4x",
+  "options": [
+   "8x + 3y",
+   "8x + 4y",
+   "11xy",
+   "11x"
+  ],
+  "correct": 0,
+  "explanation": "4x + 4x = 8x; also 8x + 3y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Mathematik: Vereinfache den Term: 6x + 2y + 7x",
+  "options": [
+   "15x",
+   "6x + 9y",
+   "13x + 2y",
+   "13x + 3y"
+  ],
+  "correct": 2,
+  "explanation": "6x + 7x = 13x; also 13x + 2y."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 6 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "42 cm²",
+   "30 cm²",
+   "12 cm²",
+   "36 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a² = 6² = 36 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 10 cm und die Höhe h = 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "18 cm²",
+   "35 cm²",
+   "40 cm²",
+   "80 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 10 · 8 / 2 = 40 cm²."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 2x + 9y + 8x",
+  "options": [
+   "19x",
+   "10x + 10y",
+   "19xy",
+   "10x + 9y"
+  ],
+  "correct": 3,
+  "explanation": "2x + 8x = 10x; also 10x + 9y."
+ },
+ {
+  "topic": "Terme",
+  "question": "Vereinfache den Term: 11x + 4x",
+  "options": [
+   "15x²",
+   "7x",
+   "16x",
+   "15x"
+  ],
+  "correct": 3,
+  "explanation": "11x + 4x = (11 + 4)x = 15x."
+ },
+ {
+  "topic": "Terme",
+  "question": "Geometrie: Vereinfache den Term: 9 · 8x",
+  "options": [
+   "72x",
+   "72x²",
+   "17x",
+   "9x + 8"
+  ],
+  "correct": 0,
+  "explanation": "9 · 8x = 72x."
+ }
+]

@@ -3,11 +3,20 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Arbeitsblätter" };
+
+type StatusKey = "alle" | "offen" | "abgegeben" | "bewertet";
+
+const STATUS_TABS: { key: StatusKey; label: string }[] = [
+  { key: "alle", label: "Alle" },
+  { key: "offen", label: "Offen" },
+  { key: "abgegeben", label: "Abgegeben" },
+  { key: "bewertet", label: "Bewertet" },
+];
 
 const DIFFICULTY_LABEL: Record<string, string> = {
   leicht: "Leicht",
@@ -33,7 +42,11 @@ function formatDue(dueAt: Date | null): { label: string; overdue: boolean } {
   return { label, overdue };
 }
 
-export default async function ArbeitsblatterPage() {
+interface PageProps {
+  searchParams: Promise<{ status?: string; fach?: string }>;
+}
+
+export default async function ArbeitsblatterPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect("/");
@@ -55,12 +68,17 @@ export default async function ArbeitsblatterPage() {
     );
   }
 
+  const { status: statusParam, fach: fachParam } = await searchParams;
+  const activeStatus: StatusKey =
+    STATUS_TABS.find((t) => t.key === statusParam?.trim().slice(0, 20))?.key ?? "alle";
+  const activeFach = fachParam?.trim().slice(0, 64) || null;
+
   const assignments = await prisma.worksheetAssignment.findMany({
     where: { classId },
     include: {
       worksheet: {
         include: {
-          subject: { select: { name: true } },
+          subject: { select: { name: true, color: true } },
         },
       },
       submissions: {
@@ -72,12 +90,54 @@ export default async function ArbeitsblatterPage() {
     orderBy: { dueAt: "asc" },
   });
 
-  const total = assignments.length;
-  const completed = assignments.filter(
+  type AssignmentRow = (typeof assignments)[number];
+
+  function getStatus(a: AssignmentRow): "open" | "submitted" | "graded" {
+    const status = a.submissions[0]?.status;
+    if (status === "graded") return "graded";
+    if (status === "submitted") return "submitted";
+    return "open";
+  }
+
+  const rows = assignments.map((a) => ({ ...a, computedStatus: getStatus(a) }));
+
+  // Header stats — always over all assignments (unfiltered)
+  const openCount = rows.filter((a) => a.computedStatus === "open").length;
+  const submittedCount = rows.filter((a) => a.computedStatus === "submitted").length;
+  const gradedCount = rows.filter((a) => a.computedStatus === "graded").length;
+  const doneCount = submittedCount + gradedCount;
+
+  // Subject filter options (worksheets without subject are ignored here)
+  const subjects = [
+    ...new Map(
+      rows
+        .filter((a) => a.worksheet.subjectId && a.worksheet.subject)
+        .map((a) => [a.worksheet.subjectId as string, a.worksheet.subject!])
+    ).entries(),
+  ].sort(([, a], [, b]) => a.name.localeCompare(b.name, "de"));
+
+  // Apply filters
+  const statusMatch: Record<StatusKey, (s: string) => boolean> = {
+    alle: () => true,
+    offen: (s) => s === "open",
+    abgegeben: (s) => s === "submitted",
+    bewertet: (s) => s === "graded",
+  };
+  const filtered = rows.filter(
     (a) =>
-      a.submissions[0]?.status === "submitted" || a.submissions[0]?.status === "graded"
-  ).length;
-  const open = total - completed;
+      statusMatch[activeStatus](a.computedStatus) &&
+      (!activeFach || a.worksheet.subjectId === activeFach)
+  );
+
+  function buildHref(next: { status?: StatusKey; fach?: string | null }) {
+    const params = new URLSearchParams();
+    const s = next.status ?? activeStatus;
+    const f = next.fach === undefined ? activeFach : next.fach;
+    if (s !== "alle") params.set("status", s);
+    if (f) params.set("fach", f);
+    const qs = params.toString();
+    return qs ? `/app/arbeitsblatter?${qs}` : "/app/arbeitsblatter";
+  }
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
@@ -88,42 +148,86 @@ export default async function ArbeitsblatterPage() {
           </p>
           <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Arbeitsblätter</h1>
           <p className="mt-1 text-sm text-muted-fg">
-            <span className="font-semibold text-fg">{open} offen</span> · {completed} abgegeben ·{" "}
-            {total} gesamt
+            <span className="font-semibold text-fg">{openCount} offen</span> · {doneCount}{" "}
+            erledigt
+            {gradedCount > 0 && <> · {gradedCount} bewertet</>}
           </p>
         </div>
       </header>
 
-      {/* Stats row */}
-      <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-2xl border border-border bg-bg p-4 text-center">
-          <p className="text-2xl font-bold">{total}</p>
-          <p className="mt-0.5 text-xs text-muted-fg">Gesamt</p>
+      {/* Filters */}
+      <div className="flex flex-col gap-3">
+        <div className="flex flex-wrap gap-2">
+          {STATUS_TABS.map((tab) => (
+            <Link
+              key={tab.key}
+              href={buildHref({ status: tab.key })}
+              className={cn(
+                "rounded-xl border px-3 py-1.5 text-xs font-semibold transition-colors",
+                activeStatus === tab.key
+                  ? "border-fg bg-fg text-bg"
+                  : "border-border text-muted-fg hover:border-fg/30 hover:text-fg"
+              )}
+            >
+              {tab.label}
+            </Link>
+          ))}
         </div>
-        <div className="rounded-2xl border border-border bg-bg p-4 text-center">
-          <p className="text-2xl font-bold text-success">{completed}</p>
-          <p className="mt-0.5 text-xs text-muted-fg">Abgegeben</p>
-        </div>
-        <div className="rounded-2xl border border-border bg-bg p-4 text-center">
-          <p className="text-2xl font-bold text-brand">{open}</p>
-          <p className="mt-0.5 text-xs text-muted-fg">Offen</p>
-        </div>
+
+        {subjects.length > 1 && (
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href={buildHref({ fach: null })}
+              className={cn(
+                "rounded-full border px-3 py-1 text-[11px] font-semibold transition-colors",
+                !activeFach
+                  ? "border-fg bg-fg text-bg"
+                  : "border-border text-muted-fg hover:border-fg/30 hover:text-fg"
+              )}
+            >
+              Alle Fächer
+            </Link>
+            {subjects.map(([id, subject]) => (
+              <Link
+                key={id}
+                href={buildHref({ fach: id })}
+                className={cn(
+                  "flex items-center gap-1.5 rounded-full border px-3 py-1 text-[11px] font-semibold transition-colors",
+                  activeFach === id
+                    ? "border-fg bg-fg text-bg"
+                    : "border-border text-muted-fg hover:border-fg/30 hover:text-fg"
+                )}
+              >
+                <span
+                  className="size-2 rounded-full"
+                  style={{ backgroundColor: subject.color }}
+                />
+                {subject.name}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
 
-      {assignments.length === 0 ? (
+      {filtered.length === 0 ? (
         <div className="grid place-items-center rounded-2xl border border-border bg-bg p-16 text-center">
           <FileText className="size-10 text-muted-fg" strokeWidth={1.5} />
-          <p className="mt-4 text-base font-semibold">Noch keine Arbeitsblätter zugewiesen</p>
-          <p className="mt-1 text-sm text-muted-fg">
-            Dein Lehrer hat noch kein Arbeitsblatt für deine Klasse freigegeben.
+          <p className="mt-4 text-base font-semibold">
+            {rows.length === 0
+              ? "Noch keine Arbeitsblätter zugewiesen"
+              : "Keine passenden Arbeitsblätter"}
+          </p>
+          <p className="mt-1 max-w-sm text-sm text-muted-fg">
+            {rows.length === 0
+              ? "Dein Lehrer hat noch kein Arbeitsblatt für deine Klasse freigegeben."
+              : "Für die gewählten Filter gibt es keine Arbeitsblätter."}
           </p>
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {assignments.map((a) => {
+          {filtered.map((a) => {
             const sub = a.submissions[0];
-            const isDone =
-              sub?.status === "submitted" || sub?.status === "graded";
+            const isDone = a.computedStatus !== "open";
             const { label: dueLabel, overdue } = formatDue(a.dueAt);
 
             return (
@@ -142,6 +246,11 @@ export default async function ArbeitsblatterPage() {
                     >
                       {DIFFICULTY_LABEL[a.worksheet.difficulty] ?? a.worksheet.difficulty}
                     </Badge>
+                    {!isDone && a.dueAt && (
+                      <Badge variant={overdue ? "danger" : "neutral"}>
+                        {overdue ? "Überfällig" : `Fällig ${dueLabel}`}
+                      </Badge>
+                    )}
                   </div>
 
                   <p className="text-sm font-semibold leading-snug group-hover:text-brand">
@@ -168,7 +277,9 @@ export default async function ArbeitsblatterPage() {
                 <div className="border-t border-border px-4 py-2.5">
                   {isDone ? (
                     <div className="flex items-center justify-between">
-                      <Badge variant="success">Abgegeben</Badge>
+                      <Badge variant="success">
+                        {a.computedStatus === "graded" ? "Bewertet" : "Abgegeben"}
+                      </Badge>
                       {sub?.score !== null && sub?.maxScore !== null && sub?.score !== undefined && sub?.maxScore !== undefined && (
                         <span className="font-mono text-xs text-muted-fg">
                           {sub.score}/{sub.maxScore} Pkt.

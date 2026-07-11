@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzt man zwei reinerbige Eltern AA × aa, wie sehen die F1-Individuen genotypisch aus?",
+  "options": [
+   "alle aa",
+   "alle Aa (heterozygot)",
+   "alle AA",
+   "1 AA : 1 aa"
+  ],
+  "correct": 1,
+  "explanation": "Jedes Elternteil gibt nur einen Allel-Typ weiter, alle Nachkommen sind Aa."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Was versteht man unter „Konsumenten“?",
+  "options": [
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "alle Individuen einer Art in einem bestimmten Gebiet"
+  ],
+  "correct": 0,
+  "explanation": "Konsumenten: heterotrophe Organismen, die sich von anderen Lebewesen ernähren."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Was versteht man unter „Produzenten“?",
+  "options": [
+   "der Lebensraum einer Lebensgemeinschaft",
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "Organismen, die totes organisches Material abbauen"
+  ],
+  "correct": 2,
+  "explanation": "Produzenten: autotrophe Organismen, die organische Stoffe aus anorganischen bilden."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 48 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "29",
+   "21",
+   "24",
+   "18"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 48 · 1/2 = 24."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Aufgabe: Wer formulierte die Theorie der natürlichen Selektion?",
+  "options": [
+   "Charles Darwin",
+   "Gregor Mendel",
+   "Jean-Baptiste Lamarck",
+   "Carl von Linné"
+  ],
+  "correct": 0,
+  "explanation": "Darwin begründete die Selektionstheorie (1859)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 12 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "7",
+   "9",
+   "10",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 12 · 3/4 = 9."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzt man zwei reinerbige Eltern AA × aa, wie sehen die F1-Individuen genotypisch aus?",
+  "options": [
+   "alle aa",
+   "alle Aa (heterozygot)",
+   "1 AA : 1 aa",
+   "alle AA"
+  ],
+  "correct": 1,
+  "explanation": "Jedes Elternteil gibt nur einen Allel-Typ weiter, alle Nachkommen sind Aa."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzt man zwei mischerbige (heterozygote) Individuen Aa × Aa, welches Phänotyp-Verhältnis erhält man in der F2 bei dominant-rezessivem Erbgang?",
+  "options": [
+   "3 : 1",
+   "9 : 3 : 3 : 1",
+   "1 : 2 : 1",
+   "1 : 1"
+  ],
+  "correct": 0,
+  "explanation": "Aa × Aa ergibt 1 AA : 2 Aa : 1 aa, also 3 dominante zu 1 rezessiven Phänotyp."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Aufgabe: Was sind homologe Organe?",
+  "options": [
+   "Organe gleicher Funktion, aber verschiedener Herkunft",
+   "identische Organe ohne Verwandtschaft",
+   "Organe gleicher Bauplan-Herkunft, aber ggf. unterschiedlicher Funktion",
+   "funktionslose Rückbildungen"
+  ],
+  "correct": 2,
+  "explanation": "Homologie beruht auf gemeinsamer Abstammung (z. B. Wirbeltier-Vordergliedmaßen)."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Konsumenten“?",
+  "options": [
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "Organismen, die totes organisches Material abbauen",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "der Lebensraum einer Lebensgemeinschaft"
+  ],
+  "correct": 2,
+  "explanation": "Konsumenten: heterotrophe Organismen, die sich von anderen Lebewesen ernähren."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Destruenten“?",
+  "options": [
+   "der Lebensraum einer Lebensgemeinschaft",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "Organismen, die totes organisches Material abbauen"
+  ],
+  "correct": 3,
+  "explanation": "Destruenten: Organismen, die totes organisches Material abbauen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Welches Genotyp-Verhältnis ergibt die Kreuzung Aa × Aa?",
+  "options": [
+   "9 : 3 : 3 : 1",
+   "1 : 2 : 1 (AA : Aa : aa)",
+   "1 : 1",
+   "3 : 1"
+  ],
+  "correct": 1,
+  "explanation": "Das Punnett-Quadrat liefert 1 AA : 2 Aa : 1 aa."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzt man zwei mischerbige (heterozygote) Individuen Aa × Aa, welches Phänotyp-Verhältnis erhält man in der F2 bei dominant-rezessivem Erbgang?",
+  "options": [
+   "9 : 3 : 3 : 1",
+   "1 : 2 : 1",
+   "3 : 1",
+   "1 : 1"
+  ],
+  "correct": 2,
+  "explanation": "Aa × Aa ergibt 1 AA : 2 Aa : 1 aa, also 3 dominante zu 1 rezessiven Phänotyp."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Welches Genotyp-Verhältnis ergibt die Kreuzung Aa × Aa?",
+  "options": [
+   "3 : 1",
+   "1 : 2 : 1 (AA : Aa : aa)",
+   "9 : 3 : 3 : 1",
+   "1 : 1"
+  ],
+  "correct": 1,
+  "explanation": "Das Punnett-Quadrat liefert 1 AA : 2 Aa : 1 aa."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 20 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "5",
+   "4",
+   "3",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 20 · 1/4 = 5."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Teste dein Wissen: Was sind analoge Organe?",
+  "options": [
+   "Organe gleicher Funktion bei nicht näher verwandten Arten",
+   "reduzierte Rudimente",
+   "Chromosomen-Paare",
+   "Organe gleicher Herkunft"
+  ],
+  "correct": 0,
+  "explanation": "Analogie entsteht durch konvergente Anpassung (z. B. Vogel- und Insektenflügel)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 8 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "2",
+   "1",
+   "5",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 8 · 1/2 = 4."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 76 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "64",
+   "60",
+   "57",
+   "47"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 76 · 3/4 = 57."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Was sind analoge Organe?",
+  "options": [
+   "Chromosomen-Paare",
+   "Organe gleicher Funktion bei nicht näher verwandten Arten",
+   "reduzierte Rudimente",
+   "Organe gleicher Herkunft"
+  ],
+  "correct": 1,
+  "explanation": "Analogie entsteht durch konvergente Anpassung (z. B. Vogel- und Insektenflügel)."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Biotop“?",
+  "options": [
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "Organismen, die totes organisches Material abbauen",
+   "der Lebensraum einer Lebensgemeinschaft"
+  ],
+  "correct": 3,
+  "explanation": "Biotop: der Lebensraum einer Lebensgemeinschaft."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Bei der Kreuzung Aa × aa (Testkreuzung): Welches Phänotyp-Verhältnis ergibt sich?",
+  "options": [
+   "1 : 2 : 1",
+   "1 : 1",
+   "9 : 3 : 3 : 1",
+   "3 : 1"
+  ],
+  "correct": 1,
+  "explanation": "Aa × aa liefert 1 Aa : 1 aa, also 1:1."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Wie nennt man den chemischen Botenstoff an der Synapse?",
+  "options": [
+   "Antikörper",
+   "Neurotransmitter",
+   "Hormon",
+   "Enzym"
+  ],
+  "correct": 1,
+  "explanation": "Neurotransmitter übertragen das Signal über den synaptischen Spalt."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Wähle die richtige Antwort. Was beschreibt die Gendrift?",
+  "options": [
+   "gerichtete Anpassung durch Selektion",
+   "zufällige Änderung der Allelhäufigkeiten in kleinen Populationen",
+   "den Genaustausch zwischen Arten",
+   "Mutation der DNA"
+  ],
+  "correct": 1,
+  "explanation": "Gendrift wirkt besonders stark in kleinen Populationen."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Was versteht man unter „Produzenten“?",
+  "options": [
+   "der Lebensraum einer Lebensgemeinschaft",
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen"
+  ],
+  "correct": 2,
+  "explanation": "Produzenten: autotrophe Organismen, die organische Stoffe aus anorganischen bilden."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Welcher Zellteil eines Neurons leitet Erregungen zum Zellkörper hin?",
+  "options": [
+   "Dendrit",
+   "Axon",
+   "Myelinscheide",
+   "Synapse"
+  ],
+  "correct": 0,
+  "explanation": "Dendriten empfangen Signale und leiten sie zum Soma."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 24 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "15",
+   "11",
+   "12",
+   "13"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 24 · 1/2 = 12."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Bei der Kreuzung Aa × aa (Testkreuzung): Welches Phänotyp-Verhältnis ergibt sich?",
+  "options": [
+   "3 : 1",
+   "1 : 1",
+   "1 : 2 : 1",
+   "9 : 3 : 3 : 1"
+  ],
+  "correct": 1,
+  "explanation": "Aa × aa liefert 1 Aa : 1 aa, also 1:1."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Wie hoch ist das Ruhepotenzial eines typischen Neurons ungefähr?",
+  "options": [
+   "0 mV",
+   "etwa −70 mV",
+   "etwa −140 mV",
+   "etwa +30 mV"
+  ],
+  "correct": 1,
+  "explanation": "Das Ruhepotenzial liegt bei ca. −70 mV."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Welches Phänotyp-Verhältnis erwartet man in der F2 einer dihybriden Kreuzung (AaBb × AaBb) bei unabhängiger Vererbung?",
+  "options": [
+   "1 : 2 : 1",
+   "9 : 3 : 3 : 1",
+   "3 : 1",
+   "1 : 1 : 1 : 1"
+  ],
+  "correct": 1,
+  "explanation": "Bei zwei unabhängigen Merkmalen ergibt sich das klassische 9:3:3:1-Verhältnis."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 48 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "26",
+   "23",
+   "30",
+   "27"
+  ],
+  "correct": 3,
+  "explanation": "Beide dominant = 9/16, also 48 · 9/16 = 27."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Biozönose“?",
+  "options": [
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen",
+   "eine Art lebt auf Kosten einer anderen (Wirt)",
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums"
+  ],
+  "correct": 3,
+  "explanation": "Biozönose: die Lebensgemeinschaft aller Organismen eines Lebensraums."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzt man zwei mischerbige (heterozygote) Individuen Aa × Aa, welches Phänotyp-Verhältnis erhält man in der F2 bei dominant-rezessivem Erbgang?",
+  "options": [
+   "1 : 1",
+   "9 : 3 : 3 : 1",
+   "1 : 2 : 1",
+   "3 : 1"
+  ],
+  "correct": 3,
+  "explanation": "Aa × Aa ergibt 1 AA : 2 Aa : 1 aa, also 3 dominante zu 1 rezessiven Phänotyp."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: Organismen, die totes organisches Material abbauen?",
+  "options": [
+   "Destruenten",
+   "Ökosystem",
+   "Symbiose",
+   "Population"
+  ],
+  "correct": 0,
+  "explanation": "Destruenten: Organismen, die totes organisches Material abbauen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzt man zwei reinerbige Eltern AA × aa, wie sehen die F1-Individuen genotypisch aus?",
+  "options": [
+   "alle AA",
+   "1 AA : 1 aa",
+   "alle Aa (heterozygot)",
+   "alle aa"
+  ],
+  "correct": 2,
+  "explanation": "Jedes Elternteil gibt nur einen Allel-Typ weiter, alle Nachkommen sind Aa."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Dihybride Kreuzung AaBb × AaBb: Wie viele von 176 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "112",
+   "98",
+   "99",
+   "106"
+  ],
+  "correct": 2,
+  "explanation": "Beide dominant = 9/16, also 176 · 9/16 = 99."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Parasitismus“?",
+  "options": [
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "eine Art lebt auf Kosten einer anderen (Wirt)",
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen",
+   "der Lebensraum einer Lebensgemeinschaft"
+  ],
+  "correct": 1,
+  "explanation": "Parasitismus: eine Art lebt auf Kosten einer anderen (Wirt)."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Was versteht man unter „Ökosystem“?",
+  "options": [
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "der Lebensraum einer Lebensgemeinschaft"
+  ],
+  "correct": 2,
+  "explanation": "Ökosystem: Biotop und Biozönose als Wirkungsgefüge."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Was liefert die Grundlage (das 'Rohmaterial') der Evolution?",
+  "options": [
+   "nur Selektion",
+   "der Wille der Organismen",
+   "Mutation und Rekombination",
+   "Gebrauch und Nichtgebrauch von Organen"
+  ],
+  "correct": 2,
+  "explanation": "Mutationen und Rekombination erzeugen die genetische Variabilität."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Welches Phänotyp-Verhältnis erwartet man in der F2 einer dihybriden Kreuzung (AaBb × AaBb) bei unabhängiger Vererbung?",
+  "options": [
+   "9 : 3 : 3 : 1",
+   "1 : 2 : 1",
+   "1 : 1 : 1 : 1",
+   "3 : 1"
+  ],
+  "correct": 0,
+  "explanation": "Bei zwei unabhängigen Merkmalen ergibt sich das klassische 9:3:3:1-Verhältnis."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Welches Phänotyp-Verhältnis erwartet man in der F2 einer dihybriden Kreuzung (AaBb × AaBb) bei unabhängiger Vererbung?",
+  "options": [
+   "9 : 3 : 3 : 1",
+   "1 : 1 : 1 : 1",
+   "3 : 1",
+   "1 : 2 : 1"
+  ],
+  "correct": 0,
+  "explanation": "Bei zwei unabhängigen Merkmalen ergibt sich das klassische 9:3:3:1-Verhältnis."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Was bedeutet der Begriff „Phänotyp“?",
+  "options": [
+   "mischerbig, die beiden Allele eines Gens sind verschieden",
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "eine von mehreren Zustandsformen eines Gens",
+   "das äußere Erscheinungsbild eines Organismus"
+  ],
+  "correct": 3,
+  "explanation": "Phänotyp: das äußere Erscheinungsbild eines Organismus."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Was versteht man unter „Biozönose“?",
+  "options": [
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "eine Art lebt auf Kosten einer anderen (Wirt)"
+  ],
+  "correct": 1,
+  "explanation": "Biozönose: die Lebensgemeinschaft aller Organismen eines Lebensraums."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Was bedeutet der Begriff „homozygot“?",
+  "options": [
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "das äußere Erscheinungsbild eines Organismus"
+  ],
+  "correct": 2,
+  "explanation": "homozygot: reinerbig, beide Allele eines Gens sind gleich."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 116 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "70",
+   "58",
+   "61",
+   "71"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 116 · 1/2 = 58."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Welcher Begriff wird beschrieben: heterotrophe Organismen, die sich von anderen Lebewesen ernähren?",
+  "options": [
+   "Destruenten",
+   "Biotop",
+   "Konsumenten",
+   "Ökosystem"
+  ],
+  "correct": 2,
+  "explanation": "Konsumenten: heterotrophe Organismen, die sich von anderen Lebewesen ernähren."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Welcher Zellteil leitet das Aktionspotenzial vom Zellkörper weg?",
+  "options": [
+   "Ranvier-Schnürring",
+   "Dendrit",
+   "Synapse",
+   "Axon"
+  ],
+  "correct": 3,
+  "explanation": "Das Axon leitet Erregungen vom Soma weg."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Wähle die richtige Antwort. Was sind homologe Organe?",
+  "options": [
+   "Organe gleicher Bauplan-Herkunft, aber ggf. unterschiedlicher Funktion",
+   "Organe gleicher Funktion, aber verschiedener Herkunft",
+   "identische Organe ohne Verwandtschaft",
+   "funktionslose Rückbildungen"
+  ],
+  "correct": 0,
+  "explanation": "Homologie beruht auf gemeinsamer Abstammung (z. B. Wirbeltier-Vordergliedmaßen)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 20 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "18",
+   "16",
+   "15",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 20 · 3/4 = 15."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 96 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "22",
+   "20",
+   "24",
+   "18"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 96 · 1/4 = 24."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Kalium (K⁺)",
+   "Natrium (Na⁺)",
+   "Magnesium"
+  ],
+  "correct": 1,
+  "explanation": "K⁺-Ausstrom stellt das Ruhepotenzial wieder her."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Was beschleunigt die Erregungsleitung entlang eines Axons?",
+  "options": [
+   "mehr Dendriten",
+   "die Myelinscheide (saltatorische Erregungsleitung)",
+   "weniger Ionen",
+   "ein dünneres Axon"
+  ],
+  "correct": 1,
+  "explanation": "Myelin ermöglicht die schnelle saltatorische Erregungsleitung."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzt man zwei mischerbige (heterozygote) Individuen Aa × Aa, welches Phänotyp-Verhältnis erhält man in der F2 bei dominant-rezessivem Erbgang?",
+  "options": [
+   "9 : 3 : 3 : 1",
+   "1 : 1",
+   "3 : 1",
+   "1 : 2 : 1"
+  ],
+  "correct": 2,
+  "explanation": "Aa × Aa ergibt 1 AA : 2 Aa : 1 aa, also 3 dominante zu 1 rezessiven Phänotyp."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Welcher Begriff wird beschrieben: Organismen, die totes organisches Material abbauen?",
+  "options": [
+   "Population",
+   "Konkurrenz",
+   "Produzenten",
+   "Destruenten"
+  ],
+  "correct": 3,
+  "explanation": "Destruenten: Organismen, die totes organisches Material abbauen."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Was versteht man unter „Produzenten“?",
+  "options": [
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "eine Art lebt auf Kosten einer anderen (Wirt)"
+  ],
+  "correct": 2,
+  "explanation": "Produzenten: autotrophe Organismen, die organische Stoffe aus anorganischen bilden."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Welcher Begriff wird beschrieben: eine Art lebt auf Kosten einer anderen (Wirt)?",
+  "options": [
+   "Ökosystem",
+   "Produzenten",
+   "Parasitismus",
+   "Destruenten"
+  ],
+  "correct": 2,
+  "explanation": "Parasitismus: eine Art lebt auf Kosten einer anderen (Wirt)."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Ökosystem“?",
+  "options": [
+   "eine Art lebt auf Kosten einer anderen (Wirt)",
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "der Lebensraum einer Lebensgemeinschaft",
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen"
+  ],
+  "correct": 1,
+  "explanation": "Ökosystem: Biotop und Biozönose als Wirkungsgefüge."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Teste dein Wissen: Wer formulierte die Theorie der natürlichen Selektion?",
+  "options": [
+   "Gregor Mendel",
+   "Carl von Linné",
+   "Jean-Baptiste Lamarck",
+   "Charles Darwin"
+  ],
+  "correct": 3,
+  "explanation": "Darwin begründete die Selektionstheorie (1859)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Was bedeutet der Begriff „rezessiv“?",
+  "options": [
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "die genetische Ausstattung (Allelkombination) eines Organismus"
+  ],
+  "correct": 1,
+  "explanation": "rezessiv: ein Allel, das nur reinerbig im Phänotyp sichtbar wird."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 40 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "27",
+   "35",
+   "34",
+   "30"
+  ],
+  "correct": 3,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 40 · 3/4 = 30."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Was sind homologe Organe?",
+  "options": [
+   "Organe gleicher Funktion, aber verschiedener Herkunft",
+   "identische Organe ohne Verwandtschaft",
+   "Organe gleicher Bauplan-Herkunft, aber ggf. unterschiedlicher Funktion",
+   "funktionslose Rückbildungen"
+  ],
+  "correct": 2,
+  "explanation": "Homologie beruht auf gemeinsamer Abstammung (z. B. Wirbeltier-Vordergliedmaßen)."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: alle Individuen einer Art in einem bestimmten Gebiet?",
+  "options": [
+   "Symbiose",
+   "Population",
+   "Biotop",
+   "Destruenten"
+  ],
+  "correct": 1,
+  "explanation": "Population: alle Individuen einer Art in einem bestimmten Gebiet."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Wer formulierte die Theorie der natürlichen Selektion?",
+  "options": [
+   "Charles Darwin",
+   "Jean-Baptiste Lamarck",
+   "Carl von Linné",
+   "Gregor Mendel"
+  ],
+  "correct": 0,
+  "explanation": "Darwin begründete die Selektionstheorie (1859)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Was bedeutet der Begriff „dominant“?",
+  "options": [
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "mischerbig, die beiden Allele eines Gens sind verschieden",
+   "die genetische Ausstattung (Allelkombination) eines Organismus"
+  ],
+  "correct": 0,
+  "explanation": "dominant: ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 40 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "20",
+   "21",
+   "23",
+   "18"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 40 · 1/2 = 20."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 44 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "33",
+   "39",
+   "34",
+   "38"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 44 · 3/4 = 33."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Welcher Zellteil eines Neurons leitet Erregungen zum Zellkörper hin?",
+  "options": [
+   "Axon",
+   "Synapse",
+   "Myelinscheide",
+   "Dendrit"
+  ],
+  "correct": 3,
+  "explanation": "Dendriten empfangen Signale und leiten sie zum Soma."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Welches Genotyp-Verhältnis ergibt die Kreuzung Aa × Aa?",
+  "options": [
+   "1 : 1",
+   "3 : 1",
+   "1 : 2 : 1 (AA : Aa : aa)",
+   "9 : 3 : 3 : 1"
+  ],
+  "correct": 2,
+  "explanation": "Das Punnett-Quadrat liefert 1 AA : 2 Aa : 1 aa."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Natrium (Na⁺)",
+   "Kalium (K⁺)",
+   "Magnesium"
+  ],
+  "correct": 2,
+  "explanation": "K⁺-Ausstrom stellt das Ruhepotenzial wieder her."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Bei der Kreuzung Aa × aa (Testkreuzung): Welches Phänotyp-Verhältnis ergibt sich?",
+  "options": [
+   "9 : 3 : 3 : 1",
+   "3 : 1",
+   "1 : 2 : 1",
+   "1 : 1"
+  ],
+  "correct": 3,
+  "explanation": "Aa × aa liefert 1 Aa : 1 aa, also 1:1."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Welcher Begriff wird beschrieben: alle Individuen einer Art in einem bestimmten Gebiet?",
+  "options": [
+   "Konkurrenz",
+   "Konsumenten",
+   "Population",
+   "Ökosystem"
+  ],
+  "correct": 2,
+  "explanation": "Population: alle Individuen einer Art in einem bestimmten Gebiet."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: Biotop und Biozönose als Wirkungsgefüge?",
+  "options": [
+   "Konkurrenz",
+   "Konsumenten",
+   "Ökosystem",
+   "Biotop"
+  ],
+  "correct": 2,
+  "explanation": "Ökosystem: Biotop und Biozönose als Wirkungsgefüge."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 40 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "15",
+   "10",
+   "12",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 40 · 1/4 = 10."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 56 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "30",
+   "33",
+   "28",
+   "34"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 56 · 1/2 = 28."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Was bedeutet der Begriff „heterozygot“?",
+  "options": [
+   "mischerbig, die beiden Allele eines Gens sind verschieden",
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "das äußere Erscheinungsbild eines Organismus",
+   "reinerbig, beide Allele eines Gens sind gleich"
+  ],
+  "correct": 0,
+  "explanation": "heterozygot: mischerbig, die beiden Allele eines Gens sind verschieden."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Dihybride Kreuzung AaBb × AaBb: Wie viele von 48 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "28",
+   "27",
+   "25",
+   "30"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 48 · 9/16 = 27."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Bei der Kreuzung Aa × aa (Testkreuzung): Welches Phänotyp-Verhältnis ergibt sich?",
+  "options": [
+   "3 : 1",
+   "9 : 3 : 3 : 1",
+   "1 : 2 : 1",
+   "1 : 1"
+  ],
+  "correct": 3,
+  "explanation": "Aa × aa liefert 1 Aa : 1 aa, also 1:1."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzt man zwei reinerbige Eltern AA × aa, wie sehen die F1-Individuen genotypisch aus?",
+  "options": [
+   "1 AA : 1 aa",
+   "alle AA",
+   "alle Aa (heterozygot)",
+   "alle aa"
+  ],
+  "correct": 2,
+  "explanation": "Jedes Elternteil gibt nur einen Allel-Typ weiter, alle Nachkommen sind Aa."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Was versteht man unter „Konsumenten“?",
+  "options": [
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden"
+  ],
+  "correct": 0,
+  "explanation": "Konsumenten: heterotrophe Organismen, die sich von anderen Lebewesen ernähren."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 108 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "27",
+   "14",
+   "35",
+   "26"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 108 · 1/4 = 27."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 20 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "12",
+   "15",
+   "18",
+   "16"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 20 · 3/4 = 15."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Teste dein Wissen: Was liefert die Grundlage (das 'Rohmaterial') der Evolution?",
+  "options": [
+   "Mutation und Rekombination",
+   "Gebrauch und Nichtgebrauch von Organen",
+   "nur Selektion",
+   "der Wille der Organismen"
+  ],
+  "correct": 0,
+  "explanation": "Mutationen und Rekombination erzeugen die genetische Variabilität."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Welches Genotyp-Verhältnis ergibt die Kreuzung Aa × Aa?",
+  "options": [
+   "1 : 2 : 1 (AA : Aa : aa)",
+   "1 : 1",
+   "9 : 3 : 3 : 1",
+   "3 : 1"
+  ],
+  "correct": 0,
+  "explanation": "Das Punnett-Quadrat liefert 1 AA : 2 Aa : 1 aa."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 96 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "31",
+   "23",
+   "24",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 96 · 1/4 = 24."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: heterotrophe Organismen, die sich von anderen Lebewesen ernähren?",
+  "options": [
+   "Parasitismus",
+   "Biozönose",
+   "Destruenten",
+   "Konsumenten"
+  ],
+  "correct": 3,
+  "explanation": "Konsumenten: heterotrophe Organismen, die sich von anderen Lebewesen ernähren."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Was versteht man unter „Population“?",
+  "options": [
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "eine Art lebt auf Kosten einer anderen (Wirt)"
+  ],
+  "correct": 1,
+  "explanation": "Population: alle Individuen einer Art in einem bestimmten Gebiet."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Was beschleunigt die Erregungsleitung entlang eines Axons?",
+  "options": [
+   "mehr Dendriten",
+   "weniger Ionen",
+   "die Myelinscheide (saltatorische Erregungsleitung)",
+   "ein dünneres Axon"
+  ],
+  "correct": 2,
+  "explanation": "Myelin ermöglicht die schnelle saltatorische Erregungsleitung."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Wie hoch ist das Ruhepotenzial eines typischen Neurons ungefähr?",
+  "options": [
+   "etwa −70 mV",
+   "etwa −140 mV",
+   "0 mV",
+   "etwa +30 mV"
+  ],
+  "correct": 0,
+  "explanation": "Das Ruhepotenzial liegt bei ca. −70 mV."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 112 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "28",
+   "40",
+   "29",
+   "15"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 112 · 1/4 = 28."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 64 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "42",
+   "48",
+   "47",
+   "53"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 64 · 3/4 = 48."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Was versteht man unter „Parasitismus“?",
+  "options": [
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen",
+   "eine Art lebt auf Kosten einer anderen (Wirt)",
+   "Organismen, die totes organisches Material abbauen"
+  ],
+  "correct": 2,
+  "explanation": "Parasitismus: eine Art lebt auf Kosten einer anderen (Wirt)."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: Organismen, die totes organisches Material abbauen?",
+  "options": [
+   "Destruenten",
+   "Parasitismus",
+   "Biotop",
+   "Konkurrenz"
+  ],
+  "correct": 0,
+  "explanation": "Destruenten: Organismen, die totes organisches Material abbauen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 100 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "32",
+   "25",
+   "29",
+   "37"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 100 · 1/4 = 25."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Wähle die richtige Antwort. Was sind analoge Organe?",
+  "options": [
+   "Organe gleicher Funktion bei nicht näher verwandten Arten",
+   "Organe gleicher Herkunft",
+   "reduzierte Rudimente",
+   "Chromosomen-Paare"
+  ],
+  "correct": 0,
+  "explanation": "Analogie entsteht durch konvergente Anpassung (z. B. Vogel- und Insektenflügel)."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Welcher Begriff wird beschrieben: Biotop und Biozönose als Wirkungsgefüge?",
+  "options": [
+   "Destruenten",
+   "Ökosystem",
+   "Biozönose",
+   "Produzenten"
+  ],
+  "correct": 1,
+  "explanation": "Ökosystem: Biotop und Biozönose als Wirkungsgefüge."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Was bedeutet der Begriff „Allel“?",
+  "options": [
+   "eine von mehreren Zustandsformen eines Gens",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "mischerbig, die beiden Allele eines Gens sind verschieden"
+  ],
+  "correct": 0,
+  "explanation": "Allel: eine von mehreren Zustandsformen eines Gens."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Welcher Begriff wird beschrieben: heterotrophe Organismen, die sich von anderen Lebewesen ernähren?",
+  "options": [
+   "Konsumenten",
+   "Parasitismus",
+   "Destruenten",
+   "Biozönose"
+  ],
+  "correct": 0,
+  "explanation": "Konsumenten: heterotrophe Organismen, die sich von anderen Lebewesen ernähren."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Was bedeutet der Begriff „rezessiv“?",
+  "options": [
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "mischerbig, die beiden Allele eines Gens sind verschieden"
+  ],
+  "correct": 1,
+  "explanation": "rezessiv: ein Allel, das nur reinerbig im Phänotyp sichtbar wird."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Was versteht man unter „Destruenten“?",
+  "options": [
+   "Organismen, die totes organisches Material abbauen",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "der Lebensraum einer Lebensgemeinschaft"
+  ],
+  "correct": 0,
+  "explanation": "Destruenten: Organismen, die totes organisches Material abbauen."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Wie heißt die Kontaktstelle zwischen zwei Nervenzellen?",
+  "options": [
+   "Dendrit",
+   "Synapse",
+   "Soma",
+   "Axon"
+  ],
+  "correct": 1,
+  "explanation": "An der Synapse wird das Signal chemisch übertragen."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Welcher Begriff wird beschrieben: Organismen, die totes organisches Material abbauen?",
+  "options": [
+   "Parasitismus",
+   "Destruenten",
+   "Produzenten",
+   "Biotop"
+  ],
+  "correct": 1,
+  "explanation": "Destruenten: Organismen, die totes organisches Material abbauen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 96 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "48",
+   "45",
+   "51",
+   "57"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 96 · 1/2 = 48."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Was bedeutet der Begriff „Allel“?",
+  "options": [
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "eine von mehreren Zustandsformen eines Gens"
+  ],
+  "correct": 3,
+  "explanation": "Allel: eine von mehreren Zustandsformen eines Gens."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 116 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "32",
+   "16",
+   "29",
+   "40"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 116 · 1/4 = 29."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 128 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "81",
+   "72",
+   "68",
+   "69"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 128 · 9/16 = 72."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 36 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "5",
+   "6",
+   "10",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 36 · 1/4 = 9."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 116 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "29",
+   "23",
+   "27",
+   "38"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 116 · 1/4 = 29."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 64 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "8",
+   "16",
+   "14",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 64 · 1/4 = 16."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 88 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "47",
+   "44",
+   "52",
+   "41"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 88 · 1/2 = 44."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 48 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "27",
+   "29",
+   "26",
+   "24"
+  ],
+  "correct": 0,
+  "explanation": "Beide dominant = 9/16, also 48 · 9/16 = 27."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 40 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "17",
+   "20",
+   "24",
+   "22"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 40 · 1/2 = 20."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Welches Phänotyp-Verhältnis erwartet man in der F2 einer dihybriden Kreuzung (AaBb × AaBb) bei unabhängiger Vererbung?",
+  "options": [
+   "3 : 1",
+   "1 : 2 : 1",
+   "9 : 3 : 3 : 1",
+   "1 : 1 : 1 : 1"
+  ],
+  "correct": 2,
+  "explanation": "Bei zwei unabhängigen Merkmalen ergibt sich das klassische 9:3:3:1-Verhältnis."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Teste dein Wissen: Was sind homologe Organe?",
+  "options": [
+   "funktionslose Rückbildungen",
+   "identische Organe ohne Verwandtschaft",
+   "Organe gleicher Funktion, aber verschiedener Herkunft",
+   "Organe gleicher Bauplan-Herkunft, aber ggf. unterschiedlicher Funktion"
+  ],
+  "correct": 3,
+  "explanation": "Homologie beruht auf gemeinsamer Abstammung (z. B. Wirbeltier-Vordergliedmaßen)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 84 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "27",
+   "21",
+   "25",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 84 · 1/4 = 21."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Dihybride Kreuzung AaBb × AaBb: Wie viele von 32 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "19",
+   "22",
+   "18",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "Beide dominant = 9/16, also 32 · 9/16 = 18."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Was versteht man unter „Ökosystem“?",
+  "options": [
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen",
+   "der Lebensraum einer Lebensgemeinschaft",
+   "eine Art lebt auf Kosten einer anderen (Wirt)",
+   "Biotop und Biozönose als Wirkungsgefüge"
+  ],
+  "correct": 3,
+  "explanation": "Ökosystem: Biotop und Biozönose als Wirkungsgefüge."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Welches Ion strömt beim Aktionspotenzial in der Depolarisation in die Zelle?",
+  "options": [
+   "Kalium (K⁺)",
+   "Chlorid (Cl⁻)",
+   "Calcium in den Muskel",
+   "Natrium (Na⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Öffnende Na⁺-Kanäle lassen Natrium einströmen (Depolarisation)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 24 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "10",
+   "12",
+   "9",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 24 · 1/2 = 12."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Was bedeutet der Begriff „homozygot“?",
+  "options": [
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "mischerbig, die beiden Allele eines Gens sind verschieden",
+   "das äußere Erscheinungsbild eines Organismus",
+   "reinerbig, beide Allele eines Gens sind gleich"
+  ],
+  "correct": 3,
+  "explanation": "homozygot: reinerbig, beide Allele eines Gens sind gleich."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 32 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "16",
+   "15",
+   "18",
+   "19"
+  ],
+  "correct": 2,
+  "explanation": "Beide dominant = 9/16, also 32 · 9/16 = 18."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 24 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "16",
+   "20",
+   "18",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 24 · 3/4 = 18."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: alle Individuen einer Art in einem bestimmten Gebiet?",
+  "options": [
+   "Population",
+   "Destruenten",
+   "Konsumenten",
+   "Parasitismus"
+  ],
+  "correct": 0,
+  "explanation": "Population: alle Individuen einer Art in einem bestimmten Gebiet."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Was bedeutet der Begriff „Allel“?",
+  "options": [
+   "das äußere Erscheinungsbild eines Organismus",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "eine von mehreren Zustandsformen eines Gens"
+  ],
+  "correct": 3,
+  "explanation": "Allel: eine von mehreren Zustandsformen eines Gens."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 84 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "21",
+   "29",
+   "18",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 84 · 1/4 = 21."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 160 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "90",
+   "98",
+   "84",
+   "78"
+  ],
+  "correct": 0,
+  "explanation": "Beide dominant = 9/16, also 160 · 9/16 = 90."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 28 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "11",
+   "15",
+   "14",
+   "13"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 28 · 1/2 = 14."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Welcher Begriff wird beschrieben: alle Individuen einer Art in einem bestimmten Gebiet?",
+  "options": [
+   "Destruenten",
+   "Population",
+   "Parasitismus",
+   "Biotop"
+  ],
+  "correct": 1,
+  "explanation": "Population: alle Individuen einer Art in einem bestimmten Gebiet."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: Wettbewerb zwischen Organismen um begrenzte Ressourcen?",
+  "options": [
+   "Population",
+   "Destruenten",
+   "Konkurrenz",
+   "Konsumenten"
+  ],
+  "correct": 2,
+  "explanation": "Konkurrenz: Wettbewerb zwischen Organismen um begrenzte Ressourcen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 80 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "33",
+   "40",
+   "48",
+   "50"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 80 · 1/2 = 40."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 100 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "64",
+   "75",
+   "84",
+   "79"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 100 · 3/4 = 75."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Aufgabe: Was ist ein Rudiment?",
+  "options": [
+   "ein besonders leistungsfähiges Organ",
+   "ein funktionslos gewordenes, zurückgebildetes Organ",
+   "ein neu entstandenes Organ",
+   "ein Fossil"
+  ],
+  "correct": 1,
+  "explanation": "Rudimente (z. B. menschlicher Blinddarm-Wurmfortsatz) belegen die Evolution."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: Zusammenleben zweier Arten zum gegenseitigen Nutzen?",
+  "options": [
+   "Konkurrenz",
+   "Produzenten",
+   "Symbiose",
+   "Destruenten"
+  ],
+  "correct": 2,
+  "explanation": "Symbiose: Zusammenleben zweier Arten zum gegenseitigen Nutzen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 120 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "31",
+   "33",
+   "30",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 120 · 1/4 = 30."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 96 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "57",
+   "48",
+   "55",
+   "59"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 96 · 1/2 = 48."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Natrium (Na⁺)",
+   "Magnesium",
+   "Kalium (K⁺)"
+  ],
+  "correct": 3,
+  "explanation": "K⁺-Ausstrom stellt das Ruhepotenzial wieder her."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: autotrophe Organismen, die organische Stoffe aus anorganischen bilden?",
+  "options": [
+   "Parasitismus",
+   "Produzenten",
+   "Ökosystem",
+   "Biozönose"
+  ],
+  "correct": 1,
+  "explanation": "Produzenten: autotrophe Organismen, die organische Stoffe aus anorganischen bilden."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 12 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "12",
+   "11",
+   "9",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 12 · 3/4 = 9."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Wähle die richtige Antwort. Was ist ein Rudiment?",
+  "options": [
+   "ein besonders leistungsfähiges Organ",
+   "ein funktionslos gewordenes, zurückgebildetes Organ",
+   "ein Fossil",
+   "ein neu entstandenes Organ"
+  ],
+  "correct": 1,
+  "explanation": "Rudimente (z. B. menschlicher Blinddarm-Wurmfortsatz) belegen die Evolution."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Dihybride Kreuzung AaBb × AaBb: Wie viele von 144 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "79",
+   "74",
+   "81",
+   "85"
+  ],
+  "correct": 2,
+  "explanation": "Beide dominant = 9/16, also 144 · 9/16 = 81."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 40 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "32",
+   "34",
+   "30",
+   "26"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 40 · 3/4 = 30."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Wie hoch ist das Ruhepotenzial eines typischen Neurons ungefähr?",
+  "options": [
+   "etwa −140 mV",
+   "etwa −70 mV",
+   "0 mV",
+   "etwa +30 mV"
+  ],
+  "correct": 1,
+  "explanation": "Das Ruhepotenzial liegt bei ca. −70 mV."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 20 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "3",
+   "5",
+   "6",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 20 · 1/4 = 5."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 68 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "20",
+   "23",
+   "15",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 68 · 1/4 = 17."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 20 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "11",
+   "10",
+   "12",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 20 · 1/2 = 10."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Was bedeutet der Begriff „Phänotyp“?",
+  "options": [
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "mischerbig, die beiden Allele eines Gens sind verschieden",
+   "das äußere Erscheinungsbild eines Organismus",
+   "die genetische Ausstattung (Allelkombination) eines Organismus"
+  ],
+  "correct": 2,
+  "explanation": "Phänotyp: das äußere Erscheinungsbild eines Organismus."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Was versteht man unter „Biotop“?",
+  "options": [
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "der Lebensraum einer Lebensgemeinschaft",
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren"
+  ],
+  "correct": 1,
+  "explanation": "Biotop: der Lebensraum einer Lebensgemeinschaft."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 112 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "38",
+   "40",
+   "28",
+   "32"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 112 · 1/4 = 28."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Dihybride Kreuzung AaBb × AaBb: Wie viele von 96 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "61",
+   "54",
+   "60",
+   "51"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 96 · 9/16 = 54."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: autotrophe Organismen, die organische Stoffe aus anorganischen bilden?",
+  "options": [
+   "Produzenten",
+   "Konsumenten",
+   "Konkurrenz",
+   "Population"
+  ],
+  "correct": 0,
+  "explanation": "Produzenten: autotrophe Organismen, die organische Stoffe aus anorganischen bilden."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Wie heißt die Kontaktstelle zwischen zwei Nervenzellen?",
+  "options": [
+   "Dendrit",
+   "Soma",
+   "Synapse",
+   "Axon"
+  ],
+  "correct": 2,
+  "explanation": "An der Synapse wird das Signal chemisch übertragen."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Welcher Zellteil leitet das Aktionspotenzial vom Zellkörper weg?",
+  "options": [
+   "Axon",
+   "Synapse",
+   "Ranvier-Schnürring",
+   "Dendrit"
+  ],
+  "correct": 0,
+  "explanation": "Das Axon leitet Erregungen vom Soma weg."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 108 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "81",
+   "78",
+   "82",
+   "79"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 108 · 3/4 = 81."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: heterotrophe Organismen, die sich von anderen Lebewesen ernähren?",
+  "options": [
+   "Biotop",
+   "Konsumenten",
+   "Destruenten",
+   "Ökosystem"
+  ],
+  "correct": 1,
+  "explanation": "Konsumenten: heterotrophe Organismen, die sich von anderen Lebewesen ernähren."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 44 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "6",
+   "11",
+   "9",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 44 · 1/4 = 11."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Was bedeutet der Begriff „Genotyp“?",
+  "options": [
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "mischerbig, die beiden Allele eines Gens sind verschieden",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt"
+  ],
+  "correct": 1,
+  "explanation": "Genotyp: die genetische Ausstattung (Allelkombination) eines Organismus."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Welcher Begriff wird beschrieben: der Lebensraum einer Lebensgemeinschaft?",
+  "options": [
+   "Destruenten",
+   "Biozönose",
+   "Population",
+   "Biotop"
+  ],
+  "correct": 3,
+  "explanation": "Biotop: der Lebensraum einer Lebensgemeinschaft."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 96 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "19",
+   "15",
+   "14",
+   "24"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 96 · 1/4 = 24."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 88 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "60",
+   "58",
+   "63",
+   "66"
+  ],
+  "correct": 3,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 88 · 3/4 = 66."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Was bedeutet der Begriff „rezessiv“?",
+  "options": [
+   "das äußere Erscheinungsbild eines Organismus",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "mischerbig, die beiden Allele eines Gens sind verschieden"
+  ],
+  "correct": 1,
+  "explanation": "rezessiv: ein Allel, das nur reinerbig im Phänotyp sichtbar wird."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Teste dein Wissen: Was ist ein Rudiment?",
+  "options": [
+   "ein besonders leistungsfähiges Organ",
+   "ein neu entstandenes Organ",
+   "ein funktionslos gewordenes, zurückgebildetes Organ",
+   "ein Fossil"
+  ],
+  "correct": 2,
+  "explanation": "Rudimente (z. B. menschlicher Blinddarm-Wurmfortsatz) belegen die Evolution."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 32 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "6",
+   "5",
+   "7",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 32 · 1/4 = 8."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 112 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "55",
+   "63",
+   "59",
+   "54"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 112 · 9/16 = 63."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 32 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "4",
+   "12",
+   "8",
+   "10"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 32 · 1/4 = 8."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Was bedeutet der Begriff „dominant“?",
+  "options": [
+   "das äußere Erscheinungsbild eines Organismus",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "eine von mehreren Zustandsformen eines Gens"
+  ],
+  "correct": 1,
+  "explanation": "dominant: ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 36 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "18",
+   "21",
+   "15",
+   "22"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 36 · 1/2 = 18."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 112 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "89",
+   "74",
+   "75",
+   "84"
+  ],
+  "correct": 3,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 112 · 3/4 = 84."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 112 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "84",
+   "87",
+   "97",
+   "70"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 112 · 3/4 = 84."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Dihybride Kreuzung AaBb × AaBb: Wie viele von 144 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "81",
+   "71",
+   "92",
+   "83"
+  ],
+  "correct": 0,
+  "explanation": "Beide dominant = 9/16, also 144 · 9/16 = 81."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: der Lebensraum einer Lebensgemeinschaft?",
+  "options": [
+   "Biotop",
+   "Ökosystem",
+   "Symbiose",
+   "Produzenten"
+  ],
+  "correct": 0,
+  "explanation": "Biotop: der Lebensraum einer Lebensgemeinschaft."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 112 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "60",
+   "63",
+   "67",
+   "57"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 112 · 9/16 = 63."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Welches Ion strömt beim Aktionspotenzial in der Depolarisation in die Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Natrium (Na⁺)",
+   "Kalium (K⁺)",
+   "Calcium in den Muskel"
+  ],
+  "correct": 1,
+  "explanation": "Öffnende Na⁺-Kanäle lassen Natrium einströmen (Depolarisation)."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Welcher Begriff wird beschrieben: die Lebensgemeinschaft aller Organismen eines Lebensraums?",
+  "options": [
+   "Population",
+   "Biozönose",
+   "Symbiose",
+   "Parasitismus"
+  ],
+  "correct": 1,
+  "explanation": "Biozönose: die Lebensgemeinschaft aller Organismen eines Lebensraums."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 72 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "46",
+   "47",
+   "54",
+   "60"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 72 · 3/4 = 54."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 96 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "55",
+   "54",
+   "56",
+   "47"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 96 · 9/16 = 54."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 48 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "25",
+   "24",
+   "26",
+   "20"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 48 · 1/2 = 24."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 32 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "8",
+   "9",
+   "7",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 32 · 1/4 = 8."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 84 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "57",
+   "58",
+   "63",
+   "64"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 84 · 3/4 = 63."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Was bedeutet der Begriff „Genotyp“?",
+  "options": [
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "das äußere Erscheinungsbild eines Organismus",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "die genetische Ausstattung (Allelkombination) eines Organismus"
+  ],
+  "correct": 3,
+  "explanation": "Genotyp: die genetische Ausstattung (Allelkombination) eines Organismus."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 28 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "3",
+   "8",
+   "9",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 28 · 1/4 = 7."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 60 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "43",
+   "45",
+   "37",
+   "51"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 60 · 3/4 = 45."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: eine Art lebt auf Kosten einer anderen (Wirt)?",
+  "options": [
+   "Destruenten",
+   "Konsumenten",
+   "Parasitismus",
+   "Biotop"
+  ],
+  "correct": 2,
+  "explanation": "Parasitismus: eine Art lebt auf Kosten einer anderen (Wirt)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 68 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "15",
+   "23",
+   "16",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 68 · 1/4 = 17."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Dihybride Kreuzung AaBb × AaBb: Wie viele von 176 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "95",
+   "106",
+   "99",
+   "114"
+  ],
+  "correct": 2,
+  "explanation": "Beide dominant = 9/16, also 176 · 9/16 = 99."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 192 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "108",
+   "103",
+   "109",
+   "112"
+  ],
+  "correct": 0,
+  "explanation": "Beide dominant = 9/16, also 192 · 9/16 = 108."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Was bedeutet der Begriff „homozygot“?",
+  "options": [
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "das äußere Erscheinungsbild eines Organismus",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "reinerbig, beide Allele eines Gens sind gleich"
+  ],
+  "correct": 3,
+  "explanation": "homozygot: reinerbig, beide Allele eines Gens sind gleich."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Was bedeutet der Begriff „rezessiv“?",
+  "options": [
+   "eine von mehreren Zustandsformen eines Gens",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird"
+  ],
+  "correct": 3,
+  "explanation": "rezessiv: ein Allel, das nur reinerbig im Phänotyp sichtbar wird."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 16 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "1",
+   "7",
+   "5",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 16 · 1/4 = 4."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 108 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "75",
+   "77",
+   "70",
+   "81"
+  ],
+  "correct": 3,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 108 · 3/4 = 81."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 116 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "87",
+   "83",
+   "99",
+   "78"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 116 · 3/4 = 87."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Wie heißt die Kontaktstelle zwischen zwei Nervenzellen?",
+  "options": [
+   "Synapse",
+   "Axon",
+   "Dendrit",
+   "Soma"
+  ],
+  "correct": 0,
+  "explanation": "An der Synapse wird das Signal chemisch übertragen."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Teste dein Wissen: Was versteht man unter „Selektion“?",
+  "options": [
+   "die naturbedingte Auslese der am besten angepassten Individuen",
+   "die zufällige Vermischung von Genen",
+   "die künstliche Veränderung des Erbguts",
+   "das Aussterben aller Arten"
+  ],
+  "correct": 0,
+  "explanation": "Selektion begünstigt besser angepasste Individuen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 120 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "30",
+   "15",
+   "20",
+   "18"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 120 · 1/4 = 30."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 116 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "26",
+   "16",
+   "21",
+   "29"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 116 · 1/4 = 29."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Aufgabe: Was sind analoge Organe?",
+  "options": [
+   "Chromosomen-Paare",
+   "Organe gleicher Funktion bei nicht näher verwandten Arten",
+   "Organe gleicher Herkunft",
+   "reduzierte Rudimente"
+  ],
+  "correct": 1,
+  "explanation": "Analogie entsteht durch konvergente Anpassung (z. B. Vogel- und Insektenflügel)."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Welcher Begriff wird beschrieben: eine Art lebt auf Kosten einer anderen (Wirt)?",
+  "options": [
+   "Biotop",
+   "Ökosystem",
+   "Parasitismus",
+   "Destruenten"
+  ],
+  "correct": 2,
+  "explanation": "Parasitismus: eine Art lebt auf Kosten einer anderen (Wirt)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 80 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "64",
+   "61",
+   "60",
+   "68"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 80 · 3/4 = 60."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Was versteht man unter „Symbiose“?",
+  "options": [
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen"
+  ],
+  "correct": 3,
+  "explanation": "Symbiose: Zusammenleben zweier Arten zum gegenseitigen Nutzen."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Was beschreibt die Gendrift?",
+  "options": [
+   "den Genaustausch zwischen Arten",
+   "zufällige Änderung der Allelhäufigkeiten in kleinen Populationen",
+   "gerichtete Anpassung durch Selektion",
+   "Mutation der DNA"
+  ],
+  "correct": 1,
+  "explanation": "Gendrift wirkt besonders stark in kleinen Populationen."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Was versteht man unter „Konkurrenz“?",
+  "options": [
+   "eine Art lebt auf Kosten einer anderen (Wirt)",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "Biotop und Biozönose als Wirkungsgefüge"
+  ],
+  "correct": 1,
+  "explanation": "Konkurrenz: Wettbewerb zwischen Organismen um begrenzte Ressourcen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 64 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "36",
+   "32",
+   "34",
+   "31"
+  ],
+  "correct": 0,
+  "explanation": "Beide dominant = 9/16, also 64 · 9/16 = 36."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 64 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "36",
+   "37",
+   "40",
+   "32"
+  ],
+  "correct": 3,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 64 · 1/2 = 32."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 108 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "65",
+   "59",
+   "54",
+   "67"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 108 · 1/2 = 54."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: die Lebensgemeinschaft aller Organismen eines Lebensraums?",
+  "options": [
+   "Ökosystem",
+   "Produzenten",
+   "Biotop",
+   "Biozönose"
+  ],
+  "correct": 3,
+  "explanation": "Biozönose: die Lebensgemeinschaft aller Organismen eines Lebensraums."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 56 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "42",
+   "45",
+   "37",
+   "48"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 56 · 3/4 = 42."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Welcher Zellteil leitet das Aktionspotenzial vom Zellkörper weg?",
+  "options": [
+   "Dendrit",
+   "Ranvier-Schnürring",
+   "Axon",
+   "Synapse"
+  ],
+  "correct": 2,
+  "explanation": "Das Axon leitet Erregungen vom Soma weg."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 160 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "79",
+   "102",
+   "103",
+   "90"
+  ],
+  "correct": 3,
+  "explanation": "Beide dominant = 9/16, also 160 · 9/16 = 90."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Was versteht man unter „Biotop“?",
+  "options": [
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "der Lebensraum einer Lebensgemeinschaft"
+  ],
+  "correct": 3,
+  "explanation": "Biotop: der Lebensraum einer Lebensgemeinschaft."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Dihybride Kreuzung AaBb × AaBb: Wie viele von 80 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "40",
+   "45",
+   "43",
+   "48"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 80 · 9/16 = 45."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 112 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "56",
+   "67",
+   "62",
+   "46"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 112 · 1/2 = 56."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 84 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "72",
+   "52",
+   "63",
+   "68"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 84 · 3/4 = 63."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 56 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "15",
+   "9",
+   "8",
+   "14"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 56 · 1/4 = 14."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Was versteht man unter „Population“?",
+  "options": [
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden"
+  ],
+  "correct": 2,
+  "explanation": "Population: alle Individuen einer Art in einem bestimmten Gebiet."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 44 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "14",
+   "11",
+   "15",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 44 · 1/4 = 11."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 72 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "38",
+   "36",
+   "37",
+   "27"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 72 · 1/2 = 36."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 16 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "7",
+   "8",
+   "10",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 16 · 1/2 = 8."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 72 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "36",
+   "42",
+   "37",
+   "41"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 72 · 1/2 = 36."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 120 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "89",
+   "81",
+   "90",
+   "105"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 120 · 3/4 = 90."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: Zusammenleben zweier Arten zum gegenseitigen Nutzen?",
+  "options": [
+   "Symbiose",
+   "Biozönose",
+   "Konkurrenz",
+   "Population"
+  ],
+  "correct": 0,
+  "explanation": "Symbiose: Zusammenleben zweier Arten zum gegenseitigen Nutzen."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Produzenten“?",
+  "options": [
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "eine Art lebt auf Kosten einer anderen (Wirt)"
+  ],
+  "correct": 2,
+  "explanation": "Produzenten: autotrophe Organismen, die organische Stoffe aus anorganischen bilden."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 108 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "25",
+   "35",
+   "20",
+   "27"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 108 · 1/4 = 27."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 88 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "22",
+   "25",
+   "33",
+   "15"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 88 · 1/4 = 22."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Welcher Zellteil eines Neurons leitet Erregungen zum Zellkörper hin?",
+  "options": [
+   "Myelinscheide",
+   "Synapse",
+   "Dendrit",
+   "Axon"
+  ],
+  "correct": 2,
+  "explanation": "Dendriten empfangen Signale und leiten sie zum Soma."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Was bedeutet der Begriff „Allel“?",
+  "options": [
+   "das äußere Erscheinungsbild eines Organismus",
+   "eine von mehreren Zustandsformen eines Gens",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "mischerbig, die beiden Allele eines Gens sind verschieden"
+  ],
+  "correct": 1,
+  "explanation": "Allel: eine von mehreren Zustandsformen eines Gens."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 120 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "49",
+   "60",
+   "66",
+   "67"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 120 · 1/2 = 60."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Welcher Begriff wird beschrieben: die Lebensgemeinschaft aller Organismen eines Lebensraums?",
+  "options": [
+   "Population",
+   "Destruenten",
+   "Biozönose",
+   "Biotop"
+  ],
+  "correct": 2,
+  "explanation": "Biozönose: die Lebensgemeinschaft aller Organismen eines Lebensraums."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 60 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "12",
+   "18",
+   "20",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 60 · 1/4 = 15."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 56 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "14",
+   "15",
+   "13",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 56 · 1/4 = 14."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Wie nennt man den chemischen Botenstoff an der Synapse?",
+  "options": [
+   "Hormon",
+   "Neurotransmitter",
+   "Enzym",
+   "Antikörper"
+  ],
+  "correct": 1,
+  "explanation": "Neurotransmitter übertragen das Signal über den synaptischen Spalt."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wie hoch ist das Ruhepotenzial eines typischen Neurons ungefähr?",
+  "options": [
+   "etwa −140 mV",
+   "etwa −70 mV",
+   "etwa +30 mV",
+   "0 mV"
+  ],
+  "correct": 1,
+  "explanation": "Das Ruhepotenzial liegt bei ca. −70 mV."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 52 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "13",
+   "10",
+   "19",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 52 · 1/4 = 13."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Was versteht man unter „Destruenten“?",
+  "options": [
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "Organismen, die totes organisches Material abbauen",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen"
+  ],
+  "correct": 1,
+  "explanation": "Destruenten: Organismen, die totes organisches Material abbauen."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Welcher Begriff wird beschrieben: eine Art lebt auf Kosten einer anderen (Wirt)?",
+  "options": [
+   "Produzenten",
+   "Parasitismus",
+   "Biotop",
+   "Konkurrenz"
+  ],
+  "correct": 1,
+  "explanation": "Parasitismus: eine Art lebt auf Kosten einer anderen (Wirt)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 108 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "37",
+   "27",
+   "16",
+   "35"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 108 · 1/4 = 27."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 84 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "58",
+   "61",
+   "63",
+   "52"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 84 · 3/4 = 63."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 56 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "46",
+   "48",
+   "42",
+   "44"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 56 · 3/4 = 42."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Dihybride Kreuzung AaBb × AaBb: Wie viele von 192 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "96",
+   "108",
+   "100",
+   "121"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 192 · 9/16 = 108."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Was bedeutet der Begriff „homozygot“?",
+  "options": [
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "eine von mehreren Zustandsformen eines Gens",
+   "mischerbig, die beiden Allele eines Gens sind verschieden"
+  ],
+  "correct": 0,
+  "explanation": "homozygot: reinerbig, beide Allele eines Gens sind gleich."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 80 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "48",
+   "39",
+   "38",
+   "40"
+  ],
+  "correct": 3,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 80 · 1/2 = 40."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 76 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "46",
+   "32",
+   "38",
+   "30"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 76 · 1/2 = 38."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Teste dein Wissen: Was beschreibt die Gendrift?",
+  "options": [
+   "zufällige Änderung der Allelhäufigkeiten in kleinen Populationen",
+   "gerichtete Anpassung durch Selektion",
+   "den Genaustausch zwischen Arten",
+   "Mutation der DNA"
+  ],
+  "correct": 0,
+  "explanation": "Gendrift wirkt besonders stark in kleinen Populationen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 56 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "39",
+   "42",
+   "40",
+   "47"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 56 · 3/4 = 42."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 24 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "13",
+   "10",
+   "12",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 24 · 1/2 = 12."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Welches Ion strömt beim Aktionspotenzial in der Depolarisation in die Zelle?",
+  "options": [
+   "Kalium (K⁺)",
+   "Natrium (Na⁺)",
+   "Calcium in den Muskel",
+   "Chlorid (Cl⁻)"
+  ],
+  "correct": 1,
+  "explanation": "Öffnende Na⁺-Kanäle lassen Natrium einströmen (Depolarisation)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 108 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "81",
+   "85",
+   "95",
+   "70"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 108 · 3/4 = 81."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 68 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "34",
+   "38",
+   "35",
+   "37"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 68 · 1/2 = 34."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Welcher Begriff wird beschrieben: Wettbewerb zwischen Organismen um begrenzte Ressourcen?",
+  "options": [
+   "Konkurrenz",
+   "Konsumenten",
+   "Produzenten",
+   "Symbiose"
+  ],
+  "correct": 0,
+  "explanation": "Konkurrenz: Wettbewerb zwischen Organismen um begrenzte Ressourcen."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Konkurrenz“?",
+  "options": [
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "der Lebensraum einer Lebensgemeinschaft",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "eine Art lebt auf Kosten einer anderen (Wirt)"
+  ],
+  "correct": 0,
+  "explanation": "Konkurrenz: Wettbewerb zwischen Organismen um begrenzte Ressourcen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 28 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "4",
+   "8",
+   "5",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 28 · 1/4 = 7."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 80 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "39",
+   "45",
+   "50",
+   "44"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 80 · 9/16 = 45."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 92 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "69",
+   "60",
+   "80",
+   "66"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 92 · 3/4 = 69."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 112 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "31",
+   "22",
+   "28",
+   "27"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 112 · 1/4 = 28."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Was versteht man unter „Biozönose“?",
+  "options": [
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen"
+  ],
+  "correct": 0,
+  "explanation": "Biozönose: die Lebensgemeinschaft aller Organismen eines Lebensraums."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 104 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "52",
+   "59",
+   "61",
+   "55"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 104 · 1/2 = 52."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Welcher Begriff wird beschrieben: Zusammenleben zweier Arten zum gegenseitigen Nutzen?",
+  "options": [
+   "Population",
+   "Produzenten",
+   "Symbiose",
+   "Konsumenten"
+  ],
+  "correct": 2,
+  "explanation": "Symbiose: Zusammenleben zweier Arten zum gegenseitigen Nutzen."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: Biotop und Biozönose als Wirkungsgefüge?",
+  "options": [
+   "Biotop",
+   "Konsumenten",
+   "Ökosystem",
+   "Produzenten"
+  ],
+  "correct": 2,
+  "explanation": "Ökosystem: Biotop und Biozönose als Wirkungsgefüge."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Wie nennt man den chemischen Botenstoff an der Synapse?",
+  "options": [
+   "Neurotransmitter",
+   "Antikörper",
+   "Hormon",
+   "Enzym"
+  ],
+  "correct": 0,
+  "explanation": "Neurotransmitter übertragen das Signal über den synaptischen Spalt."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 104 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "57",
+   "44",
+   "52",
+   "59"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 104 · 1/2 = 52."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 68 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "9",
+   "13",
+   "14",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 68 · 1/4 = 17."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 112 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "67",
+   "52",
+   "61",
+   "56"
+  ],
+  "correct": 3,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 112 · 1/2 = 56."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 44 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "27",
+   "38",
+   "33",
+   "32"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 44 · 3/4 = 33."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 8 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "5",
+   "4",
+   "6",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 8 · 1/2 = 4."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Was bedeutet der Begriff „heterozygot“?",
+  "options": [
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "das äußere Erscheinungsbild eines Organismus",
+   "mischerbig, die beiden Allele eines Gens sind verschieden"
+  ],
+  "correct": 3,
+  "explanation": "heterozygot: mischerbig, die beiden Allele eines Gens sind verschieden."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Was bedeutet der Begriff „dominant“?",
+  "options": [
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "das äußere Erscheinungsbild eines Organismus",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird"
+  ],
+  "correct": 1,
+  "explanation": "dominant: ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 104 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "78",
+   "91",
+   "65",
+   "75"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 104 · 3/4 = 78."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 20 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "13",
+   "15",
+   "12",
+   "16"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 20 · 3/4 = 15."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Dihybride Kreuzung AaBb × AaBb: Wie viele von 112 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "71",
+   "63",
+   "66",
+   "54"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 112 · 9/16 = 63."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 104 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "23",
+   "32",
+   "36",
+   "26"
+  ],
+  "correct": 3,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 104 · 1/4 = 26."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Population“?",
+  "options": [
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "Organismen, die totes organisches Material abbauen",
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren"
+  ],
+  "correct": 2,
+  "explanation": "Population: alle Individuen einer Art in einem bestimmten Gebiet."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 120 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "105",
+   "95",
+   "90",
+   "80"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 120 · 3/4 = 90."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 64 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "32",
+   "26",
+   "36",
+   "29"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 64 · 1/2 = 32."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 144 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "81",
+   "90",
+   "70",
+   "86"
+  ],
+  "correct": 0,
+  "explanation": "Beide dominant = 9/16, also 144 · 9/16 = 81."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Welcher Zellteil leitet das Aktionspotenzial vom Zellkörper weg?",
+  "options": [
+   "Synapse",
+   "Axon",
+   "Dendrit",
+   "Ranvier-Schnürring"
+  ],
+  "correct": 1,
+  "explanation": "Das Axon leitet Erregungen vom Soma weg."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 16 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "6",
+   "11",
+   "8",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 16 · 1/2 = 8."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 60 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "11",
+   "15",
+   "8",
+   "22"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 60 · 1/4 = 15."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 48 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "10",
+   "12",
+   "17",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 48 · 1/4 = 12."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 116 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "29",
+   "30",
+   "34",
+   "31"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 116 · 1/4 = 29."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 92 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "46",
+   "45",
+   "41",
+   "53"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 92 · 1/2 = 46."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: Wettbewerb zwischen Organismen um begrenzte Ressourcen?",
+  "options": [
+   "Konkurrenz",
+   "Population",
+   "Ökosystem",
+   "Biozönose"
+  ],
+  "correct": 0,
+  "explanation": "Konkurrenz: Wettbewerb zwischen Organismen um begrenzte Ressourcen."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: der Lebensraum einer Lebensgemeinschaft?",
+  "options": [
+   "Biozönose",
+   "Konsumenten",
+   "Parasitismus",
+   "Biotop"
+  ],
+  "correct": 3,
+  "explanation": "Biotop: der Lebensraum einer Lebensgemeinschaft."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 100 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "70",
+   "75",
+   "76",
+   "63"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 100 · 3/4 = 75."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Welcher Begriff wird beschrieben: autotrophe Organismen, die organische Stoffe aus anorganischen bilden?",
+  "options": [
+   "Biotop",
+   "Ökosystem",
+   "Konsumenten",
+   "Produzenten"
+  ],
+  "correct": 3,
+  "explanation": "Produzenten: autotrophe Organismen, die organische Stoffe aus anorganischen bilden."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 12 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "6",
+   "5",
+   "4",
+   "9"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 12 · 1/2 = 6."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 8 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "3",
+   "5",
+   "9",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 8 · 3/4 = 6."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 192 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "107",
+   "108",
+   "102",
+   "122"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 192 · 9/16 = 108."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Selektion“?",
+  "options": [
+   "das Aussterben aller Arten",
+   "die naturbedingte Auslese der am besten angepassten Individuen",
+   "die künstliche Veränderung des Erbguts",
+   "die zufällige Vermischung von Genen"
+  ],
+  "correct": 1,
+  "explanation": "Selektion begünstigt besser angepasste Individuen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 120 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "90",
+   "78",
+   "95",
+   "87"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 120 · 3/4 = 90."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 108 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "41",
+   "54",
+   "46",
+   "52"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 108 · 1/2 = 54."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Dihybride Kreuzung AaBb × AaBb: Wie viele von 160 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "98",
+   "94",
+   "92",
+   "90"
+  ],
+  "correct": 3,
+  "explanation": "Beide dominant = 9/16, also 160 · 9/16 = 90."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Wähle die richtige Antwort. Was versteht man unter „Symbiose“?",
+  "options": [
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen",
+   "Organismen, die totes organisches Material abbauen",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden"
+  ],
+  "correct": 1,
+  "explanation": "Symbiose: Zusammenleben zweier Arten zum gegenseitigen Nutzen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 96 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "48",
+   "44",
+   "56",
+   "49"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 96 · 1/2 = 48."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Aufgabe: Was beschreibt die Gendrift?",
+  "options": [
+   "zufällige Änderung der Allelhäufigkeiten in kleinen Populationen",
+   "gerichtete Anpassung durch Selektion",
+   "den Genaustausch zwischen Arten",
+   "Mutation der DNA"
+  ],
+  "correct": 0,
+  "explanation": "Gendrift wirkt besonders stark in kleinen Populationen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Was bedeutet der Begriff „heterozygot“?",
+  "options": [
+   "eine von mehreren Zustandsformen eines Gens",
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "mischerbig, die beiden Allele eines Gens sind verschieden"
+  ],
+  "correct": 3,
+  "explanation": "heterozygot: mischerbig, die beiden Allele eines Gens sind verschieden."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 92 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "46",
+   "39",
+   "48",
+   "54"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 92 · 1/2 = 46."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 88 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "21",
+   "22",
+   "14",
+   "16"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 88 · 1/4 = 22."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Was bedeutet der Begriff „Phänotyp“?",
+  "options": [
+   "das äußere Erscheinungsbild eines Organismus",
+   "mischerbig, die beiden Allele eines Gens sind verschieden",
+   "reinerbig, beide Allele eines Gens sind gleich",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt"
+  ],
+  "correct": 0,
+  "explanation": "Phänotyp: das äußere Erscheinungsbild eines Organismus."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 28 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "23",
+   "21",
+   "19",
+   "18"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 28 · 3/4 = 21."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 92 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "70",
+   "69",
+   "67",
+   "78"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 92 · 3/4 = 69."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Was versteht man unter „Biotop“?",
+  "options": [
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "der Lebensraum einer Lebensgemeinschaft",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "eine Art lebt auf Kosten einer anderen (Wirt)"
+  ],
+  "correct": 1,
+  "explanation": "Biotop: der Lebensraum einer Lebensgemeinschaft."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Welches Ion strömt beim Aktionspotenzial in der Depolarisation in die Zelle?",
+  "options": [
+   "Kalium (K⁺)",
+   "Chlorid (Cl⁻)",
+   "Calcium in den Muskel",
+   "Natrium (Na⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Öffnende Na⁺-Kanäle lassen Natrium einströmen (Depolarisation)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 40 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "5",
+   "15",
+   "10",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 40 · 1/4 = 10."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 92 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "13",
+   "26",
+   "23",
+   "17"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 92 · 1/4 = 23."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 96 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "72",
+   "69",
+   "61",
+   "67"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 96 · 3/4 = 72."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 24 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "18",
+   "21",
+   "20",
+   "19"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 24 · 3/4 = 18."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 40 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "10",
+   "9",
+   "14",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 40 · 1/4 = 10."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 48 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "18",
+   "12",
+   "7",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 48 · 1/4 = 12."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 80 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "47",
+   "45",
+   "51",
+   "43"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 80 · 9/16 = 45."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Was versteht man unter „Population“?",
+  "options": [
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen"
+  ],
+  "correct": 2,
+  "explanation": "Population: alle Individuen einer Art in einem bestimmten Gebiet."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 144 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "85",
+   "93",
+   "81",
+   "83"
+  ],
+  "correct": 2,
+  "explanation": "Beide dominant = 9/16, also 144 · 9/16 = 81."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 24 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "6",
+   "7",
+   "4",
+   "9"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 24 · 1/4 = 6."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Welcher Begriff wird beschrieben: die Lebensgemeinschaft aller Organismen eines Lebensraums?",
+  "options": [
+   "Population",
+   "Ökosystem",
+   "Biozönose",
+   "Biotop"
+  ],
+  "correct": 2,
+  "explanation": "Biozönose: die Lebensgemeinschaft aller Organismen eines Lebensraums."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 48 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "12",
+   "7",
+   "11",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 48 · 1/4 = 12."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 112 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "19",
+   "28",
+   "37",
+   "38"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 112 · 1/4 = 28."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wie nennt man den chemischen Botenstoff an der Synapse?",
+  "options": [
+   "Antikörper",
+   "Neurotransmitter",
+   "Enzym",
+   "Hormon"
+  ],
+  "correct": 1,
+  "explanation": "Neurotransmitter übertragen das Signal über den synaptischen Spalt."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 32 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "22",
+   "25",
+   "24",
+   "26"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 32 · 3/4 = 24."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Dihybride Kreuzung AaBb × AaBb: Wie viele von 80 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "40",
+   "45",
+   "46",
+   "43"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 80 · 9/16 = 45."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 8 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "4",
+   "2",
+   "5",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 8 · 1/2 = 4."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 96 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "22",
+   "24",
+   "27",
+   "26"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 96 · 1/4 = 24."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 52 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "32",
+   "29",
+   "27",
+   "26"
+  ],
+  "correct": 3,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 52 · 1/2 = 26."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 32 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "24",
+   "22",
+   "23",
+   "21"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 32 · 3/4 = 24."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Welcher Begriff wird beschrieben: Biotop und Biozönose als Wirkungsgefüge?",
+  "options": [
+   "Ökosystem",
+   "Biotop",
+   "Parasitismus",
+   "Biozönose"
+  ],
+  "correct": 0,
+  "explanation": "Ökosystem: Biotop und Biozönose als Wirkungsgefüge."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Was versteht man unter „Konsumenten“?",
+  "options": [
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "eine Art lebt auf Kosten einer anderen (Wirt)",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren"
+  ],
+  "correct": 3,
+  "explanation": "Konsumenten: heterotrophe Organismen, die sich von anderen Lebewesen ernähren."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 88 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "22",
+   "27",
+   "14",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 88 · 1/4 = 22."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Was versteht man unter „Selektion“?",
+  "options": [
+   "die naturbedingte Auslese der am besten angepassten Individuen",
+   "die zufällige Vermischung von Genen",
+   "die künstliche Veränderung des Erbguts",
+   "das Aussterben aller Arten"
+  ],
+  "correct": 0,
+  "explanation": "Selektion begünstigt besser angepasste Individuen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 52 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "26",
+   "19",
+   "32",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 52 · 1/2 = 26."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 120 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "60",
+   "58",
+   "74",
+   "62"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 120 · 1/2 = 60."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 36 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "16",
+   "20",
+   "18",
+   "22"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 36 · 1/2 = 18."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 60 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "38",
+   "32",
+   "30",
+   "33"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 60 · 1/2 = 30."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 52 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "26",
+   "30",
+   "22",
+   "24"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 52 · 1/2 = 26."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Was bedeutet der Begriff „heterozygot“?",
+  "options": [
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "mischerbig, die beiden Allele eines Gens sind verschieden",
+   "eine von mehreren Zustandsformen eines Gens",
+   "das äußere Erscheinungsbild eines Organismus"
+  ],
+  "correct": 1,
+  "explanation": "heterozygot: mischerbig, die beiden Allele eines Gens sind verschieden."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 76 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "57",
+   "66",
+   "63",
+   "62"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 76 · 3/4 = 57."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 52 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "44",
+   "36",
+   "32",
+   "39"
+  ],
+  "correct": 3,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 52 · 3/4 = 39."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Was bedeutet der Begriff „dominant“?",
+  "options": [
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "das äußere Erscheinungsbild eines Organismus",
+   "eine von mehreren Zustandsformen eines Gens",
+   "reinerbig, beide Allele eines Gens sind gleich"
+  ],
+  "correct": 0,
+  "explanation": "dominant: ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 44 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "11",
+   "5",
+   "10",
+   "13"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 44 · 1/4 = 11."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 88 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "66",
+   "57",
+   "67",
+   "71"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 88 · 3/4 = 66."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 104 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "26",
+   "33",
+   "15",
+   "28"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 104 · 1/4 = 26."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Aufgabe: Was versteht man unter „Selektion“?",
+  "options": [
+   "die zufällige Vermischung von Genen",
+   "das Aussterben aller Arten",
+   "die künstliche Veränderung des Erbguts",
+   "die naturbedingte Auslese der am besten angepassten Individuen"
+  ],
+  "correct": 3,
+  "explanation": "Selektion begünstigt besser angepasste Individuen."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Welcher Zellteil eines Neurons leitet Erregungen zum Zellkörper hin?",
+  "options": [
+   "Myelinscheide",
+   "Synapse",
+   "Axon",
+   "Dendrit"
+  ],
+  "correct": 3,
+  "explanation": "Dendriten empfangen Signale und leiten sie zum Soma."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 176 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "112",
+   "99",
+   "96",
+   "101"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 176 · 9/16 = 99."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Was bedeutet der Begriff „Genotyp“?",
+  "options": [
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird",
+   "das äußere Erscheinungsbild eines Organismus",
+   "eine von mehreren Zustandsformen eines Gens",
+   "die genetische Ausstattung (Allelkombination) eines Organismus"
+  ],
+  "correct": 3,
+  "explanation": "Genotyp: die genetische Ausstattung (Allelkombination) eines Organismus."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 48 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "35",
+   "36",
+   "32",
+   "37"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 48 · 3/4 = 36."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 68 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "34",
+   "42",
+   "26",
+   "39"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 68 · 1/2 = 34."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Dihybride Kreuzung AaBb × AaBb: Wie viele von 112 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "54",
+   "63",
+   "55",
+   "69"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 112 · 9/16 = 63."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 84 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "42",
+   "38",
+   "35",
+   "36"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 84 · 1/2 = 42."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 16 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "8",
+   "7",
+   "10",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 16 · 1/2 = 8."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 32 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "16",
+   "20",
+   "17",
+   "19"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 32 · 1/2 = 16."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 80 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "20",
+   "13",
+   "10",
+   "27"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 80 · 1/4 = 20."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 100 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "75",
+   "70",
+   "71",
+   "62"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 100 · 3/4 = 75."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Was versteht man unter „Destruenten“?",
+  "options": [
+   "der Lebensraum einer Lebensgemeinschaft",
+   "Organismen, die totes organisches Material abbauen",
+   "Biotop und Biozönose als Wirkungsgefüge",
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden"
+  ],
+  "correct": 1,
+  "explanation": "Destruenten: Organismen, die totes organisches Material abbauen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Dihybride Kreuzung AaBb × AaBb: Wie viele von 64 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "41",
+   "36",
+   "34",
+   "32"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 64 · 9/16 = 36."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Was bedeutet der Begriff „Phänotyp“?",
+  "options": [
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "eine von mehreren Zustandsformen eines Gens",
+   "das äußere Erscheinungsbild eines Organismus",
+   "die genetische Ausstattung (Allelkombination) eines Organismus"
+  ],
+  "correct": 2,
+  "explanation": "Phänotyp: das äußere Erscheinungsbild eines Organismus."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 64 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "19",
+   "16",
+   "24",
+   "23"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 64 · 1/4 = 16."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Dihybride Kreuzung AaBb × AaBb: Wie viele von 96 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "61",
+   "47",
+   "48",
+   "54"
+  ],
+  "correct": 3,
+  "explanation": "Beide dominant = 9/16, also 96 · 9/16 = 54."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 176 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "99",
+   "87",
+   "88",
+   "108"
+  ],
+  "correct": 0,
+  "explanation": "Beide dominant = 9/16, also 176 · 9/16 = 99."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Was ist ein Rudiment?",
+  "options": [
+   "ein Fossil",
+   "ein funktionslos gewordenes, zurückgebildetes Organ",
+   "ein besonders leistungsfähiges Organ",
+   "ein neu entstandenes Organ"
+  ],
+  "correct": 1,
+  "explanation": "Rudimente (z. B. menschlicher Blinddarm-Wurmfortsatz) belegen die Evolution."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 28 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "5",
+   "4",
+   "7",
+   "10"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 28 · 1/4 = 7."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 20 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "17",
+   "18",
+   "13",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 20 · 3/4 = 15."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 64 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "10",
+   "16",
+   "19",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 64 · 1/4 = 16."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 84 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "52",
+   "63",
+   "59",
+   "58"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 84 · 3/4 = 63."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 76 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "28",
+   "36",
+   "38",
+   "32"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 76 · 1/2 = 38."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 112 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "84",
+   "95",
+   "76",
+   "78"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 112 · 3/4 = 84."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 108 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "17",
+   "39",
+   "27",
+   "23"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 108 · 1/4 = 27."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Was beschleunigt die Erregungsleitung entlang eines Axons?",
+  "options": [
+   "mehr Dendriten",
+   "ein dünneres Axon",
+   "weniger Ionen",
+   "die Myelinscheide (saltatorische Erregungsleitung)"
+  ],
+  "correct": 3,
+  "explanation": "Myelin ermöglicht die schnelle saltatorische Erregungsleitung."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 56 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "25",
+   "22",
+   "33",
+   "28"
+  ],
+  "correct": 3,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 56 · 1/2 = 28."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 112 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "60",
+   "50",
+   "56",
+   "63"
+  ],
+  "correct": 2,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 112 · 1/2 = 56."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 40 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "26",
+   "30",
+   "27",
+   "25"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 40 · 3/4 = 30."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 68 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "21",
+   "20",
+   "17",
+   "22"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 68 · 1/4 = 17."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Was bedeutet der Begriff „Genotyp“?",
+  "options": [
+   "die genetische Ausstattung (Allelkombination) eines Organismus",
+   "ein Allel, das sich im Phänotyp gegenüber dem anderen durchsetzt",
+   "eine von mehreren Zustandsformen eines Gens",
+   "ein Allel, das nur reinerbig im Phänotyp sichtbar wird"
+  ],
+  "correct": 0,
+  "explanation": "Genotyp: die genetische Ausstattung (Allelkombination) eines Organismus."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 68 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "45",
+   "47",
+   "51",
+   "55"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 68 · 3/4 = 51."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Welcher Begriff wird beschrieben: autotrophe Organismen, die organische Stoffe aus anorganischen bilden?",
+  "options": [
+   "Konsumenten",
+   "Biotop",
+   "Produzenten",
+   "Ökosystem"
+  ],
+  "correct": 2,
+  "explanation": "Produzenten: autotrophe Organismen, die organische Stoffe aus anorganischen bilden."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 64 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "44",
+   "55",
+   "48",
+   "46"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 64 · 3/4 = 48."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 36 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "27",
+   "32",
+   "23",
+   "28"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 36 · 3/4 = 27."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 60 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "53",
+   "45",
+   "43",
+   "42"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 60 · 3/4 = 45."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Was versteht man unter „Konkurrenz“?",
+  "options": [
+   "autotrophe Organismen, die organische Stoffe aus anorganischen bilden",
+   "Wettbewerb zwischen Organismen um begrenzte Ressourcen",
+   "alle Individuen einer Art in einem bestimmten Gebiet",
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren"
+  ],
+  "correct": 1,
+  "explanation": "Konkurrenz: Wettbewerb zwischen Organismen um begrenzte Ressourcen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 64 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "52",
+   "42",
+   "48",
+   "46"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 64 · 3/4 = 48."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 44 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "35",
+   "32",
+   "33",
+   "34"
+  ],
+  "correct": 2,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 44 · 3/4 = 33."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Dihybride Kreuzung AaBb × AaBb: Wie viele von 48 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "25",
+   "28",
+   "24",
+   "27"
+  ],
+  "correct": 3,
+  "explanation": "Beide dominant = 9/16, also 48 · 9/16 = 27."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 84 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "21",
+   "19",
+   "23",
+   "32"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 84 · 1/4 = 21."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Welcher Begriff wird beschrieben: Zusammenleben zweier Arten zum gegenseitigen Nutzen?",
+  "options": [
+   "Destruenten",
+   "Symbiose",
+   "Produzenten",
+   "Biozönose"
+  ],
+  "correct": 1,
+  "explanation": "Symbiose: Zusammenleben zweier Arten zum gegenseitigen Nutzen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Dihybride Kreuzung AaBb × AaBb: Wie viele von 160 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "84",
+   "90",
+   "87",
+   "99"
+  ],
+  "correct": 1,
+  "explanation": "Beide dominant = 9/16, also 160 · 9/16 = 90."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 80 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "40",
+   "30",
+   "42",
+   "41"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 80 · 1/2 = 40."
+ },
+ {
+  "topic": "Evolution",
+  "question": "Wähle die richtige Antwort. Wer formulierte die Theorie der natürlichen Selektion?",
+  "options": [
+   "Charles Darwin",
+   "Gregor Mendel",
+   "Carl von Linné",
+   "Jean-Baptiste Lamarck"
+  ],
+  "correct": 0,
+  "explanation": "Darwin begründete die Selektionstheorie (1859)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Dihybride Kreuzung AaBb × AaBb: Wie viele von 64 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "35",
+   "40",
+   "36",
+   "38"
+  ],
+  "correct": 2,
+  "explanation": "Beide dominant = 9/16, also 64 · 9/16 = 36."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Dihybride Kreuzung AaBb × AaBb: Wie viele von 96 Nachkommen zeigen beide dominanten Merkmale (Verhältnis 9:3:3:1)?",
+  "options": [
+   "48",
+   "60",
+   "56",
+   "54"
+  ],
+  "correct": 3,
+  "explanation": "Beide dominant = 9/16, also 96 · 9/16 = 54."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 108 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "77",
+   "81",
+   "85",
+   "73"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 108 · 3/4 = 81."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 16 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "2",
+   "6",
+   "4",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 16 · 1/4 = 4."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 92 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "25",
+   "23",
+   "27",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 92 · 1/4 = 23."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Teste dein Wissen: Kreuzung Aa × Aa: Wie viele von 52 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "26",
+   "32",
+   "30",
+   "23"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 52 · 1/2 = 26."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 84 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "44",
+   "42",
+   "35",
+   "52"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 84 · 1/2 = 42."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 72 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "23",
+   "18",
+   "14",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 72 · 1/4 = 18."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 116 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "58",
+   "69",
+   "63",
+   "47"
+  ],
+  "correct": 0,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 116 · 1/2 = 58."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Teste dein Wissen: Was versteht man unter „Symbiose“?",
+  "options": [
+   "Zusammenleben zweier Arten zum gegenseitigen Nutzen",
+   "eine Art lebt auf Kosten einer anderen (Wirt)",
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "Biotop und Biozönose als Wirkungsgefüge"
+  ],
+  "correct": 0,
+  "explanation": "Symbiose: Zusammenleben zweier Arten zum gegenseitigen Nutzen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 80 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "60",
+   "59",
+   "63",
+   "65"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 80 · 3/4 = 60."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 36 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "27",
+   "30",
+   "32",
+   "31"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 36 · 3/4 = 27."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 64 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "56",
+   "48",
+   "40",
+   "51"
+  ],
+  "correct": 1,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 64 · 3/4 = 48."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Wähle die richtige Antwort. Kreuzung Aa × Aa: Wie viele von 32 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "7",
+   "9",
+   "8",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 32 · 1/4 = 8."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wie heißt die Kontaktstelle zwischen zwei Nervenzellen?",
+  "options": [
+   "Axon",
+   "Soma",
+   "Synapse",
+   "Dendrit"
+  ],
+  "correct": 2,
+  "explanation": "An der Synapse wird das Signal chemisch übertragen."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 24 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "6",
+   "3",
+   "9",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 24 · 1/4 = 6."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Kreuzung Aa × Aa: Wie viele von 28 Nachkommen sind erwartungsgemäß mischerbig (Aa)?",
+  "options": [
+   "17",
+   "14",
+   "18",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "Der Anteil Aa beträgt 1/2 (2 von 4), also 28 · 1/2 = 14."
+ },
+ {
+  "topic": "Ökologie",
+  "question": "Aufgabe: Was versteht man unter „Parasitismus“?",
+  "options": [
+   "heterotrophe Organismen, die sich von anderen Lebewesen ernähren",
+   "eine Art lebt auf Kosten einer anderen (Wirt)",
+   "die Lebensgemeinschaft aller Organismen eines Lebensraums",
+   "alle Individuen einer Art in einem bestimmten Gebiet"
+  ],
+  "correct": 1,
+  "explanation": "Parasitismus: eine Art lebt auf Kosten einer anderen (Wirt)."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 72 Nachkommen zeigen erwartungsgemäß den dominanten Phänotyp?",
+  "options": [
+   "54",
+   "51",
+   "52",
+   "55"
+  ],
+  "correct": 0,
+  "explanation": "Der dominante Anteil beträgt 3/4, also 72 · 3/4 = 54."
+ },
+ {
+  "topic": "Genetik",
+  "question": "Aufgabe: Kreuzung Aa × Aa: Wie viele von 52 Nachkommen zeigen erwartungsgemäß den rezessiven Phänotyp?",
+  "options": [
+   "15",
+   "11",
+   "13",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "Der rezessive Anteil beträgt 1/4, also 52 · 1/4 = 13."
+ }
+]

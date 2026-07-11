@@ -24,6 +24,41 @@ const COLUMNS: { key: "todo" | "in_progress" | "done"; label: string; color: str
   { key: "done", label: "Fertig", color: "border-green-500" },
 ];
 
+function dueBadge(dueAt: Date | null, status: Task["status"]): { label: string; className: string } | null {
+  if (!dueAt || status === "done") return null;
+  const msPerDay = 24 * 60 * 60 * 1000;
+  const startOfToday = new Date();
+  startOfToday.setHours(0, 0, 0, 0);
+  const startOfDue = new Date(dueAt);
+  startOfDue.setHours(0, 0, 0, 0);
+  const days = Math.round((startOfDue.getTime() - startOfToday.getTime()) / msPerDay);
+  if (days < 0) {
+    return {
+      label: `Überfällig seit ${Math.abs(days)} Tag${Math.abs(days) !== 1 ? "en" : ""}`,
+      className: "bg-destructive/10 text-destructive border-destructive/30",
+    };
+  }
+  if (days === 0) {
+    return { label: "Heute fällig", className: "bg-destructive/10 text-destructive border-destructive/30" };
+  }
+  if (days <= 3) {
+    return {
+      label: `Noch ${days} Tag${days !== 1 ? "e" : ""}`,
+      className: "bg-yellow-400/10 text-yellow-600 dark:text-yellow-400 border-yellow-400/30",
+    };
+  }
+  return { label: `Noch ${days} Tage`, className: "bg-muted text-muted-foreground border-border" };
+}
+
+function sortByDue(tasks: Task[]): Task[] {
+  return [...tasks].sort((a, b) => {
+    if (a.dueAt && b.dueAt) return new Date(a.dueAt).getTime() - new Date(b.dueAt).getTime();
+    if (a.dueAt) return -1;
+    if (b.dueAt) return 1;
+    return 0;
+  });
+}
+
 function TaskCard({ task }: { task: Task }) {
   const [, startTransition] = useTransition();
 
@@ -39,12 +74,21 @@ function TaskCard({ task }: { task: Task }) {
     done: "↩ Zurücksetzen",
   };
 
+  const badge = dueBadge(task.dueAt, task.status);
+
   return (
     <div className="bg-card border border-border rounded-xl p-4 space-y-3">
       <div>
-        <Link href={`/app/mastertask/${task.id}`} className="font-semibold hover:underline leading-tight block">
-          {task.title}
-        </Link>
+        <div className="flex items-start justify-between gap-2">
+          <Link href={`/app/mastertask/${task.id}`} className="font-semibold hover:underline leading-tight block">
+            {task.title}
+          </Link>
+          {badge && (
+            <span className={`shrink-0 text-[11px] font-medium border rounded-full px-2 py-0.5 ${badge.className}`}>
+              {badge.label}
+            </span>
+          )}
+        </div>
         {task.subject && <p className="text-xs text-muted-foreground mt-0.5">{task.subject}</p>}
       </div>
 
@@ -76,10 +120,33 @@ function TaskCard({ task }: { task: Task }) {
 }
 
 export function KanbanBoard({ tasks }: { tasks: Task[] }) {
+  const doneCount = tasks.filter((t) => t.status === "done").length;
+  const total = tasks.length;
+  const percent = total > 0 ? Math.round((doneCount / total) * 100) : 0;
+  const openCount = total - doneCount;
+
   return (
+    <div className="space-y-6">
+      <div className="bg-card border border-border rounded-2xl p-4 space-y-2">
+        <div className="flex items-center justify-between text-sm">
+          <p className="font-semibold">
+            {doneCount} von {total} Aufgaben erledigt
+          </p>
+          <p className="text-xs text-muted-foreground">
+            {openCount === 0 ? "Alles erledigt 🎉" : `${openCount} offen`} · {percent}%
+          </p>
+        </div>
+        <div className="h-2 rounded-full bg-muted overflow-hidden">
+          <div
+            className="h-full rounded-full bg-green-500 transition-all"
+            style={{ width: `${percent}%` }}
+          />
+        </div>
+      </div>
+
     <div className="grid gap-5 lg:grid-cols-3">
       {COLUMNS.map((col) => {
-        const columnTasks = tasks.filter((t) => t.status === col.key);
+        const columnTasks = sortByDue(tasks.filter((t) => t.status === col.key));
         return (
           <div key={col.key} className={`border-t-4 ${col.color} bg-muted/20 rounded-xl p-4 space-y-3`}>
             <div className="flex items-center justify-between">
@@ -89,12 +156,15 @@ export function KanbanBoard({ tasks }: { tasks: Task[] }) {
             <div className="space-y-3">
               {columnTasks.map((t) => <TaskCard key={t.id} task={t} />)}
               {columnTasks.length === 0 && (
-                <p className="text-xs text-muted-foreground text-center py-4">Keine Aufgaben</p>
+                <p className="text-xs text-muted-foreground text-center py-4">
+                  {col.key === "done" ? "Noch nichts erledigt" : "Keine Aufgaben"}
+                </p>
               )}
             </div>
           </div>
         );
       })}
+    </div>
     </div>
   );
 }

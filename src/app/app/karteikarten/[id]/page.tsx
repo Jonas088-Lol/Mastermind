@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowRight, Layers } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, Layers } from "lucide-react";
+import { ExportDeckButton } from "./ExportDeckButton";
 import { FlashcardModes } from "./FlashcardModes";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -49,6 +50,15 @@ export default async function DeckDetailPage({ params }: Props) {
   const due = deck.cards.filter((c) => c.nextReviewAt <= now).length;
   const pct = total > 0 ? Math.round((mastered / total) * 100) : 0;
 
+  const avgRepetitions =
+    total > 0
+      ? (deck.cards.reduce((s, c) => s + c.repetitions, 0) / total).toFixed(1)
+      : null;
+  const streakCard =
+    total > 0
+      ? deck.cards.reduce((best, c) => (c.repetitions > best.repetitions ? c : best), deck.cards[0])
+      : null;
+
   return (
     <div className="mx-auto flex max-w-3xl flex-col gap-8">
       {/* Back link */}
@@ -85,6 +95,10 @@ export default async function DeckDetailPage({ params }: Props) {
               {total} Karten · {mastered} gemeistert
             </p>
           </div>
+          <ExportDeckButton
+            name={deck.name}
+            cards={deck.cards.map((c) => ({ front: c.front, back: c.back }))}
+          />
         </div>
 
         {/* Mastery progress */}
@@ -127,6 +141,47 @@ export default async function DeckDetailPage({ params }: Props) {
           )}
         </div>
       </header>
+
+      {/* Lernstatistik */}
+      <section>
+        <h2 className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-fg">
+          <BarChart3 className="size-4" strokeWidth={1.75} />
+          Lernstatistik
+        </h2>
+        <div className="grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-4">
+          {[
+            { label: "Karten gesamt", value: String(total), suffix: total === 1 ? "Karte" : "Karten" },
+            {
+              label: "Fällig",
+              value: String(due),
+              suffix: due === 1 ? "Karte" : "Karten",
+              tone: due > 0 ? "text-brand" : "text-success",
+            },
+            {
+              label: "Ø Wiederholungen",
+              value: avgRepetitions ?? "—",
+              suffix: avgRepetitions !== null ? "pro Karte" : "keine Daten",
+            },
+            {
+              label: "Längste Streak",
+              value: streakCard ? String(streakCard.repetitions) : "—",
+              suffix: streakCard && streakCard.repetitions > 0
+                ? streakCard.front.slice(0, 30) + (streakCard.front.length > 30 ? "…" : "")
+                : "noch keine",
+            },
+          ].map((s) => (
+            <div key={s.label} className="bg-bg p-4">
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">
+                {s.label}
+              </p>
+              <p className={cn("mt-2 font-mono text-2xl font-bold tracking-tight", s.tone)}>
+                {s.value}
+              </p>
+              <p className="mt-0.5 truncate text-xs text-muted-fg">{s.suffix}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Cards list */}
       <section>

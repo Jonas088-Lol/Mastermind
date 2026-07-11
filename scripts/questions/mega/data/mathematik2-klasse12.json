@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 12. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 2 und x = -2",
+   "x = -2 und x = 2",
+   "x = -1 und x = 3",
+   "x = -3 und x = 2"
+  ],
+  "correct": 1,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -2)(x - 2) = 0 ⇒ x = -2 oder x = 2."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-5; -3) und (5; -4).",
+  "options": [
+   "-12",
+   "-15",
+   "-8",
+   "-13"
+  ],
+  "correct": 3,
+  "explanation": "(-5; -3) · (5; -4) = -5·5 + -3·-4 = -13."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 9x. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 1 und x = 4",
+   "x = 0 und x = -3",
+   "x = 0 und x = 4",
+   "x = 0 und x = 3"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - 0)(x - 3) = 0 ⇒ x = 0 oder x = 3."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (4; -5) und (-1; 3).",
+  "options": [
+   "-19",
+   "-14",
+   "-18",
+   "-21"
+  ],
+  "correct": 0,
+  "explanation": "(4; -5) · (-1; 3) = 4·-1 + -5·3 = -19."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (8; -15)? (Betrag)",
+  "options": [
+   "17",
+   "16",
+   "15",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "|(8; -15)| = √(8² + -15²) = 17."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (4; -4) und (-2; 5).",
+  "options": [
+   "-30",
+   "-28",
+   "-26",
+   "-23"
+  ],
+  "correct": 1,
+  "explanation": "(4; -4) · (-2; 5) = 4·-2 + -4·5 = -28."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 4x in den Grenzen von 0 bis 2.",
+  "options": [
+   "4",
+   "8",
+   "7",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^2 4x dx = [2x^2]₀^2 = 8."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-2; 10; -11)? (Betrag)",
+  "options": [
+   "15",
+   "16",
+   "17",
+   "13"
+  ],
+  "correct": 0,
+  "explanation": "|(-2; 10; -11)| = √(-2² + 10² + -11²) = 15."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 2 und p = 1/2. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "3",
+   "0",
+   "2",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "E(X) = n·p = 2·1/2 = 1."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 20x^3 in den Grenzen von 0 bis 2.",
+  "options": [
+   "40",
+   "81",
+   "80",
+   "160"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^2 20x^3 dx = [5x^4]₀^2 = 80."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 7-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 1-mal Kopf?",
+  "options": [
+   "1/128",
+   "35/128",
+   "7/128",
+   "21/128"
+  ],
+  "correct": 2,
+  "explanation": "P(X=1) = C(7,1)·(1/2)^7 = 7/128 = 7/128."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 5x^4?",
+  "options": [
+   "x^5 + C",
+   "5x^5 + C",
+   "2x^5 + C",
+   "x^4 + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 5x^4 dx = x^5 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = x^2 - 4x - 3 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = 4",
+   "x = 1",
+   "x = 2"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 2."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 3x^2 in den Grenzen von 0 bis 3.",
+  "options": [
+   "9",
+   "26",
+   "27",
+   "28"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^3 3x^2 dx = [x^3]₀^3 = 27."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 - 8x + 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Sattelpunkt",
+   "Minimum",
+   "Wendepunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 6-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 3-mal Kopf?",
+  "options": [
+   "15/64",
+   "3/32",
+   "5/16",
+   "1/64"
+  ],
+  "correct": 2,
+  "explanation": "P(X=3) = C(6,3)·(1/2)^6 = 20/64 = 5/16."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 7-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 6-mal Kopf?",
+  "options": [
+   "7/128",
+   "35/128",
+   "21/128",
+   "1/128"
+  ],
+  "correct": 0,
+  "explanation": "P(X=6) = C(7,6)·(1/2)^7 = 7/128 = 7/128."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 2x in den Grenzen von 0 bis 3.",
+  "options": [
+   "9",
+   "3",
+   "6",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^3 2x dx = [x^2]₀^3 = 9."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 10x in den Grenzen von 0 bis 2.",
+  "options": [
+   "22",
+   "19",
+   "20",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^2 10x dx = [5x^2]₀^2 = 20."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 7-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 0-mal Kopf?",
+  "options": [
+   "21/128",
+   "1/128",
+   "7/128",
+   "35/128"
+  ],
+  "correct": 1,
+  "explanation": "P(X=0) = C(7,0)·(1/2)^7 = 1/128 = 1/128."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 - 6x + 2 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Sattelpunkt",
+   "Maximum",
+   "Wendepunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 16x^3?",
+  "options": [
+   "5x^4 + C",
+   "4x^3 + C",
+   "16x^4 + C",
+   "4x^4 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 16x^3 dx = 4x^4 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = 3x^2 + 6x - 5 ihr Extremum?",
+  "options": [
+   "x = -2",
+   "x = 2",
+   "x = 1",
+   "x = -1"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = -1."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (3; 2; 0) und (0; 0; 2).",
+  "options": [
+   "1",
+   "0",
+   "-1",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "(3; 2; 0) · (0; 0; 2) = 3·0 + 2·0 + 0·2 = 0."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 6x in den Grenzen von 0 bis 4.",
+  "options": [
+   "12",
+   "24",
+   "48",
+   "52"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^4 6x dx = [3x^2]₀^4 = 48."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 25x^4?",
+  "options": [
+   "5x^5 + C",
+   "25x^4 + C",
+   "5x^4 + C",
+   "25x^5 + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 25x^4 dx = 5x^5 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 6x?",
+  "options": [
+   "4x^2 + C",
+   "3x^2 + C",
+   "6x + C",
+   "3x + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 6x dx = 3x^2 + C."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-20; -21)? (Betrag)",
+  "options": [
+   "31",
+   "29",
+   "27",
+   "28"
+  ],
+  "correct": 1,
+  "explanation": "|(-20; -21)| = √(-20² + -21²) = 29."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 3x. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -1 und x = 1",
+   "x = 0 und x = -1",
+   "x = 1 und x = 2",
+   "x = 0 und x = 1"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - 0)(x - 1) = 0 ⇒ x = 0 oder x = 1."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 15x^4?",
+  "options": [
+   "15x^4 + C",
+   "3x^4 + C",
+   "4x^5 + C",
+   "3x^5 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 15x^4 dx = 3x^5 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = -3x^2 + 18x ihr Extremum?",
+  "options": [
+   "x = -3",
+   "x = 2",
+   "x = 6",
+   "x = 3"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 3."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (9; 12)? (Betrag)",
+  "options": [
+   "15",
+   "21",
+   "13",
+   "17"
+  ],
+  "correct": 0,
+  "explanation": "|(9; 12)| = √(9² + 12²) = 15."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 48. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -4 und x = 4",
+   "x = 4 und x = -4",
+   "x = -3 und x = 5",
+   "x = -5 und x = 4"
+  ],
+  "correct": 0,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -4)(x - 4) = 0 ⇒ x = -4 oder x = 4."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (1; -2; -2)? (Betrag)",
+  "options": [
+   "2",
+   "5",
+   "1",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "|(1; -2; -2)| = √(1² + -2² + -2²) = 3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 3x^2 - 12x + 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Maximum",
+   "Wendepunkt",
+   "Minimum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = 3 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-4; 0; 3)? (Betrag)",
+  "options": [
+   "7",
+   "3",
+   "5",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "|(-4; 0; 3)| = √(-4² + 0² + 3²) = 5."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (2; 1; -4) und (3; -2; -4).",
+  "options": [
+   "20",
+   "22",
+   "19",
+   "25"
+  ],
+  "correct": 0,
+  "explanation": "(2; 1; -4) · (3; -2; -4) = 2·3 + 1·-2 + -4·-4 = 20."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = -3x^2 - 18x + 4 ihr Extremum?",
+  "options": [
+   "x = -2",
+   "x = 3",
+   "x = -3",
+   "x = -4"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 6x. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 1 und x = 3",
+   "x = 0 und x = 3",
+   "x = 0 und x = 2",
+   "x = -1 und x = 2"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - 0)(x - 2) = 0 ⇒ x = 0 oder x = 2."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = -2x^2 + 12x + 3 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = 5",
+   "x = 6",
+   "x = -3"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = 3."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 8x in den Grenzen von 0 bis 4.",
+  "options": [
+   "16",
+   "63",
+   "64",
+   "68"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^4 8x dx = [4x^2]₀^4 = 64."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 10 und p = 1/2. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "7",
+   "5",
+   "6",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "E(X) = n·p = 10·1/2 = 5."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 4x^3?",
+  "options": [
+   "x^3 + C",
+   "x^4 + C",
+   "4x^4 + C",
+   "2x^4 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 4x^3 dx = x^4 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 6x. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -2 und x = 1",
+   "x = -3 und x = 0",
+   "x = -2 und x = 0",
+   "x = 2 und x = 0"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -2)(x - 0) = 0 ⇒ x = -2 oder x = 0."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 - 6x + 4 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Maximum",
+   "Sattelpunkt",
+   "Minimum"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (0; 2) und (4; 4).",
+  "options": [
+   "7",
+   "13",
+   "8",
+   "10"
+  ],
+  "correct": 2,
+  "explanation": "(0; 2) · (4; 4) = 0·4 + 2·4 = 8."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 6-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 5-mal Kopf?",
+  "options": [
+   "1/64",
+   "3/32",
+   "15/64",
+   "5/16"
+  ],
+  "correct": 1,
+  "explanation": "P(X=5) = C(6,5)·(1/2)^6 = 6/64 = 3/32."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (0; -5; 2) und (4; 3; 2).",
+  "options": [
+   "-11",
+   "-13",
+   "-9",
+   "-6"
+  ],
+  "correct": 0,
+  "explanation": "(0; -5; 2) · (4; 3; 2) = 0·4 + -5·3 + 2·2 = -11."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 + 4x - 5 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Minimum",
+   "Sattelpunkt",
+   "Wendepunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-2; -6; -9)? (Betrag)",
+  "options": [
+   "9",
+   "11",
+   "12",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "|(-2; -6; -9)| = √(-2² + -6² + -9²) = 11."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = -3x^2 + 6x + 3 ihr Extremum?",
+  "options": [
+   "x = 1",
+   "x = -1",
+   "x = 0",
+   "x = 4"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = 1."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 25 und p = 1/5. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "25",
+   "4",
+   "7",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "E(X) = n·p = 25·1/5 = 5."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (20; -21)? (Betrag)",
+  "options": [
+   "28",
+   "30",
+   "29",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "|(20; -21)| = √(20² + -21²) = 29."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 4x in den Grenzen von 0 bis 2.",
+  "options": [
+   "8",
+   "9",
+   "10",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^2 4x dx = [2x^2]₀^2 = 8."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 3x^2?",
+  "options": [
+   "2x^3 + C",
+   "3x^2 + C",
+   "x^3 + C",
+   "x^2 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 3x^2 dx = x^3 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Berechne das bestimmte Integral von f(x) = 8x in den Grenzen von 0 bis 3.",
+  "options": [
+   "12",
+   "39",
+   "36",
+   "24"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^3 8x dx = [4x^2]₀^3 = 36."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Welche Funktion ist eine Stammfunktion von f(x) = 4x^3?",
+  "options": [
+   "x^4 + C",
+   "4x^3 + C",
+   "4x^4 + C",
+   "x^3 + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 4x^3 dx = x^4 + C."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-20; 21)? (Betrag)",
+  "options": [
+   "29",
+   "27",
+   "1",
+   "31"
+  ],
+  "correct": 0,
+  "explanation": "|(-20; 21)| = √(-20² + 21²) = 29."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 8x?",
+  "options": [
+   "5x^2 + C",
+   "8x + C",
+   "4x^2 + C",
+   "8x^2 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 8x dx = 4x^2 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = 3x^2 - 18x + 1 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = 4",
+   "x = 5",
+   "x = -3"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = 3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 + 6x + 5 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Sattelpunkt",
+   "Minimum",
+   "Wendepunkt"
+  ],
+  "correct": 2,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 30x^4?",
+  "options": [
+   "30x^4 + C",
+   "7x^5 + C",
+   "6x^5 + C",
+   "30x^5 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 30x^4 dx = 6x^5 + C."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-3; -4)? (Betrag)",
+  "options": [
+   "5",
+   "6",
+   "4",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "|(-3; -4)| = √(-3² + -4²) = 5."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 20x^3 in den Grenzen von 0 bis 3.",
+  "options": [
+   "406",
+   "135",
+   "540",
+   "405"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^3 20x^3 dx = [5x^4]₀^3 = 405."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 4x in den Grenzen von 0 bis 3.",
+  "options": [
+   "6",
+   "18",
+   "21",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^3 4x dx = [2x^2]₀^3 = 18."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 18x + 24. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -4 und x = -2",
+   "x = -3 und x = -1",
+   "x = 4 und x = 2",
+   "x = -4 und x = -1"
+  ],
+  "correct": 0,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -4)(x - -2) = 0 ⇒ x = -4 oder x = -2."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 21x + 36. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 4 und x = 3",
+   "x = -4 und x = -3",
+   "x = -4 und x = -2",
+   "x = -5 und x = -3"
+  ],
+  "correct": 1,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -4)(x - -3) = 0 ⇒ x = -4 oder x = -3."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-2; -1; -3) und (5; 4; -1).",
+  "options": [
+   "-9",
+   "-6",
+   "-13",
+   "-11"
+  ],
+  "correct": 3,
+  "explanation": "(-2; -1; -3) · (5; 4; -1) = -2·5 + -1·4 + -3·-1 = -11."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -2x^2 + 8x + 1 ihr Extremum?",
+  "options": [
+   "x = 5",
+   "x = -2",
+   "x = 3",
+   "x = 2"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 2."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 - 24x - 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Minimum",
+   "Maximum",
+   "Wendepunkt"
+  ],
+  "correct": 2,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-2; 2) und (4; -1).",
+  "options": [
+   "-5",
+   "-12",
+   "-8",
+   "-10"
+  ],
+  "correct": 3,
+  "explanation": "(-2; 2) · (4; -1) = -2·4 + 2·-1 = -10."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = x^2 - 2x - 4 ihr Extremum?",
+  "options": [
+   "x = 0",
+   "x = 4",
+   "x = 1",
+   "x = -1"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = 1."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 + 6x - 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Maximum",
+   "Wendepunkt",
+   "Sattelpunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 9x + 6. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -3 und x = -1",
+   "x = 2 und x = 1",
+   "x = -2 und x = 0",
+   "x = -2 und x = -1"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -2)(x - -1) = 0 ⇒ x = -2 oder x = -1."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 - 12x - 5 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Sattelpunkt",
+   "Minimum",
+   "Wendepunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (2; 3; 6)? (Betrag)",
+  "options": [
+   "8",
+   "7",
+   "11",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "|(2; 3; 6)| = √(2² + 3² + 6²) = 7."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 15x + 18. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -4 und x = -2",
+   "x = 3 und x = 2",
+   "x = -3 und x = -2",
+   "x = -3 und x = -1"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -3)(x - -2) = 0 ⇒ x = -3 oder x = -2."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 12 und p = 1/4. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "4",
+   "12",
+   "3",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "E(X) = n·p = 12·1/4 = 3."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 8-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 7-mal Kopf?",
+  "options": [
+   "35/128",
+   "1/32",
+   "7/32",
+   "1/256"
+  ],
+  "correct": 1,
+  "explanation": "P(X=7) = C(8,7)·(1/2)^8 = 8/256 = 1/32."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 12x^2?",
+  "options": [
+   "4x^3 + C",
+   "12x^3 + C",
+   "12x^2 + C",
+   "4x^2 + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 12x^2 dx = 4x^3 + C."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (4; -5) und (-2; -2).",
+  "options": [
+   "0",
+   "4",
+   "7",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "(4; -5) · (-2; -2) = 4·-2 + -5·-2 = 2."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 4x^3?",
+  "options": [
+   "4x^4 + C",
+   "2x^4 + C",
+   "4x^3 + C",
+   "x^4 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 4x^3 dx = x^4 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 - 16x - 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Minimum",
+   "Maximum",
+   "Sattelpunkt"
+  ],
+  "correct": 2,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = -2x^2 + 12x + 6 ihr Extremum?",
+  "options": [
+   "x = 2",
+   "x = -3",
+   "x = 4",
+   "x = 3"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 + 2x - 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Sattelpunkt",
+   "Maximum",
+   "Wendepunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 3x^2 - 24x + 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Minimum",
+   "Maximum",
+   "Wendepunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = 3 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = x^2 + 4x - 2 ihr Extremum?",
+  "options": [
+   "x = 0",
+   "x = -1",
+   "x = -3",
+   "x = -2"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = -2."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 8-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 8-mal Kopf?",
+  "options": [
+   "1/256",
+   "1/32",
+   "7/64",
+   "35/128"
+  ],
+  "correct": 0,
+  "explanation": "P(X=8) = C(8,8)·(1/2)^8 = 1/256 = 1/256."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-3; 5) und (1; 4).",
+  "options": [
+   "18",
+   "17",
+   "19",
+   "22"
+  ],
+  "correct": 1,
+  "explanation": "(-3; 5) · (1; 4) = -3·1 + 5·4 = 17."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-5; 12)? (Betrag)",
+  "options": [
+   "13",
+   "11",
+   "7",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "|(-5; 12)| = √(-5² + 12²) = 13."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 10x in den Grenzen von 0 bis 2.",
+  "options": [
+   "20",
+   "21",
+   "10",
+   "22"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^2 10x dx = [5x^2]₀^2 = 20."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (0; 4) und (1; 4).",
+  "options": [
+   "14",
+   "15",
+   "17",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "(0; 4) · (1; 4) = 0·1 + 4·4 = 16."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -3x^2 + 18x + 2 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = 5",
+   "x = 4",
+   "x = -3"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = 3."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 8x^3?",
+  "options": [
+   "8x^4 + C",
+   "3x^4 + C",
+   "2x^4 + C",
+   "2x^3 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 8x^3 dx = 2x^4 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = x^2 + 2x + 2 ihr Extremum?",
+  "options": [
+   "x = 2",
+   "x = -1",
+   "x = 1",
+   "x = -2"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = -1."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 3x - 6. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -2 und x = 1",
+   "x = -1 und x = 2",
+   "x = -2 und x = 2",
+   "x = -3 und x = 1"
+  ],
+  "correct": 0,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -2)(x - 1) = 0 ⇒ x = -2 oder x = 1."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Welche Funktion ist eine Stammfunktion von f(x) = 6x^2?",
+  "options": [
+   "6x^3 + C",
+   "3x^3 + C",
+   "2x^3 + C",
+   "6x^2 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 6x^2 dx = 2x^3 + C."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (0; -4) und (1; 5).",
+  "options": [
+   "-20",
+   "-18",
+   "-15",
+   "-19"
+  ],
+  "correct": 0,
+  "explanation": "(0; -4) · (1; 5) = 0·1 + -4·5 = -20."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 10x in den Grenzen von 0 bis 4.",
+  "options": [
+   "81",
+   "20",
+   "79",
+   "80"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^4 10x dx = [5x^2]₀^4 = 80."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 35 und p = 1/5. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "35",
+   "6",
+   "7",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "E(X) = n·p = 35·1/5 = 7."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 6x^2 in den Grenzen von 0 bis 4.",
+  "options": [
+   "96",
+   "128",
+   "132",
+   "127"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^4 6x^2 dx = [2x^3]₀^4 = 128."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = 2x^2 + 8x - 4 ihr Extremum?",
+  "options": [
+   "x = -1",
+   "x = -2",
+   "x = -3",
+   "x = 0"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = -2."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (2; 5) und (5; 2).",
+  "options": [
+   "19",
+   "20",
+   "22",
+   "21"
+  ],
+  "correct": 1,
+  "explanation": "(2; 5) · (5; 2) = 2·5 + 5·2 = 20."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 + 8x - 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Wendepunkt",
+   "Maximum",
+   "Minimum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Welche Funktion ist eine Stammfunktion von f(x) = 25x^4?",
+  "options": [
+   "25x^4 + C",
+   "5x^5 + C",
+   "6x^5 + C",
+   "25x^5 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 25x^4 dx = 5x^5 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 12x. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -4 und x = 0",
+   "x = -4 und x = 1",
+   "x = 4 und x = 0",
+   "x = -5 und x = 0"
+  ],
+  "correct": 0,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -4)(x - 0) = 0 ⇒ x = -4 oder x = 0."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (1; 4; -8)? (Betrag)",
+  "options": [
+   "3",
+   "10",
+   "8",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "|(1; 4; -8)| = √(1² + 4² + -8²) = 9."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -x^2 + 8x + 2 ihr Extremum?",
+  "options": [
+   "x = 7",
+   "x = 3",
+   "x = 4",
+   "x = 6"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = 4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 9x^2?",
+  "options": [
+   "9x^3 + C",
+   "9x^2 + C",
+   "3x^2 + C",
+   "3x^3 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 9x^2 dx = 3x^3 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 12x^2?",
+  "options": [
+   "4x^2 + C",
+   "12x^2 + C",
+   "5x^3 + C",
+   "4x^3 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 12x^2 dx = 4x^3 + C."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-5; 0; -2) und (2; -1; 2).",
+  "options": [
+   "-16",
+   "-15",
+   "-9",
+   "-14"
+  ],
+  "correct": 3,
+  "explanation": "(-5; 0; -2) · (2; -1; 2) = -5·2 + 0·-1 + -2·2 = -14."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (6; -8)? (Betrag)",
+  "options": [
+   "2",
+   "10",
+   "8",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "|(6; -8)| = √(6² + -8²) = 10."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (1; 5; -4) und (-3; -3; 1).",
+  "options": [
+   "-22",
+   "-20",
+   "-21",
+   "-23"
+  ],
+  "correct": 0,
+  "explanation": "(1; 5; -4) · (-3; -3; 1) = 1·-3 + 5·-3 + -4·1 = -22."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (20; 21)? (Betrag)",
+  "options": [
+   "41",
+   "29",
+   "30",
+   "28"
+  ],
+  "correct": 1,
+  "explanation": "|(20; 21)| = √(20² + 21²) = 29."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (3; -4)? (Betrag)",
+  "options": [
+   "1",
+   "3",
+   "7",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "|(3; -4)| = √(3² + -4²) = 5."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (2; 10; -11)? (Betrag)",
+  "options": [
+   "14",
+   "15",
+   "13",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "|(2; 10; -11)| = √(2² + 10² + -11²) = 15."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 6x?",
+  "options": [
+   "4x^2 + C",
+   "3x^2 + C",
+   "6x + C",
+   "3x + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 6x dx = 3x^2 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = -2x^2 + 16x - 2 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = 6",
+   "x = -4",
+   "x = 4"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 4."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (3; 1) und (3; 0).",
+  "options": [
+   "9",
+   "7",
+   "11",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "(3; 1) · (3; 0) = 3·3 + 1·0 = 9."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 12x + 9. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 3 und x = 1",
+   "x = -2 und x = 0",
+   "x = -4 und x = -1",
+   "x = -3 und x = -1"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -3)(x - -1) = 0 ⇒ x = -3 oder x = -1."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 9x^2?",
+  "options": [
+   "3x^2 + C",
+   "9x^2 + C",
+   "3x^3 + C",
+   "9x^3 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 9x^2 dx = 3x^3 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 9x - 12. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -3 und x = 2",
+   "x = -4 und x = 2",
+   "x = 4 und x = -1",
+   "x = -4 und x = 1"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -4)(x - 1) = 0 ⇒ x = -4 oder x = 1."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = 2x^2 - 4x - 6 ihr Extremum?",
+  "options": [
+   "x = 4",
+   "x = 1",
+   "x = 0",
+   "x = -1"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = 1."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 8-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 3-mal Kopf?",
+  "options": [
+   "7/64",
+   "7/32",
+   "1/32",
+   "1/256"
+  ],
+  "correct": 1,
+  "explanation": "P(X=3) = C(8,3)·(1/2)^8 = 56/256 = 7/32."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 3x^2 in den Grenzen von 0 bis 3.",
+  "options": [
+   "27",
+   "9",
+   "28",
+   "30"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^3 3x^2 dx = [x^3]₀^3 = 27."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = x^2 + 4 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = -1",
+   "x = 0",
+   "x = 1"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = 0."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = -x^2 + 6x - 4 ihr Extremum?",
+  "options": [
+   "x = 4",
+   "x = 6",
+   "x = -3",
+   "x = 3"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 3."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-2; 3; -1) und (4; 5; 3).",
+  "options": [
+   "6",
+   "9",
+   "4",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "(-2; 3; -1) · (4; 5; 3) = -2·4 + 3·5 + -1·3 = 4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = 2x^2 + 16x + 5 ihr Extremum?",
+  "options": [
+   "x = 4",
+   "x = -5",
+   "x = -3",
+   "x = -4"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = -4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 6x^2 in den Grenzen von 0 bis 4.",
+  "options": [
+   "127",
+   "129",
+   "128",
+   "132"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^4 6x^2 dx = [2x^3]₀^4 = 128."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -x^2 - 4x + 4 ihr Extremum?",
+  "options": [
+   "x = 0",
+   "x = 2",
+   "x = -3",
+   "x = -2"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = -2."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 3x - 36. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -4 und x = 3",
+   "x = 4 und x = -3",
+   "x = -5 und x = 3",
+   "x = -4 und x = 4"
+  ],
+  "correct": 0,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -4)(x - 3) = 0 ⇒ x = -4 oder x = 3."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 8-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 0-mal Kopf?",
+  "options": [
+   "1/256",
+   "7/32",
+   "1/32",
+   "7/64"
+  ],
+  "correct": 0,
+  "explanation": "P(X=0) = C(8,0)·(1/2)^8 = 1/256 = 1/256."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 15x + 12. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 1 und x = 4",
+   "x = 2 und x = 5",
+   "x = -1 und x = -4",
+   "x = 1 und x = 5"
+  ],
+  "correct": 0,
+  "explanation": "f'(x) = 0 ⇒ 3(x - 1)(x - 4) = 0 ⇒ x = 1 oder x = 4."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-5; 3) und (0; 2).",
+  "options": [
+   "7",
+   "5",
+   "4",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "(-5; 3) · (0; 2) = -5·0 + 3·2 = 6."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (4; 2; 2) und (4; -2; 0).",
+  "options": [
+   "12",
+   "14",
+   "13",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "(4; 2; 2) · (4; -2; 0) = 4·4 + 2·-2 + 2·0 = 12."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 6-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 1-mal Kopf?",
+  "options": [
+   "1/64",
+   "15/64",
+   "5/16",
+   "3/32"
+  ],
+  "correct": 3,
+  "explanation": "P(X=1) = C(6,1)·(1/2)^6 = 6/64 = 3/32."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Berechne das bestimmte Integral von f(x) = 9x^2 in den Grenzen von 0 bis 3.",
+  "options": [
+   "82",
+   "27",
+   "81",
+   "80"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^3 9x^2 dx = [3x^3]₀^3 = 81."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Welche Funktion ist eine Stammfunktion von f(x) = 10x?",
+  "options": [
+   "10x^2 + C",
+   "5x^2 + C",
+   "5x + C",
+   "10x + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 10x dx = 5x^2 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -x^2 + 2x + 4 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = 2",
+   "x = 0",
+   "x = 1"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 1."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-2; 2; -5) und (-4; 1; -1).",
+  "options": [
+   "13",
+   "15",
+   "16",
+   "20"
+  ],
+  "correct": 1,
+  "explanation": "(-2; 2; -5) · (-4; 1; -1) = -2·-4 + 2·1 + -5·-1 = 15."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = 2x^2 + 4x + 2 ihr Extremum?",
+  "options": [
+   "x = 2",
+   "x = -1",
+   "x = -2",
+   "x = 1"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = -1."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 27. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 3 und x = -3",
+   "x = -3 und x = 4",
+   "x = -4 und x = 3",
+   "x = -3 und x = 3"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -3)(x - 3) = 0 ⇒ x = -3 oder x = 3."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Welche Funktion ist eine Stammfunktion von f(x) = 9x^2?",
+  "options": [
+   "3x^3 + C",
+   "3x^2 + C",
+   "9x^2 + C",
+   "9x^3 + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 9x^2 dx = 3x^3 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 - 12x - 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Maximum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Welche Funktion ist eine Stammfunktion von f(x) = 8x?",
+  "options": [
+   "4x + C",
+   "4x^2 + C",
+   "8x^2 + C",
+   "5x^2 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 8x dx = 4x^2 + C."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-2; -4; -5) und (3; 0; -3).",
+  "options": [
+   "9",
+   "14",
+   "7",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "(-2; -4; -5) · (3; 0; -3) = -2·3 + -4·0 + -5·-3 = 9."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = 3x^2 - 30x - 1 ihr Extremum?",
+  "options": [
+   "x = 5",
+   "x = 8",
+   "x = 6",
+   "x = -5"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = 5."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = x^2 + 8x - 2 ihr Extremum?",
+  "options": [
+   "x = 4",
+   "x = -2",
+   "x = -4",
+   "x = -3"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = 3x^2 + 18x ihr Extremum?",
+  "options": [
+   "x = -4",
+   "x = -3",
+   "x = -1",
+   "x = 3"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = -3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 3x - 6. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 1 und x = -2",
+   "x = 0 und x = 3",
+   "x = -1 und x = 2",
+   "x = -2 und x = 2"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -1)(x - 2) = 0 ⇒ x = -1 oder x = 2."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 + 16x an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Minimum",
+   "Maximum",
+   "Sattelpunkt"
+  ],
+  "correct": 2,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 5x^4?",
+  "options": [
+   "5x^4 + C",
+   "x^4 + C",
+   "5x^5 + C",
+   "x^5 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 5x^4 dx = x^5 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = 3x^2 + 6x + 2 ihr Extremum?",
+  "options": [
+   "x = -2",
+   "x = -1",
+   "x = 1",
+   "x = 0"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = -1."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (4; 5) und (-2; -5).",
+  "options": [
+   "-34",
+   "-31",
+   "-28",
+   "-33"
+  ],
+  "correct": 3,
+  "explanation": "(4; 5) · (-2; -5) = 4·-2 + 5·-5 = -33."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -x^2 + 2x - 5 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Wendepunkt",
+   "Minimum",
+   "Sattelpunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -1 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -x^2 - 8x + 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Wendepunkt",
+   "Minimum",
+   "Maximum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = -1 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 9x^2 in den Grenzen von 0 bis 3.",
+  "options": [
+   "81",
+   "27",
+   "84",
+   "80"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^3 9x^2 dx = [3x^3]₀^3 = 81."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 8-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 4-mal Kopf?",
+  "options": [
+   "35/128",
+   "7/64",
+   "7/32",
+   "1/32"
+  ],
+  "correct": 0,
+  "explanation": "P(X=4) = C(8,4)·(1/2)^8 = 70/256 = 35/128."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 12x^3 in den Grenzen von 0 bis 2.",
+  "options": [
+   "47",
+   "48",
+   "96",
+   "24"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^2 12x^3 dx = [3x^4]₀^2 = 48."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 26 und p = 1/2. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "15",
+   "12",
+   "14",
+   "13"
+  ],
+  "correct": 3,
+  "explanation": "E(X) = n·p = 26·1/2 = 13."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 3x. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -1 und x = 1",
+   "x = 0 und x = 1",
+   "x = -1 und x = 0",
+   "x = 1 und x = 0"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -1)(x - 0) = 0 ⇒ x = -1 oder x = 0."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 3x - 18. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -2 und x = 4",
+   "x = 2 und x = -3",
+   "x = -2 und x = 3",
+   "x = -3 und x = 3"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -2)(x - 3) = 0 ⇒ x = -2 oder x = 3."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-6; -8)? (Betrag)",
+  "options": [
+   "11",
+   "9",
+   "12",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "|(-6; -8)| = √(-6² + -8²) = 10."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 12x^3 in den Grenzen von 0 bis 2.",
+  "options": [
+   "49",
+   "48",
+   "47",
+   "50"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^2 12x^3 dx = [3x^4]₀^2 = 48."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 16 und p = 1/4. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "3",
+   "5",
+   "4",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "E(X) = n·p = 16·1/4 = 4."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-4; 0) und (4; 1).",
+  "options": [
+   "-11",
+   "-18",
+   "-14",
+   "-16"
+  ],
+  "correct": 3,
+  "explanation": "(-4; 0) · (4; 1) = -4·4 + 0·1 = -16."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-3; 5) und (-4; 4).",
+  "options": [
+   "33",
+   "31",
+   "30",
+   "32"
+  ],
+  "correct": 3,
+  "explanation": "(-3; 5) · (-4; 4) = -3·-4 + 5·4 = 32."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (1; 4; 8)? (Betrag)",
+  "options": [
+   "10",
+   "11",
+   "7",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "|(1; 4; 8)| = √(1² + 4² + 8²) = 9."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (0; -1; 3) und (5; -3; 1).",
+  "options": [
+   "5",
+   "4",
+   "11",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "(0; -1; 3) · (5; -3; 1) = 0·5 + -1·-3 + 3·1 = 6."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (2; 4; -4) und (-5; 1; 4).",
+  "options": [
+   "-21",
+   "-20",
+   "-17",
+   "-22"
+  ],
+  "correct": 3,
+  "explanation": "(2; 4; -4) · (-5; 1; 4) = 2·-5 + 4·1 + -4·4 = -22."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (3; 4)? (Betrag)",
+  "options": [
+   "4",
+   "7",
+   "3",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "|(3; 4)| = √(3² + 4²) = 5."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 20x^3?",
+  "options": [
+   "20x^3 + C",
+   "5x^4 + C",
+   "20x^4 + C",
+   "5x^3 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 20x^3 dx = 5x^4 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 6x - 9. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -4 und x = 1",
+   "x = -3 und x = 2",
+   "x = -2 und x = 2",
+   "x = -3 und x = 1"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -3)(x - 1) = 0 ⇒ x = -3 oder x = 1."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-2; 5; -1) und (2; -3; 1).",
+  "options": [
+   "-20",
+   "-18",
+   "-21",
+   "-19"
+  ],
+  "correct": 0,
+  "explanation": "(-2; 5; -1) · (2; -3; 1) = -2·2 + 5·-3 + -1·1 = -20."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 24x^3?",
+  "options": [
+   "7x^4 + C",
+   "6x^4 + C",
+   "24x^3 + C",
+   "6x^3 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 24x^3 dx = 6x^4 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 2x^2 - 12x - 5 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Sattelpunkt",
+   "Wendepunkt",
+   "Maximum"
+  ],
+  "correct": 0,
+  "explanation": "Da a = 2 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 30 und p = 1/2. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "17",
+   "30",
+   "14",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "E(X) = n·p = 30·1/2 = 15."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 6-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 0-mal Kopf?",
+  "options": [
+   "5/16",
+   "1/64",
+   "3/32",
+   "15/64"
+  ],
+  "correct": 1,
+  "explanation": "P(X=0) = C(6,0)·(1/2)^6 = 1/64 = 1/64."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 3x^2 + 24x + 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Maximum",
+   "Minimum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = 3 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 6x - 24. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -2 und x = 5",
+   "x = -2 und x = 4",
+   "x = -3 und x = 4",
+   "x = 2 und x = -4"
+  ],
+  "correct": 1,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -2)(x - 4) = 0 ⇒ x = -2 oder x = 4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 - 8x + 2 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Minimum",
+   "Sattelpunkt",
+   "Wendepunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 10x?",
+  "options": [
+   "5x + C",
+   "5x^2 + C",
+   "10x + C",
+   "10x^2 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 10x dx = 5x^2 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = 2x^2 + 12x - 6 ihr Extremum?",
+  "options": [
+   "x = -1",
+   "x = -4",
+   "x = 0",
+   "x = -3"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = -3."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (2; 0) und (0; 5).",
+  "options": [
+   "0",
+   "1",
+   "5",
+   "-1"
+  ],
+  "correct": 0,
+  "explanation": "(2; 0) · (0; 5) = 2·0 + 0·5 = 0."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 15x^2 in den Grenzen von 0 bis 2.",
+  "options": [
+   "41",
+   "40",
+   "39",
+   "60"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^2 15x^2 dx = [5x^3]₀^2 = 40."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 12x. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -1 und x = 4",
+   "x = 0 und x = 5",
+   "x = 1 und x = 5",
+   "x = 0 und x = 4"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - 0)(x - 4) = 0 ⇒ x = 0 oder x = 4."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-2; 10; 11)? (Betrag)",
+  "options": [
+   "13",
+   "15",
+   "19",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "|(-2; 10; 11)| = √(-2² + 10² + 11²) = 15."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 15x^4?",
+  "options": [
+   "15x^4 + C",
+   "3x^5 + C",
+   "4x^5 + C",
+   "15x^5 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 15x^4 dx = 3x^5 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 16x^3 in den Grenzen von 0 bis 4.",
+  "options": [
+   "256",
+   "1023",
+   "1028",
+   "1024"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^4 16x^3 dx = [4x^4]₀^4 = 1024."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 18x + 24. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 2 und x = 5",
+   "x = 1 und x = 4",
+   "x = -2 und x = -4",
+   "x = 2 und x = 4"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - 2)(x - 4) = 0 ⇒ x = 2 oder x = 4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 12x + 9. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 1 und x = 4",
+   "x = 0 und x = 3",
+   "x = 1 und x = 3",
+   "x = -1 und x = -3"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - 1)(x - 3) = 0 ⇒ x = 1 oder x = 3."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (1; 5; 0) und (-4; -4; 3).",
+  "options": [
+   "-23",
+   "-22",
+   "-19",
+   "-24"
+  ],
+  "correct": 3,
+  "explanation": "(1; 5; 0) · (-4; -4; 3) = 1·-4 + 5·-4 + 0·3 = -24."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Berechne das bestimmte Integral von f(x) = 4x^3 in den Grenzen von 0 bis 3.",
+  "options": [
+   "27",
+   "80",
+   "84",
+   "81"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^3 4x^3 dx = [x^4]₀^3 = 81."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 + 8x + 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Minimum",
+   "Maximum",
+   "Wendepunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 3x^2 + 18x - 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Sattelpunkt",
+   "Minimum",
+   "Wendepunkt"
+  ],
+  "correct": 2,
+  "explanation": "Da a = 3 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 12x^3 in den Grenzen von 0 bis 4.",
+  "options": [
+   "192",
+   "768",
+   "767",
+   "772"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^4 12x^3 dx = [3x^4]₀^4 = 768."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-1; -2; 2)? (Betrag)",
+  "options": [
+   "4",
+   "2",
+   "3",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "|(-1; -2; 2)| = √(-1² + -2² + 2²) = 3."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 4x?",
+  "options": [
+   "2x^2 + C",
+   "2x + C",
+   "4x + C",
+   "4x^2 + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 4x dx = 2x^2 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = 3x^2 - 18x + 3 ihr Extremum?",
+  "options": [
+   "x = 2",
+   "x = 3",
+   "x = 6",
+   "x = -3"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = 3."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 3x^2?",
+  "options": [
+   "x^2 + C",
+   "2x^3 + C",
+   "x^3 + C",
+   "3x^2 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 3x^2 dx = x^3 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = -x^2 - 8x + 4 ihr Extremum?",
+  "options": [
+   "x = -5",
+   "x = 4",
+   "x = -4",
+   "x = -3"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 6x^2?",
+  "options": [
+   "6x^2 + C",
+   "2x^3 + C",
+   "6x^3 + C",
+   "2x^2 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 6x^2 dx = 2x^3 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 12x^2 in den Grenzen von 0 bis 4.",
+  "options": [
+   "255",
+   "260",
+   "192",
+   "256"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^4 12x^2 dx = [4x^3]₀^4 = 256."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-4; -4) und (2; 3).",
+  "options": [
+   "-18",
+   "-22",
+   "-15",
+   "-20"
+  ],
+  "correct": 3,
+  "explanation": "(-4; -4) · (2; 3) = -4·2 + -4·3 = -20."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = x^2 - 4x + 1 ihr Extremum?",
+  "options": [
+   "x = 4",
+   "x = 2",
+   "x = -2",
+   "x = 5"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = 2."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 - 2x + 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Minimum",
+   "Wendepunkt",
+   "Maximum"
+  ],
+  "correct": 1,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 6x - 9. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 1 und x = -3",
+   "x = -1 und x = 3",
+   "x = -2 und x = 3",
+   "x = 0 und x = 4"
+  ],
+  "correct": 1,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -1)(x - 3) = 0 ⇒ x = -1 oder x = 3."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 8x in den Grenzen von 0 bis 4.",
+  "options": [
+   "64",
+   "68",
+   "63",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^4 8x dx = [4x^2]₀^4 = 64."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -x^2 - 8x - 2 ihr Extremum?",
+  "options": [
+   "x = -3",
+   "x = -1",
+   "x = -2",
+   "x = -4"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = -4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 2x^2 - 16x - 2 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Maximum",
+   "Minimum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = 2 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = 3x^2 - 24x + 1 ihr Extremum?",
+  "options": [
+   "x = 7",
+   "x = 4",
+   "x = 6",
+   "x = 5"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = 4."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 5 und p = 1/5. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "0",
+   "2",
+   "1",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "E(X) = n·p = 5·1/5 = 1."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = -3x^2 - 3 ihr Extremum?",
+  "options": [
+   "x = 1",
+   "x = -1",
+   "x = 0",
+   "x = 2"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = 0."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-4; -3) und (4; 3).",
+  "options": [
+   "-26",
+   "-25",
+   "-24",
+   "-23"
+  ],
+  "correct": 1,
+  "explanation": "(-4; -3) · (4; 3) = -4·4 + -3·3 = -25."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 12x^2 in den Grenzen von 0 bis 4.",
+  "options": [
+   "64",
+   "192",
+   "255",
+   "256"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^4 12x^2 dx = [4x^3]₀^4 = 256."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (2; 6; 9)? (Betrag)",
+  "options": [
+   "17",
+   "12",
+   "9",
+   "11"
+  ],
+  "correct": 3,
+  "explanation": "|(2; 6; 9)| = √(2² + 6² + 9²) = 11."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-2; -3; -6)? (Betrag)",
+  "options": [
+   "11",
+   "7",
+   "5",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "|(-2; -3; -6)| = √(-2² + -3² + -6²) = 7."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (4; 0; -3)? (Betrag)",
+  "options": [
+   "6",
+   "5",
+   "1",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "|(4; 0; -3)| = √(4² + 0² + -3²) = 5."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 - 2x + 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Wendepunkt",
+   "Maximum",
+   "Sattelpunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = 3x^2 - 24x + 6 ihr Extremum?",
+  "options": [
+   "x = 5",
+   "x = 4",
+   "x = 7",
+   "x = 6"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = 4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = -3x^2 - 30x + 3 ihr Extremum?",
+  "options": [
+   "x = -6",
+   "x = -3",
+   "x = -5",
+   "x = 5"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -5."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = 3x^2 + 24x + 5 ihr Extremum?",
+  "options": [
+   "x = -2",
+   "x = -4",
+   "x = -1",
+   "x = -5"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = -4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = x^2 + 6x + 4 ihr Extremum?",
+  "options": [
+   "x = -1",
+   "x = -3",
+   "x = -2",
+   "x = 3"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = -3."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (0; 5; -4) und (-5; 5; -4).",
+  "options": [
+   "40",
+   "41",
+   "46",
+   "43"
+  ],
+  "correct": 1,
+  "explanation": "(0; 5; -4) · (-5; 5; -4) = 0·-5 + 5·5 + -4·-4 = 41."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 21x + 36. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 3 und x = 5",
+   "x = 4 und x = 5",
+   "x = -3 und x = -4",
+   "x = 3 und x = 4"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - 3)(x - 4) = 0 ⇒ x = 3 oder x = 4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 15x^2?",
+  "options": [
+   "5x^2 + C",
+   "15x^2 + C",
+   "5x^3 + C",
+   "6x^3 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 15x^2 dx = 5x^3 + C."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 32 und p = 1/2. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "18",
+   "16",
+   "15",
+   "32"
+  ],
+  "correct": 1,
+  "explanation": "E(X) = n·p = 32·1/2 = 16."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-5; -5) und (-1; 2).",
+  "options": [
+   "-6",
+   "0",
+   "-7",
+   "-5"
+  ],
+  "correct": 3,
+  "explanation": "(-5; -5) · (-1; 2) = -5·-1 + -5·2 = -5."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Berechne das bestimmte Integral von f(x) = 12x^3 in den Grenzen von 0 bis 4.",
+  "options": [
+   "768",
+   "772",
+   "767",
+   "192"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^4 12x^3 dx = [3x^4]₀^4 = 768."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-4; 0) und (1; -5).",
+  "options": [
+   "1",
+   "-4",
+   "-3",
+   "-5"
+  ],
+  "correct": 1,
+  "explanation": "(-4; 0) · (1; -5) = -4·1 + 0·-5 = -4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 - 4x - 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Wendepunkt",
+   "Minimum",
+   "Sattelpunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-2; -3; 6)? (Betrag)",
+  "options": [
+   "1",
+   "8",
+   "9",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "|(-2; -3; 6)| = √(-2² + -3² + 6²) = 7."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = x^2 + 2x + 1 ihr Extremum?",
+  "options": [
+   "x = -2",
+   "x = 0",
+   "x = -1",
+   "x = 1"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -1."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (6; 8)? (Betrag)",
+  "options": [
+   "10",
+   "11",
+   "12",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "|(6; 8)| = √(6² + 8²) = 10."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (4; 3; -5) und (-4; -3; 0).",
+  "options": [
+   "-27",
+   "-23",
+   "-20",
+   "-25"
+  ],
+  "correct": 3,
+  "explanation": "(4; 3; -5) · (-4; -3; 0) = 4·-4 + 3·-3 + -5·0 = -25."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 6x^2 in den Grenzen von 0 bis 2.",
+  "options": [
+   "8",
+   "24",
+   "17",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^2 6x^2 dx = [2x^3]₀^2 = 16."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = 3x^2 + 6 ihr Extremum?",
+  "options": [
+   "x = -1",
+   "x = 3",
+   "x = 0",
+   "x = 1"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = 0."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -3x^2 - 18x + 1 ihr Extremum?",
+  "options": [
+   "x = -2",
+   "x = 0",
+   "x = -3",
+   "x = 3"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -3."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 16x^3 in den Grenzen von 0 bis 3.",
+  "options": [
+   "324",
+   "327",
+   "432",
+   "323"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^3 16x^3 dx = [4x^4]₀^3 = 324."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 24 und p = 1/2. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "6",
+   "11",
+   "12",
+   "24"
+  ],
+  "correct": 2,
+  "explanation": "E(X) = n·p = 24·1/2 = 12."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (0; -3; 5) und (-2; 2; -1).",
+  "options": [
+   "-6",
+   "-10",
+   "-12",
+   "-11"
+  ],
+  "correct": 3,
+  "explanation": "(0; -3; 5) · (-2; 2; -1) = 0·-2 + -3·2 + 5·-1 = -11."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = 3x^2 - 12x + 5 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = 5",
+   "x = 1",
+   "x = 2"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 2."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 6 und p = 1/2. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "2",
+   "5",
+   "3",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "E(X) = n·p = 6·1/2 = 3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 15x + 12. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -4 und x = 0",
+   "x = -5 und x = -1",
+   "x = -4 und x = -1",
+   "x = -3 und x = 0"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -4)(x - -1) = 0 ⇒ x = -4 oder x = -1."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 40 und p = 1/5. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "8",
+   "6",
+   "40",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "E(X) = n·p = 40·1/5 = 8."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = x^2 + 2x + 6 ihr Extremum?",
+  "options": [
+   "x = -1",
+   "x = -2",
+   "x = 0",
+   "x = 2"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = -1."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Welche Funktion ist eine Stammfunktion von f(x) = 15x^4?",
+  "options": [
+   "15x^4 + C",
+   "3x^5 + C",
+   "3x^4 + C",
+   "15x^5 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 15x^4 dx = 3x^5 + C."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 6-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 2-mal Kopf?",
+  "options": [
+   "5/16",
+   "1/64",
+   "15/64",
+   "3/32"
+  ],
+  "correct": 2,
+  "explanation": "P(X=2) = C(6,2)·(1/2)^6 = 15/64 = 15/64."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 8x in den Grenzen von 0 bis 4.",
+  "options": [
+   "68",
+   "64",
+   "63",
+   "65"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^4 8x dx = [4x^2]₀^4 = 64."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Berechne das bestimmte Integral von f(x) = 16x^3 in den Grenzen von 0 bis 2.",
+  "options": [
+   "65",
+   "64",
+   "63",
+   "128"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^2 16x^3 dx = [4x^4]₀^2 = 64."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (4; 0) und (-5; 2).",
+  "options": [
+   "-19",
+   "-15",
+   "-18",
+   "-20"
+  ],
+  "correct": 3,
+  "explanation": "(4; 0) · (-5; 2) = 4·-5 + 0·2 = -20."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-2; 2) und (0; -5).",
+  "options": [
+   "-5",
+   "-9",
+   "-10",
+   "-11"
+  ],
+  "correct": 2,
+  "explanation": "(-2; 2) · (0; -5) = -2·0 + 2·-5 = -10."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -x^2 - 2x an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Maximum",
+   "Minimum",
+   "Wendepunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -1 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 + 4x - 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Maximum",
+   "Minimum",
+   "Sattelpunkt"
+  ],
+  "correct": 2,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-9; 12)? (Betrag)",
+  "options": [
+   "15",
+   "14",
+   "3",
+   "17"
+  ],
+  "correct": 0,
+  "explanation": "|(-9; 12)| = √(-9² + 12²) = 15."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 + 8x an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Minimum"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 2x?",
+  "options": [
+   "2x^2 + C",
+   "2x + C",
+   "x + C",
+   "x^2 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 2x dx = x^2 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 4x^3?",
+  "options": [
+   "2x^4 + C",
+   "x^3 + C",
+   "4x^4 + C",
+   "x^4 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 4x^3 dx = x^4 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -x^2 + 4x - 5 ihr Extremum?",
+  "options": [
+   "x = 5",
+   "x = 3",
+   "x = 4",
+   "x = 2"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 2."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -x^2 - 6x + 6 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = -1",
+   "x = -3",
+   "x = -2"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -3."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 16x^3?",
+  "options": [
+   "4x^3 + C",
+   "5x^4 + C",
+   "16x^3 + C",
+   "4x^4 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 16x^3 dx = 4x^4 + C."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 30 und p = 1/10. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "5",
+   "2",
+   "3",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "E(X) = n·p = 30·1/10 = 3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 + 12x - 2 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Minimum",
+   "Maximum",
+   "Sattelpunkt"
+  ],
+  "correct": 2,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (5; 3) und (0; -4).",
+  "options": [
+   "-11",
+   "-12",
+   "-14",
+   "-10"
+  ],
+  "correct": 1,
+  "explanation": "(5; 3) · (0; -4) = 5·0 + 3·-4 = -12."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 6x in den Grenzen von 0 bis 3.",
+  "options": [
+   "9",
+   "27",
+   "30",
+   "18"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^3 6x dx = [3x^2]₀^3 = 27."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = -3x^2 - 6 ihr Extremum?",
+  "options": [
+   "x = -1",
+   "x = 0",
+   "x = 3",
+   "x = 2"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = 0."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 10x in den Grenzen von 0 bis 4.",
+  "options": [
+   "80",
+   "79",
+   "40",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^4 10x dx = [5x^2]₀^4 = 80."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (3; -4; 2) und (-3; 2; -3).",
+  "options": [
+   "-18",
+   "-24",
+   "-21",
+   "-23"
+  ],
+  "correct": 3,
+  "explanation": "(3; -4; 2) · (-3; 2; -3) = 3·-3 + -4·2 + 2·-3 = -23."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 - 4x + 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Sattelpunkt",
+   "Minimum",
+   "Wendepunkt"
+  ],
+  "correct": 2,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 7-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 2-mal Kopf?",
+  "options": [
+   "1/128",
+   "21/128",
+   "7/128",
+   "35/128"
+  ],
+  "correct": 1,
+  "explanation": "P(X=2) = C(7,2)·(1/2)^7 = 21/128 = 21/128."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 8x in den Grenzen von 0 bis 2.",
+  "options": [
+   "17",
+   "18",
+   "8",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^2 8x dx = [4x^2]₀^2 = 16."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-1; 4; -8)? (Betrag)",
+  "options": [
+   "10",
+   "9",
+   "5",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "|(-1; 4; -8)| = √(-1² + 4² + -8²) = 9."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 6x in den Grenzen von 0 bis 2.",
+  "options": [
+   "14",
+   "12",
+   "13",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^2 6x dx = [3x^2]₀^2 = 12."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (2; 10; 11)? (Betrag)",
+  "options": [
+   "23",
+   "17",
+   "13",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "|(2; 10; 11)| = √(2² + 10² + 11²) = 15."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 - 12x - 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Maximum",
+   "Minimum",
+   "Sattelpunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 8x^3 in den Grenzen von 0 bis 2.",
+  "options": [
+   "34",
+   "16",
+   "32",
+   "64"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^2 8x^3 dx = [2x^4]₀^2 = 32."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 9x - 12. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = 1 und x = -4",
+   "x = 0 und x = 5",
+   "x = -1 und x = 4",
+   "x = -1 und x = 5"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -1)(x - 4) = 0 ⇒ x = -1 oder x = 4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 12x^2 in den Grenzen von 0 bis 3.",
+  "options": [
+   "109",
+   "107",
+   "108",
+   "111"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^3 12x^2 dx = [4x^3]₀^3 = 108."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 2x^2 + 16x + 4 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Maximum",
+   "Sattelpunkt",
+   "Wendepunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = 2 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (0; -4; 5) und (2; 2; 5).",
+  "options": [
+   "19",
+   "18",
+   "22",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "(0; -4; 5) · (2; 2; 5) = 0·2 + -4·2 + 5·5 = 17."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 + 6x + 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Minimum",
+   "Wendepunkt",
+   "Sattelpunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 3x - 36. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -4 und x = 4",
+   "x = -2 und x = 5",
+   "x = -3 und x = 4",
+   "x = 3 und x = -4"
+  ],
+  "correct": 2,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -3)(x - 4) = 0 ⇒ x = -3 oder x = 4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 12x?",
+  "options": [
+   "6x^2 + C",
+   "6x + C",
+   "12x + C",
+   "7x^2 + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 12x dx = 6x^2 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 - 18x - 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Maximum",
+   "Minimum",
+   "Wendepunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 6x^2?",
+  "options": [
+   "2x^3 + C",
+   "6x^2 + C",
+   "6x^3 + C",
+   "2x^2 + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 6x^2 dx = 2x^3 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 15x^2 in den Grenzen von 0 bis 3.",
+  "options": [
+   "138",
+   "134",
+   "136",
+   "135"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^3 15x^2 dx = [5x^3]₀^3 = 135."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-1; 4; 8)? (Betrag)",
+  "options": [
+   "11",
+   "9",
+   "10",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "|(-1; 4; 8)| = √(-1² + 4² + 8²) = 9."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 6x - 24. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -5 und x = 2",
+   "x = 4 und x = -2",
+   "x = -4 und x = 3",
+   "x = -4 und x = 2"
+  ],
+  "correct": 3,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -4)(x - 2) = 0 ⇒ x = -4 oder x = 2."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 6x?",
+  "options": [
+   "6x^2 + C",
+   "4x^2 + C",
+   "3x^2 + C",
+   "3x + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 6x dx = 3x^2 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 4x in den Grenzen von 0 bis 2.",
+  "options": [
+   "9",
+   "4",
+   "8",
+   "10"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^2 4x dx = [2x^2]₀^2 = 8."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = x^2 - 4x - 1 ihr Extremum?",
+  "options": [
+   "x = 5",
+   "x = -2",
+   "x = 2",
+   "x = 3"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = 2."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 18x^2?",
+  "options": [
+   "7x^3 + C",
+   "6x^3 + C",
+   "18x^3 + C",
+   "6x^2 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 18x^2 dx = 6x^3 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = 2x^2 - 20x + 3 ihr Extremum?",
+  "options": [
+   "x = 5",
+   "x = 4",
+   "x = 7",
+   "x = -5"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = 5."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (5; 1) und (1; -4).",
+  "options": [
+   "2",
+   "1",
+   "6",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "(5; 1) · (1; -4) = 5·1 + 1·-4 = 1."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 6x^2 in den Grenzen von 0 bis 3.",
+  "options": [
+   "54",
+   "57",
+   "18",
+   "53"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^3 6x^2 dx = [2x^3]₀^3 = 54."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = x^2 - 10x - 4 ihr Extremum?",
+  "options": [
+   "x = 7",
+   "x = 6",
+   "x = 8",
+   "x = 5"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 5."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 + 2x - 4 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Minimum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = -x^2 + 4 ihr Extremum?",
+  "options": [
+   "x = 0",
+   "x = 1",
+   "x = 2",
+   "x = -1"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = 0."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 + 6x - 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Maximum",
+   "Sattelpunkt",
+   "Wendepunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-3; 3; 5) und (2; 2; -2).",
+  "options": [
+   "-10",
+   "-12",
+   "-8",
+   "-11"
+  ],
+  "correct": 0,
+  "explanation": "(-3; 3; 5) · (2; 2; -2) = -3·2 + 3·2 + 5·-2 = -10."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 - 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Sattelpunkt",
+   "Maximum",
+   "Wendepunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 - 4x - 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Minimum",
+   "Maximum",
+   "Wendepunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (2; -3; -1) und (1; 2; 1).",
+  "options": [
+   "-7",
+   "-3",
+   "0",
+   "-5"
+  ],
+  "correct": 3,
+  "explanation": "(2; -3; -1) · (1; 2; 1) = 2·1 + -3·2 + -1·1 = -5."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (0; 0) und (5; -5).",
+  "options": [
+   "2",
+   "0",
+   "-1",
+   "-2"
+  ],
+  "correct": 1,
+  "explanation": "(0; 0) · (5; -5) = 0·5 + 0·-5 = 0."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 2x in den Grenzen von 0 bis 4.",
+  "options": [
+   "16",
+   "15",
+   "4",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^4 2x dx = [x^2]₀^4 = 16."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-6; 8)? (Betrag)",
+  "options": [
+   "11",
+   "9",
+   "12",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "|(-6; 8)| = √(-6² + 8²) = 10."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 6-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 4-mal Kopf?",
+  "options": [
+   "3/32",
+   "5/16",
+   "1/64",
+   "15/64"
+  ],
+  "correct": 3,
+  "explanation": "P(X=4) = C(6,4)·(1/2)^6 = 15/64 = 15/64."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 4x in den Grenzen von 0 bis 3.",
+  "options": [
+   "12",
+   "6",
+   "18",
+   "17"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^3 4x dx = [2x^2]₀^3 = 18."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-4; -3; 2) und (-5; 3; 4).",
+  "options": [
+   "19",
+   "18",
+   "17",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "(-4; -3; 2) · (-5; 3; 4) = -4·-5 + -3·3 + 2·4 = 19."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = x^2 - 8x + 6 ihr Extremum?",
+  "options": [
+   "x = 3",
+   "x = 4",
+   "x = 6",
+   "x = 5"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = 4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 - 8x + 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Minimum",
+   "Sattelpunkt",
+   "Maximum"
+  ],
+  "correct": 1,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 2x^2 + 8x - 2 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Wendepunkt",
+   "Maximum",
+   "Minimum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = 2 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-8; 15)? (Betrag)",
+  "options": [
+   "7",
+   "17",
+   "15",
+   "18"
+  ],
+  "correct": 1,
+  "explanation": "|(-8; 15)| = √(-8² + 15²) = 17."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 2x in den Grenzen von 0 bis 2.",
+  "options": [
+   "3",
+   "6",
+   "2",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^2 2x dx = [x^2]₀^2 = 4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Welche Funktion ist eine Stammfunktion von f(x) = 12x?",
+  "options": [
+   "6x + C",
+   "12x^2 + C",
+   "7x^2 + C",
+   "6x^2 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 12x dx = 6x^2 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 2x^2 + 16x + 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Maximum",
+   "Minimum",
+   "Sattelpunkt"
+  ],
+  "correct": 2,
+  "explanation": "Da a = 2 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Berechne das bestimmte Integral von f(x) = 9x^2 in den Grenzen von 0 bis 4.",
+  "options": [
+   "191",
+   "48",
+   "144",
+   "192"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^4 9x^2 dx = [3x^3]₀^4 = 192."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 + 24x - 4 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Maximum",
+   "Minimum",
+   "Sattelpunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 - 16x + 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Sattelpunkt",
+   "Minimum",
+   "Wendepunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = 2x^2 - 20x + 2 ihr Extremum?",
+  "options": [
+   "x = 5",
+   "x = 7",
+   "x = -5",
+   "x = 8"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = 5."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-2; 6; 9)? (Betrag)",
+  "options": [
+   "11",
+   "13",
+   "12",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "|(-2; 6; 9)| = √(-2² + 6² + 9²) = 11."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-8; -15)? (Betrag)",
+  "options": [
+   "18",
+   "23",
+   "19",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "|(-8; -15)| = √(-8² + -15²) = 17."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 10x?",
+  "options": [
+   "5x + C",
+   "10x^2 + C",
+   "5x^2 + C",
+   "10x + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 10x dx = 5x^2 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 12x^3?",
+  "options": [
+   "12x^4 + C",
+   "4x^4 + C",
+   "3x^4 + C",
+   "3x^3 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 12x^3 dx = 3x^4 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 20x^3?",
+  "options": [
+   "6x^4 + C",
+   "20x^4 + C",
+   "5x^4 + C",
+   "20x^3 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 20x^3 dx = 5x^4 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 10x?",
+  "options": [
+   "5x^2 + C",
+   "6x^2 + C",
+   "10x^2 + C",
+   "5x + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 10x dx = 5x^2 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 3x^2 + 12x + 4 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Maximum"
+  ],
+  "correct": 0,
+  "explanation": "Da a = 3 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 2x^2 + 8x + 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Minimum",
+   "Sattelpunkt",
+   "Maximum"
+  ],
+  "correct": 1,
+  "explanation": "Da a = 2 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 4x?",
+  "options": [
+   "4x^2 + C",
+   "4x + C",
+   "3x^2 + C",
+   "2x^2 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 4x dx = 2x^2 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 8x^3 in den Grenzen von 0 bis 3.",
+  "options": [
+   "162",
+   "54",
+   "163",
+   "161"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^3 8x^3 dx = [2x^4]₀^3 = 162."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -x^2 - 2x - 2 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Maximum",
+   "Minimum",
+   "Wendepunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -1 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 2x^2 - 8x - 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Wendepunkt",
+   "Minimum",
+   "Maximum"
+  ],
+  "correct": 2,
+  "explanation": "Da a = 2 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 3x^2 - 6x an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Maximum",
+   "Minimum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = 3 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (5; -4) und (-2; 0).",
+  "options": [
+   "-12",
+   "-5",
+   "-10",
+   "-8"
+  ],
+  "correct": 2,
+  "explanation": "(5; -4) · (-2; 0) = 5·-2 + -4·0 = -10."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 8-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 2-mal Kopf?",
+  "options": [
+   "35/128",
+   "1/256",
+   "7/64",
+   "7/32"
+  ],
+  "correct": 2,
+  "explanation": "P(X=2) = C(8,2)·(1/2)^8 = 28/256 = 7/64."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 15x^4?",
+  "options": [
+   "15x^5 + C",
+   "3x^4 + C",
+   "3x^5 + C",
+   "15x^4 + C"
+  ],
+  "correct": 2,
+  "explanation": "∫ 15x^4 dx = 3x^5 + C."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Welche Funktion ist eine Stammfunktion von f(x) = 3x^2?",
+  "options": [
+   "2x^3 + C",
+   "3x^2 + C",
+   "3x^3 + C",
+   "x^3 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 3x^2 dx = x^3 + C."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-1; -2; -2)? (Betrag)",
+  "options": [
+   "4",
+   "5",
+   "2",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "|(-1; -2; -2)| = √(-1² + -2² + -2²) = 3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = x^2 - 4x - 4 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Minimum",
+   "Maximum",
+   "Wendepunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = 1 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (5; 3; 0) und (-5; 5; 1).",
+  "options": [
+   "-5",
+   "-10",
+   "-12",
+   "-9"
+  ],
+  "correct": 1,
+  "explanation": "(5; 3; 0) · (-5; 5; 1) = 5·-5 + 3·5 + 0·1 = -10."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-3; -3) und (4; -5).",
+  "options": [
+   "3",
+   "4",
+   "1",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "(-3; -3) · (4; -5) = -3·4 + -3·-5 = 3."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Berechne das bestimmte Integral von f(x) = 4x^3 in den Grenzen von 0 bis 3.",
+  "options": [
+   "108",
+   "81",
+   "82",
+   "84"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^3 4x^3 dx = [x^4]₀^3 = 81."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -3x^2 - 12x + 3 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Minimum",
+   "Wendepunkt",
+   "Sattelpunkt"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -3 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = 2x^2 - 16x + 3 ihr Extremum?",
+  "options": [
+   "x = 7",
+   "x = -4",
+   "x = 5",
+   "x = 4"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = 4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Berechne das bestimmte Integral von f(x) = 6x in den Grenzen von 0 bis 2.",
+  "options": [
+   "14",
+   "6",
+   "13",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^2 6x dx = [3x^2]₀^2 = 12."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (1; -1) und (-1; 4).",
+  "options": [
+   "-5",
+   "-7",
+   "0",
+   "-4"
+  ],
+  "correct": 0,
+  "explanation": "(1; -1) · (-1; 4) = 1·-1 + -1·4 = -5."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -x^2 + 6x + 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Maximum",
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Minimum"
+  ],
+  "correct": 0,
+  "explanation": "Da a = -1 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (1; -3; -3) und (-4; 1; -5).",
+  "options": [
+   "8",
+   "9",
+   "10",
+   "13"
+  ],
+  "correct": 0,
+  "explanation": "(1; -3; -3) · (-4; 1; -5) = 1·-4 + -3·1 + -3·-5 = 8."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Mathematik: An welcher Stelle x hat die Funktion f(x) = -2x^2 - 4x + 6 ihr Extremum?",
+  "options": [
+   "x = 1",
+   "x = -2",
+   "x = 0",
+   "x = -1"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = -1."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (8; 15)? (Betrag)",
+  "options": [
+   "19",
+   "17",
+   "16",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "|(8; 15)| = √(8² + 15²) = 17."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = -x^2 - 2x + 5 ihr Extremum?",
+  "options": [
+   "x = -2",
+   "x = 1",
+   "x = 2",
+   "x = -1"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = -1."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (1; 2; 2)? (Betrag)",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "|(1; 2; 2)| = √(1² + 2² + 2²) = 3."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-2; -6; 9)? (Betrag)",
+  "options": [
+   "10",
+   "1",
+   "12",
+   "11"
+  ],
+  "correct": 3,
+  "explanation": "|(-2; -6; 9)| = √(-2² + -6² + 9²) = 11."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 25x^4?",
+  "options": [
+   "25x^4 + C",
+   "5x^5 + C",
+   "6x^5 + C",
+   "5x^4 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 25x^4 dx = 5x^5 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = -3x^2 + 24x ihr Extremum?",
+  "options": [
+   "x = 5",
+   "x = 4",
+   "x = -4",
+   "x = 3"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = 4."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-4; 0; -3)? (Betrag)",
+  "options": [
+   "3",
+   "5",
+   "7",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "|(-4; 0; -3)| = √(-4² + 0² + -3²) = 5."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-4; 4; 2) und (-4; -1; -5).",
+  "options": [
+   "1",
+   "7",
+   "2",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "(-4; 4; 2) · (-4; -1; -5) = -4·-4 + 4·-1 + 2·-5 = 2."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -x^2 + 2x + 4 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Wendepunkt",
+   "Maximum",
+   "Minimum"
+  ],
+  "correct": 2,
+  "explanation": "Da a = -1 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = -2x^2 - 4x + 4 ihr Extremum?",
+  "options": [
+   "x = 2",
+   "x = -1",
+   "x = 1",
+   "x = 0"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = -1."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 10 und p = 1/10. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "3",
+   "0",
+   "10",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "E(X) = n·p = 10·1/10 = 1."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 16x^3 in den Grenzen von 0 bis 2.",
+  "options": [
+   "128",
+   "66",
+   "32",
+   "64"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^2 16x^3 dx = [4x^4]₀^2 = 64."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (2; -2; -3) und (4; -3; 4).",
+  "options": [
+   "7",
+   "2",
+   "0",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "(2; -2; -3) · (4; -3; 4) = 2·4 + -2·-3 + -3·4 = 2."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 8x?",
+  "options": [
+   "5x^2 + C",
+   "4x^2 + C",
+   "8x + C",
+   "4x + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 8x dx = 4x^2 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = -x^2 - 8x + 2 ihr Extremum?",
+  "options": [
+   "x = -4",
+   "x = -1",
+   "x = -5",
+   "x = 4"
+  ],
+  "correct": 0,
+  "explanation": "Scheitel bei x = -b/(2a) = -4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 6x in den Grenzen von 0 bis 3.",
+  "options": [
+   "26",
+   "27",
+   "28",
+   "18"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^3 6x dx = [3x^2]₀^3 = 27."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = -3x^2 - 12x - 2 ihr Extremum?",
+  "options": [
+   "x = 1",
+   "x = 2",
+   "x = -2",
+   "x = -1"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -2."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = 2x^2 - 4x + 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Minimum",
+   "Wendepunkt",
+   "Maximum"
+  ],
+  "correct": 1,
+  "explanation": "Da a = 2 > 0, ist die Parabel nach oben geöffnet → Minimum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 - 12x - 4 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Sattelpunkt",
+   "Minimum",
+   "Wendepunkt",
+   "Maximum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine binomialverteilte Zufallsgröße X hat n = 34 und p = 1/2. Wie groß ist der Erwartungswert E(X)?",
+  "options": [
+   "19",
+   "16",
+   "34",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "E(X) = n·p = 34·1/2 = 17."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (-2; 6; -9)? (Betrag)",
+  "options": [
+   "13",
+   "11",
+   "5",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "|(-2; 6; -9)| = √(-2² + 6² + -9²) = 11."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 + 8x + 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Maximum",
+   "Sattelpunkt",
+   "Minimum"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Wie lang ist der Vektor (7; 24)? (Betrag)",
+  "options": [
+   "26",
+   "25",
+   "31",
+   "27"
+  ],
+  "correct": 1,
+  "explanation": "|(7; 24)| = √(7² + 24²) = 25."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Berechne. An welcher Stelle x hat die Funktion f(x) = -x^2 + 10x - 5 ihr Extremum?",
+  "options": [
+   "x = 8",
+   "x = 7",
+   "x = 5",
+   "x = 4"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = 5."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-3; -4; 1) und (-3; 3; -3).",
+  "options": [
+   "-6",
+   "-5",
+   "-1",
+   "-8"
+  ],
+  "correct": 0,
+  "explanation": "(-3; -4; 1) · (-3; 3; -3) = -3·-3 + -4·3 + 1·-3 = -6."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (4; 2) und (-3; 0).",
+  "options": [
+   "-14",
+   "-12",
+   "-10",
+   "-7"
+  ],
+  "correct": 1,
+  "explanation": "(4; 2) · (-3; 0) = 4·-3 + 2·0 = -12."
+ },
+ {
+  "topic": "Binomialverteilung",
+  "question": "Eine faire Münze wird 8-mal geworfen. Wie groß ist die Wahrscheinlichkeit für genau 6-mal Kopf?",
+  "options": [
+   "7/64",
+   "1/256",
+   "1/32",
+   "7/32"
+  ],
+  "correct": 0,
+  "explanation": "P(X=6) = C(8,6)·(1/2)^8 = 28/256 = 7/64."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (3; 5) und (-3; 2).",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "(3; 5) · (-3; 2) = 3·-3 + 5·2 = 1."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 12x^2 in den Grenzen von 0 bis 3.",
+  "options": [
+   "109",
+   "107",
+   "36",
+   "108"
+  ],
+  "correct": 3,
+  "explanation": "∫₀^3 12x^2 dx = [4x^3]₀^3 = 108."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Mathematik: Welche Funktion ist eine Stammfunktion von f(x) = 15x^2?",
+  "options": [
+   "15x^2 + C",
+   "5x^3 + C",
+   "6x^3 + C",
+   "15x^3 + C"
+  ],
+  "correct": 1,
+  "explanation": "∫ 15x^2 dx = 5x^3 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 - 16x - 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Wendepunkt",
+   "Minimum",
+   "Sattelpunkt",
+   "Maximum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 + 3x - 18. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -3 und x = 2",
+   "x = -4 und x = 2",
+   "x = 3 und x = -2",
+   "x = -3 und x = 3"
+  ],
+  "correct": 0,
+  "explanation": "f'(x) = 0 ⇒ 3(x - -3)(x - 2) = 0 ⇒ x = -3 oder x = 2."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Berechne das bestimmte Integral von f(x) = 4x^3 in den Grenzen von 0 bis 2.",
+  "options": [
+   "18",
+   "16",
+   "32",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "∫₀^2 4x^3 dx = [x^4]₀^2 = 16."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 + 4x + 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Sattelpunkt",
+   "Wendepunkt",
+   "Maximum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 + 12x - 1 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Maximum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Berechne das bestimmte Integral von f(x) = 4x^3 in den Grenzen von 0 bis 4.",
+  "options": [
+   "257",
+   "64",
+   "256",
+   "260"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^4 4x^3 dx = [x^4]₀^4 = 256."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = x^2 + 8x - 4 ihr Extremum?",
+  "options": [
+   "x = -1",
+   "x = -5",
+   "x = -3",
+   "x = -4"
+  ],
+  "correct": 3,
+  "explanation": "Scheitel bei x = -b/(2a) = -4."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -x^2 - 6x - 5 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Wendepunkt",
+   "Sattelpunkt",
+   "Maximum"
+  ],
+  "correct": 3,
+  "explanation": "Da a = -1 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-2; 5) und (-3; -5).",
+  "options": [
+   "-20",
+   "-21",
+   "-19",
+   "-14"
+  ],
+  "correct": 2,
+  "explanation": "(-2; 5) · (-3; -5) = -2·-3 + 5·-5 = -19."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Welche Funktion ist eine Stammfunktion von f(x) = 8x^3?",
+  "options": [
+   "3x^4 + C",
+   "8x^4 + C",
+   "2x^3 + C",
+   "2x^4 + C"
+  ],
+  "correct": 3,
+  "explanation": "∫ 8x^3 dx = 2x^4 + C."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = 3x^2 + 24x + 1 ihr Extremum?",
+  "options": [
+   "x = -5",
+   "x = -3",
+   "x = -4",
+   "x = 4"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -4."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne das bestimmte Integral von f(x) = 20x^3 in den Grenzen von 0 bis 4.",
+  "options": [
+   "1280",
+   "1284",
+   "1281",
+   "1279"
+  ],
+  "correct": 0,
+  "explanation": "∫₀^4 20x^3 dx = [5x^4]₀^4 = 1280."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Hat die Funktion f(x) = -2x^2 + 6 an ihrer Extremstelle ein Minimum oder ein Maximum?",
+  "options": [
+   "Minimum",
+   "Maximum",
+   "Wendepunkt",
+   "Sattelpunkt"
+  ],
+  "correct": 1,
+  "explanation": "Da a = -2 < 0, ist die Parabel nach unten geöffnet → Maximum."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (1; -3; 3) und (5; 5; -2).",
+  "options": [
+   "-15",
+   "-16",
+   "-14",
+   "-11"
+  ],
+  "correct": 1,
+  "explanation": "(1; -3; 3) · (5; 5; -2) = 1·5 + -3·5 + 3·-2 = -16."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Die Ableitung einer Funktion f ist f'(x) = 3x^2 - 15x + 18. An welchen Stellen liegen die Extremstellen?",
+  "options": [
+   "x = -2 und x = -3",
+   "x = 2 und x = 3",
+   "x = 2 und x = 4",
+   "x = 1 und x = 3"
+  ],
+  "correct": 1,
+  "explanation": "f'(x) = 0 ⇒ 3(x - 2)(x - 3) = 0 ⇒ x = 2 oder x = 3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "Analysis/Geometrie: An welcher Stelle x hat die Funktion f(x) = 3x^2 + 18x + 3 ihr Extremum?",
+  "options": [
+   "x = -2",
+   "x = -3",
+   "x = -4",
+   "x = -1"
+  ],
+  "correct": 1,
+  "explanation": "Scheitel bei x = -b/(2a) = -3."
+ },
+ {
+  "topic": "Extremstellen",
+  "question": "An welcher Stelle x hat die Funktion f(x) = -3x^2 - 24x + 2 ihr Extremum?",
+  "options": [
+   "x = -1",
+   "x = -3",
+   "x = -4",
+   "x = -2"
+  ],
+  "correct": 2,
+  "explanation": "Scheitel bei x = -b/(2a) = -4."
+ },
+ {
+  "topic": "Vektoren",
+  "question": "Berechne das Skalarprodukt der Vektoren (-4; 2; 5) und (4; 1; -2).",
+  "options": [
+   "-23",
+   "-22",
+   "-24",
+   "-26"
+  ],
+  "correct": 2,
+  "explanation": "(-4; 2; 5) · (4; 1; -2) = -4·4 + 2·1 + 5·-2 = -24."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Analysis/Geometrie: Berechne das bestimmte Integral von f(x) = 4x^3 in den Grenzen von 0 bis 2.",
+  "options": [
+   "17",
+   "15",
+   "16",
+   "8"
+  ],
+  "correct": 2,
+  "explanation": "∫₀^2 4x^3 dx = [x^4]₀^2 = 16."
+ },
+ {
+  "topic": "Integralrechnung",
+  "question": "Berechne. Welche Funktion ist eine Stammfunktion von f(x) = 30x^4?",
+  "options": [
+   "6x^5 + C",
+   "7x^5 + C",
+   "6x^4 + C",
+   "30x^4 + C"
+  ],
+  "correct": 0,
+  "explanation": "∫ 30x^4 dx = 6x^5 + C."
+ }
+]

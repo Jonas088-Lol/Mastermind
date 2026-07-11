@@ -2609,6 +2609,7 @@ model NewspaperArticle {
   authorName String
   title      String
   subtitle   String?
+  category   String?  // Rubrik: "schule" | "sport" | "kultur" | "meinung" | "sonstiges"
   content    String   // Artikeltext (Absätze durch Leerzeilen)
   coverUrl   String?  // Titelbild-URL (optional)
   color      String?  // Akzentfarbe der Artikelkarte (optional)
@@ -2617,4 +2618,63 @@ model NewspaperArticle {
   updatedAt  DateTime @updatedAt
 
   @@index([schoolId, createdAt])
+}
+
+// ── Eltern: Belohnungs-Versprechen ─────────────────────────
+model RewardPromise {
+  id          String    @id @default(cuid())
+  parentId    String
+  studentId   String
+  title       String    // "Note 2 oder besser in Mathe"
+  rewardText  String    // "10 € Taschengeld extra"
+  status      String    @default("open") // open | fulfilled | cancelled
+  createdAt   DateTime  @default(now())
+  fulfilledAt DateTime?
+
+  @@index([studentId, status])
+  @@index([parentId])
+}
+
+// ── Schülerzeitung: Kommentare ─────────────────────────────
+model NewspaperComment {
+  id        String   @id @default(cuid())
+  articleId String
+  userId    String
+  userName  String
+  text      String
+  createdAt DateTime @default(now())
+
+  @@index([articleId, createdAt])
+}
+
+// ── Lehrer: Aufgaben-Vorlagen ──────────────────────────────
+model AssignmentTemplate {
+  id          String   @id @default(cuid())
+  schoolId    String
+  teacherId   String
+  teacherName String
+  title       String
+  description String?
+  subjectName String?
+  content     String   // JSON: Aufgabenfelder (Beschreibung, Punkte, Typ …)
+  shared      Boolean  @default(false) // schulweit sichtbar
+  createdAt   DateTime @default(now())
+
+  @@index([schoolId, shared])
+  @@index([teacherId])
+}
+
+// ── Anzeigetafel: freie Ankündigungs-Folien ────────────────
+model BoardAnnouncement {
+  id        String   @id @default(cuid())
+  schoolId  String
+  title     String
+  body      String?
+  emoji     String?
+  color     String?
+  active    Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@index([schoolId, active, order])
 }

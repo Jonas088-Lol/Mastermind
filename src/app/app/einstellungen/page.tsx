@@ -46,6 +46,7 @@ const SECTIONS = [
   { id: "darstellung", label: "Darstellung", icon: Palette },
   { id: "sprache", label: "Sprache", icon: Globe },
   { id: "geraete", label: "Geräte", icon: Laptop },
+  { id: "meine-daten", label: "Meine Daten", icon: Download },
   { id: "daten", label: "Daten & DSGVO", icon: Shield },
 ] as const;
 
@@ -440,6 +441,35 @@ export default async function EinstellungenPage() {
                     );
                   })}
                 </ul>
+              </CardBody>
+            </Card>
+          </section>
+
+          {/* ── Meine Daten (DSGVO-Selbstauskunft) ──────── */}
+          <section id="meine-daten">
+            <Card>
+              <CardHeader>
+                <CardTitle>Meine Daten (DSGVO)</CardTitle>
+              </CardHeader>
+              <CardBody className="space-y-3">
+                <p className="text-sm text-muted-fg">
+                  Lade eine Kopie deiner bei MasterMind gespeicherten Daten herunter
+                  (Art. 15/20 DSGVO): Profil, Noten, XP- und Münz-Verlauf, Abgaben,
+                  Nachrichten, Vokabellisten, Hefte und Erfolge — als maschinenlesbare
+                  JSON-Datei.
+                </p>
+                <a
+                  href="/api/me/export"
+                  download
+                  className="inline-flex h-9 items-center gap-2 border border-border px-4 text-sm font-medium transition-colors hover:bg-surface"
+                >
+                  <Download className="size-4" strokeWidth={1.75} />
+                  Datenexport herunterladen
+                </a>
+                <p className="text-xs text-muted-fg">
+                  Aus Sicherheitsgründen sind maximal 3 Exporte pro Tag möglich. Jeder
+                  Export wird protokolliert.
+                </p>
               </CardBody>
             </Card>
           </section>

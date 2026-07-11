@@ -1,7 +1,7 @@
 # MasterMind — Feature-Dokumentation
 
-> **Stand:** Mai 2026  
-> **Stack:** Next.js 15 App Router · Prisma · SQLite (Dev) / PostgreSQL (Prod) · Anthropic Claude · VAPID Push · Tailwind CSS
+> **Stand:** Juli 2026  
+> **Stack:** Next.js 16 App Router · Prisma · SQLite (Dev) / PostgreSQL (Prod) · Anthropic Claude · VAPID Push · Tailwind CSS
 
 Diese Datei dokumentiert alle implementierten Features der MasterMind-Plattform nach Bereich gegliedert. Zielgruppe: interne Entwickler, Stakeholder und potenzielle Kunden.
 
@@ -29,6 +29,8 @@ Diese Datei dokumentiert alle implementierten Features der MasterMind-Plattform 
 18. [E-Mail-System](#18-e-mail-system)
 19. [Rechtliche Seiten](#19-rechtliche-seiten)
 20. [UI & Design-System](#20-ui--design-system)
+21. [Anzeigetafel (Kiosk-Modus)](#21-anzeigetafel-kiosk-modus)
+22. [MEGA-Fragen-Bank](#22-mega-fragen-bank)
 
 ---
 
@@ -49,6 +51,18 @@ MasterMind basiert auf einem feingranularen, rollenbasierten Zugriffsmodell. Jed
 | Sekretariat | `secretary` | `/sekretariat` | Fehlzeiten, Schülerverwaltung |
 | Schulträger | `school_company` | `/schultraeger` | Verwaltung mehrerer Schulen |
 | Super-Admin | `super` | `/plattform` | Plattformbetreiber, volle Rechte |
+
+### Schüler-Zusatzrollen (Features)
+
+Zusätzlich zur Rolle `student` können pro Schüler-Account mehrere "Features" kombiniert werden (`src/lib/student-features.ts`, gespeichert als JSON-Array in `User.studentFeatures`):
+
+| Feature | Berechtigung |
+|---------|-------------|
+| `klassensprecher` | Nachrichten an die eigene Klasse senden |
+| `schuelersprecher` | Schulweite Nachrichten an alle Schüler senden |
+| `schuelerzeitung` | Artikel in der Schülerzeitung veröffentlichen |
+
+Die Vergabe erfolgt durch Admins; Parsing/Serialisierung ist gegen ungültige Werte abgesichert.
 
 ### Impersonation (Super-Admin)
 Der Super-Admin kann jede Rolle simulieren, ohne Daten zu manipulieren. Die `effectiveRole()` Funktion gibt die aktuell eingenommene Rolle zurück; `session.realRole` bleibt immer `super`. Mit `switchView()` wechselt der Super-Admin die Sichtweise, mit `stopImpersonation()` kehrt er zurück.
@@ -384,9 +398,15 @@ Druckbares HTML-Zeugnis im A4-Format:
 **Themennavigation:**
 - Fach-Übersicht → Jahrgangsstufen-Auswahl → Themen-Liste → Quiz
 
-**Curriculum-Seed:**
-- 52 Themen, 208 Fragen via `scripts/seed-topics.ts`
-- Abdeckung: alle 8 Hauptfächer, Klassen 1–13
+**Fragen-Basis:**
+- MEGA-Fragen-Bank mit über 120.000 Fragen (siehe [Abschnitt 22](#22-mega-fragen-bank))
+- Abdeckung: 19 Fächer (von Mathematik bis Wirtschaft), Klassen 1–13
+
+**Übungs-Statistiken (`/app/uebungen/stats`):**
+- Persönliche Auswertung des Übungsfortschritts (pro Fach/Thema)
+
+**Wiederholen (`/app/uebungen/wiederholen`):**
+- Gezieltes Wiederholen zuvor falsch beantworteter Fragen
 
 ---
 
@@ -403,6 +423,8 @@ Druckbares HTML-Zeugnis im A4-Format:
 - Spaced-Repetition-Algorithmus für optimales Wiederholungsintervall
 - Lernfortschritt pro Deck tracken
 - Deck mit Klassenkammeraden teilen → +5 XP pro Teilen
+- **Import/Export:** Decks als JSON importieren (`importDeck()`-Action, `ImportDeckForm`) und exportieren
+- **Deck aus PDF** (`/app/karteikarten/aus-pdf`): Karteikarten aus hochgeladenem PDF generieren
 
 ---
 
@@ -417,7 +439,12 @@ Druckbares HTML-Zeugnis im A4-Format:
 **Features:**
 - Schüler können andere Schüler zu Quiz-Duellen herausfordern
 - Asynchrones oder synchrones Spielformat
-- XP-Belohnung für Gewinner
+- Fach-Auswahl (Deutsch, Mathe, Englisch, Physik, Chemie, Biologie, Geschichte, Informatik)
+- Annehmen/Ablehnen von Herausforderungen (`acceptDuel()` / `declineDuel()`)
+- **Revanche:** Nach abgeschlossenem Duell direkt ein Rückduell starten (`rematchDuel()`)
+- **Statistik:** Siege/Niederlagen-Bilanz in der Duell-Übersicht
+- XP- und Münz-Belohnung für Gewinner (`COIN_REWARDS`)
+- Live-Aktualisierung der Übersicht per Auto-Refresh
 - Leaderboard-Integration
 
 ---
@@ -446,6 +473,7 @@ Druckbares HTML-Zeugnis im A4-Format:
 - Chat-Oberfläche (Sidebar: Themenhistorie, Hauptbereich: Nachrichtenverlauf + Eingabe)
 - Streaming-Antworten (Server-Sent Events, token-by-token)
 - Quota-Anzeige: verbleibende Anfragen
+- **Presets:** Vordefinierte Einstiegs-Prompts als Schnellauswahl-Buttons (z. B. Erklären, Abfragen)
 
 **Verhalten:**
 - Lernt schrittweise – gibt nie komplette Lösungen
@@ -515,6 +543,114 @@ Druckbares HTML-Zeugnis im A4-Format:
 - Alle aktiven Sessions mit Gerät/Browser/IP
 - Einzelne Sessions beenden (`DeviceLogout`-Komponente)
 - "Überall abmelden"-Option
+
+**Weitere Einstellungen:**
+- Schriftgröße (`FontSizePicker`) und Sprache (`LangSelector`)
+- Klassencode einlösen (`ClassCodeRedeemer`) zum Klassenbeitritt
+- App-Download-Hinweis (`AppDownloadSection`)
+- Konto löschen (`deleteOwnAccount()`, mit Bestätigung)
+
+**Meine Daten (DSGVO):**
+- Abschnitt "Meine Daten" mit Selbst-Export der eigenen personenbezogenen Daten
+- Download via `GET /api/user/dsgvo-export` (Art. 15/20 DSGVO)
+
+---
+
+### 5.15 Office-Suite (Dokumente, Tabellen, Präsentationen)
+
+**Dokumente (`/app/dokumente`):**
+- Word-ähnlicher Rich-Text-Editor (HTML-basiert), Dokument-Liste mit Zuletzt-bearbeitet
+- **Vorlagen** (`templates.ts`): u. a. Formeller Brief — vorstrukturierte Inhalte mit Platzhaltern
+
+**Tabellen (`/app/tabellen`):**
+- Excel-Alternative mit Formeln und CSV-Export
+- **Diagramme:** Charts aus Tabellendaten (`SpreadsheetCharts`)
+- **Sortierung** und **Farbskala** (bedingte Zellenfärbung) im Editor (`SpreadsheetEditor`)
+
+**Präsentationen (`/app/praesentationen`):**
+- Folien-Editor auf 16:9-Canvas (Text, Titel, Bilder, Formen — Rechteck/Kreis/Dreieck; Position in Prozent)
+- Notizen pro Folie
+- **Folien-Vorlagen** (`templates.ts`) in einer Vorlagen-Galerie
+
+**Office-Dark-Mode:** Eigener Theme-Umschalter für die Office-Editoren (`src/components/office/OfficeTheme.tsx`), unabhängig vom App-Theme.
+
+---
+
+### 5.16 Boss-Battles (`/app/boss`)
+
+- Klassenweite Boss-Kämpfe als 2D-Arena: Avatar vs. Boss, Spieler-Herzen, aufploppende Fragen mit Antwort-Erklärung
+- Boss-Stufen (`BOSS_TIERS` aus `src/lib/game.ts`), gemeinsamer Boss-HP-Pool (`BossBattle.currentHp`)
+- Fragen kommen aus dem Fach-Pool; robuster Fallback auf beliebige Frage, falls der Pool leer ist
+- Todes-/Sieg-Animationen (`BossDeathAnimation`, `BossDefeatedOverlay`), Live-Aktualisierung per Auto-Refresh
+- **Kompendium** (`/app/boss/kompendium`) und **Bestiarium** (`/app/boss/bestiary`): Übersicht aller Bosse und Fortschritt
+
+---
+
+### 5.17 Quests, Saison, Shop & Münzen
+
+**Quests (`/app/quests`):**
+- Tages-, Wochen-, Monats- und versteckte Quests (Pools in `src/lib/game.ts`)
+- Schwierigkeitsgrade, Fortschrittsbalken, Belohnung einlösen (`claimQuestReward()`)
+
+**Saison (`/app/saison`):**
+- Saisonaler Fortschritt mit Belohnungsstufen (Trophäen/Geschenke), Verknüpfung zu Shop und Rangliste
+
+**Shop (`/app/shop`) & Coins (`/app/coins`):**
+- Münz-Währung als zweite Belohnungsschiene neben XP (`src/lib/coins.ts`)
+- Käufe im Shop (z. B. kosmetische Items), Inventar unter `/app/inventar`
+
+---
+
+### 5.18 Streaks & Hall of Fame
+
+**Streak-Tracker (`/app/streaks`):**
+- Meilensteine bei 7/14/30/60/100 Tagen mit Fortschrittsanzeige
+- Wochen-/Kalender-**Heatmap** der Aktivitätstage
+
+**Hall of Fame (`/app/hall-of-fame`):**
+- Schulweite Bestenlisten in Kategorien: XP, Münzen, Boss-Schaden, MVP, Streak, Lernzeit u. a.
+- Datenschutz: Anzeige nur als Vorname + Initial des Nachnamens
+
+---
+
+### 5.19 Ziele & Belohnungen (`/app/ziele`)
+
+- Eltern setzen Ziele mit Belohnungsversprechen (`RewardPromise`), Schüler sehen offene und erfüllte Ziele
+- Einlösen erfüllter Ziele über `/app/ziele-claim`; Gegenstück im Eltern-Bereich (`/eltern/belohnungen`)
+
+---
+
+### 5.20 Schülerzeitung & Sprecher-Nachrichten
+
+**Schülerzeitung (`/app/zeitung`):**
+- Alle Schüler lesen veröffentlichte Artikel der eigenen Schule, filterbar nach Rubrik
+- Schüler mit Feature `schuelerzeitung` verfassen/veröffentlichen Artikel (`/app/zeitung/neu`)
+- Auto-Refresh: neue Artikel erscheinen ohne Neuladen
+
+**Sprecher (`/app/sprecher`):**
+- Nur für Schüler mit Feature `klassensprecher` (eigene Klasse) bzw. `schuelersprecher` (schulweit)
+- Nachricht wird den Empfängern als Benachrichtigung mit dem Namen des Absenders zugestellt; Meldung an Admins
+
+---
+
+### 5.21 Drive & Lernzettel
+
+**Drive (`/app/drive`):**
+- Persönliche Dateiablage (Upload, Ordner, Download) als Client-Oberfläche
+
+**Lernzettel (`/app/lernzettel`):**
+- Lernzettel erstellen (`/neu`), bearbeiten und verwalten
+
+---
+
+### 5.22 Weitere Schüler-Seiten
+
+- **Fehlzeiten (`/app/fehlzeiten`):** Eigene Fehlzeiten und Entschuldigungsstatus einsehen
+- **Erfolge (`/app/erfolge`), Titel (`/app/titel`), Skills (`/app/skills`):** Achievements, Titel-Auswahl, Skill-Fortschritt
+- **Tagesbelohnung (`/app/tagesbelohnung`):** Tägliche Login-Belohnung
+- **Mannschaften (`/app/mannschaften`):** Team-Wettbewerbe
+- **Vokabeln (`/app/vokabeln`), Hausaufgaben (`/app/hausaufgaben`), Lernplan (`/app/lernplan`), Heft (`/app/heft`), Arbeitsblätter (`/app/arbeitsblatter`)**
+- **Plan (`/app/plan`):** Anzeigetafel-Ansicht (siehe Abschnitt 21)
 
 ---
 
@@ -710,6 +846,36 @@ Druckbares HTML-Zeugnis im A4-Format:
 
 ---
 
+### 6.14 Aufgaben-Vorlagen (`/teach/vorlagen`)
+
+- Wiederverwendbare Aufgaben-Vorlagen (`AssignmentTemplate`): Aufgabentext, Typ, max. Punkte
+- Eigene Vorlagen + von Kollegen geteilte Vorlagen (`shared`-Flag) derselben Schule
+- Vorlagen-Verwaltung als Client-Oberfläche (`VorlagenClient`)
+
+---
+
+### 6.15 Elternbrief-Generator (`/teach/elternbrief`)
+
+- KI-gestützt: Stichpunkte eingeben → fertig formulierter Elternbrief
+- Lehrkraft behält die Endkontrolle und kann den Text vollständig bearbeiten
+- Funktioniert nur bei konfigurierter KI (`isAiConfigured()`), sonst Hinweis
+
+---
+
+### 6.16 Statistiken (`/teach/statistiken`)
+
+- Auswertungen über eigene Klassen: Notendurchschnitte, Trends (steigend/fallend), Abgabequoten
+- Farbcodierte Notenwerte, Fortschrittsbalken, Warnhinweise bei Auffälligkeiten
+
+---
+
+### 6.17 Sitzplan (`/teach/sitzplan`)
+
+- Sitzplan-Ansicht pro Klasse (Raster-Darstellung der Schüler)
+- Klassen-Auswahl per Dropdown
+
+---
+
 ## 7. Eltern-Bereich (/eltern)
 
 ### 7.1 Dashboard (`/eltern`)
@@ -784,6 +950,21 @@ Server Action `reportAbsence()`:
 - Anzeigename, E-Mail (schreibgeschützt)
 - Benachrichtigungspräferenzen
 - Verknüpfte Kinder verwalten
+
+---
+
+### 7.8 Belohnungen & Ziele (`/eltern/belohnungen`)
+
+- Eltern legen pro Kind Ziele mit Belohnungsversprechen an (`createPromise()`)
+- Status-Verwaltung: Offen · Erfüllt · Abgebrochen (`fulfillPromise()` / `cancelPromise()`)
+- Kinder sehen die Ziele unter `/app/ziele`
+
+---
+
+### 7.9 Wochenbericht (`/eltern/bericht`)
+
+- Kompakter Wochenbericht pro Kind: Noten mit Tendenz (steigend/fallend), Streak, Fehlzeiten, erledigte Aufgaben
+- Tagesaufschlüsselung Mo–So, farbcodierte Notenbewertung
 
 ---
 
@@ -1009,6 +1190,33 @@ Pro Integration: Konfigurations-Status, Einrichtungsanleitung, Verbindungstest
 - Filter: Akteur · Aktion · Datumsbereich
 - Export als CSV/JSON
 - DSGVO Art. 32 (Rechenschaftspflicht) konform
+
+---
+
+### 10.13 Anzeigetafel-Verwaltung (`/admin/anzeigetafel-verwaltung`)
+
+- Ankündigungen für die schulische Anzeigetafel (siehe Abschnitt 21) pflegen
+- Aktionen: Erstellen, Löschen, Ein-/Ausblenden, Reihenfolge per Hoch/Runter verschieben
+- Akzentfarbe pro Ankündigung aus 6er-Farbpalette (Blau, Grün, Gelb, Rot, Violett, …)
+- Vorschau der Tafel unter `/admin/anzeigetafel`
+
+---
+
+### 10.14 Vertretungsplan (`/admin/vertretungsplan`)
+
+- Vertretungen pro Tag erfassen (Klasse, Stunde, Vertretungslehrkraft/Entfall, Raum)
+- **Schnellerfassung:** Kompaktformular zum zügigen Eintragen mehrerer Vertretungen
+- Vertretungen erscheinen auf der Anzeigetafel und in der Read-only-API (`/api/v1/vertretungen`)
+
+---
+
+### 10.15 Berichte (`/admin/berichte`)
+
+- Auswertungs-Dashboard: Nutzer-, Noten- und Fehlzeiten-Kennzahlen mit Trends
+- **CSV-Downloads:**
+  - `/api/admin/export/nutzer` — Nutzerliste (Name, E-Mail, Rolle, Klasse)
+  - `/api/admin/export/noten` — Noten (Schüler, Fach, Note, Art)
+  - `/api/admin/export/fehlzeiten` — Anwesenheit & Gründe
 
 ---
 
@@ -1318,6 +1526,22 @@ Notiz-Datei-Upload. Auth: Session. Output: `{ url, size }`.
 ### `GET /api/health`
 Health-Check für Uptime-Monitoring. Output: `{ status: "ok", timestamp }`.
 
+### `GET /api/user/dsgvo-export`
+Selbst-Export der eigenen personenbezogenen Daten (Art. 15/20 DSGVO). Auth: Session.
+
+### Read-only API v1 (`/api/v1/*`)
+
+Öffentliche, schreibgeschützte Schnittstelle für Drittsysteme. Auth: `Authorization: Bearer <API-Token>` (Token-Verwaltung unter Admin → Sicherheit, Prüfung via `authenticateApiRequest()`).
+
+| Endpunkt | Antwort |
+|----------|---------|
+| `GET /api/v1/klassen` | Klassen (id, Name, Jahrgangsstufe, aggregierte Schüleranzahl) |
+| `GET /api/v1/stundenplan` | Stundenplan-Daten |
+| `GET /api/v1/vertretungen` | Vertretungen |
+| `GET /api/v1/termine` | Schultermine |
+
+DSGVO: Es werden keine personenbezogenen Schülerdaten ausgegeben — nur aggregierte bzw. organisatorische Daten.
+
 ---
 
 ## 17. Sicherheit & Datenschutz
@@ -1370,7 +1594,18 @@ Implementierung: Upstash Redis (Production) / In-Memory-Fallback (lokale Entwick
 - **Löschung:** Alle personenbezogenen Daten binnen 30 Tagen nach Vertragsende
 - **Audit-Log:** Vollständiges Trail aller datenschutzrelevanten Aktionen (Art. 32 DSGVO)
 
-### 17.6 Eingeladene Nutzer / Token-Sicherheit
+### 17.6 Datei-Verschlüsselung (At-Rest)
+
+**Quelle:** `src/lib/privacy/file-encryption.ts` (Art. 32 DSGVO)
+
+- **Algorithmus:** AES-256-GCM (authentifiziert), pro Datei ein zufälliger 12-Byte-IV
+- **Schlüsselableitung:** HKDF-SHA256 aus dem `FIELD_ENCRYPTION_KEYS`-Master-Key (Kontext `file:<version>`) — keine neuen Secrets nötig
+- **Streaming:** Ver-/Entschlüsselung über `pipeline()` — auch große Uploads (500 MB) ohne RAM-Spitzen
+- **Key-Versionierung:** Rotation ohne Migration, aktive Version via `FIELD_ENCRYPTION_ACTIVE`
+- **Dateiformat:** Magic `MMENC1` + Versions-Header + IV + Ciphertext + 16-Byte-GCM-Auth-Tag
+- **Graceful Fallback:** Ohne konfigurierte Keys wird unverschlüsselt gespeichert; Aufrufer prüfen `isFileEncryptionConfigured()`
+
+### 17.7 Eingeladene Nutzer / Token-Sicherheit
 
 - Alle Einladungstoken: 32 Bytes kryptografisch zufällig (hex)
 - Token-Ablauf: 7 Tage
@@ -1450,6 +1685,8 @@ Auftragsverarbeitungsvertrag gem. Art. 28 DSGVO:
 
 Hell- und Dunkelmodus via `ThemeButtons`-Komponente (Client), Präferenz im Cookie gespeichert.
 
+**Office-Dark-Mode:** Die Office-Editoren (Dokumente, Tabellen, Präsentationen) haben einen eigenen Theme-Umschalter (`src/components/office/OfficeTheme.tsx`), sodass Editor-Flächen unabhängig vom App-Theme hell/dunkel dargestellt werden können.
+
 ### Komponenten-Bibliothek (`/src/components/ui/`)
 
 | Komponente | Beschreibung |
@@ -1490,6 +1727,33 @@ Hell- und Dunkelmodus via `ThemeButtons`-Komponente (Client), Präferenz im Cook
 - Sidebar collapsed on mobile → Bottom-Tab-Bar
 - Grid-Layouts kollabieren zu Single-Column auf kleinen Screens
 - Touch-optimierte Button-Größen (min. 44px)
+
+---
+
+## 21. Anzeigetafel (Kiosk-Modus)
+
+**Quelle:** `src/components/plan/PlanBoardClient.tsx`, Datenaufbereitung in `src/lib/plan-board.ts`
+
+Vollbild-Anzeigetafel für Bildschirme/Fernseher im Schulgebäude:
+
+- Heutiger Stundenplan **aller Klassen** inkl. Vertretungen (Entfall/Vertretung hervorgehoben)
+- Uhr + Tagesdatum, Auto-Refresh alle 60 Sekunden
+- Echtes Browser-Vollbild (Maximize/Minimize-Toggle); im Vollbild skaliert die Typografie hoch für Lesbarkeit aus Distanz
+- Zusatzinhalte: Schultermine, Team-/Mannschafts-Ergebnisse, Ankündigungen (gepflegt über `/admin/anzeigetafel-verwaltung`, mit Akzentfarbe und Reihenfolge)
+- Blättern zwischen Klassen-Seiten (Vor/Zurück)
+
+---
+
+## 22. MEGA-Fragen-Bank
+
+**Quelle:** `scripts/questions/mega/` (Generator-Skripte `generate*.mjs`, Import via `import-mega.ts`)
+
+- **Umfang:** über 120.000 Multiple-Choice-Fragen in 286 JSON-Dateien (`data/*.json`)
+- **Fächer (19):** Biologie, Chemie, Deutsch, Englisch, Erdkunde, Ethik, Französisch, Geschichte, Informatik, Kunst, Latein, Mathematik, Musik, Physik, Sachkunde, Spanisch, Sport, Technik, Wirtschaft
+- **Jahrgangsstufen:** 1–13 (fachabhängig, z. B. Sachkunde in der Grundschule)
+- **Fragenformat:** Thema, Fragetext, 4 Antwortoptionen, Index der richtigen Antwort, Erklärungstext
+- **Import:** `npx tsx scripts/questions/mega/import-mega.ts` — legt Topics und Fragen an, überspringt Duplikate (`createMany` mit `skipDuplicates` auf Postgres)
+- Genutzt von: Übungen (`/app/uebungen`), Duellen, Boss-Battles
 
 ---
 

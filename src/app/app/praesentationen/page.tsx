@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { createPresentation } from "./actions";
+import { createPresentation, createPresentationFromTemplate } from "./actions";
+import { PRESENTATION_TEMPLATES } from "./templates";
 
 export const metadata: Metadata = { title: "Präsentationen · MasterMind" };
 
@@ -36,6 +37,28 @@ export default async function PraesentationenPage() {
           </button>
         </form>
       </header>
+
+      <section className="flex flex-col gap-3">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-muted-fg">
+          Mit Vorlage starten
+        </h2>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          {PRESENTATION_TEMPLATES.map((template) => (
+            <form key={template.key} action={createPresentationFromTemplate.bind(null, template.key)}>
+              <button
+                type="submit"
+                className="flex w-full flex-col items-start gap-1 rounded-2xl border border-border bg-surface px-4 py-4 text-left transition-colors hover:border-brand/50 hover:bg-bg"
+              >
+                <span className="text-2xl" aria-hidden>{template.emoji}</span>
+                <span className="mt-1 text-sm font-semibold text-fg">{template.name}</span>
+                <span className="text-[11px] text-muted-fg">
+                  {template.slides.length} Folien · {template.description}
+                </span>
+              </button>
+            </form>
+          ))}
+        </div>
+      </section>
 
       {presentations.length === 0 ? (
         <div className="rounded-2xl border-2 border-dashed border-border bg-bg px-8 py-16 text-center">

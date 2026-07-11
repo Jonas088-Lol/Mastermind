@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 1500 € wird 5 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "75 €",
+   "15 €",
+   "60 €",
+   "150 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 1500 € · 1/100 · 5 = 75 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Eine Ware kostet 760 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "760 €",
+   "330 €",
+   "380 €",
+   "430 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 760 € · 50 % = 380 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Was gilt für das Schengener Abkommen?",
+  "options": [
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten",
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel"
+  ],
+  "correct": 2,
+  "explanation": "das Schengener Abkommen: ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Was bedeutet eine gleiche Wahl?",
+  "options": [
+   "ist das Recht, selbst zu wählen",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat"
+  ],
+  "correct": 3,
+  "explanation": "eine gleiche Wahl: bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Worauf trifft das zu: „ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten“?",
+  "options": [
+   "das Europäische Parlament",
+   "der Europäische Gerichtshof (EuGH)",
+   "das Schengener Abkommen",
+   "die Europäische Zentralbank (EZB)"
+  ],
+  "correct": 2,
+  "explanation": "das Schengener Abkommen: ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Worauf trifft das zu: „schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel“?",
+  "options": [
+   "der Vertrag von Maastricht (1992)",
+   "die Europäische Kommission",
+   "der Europäische Rat",
+   "die Europäische Zentralbank (EZB)"
+  ],
+  "correct": 1,
+  "explanation": "die Europäische Kommission: schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Welcher Begriff passt: „wählt den Bundespräsidenten / die Bundespräsidentin“?",
+  "options": [
+   "die Bundesversammlung",
+   "die Legislative",
+   "die Exekutive",
+   "das konstruktive Misstrauensvotum"
+  ],
+  "correct": 0,
+  "explanation": "die Bundesversammlung: wählt den Bundespräsidenten / die Bundespräsidentin."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Eine Ware kostet 360 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "308 €",
+   "288 €",
+   "360 €",
+   "72 €"
+  ],
+  "correct": 1,
+  "explanation": "Neuer Preis = 360 € · 80 % = 288 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 40 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "55 €",
+   "5 €",
+   "30 €",
+   "10 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 40 € · 75 % = 30 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Welcher Begriff des Wahlrechts passt: „ist das Recht, sich zur Wahl aufstellen zu lassen“?",
+  "options": [
+   "eine geheime Wahl",
+   "das passive Wahlrecht",
+   "die Zweitstimme",
+   "das aktive Wahlrecht"
+  ],
+  "correct": 1,
+  "explanation": "das passive Wahlrecht: ist das Recht, sich zur Wahl aufstellen zu lassen."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Welcher Begriff des Wahlrechts passt: „wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis“?",
+  "options": [
+   "eine allgemeine Wahl",
+   "die Erststimme",
+   "die Fünf-Prozent-Hürde",
+   "eine geheime Wahl"
+  ],
+  "correct": 1,
+  "explanation": "die Erststimme: wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Welcher Begriff des Wahlrechts passt: „bedeutet, dass niemand erfährt, wie jemand gewählt hat“?",
+  "options": [
+   "die Mehrheitswahl",
+   "das aktive Wahlrecht",
+   "eine geheime Wahl",
+   "das passive Wahlrecht"
+  ],
+  "correct": 2,
+  "explanation": "eine geheime Wahl: bedeutet, dass niemand erfährt, wie jemand gewählt hat."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet das passive Wahlrecht?",
+  "options": [
+   "ist das Recht, sich zur Wahl aufstellen zu lassen",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung",
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat"
+  ],
+  "correct": 0,
+  "explanation": "das passive Wahlrecht: ist das Recht, sich zur Wahl aufstellen zu lassen."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg“?",
+  "options": [
+   "der Europäische Gerichtshof (EuGH)",
+   "das Europäische Parlament",
+   "der Euro als Bargeld",
+   "das Schengener Abkommen"
+  ],
+  "correct": 0,
+  "explanation": "der Europäische Gerichtshof (EuGH): wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 9000 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "270 €",
+   "360 €",
+   "90 €",
+   "540 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 9000 € · 3/100 = 270 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Was gilt für der Europäische Rat?",
+  "options": [
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg",
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "ist das Gipfeltreffen der Staats- und Regierungschefs der EU"
+  ],
+  "correct": 3,
+  "explanation": "der Europäische Rat: ist das Gipfeltreffen der Staats- und Regierungschefs der EU."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 520 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "396 €",
+   "416 €",
+   "104 €",
+   "436 €"
+  ],
+  "correct": 1,
+  "explanation": "Neuer Preis = 520 € · 80 % = 416 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 660 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "132 €",
+   "528 €",
+   "548 €",
+   "660 €"
+  ],
+  "correct": 1,
+  "explanation": "Neuer Preis = 660 € · 80 % = 528 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet die Zweitstimme?",
+  "options": [
+   "ist das Recht, selbst zu wählen",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen"
+  ],
+  "correct": 1,
+  "explanation": "die Zweitstimme: wählt die Landesliste einer Partei und bestimmt die Sitzverteilung."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Was gilt für die Judikative?",
+  "options": [
+   "ist das Staatsoberhaupt Deutschlands",
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes",
+   "ist die rechtsprechende Gewalt",
+   "dauert in der Regel 4 Jahre"
+  ],
+  "correct": 2,
+  "explanation": "die Judikative: ist die rechtsprechende Gewalt."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „gründete die Europäische Union“?",
+  "options": [
+   "die Europäische Kommission",
+   "das Europäische Parlament",
+   "der Rat der Europäischen Union (Ministerrat)",
+   "der Vertrag von Maastricht (1992)"
+  ],
+  "correct": 3,
+  "explanation": "der Vertrag von Maastricht (1992): gründete die Europäische Union."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1700 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "34 €",
+   "51 €",
+   "68 €",
+   "102 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 1700 € · 3/100 = 51 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für das Bundesverfassungsgericht?",
+  "options": [
+   "schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen",
+   "ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern",
+   "wacht über die Einhaltung des Grundgesetzes und sitzt in Karlsruhe",
+   "bestimmt die Richtlinien der Politik und leitet die Bundesregierung"
+  ],
+  "correct": 2,
+  "explanation": "das Bundesverfassungsgericht: wacht über die Einhaltung des Grundgesetzes und sitzt in Karlsruhe."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Eine Ware kostet 200 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "200 €",
+   "140 €",
+   "40 €",
+   "160 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 200 € · 80 % = 160 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für der Rat der Europäischen Union (Ministerrat)?",
+  "options": [
+   "gründete die Europäische Union",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten",
+   "besteht aus den Fachministern der Mitgliedstaaten"
+  ],
+  "correct": 3,
+  "explanation": "der Rat der Europäischen Union (Ministerrat): besteht aus den Fachministern der Mitgliedstaaten."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet eine freie Wahl?",
+  "options": [
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen",
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden"
+  ],
+  "correct": 1,
+  "explanation": "eine freie Wahl: bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Was gilt für die Legislative?",
+  "options": [
+   "ist die rechtsprechende Gewalt",
+   "ist das Staatsoberhaupt Deutschlands",
+   "wählt den Bundespräsidenten / die Bundespräsidentin",
+   "ist die gesetzgebende Gewalt"
+  ],
+  "correct": 3,
+  "explanation": "die Legislative: ist die gesetzgebende Gewalt."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Worauf trifft das zu: „wird alle 5 Jahre direkt von den EU-Bürgern gewählt“?",
+  "options": [
+   "der EU-Binnenmarkt",
+   "der Europäische Gerichtshof (EuGH)",
+   "das Europäische Parlament",
+   "der Rat der Europäischen Union (Ministerrat)"
+  ],
+  "correct": 2,
+  "explanation": "das Europäische Parlament: wird alle 5 Jahre direkt von den EU-Bürgern gewählt."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Was gilt für der Brexit?",
+  "options": [
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)",
+   "wurde 2002 eingeführt",
+   "gründete die Europäische Union"
+  ],
+  "correct": 1,
+  "explanation": "der Brexit: war der Austritt des Vereinigten Königreichs aus der EU (2020)."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat“?",
+  "options": [
+   "die Verhältniswahl",
+   "die Erststimme",
+   "die Mehrheitswahl",
+   "das aktive Wahlrecht"
+  ],
+  "correct": 2,
+  "explanation": "die Mehrheitswahl: gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 3400 € wird 6 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "680 €",
+   "1632 €",
+   "136 €",
+   "816 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 3400 € · 4/100 · 6 = 816 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Welcher Begriff passt: „vertritt die Bundesländer bei der Gesetzgebung des Bundes“?",
+  "options": [
+   "der Bundesrat",
+   "eine Legislaturperiode des Bundestages",
+   "die Judikative",
+   "die Ewigkeitsklausel (Art. 79 Abs. 3 GG)"
+  ],
+  "correct": 0,
+  "explanation": "der Bundesrat: vertritt die Bundesländer bei der Gesetzgebung des Bundes."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 9000 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "540 €",
+   "90 €",
+   "360 €",
+   "270 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 9000 € · 3/100 = 270 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Worauf trifft das zu: „ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten“?",
+  "options": [
+   "das Schengener Abkommen",
+   "der Europäische Gerichtshof (EuGH)",
+   "der EU-Binnenmarkt",
+   "die Römischen Verträge (1957)"
+  ],
+  "correct": 0,
+  "explanation": "das Schengener Abkommen: ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Welcher Begriff passt: „bestimmt die Richtlinien der Politik und leitet die Bundesregierung“?",
+  "options": [
+   "eine Legislaturperiode des Bundestages",
+   "Artikel 1 des Grundgesetzes",
+   "der Bundeskanzler / die Bundeskanzlerin",
+   "der Bundespräsident / die Bundespräsidentin"
+  ],
+  "correct": 2,
+  "explanation": "der Bundeskanzler / die Bundeskanzlerin: bestimmt die Richtlinien der Politik und leitet die Bundesregierung."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Was bedeutet eine allgemeine Wahl?",
+  "options": [
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "ist das Recht, selbst zu wählen"
+  ],
+  "correct": 0,
+  "explanation": "eine allgemeine Wahl: bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 1500 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1605 €",
+   "1500 €",
+   "105 €",
+   "1507 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 1500 € · 1,07 = 1605 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 2000 € wird 4 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "500 €",
+   "300 €",
+   "400 €",
+   "100 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 2000 € · 5/100 · 4 = 400 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet das aktive Wahlrecht?",
+  "options": [
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "ist das Recht, selbst zu wählen",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung"
+  ],
+  "correct": 1,
+  "explanation": "das aktive Wahlrecht: ist das Recht, selbst zu wählen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 2600 € wird ein Jahr lang mit 5 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "104 €",
+   "260 €",
+   "26 €",
+   "130 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 2600 € · 5/100 = 130 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 1700 € wird 2 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "170 €",
+   "255 €",
+   "85 €",
+   "340 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 1700 € · 5/100 · 2 = 170 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Was bedeutet eine unmittelbare Wahl?",
+  "options": [
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden"
+  ],
+  "correct": 3,
+  "explanation": "eine unmittelbare Wahl: bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für eine Legislaturperiode des Bundestages?",
+  "options": [
+   "dauert in der Regel 4 Jahre",
+   "erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen",
+   "ist die ausführende Gewalt",
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes"
+  ],
+  "correct": 0,
+  "explanation": "eine Legislaturperiode des Bundestages: dauert in der Regel 4 Jahre."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1000 € wird ein Jahr lang mit 5 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "50 €",
+   "40 €",
+   "60 €",
+   "10 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 1000 € · 5/100 = 50 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Welcher Begriff des Wahlrechts passt: „verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen“?",
+  "options": [
+   "eine unmittelbare Wahl",
+   "die Verhältniswahl",
+   "die Zweitstimme",
+   "die Fünf-Prozent-Hürde"
+  ],
+  "correct": 3,
+  "explanation": "die Fünf-Prozent-Hürde: verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „war der Austritt des Vereinigten Königreichs aus der EU (2020)“?",
+  "options": [
+   "die Europäische Zentralbank (EZB)",
+   "der Rat der Europäischen Union (Ministerrat)",
+   "die Römischen Verträge (1957)",
+   "der Brexit"
+  ],
+  "correct": 3,
+  "explanation": "der Brexit: war der Austritt des Vereinigten Königreichs aus der EU (2020)."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 300 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "307 €",
+   "331 €",
+   "21 €",
+   "321 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 300 € · 1,07 = 321 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 6900 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "69 €",
+   "138 €",
+   "276 €",
+   "207 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 6900 € · 2/100 = 138 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Was bedeutet eine geheime Wahl?",
+  "options": [
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat",
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen"
+  ],
+  "correct": 0,
+  "explanation": "eine geheime Wahl: bedeutet, dass niemand erfährt, wie jemand gewählt hat."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 10000 € wird ein Jahr lang mit 5 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "600 €",
+   "500 €",
+   "100 €",
+   "1000 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 10000 € · 5/100 = 500 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 1200 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "12 €",
+   "24 €",
+   "36 €",
+   "48 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 1200 € · 2/100 = 24 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Welcher Begriff passt: „besteht aus Bundeskanzler/in und den Bundesministern“?",
+  "options": [
+   "die Bundesregierung",
+   "die Bundesversammlung",
+   "Artikel 1 des Grundgesetzes",
+   "die Gewaltenteilung"
+  ],
+  "correct": 0,
+  "explanation": "die Bundesregierung: besteht aus Bundeskanzler/in und den Bundesministern."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 480 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "360 €",
+   "480 €",
+   "385 €",
+   "335 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 480 € · 75 % = 360 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Eine Ware kostet 440 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "396 €",
+   "440 €",
+   "386 €",
+   "406 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 440 € · 90 % = 396 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 2000 € wird ein Jahr lang mit 5 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "80 €",
+   "100 €",
+   "20 €",
+   "120 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 2000 € · 5/100 = 100 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Was bedeutet die Erststimme?",
+  "options": [
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien",
+   "ist das Recht, selbst zu wählen",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis"
+  ],
+  "correct": 3,
+  "explanation": "die Erststimme: wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 1000 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "10 €",
+   "20 €",
+   "30 €",
+   "40 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 1000 € · 2/100 = 20 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet die Fünf-Prozent-Hürde?",
+  "options": [
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat",
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung"
+  ],
+  "correct": 2,
+  "explanation": "die Fünf-Prozent-Hürde: verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 780 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "390 €",
+   "780 €",
+   "440 €",
+   "340 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 780 € · 50 % = 390 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Was gilt für der Vertrag von Maastricht (1992)?",
+  "options": [
+   "gründete die Europäische Union",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)",
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel",
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg"
+  ],
+  "correct": 0,
+  "explanation": "der Vertrag von Maastricht (1992): gründete die Europäische Union."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „bedeutet, dass niemand erfährt, wie jemand gewählt hat“?",
+  "options": [
+   "die Mehrheitswahl",
+   "eine freie Wahl",
+   "eine unmittelbare Wahl",
+   "eine geheime Wahl"
+  ],
+  "correct": 3,
+  "explanation": "eine geheime Wahl: bedeutet, dass niemand erfährt, wie jemand gewählt hat."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 3000 € wird 5 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "300 €",
+   "60 €",
+   "240 €",
+   "600 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 3000 € · 2/100 · 5 = 300 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Eine Ware kostet 460 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "348 €",
+   "460 €",
+   "368 €",
+   "388 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 460 € · 80 % = 368 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Was bedeutet das passive Wahlrecht?",
+  "options": [
+   "ist das Recht, sich zur Wahl aufstellen zu lassen",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat"
+  ],
+  "correct": 0,
+  "explanation": "das passive Wahlrecht: ist das Recht, sich zur Wahl aufstellen zu lassen."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 1900 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "2043 €",
+   "1900 €",
+   "2033 €",
+   "133 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 1900 € · 1,07 = 2033 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet die Mehrheitswahl?",
+  "options": [
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat",
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis"
+  ],
+  "correct": 0,
+  "explanation": "die Mehrheitswahl: gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Welcher Begriff passt: „wacht über die Einhaltung des Grundgesetzes und sitzt in Karlsruhe“?",
+  "options": [
+   "das Bundesverfassungsgericht",
+   "das konstruktive Misstrauensvotum",
+   "die Gewaltenteilung",
+   "Artikel 1 des Grundgesetzes"
+  ],
+  "correct": 0,
+  "explanation": "das Bundesverfassungsgericht: wacht über die Einhaltung des Grundgesetzes und sitzt in Karlsruhe."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 3700 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "37 €",
+   "222 €",
+   "111 €",
+   "148 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 3700 € · 3/100 = 111 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Was gilt für die Judikative?",
+  "options": [
+   "ist das vom Volk direkt gewählte Parlament Deutschlands",
+   "besteht aus Bundeskanzler/in und den Bundesministern",
+   "ist das Staatsoberhaupt Deutschlands",
+   "ist die rechtsprechende Gewalt"
+  ],
+  "correct": 3,
+  "explanation": "die Judikative: ist die rechtsprechende Gewalt."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 1400 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "98 €",
+   "1407 €",
+   "1498 €",
+   "1400 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 1400 € · 1,07 = 1498 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Was gilt für das Schengener Abkommen?",
+  "options": [
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten",
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "wurde 2002 eingeführt",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)"
+  ],
+  "correct": 0,
+  "explanation": "das Schengener Abkommen: ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 600 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "114 €",
+   "724 €",
+   "714 €",
+   "619 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 600 € · 1,19 = 714 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Welcher Begriff passt: „ist die rechtsprechende Gewalt“?",
+  "options": [
+   "der Bundeskanzler / die Bundeskanzlerin",
+   "der Bundestag",
+   "der Bundesrat",
+   "die Judikative"
+  ],
+  "correct": 3,
+  "explanation": "die Judikative: ist die rechtsprechende Gewalt."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 4800 € wird 2 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "384 €",
+   "192 €",
+   "768 €",
+   "576 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 4800 € · 4/100 · 2 = 384 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 4800 € wird 5 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "240 €",
+   "1200 €",
+   "2400 €",
+   "1440 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 4800 € · 5/100 · 5 = 1200 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Welcher Begriff passt: „vertritt die Bundesländer bei der Gesetzgebung des Bundes“?",
+  "options": [
+   "die Ewigkeitsklausel (Art. 79 Abs. 3 GG)",
+   "der Bundestag",
+   "die Exekutive",
+   "der Bundesrat"
+  ],
+  "correct": 3,
+  "explanation": "der Bundesrat: vertritt die Bundesländer bei der Gesetzgebung des Bundes."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Welcher Begriff passt: „wählt den Bundespräsidenten / die Bundespräsidentin“?",
+  "options": [
+   "die Bundesregierung",
+   "die Ewigkeitsklausel (Art. 79 Abs. 3 GG)",
+   "die Bundesversammlung",
+   "eine Legislaturperiode des Bundestages"
+  ],
+  "correct": 2,
+  "explanation": "die Bundesversammlung: wählt den Bundespräsidenten / die Bundespräsidentin."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Was gilt für das Europäische Parlament?",
+  "options": [
+   "wurde 2002 eingeführt",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "gründete die Europäische Union",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)"
+  ],
+  "correct": 1,
+  "explanation": "das Europäische Parlament: wird alle 5 Jahre direkt von den EU-Bürgern gewählt."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 4400 € wird 6 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "2112 €",
+   "880 €",
+   "1056 €",
+   "1232 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 4400 € · 4/100 · 6 = 1056 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Ein Produkt kostet netto 1900 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1900 €",
+   "2043 €",
+   "1907 €",
+   "2033 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 1900 € · 1,07 = 2033 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 1900 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "76 €",
+   "57 €",
+   "38 €",
+   "19 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 1900 € · 3/100 = 57 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 100 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "19 €",
+   "119 €",
+   "100 €",
+   "129 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 100 € · 1,19 = 119 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Was gilt für der Bundespräsident / die Bundespräsidentin?",
+  "options": [
+   "dauert in der Regel 4 Jahre",
+   "ist das Staatsoberhaupt Deutschlands",
+   "erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen",
+   "ist die ausführende Gewalt"
+  ],
+  "correct": 1,
+  "explanation": "der Bundespräsident / die Bundespräsidentin: ist das Staatsoberhaupt Deutschlands."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet eine unmittelbare Wahl?",
+  "options": [
+   "ist das Recht, selbst zu wählen",
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden",
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat"
+  ],
+  "correct": 1,
+  "explanation": "eine unmittelbare Wahl: bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel“?",
+  "options": [
+   "die Römischen Verträge (1957)",
+   "der Rat der Europäischen Union (Ministerrat)",
+   "der Europäische Rat",
+   "die Europäische Kommission"
+  ],
+  "correct": 3,
+  "explanation": "die Europäische Kommission: schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 440 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "170 €",
+   "440 €",
+   "220 €",
+   "270 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 440 € · 50 % = 220 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 600 € wird 4 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "6 €",
+   "48 €",
+   "30 €",
+   "24 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 600 € · 1/100 · 4 = 24 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „verteilt die Sitze entsprechend dem Stimmenanteil der Parteien“?",
+  "options": [
+   "eine unmittelbare Wahl",
+   "das passive Wahlrecht",
+   "die Erststimme",
+   "die Verhältniswahl"
+  ],
+  "correct": 3,
+  "explanation": "die Verhältniswahl: verteilt die Sitze entsprechend dem Stimmenanteil der Parteien."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main“?",
+  "options": [
+   "die Europäische Zentralbank (EZB)",
+   "das Schengener Abkommen",
+   "der Euro als Bargeld",
+   "der Vertrag von Maastricht (1992)"
+  ],
+  "correct": 0,
+  "explanation": "die Europäische Zentralbank (EZB): sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Was gilt für eine Legislaturperiode des Bundestages?",
+  "options": [
+   "besteht aus Bundeskanzler/in und den Bundesministern",
+   "dauert in der Regel 4 Jahre",
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes",
+   "ist das vom Volk direkt gewählte Parlament Deutschlands"
+  ],
+  "correct": 1,
+  "explanation": "eine Legislaturperiode des Bundestages: dauert in der Regel 4 Jahre."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet eine geheime Wahl?",
+  "options": [
+   "ist das Recht, selbst zu wählen",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen",
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat"
+  ],
+  "correct": 3,
+  "explanation": "eine geheime Wahl: bedeutet, dass niemand erfährt, wie jemand gewählt hat."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Was bedeutet die Verhältniswahl?",
+  "options": [
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat",
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien"
+  ],
+  "correct": 3,
+  "explanation": "die Verhältniswahl: verteilt die Sitze entsprechend dem Stimmenanteil der Parteien."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Was gilt für der Bundeskanzler / die Bundeskanzlerin?",
+  "options": [
+   "ist das Staatsoberhaupt Deutschlands",
+   "bestimmt die Richtlinien der Politik und leitet die Bundesregierung",
+   "ist das vom Volk direkt gewählte Parlament Deutschlands",
+   "besteht aus Bundeskanzler/in und den Bundesministern"
+  ],
+  "correct": 1,
+  "explanation": "der Bundeskanzler / die Bundeskanzlerin: bestimmt die Richtlinien der Politik und leitet die Bundesregierung."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für der Euro als Bargeld?",
+  "options": [
+   "wurde 2002 eingeführt",
+   "besteht aus den Fachministern der Mitgliedstaaten",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)"
+  ],
+  "correct": 0,
+  "explanation": "der Euro als Bargeld: wurde 2002 eingeführt."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet das aktive Wahlrecht?",
+  "options": [
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "ist das Recht, selbst zu wählen",
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien"
+  ],
+  "correct": 2,
+  "explanation": "das aktive Wahlrecht: ist das Recht, selbst zu wählen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 2600 € wird 4 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "312 €",
+   "104 €",
+   "520 €",
+   "416 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 2600 € · 4/100 · 4 = 416 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 700 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "833 €",
+   "843 €",
+   "719 €",
+   "133 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 700 € · 1,19 = 833 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Welcher Begriff passt: „dauert in der Regel 4 Jahre“?",
+  "options": [
+   "das konstruktive Misstrauensvotum",
+   "das Bundesverfassungsgericht",
+   "Artikel 1 des Grundgesetzes",
+   "eine Legislaturperiode des Bundestages"
+  ],
+  "correct": 3,
+  "explanation": "eine Legislaturperiode des Bundestages: dauert in der Regel 4 Jahre."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für die Bundesversammlung?",
+  "options": [
+   "ist das Staatsoberhaupt Deutschlands",
+   "wählt den Bundespräsidenten / die Bundespräsidentin",
+   "wacht über die Einhaltung des Grundgesetzes und sitzt in Karlsruhe",
+   "ist die rechtsprechende Gewalt"
+  ],
+  "correct": 1,
+  "explanation": "die Bundesversammlung: wählt den Bundespräsidenten / die Bundespräsidentin."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Welcher Begriff des Wahlrechts passt: „wählt die Landesliste einer Partei und bestimmt die Sitzverteilung“?",
+  "options": [
+   "eine geheime Wahl",
+   "die Fünf-Prozent-Hürde",
+   "die Erststimme",
+   "die Zweitstimme"
+  ],
+  "correct": 3,
+  "explanation": "die Zweitstimme: wählt die Landesliste einer Partei und bestimmt die Sitzverteilung."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Was gilt für die Legislative?",
+  "options": [
+   "dauert in der Regel 4 Jahre",
+   "ist die gesetzgebende Gewalt",
+   "verteilt die Staatsgewalt auf Gesetzgebung, Verwaltung und Rechtsprechung",
+   "ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern"
+  ],
+  "correct": 1,
+  "explanation": "die Legislative: ist die gesetzgebende Gewalt."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Was bedeutet die Verhältniswahl?",
+  "options": [
+   "ist das Recht, selbst zu wählen",
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung"
+  ],
+  "correct": 1,
+  "explanation": "die Verhältniswahl: verteilt die Sitze entsprechend dem Stimmenanteil der Parteien."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 2000 € wird 3 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "100 €",
+   "600 €",
+   "300 €",
+   "400 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 2000 € · 5/100 · 3 = 300 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Welcher Begriff passt: „besteht aus Bundeskanzler/in und den Bundesministern“?",
+  "options": [
+   "die Bundesregierung",
+   "der Bundeskanzler / die Bundeskanzlerin",
+   "der Bundespräsident / die Bundespräsidentin",
+   "die Exekutive"
+  ],
+  "correct": 0,
+  "explanation": "die Bundesregierung: besteht aus Bundeskanzler/in und den Bundesministern."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Welcher Begriff des Wahlrechts passt: „bedeutet, dass niemand erfährt, wie jemand gewählt hat“?",
+  "options": [
+   "die Zweitstimme",
+   "eine geheime Wahl",
+   "eine freie Wahl",
+   "das passive Wahlrecht"
+  ],
+  "correct": 1,
+  "explanation": "eine geheime Wahl: bedeutet, dass niemand erfährt, wie jemand gewählt hat."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital“?",
+  "options": [
+   "das Europäische Parlament",
+   "der Brexit",
+   "der Vertrag von Maastricht (1992)",
+   "der EU-Binnenmarkt"
+  ],
+  "correct": 3,
+  "explanation": "der EU-Binnenmarkt: garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für der EU-Binnenmarkt?",
+  "options": [
+   "garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)"
+  ],
+  "correct": 0,
+  "explanation": "der EU-Binnenmarkt: garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 1100 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "1309 €",
+   "1119 €",
+   "209 €",
+   "1319 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 1100 € · 1,19 = 1309 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 300 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "270 €",
+   "280 €",
+   "30 €",
+   "300 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 300 € · 90 % = 270 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Welcher Begriff passt: „schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen“?",
+  "options": [
+   "der Bundestag",
+   "die Gewaltenteilung",
+   "die Ewigkeitsklausel (Art. 79 Abs. 3 GG)",
+   "Artikel 1 des Grundgesetzes"
+  ],
+  "correct": 2,
+  "explanation": "die Ewigkeitsklausel (Art. 79 Abs. 3 GG): schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Was gilt für die Ewigkeitsklausel (Art. 79 Abs. 3 GG)?",
+  "options": [
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes",
+   "ist das Staatsoberhaupt Deutschlands",
+   "besteht aus Bundeskanzler/in und den Bundesministern",
+   "schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen"
+  ],
+  "correct": 3,
+  "explanation": "die Ewigkeitsklausel (Art. 79 Abs. 3 GG): schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Was bedeutet eine freie Wahl?",
+  "options": [
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "ist das Recht, selbst zu wählen",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird"
+  ],
+  "correct": 3,
+  "explanation": "eine freie Wahl: bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 4800 € wird 2 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "96 €",
+   "384 €",
+   "192 €",
+   "288 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 4800 € · 2/100 · 2 = 192 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Welcher Begriff des Wahlrechts passt: „bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat“?",
+  "options": [
+   "die Verhältniswahl",
+   "eine gleiche Wahl",
+   "die Mehrheitswahl",
+   "die Fünf-Prozent-Hürde"
+  ],
+  "correct": 1,
+  "explanation": "eine gleiche Wahl: bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 100 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "100 €",
+   "129 €",
+   "19 €",
+   "119 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 100 € · 1,19 = 119 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 2000 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "80 €",
+   "40 €",
+   "60 €",
+   "20 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 2000 € · 2/100 = 40 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 2000 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "380 €",
+   "2380 €",
+   "2000 €",
+   "2019 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 2000 € · 1,19 = 2380 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Eine Ware kostet 500 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "500 €",
+   "300 €",
+   "250 €",
+   "200 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 500 € · 50 % = 250 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Was gilt für der Euro als Bargeld?",
+  "options": [
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "wurde 2002 eingeführt",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital"
+  ],
+  "correct": 1,
+  "explanation": "der Euro als Bargeld: wurde 2002 eingeführt."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Was gilt für der EU-Binnenmarkt?",
+  "options": [
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital",
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg"
+  ],
+  "correct": 1,
+  "explanation": "der EU-Binnenmarkt: garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Was gilt für die Bundesregierung?",
+  "options": [
+   "erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen",
+   "bestimmt die Richtlinien der Politik und leitet die Bundesregierung",
+   "besteht aus Bundeskanzler/in und den Bundesministern",
+   "verteilt die Staatsgewalt auf Gesetzgebung, Verwaltung und Rechtsprechung"
+  ],
+  "correct": 2,
+  "explanation": "die Bundesregierung: besteht aus Bundeskanzler/in und den Bundesministern."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 700 € wird 2 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "105 €",
+   "35 €",
+   "70 €",
+   "140 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 700 € · 5/100 · 2 = 70 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Eine Ware kostet 380 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "190 €",
+   "140 €",
+   "380 €",
+   "240 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 380 € · 50 % = 190 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Welcher Begriff passt: „ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern“?",
+  "options": [
+   "der Föderalismus",
+   "die Bundesversammlung",
+   "die Judikative",
+   "das Bundesverfassungsgericht"
+  ],
+  "correct": 0,
+  "explanation": "der Föderalismus: ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 300 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "357 €",
+   "57 €",
+   "367 €",
+   "300 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 300 € · 1,19 = 357 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „wurde 2002 eingeführt“?",
+  "options": [
+   "der Rat der Europäischen Union (Ministerrat)",
+   "das Europäische Parlament",
+   "der Euro als Bargeld",
+   "die Römischen Verträge (1957)"
+  ],
+  "correct": 2,
+  "explanation": "der Euro als Bargeld: wurde 2002 eingeführt."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 2500 € wird 5 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "1250 €",
+   "125 €",
+   "500 €",
+   "625 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 2500 € · 5/100 · 5 = 625 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 600 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "540 €",
+   "550 €",
+   "530 €",
+   "60 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 600 € · 90 % = 540 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet die Verhältniswahl?",
+  "options": [
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis",
+   "ist das Recht, selbst zu wählen",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung"
+  ],
+  "correct": 0,
+  "explanation": "die Verhältniswahl: verteilt die Sitze entsprechend dem Stimmenanteil der Parteien."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für Artikel 1 des Grundgesetzes?",
+  "options": [
+   "dauert in der Regel 4 Jahre",
+   "ist die ausführende Gewalt",
+   "ist die rechtsprechende Gewalt",
+   "garantiert die Unantastbarkeit der Menschenwürde"
+  ],
+  "correct": 3,
+  "explanation": "Artikel 1 des Grundgesetzes: garantiert die Unantastbarkeit der Menschenwürde."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 3500 € wird 4 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "560 €",
+   "1120 €",
+   "140 €",
+   "420 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 3500 € · 4/100 · 4 = 560 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für das Europäische Parlament?",
+  "options": [
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg",
+   "garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital"
+  ],
+  "correct": 0,
+  "explanation": "das Europäische Parlament: wird alle 5 Jahre direkt von den EU-Bürgern gewählt."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 1100 € wird 5 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "11 €",
+   "66 €",
+   "110 €",
+   "55 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 1100 € · 1/100 · 5 = 55 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 900 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "907 €",
+   "963 €",
+   "900 €",
+   "973 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 900 € · 1,07 = 963 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Was gilt für der Vertrag von Maastricht (1992)?",
+  "options": [
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg",
+   "gründete die Europäische Union",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)",
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel"
+  ],
+  "correct": 1,
+  "explanation": "der Vertrag von Maastricht (1992): gründete die Europäische Union."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Welcher Begriff des Wahlrechts passt: „gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat“?",
+  "options": [
+   "die Mehrheitswahl",
+   "die Zweitstimme",
+   "die Erststimme",
+   "das passive Wahlrecht"
+  ],
+  "correct": 0,
+  "explanation": "die Mehrheitswahl: gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 1200 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "1438 €",
+   "228 €",
+   "1219 €",
+   "1428 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 1200 € · 1,19 = 1428 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 4700 € wird 2 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "282 €",
+   "188 €",
+   "376 €",
+   "94 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 4700 € · 2/100 · 2 = 188 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Was gilt für der Bundestag?",
+  "options": [
+   "erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen",
+   "ist das vom Volk direkt gewählte Parlament Deutschlands",
+   "wacht über die Einhaltung des Grundgesetzes und sitzt in Karlsruhe",
+   "ist das Staatsoberhaupt Deutschlands"
+  ],
+  "correct": 1,
+  "explanation": "der Bundestag: ist das vom Volk direkt gewählte Parlament Deutschlands."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Was gilt für der Föderalismus?",
+  "options": [
+   "besteht aus Bundeskanzler/in und den Bundesministern",
+   "ist die rechtsprechende Gewalt",
+   "ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern",
+   "dauert in der Regel 4 Jahre"
+  ],
+  "correct": 2,
+  "explanation": "der Föderalismus: ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Welcher Begriff des Wahlrechts passt: „verteilt die Sitze entsprechend dem Stimmenanteil der Parteien“?",
+  "options": [
+   "eine gleiche Wahl",
+   "die Zweitstimme",
+   "die Verhältniswahl",
+   "die Mehrheitswahl"
+  ],
+  "correct": 2,
+  "explanation": "die Verhältniswahl: verteilt die Sitze entsprechend dem Stimmenanteil der Parteien."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 300 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "357 €",
+   "57 €",
+   "367 €",
+   "300 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 300 € · 1,19 = 357 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 7100 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "71 €",
+   "284 €",
+   "568 €",
+   "355 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 7100 € · 4/100 = 284 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet eine geheime Wahl?",
+  "options": [
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen"
+  ],
+  "correct": 1,
+  "explanation": "eine geheime Wahl: bedeutet, dass niemand erfährt, wie jemand gewählt hat."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1200 € wird 4 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "240 €",
+   "300 €",
+   "60 €",
+   "480 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 1200 € · 5/100 · 4 = 240 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel“?",
+  "options": [
+   "die Europäische Zentralbank (EZB)",
+   "der EU-Binnenmarkt",
+   "die Europäische Kommission",
+   "der Euro als Bargeld"
+  ],
+  "correct": 2,
+  "explanation": "die Europäische Kommission: schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 1400 € wird 4 Jahre lang mit 3 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "42 €",
+   "126 €",
+   "168 €",
+   "210 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 1400 € · 3/100 · 4 = 168 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Welcher Begriff passt: „ist die ausführende Gewalt“?",
+  "options": [
+   "eine Legislaturperiode des Bundestages",
+   "die Exekutive",
+   "die Bundesregierung",
+   "das Bundesverfassungsgericht"
+  ],
+  "correct": 1,
+  "explanation": "die Exekutive: ist die ausführende Gewalt."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Welcher Begriff des Wahlrechts passt: „verteilt die Sitze entsprechend dem Stimmenanteil der Parteien“?",
+  "options": [
+   "eine gleiche Wahl",
+   "die Mehrheitswahl",
+   "eine unmittelbare Wahl",
+   "die Verhältniswahl"
+  ],
+  "correct": 3,
+  "explanation": "die Verhältniswahl: verteilt die Sitze entsprechend dem Stimmenanteil der Parteien."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten“?",
+  "options": [
+   "das Schengener Abkommen",
+   "der Euro als Bargeld",
+   "der EU-Binnenmarkt",
+   "die Römischen Verträge (1957)"
+  ],
+  "correct": 0,
+  "explanation": "das Schengener Abkommen: ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 9400 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "188 €",
+   "94 €",
+   "564 €",
+   "282 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 9400 € · 3/100 = 282 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 200 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "38 €",
+   "238 €",
+   "248 €",
+   "219 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 200 € · 1,19 = 238 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Was gilt für die Römischen Verträge (1957)?",
+  "options": [
+   "ist das Gipfeltreffen der Staats- und Regierungschefs der EU",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "wurde 2002 eingeführt",
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel"
+  ],
+  "correct": 1,
+  "explanation": "die Römischen Verträge (1957): gründeten die Europäische Wirtschaftsgemeinschaft (EWG)."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 9100 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "91 €",
+   "364 €",
+   "182 €",
+   "273 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 9100 € · 2/100 = 182 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Was gilt für der Euro als Bargeld?",
+  "options": [
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "wurde 2002 eingeführt",
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel"
+  ],
+  "correct": 2,
+  "explanation": "der Euro als Bargeld: wurde 2002 eingeführt."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Was gilt für das Europäische Parlament?",
+  "options": [
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)",
+   "besteht aus den Fachministern der Mitgliedstaaten",
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt"
+  ],
+  "correct": 3,
+  "explanation": "das Europäische Parlament: wird alle 5 Jahre direkt von den EU-Bürgern gewählt."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 600 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "607 €",
+   "642 €",
+   "42 €",
+   "652 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 600 € · 1,07 = 642 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Was gilt für der Rat der Europäischen Union (Ministerrat)?",
+  "options": [
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)",
+   "ist das Gipfeltreffen der Staats- und Regierungschefs der EU",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "besteht aus den Fachministern der Mitgliedstaaten"
+  ],
+  "correct": 3,
+  "explanation": "der Rat der Europäischen Union (Ministerrat): besteht aus den Fachministern der Mitgliedstaaten."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 300 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "307 €",
+   "300 €",
+   "321 €",
+   "21 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 300 € · 1,07 = 321 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Ein Produkt kostet netto 1200 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "1438 €",
+   "1219 €",
+   "1200 €",
+   "1428 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 1200 € · 1,19 = 1428 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 680 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "485 €",
+   "535 €",
+   "510 €",
+   "680 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 680 € · 75 % = 510 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Worauf trifft das zu: „schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel“?",
+  "options": [
+   "die Europäische Zentralbank (EZB)",
+   "die Europäische Kommission",
+   "der Euro als Bargeld",
+   "der Brexit"
+  ],
+  "correct": 1,
+  "explanation": "die Europäische Kommission: schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Was gilt für der Vertrag von Maastricht (1992)?",
+  "options": [
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten",
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "gründete die Europäische Union",
+   "ist das Gipfeltreffen der Staats- und Regierungschefs der EU"
+  ],
+  "correct": 2,
+  "explanation": "der Vertrag von Maastricht (1992): gründete die Europäische Union."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 2000 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "2380 €",
+   "2019 €",
+   "2000 €",
+   "380 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 2000 € · 1,19 = 2380 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für das Schengener Abkommen?",
+  "options": [
+   "gründete die Europäische Union",
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg"
+  ],
+  "correct": 1,
+  "explanation": "das Schengener Abkommen: ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet die Mehrheitswahl?",
+  "options": [
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien"
+  ],
+  "correct": 0,
+  "explanation": "die Mehrheitswahl: gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Welcher Begriff passt: „dauert in der Regel 4 Jahre“?",
+  "options": [
+   "eine Legislaturperiode des Bundestages",
+   "die Exekutive",
+   "Artikel 1 des Grundgesetzes",
+   "der Bundeskanzler / die Bundeskanzlerin"
+  ],
+  "correct": 0,
+  "explanation": "eine Legislaturperiode des Bundestages: dauert in der Regel 4 Jahre."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen“?",
+  "options": [
+   "die Zweitstimme",
+   "die Mehrheitswahl",
+   "das passive Wahlrecht",
+   "eine allgemeine Wahl"
+  ],
+  "correct": 3,
+  "explanation": "eine allgemeine Wahl: bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 2300 € wird 4 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "184 €",
+   "368 €",
+   "138 €",
+   "46 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 2300 € · 2/100 · 4 = 184 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 5300 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "53 €",
+   "212 €",
+   "159 €",
+   "265 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 5300 € · 4/100 = 212 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 1000 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "1190 €",
+   "1200 €",
+   "190 €",
+   "1000 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 1000 € · 1,19 = 1190 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 3400 € wird 2 Jahre lang mit 3 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "408 €",
+   "204 €",
+   "102 €",
+   "306 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 3400 € · 3/100 · 2 = 204 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Eine Ware kostet 260 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "195 €",
+   "65 €",
+   "260 €",
+   "220 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 260 € · 75 % = 195 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Was bedeutet die Zweitstimme?",
+  "options": [
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen"
+  ],
+  "correct": 0,
+  "explanation": "die Zweitstimme: wählt die Landesliste einer Partei und bestimmt die Sitzverteilung."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Welcher Begriff des Wahlrechts passt: „bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird“?",
+  "options": [
+   "das passive Wahlrecht",
+   "eine gleiche Wahl",
+   "die Verhältniswahl",
+   "eine freie Wahl"
+  ],
+  "correct": 3,
+  "explanation": "eine freie Wahl: bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 340 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "306 €",
+   "340 €",
+   "296 €",
+   "316 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 340 € · 90 % = 306 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für der Europäische Gerichtshof (EuGH)?",
+  "options": [
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital",
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg"
+  ],
+  "correct": 3,
+  "explanation": "der Europäische Gerichtshof (EuGH): wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Was gilt für der Rat der Europäischen Union (Ministerrat)?",
+  "options": [
+   "ist das Gipfeltreffen der Staats- und Regierungschefs der EU",
+   "garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital",
+   "besteht aus den Fachministern der Mitgliedstaaten",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)"
+  ],
+  "correct": 2,
+  "explanation": "der Rat der Europäischen Union (Ministerrat): besteht aus den Fachministern der Mitgliedstaaten."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Welcher Begriff des Wahlrechts passt: „bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat“?",
+  "options": [
+   "eine unmittelbare Wahl",
+   "eine geheime Wahl",
+   "eine gleiche Wahl",
+   "die Erststimme"
+  ],
+  "correct": 2,
+  "explanation": "eine gleiche Wahl: bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Welcher Begriff passt: „erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen“?",
+  "options": [
+   "die Judikative",
+   "das konstruktive Misstrauensvotum",
+   "Artikel 1 des Grundgesetzes",
+   "der Föderalismus"
+  ],
+  "correct": 1,
+  "explanation": "das konstruktive Misstrauensvotum: erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 6100 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "488 €",
+   "244 €",
+   "305 €",
+   "183 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 6100 € · 4/100 = 244 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 2400 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "192 €",
+   "96 €",
+   "120 €",
+   "72 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 2400 € · 4/100 = 96 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 500 € wird 4 Jahre lang mit 3 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "60 €",
+   "120 €",
+   "75 €",
+   "45 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 500 € · 3/100 · 4 = 60 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 360 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "295 €",
+   "270 €",
+   "245 €",
+   "360 €"
+  ],
+  "correct": 1,
+  "explanation": "Neuer Preis = 360 € · 75 % = 270 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 2100 € wird 6 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "147 €",
+   "252 €",
+   "126 €",
+   "21 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 2100 € · 1/100 · 6 = 126 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für die Bundesregierung?",
+  "options": [
+   "ist die rechtsprechende Gewalt",
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes",
+   "besteht aus Bundeskanzler/in und den Bundesministern",
+   "ist die gesetzgebende Gewalt"
+  ],
+  "correct": 2,
+  "explanation": "die Bundesregierung: besteht aus Bundeskanzler/in und den Bundesministern."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „ist das Recht, sich zur Wahl aufstellen zu lassen“?",
+  "options": [
+   "die Mehrheitswahl",
+   "eine gleiche Wahl",
+   "das passive Wahlrecht",
+   "die Fünf-Prozent-Hürde"
+  ],
+  "correct": 2,
+  "explanation": "das passive Wahlrecht: ist das Recht, sich zur Wahl aufstellen zu lassen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 9100 € wird ein Jahr lang mit 5 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "91 €",
+   "455 €",
+   "910 €",
+   "546 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 9100 € · 5/100 = 455 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 2100 € wird 6 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "21 €",
+   "147 €",
+   "126 €",
+   "105 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 2100 € · 1/100 · 6 = 126 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Welcher Begriff des Wahlrechts passt: „bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden“?",
+  "options": [
+   "eine unmittelbare Wahl",
+   "die Fünf-Prozent-Hürde",
+   "das passive Wahlrecht",
+   "eine geheime Wahl"
+  ],
+  "correct": 0,
+  "explanation": "eine unmittelbare Wahl: bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Was gilt für die Bundesversammlung?",
+  "options": [
+   "wählt den Bundespräsidenten / die Bundespräsidentin",
+   "erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen",
+   "verteilt die Staatsgewalt auf Gesetzgebung, Verwaltung und Rechtsprechung",
+   "ist die ausführende Gewalt"
+  ],
+  "correct": 0,
+  "explanation": "die Bundesversammlung: wählt den Bundespräsidenten / die Bundespräsidentin."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 2200 € wird 2 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "44 €",
+   "88 €",
+   "66 €",
+   "22 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 2200 € · 1/100 · 2 = 44 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Was bedeutet das passive Wahlrecht?",
+  "options": [
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen"
+  ],
+  "correct": 3,
+  "explanation": "das passive Wahlrecht: ist das Recht, sich zur Wahl aufstellen zu lassen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1300 € wird 6 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "260 €",
+   "312 €",
+   "364 €",
+   "624 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 1300 € · 4/100 · 6 = 312 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 580 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "240 €",
+   "340 €",
+   "290 €",
+   "580 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 580 € · 50 % = 290 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 3100 € wird 6 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "310 €",
+   "744 €",
+   "434 €",
+   "372 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 3100 € · 2/100 · 6 = 372 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Welcher Begriff des Wahlrechts passt: „bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird“?",
+  "options": [
+   "eine freie Wahl",
+   "die Erststimme",
+   "die Verhältniswahl",
+   "das passive Wahlrecht"
+  ],
+  "correct": 0,
+  "explanation": "eine freie Wahl: bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Welcher Begriff des Wahlrechts passt: „bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden“?",
+  "options": [
+   "die Verhältniswahl",
+   "eine allgemeine Wahl",
+   "eine unmittelbare Wahl",
+   "die Erststimme"
+  ],
+  "correct": 2,
+  "explanation": "eine unmittelbare Wahl: bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 4200 € wird ein Jahr lang mit 5 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "42 €",
+   "210 €",
+   "168 €",
+   "252 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 4200 € · 5/100 = 210 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Worauf trifft das zu: „besteht aus den Fachministern der Mitgliedstaaten“?",
+  "options": [
+   "der Euro als Bargeld",
+   "die Europäische Kommission",
+   "der Rat der Europäischen Union (Ministerrat)",
+   "der EU-Binnenmarkt"
+  ],
+  "correct": 2,
+  "explanation": "der Rat der Europäischen Union (Ministerrat): besteht aus den Fachministern der Mitgliedstaaten."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Eine Ware kostet 500 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "100 €",
+   "380 €",
+   "400 €",
+   "500 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 500 € · 80 % = 400 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 5100 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "204 €",
+   "153 €",
+   "51 €",
+   "102 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 5100 € · 2/100 = 102 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 1100 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "1309 €",
+   "1119 €",
+   "209 €",
+   "1100 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 1100 € · 1,19 = 1309 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet die Fünf-Prozent-Hürde?",
+  "options": [
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat"
+  ],
+  "correct": 1,
+  "explanation": "die Fünf-Prozent-Hürde: verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 9700 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "291 €",
+   "194 €",
+   "582 €",
+   "388 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 9700 € · 3/100 = 291 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet eine freie Wahl?",
+  "options": [
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen"
+  ],
+  "correct": 0,
+  "explanation": "eine freie Wahl: bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet eine allgemeine Wahl?",
+  "options": [
+   "ist das Recht, sich zur Wahl aufstellen zu lassen",
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen"
+  ],
+  "correct": 3,
+  "explanation": "eine allgemeine Wahl: bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Was bedeutet eine freie Wahl?",
+  "options": [
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien",
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden",
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen"
+  ],
+  "correct": 2,
+  "explanation": "eine freie Wahl: bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Worauf trifft das zu: „gründeten die Europäische Wirtschaftsgemeinschaft (EWG)“?",
+  "options": [
+   "der Brexit",
+   "der EU-Binnenmarkt",
+   "die Römischen Verträge (1957)",
+   "das Europäische Parlament"
+  ],
+  "correct": 2,
+  "explanation": "die Römischen Verträge (1957): gründeten die Europäische Wirtschaftsgemeinschaft (EWG)."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen“?",
+  "options": [
+   "die Fünf-Prozent-Hürde",
+   "die Verhältniswahl",
+   "das passive Wahlrecht",
+   "die Mehrheitswahl"
+  ],
+  "correct": 0,
+  "explanation": "die Fünf-Prozent-Hürde: verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 1900 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "133 €",
+   "1900 €",
+   "2033 €",
+   "2043 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 1900 € · 1,07 = 2033 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Worauf trifft das zu: „gründete die Europäische Union“?",
+  "options": [
+   "das Schengener Abkommen",
+   "der Vertrag von Maastricht (1992)",
+   "die Europäische Zentralbank (EZB)",
+   "die Europäische Kommission"
+  ],
+  "correct": 1,
+  "explanation": "der Vertrag von Maastricht (1992): gründete die Europäische Union."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 1600 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "1914 €",
+   "1619 €",
+   "304 €",
+   "1904 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 1600 € · 1,19 = 1904 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Welcher Begriff passt: „wacht über die Einhaltung des Grundgesetzes und sitzt in Karlsruhe“?",
+  "options": [
+   "der Bundesrat",
+   "der Bundespräsident / die Bundespräsidentin",
+   "der Föderalismus",
+   "das Bundesverfassungsgericht"
+  ],
+  "correct": 3,
+  "explanation": "das Bundesverfassungsgericht: wacht über die Einhaltung des Grundgesetzes und sitzt in Karlsruhe."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „war der Austritt des Vereinigten Königreichs aus der EU (2020)“?",
+  "options": [
+   "der Europäische Gerichtshof (EuGH)",
+   "die Europäische Kommission",
+   "der Brexit",
+   "der EU-Binnenmarkt"
+  ],
+  "correct": 2,
+  "explanation": "der Brexit: war der Austritt des Vereinigten Königreichs aus der EU (2020)."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „wird alle 5 Jahre direkt von den EU-Bürgern gewählt“?",
+  "options": [
+   "das Europäische Parlament",
+   "die Europäische Zentralbank (EZB)",
+   "der Brexit",
+   "der Euro als Bargeld"
+  ],
+  "correct": 0,
+  "explanation": "das Europäische Parlament: wird alle 5 Jahre direkt von den EU-Bürgern gewählt."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird“?",
+  "options": [
+   "die Fünf-Prozent-Hürde",
+   "eine freie Wahl",
+   "eine unmittelbare Wahl",
+   "die Mehrheitswahl"
+  ],
+  "correct": 1,
+  "explanation": "eine freie Wahl: bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Was gilt für der Föderalismus?",
+  "options": [
+   "dauert in der Regel 4 Jahre",
+   "ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern",
+   "ist das Staatsoberhaupt Deutschlands",
+   "verteilt die Staatsgewalt auf Gesetzgebung, Verwaltung und Rechtsprechung"
+  ],
+  "correct": 1,
+  "explanation": "der Föderalismus: ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 1100 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1187 €",
+   "1107 €",
+   "1177 €",
+   "1100 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 1100 € · 1,07 = 1177 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 1100 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "44 €",
+   "66 €",
+   "33 €",
+   "11 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 1100 € · 3/100 = 33 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Welcher Begriff des Wahlrechts passt: „bedeutet, dass niemand erfährt, wie jemand gewählt hat“?",
+  "options": [
+   "das passive Wahlrecht",
+   "eine gleiche Wahl",
+   "die Verhältniswahl",
+   "eine geheime Wahl"
+  ],
+  "correct": 3,
+  "explanation": "eine geheime Wahl: bedeutet, dass niemand erfährt, wie jemand gewählt hat."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Worauf trifft das zu: „wurde 2002 eingeführt“?",
+  "options": [
+   "der Euro als Bargeld",
+   "das Schengener Abkommen",
+   "der Rat der Europäischen Union (Ministerrat)",
+   "der Europäische Rat"
+  ],
+  "correct": 0,
+  "explanation": "der Euro als Bargeld: wurde 2002 eingeführt."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 3700 € wird 3 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "296 €",
+   "74 €",
+   "222 €",
+   "148 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 3700 € · 2/100 · 3 = 222 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 720 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "658 €",
+   "720 €",
+   "72 €",
+   "648 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 720 € · 90 % = 648 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet die Erststimme?",
+  "options": [
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen",
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis"
+  ],
+  "correct": 3,
+  "explanation": "die Erststimme: wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Welcher Begriff passt: „ist die gesetzgebende Gewalt“?",
+  "options": [
+   "die Legislative",
+   "die Ewigkeitsklausel (Art. 79 Abs. 3 GG)",
+   "das Bundesverfassungsgericht",
+   "die Judikative"
+  ],
+  "correct": 0,
+  "explanation": "die Legislative: ist die gesetzgebende Gewalt."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Was bedeutet eine unmittelbare Wahl?",
+  "options": [
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden"
+  ],
+  "correct": 3,
+  "explanation": "eine unmittelbare Wahl: bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Was bedeutet das aktive Wahlrecht?",
+  "options": [
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung",
+   "ist das Recht, selbst zu wählen",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen"
+  ],
+  "correct": 1,
+  "explanation": "das aktive Wahlrecht: ist das Recht, selbst zu wählen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 4200 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "126 €",
+   "168 €",
+   "252 €",
+   "84 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 4200 € · 3/100 = 126 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 5800 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "58 €",
+   "232 €",
+   "348 €",
+   "174 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 5800 € · 3/100 = 174 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 9000 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "360 €",
+   "270 €",
+   "90 €",
+   "180 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 9000 € · 3/100 = 270 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 3700 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "74 €",
+   "148 €",
+   "111 €",
+   "37 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 3700 € · 3/100 = 111 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 3500 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "70 €",
+   "35 €",
+   "140 €",
+   "105 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 3500 € · 3/100 = 105 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für der Brexit?",
+  "options": [
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)",
+   "garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital",
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten"
+  ],
+  "correct": 1,
+  "explanation": "der Brexit: war der Austritt des Vereinigten Königreichs aus der EU (2020)."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Worauf trifft das zu: „gründete die Europäische Union“?",
+  "options": [
+   "der Euro als Bargeld",
+   "der Brexit",
+   "der Vertrag von Maastricht (1992)",
+   "der EU-Binnenmarkt"
+  ],
+  "correct": 2,
+  "explanation": "der Vertrag von Maastricht (1992): gründete die Europäische Union."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet eine gleiche Wahl?",
+  "options": [
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung",
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat"
+  ],
+  "correct": 1,
+  "explanation": "eine gleiche Wahl: bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 6200 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "124 €",
+   "186 €",
+   "62 €",
+   "372 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 6200 € · 3/100 = 186 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 2000 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "140 €",
+   "2007 €",
+   "2140 €",
+   "2000 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 2000 € · 1,07 = 2140 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Welcher Begriff passt: „erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen“?",
+  "options": [
+   "der Bundeskanzler / die Bundeskanzlerin",
+   "das konstruktive Misstrauensvotum",
+   "die Ewigkeitsklausel (Art. 79 Abs. 3 GG)",
+   "die Exekutive"
+  ],
+  "correct": 1,
+  "explanation": "das konstruktive Misstrauensvotum: erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 1100 € wird 3 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "220 €",
+   "165 €",
+   "55 €",
+   "110 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 1100 € · 5/100 · 3 = 165 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Ein Produkt kostet netto 700 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "707 €",
+   "759 €",
+   "749 €",
+   "49 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 700 € · 1,07 = 749 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Welcher Begriff des Wahlrechts passt: „wählt die Landesliste einer Partei und bestimmt die Sitzverteilung“?",
+  "options": [
+   "eine geheime Wahl",
+   "das passive Wahlrecht",
+   "die Erststimme",
+   "die Zweitstimme"
+  ],
+  "correct": 3,
+  "explanation": "die Zweitstimme: wählt die Landesliste einer Partei und bestimmt die Sitzverteilung."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Was gilt für der Bundeskanzler / die Bundeskanzlerin?",
+  "options": [
+   "ist das vom Volk direkt gewählte Parlament Deutschlands",
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes",
+   "schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen",
+   "bestimmt die Richtlinien der Politik und leitet die Bundesregierung"
+  ],
+  "correct": 3,
+  "explanation": "der Bundeskanzler / die Bundeskanzlerin: bestimmt die Richtlinien der Politik und leitet die Bundesregierung."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 120 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "98 €",
+   "118 €",
+   "120 €",
+   "108 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 120 € · 90 % = 108 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Welcher Begriff des Wahlrechts passt: „bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen“?",
+  "options": [
+   "das aktive Wahlrecht",
+   "eine unmittelbare Wahl",
+   "die Mehrheitswahl",
+   "eine allgemeine Wahl"
+  ],
+  "correct": 3,
+  "explanation": "eine allgemeine Wahl: bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Welcher Begriff passt: „wählt den Bundespräsidenten / die Bundespräsidentin“?",
+  "options": [
+   "eine Legislaturperiode des Bundestages",
+   "die Bundesversammlung",
+   "der Bundeskanzler / die Bundeskanzlerin",
+   "der Bundesrat"
+  ],
+  "correct": 1,
+  "explanation": "die Bundesversammlung: wählt den Bundespräsidenten / die Bundespräsidentin."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 900 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "1081 €",
+   "1071 €",
+   "900 €",
+   "919 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 900 € · 1,19 = 1071 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 4600 € wird 2 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "92 €",
+   "46 €",
+   "138 €",
+   "184 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 4600 € · 1/100 · 2 = 92 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Eine Ware kostet 680 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "390 €",
+   "680 €",
+   "340 €",
+   "290 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 680 € · 50 % = 340 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 1700 € wird 5 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "85 €",
+   "850 €",
+   "425 €",
+   "510 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 1700 € · 5/100 · 5 = 425 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für die Exekutive?",
+  "options": [
+   "ist die ausführende Gewalt",
+   "erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen",
+   "bestimmt die Richtlinien der Politik und leitet die Bundesregierung",
+   "wählt den Bundespräsidenten / die Bundespräsidentin"
+  ],
+  "correct": 0,
+  "explanation": "die Exekutive: ist die ausführende Gewalt."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für der Bundespräsident / die Bundespräsidentin?",
+  "options": [
+   "verteilt die Staatsgewalt auf Gesetzgebung, Verwaltung und Rechtsprechung",
+   "ist das Staatsoberhaupt Deutschlands",
+   "ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern",
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes"
+  ],
+  "correct": 1,
+  "explanation": "der Bundespräsident / die Bundespräsidentin: ist das Staatsoberhaupt Deutschlands."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 5000 € wird 6 Jahre lang mit 3 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "150 €",
+   "900 €",
+   "1800 €",
+   "1050 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 5000 € · 3/100 · 6 = 900 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „gründeten die Europäische Wirtschaftsgemeinschaft (EWG)“?",
+  "options": [
+   "das Europäische Parlament",
+   "die Europäische Kommission",
+   "der Europäische Gerichtshof (EuGH)",
+   "die Römischen Verträge (1957)"
+  ],
+  "correct": 3,
+  "explanation": "die Römischen Verträge (1957): gründeten die Europäische Wirtschaftsgemeinschaft (EWG)."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Eine Ware kostet 120 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "115 €",
+   "30 €",
+   "65 €",
+   "90 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 120 € · 75 % = 90 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Welcher Begriff passt: „ist die rechtsprechende Gewalt“?",
+  "options": [
+   "die Judikative",
+   "das Bundesverfassungsgericht",
+   "die Bundesregierung",
+   "die Legislative"
+  ],
+  "correct": 0,
+  "explanation": "die Judikative: ist die rechtsprechende Gewalt."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Was gilt für der Bundesrat?",
+  "options": [
+   "ist die rechtsprechende Gewalt",
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes",
+   "ist das Staatsoberhaupt Deutschlands",
+   "besteht aus Bundeskanzler/in und den Bundesministern"
+  ],
+  "correct": 1,
+  "explanation": "der Bundesrat: vertritt die Bundesländer bei der Gesetzgebung des Bundes."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Ein Produkt kostet netto 1200 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1294 €",
+   "1284 €",
+   "84 €",
+   "1200 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 1200 € · 1,07 = 1284 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 220 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "208 €",
+   "188 €",
+   "22 €",
+   "198 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 220 € · 90 % = 198 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 200 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "214 €",
+   "224 €",
+   "207 €",
+   "200 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 200 € · 1,07 = 214 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Was gilt für die Europäische Kommission?",
+  "options": [
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "ist das Gipfeltreffen der Staats- und Regierungschefs der EU",
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)"
+  ],
+  "correct": 2,
+  "explanation": "die Europäische Kommission: schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 1600 € wird 6 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "448 €",
+   "320 €",
+   "64 €",
+   "384 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 1600 € · 4/100 · 6 = 384 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Ein Produkt kostet netto 300 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "367 €",
+   "357 €",
+   "57 €",
+   "319 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 300 € · 1,19 = 357 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 4600 € wird 4 Jahre lang mit 3 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "690 €",
+   "552 €",
+   "414 €",
+   "138 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 4600 € · 3/100 · 4 = 552 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für der Bundesrat?",
+  "options": [
+   "bestimmt die Richtlinien der Politik und leitet die Bundesregierung",
+   "dauert in der Regel 4 Jahre",
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes",
+   "ist die ausführende Gewalt"
+  ],
+  "correct": 2,
+  "explanation": "der Bundesrat: vertritt die Bundesländer bei der Gesetzgebung des Bundes."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Was gilt für die Europäische Kommission?",
+  "options": [
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel",
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)"
+  ],
+  "correct": 0,
+  "explanation": "die Europäische Kommission: schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Welcher Begriff passt: „besteht aus Bundeskanzler/in und den Bundesministern“?",
+  "options": [
+   "der Bundeskanzler / die Bundeskanzlerin",
+   "die Bundesregierung",
+   "der Bundestag",
+   "die Gewaltenteilung"
+  ],
+  "correct": 1,
+  "explanation": "die Bundesregierung: besteht aus Bundeskanzler/in und den Bundesministern."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 1100 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1177 €",
+   "1107 €",
+   "1187 €",
+   "1100 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 1100 € · 1,07 = 1177 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 8500 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "680 €",
+   "255 €",
+   "85 €",
+   "340 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 8500 € · 4/100 = 340 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 700 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "28 €",
+   "56 €",
+   "21 €",
+   "35 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 700 € · 4/100 = 28 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „wird alle 5 Jahre direkt von den EU-Bürgern gewählt“?",
+  "options": [
+   "der Rat der Europäischen Union (Ministerrat)",
+   "die Europäische Zentralbank (EZB)",
+   "der Euro als Bargeld",
+   "das Europäische Parlament"
+  ],
+  "correct": 3,
+  "explanation": "das Europäische Parlament: wird alle 5 Jahre direkt von den EU-Bürgern gewählt."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten“?",
+  "options": [
+   "der Europäische Rat",
+   "der EU-Binnenmarkt",
+   "das Schengener Abkommen",
+   "die Europäische Zentralbank (EZB)"
+  ],
+  "correct": 2,
+  "explanation": "das Schengener Abkommen: ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Was gilt für die Ewigkeitsklausel (Art. 79 Abs. 3 GG)?",
+  "options": [
+   "wählt den Bundespräsidenten / die Bundespräsidentin",
+   "ist das Staatsoberhaupt Deutschlands",
+   "schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen",
+   "ist die rechtsprechende Gewalt"
+  ],
+  "correct": 2,
+  "explanation": "die Ewigkeitsklausel (Art. 79 Abs. 3 GG): schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 420 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "356 €",
+   "420 €",
+   "336 €",
+   "316 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 420 € · 80 % = 336 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet die Erststimme?",
+  "options": [
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien",
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen"
+  ],
+  "correct": 2,
+  "explanation": "die Erststimme: wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Worauf trifft das zu: „sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main“?",
+  "options": [
+   "der Rat der Europäischen Union (Ministerrat)",
+   "der Vertrag von Maastricht (1992)",
+   "die Europäische Zentralbank (EZB)",
+   "der Brexit"
+  ],
+  "correct": 2,
+  "explanation": "die Europäische Zentralbank (EZB): sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Was bedeutet eine unmittelbare Wahl?",
+  "options": [
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden"
+  ],
+  "correct": 3,
+  "explanation": "eine unmittelbare Wahl: bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „gründete die Europäische Union“?",
+  "options": [
+   "der Europäische Rat",
+   "der Vertrag von Maastricht (1992)",
+   "das Europäische Parlament",
+   "der Europäische Gerichtshof (EuGH)"
+  ],
+  "correct": 1,
+  "explanation": "der Vertrag von Maastricht (1992): gründete die Europäische Union."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Was bedeutet die Mehrheitswahl?",
+  "options": [
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen"
+  ],
+  "correct": 0,
+  "explanation": "die Mehrheitswahl: gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 5400 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "108 €",
+   "54 €",
+   "216 €",
+   "162 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 5400 € · 2/100 = 108 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für der Bundeskanzler / die Bundeskanzlerin?",
+  "options": [
+   "besteht aus Bundeskanzler/in und den Bundesministern",
+   "wacht über die Einhaltung des Grundgesetzes und sitzt in Karlsruhe",
+   "bestimmt die Richtlinien der Politik und leitet die Bundesregierung",
+   "ist die gesetzgebende Gewalt"
+  ],
+  "correct": 2,
+  "explanation": "der Bundeskanzler / die Bundeskanzlerin: bestimmt die Richtlinien der Politik und leitet die Bundesregierung."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 3800 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "304 €",
+   "190 €",
+   "152 €",
+   "38 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 3800 € · 4/100 = 152 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 600 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "600 €",
+   "114 €",
+   "724 €",
+   "714 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 600 € · 1,19 = 714 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet die Verhältniswahl?",
+  "options": [
+   "bedeutet, dass kein Zwang oder Druck auf die Wahlentscheidung ausgeübt wird",
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien"
+  ],
+  "correct": 3,
+  "explanation": "die Verhältniswahl: verteilt die Sitze entsprechend dem Stimmenanteil der Parteien."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 100 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "7 €",
+   "107 €",
+   "100 €",
+   "117 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 100 € · 1,07 = 107 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Was gilt für der Brexit?",
+  "options": [
+   "ist das Gipfeltreffen der Staats- und Regierungschefs der EU",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten"
+  ],
+  "correct": 1,
+  "explanation": "der Brexit: war der Austritt des Vereinigten Königreichs aus der EU (2020)."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „besteht aus den Fachministern der Mitgliedstaaten“?",
+  "options": [
+   "der Rat der Europäischen Union (Ministerrat)",
+   "der Brexit",
+   "der Europäische Rat",
+   "das Europäische Parlament"
+  ],
+  "correct": 0,
+  "explanation": "der Rat der Europäischen Union (Ministerrat): besteht aus den Fachministern der Mitgliedstaaten."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 6800 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "340 €",
+   "68 €",
+   "272 €",
+   "544 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 6800 € · 4/100 = 272 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 1800 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1807 €",
+   "1800 €",
+   "1926 €",
+   "126 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 1800 € · 1,07 = 1926 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für die Judikative?",
+  "options": [
+   "ist die rechtsprechende Gewalt",
+   "wählt den Bundespräsidenten / die Bundespräsidentin",
+   "ist das vom Volk direkt gewählte Parlament Deutschlands",
+   "erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen"
+  ],
+  "correct": 0,
+  "explanation": "die Judikative: ist die rechtsprechende Gewalt."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 2000 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "2000 €",
+   "2007 €",
+   "2150 €",
+   "2140 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 2000 € · 1,07 = 2140 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1300 € wird 2 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "104 €",
+   "52 €",
+   "78 €",
+   "26 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 1300 € · 2/100 · 2 = 52 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 8000 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "80 €",
+   "240 €",
+   "320 €",
+   "640 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 8000 € · 4/100 = 320 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Worauf trifft das zu: „war der Austritt des Vereinigten Königreichs aus der EU (2020)“?",
+  "options": [
+   "der Brexit",
+   "der Euro als Bargeld",
+   "der EU-Binnenmarkt",
+   "die Europäische Zentralbank (EZB)"
+  ],
+  "correct": 0,
+  "explanation": "der Brexit: war der Austritt des Vereinigten Königreichs aus der EU (2020)."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Welcher Begriff des Wahlrechts passt: „ist das Recht, sich zur Wahl aufstellen zu lassen“?",
+  "options": [
+   "eine gleiche Wahl",
+   "das passive Wahlrecht",
+   "eine freie Wahl",
+   "eine geheime Wahl"
+  ],
+  "correct": 1,
+  "explanation": "das passive Wahlrecht: ist das Recht, sich zur Wahl aufstellen zu lassen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 2000 € wird 3 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "600 €",
+   "400 €",
+   "300 €",
+   "100 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 2000 € · 5/100 · 3 = 300 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 1500 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1605 €",
+   "105 €",
+   "1507 €",
+   "1500 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 1500 € · 1,07 = 1605 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Eine Ware kostet 700 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "350 €",
+   "300 €",
+   "700 €",
+   "400 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 700 € · 50 % = 350 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 6600 € wird ein Jahr lang mit 5 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "330 €",
+   "66 €",
+   "264 €",
+   "396 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 6600 € · 5/100 = 330 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Was gilt für der Föderalismus?",
+  "options": [
+   "ist das vom Volk direkt gewählte Parlament Deutschlands",
+   "ist die ausführende Gewalt",
+   "ist die rechtsprechende Gewalt",
+   "ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern"
+  ],
+  "correct": 3,
+  "explanation": "der Föderalismus: ist die Aufteilung der Staatsgewalt zwischen Bund und Ländern."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „wurde 2002 eingeführt“?",
+  "options": [
+   "die Römischen Verträge (1957)",
+   "der Europäische Rat",
+   "der Euro als Bargeld",
+   "der EU-Binnenmarkt"
+  ],
+  "correct": 2,
+  "explanation": "der Euro als Bargeld: wurde 2002 eingeführt."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Politik: Welcher Begriff des Wahlrechts passt: „bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen“?",
+  "options": [
+   "eine allgemeine Wahl",
+   "die Zweitstimme",
+   "eine unmittelbare Wahl",
+   "das passive Wahlrecht"
+  ],
+  "correct": 0,
+  "explanation": "eine allgemeine Wahl: bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 5000 € wird 3 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "400 €",
+   "600 €",
+   "1200 €",
+   "800 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 5000 € · 4/100 · 3 = 600 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „ist das Recht, selbst zu wählen“?",
+  "options": [
+   "eine freie Wahl",
+   "eine gleiche Wahl",
+   "das aktive Wahlrecht",
+   "die Verhältniswahl"
+  ],
+  "correct": 2,
+  "explanation": "das aktive Wahlrecht: ist das Recht, selbst zu wählen."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Was gilt für Artikel 1 des Grundgesetzes?",
+  "options": [
+   "verteilt die Staatsgewalt auf Gesetzgebung, Verwaltung und Rechtsprechung",
+   "garantiert die Unantastbarkeit der Menschenwürde",
+   "ist die gesetzgebende Gewalt",
+   "ist die ausführende Gewalt"
+  ],
+  "correct": 1,
+  "explanation": "Artikel 1 des Grundgesetzes: garantiert die Unantastbarkeit der Menschenwürde."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 2300 € wird ein Jahr lang mit 5 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "23 €",
+   "115 €",
+   "138 €",
+   "230 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 2300 € · 5/100 = 115 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1700 € wird 3 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "102 €",
+   "17 €",
+   "51 €",
+   "34 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 1700 € · 1/100 · 3 = 51 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 3600 € wird 3 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "720 €",
+   "1080 €",
+   "360 €",
+   "540 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 3600 € · 5/100 · 3 = 540 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „besteht aus den Fachministern der Mitgliedstaaten“?",
+  "options": [
+   "der Brexit",
+   "der Vertrag von Maastricht (1992)",
+   "der Rat der Europäischen Union (Ministerrat)",
+   "die Europäische Zentralbank (EZB)"
+  ],
+  "correct": 2,
+  "explanation": "der Rat der Europäischen Union (Ministerrat): besteht aus den Fachministern der Mitgliedstaaten."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für die Legislative?",
+  "options": [
+   "dauert in der Regel 4 Jahre",
+   "bestimmt die Richtlinien der Politik und leitet die Bundesregierung",
+   "ist die gesetzgebende Gewalt",
+   "ist die ausführende Gewalt"
+  ],
+  "correct": 2,
+  "explanation": "die Legislative: ist die gesetzgebende Gewalt."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 5700 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "171 €",
+   "114 €",
+   "57 €",
+   "228 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 5700 € · 2/100 = 114 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1400 € wird 5 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "70 €",
+   "350 €",
+   "280 €",
+   "420 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 1400 € · 5/100 · 5 = 350 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 480 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "48 €",
+   "442 €",
+   "480 €",
+   "432 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 480 € · 90 % = 432 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für der Europäische Rat?",
+  "options": [
+   "wurde 2002 eingeführt",
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel",
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg",
+   "ist das Gipfeltreffen der Staats- und Regierungschefs der EU"
+  ],
+  "correct": 3,
+  "explanation": "der Europäische Rat: ist das Gipfeltreffen der Staats- und Regierungschefs der EU."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „wählt die Landesliste einer Partei und bestimmt die Sitzverteilung“?",
+  "options": [
+   "eine freie Wahl",
+   "die Zweitstimme",
+   "eine geheime Wahl",
+   "eine gleiche Wahl"
+  ],
+  "correct": 1,
+  "explanation": "die Zweitstimme: wählt die Landesliste einer Partei und bestimmt die Sitzverteilung."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Welcher Begriff passt: „ist die ausführende Gewalt“?",
+  "options": [
+   "der Bundesrat",
+   "die Bundesversammlung",
+   "das Bundesverfassungsgericht",
+   "die Exekutive"
+  ],
+  "correct": 3,
+  "explanation": "die Exekutive: ist die ausführende Gewalt."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Welcher Begriff passt: „schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen“?",
+  "options": [
+   "Artikel 1 des Grundgesetzes",
+   "die Ewigkeitsklausel (Art. 79 Abs. 3 GG)",
+   "der Bundesrat",
+   "die Legislative"
+  ],
+  "correct": 1,
+  "explanation": "die Ewigkeitsklausel (Art. 79 Abs. 3 GG): schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1700 € wird 3 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "255 €",
+   "170 €",
+   "85 €",
+   "510 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 1700 € · 5/100 · 3 = 255 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Eine Ware kostet 640 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "160 €",
+   "505 €",
+   "455 €",
+   "480 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 640 € · 75 % = 480 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 700 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "21 €",
+   "7 €",
+   "28 €",
+   "14 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 700 € · 2/100 = 14 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 1700 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "1719 €",
+   "2023 €",
+   "1700 €",
+   "2033 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 1700 € · 1,19 = 2023 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 1100 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1177 €",
+   "1187 €",
+   "1100 €",
+   "1107 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 1100 € · 1,07 = 1177 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis“?",
+  "options": [
+   "die Erststimme",
+   "das aktive Wahlrecht",
+   "die Fünf-Prozent-Hürde",
+   "die Mehrheitswahl"
+  ],
+  "correct": 0,
+  "explanation": "die Erststimme: wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Politik: Welcher Begriff passt: „ist das Staatsoberhaupt Deutschlands“?",
+  "options": [
+   "der Bundespräsident / die Bundespräsidentin",
+   "die Bundesregierung",
+   "die Legislative",
+   "der Bundestag"
+  ],
+  "correct": 0,
+  "explanation": "der Bundespräsident / die Bundespräsidentin: ist das Staatsoberhaupt Deutschlands."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Was bedeutet die Zweitstimme?",
+  "options": [
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung",
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen",
+   "wählt den Direktkandidaten / die Direktkandidatin im Wahlkreis"
+  ],
+  "correct": 0,
+  "explanation": "die Zweitstimme: wählt die Landesliste einer Partei und bestimmt die Sitzverteilung."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Welcher Begriff des Wahlrechts passt: „bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat“?",
+  "options": [
+   "eine geheime Wahl",
+   "die Verhältniswahl",
+   "eine gleiche Wahl",
+   "die Zweitstimme"
+  ],
+  "correct": 2,
+  "explanation": "eine gleiche Wahl: bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für die Europäische Zentralbank (EZB)?",
+  "options": [
+   "gründete die Europäische Union",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten"
+  ],
+  "correct": 2,
+  "explanation": "die Europäische Zentralbank (EZB): sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 1400 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "266 €",
+   "1419 €",
+   "1400 €",
+   "1666 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 1400 € · 1,19 = 1666 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 500 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "35 €",
+   "500 €",
+   "545 €",
+   "535 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 500 € · 1,07 = 535 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Worauf trifft das zu: „wird alle 5 Jahre direkt von den EU-Bürgern gewählt“?",
+  "options": [
+   "die Europäische Zentralbank (EZB)",
+   "der Europäische Rat",
+   "das Europäische Parlament",
+   "die Römischen Verträge (1957)"
+  ],
+  "correct": 2,
+  "explanation": "das Europäische Parlament: wird alle 5 Jahre direkt von den EU-Bürgern gewählt."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 4700 € wird ein Jahr lang mit 5 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "235 €",
+   "282 €",
+   "47 €",
+   "188 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 4700 € · 5/100 = 235 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Was gilt für die Europäische Zentralbank (EZB)?",
+  "options": [
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main",
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)"
+  ],
+  "correct": 0,
+  "explanation": "die Europäische Zentralbank (EZB): sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 1300 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1307 €",
+   "91 €",
+   "1300 €",
+   "1391 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 1300 € · 1,07 = 1391 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Eine Ware kostet 620 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "620 €",
+   "496 €",
+   "476 €",
+   "124 €"
+  ],
+  "correct": 1,
+  "explanation": "Neuer Preis = 620 € · 80 % = 496 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Worauf trifft das zu: „garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital“?",
+  "options": [
+   "die Europäische Zentralbank (EZB)",
+   "der Euro als Bargeld",
+   "der EU-Binnenmarkt",
+   "der Europäische Rat"
+  ],
+  "correct": 2,
+  "explanation": "der EU-Binnenmarkt: garantiert freien Verkehr von Waren, Personen, Dienstleistungen und Kapital."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 200 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "214 €",
+   "14 €",
+   "200 €",
+   "224 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 200 € · 1,07 = 214 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wirtschaft: Was gilt für die Europäische Zentralbank (EZB)?",
+  "options": [
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)",
+   "wurde 2002 eingeführt",
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg",
+   "sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main"
+  ],
+  "correct": 3,
+  "explanation": "die Europäische Zentralbank (EZB): sichert die Preisstabilität im Euroraum und sitzt in Frankfurt am Main."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 500 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "35 €",
+   "545 €",
+   "507 €",
+   "535 €"
+  ],
+  "correct": 3,
+  "explanation": "Brutto = 500 € · 1,07 = 535 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Eine Ware kostet 360 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "360 €",
+   "90 €",
+   "270 €",
+   "245 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 360 € · 75 % = 270 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 3600 € wird 2 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "144 €",
+   "576 €",
+   "288 €",
+   "432 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 3600 € · 4/100 · 2 = 288 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 500 € wird 4 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "20 €",
+   "25 €",
+   "5 €",
+   "40 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 500 € · 1/100 · 4 = 20 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 3900 € wird 2 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "156 €",
+   "39 €",
+   "117 €",
+   "78 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 3900 € · 1/100 · 2 = 78 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 3300 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "33 €",
+   "264 €",
+   "99 €",
+   "132 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 = 3300 € · 4/100 = 132 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 800 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "819 €",
+   "952 €",
+   "800 €",
+   "152 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 800 € · 1,19 = 952 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 9900 € wird ein Jahr lang mit 4 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "792 €",
+   "297 €",
+   "396 €",
+   "495 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 = 9900 € · 4/100 = 396 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1100 € wird 2 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "22 €",
+   "44 €",
+   "11 €",
+   "33 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 1100 € · 1/100 · 2 = 22 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 200 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "200 €",
+   "150 €",
+   "50 €",
+   "100 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 200 € · 50 % = 100 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Worauf trifft das zu: „wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg“?",
+  "options": [
+   "die Römischen Verträge (1957)",
+   "der Euro als Bargeld",
+   "der Europäische Gerichtshof (EuGH)",
+   "der EU-Binnenmarkt"
+  ],
+  "correct": 2,
+  "explanation": "der Europäische Gerichtshof (EuGH): wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Was gilt für das konstruktive Misstrauensvotum?",
+  "options": [
+   "bestimmt die Richtlinien der Politik und leitet die Bundesregierung",
+   "besteht aus Bundeskanzler/in und den Bundesministern",
+   "erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen",
+   "ist die rechtsprechende Gewalt"
+  ],
+  "correct": 2,
+  "explanation": "das konstruktive Misstrauensvotum: erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wirtschaft: Ein Produkt kostet netto 1800 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "2142 €",
+   "342 €",
+   "1800 €",
+   "1819 €"
+  ],
+  "correct": 0,
+  "explanation": "Brutto = 1800 € · 1,19 = 2142 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Was gilt für der Bundestag?",
+  "options": [
+   "schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen",
+   "ist das vom Volk direkt gewählte Parlament Deutschlands",
+   "ist die rechtsprechende Gewalt",
+   "garantiert die Unantastbarkeit der Menschenwürde"
+  ],
+  "correct": 1,
+  "explanation": "der Bundestag: ist das vom Volk direkt gewählte Parlament Deutschlands."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Eine Ware kostet 760 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "152 €",
+   "588 €",
+   "760 €",
+   "608 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 760 € · 80 % = 608 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wähle die richtige Antwort. Was bedeutet die Mehrheitswahl?",
+  "options": [
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden",
+   "gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat",
+   "bedeutet, dass jede Stimme grundsätzlich den gleichen Zählwert hat",
+   "verhindert den Einzug von Parteien mit weniger als 5 % der Zweitstimmen"
+  ],
+  "correct": 1,
+  "explanation": "die Mehrheitswahl: gibt dem Kandidaten mit den meisten Stimmen im Wahlkreis das Mandat."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Was bedeutet die Zweitstimme?",
+  "options": [
+   "verteilt die Sitze entsprechend dem Stimmenanteil der Parteien",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat",
+   "wählt die Landesliste einer Partei und bestimmt die Sitzverteilung",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen"
+  ],
+  "correct": 2,
+  "explanation": "die Zweitstimme: wählt die Landesliste einer Partei und bestimmt die Sitzverteilung."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Worauf trifft das zu: „war der Austritt des Vereinigten Königreichs aus der EU (2020)“?",
+  "options": [
+   "die Römischen Verträge (1957)",
+   "der Brexit",
+   "das Europäische Parlament",
+   "der Vertrag von Maastricht (1992)"
+  ],
+  "correct": 1,
+  "explanation": "der Brexit: war der Austritt des Vereinigten Königreichs aus der EU (2020)."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 2700 € wird 5 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "270 €",
+   "54 €",
+   "216 €",
+   "540 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 2700 € · 2/100 · 5 = 270 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für die Römischen Verträge (1957)?",
+  "options": [
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg",
+   "ist das Gipfeltreffen der Staats- und Regierungschefs der EU",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten"
+  ],
+  "correct": 2,
+  "explanation": "die Römischen Verträge (1957): gründeten die Europäische Wirtschaftsgemeinschaft (EWG)."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 580 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "460 €",
+   "435 €",
+   "580 €",
+   "410 €"
+  ],
+  "correct": 1,
+  "explanation": "Neuer Preis = 580 € · 75 % = 435 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 4700 € wird 4 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "752 €",
+   "376 €",
+   "282 €",
+   "94 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 4700 € · 2/100 · 4 = 376 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Welcher Begriff passt: „ist die ausführende Gewalt“?",
+  "options": [
+   "die Legislative",
+   "die Exekutive",
+   "der Bundespräsident / die Bundespräsidentin",
+   "die Ewigkeitsklausel (Art. 79 Abs. 3 GG)"
+  ],
+  "correct": 1,
+  "explanation": "die Exekutive: ist die ausführende Gewalt."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 1800 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "1936 €",
+   "1926 €",
+   "1800 €",
+   "1807 €"
+  ],
+  "correct": 1,
+  "explanation": "Brutto = 1800 € · 1,07 = 1926 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 100 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "80 €",
+   "100 €",
+   "10 €",
+   "90 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 100 € · 90 % = 90 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wähle die richtige Antwort. Ein Kapital von 3700 € wird 4 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "74 €",
+   "296 €",
+   "222 €",
+   "592 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 3700 € · 2/100 · 4 = 296 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 9000 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "180 €",
+   "360 €",
+   "90 €",
+   "270 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 9000 € · 2/100 = 180 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 1100 € wird 4 Jahre lang mit 2 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "176 €",
+   "66 €",
+   "88 €",
+   "110 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 1100 € · 2/100 · 4 = 88 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 60 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "28 €",
+   "12 €",
+   "48 €",
+   "60 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 60 € · 80 % = 48 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Wirtschaft: Welcher Begriff des Wahlrechts passt: „ist das Recht, sich zur Wahl aufstellen zu lassen“?",
+  "options": [
+   "eine freie Wahl",
+   "das passive Wahlrecht",
+   "die Erststimme",
+   "die Mehrheitswahl"
+  ],
+  "correct": 1,
+  "explanation": "das passive Wahlrecht: ist das Recht, sich zur Wahl aufstellen zu lassen."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Welcher Begriff passt: „garantiert die Unantastbarkeit der Menschenwürde“?",
+  "options": [
+   "Artikel 1 des Grundgesetzes",
+   "der Bundesrat",
+   "die Exekutive",
+   "der Föderalismus"
+  ],
+  "correct": 0,
+  "explanation": "Artikel 1 des Grundgesetzes: garantiert die Unantastbarkeit der Menschenwürde."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 4300 € wird 5 Jahre lang mit 3 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "516 €",
+   "129 €",
+   "645 €",
+   "1290 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 4300 € · 3/100 · 5 = 645 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Ein Produkt kostet netto 200 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "248 €",
+   "38 €",
+   "238 €",
+   "219 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 200 € · 1,19 = 238 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 3300 € wird ein Jahr lang mit 3 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "99 €",
+   "198 €",
+   "33 €",
+   "132 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 3300 € · 3/100 = 99 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 200 €. Beim Sale gibt es 50 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "100 €",
+   "50 €",
+   "150 €",
+   "200 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 200 € · 50 % = 100 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Worauf trifft das zu: „wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg“?",
+  "options": [
+   "die Römischen Verträge (1957)",
+   "der Europäische Rat",
+   "die Europäische Kommission",
+   "der Europäische Gerichtshof (EuGH)"
+  ],
+  "correct": 3,
+  "explanation": "der Europäische Gerichtshof (EuGH): wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Worauf trifft das zu: „gründeten die Europäische Wirtschaftsgemeinschaft (EWG)“?",
+  "options": [
+   "der Vertrag von Maastricht (1992)",
+   "das Europäische Parlament",
+   "die Römischen Verträge (1957)",
+   "der EU-Binnenmarkt"
+  ],
+  "correct": 2,
+  "explanation": "die Römischen Verträge (1957): gründeten die Europäische Wirtschaftsgemeinschaft (EWG)."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 4000 € wird 5 Jahre lang mit 5 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "1200 €",
+   "200 €",
+   "1000 €",
+   "800 €"
+  ],
+  "correct": 2,
+  "explanation": "Z = K · p/100 · t = 4000 € · 5/100 · 5 = 1000 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Politik: Worauf trifft das zu: „wurde 2002 eingeführt“?",
+  "options": [
+   "der Brexit",
+   "der Vertrag von Maastricht (1992)",
+   "der Euro als Bargeld",
+   "die Römischen Verträge (1957)"
+  ],
+  "correct": 2,
+  "explanation": "der Euro als Bargeld: wurde 2002 eingeführt."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Wirtschaft: Ein Kapital von 6100 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "244 €",
+   "122 €",
+   "183 €",
+   "61 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 = 6100 € · 2/100 = 122 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Eine Ware kostet 680 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "524 €",
+   "680 €",
+   "544 €",
+   "564 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 680 € · 80 % = 544 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Was bedeutet eine allgemeine Wahl?",
+  "options": [
+   "bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen",
+   "bedeutet, dass die Abgeordneten direkt ohne Wahlleute gewählt werden",
+   "ist das Recht, sich zur Wahl aufstellen zu lassen",
+   "bedeutet, dass niemand erfährt, wie jemand gewählt hat"
+  ],
+  "correct": 0,
+  "explanation": "eine allgemeine Wahl: bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „gründeten die Europäische Wirtschaftsgemeinschaft (EWG)“?",
+  "options": [
+   "der EU-Binnenmarkt",
+   "das Europäische Parlament",
+   "die Römischen Verträge (1957)",
+   "die Europäische Zentralbank (EZB)"
+  ],
+  "correct": 2,
+  "explanation": "die Römischen Verträge (1957): gründeten die Europäische Wirtschaftsgemeinschaft (EWG)."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Wähle die richtige Antwort. Eine Ware kostet 680 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "510 €",
+   "535 €",
+   "680 €",
+   "485 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 680 € · 75 % = 510 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Ein Produkt kostet netto 100 €. Wie hoch ist der Bruttopreis bei 19 % Mehrwertsteuer?",
+  "options": [
+   "100 €",
+   "129 €",
+   "119 €",
+   "19 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 100 € · 1,19 = 119 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Was gilt für die Europäische Kommission?",
+  "options": [
+   "ermöglicht Reisen ohne Grenzkontrollen zwischen den Mitgliedstaaten",
+   "war der Austritt des Vereinigten Königreichs aus der EU (2020)",
+   "besteht aus den Fachministern der Mitgliedstaaten",
+   "schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel"
+  ],
+  "correct": 3,
+  "explanation": "die Europäische Kommission: schlägt EU-Gesetze vor und hat ihren Sitz in Brüssel."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Ein Produkt kostet netto 900 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "973 €",
+   "900 €",
+   "963 €",
+   "907 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 900 € · 1,07 = 963 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für das konstruktive Misstrauensvotum?",
+  "options": [
+   "erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen",
+   "ist die rechtsprechende Gewalt",
+   "ist das Staatsoberhaupt Deutschlands",
+   "ist das vom Volk direkt gewählte Parlament Deutschlands"
+  ],
+  "correct": 0,
+  "explanation": "das konstruktive Misstrauensvotum: erlaubt dem Bundestag, den Kanzler nur durch Wahl eines Nachfolgers zu stürzen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 4500 € wird ein Jahr lang mit 2 % verzinst. Wie hoch sind die Zinsen?",
+  "options": [
+   "90 €",
+   "45 €",
+   "135 €",
+   "180 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 = 4500 € · 2/100 = 90 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Ein Kapital von 3700 € wird 4 Jahre lang mit 1 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "148 €",
+   "296 €",
+   "37 €",
+   "111 €"
+  ],
+  "correct": 0,
+  "explanation": "Z = K · p/100 · t = 3700 € · 1/100 · 4 = 148 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wähle die richtige Antwort. Welcher Begriff passt: „ist das Staatsoberhaupt Deutschlands“?",
+  "options": [
+   "der Bundespräsident / die Bundespräsidentin",
+   "das Bundesverfassungsgericht",
+   "Artikel 1 des Grundgesetzes",
+   "die Ewigkeitsklausel (Art. 79 Abs. 3 GG)"
+  ],
+  "correct": 0,
+  "explanation": "der Bundespräsident / die Bundespräsidentin: ist das Staatsoberhaupt Deutschlands."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 600 €. Beim Sale gibt es 25 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "475 €",
+   "600 €",
+   "150 €",
+   "450 €"
+  ],
+  "correct": 3,
+  "explanation": "Neuer Preis = 600 € · 75 % = 450 €."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Ein Produkt kostet netto 200 €. Wie hoch ist der Bruttopreis bei 7 % Mehrwertsteuer?",
+  "options": [
+   "207 €",
+   "14 €",
+   "214 €",
+   "224 €"
+  ],
+  "correct": 2,
+  "explanation": "Brutto = 200 € · 1,07 = 214 €."
+ },
+ {
+  "topic": "Wahlsystem",
+  "question": "Welcher Begriff des Wahlrechts passt: „bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen“?",
+  "options": [
+   "eine allgemeine Wahl",
+   "das aktive Wahlrecht",
+   "eine unmittelbare Wahl",
+   "eine gleiche Wahl"
+  ],
+  "correct": 0,
+  "explanation": "eine allgemeine Wahl: bedeutet, dass grundsätzlich alle Staatsbürger ab dem Wahlalter wählen dürfen."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 1000 € wird 5 Jahre lang mit 3 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "120 €",
+   "150 €",
+   "180 €",
+   "30 €"
+  ],
+  "correct": 1,
+  "explanation": "Z = K · p/100 · t = 1000 € · 3/100 · 5 = 150 €."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Was gilt für das Europäische Parlament?",
+  "options": [
+   "wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg",
+   "gründeten die Europäische Wirtschaftsgemeinschaft (EWG)",
+   "besteht aus den Fachministern der Mitgliedstaaten",
+   "wird alle 5 Jahre direkt von den EU-Bürgern gewählt"
+  ],
+  "correct": 3,
+  "explanation": "das Europäische Parlament: wird alle 5 Jahre direkt von den EU-Bürgern gewählt."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 360 €. Beim Sale gibt es 10 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "324 €",
+   "360 €",
+   "334 €",
+   "36 €"
+  ],
+  "correct": 0,
+  "explanation": "Neuer Preis = 360 € · 90 % = 324 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Was gilt für die Gewaltenteilung?",
+  "options": [
+   "vertritt die Bundesländer bei der Gesetzgebung des Bundes",
+   "schützt Menschenwürde, Demokratie und Föderalismus vor Verfassungsänderungen",
+   "dauert in der Regel 4 Jahre",
+   "verteilt die Staatsgewalt auf Gesetzgebung, Verwaltung und Rechtsprechung"
+  ],
+  "correct": 3,
+  "explanation": "die Gewaltenteilung: verteilt die Staatsgewalt auf Gesetzgebung, Verwaltung und Rechtsprechung."
+ },
+ {
+  "topic": "Europäische Union",
+  "question": "Wähle die richtige Antwort. Worauf trifft das zu: „wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg“?",
+  "options": [
+   "der Rat der Europäischen Union (Ministerrat)",
+   "das Europäische Parlament",
+   "die Europäische Kommission",
+   "der Europäische Gerichtshof (EuGH)"
+  ],
+  "correct": 3,
+  "explanation": "der Europäische Gerichtshof (EuGH): wacht über die Einhaltung des EU-Rechts und sitzt in Luxemburg."
+ },
+ {
+  "topic": "Prozentrechnung",
+  "question": "Politik: Eine Ware kostet 300 €. Beim Sale gibt es 20 % Rabatt. Was kostet sie danach?",
+  "options": [
+   "300 €",
+   "60 €",
+   "240 €",
+   "220 €"
+  ],
+  "correct": 2,
+  "explanation": "Neuer Preis = 300 € · 80 % = 240 €."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 800 € wird 2 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "96 €",
+   "32 €",
+   "128 €",
+   "64 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 800 € · 4/100 · 2 = 64 €."
+ },
+ {
+  "topic": "Grundgesetz & Staatsorgane",
+  "question": "Wirtschaft: Was gilt für der Bundestag?",
+  "options": [
+   "dauert in der Regel 4 Jahre",
+   "besteht aus Bundeskanzler/in und den Bundesministern",
+   "ist die rechtsprechende Gewalt",
+   "ist das vom Volk direkt gewählte Parlament Deutschlands"
+  ],
+  "correct": 3,
+  "explanation": "der Bundestag: ist das vom Volk direkt gewählte Parlament Deutschlands."
+ },
+ {
+  "topic": "Zinsrechnung",
+  "question": "Politik: Ein Kapital von 900 € wird 6 Jahre lang mit 4 % pro Jahr verzinst (einfache Zinsen). Wie hoch sind die Zinsen insgesamt?",
+  "options": [
+   "432 €",
+   "252 €",
+   "36 €",
+   "216 €"
+  ],
+  "correct": 3,
+  "explanation": "Z = K · p/100 · t = 900 € · 4/100 · 6 = 216 €."
+ }
+]

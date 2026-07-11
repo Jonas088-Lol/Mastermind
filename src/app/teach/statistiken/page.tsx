@@ -1,9 +1,12 @@
 import {
+  Activity,
   AlertTriangle,
   BarChart3,
   CheckCircle2,
   GraduationCap,
   Trophy,
+  TrendingDown,
+  TrendingUp,
   Users,
 } from "lucide-react";
 import Link from "next/link";
@@ -57,8 +60,24 @@ export default async function StatistikenPage() {
   // Deduplicate by classId for top-level stats but keep by classId+subjectId for grade data
   const uniqueClassIds = [...new Set(tscEntries.map((t) => t.classId))];
 
+  const allStudentIds = [
+    ...new Set(
+      tscEntries.flatMap((t) => t.class.students.map((s) => s.id))
+    ),
+  ];
+
+  const now = Date.now();
+  const sevenDaysAgo = new Date(now - 7 * 24 * 60 * 60 * 1000);
+  const fourteenDaysAgo = new Date(now - 14 * 24 * 60 * 60 * 1000);
+
   // Fetch all relevant data in parallel
-  const [allGrades, allAssignments, allAttendance] = await Promise.all([
+  const [
+    allGrades,
+    allAssignments,
+    allAttendance,
+    answersThisWeek,
+    answersLastWeek,
+  ] = await Promise.all([
     prisma.grade.findMany({
       where: {
         teacherId: session.userId,
@@ -90,7 +109,87 @@ export default async function StatistikenPage() {
         student: { select: { classId: true } },
       },
     }),
+    prisma.exerciseAnswer.findMany({
+      where: {
+        userId: { in: allStudentIds },
+        createdAt: { gte: sevenDaysAgo },
+      },
+      select: { correct: true },
+    }),
+    prisma.exerciseAnswer.count({
+      where: {
+        userId: { in: allStudentIds },
+        createdAt: { gte: fourteenDaysAgo, lt: sevenDaysAgo },
+      },
+    }),
   ]);
+
+  // ── Abgabequoten: letzte 10 eigene Aufgaben ────────────────────────────────
+  const recentAssignments = [...allAssignments]
+    .sort((a, b) => b.dueAt.getTime() - a.dueAt.getTime())
+    .slice(0, 10)
+    .map((a) => {
+      const classSize = a.class.students.length;
+      const submitted = a.submissions.filter((s) =>
+        ["submitted", "graded"].includes(s.status)
+      ).length;
+      return {
+        id: a.id,
+        title: a.title,
+        submitted,
+        classSize,
+        rate: classSize > 0 ? Math.round((submitted / classSize) * 100) : null,
+      };
+    });
+  const avgSubmissionRate = avg(
+    recentAssignments
+      .filter((a) => a.rate !== null)
+      .map((a) => a.rate as number)
+  );
+
+  // ── Klassenvergleich: Noten-Ø je Klasse+Fach (nur eigene Fächer) ──────────
+  const comparison = tscEntries
+    .map((tsc) => {
+      const vals = allGrades
+        .filter(
+          (g) =>
+            g.subjectId === tsc.subjectId &&
+            g.student.classId === tsc.classId
+        )
+        .map((g) => g.value);
+      return {
+        key: `${tsc.classId}-${tsc.subjectId}`,
+        label: `${tsc.class.name} · ${tsc.subject.name}`,
+        color: tsc.subject.color,
+        avg: avg(vals),
+        count: vals.length,
+      };
+    })
+    .filter((c) => c.avg !== null) as {
+    key: string;
+    label: string;
+    color: string;
+    avg: number;
+    count: number;
+  }[];
+  const bestKey =
+    comparison.length > 1
+      ? comparison.reduce((a, b) => (a.avg <= b.avg ? a : b)).key
+      : null;
+  const worstKey =
+    comparison.length > 1
+      ? comparison.reduce((a, b) => (a.avg >= b.avg ? a : b)).key
+      : null;
+
+  // ── Aktivitäts-Indikator: Übungs-Antworten letzte 7 Tage ──────────────────
+  const answersCount = answersThisWeek.length;
+  const correctCount = answersThisWeek.filter((a) => a.correct).length;
+  const correctRate =
+    answersCount > 0 ? Math.round((correctCount / answersCount) * 100) : null;
+  const trendPercent =
+    answersLastWeek > 0
+      ? Math.round(((answersCount - answersLastWeek) / answersLastWeek) * 100)
+      : null;
 
   // Build per-class stats
   type ClassStats = {
@@ -250,6 +349,181 @@ export default async function StatistikenPage() {
             <p className="mt-3 font-mono text-3xl font-bold tracking-tight">{s.value}</p>
           </div>
         ))}
+      </section>
+
+      {/* Vertiefte Auswertungen */}
+      <section className="grid gap-5 lg:grid-cols-2">
+        {/* Abgabequoten der letzten 10 Aufgaben */}
+        <Card>
+          <CardHeader>
+            <div className="flex w-full items-center justify-between gap-3">
+              <CardTitle>Abgabequoten (letzte 10 Aufgaben)</CardTitle>
+              {avgSubmissionRate !== null && (
+                <Badge
+                  variant={
+                    avgSubmissionRate >= 80
+                      ? "success"
+                      : avgSubmissionRate >= 50
+                      ? "warning"
+                      : "danger"
+                  }
+                >
+                  Ø {Math.round(avgSubmissionRate)}%
+                </Badge>
+              )}
+            </div>
+          </CardHeader>
+          <CardBody className="space-y-3">
+            {recentAssignments.length === 0 ? (
+              <p className="text-sm text-muted-fg">
+                Noch keine Aufgaben erstellt.
+              </p>
+            ) : (
+              recentAssignments.map((a) => (
+                <div key={a.id} className="space-y-1">
+                  <div className="flex items-center justify-between gap-3 text-xs">
+                    <span className="min-w-0 flex-1 truncate font-medium">
+                      {a.title}
+                    </span>
+                    <span className="shrink-0 font-mono font-semibold text-muted-fg">
+                      {a.submitted}/{a.classSize}
+                      {a.rate !== null ? ` · ${a.rate}%` : ""}
+                    </span>
+                  </div>
+                  <Progress
+                    value={a.rate ?? 0}
+                    tone={
+                      a.rate === null
+                        ? "brand"
+                        : a.rate >= 80
+                        ? "success"
+                        : a.rate >= 50
+                        ? "brand"
+                        : "warning"
+                    }
+                  />
+                </div>
+              ))
+            )}
+          </CardBody>
+        </Card>
+
+        <div className="flex flex-col gap-5">
+          {/* Klassenvergleich */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Klassenvergleich (Noten-Ø, eigene Fächer)</CardTitle>
+            </CardHeader>
+            <CardBody className="space-y-3">
+              {comparison.length === 0 ? (
+                <p className="text-sm text-muted-fg">Noch keine Noten.</p>
+              ) : (
+                comparison.map((c) => (
+                  <div key={c.key} className="space-y-1">
+                    <div className="flex items-center justify-between gap-3 text-xs">
+                      <span className="flex min-w-0 items-center gap-1.5 font-medium">
+                        <span
+                          className="inline-block size-2 shrink-0 rounded-full"
+                          style={{ backgroundColor: c.color }}
+                        />
+                        <span className="truncate">{c.label}</span>
+                        {c.key === bestKey && (
+                          <Badge variant="success">Beste</Badge>
+                        )}
+                        {c.key === worstKey && (
+                          <Badge variant="danger">Schwächste</Badge>
+                        )}
+                      </span>
+                      <span
+                        className={cn(
+                          "shrink-0 font-mono font-semibold",
+                          gradeColor(c.avg)
+                        )}
+                      >
+                        Ø {c.avg.toFixed(1).replace(".", ",")}
+                      </span>
+                    </div>
+                    <Progress
+                      value={Math.round(((6 - c.avg) / 5) * 100)}
+                      tone={
+                        c.avg <= 2 ? "success" : c.avg <= 4 ? "warning" : "danger"
+                      }
+                    />
+                    <p className="text-[10px] text-muted-fg">
+                      {c.count} Noten
+                    </p>
+                  </div>
+                ))
+              )}
+            </CardBody>
+          </Card>
+
+          {/* Aktivitäts-Indikator */}
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                <Activity
+                  className="mr-1.5 inline size-4 text-brand"
+                  strokeWidth={1.75}
+                />
+                Übungs-Aktivität (7 Tage)
+              </CardTitle>
+            </CardHeader>
+            <CardBody>
+              <div className="flex flex-wrap items-end gap-6">
+                <div>
+                  <p className="font-mono text-3xl font-bold tracking-tight">
+                    {answersCount}
+                  </p>
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">
+                    Antworten
+                  </p>
+                </div>
+                <div>
+                  <p className="font-mono text-3xl font-bold tracking-tight">
+                    {correctRate !== null ? `${correctRate}%` : "—"}
+                  </p>
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">
+                    Richtig
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  {trendPercent === null ? (
+                    <span className="text-sm text-muted-fg">
+                      Kein Vorwochen-Vergleich
+                    </span>
+                  ) : trendPercent >= 0 ? (
+                    <>
+                      <TrendingUp
+                        className="size-4 text-success"
+                        strokeWidth={1.75}
+                      />
+                      <span className="font-mono text-sm font-semibold text-success">
+                        +{trendPercent}%
+                      </span>
+                      <span className="text-xs text-muted-fg">
+                        zur Vorwoche ({answersLastWeek})
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <TrendingDown
+                        className="size-4 text-danger"
+                        strokeWidth={1.75}
+                      />
+                      <span className="font-mono text-sm font-semibold text-danger">
+                        {trendPercent}%
+                      </span>
+                      <span className="text-xs text-muted-fg">
+                        zur Vorwoche ({answersLastWeek})
+                      </span>
+                    </>
+                  )}
+                </div>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
       </section>
 
       {classStats.length === 0 ? (

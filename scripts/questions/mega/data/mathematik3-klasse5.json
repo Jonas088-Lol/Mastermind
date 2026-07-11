@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 3 kg Äpfel kosten 24 €. Wie viel kosten 2 kg? (proportional)",
+  "options": [
+   "16 €",
+   "8 €",
+   "17 €",
+   "24 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 24/3 = 8 €; 2 kg kosten 2 · 8 = 16 €."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "6 kg Äpfel kosten 48 €. Wie viel kosten 2 kg? (proportional)",
+  "options": [
+   "16 €",
+   "17 €",
+   "8 €",
+   "24 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 48/6 = 8 €; 2 kg kosten 2 · 8 = 16 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 7 cm, 6 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "336 cm³",
+   "21 cm³",
+   "343 cm³",
+   "50 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 7 · 6 · 8 = 336 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Würfel hat die Kantenlänge 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "100 cm³",
+   "1010 cm³",
+   "30 cm³",
+   "1000 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a³ = 10³ = 1000 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 15 cm lang und 4 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "40 cm",
+   "19 cm",
+   "60 cm",
+   "38 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (15 + 4) = 38 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 3 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "3 Stunden",
+   "2 Stunden",
+   "4 Stunden",
+   "12 Stunden"
+  ],
+  "correct": 0,
+  "explanation": "Produkt konstant: 3 · 6 = 18 = 6 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "120 cm²",
+   "22 cm²",
+   "54 cm²",
+   "60 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 12 · 10 / 2 = 60 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "90 cm²",
+   "23 cm²",
+   "45 cm²",
+   "50 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 18 · 5 / 2 = 45 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 5 → 10. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "20 → 80",
+   "20 → 14",
+   "20 → 40",
+   "20 → 41"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 2; 20 · 2 = 40."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "36 cm³",
+   "216 cm³",
+   "18 cm³",
+   "222 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 6³ = 216 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 5 cm, 9 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "275 cm³",
+   "51 cm³",
+   "20 cm³",
+   "270 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 5 · 9 · 6 = 270 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 3 → 21. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "9 → 64",
+   "9 → 24",
+   "9 → 63",
+   "9 → 126"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 7; 9 · 7 = 63."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 6 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "6 Stunden",
+   "3 Stunden",
+   "2 Stunden",
+   "12 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 6 · 6 = 36 = 12 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 2 → 10. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "8 → 40",
+   "8 → 80",
+   "8 → 41",
+   "8 → 14"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 5; 8 · 5 = 40."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 2 cm, 2 cm und 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "20 cm³",
+   "9 cm³",
+   "48 cm³",
+   "22 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 2 · 2 · 5 = 20 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 5 kg Äpfel kosten 15 €. Wie viel kosten 9 kg? (proportional)",
+  "options": [
+   "30 €",
+   "27 €",
+   "24 €",
+   "28 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 15/5 = 3 €; 9 kg kosten 9 · 3 = 27 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 9 cm, 3 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "35 cm³",
+   "216 cm³",
+   "20 cm³",
+   "225 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 9 · 3 · 8 = 216 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "512 cm³",
+   "24 cm³",
+   "384 cm³",
+   "64 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 8³ = 512 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 6 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "12 cm²",
+   "30 cm²",
+   "36 cm²",
+   "42 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 6² = 36 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "16 cm²",
+   "24 cm²",
+   "18 cm²",
+   "48 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 12 · 4 / 2 = 24 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 5 cm lang und 14 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "19 cm",
+   "36 cm",
+   "70 cm",
+   "38 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (5 + 14) = 38 cm."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 5 cm lang und 14 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "19 cm",
+   "70 cm",
+   "38 cm",
+   "36 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (5 + 14) = 38 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "222 cm³",
+   "18 cm³",
+   "216 cm³",
+   "36 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 6³ = 216 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 4 cm und die Höhe h = 2 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "4 cm²",
+   "8 cm²",
+   "2 cm²",
+   "6 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 4 · 2 / 2 = 4 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 5 cm, 10 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "305 cm³",
+   "56 cm³",
+   "300 cm³",
+   "280 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 5 · 10 · 6 = 300 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 6 kg Äpfel kosten 12 €. Wie viel kosten 11 kg? (proportional)",
+  "options": [
+   "23 €",
+   "24 €",
+   "22 €",
+   "20 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 12/6 = 2 €; 11 kg kosten 11 · 2 = 22 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 14 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "21 cm²",
+   "14 cm²",
+   "17 cm²",
+   "24 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 14 · 3 / 2 = 21 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 2 → 10. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "8 → 40",
+   "8 → 14",
+   "8 → 41",
+   "8 → 80"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 5; 8 · 5 = 40."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 2 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 3 Arbeiter? (antiproportional)",
+  "options": [
+   "4 Stunden",
+   "6 Stunden",
+   "3 Stunden",
+   "9 Stunden"
+  ],
+  "correct": 0,
+  "explanation": "Produkt konstant: 2 · 6 = 12 = 3 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 2 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "6 cm²",
+   "4 cm²",
+   "8 cm²",
+   "2 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 2² = 4 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 5 → 35. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "15 → 105",
+   "15 → 210",
+   "15 → 38",
+   "15 → 106"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 7; 15 · 7 = 105."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 6 → 36. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "24 → 144",
+   "24 → 288",
+   "24 → 145",
+   "24 → 40"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 6; 24 · 6 = 144."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 4 cm lang und 10 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "14 cm²",
+   "28 cm²",
+   "40 cm²",
+   "44 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 4 cm · 10 cm = 40 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 3 cm lang und 6 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "16 cm",
+   "20 cm",
+   "9 cm",
+   "18 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (3 + 6) = 18 cm."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 4 cm lang und 7 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "11 cm",
+   "28 cm",
+   "22 cm",
+   "24 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (4 + 7) = 22 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 2 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "5 Stunden",
+   "8 Stunden",
+   "16 Stunden",
+   "4 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 2 · 8 = 16 = 4 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 6 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 3 Arbeiter? (antiproportional)",
+  "options": [
+   "23 Stunden",
+   "12 Stunden",
+   "6 Stunden",
+   "24 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 6 · 12 = 72 = 3 · 24 ⇒ 24 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 3 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "12 Stunden",
+   "10 Stunden",
+   "9 Stunden",
+   "8 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 3 · 12 = 36 = 4 · 9 ⇒ 9 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 4 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 72",
+   "12 → 15",
+   "12 → 37",
+   "12 → 36"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 3; 12 · 3 = 36."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 5 → 15. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "20 → 61",
+   "20 → 60",
+   "20 → 19",
+   "20 → 120"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 3; 20 · 3 = 60."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 4 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "7 cm²",
+   "12 cm²",
+   "4 cm²",
+   "6 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 4 · 3 / 2 = 6 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 7 cm lang und 12 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "72 cm²",
+   "19 cm²",
+   "84 cm²",
+   "38 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 7 cm · 12 cm = 84 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 4 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "24 Stunden",
+   "12 Stunden",
+   "5 Stunden",
+   "6 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 4 · 12 = 48 = 8 · 6 ⇒ 6 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "16 cm²",
+   "8 cm²",
+   "20 cm²",
+   "12 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 4² = 16 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 4 → 28. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "16 → 224",
+   "16 → 112",
+   "16 → 32",
+   "16 → 113"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 7; 16 · 7 = 112."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 14 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "196 cm²",
+   "182 cm²",
+   "56 cm²",
+   "28 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 14² = 196 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 2 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "4 cm²",
+   "6 cm²",
+   "2 cm²",
+   "8 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 2² = 4 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 3 kg Äpfel kosten 6 €. Wie viel kosten 11 kg? (proportional)",
+  "options": [
+   "22 €",
+   "23 €",
+   "20 €",
+   "24 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 6/3 = 2 €; 11 kg kosten 11 · 2 = 22 €."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 2 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "24 Stunden",
+   "12 Stunden",
+   "13 Stunden",
+   "48 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 2 · 24 = 48 = 4 · 12 ⇒ 12 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "12 cm²",
+   "20 cm²",
+   "8 cm²",
+   "16 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a² = 4² = 16 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "24 cm³",
+   "520 cm³",
+   "64 cm³",
+   "512 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a³ = 8³ = 512 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 4 cm lang und 11 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "30 cm²",
+   "33 cm²",
+   "44 cm²",
+   "48 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 4 cm · 11 cm = 44 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 7 cm, 7 cm und 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "98 cm³",
+   "105 cm³",
+   "154 cm³",
+   "16 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 7 · 7 · 2 = 98 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 5 kg Äpfel kosten 40 €. Wie viel kosten 6 kg? (proportional)",
+  "options": [
+   "49 €",
+   "46 €",
+   "56 €",
+   "48 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 40/5 = 8 €; 6 kg kosten 6 · 8 = 48 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "9 cm³",
+   "30 cm³",
+   "27 cm³",
+   "54 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 3³ = 27 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 6 kg Äpfel kosten 36 €. Wie viel kosten 5 kg? (proportional)",
+  "options": [
+   "36 €",
+   "24 €",
+   "41 €",
+   "30 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 36/6 = 6 €; 5 kg kosten 5 · 6 = 30 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 7 cm, 7 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "350 cm³",
+   "441 cm³",
+   "23 cm³",
+   "58 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 7 · 7 · 9 = 441 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 6 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 3 Arbeiter? (antiproportional)",
+  "options": [
+   "25 Stunden",
+   "6 Stunden",
+   "23 Stunden",
+   "24 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 6 · 12 = 72 = 3 · 24 ⇒ 24 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 6 → 30. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "24 → 34",
+   "24 → 120",
+   "24 → 121",
+   "24 → 240"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 5; 24 · 5 = 120."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 4 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 2 Arbeiter? (antiproportional)",
+  "options": [
+   "23 Stunden",
+   "25 Stunden",
+   "6 Stunden",
+   "24 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 4 · 12 = 48 = 2 · 24 ⇒ 24 Stunden."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 7 cm lang und 12 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "38 cm",
+   "40 cm",
+   "84 cm",
+   "36 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (7 + 12) = 38 cm."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 2 cm lang und 2 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "8 cm",
+   "6 cm",
+   "10 cm",
+   "4 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (2 + 2) = 8 cm."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 2 cm lang und 2 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "8 cm",
+   "10 cm",
+   "6 cm",
+   "4 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (2 + 2) = 8 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 2 → 4. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "8 → 17",
+   "8 → 8",
+   "8 → 16",
+   "8 → 32"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 2; 8 · 2 = 16."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 3 kg Äpfel kosten 18 €. Wie viel kosten 8 kg? (proportional)",
+  "options": [
+   "48 €",
+   "49 €",
+   "54 €",
+   "42 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 18/3 = 6 €; 8 kg kosten 8 · 6 = 48 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 6 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "42 cm²",
+   "36 cm²",
+   "30 cm²",
+   "24 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 6² = 36 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 5 kg Äpfel kosten 45 €. Wie viel kosten 6 kg? (proportional)",
+  "options": [
+   "63 €",
+   "54 €",
+   "45 €",
+   "51 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 45/5 = 9 €; 6 kg kosten 6 · 9 = 54 €."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 14 cm lang und 8 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "42 cm",
+   "44 cm",
+   "112 cm",
+   "22 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (14 + 8) = 44 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Würfel hat die Kantenlänge 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "8 cm³",
+   "4 cm³",
+   "24 cm³",
+   "10 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 2³ = 8 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 6 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "24 → 48",
+   "24 → 16",
+   "24 → 49",
+   "24 → 96"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 2; 24 · 2 = 48."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 8 cm und die Höhe h = 11 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "44 cm²",
+   "55 cm²",
+   "88 cm²",
+   "19 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 8 · 11 / 2 = 44 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 4 → 16. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 48",
+   "12 → 19",
+   "12 → 96",
+   "12 → 49"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 4; 12 · 4 = 48."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 8 cm und die Höhe h = 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "40 cm²",
+   "16 cm²",
+   "25 cm²",
+   "20 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 8 · 5 / 2 = 20 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 6 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 2 Arbeiter? (antiproportional)",
+  "options": [
+   "17 Stunden",
+   "6 Stunden",
+   "19 Stunden",
+   "18 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 6 · 6 = 36 = 2 · 18 ⇒ 18 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 12 cm lang und 13 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "143 cm²",
+   "168 cm²",
+   "156 cm²",
+   "50 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 12 cm · 13 cm = 156 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 10 cm und die Höhe h = 6 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "16 cm²",
+   "25 cm²",
+   "60 cm²",
+   "30 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 10 · 6 / 2 = 30 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 5 cm, 9 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "365 cm³",
+   "53 cm³",
+   "22 cm³",
+   "360 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 5 · 9 · 8 = 360 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "20 cm²",
+   "30 cm²",
+   "10 cm²",
+   "25 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a² = 5² = 25 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 4 cm, 3 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "80 cm³",
+   "16 cm³",
+   "52 cm³",
+   "48 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 4 · 3 · 4 = 48 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 15 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "240 cm²",
+   "225 cm²",
+   "30 cm²",
+   "60 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 15² = 225 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 4 cm, 7 cm und 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "144 cm³",
+   "166 cm³",
+   "140 cm³",
+   "16 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 4 · 7 · 5 = 140 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 6 cm, 3 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "22 cm³",
+   "13 cm³",
+   "108 cm³",
+   "72 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 6 · 3 · 4 = 72 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 16 cm und die Höhe h = 7 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "112 cm²",
+   "56 cm²",
+   "63 cm²",
+   "23 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 16 · 7 / 2 = 56 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 12 cm lang und 5 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "72 cm²",
+   "34 cm²",
+   "17 cm²",
+   "60 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 12 cm · 5 cm = 60 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 7 cm, 8 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "455 cm³",
+   "64 cm³",
+   "448 cm³",
+   "352 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 7 · 8 · 8 = 448 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 3 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "6 → 48",
+   "6 → 14",
+   "6 → 24",
+   "6 → 25"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 4; 6 · 4 = 24."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 11 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "110 cm²",
+   "132 cm²",
+   "121 cm²",
+   "44 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 11² = 121 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 5 → 20. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "15 → 120",
+   "15 → 60",
+   "15 → 23",
+   "15 → 61"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 4; 15 · 4 = 60."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 5 cm lang und 9 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "28 cm",
+   "30 cm",
+   "26 cm",
+   "14 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (5 + 9) = 28 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 5 cm, 7 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "262 cm³",
+   "43 cm³",
+   "280 cm³",
+   "20 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 5 · 7 · 8 = 280 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Würfel hat die Kantenlänge 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "512 cm³",
+   "384 cm³",
+   "520 cm³",
+   "64 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 8³ = 512 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 13 cm lang und 6 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "78 cm²",
+   "72 cm²",
+   "19 cm²",
+   "38 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 13 cm · 6 cm = 78 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 13 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "182 cm²",
+   "169 cm²",
+   "156 cm²",
+   "26 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 13² = 169 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 8 cm, 4 cm und 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "17 cm³",
+   "184 cm³",
+   "168 cm³",
+   "160 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 8 · 4 · 5 = 160 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 6 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "24 → 49",
+   "24 → 16",
+   "24 → 96",
+   "24 → 48"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 2; 24 · 2 = 48."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 14 cm und die Höhe h = 11 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "154 cm²",
+   "88 cm²",
+   "25 cm²",
+   "77 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 14 · 11 / 2 = 77 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 7 kg Äpfel kosten 28 €. Wie viel kosten 12 kg? (proportional)",
+  "options": [
+   "52 €",
+   "48 €",
+   "40 €",
+   "49 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 28/7 = 4 €; 12 kg kosten 12 · 4 = 48 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "24 cm³",
+   "8 cm³",
+   "10 cm³",
+   "6 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 2³ = 8 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 11 cm lang und 7 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "77 cm²",
+   "70 cm²",
+   "88 cm²",
+   "36 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 11 cm · 7 cm = 77 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 8 cm, 10 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "24 cm³",
+   "376 cm³",
+   "86 cm³",
+   "480 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 8 · 10 · 6 = 480 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "8 cm³",
+   "24 cm³",
+   "4 cm³",
+   "6 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 2³ = 8 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 10 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "10 cm²",
+   "18 cm²",
+   "15 cm²",
+   "13 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 10 · 3 / 2 = 15 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 10 cm, 10 cm und 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "200 cm³",
+   "280 cm³",
+   "210 cm³",
+   "102 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 10 · 10 · 2 = 200 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 9 cm lang und 4 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "45 cm²",
+   "32 cm²",
+   "13 cm²",
+   "36 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 9 cm · 4 cm = 36 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "30 cm³",
+   "100 cm³",
+   "1000 cm³",
+   "1010 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 10³ = 1000 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "2 kg Äpfel kosten 16 €. Wie viel kosten 4 kg? (proportional)",
+  "options": [
+   "24 €",
+   "40 €",
+   "33 €",
+   "32 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 16/2 = 8 €; 4 kg kosten 4 · 8 = 32 €."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 4 → 20. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "8 → 22",
+   "8 → 41",
+   "8 → 80",
+   "8 → 40"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 5; 8 · 5 = 40."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "54 cm³",
+   "9 cm³",
+   "27 cm³",
+   "30 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 3³ = 27 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 2 cm, 8 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "22 cm³",
+   "152 cm³",
+   "98 cm³",
+   "96 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 2 · 8 · 6 = 96 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 13 cm lang und 4 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "36 cm",
+   "52 cm",
+   "17 cm",
+   "34 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (13 + 4) = 34 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "6 kg Äpfel kosten 54 €. Wie viel kosten 7 kg? (proportional)",
+  "options": [
+   "54 €",
+   "64 €",
+   "72 €",
+   "63 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 54/6 = 9 €; 7 kg kosten 7 · 9 = 63 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 10 cm, 5 cm und 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "160 cm³",
+   "100 cm³",
+   "52 cm³",
+   "110 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 10 · 5 · 2 = 100 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 6 → 42. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 84",
+   "12 → 168",
+   "12 → 85",
+   "12 → 44"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 7; 12 · 7 = 84."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 7 cm lang und 8 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "15 cm",
+   "30 cm",
+   "28 cm",
+   "32 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (7 + 8) = 30 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 3 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "12 Stunden",
+   "9 Stunden",
+   "8 Stunden",
+   "10 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 3 · 12 = 36 = 4 · 9 ⇒ 9 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "64 cm³",
+   "16 cm³",
+   "96 cm³",
+   "12 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 4³ = 64 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 4 cm und die Höhe h = 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "8 cm²",
+   "9 cm²",
+   "20 cm²",
+   "10 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 4 · 5 / 2 = 10 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "343 cm³",
+   "350 cm³",
+   "21 cm³",
+   "294 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 7³ = 343 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 7 cm, 4 cm und 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "100 cm³",
+   "63 cm³",
+   "56 cm³",
+   "30 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 7 · 4 · 2 = 56 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 5 cm lang und 13 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "18 cm",
+   "38 cm",
+   "36 cm",
+   "34 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (5 + 13) = 36 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 12 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "144 cm²",
+   "156 cm²",
+   "24 cm²",
+   "132 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 12² = 144 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 4 cm lang und 5 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "9 cm",
+   "18 cm",
+   "16 cm",
+   "20 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (4 + 5) = 18 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 2 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "32 Stunden",
+   "8 Stunden",
+   "2 Stunden",
+   "3 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 2 · 8 = 16 = 8 · 2 ⇒ 2 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 6 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 2 Arbeiter? (antiproportional)",
+  "options": [
+   "6 Stunden",
+   "18 Stunden",
+   "17 Stunden",
+   "19 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 6 · 6 = 36 = 2 · 18 ⇒ 18 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 10 cm und die Höhe h = 9 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "45 cm²",
+   "19 cm²",
+   "90 cm²",
+   "40 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 10 · 9 / 2 = 45 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "130 cm³",
+   "150 cm³",
+   "125 cm³",
+   "25 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 5³ = 125 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 9 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "63 cm²",
+   "48 cm²",
+   "54 cm²",
+   "21 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 12 · 9 / 2 = 54 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 4 cm lang und 7 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "20 cm",
+   "11 cm",
+   "24 cm",
+   "22 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (4 + 7) = 22 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Würfel hat die Kantenlänge 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "512 cm³",
+   "384 cm³",
+   "24 cm³",
+   "64 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 8³ = 512 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "45 cm²",
+   "23 cm²",
+   "90 cm²",
+   "36 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 18 · 5 / 2 = 45 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 8 cm, 8 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "264 cm³",
+   "256 cm³",
+   "20 cm³",
+   "68 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 8 · 8 · 4 = 256 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 3 → 21. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "6 → 23",
+   "6 → 42",
+   "6 → 43",
+   "6 → 84"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 7; 6 · 7 = 42."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 4 cm und die Höhe h = 9 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "36 cm²",
+   "18 cm²",
+   "27 cm²",
+   "16 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 4 · 9 / 2 = 18 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "72 cm²",
+   "144 cm²",
+   "80 cm²",
+   "26 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 18 · 8 / 2 = 72 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 10 cm, 7 cm und 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "210 cm³",
+   "73 cm³",
+   "20 cm³",
+   "242 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 10 · 7 · 3 = 210 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "7 kg Äpfel kosten 28 €. Wie viel kosten 9 kg? (proportional)",
+  "options": [
+   "32 €",
+   "36 €",
+   "37 €",
+   "40 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 28/7 = 4 €; 9 kg kosten 9 · 4 = 36 €."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 4 → 32. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "16 → 128",
+   "16 → 129",
+   "16 → 36",
+   "16 → 256"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 8; 16 · 8 = 128."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "100 cm²",
+   "40 cm²",
+   "20 cm²",
+   "90 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 10² = 100 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 6 → 42. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 84",
+   "12 → 44",
+   "12 → 85",
+   "12 → 168"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 7; 12 · 7 = 84."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 2 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "3 Stunden",
+   "12 Stunden",
+   "2 Stunden",
+   "6 Stunden"
+  ],
+  "correct": 0,
+  "explanation": "Produkt konstant: 2 · 6 = 12 = 4 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "216 cm³",
+   "222 cm³",
+   "18 cm³",
+   "36 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 6³ = 216 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 2 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "4 Stunden",
+   "12 Stunden",
+   "2 Stunden",
+   "3 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 2 · 6 = 12 = 4 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 11 cm lang und 9 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "42 cm",
+   "38 cm",
+   "40 cm",
+   "99 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (11 + 9) = 40 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 2 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "3 Stunden",
+   "1 Stunden",
+   "2 Stunden",
+   "72 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 2 · 12 = 24 = 12 · 2 ⇒ 2 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 15 cm lang und 15 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "210 cm²",
+   "30 cm²",
+   "60 cm²",
+   "225 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 15 cm · 15 cm = 225 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 14 cm und die Höhe h = 9 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "72 cm²",
+   "56 cm²",
+   "63 cm²",
+   "126 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 14 · 9 / 2 = 63 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 2 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "2 Stunden",
+   "6 Stunden",
+   "1 Stunden",
+   "36 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 2 · 6 = 12 = 12 · 1 ⇒ 1 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 5 → 35. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "20 → 39",
+   "20 → 140",
+   "20 → 141",
+   "20 → 280"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 7; 20 · 7 = 140."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Würfel hat die Kantenlänge 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "216 cm³",
+   "18 cm³",
+   "36 cm³",
+   "222 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 6³ = 216 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 3 kg Äpfel kosten 24 €. Wie viel kosten 8 kg? (proportional)",
+  "options": [
+   "64 €",
+   "32 €",
+   "72 €",
+   "65 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 24/3 = 8 €; 8 kg kosten 8 · 8 = 64 €."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 8 kg Äpfel kosten 48 €. Wie viel kosten 9 kg? (proportional)",
+  "options": [
+   "57 €",
+   "55 €",
+   "60 €",
+   "54 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 48/8 = 6 €; 9 kg kosten 9 · 6 = 54 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 4 cm und die Höhe h = 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "6 cm²",
+   "8 cm²",
+   "16 cm²",
+   "12 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 4 · 4 / 2 = 8 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 3 cm lang und 13 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "32 cm",
+   "30 cm",
+   "16 cm",
+   "39 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (3 + 13) = 32 cm."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 2 cm lang und 15 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "36 cm",
+   "30 cm",
+   "34 cm",
+   "32 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (2 + 15) = 34 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 7 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "25 cm²",
+   "63 cm²",
+   "126 cm²",
+   "54 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 18 · 7 / 2 = 63 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "25 cm²",
+   "20 cm²",
+   "10 cm²",
+   "30 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 5² = 25 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 4 cm lang und 5 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "24 cm²",
+   "20 cm²",
+   "9 cm²",
+   "18 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 4 cm · 5 cm = 20 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 2 cm, 6 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "98 cm³",
+   "20 cm³",
+   "152 cm³",
+   "96 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 2 · 6 · 8 = 96 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 14 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "210 cm²",
+   "196 cm²",
+   "182 cm²",
+   "56 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 14² = 196 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "4 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 2 Arbeiter? (antiproportional)",
+  "options": [
+   "11 Stunden",
+   "13 Stunden",
+   "6 Stunden",
+   "12 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 4 · 6 = 24 = 2 · 12 ⇒ 12 Stunden."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 4 cm lang und 8 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "24 cm",
+   "32 cm",
+   "26 cm",
+   "22 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (4 + 8) = 24 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 7 cm, 2 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "172 cm³",
+   "22 cm³",
+   "112 cm³",
+   "119 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 7 · 2 · 8 = 112 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 4 cm, 3 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "96 cm³",
+   "20 cm³",
+   "136 cm³",
+   "15 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 4 · 3 · 8 = 96 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 12 cm lang und 7 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "77 cm²",
+   "19 cm²",
+   "96 cm²",
+   "84 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 12 cm · 7 cm = 84 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 9 cm, 9 cm und 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "819 cm³",
+   "522 cm³",
+   "810 cm³",
+   "28 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 9 · 9 · 10 = 810 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 12 cm lang und 3 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "48 cm²",
+   "15 cm²",
+   "36 cm²",
+   "30 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 12 cm · 3 cm = 36 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 6 cm lang und 11 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "66 cm",
+   "34 cm",
+   "17 cm",
+   "32 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (6 + 11) = 34 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 5 → 25. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "15 → 28",
+   "15 → 76",
+   "15 → 75",
+   "15 → 150"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 5; 15 · 5 = 75."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 5 cm, 2 cm und 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "15 cm³",
+   "12 cm³",
+   "50 cm³",
+   "90 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 5 · 2 · 5 = 50 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 11 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "23 cm²",
+   "77 cm²",
+   "60 cm²",
+   "66 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 12 · 11 / 2 = 66 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 6 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "30 cm²",
+   "24 cm²",
+   "36 cm²",
+   "12 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 6² = 36 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 13 cm lang und 7 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "38 cm",
+   "40 cm",
+   "20 cm",
+   "91 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (13 + 7) = 40 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 2 cm, 6 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "120 cm³",
+   "72 cm³",
+   "74 cm³",
+   "18 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 2 · 6 · 6 = 72 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 2 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "3 Stunden",
+   "6 Stunden",
+   "1 Stunden",
+   "2 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 2 · 6 = 12 = 6 · 2 ⇒ 2 Stunden."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 5 cm lang und 9 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "28 cm",
+   "14 cm",
+   "30 cm",
+   "26 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (5 + 9) = 28 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "2 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "3 Stunden",
+   "4 Stunden",
+   "5 Stunden",
+   "16 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 2 · 8 = 16 = 4 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 4 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "24 Stunden",
+   "12 Stunden",
+   "6 Stunden",
+   "7 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 4 · 12 = 48 = 8 · 6 ⇒ 6 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 4 kg Äpfel kosten 16 €. Wie viel kosten 12 kg? (proportional)",
+  "options": [
+   "28 €",
+   "48 €",
+   "44 €",
+   "52 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 16/4 = 4 €; 12 kg kosten 12 · 4 = 48 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 7 cm, 4 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "112 cm³",
+   "32 cm³",
+   "144 cm³",
+   "15 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 7 · 4 · 4 = 112 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 10 cm lang und 11 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "42 cm",
+   "44 cm",
+   "21 cm",
+   "40 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (10 + 11) = 42 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "21 cm³",
+   "343 cm³",
+   "294 cm³",
+   "350 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 7³ = 343 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 3 → 18. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "9 → 21",
+   "9 → 108",
+   "9 → 55",
+   "9 → 54"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 6; 9 · 6 = 54."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 12 cm lang und 9 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "108 cm²",
+   "120 cm²",
+   "21 cm²",
+   "42 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 12 cm · 9 cm = 108 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 14 cm lang und 14 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "196 cm²",
+   "28 cm²",
+   "210 cm²",
+   "182 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 14 cm · 14 cm = 196 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "3 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "6 Stunden",
+   "7 Stunden",
+   "12 Stunden",
+   "5 Stunden"
+  ],
+  "correct": 0,
+  "explanation": "Produkt konstant: 3 · 12 = 36 = 6 · 6 ⇒ 6 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Würfel hat die Kantenlänge 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "68 cm³",
+   "96 cm³",
+   "16 cm³",
+   "64 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a³ = 4³ = 64 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 11 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "132 cm²",
+   "121 cm²",
+   "110 cm²",
+   "22 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 11² = 121 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 5 cm, 9 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "20 cm³",
+   "270 cm³",
+   "51 cm³",
+   "275 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 5 · 9 · 6 = 270 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 10 cm lang und 9 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "38 cm²",
+   "19 cm²",
+   "90 cm²",
+   "100 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 10 cm · 9 cm = 90 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 13 cm lang und 13 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "169 cm²",
+   "26 cm²",
+   "52 cm²",
+   "182 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 13 cm · 13 cm = 169 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 3 → 21. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "6 → 43",
+   "6 → 84",
+   "6 → 42",
+   "6 → 23"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 7; 6 · 7 = 42."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 9 cm, 5 cm und 2 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "99 cm³",
+   "90 cm³",
+   "146 cm³",
+   "47 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 9 · 5 · 2 = 90 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 11 cm lang und 8 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "19 cm",
+   "38 cm",
+   "40 cm",
+   "88 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (11 + 8) = 38 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 3 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 2 Arbeiter? (antiproportional)",
+  "options": [
+   "18 Stunden",
+   "12 Stunden",
+   "19 Stunden",
+   "8 Stunden"
+  ],
+  "correct": 0,
+  "explanation": "Produkt konstant: 3 · 12 = 36 = 2 · 18 ⇒ 18 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 4 → 32. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 192",
+   "12 → 35",
+   "12 → 97",
+   "12 → 96"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 8; 12 · 8 = 96."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 12 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "72 cm²",
+   "24 cm²",
+   "144 cm²",
+   "84 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 12 · 12 / 2 = 72 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 7 cm lang und 4 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "35 cm²",
+   "24 cm²",
+   "28 cm²",
+   "11 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 7 cm · 4 cm = 28 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 13 cm lang und 15 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "58 cm",
+   "28 cm",
+   "54 cm",
+   "56 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (13 + 15) = 56 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "4 kg Äpfel kosten 20 €. Wie viel kosten 8 kg? (proportional)",
+  "options": [
+   "40 €",
+   "35 €",
+   "41 €",
+   "28 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 20/4 = 5 €; 8 kg kosten 8 · 5 = 40 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 6 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "9 cm²",
+   "18 cm²",
+   "12 cm²",
+   "6 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 6 · 3 / 2 = 9 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 11 cm lang und 6 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "17 cm",
+   "32 cm",
+   "34 cm",
+   "66 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (11 + 6) = 34 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 2 → 6. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "8 → 25",
+   "8 → 10",
+   "8 → 24",
+   "8 → 48"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 3; 8 · 3 = 24."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 6 cm, 8 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "390 cm³",
+   "384 cm³",
+   "320 cm³",
+   "56 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 6 · 8 · 8 = 384 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 2 → 14. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "8 → 57",
+   "8 → 112",
+   "8 → 56",
+   "8 → 18"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 7; 8 · 7 = 56."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 8 cm, 6 cm und 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "336 cm³",
+   "344 cm³",
+   "21 cm³",
+   "292 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 8 · 6 · 7 = 336 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "4 kg Äpfel kosten 32 €. Wie viel kosten 9 kg? (proportional)",
+  "options": [
+   "72 €",
+   "73 €",
+   "80 €",
+   "64 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 32/4 = 8 €; 9 kg kosten 9 · 8 = 72 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "64 cm²",
+   "16 cm²",
+   "72 cm²",
+   "32 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 8² = 64 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 2 → 16. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "8 → 64",
+   "8 → 65",
+   "8 → 20",
+   "8 → 128"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 8; 8 · 8 = 64."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 3 → 6. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "9 → 18",
+   "9 → 9",
+   "9 → 19",
+   "9 → 36"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 2; 9 · 2 = 18."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 4 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "8 Stunden",
+   "16 Stunden",
+   "5 Stunden",
+   "4 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 4 · 8 = 32 = 8 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 3 cm, 10 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "180 cm³",
+   "36 cm³",
+   "19 cm³",
+   "183 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 3 · 10 · 6 = 180 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 6 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "24 Stunden",
+   "12 Stunden",
+   "11 Stunden",
+   "13 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 6 · 24 = 144 = 12 · 12 ⇒ 12 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 6 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "16 Stunden",
+   "35 Stunden",
+   "24 Stunden",
+   "36 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 6 · 24 = 144 = 4 · 36 ⇒ 36 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 8 kg Äpfel kosten 48 €. Wie viel kosten 12 kg? (proportional)",
+  "options": [
+   "60 €",
+   "66 €",
+   "72 €",
+   "73 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 48/8 = 6 €; 12 kg kosten 12 · 6 = 72 €."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 6 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "18 → 37",
+   "18 → 72",
+   "18 → 15",
+   "18 → 36"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 2; 18 · 2 = 36."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 10 cm lang und 5 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "30 cm²",
+   "50 cm²",
+   "15 cm²",
+   "60 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 10 cm · 5 cm = 50 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "2 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "32 Stunden",
+   "3 Stunden",
+   "8 Stunden",
+   "2 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 2 · 8 = 16 = 8 · 2 ⇒ 2 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 2 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "5 Stunden",
+   "4 Stunden",
+   "36 Stunden",
+   "3 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 2 · 12 = 24 = 6 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 16 cm und die Höhe h = 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "64 cm²",
+   "32 cm²",
+   "36 cm²",
+   "20 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 16 · 4 / 2 = 32 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 15 cm lang und 11 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "50 cm",
+   "52 cm",
+   "54 cm",
+   "165 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (15 + 11) = 52 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 8 cm, 3 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "216 cm³",
+   "33 cm³",
+   "20 cm³",
+   "224 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 8 · 3 · 9 = 216 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 2 cm lang und 8 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "10 cm²",
+   "16 cm²",
+   "18 cm²",
+   "8 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 2 cm · 8 cm = 16 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 8 cm, 3 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "19 cm³",
+   "224 cm³",
+   "32 cm³",
+   "192 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 8 · 3 · 8 = 192 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 12 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "30 cm²",
+   "108 cm²",
+   "99 cm²",
+   "120 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 18 · 12 / 2 = 108 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 6 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 3 Arbeiter? (antiproportional)",
+  "options": [
+   "11 Stunden",
+   "6 Stunden",
+   "13 Stunden",
+   "12 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 6 · 6 = 36 = 3 · 12 ⇒ 12 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "17 cm²",
+   "30 cm²",
+   "35 cm²",
+   "60 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 12 · 5 / 2 = 30 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 7 cm lang und 9 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "54 cm²",
+   "70 cm²",
+   "63 cm²",
+   "32 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 7 cm · 9 cm = 63 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "729 cm³",
+   "27 cm³",
+   "81 cm³",
+   "738 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 9³ = 729 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 6 → 48. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 97",
+   "12 → 96",
+   "12 → 50",
+   "12 → 192"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 8; 12 · 8 = 96."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 4 cm, 3 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "21 cm³",
+   "108 cm³",
+   "112 cm³",
+   "150 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 4 · 3 · 9 = 108 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "27 cm³",
+   "81 cm³",
+   "738 cm³",
+   "729 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a³ = 9³ = 729 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 4 cm, 10 cm und 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "21 cm³",
+   "284 cm³",
+   "280 cm³",
+   "47 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 4 · 10 · 7 = 280 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 12 cm lang und 11 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "144 cm²",
+   "132 cm²",
+   "121 cm²",
+   "46 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 12 cm · 11 cm = 132 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 6 cm und die Höhe h = 11 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "66 cm²",
+   "30 cm²",
+   "33 cm²",
+   "44 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 6 · 11 / 2 = 33 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 14 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "56 cm²",
+   "196 cm²",
+   "28 cm²",
+   "182 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 14² = 196 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 3 → 6. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "6 → 12",
+   "6 → 13",
+   "6 → 8",
+   "6 → 24"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 2; 6 · 2 = 12."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 4 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "36 Stunden",
+   "5 Stunden",
+   "4 Stunden",
+   "12 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 4 · 12 = 48 = 12 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 7 cm, 3 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "122 cm³",
+   "25 cm³",
+   "91 cm³",
+   "84 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 7 · 3 · 4 = 84 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 14 cm und die Höhe h = 6 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "20 cm²",
+   "35 cm²",
+   "42 cm²",
+   "84 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 14 · 6 / 2 = 42 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 4 cm, 9 cm und 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "108 cm³",
+   "16 cm³",
+   "150 cm³",
+   "112 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 4 · 9 · 3 = 108 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 4 → 20. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 60",
+   "12 → 23",
+   "12 → 61",
+   "12 → 120"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 5; 12 · 5 = 60."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 2 → 14. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "4 → 16",
+   "4 → 56",
+   "4 → 29",
+   "4 → 28"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 7; 4 · 7 = 28."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 2 cm, 2 cm und 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "40 cm³",
+   "14 cm³",
+   "88 cm³",
+   "42 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 2 · 2 · 10 = 40 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Würfel hat die Kantenlänge 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "30 cm³",
+   "1000 cm³",
+   "100 cm³",
+   "600 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a³ = 10³ = 1000 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "35 cm²",
+   "30 cm²",
+   "60 cm²",
+   "17 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 12 · 5 / 2 = 30 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 8 cm lang und 11 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "88 cm",
+   "19 cm",
+   "38 cm",
+   "40 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (8 + 11) = 38 cm."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 7 cm lang und 10 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "36 cm",
+   "34 cm",
+   "70 cm",
+   "17 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (7 + 10) = 34 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 10 cm lang und 9 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "90 cm²",
+   "19 cm²",
+   "38 cm²",
+   "81 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 10 cm · 9 cm = 90 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "25 cm²",
+   "30 cm²",
+   "10 cm²",
+   "20 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 5² = 25 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 5 cm lang und 8 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "26 cm²",
+   "13 cm²",
+   "40 cm²",
+   "32 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 5 cm · 8 cm = 40 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 4 → 8. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 11",
+   "12 → 48",
+   "12 → 24",
+   "12 → 25"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 2; 12 · 2 = 24."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 12 cm lang und 2 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "36 cm²",
+   "14 cm²",
+   "28 cm²",
+   "24 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 12 cm · 2 cm = 24 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 8 cm lang und 10 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "36 cm",
+   "18 cm",
+   "38 cm",
+   "34 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (8 + 10) = 36 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "343 cm³",
+   "49 cm³",
+   "21 cm³",
+   "294 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a³ = 7³ = 343 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 6 kg Äpfel kosten 24 €. Wie viel kosten 2 kg? (proportional)",
+  "options": [
+   "12 €",
+   "9 €",
+   "8 €",
+   "26 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 24/6 = 4 €; 2 kg kosten 2 · 4 = 8 €."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 4 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 2 Arbeiter? (antiproportional)",
+  "options": [
+   "24 Stunden",
+   "12 Stunden",
+   "48 Stunden",
+   "47 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 4 · 24 = 96 = 2 · 48 ⇒ 48 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 14 cm und die Höhe h = 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "80 cm²",
+   "24 cm²",
+   "70 cm²",
+   "63 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 14 · 10 / 2 = 70 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 2 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "32 Stunden",
+   "2 Stunden",
+   "8 Stunden",
+   "1 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 2 · 8 = 16 = 8 · 2 ⇒ 2 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "4 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "18 Stunden",
+   "6 Stunden",
+   "2 Stunden",
+   "1 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 4 · 6 = 24 = 12 · 2 ⇒ 2 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 12 cm lang und 11 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "23 cm²",
+   "144 cm²",
+   "46 cm²",
+   "132 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 12 cm · 11 cm = 132 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 5 kg Äpfel kosten 10 €. Wie viel kosten 11 kg? (proportional)",
+  "options": [
+   "22 €",
+   "23 €",
+   "21 €",
+   "20 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 10/5 = 2 €; 11 kg kosten 11 · 2 = 22 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "21 cm²",
+   "27 cm²",
+   "30 cm²",
+   "54 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 18 · 3 / 2 = 27 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Quadrat hat die Seitenlänge 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "32 cm²",
+   "72 cm²",
+   "64 cm²",
+   "16 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 8² = 64 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 4 cm lang und 12 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "48 cm²",
+   "16 cm²",
+   "36 cm²",
+   "52 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 4 cm · 12 cm = 48 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 6 cm, 7 cm und 6 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "19 cm³",
+   "240 cm³",
+   "252 cm³",
+   "258 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 6 · 7 · 6 = 252 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 7 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "28 cm²",
+   "56 cm²",
+   "49 cm²",
+   "14 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a² = 7² = 49 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "3 kg Äpfel kosten 27 €. Wie viel kosten 8 kg? (proportional)",
+  "options": [
+   "73 €",
+   "35 €",
+   "72 €",
+   "63 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 27/3 = 9 €; 8 kg kosten 8 · 9 = 72 €."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 8 kg Äpfel kosten 24 €. Wie viel kosten 5 kg? (proportional)",
+  "options": [
+   "29 €",
+   "12 €",
+   "15 €",
+   "18 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 24/8 = 3 €; 5 kg kosten 5 · 3 = 15 €."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 12 cm lang und 13 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "50 cm",
+   "25 cm",
+   "156 cm",
+   "52 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (12 + 13) = 50 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 5 → 10. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "10 → 40",
+   "10 → 21",
+   "10 → 12",
+   "10 → 20"
+  ],
+  "correct": 3,
+  "explanation": "Der Faktor ist 2; 10 · 2 = 20."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 11 cm lang und 2 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "13 cm²",
+   "22 cm²",
+   "26 cm²",
+   "33 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 11 cm · 2 cm = 22 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 11 cm lang und 4 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "40 cm²",
+   "44 cm²",
+   "55 cm²",
+   "15 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 11 cm · 4 cm = 44 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 5 kg Äpfel kosten 25 €. Wie viel kosten 9 kg? (proportional)",
+  "options": [
+   "45 €",
+   "40 €",
+   "46 €",
+   "50 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 25/5 = 5 €; 9 kg kosten 9 · 5 = 45 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 10 cm und die Höhe h = 12 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "120 cm²",
+   "60 cm²",
+   "72 cm²",
+   "55 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 10 · 12 / 2 = 60 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 5 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "20 cm²",
+   "25 cm²",
+   "10 cm²",
+   "30 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 5² = 25 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 5 → 25. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "15 → 75",
+   "15 → 150",
+   "15 → 76",
+   "15 → 28"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 5; 15 · 5 = 75."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 9 cm lang und 7 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "32 cm",
+   "16 cm",
+   "63 cm",
+   "30 cm"
+  ],
+  "correct": 0,
+  "explanation": "U = 2 · (a + b) = 2 · (9 + 7) = 32 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 6 cm, 7 cm und 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "266 cm³",
+   "300 cm³",
+   "294 cm³",
+   "20 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 6 · 7 · 7 = 294 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 11 cm lang und 12 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "23 cm²",
+   "120 cm²",
+   "132 cm²",
+   "143 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 11 cm · 12 cm = 132 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 6 → 24. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "18 → 27",
+   "18 → 144",
+   "18 → 72",
+   "18 → 73"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 4; 18 · 4 = 72."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 7 kg Äpfel kosten 49 €. Wie viel kosten 3 kg? (proportional)",
+  "options": [
+   "22 €",
+   "28 €",
+   "14 €",
+   "21 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 49/7 = 7 €; 3 kg kosten 3 · 7 = 21 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 8 cm lang und 11 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "77 cm²",
+   "96 cm²",
+   "19 cm²",
+   "88 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 8 cm · 11 cm = 88 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 14 cm lang und 3 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "42 cm²",
+   "34 cm²",
+   "39 cm²",
+   "56 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 14 cm · 3 cm = 42 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 5 cm lang und 2 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "8 cm²",
+   "14 cm²",
+   "7 cm²",
+   "10 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 5 cm · 2 cm = 10 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 4 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "12 cm²",
+   "16 cm²",
+   "8 cm²",
+   "20 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 4² = 16 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 13 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "182 cm²",
+   "52 cm²",
+   "156 cm²",
+   "169 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a² = 13² = 169 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 13 cm lang und 5 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "34 cm",
+   "36 cm",
+   "38 cm",
+   "65 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (13 + 5) = 36 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 13 cm lang und 12 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "50 cm²",
+   "25 cm²",
+   "156 cm²",
+   "169 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 13 cm · 12 cm = 156 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "2 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "7 Stunden",
+   "12 Stunden",
+   "5 Stunden",
+   "6 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 2 · 12 = 24 = 4 · 6 ⇒ 6 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 6 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "8 Stunden",
+   "5 Stunden",
+   "4 Stunden",
+   "16 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 6 · 8 = 48 = 12 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 8 cm und die Höhe h = 12 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "48 cm²",
+   "60 cm²",
+   "96 cm²",
+   "44 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 8 · 12 / 2 = 48 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 14 cm lang und 11 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "154 cm",
+   "50 cm",
+   "25 cm",
+   "52 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (14 + 11) = 50 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 2 kg Äpfel kosten 4 €. Wie viel kosten 10 kg? (proportional)",
+  "options": [
+   "22 €",
+   "18 €",
+   "14 €",
+   "20 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 4/2 = 2 €; 10 kg kosten 10 · 2 = 20 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 10 cm, 6 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "250 cm³",
+   "240 cm³",
+   "248 cm³",
+   "20 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 10 · 6 · 4 = 240 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 8 cm lang und 12 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "96 cm",
+   "38 cm",
+   "40 cm",
+   "42 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (8 + 12) = 40 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 2 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "32 Stunden",
+   "8 Stunden",
+   "2 Stunden",
+   "3 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 2 · 8 = 16 = 8 · 2 ⇒ 2 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 5 kg Äpfel kosten 10 €. Wie viel kosten 10 kg? (proportional)",
+  "options": [
+   "20 €",
+   "18 €",
+   "22 €",
+   "21 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 10/5 = 2 €; 10 kg kosten 10 · 2 = 20 €."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 11 cm lang und 14 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "48 cm",
+   "50 cm",
+   "25 cm",
+   "154 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (11 + 14) = 50 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 2 kg Äpfel kosten 4 €. Wie viel kosten 11 kg? (proportional)",
+  "options": [
+   "20 €",
+   "22 €",
+   "24 €",
+   "23 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 4/2 = 2 €; 11 kg kosten 11 · 2 = 22 €."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "4 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "16 Stunden",
+   "4 Stunden",
+   "5 Stunden",
+   "3 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 4 · 8 = 32 = 8 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Berechne. Ein Rechteck ist 14 cm lang und 11 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "48 cm",
+   "50 cm",
+   "154 cm",
+   "25 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (14 + 11) = 50 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Quadrat hat die Seitenlänge 15 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "60 cm²",
+   "225 cm²",
+   "240 cm²",
+   "30 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a² = 15² = 225 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 3 cm lang und 14 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "42 cm",
+   "17 cm",
+   "36 cm",
+   "34 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (3 + 14) = 34 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 6 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 2 Arbeiter? (antiproportional)",
+  "options": [
+   "8 Stunden",
+   "24 Stunden",
+   "23 Stunden",
+   "25 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 6 · 8 = 48 = 2 · 24 ⇒ 24 Stunden."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 7 cm lang und 6 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "28 cm",
+   "42 cm",
+   "24 cm",
+   "26 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (7 + 6) = 26 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 9 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "81 cm²",
+   "90 cm²",
+   "72 cm²",
+   "18 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 9² = 81 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 11 cm lang und 4 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "30 cm²",
+   "55 cm²",
+   "44 cm²",
+   "15 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 11 cm · 4 cm = 44 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 3 cm lang und 12 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "36 cm",
+   "28 cm",
+   "15 cm",
+   "30 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (3 + 12) = 30 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 6 → 48. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 96",
+   "12 → 50",
+   "12 → 97",
+   "12 → 192"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 8; 12 · 8 = 96."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 10 cm lang und 15 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "52 cm",
+   "50 cm",
+   "25 cm",
+   "150 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (10 + 15) = 50 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 6 cm, 10 cm und 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "19 cm³",
+   "186 cm³",
+   "180 cm³",
+   "216 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 6 · 10 · 3 = 180 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 2 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "12 Stunden",
+   "24 Stunden",
+   "6 Stunden",
+   "7 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 2 · 12 = 24 = 4 · 6 ⇒ 6 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Quadrat hat die Seitenlänge 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "110 cm²",
+   "90 cm²",
+   "20 cm²",
+   "100 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a² = 10² = 100 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 6 cm lang und 4 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "24 cm",
+   "10 cm",
+   "20 cm",
+   "18 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (6 + 4) = 20 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 2 cm, 3 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "10 cm³",
+   "24 cm³",
+   "26 cm³",
+   "9 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 2 · 3 · 4 = 24 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 8 cm und die Höhe h = 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "80 cm²",
+   "40 cm²",
+   "18 cm²",
+   "36 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 8 · 10 / 2 = 40 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 4 cm, 10 cm und 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "47 cm³",
+   "276 cm³",
+   "280 cm³",
+   "284 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 4 · 10 · 7 = 280 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "4 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "2 Stunden",
+   "12 Stunden",
+   "6 Stunden",
+   "3 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 4 · 6 = 24 = 8 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 10 cm, 9 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "820 cm³",
+   "28 cm³",
+   "810 cm³",
+   "99 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 10 · 9 · 9 = 810 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 8 cm, 4 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "41 cm³",
+   "288 cm³",
+   "21 cm³",
+   "296 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 8 · 4 · 9 = 288 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 3 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "3 Stunden",
+   "16 Stunden",
+   "8 Stunden",
+   "4 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 3 · 8 = 24 = 6 · 4 ⇒ 4 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 4 Arbeiter brauchen für eine Aufgabe 8 Stunden. Wie lange brauchen 2 Arbeiter? (antiproportional)",
+  "options": [
+   "8 Stunden",
+   "16 Stunden",
+   "4 Stunden",
+   "17 Stunden"
+  ],
+  "correct": 1,
+  "explanation": "Produkt konstant: 4 · 8 = 32 = 2 · 16 ⇒ 16 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 6 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "72 cm²",
+   "42 cm²",
+   "36 cm²",
+   "30 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = g · h / 2 = 12 · 6 / 2 = 36 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 5 kg Äpfel kosten 25 €. Wie viel kosten 7 kg? (proportional)",
+  "options": [
+   "36 €",
+   "30 €",
+   "32 €",
+   "35 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 25/5 = 5 €; 7 kg kosten 7 · 5 = 35 €."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 3 cm lang und 6 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "16 cm",
+   "20 cm",
+   "18 cm",
+   "9 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (3 + 6) = 18 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "2 kg Äpfel kosten 4 €. Wie viel kosten 5 kg? (proportional)",
+  "options": [
+   "10 €",
+   "11 €",
+   "8 €",
+   "12 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 4/2 = 2 €; 5 kg kosten 5 · 2 = 10 €."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 2 cm lang und 12 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "30 cm",
+   "26 cm",
+   "14 cm",
+   "28 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (2 + 12) = 28 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 4 cm, 7 cm und 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "84 cm³",
+   "31 cm³",
+   "122 cm³",
+   "14 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 4 · 7 · 3 = 84 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 4 → 8. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "12 → 24",
+   "12 → 11",
+   "12 → 25",
+   "12 → 48"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 2; 12 · 2 = 24."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "3 Arbeiter brauchen für eine Aufgabe 12 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "4 Stunden",
+   "2 Stunden",
+   "48 Stunden",
+   "3 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 3 · 12 = 36 = 12 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 10 cm und die Höhe h = 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "48 cm²",
+   "18 cm²",
+   "35 cm²",
+   "40 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 10 · 8 / 2 = 40 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 8 cm lang und 11 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "96 cm²",
+   "88 cm²",
+   "19 cm²",
+   "77 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 8 cm · 11 cm = 88 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 5 cm, 2 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "40 cm³",
+   "11 cm³",
+   "76 cm³",
+   "14 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 5 · 2 · 4 = 40 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. Eine proportionale Zuordnung enthält das Paar 6 → 42. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "24 → 336",
+   "24 → 169",
+   "24 → 168",
+   "24 → 46"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 7; 24 · 7 = 168."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 7 kg Äpfel kosten 35 €. Wie viel kosten 10 kg? (proportional)",
+  "options": [
+   "51 €",
+   "50 €",
+   "45 €",
+   "55 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 35/7 = 5 €; 10 kg kosten 10 · 5 = 50 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 9 cm, 5 cm und 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "48 cm³",
+   "135 cm³",
+   "17 cm³",
+   "144 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 9 · 5 · 3 = 135 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 3 kg Äpfel kosten 9 €. Wie viel kosten 12 kg? (proportional)",
+  "options": [
+   "37 €",
+   "21 €",
+   "39 €",
+   "36 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 9/3 = 3 €; 12 kg kosten 12 · 3 = 36 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 8 cm lang und 10 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "80 cm²",
+   "18 cm²",
+   "36 cm²",
+   "70 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 8 cm · 10 cm = 80 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 10 cm, 9 cm und 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "630 cm³",
+   "446 cm³",
+   "26 cm³",
+   "640 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 10 · 9 · 7 = 630 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 5 cm lang und 7 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "35 cm",
+   "24 cm",
+   "26 cm",
+   "22 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (5 + 7) = 24 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: Eine proportionale Zuordnung enthält das Paar 2 → 12. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "8 → 48",
+   "8 → 49",
+   "8 → 16",
+   "8 → 96"
+  ],
+  "correct": 0,
+  "explanation": "Der Faktor ist 6; 8 · 6 = 48."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 3 cm lang und 14 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "34 cm²",
+   "17 cm²",
+   "42 cm²",
+   "45 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 3 cm · 14 cm = 42 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Dreieck hat die Grundseite g = 4 cm und die Höhe h = 8 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "32 cm²",
+   "12 cm²",
+   "24 cm²",
+   "16 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 4 · 8 / 2 = 16 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 3 cm lang und 4 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "12 cm²",
+   "7 cm²",
+   "8 cm²",
+   "14 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 3 cm · 4 cm = 12 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 8 cm lang und 6 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "56 cm²",
+   "48 cm²",
+   "14 cm²",
+   "28 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 8 cm · 6 cm = 48 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 3 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 6 Arbeiter? (antiproportional)",
+  "options": [
+   "2 Stunden",
+   "6 Stunden",
+   "3 Stunden",
+   "12 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 3 · 6 = 18 = 6 · 3 ⇒ 3 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 6 kg Äpfel kosten 48 €. Wie viel kosten 8 kg? (proportional)",
+  "options": [
+   "56 €",
+   "64 €",
+   "72 €",
+   "65 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 48/6 = 8 €; 8 kg kosten 8 · 8 = 64 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 8 cm, 3 cm und 4 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "28 cm³",
+   "104 cm³",
+   "96 cm³",
+   "15 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 8 · 3 · 4 = 96 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Würfel hat die Kantenlänge 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "30 cm³",
+   "54 cm³",
+   "27 cm³",
+   "9 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 3³ = 27 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: Eine proportionale Zuordnung enthält das Paar 5 → 25. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "10 → 100",
+   "10 → 50",
+   "10 → 27",
+   "10 → 51"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 5; 10 · 5 = 50."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 5 cm lang und 4 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "20 cm",
+   "16 cm",
+   "9 cm",
+   "18 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (5 + 4) = 18 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 6 cm lang und 9 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "60 cm²",
+   "54 cm²",
+   "30 cm²",
+   "15 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = a · b = 6 cm · 9 cm = 54 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 8 cm, 5 cm und 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "408 cm³",
+   "23 cm³",
+   "400 cm³",
+   "50 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 8 · 5 · 10 = 400 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Dreieck hat die Grundseite g = 12 cm und die Höhe h = 7 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "42 cm²",
+   "49 cm²",
+   "36 cm²",
+   "19 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = g · h / 2 = 12 · 7 / 2 = 42 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Mathematik: 4 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 12 Arbeiter? (antiproportional)",
+  "options": [
+   "3 Stunden",
+   "18 Stunden",
+   "2 Stunden",
+   "1 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 4 · 6 = 24 = 12 · 2 ⇒ 2 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Rechteck ist 2 cm lang und 3 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "8 cm²",
+   "5 cm²",
+   "10 cm²",
+   "6 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 2 cm · 3 cm = 6 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 5 cm, 3 cm und 10 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "155 cm³",
+   "18 cm³",
+   "150 cm³",
+   "25 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 5 · 3 · 10 = 150 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 2 → 16. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "6 → 49",
+   "6 → 19",
+   "6 → 48",
+   "6 → 96"
+  ],
+  "correct": 2,
+  "explanation": "Der Faktor ist 8; 6 · 8 = 48."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 9 cm, 2 cm und 5 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "90 cm³",
+   "23 cm³",
+   "16 cm³",
+   "146 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 9 · 2 · 5 = 90 cm³."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 7 cm, 10 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "78 cm³",
+   "560 cm³",
+   "25 cm³",
+   "412 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 7 · 10 · 8 = 560 cm³."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 3 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "32 Stunden",
+   "24 Stunden",
+   "17 Stunden",
+   "18 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 3 · 24 = 72 = 4 · 18 ⇒ 18 Stunden."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 2 kg Äpfel kosten 18 €. Wie viel kosten 4 kg? (proportional)",
+  "options": [
+   "27 €",
+   "36 €",
+   "37 €",
+   "22 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 18/2 = 9 €; 4 kg kosten 4 · 9 = 36 €."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 5 kg Äpfel kosten 10 €. Wie viel kosten 9 kg? (proportional)",
+  "options": [
+   "19 €",
+   "18 €",
+   "16 €",
+   "20 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 10/5 = 2 €; 9 kg kosten 9 · 2 = 18 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 10 cm lang und 15 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "150 cm²",
+   "25 cm²",
+   "160 cm²",
+   "135 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 10 cm · 15 cm = 150 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Berechne. Ein Quader hat die Kantenlängen 7 cm, 5 cm und 9 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "44 cm³",
+   "322 cm³",
+   "315 cm³",
+   "286 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a · b · c = 7 · 5 · 9 = 315 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 2 kg Äpfel kosten 8 €. Wie viel kosten 8 kg? (proportional)",
+  "options": [
+   "36 €",
+   "16 €",
+   "32 €",
+   "33 €"
+  ],
+  "correct": 2,
+  "explanation": "1 kg kostet 8/2 = 4 €; 8 kg kosten 8 · 4 = 32 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Berechne. Ein Rechteck ist 11 cm lang und 9 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "110 cm²",
+   "20 cm²",
+   "40 cm²",
+   "99 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 11 cm · 9 cm = 99 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 5 cm lang und 7 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "22 cm",
+   "24 cm",
+   "12 cm",
+   "35 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (5 + 7) = 24 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 6 Arbeiter brauchen für eine Aufgabe 6 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "6 Stunden",
+   "8 Stunden",
+   "10 Stunden",
+   "9 Stunden"
+  ],
+  "correct": 3,
+  "explanation": "Produkt konstant: 6 · 6 = 36 = 4 · 9 ⇒ 9 Stunden."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 11 cm lang und 11 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "46 cm",
+   "42 cm",
+   "44 cm",
+   "22 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (11 + 11) = 44 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 4 kg Äpfel kosten 12 €. Wie viel kosten 5 kg? (proportional)",
+  "options": [
+   "16 €",
+   "15 €",
+   "18 €",
+   "12 €"
+  ],
+  "correct": 1,
+  "explanation": "1 kg kostet 12/4 = 3 €; 5 kg kosten 5 · 3 = 15 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Ein Dreieck hat die Grundseite g = 14 cm und die Höhe h = 9 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "126 cm²",
+   "63 cm²",
+   "56 cm²",
+   "72 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 14 · 9 / 2 = 63 cm²."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Ein Quader hat die Kantenlängen 4 cm, 2 cm und 8 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "112 cm³",
+   "14 cm³",
+   "68 cm³",
+   "64 cm³"
+  ],
+  "correct": 3,
+  "explanation": "V = a · b · c = 4 · 2 · 8 = 64 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 15 cm lang und 10 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "150 cm²",
+   "140 cm²",
+   "50 cm²",
+   "25 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 15 cm · 10 cm = 150 cm²."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 2 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 8 Arbeiter? (antiproportional)",
+  "options": [
+   "96 Stunden",
+   "7 Stunden",
+   "6 Stunden",
+   "24 Stunden"
+  ],
+  "correct": 2,
+  "explanation": "Produkt konstant: 2 · 24 = 48 = 8 · 6 ⇒ 6 Stunden."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Berechne. 3 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "18 Stunden",
+   "32 Stunden",
+   "19 Stunden",
+   "24 Stunden"
+  ],
+  "correct": 0,
+  "explanation": "Produkt konstant: 3 · 24 = 72 = 4 · 18 ⇒ 18 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 9 cm lang und 10 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "90 cm²",
+   "99 cm²",
+   "80 cm²",
+   "19 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 9 cm · 10 cm = 90 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 12 cm lang und 3 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "28 cm",
+   "30 cm",
+   "32 cm",
+   "36 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (12 + 3) = 30 cm."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Geometrie: Ein Rechteck ist 15 cm lang und 8 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "120 cm",
+   "46 cm",
+   "44 cm",
+   "23 cm"
+  ],
+  "correct": 1,
+  "explanation": "U = 2 · (a + b) = 2 · (15 + 8) = 46 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Würfel hat die Kantenlänge 3 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "54 cm³",
+   "9 cm³",
+   "27 cm³",
+   "30 cm³"
+  ],
+  "correct": 2,
+  "explanation": "V = a³ = 3³ = 27 cm³."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Eine proportionale Zuordnung enthält das Paar 3 → 6. Welches Paar gehört ebenfalls dazu?",
+  "options": [
+   "9 → 9",
+   "9 → 18",
+   "9 → 36",
+   "9 → 19"
+  ],
+  "correct": 1,
+  "explanation": "Der Faktor ist 2; 9 · 2 = 18."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 12 cm lang und 12 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "156 cm²",
+   "48 cm²",
+   "132 cm²",
+   "144 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 12 cm · 12 cm = 144 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 2 cm lang und 4 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "6 cm",
+   "14 cm",
+   "10 cm",
+   "12 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (2 + 4) = 12 cm."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Berechne. 7 kg Äpfel kosten 21 €. Wie viel kosten 4 kg? (proportional)",
+  "options": [
+   "15 €",
+   "13 €",
+   "25 €",
+   "12 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 21/7 = 3 €; 4 kg kosten 4 · 3 = 12 €."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 9 cm lang und 11 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "20 cm²",
+   "108 cm²",
+   "88 cm²",
+   "99 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = a · b = 9 cm · 11 cm = 99 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Mathematik: 6 kg Äpfel kosten 48 €. Wie viel kosten 3 kg? (proportional)",
+  "options": [
+   "16 €",
+   "32 €",
+   "25 €",
+   "24 €"
+  ],
+  "correct": 3,
+  "explanation": "1 kg kostet 48/6 = 8 €; 3 kg kosten 3 · 8 = 24 €."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "5 kg Äpfel kosten 25 €. Wie viel kosten 12 kg? (proportional)",
+  "options": [
+   "60 €",
+   "61 €",
+   "37 €",
+   "55 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 25/5 = 5 €; 12 kg kosten 12 · 5 = 60 €."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 12 cm lang und 9 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "44 cm",
+   "21 cm",
+   "42 cm",
+   "40 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (12 + 9) = 42 cm."
+ },
+ {
+  "topic": "Antiproportionale Zuordnung",
+  "question": "Geometrie: 6 Arbeiter brauchen für eine Aufgabe 24 Stunden. Wie lange brauchen 4 Arbeiter? (antiproportional)",
+  "options": [
+   "36 Stunden",
+   "16 Stunden",
+   "35 Stunden",
+   "37 Stunden"
+  ],
+  "correct": 0,
+  "explanation": "Produkt konstant: 6 · 24 = 144 = 4 · 36 ⇒ 36 Stunden."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 20 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "60 cm²",
+   "30 cm²",
+   "33 cm²",
+   "23 cm²"
+  ],
+  "correct": 1,
+  "explanation": "A = g · h / 2 = 20 · 3 / 2 = 30 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 18 cm und die Höhe h = 12 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "30 cm²",
+   "216 cm²",
+   "99 cm²",
+   "108 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 18 · 12 / 2 = 108 cm²."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Ein Rechteck ist 2 cm lang und 9 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "18 cm",
+   "20 cm",
+   "24 cm",
+   "22 cm"
+  ],
+  "correct": 3,
+  "explanation": "U = 2 · (a + b) = 2 · (2 + 9) = 22 cm."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Geometrie: Ein Quader hat die Kantenlängen 10 cm, 6 cm und 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "420 cm³",
+   "430 cm³",
+   "344 cm³",
+   "23 cm³"
+  ],
+  "correct": 0,
+  "explanation": "V = a · b · c = 10 · 6 · 7 = 420 cm³."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Rechteck ist 12 cm lang und 14 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "26 cm²",
+   "52 cm²",
+   "168 cm²",
+   "154 cm²"
+  ],
+  "correct": 2,
+  "explanation": "A = a · b = 12 cm · 14 cm = 168 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Dreieck hat die Grundseite g = 8 cm und die Höhe h = 3 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "8 cm²",
+   "11 cm²",
+   "15 cm²",
+   "12 cm²"
+  ],
+  "correct": 3,
+  "explanation": "A = g · h / 2 = 8 · 3 / 2 = 12 cm²."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Geometrie: Ein Quadrat hat die Seitenlänge 10 cm. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "100 cm²",
+   "20 cm²",
+   "40 cm²",
+   "110 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a² = 10² = 100 cm²."
+ },
+ {
+  "topic": "Proportionale Zuordnung",
+  "question": "Geometrie: 4 kg Äpfel kosten 28 €. Wie viel kosten 10 kg? (proportional)",
+  "options": [
+   "70 €",
+   "77 €",
+   "38 €",
+   "63 €"
+  ],
+  "correct": 0,
+  "explanation": "1 kg kostet 28/4 = 7 €; 10 kg kosten 10 · 7 = 70 €."
+ },
+ {
+  "topic": "Volumen",
+  "question": "Mathematik: Ein Quader hat die Kantenlängen 5 cm, 2 cm und 7 cm. Wie groß ist sein Volumen?",
+  "options": [
+   "17 cm³",
+   "70 cm³",
+   "118 cm³",
+   "75 cm³"
+  ],
+  "correct": 1,
+  "explanation": "V = a · b · c = 5 · 2 · 7 = 70 cm³."
+ },
+ {
+  "topic": "Umfang",
+  "question": "Mathematik: Ein Rechteck ist 7 cm lang und 2 cm breit. Wie groß ist sein Umfang?",
+  "options": [
+   "16 cm",
+   "14 cm",
+   "18 cm",
+   "9 cm"
+  ],
+  "correct": 2,
+  "explanation": "U = 2 · (a + b) = 2 · (7 + 2) = 18 cm."
+ },
+ {
+  "topic": "Flächen",
+  "question": "Mathematik: Ein Rechteck ist 10 cm lang und 3 cm breit. Wie groß ist sein Flächeninhalt?",
+  "options": [
+   "30 cm²",
+   "13 cm²",
+   "40 cm²",
+   "27 cm²"
+  ],
+  "correct": 0,
+  "explanation": "A = a · b = 10 cm · 3 cm = 30 cm²."
+ }
+]

@@ -6,18 +6,22 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { getStudentFeatures } from "@/lib/student-features";
 import { AutoRefresh } from "@/components/app/AutoRefresh";
+import { KATEGORIEN, kategorieInfo } from "./colors";
 
 export const metadata: Metadata = { title: "Schülerzeitung | MasterMind" };
 export const dynamic = "force-dynamic";
 
-export default async function ZeitungPage() {
+export default async function ZeitungPage({ searchParams }: { searchParams: Promise<{ rubrik?: string }> }) {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "student") redirect("/app");
   if (!session.schoolId) redirect("/app");
 
+  const { rubrik: rubrikRaw } = await searchParams;
+  const rubrik = KATEGORIEN.some((k) => k.value === rubrikRaw) ? rubrikRaw : undefined;
+
   const [articles, features] = await Promise.all([
     prisma.newspaperArticle.findMany({
-      where: { schoolId: session.schoolId, published: true },
+      where: { schoolId: session.schoolId, published: true, ...(rubrik ? { category: rubrik } : {}) },
       orderBy: { createdAt: "desc" },
       take: 50,
     }),
@@ -47,6 +51,24 @@ export default async function ZeitungPage() {
         )}
       </header>
 
+      {/* Rubrik-Filter */}
+      <nav className="flex flex-wrap gap-2" aria-label="Rubriken">
+        <Link href="/app/zeitung"
+          className={`rounded-xl border px-3 py-1.5 text-xs font-semibold transition-colors ${
+            !rubrik ? "border-brand bg-brand text-brand-fg" : "border-border bg-surface text-muted-fg hover:text-fg"
+          }`}>
+          Alle
+        </Link>
+        {KATEGORIEN.map((k) => (
+          <Link key={k.value} href={`/app/zeitung?rubrik=${k.value}`}
+            className={`rounded-xl border px-3 py-1.5 text-xs font-semibold transition-colors ${
+              rubrik === k.value ? "border-brand bg-brand text-brand-fg" : "border-border bg-surface text-muted-fg hover:text-fg"
+            }`}>
+            {k.emoji} {k.label}
+          </Link>
+        ))}
+      </nav>
+
       {articles.length === 0 ? (
         <div className="rounded-2xl border border-border bg-surface p-10 text-center text-muted-fg">
           <p className="text-3xl">📰</p>
@@ -73,6 +95,11 @@ export default async function ZeitungPage() {
                   <div className={`w-full ${big ? "h-24" : "h-16"}`} style={{ background: `linear-gradient(120deg, ${accent}33, ${accent}0d)` }} />
                 )}
                 <div className="p-5" style={{ borderTop: `3px solid ${accent}` }}>
+                  {kategorieInfo(a.category) && (
+                    <span className="mb-2 inline-block rounded-xl border border-border bg-bg px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+                      {kategorieInfo(a.category)!.emoji} {kategorieInfo(a.category)!.label}
+                    </span>
+                  )}
                   <h2 className={`font-bold leading-snug group-hover:underline ${big ? "text-2xl" : "text-lg"}`}>{a.title}</h2>
                   {a.subtitle && <p className="mt-1 text-sm text-muted-fg">{a.subtitle}</p>}
                   <p className="mt-3 text-xs text-muted-fg">

@@ -1,0 +1,4202 @@
+[
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 1 Strich über der Marke 10 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "16 °C",
+   "10 °C",
+   "14 °C",
+   "12 °C"
+  ],
+  "correct": 3,
+  "explanation": "10 °C + 1 · 2 °C = 12 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: Welche Einheit gehört zur Größe „Länge“?",
+  "options": [
+   "m (Meter)",
+   "s (Sekunde)",
+   "°C (Grad Celsius)",
+   "kg (Kilogramm)"
+  ],
+  "correct": 0,
+  "explanation": "Die Größe Länge wird in Meter (m) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt -1 °C. Die Temperatur fällt um 12 °C. Was zeigt es danach an?",
+  "options": [
+   "-16 °C",
+   "-13 °C",
+   "-12 °C",
+   "-15 °C"
+  ],
+  "correct": 1,
+  "explanation": "-1 °C − 12 °C = -13 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Morgens sind es -11 °C, mittags 2 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "12 °C",
+   "16 °C",
+   "13 °C",
+   "11 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 2 °C − (-11 °C) = 13 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: Welche Einheit gehört zur Größe „Masse“?",
+  "options": [
+   "°C (Grad Celsius)",
+   "kg (Kilogramm)",
+   "m (Meter)",
+   "s (Sekunde)"
+  ],
+  "correct": 1,
+  "explanation": "Die Größe Masse wird in Kilogramm (kg) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 1 Strich über der Marke 20 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "21 °C",
+   "22 °C",
+   "20 °C",
+   "18 °C"
+  ],
+  "correct": 1,
+  "explanation": "20 °C + 1 · 2 °C = 22 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es -3 °C, mittags 7 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "8 °C",
+   "9 °C",
+   "13 °C",
+   "10 °C"
+  ],
+  "correct": 3,
+  "explanation": "Unterschied: 7 °C − (-3 °C) = 10 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Aufgabe: Welcher Stoff ist lichtdurchlässig?",
+  "options": [
+   "eine Holzplatte",
+   "eine Metallplatte",
+   "ein Backstein",
+   "Fensterglas"
+  ],
+  "correct": 3,
+  "explanation": "Klares Glas lässt Licht hindurch — Holz, Stein und Metall nicht."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Welche Einheit gehört zur Größe „Länge“?",
+  "options": [
+   "m (Meter)",
+   "°C (Grad Celsius)",
+   "s (Sekunde)",
+   "kg (Kilogramm)"
+  ],
+  "correct": 0,
+  "explanation": "Die Größe Länge wird in Meter (m) gemessen."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Wird ein Gegenstand wie „Stahlbüroklammer“ von einem Magneten angezogen?",
+  "options": [
+   "Ja, denn er enthält Eisen bzw. Stahl.",
+   "Nur, wenn er nass ist.",
+   "Nur bei großer Hitze.",
+   "Nein, Magnete ziehen nur Kunststoff an."
+  ],
+  "correct": 0,
+  "explanation": "Stahlbüroklammer enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Wird ein Gegenstand wie „Eisenschraube“ von einem Magneten angezogen?",
+  "options": [
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur bei großer Hitze.",
+   "Nur, wenn er nass ist.",
+   "Ja, denn er enthält Eisen bzw. Stahl."
+  ],
+  "correct": 3,
+  "explanation": "Eisenschraube enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Radiergummi“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 1,
+  "explanation": "Radiergummi ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Wird ein Gegenstand wie „Eisenschraube“ von einem Magneten angezogen?",
+  "options": [
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur bei großer Hitze.",
+   "Nur, wenn er nass ist.",
+   "Ja, denn er enthält Eisen bzw. Stahl."
+  ],
+  "correct": 3,
+  "explanation": "Eisenschraube enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Messingschlüssel“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur, wenn die Batterie neu ist.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur im Dunkeln."
+  ],
+  "correct": 0,
+  "explanation": "Messingschlüssel ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Teste dein Wissen: Welche Flüssigkeit steigt im Thermometer, wenn es wärmer wird?",
+  "options": [
+   "Luft wird hineingepumpt",
+   "die Thermometerflüssigkeit dehnt sich aus und steigt",
+   "die Flüssigkeit schrumpft",
+   "Wasser fließt hinein"
+  ],
+  "correct": 1,
+  "explanation": "Wärme dehnt die Flüssigkeit im Röhrchen aus — sie steigt an der Skala nach oben."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: In welcher Einheit misst man die Masse einer Schultasche?",
+  "options": [
+   "s",
+   "kg",
+   "m",
+   "°C"
+  ],
+  "correct": 1,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt -5 °C. Die Temperatur steigt um 7 °C. Was zeigt es danach an?",
+  "options": [
+   "1 °C",
+   "2 °C",
+   "5 °C",
+   "-1 °C"
+  ],
+  "correct": 1,
+  "explanation": "-5 °C + 7 °C = 2 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Goldring“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nur im Dunkeln.",
+   "Nur, wenn die Batterie neu ist.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 3,
+  "explanation": "Goldring ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Stahlschere (Klinge)“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nur, wenn die Batterie neu ist.",
+   "Nur im Dunkeln.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 3,
+  "explanation": "Stahlschere (Klinge) ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Welcher dieser Gegenstände bleibt an einem Magneten haften?",
+  "options": [
+   "Plastiklineal",
+   "Stahlbüroklammer",
+   "Ledergürtel",
+   "Korken"
+  ],
+  "correct": 1,
+  "explanation": "Stahlbüroklammer besteht aus Eisen/Stahl und haftet deshalb am Magneten."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Welcher dieser Gegenstände wird NICHT vom Magneten angezogen?",
+  "options": [
+   "Eisennagel",
+   "Stahlbüroklammer",
+   "Gummihandschuh",
+   "Eisenschraube"
+  ],
+  "correct": 2,
+  "explanation": "Gummihandschuh enthält kein Eisen und wird deshalb nicht angezogen."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. Welcher Gegenstand leitet den Strom NICHT (Isolator)?",
+  "options": [
+   "Silberlöffel",
+   "Goldring",
+   "Stahlbüroklammer",
+   "Ledergürtel"
+  ],
+  "correct": 3,
+  "explanation": "Ledergürtel ist ein Isolator — er leitet keinen Strom, die Lampe bleibt dunkel."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "In welcher Einheit misst man die Masse eines Kartoffelsacks?",
+  "options": [
+   "kg",
+   "°C",
+   "s",
+   "m"
+  ],
+  "correct": 0,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Morgens sind es -8 °C, mittags -4 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "1 °C",
+   "4 °C",
+   "7 °C",
+   "2 °C"
+  ],
+  "correct": 1,
+  "explanation": "Unterschied: -4 °C − (-8 °C) = 4 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Überlege genau: Welcher Gegenstand leitet den elektrischen Strom, wenn man ihn in einen Stromkreis einbaut?",
+  "options": [
+   "Glasscheibe",
+   "Bleistiftmine (Grafit)",
+   "Keramikfliese",
+   "Holzstab"
+  ],
+  "correct": 1,
+  "explanation": "Bleistiftmine (Grafit) besteht aus leitendem Material (Metall bzw. Grafit) — die Lampe leuchtet."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 19 °C. Die Temperatur fällt um 5 °C. Was zeigt es danach an?",
+  "options": [
+   "11 °C",
+   "17 °C",
+   "12 °C",
+   "14 °C"
+  ],
+  "correct": 3,
+  "explanation": "19 °C − 5 °C = 14 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Morgens sind es 9 °C, mittags 24 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "13 °C",
+   "14 °C",
+   "16 °C",
+   "15 °C"
+  ],
+  "correct": 3,
+  "explanation": "Unterschied: 24 °C − (9 °C) = 15 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wo kann sich Schall NICHT ausbreiten?",
+  "options": [
+   "in Wasser",
+   "in Luft",
+   "im luftleeren Raum (Vakuum)",
+   "in Metall"
+  ],
+  "correct": 2,
+  "explanation": "Schall braucht einen Träger (Luft, Wasser, feste Stoffe). Im Vakuum gibt es keinen Schall."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es 1 °C, mittags 6 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "6 °C",
+   "5 °C",
+   "2 °C",
+   "4 °C"
+  ],
+  "correct": 1,
+  "explanation": "Unterschied: 6 °C − (1 °C) = 5 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Zwei Magnete werden mit Südpol und Südpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole stoßen sich ab.",
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Die Pole ziehen sich an.",
+   "Beide Magnete verlieren ihre Kraft."
+  ],
+  "correct": 0,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Südpol und Südpol stoßen sich ab also."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Welcher dieser Gegenstände wird NICHT vom Magneten angezogen?",
+  "options": [
+   "Stahlbüroklammer",
+   "Eisennagel",
+   "Baumwolltuch",
+   "Eisenschraube"
+  ],
+  "correct": 2,
+  "explanation": "Baumwolltuch enthält kein Eisen und wird deshalb nicht angezogen."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: Welche Einheit gehört zur Größe „Länge“?",
+  "options": [
+   "°C (Grad Celsius)",
+   "s (Sekunde)",
+   "m (Meter)",
+   "kg (Kilogramm)"
+  ],
+  "correct": 2,
+  "explanation": "Die Größe Länge wird in Meter (m) gemessen."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zwei Magnete werden mit Nordpol und Südpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Beide Magnete verlieren ihre Kraft.",
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Die Pole stoßen sich ab.",
+   "Die Pole ziehen sich an."
+  ],
+  "correct": 3,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Nordpol und Südpol ziehen sich an also."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Zwei Magnete werden mit Nordpol und Südpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole ziehen sich an.",
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Die Pole stoßen sich ab.",
+   "Beide Magnete verlieren ihre Kraft."
+  ],
+  "correct": 0,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Nordpol und Südpol ziehen sich an also."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. Zu welcher Größe gehört die Einheit „kg“?",
+  "options": [
+   "Zeit",
+   "Masse",
+   "Länge",
+   "Temperatur"
+  ],
+  "correct": 1,
+  "explanation": "kg steht für Kilogramm und misst die Größe Masse."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zieht ein Magnet den Gegenstand „Goldring“ an?",
+  "options": [
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Ja, aber nur am Nordpol.",
+   "Nur, wenn der Magnet sehr groß ist."
+  ],
+  "correct": 0,
+  "explanation": "Goldring enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 2 Striche über der Marke 4 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "6 °C",
+   "10 °C",
+   "7 °C",
+   "8 °C"
+  ],
+  "correct": 3,
+  "explanation": "4 °C + 2 · 2 °C = 8 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es -4 °C, mittags 10 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "13 °C",
+   "11 °C",
+   "17 °C",
+   "14 °C"
+  ],
+  "correct": 3,
+  "explanation": "Unterschied: 10 °C − (-4 °C) = 14 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Welcher Körper leuchtet NICHT selbst?",
+  "options": [
+   "ein Lagerfeuer",
+   "der Mond",
+   "eine Kerze",
+   "eine Glühlampe"
+  ],
+  "correct": 1,
+  "explanation": "Der Mond wird nur von der Sonne beleuchtet, er ist keine eigene Lichtquelle."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Zieht ein Magnet den Gegenstand „Wollfaden“ an?",
+  "options": [
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Ja, aber nur am Nordpol.",
+   "Nur, wenn der Magnet sehr groß ist."
+  ],
+  "correct": 0,
+  "explanation": "Wollfaden enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wird ein Gegenstand wie „Eisenschraube“ von einem Magneten angezogen?",
+  "options": [
+   "Nur bei großer Hitze.",
+   "Nur, wenn er nass ist.",
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Ja, denn er enthält Eisen bzw. Stahl."
+  ],
+  "correct": 3,
+  "explanation": "Eisenschraube enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Welche Einheit gehört zur Größe „Temperatur“?",
+  "options": [
+   "kg (Kilogramm)",
+   "m (Meter)",
+   "°C (Grad Celsius)",
+   "s (Sekunde)"
+  ],
+  "correct": 2,
+  "explanation": "Die Größe Temperatur wird in Grad Celsius (°C) gemessen."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wähle die richtige Antwort. Was passiert, wenn man einen Stabmagneten in der Mitte durchtrennt?",
+  "options": [
+   "beide Teile sind nicht mehr magnetisch",
+   "ein Teil ist nur Nordpol, der andere nur Südpol",
+   "nur ein Teil bleibt magnetisch",
+   "es entstehen zwei Magnete mit je zwei Polen"
+  ],
+  "correct": 3,
+  "explanation": "Es gibt keinen einzelnen Pol: Jedes Teilstück hat wieder Nord- und Südpol."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke 20 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "28 °C",
+   "26 °C",
+   "22 °C",
+   "25 °C"
+  ],
+  "correct": 1,
+  "explanation": "20 °C + 3 · 2 °C = 26 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Silberlöffel“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur im Dunkeln.",
+   "Nur, wenn die Batterie neu ist."
+  ],
+  "correct": 0,
+  "explanation": "Silberlöffel ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Teste dein Wissen: Was passiert, wenn man einen Stabmagneten in der Mitte durchtrennt?",
+  "options": [
+   "beide Teile sind nicht mehr magnetisch",
+   "es entstehen zwei Magnete mit je zwei Polen",
+   "nur ein Teil bleibt magnetisch",
+   "ein Teil ist nur Nordpol, der andere nur Südpol"
+  ],
+  "correct": 1,
+  "explanation": "Es gibt keinen einzelnen Pol: Jedes Teilstück hat wieder Nord- und Südpol."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Morgens sind es 2 °C, mittags 6 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "7 °C",
+   "5 °C",
+   "6 °C",
+   "4 °C"
+  ],
+  "correct": 3,
+  "explanation": "Unterschied: 6 °C − (2 °C) = 4 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke -8 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "0 °C",
+   "-4 °C",
+   "2 °C",
+   "-2 °C"
+  ],
+  "correct": 3,
+  "explanation": "-8 °C + 3 · 2 °C = -2 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. Welcher Gegenstand leitet den elektrischen Strom, wenn man ihn in einen Stromkreis einbaut?",
+  "options": [
+   "Stahlschere (Klinge)",
+   "Baumwolltuch",
+   "Ledergürtel",
+   "Glasscheibe"
+  ],
+  "correct": 0,
+  "explanation": "Stahlschere (Klinge) besteht aus leitendem Material (Metall bzw. Grafit) — die Lampe leuchtet."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Zwei Magnete werden mit Südpol und Nordpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole ziehen sich an.",
+   "Beide Magnete verlieren ihre Kraft.",
+   "Die Pole stoßen sich ab.",
+   "Nichts — Magnete wirken nur auf Eisen."
+  ],
+  "correct": 0,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Südpol und Nordpol ziehen sich an also."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: Welcher Gegenstand leitet den elektrischen Strom, wenn man ihn in einen Stromkreis einbaut?",
+  "options": [
+   "Stahlschere (Klinge)",
+   "Porzellantasse",
+   "Holzstab",
+   "Glasscheibe"
+  ],
+  "correct": 0,
+  "explanation": "Stahlschere (Klinge) besteht aus leitendem Material (Metall bzw. Grafit) — die Lampe leuchtet."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Zwei Magnete werden mit Südpol und Südpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Beide Magnete verlieren ihre Kraft.",
+   "Die Pole stoßen sich ab.",
+   "Die Pole ziehen sich an.",
+   "Nichts — Magnete wirken nur auf Eisen."
+  ],
+  "correct": 1,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Südpol und Südpol stoßen sich ab also."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wähle die richtige Antwort. Welcher Körper leuchtet NICHT selbst?",
+  "options": [
+   "der Mond",
+   "eine Kerze",
+   "eine Glühlampe",
+   "ein Lagerfeuer"
+  ],
+  "correct": 0,
+  "explanation": "Der Mond wird nur von der Sonne beleuchtet, er ist keine eigene Lichtquelle."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: In welcher Einheit misst man die Länge eines Klassenzimmers?",
+  "options": [
+   "°C",
+   "m",
+   "s",
+   "kg"
+  ],
+  "correct": 1,
+  "explanation": "Länge misst man in der Einheit m."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Aufgabe: Welcher Gegenstand leitet den elektrischen Strom, wenn man ihn in einen Stromkreis einbaut?",
+  "options": [
+   "Glasscheibe",
+   "Gummihandschuh",
+   "Messingschlüssel",
+   "Korken"
+  ],
+  "correct": 2,
+  "explanation": "Messingschlüssel besteht aus leitendem Material (Metall bzw. Grafit) — die Lampe leuchtet."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Bei welcher Temperatur gefriert Wasser?",
+  "options": [
+   "100 °C",
+   "10 °C",
+   "−100 °C",
+   "0 °C"
+  ],
+  "correct": 3,
+  "explanation": "Reines Wasser gefriert bei 0 °C und siedet bei 100 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: In welcher Einheit misst man die Masse eines Mehlsacks?",
+  "options": [
+   "°C",
+   "kg",
+   "s",
+   "m"
+  ],
+  "correct": 1,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: In welcher Einheit misst man die Länge eines Schwimmbeckens?",
+  "options": [
+   "°C",
+   "s",
+   "m",
+   "kg"
+  ],
+  "correct": 2,
+  "explanation": "Länge misst man in der Einheit m."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Wird ein Gegenstand wie „Stahlschere (Klinge)“ von einem Magneten angezogen?",
+  "options": [
+   "Nur, wenn er nass ist.",
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Ja, denn er enthält Eisen bzw. Stahl.",
+   "Nur bei großer Hitze."
+  ],
+  "correct": 2,
+  "explanation": "Stahlschere (Klinge) enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: In welcher Einheit misst man die Dauer eines 100-Meter-Laufs?",
+  "options": [
+   "kg",
+   "m",
+   "s",
+   "°C"
+  ],
+  "correct": 2,
+  "explanation": "Zeit misst man in der Einheit s."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Morgens sind es -4 °C, mittags 4 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "8 °C",
+   "11 °C",
+   "9 °C",
+   "5 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 4 °C − (-4 °C) = 8 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Überlege genau: Welcher Gegenstand leitet den Strom NICHT (Isolator)?",
+  "options": [
+   "Silberlöffel",
+   "Aluminiumfolie",
+   "Goldring",
+   "Styroporplatte"
+  ],
+  "correct": 3,
+  "explanation": "Styroporplatte ist ein Isolator — er leitet keinen Strom, die Lampe bleibt dunkel."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Zieht ein Magnet den Gegenstand „Gummihandschuh“ an?",
+  "options": [
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, aber nur am Nordpol."
+  ],
+  "correct": 0,
+  "explanation": "Gummihandschuh enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Holzstab“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn man das Material erwärmt."
+  ],
+  "correct": 2,
+  "explanation": "Holzstab ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt 20 °C. Die Temperatur steigt um 4 °C. Was zeigt es danach an?",
+  "options": [
+   "24 °C",
+   "26 °C",
+   "21 °C",
+   "27 °C"
+  ],
+  "correct": 0,
+  "explanation": "20 °C + 4 °C = 24 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke 6 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "12 °C",
+   "16 °C",
+   "14 °C",
+   "11 °C"
+  ],
+  "correct": 0,
+  "explanation": "6 °C + 3 · 2 °C = 12 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Wird ein Gegenstand wie „Eisenschraube“ von einem Magneten angezogen?",
+  "options": [
+   "Nur bei großer Hitze.",
+   "Ja, denn er enthält Eisen bzw. Stahl.",
+   "Nur, wenn er nass ist.",
+   "Nein, Magnete ziehen nur Kunststoff an."
+  ],
+  "correct": 1,
+  "explanation": "Eisenschraube enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zieht ein Magnet den Gegenstand „Wollfaden“ an?",
+  "options": [
+   "Ja, aber nur am Nordpol.",
+   "Nein, denn er enthält kein Eisen.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an."
+  ],
+  "correct": 1,
+  "explanation": "Wollfaden enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Welcher dieser Gegenstände wird NICHT vom Magneten angezogen?",
+  "options": [
+   "Stahlschere (Klinge)",
+   "Glasscheibe",
+   "Stahlbüroklammer",
+   "Eisenschraube"
+  ],
+  "correct": 1,
+  "explanation": "Glasscheibe enthält kein Eisen und wird deshalb nicht angezogen."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Stahlbüroklammer“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur, wenn die Batterie neu ist.",
+   "Nur im Dunkeln."
+  ],
+  "correct": 1,
+  "explanation": "Stahlbüroklammer ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Teste dein Wissen: Bei welcher Temperatur gefriert Wasser?",
+  "options": [
+   "−100 °C",
+   "0 °C",
+   "10 °C",
+   "100 °C"
+  ],
+  "correct": 1,
+  "explanation": "Reines Wasser gefriert bei 0 °C und siedet bei 100 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Welcher dieser Gegenstände wird NICHT vom Magneten angezogen?",
+  "options": [
+   "Baumwolltuch",
+   "Eisennagel",
+   "Stahlbüroklammer",
+   "Stahlschere (Klinge)"
+  ],
+  "correct": 0,
+  "explanation": "Baumwolltuch enthält kein Eisen und wird deshalb nicht angezogen."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Zieht ein Magnet den Gegenstand „Glasscheibe“ an?",
+  "options": [
+   "Ja, aber nur am Nordpol.",
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nur, wenn der Magnet sehr groß ist."
+  ],
+  "correct": 1,
+  "explanation": "Glasscheibe enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Das Thermometer zeigt -8 °C. Die Temperatur fällt um 15 °C. Was zeigt es danach an?",
+  "options": [
+   "-25 °C",
+   "-23 °C",
+   "-21 °C",
+   "-22 °C"
+  ],
+  "correct": 1,
+  "explanation": "-8 °C − 15 °C = -23 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Keramikfliese“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, aber nur ganz schwach für eine Sekunde."
+  ],
+  "correct": 1,
+  "explanation": "Keramikfliese ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. Zu welcher Größe gehört die Einheit „s“?",
+  "options": [
+   "Länge",
+   "Zeit",
+   "Masse",
+   "Temperatur"
+  ],
+  "correct": 1,
+  "explanation": "s steht für Sekunde und misst die Größe Zeit."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es 10 °C, mittags 16 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "9 °C",
+   "3 °C",
+   "6 °C",
+   "4 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 16 °C − (10 °C) = 6 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wird ein Gegenstand wie „Stahlbüroklammer“ von einem Magneten angezogen?",
+  "options": [
+   "Nur bei großer Hitze.",
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur, wenn er nass ist.",
+   "Ja, denn er enthält Eisen bzw. Stahl."
+  ],
+  "correct": 3,
+  "explanation": "Stahlbüroklammer enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Wird ein Gegenstand wie „Eisennagel“ von einem Magneten angezogen?",
+  "options": [
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur, wenn er nass ist.",
+   "Ja, denn er enthält Eisen bzw. Stahl.",
+   "Nur bei großer Hitze."
+  ],
+  "correct": 2,
+  "explanation": "Eisennagel enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Zu welcher Größe gehört die Einheit „s“?",
+  "options": [
+   "Temperatur",
+   "Masse",
+   "Länge",
+   "Zeit"
+  ],
+  "correct": 3,
+  "explanation": "s steht für Sekunde und misst die Größe Zeit."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Zieht ein Magnet den Gegenstand „Kupferdraht“ an?",
+  "options": [
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, aber nur am Nordpol.",
+   "Nur, wenn der Magnet sehr groß ist."
+  ],
+  "correct": 1,
+  "explanation": "Kupferdraht enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: Welche Einheit gehört zur Größe „Temperatur“?",
+  "options": [
+   "s (Sekunde)",
+   "kg (Kilogramm)",
+   "°C (Grad Celsius)",
+   "m (Meter)"
+  ],
+  "correct": 2,
+  "explanation": "Die Größe Temperatur wird in Grad Celsius (°C) gemessen."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Wird ein Gegenstand wie „Stahlbüroklammer“ von einem Magneten angezogen?",
+  "options": [
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur bei großer Hitze.",
+   "Nur, wenn er nass ist.",
+   "Ja, denn er enthält Eisen bzw. Stahl."
+  ],
+  "correct": 3,
+  "explanation": "Stahlbüroklammer enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: Welche Einheit gehört zur Größe „Temperatur“?",
+  "options": [
+   "kg (Kilogramm)",
+   "s (Sekunde)",
+   "°C (Grad Celsius)",
+   "m (Meter)"
+  ],
+  "correct": 2,
+  "explanation": "Die Größe Temperatur wird in Grad Celsius (°C) gemessen."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Zwei Magnete werden mit Nordpol und Südpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Beide Magnete verlieren ihre Kraft.",
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Die Pole ziehen sich an.",
+   "Die Pole stoßen sich ab."
+  ],
+  "correct": 2,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Nordpol und Südpol ziehen sich an also."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Aufgabe: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Ledergürtel“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, denn dieses Material leitet Strom.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde."
+  ],
+  "correct": 2,
+  "explanation": "Ledergürtel ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Überlege genau: Wie nennt man zurückgeworfenen Schall?",
+  "options": [
+   "Blitz",
+   "Echo",
+   "Strahl",
+   "Funke"
+  ],
+  "correct": 1,
+  "explanation": "Trifft Schall auf eine Wand oder Felswand, wird er zurückgeworfen — wir hören ein Echo."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. In welcher Einheit misst man die Länge eines Fußballfeldes?",
+  "options": [
+   "s",
+   "°C",
+   "kg",
+   "m"
+  ],
+  "correct": 3,
+  "explanation": "Länge misst man in der Einheit m."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wähle die richtige Antwort. In welchem Stoff breitet sich Schall am schnellsten aus?",
+  "options": [
+   "im Vakuum",
+   "in Watte",
+   "in Stahl",
+   "in Luft"
+  ],
+  "correct": 2,
+  "explanation": "In festen Stoffen wie Stahl ist Schall viel schneller als in Luft; im Vakuum gibt es keinen Schall."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Das Thermometer zeigt 17 °C. Die Temperatur steigt um 7 °C. Was zeigt es danach an?",
+  "options": [
+   "25 °C",
+   "26 °C",
+   "24 °C",
+   "21 °C"
+  ],
+  "correct": 2,
+  "explanation": "17 °C + 7 °C = 24 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 2 Striche über der Marke 20 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "20 °C",
+   "26 °C",
+   "24 °C",
+   "25 °C"
+  ],
+  "correct": 2,
+  "explanation": "20 °C + 2 · 2 °C = 24 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Zwei Magnete werden mit Südpol und Nordpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole stoßen sich ab.",
+   "Die Pole ziehen sich an.",
+   "Beide Magnete verlieren ihre Kraft.",
+   "Nichts — Magnete wirken nur auf Eisen."
+  ],
+  "correct": 1,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Südpol und Nordpol ziehen sich an also."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Aufgabe: Wie breitet sich Licht aus?",
+  "options": [
+   "geradlinig",
+   "im Zickzack",
+   "gar nicht",
+   "in Kreisen"
+  ],
+  "correct": 0,
+  "explanation": "Licht breitet sich geradlinig aus — deshalb entstehen scharfe Schatten."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: Zu welcher Größe gehört die Einheit „s“?",
+  "options": [
+   "Masse",
+   "Zeit",
+   "Temperatur",
+   "Länge"
+  ],
+  "correct": 1,
+  "explanation": "s steht für Sekunde und misst die Größe Zeit."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Glasscheibe“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur, wenn man das Material erwärmt."
+  ],
+  "correct": 0,
+  "explanation": "Glasscheibe ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 20 °C. Die Temperatur fällt um 3 °C. Was zeigt es danach an?",
+  "options": [
+   "14 °C",
+   "16 °C",
+   "17 °C",
+   "19 °C"
+  ],
+  "correct": 2,
+  "explanation": "20 °C − 3 °C = 17 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wähle die richtige Antwort. Bei welcher Temperatur gefriert Wasser?",
+  "options": [
+   "0 °C",
+   "100 °C",
+   "10 °C",
+   "−100 °C"
+  ],
+  "correct": 0,
+  "explanation": "Reines Wasser gefriert bei 0 °C und siedet bei 100 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Keramikfliese“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nur, wenn man das Material erwärmt.",
+   "Nein, denn dieses Material leitet keinen Strom."
+  ],
+  "correct": 3,
+  "explanation": "Keramikfliese ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "In welcher Einheit misst man die Zeit für einen tiefen Atemzug?",
+  "options": [
+   "°C",
+   "s",
+   "kg",
+   "m"
+  ],
+  "correct": 1,
+  "explanation": "Zeit misst man in der Einheit s."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 13 °C. Die Temperatur steigt um 11 °C. Was zeigt es danach an?",
+  "options": [
+   "24 °C",
+   "21 °C",
+   "23 °C",
+   "25 °C"
+  ],
+  "correct": 0,
+  "explanation": "13 °C + 11 °C = 24 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Zieht ein Magnet den Gegenstand „Radiergummi“ an?",
+  "options": [
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, aber nur am Nordpol.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nein, denn er enthält kein Eisen."
+  ],
+  "correct": 3,
+  "explanation": "Radiergummi enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Morgens sind es 2 °C, mittags 16 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "16 °C",
+   "17 °C",
+   "14 °C",
+   "12 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 16 °C − (2 °C) = 14 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: In welcher Einheit misst man die Zeit für einen tiefen Atemzug?",
+  "options": [
+   "m",
+   "°C",
+   "s",
+   "kg"
+  ],
+  "correct": 2,
+  "explanation": "Zeit misst man in der Einheit s."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Das Thermometer zeigt -6 °C. Die Temperatur steigt um 11 °C. Was zeigt es danach an?",
+  "options": [
+   "8 °C",
+   "5 °C",
+   "7 °C",
+   "6 °C"
+  ],
+  "correct": 1,
+  "explanation": "-6 °C + 11 °C = 5 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Stahlbüroklammer“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur im Dunkeln.",
+   "Nur, wenn die Batterie neu ist."
+  ],
+  "correct": 0,
+  "explanation": "Stahlbüroklammer ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Aufgabe: Welcher Gegenstand leitet den Strom NICHT (Isolator)?",
+  "options": [
+   "Bleistiftmine (Grafit)",
+   "Aluminiumfolie",
+   "Ledergürtel",
+   "Messingschlüssel"
+  ],
+  "correct": 2,
+  "explanation": "Ledergürtel ist ein Isolator — er leitet keinen Strom, die Lampe bleibt dunkel."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: In welcher Einheit misst man die Masse eines Fahrrads?",
+  "options": [
+   "°C",
+   "m",
+   "kg",
+   "s"
+  ],
+  "correct": 2,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Überlege genau: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Eisennagel“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur im Dunkeln.",
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur, wenn die Batterie neu ist."
+  ],
+  "correct": 2,
+  "explanation": "Eisennagel ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Zwei Magnete werden mit Südpol und Nordpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Beide Magnete verlieren ihre Kraft.",
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Die Pole ziehen sich an.",
+   "Die Pole stoßen sich ab."
+  ],
+  "correct": 2,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Südpol und Nordpol ziehen sich an also."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt -6 °C. Die Temperatur fällt um 9 °C. Was zeigt es danach an?",
+  "options": [
+   "-15 °C",
+   "-14 °C",
+   "-16 °C",
+   "-12 °C"
+  ],
+  "correct": 0,
+  "explanation": "-6 °C − 9 °C = -15 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Welcher dieser Gegenstände bleibt an einem Magneten haften?",
+  "options": [
+   "Holzstab",
+   "Eisenschraube",
+   "Goldring",
+   "Ledergürtel"
+  ],
+  "correct": 1,
+  "explanation": "Eisenschraube besteht aus Eisen/Stahl und haftet deshalb am Magneten."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Welcher dieser Gegenstände bleibt an einem Magneten haften?",
+  "options": [
+   "Stahlschere (Klinge)",
+   "Porzellantasse",
+   "Goldring",
+   "Baumwolltuch"
+  ],
+  "correct": 0,
+  "explanation": "Stahlschere (Klinge) besteht aus Eisen/Stahl und haftet deshalb am Magneten."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Das Thermometer zeigt 0 °C. Die Temperatur steigt um 7 °C. Was zeigt es danach an?",
+  "options": [
+   "7 °C",
+   "9 °C",
+   "5 °C",
+   "4 °C"
+  ],
+  "correct": 0,
+  "explanation": "0 °C + 7 °C = 7 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 2 Striche über der Marke 20 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "26 °C",
+   "25 °C",
+   "24 °C",
+   "22 °C"
+  ],
+  "correct": 2,
+  "explanation": "20 °C + 2 · 2 °C = 24 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Welcher dieser Gegenstände wird NICHT vom Magneten angezogen?",
+  "options": [
+   "Eisenschraube",
+   "Stahlschere (Klinge)",
+   "Eisennagel",
+   "Styroporplatte"
+  ],
+  "correct": 3,
+  "explanation": "Styroporplatte enthält kein Eisen und wird deshalb nicht angezogen."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "In welcher Einheit misst man die Masse eines Mehlsacks?",
+  "options": [
+   "°C",
+   "s",
+   "m",
+   "kg"
+  ],
+  "correct": 3,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: In welcher Einheit misst man die Temperatur von Tee?",
+  "options": [
+   "s",
+   "kg",
+   "m",
+   "°C"
+  ],
+  "correct": 3,
+  "explanation": "Temperatur misst man in der Einheit °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: Zu welcher Größe gehört die Einheit „s“?",
+  "options": [
+   "Länge",
+   "Temperatur",
+   "Masse",
+   "Zeit"
+  ],
+  "correct": 3,
+  "explanation": "s steht für Sekunde und misst die Größe Zeit."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Radiergummi“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn man das Material erwärmt."
+  ],
+  "correct": 2,
+  "explanation": "Radiergummi ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Morgens sind es -7 °C, mittags 3 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "11 °C",
+   "7 °C",
+   "10 °C",
+   "9 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 3 °C − (-7 °C) = 10 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Das Thermometer zeigt -7 °C. Die Temperatur fällt um 3 °C. Was zeigt es danach an?",
+  "options": [
+   "-13 °C",
+   "-12 °C",
+   "-9 °C",
+   "-10 °C"
+  ],
+  "correct": 3,
+  "explanation": "-7 °C − 3 °C = -10 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. In welcher Einheit misst man die Masse einer Schultasche?",
+  "options": [
+   "kg",
+   "s",
+   "m",
+   "°C"
+  ],
+  "correct": 0,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: Welche Einheit gehört zur Größe „Zeit“?",
+  "options": [
+   "kg (Kilogramm)",
+   "s (Sekunde)",
+   "°C (Grad Celsius)",
+   "m (Meter)"
+  ],
+  "correct": 1,
+  "explanation": "Die Größe Zeit wird in Sekunde (s) gemessen."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Welcher Gegenstand leitet den Strom NICHT (Isolator)?",
+  "options": [
+   "Aluminiumfolie",
+   "Eisennagel",
+   "Ledergürtel",
+   "Kupferdraht"
+  ],
+  "correct": 2,
+  "explanation": "Ledergürtel ist ein Isolator — er leitet keinen Strom, die Lampe bleibt dunkel."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Das Thermometer zeigt 24 °C. Die Temperatur fällt um 5 °C. Was zeigt es danach an?",
+  "options": [
+   "19 °C",
+   "20 °C",
+   "17 °C",
+   "21 °C"
+  ],
+  "correct": 0,
+  "explanation": "24 °C − 5 °C = 19 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: In welcher Einheit misst man die Temperatur von Tee?",
+  "options": [
+   "m",
+   "°C",
+   "kg",
+   "s"
+  ],
+  "correct": 1,
+  "explanation": "Temperatur misst man in der Einheit °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Überlege genau: In welchem Stoff breitet sich Schall am schnellsten aus?",
+  "options": [
+   "in Watte",
+   "in Stahl",
+   "in Luft",
+   "im Vakuum"
+  ],
+  "correct": 1,
+  "explanation": "In festen Stoffen wie Stahl ist Schall viel schneller als in Luft; im Vakuum gibt es keinen Schall."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Morgens sind es 9 °C, mittags 24 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "18 °C",
+   "17 °C",
+   "15 °C",
+   "12 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 24 °C − (9 °C) = 15 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Zwei Magnete werden mit Nordpol und Nordpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Beide Magnete verlieren ihre Kraft.",
+   "Die Pole ziehen sich an.",
+   "Die Pole stoßen sich ab.",
+   "Nichts — Magnete wirken nur auf Eisen."
+  ],
+  "correct": 2,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Nordpol und Nordpol stoßen sich ab also."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Das Thermometer zeigt 7 °C. Die Temperatur fällt um 14 °C. Was zeigt es danach an?",
+  "options": [
+   "-7 °C",
+   "-5 °C",
+   "-6 °C",
+   "-8 °C"
+  ],
+  "correct": 0,
+  "explanation": "7 °C − 14 °C = -7 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke 14 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "26 °C",
+   "28 °C",
+   "24 °C",
+   "22 °C"
+  ],
+  "correct": 2,
+  "explanation": "14 °C + 5 · 2 °C = 24 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Überlege genau: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Baumwolltuch“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 0,
+  "explanation": "Baumwolltuch ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Zwei Magnete werden mit Nordpol und Südpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole stoßen sich ab.",
+   "Die Pole ziehen sich an.",
+   "Beide Magnete verlieren ihre Kraft.",
+   "Nichts — Magnete wirken nur auf Eisen."
+  ],
+  "correct": 1,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Nordpol und Südpol ziehen sich an also."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke -4 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "5 °C",
+   "10 °C",
+   "4 °C",
+   "6 °C"
+  ],
+  "correct": 3,
+  "explanation": "-4 °C + 5 · 2 °C = 6 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke 2 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "8 °C",
+   "11 °C",
+   "12 °C",
+   "14 °C"
+  ],
+  "correct": 2,
+  "explanation": "2 °C + 5 · 2 °C = 12 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wonach richtet sich die Nadel eines Kompasses aus?",
+  "options": [
+   "nach der Sonne",
+   "nach dem Wind",
+   "nach dem Magnetfeld der Erde",
+   "nach dem Luftdruck"
+  ],
+  "correct": 2,
+  "explanation": "Die Erde ist ein riesiger Magnet — die Kompassnadel richtet sich nach ihrem Magnetfeld aus."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "In welcher Einheit misst man die Temperatur im Kühlschrank?",
+  "options": [
+   "°C",
+   "s",
+   "m",
+   "kg"
+  ],
+  "correct": 0,
+  "explanation": "Temperatur misst man in der Einheit °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 2 Striche über der Marke 10 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "16 °C",
+   "10 °C",
+   "12 °C",
+   "14 °C"
+  ],
+  "correct": 3,
+  "explanation": "10 °C + 2 · 2 °C = 14 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es 5 °C, mittags 19 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "16 °C",
+   "14 °C",
+   "13 °C",
+   "12 °C"
+  ],
+  "correct": 1,
+  "explanation": "Unterschied: 19 °C − (5 °C) = 14 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: Zu welcher Größe gehört die Einheit „m“?",
+  "options": [
+   "Temperatur",
+   "Zeit",
+   "Masse",
+   "Länge"
+  ],
+  "correct": 3,
+  "explanation": "m steht für Meter und misst die Größe Länge."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Zwei Magnete werden mit Nordpol und Nordpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole stoßen sich ab.",
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Die Pole ziehen sich an.",
+   "Beide Magnete verlieren ihre Kraft."
+  ],
+  "correct": 0,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Nordpol und Nordpol stoßen sich ab also."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt -10 °C. Die Temperatur steigt um 3 °C. Was zeigt es danach an?",
+  "options": [
+   "-5 °C",
+   "-9 °C",
+   "-7 °C",
+   "-6 °C"
+  ],
+  "correct": 2,
+  "explanation": "-10 °C + 3 °C = -7 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Das Thermometer zeigt 8 °C. Die Temperatur steigt um 14 °C. Was zeigt es danach an?",
+  "options": [
+   "19 °C",
+   "20 °C",
+   "21 °C",
+   "22 °C"
+  ],
+  "correct": 3,
+  "explanation": "8 °C + 14 °C = 22 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: In welcher Einheit misst man die Temperatur von Tee?",
+  "options": [
+   "°C",
+   "s",
+   "m",
+   "kg"
+  ],
+  "correct": 0,
+  "explanation": "Temperatur misst man in der Einheit °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zwei Magnete werden mit Südpol und Nordpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole ziehen sich an.",
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Die Pole stoßen sich ab.",
+   "Beide Magnete verlieren ihre Kraft."
+  ],
+  "correct": 0,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Südpol und Nordpol ziehen sich an also."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Das Thermometer zeigt -5 °C. Die Temperatur fällt um 14 °C. Was zeigt es danach an?",
+  "options": [
+   "-21 °C",
+   "-17 °C",
+   "-19 °C",
+   "-18 °C"
+  ],
+  "correct": 2,
+  "explanation": "-5 °C − 14 °C = -19 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Überlege genau: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Aluminiumfolie“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nur im Dunkeln.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn die Batterie neu ist.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 3,
+  "explanation": "Aluminiumfolie ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 4 Striche über der Marke 14 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "22 °C",
+   "23 °C",
+   "20 °C",
+   "24 °C"
+  ],
+  "correct": 0,
+  "explanation": "14 °C + 4 · 2 °C = 22 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: In welcher Einheit misst man die Höhe eines Hauses?",
+  "options": [
+   "°C",
+   "s",
+   "kg",
+   "m"
+  ],
+  "correct": 3,
+  "explanation": "Länge/Höhe misst man in der Einheit m."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es -8 °C, mittags 2 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "7 °C",
+   "8 °C",
+   "10 °C",
+   "11 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 2 °C − (-8 °C) = 10 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Zieht ein Magnet den Gegenstand „Aluminiumfolie“ an?",
+  "options": [
+   "Ja, aber nur am Nordpol.",
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nur, wenn der Magnet sehr groß ist."
+  ],
+  "correct": 1,
+  "explanation": "Aluminiumfolie enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Morgens sind es -11 °C, mittags -6 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "5 °C",
+   "3 °C",
+   "4 °C",
+   "8 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: -6 °C − (-11 °C) = 5 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Zwei Magnete werden mit Südpol und Südpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole stoßen sich ab.",
+   "Beide Magnete verlieren ihre Kraft.",
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Die Pole ziehen sich an."
+  ],
+  "correct": 0,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Südpol und Südpol stoßen sich ab also."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: In welcher Einheit misst man die Masse eines Hundes?",
+  "options": [
+   "kg",
+   "°C",
+   "m",
+   "s"
+  ],
+  "correct": 0,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 2 Striche über der Marke 20 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "26 °C",
+   "25 °C",
+   "24 °C",
+   "28 °C"
+  ],
+  "correct": 2,
+  "explanation": "20 °C + 2 · 2 °C = 24 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Welcher dieser Gegenstände bleibt an einem Magneten haften?",
+  "options": [
+   "Keramikfliese",
+   "Kerzenwachs",
+   "Eisennagel",
+   "Glasscheibe"
+  ],
+  "correct": 2,
+  "explanation": "Eisennagel besteht aus Eisen/Stahl und haftet deshalb am Magneten."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Welcher dieser Gegenstände bleibt an einem Magneten haften?",
+  "options": [
+   "Ledergürtel",
+   "Glasscheibe",
+   "Eisenschraube",
+   "Plastiklineal"
+  ],
+  "correct": 2,
+  "explanation": "Eisenschraube besteht aus Eisen/Stahl und haftet deshalb am Magneten."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: Zu welcher Größe gehört die Einheit „°C“?",
+  "options": [
+   "Länge",
+   "Zeit",
+   "Temperatur",
+   "Masse"
+  ],
+  "correct": 2,
+  "explanation": "°C steht für Grad Celsius und misst die Größe Temperatur."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt 2 °C. Die Temperatur steigt um 12 °C. Was zeigt es danach an?",
+  "options": [
+   "14 °C",
+   "11 °C",
+   "12 °C",
+   "16 °C"
+  ],
+  "correct": 0,
+  "explanation": "2 °C + 12 °C = 14 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 11 °C. Die Temperatur steigt um 6 °C. Was zeigt es danach an?",
+  "options": [
+   "19 °C",
+   "17 °C",
+   "16 °C",
+   "15 °C"
+  ],
+  "correct": 1,
+  "explanation": "11 °C + 6 °C = 17 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Morgens sind es -4 °C, mittags 3 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "9 °C",
+   "4 °C",
+   "8 °C",
+   "7 °C"
+  ],
+  "correct": 3,
+  "explanation": "Unterschied: 3 °C − (-4 °C) = 7 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Eisennagel“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur im Dunkeln.",
+   "Nur, wenn die Batterie neu ist.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 3,
+  "explanation": "Eisennagel ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: Welche Einheit gehört zur Größe „Masse“?",
+  "options": [
+   "kg (Kilogramm)",
+   "°C (Grad Celsius)",
+   "s (Sekunde)",
+   "m (Meter)"
+  ],
+  "correct": 0,
+  "explanation": "Die Größe Masse wird in Kilogramm (kg) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke -10 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "4 °C",
+   "-2 °C",
+   "0 °C",
+   "-1 °C"
+  ],
+  "correct": 2,
+  "explanation": "-10 °C + 5 · 2 °C = 0 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Zieht ein Magnet den Gegenstand „Aluminiumfolie“ an?",
+  "options": [
+   "Ja, aber nur am Nordpol.",
+   "Nein, denn er enthält kein Eisen.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an."
+  ],
+  "correct": 1,
+  "explanation": "Aluminiumfolie enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wie nennt man zurückgeworfenen Schall?",
+  "options": [
+   "Funke",
+   "Blitz",
+   "Echo",
+   "Strahl"
+  ],
+  "correct": 2,
+  "explanation": "Trifft Schall auf eine Wand oder Felswand, wird er zurückgeworfen — wir hören ein Echo."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es -2 °C, mittags 8 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "12 °C",
+   "11 °C",
+   "10 °C",
+   "13 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 8 °C − (-2 °C) = 10 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Morgens sind es -9 °C, mittags 0 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "10 °C",
+   "8 °C",
+   "9 °C",
+   "11 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 0 °C − (-9 °C) = 9 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Überlege genau: Was braucht ein einfacher Stromkreis mindestens, damit eine Lampe leuchtet?",
+  "options": [
+   "einen offenen Kreis mit Lücke",
+   "nur eine Lampe und einen Schalter",
+   "Stromquelle, Leitungen und Lampe in einem geschlossenen Kreis",
+   "nur eine Batterie"
+  ],
+  "correct": 2,
+  "explanation": "Erst wenn der Kreis aus Quelle, Leitungen und Lampe geschlossen ist, fließt Strom."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Zwei Magnete werden mit Nordpol und Nordpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole ziehen sich an.",
+   "Beide Magnete verlieren ihre Kraft.",
+   "Die Pole stoßen sich ab.",
+   "Nichts — Magnete wirken nur auf Eisen."
+  ],
+  "correct": 2,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Nordpol und Nordpol stoßen sich ab also."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Morgens sind es -6 °C, mittags 0 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "8 °C",
+   "7 °C",
+   "6 °C",
+   "5 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 0 °C − (-6 °C) = 6 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: In welcher Einheit misst man die Länge eines Fußballfeldes?",
+  "options": [
+   "m",
+   "kg",
+   "s",
+   "°C"
+  ],
+  "correct": 0,
+  "explanation": "Länge misst man in der Einheit m."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Goldring“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nur im Dunkeln.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn die Batterie neu ist.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 3,
+  "explanation": "Goldring ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Kerzenwachs“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nur, wenn man das Material erwärmt.",
+   "Nein, denn dieses Material leitet keinen Strom."
+  ],
+  "correct": 3,
+  "explanation": "Kerzenwachs ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es 8 °C, mittags 16 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "8 °C",
+   "11 °C",
+   "6 °C",
+   "10 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 16 °C − (8 °C) = 8 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Porzellantasse“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nur, wenn man das Material erwärmt.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 1,
+  "explanation": "Porzellantasse ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Aufgabe: Welche der genannten Lichtquellen leuchtet selbst?",
+  "options": [
+   "ein Spiegel",
+   "eine weiße Wand",
+   "die Sonne",
+   "der Mond"
+  ],
+  "correct": 2,
+  "explanation": "Die Sonne ist eine natürliche Lichtquelle. Mond, Spiegel und Wand reflektieren nur Licht."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Das Thermometer zeigt -7 °C. Die Temperatur fällt um 12 °C. Was zeigt es danach an?",
+  "options": [
+   "-21 °C",
+   "-19 °C",
+   "-22 °C",
+   "-18 °C"
+  ],
+  "correct": 1,
+  "explanation": "-7 °C − 12 °C = -19 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Das Thermometer zeigt 5 °C. Die Temperatur steigt um 5 °C. Was zeigt es danach an?",
+  "options": [
+   "11 °C",
+   "7 °C",
+   "10 °C",
+   "8 °C"
+  ],
+  "correct": 2,
+  "explanation": "5 °C + 5 °C = 10 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Welche Einheit gehört zur Größe „Zeit“?",
+  "options": [
+   "s (Sekunde)",
+   "m (Meter)",
+   "°C (Grad Celsius)",
+   "kg (Kilogramm)"
+  ],
+  "correct": 0,
+  "explanation": "Die Größe Zeit wird in Sekunde (s) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Das Thermometer zeigt 6 °C. Die Temperatur fällt um 3 °C. Was zeigt es danach an?",
+  "options": [
+   "4 °C",
+   "3 °C",
+   "2 °C",
+   "5 °C"
+  ],
+  "correct": 1,
+  "explanation": "6 °C − 3 °C = 3 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke 0 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "9 °C",
+   "10 °C",
+   "11 °C",
+   "12 °C"
+  ],
+  "correct": 1,
+  "explanation": "0 °C + 5 · 2 °C = 10 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt 4 °C. Die Temperatur steigt um 4 °C. Was zeigt es danach an?",
+  "options": [
+   "11 °C",
+   "9 °C",
+   "8 °C",
+   "5 °C"
+  ],
+  "correct": 2,
+  "explanation": "4 °C + 4 °C = 8 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt -4 °C. Die Temperatur fällt um 10 °C. Was zeigt es danach an?",
+  "options": [
+   "-14 °C",
+   "-12 °C",
+   "-17 °C",
+   "-16 °C"
+  ],
+  "correct": 0,
+  "explanation": "-4 °C − 10 °C = -14 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es 8 °C, mittags 25 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "20 °C",
+   "17 °C",
+   "14 °C",
+   "16 °C"
+  ],
+  "correct": 1,
+  "explanation": "Unterschied: 25 °C − (8 °C) = 17 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Kupferdraht“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn die Batterie neu ist.",
+   "Nur im Dunkeln.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 3,
+  "explanation": "Kupferdraht ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: Welcher Gegenstand leitet den Strom NICHT (Isolator)?",
+  "options": [
+   "Wollfaden",
+   "Stahlschere (Klinge)",
+   "Bleistiftmine (Grafit)",
+   "Stahlbüroklammer"
+  ],
+  "correct": 0,
+  "explanation": "Wollfaden ist ein Isolator — er leitet keinen Strom, die Lampe bleibt dunkel."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. In welcher Einheit misst man die Höhe eines Hauses?",
+  "options": [
+   "kg",
+   "m",
+   "s",
+   "°C"
+  ],
+  "correct": 1,
+  "explanation": "Länge/Höhe misst man in der Einheit m."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Zieht ein Magnet den Gegenstand „Bleistiftmine (Grafit)“ an?",
+  "options": [
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, aber nur am Nordpol.",
+   "Nein, denn er enthält kein Eisen."
+  ],
+  "correct": 3,
+  "explanation": "Bleistiftmine (Grafit) enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Überlege genau: Bei welcher Temperatur gefriert Wasser?",
+  "options": [
+   "0 °C",
+   "−100 °C",
+   "10 °C",
+   "100 °C"
+  ],
+  "correct": 0,
+  "explanation": "Reines Wasser gefriert bei 0 °C und siedet bei 100 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Morgens sind es -5 °C, mittags 7 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "13 °C",
+   "11 °C",
+   "10 °C",
+   "12 °C"
+  ],
+  "correct": 3,
+  "explanation": "Unterschied: 7 °C − (-5 °C) = 12 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Morgens sind es 7 °C, mittags 27 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "22 °C",
+   "17 °C",
+   "19 °C",
+   "20 °C"
+  ],
+  "correct": 3,
+  "explanation": "Unterschied: 27 °C − (7 °C) = 20 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Zieht ein Magnet den Gegenstand „Keramikfliese“ an?",
+  "options": [
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, aber nur am Nordpol."
+  ],
+  "correct": 0,
+  "explanation": "Keramikfliese enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 2 Striche über der Marke 14 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "18 °C",
+   "16 °C",
+   "19 °C",
+   "20 °C"
+  ],
+  "correct": 0,
+  "explanation": "14 °C + 2 · 2 °C = 18 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Überlege genau: Was hören wir, wenn eine Saite schneller schwingt?",
+  "options": [
+   "immer einen lauteren Ton",
+   "gar keinen Ton",
+   "einen tieferen Ton",
+   "einen höheren Ton"
+  ],
+  "correct": 3,
+  "explanation": "Je schneller die Schwingung (höhere Frequenz), desto höher klingt der Ton."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Wird ein Gegenstand wie „Stahlschere (Klinge)“ von einem Magneten angezogen?",
+  "options": [
+   "Ja, denn er enthält Eisen bzw. Stahl.",
+   "Nur, wenn er nass ist.",
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur bei großer Hitze."
+  ],
+  "correct": 0,
+  "explanation": "Stahlschere (Klinge) enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Teste dein Wissen: Wo kann sich Schall NICHT ausbreiten?",
+  "options": [
+   "im luftleeren Raum (Vakuum)",
+   "in Luft",
+   "in Wasser",
+   "in Metall"
+  ],
+  "correct": 0,
+  "explanation": "Schall braucht einen Träger (Luft, Wasser, feste Stoffe). Im Vakuum gibt es keinen Schall."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zwei Magnete werden mit Nordpol und Nordpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Beide Magnete verlieren ihre Kraft.",
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Die Pole stoßen sich ab.",
+   "Die Pole ziehen sich an."
+  ],
+  "correct": 2,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Nordpol und Nordpol stoßen sich ab also."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: In welcher Einheit misst man die Temperatur von Badewasser?",
+  "options": [
+   "s",
+   "kg",
+   "m",
+   "°C"
+  ],
+  "correct": 3,
+  "explanation": "Temperatur misst man in der Einheit °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wird ein Gegenstand wie „Stahlschere (Klinge)“ von einem Magneten angezogen?",
+  "options": [
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur bei großer Hitze.",
+   "Nur, wenn er nass ist.",
+   "Ja, denn er enthält Eisen bzw. Stahl."
+  ],
+  "correct": 3,
+  "explanation": "Stahlschere (Klinge) enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es -6 °C, mittags 9 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "16 °C",
+   "14 °C",
+   "15 °C",
+   "17 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 9 °C − (-6 °C) = 15 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es 8 °C, mittags 13 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "5 °C",
+   "8 °C",
+   "2 °C",
+   "7 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 13 °C − (8 °C) = 5 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zieht ein Magnet den Gegenstand „Plastiklineal“ an?",
+  "options": [
+   "Nein, denn er enthält kein Eisen.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, aber nur am Nordpol.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an."
+  ],
+  "correct": 0,
+  "explanation": "Plastiklineal enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt 22 °C. Die Temperatur fällt um 5 °C. Was zeigt es danach an?",
+  "options": [
+   "17 °C",
+   "19 °C",
+   "20 °C",
+   "14 °C"
+  ],
+  "correct": 0,
+  "explanation": "22 °C − 5 °C = 17 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Morgens sind es -12 °C, mittags -5 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "8 °C",
+   "10 °C",
+   "6 °C",
+   "7 °C"
+  ],
+  "correct": 3,
+  "explanation": "Unterschied: -5 °C − (-12 °C) = 7 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Aufgabe: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Messingschlüssel“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur im Dunkeln.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn die Batterie neu ist."
+  ],
+  "correct": 0,
+  "explanation": "Messingschlüssel ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: In welcher Einheit misst man die Masse einer Schultasche?",
+  "options": [
+   "m",
+   "s",
+   "kg",
+   "°C"
+  ],
+  "correct": 2,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt 20 °C. Die Temperatur steigt um 15 °C. Was zeigt es danach an?",
+  "options": [
+   "35 °C",
+   "36 °C",
+   "34 °C",
+   "32 °C"
+  ],
+  "correct": 0,
+  "explanation": "20 °C + 15 °C = 35 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Zieht ein Magnet den Gegenstand „Korken“ an?",
+  "options": [
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Ja, aber nur am Nordpol."
+  ],
+  "correct": 1,
+  "explanation": "Korken enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Das Thermometer zeigt 6 °C. Die Temperatur steigt um 8 °C. Was zeigt es danach an?",
+  "options": [
+   "14 °C",
+   "16 °C",
+   "15 °C",
+   "17 °C"
+  ],
+  "correct": 0,
+  "explanation": "6 °C + 8 °C = 14 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: Zu welcher Größe gehört die Einheit „°C“?",
+  "options": [
+   "Masse",
+   "Zeit",
+   "Länge",
+   "Temperatur"
+  ],
+  "correct": 3,
+  "explanation": "°C steht für Grad Celsius und misst die Größe Temperatur."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Wird ein Gegenstand wie „Stahlbüroklammer“ von einem Magneten angezogen?",
+  "options": [
+   "Nur bei großer Hitze.",
+   "Ja, denn er enthält Eisen bzw. Stahl.",
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur, wenn er nass ist."
+  ],
+  "correct": 1,
+  "explanation": "Stahlbüroklammer enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. Welche Einheit gehört zur Größe „Zeit“?",
+  "options": [
+   "s (Sekunde)",
+   "kg (Kilogramm)",
+   "m (Meter)",
+   "°C (Grad Celsius)"
+  ],
+  "correct": 0,
+  "explanation": "Die Größe Zeit wird in Sekunde (s) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 4 Striche über der Marke 0 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "9 °C",
+   "6 °C",
+   "8 °C",
+   "4 °C"
+  ],
+  "correct": 2,
+  "explanation": "0 °C + 4 · 2 °C = 8 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt 9 °C. Die Temperatur fällt um 5 °C. Was zeigt es danach an?",
+  "options": [
+   "4 °C",
+   "7 °C",
+   "3 °C",
+   "1 °C"
+  ],
+  "correct": 0,
+  "explanation": "9 °C − 5 °C = 4 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es 0 °C, mittags 16 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "16 °C",
+   "15 °C",
+   "14 °C",
+   "19 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 16 °C − (0 °C) = 16 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wird ein Gegenstand wie „Eisennagel“ von einem Magneten angezogen?",
+  "options": [
+   "Nur, wenn er nass ist.",
+   "Nur bei großer Hitze.",
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Ja, denn er enthält Eisen bzw. Stahl."
+  ],
+  "correct": 3,
+  "explanation": "Eisennagel enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Aufgabe: Warum sind Stromkabel mit Kunststoff ummantelt?",
+  "options": [
+   "Kunststoff leitet keinen Strom und schützt uns",
+   "damit sie schwerer sind",
+   "damit sie schöner aussehen",
+   "damit der Strom schneller fließt"
+  ],
+  "correct": 0,
+  "explanation": "Die Kunststoffhülle ist ein Isolator — sie schützt vor einem Stromschlag."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke 0 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "5 °C",
+   "6 °C",
+   "10 °C",
+   "8 °C"
+  ],
+  "correct": 1,
+  "explanation": "0 °C + 3 · 2 °C = 6 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: Zu welcher Größe gehört die Einheit „kg“?",
+  "options": [
+   "Zeit",
+   "Masse",
+   "Temperatur",
+   "Länge"
+  ],
+  "correct": 1,
+  "explanation": "kg steht für Kilogramm und misst die Größe Masse."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "In welcher Einheit misst man die Masse einer Schultasche?",
+  "options": [
+   "s",
+   "m",
+   "kg",
+   "°C"
+  ],
+  "correct": 2,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Zu welcher Größe gehört die Einheit „m“?",
+  "options": [
+   "Temperatur",
+   "Masse",
+   "Länge",
+   "Zeit"
+  ],
+  "correct": 2,
+  "explanation": "m steht für Meter und misst die Größe Länge."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Morgens sind es -6 °C, mittags 1 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "10 °C",
+   "7 °C",
+   "5 °C",
+   "4 °C"
+  ],
+  "correct": 1,
+  "explanation": "Unterschied: 1 °C − (-6 °C) = 7 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke 12 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "18 °C",
+   "23 °C",
+   "24 °C",
+   "22 °C"
+  ],
+  "correct": 3,
+  "explanation": "12 °C + 5 · 2 °C = 22 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Welcher Gegenstand leitet den elektrischen Strom, wenn man ihn in einen Stromkreis einbaut?",
+  "options": [
+   "Papierblatt",
+   "Holzstab",
+   "Messingschlüssel",
+   "Styroporplatte"
+  ],
+  "correct": 2,
+  "explanation": "Messingschlüssel besteht aus leitendem Material (Metall bzw. Grafit) — die Lampe leuchtet."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: In welcher Einheit misst man die Dauer eines Blitzes?",
+  "options": [
+   "°C",
+   "kg",
+   "m",
+   "s"
+  ],
+  "correct": 3,
+  "explanation": "Zeit misst man in der Einheit s."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Morgens sind es 1 °C, mittags 16 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "18 °C",
+   "16 °C",
+   "15 °C",
+   "12 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 16 °C − (1 °C) = 15 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Überlege genau: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Ledergürtel“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, denn dieses Material leitet Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nein, denn dieses Material leitet keinen Strom."
+  ],
+  "correct": 3,
+  "explanation": "Ledergürtel ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 1 Strich über der Marke 8 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "9 °C",
+   "10 °C",
+   "11 °C",
+   "14 °C"
+  ],
+  "correct": 1,
+  "explanation": "8 °C + 1 · 2 °C = 10 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Morgens sind es 3 °C, mittags 17 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "14 °C",
+   "12 °C",
+   "17 °C",
+   "11 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 17 °C − (3 °C) = 14 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Aufgabe: Wann entsteht ein Schatten?",
+  "options": [
+   "wenn Licht durch Glas fällt",
+   "wenn es dunkel ist",
+   "wenn eine Lampe ausgeschaltet ist",
+   "wenn ein lichtundurchlässiger Körper Licht abblockt"
+  ],
+  "correct": 3,
+  "explanation": "Ein Schatten entsteht hinter einem Körper, der das Licht nicht durchlässt."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Aufgabe: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Korken“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 0,
+  "explanation": "Korken ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 8 °C. Die Temperatur steigt um 13 °C. Was zeigt es danach an?",
+  "options": [
+   "21 °C",
+   "20 °C",
+   "24 °C",
+   "19 °C"
+  ],
+  "correct": 0,
+  "explanation": "8 °C + 13 °C = 21 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Morgens sind es 0 °C, mittags 12 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "12 °C",
+   "10 °C",
+   "15 °C",
+   "9 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 12 °C − (0 °C) = 12 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke -4 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "7 °C",
+   "10 °C",
+   "6 °C",
+   "5 °C"
+  ],
+  "correct": 2,
+  "explanation": "-4 °C + 5 · 2 °C = 6 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Das Thermometer zeigt 3 °C. Die Temperatur fällt um 12 °C. Was zeigt es danach an?",
+  "options": [
+   "-11 °C",
+   "-9 °C",
+   "-12 °C",
+   "-6 °C"
+  ],
+  "correct": 1,
+  "explanation": "3 °C − 12 °C = -9 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Das Thermometer zeigt 1 °C. Die Temperatur steigt um 11 °C. Was zeigt es danach an?",
+  "options": [
+   "12 °C",
+   "15 °C",
+   "10 °C",
+   "11 °C"
+  ],
+  "correct": 0,
+  "explanation": "1 °C + 11 °C = 12 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es -12 °C, mittags -3 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "11 °C",
+   "9 °C",
+   "7 °C",
+   "12 °C"
+  ],
+  "correct": 1,
+  "explanation": "Unterschied: -3 °C − (-12 °C) = 9 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Zieht ein Magnet den Gegenstand „Aluminiumfolie“ an?",
+  "options": [
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Ja, aber nur am Nordpol.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Nein, denn er enthält kein Eisen."
+  ],
+  "correct": 3,
+  "explanation": "Aluminiumfolie enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Baumwolltuch“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn man das Material erwärmt."
+  ],
+  "correct": 2,
+  "explanation": "Baumwolltuch ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: In welcher Einheit misst man die Masse eines Hundes?",
+  "options": [
+   "°C",
+   "kg",
+   "s",
+   "m"
+  ],
+  "correct": 1,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Aufgabe: Bei welcher Temperatur gefriert Wasser?",
+  "options": [
+   "0 °C",
+   "−100 °C",
+   "100 °C",
+   "10 °C"
+  ],
+  "correct": 0,
+  "explanation": "Reines Wasser gefriert bei 0 °C und siedet bei 100 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zieht ein Magnet den Gegenstand „Ledergürtel“ an?",
+  "options": [
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, aber nur am Nordpol."
+  ],
+  "correct": 2,
+  "explanation": "Ledergürtel enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wähle die richtige Antwort. Welche Körpertemperatur ist bei einem gesunden Menschen normal?",
+  "options": [
+   "etwa 20 °C",
+   "etwa 37 °C",
+   "etwa 0 °C",
+   "etwa 45 °C"
+  ],
+  "correct": 1,
+  "explanation": "Die normale Körpertemperatur des Menschen liegt bei ungefähr 37 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Überlege genau: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Kupferdraht“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur im Dunkeln.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn die Batterie neu ist."
+  ],
+  "correct": 0,
+  "explanation": "Kupferdraht ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. Zu welcher Größe gehört die Einheit „°C“?",
+  "options": [
+   "Zeit",
+   "Länge",
+   "Temperatur",
+   "Masse"
+  ],
+  "correct": 2,
+  "explanation": "°C steht für Grad Celsius und misst die Größe Temperatur."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: Welche Einheit gehört zur Größe „Länge“?",
+  "options": [
+   "kg (Kilogramm)",
+   "°C (Grad Celsius)",
+   "s (Sekunde)",
+   "m (Meter)"
+  ],
+  "correct": 3,
+  "explanation": "Die Größe Länge wird in Meter (m) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Morgens sind es -6 °C, mittags -2 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "5 °C",
+   "4 °C",
+   "3 °C",
+   "2 °C"
+  ],
+  "correct": 1,
+  "explanation": "Unterschied: -2 °C − (-6 °C) = 4 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: Zu welcher Größe gehört die Einheit „°C“?",
+  "options": [
+   "Temperatur",
+   "Zeit",
+   "Länge",
+   "Masse"
+  ],
+  "correct": 0,
+  "explanation": "°C steht für Grad Celsius und misst die Größe Temperatur."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke -10 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "-4 °C",
+   "-6 °C",
+   "-3 °C",
+   "-8 °C"
+  ],
+  "correct": 0,
+  "explanation": "-10 °C + 3 · 2 °C = -4 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Teste dein Wissen: Wonach richtet sich die Nadel eines Kompasses aus?",
+  "options": [
+   "nach dem Luftdruck",
+   "nach dem Wind",
+   "nach der Sonne",
+   "nach dem Magnetfeld der Erde"
+  ],
+  "correct": 3,
+  "explanation": "Die Erde ist ein riesiger Magnet — die Kompassnadel richtet sich nach ihrem Magnetfeld aus."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Teste dein Wissen: Zwei Magnete werden mit Nordpol und Nordpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Die Pole ziehen sich an.",
+   "Beide Magnete verlieren ihre Kraft.",
+   "Die Pole stoßen sich ab.",
+   "Nichts — Magnete wirken nur auf Eisen."
+  ],
+  "correct": 2,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Nordpol und Nordpol stoßen sich ab also."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zieht ein Magnet den Gegenstand „Zinkblech“ an?",
+  "options": [
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, aber nur am Nordpol."
+  ],
+  "correct": 2,
+  "explanation": "Zinkblech enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke -6 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "0 °C",
+   "6 °C",
+   "5 °C",
+   "4 °C"
+  ],
+  "correct": 3,
+  "explanation": "-6 °C + 5 · 2 °C = 4 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke 8 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "16 °C",
+   "20 °C",
+   "17 °C",
+   "18 °C"
+  ],
+  "correct": 3,
+  "explanation": "8 °C + 5 · 2 °C = 18 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. In welcher Einheit misst man die Länge eines Schwimmbeckens?",
+  "options": [
+   "kg",
+   "s",
+   "m",
+   "°C"
+  ],
+  "correct": 2,
+  "explanation": "Länge misst man in der Einheit m."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Zieht ein Magnet den Gegenstand „Gummihandschuh“ an?",
+  "options": [
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, aber nur am Nordpol.",
+   "Nur, wenn der Magnet sehr groß ist."
+  ],
+  "correct": 1,
+  "explanation": "Gummihandschuh enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 19 °C. Die Temperatur steigt um 12 °C. Was zeigt es danach an?",
+  "options": [
+   "31 °C",
+   "34 °C",
+   "29 °C",
+   "30 °C"
+  ],
+  "correct": 0,
+  "explanation": "19 °C + 12 °C = 31 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Zinkblech“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur im Dunkeln.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn die Batterie neu ist."
+  ],
+  "correct": 0,
+  "explanation": "Zinkblech ist ein elektrischer Leiter — der Stromkreis ist geschlossen und die Lampe leuchtet."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Überlege genau: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Glasscheibe“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nur, wenn man das Material erwärmt.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, denn dieses Material leitet Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde."
+  ],
+  "correct": 1,
+  "explanation": "Glasscheibe ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "In welcher Einheit misst man die Temperatur von Badewasser?",
+  "options": [
+   "s",
+   "kg",
+   "m",
+   "°C"
+  ],
+  "correct": 3,
+  "explanation": "Temperatur misst man in der Einheit °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: In welcher Einheit misst man die Körpertemperatur eines Menschen?",
+  "options": [
+   "m",
+   "kg",
+   "°C",
+   "s"
+  ],
+  "correct": 2,
+  "explanation": "Temperatur misst man in der Einheit °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke -6 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "4 °C",
+   "3 °C",
+   "8 °C",
+   "6 °C"
+  ],
+  "correct": 0,
+  "explanation": "-6 °C + 5 · 2 °C = 4 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es 3 °C, mittags 10 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "10 °C",
+   "4 °C",
+   "7 °C",
+   "5 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 10 °C − (3 °C) = 7 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Was passiert, wenn man einen Stabmagneten in der Mitte durchtrennt?",
+  "options": [
+   "es entstehen zwei Magnete mit je zwei Polen",
+   "ein Teil ist nur Nordpol, der andere nur Südpol",
+   "nur ein Teil bleibt magnetisch",
+   "beide Teile sind nicht mehr magnetisch"
+  ],
+  "correct": 0,
+  "explanation": "Es gibt keinen einzelnen Pol: Jedes Teilstück hat wieder Nord- und Südpol."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Welche Einheit gehört zur Größe „Masse“?",
+  "options": [
+   "s (Sekunde)",
+   "kg (Kilogramm)",
+   "°C (Grad Celsius)",
+   "m (Meter)"
+  ],
+  "correct": 1,
+  "explanation": "Die Größe Masse wird in Kilogramm (kg) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke 12 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "16 °C",
+   "14 °C",
+   "17 °C",
+   "18 °C"
+  ],
+  "correct": 3,
+  "explanation": "12 °C + 3 · 2 °C = 18 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Aufgabe: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Wollfaden“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur, wenn man das Material erwärmt.",
+   "Nein, denn dieses Material leitet keinen Strom."
+  ],
+  "correct": 3,
+  "explanation": "Wollfaden ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Das Thermometer zeigt 22 °C. Die Temperatur steigt um 3 °C. Was zeigt es danach an?",
+  "options": [
+   "22 °C",
+   "27 °C",
+   "24 °C",
+   "25 °C"
+  ],
+  "correct": 3,
+  "explanation": "22 °C + 3 °C = 25 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Zieht ein Magnet den Gegenstand „Wollfaden“ an?",
+  "options": [
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Ja, aber nur am Nordpol.",
+   "Nein, denn er enthält kein Eisen."
+  ],
+  "correct": 3,
+  "explanation": "Wollfaden enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Styroporplatte“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 0,
+  "explanation": "Styroporplatte ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Aufgabe: Wo kann sich Schall NICHT ausbreiten?",
+  "options": [
+   "in Wasser",
+   "in Metall",
+   "in Luft",
+   "im luftleeren Raum (Vakuum)"
+  ],
+  "correct": 3,
+  "explanation": "Schall braucht einen Träger (Luft, Wasser, feste Stoffe). Im Vakuum gibt es keinen Schall."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Das Thermometer zeigt 7 °C. Die Temperatur fällt um 9 °C. Was zeigt es danach an?",
+  "options": [
+   "-4 °C",
+   "-5 °C",
+   "-3 °C",
+   "-2 °C"
+  ],
+  "correct": 3,
+  "explanation": "7 °C − 9 °C = -2 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Zu welcher Größe gehört die Einheit „kg“?",
+  "options": [
+   "Masse",
+   "Temperatur",
+   "Länge",
+   "Zeit"
+  ],
+  "correct": 0,
+  "explanation": "kg steht für Kilogramm und misst die Größe Masse."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: In welcher Einheit misst man die Temperatur von Badewasser?",
+  "options": [
+   "kg",
+   "m",
+   "s",
+   "°C"
+  ],
+  "correct": 3,
+  "explanation": "Temperatur misst man in der Einheit °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Zieht ein Magnet den Gegenstand „Ledergürtel“ an?",
+  "options": [
+   "Nein, denn er enthält kein Eisen.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Ja, aber nur am Nordpol.",
+   "Nur, wenn der Magnet sehr groß ist."
+  ],
+  "correct": 0,
+  "explanation": "Ledergürtel enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Das Thermometer zeigt -3 °C. Die Temperatur fällt um 9 °C. Was zeigt es danach an?",
+  "options": [
+   "-13 °C",
+   "-12 °C",
+   "-10 °C",
+   "-14 °C"
+  ],
+  "correct": 1,
+  "explanation": "-3 °C − 9 °C = -12 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt -9 °C. Die Temperatur fällt um 10 °C. Was zeigt es danach an?",
+  "options": [
+   "-20 °C",
+   "-19 °C",
+   "-16 °C",
+   "-21 °C"
+  ],
+  "correct": 1,
+  "explanation": "-9 °C − 10 °C = -19 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke 10 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "14 °C",
+   "20 °C",
+   "16 °C",
+   "18 °C"
+  ],
+  "correct": 2,
+  "explanation": "10 °C + 3 · 2 °C = 16 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Wähle die richtige Antwort. In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Wollfaden“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur, wenn man das Material erwärmt.",
+   "Nein, denn dieses Material leitet keinen Strom."
+  ],
+  "correct": 3,
+  "explanation": "Wollfaden ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke 14 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "22 °C",
+   "23 °C",
+   "25 °C",
+   "24 °C"
+  ],
+  "correct": 3,
+  "explanation": "14 °C + 5 · 2 °C = 24 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Welche Flüssigkeit steigt im Thermometer, wenn es wärmer wird?",
+  "options": [
+   "Wasser fließt hinein",
+   "die Thermometerflüssigkeit dehnt sich aus und steigt",
+   "Luft wird hineingepumpt",
+   "die Flüssigkeit schrumpft"
+  ],
+  "correct": 1,
+  "explanation": "Wärme dehnt die Flüssigkeit im Röhrchen aus — sie steigt an der Skala nach oben."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es -9 °C, mittags 5 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "14 °C",
+   "16 °C",
+   "13 °C",
+   "12 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 5 °C − (-9 °C) = 14 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zwei Magnete werden mit Südpol und Südpol aneinandergehalten. Was passiert?",
+  "options": [
+   "Nichts — Magnete wirken nur auf Eisen.",
+   "Beide Magnete verlieren ihre Kraft.",
+   "Die Pole ziehen sich an.",
+   "Die Pole stoßen sich ab."
+  ],
+  "correct": 3,
+  "explanation": "Gleiche Pole stoßen sich ab, ungleiche Pole ziehen sich an. Südpol und Südpol stoßen sich ab also."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "In welcher Einheit misst man die Länge eines Fußballfeldes?",
+  "options": [
+   "°C",
+   "s",
+   "kg",
+   "m"
+  ],
+  "correct": 3,
+  "explanation": "Länge misst man in der Einheit m."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 4 °C. Die Temperatur steigt um 12 °C. Was zeigt es danach an?",
+  "options": [
+   "15 °C",
+   "17 °C",
+   "16 °C",
+   "19 °C"
+  ],
+  "correct": 2,
+  "explanation": "4 °C + 12 °C = 16 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt -9 °C. Die Temperatur fällt um 5 °C. Was zeigt es danach an?",
+  "options": [
+   "-15 °C",
+   "-17 °C",
+   "-14 °C",
+   "-13 °C"
+  ],
+  "correct": 2,
+  "explanation": "-9 °C − 5 °C = -14 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Das Thermometer zeigt -10 °C. Die Temperatur steigt um 13 °C. Was zeigt es danach an?",
+  "options": [
+   "4 °C",
+   "3 °C",
+   "2 °C",
+   "1 °C"
+  ],
+  "correct": 1,
+  "explanation": "-10 °C + 13 °C = 3 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: Welche Einheit gehört zur Größe „Zeit“?",
+  "options": [
+   "°C (Grad Celsius)",
+   "s (Sekunde)",
+   "m (Meter)",
+   "kg (Kilogramm)"
+  ],
+  "correct": 1,
+  "explanation": "Die Größe Zeit wird in Sekunde (s) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Das Thermometer zeigt 10 °C. Die Temperatur fällt um 5 °C. Was zeigt es danach an?",
+  "options": [
+   "7 °C",
+   "8 °C",
+   "5 °C",
+   "4 °C"
+  ],
+  "correct": 2,
+  "explanation": "10 °C − 5 °C = 5 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es 6 °C, mittags 16 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "10 °C",
+   "9 °C",
+   "8 °C",
+   "12 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 16 °C − (6 °C) = 10 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wähle die richtige Antwort. Durch welche Stoffe wirkt die Kraft eines Magneten hindurch?",
+  "options": [
+   "z. B. durch Papier und dünnes Holz",
+   "nur durch Wasser",
+   "nur durch Eisen",
+   "durch gar keine Stoffe"
+  ],
+  "correct": 0,
+  "explanation": "Magnetkraft wirkt durch viele nicht-magnetische Stoffe hindurch, etwa Papier, Holz oder Glas."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 10 °C. Die Temperatur fällt um 12 °C. Was zeigt es danach an?",
+  "options": [
+   "-4 °C",
+   "-5 °C",
+   "-3 °C",
+   "-2 °C"
+  ],
+  "correct": 3,
+  "explanation": "10 °C − 12 °C = -2 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: Welche Einheit gehört zur Größe „Temperatur“?",
+  "options": [
+   "m (Meter)",
+   "s (Sekunde)",
+   "kg (Kilogramm)",
+   "°C (Grad Celsius)"
+  ],
+  "correct": 3,
+  "explanation": "Die Größe Temperatur wird in Grad Celsius (°C) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es -6 °C, mittags 8 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "12 °C",
+   "11 °C",
+   "14 °C",
+   "15 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 8 °C − (-6 °C) = 14 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke 8 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "12 °C",
+   "14 °C",
+   "16 °C",
+   "15 °C"
+  ],
+  "correct": 1,
+  "explanation": "8 °C + 3 · 2 °C = 14 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "In welcher Einheit misst man die Körpertemperatur eines Menschen?",
+  "options": [
+   "°C",
+   "m",
+   "s",
+   "kg"
+  ],
+  "correct": 0,
+  "explanation": "Temperatur misst man in der Einheit °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Holzstab“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nein, denn dieses Material leitet keinen Strom."
+  ],
+  "correct": 3,
+  "explanation": "Holzstab ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Wähle die richtige Antwort. Zieht ein Magnet den Gegenstand „Glasscheibe“ an?",
+  "options": [
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Ja, aber nur am Nordpol.",
+   "Nein, denn er enthält kein Eisen."
+  ],
+  "correct": 3,
+  "explanation": "Glasscheibe enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Überlege genau: In welcher Einheit misst man die Höhe eines Hauses?",
+  "options": [
+   "m",
+   "s",
+   "kg",
+   "°C"
+  ],
+  "correct": 0,
+  "explanation": "Länge/Höhe misst man in der Einheit m."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke -8 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "1 °C",
+   "2 °C",
+   "6 °C",
+   "4 °C"
+  ],
+  "correct": 1,
+  "explanation": "-8 °C + 5 · 2 °C = 2 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Das Thermometer zeigt 9 °C. Die Temperatur steigt um 15 °C. Was zeigt es danach an?",
+  "options": [
+   "22 °C",
+   "24 °C",
+   "23 °C",
+   "21 °C"
+  ],
+  "correct": 1,
+  "explanation": "9 °C + 15 °C = 24 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Aufgabe: Wo ist die Kraft eines Stabmagneten am stärksten?",
+  "options": [
+   "genau in der Mitte",
+   "nur am Nordpol",
+   "an den beiden Polen",
+   "überall gleich stark"
+  ],
+  "correct": 2,
+  "explanation": "Die magnetische Kraft ist an den Polen (den Enden) am stärksten."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Das Thermometer zeigt 9 °C. Die Temperatur fällt um 8 °C. Was zeigt es danach an?",
+  "options": [
+   "0 °C",
+   "1 °C",
+   "4 °C",
+   "-1 °C"
+  ],
+  "correct": 1,
+  "explanation": "9 °C − 8 °C = 1 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Ledergürtel“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur, wenn man das Material erwärmt.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde."
+  ],
+  "correct": 2,
+  "explanation": "Ledergürtel ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 7 °C. Die Temperatur fällt um 11 °C. Was zeigt es danach an?",
+  "options": [
+   "-6 °C",
+   "-4 °C",
+   "-5 °C",
+   "-2 °C"
+  ],
+  "correct": 1,
+  "explanation": "7 °C − 11 °C = -4 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 2 Striche über der Marke 10 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "16 °C",
+   "12 °C",
+   "10 °C",
+   "14 °C"
+  ],
+  "correct": 3,
+  "explanation": "10 °C + 2 · 2 °C = 14 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Das Thermometer zeigt 20 °C. Die Temperatur steigt um 3 °C. Was zeigt es danach an?",
+  "options": [
+   "23 °C",
+   "25 °C",
+   "20 °C",
+   "24 °C"
+  ],
+  "correct": 0,
+  "explanation": "20 °C + 3 °C = 23 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke 20 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "26 °C",
+   "27 °C",
+   "30 °C",
+   "28 °C"
+  ],
+  "correct": 0,
+  "explanation": "20 °C + 3 · 2 °C = 26 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Bei welcher Temperatur siedet Wasser (auf Meereshöhe)?",
+  "options": [
+   "0 °C",
+   "1000 °C",
+   "100 °C",
+   "50 °C"
+  ],
+  "correct": 2,
+  "explanation": "Auf Meereshöhe siedet reines Wasser bei 100 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: Zu welcher Größe gehört die Einheit „m“?",
+  "options": [
+   "Temperatur",
+   "Zeit",
+   "Länge",
+   "Masse"
+  ],
+  "correct": 2,
+  "explanation": "m steht für Meter und misst die Größe Länge."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es 2 °C, mittags 21 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "19 °C",
+   "18 °C",
+   "20 °C",
+   "16 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 21 °C − (2 °C) = 19 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Aufgabe: Wodurch entsteht Schall?",
+  "options": [
+   "durch Magnetismus",
+   "durch Schwingungen von Körpern",
+   "durch Wärme",
+   "durch Licht"
+  ],
+  "correct": 1,
+  "explanation": "Schall entsteht, wenn Körper schwingen — z. B. eine Gitarrensaite oder ein Trommelfell."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 1 Strich über der Marke -6 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "-4 °C",
+   "-8 °C",
+   "-3 °C",
+   "-6 °C"
+  ],
+  "correct": 0,
+  "explanation": "-6 °C + 1 · 2 °C = -4 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Morgens sind es 4 °C, mittags 19 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "15 °C",
+   "18 °C",
+   "17 °C",
+   "13 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 19 °C − (4 °C) = 15 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 4 Striche über der Marke 0 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "9 °C",
+   "10 °C",
+   "8 °C",
+   "7 °C"
+  ],
+  "correct": 2,
+  "explanation": "0 °C + 4 · 2 °C = 8 °C."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Wähle die richtige Antwort. Was passiert mit dem Schatten, wenn die Lampe näher an den Gegenstand rückt?",
+  "options": [
+   "er bleibt genau gleich",
+   "er wird kleiner",
+   "er verschwindet",
+   "er wird größer"
+  ],
+  "correct": 3,
+  "explanation": "Je näher die Lichtquelle am Gegenstand ist, desto größer wird der Schatten an der Wand."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 1 Strich über der Marke -4 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "-2 °C",
+   "-3 °C",
+   "-1 °C",
+   "-6 °C"
+  ],
+  "correct": 0,
+  "explanation": "-4 °C + 1 · 2 °C = -2 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Papierblatt“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 0,
+  "explanation": "Papierblatt ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Das Thermometer zeigt 12 °C. Die Temperatur steigt um 13 °C. Was zeigt es danach an?",
+  "options": [
+   "27 °C",
+   "25 °C",
+   "22 °C",
+   "26 °C"
+  ],
+  "correct": 1,
+  "explanation": "12 °C + 13 °C = 25 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Morgens sind es -10 °C, mittags -4 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "8 °C",
+   "3 °C",
+   "6 °C",
+   "5 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: -4 °C − (-10 °C) = 6 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke 0 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "14 °C",
+   "8 °C",
+   "9 °C",
+   "10 °C"
+  ],
+  "correct": 3,
+  "explanation": "0 °C + 5 · 2 °C = 10 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Morgens sind es 2 °C, mittags 19 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "14 °C",
+   "18 °C",
+   "19 °C",
+   "17 °C"
+  ],
+  "correct": 3,
+  "explanation": "Unterschied: 19 °C − (2 °C) = 17 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es 9 °C, mittags 20 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "14 °C",
+   "11 °C",
+   "10 °C",
+   "9 °C"
+  ],
+  "correct": 1,
+  "explanation": "Unterschied: 20 °C − (9 °C) = 11 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke 0 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "10 °C",
+   "7 °C",
+   "4 °C",
+   "6 °C"
+  ],
+  "correct": 3,
+  "explanation": "0 °C + 3 · 2 °C = 6 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Überlege genau: Wird ein Gegenstand wie „Eisennagel“ von einem Magneten angezogen?",
+  "options": [
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur, wenn er nass ist.",
+   "Ja, denn er enthält Eisen bzw. Stahl.",
+   "Nur bei großer Hitze."
+  ],
+  "correct": 2,
+  "explanation": "Eisennagel enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Morgens sind es -6 °C, mittags 9 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "18 °C",
+   "12 °C",
+   "15 °C",
+   "14 °C"
+  ],
+  "correct": 2,
+  "explanation": "Unterschied: 9 °C − (-6 °C) = 15 °C."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Zieht ein Magnet den Gegenstand „Plastiklineal“ an?",
+  "options": [
+   "Ja, aber nur am Nordpol.",
+   "Nur, wenn der Magnet sehr groß ist.",
+   "Ja, Magnete ziehen alle Metalle und Stoffe an.",
+   "Nein, denn er enthält kein Eisen."
+  ],
+  "correct": 3,
+  "explanation": "Plastiklineal enthält kein Eisen (und kein Nickel/Cobalt) — der Magnet zieht ihn nicht an."
+ },
+ {
+  "topic": "Physik-Grundlagen",
+  "question": "Teste dein Wissen: Wann entsteht ein Schatten?",
+  "options": [
+   "wenn Licht durch Glas fällt",
+   "wenn es dunkel ist",
+   "wenn ein lichtundurchlässiger Körper Licht abblockt",
+   "wenn eine Lampe ausgeschaltet ist"
+  ],
+  "correct": 2,
+  "explanation": "Ein Schatten entsteht hinter einem Körper, der das Licht nicht durchlässt."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Radiergummi“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, denn dieses Material leitet Strom.",
+   "Nur, wenn man das Material erwärmt."
+  ],
+  "correct": 1,
+  "explanation": "Radiergummi ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Magnetismus",
+  "question": "Aufgabe: Wird ein Gegenstand wie „Stahlschere (Klinge)“ von einem Magneten angezogen?",
+  "options": [
+   "Ja, denn er enthält Eisen bzw. Stahl.",
+   "Nur, wenn er nass ist.",
+   "Nein, Magnete ziehen nur Kunststoff an.",
+   "Nur bei großer Hitze."
+  ],
+  "correct": 0,
+  "explanation": "Stahlschere (Klinge) enthält Eisen/Stahl und wird deshalb vom Magneten angezogen."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: Zu welcher Größe gehört die Einheit „kg“?",
+  "options": [
+   "Zeit",
+   "Länge",
+   "Masse",
+   "Temperatur"
+  ],
+  "correct": 2,
+  "explanation": "kg steht für Kilogramm und misst die Größe Masse."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: In welcher Einheit misst man die Masse eines Kartoffelsacks?",
+  "options": [
+   "kg",
+   "°C",
+   "s",
+   "m"
+  ],
+  "correct": 0,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 4 Striche über der Marke -6 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "2 °C",
+   "3 °C",
+   "1 °C",
+   "4 °C"
+  ],
+  "correct": 0,
+  "explanation": "-6 °C + 4 · 2 °C = 2 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 1 Strich über der Marke 6 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "4 °C",
+   "9 °C",
+   "8 °C",
+   "12 °C"
+  ],
+  "correct": 2,
+  "explanation": "6 °C + 1 · 2 °C = 8 °C."
+ },
+ {
+  "topic": "Stromkreis",
+  "question": "Teste dein Wissen: In einem Stromkreis mit Batterie und Lampe wird die Lücke mit „Gummihandschuh“ überbrückt. Leuchtet die Lampe?",
+  "options": [
+   "Nein, denn dieses Material leitet keinen Strom.",
+   "Ja, aber nur ganz schwach für eine Sekunde.",
+   "Nur, wenn man das Material erwärmt.",
+   "Ja, denn dieses Material leitet Strom."
+  ],
+  "correct": 0,
+  "explanation": "Gummihandschuh ist ein Isolator — der Stromkreis bleibt unterbrochen, die Lampe bleibt aus."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Das Thermometer zeigt 1 °C. Die Temperatur fällt um 6 °C. Was zeigt es danach an?",
+  "options": [
+   "-8 °C",
+   "-3 °C",
+   "-5 °C",
+   "-4 °C"
+  ],
+  "correct": 2,
+  "explanation": "1 °C − 6 °C = -5 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. In welcher Einheit misst man die Masse eines Hundes?",
+  "options": [
+   "kg",
+   "s",
+   "°C",
+   "m"
+  ],
+  "correct": 0,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: In welcher Einheit misst man die Masse eines Kartoffelsacks?",
+  "options": [
+   "kg",
+   "°C",
+   "s",
+   "m"
+  ],
+  "correct": 0,
+  "explanation": "Masse misst man in der Einheit kg."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: In welcher Einheit misst man die Dauer eines Blitzes?",
+  "options": [
+   "°C",
+   "m",
+   "s",
+   "kg"
+  ],
+  "correct": 2,
+  "explanation": "Zeit misst man in der Einheit s."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Das Thermometer zeigt 9 °C. Die Temperatur fällt um 12 °C. Was zeigt es danach an?",
+  "options": [
+   "-3 °C",
+   "-5 °C",
+   "-6 °C",
+   "0 °C"
+  ],
+  "correct": 0,
+  "explanation": "9 °C − 12 °C = -3 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Teste dein Wissen: In welcher Einheit misst man die Dauer eines 100-Meter-Laufs?",
+  "options": [
+   "kg",
+   "m",
+   "s",
+   "°C"
+  ],
+  "correct": 2,
+  "explanation": "Zeit misst man in der Einheit s."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 3 Striche über der Marke 2 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "8 °C",
+   "10 °C",
+   "4 °C",
+   "9 °C"
+  ],
+  "correct": 0,
+  "explanation": "2 °C + 3 · 2 °C = 8 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Aufgabe: In welcher Einheit misst man die Länge eines Schwimmbeckens?",
+  "options": [
+   "s",
+   "kg",
+   "°C",
+   "m"
+  ],
+  "correct": 3,
+  "explanation": "Länge misst man in der Einheit m."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Aufgabe: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 5 Striche über der Marke -6 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "3 °C",
+   "5 °C",
+   "4 °C",
+   "0 °C"
+  ],
+  "correct": 2,
+  "explanation": "-6 °C + 5 · 2 °C = 4 °C."
+ },
+ {
+  "topic": "Einheiten",
+  "question": "Wähle die richtige Antwort. Welche Einheit gehört zur Größe „Temperatur“?",
+  "options": [
+   "kg (Kilogramm)",
+   "s (Sekunde)",
+   "m (Meter)",
+   "°C (Grad Celsius)"
+  ],
+  "correct": 3,
+  "explanation": "Die Größe Temperatur wird in Grad Celsius (°C) gemessen."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Auf einer Thermometerskala ist jeder Strich 2 °C. Die Flüssigkeit steht 2 Striche über der Marke 12 °C. Welche Temperatur wird angezeigt?",
+  "options": [
+   "17 °C",
+   "12 °C",
+   "18 °C",
+   "16 °C"
+  ],
+  "correct": 3,
+  "explanation": "12 °C + 2 · 2 °C = 16 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Teste dein Wissen: Morgens sind es -6 °C, mittags 3 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "9 °C",
+   "10 °C",
+   "11 °C",
+   "7 °C"
+  ],
+  "correct": 0,
+  "explanation": "Unterschied: 3 °C − (-6 °C) = 9 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Überlege genau: Das Thermometer zeigt 7 °C. Die Temperatur fällt um 14 °C. Was zeigt es danach an?",
+  "options": [
+   "-7 °C",
+   "-6 °C",
+   "-8 °C",
+   "-4 °C"
+  ],
+  "correct": 0,
+  "explanation": "7 °C − 14 °C = -7 °C."
+ },
+ {
+  "topic": "Temperatur & Thermometer",
+  "question": "Wähle die richtige Antwort. Morgens sind es 2 °C, mittags 17 °C. Um wie viel Grad ist die Temperatur gestiegen?",
+  "options": [
+   "17 °C",
+   "15 °C",
+   "12 °C",
+   "14 °C"
+  ],
+  "correct": 1,
+  "explanation": "Unterschied: 17 °C − (2 °C) = 15 °C."
+ }
+]

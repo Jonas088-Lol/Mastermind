@@ -1,0 +1,6002 @@
+[
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 25 km mit 5 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "6 h",
+   "20 h",
+   "5 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 25 km / 5 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 26 km mit 13 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "1 h",
+   "13 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 26 km / 13 km/h = 2 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 17 cm³ und die Masse 328,1 g. Welche Dichte hat er?",
+  "options": [
+   "5577,7 g/cm³",
+   "19,8 g/cm³",
+   "38,6 g/cm³",
+   "19,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 328,1 g / 17 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 4 V, R = 4 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "16 A",
+   "2 A",
+   "1 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U/R = 4 V / 4 Ω = 1 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 24 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "144 km",
+   "120 km",
+   "29 km",
+   "60 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 24 km/h · 5 h = 120 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 40 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "160 V",
+   "320 V",
+   "165 V",
+   "10 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 40 Ω · 4 A = 160 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 84 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "588 km/h",
+   "12 km/h",
+   "10 km/h",
+   "17 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 84 km / 7 h = 12 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 5 cm³?",
+  "options": [
+   "395 g",
+   "19,8 g",
+   "12,9 g",
+   "39,5 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 7,9 · 5 = 39,5 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 3 cm³ und die Masse 2,1 g. Welche Dichte hat er?",
+  "options": [
+   "0,7 g/cm³",
+   "1,4 g/cm³",
+   "6,3 g/cm³",
+   "1,2 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 2,1 g / 3 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 28 Ω fließt ein Strom von 5 A. Wie groß ist die Spannung?",
+  "options": [
+   "280 V",
+   "145 V",
+   "5,6 V",
+   "140 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 28 Ω · 5 A = 140 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 4 cm³ und die Masse 2,8 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "0,7 g/cm³",
+   "1,2 g/cm³",
+   "11,2 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 2,8 g / 4 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 174 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "34 km/h",
+   "1044 km/h",
+   "29 km/h",
+   "27 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 174 km / 6 h = 29 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 15 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "5 km/h",
+   "10 km/h",
+   "3 km/h",
+   "45 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 15 km / 3 h = 5 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 84 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "19 km/h",
+   "26 km/h",
+   "21 km/h",
+   "336 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 84 km / 4 h = 21 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 6 V, R = 2 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "5 A",
+   "3 A",
+   "12 A",
+   "4 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 6 V / 2 Ω = 3 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 48 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "3 h",
+   "32 h",
+   "2 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 48 km / 16 km/h = 3 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 100 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "50 V",
+   "400 V",
+   "200 V",
+   "205 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 100 Ω · 2 A = 200 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 144 km mit 24 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "5 h",
+   "6 h",
+   "120 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 144 km / 24 km/h = 6 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 9 cm³?",
+  "options": [
+   "711 g",
+   "35,6 g",
+   "16,9 g",
+   "71,1 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 7,9 · 9 = 71,1 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 99 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "198 V",
+   "100 V",
+   "104 V",
+   "99 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 99 Ω · 1 A = 99 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 12,5 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "23 Ω",
+   "25 Ω",
+   "30 Ω",
+   "6,3 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 12,5 V / 0,5 A = 25 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 40 cm³ und die Masse 772 g. Welche Dichte hat er?",
+  "options": [
+   "19,3 g/cm³",
+   "30880 g/cm³",
+   "38,6 g/cm³",
+   "19,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 772 g / 40 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 30 cm³?",
+  "options": [
+   "169,5 g",
+   "41,3 g",
+   "339 g",
+   "3390 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 11,3 · 30 = 339 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 105 km mit 21 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "5 h",
+   "84 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 105 km / 21 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 31 cm³ und die Masse 275,9 g. Welche Dichte hat er?",
+  "options": [
+   "9,4 g/cm³",
+   "17,8 g/cm³",
+   "8,9 g/cm³",
+   "8552,9 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 275,9 g / 31 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 192 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1536 km/h",
+   "22 km/h",
+   "24 km/h",
+   "29 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 192 km / 8 h = 24 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 45 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "7 km/h",
+   "9 km/h",
+   "225 km/h",
+   "14 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 45 km / 5 h = 9 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 75 V, R = 25 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "4 A",
+   "3 A",
+   "1875 A",
+   "5 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 75 V / 25 Ω = 3 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 10 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "5 km/h",
+   "20 km/h",
+   "10 km/h",
+   "3 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 10 km / 2 h = 5 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 24 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "48 km/h",
+   "12 km/h",
+   "17 km/h",
+   "10 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 24 km / 2 h = 12 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 23 cm³?",
+  "options": [
+   "24 g",
+   "230 g",
+   "23 g",
+   "11,5 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 23 = 23 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 82 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "84 km",
+   "164 km",
+   "82 km",
+   "246 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 82 km/h · 2 h = 164 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 41 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "164 km",
+   "44 km",
+   "62 km",
+   "123 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 41 km/h · 3 h = 123 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 100 V, R = 25 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "2500 A",
+   "4 A",
+   "6 A",
+   "5 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 100 V / 25 Ω = 4 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 9 cm³?",
+  "options": [
+   "1017 g",
+   "20,3 g",
+   "101,7 g",
+   "50,9 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 11,3 · 9 = 101,7 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 38 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "43 km",
+   "228 km",
+   "190 km",
+   "95 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 38 km/h · 5 h = 190 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 80 V, R = 20 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "6 A",
+   "1600 A",
+   "4 A",
+   "5 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 80 V / 20 Ω = 4 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 54 km mit 18 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "36 h",
+   "2 h",
+   "4 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 54 km / 18 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 7 cm³?",
+  "options": [
+   "3,5 g",
+   "7 g",
+   "8 g",
+   "70 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 1 · 7 = 7 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 31 cm³?",
+  "options": [
+   "2759 g",
+   "39,9 g",
+   "275,9 g",
+   "138 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 8,9 · 31 = 275,9 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 49 cm³ und die Masse 132,3 g. Welche Dichte hat er?",
+  "options": [
+   "2,7 g/cm³",
+   "5,4 g/cm³",
+   "6482,7 g/cm³",
+   "3,2 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 132,3 g / 49 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 26 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "50 Ω",
+   "57 Ω",
+   "13 Ω",
+   "52 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 26 V / 0,5 A = 52 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 41 cm³ und die Masse 110,7 g. Welche Dichte hat er?",
+  "options": [
+   "5,4 g/cm³",
+   "4538,7 g/cm³",
+   "3,2 g/cm³",
+   "2,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 110,7 g / 41 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 228 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "62 Ω",
+   "55 Ω",
+   "57 Ω",
+   "912 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 228 V / 4 A = 57 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 34 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "32 Ω",
+   "39 Ω",
+   "35 Ω",
+   "34 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 34 V / 1 A = 34 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 13 cm³?",
+  "options": [
+   "1157 g",
+   "57,9 g",
+   "115,7 g",
+   "21,9 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 8,9 · 13 = 115,7 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 90 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "360 km",
+   "93 km",
+   "135 km",
+   "270 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 90 km/h · 3 h = 270 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 150 V, R = 50 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "7500 A",
+   "4 A",
+   "3 A",
+   "5 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 150 V / 50 Ω = 3 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 120 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "960 km/h",
+   "13 km/h",
+   "20 km/h",
+   "15 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 120 km / 8 h = 15 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 10 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "20 km",
+   "12 km",
+   "30 km",
+   "10 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 10 km/h · 2 h = 20 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 65 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "68 km",
+   "98 km",
+   "260 km",
+   "195 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 65 km/h · 3 h = 195 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 100 V, R = 50 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "4 A",
+   "2 A",
+   "3 A",
+   "5000 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 100 V / 50 Ω = 2 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 18 cm³?",
+  "options": [
+   "24,3 g",
+   "486 g",
+   "20,7 g",
+   "48,6 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 2,7 · 18 = 48,6 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 96 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "14 km/h",
+   "16 km/h",
+   "576 km/h",
+   "21 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 96 km / 6 h = 16 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 66 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "269 V",
+   "528 V",
+   "16,5 V",
+   "264 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 66 Ω · 4 A = 264 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 10 V, R = 5 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "50 A",
+   "2 A",
+   "4 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 10 V / 5 Ω = 2 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 12 cm³ und die Masse 106,8 g. Welche Dichte hat er?",
+  "options": [
+   "8,9 g/cm³",
+   "9,4 g/cm³",
+   "17,8 g/cm³",
+   "1281,6 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 106,8 g / 12 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 116 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "27 km/h",
+   "29 km/h",
+   "34 km/h",
+   "464 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 116 km / 4 h = 29 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 250 V, R = 50 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "6 A",
+   "7 A",
+   "5 A",
+   "12500 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 250 V / 50 Ω = 5 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 14 km mit 7 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "2 h",
+   "3 h",
+   "1 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 14 km / 7 km/h = 2 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 48 Ω fließt ein Strom von 5 A. Wie groß ist die Spannung?",
+  "options": [
+   "240 V",
+   "480 V",
+   "245 V",
+   "9,6 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 48 Ω · 5 A = 240 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 14 cm³?",
+  "options": [
+   "1582 g",
+   "79,1 g",
+   "25,3 g",
+   "158,2 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 11,3 · 14 = 158,2 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 48 cm³ und die Masse 926,4 g. Welche Dichte hat er?",
+  "options": [
+   "19,8 g/cm³",
+   "38,6 g/cm³",
+   "19,3 g/cm³",
+   "44467,2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 926,4 g / 48 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 16 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "144 km",
+   "64 km",
+   "128 km",
+   "24 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 16 km/h · 8 h = 128 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 22 cm³ und die Masse 22 g. Welche Dichte hat er?",
+  "options": [
+   "1,5 g/cm³",
+   "2 g/cm³",
+   "1 g/cm³",
+   "484 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 22 g / 22 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 76 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "24 Ω",
+   "17 Ω",
+   "304 Ω",
+   "19 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 76 V / 4 A = 19 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 105 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "26 km/h",
+   "19 km/h",
+   "21 km/h",
+   "525 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 105 km / 5 h = 21 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 17 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "77 km",
+   "170 km",
+   "153 km",
+   "26 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 17 km/h · 9 h = 153 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 46 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "23 km/h",
+   "92 km/h",
+   "28 km/h",
+   "21 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 46 km / 2 h = 23 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 105 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "735 km/h",
+   "20 km/h",
+   "13 km/h",
+   "15 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 105 km / 7 h = 15 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 75 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "75 Ω",
+   "80 Ω",
+   "76 Ω",
+   "73 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 75 V / 1 A = 75 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 61 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "61 V",
+   "122 V",
+   "62 V",
+   "66 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 61 Ω · 1 A = 61 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 102 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "612 km/h",
+   "15 km/h",
+   "17 km/h",
+   "22 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 102 km / 6 h = 17 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 16 V, R = 4 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "5 A",
+   "4 A",
+   "64 A",
+   "6 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 16 V / 4 Ω = 4 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 176 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "20 km/h",
+   "1408 km/h",
+   "27 km/h",
+   "22 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 176 km / 8 h = 22 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 21 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "84 V",
+   "168 V",
+   "89 V",
+   "5,25 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 21 Ω · 4 A = 84 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 34 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "136 V",
+   "17 V",
+   "73 V",
+   "68 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 34 Ω · 2 A = 68 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 36 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "7 km/h",
+   "144 km/h",
+   "14 km/h",
+   "9 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 36 km / 4 h = 9 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 168 km mit 24 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "144 h",
+   "7 h",
+   "6 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 168 km / 24 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 64 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "384 km",
+   "448 km",
+   "70 km",
+   "192 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 64 km/h · 6 h = 384 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 90 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "360 km",
+   "720 km",
+   "98 km",
+   "810 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 90 km/h · 8 h = 720 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 25 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "175 km",
+   "32 km",
+   "200 km",
+   "88 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 25 km/h · 7 h = 175 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 84 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "88 km",
+   "336 km",
+   "420 km",
+   "168 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 84 km/h · 4 h = 336 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 55 km mit 11 km/h. Wie lange braucht er?",
+  "options": [
+   "44 h",
+   "5 h",
+   "6 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 55 km / 11 km/h = 5 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 120 V, R = 20 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "6 A",
+   "8 A",
+   "7 A",
+   "2400 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U/R = 120 V / 20 Ω = 6 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 19 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "62 V",
+   "114 V",
+   "57 V",
+   "6,3333 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 19 Ω · 3 A = 57 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 80 km mit 20 km/h. Wie lange braucht er?",
+  "options": [
+   "60 h",
+   "4 h",
+   "5 h",
+   "3 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 80 km / 20 km/h = 4 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 12 V, R = 4 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "4 A",
+   "5 A",
+   "48 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U/R = 12 V / 4 Ω = 3 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 12 cm³ und die Masse 8,4 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "1,2 g/cm³",
+   "0,7 g/cm³",
+   "100,8 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 8,4 g / 12 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 26 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "13 V",
+   "57 V",
+   "52 V",
+   "104 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 26 Ω · 2 A = 52 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 26 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "26 V",
+   "31 V",
+   "52 V",
+   "27 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 26 Ω · 1 A = 26 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 84 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "252 V",
+   "257 V",
+   "28 V",
+   "504 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 84 Ω · 3 A = 252 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 56 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "28 V",
+   "112 V",
+   "117 V",
+   "224 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 56 Ω · 2 A = 112 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 65 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "11 Ω",
+   "325 Ω",
+   "18 Ω",
+   "13 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 65 V / 5 A = 13 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 9 cm³ und die Masse 71,1 g. Welche Dichte hat er?",
+  "options": [
+   "639,9 g/cm³",
+   "15,8 g/cm³",
+   "7,9 g/cm³",
+   "8,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 71,1 g / 9 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 42 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "63 km",
+   "45 km",
+   "126 km",
+   "168 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 42 km/h · 3 h = 126 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 168 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "47 Ω",
+   "40 Ω",
+   "672 Ω",
+   "42 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 168 V / 4 A = 42 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 44 cm³ und die Masse 391,6 g. Welche Dichte hat er?",
+  "options": [
+   "17,8 g/cm³",
+   "17230,4 g/cm³",
+   "9,4 g/cm³",
+   "8,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 391,6 g / 44 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 32 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "128 km",
+   "48 km",
+   "96 km",
+   "35 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 32 km/h · 3 h = 96 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 46 cm³ und die Masse 124,2 g. Welche Dichte hat er?",
+  "options": [
+   "5,4 g/cm³",
+   "3,2 g/cm³",
+   "5713,2 g/cm³",
+   "2,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 124,2 g / 46 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 90 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "450 km/h",
+   "18 km/h",
+   "23 km/h",
+   "16 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 90 km / 5 h = 18 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 42 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "42 V",
+   "43 V",
+   "84 V",
+   "47 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 42 Ω · 1 A = 42 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 20 V, R = 4 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "80 A",
+   "5 A",
+   "6 A",
+   "7 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 20 V / 4 Ω = 5 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 7 cm³ und die Masse 18,9 g. Welche Dichte hat er?",
+  "options": [
+   "2,7 g/cm³",
+   "5,4 g/cm³",
+   "132,3 g/cm³",
+   "3,2 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 18,9 g / 7 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 66 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "44 h",
+   "2 h",
+   "3 h",
+   "4 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 66 km / 22 km/h = 3 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 18 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "72 km",
+   "54 km",
+   "27 km",
+   "21 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 18 km/h · 3 h = 54 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 150 V, R = 25 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "7 A",
+   "3750 A",
+   "6 A",
+   "8 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 150 V / 25 Ω = 6 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 100 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "500 km/h",
+   "18 km/h",
+   "20 km/h",
+   "25 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 100 km / 5 h = 20 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 36 cm³?",
+  "options": [
+   "44,9 g",
+   "160,2 g",
+   "3204 g",
+   "320,4 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 36 = 320,4 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 52 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "18 Ω",
+   "13 Ω",
+   "208 Ω",
+   "11 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 52 V / 4 A = 13 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 110 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "5 h",
+   "88 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 110 km / 22 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 23 cm³?",
+  "options": [
+   "181,7 g",
+   "1817 g",
+   "90,9 g",
+   "30,9 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 7,9 · 23 = 181,7 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 18 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "23 Ω",
+   "19 Ω",
+   "18 Ω",
+   "16 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 18 V / 1 A = 18 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 24 km mit 8 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "4 h",
+   "16 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 24 km / 8 km/h = 3 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 88 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "66 h",
+   "4 h",
+   "3 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 88 km / 22 km/h = 4 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 44 cm³ und die Masse 849,2 g. Welche Dichte hat er?",
+  "options": [
+   "38,6 g/cm³",
+   "19,8 g/cm³",
+   "37364,8 g/cm³",
+   "19,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 849,2 g / 44 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 30 km mit 15 km/h. Wie lange braucht er?",
+  "options": [
+   "15 h",
+   "2 h",
+   "1 h",
+   "3 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 30 km / 15 km/h = 2 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 5 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "10 Ω",
+   "8 Ω",
+   "2,5 Ω",
+   "15 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 5 V / 0,5 A = 10 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 33 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "104 V",
+   "11 V",
+   "198 V",
+   "99 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 33 Ω · 3 A = 99 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 64 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "37 Ω",
+   "128 Ω",
+   "30 Ω",
+   "32 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 64 V / 2 A = 32 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 47 cm³ und die Masse 42,3 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "1988,1 g/cm³",
+   "0,9 g/cm³",
+   "1,8 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 42,3 g / 47 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 30 cm³?",
+  "options": [
+   "237 g",
+   "2370 g",
+   "37,9 g",
+   "118,5 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 7,9 · 30 = 237 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 19 cm³?",
+  "options": [
+   "20 g",
+   "9,5 g",
+   "190 g",
+   "19 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 1 · 19 = 19 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 6 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "3 V",
+   "12 V",
+   "8 V",
+   "6 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 6 Ω · 0,5 A = 3 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 128 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "7 h",
+   "9 h",
+   "112 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 128 km / 16 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 38 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "45 km",
+   "266 km",
+   "133 km",
+   "304 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 38 km/h · 7 h = 266 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 46 cm³ und die Masse 46 g. Welche Dichte hat er?",
+  "options": [
+   "2116 g/cm³",
+   "1,5 g/cm³",
+   "1 g/cm³",
+   "2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 46 g / 46 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 33 cm³ und die Masse 372,9 g. Welche Dichte hat er?",
+  "options": [
+   "12305,7 g/cm³",
+   "11,8 g/cm³",
+   "22,6 g/cm³",
+   "11,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 372,9 g / 33 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 268 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "67 Ω",
+   "1072 Ω",
+   "65 Ω",
+   "72 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 268 V / 4 A = 67 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 24 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "72 km/h",
+   "6 km/h",
+   "8 km/h",
+   "13 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 24 km / 3 h = 8 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 21 cm³?",
+  "options": [
+   "22 g",
+   "210 g",
+   "10,5 g",
+   "21 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 1 · 21 = 21 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 40 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "78 Ω",
+   "85 Ω",
+   "20 Ω",
+   "80 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 40 V / 0,5 A = 80 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 20 cm³?",
+  "options": [
+   "10 g",
+   "200 g",
+   "20 g",
+   "21 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 20 = 20 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 192 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "46 Ω",
+   "768 Ω",
+   "48 Ω",
+   "53 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 192 V / 4 A = 48 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 96 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "192 V",
+   "48 V",
+   "53 V",
+   "96 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 96 Ω · 0,5 A = 48 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 355 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "76 Ω",
+   "71 Ω",
+   "69 Ω",
+   "1775 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 355 V / 5 A = 71 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 56 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "56 V",
+   "33 V",
+   "112 V",
+   "28 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 56 Ω · 0,5 A = 28 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 28 km mit 4 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "6 h",
+   "8 h",
+   "24 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 28 km / 4 km/h = 7 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 40 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "200 Ω",
+   "8 Ω",
+   "13 Ω",
+   "6 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 40 V / 5 A = 8 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 52 km mit 13 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "5 h",
+   "3 h",
+   "39 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 52 km / 13 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 45 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "48 km",
+   "135 km",
+   "180 km",
+   "68 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 45 km/h · 3 h = 135 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 55 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "57 km",
+   "55 km",
+   "165 km",
+   "110 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 55 km/h · 2 h = 110 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 32 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "6 Ω",
+   "13 Ω",
+   "128 Ω",
+   "8 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 32 V / 4 A = 8 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 90 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "95 km",
+   "450 km",
+   "225 km",
+   "540 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 90 km/h · 5 h = 450 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 28 cm³?",
+  "options": [
+   "756 g",
+   "75,6 g",
+   "30,7 g",
+   "37,8 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 2,7 · 28 = 75,6 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 4 V, R = 2 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "8 A",
+   "3 A",
+   "2 A",
+   "4 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 4 V / 2 Ω = 2 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 23 cm³ und die Masse 259,9 g. Welche Dichte hat er?",
+  "options": [
+   "11,8 g/cm³",
+   "11,3 g/cm³",
+   "5977,7 g/cm³",
+   "22,6 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 259,9 g / 23 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 27 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "52 Ω",
+   "54 Ω",
+   "59 Ω",
+   "13,5 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 27 V / 0,5 A = 54 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 35 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "70 km",
+   "39 km",
+   "140 km",
+   "175 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 35 km/h · 4 h = 140 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 69 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "276 km",
+   "104 km",
+   "207 km",
+   "72 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 69 km/h · 3 h = 207 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 25 cm³ und die Masse 197,5 g. Welche Dichte hat er?",
+  "options": [
+   "15,8 g/cm³",
+   "4937,5 g/cm³",
+   "8,4 g/cm³",
+   "7,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 197,5 g / 25 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 21 cm³ und die Masse 18,9 g. Welche Dichte hat er?",
+  "options": [
+   "1,8 g/cm³",
+   "1,4 g/cm³",
+   "0,9 g/cm³",
+   "396,9 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 18,9 g / 21 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 300 V, R = 50 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "6 A",
+   "7 A",
+   "15000 A",
+   "8 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U/R = 300 V / 50 Ω = 6 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 32 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "14 km/h",
+   "16 km/h",
+   "64 km/h",
+   "21 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 32 km / 2 h = 16 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 34 cm³?",
+  "options": [
+   "134,3 g",
+   "2686 g",
+   "268,6 g",
+   "41,9 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 7,9 · 34 = 268,6 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 30 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "8 km/h",
+   "90 km/h",
+   "15 km/h",
+   "10 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 30 km / 3 h = 10 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 18 cm³ und die Masse 12,6 g. Welche Dichte hat er?",
+  "options": [
+   "1,2 g/cm³",
+   "0,7 g/cm³",
+   "226,8 g/cm³",
+   "1,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 12,6 g / 18 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 89 Ω fließt ein Strom von 5 A. Wie groß ist die Spannung?",
+  "options": [
+   "17,8 V",
+   "445 V",
+   "450 V",
+   "890 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 89 Ω · 5 A = 445 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 115 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "575 km/h",
+   "21 km/h",
+   "23 km/h",
+   "28 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 115 km / 5 h = 23 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 3 cm³?",
+  "options": [
+   "8,1 g",
+   "5,7 g",
+   "81 g",
+   "4,1 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 2,7 · 3 = 8,1 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 28 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "33 V",
+   "56 V",
+   "28 V",
+   "29 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 28 Ω · 1 A = 28 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 50 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "150 km",
+   "52 km",
+   "100 km",
+   "50 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 50 km/h · 2 h = 100 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 11 cm³?",
+  "options": [
+   "5,5 g",
+   "12 g",
+   "11 g",
+   "110 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 11 = 11 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 112 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "14 km/h",
+   "896 km/h",
+   "12 km/h",
+   "19 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 112 km / 8 h = 14 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 40 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "320 km/h",
+   "5 km/h",
+   "3 km/h",
+   "10 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 40 km / 8 h = 5 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 21 cm³?",
+  "options": [
+   "567 g",
+   "56,7 g",
+   "23,7 g",
+   "28,4 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 2,7 · 21 = 56,7 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 25 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "23 Ω",
+   "30 Ω",
+   "26 Ω",
+   "25 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 25 V / 1 A = 25 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 168 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "24 km/h",
+   "22 km/h",
+   "29 km/h",
+   "1176 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 168 km / 7 h = 24 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 60 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "540 km",
+   "69 km",
+   "600 km",
+   "270 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 60 km/h · 9 h = 540 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 31 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "67 V",
+   "15,5 V",
+   "124 V",
+   "62 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 31 Ω · 2 A = 62 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 48 cm³ und die Masse 48 g. Welche Dichte hat er?",
+  "options": [
+   "2 g/cm³",
+   "2304 g/cm³",
+   "1,5 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 48 g / 48 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 54 Ω fließt ein Strom von 5 A. Wie groß ist die Spannung?",
+  "options": [
+   "270 V",
+   "275 V",
+   "540 V",
+   "10,8 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 54 Ω · 5 A = 270 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 80 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "64 h",
+   "5 h",
+   "4 h",
+   "6 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 80 km / 16 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 3 cm³?",
+  "options": [
+   "23,7 g",
+   "10,9 g",
+   "11,9 g",
+   "237 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 7,9 · 3 = 23,7 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 94 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "95 V",
+   "99 V",
+   "188 V",
+   "94 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 94 Ω · 1 A = 94 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 200 V, R = 50 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "6 A",
+   "10000 A",
+   "5 A",
+   "4 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U/R = 200 V / 50 Ω = 4 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 154 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "27 km/h",
+   "1078 km/h",
+   "20 km/h",
+   "22 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 154 km / 7 h = 22 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 8 cm³ und die Masse 21,6 g. Welche Dichte hat er?",
+  "options": [
+   "172,8 g/cm³",
+   "3,2 g/cm³",
+   "2,7 g/cm³",
+   "5,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 21,6 g / 8 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 66 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "66 Ω",
+   "67 Ω",
+   "64 Ω",
+   "71 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 66 V / 1 A = 66 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 35 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "105 km",
+   "70 km",
+   "35 km",
+   "37 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 35 km/h · 2 h = 70 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 37 cm³?",
+  "options": [
+   "418,1 g",
+   "209,1 g",
+   "4181 g",
+   "48,3 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 11,3 · 37 = 418,1 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 160 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "20 km/h",
+   "18 km/h",
+   "25 km/h",
+   "1280 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 160 km / 8 h = 20 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 16 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "16 km",
+   "18 km",
+   "48 km",
+   "32 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 16 km/h · 2 h = 32 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 53 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "318 km",
+   "159 km",
+   "59 km",
+   "371 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 53 km/h · 6 h = 318 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 63 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "54 h",
+   "7 h",
+   "6 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 63 km / 9 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 15 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "120 km",
+   "23 km",
+   "60 km",
+   "135 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 15 km/h · 8 h = 120 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 40 cm³?",
+  "options": [
+   "51,3 g",
+   "4520 g",
+   "226 g",
+   "452 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 11,3 · 40 = 452 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 140 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "70 Ω",
+   "280 Ω",
+   "75 Ω",
+   "68 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 140 V / 2 A = 70 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 22 km mit 11 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "1 h",
+   "11 h",
+   "2 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 22 km / 11 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 30 km mit 5 km/h. Wie lange braucht er?",
+  "options": [
+   "25 h",
+   "6 h",
+   "5 h",
+   "7 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 30 km / 5 km/h = 6 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 6 cm³?",
+  "options": [
+   "3 g",
+   "6 g",
+   "7 g",
+   "60 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 1 · 6 = 6 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 50 V, R = 10 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "6 A",
+   "500 A",
+   "7 A",
+   "5 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U/R = 50 V / 10 Ω = 5 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 79 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "321 V",
+   "316 V",
+   "632 V",
+   "19,75 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 79 Ω · 4 A = 316 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 60 V, R = 20 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "5 A",
+   "1200 A",
+   "4 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U/R = 60 V / 20 Ω = 3 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 245 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1715 km/h",
+   "33 km/h",
+   "35 km/h",
+   "40 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 245 km / 7 h = 35 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 35 cm³?",
+  "options": [
+   "350 g",
+   "36 g",
+   "35 g",
+   "17,5 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 35 = 35 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 34 cm³ und die Masse 30,6 g. Welche Dichte hat er?",
+  "options": [
+   "1040,4 g/cm³",
+   "0,9 g/cm³",
+   "1,4 g/cm³",
+   "1,8 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 30,6 g / 34 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 80 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "38 km/h",
+   "160 km/h",
+   "45 km/h",
+   "40 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 80 km / 2 h = 40 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 9 cm³ und die Masse 173,7 g. Welche Dichte hat er?",
+  "options": [
+   "19,8 g/cm³",
+   "19,3 g/cm³",
+   "1563,3 g/cm³",
+   "38,6 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 173,7 g / 9 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 26 cm³ und die Masse 501,8 g. Welche Dichte hat er?",
+  "options": [
+   "19,8 g/cm³",
+   "19,3 g/cm³",
+   "38,6 g/cm³",
+   "13046,8 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 501,8 g / 26 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 36 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "10 km/h",
+   "108 km/h",
+   "17 km/h",
+   "12 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 36 km / 3 h = 12 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 41 cm³ und die Masse 463,3 g. Welche Dichte hat er?",
+  "options": [
+   "18995,3 g/cm³",
+   "11,8 g/cm³",
+   "11,3 g/cm³",
+   "22,6 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 463,3 g / 41 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 35 km mit 7 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "28 h",
+   "5 h",
+   "6 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 35 km / 7 km/h = 5 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 125 V, R = 25 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "7 A",
+   "5 A",
+   "3125 A",
+   "6 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 125 V / 25 Ω = 5 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 340 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "73 Ω",
+   "68 Ω",
+   "66 Ω",
+   "1700 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 340 V / 5 A = 68 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 34 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "136 km",
+   "51 km",
+   "102 km",
+   "37 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 34 km/h · 3 h = 102 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 16 cm³ und die Masse 142,4 g. Welche Dichte hat er?",
+  "options": [
+   "8,9 g/cm³",
+   "17,8 g/cm³",
+   "2278,4 g/cm³",
+   "9,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 142,4 g / 16 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 83 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "27,6667 V",
+   "249 V",
+   "498 V",
+   "254 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 83 Ω · 3 A = 249 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 126 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "61 Ω",
+   "68 Ω",
+   "252 Ω",
+   "63 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 126 V / 2 A = 63 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 272 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "39 km/h",
+   "2176 km/h",
+   "32 km/h",
+   "34 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 272 km / 8 h = 34 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 10 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "19 km",
+   "45 km",
+   "100 km",
+   "90 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 10 km/h · 9 h = 90 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 57 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "171 km/h",
+   "24 km/h",
+   "19 km/h",
+   "17 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 57 km / 3 h = 19 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 224 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "33 km/h",
+   "28 km/h",
+   "26 km/h",
+   "1792 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 224 km / 8 h = 28 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 43 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "48 V",
+   "86 V",
+   "44 V",
+   "43 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 43 Ω · 1 A = 43 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 14 cm³?",
+  "options": [
+   "18,9 g",
+   "37,8 g",
+   "378 g",
+   "16,7 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 2,7 · 14 = 37,8 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 2 V, R = 2 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "1 A",
+   "4 A",
+   "2 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 2 V / 2 Ω = 1 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 70 km mit 14 km/h. Wie lange braucht er?",
+  "options": [
+   "56 h",
+   "4 h",
+   "5 h",
+   "6 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 70 km / 14 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 28 cm³?",
+  "options": [
+   "158,2 g",
+   "316,4 g",
+   "39,3 g",
+   "3164 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 11,3 · 28 = 316,4 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 132 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "5 h",
+   "110 h",
+   "7 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 132 km / 22 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 78 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "85 km",
+   "273 km",
+   "546 km",
+   "624 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 78 km/h · 7 h = 546 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 44 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "154 km",
+   "352 km",
+   "51 km",
+   "308 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 44 km/h · 7 h = 308 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 19 cm³?",
+  "options": [
+   "25,7 g",
+   "21,7 g",
+   "51,3 g",
+   "513 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 2,7 · 19 = 51,3 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 50 V, R = 50 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "2 A",
+   "2500 A",
+   "1 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U/R = 50 V / 50 Ω = 1 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 29 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "87 V",
+   "174 V",
+   "9,6667 V",
+   "92 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 29 Ω · 3 A = 87 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 35 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "210 km",
+   "40 km",
+   "175 km",
+   "88 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 35 km/h · 5 h = 175 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 48 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "336 km",
+   "384 km",
+   "168 km",
+   "55 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 48 km/h · 7 h = 336 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 14 cm³ und die Masse 14 g. Welche Dichte hat er?",
+  "options": [
+   "196 g/cm³",
+   "2 g/cm³",
+   "1,5 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 14 g / 14 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 48 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "16 km/h",
+   "14 km/h",
+   "144 km/h",
+   "21 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 48 km / 3 h = 16 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 17 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "8,5 Ω",
+   "39 Ω",
+   "34 Ω",
+   "32 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 17 V / 0,5 A = 34 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 37 cm³?",
+  "options": [
+   "37 g",
+   "18,5 g",
+   "38 g",
+   "370 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 1 · 37 = 37 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 76 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "380 km",
+   "190 km",
+   "456 km",
+   "81 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 76 km/h · 5 h = 380 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 114 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "38 km/h",
+   "43 km/h",
+   "342 km/h",
+   "36 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 114 km / 3 h = 38 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 13 cm³ und die Masse 35,1 g. Welche Dichte hat er?",
+  "options": [
+   "5,4 g/cm³",
+   "456,3 g/cm³",
+   "3,2 g/cm³",
+   "2,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 35,1 g / 13 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 94 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "47 V",
+   "188 V",
+   "193 V",
+   "376 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 94 Ω · 2 A = 188 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 80 km mit 10 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "70 h",
+   "9 h",
+   "8 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 80 km / 10 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 147 km mit 21 km/h. Wie lange braucht er?",
+  "options": [
+   "126 h",
+   "7 h",
+   "6 h",
+   "8 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 147 km / 21 km/h = 7 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 19 cm³ und die Masse 19 g. Welche Dichte hat er?",
+  "options": [
+   "1 g/cm³",
+   "1,5 g/cm³",
+   "2 g/cm³",
+   "361 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 19 g / 19 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 50 cm³ und die Masse 50 g. Welche Dichte hat er?",
+  "options": [
+   "1,5 g/cm³",
+   "2 g/cm³",
+   "2500 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 50 g / 50 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 72 km mit 24 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "48 h",
+   "4 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 72 km / 24 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 30 cm³ und die Masse 267 g. Welche Dichte hat er?",
+  "options": [
+   "17,8 g/cm³",
+   "9,4 g/cm³",
+   "8010 g/cm³",
+   "8,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 267 g / 30 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 105 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "26 Ω",
+   "21 Ω",
+   "19 Ω",
+   "525 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 105 V / 5 A = 21 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 2 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "2 Ω",
+   "1 Ω",
+   "4 Ω",
+   "9 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 2 V / 0,5 A = 4 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 28 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "12 km/h",
+   "112 km/h",
+   "7 km/h",
+   "5 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 28 km / 4 h = 7 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 74 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "80 km",
+   "518 km",
+   "222 km",
+   "444 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 74 km/h · 6 h = 444 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 10 km mit 5 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "5 h",
+   "1 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 10 km / 5 km/h = 2 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 72 Ω fließt ein Strom von 5 A. Wie groß ist die Spannung?",
+  "options": [
+   "365 V",
+   "14,4 V",
+   "720 V",
+   "360 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 72 Ω · 5 A = 360 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 68 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "34 Ω",
+   "136 Ω",
+   "32 Ω",
+   "39 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 68 V / 2 A = 34 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 24 cm³?",
+  "options": [
+   "12 g",
+   "24 g",
+   "25 g",
+   "240 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 1 · 24 = 24 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 225 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "45 Ω",
+   "1125 Ω",
+   "43 Ω",
+   "50 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 225 V / 5 A = 45 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 83 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "747 km",
+   "332 km",
+   "664 km",
+   "91 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 83 km/h · 8 h = 664 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 5 V, R = 5 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "2 A",
+   "25 A",
+   "1 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U/R = 5 V / 5 Ω = 1 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 4 cm³ und die Masse 45,2 g. Welche Dichte hat er?",
+  "options": [
+   "22,6 g/cm³",
+   "11,8 g/cm³",
+   "180,8 g/cm³",
+   "11,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 45,2 g / 4 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 62 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "248 V",
+   "31 V",
+   "129 V",
+   "124 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 62 Ω · 2 A = 124 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 30 cm³ und die Masse 237 g. Welche Dichte hat er?",
+  "options": [
+   "8,4 g/cm³",
+   "15,8 g/cm³",
+   "7110 g/cm³",
+   "7,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 237 g / 30 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 75 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "15 km/h",
+   "13 km/h",
+   "375 km/h",
+   "20 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 75 km / 5 h = 15 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 70 km mit 10 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "8 h",
+   "7 h",
+   "60 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 70 km / 10 km/h = 7 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 20 V, R = 5 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "100 A",
+   "5 A",
+   "4 A",
+   "6 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 20 V / 5 Ω = 4 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 35 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "36 Ω",
+   "33 Ω",
+   "40 Ω",
+   "35 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 35 V / 1 A = 35 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 10 cm³?",
+  "options": [
+   "270 g",
+   "13,5 g",
+   "27 g",
+   "12,7 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 2,7 · 10 = 27 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 200 km mit 25 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "8 h",
+   "9 h",
+   "175 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 200 km / 25 km/h = 8 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 18 cm³?",
+  "options": [
+   "29,3 g",
+   "203,4 g",
+   "101,7 g",
+   "2034 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 11,3 · 18 = 203,4 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 65 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "195 km",
+   "71 km",
+   "390 km",
+   "455 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 65 km/h · 6 h = 390 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 17 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "68 km",
+   "136 km",
+   "153 km",
+   "25 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 17 km/h · 8 h = 136 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 82 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "90 km",
+   "656 km",
+   "738 km",
+   "328 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 82 km/h · 8 h = 656 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 58 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "406 km",
+   "65 km",
+   "203 km",
+   "464 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 58 km/h · 7 h = 406 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 168 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1008 km/h",
+   "33 km/h",
+   "28 km/h",
+   "26 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 168 km / 6 h = 28 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 32 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "8 V",
+   "128 V",
+   "256 V",
+   "133 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 32 Ω · 4 A = 128 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 15 cm³?",
+  "options": [
+   "40,5 g",
+   "20,3 g",
+   "17,7 g",
+   "405 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 2,7 · 15 = 40,5 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 54 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "162 V",
+   "18 V",
+   "324 V",
+   "167 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 54 Ω · 3 A = 162 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 62 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "29 km/h",
+   "31 km/h",
+   "36 km/h",
+   "124 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 62 km / 2 h = 31 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 154 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "132 h",
+   "8 h",
+   "6 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 154 km / 22 km/h = 7 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 134 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "67 Ω",
+   "65 Ω",
+   "268 Ω",
+   "72 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 134 V / 2 A = 67 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 136 km mit 17 km/h. Wie lange braucht er?",
+  "options": [
+   "9 h",
+   "8 h",
+   "119 h",
+   "7 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 136 km / 17 km/h = 8 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 15 V, R = 5 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "4 A",
+   "3 A",
+   "75 A",
+   "5 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 15 V / 5 Ω = 3 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 73 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "219 V",
+   "224 V",
+   "24,3333 V",
+   "438 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 73 Ω · 3 A = 219 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 89 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "44,5 V",
+   "89 V",
+   "49,5 V",
+   "178 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 89 Ω · 0,5 A = 44,5 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 61 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "153 km",
+   "305 km",
+   "66 km",
+   "366 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 61 km/h · 5 h = 305 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 79 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "198 km",
+   "84 km",
+   "395 km",
+   "474 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 79 km/h · 5 h = 395 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 10 V, R = 10 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "3 A",
+   "100 A",
+   "1 A",
+   "2 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 10 V / 10 Ω = 1 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 35 cm³?",
+  "options": [
+   "42,9 g",
+   "138,3 g",
+   "276,5 g",
+   "2765 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 7,9 · 35 = 276,5 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 16 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "96 km",
+   "48 km",
+   "112 km",
+   "22 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 16 km/h · 6 h = 96 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 14 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "7 Ω",
+   "26 Ω",
+   "28 Ω",
+   "33 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 14 V / 0,5 A = 28 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 43 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "134 V",
+   "129 V",
+   "14,3333 V",
+   "258 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 43 Ω · 3 A = 129 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 68 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "544 km",
+   "272 km",
+   "76 km",
+   "612 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 68 km/h · 8 h = 544 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 14 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "98 km",
+   "21 km",
+   "112 km",
+   "49 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 14 km/h · 7 h = 98 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 40 cm³?",
+  "options": [
+   "48,9 g",
+   "178 g",
+   "3560 g",
+   "356 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 40 = 356 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 8 cm³ und die Masse 63,2 g. Welche Dichte hat er?",
+  "options": [
+   "505,6 g/cm³",
+   "15,8 g/cm³",
+   "8,4 g/cm³",
+   "7,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 63,2 g / 8 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 36 cm³ und die Masse 97,2 g. Welche Dichte hat er?",
+  "options": [
+   "3,2 g/cm³",
+   "5,4 g/cm³",
+   "3499,2 g/cm³",
+   "2,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 97,2 g / 36 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 8 cm³?",
+  "options": [
+   "71,2 g",
+   "16,9 g",
+   "712 g",
+   "35,6 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 8,9 · 8 = 71,2 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 23 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "46 km",
+   "27 km",
+   "115 km",
+   "92 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 23 km/h · 4 h = 92 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 6 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "24 V",
+   "3 V",
+   "17 V",
+   "12 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 6 Ω · 2 A = 12 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 86 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "48 Ω",
+   "172 Ω",
+   "43 Ω",
+   "41 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 86 V / 2 A = 43 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 26 cm³ und die Masse 70,2 g. Welche Dichte hat er?",
+  "options": [
+   "5,4 g/cm³",
+   "1825,2 g/cm³",
+   "2,7 g/cm³",
+   "3,2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 70,2 g / 26 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 168 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1344 km/h",
+   "21 km/h",
+   "26 km/h",
+   "19 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 168 km / 8 h = 21 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 335 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "67 Ω",
+   "65 Ω",
+   "1675 Ω",
+   "72 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 335 V / 5 A = 67 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 15 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "105 km",
+   "21 km",
+   "45 km",
+   "90 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 15 km/h · 6 h = 90 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 38 cm³?",
+  "options": [
+   "38 g",
+   "380 g",
+   "19 g",
+   "39 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 1 · 38 = 38 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 72 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "9 h",
+   "63 h",
+   "8 h",
+   "7 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 72 km / 9 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 75 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "30 km/h",
+   "25 km/h",
+   "23 km/h",
+   "225 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 75 km / 3 h = 25 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 71 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "497 km",
+   "568 km",
+   "249 km",
+   "78 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 71 km/h · 7 h = 497 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 76 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "38 Ω",
+   "43 Ω",
+   "152 Ω",
+   "36 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 76 V / 2 A = 38 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 43 cm³ und die Masse 382,7 g. Welche Dichte hat er?",
+  "options": [
+   "8,9 g/cm³",
+   "9,4 g/cm³",
+   "17,8 g/cm³",
+   "16456,1 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 382,7 g / 43 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 33 cm³?",
+  "options": [
+   "35,7 g",
+   "44,6 g",
+   "89,1 g",
+   "891 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 2,7 · 33 = 89,1 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 25 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "55 Ω",
+   "50 Ω",
+   "12,5 Ω",
+   "48 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 25 V / 0,5 A = 50 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 50 V, R = 25 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "4 A",
+   "3 A",
+   "2 A",
+   "1250 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 50 V / 25 Ω = 2 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 14 cm³ und die Masse 110,6 g. Welche Dichte hat er?",
+  "options": [
+   "1548,4 g/cm³",
+   "15,8 g/cm³",
+   "8,4 g/cm³",
+   "7,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 110,6 g / 14 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 110 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "27 Ω",
+   "550 Ω",
+   "20 Ω",
+   "22 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 110 V / 5 A = 22 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 28 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "224 V",
+   "7 V",
+   "112 V",
+   "117 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 28 Ω · 4 A = 112 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 152 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "608 Ω",
+   "36 Ω",
+   "38 Ω",
+   "43 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 152 V / 4 A = 38 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 55 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "16 km/h",
+   "275 km/h",
+   "11 km/h",
+   "9 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 55 km / 5 h = 11 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 132 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "528 km/h",
+   "38 km/h",
+   "31 km/h",
+   "33 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 132 km / 4 h = 33 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 13 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "26 V",
+   "52 V",
+   "31 V",
+   "6,5 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 13 Ω · 2 A = 26 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 85 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "680 km",
+   "93 km",
+   "340 km",
+   "765 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 85 km/h · 8 h = 680 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 35 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "35 V",
+   "22,5 V",
+   "17,5 V",
+   "70 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 35 Ω · 0,5 A = 17,5 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 8 cm³ und die Masse 7,2 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "0,9 g/cm³",
+   "1,8 g/cm³",
+   "57,6 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 7,2 g / 8 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 2 cm³?",
+  "options": [
+   "3 g",
+   "2 g",
+   "20 g",
+   "1 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 1 · 2 = 2 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 30 V, R = 10 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "300 A",
+   "3 A",
+   "5 A",
+   "4 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 30 V / 10 Ω = 3 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 40 km mit 8 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "6 h",
+   "4 h",
+   "32 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 40 km / 8 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 7 cm³ und die Masse 62,3 g. Welche Dichte hat er?",
+  "options": [
+   "9,4 g/cm³",
+   "17,8 g/cm³",
+   "8,9 g/cm³",
+   "436,1 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 62,3 g / 7 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 76 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "684 km",
+   "84 km",
+   "304 km",
+   "608 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 76 km/h · 8 h = 608 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 22 cm³?",
+  "options": [
+   "11 g",
+   "220 g",
+   "23 g",
+   "22 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 1 · 22 = 22 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 39 cm³ und die Masse 39 g. Welche Dichte hat er?",
+  "options": [
+   "1 g/cm³",
+   "1,5 g/cm³",
+   "2 g/cm³",
+   "1521 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 39 g / 39 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 256 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "37 km/h",
+   "30 km/h",
+   "32 km/h",
+   "2048 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 256 km / 8 h = 32 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 33 cm³ und die Masse 89,1 g. Welche Dichte hat er?",
+  "options": [
+   "2940,3 g/cm³",
+   "2,7 g/cm³",
+   "5,4 g/cm³",
+   "3,2 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 89,1 g / 33 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 22,5 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "45 Ω",
+   "11,3 Ω",
+   "43 Ω",
+   "50 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 22,5 V / 0,5 A = 45 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 10 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "11 V",
+   "20 V",
+   "15 V",
+   "10 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 10 Ω · 1 A = 10 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 31 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "67 Ω",
+   "15,5 Ω",
+   "62 Ω",
+   "60 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 31 V / 0,5 A = 62 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 24 km mit 4 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "6 h",
+   "20 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 24 km / 4 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 28 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "19 km/h",
+   "56 km/h",
+   "14 km/h",
+   "12 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 28 km / 2 h = 14 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 24 cm³ und die Masse 21,6 g. Welche Dichte hat er?",
+  "options": [
+   "1,8 g/cm³",
+   "518,4 g/cm³",
+   "0,9 g/cm³",
+   "1,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 21,6 g / 24 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 62 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "620 km",
+   "71 km",
+   "558 km",
+   "279 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 62 km/h · 9 h = 558 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 260 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "65 Ω",
+   "70 Ω",
+   "63 Ω",
+   "1040 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 260 V / 4 A = 65 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 54 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "45 h",
+   "5 h",
+   "7 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 54 km / 9 km/h = 6 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 26 cm³ und die Masse 18,2 g. Welche Dichte hat er?",
+  "options": [
+   "1,2 g/cm³",
+   "1,4 g/cm³",
+   "0,7 g/cm³",
+   "473,2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 18,2 g / 26 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 84 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "420 km",
+   "210 km",
+   "504 km",
+   "89 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 84 km/h · 5 h = 420 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 12 V, R = 2 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "7 A",
+   "24 A",
+   "6 A",
+   "8 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 12 V / 2 Ω = 6 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 47 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "329 km",
+   "282 km",
+   "53 km",
+   "141 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 47 km/h · 6 h = 282 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 152 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "19 km/h",
+   "17 km/h",
+   "1216 km/h",
+   "24 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 152 km / 8 h = 19 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 5,5 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "9 Ω",
+   "11 Ω",
+   "16 Ω",
+   "2,8 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 5,5 V / 0,5 A = 11 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 64 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "128 V",
+   "65 V",
+   "69 V",
+   "64 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 64 Ω · 1 A = 64 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 40 km mit 5 km/h. Wie lange braucht er?",
+  "options": [
+   "9 h",
+   "7 h",
+   "35 h",
+   "8 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 40 km / 5 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 50 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "200 km",
+   "100 km",
+   "250 km",
+   "54 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 50 km/h · 4 h = 200 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 133 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "931 km/h",
+   "24 km/h",
+   "19 km/h",
+   "17 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 133 km / 7 h = 19 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 220 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "1100 Ω",
+   "49 Ω",
+   "42 Ω",
+   "44 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 220 V / 5 A = 44 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 96 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "768 km/h",
+   "10 km/h",
+   "17 km/h",
+   "12 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 96 km / 8 h = 12 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 30 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "28 Ω",
+   "35 Ω",
+   "30 Ω",
+   "31 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 30 V / 1 A = 30 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 130 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "31 Ω",
+   "26 Ω",
+   "24 Ω",
+   "650 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 130 V / 5 A = 26 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 63 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "315 km",
+   "378 km",
+   "68 km",
+   "158 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 63 km/h · 5 h = 315 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 37 cm³?",
+  "options": [
+   "99,9 g",
+   "50 g",
+   "999 g",
+   "39,7 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 2,7 · 37 = 99,9 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 56 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "28 Ω",
+   "112 Ω",
+   "26 Ω",
+   "33 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 56 V / 2 A = 28 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 21 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "84 km",
+   "189 km",
+   "29 km",
+   "168 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 21 km/h · 8 h = 168 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 54 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "324 km/h",
+   "9 km/h",
+   "14 km/h",
+   "7 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 54 km / 6 h = 9 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 10 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "14 km",
+   "50 km",
+   "40 km",
+   "20 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 10 km/h · 4 h = 40 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 114 km mit 19 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "95 h",
+   "5 h",
+   "7 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 114 km / 19 km/h = 6 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 29 cm³?",
+  "options": [
+   "2581 g",
+   "37,9 g",
+   "258,1 g",
+   "129,1 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 8,9 · 29 = 258,1 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 68 km mit 17 km/h. Wie lange braucht er?",
+  "options": [
+   "51 h",
+   "4 h",
+   "3 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 68 km / 17 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 89 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "267 km",
+   "89 km",
+   "178 km",
+   "91 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 89 km/h · 2 h = 178 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 124 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "62 Ω",
+   "60 Ω",
+   "67 Ω",
+   "248 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 124 V / 2 A = 62 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 7 cm³ und die Masse 4,9 g. Welche Dichte hat er?",
+  "options": [
+   "34,3 g/cm³",
+   "1,2 g/cm³",
+   "1,4 g/cm³",
+   "0,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 4,9 g / 7 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 30 cm³ und die Masse 339 g. Welche Dichte hat er?",
+  "options": [
+   "11,8 g/cm³",
+   "11,3 g/cm³",
+   "22,6 g/cm³",
+   "10170 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 339 g / 30 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 48 km mit 6 km/h. Wie lange braucht er?",
+  "options": [
+   "42 h",
+   "7 h",
+   "9 h",
+   "8 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 48 km / 6 km/h = 8 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 10 V, R = 2 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "20 A",
+   "6 A",
+   "5 A",
+   "7 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 10 V / 2 Ω = 5 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 108 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "216 Ω",
+   "59 Ω",
+   "52 Ω",
+   "54 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 108 V / 2 A = 54 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 23,5 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "45 Ω",
+   "47 Ω",
+   "11,8 Ω",
+   "52 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 23,5 V / 0,5 A = 47 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 27 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "108 V",
+   "216 V",
+   "113 V",
+   "6,75 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 27 Ω · 4 A = 108 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 26 cm³ und die Masse 23,4 g. Welche Dichte hat er?",
+  "options": [
+   "608,4 g/cm³",
+   "0,9 g/cm³",
+   "1,8 g/cm³",
+   "1,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 23,4 g / 26 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 66 km mit 11 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "55 h",
+   "7 h",
+   "6 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 66 km / 11 km/h = 6 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 13 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "6,5 Ω",
+   "31 Ω",
+   "24 Ω",
+   "26 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 13 V / 0,5 A = 26 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 9 cm³ und die Masse 6,3 g. Welche Dichte hat er?",
+  "options": [
+   "56,7 g/cm³",
+   "0,7 g/cm³",
+   "1,4 g/cm³",
+   "1,2 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 6,3 g / 9 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 25 V, R = 25 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "1 A",
+   "2 A",
+   "625 A",
+   "3 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U/R = 25 V / 25 Ω = 1 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 52 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "58 km",
+   "364 km",
+   "156 km",
+   "312 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 52 km/h · 6 h = 312 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 88 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "44 V",
+   "49 V",
+   "176 V",
+   "88 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 88 Ω · 0,5 A = 44 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 29 cm³ und die Masse 20,3 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "588,7 g/cm³",
+   "0,7 g/cm³",
+   "1,2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 20,3 g / 29 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 77 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "75 Ω",
+   "78 Ω",
+   "77 Ω",
+   "82 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 77 V / 1 A = 77 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 26 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "18 V",
+   "52 V",
+   "26 V",
+   "13 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 26 Ω · 0,5 A = 13 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 43 cm³ und die Masse 30,1 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "0,7 g/cm³",
+   "1,2 g/cm³",
+   "1294,3 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 30,1 g / 43 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 29,5 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "57 Ω",
+   "64 Ω",
+   "14,8 Ω",
+   "59 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 29,5 V / 0,5 A = 59 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 5 cm³ und die Masse 44,5 g. Welche Dichte hat er?",
+  "options": [
+   "8,9 g/cm³",
+   "17,8 g/cm³",
+   "222,5 g/cm³",
+   "9,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 44,5 g / 5 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 67 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "139 V",
+   "134 V",
+   "33,5 V",
+   "268 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 67 Ω · 2 A = 134 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 51 Ω fließt ein Strom von 5 A. Wie groß ist die Spannung?",
+  "options": [
+   "10,2 V",
+   "510 V",
+   "255 V",
+   "260 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 51 Ω · 5 A = 255 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 49 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "196 km",
+   "147 km",
+   "74 km",
+   "52 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 49 km/h · 3 h = 147 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 33 cm³?",
+  "options": [
+   "44,3 g",
+   "186,5 g",
+   "3729 g",
+   "372,9 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 11,3 · 33 = 372,9 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 28 cm³?",
+  "options": [
+   "28 g",
+   "280 g",
+   "14 g",
+   "29 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 1 · 28 = 28 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 22 cm³?",
+  "options": [
+   "173,8 g",
+   "1738 g",
+   "86,9 g",
+   "29,9 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 7,9 · 22 = 173,8 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 56 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "392 km/h",
+   "6 km/h",
+   "13 km/h",
+   "8 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 56 km / 7 h = 8 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 67 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "603 km",
+   "536 km",
+   "268 km",
+   "75 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 67 km/h · 8 h = 536 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 72 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "216 km",
+   "78 km",
+   "504 km",
+   "432 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 72 km/h · 6 h = 432 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 60 km mit 15 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "3 h",
+   "45 h",
+   "5 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 60 km / 15 km/h = 4 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 27 cm³?",
+  "options": [
+   "729 g",
+   "72,9 g",
+   "29,7 g",
+   "36,5 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 2,7 · 27 = 72,9 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 156 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "936 km/h",
+   "26 km/h",
+   "31 km/h",
+   "24 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 156 km / 6 h = 26 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 21 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "7 km/h",
+   "5 km/h",
+   "12 km/h",
+   "63 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 21 km / 3 h = 7 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 76 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "304 V",
+   "309 V",
+   "608 V",
+   "19 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 76 Ω · 4 A = 304 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 58 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "232 V",
+   "464 V",
+   "237 V",
+   "14,5 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 58 Ω · 4 A = 232 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 96 km mit 24 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "72 h",
+   "4 h",
+   "3 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 96 km / 24 km/h = 4 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 43 cm³ und die Masse 43 g. Welche Dichte hat er?",
+  "options": [
+   "1849 g/cm³",
+   "1,5 g/cm³",
+   "1 g/cm³",
+   "2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 43 g / 43 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 27 cm³ und die Masse 18,9 g. Welche Dichte hat er?",
+  "options": [
+   "510,3 g/cm³",
+   "1,2 g/cm³",
+   "1,4 g/cm³",
+   "0,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 18,9 g / 27 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 12 km mit 6 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "6 h",
+   "1 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 12 km / 6 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 78 km mit 13 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "65 h",
+   "6 h",
+   "5 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 78 km / 13 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 84 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "90 km",
+   "588 km",
+   "504 km",
+   "252 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 84 km/h · 6 h = 504 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 168 km mit 21 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "9 h",
+   "7 h",
+   "147 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 168 km / 21 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 68 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "70 km",
+   "204 km",
+   "68 km",
+   "136 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 68 km/h · 2 h = 136 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 21 cm³?",
+  "options": [
+   "83 g",
+   "165,9 g",
+   "28,9 g",
+   "1659 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 7,9 · 21 = 165,9 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 77 km mit 11 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "6 h",
+   "8 h",
+   "66 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 77 km / 11 km/h = 7 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 6 cm³ und die Masse 4,2 g. Welche Dichte hat er?",
+  "options": [
+   "1,2 g/cm³",
+   "25,2 g/cm³",
+   "1,4 g/cm³",
+   "0,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 4,2 g / 6 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 30 km mit 6 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "5 h",
+   "24 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 30 km / 6 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 36 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "27 h",
+   "3 h",
+   "5 h",
+   "4 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 36 km / 9 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 24 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "48 km",
+   "28 km",
+   "96 km",
+   "120 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 24 km/h · 4 h = 96 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 63 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "26 km/h",
+   "21 km/h",
+   "189 km/h",
+   "19 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 63 km / 3 h = 21 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 98 km mit 14 km/h. Wie lange braucht er?",
+  "options": [
+   "84 h",
+   "8 h",
+   "6 h",
+   "7 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 98 km / 14 km/h = 7 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 10 cm³ und die Masse 113 g. Welche Dichte hat er?",
+  "options": [
+   "11,8 g/cm³",
+   "11,3 g/cm³",
+   "22,6 g/cm³",
+   "1130 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 113 g / 10 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 115 km mit 23 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "5 h",
+   "92 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 115 km / 23 km/h = 5 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 97 Ω fließt ein Strom von 5 A. Wie groß ist die Spannung?",
+  "options": [
+   "490 V",
+   "970 V",
+   "485 V",
+   "19,4 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 97 Ω · 5 A = 485 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 49 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "98 V",
+   "29,5 V",
+   "49 V",
+   "24,5 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 49 Ω · 0,5 A = 24,5 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 53 Ω fließt ein Strom von 2 A. Wie groß ist die Spannung?",
+  "options": [
+   "212 V",
+   "111 V",
+   "26,5 V",
+   "106 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 53 Ω · 2 A = 106 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 44 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "22 km/h",
+   "27 km/h",
+   "20 km/h",
+   "88 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 44 km / 2 h = 22 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 30 V, R = 5 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "8 A",
+   "6 A",
+   "150 A",
+   "7 A"
+  ],
+  "correct": 1,
+  "explanation": "I = U/R = 30 V / 5 Ω = 6 A."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 9 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "3 V",
+   "54 V",
+   "27 V",
+   "32 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 9 Ω · 3 A = 27 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 53 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "31,5 V",
+   "106 V",
+   "26,5 V",
+   "53 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 53 Ω · 0,5 A = 26,5 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 36 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "23 Ω",
+   "72 Ω",
+   "16 Ω",
+   "18 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 36 V / 2 A = 18 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 315 V an, es fließen 5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "61 Ω",
+   "1575 Ω",
+   "63 Ω",
+   "68 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 315 V / 5 A = 63 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 304 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "43 km/h",
+   "2432 km/h",
+   "36 km/h",
+   "38 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 304 km / 8 h = 38 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 124 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "36 Ω",
+   "31 Ω",
+   "29 Ω",
+   "496 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 124 V / 4 A = 31 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 87 Ω fließt ein Strom von 4 A. Wie groß ist die Spannung?",
+  "options": [
+   "353 V",
+   "696 V",
+   "348 V",
+   "21,75 V"
+  ],
+  "correct": 2,
+  "explanation": "U = R · I = 87 Ω · 4 A = 348 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 67 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "70 km",
+   "201 km",
+   "101 km",
+   "268 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 67 km/h · 3 h = 201 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 35 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "12 km/h",
+   "7 km/h",
+   "5 km/h",
+   "175 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 35 km / 5 h = 7 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 120 km mit 24 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "4 h",
+   "5 h",
+   "96 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 120 km / 24 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 27 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "135 km",
+   "31 km",
+   "54 km",
+   "108 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 27 km/h · 4 h = 108 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 26 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "27 Ω",
+   "24 Ω",
+   "26 Ω",
+   "31 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 26 V / 1 A = 26 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 74 Ω fließt ein Strom von 0,5 A. Wie groß ist die Spannung?",
+  "options": [
+   "42 V",
+   "37 V",
+   "148 V",
+   "74 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 74 Ω · 0,5 A = 37 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 57 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "62 Ω",
+   "57 Ω",
+   "55 Ω",
+   "58 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 57 V / 1 A = 57 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 60 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "10 km/h",
+   "15 km/h",
+   "360 km/h",
+   "8 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 60 km / 6 h = 10 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 26 cm³ und die Masse 231,4 g. Welche Dichte hat er?",
+  "options": [
+   "9,4 g/cm³",
+   "6016,4 g/cm³",
+   "17,8 g/cm³",
+   "8,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 231,4 g / 26 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 45 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "36 h",
+   "4 h",
+   "6 h",
+   "5 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 45 km / 9 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 14 cm³ und die Masse 158,2 g. Welche Dichte hat er?",
+  "options": [
+   "2214,8 g/cm³",
+   "11,8 g/cm³",
+   "11,3 g/cm³",
+   "22,6 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 158,2 g / 14 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 24 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "8 V",
+   "72 V",
+   "77 V",
+   "144 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 24 Ω · 3 A = 72 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 140 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "33 km/h",
+   "28 km/h",
+   "700 km/h",
+   "26 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 140 km / 5 h = 28 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 6 cm³?",
+  "options": [
+   "474 g",
+   "47,4 g",
+   "23,7 g",
+   "13,9 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 7,9 · 6 = 47,4 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 72 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "144 km/h",
+   "34 km/h",
+   "36 km/h",
+   "41 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 72 km / 2 h = 36 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 93 Ω fließt ein Strom von 1 A. Wie groß ist die Spannung?",
+  "options": [
+   "94 V",
+   "186 V",
+   "98 V",
+   "93 V"
+  ],
+  "correct": 3,
+  "explanation": "U = R · I = 93 Ω · 1 A = 93 V."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 22 cm³ und die Masse 15,4 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "338,8 g/cm³",
+   "1,2 g/cm³",
+   "0,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 15,4 g / 22 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 8 V, R = 2 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "5 A",
+   "6 A",
+   "16 A",
+   "4 A"
+  ],
+  "correct": 3,
+  "explanation": "I = U/R = 8 V / 2 Ω = 4 A."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 76 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "532 km",
+   "82 km",
+   "228 km",
+   "456 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 76 km/h · 6 h = 456 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 13 cm³?",
+  "options": [
+   "24,3 g",
+   "1469 g",
+   "73,5 g",
+   "146,9 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 11,3 · 13 = 146,9 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 56 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "33 km/h",
+   "112 km/h",
+   "28 km/h",
+   "26 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 56 km / 2 h = 28 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 100 V, R = 20 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "5 A",
+   "7 A",
+   "2000 A",
+   "6 A"
+  ],
+  "correct": 0,
+  "explanation": "I = U/R = 100 V / 20 Ω = 5 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 19 cm³?",
+  "options": [
+   "1501 g",
+   "26,9 g",
+   "75,1 g",
+   "150,1 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 7,9 · 19 = 150,1 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 17 cm³ und die Masse 45,9 g. Welche Dichte hat er?",
+  "options": [
+   "2,7 g/cm³",
+   "3,2 g/cm³",
+   "780,3 g/cm³",
+   "5,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 45,9 g / 17 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 84 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "12 km/h",
+   "19 km/h",
+   "504 km/h",
+   "14 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 84 km / 6 h = 14 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 48 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "11 km/h",
+   "4 km/h",
+   "6 km/h",
+   "384 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 48 km / 8 h = 6 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 24 km mit 6 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "18 h",
+   "4 h",
+   "5 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 24 km / 6 km/h = 4 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 100 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "30 Ω",
+   "25 Ω",
+   "23 Ω",
+   "400 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 100 V / 4 A = 25 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 145 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "29 km/h",
+   "725 km/h",
+   "34 km/h",
+   "27 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 145 km / 5 h = 29 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 120 km mit 15 km/h. Wie lange braucht er?",
+  "options": [
+   "9 h",
+   "7 h",
+   "8 h",
+   "105 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 120 km / 15 km/h = 8 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 65 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "66 Ω",
+   "65 Ω",
+   "63 Ω",
+   "70 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 65 V / 1 A = 65 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 32 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "2 h",
+   "1 h",
+   "16 h",
+   "3 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 32 km / 16 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 50 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "250 km/h",
+   "10 km/h",
+   "15 km/h",
+   "8 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 50 km / 5 h = 10 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 162 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "27 km/h",
+   "32 km/h",
+   "25 km/h",
+   "972 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 162 km / 6 h = 27 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 15,5 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "29 Ω",
+   "7,8 Ω",
+   "31 Ω",
+   "36 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 15,5 V / 0,5 A = 31 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 28 cm³?",
+  "options": [
+   "124,6 g",
+   "36,9 g",
+   "249,2 g",
+   "2492 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 8,9 · 28 = 249,2 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 106 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "51 Ω",
+   "53 Ω",
+   "212 Ω",
+   "58 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 106 V / 2 A = 53 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 4 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "1,3333 V",
+   "12 V",
+   "17 V",
+   "24 V"
+  ],
+  "correct": 1,
+  "explanation": "U = R · I = 4 Ω · 3 A = 12 V."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 12 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "36 V",
+   "41 V",
+   "4 V",
+   "72 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 12 Ω · 3 A = 36 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 51 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "15 km/h",
+   "17 km/h",
+   "22 km/h",
+   "153 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 51 km / 3 h = 17 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 25 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "5 km/h",
+   "3 km/h",
+   "125 km/h",
+   "10 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 25 km / 5 h = 5 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 40 km mit 20 km/h. Wie lange braucht er?",
+  "options": [
+   "2 h",
+   "20 h",
+   "1 h",
+   "3 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 40 km / 20 km/h = 2 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 51 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "49 Ω",
+   "51 Ω",
+   "56 Ω",
+   "52 Ω"
+  ],
+  "correct": 1,
+  "explanation": "R = U/I = 51 V / 1 A = 51 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 80 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "320 km",
+   "640 km",
+   "720 km",
+   "88 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 80 km/h · 8 h = 640 km."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 36,5 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "71 Ω",
+   "78 Ω",
+   "18,3 Ω",
+   "73 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 36,5 V / 0,5 A = 73 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 54 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "324 km",
+   "60 km",
+   "378 km",
+   "162 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 54 km/h · 6 h = 324 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 18 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "54 km/h",
+   "4 km/h",
+   "11 km/h",
+   "6 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 18 km / 3 h = 6 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 18 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "9 km/h",
+   "36 km/h",
+   "14 km/h",
+   "7 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 18 km / 2 h = 9 km/h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "U = 8 V, R = 4 Ω. Wie groß ist die Stromstärke I?",
+  "options": [
+   "32 A",
+   "3 A",
+   "2 A",
+   "4 A"
+  ],
+  "correct": 2,
+  "explanation": "I = U/R = 8 V / 4 Ω = 2 A."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 32 cm³?",
+  "options": [
+   "32 g",
+   "33 g",
+   "16 g",
+   "320 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 1 · 32 = 32 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 32 V an, es fließen 0,5 A. Wie groß ist der Widerstand?",
+  "options": [
+   "64 Ω",
+   "69 Ω",
+   "62 Ω",
+   "16 Ω"
+  ],
+  "correct": 0,
+  "explanation": "R = U/I = 32 V / 0,5 A = 64 Ω."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 8 cm³?",
+  "options": [
+   "216 g",
+   "10,8 g",
+   "10,7 g",
+   "21,6 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 2,7 · 8 = 21,6 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 10 cm³?",
+  "options": [
+   "17,9 g",
+   "39,5 g",
+   "79 g",
+   "790 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 7,9 · 10 = 79 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 17 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "19 km",
+   "34 km",
+   "17 km",
+   "51 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 17 km/h · 2 h = 34 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 44 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "1 h",
+   "22 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 44 km / 22 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 140 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "35 km/h",
+   "560 km/h",
+   "40 km/h",
+   "33 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 140 km / 4 h = 35 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 80 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "400 km/h",
+   "16 km/h",
+   "14 km/h",
+   "21 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 80 km / 5 h = 16 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 38 cm³?",
+  "options": [
+   "40,7 g",
+   "1026 g",
+   "102,6 g",
+   "51,3 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 2,7 · 38 = 102,6 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 70 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "33 km/h",
+   "140 km/h",
+   "40 km/h",
+   "35 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 70 km / 2 h = 35 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 29 cm³ und die Masse 26,1 g. Welche Dichte hat er?",
+  "options": [
+   "0,9 g/cm³",
+   "756,9 g/cm³",
+   "1,4 g/cm³",
+   "1,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 26,1 g / 29 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "Durch einen Widerstand von 27 Ω fließt ein Strom von 3 A. Wie groß ist die Spannung?",
+  "options": [
+   "81 V",
+   "162 V",
+   "9 V",
+   "86 V"
+  ],
+  "correct": 0,
+  "explanation": "U = R · I = 27 Ω · 3 A = 81 V."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 49 km mit 7 km/h. Wie lange braucht er?",
+  "options": [
+   "42 h",
+   "6 h",
+   "7 h",
+   "8 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 49 km / 7 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 63 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "189 km",
+   "69 km",
+   "378 km",
+   "441 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 63 km/h · 6 h = 378 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 175 km mit 25 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "7 h",
+   "150 h",
+   "6 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 175 km / 25 km/h = 7 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 35 cm³?",
+  "options": [
+   "3955 g",
+   "46,3 g",
+   "197,8 g",
+   "395,5 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 11,3 · 35 = 395,5 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 21 cm³ und die Masse 14,7 g. Welche Dichte hat er?",
+  "options": [
+   "1,2 g/cm³",
+   "0,7 g/cm³",
+   "1,4 g/cm³",
+   "308,7 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 14,7 g / 21 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 23 cm³?",
+  "options": [
+   "31,9 g",
+   "204,7 g",
+   "102,4 g",
+   "2047 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 8,9 · 23 = 204,7 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 85 km mit 17 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "5 h",
+   "6 h",
+   "68 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 85 km / 17 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 60 km mit 20 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "3 h",
+   "2 h",
+   "40 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 60 km / 20 km/h = 3 h."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 67 V an, es fließen 1 A. Wie groß ist der Widerstand?",
+  "options": [
+   "68 Ω",
+   "72 Ω",
+   "65 Ω",
+   "67 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 67 V / 1 A = 67 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 48 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "8 km/h",
+   "13 km/h",
+   "6 km/h",
+   "288 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 48 km / 6 h = 8 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 6 cm³ und die Masse 53,4 g. Welche Dichte hat er?",
+  "options": [
+   "8,9 g/cm³",
+   "17,8 g/cm³",
+   "9,4 g/cm³",
+   "320,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 53,4 g / 6 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 216 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "864 Ω",
+   "59 Ω",
+   "52 Ω",
+   "54 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 216 V / 4 A = 54 Ω."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 8 V an, es fließen 2 A. Wie groß ist der Widerstand?",
+  "options": [
+   "9 Ω",
+   "2 Ω",
+   "16 Ω",
+   "4 Ω"
+  ],
+  "correct": 3,
+  "explanation": "R = U/I = 8 V / 2 A = 4 Ω."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 72 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "29 km/h",
+   "216 km/h",
+   "22 km/h",
+   "24 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 72 km / 3 h = 24 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 11 cm³?",
+  "options": [
+   "979 g",
+   "49 g",
+   "19,9 g",
+   "97,9 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 11 = 97,9 g."
+ },
+ {
+  "topic": "Ohmsches Gesetz",
+  "question": "An einem Widerstand liegen 284 V an, es fließen 4 A. Wie groß ist der Widerstand?",
+  "options": [
+   "69 Ω",
+   "76 Ω",
+   "71 Ω",
+   "1136 Ω"
+  ],
+  "correct": 2,
+  "explanation": "R = U/I = 284 V / 4 A = 71 Ω."
+ }
+]

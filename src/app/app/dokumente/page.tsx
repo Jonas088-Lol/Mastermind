@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { createDocument } from "./actions";
+import { createDocument, createDocumentFromTemplate } from "./actions";
+import { DOCUMENT_TEMPLATES } from "./templates";
 
 export const metadata: Metadata = { title: "Dokumente · MasterMind" };
 
@@ -36,6 +37,32 @@ export default async function DokumentePage() {
           </button>
         </form>
       </header>
+
+      <section>
+        <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-fg">
+          Vorlagen
+        </h2>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {DOCUMENT_TEMPLATES.map((template) => (
+            <form key={template.key} action={createDocumentFromTemplate.bind(null, template.key)}>
+              <button
+                type="submit"
+                className="flex w-full items-start gap-3 rounded-2xl border border-border bg-surface p-4 text-left transition-colors hover:border-brand/50 hover:bg-bg"
+              >
+                <span className="text-2xl leading-none" aria-hidden>
+                  {template.emoji}
+                </span>
+                <span className="min-w-0">
+                  <span className="block truncate text-sm font-semibold">{template.name}</span>
+                  <span className="mt-0.5 block text-xs text-muted-fg">
+                    {template.description}
+                  </span>
+                </span>
+              </button>
+            </form>
+          ))}
+        </div>
+      </section>
 
       {documents.length === 0 ? (
         <div className="rounded-2xl border-2 border-dashed border-border bg-bg px-8 py-16 text-center">

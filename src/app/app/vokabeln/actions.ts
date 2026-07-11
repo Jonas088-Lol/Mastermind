@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { awardCoins } from "@/lib/coins";
+import { awardXpCustom } from "@/lib/xp";
 
 // ── List management ────────────────────────────────────────────────
 
@@ -110,6 +111,8 @@ export async function recordVocabAnswer(entryId: string, quality: 0 | 1 | 2 | 3 
   // Award coins for a correct answer (quality >= 3 = pass)
   if (quality >= 3) {
     awardCoins(entry.list.userId, "vokabel_session").catch(() => undefined);
+    // +2 XP pro richtiger Vokabel (zählt auch für Tages-Streak)
+    awardXpCustom(entry.list.userId, 2, "vokabel_antwort", entryId).catch(() => undefined);
   }
 }
 

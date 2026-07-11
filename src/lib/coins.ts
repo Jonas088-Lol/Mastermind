@@ -29,6 +29,10 @@ export const COIN_REWARDS = {
   profil_foto_gesetzt:       5,
   klasse_platz_1_woche:     40,
   lucky_wheel:              10,
+  zeitungsartikel:          15,
+  office_dokument_erstellt:  3,
+  daily_goal:               20,
+  weekly_goal:             100,
   admin_grant:               0,
 } as const;
 

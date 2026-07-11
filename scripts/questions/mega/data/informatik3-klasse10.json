@@ -1,0 +1,4202 @@
+[
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Hexadezimalzahl 80 in das Dezimalsystem um.",
+  "options": [
+   "128",
+   "113",
+   "123",
+   "119"
+  ],
+  "correct": 0,
+  "explanation": "80₁₆ = 8·16 + 0 = 128."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Gegeben: liste = [16, 17, 11, 30, 9, 2]. Was liefert liste[4]?",
+  "options": [
+   "16",
+   "4",
+   "9",
+   "30"
+  ],
+  "correct": 2,
+  "explanation": "Der Index beginnt bei 0 → liste[4] = 9."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Was macht der Operator % (Modulo) in Python, z. B. 7 % 3?",
+  "options": [
+   "er potenziert",
+   "er liefert den Rest der Division: 7 % 3 = 1",
+   "er liefert 7 Prozent von 3",
+   "er rundet auf"
+  ],
+  "correct": 1,
+  "explanation": "Modulo liefert den Divisionsrest: 7 % 3 = 1."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 112 in das Hexadezimalsystem um.",
+  "options": [
+   "70",
+   "6F",
+   "71",
+   "80"
+  ],
+  "correct": 0,
+  "explanation": "112 = 7·16 + 0 = 70₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wie oft wird der Schleifenkörper ausgeführt?\ni = 4\nwhile i < 12:\n    i = i + 1",
+  "options": [
+   "7",
+   "9",
+   "8",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "Von 4 bis 11 wird erhöht → 8 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(1, 5):\n    s = s + i\nprint(s)",
+  "options": [
+   "13",
+   "11",
+   "9",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "range(1, 5) liefert 1 bis 4; Summe = 10."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. liste = [12, 16, 5, 11]; liste.append(16) — Was liefert len(liste) danach?",
+  "options": [
+   "5",
+   "3",
+   "7",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "append fügt 1 Element an: 4 + 1 = 5."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Welche Zahlen gibt „for i in range(0, 4, 1): print(i)“ aus?",
+  "options": [
+   "1, 2, 3, 4",
+   "1, 2, 3",
+   "0, 1, 2, 3",
+   "0, 1, 2, 3, 4"
+  ],
+  "correct": 2,
+  "explanation": "range(0, 4, 1) zählt von 0 in 1er-Schritten bis unter 4."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welche Zahlen gibt „for i in range(0, 4, 1): print(i)“ aus?",
+  "options": [
+   "1, 2, 3, 4",
+   "0, 1, 2, 3",
+   "1, 2, 3",
+   "0, 1, 2, 3, 4"
+  ],
+  "correct": 1,
+  "explanation": "range(0, 4, 1) zählt von 0 in 1er-Schritten bis unter 4."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Hexadezimalzahl 67 in das Dezimalsystem um.",
+  "options": [
+   "103",
+   "95",
+   "111",
+   "118"
+  ],
+  "correct": 0,
+  "explanation": "67₁₆ = 6·16 + 7 = 103."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wie oft wird der Schleifenkörper ausgeführt?\ni = 4\nwhile i < 8:\n    i = i + 1",
+  "options": [
+   "1",
+   "6",
+   "7",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Von 4 bis 7 wird erhöht → 4 Durchläufe."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 163 in das Hexadezimalsystem um.",
+  "options": [
+   "A4",
+   "A2",
+   "A3",
+   "B3"
+  ],
+  "correct": 2,
+  "explanation": "163 = 10·16 + 3 = A3₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([7, 17, 3, 10, 23])) aus?",
+  "options": [
+   "60",
+   "65",
+   "52",
+   "57"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Listenelemente ist 60."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Gegeben: liste = [20, 29, 28, 23, 19, 23]. Was liefert liste[1]?",
+  "options": [
+   "20",
+   "29",
+   "23",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "Der Index beginnt bei 0 → liste[1] = 29."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. liste = [18, 30, 37, 6, 35, 10]; liste.append(18) — Was liefert len(liste) danach?",
+  "options": [
+   "5",
+   "7",
+   "6",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 6 + 1 = 7."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Dezimalzahl 169 in das Hexadezimalsystem um.",
+  "options": [
+   "AA",
+   "B9",
+   "A9",
+   "A8"
+  ],
+  "correct": 2,
+  "explanation": "169 = 10·16 + 9 = A9₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Wie oft wird der Schleifenkörper ausgeführt?\ni = 1\nwhile i < 9:\n    i = i + 1",
+  "options": [
+   "8",
+   "10",
+   "6",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "Von 1 bis 8 wird erhöht → 8 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welchen Wert hat x am Ende?\nx = 2\nwhile x < 100:\n    x = x * 2\nprint(x)",
+  "options": [
+   "256",
+   "64",
+   "100",
+   "128"
+  ],
+  "correct": 3,
+  "explanation": "x verdoppelt sich (2 → …), bis x ≥ 100: Ergebnis 128."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Welche Zahlen gibt „for i in range(0, 3, 1): print(i)“ aus?",
+  "options": [
+   "1, 2, 3",
+   "0, 1, 2, 3",
+   "1, 2",
+   "0, 1, 2"
+  ],
+  "correct": 3,
+  "explanation": "range(0, 3, 1) zählt von 0 in 1er-Schritten bis unter 3."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welche Zahlen gibt „for i in range(0, 5, 1): print(i)“ aus?",
+  "options": [
+   "0, 1, 2, 3, 4",
+   "1, 2, 3, 4",
+   "0, 1, 2, 3, 4, 5",
+   "1, 2, 3, 4, 5"
+  ],
+  "correct": 0,
+  "explanation": "range(0, 5, 1) zählt von 0 in 1er-Schritten bis unter 5."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 35 in das Hexadezimalsystem um.",
+  "options": [
+   "24",
+   "22",
+   "23",
+   "33"
+  ],
+  "correct": 2,
+  "explanation": "35 = 2·16 + 3 = 23₁₆."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Aufgabe: Wofür steht in Scratch der Block „falls …, dann …“?",
+  "options": [
+   "für eine Schleife",
+   "für eine Verzweigung (Bedingung)",
+   "für eine Variable",
+   "für einen Kommentar"
+  ],
+  "correct": 1,
+  "explanation": "„falls … dann“ führt Code nur bei erfüllter Bedingung aus."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(min([36, 12, 32, 41])) aus?",
+  "options": [
+   "12",
+   "36",
+   "41",
+   "32"
+  ],
+  "correct": 0,
+  "explanation": "min liefert das kleinste Element: 12."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Welchen Wert hat x am Ende?\nx = 1\nwhile x < 20:\n    x = x * 2\nprint(x)",
+  "options": [
+   "32",
+   "16",
+   "64",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "x verdoppelt sich (1 → …), bis x ≥ 20: Ergebnis 32."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 143 in das Hexadezimalsystem um.",
+  "options": [
+   "90",
+   "8E",
+   "9F",
+   "8F"
+  ],
+  "correct": 3,
+  "explanation": "143 = 8·16 + 15 = 8F₁₆."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Wähle die richtige Antwort. Was bewirkt in Scratch der Block „wiederhole 10 mal“?",
+  "options": [
+   "das Programm stoppt nach 10 Sekunden",
+   "der eingeschlossene Code wird 10-mal ausgeführt",
+   "es werden 10 Figuren erzeugt",
+   "der Code wird einmal ausgeführt"
+  ],
+  "correct": 1,
+  "explanation": "„wiederhole n mal“ ist eine Zählschleife."
+ },
+ {
+  "topic": "Listen",
+  "question": "liste = [28, 29, 34]; liste.append(24) — Was liefert len(liste) danach?",
+  "options": [
+   "6",
+   "2",
+   "5",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "append fügt 1 Element an: 3 + 1 = 4."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Warum sind regelmäßige Software-Updates wichtig für die Sicherheit?",
+  "options": [
+   "sie schließen bekannte Sicherheitslücken",
+   "sie machen den Bildschirm heller",
+   "sie löschen alte Dateien",
+   "sie sind nur Werbung"
+  ],
+  "correct": 0,
+  "explanation": "Updates beheben Schwachstellen, bevor Angreifer sie ausnutzen."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Wie oft wird der Schleifenkörper ausgeführt?\ni = 4\nwhile i < 8:\n    i = i + 1",
+  "options": [
+   "3",
+   "4",
+   "7",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Von 4 bis 7 wird erhöht → 4 Durchläufe."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Aufgabe: Was beschreibt ein Struktogramm (Nassi-Shneiderman-Diagramm)?",
+  "options": [
+   "den Ablauf eines Algorithmus grafisch",
+   "das Dateisystem",
+   "die Pixel eines Bildes",
+   "den Aufbau eines Computers"
+  ],
+  "correct": 0,
+  "explanation": "Struktogramme stellen Algorithmen grafisch dar."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Was gibt print(max([31, 46, 49, 8, 14, 34])) aus?",
+  "options": [
+   "31",
+   "49",
+   "8",
+   "46"
+  ],
+  "correct": 1,
+  "explanation": "max liefert das größte Element: 49."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: liste = [32, 25, 1, 26]; liste.append(4) — Was liefert len(liste) danach?",
+  "options": [
+   "4",
+   "7",
+   "5",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "append fügt 1 Element an: 4 + 1 = 5."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 116 in das Hexadezimalsystem um.",
+  "options": [
+   "73",
+   "75",
+   "74",
+   "84"
+  ],
+  "correct": 2,
+  "explanation": "116 = 7·16 + 4 = 74₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. liste = [28, 32, 6, 30, 7]; liste.append(20) — Was liefert len(liste) danach?",
+  "options": [
+   "8",
+   "6",
+   "4",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Warum sollte man nicht dasselbe Passwort überall verwenden?",
+  "options": [
+   "weil es sonst zu leicht zu merken ist",
+   "das ist kein Problem",
+   "wird es einmal gestohlen, sind sonst alle Konten betroffen",
+   "weil Passwörter sich abnutzen"
+  ],
+  "correct": 2,
+  "explanation": "Ein Leak würde sonst alle Konten gefährden."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([24, 14, 25, 13, 22])) aus?",
+  "options": [
+   "95",
+   "93",
+   "99",
+   "98"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Listenelemente ist 98."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Hexadezimalzahl F3 in das Dezimalsystem um.",
+  "options": [
+   "236",
+   "237",
+   "243",
+   "259"
+  ],
+  "correct": 2,
+  "explanation": "F3₁₆ = 15·16 + 3 = 243."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(5, 10):\n    s = s + i\nprint(s)",
+  "options": [
+   "42",
+   "35",
+   "25",
+   "44"
+  ],
+  "correct": 1,
+  "explanation": "range(5, 10) liefert 5 bis 9; Summe = 35."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(sum([17, 10, 23, 2])) aus?",
+  "options": [
+   "57",
+   "53",
+   "52",
+   "58"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Listenelemente ist 52."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Was ist eine Variable in einem Programm?",
+  "options": [
+   "ein Ausgabegerät",
+   "ein Programmfehler",
+   "ein benannter Speicherplatz für einen Wert",
+   "eine feste Zahl, die sich nie ändert"
+  ],
+  "correct": 2,
+  "explanation": "Variablen speichern Werte, die sich ändern können."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Wähle die richtige Antwort. Warum sollte man nicht dasselbe Passwort überall verwenden?",
+  "options": [
+   "weil es sonst zu leicht zu merken ist",
+   "wird es einmal gestohlen, sind sonst alle Konten betroffen",
+   "das ist kein Problem",
+   "weil Passwörter sich abnutzen"
+  ],
+  "correct": 1,
+  "explanation": "Ein Leak würde sonst alle Konten gefährden."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Was ist ein Backup?",
+  "options": [
+   "eine Suchmaschine",
+   "eine Sicherungskopie wichtiger Daten",
+   "ein zweiter Monitor",
+   "ein Virenscanner"
+  ],
+  "correct": 1,
+  "explanation": "Backups schützen vor Datenverlust (Defekt, Ransomware)."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Wie oft wird der Schleifenkörper ausgeführt?\ni = 3\nwhile i < 10:\n    i = i + 1",
+  "options": [
+   "5",
+   "10",
+   "6",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Von 3 bis 9 wird erhöht → 7 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welche Zahlen gibt „for i in range(0, 10, 2): print(i)“ aus?",
+  "options": [
+   "0, 2, 4, 6, 8",
+   "1, 3, 5, 7, 9",
+   "0, 2, 4, 6, 8, 10",
+   "2, 4, 6, 8"
+  ],
+  "correct": 0,
+  "explanation": "range(0, 10, 2) zählt von 0 in 2er-Schritten bis unter 10."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Aufgabe: Wie nennt man die Suche und Behebung von Programmfehlern?",
+  "options": [
+   "Booten",
+   "Debugging",
+   "Rendering",
+   "Streaming"
+  ],
+  "correct": 1,
+  "explanation": "Debugging = Fehler finden und beheben."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: liste = [14, 36, 1, 40, 14]; liste.append(10) — Was liefert len(liste) danach?",
+  "options": [
+   "5",
+   "8",
+   "6",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wie oft wird der Schleifenkörper ausgeführt?\ni = 1\nwhile i < 6:\n    i = i + 1",
+  "options": [
+   "3",
+   "4",
+   "6",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "Von 1 bis 5 wird erhöht → 5 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [2, 36, 9, 13, 16, 16, 31]; liste.append(39) — Was liefert len(liste) danach?",
+  "options": [
+   "7",
+   "6",
+   "9",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "append fügt 1 Element an: 7 + 1 = 8."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welche Zahlen gibt „for i in range(0, 6, 2): print(i)“ aus?",
+  "options": [
+   "1, 3, 5",
+   "2, 4",
+   "0, 2, 4",
+   "0, 2, 4, 6"
+  ],
+  "correct": 2,
+  "explanation": "range(0, 6, 2) zählt von 0 in 2er-Schritten bis unter 6."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Hexadezimalzahl F6 in das Dezimalsystem um.",
+  "options": [
+   "246",
+   "235",
+   "229",
+   "226"
+  ],
+  "correct": 0,
+  "explanation": "F6₁₆ = 15·16 + 6 = 246."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([12, 7, 22, 10, 17])) aus?",
+  "options": [
+   "68",
+   "66",
+   "65",
+   "72"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Listenelemente ist 68."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 128 in das Hexadezimalsystem um.",
+  "options": [
+   "81",
+   "7F",
+   "80",
+   "90"
+  ],
+  "correct": 2,
+  "explanation": "128 = 8·16 + 0 = 80₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welchen Wert hat x am Ende?\nx = 1\nwhile x < 200:\n    x = x * 2\nprint(x)",
+  "options": [
+   "128",
+   "200",
+   "256",
+   "512"
+  ],
+  "correct": 2,
+  "explanation": "x verdoppelt sich (1 → …), bis x ≥ 200: Ergebnis 256."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Hexadezimalzahl 75 in das Dezimalsystem um.",
+  "options": [
+   "117",
+   "114",
+   "106",
+   "104"
+  ],
+  "correct": 0,
+  "explanation": "75₁₆ = 7·16 + 5 = 117."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(3, 9):\n    s = s + i\nprint(s)",
+  "options": [
+   "33",
+   "40",
+   "34",
+   "24"
+  ],
+  "correct": 0,
+  "explanation": "range(3, 9) liefert 3 bis 8; Summe = 33."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 8):\n    s = s + i\nprint(s)",
+  "options": [
+   "19",
+   "20",
+   "27",
+   "22"
+  ],
+  "correct": 2,
+  "explanation": "range(2, 8) liefert 2 bis 7; Summe = 27."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(5, 11):\n    s = s + i\nprint(s)",
+  "options": [
+   "46",
+   "43",
+   "45",
+   "54"
+  ],
+  "correct": 2,
+  "explanation": "range(5, 11) liefert 5 bis 10; Summe = 45."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Hexadezimalzahl 99 in das Dezimalsystem um.",
+  "options": [
+   "153",
+   "169",
+   "141",
+   "163"
+  ],
+  "correct": 0,
+  "explanation": "99₁₆ = 9·16 + 9 = 153."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Teste dein Wissen: Welches Gesetz regelt in der EU den Umgang mit personenbezogenen Daten?",
+  "options": [
+   "das Urheberrechtsgesetz",
+   "die Datenschutz-Grundverordnung (DSGVO)",
+   "das Straßenverkehrsgesetz",
+   "das Jugendschutzgesetz allein"
+  ],
+  "correct": 1,
+  "explanation": "Die DSGVO gilt seit 2018 in der ganzen EU."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welche Zahlen gibt „for i in range(0, 10, 2): print(i)“ aus?",
+  "options": [
+   "0, 2, 4, 6, 8",
+   "0, 2, 4, 6, 8, 10",
+   "1, 3, 5, 7, 9",
+   "2, 4, 6, 8"
+  ],
+  "correct": 0,
+  "explanation": "range(0, 10, 2) zählt von 0 in 2er-Schritten bis unter 10."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 242 in das Hexadezimalsystem um.",
+  "options": [
+   "F1",
+   "F3",
+   "102",
+   "F2"
+  ],
+  "correct": 3,
+  "explanation": "242 = 15·16 + 2 = F2₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(min([35, 45, 50, 26])) aus?",
+  "options": [
+   "50",
+   "26",
+   "45",
+   "35"
+  ],
+  "correct": 1,
+  "explanation": "min liefert das kleinste Element: 26."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(min([34, 16, 24, 22, 27, 24])) aus?",
+  "options": [
+   "27",
+   "34",
+   "16",
+   "22"
+  ],
+  "correct": 2,
+  "explanation": "min liefert das kleinste Element: 16."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Wähle die richtige Antwort. Wie nennt man die Suche und Behebung von Programmfehlern?",
+  "options": [
+   "Rendering",
+   "Streaming",
+   "Booten",
+   "Debugging"
+  ],
+  "correct": 3,
+  "explanation": "Debugging = Fehler finden und beheben."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(5, 8):\n    s = s + i\nprint(s)",
+  "options": [
+   "19",
+   "13",
+   "18",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "range(5, 8) liefert 5 bis 7; Summe = 18."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(4, 8):\n    s = s + i\nprint(s)",
+  "options": [
+   "22",
+   "24",
+   "17",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "range(4, 8) liefert 4 bis 7; Summe = 22."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Hexadezimalzahl D9 in das Dezimalsystem um.",
+  "options": [
+   "209",
+   "217",
+   "212",
+   "216"
+  ],
+  "correct": 1,
+  "explanation": "D9₁₆ = 13·16 + 9 = 217."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(5, 9):\n    s = s + i\nprint(s)",
+  "options": [
+   "33",
+   "26",
+   "17",
+   "28"
+  ],
+  "correct": 1,
+  "explanation": "range(5, 9) liefert 5 bis 8; Summe = 26."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(max([25, 22, 17, 4])) aus?",
+  "options": [
+   "17",
+   "4",
+   "25",
+   "22"
+  ],
+  "correct": 2,
+  "explanation": "max liefert das größte Element: 25."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [14, 33, 6, 37, 21, 31]; liste.append(24) — Was liefert len(liste) danach?",
+  "options": [
+   "9",
+   "8",
+   "7",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "append fügt 1 Element an: 6 + 1 = 7."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(max([20, 42, 5, 31, 15])) aus?",
+  "options": [
+   "20",
+   "5",
+   "31",
+   "42"
+  ],
+  "correct": 3,
+  "explanation": "max liefert das größte Element: 42."
+ },
+ {
+  "topic": "Listen",
+  "question": "liste = [20, 16, 2, 15, 18]; liste.append(2) — Was liefert len(liste) danach?",
+  "options": [
+   "4",
+   "6",
+   "5",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 172 in das Hexadezimalsystem um.",
+  "options": [
+   "AC",
+   "AB",
+   "AD",
+   "BC"
+  ],
+  "correct": 0,
+  "explanation": "172 = 10·16 + 12 = AC₁₆."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Dezimalzahl 245 in das Hexadezimalsystem um.",
+  "options": [
+   "F5",
+   "F6",
+   "F4",
+   "105"
+  ],
+  "correct": 0,
+  "explanation": "245 = 15·16 + 5 = F5₁₆."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Wähle die richtige Antwort. Was sollte man tun, wenn man in einer E-Mail einen unbekannten Anhang erhält?",
+  "options": [
+   "den Anhang doppelt anklicken",
+   "sofort öffnen",
+   "an alle Freunde weiterleiten",
+   "nicht öffnen und den Absender prüfen"
+  ],
+  "correct": 3,
+  "explanation": "Unbekannte Anhänge können Schadsoftware enthalten."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(sum([23, 13, 3, 21, 19, 9])) aus?",
+  "options": [
+   "80",
+   "91",
+   "90",
+   "88"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Listenelemente ist 88."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welchen Wert hat x am Ende?\nx = 3\nwhile x < 100:\n    x = x * 2\nprint(x)",
+  "options": [
+   "96",
+   "384",
+   "192",
+   "100"
+  ],
+  "correct": 2,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 100: Ergebnis 192."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wie oft wird der Schleifenkörper ausgeführt?\ni = 1\nwhile i < 7:\n    i = i + 1",
+  "options": [
+   "7",
+   "8",
+   "9",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Von 1 bis 6 wird erhöht → 6 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. liste = [24, 17, 29, 7, 4]; liste.append(18) — Was liefert len(liste) danach?",
+  "options": [
+   "6",
+   "8",
+   "7",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 8):\n    s = s + i\nprint(s)",
+  "options": [
+   "29",
+   "27",
+   "25",
+   "28"
+  ],
+  "correct": 1,
+  "explanation": "range(2, 8) liefert 2 bis 7; Summe = 27."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Gegeben: liste = [26, 12, 21, 26, 15]. Was liefert liste[1]?",
+  "options": [
+   "21",
+   "15",
+   "26",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[1] = 12."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Wähle die richtige Antwort. Was ist eine Variable in einem Programm?",
+  "options": [
+   "eine feste Zahl, die sich nie ändert",
+   "ein Ausgabegerät",
+   "ein benannter Speicherplatz für einen Wert",
+   "ein Programmfehler"
+  ],
+  "correct": 2,
+  "explanation": "Variablen speichern Werte, die sich ändern können."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Welches Gesetz regelt in der EU den Umgang mit personenbezogenen Daten?",
+  "options": [
+   "die Datenschutz-Grundverordnung (DSGVO)",
+   "das Straßenverkehrsgesetz",
+   "das Jugendschutzgesetz allein",
+   "das Urheberrechtsgesetz"
+  ],
+  "correct": 0,
+  "explanation": "Die DSGVO gilt seit 2018 in der ganzen EU."
+ },
+ {
+  "topic": "Listen",
+  "question": "liste = [4, 8, 22, 10, 29]; liste.append(3) — Was liefert len(liste) danach?",
+  "options": [
+   "7",
+   "8",
+   "6",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 6):\n    s = s + i\nprint(s)",
+  "options": [
+   "16",
+   "14",
+   "12",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "range(2, 6) liefert 2 bis 5; Summe = 14."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [30, 20, 6, 27]; liste.append(3) — Was liefert len(liste) danach?",
+  "options": [
+   "7",
+   "5",
+   "6",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 4 + 1 = 5."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 86 in das Hexadezimalsystem um.",
+  "options": [
+   "55",
+   "66",
+   "56",
+   "57"
+  ],
+  "correct": 2,
+  "explanation": "86 = 5·16 + 6 = 56₁₆."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl 65 in das Dezimalsystem um.",
+  "options": [
+   "107",
+   "92",
+   "91",
+   "101"
+  ],
+  "correct": 3,
+  "explanation": "65₁₆ = 6·16 + 5 = 101."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 128 in das Hexadezimalsystem um.",
+  "options": [
+   "90",
+   "80",
+   "81",
+   "7F"
+  ],
+  "correct": 1,
+  "explanation": "128 = 8·16 + 0 = 80₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [23, 5, 18, 8, 5, 26]; liste.append(12) — Was liefert len(liste) danach?",
+  "options": [
+   "8",
+   "5",
+   "6",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "append fügt 1 Element an: 6 + 1 = 7."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(min([49, 1, 26, 49, 6, 28])) aus?",
+  "options": [
+   "1",
+   "49",
+   "28",
+   "26"
+  ],
+  "correct": 0,
+  "explanation": "min liefert das kleinste Element: 1."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(1, 6):\n    s = s + i\nprint(s)",
+  "options": [
+   "10",
+   "20",
+   "15",
+   "14"
+  ],
+  "correct": 2,
+  "explanation": "range(1, 6) liefert 1 bis 5; Summe = 15."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 8):\n    s = s + i\nprint(s)",
+  "options": [
+   "34",
+   "27",
+   "35",
+   "22"
+  ],
+  "correct": 1,
+  "explanation": "range(2, 8) liefert 2 bis 7; Summe = 27."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 72 in das Hexadezimalsystem um.",
+  "options": [
+   "49",
+   "58",
+   "47",
+   "48"
+  ],
+  "correct": 3,
+  "explanation": "72 = 4·16 + 8 = 48₁₆."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl 8A in das Dezimalsystem um.",
+  "options": [
+   "120",
+   "129",
+   "124",
+   "138"
+  ],
+  "correct": 3,
+  "explanation": "8A₁₆ = 8·16 + 10 = 138."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(min([9, 25, 30, 28, 11, 38, 2])) aus?",
+  "options": [
+   "28",
+   "2",
+   "11",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "min liefert das kleinste Element: 2."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 5):\n    s = s + i\nprint(s)",
+  "options": [
+   "9",
+   "10",
+   "6",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "range(2, 5) liefert 2 bis 4; Summe = 9."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. liste = [23, 34, 2, 20, 15]; liste.append(21) — Was liefert len(liste) danach?",
+  "options": [
+   "8",
+   "7",
+   "6",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Aufgabe: Was macht ein sicheres Passwort aus?",
+  "options": [
+   "es ist kurz und leicht zu merken wie 1234",
+   "es ist lang und kombiniert Buchstaben, Zahlen und Sonderzeichen",
+   "es steht auf einem Zettel am Monitor",
+   "es ist der eigene Name"
+  ],
+  "correct": 1,
+  "explanation": "Länge + Zeichenvielfalt machen Passwörter stark."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(max([44, 37, 22, 20, 14, 6, 44])) aus?",
+  "options": [
+   "6",
+   "20",
+   "44",
+   "22"
+  ],
+  "correct": 2,
+  "explanation": "max liefert das größte Element: 44."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welchen Wert hat x am Ende?\nx = 1\nwhile x < 20:\n    x = x * 2\nprint(x)",
+  "options": [
+   "64",
+   "16",
+   "32",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "x verdoppelt sich (1 → …), bis x ≥ 20: Ergebnis 32."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(max([48, 34, 33, 23, 39, 19, 4])) aus?",
+  "options": [
+   "4",
+   "48",
+   "23",
+   "34"
+  ],
+  "correct": 1,
+  "explanation": "max liefert das größte Element: 48."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Gegeben: liste = [4, 25, 16, 22]. Was liefert liste[1]?",
+  "options": [
+   "25",
+   "22",
+   "1",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "Der Index beginnt bei 0 → liste[1] = 25."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 7):\n    s = s + i\nprint(s)",
+  "options": [
+   "20",
+   "23",
+   "26",
+   "18"
+  ],
+  "correct": 0,
+  "explanation": "range(2, 7) liefert 2 bis 6; Summe = 20."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Gegeben: liste = [10, 6, 4, 12, 12]. Was liefert liste[0]?",
+  "options": [
+   "12",
+   "0",
+   "10",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Der Index beginnt bei 0 → liste[0] = 10."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 235 in das Hexadezimalsystem um.",
+  "options": [
+   "EC",
+   "EA",
+   "EB",
+   "FB"
+  ],
+  "correct": 2,
+  "explanation": "235 = 14·16 + 11 = EB₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [7, 22, 3, 25, 16]; liste.append(34) — Was liefert len(liste) danach?",
+  "options": [
+   "8",
+   "6",
+   "7",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Wie nennt man einen Fehler im Programmcode?",
+  "options": [
+   "Loop",
+   "Feature",
+   "Pixel",
+   "Bug"
+  ],
+  "correct": 3,
+  "explanation": "Programmfehler heißen Bugs; die Fehlersuche heißt Debugging."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Wie oft wird der Schleifenkörper ausgeführt?\ni = 2\nwhile i < 6:\n    i = i + 1",
+  "options": [
+   "1",
+   "4",
+   "2",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "Von 2 bis 5 wird erhöht → 4 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(min([22, 21, 42, 5])) aus?",
+  "options": [
+   "21",
+   "22",
+   "5",
+   "42"
+  ],
+  "correct": 2,
+  "explanation": "min liefert das kleinste Element: 5."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Was ist ein Cookie im Browser?",
+  "options": [
+   "ein Computervirus",
+   "eine kleine Datei, die Webseiten auf dem Gerät speichern",
+   "ein Werbebanner",
+   "eine E-Mail"
+  ],
+  "correct": 1,
+  "explanation": "Cookies speichern z. B. Logins oder Tracking-IDs."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welchen Wert hat x am Ende?\nx = 2\nwhile x < 200:\n    x = x * 2\nprint(x)",
+  "options": [
+   "512",
+   "200",
+   "256",
+   "128"
+  ],
+  "correct": 2,
+  "explanation": "x verdoppelt sich (2 → …), bis x ≥ 200: Ergebnis 256."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Teste dein Wissen: Was macht der Operator % (Modulo) in Python, z. B. 7 % 3?",
+  "options": [
+   "er rundet auf",
+   "er liefert den Rest der Division: 7 % 3 = 1",
+   "er liefert 7 Prozent von 3",
+   "er potenziert"
+  ],
+  "correct": 1,
+  "explanation": "Modulo liefert den Divisionsrest: 7 % 3 = 1."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Gegeben: liste = [6, 26, 13, 24, 27]. Was liefert liste[1]?",
+  "options": [
+   "1",
+   "27",
+   "26",
+   "24"
+  ],
+  "correct": 2,
+  "explanation": "Der Index beginnt bei 0 → liste[1] = 26."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Gegeben: liste = [25, 27, 16, 5, 9, 29]. Was liefert liste[5]?",
+  "options": [
+   "16",
+   "27",
+   "29",
+   "25"
+  ],
+  "correct": 2,
+  "explanation": "Der Index beginnt bei 0 → liste[5] = 29."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Teste dein Wissen: Warum sollte man nicht dasselbe Passwort überall verwenden?",
+  "options": [
+   "weil Passwörter sich abnutzen",
+   "weil es sonst zu leicht zu merken ist",
+   "wird es einmal gestohlen, sind sonst alle Konten betroffen",
+   "das ist kein Problem"
+  ],
+  "correct": 2,
+  "explanation": "Ein Leak würde sonst alle Konten gefährden."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(4, 7):\n    s = s + i\nprint(s)",
+  "options": [
+   "16",
+   "15",
+   "10",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "range(4, 7) liefert 4 bis 6; Summe = 15."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Aufgabe: Welches Gesetz regelt in der EU den Umgang mit personenbezogenen Daten?",
+  "options": [
+   "die Datenschutz-Grundverordnung (DSGVO)",
+   "das Urheberrechtsgesetz",
+   "das Jugendschutzgesetz allein",
+   "das Straßenverkehrsgesetz"
+  ],
+  "correct": 0,
+  "explanation": "Die DSGVO gilt seit 2018 in der ganzen EU."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Wie oft wird der Schleifenkörper ausgeführt?\ni = 1\nwhile i < 5:\n    i = i + 1",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Von 1 bis 4 wird erhöht → 4 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Was gibt print(sum([6, 8, 8, 19, 3])) aus?",
+  "options": [
+   "44",
+   "43",
+   "47",
+   "40"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Listenelemente ist 44."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Dezimalzahl 106 in das Hexadezimalsystem um.",
+  "options": [
+   "6A",
+   "7A",
+   "6B",
+   "69"
+  ],
+  "correct": 0,
+  "explanation": "106 = 6·16 + 10 = 6A₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welche Zahlen gibt „for i in range(0, 6, 2): print(i)“ aus?",
+  "options": [
+   "2, 4",
+   "0, 2, 4",
+   "0, 2, 4, 6",
+   "1, 3, 5"
+  ],
+  "correct": 1,
+  "explanation": "range(0, 6, 2) zählt von 0 in 2er-Schritten bis unter 6."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Welchen Wert hat x am Ende?\nx = 3\nwhile x < 20:\n    x = x * 2\nprint(x)",
+  "options": [
+   "24",
+   "20",
+   "48",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 20: Ergebnis 24."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(sum([23, 19, 8, 12, 4, 6])) aus?",
+  "options": [
+   "74",
+   "79",
+   "73",
+   "72"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Listenelemente ist 72."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Wie oft wird der Schleifenkörper ausgeführt?\ni = 2\nwhile i < 7:\n    i = i + 1",
+  "options": [
+   "5",
+   "2",
+   "4",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Von 2 bis 6 wird erhöht → 5 Durchläufe."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 115 in das Hexadezimalsystem um.",
+  "options": [
+   "72",
+   "83",
+   "74",
+   "73"
+  ],
+  "correct": 3,
+  "explanation": "115 = 7·16 + 3 = 73₁₆."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 202 in das Hexadezimalsystem um.",
+  "options": [
+   "DA",
+   "CA",
+   "C9",
+   "CB"
+  ],
+  "correct": 1,
+  "explanation": "202 = 12·16 + 10 = CA₁₆."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Aufgabe: Was ist ein Algorithmus?",
+  "options": [
+   "eine Programmiersprache",
+   "ein Speichermedium",
+   "ein Computerprogramm in Maschinensprache",
+   "eine eindeutige Schritt-für-Schritt-Anleitung zur Lösung eines Problems"
+  ],
+  "correct": 3,
+  "explanation": "Ein Algorithmus ist eine endliche, eindeutige Handlungsvorschrift."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welche Zahlen gibt „for i in range(0, 3, 1): print(i)“ aus?",
+  "options": [
+   "1, 2, 3",
+   "0, 1, 2, 3",
+   "0, 1, 2",
+   "1, 2"
+  ],
+  "correct": 2,
+  "explanation": "range(0, 3, 1) zählt von 0 in 1er-Schritten bis unter 3."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl EF in das Dezimalsystem um.",
+  "options": [
+   "255",
+   "226",
+   "233",
+   "239"
+  ],
+  "correct": 3,
+  "explanation": "EF₁₆ = 14·16 + 15 = 239."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Teste dein Wissen: Was sollte man tun, wenn man in einer E-Mail einen unbekannten Anhang erhält?",
+  "options": [
+   "den Anhang doppelt anklicken",
+   "sofort öffnen",
+   "an alle Freunde weiterleiten",
+   "nicht öffnen und den Absender prüfen"
+  ],
+  "correct": 3,
+  "explanation": "Unbekannte Anhänge können Schadsoftware enthalten."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(max([13, 44, 46, 16])) aus?",
+  "options": [
+   "16",
+   "46",
+   "44",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "max liefert das größte Element: 46."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 190 in das Hexadezimalsystem um.",
+  "options": [
+   "BE",
+   "CE",
+   "BF",
+   "BD"
+  ],
+  "correct": 0,
+  "explanation": "190 = 11·16 + 14 = BE₁₆."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 120 in das Hexadezimalsystem um.",
+  "options": [
+   "88",
+   "77",
+   "78",
+   "79"
+  ],
+  "correct": 2,
+  "explanation": "120 = 7·16 + 8 = 78₁₆."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Dezimalzahl 28 in das Hexadezimalsystem um.",
+  "options": [
+   "1D",
+   "1B",
+   "1C",
+   "2C"
+  ],
+  "correct": 2,
+  "explanation": "28 = 1·16 + 12 = 1C₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Wie oft wird der Schleifenkörper ausgeführt?\ni = 1\nwhile i < 8:\n    i = i + 1",
+  "options": [
+   "8",
+   "4",
+   "10",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Von 1 bis 7 wird erhöht → 7 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Welche Zahlen gibt „for i in range(0, 5, 1): print(i)“ aus?",
+  "options": [
+   "0, 1, 2, 3, 4",
+   "0, 1, 2, 3, 4, 5",
+   "1, 2, 3, 4, 5",
+   "1, 2, 3, 4"
+  ],
+  "correct": 0,
+  "explanation": "range(0, 5, 1) zählt von 0 in 1er-Schritten bis unter 5."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welchen Wert hat x am Ende?\nx = 3\nwhile x < 200:\n    x = x * 2\nprint(x)",
+  "options": [
+   "192",
+   "768",
+   "384",
+   "200"
+  ],
+  "correct": 2,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 200: Ergebnis 384."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [34, 5, 3, 25, 19]; liste.append(31) — Was liefert len(liste) danach?",
+  "options": [
+   "6",
+   "5",
+   "8",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 5):\n    s = s + i\nprint(s)",
+  "options": [
+   "7",
+   "9",
+   "10",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "range(2, 5) liefert 2 bis 4; Summe = 9."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welche Zahlen gibt „for i in range(0, 3, 1): print(i)“ aus?",
+  "options": [
+   "1, 2, 3",
+   "0, 1, 2",
+   "1, 2",
+   "0, 1, 2, 3"
+  ],
+  "correct": 1,
+  "explanation": "range(0, 3, 1) zählt von 0 in 1er-Schritten bis unter 3."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(3, 8):\n    s = s + i\nprint(s)",
+  "options": [
+   "22",
+   "26",
+   "25",
+   "32"
+  ],
+  "correct": 2,
+  "explanation": "range(3, 8) liefert 3 bis 7; Summe = 25."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Wie oft wird der Schleifenkörper ausgeführt?\ni = 3\nwhile i < 9:\n    i = i + 1",
+  "options": [
+   "4",
+   "6",
+   "5",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "Von 3 bis 8 wird erhöht → 6 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(min([1, 10, 25, 40, 34])) aus?",
+  "options": [
+   "40",
+   "1",
+   "25",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "min liefert das kleinste Element: 1."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Welchen Wert hat x am Ende?\nx = 3\nwhile x < 100:\n    x = x * 2\nprint(x)",
+  "options": [
+   "96",
+   "384",
+   "192",
+   "100"
+  ],
+  "correct": 2,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 100: Ergebnis 192."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(sum([13, 13, 10, 18])) aus?",
+  "options": [
+   "50",
+   "58",
+   "54",
+   "53"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Listenelemente ist 54."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Dezimalzahl 211 in das Hexadezimalsystem um.",
+  "options": [
+   "D2",
+   "D4",
+   "D3",
+   "E3"
+  ],
+  "correct": 2,
+  "explanation": "211 = 13·16 + 3 = D3₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Was gibt print(max([2, 46, 27, 30])) aus?",
+  "options": [
+   "2",
+   "46",
+   "30",
+   "27"
+  ],
+  "correct": 1,
+  "explanation": "max liefert das größte Element: 46."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(sum([1, 20, 15, 5])) aus?",
+  "options": [
+   "33",
+   "40",
+   "34",
+   "41"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Listenelemente ist 41."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl BB in das Dezimalsystem um.",
+  "options": [
+   "190",
+   "196",
+   "187",
+   "177"
+  ],
+  "correct": 2,
+  "explanation": "BB₁₆ = 11·16 + 11 = 187."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl 30 in das Dezimalsystem um.",
+  "options": [
+   "68",
+   "52",
+   "48",
+   "43"
+  ],
+  "correct": 2,
+  "explanation": "30₁₆ = 3·16 + 0 = 48."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Hexadezimalzahl AE in das Dezimalsystem um.",
+  "options": [
+   "191",
+   "174",
+   "161",
+   "164"
+  ],
+  "correct": 1,
+  "explanation": "AE₁₆ = 10·16 + 14 = 174."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Hexadezimalzahl B1 in das Dezimalsystem um.",
+  "options": [
+   "182",
+   "169",
+   "170",
+   "177"
+  ],
+  "correct": 3,
+  "explanation": "B1₁₆ = 11·16 + 1 = 177."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. liste = [26, 14, 24]; liste.append(32) — Was liefert len(liste) danach?",
+  "options": [
+   "4",
+   "6",
+   "5",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "append fügt 1 Element an: 3 + 1 = 4."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Wie oft wird der Schleifenkörper ausgeführt?\ni = 4\nwhile i < 8:\n    i = i + 1",
+  "options": [
+   "6",
+   "1",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Von 4 bis 7 wird erhöht → 4 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Wie oft wird der Schleifenkörper ausgeführt?\ni = 2\nwhile i < 10:\n    i = i + 1",
+  "options": [
+   "11",
+   "7",
+   "5",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "Von 2 bis 9 wird erhöht → 8 Durchläufe."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Was bewirkt in Scratch der Block „wiederhole 10 mal“?",
+  "options": [
+   "der Code wird einmal ausgeführt",
+   "das Programm stoppt nach 10 Sekunden",
+   "es werden 10 Figuren erzeugt",
+   "der eingeschlossene Code wird 10-mal ausgeführt"
+  ],
+  "correct": 3,
+  "explanation": "„wiederhole n mal“ ist eine Zählschleife."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Hexadezimalzahl 45 in das Dezimalsystem um.",
+  "options": [
+   "65",
+   "80",
+   "69",
+   "76"
+  ],
+  "correct": 2,
+  "explanation": "45₁₆ = 4·16 + 5 = 69."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(5, 11):\n    s = s + i\nprint(s)",
+  "options": [
+   "51",
+   "45",
+   "34",
+   "42"
+  ],
+  "correct": 1,
+  "explanation": "range(5, 11) liefert 5 bis 10; Summe = 45."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [36, 28, 7, 12, 39, 5, 22]; liste.append(26) — Was liefert len(liste) danach?",
+  "options": [
+   "8",
+   "10",
+   "9",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "append fügt 1 Element an: 7 + 1 = 8."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([8, 3, 2, 18, 23])) aus?",
+  "options": [
+   "56",
+   "54",
+   "51",
+   "48"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Listenelemente ist 54."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Teste dein Wissen: Was macht der Vergleichsoperator == in Python?",
+  "options": [
+   "er löscht eine Variable",
+   "er weist einen Wert zu",
+   "er addiert zwei Zahlen",
+   "er prüft, ob zwei Werte gleich sind"
+  ],
+  "correct": 3,
+  "explanation": "== vergleicht; ein einzelnes = weist zu."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Was gibt print(max([38, 16, 3, 21])) aus?",
+  "options": [
+   "16",
+   "38",
+   "3",
+   "21"
+  ],
+  "correct": 1,
+  "explanation": "max liefert das größte Element: 38."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(min([32, 48, 42, 27, 22])) aus?",
+  "options": [
+   "22",
+   "32",
+   "42",
+   "48"
+  ],
+  "correct": 0,
+  "explanation": "min liefert das kleinste Element: 22."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Dezimalzahl 59 in das Hexadezimalsystem um.",
+  "options": [
+   "4B",
+   "3A",
+   "3B",
+   "3C"
+  ],
+  "correct": 2,
+  "explanation": "59 = 3·16 + 11 = 3B₁₆."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 55 in das Hexadezimalsystem um.",
+  "options": [
+   "47",
+   "37",
+   "36",
+   "38"
+  ],
+  "correct": 1,
+  "explanation": "55 = 3·16 + 7 = 37₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Gegeben: liste = [30, 11, 3, 1, 26]. Was liefert liste[0]?",
+  "options": [
+   "26",
+   "30",
+   "3",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "Der Index beginnt bei 0 → liste[0] = 30."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(5, 10):\n    s = s + i\nprint(s)",
+  "options": [
+   "33",
+   "35",
+   "47",
+   "24"
+  ],
+  "correct": 1,
+  "explanation": "range(5, 10) liefert 5 bis 9; Summe = 35."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Was gibt print(sum([1, 3, 23, 25])) aus?",
+  "options": [
+   "52",
+   "46",
+   "45",
+   "48"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Listenelemente ist 52."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Was gibt print(max([26, 11, 19, 36])) aus?",
+  "options": [
+   "11",
+   "36",
+   "19",
+   "26"
+  ],
+  "correct": 1,
+  "explanation": "max liefert das größte Element: 36."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Hexadezimalzahl 62 in das Dezimalsystem um.",
+  "options": [
+   "80",
+   "84",
+   "101",
+   "98"
+  ],
+  "correct": 3,
+  "explanation": "62₁₆ = 6·16 + 2 = 98."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welchen Wert hat x am Ende?\nx = 3\nwhile x < 50:\n    x = x * 2\nprint(x)",
+  "options": [
+   "48",
+   "50",
+   "192",
+   "96"
+  ],
+  "correct": 3,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 50: Ergebnis 96."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Hexadezimalzahl 13 in das Dezimalsystem um.",
+  "options": [
+   "29",
+   "19",
+   "34",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "13₁₆ = 1·16 + 3 = 19."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 5):\n    s = s + i\nprint(s)",
+  "options": [
+   "8",
+   "9",
+   "12",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "range(2, 5) liefert 2 bis 4; Summe = 9."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [24, 34, 9, 19]; liste.append(13) — Was liefert len(liste) danach?",
+  "options": [
+   "3",
+   "5",
+   "4",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 4 + 1 = 5."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Wie oft wird der Schleifenkörper ausgeführt?\ni = 2\nwhile i < 5:\n    i = i + 1",
+  "options": [
+   "1",
+   "4",
+   "3",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Von 2 bis 4 wird erhöht → 3 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([5, 7, 17, 14, 11])) aus?",
+  "options": [
+   "54",
+   "56",
+   "55",
+   "58"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Listenelemente ist 54."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Wie oft wird der Schleifenkörper ausgeführt?\ni = 1\nwhile i < 9:\n    i = i + 1",
+  "options": [
+   "7",
+   "8",
+   "9",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "Von 1 bis 8 wird erhöht → 8 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Gegeben: liste = [11, 18, 2, 20, 5, 30]. Was liefert liste[4]?",
+  "options": [
+   "2",
+   "5",
+   "20",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "Der Index beginnt bei 0 → liste[4] = 5."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(sum([1, 15, 10, 20, 24])) aus?",
+  "options": [
+   "65",
+   "67",
+   "70",
+   "64"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Listenelemente ist 70."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welchen Wert hat x am Ende?\nx = 3\nwhile x < 100:\n    x = x * 2\nprint(x)",
+  "options": [
+   "384",
+   "100",
+   "96",
+   "192"
+  ],
+  "correct": 3,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 100: Ergebnis 192."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welchen Wert hat x am Ende?\nx = 1\nwhile x < 20:\n    x = x * 2\nprint(x)",
+  "options": [
+   "32",
+   "16",
+   "20",
+   "64"
+  ],
+  "correct": 0,
+  "explanation": "x verdoppelt sich (1 → …), bis x ≥ 20: Ergebnis 32."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Wähle die richtige Antwort. Welche drei Grundstrukturen reichen für jeden Algorithmus aus?",
+  "options": [
+   "Eingabe, Bildschirm, Maus",
+   "Addition, Subtraktion, Division",
+   "Start, Pause, Ende",
+   "Sequenz, Verzweigung, Schleife"
+  ],
+  "correct": 3,
+  "explanation": "Jeder Algorithmus lässt sich aus Sequenz, Auswahl und Wiederholung aufbauen."
+ },
+ {
+  "topic": "Listen",
+  "question": "Gegeben: liste = [25, 17, 13, 14]. Was liefert liste[2]?",
+  "options": [
+   "14",
+   "13",
+   "17",
+   "25"
+  ],
+  "correct": 1,
+  "explanation": "Der Index beginnt bei 0 → liste[2] = 13."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welche Zahlen gibt „for i in range(0, 12, 2): print(i)“ aus?",
+  "options": [
+   "0, 2, 4, 6, 8, 10",
+   "1, 3, 5, 7, 9, 11",
+   "2, 4, 6, 8, 10",
+   "0, 2, 4, 6, 8, 10, 12"
+  ],
+  "correct": 0,
+  "explanation": "range(0, 12, 2) zählt von 0 in 2er-Schritten bis unter 12."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Aufgabe: In welcher Reihenfolge arbeitet ein Programm Anweisungen ohne Schleifen/Verzweigungen ab?",
+  "options": [
+   "von oben nach unten (sequenziell)",
+   "alle gleichzeitig",
+   "von unten nach oben",
+   "zufällig"
+  ],
+  "correct": 0,
+  "explanation": "Ohne Kontrollstrukturen läuft Code sequenziell ab."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. liste = [29, 7, 19, 16, 29, 22]; liste.append(29) — Was liefert len(liste) danach?",
+  "options": [
+   "5",
+   "8",
+   "7",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "append fügt 1 Element an: 6 + 1 = 7."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(min([17, 42, 15, 1, 10])) aus?",
+  "options": [
+   "10",
+   "15",
+   "17",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "min liefert das kleinste Element: 1."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welchen Wert hat x am Ende?\nx = 2\nwhile x < 20:\n    x = x * 2\nprint(x)",
+  "options": [
+   "32",
+   "64",
+   "16",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "x verdoppelt sich (2 → …), bis x ≥ 20: Ergebnis 32."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welche Zahlen gibt „for i in range(0, 8, 2): print(i)“ aus?",
+  "options": [
+   "0, 2, 4, 6, 8",
+   "0, 2, 4, 6",
+   "2, 4, 6",
+   "1, 3, 5, 7"
+  ],
+  "correct": 1,
+  "explanation": "range(0, 8, 2) zählt von 0 in 2er-Schritten bis unter 8."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [29, 4, 22, 29, 40]; liste.append(16) — Was liefert len(liste) danach?",
+  "options": [
+   "5",
+   "8",
+   "4",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welchen Wert hat x am Ende?\nx = 3\nwhile x < 20:\n    x = x * 2\nprint(x)",
+  "options": [
+   "48",
+   "12",
+   "24",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 20: Ergebnis 24."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([13, 2, 23, 18])) aus?",
+  "options": [
+   "48",
+   "56",
+   "62",
+   "63"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Listenelemente ist 56."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: liste = [6, 15, 8, 31, 17]; liste.append(31) — Was liefert len(liste) danach?",
+  "options": [
+   "4",
+   "5",
+   "7",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Gegeben: liste = [9, 13, 23, 22, 24]. Was liefert liste[1]?",
+  "options": [
+   "23",
+   "9",
+   "22",
+   "13"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[1] = 13."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(sum([14, 2, 20, 11, 22])) aus?",
+  "options": [
+   "64",
+   "69",
+   "72",
+   "77"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Listenelemente ist 69."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 7):\n    s = s + i\nprint(s)",
+  "options": [
+   "15",
+   "20",
+   "23",
+   "18"
+  ],
+  "correct": 1,
+  "explanation": "range(2, 7) liefert 2 bis 6; Summe = 20."
+ },
+ {
+  "topic": "Listen",
+  "question": "Gegeben: liste = [24, 25, 2, 3, 24, 25]. Was liefert liste[5]?",
+  "options": [
+   "3",
+   "24",
+   "25",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Der Index beginnt bei 0 → liste[5] = 25."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(5, 10):\n    s = s + i\nprint(s)",
+  "options": [
+   "41",
+   "46",
+   "26",
+   "35"
+  ],
+  "correct": 3,
+  "explanation": "range(5, 10) liefert 5 bis 9; Summe = 35."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Wie oft wird der Schleifenkörper ausgeführt?\ni = 3\nwhile i < 9:\n    i = i + 1",
+  "options": [
+   "8",
+   "6",
+   "7",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "Von 3 bis 8 wird erhöht → 6 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Wie oft wird der Schleifenkörper ausgeführt?\ni = 4\nwhile i < 12:\n    i = i + 1",
+  "options": [
+   "9",
+   "8",
+   "7",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Von 4 bis 11 wird erhöht → 8 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Gegeben: liste = [20, 18, 4, 6, 21]. Was liefert liste[3]?",
+  "options": [
+   "6",
+   "21",
+   "18",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "Der Index beginnt bei 0 → liste[3] = 6."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(1, 4):\n    s = s + i\nprint(s)",
+  "options": [
+   "7",
+   "3",
+   "6",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "range(1, 4) liefert 1 bis 3; Summe = 6."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(max([17, 10, 26, 45, 41])) aus?",
+  "options": [
+   "10",
+   "45",
+   "26",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "max liefert das größte Element: 45."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Gegeben: liste = [4, 13, 18, 3, 23]. Was liefert liste[3]?",
+  "options": [
+   "3",
+   "4",
+   "13",
+   "23"
+  ],
+  "correct": 0,
+  "explanation": "Der Index beginnt bei 0 → liste[3] = 3."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Welchen Wert hat x am Ende?\nx = 1\nwhile x < 100:\n    x = x * 2\nprint(x)",
+  "options": [
+   "256",
+   "64",
+   "100",
+   "128"
+  ],
+  "correct": 3,
+  "explanation": "x verdoppelt sich (1 → …), bis x ≥ 100: Ergebnis 128."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Wie oft wird der Schleifenkörper ausgeführt?\ni = 1\nwhile i < 5:\n    i = i + 1",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Von 1 bis 4 wird erhöht → 4 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(min([39, 6, 2, 2, 24, 12, 21])) aus?",
+  "options": [
+   "24",
+   "21",
+   "39",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "min liefert das kleinste Element: 2."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([9, 8, 22, 13, 18, 14])) aus?",
+  "options": [
+   "84",
+   "86",
+   "87",
+   "82"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Listenelemente ist 84."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 196 in das Hexadezimalsystem um.",
+  "options": [
+   "D4",
+   "C4",
+   "C3",
+   "C5"
+  ],
+  "correct": 1,
+  "explanation": "196 = 12·16 + 4 = C4₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 8):\n    s = s + i\nprint(s)",
+  "options": [
+   "26",
+   "27",
+   "34",
+   "36"
+  ],
+  "correct": 1,
+  "explanation": "range(2, 8) liefert 2 bis 7; Summe = 27."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(sum([24, 24, 2, 10, 2])) aus?",
+  "options": [
+   "62",
+   "64",
+   "67",
+   "61"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Listenelemente ist 62."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Wie oft wird der Schleifenkörper ausgeführt?\ni = 3\nwhile i < 7:\n    i = i + 1",
+  "options": [
+   "4",
+   "6",
+   "2",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "Von 3 bis 6 wird erhöht → 4 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(2, 7):\n    s = s + i\nprint(s)",
+  "options": [
+   "14",
+   "20",
+   "16",
+   "27"
+  ],
+  "correct": 1,
+  "explanation": "range(2, 7) liefert 2 bis 6; Summe = 20."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: liste = [11, 17, 9]; liste.append(37) — Was liefert len(liste) danach?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "append fügt 1 Element an: 3 + 1 = 4."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Welchen Wert hat x am Ende?\nx = 3\nwhile x < 50:\n    x = x * 2\nprint(x)",
+  "options": [
+   "50",
+   "192",
+   "96",
+   "48"
+  ],
+  "correct": 2,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 50: Ergebnis 96."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Dezimalzahl 94 in das Hexadezimalsystem um.",
+  "options": [
+   "6E",
+   "5F",
+   "5E",
+   "5D"
+  ],
+  "correct": 2,
+  "explanation": "94 = 5·16 + 14 = 5E₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welche Zahlen gibt „for i in range(0, 6, 2): print(i)“ aus?",
+  "options": [
+   "0, 2, 4, 6",
+   "0, 2, 4",
+   "1, 3, 5",
+   "2, 4"
+  ],
+  "correct": 1,
+  "explanation": "range(0, 6, 2) zählt von 0 in 2er-Schritten bis unter 6."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 239 in das Hexadezimalsystem um.",
+  "options": [
+   "EE",
+   "EF",
+   "FF",
+   "F0"
+  ],
+  "correct": 1,
+  "explanation": "239 = 14·16 + 15 = EF₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Gegeben: liste = [16, 13, 22, 12]. Was liefert liste[2]?",
+  "options": [
+   "2",
+   "16",
+   "22",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "Der Index beginnt bei 0 → liste[2] = 22."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 113 in das Hexadezimalsystem um.",
+  "options": [
+   "81",
+   "70",
+   "72",
+   "71"
+  ],
+  "correct": 3,
+  "explanation": "113 = 7·16 + 1 = 71₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(sum([10, 1, 7, 12, 18, 19])) aus?",
+  "options": [
+   "61",
+   "67",
+   "59",
+   "71"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Listenelemente ist 67."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(min([45, 34, 47, 18, 17])) aus?",
+  "options": [
+   "47",
+   "45",
+   "17",
+   "18"
+  ],
+  "correct": 2,
+  "explanation": "min liefert das kleinste Element: 17."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Hexadezimalzahl D4 in das Dezimalsystem um.",
+  "options": [
+   "212",
+   "222",
+   "220",
+   "211"
+  ],
+  "correct": 0,
+  "explanation": "D4₁₆ = 13·16 + 4 = 212."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Gegeben: liste = [24, 13, 19, 26, 25, 22]. Was liefert liste[0]?",
+  "options": [
+   "13",
+   "22",
+   "19",
+   "24"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[0] = 24."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Gegeben: liste = [17, 23, 2, 1]. Was liefert liste[2]?",
+  "options": [
+   "23",
+   "1",
+   "17",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[2] = 2."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: liste = [29, 19, 13, 24, 7, 13]; liste.append(27) — Was liefert len(liste) danach?",
+  "options": [
+   "6",
+   "7",
+   "8",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 6 + 1 = 7."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(5, 8):\n    s = s + i\nprint(s)",
+  "options": [
+   "18",
+   "21",
+   "24",
+   "14"
+  ],
+  "correct": 0,
+  "explanation": "range(5, 8) liefert 5 bis 7; Summe = 18."
+ },
+ {
+  "topic": "Listen",
+  "question": "Gegeben: liste = [7, 4, 27, 5, 7, 2]. Was liefert liste[1]?",
+  "options": [
+   "7",
+   "1",
+   "4",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Der Index beginnt bei 0 → liste[1] = 4."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(1, 5):\n    s = s + i\nprint(s)",
+  "options": [
+   "10",
+   "11",
+   "8",
+   "13"
+  ],
+  "correct": 0,
+  "explanation": "range(1, 5) liefert 1 bis 4; Summe = 10."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Wähle die richtige Antwort. Was ist Phishing?",
+  "options": [
+   "eine Verschlüsselungstechnik",
+   "das Sichern von Daten",
+   "der Versuch, über gefälschte Nachrichten/Webseiten an Zugangsdaten zu gelangen",
+   "ein Computerspiel"
+  ],
+  "correct": 2,
+  "explanation": "Phishing-Mails imitieren z. B. Banken, um Passwörter zu stehlen."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Woran erkennt man eine verschlüsselte Verbindung im Browser?",
+  "options": [
+   "an einer langen Ladezeit",
+   "an bunter Werbung",
+   "am Wort 'sicher' im Text",
+   "an https:// und dem Schloss-Symbol"
+  ],
+  "correct": 3,
+  "explanation": "https und Schloss-Symbol zeigen Transportverschlüsselung an."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Aufgabe: Was ist ein Cookie im Browser?",
+  "options": [
+   "ein Werbebanner",
+   "eine kleine Datei, die Webseiten auf dem Gerät speichern",
+   "eine E-Mail",
+   "ein Computervirus"
+  ],
+  "correct": 1,
+  "explanation": "Cookies speichern z. B. Logins oder Tracking-IDs."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Dezimalzahl 203 in das Hexadezimalsystem um.",
+  "options": [
+   "CC",
+   "CA",
+   "DB",
+   "CB"
+  ],
+  "correct": 3,
+  "explanation": "203 = 12·16 + 11 = CB₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welche Zahlen gibt „for i in range(0, 12, 2): print(i)“ aus?",
+  "options": [
+   "0, 2, 4, 6, 8, 10, 12",
+   "2, 4, 6, 8, 10",
+   "1, 3, 5, 7, 9, 11",
+   "0, 2, 4, 6, 8, 10"
+  ],
+  "correct": 3,
+  "explanation": "range(0, 12, 2) zählt von 0 in 2er-Schritten bis unter 12."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([9, 5, 23, 21, 2])) aus?",
+  "options": [
+   "52",
+   "60",
+   "64",
+   "65"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Listenelemente ist 60."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Wähle die richtige Antwort. Warum sind regelmäßige Software-Updates wichtig für die Sicherheit?",
+  "options": [
+   "sie sind nur Werbung",
+   "sie löschen alte Dateien",
+   "sie schließen bekannte Sicherheitslücken",
+   "sie machen den Bildschirm heller"
+  ],
+  "correct": 2,
+  "explanation": "Updates beheben Schwachstellen, bevor Angreifer sie ausnutzen."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Was sind personenbezogene Daten?",
+  "options": [
+   "nur Passwörter",
+   "nur Fotos",
+   "alle Daten im Internet",
+   "alle Informationen, die sich auf eine identifizierbare Person beziehen"
+  ],
+  "correct": 3,
+  "explanation": "Personenbezogene Daten: Name, Adresse, Geburtsdatum, IP-Adresse usw."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Was gibt print(sum([4, 3, 24, 5, 24])) aus?",
+  "options": [
+   "60",
+   "54",
+   "64",
+   "67"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Listenelemente ist 60."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(1, 4):\n    s = s + i\nprint(s)",
+  "options": [
+   "4",
+   "7",
+   "6",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "range(1, 4) liefert 1 bis 3; Summe = 6."
+ },
+ {
+  "topic": "Listen",
+  "question": "liste = [14, 33, 24, 35, 11, 28]; liste.append(7) — Was liefert len(liste) danach?",
+  "options": [
+   "5",
+   "7",
+   "8",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 6 + 1 = 7."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(4, 9):\n    s = s + i\nprint(s)",
+  "options": [
+   "20",
+   "30",
+   "21",
+   "34"
+  ],
+  "correct": 1,
+  "explanation": "range(4, 9) liefert 4 bis 8; Summe = 30."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Wie oft wird der Schleifenkörper ausgeführt?\ni = 2\nwhile i < 6:\n    i = i + 1",
+  "options": [
+   "1",
+   "3",
+   "5",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Von 2 bis 5 wird erhöht → 4 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Gegeben: liste = [7, 3, 3, 5, 7]. Was liefert liste[2]?",
+  "options": [
+   "2",
+   "3",
+   "7",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "Der Index beginnt bei 0 → liste[2] = 3."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(sum([6, 13, 7, 8, 23])) aus?",
+  "options": [
+   "62",
+   "63",
+   "57",
+   "61"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Listenelemente ist 57."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(min([27, 8, 5, 10, 33, 31, 30])) aus?",
+  "options": [
+   "5",
+   "31",
+   "33",
+   "30"
+  ],
+  "correct": 0,
+  "explanation": "min liefert das kleinste Element: 5."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 111 in das Hexadezimalsystem um.",
+  "options": [
+   "6F",
+   "7F",
+   "70",
+   "6E"
+  ],
+  "correct": 0,
+  "explanation": "111 = 6·16 + 15 = 6F₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welchen Wert hat x am Ende?\nx = 3\nwhile x < 200:\n    x = x * 2\nprint(x)",
+  "options": [
+   "200",
+   "384",
+   "192",
+   "768"
+  ],
+  "correct": 1,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 200: Ergebnis 384."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "In welcher Reihenfolge arbeitet ein Programm Anweisungen ohne Schleifen/Verzweigungen ab?",
+  "options": [
+   "von unten nach oben",
+   "zufällig",
+   "von oben nach unten (sequenziell)",
+   "alle gleichzeitig"
+  ],
+  "correct": 2,
+  "explanation": "Ohne Kontrollstrukturen läuft Code sequenziell ab."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(min([27, 21, 11, 25, 20, 22])) aus?",
+  "options": [
+   "22",
+   "11",
+   "25",
+   "20"
+  ],
+  "correct": 1,
+  "explanation": "min liefert das kleinste Element: 11."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl 23 in das Dezimalsystem um.",
+  "options": [
+   "33",
+   "55",
+   "44",
+   "35"
+  ],
+  "correct": 3,
+  "explanation": "23₁₆ = 2·16 + 3 = 35."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Gegeben: liste = [16, 24, 14, 1, 24]. Was liefert liste[0]?",
+  "options": [
+   "14",
+   "24",
+   "1",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[0] = 16."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl C2 in das Dezimalsystem um.",
+  "options": [
+   "181",
+   "198",
+   "186",
+   "194"
+  ],
+  "correct": 3,
+  "explanation": "C2₁₆ = 12·16 + 2 = 194."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Hexadezimalzahl 71 in das Dezimalsystem um.",
+  "options": [
+   "119",
+   "111",
+   "113",
+   "96"
+  ],
+  "correct": 2,
+  "explanation": "71₁₆ = 7·16 + 1 = 113."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Gegeben: liste = [20, 12, 12, 16]. Was liefert liste[2]?",
+  "options": [
+   "16",
+   "20",
+   "2",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[2] = 12."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wie oft wird der Schleifenkörper ausgeführt?\ni = 4\nwhile i < 10:\n    i = i + 1",
+  "options": [
+   "4",
+   "9",
+   "6",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Von 4 bis 9 wird erhöht → 6 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welche Zahlen gibt „for i in range(0, 5, 1): print(i)“ aus?",
+  "options": [
+   "1, 2, 3, 4, 5",
+   "1, 2, 3, 4",
+   "0, 1, 2, 3, 4",
+   "0, 1, 2, 3, 4, 5"
+  ],
+  "correct": 2,
+  "explanation": "range(0, 5, 1) zählt von 0 in 1er-Schritten bis unter 5."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welchen Wert hat x am Ende?\nx = 3\nwhile x < 200:\n    x = x * 2\nprint(x)",
+  "options": [
+   "384",
+   "200",
+   "192",
+   "768"
+  ],
+  "correct": 0,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 200: Ergebnis 384."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welchen Wert hat x am Ende?\nx = 3\nwhile x < 50:\n    x = x * 2\nprint(x)",
+  "options": [
+   "50",
+   "96",
+   "48",
+   "192"
+  ],
+  "correct": 1,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 50: Ergebnis 96."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Welche Zahlen gibt „for i in range(0, 8, 2): print(i)“ aus?",
+  "options": [
+   "0, 2, 4, 6",
+   "0, 2, 4, 6, 8",
+   "1, 3, 5, 7",
+   "2, 4, 6"
+  ],
+  "correct": 0,
+  "explanation": "range(0, 8, 2) zählt von 0 in 2er-Schritten bis unter 8."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 55 in das Hexadezimalsystem um.",
+  "options": [
+   "38",
+   "47",
+   "36",
+   "37"
+  ],
+  "correct": 3,
+  "explanation": "55 = 3·16 + 7 = 37₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(4, 8):\n    s = s + i\nprint(s)",
+  "options": [
+   "22",
+   "26",
+   "28",
+   "17"
+  ],
+  "correct": 0,
+  "explanation": "range(4, 8) liefert 4 bis 7; Summe = 22."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Teste dein Wissen: Was ist ein Algorithmus?",
+  "options": [
+   "eine Programmiersprache",
+   "ein Speichermedium",
+   "ein Computerprogramm in Maschinensprache",
+   "eine eindeutige Schritt-für-Schritt-Anleitung zur Lösung eines Problems"
+  ],
+  "correct": 3,
+  "explanation": "Ein Algorithmus ist eine endliche, eindeutige Handlungsvorschrift."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Teste dein Wissen: Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(1, 6):\n    s = s + i\nprint(s)",
+  "options": [
+   "11",
+   "15",
+   "17",
+   "20"
+  ],
+  "correct": 1,
+  "explanation": "range(1, 6) liefert 1 bis 5; Summe = 15."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Wähle die richtige Antwort. Was ist ein Cookie im Browser?",
+  "options": [
+   "eine kleine Datei, die Webseiten auf dem Gerät speichern",
+   "ein Computervirus",
+   "ein Werbebanner",
+   "eine E-Mail"
+  ],
+  "correct": 0,
+  "explanation": "Cookies speichern z. B. Logins oder Tracking-IDs."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Gegeben: liste = [23, 7, 16, 9, 8]. Was liefert liste[4]?",
+  "options": [
+   "4",
+   "16",
+   "9",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[4] = 8."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Gegeben: liste = [18, 11, 22, 15, 27, 23]. Was liefert liste[3]?",
+  "options": [
+   "15",
+   "3",
+   "22",
+   "23"
+  ],
+  "correct": 0,
+  "explanation": "Der Index beginnt bei 0 → liste[3] = 15."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 119 in das Hexadezimalsystem um.",
+  "options": [
+   "77",
+   "78",
+   "76",
+   "87"
+  ],
+  "correct": 0,
+  "explanation": "119 = 7·16 + 7 = 77₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Gegeben: liste = [7, 23, 21, 17]. Was liefert liste[0]?",
+  "options": [
+   "0",
+   "17",
+   "21",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[0] = 7."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl 1D in das Dezimalsystem um.",
+  "options": [
+   "36",
+   "29",
+   "23",
+   "49"
+  ],
+  "correct": 1,
+  "explanation": "1D₁₆ = 1·16 + 13 = 29."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wie oft wird der Schleifenkörper ausgeführt?\ni = 3\nwhile i < 9:\n    i = i + 1",
+  "options": [
+   "4",
+   "7",
+   "6",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Von 3 bis 8 wird erhöht → 6 Durchläufe."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Teste dein Wissen: Was ist Phishing?",
+  "options": [
+   "das Sichern von Daten",
+   "der Versuch, über gefälschte Nachrichten/Webseiten an Zugangsdaten zu gelangen",
+   "ein Computerspiel",
+   "eine Verschlüsselungstechnik"
+  ],
+  "correct": 1,
+  "explanation": "Phishing-Mails imitieren z. B. Banken, um Passwörter zu stehlen."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(sum([23, 23, 25, 10])) aus?",
+  "options": [
+   "78",
+   "77",
+   "81",
+   "74"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Listenelemente ist 81."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: liste = [27, 16, 20, 31, 31, 22]; liste.append(14) — Was liefert len(liste) danach?",
+  "options": [
+   "6",
+   "5",
+   "7",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "append fügt 1 Element an: 6 + 1 = 7."
+ },
+ {
+  "topic": "Listen",
+  "question": "Gegeben: liste = [24, 2, 13, 20, 7]. Was liefert liste[0]?",
+  "options": [
+   "13",
+   "0",
+   "24",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "Der Index beginnt bei 0 → liste[0] = 24."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Was macht der Vergleichsoperator == in Python?",
+  "options": [
+   "er weist einen Wert zu",
+   "er prüft, ob zwei Werte gleich sind",
+   "er addiert zwei Zahlen",
+   "er löscht eine Variable"
+  ],
+  "correct": 1,
+  "explanation": "== vergleicht; ein einzelnes = weist zu."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl 46 in das Dezimalsystem um.",
+  "options": [
+   "89",
+   "57",
+   "65",
+   "70"
+  ],
+  "correct": 3,
+  "explanation": "46₁₆ = 4·16 + 6 = 70."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Wie oft wird der Schleifenkörper ausgeführt?\ni = 2\nwhile i < 9:\n    i = i + 1",
+  "options": [
+   "8",
+   "9",
+   "6",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Von 2 bis 8 wird erhöht → 7 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Wie oft wird der Schleifenkörper ausgeführt?\ni = 4\nwhile i < 12:\n    i = i + 1",
+  "options": [
+   "6",
+   "8",
+   "7",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "Von 4 bis 11 wird erhöht → 8 Durchläufe."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Teste dein Wissen: Was bewirkt in Scratch der Block „wiederhole 10 mal“?",
+  "options": [
+   "der eingeschlossene Code wird 10-mal ausgeführt",
+   "es werden 10 Figuren erzeugt",
+   "das Programm stoppt nach 10 Sekunden",
+   "der Code wird einmal ausgeführt"
+  ],
+  "correct": 0,
+  "explanation": "„wiederhole n mal“ ist eine Zählschleife."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welchen Wert hat x am Ende?\nx = 3\nwhile x < 100:\n    x = x * 2\nprint(x)",
+  "options": [
+   "100",
+   "384",
+   "96",
+   "192"
+  ],
+  "correct": 3,
+  "explanation": "x verdoppelt sich (3 → …), bis x ≥ 100: Ergebnis 192."
+ },
+ {
+  "topic": "Listen",
+  "question": "liste = [28, 21, 37, 3]; liste.append(22) — Was liefert len(liste) danach?",
+  "options": [
+   "7",
+   "5",
+   "3",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 4 + 1 = 5."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 194 in das Hexadezimalsystem um.",
+  "options": [
+   "C1",
+   "C3",
+   "C2",
+   "D2"
+  ],
+  "correct": 2,
+  "explanation": "194 = 12·16 + 2 = C2₁₆."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Teste dein Wissen: Welche drei Grundstrukturen reichen für jeden Algorithmus aus?",
+  "options": [
+   "Start, Pause, Ende",
+   "Addition, Subtraktion, Division",
+   "Eingabe, Bildschirm, Maus",
+   "Sequenz, Verzweigung, Schleife"
+  ],
+  "correct": 3,
+  "explanation": "Jeder Algorithmus lässt sich aus Sequenz, Auswahl und Wiederholung aufbauen."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Welche Zahlen gibt „for i in range(0, 6, 2): print(i)“ aus?",
+  "options": [
+   "0, 2, 4, 6",
+   "0, 2, 4",
+   "2, 4",
+   "1, 3, 5"
+  ],
+  "correct": 1,
+  "explanation": "range(0, 6, 2) zählt von 0 in 2er-Schritten bis unter 6."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([17, 4, 10, 13, 1])) aus?",
+  "options": [
+   "53",
+   "45",
+   "41",
+   "46"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Listenelemente ist 45."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl 3C in das Dezimalsystem um.",
+  "options": [
+   "63",
+   "58",
+   "60",
+   "61"
+  ],
+  "correct": 2,
+  "explanation": "3C₁₆ = 3·16 + 12 = 60."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [38, 32, 25, 23]; liste.append(22) — Was liefert len(liste) danach?",
+  "options": [
+   "3",
+   "5",
+   "6",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 4 + 1 = 5."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Teste dein Wissen: Was sollte man tun, bevor man ein Foto von Freunden postet?",
+  "options": [
+   "nichts, Fotos sind immer erlaubt",
+   "es genügt, den Ort zu löschen",
+   "das Foto nur zuschneiden",
+   "die abgebildeten Personen um Erlaubnis fragen"
+  ],
+  "correct": 3,
+  "explanation": "Das Recht am eigenen Bild verlangt eine Einwilligung."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Wie oft wird der Schleifenkörper ausgeführt?\ni = 1\nwhile i < 6:\n    i = i + 1",
+  "options": [
+   "2",
+   "7",
+   "8",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "Von 1 bis 5 wird erhöht → 5 Durchläufe."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Hexadezimalzahl FD in das Dezimalsystem um.",
+  "options": [
+   "267",
+   "253",
+   "240",
+   "244"
+  ],
+  "correct": 1,
+  "explanation": "FD₁₆ = 15·16 + 13 = 253."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Dezimalzahl 76 in das Hexadezimalsystem um.",
+  "options": [
+   "4C",
+   "4B",
+   "4D",
+   "5C"
+  ],
+  "correct": 0,
+  "explanation": "76 = 4·16 + 12 = 4C₁₆."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Dezimalzahl 218 in das Hexadezimalsystem um.",
+  "options": [
+   "EA",
+   "D9",
+   "DA",
+   "DB"
+  ],
+  "correct": 2,
+  "explanation": "218 = 13·16 + 10 = DA₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welchen Wert hat x am Ende?\nx = 1\nwhile x < 100:\n    x = x * 2\nprint(x)",
+  "options": [
+   "64",
+   "128",
+   "100",
+   "256"
+  ],
+  "correct": 1,
+  "explanation": "x verdoppelt sich (1 → …), bis x ≥ 100: Ergebnis 128."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: liste = [38, 38, 40, 13, 13, 19]; liste.append(11) — Was liefert len(liste) danach?",
+  "options": [
+   "7",
+   "8",
+   "5",
+   "9"
+  ],
+  "correct": 0,
+  "explanation": "append fügt 1 Element an: 6 + 1 = 7."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Teste dein Wissen: Was bewirkt in Scratch der Block „wiederhole fortlaufend“?",
+  "options": [
+   "der Code läuft genau zweimal",
+   "eine Endlosschleife: der Code läuft immer weiter",
+   "der Code läuft nie",
+   "das Programm wird gelöscht"
+  ],
+  "correct": 1,
+  "explanation": "„wiederhole fortlaufend“ ist eine Endlosschleife."
+ },
+ {
+  "topic": "Listen",
+  "question": "Gegeben: liste = [8, 27, 7, 25, 20, 4]. Was liefert liste[0]?",
+  "options": [
+   "0",
+   "4",
+   "20",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[0] = 8."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wie oft wird der Schleifenkörper ausgeführt?\ni = 3\nwhile i < 7:\n    i = i + 1",
+  "options": [
+   "1",
+   "5",
+   "3",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Von 3 bis 6 wird erhöht → 4 Durchläufe."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Was gibt print(min([25, 5, 27, 7, 9, 22])) aus?",
+  "options": [
+   "9",
+   "5",
+   "25",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "min liefert das kleinste Element: 5."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Was gibt print(min([24, 17, 27, 39, 1, 12])) aus?",
+  "options": [
+   "12",
+   "39",
+   "1",
+   "24"
+  ],
+  "correct": 2,
+  "explanation": "min liefert das kleinste Element: 1."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Aufgabe: Was macht der Vergleichsoperator == in Python?",
+  "options": [
+   "er weist einen Wert zu",
+   "er addiert zwei Zahlen",
+   "er prüft, ob zwei Werte gleich sind",
+   "er löscht eine Variable"
+  ],
+  "correct": 2,
+  "explanation": "== vergleicht; ein einzelnes = weist zu."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [19, 5, 25]; liste.append(38) — Was liefert len(liste) danach?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "append fügt 1 Element an: 3 + 1 = 4."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Dezimalzahl 182 in das Hexadezimalsystem um.",
+  "options": [
+   "B6",
+   "B5",
+   "B7",
+   "C6"
+  ],
+  "correct": 0,
+  "explanation": "182 = 11·16 + 6 = B6₁₆."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 156 in das Hexadezimalsystem um.",
+  "options": [
+   "9D",
+   "9B",
+   "AC",
+   "9C"
+  ],
+  "correct": 3,
+  "explanation": "156 = 9·16 + 12 = 9C₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welchen Wert hat x am Ende?\nx = 2\nwhile x < 20:\n    x = x * 2\nprint(x)",
+  "options": [
+   "20",
+   "16",
+   "32",
+   "64"
+  ],
+  "correct": 2,
+  "explanation": "x verdoppelt sich (2 → …), bis x ≥ 20: Ergebnis 32."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl A5 in das Dezimalsystem um.",
+  "options": [
+   "156",
+   "165",
+   "163",
+   "182"
+  ],
+  "correct": 1,
+  "explanation": "A5₁₆ = 10·16 + 5 = 165."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Hexadezimalzahl 79 in das Dezimalsystem um.",
+  "options": [
+   "140",
+   "119",
+   "121",
+   "108"
+  ],
+  "correct": 2,
+  "explanation": "79₁₆ = 7·16 + 9 = 121."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(max([5, 32, 3, 37])) aus?",
+  "options": [
+   "37",
+   "5",
+   "32",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "max liefert das größte Element: 37."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Dezimalzahl 125 in das Hexadezimalsystem um.",
+  "options": [
+   "7C",
+   "7E",
+   "7D",
+   "8D"
+  ],
+  "correct": 2,
+  "explanation": "125 = 7·16 + 13 = 7D₁₆."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Gegeben: liste = [17, 6, 15, 12, 3, 4]. Was liefert liste[2]?",
+  "options": [
+   "17",
+   "2",
+   "3",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[2] = 15."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(sum([4, 8, 25, 6, 10])) aus?",
+  "options": [
+   "53",
+   "56",
+   "49",
+   "47"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Listenelemente ist 53."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Gegeben: liste = [9, 14, 15, 22, 29, 22]. Was liefert liste[0]?",
+  "options": [
+   "9",
+   "0",
+   "22",
+   "15"
+  ],
+  "correct": 0,
+  "explanation": "Der Index beginnt bei 0 → liste[0] = 9."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([3, 23, 24, 23])) aus?",
+  "options": [
+   "69",
+   "68",
+   "79",
+   "73"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Listenelemente ist 73."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl 33 in das Dezimalsystem um.",
+  "options": [
+   "65",
+   "51",
+   "46",
+   "49"
+  ],
+  "correct": 1,
+  "explanation": "33₁₆ = 3·16 + 3 = 51."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(max([36, 3, 15, 37, 40])) aus?",
+  "options": [
+   "37",
+   "3",
+   "15",
+   "40"
+  ],
+  "correct": 3,
+  "explanation": "max liefert das größte Element: 40."
+ },
+ {
+  "topic": "Listen",
+  "question": "Gegeben: liste = [17, 6, 3, 7, 27, 8]. Was liefert liste[3]?",
+  "options": [
+   "8",
+   "3",
+   "17",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Der Index beginnt bei 0 → liste[3] = 7."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Dezimalzahl 148 in das Hexadezimalsystem um.",
+  "options": [
+   "95",
+   "94",
+   "A4",
+   "93"
+  ],
+  "correct": 1,
+  "explanation": "148 = 9·16 + 4 = 94₁₆."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Was gibt dieses Python-Programm aus?\ns = 0\nfor i in range(1, 7):\n    s = s + i\nprint(s)",
+  "options": [
+   "25",
+   "22",
+   "17",
+   "21"
+  ],
+  "correct": 3,
+  "explanation": "range(1, 7) liefert 1 bis 6; Summe = 21."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welchen Wert hat x am Ende?\nx = 2\nwhile x < 20:\n    x = x * 2\nprint(x)",
+  "options": [
+   "64",
+   "16",
+   "20",
+   "32"
+  ],
+  "correct": 3,
+  "explanation": "x verdoppelt sich (2 → …), bis x ≥ 20: Ergebnis 32."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Hexadezimalzahl F3 in das Dezimalsystem um.",
+  "options": [
+   "231",
+   "227",
+   "232",
+   "243"
+  ],
+  "correct": 3,
+  "explanation": "F3₁₆ = 15·16 + 3 = 243."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(min([36, 49, 29, 43])) aus?",
+  "options": [
+   "49",
+   "29",
+   "36",
+   "43"
+  ],
+  "correct": 1,
+  "explanation": "min liefert das kleinste Element: 29."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Wie oft wird der Schleifenkörper ausgeführt?\ni = 1\nwhile i < 6:\n    i = i + 1",
+  "options": [
+   "8",
+   "5",
+   "7",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Von 1 bis 5 wird erhöht → 5 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Wie oft wird der Schleifenkörper ausgeführt?\ni = 4\nwhile i < 9:\n    i = i + 1",
+  "options": [
+   "2",
+   "4",
+   "5",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "Von 4 bis 8 wird erhöht → 5 Durchläufe."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welche Zahlen gibt „for i in range(0, 8, 2): print(i)“ aus?",
+  "options": [
+   "2, 4, 6",
+   "0, 2, 4, 6, 8",
+   "1, 3, 5, 7",
+   "0, 2, 4, 6"
+  ],
+  "correct": 3,
+  "explanation": "range(0, 8, 2) zählt von 0 in 2er-Schritten bis unter 8."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(sum([10, 20, 8, 7, 2, 17])) aus?",
+  "options": [
+   "69",
+   "64",
+   "68",
+   "63"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Listenelemente ist 64."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Gegeben: liste = [2, 11, 16, 25, 19]. Was liefert liste[1]?",
+  "options": [
+   "11",
+   "2",
+   "1",
+   "19"
+  ],
+  "correct": 0,
+  "explanation": "Der Index beginnt bei 0 → liste[1] = 11."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Teste dein Wissen: Wandle die Hexadezimalzahl D1 in das Dezimalsystem um.",
+  "options": [
+   "207",
+   "209",
+   "189",
+   "227"
+  ],
+  "correct": 1,
+  "explanation": "D1₁₆ = 13·16 + 1 = 209."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welchen Wert hat x am Ende?\nx = 2\nwhile x < 100:\n    x = x * 2\nprint(x)",
+  "options": [
+   "128",
+   "64",
+   "256",
+   "100"
+  ],
+  "correct": 0,
+  "explanation": "x verdoppelt sich (2 → …), bis x ≥ 100: Ergebnis 128."
+ },
+ {
+  "topic": "Listen",
+  "question": "Was gibt print(min([15, 20, 16, 15, 44, 11])) aus?",
+  "options": [
+   "16",
+   "11",
+   "20",
+   "44"
+  ],
+  "correct": 1,
+  "explanation": "min liefert das kleinste Element: 11."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. liste = [7, 16, 23]; liste.append(40) — Was liefert len(liste) danach?",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 3 + 1 = 4."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Gegeben: liste = [28, 23, 19, 25]. Was liefert liste[1]?",
+  "options": [
+   "25",
+   "23",
+   "1",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "Der Index beginnt bei 0 → liste[1] = 23."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(max([28, 2, 4, 15, 14])) aus?",
+  "options": [
+   "4",
+   "28",
+   "15",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "max liefert das größte Element: 28."
+ },
+ {
+  "topic": "Listen",
+  "question": "Wähle die richtige Antwort. Was gibt print(min([35, 28, 26, 21])) aus?",
+  "options": [
+   "35",
+   "26",
+   "21",
+   "28"
+  ],
+  "correct": 2,
+  "explanation": "min liefert das kleinste Element: 21."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: liste = [3, 19, 1, 22, 14, 37, 28]; liste.append(21) — Was liefert len(liste) danach?",
+  "options": [
+   "9",
+   "10",
+   "7",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "append fügt 1 Element an: 7 + 1 = 8."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welche Zahlen gibt „for i in range(0, 4, 1): print(i)“ aus?",
+  "options": [
+   "0, 1, 2, 3, 4",
+   "1, 2, 3, 4",
+   "1, 2, 3",
+   "0, 1, 2, 3"
+  ],
+  "correct": 3,
+  "explanation": "range(0, 4, 1) zählt von 0 in 1er-Schritten bis unter 4."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Hexadezimalzahl BB in das Dezimalsystem um.",
+  "options": [
+   "172",
+   "206",
+   "171",
+   "187"
+  ],
+  "correct": 3,
+  "explanation": "BB₁₆ = 11·16 + 11 = 187."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wandle die Hexadezimalzahl FF in das Dezimalsystem um.",
+  "options": [
+   "255",
+   "246",
+   "261",
+   "271"
+  ],
+  "correct": 0,
+  "explanation": "FF₁₆ = 15·16 + 15 = 255."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Teste dein Wissen: Was bedeutet 'Datensparsamkeit'?",
+  "options": [
+   "Daten doppelt speichern",
+   "nur so viele Daten angeben, wie unbedingt nötig",
+   "Daten nie löschen",
+   "möglichst viele Daten teilen"
+  ],
+  "correct": 1,
+  "explanation": "Datensparsamkeit: so wenig persönliche Daten wie möglich preisgeben."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Aufgabe: Woran erkennt man eine verschlüsselte Verbindung im Browser?",
+  "options": [
+   "an https:// und dem Schloss-Symbol",
+   "an bunter Werbung",
+   "am Wort 'sicher' im Text",
+   "an einer langen Ladezeit"
+  ],
+  "correct": 0,
+  "explanation": "https und Schloss-Symbol zeigen Transportverschlüsselung an."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: liste = [21, 17, 32, 26, 7]; liste.append(13) — Was liefert len(liste) danach?",
+  "options": [
+   "8",
+   "6",
+   "7",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Algorithmen",
+  "question": "Teste dein Wissen: Was ist eine Variable in einem Programm?",
+  "options": [
+   "ein Programmfehler",
+   "ein benannter Speicherplatz für einen Wert",
+   "eine feste Zahl, die sich nie ändert",
+   "ein Ausgabegerät"
+  ],
+  "correct": 1,
+  "explanation": "Variablen speichern Werte, die sich ändern können."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Wähle die richtige Antwort. Wandle die Hexadezimalzahl 7F in das Dezimalsystem um.",
+  "options": [
+   "115",
+   "127",
+   "141",
+   "121"
+  ],
+  "correct": 1,
+  "explanation": "7F₁₆ = 7·16 + 15 = 127."
+ },
+ {
+  "topic": "Zahlensysteme",
+  "question": "Aufgabe: Wandle die Hexadezimalzahl B4 in das Dezimalsystem um.",
+  "options": [
+   "188",
+   "179",
+   "199",
+   "180"
+  ],
+  "correct": 3,
+  "explanation": "B4₁₆ = 11·16 + 4 = 180."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Teste dein Wissen: Warum sind regelmäßige Software-Updates wichtig für die Sicherheit?",
+  "options": [
+   "sie schließen bekannte Sicherheitslücken",
+   "sie löschen alte Dateien",
+   "sie sind nur Werbung",
+   "sie machen den Bildschirm heller"
+  ],
+  "correct": 0,
+  "explanation": "Updates beheben Schwachstellen, bevor Angreifer sie ausnutzen."
+ },
+ {
+  "topic": "Listen",
+  "question": "Aufgabe: Gegeben: liste = [28, 14, 29, 9, 2, 16]. Was liefert liste[0]?",
+  "options": [
+   "28",
+   "9",
+   "0",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "Der Index beginnt bei 0 → liste[0] = 28."
+ },
+ {
+  "topic": "Datenschutz",
+  "question": "Wähle die richtige Antwort. Was sollte man tun, bevor man ein Foto von Freunden postet?",
+  "options": [
+   "es genügt, den Ort zu löschen",
+   "nichts, Fotos sind immer erlaubt",
+   "die abgebildeten Personen um Erlaubnis fragen",
+   "das Foto nur zuschneiden"
+  ],
+  "correct": 2,
+  "explanation": "Das Recht am eigenen Bild verlangt eine Einwilligung."
+ },
+ {
+  "topic": "Listen",
+  "question": "liste = [31, 32, 29, 34, 19]; liste.append(13) — Was liefert len(liste) danach?",
+  "options": [
+   "5",
+   "7",
+   "4",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "append fügt 1 Element an: 5 + 1 = 6."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Wähle die richtige Antwort. Welchen Wert hat x am Ende?\nx = 1\nwhile x < 200:\n    x = x * 2\nprint(x)",
+  "options": [
+   "256",
+   "128",
+   "512",
+   "200"
+  ],
+  "correct": 0,
+  "explanation": "x verdoppelt sich (1 → …), bis x ≥ 200: Ergebnis 256."
+ },
+ {
+  "topic": "Python-Schleifen",
+  "question": "Aufgabe: Welche Zahlen gibt „for i in range(0, 12, 2): print(i)“ aus?",
+  "options": [
+   "0, 2, 4, 6, 8, 10, 12",
+   "2, 4, 6, 8, 10",
+   "1, 3, 5, 7, 9, 11",
+   "0, 2, 4, 6, 8, 10"
+  ],
+  "correct": 3,
+  "explanation": "range(0, 12, 2) zählt von 0 in 2er-Schritten bis unter 12."
+ },
+ {
+  "topic": "Listen",
+  "question": "Teste dein Wissen: Was gibt print(sum([5, 17, 3, 25, 15])) aus?",
+  "options": [
+   "58",
+   "66",
+   "65",
+   "59"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Listenelemente ist 65."
+ }
+]

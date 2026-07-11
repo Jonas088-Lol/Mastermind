@@ -1,0 +1,4202 @@
+[
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die kleinste: 13, 15, 18, 14?",
+  "options": [
+   "15",
+   "18",
+   "13",
+   "14"
+  ],
+  "correct": 2,
+  "explanation": "Geordnet: 13 < 14 < 15 < 18. Die kleinste Zahl ist 13."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welches Zeichen gehört in die Lücke: 6 ⬜ 15?",
+  "options": [
+   ">",
+   "=",
+   "+",
+   "<"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 6 < 15, denn 6 ist kleiner als 15."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Welche Zahl kommt direkt nach der 17?",
+  "options": [
+   "20",
+   "18",
+   "16",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "Die Zahl direkt nach 17 ist 18."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Wie heißen die beiden Nachbarzahlen von 9?",
+  "options": [
+   "9 und 10",
+   "8 und 9",
+   "8 und 10",
+   "7 und 11"
+  ],
+  "correct": 2,
+  "explanation": "Die Nachbarn von 9 sind 8 (davor) und 10 (danach)."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Aufgabe: Setze das Muster fort: 2, 3, 4, 5, ?",
+  "options": [
+   "8",
+   "6",
+   "5",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "Es wird immer 1 dazugezählt: 5 + 1 = 6."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die kleinste: 1, 14, 16, 9?",
+  "options": [
+   "16",
+   "1",
+   "9",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 1 < 9 < 14 < 16. Die kleinste Zahl ist 1."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Welche Zahl kommt direkt vor der 6?",
+  "options": [
+   "4",
+   "7",
+   "5",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Die Zahl direkt vor 6 ist 5."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die größte: 16, 12, 1, 19?",
+  "options": [
+   "16",
+   "19",
+   "12",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 1 < 12 < 16 < 19. Die größte Zahl ist 19."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Teste dein Wissen: 18 + 2 = 20. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "2 + 18 = 20",
+   "18 − 2 = 20",
+   "2 + 20 = 18",
+   "20 + 2 = 18"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 2 + 18 = 20."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 20: 20 = 18 + ?",
+  "options": [
+   "1",
+   "0",
+   "2",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "18 + 2 = 20, also fehlt die 2."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist das Doppelte von 2?",
+  "options": [
+   "2",
+   "4",
+   "6",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "Das Doppelte von 2 ist 2 + 2 = 4."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Welche Zahl kommt direkt nach der 18?",
+  "options": [
+   "19",
+   "18",
+   "17",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt nach 18 ist 19."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die größte: 5, 16, 6, 1?",
+  "options": [
+   "5",
+   "16",
+   "6",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 1 < 5 < 6 < 16. Die größte Zahl ist 16."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt vor der 11?",
+  "options": [
+   "8",
+   "9",
+   "12",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "Die Zahl direkt vor 11 ist 10."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 7 ⬜ 18?",
+  "options": [
+   "=",
+   "<",
+   ">",
+   "+"
+  ],
+  "correct": 1,
+  "explanation": "Richtig ist 7 < 18, denn 7 ist kleiner als 18."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Wähle die richtige Antwort. Zerlege die 20: 20 = 15 + ?",
+  "options": [
+   "6",
+   "4",
+   "7",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "15 + 5 = 20, also fehlt die 5."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 1 ⬜ 20?",
+  "options": [
+   "+",
+   ">",
+   "<",
+   "="
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 1 < 20, denn 1 ist kleiner als 20."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Welche Zahl kommt direkt nach der 4?",
+  "options": [
+   "5",
+   "4",
+   "6",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt nach 4 ist 5."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wie heißen die beiden Nachbarzahlen von 16?",
+  "options": [
+   "15 und 17",
+   "15 und 16",
+   "16 und 17",
+   "14 und 18"
+  ],
+  "correct": 0,
+  "explanation": "Die Nachbarn von 16 sind 15 (davor) und 17 (danach)."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist das Doppelte von 1?",
+  "options": [
+   "1",
+   "2",
+   "4",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "Das Doppelte von 1 ist 1 + 1 = 2."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Aufgabe: Zerlege die 20: 20 = 17 + ?",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "17 + 3 = 20, also fehlt die 3."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist die Hälfte von 20?",
+  "options": [
+   "9",
+   "10",
+   "12",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "Die Hälfte von 20 ist 10, denn 10 + 10 = 20."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 9: 9 = 4 + ?",
+  "options": [
+   "3",
+   "5",
+   "6",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "4 + 5 = 9, also fehlt die 5."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Teste dein Wissen: Rechne: 9 + 7 = ?",
+  "options": [
+   "18",
+   "16",
+   "14",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "9 + 7 = 16."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Aufgabe: Zerlege die 8: 8 = 4 + ?",
+  "options": [
+   "2",
+   "5",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "4 + 4 = 8, also fehlt die 4."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die kleinste: 12, 3, 15, 20?",
+  "options": [
+   "12",
+   "3",
+   "15",
+   "20"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 3 < 12 < 15 < 20. Die kleinste Zahl ist 3."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist die Hälfte von 2?",
+  "options": [
+   "2",
+   "1",
+   "3",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "Die Hälfte von 2 ist 1, denn 1 + 1 = 2."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 20, 30, 40, 50, ?",
+  "options": [
+   "62",
+   "59",
+   "58",
+   "60"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 10 dazugezählt: 50 + 10 = 60."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist die Hälfte von 4?",
+  "options": [
+   "4",
+   "0",
+   "3",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "Die Hälfte von 4 ist 2, denn 2 + 2 = 4."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Wie heißen die beiden Nachbarzahlen von 10?",
+  "options": [
+   "8 und 12",
+   "9 und 10",
+   "10 und 11",
+   "9 und 11"
+  ],
+  "correct": 3,
+  "explanation": "Die Nachbarn von 10 sind 9 (davor) und 11 (danach)."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist die Hälfte von 14?",
+  "options": [
+   "9",
+   "7",
+   "8",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "Die Hälfte von 14 ist 7, denn 7 + 7 = 14."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Wie heißen die beiden Nachbarzahlen von 5?",
+  "options": [
+   "3 und 7",
+   "5 und 6",
+   "4 und 5",
+   "4 und 6"
+  ],
+  "correct": 3,
+  "explanation": "Die Nachbarn von 5 sind 4 (davor) und 6 (danach)."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 3 ⬜ 5?",
+  "options": [
+   "+",
+   "<",
+   "=",
+   ">"
+  ],
+  "correct": 1,
+  "explanation": "Richtig ist 3 < 5, denn 3 ist kleiner als 5."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 13 ⬜ 6?",
+  "options": [
+   ">",
+   "<",
+   "+",
+   "="
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 13 > 6, denn 13 ist größer als 6."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 14 + 6 = ?",
+  "options": [
+   "20",
+   "19",
+   "18",
+   "21"
+  ],
+  "correct": 0,
+  "explanation": "14 + 6 = 20."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt nach der 12?",
+  "options": [
+   "15",
+   "13",
+   "11",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "Die Zahl direkt nach 12 ist 13."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 2 − 1 = ?",
+  "options": [
+   "3",
+   "0",
+   "1",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "2 − 1 = 1."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Aufgabe: Setze das Muster fort: 40, 50, 60, 70, ?",
+  "options": [
+   "80",
+   "78",
+   "82",
+   "81"
+  ],
+  "correct": 0,
+  "explanation": "Es wird immer 10 dazugezählt: 70 + 10 = 80."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist die Hälfte von 12?",
+  "options": [
+   "5",
+   "8",
+   "4",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Die Hälfte von 12 ist 6, denn 6 + 6 = 12."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 5 ⬜ 19?",
+  "options": [
+   "+",
+   "<",
+   ">",
+   "="
+  ],
+  "correct": 1,
+  "explanation": "Richtig ist 5 < 19, denn 5 ist kleiner als 19."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 2 + 7 = 9. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "7 + 9 = 2",
+   "7 + 2 = 9",
+   "2 − 7 = 9",
+   "9 + 7 = 2"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 7 + 2 = 9."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist die Hälfte von 10?",
+  "options": [
+   "6",
+   "7",
+   "5",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "Die Hälfte von 10 ist 5, denn 5 + 5 = 10."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Wie heißen die beiden Nachbarzahlen von 3?",
+  "options": [
+   "3 und 4",
+   "2 und 3",
+   "2 und 4",
+   "1 und 5"
+  ],
+  "correct": 2,
+  "explanation": "Die Nachbarn von 3 sind 2 (davor) und 4 (danach)."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist die Hälfte von 6?",
+  "options": [
+   "3",
+   "2",
+   "5",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "Die Hälfte von 6 ist 3, denn 3 + 3 = 6."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Wähle die richtige Antwort. Zerlege die 6: 6 = 3 + ?",
+  "options": [
+   "4",
+   "3",
+   "5",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "3 + 3 = 6, also fehlt die 3."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist die Hälfte von 14?",
+  "options": [
+   "9",
+   "6",
+   "8",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Die Hälfte von 14 ist 7, denn 7 + 7 = 14."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welche dieser Zahlen ist die größte: 1, 14, 16, 15?",
+  "options": [
+   "14",
+   "15",
+   "1",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "Geordnet: 1 < 14 < 15 < 16. Die größte Zahl ist 16."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Aufgabe: Rechne: 6 + 12 = ?",
+  "options": [
+   "18",
+   "17",
+   "20",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "6 + 12 = 18."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Wie heißen die beiden Nachbarzahlen von 19?",
+  "options": [
+   "18 und 19",
+   "17 und 21",
+   "18 und 20",
+   "19 und 20"
+  ],
+  "correct": 2,
+  "explanation": "Die Nachbarn von 19 sind 18 (davor) und 20 (danach)."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 30, 40, 50, 60, ?",
+  "options": [
+   "70",
+   "72",
+   "71",
+   "69"
+  ],
+  "correct": 0,
+  "explanation": "Es wird immer 10 dazugezählt: 60 + 10 = 70."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 3 + 11 = 14. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "3 − 11 = 14",
+   "11 + 3 = 14",
+   "14 + 11 = 3",
+   "11 + 14 = 3"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 11 + 3 = 14."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wie heißen die beiden Nachbarzahlen von 15?",
+  "options": [
+   "14 und 15",
+   "14 und 16",
+   "15 und 16",
+   "13 und 17"
+  ],
+  "correct": 1,
+  "explanation": "Die Nachbarn von 15 sind 14 (davor) und 16 (danach)."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "9 + 10 = 19. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "10 + 19 = 9",
+   "9 − 10 = 19",
+   "19 + 10 = 9",
+   "10 + 9 = 19"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 10 + 9 = 19."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Teste dein Wissen: Rechne: 7 − 6 = ?",
+  "options": [
+   "1",
+   "3",
+   "2",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "7 − 6 = 1."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 12 + 5 = 17. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "5 + 12 = 17",
+   "12 − 5 = 17",
+   "5 + 17 = 12",
+   "17 + 5 = 12"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 5 + 12 = 17."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 5 + 4 = 9. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "5 − 4 = 9",
+   "4 + 9 = 5",
+   "9 + 4 = 5",
+   "4 + 5 = 9"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 4 + 5 = 9."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 19: 19 = 7 + ?",
+  "options": [
+   "11",
+   "10",
+   "12",
+   "14"
+  ],
+  "correct": 2,
+  "explanation": "7 + 12 = 19, also fehlt die 12."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Aufgabe: Zerlege die 16: 16 = 9 + ?",
+  "options": [
+   "9",
+   "7",
+   "5",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "9 + 7 = 16, also fehlt die 7."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist das Doppelte von 2?",
+  "options": [
+   "5",
+   "6",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Das Doppelte von 2 ist 2 + 2 = 4."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Teste dein Wissen: Setze das Muster fort: 20, 30, 40, 50, ?",
+  "options": [
+   "60",
+   "58",
+   "62",
+   "59"
+  ],
+  "correct": 0,
+  "explanation": "Es wird immer 10 dazugezählt: 50 + 10 = 60."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 6: 6 = 4 + ?",
+  "options": [
+   "1",
+   "3",
+   "0",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "4 + 2 = 6, also fehlt die 2."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist die Hälfte von 16?",
+  "options": [
+   "9",
+   "6",
+   "8",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "Die Hälfte von 16 ist 8, denn 8 + 8 = 16."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Wie heißen die beiden Nachbarzahlen von 17?",
+  "options": [
+   "15 und 19",
+   "16 und 18",
+   "17 und 18",
+   "16 und 17"
+  ],
+  "correct": 1,
+  "explanation": "Die Nachbarn von 17 sind 16 (davor) und 18 (danach)."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Welche Zahl kommt direkt vor der 10?",
+  "options": [
+   "7",
+   "10",
+   "11",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "Die Zahl direkt vor 10 ist 9."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist das Doppelte von 5?",
+  "options": [
+   "9",
+   "11",
+   "10",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "Das Doppelte von 5 ist 5 + 5 = 10."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist die Hälfte von 14?",
+  "options": [
+   "7",
+   "8",
+   "6",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "Die Hälfte von 14 ist 7, denn 7 + 7 = 14."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist die Hälfte von 4?",
+  "options": [
+   "1",
+   "0",
+   "2",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Die Hälfte von 4 ist 2, denn 2 + 2 = 4."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 16?",
+  "options": [
+   "14 und 18",
+   "15 und 16",
+   "16 und 17",
+   "15 und 17"
+  ],
+  "correct": 3,
+  "explanation": "Die Nachbarn von 16 sind 15 (davor) und 17 (danach)."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "12 + 4 = 16. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "4 + 16 = 12",
+   "12 − 4 = 16",
+   "16 + 4 = 12",
+   "4 + 12 = 16"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 4 + 12 = 16."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Aufgabe: Rechne: 9 − 8 = ?",
+  "options": [
+   "1",
+   "3",
+   "2",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "9 − 8 = 1."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt vor der 5?",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Die Zahl direkt vor 5 ist 4."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Setze das Muster fort: 2, 3, 4, 5, ?",
+  "options": [
+   "6",
+   "7",
+   "4",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "Es wird immer 1 dazugezählt: 5 + 1 = 6."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 12 ⬜ 6?",
+  "options": [
+   "<",
+   "+",
+   ">",
+   "="
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 12 > 6, denn 12 ist größer als 6."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Teste dein Wissen: Setze das Muster fort: 4, 6, 8, 10, ?",
+  "options": [
+   "14",
+   "11",
+   "13",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 2 dazugezählt: 10 + 2 = 12."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Aufgabe: Setze das Muster fort: 0, 5, 10, 15, ?",
+  "options": [
+   "20",
+   "19",
+   "21",
+   "22"
+  ],
+  "correct": 0,
+  "explanation": "Es wird immer 5 dazugezählt: 15 + 5 = 20."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist die Hälfte von 10?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Die Hälfte von 10 ist 5, denn 5 + 5 = 10."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welches Zeichen gehört in die Lücke: 12 ⬜ 3?",
+  "options": [
+   "<",
+   "=",
+   "+",
+   ">"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 12 > 3, denn 12 ist größer als 3."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist die Hälfte von 10?",
+  "options": [
+   "6",
+   "7",
+   "4",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "Die Hälfte von 10 ist 5, denn 5 + 5 = 10."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 11: 11 = 10 + ?",
+  "options": [
+   "3",
+   "2",
+   "0",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "10 + 1 = 11, also fehlt die 1."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt vor der 16?",
+  "options": [
+   "14",
+   "15",
+   "16",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "Die Zahl direkt vor 16 ist 15."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 6 ⬜ 13?",
+  "options": [
+   "+",
+   ">",
+   "=",
+   "<"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 6 < 13, denn 6 ist kleiner als 13."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "3 + 7 = 10. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "3 − 7 = 10",
+   "7 + 10 = 3",
+   "10 + 7 = 3",
+   "7 + 3 = 10"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 7 + 3 = 10."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 18 ⬜ 17?",
+  "options": [
+   "<",
+   ">",
+   "+",
+   "="
+  ],
+  "correct": 1,
+  "explanation": "Richtig ist 18 > 17, denn 18 ist größer als 17."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Teste dein Wissen: Setze das Muster fort: 4, 9, 14, 19, ?",
+  "options": [
+   "24",
+   "26",
+   "22",
+   "25"
+  ],
+  "correct": 0,
+  "explanation": "Es wird immer 5 dazugezählt: 19 + 5 = 24."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Wähle die richtige Antwort. Rechne: 2 − 1 = ?",
+  "options": [
+   "0",
+   "3",
+   "2",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "2 − 1 = 1."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt vor der 17?",
+  "options": [
+   "16",
+   "17",
+   "15",
+   "14"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt vor 17 ist 16."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Aufgabe: Setze das Muster fort: 2, 7, 12, 17, ?",
+  "options": [
+   "23",
+   "22",
+   "20",
+   "24"
+  ],
+  "correct": 1,
+  "explanation": "Es wird immer 5 dazugezählt: 17 + 5 = 22."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist das Doppelte von 8?",
+  "options": [
+   "14",
+   "15",
+   "16",
+   "18"
+  ],
+  "correct": 2,
+  "explanation": "Das Doppelte von 8 ist 8 + 8 = 16."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Wähle die richtige Antwort. Zerlege die 11: 11 = 4 + ?",
+  "options": [
+   "7",
+   "5",
+   "9",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "4 + 7 = 11, also fehlt die 7."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die größte: 3, 13, 12, 11?",
+  "options": [
+   "13",
+   "11",
+   "12",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 3 < 11 < 12 < 13. Die größte Zahl ist 13."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 11: 11 = 10 + ?",
+  "options": [
+   "1",
+   "3",
+   "0",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "10 + 1 = 11, also fehlt die 1."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Welche Zahl kommt direkt nach der 19?",
+  "options": [
+   "19",
+   "18",
+   "20",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "Die Zahl direkt nach 19 ist 20."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 1, 3, 5, 7, ?",
+  "options": [
+   "11",
+   "8",
+   "7",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 2 dazugezählt: 7 + 2 = 9."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 15 + 2 = 17. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "2 + 17 = 15",
+   "17 + 2 = 15",
+   "2 + 15 = 17",
+   "15 − 2 = 17"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 2 + 15 = 17."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist das Doppelte von 9?",
+  "options": [
+   "18",
+   "19",
+   "17",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "Das Doppelte von 9 ist 9 + 9 = 18."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 9 ⬜ 20?",
+  "options": [
+   ">",
+   "+",
+   "<",
+   "="
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 9 < 20, denn 9 ist kleiner als 20."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist das Doppelte von 7?",
+  "options": [
+   "13",
+   "14",
+   "15",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "Das Doppelte von 7 ist 7 + 7 = 14."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist das Doppelte von 10?",
+  "options": [
+   "19",
+   "18",
+   "20",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "Das Doppelte von 10 ist 10 + 10 = 20."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 5: 5 = 2 + ?",
+  "options": [
+   "1",
+   "2",
+   "5",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "2 + 3 = 5, also fehlt die 3."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 7 + 13 = 20. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "7 − 13 = 20",
+   "20 + 13 = 7",
+   "13 + 20 = 7",
+   "13 + 7 = 20"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 13 + 7 = 20."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Aufgabe: Zerlege die 17: 17 = 3 + ?",
+  "options": [
+   "14",
+   "12",
+   "13",
+   "15"
+  ],
+  "correct": 0,
+  "explanation": "3 + 14 = 17, also fehlt die 14."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Aufgabe: Zerlege die 17: 17 = 10 + ?",
+  "options": [
+   "5",
+   "6",
+   "7",
+   "8"
+  ],
+  "correct": 2,
+  "explanation": "10 + 7 = 17, also fehlt die 7."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 19 ⬜ 10?",
+  "options": [
+   ">",
+   "+",
+   "=",
+   "<"
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 19 > 10, denn 19 ist größer als 10."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "5 + 7 = 12. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "7 + 12 = 5",
+   "12 + 7 = 5",
+   "5 − 7 = 12",
+   "7 + 5 = 12"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 7 + 5 = 12."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Teste dein Wissen: 8 + 5 = 13. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "8 − 5 = 13",
+   "5 + 13 = 8",
+   "5 + 8 = 13",
+   "13 + 5 = 8"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 5 + 8 = 13."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Teste dein Wissen: Rechne: 7 − 2 = ?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "7 − 2 = 5."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "14 + 6 = 20. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "6 + 20 = 14",
+   "14 − 6 = 20",
+   "6 + 14 = 20",
+   "20 + 6 = 14"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 6 + 14 = 20."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 16 ⬜ 18?",
+  "options": [
+   "<",
+   "+",
+   "=",
+   ">"
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 16 < 18, denn 16 ist kleiner als 18."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welche dieser Zahlen ist die größte: 6, 9, 5, 16?",
+  "options": [
+   "16",
+   "6",
+   "5",
+   "9"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 5 < 6 < 9 < 16. Die größte Zahl ist 16."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 7 + 10 = 17. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "7 − 10 = 17",
+   "10 + 7 = 17",
+   "17 + 10 = 7",
+   "10 + 17 = 7"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 10 + 7 = 17."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Aufgabe: Rechne: 6 + 1 = ?",
+  "options": [
+   "8",
+   "9",
+   "7",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "6 + 1 = 7."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 10 + 6 = ?",
+  "options": [
+   "15",
+   "17",
+   "16",
+   "14"
+  ],
+  "correct": 2,
+  "explanation": "10 + 6 = 16."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Aufgabe: Zerlege die 9: 9 = 1 + ?",
+  "options": [
+   "10",
+   "6",
+   "8",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "1 + 8 = 9, also fehlt die 8."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "13 + 4 = 17. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "17 + 4 = 13",
+   "4 + 13 = 17",
+   "4 + 17 = 13",
+   "13 − 4 = 17"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 4 + 13 = 17."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Aufgabe: Setze das Muster fort: 0, 1, 2, 3, ?",
+  "options": [
+   "3",
+   "2",
+   "6",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 1 dazugezählt: 3 + 1 = 4."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Aufgabe: Setze das Muster fort: 4, 6, 8, 10, ?",
+  "options": [
+   "14",
+   "12",
+   "11",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "Es wird immer 2 dazugezählt: 10 + 2 = 12."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 11 − 9 = ?",
+  "options": [
+   "4",
+   "2",
+   "0",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "11 − 9 = 2."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Teste dein Wissen: 14 + 4 = 18. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "4 + 14 = 18",
+   "18 + 4 = 14",
+   "14 − 4 = 18",
+   "4 + 18 = 14"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 4 + 14 = 18."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "12 + 8 = 20. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "8 + 12 = 20",
+   "8 + 20 = 12",
+   "12 − 8 = 20",
+   "20 + 8 = 12"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 8 + 12 = 20."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 16 ⬜ 2?",
+  "options": [
+   ">",
+   "=",
+   "+",
+   "<"
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 16 > 2, denn 16 ist größer als 2."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 3 ⬜ 8?",
+  "options": [
+   "<",
+   "+",
+   "=",
+   ">"
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 3 < 8, denn 3 ist kleiner als 8."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 13 − 1 = ?",
+  "options": [
+   "12",
+   "11",
+   "14",
+   "13"
+  ],
+  "correct": 0,
+  "explanation": "13 − 1 = 12."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welche dieser Zahlen ist die kleinste: 2, 7, 0, 11?",
+  "options": [
+   "2",
+   "11",
+   "7",
+   "0"
+  ],
+  "correct": 3,
+  "explanation": "Geordnet: 0 < 2 < 7 < 11. Die kleinste Zahl ist 0."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Wähle die richtige Antwort. Zerlege die 8: 8 = 5 + ?",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "5 + 3 = 8, also fehlt die 3."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die größte: 6, 11, 1, 17?",
+  "options": [
+   "17",
+   "11",
+   "6",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 1 < 6 < 11 < 17. Die größte Zahl ist 17."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Aufgabe: Rechne: 14 − 14 = ?",
+  "options": [
+   "3",
+   "2",
+   "0",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "14 − 14 = 0."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die größte: 6, 2, 18, 9?",
+  "options": [
+   "2",
+   "18",
+   "9",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 2 < 6 < 9 < 18. Die größte Zahl ist 18."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Wähle die richtige Antwort. Rechne: 17 + 2 = ?",
+  "options": [
+   "18",
+   "19",
+   "21",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "17 + 2 = 19."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Welche Zahl kommt direkt nach der 16?",
+  "options": [
+   "18",
+   "17",
+   "15",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "Die Zahl direkt nach 16 ist 17."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die größte: 3, 18, 14, 6?",
+  "options": [
+   "18",
+   "3",
+   "14",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 3 < 6 < 14 < 18. Die größte Zahl ist 18."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Teste dein Wissen: 4 + 15 = 19. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "15 + 4 = 19",
+   "19 + 15 = 4",
+   "4 − 15 = 19",
+   "15 + 19 = 4"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 15 + 4 = 19."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Wie heißen die beiden Nachbarzahlen von 12?",
+  "options": [
+   "10 und 14",
+   "11 und 13",
+   "12 und 13",
+   "11 und 12"
+  ],
+  "correct": 1,
+  "explanation": "Die Nachbarn von 12 sind 11 (davor) und 13 (danach)."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Aufgabe: Rechne: 2 − 2 = ?",
+  "options": [
+   "3",
+   "0",
+   "2",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "2 − 2 = 0."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "14 + 1 = 15. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "1 + 14 = 15",
+   "15 + 1 = 14",
+   "1 + 15 = 14",
+   "14 − 1 = 15"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 1 + 14 = 15."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wie heißen die beiden Nachbarzahlen von 4?",
+  "options": [
+   "3 und 5",
+   "2 und 6",
+   "3 und 4",
+   "4 und 5"
+  ],
+  "correct": 0,
+  "explanation": "Die Nachbarn von 4 sind 3 (davor) und 5 (danach)."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Teste dein Wissen: Setze das Muster fort: 0, 2, 4, 6, ?",
+  "options": [
+   "10",
+   "7",
+   "8",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "Es wird immer 2 dazugezählt: 6 + 2 = 8."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welche dieser Zahlen ist die kleinste: 1, 20, 10, 9?",
+  "options": [
+   "9",
+   "1",
+   "20",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 1 < 9 < 10 < 20. Die kleinste Zahl ist 1."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 3 ⬜ 6?",
+  "options": [
+   ">",
+   "+",
+   "<",
+   "="
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 3 < 6, denn 3 ist kleiner als 6."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist die Hälfte von 18?",
+  "options": [
+   "11",
+   "10",
+   "7",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "Die Hälfte von 18 ist 9, denn 9 + 9 = 18."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 15: 15 = 3 + ?",
+  "options": [
+   "14",
+   "10",
+   "11",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "3 + 12 = 15, also fehlt die 12."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wie heißen die beiden Nachbarzahlen von 12?",
+  "options": [
+   "10 und 14",
+   "12 und 13",
+   "11 und 12",
+   "11 und 13"
+  ],
+  "correct": 3,
+  "explanation": "Die Nachbarn von 12 sind 11 (davor) und 13 (danach)."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Teste dein Wissen: Setze das Muster fort: 30, 40, 50, 60, ?",
+  "options": [
+   "69",
+   "72",
+   "68",
+   "70"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 10 dazugezählt: 60 + 10 = 70."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Teste dein Wissen: 5 + 6 = 11. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "5 − 6 = 11",
+   "11 + 6 = 5",
+   "6 + 11 = 5",
+   "6 + 5 = 11"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 6 + 5 = 11."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist die Hälfte von 8?",
+  "options": [
+   "4",
+   "6",
+   "3",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "Die Hälfte von 8 ist 4, denn 4 + 4 = 8."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welches Zeichen gehört in die Lücke: 3 ⬜ 5?",
+  "options": [
+   "=",
+   "+",
+   ">",
+   "<"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 3 < 5, denn 3 ist kleiner als 5."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die kleinste: 4, 13, 15, 12?",
+  "options": [
+   "13",
+   "4",
+   "15",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 4 < 12 < 13 < 15. Die kleinste Zahl ist 4."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 11 ⬜ 20?",
+  "options": [
+   ">",
+   "+",
+   "=",
+   "<"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 11 < 20, denn 11 ist kleiner als 20."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 9: 9 = 4 + ?",
+  "options": [
+   "5",
+   "6",
+   "3",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "4 + 5 = 9, also fehlt die 5."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt nach der 19?",
+  "options": [
+   "19",
+   "21",
+   "18",
+   "20"
+  ],
+  "correct": 3,
+  "explanation": "Die Zahl direkt nach 19 ist 20."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 17 + 3 = ?",
+  "options": [
+   "20",
+   "18",
+   "19",
+   "22"
+  ],
+  "correct": 0,
+  "explanation": "17 + 3 = 20."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Welche Zahl kommt direkt nach der 1?",
+  "options": [
+   "2",
+   "1",
+   "0",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt nach 1 ist 2."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist die Hälfte von 8?",
+  "options": [
+   "4",
+   "5",
+   "3",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "Die Hälfte von 8 ist 4, denn 4 + 4 = 8."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Welche Zahl kommt direkt vor der 2?",
+  "options": [
+   "1",
+   "3",
+   "0",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt vor 2 ist 1."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 5 ⬜ 4?",
+  "options": [
+   "=",
+   "<",
+   "+",
+   ">"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 5 > 4, denn 5 ist größer als 4."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 17?",
+  "options": [
+   "16 und 18",
+   "17 und 18",
+   "16 und 17",
+   "15 und 19"
+  ],
+  "correct": 0,
+  "explanation": "Die Nachbarn von 17 sind 16 (davor) und 18 (danach)."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Setze das Muster fort: 4, 5, 6, 7, ?",
+  "options": [
+   "6",
+   "8",
+   "9",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "Es wird immer 1 dazugezählt: 7 + 1 = 8."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist das Doppelte von 10?",
+  "options": [
+   "18",
+   "20",
+   "21",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "Das Doppelte von 10 ist 10 + 10 = 20."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist die Hälfte von 8?",
+  "options": [
+   "5",
+   "4",
+   "2",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "Die Hälfte von 8 ist 4, denn 4 + 4 = 8."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Welche Zahl kommt direkt vor der 18?",
+  "options": [
+   "16",
+   "19",
+   "15",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Die Zahl direkt vor 18 ist 17."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist die Hälfte von 6?",
+  "options": [
+   "2",
+   "1",
+   "3",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "Die Hälfte von 6 ist 3, denn 3 + 3 = 6."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Setze das Muster fort: 1, 2, 3, 4, ?",
+  "options": [
+   "3",
+   "6",
+   "4",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 1 dazugezählt: 4 + 1 = 5."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 6 + 12 = ?",
+  "options": [
+   "17",
+   "16",
+   "19",
+   "18"
+  ],
+  "correct": 3,
+  "explanation": "6 + 12 = 18."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 5 + 10 = 15. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "10 + 15 = 5",
+   "10 + 5 = 15",
+   "15 + 10 = 5",
+   "5 − 10 = 15"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 10 + 5 = 15."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt nach der 11?",
+  "options": [
+   "11",
+   "14",
+   "10",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "Die Zahl direkt nach 11 ist 12."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist das Doppelte von 1?",
+  "options": [
+   "0",
+   "4",
+   "2",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "Das Doppelte von 1 ist 1 + 1 = 2."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 17: 17 = 5 + ?",
+  "options": [
+   "12",
+   "11",
+   "14",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "5 + 12 = 17, also fehlt die 12."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die größte: 19, 10, 3, 5?",
+  "options": [
+   "19",
+   "5",
+   "10",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 3 < 5 < 10 < 19. Die größte Zahl ist 19."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Wähle die richtige Antwort. Zerlege die 12: 12 = 8 + ?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "8 + 4 = 12, also fehlt die 4."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Aufgabe: Rechne: 5 + 4 = ?",
+  "options": [
+   "8",
+   "9",
+   "10",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "5 + 4 = 9."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist das Doppelte von 6?",
+  "options": [
+   "13",
+   "10",
+   "12",
+   "14"
+  ],
+  "correct": 2,
+  "explanation": "Das Doppelte von 6 ist 6 + 6 = 12."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die größte: 15, 14, 4, 5?",
+  "options": [
+   "14",
+   "5",
+   "15",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "Geordnet: 4 < 5 < 14 < 15. Die größte Zahl ist 15."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist die Hälfte von 12?",
+  "options": [
+   "8",
+   "6",
+   "5",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "Die Hälfte von 12 ist 6, denn 6 + 6 = 12."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 12: 12 = 6 + ?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "correct": 2,
+  "explanation": "6 + 6 = 12, also fehlt die 6."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welches Zeichen gehört in die Lücke: 13 ⬜ 11?",
+  "options": [
+   ">",
+   "<",
+   "+",
+   "="
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 13 > 11, denn 13 ist größer als 11."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 7 + 8 = 15. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "8 + 7 = 15",
+   "15 + 8 = 7",
+   "8 + 15 = 7",
+   "7 − 8 = 15"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 8 + 7 = 15."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die kleinste: 8, 6, 15, 10?",
+  "options": [
+   "6",
+   "8",
+   "15",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 6 < 8 < 10 < 15. Die kleinste Zahl ist 6."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Teste dein Wissen: Setze das Muster fort: 40, 50, 60, 70, ?",
+  "options": [
+   "78",
+   "82",
+   "81",
+   "80"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 10 dazugezählt: 70 + 10 = 80."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt vor der 10?",
+  "options": [
+   "9",
+   "7",
+   "8",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt vor 10 ist 9."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die größte: 0, 14, 10, 7?",
+  "options": [
+   "14",
+   "10",
+   "7",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 0 < 7 < 10 < 14. Die größte Zahl ist 14."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 13 + 5 = 18. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "5 + 18 = 13",
+   "18 + 5 = 13",
+   "5 + 13 = 18",
+   "13 − 5 = 18"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 5 + 13 = 18."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 4 ⬜ 9?",
+  "options": [
+   ">",
+   "=",
+   "<",
+   "+"
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 4 < 9, denn 4 ist kleiner als 9."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Welche Zahl kommt direkt vor der 17?",
+  "options": [
+   "18",
+   "16",
+   "17",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "Die Zahl direkt vor 17 ist 16."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist das Doppelte von 8?",
+  "options": [
+   "18",
+   "17",
+   "14",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "Das Doppelte von 8 ist 8 + 8 = 16."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Aufgabe: Rechne: 11 − 3 = ?",
+  "options": [
+   "8",
+   "9",
+   "10",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "11 − 3 = 8."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Welche Zahl kommt direkt vor der 9?",
+  "options": [
+   "8",
+   "6",
+   "10",
+   "9"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt vor 9 ist 8."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 5 ⬜ 18?",
+  "options": [
+   "+",
+   ">",
+   "=",
+   "<"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 5 < 18, denn 5 ist kleiner als 18."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wie heißen die beiden Nachbarzahlen von 2?",
+  "options": [
+   "2 und 3",
+   "1 und 3",
+   "0 und 4",
+   "1 und 2"
+  ],
+  "correct": 1,
+  "explanation": "Die Nachbarn von 2 sind 1 (davor) und 3 (danach)."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 4 − 2 = ?",
+  "options": [
+   "3",
+   "2",
+   "0",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "4 − 2 = 2."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 18: 18 = 12 + ?",
+  "options": [
+   "7",
+   "4",
+   "6",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "12 + 6 = 18, also fehlt die 6."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welches Zeichen gehört in die Lücke: 0 ⬜ 20?",
+  "options": [
+   "=",
+   "<",
+   ">",
+   "+"
+  ],
+  "correct": 1,
+  "explanation": "Richtig ist 0 < 20, denn 0 ist kleiner als 20."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist die Hälfte von 12?",
+  "options": [
+   "6",
+   "7",
+   "4",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "Die Hälfte von 12 ist 6, denn 6 + 6 = 12."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist das Doppelte von 10?",
+  "options": [
+   "22",
+   "19",
+   "18",
+   "20"
+  ],
+  "correct": 3,
+  "explanation": "Das Doppelte von 10 ist 10 + 10 = 20."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die kleinste: 17, 19, 11, 2?",
+  "options": [
+   "11",
+   "2",
+   "17",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 2 < 11 < 17 < 19. Die kleinste Zahl ist 2."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 20: 20 = 4 + ?",
+  "options": [
+   "15",
+   "16",
+   "18",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "4 + 16 = 20, also fehlt die 16."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 7: 7 = 2 + ?",
+  "options": [
+   "7",
+   "4",
+   "5",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "2 + 5 = 7, also fehlt die 5."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 7 ⬜ 14?",
+  "options": [
+   "+",
+   ">",
+   "<",
+   "="
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 7 < 14, denn 7 ist kleiner als 14."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 14: 14 = 8 + ?",
+  "options": [
+   "7",
+   "4",
+   "5",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "8 + 6 = 14, also fehlt die 6."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 10 + 9 = 19. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "10 − 9 = 19",
+   "19 + 9 = 10",
+   "9 + 10 = 19",
+   "9 + 19 = 10"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 9 + 10 = 19."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Welche Zahl kommt direkt vor der 10?",
+  "options": [
+   "8",
+   "10",
+   "9",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "Die Zahl direkt vor 10 ist 9."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Teste dein Wissen: 1 + 4 = 5. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "5 + 4 = 1",
+   "4 + 5 = 1",
+   "1 − 4 = 5",
+   "4 + 1 = 5"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 4 + 1 = 5."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 12 + 2 = 14. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "2 + 14 = 12",
+   "14 + 2 = 12",
+   "12 − 2 = 14",
+   "2 + 12 = 14"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 2 + 12 = 14."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Aufgabe: Setze das Muster fort: 4, 9, 14, 19, ?",
+  "options": [
+   "24",
+   "25",
+   "26",
+   "22"
+  ],
+  "correct": 0,
+  "explanation": "Es wird immer 5 dazugezählt: 19 + 5 = 24."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Teste dein Wissen: Rechne: 12 + 4 = ?",
+  "options": [
+   "15",
+   "14",
+   "17",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "12 + 4 = 16."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Setze das Muster fort: 3, 5, 7, 9, ?",
+  "options": [
+   "9",
+   "11",
+   "10",
+   "13"
+  ],
+  "correct": 1,
+  "explanation": "Es wird immer 2 dazugezählt: 9 + 2 = 11."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 11?",
+  "options": [
+   "9 und 13",
+   "11 und 12",
+   "10 und 11",
+   "10 und 12"
+  ],
+  "correct": 3,
+  "explanation": "Die Nachbarn von 11 sind 10 (davor) und 12 (danach)."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Welche Zahl kommt direkt nach der 15?",
+  "options": [
+   "16",
+   "15",
+   "14",
+   "17"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt nach 15 ist 16."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 2?",
+  "options": [
+   "2 und 3",
+   "1 und 2",
+   "0 und 4",
+   "1 und 3"
+  ],
+  "correct": 3,
+  "explanation": "Die Nachbarn von 2 sind 1 (davor) und 3 (danach)."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die größte: 8, 1, 20, 9?",
+  "options": [
+   "9",
+   "20",
+   "8",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 1 < 8 < 9 < 20. Die größte Zahl ist 20."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist die Hälfte von 16?",
+  "options": [
+   "7",
+   "8",
+   "10",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "Die Hälfte von 16 ist 8, denn 8 + 8 = 16."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist das Doppelte von 9?",
+  "options": [
+   "20",
+   "18",
+   "17",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "Das Doppelte von 9 ist 9 + 9 = 18."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 4 ⬜ 17?",
+  "options": [
+   "<",
+   "=",
+   "+",
+   ">"
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 4 < 17, denn 4 ist kleiner als 17."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Welche Zahl kommt direkt nach der 16?",
+  "options": [
+   "16",
+   "19",
+   "15",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Die Zahl direkt nach 16 ist 17."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 5: 5 = 2 + ?",
+  "options": [
+   "5",
+   "4",
+   "2",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "2 + 3 = 5, also fehlt die 3."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die kleinste: 17, 1, 12, 11?",
+  "options": [
+   "1",
+   "17",
+   "11",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 1 < 11 < 12 < 17. Die kleinste Zahl ist 1."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Welche Zahl kommt direkt nach der 9?",
+  "options": [
+   "8",
+   "12",
+   "9",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "Die Zahl direkt nach 9 ist 10."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 6 ⬜ 16?",
+  "options": [
+   "+",
+   ">",
+   "<",
+   "="
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 6 < 16, denn 6 ist kleiner als 16."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist die Hälfte von 14?",
+  "options": [
+   "8",
+   "9",
+   "5",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Die Hälfte von 14 ist 7, denn 7 + 7 = 14."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 19?",
+  "options": [
+   "18 und 20",
+   "19 und 20",
+   "18 und 19",
+   "17 und 21"
+  ],
+  "correct": 0,
+  "explanation": "Die Nachbarn von 19 sind 18 (davor) und 20 (danach)."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 6 ⬜ 11?",
+  "options": [
+   "+",
+   "<",
+   "=",
+   ">"
+  ],
+  "correct": 1,
+  "explanation": "Richtig ist 6 < 11, denn 6 ist kleiner als 11."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welches Zeichen gehört in die Lücke: 20 ⬜ 15?",
+  "options": [
+   ">",
+   "+",
+   "<",
+   "="
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 20 > 15, denn 20 ist größer als 15."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 13: 13 = 1 + ?",
+  "options": [
+   "10",
+   "12",
+   "13",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "1 + 12 = 13, also fehlt die 12."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 3, 4, 5, 6, ?",
+  "options": [
+   "5",
+   "8",
+   "9",
+   "7"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 1 dazugezählt: 6 + 1 = 7."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welches Zeichen gehört in die Lücke: 17 ⬜ 20?",
+  "options": [
+   "+",
+   ">",
+   "<",
+   "="
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 17 < 20, denn 17 ist kleiner als 20."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 7?",
+  "options": [
+   "6 und 7",
+   "6 und 8",
+   "5 und 9",
+   "7 und 8"
+  ],
+  "correct": 1,
+  "explanation": "Die Nachbarn von 7 sind 6 (davor) und 8 (danach)."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 10 + 9 = 19. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "10 − 9 = 19",
+   "19 + 9 = 10",
+   "9 + 19 = 10",
+   "9 + 10 = 19"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 9 + 10 = 19."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die größte: 4, 1, 6, 8?",
+  "options": [
+   "1",
+   "8",
+   "6",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 1 < 4 < 6 < 8. Die größte Zahl ist 8."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 5 + 3 = 8. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "3 + 5 = 8",
+   "5 − 3 = 8",
+   "3 + 8 = 5",
+   "8 + 3 = 5"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 3 + 5 = 8."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Welche Zahl kommt direkt nach der 8?",
+  "options": [
+   "9",
+   "7",
+   "10",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt nach 8 ist 9."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Wie heißen die beiden Nachbarzahlen von 1?",
+  "options": [
+   "0 und 2",
+   "1 und 2",
+   "-1 und 3",
+   "0 und 1"
+  ],
+  "correct": 0,
+  "explanation": "Die Nachbarn von 1 sind 0 (davor) und 2 (danach)."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt vor der 8?",
+  "options": [
+   "9",
+   "7",
+   "5",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "Die Zahl direkt vor 8 ist 7."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 2, 3, 4, 5, ?",
+  "options": [
+   "5",
+   "4",
+   "6",
+   "8"
+  ],
+  "correct": 2,
+  "explanation": "Es wird immer 1 dazugezählt: 5 + 1 = 6."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 11 ⬜ 1?",
+  "options": [
+   "<",
+   "=",
+   "+",
+   ">"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 11 > 1, denn 11 ist größer als 1."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Teste dein Wissen: Rechne: 14 − 6 = ?",
+  "options": [
+   "7",
+   "10",
+   "8",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "14 − 6 = 8."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 16 ⬜ 9?",
+  "options": [
+   ">",
+   "<",
+   "+",
+   "="
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 16 > 9, denn 16 ist größer als 9."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Aufgabe: Rechne: 6 − 1 = ?",
+  "options": [
+   "5",
+   "6",
+   "3",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "6 − 1 = 5."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Welche Zahl kommt direkt nach der 8?",
+  "options": [
+   "7",
+   "9",
+   "10",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "Die Zahl direkt nach 8 ist 9."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Teste dein Wissen: Rechne: 15 − 11 = ?",
+  "options": [
+   "4",
+   "2",
+   "5",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "15 − 11 = 4."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 2 ⬜ 16?",
+  "options": [
+   ">",
+   "+",
+   "=",
+   "<"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 2 < 16, denn 2 ist kleiner als 16."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die größte: 6, 2, 14, 1?",
+  "options": [
+   "14",
+   "1",
+   "6",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 1 < 2 < 6 < 14. Die größte Zahl ist 14."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Teste dein Wissen: 17 + 3 = 20. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "3 + 20 = 17",
+   "20 + 3 = 17",
+   "3 + 17 = 20",
+   "17 − 3 = 20"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 3 + 17 = 20."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die größte: 12, 3, 17, 0?",
+  "options": [
+   "12",
+   "0",
+   "3",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Geordnet: 0 < 3 < 12 < 17. Die größte Zahl ist 17."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist die Hälfte von 16?",
+  "options": [
+   "9",
+   "8",
+   "10",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "Die Hälfte von 16 ist 8, denn 8 + 8 = 16."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 10 ⬜ 1?",
+  "options": [
+   "=",
+   "<",
+   ">",
+   "+"
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 10 > 1, denn 10 ist größer als 1."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 2 + 4 = 6. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "4 + 6 = 2",
+   "2 − 4 = 6",
+   "4 + 2 = 6",
+   "6 + 4 = 2"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 4 + 2 = 6."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Wie heißen die beiden Nachbarzahlen von 7?",
+  "options": [
+   "6 und 7",
+   "6 und 8",
+   "5 und 9",
+   "7 und 8"
+  ],
+  "correct": 1,
+  "explanation": "Die Nachbarn von 7 sind 6 (davor) und 8 (danach)."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die größte: 16, 4, 15, 11?",
+  "options": [
+   "16",
+   "4",
+   "11",
+   "15"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 4 < 11 < 15 < 16. Die größte Zahl ist 16."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die größte: 6, 0, 5, 9?",
+  "options": [
+   "0",
+   "6",
+   "9",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Geordnet: 0 < 5 < 6 < 9. Die größte Zahl ist 9."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 0 + 1 = ?",
+  "options": [
+   "0",
+   "3",
+   "1",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "0 + 1 = 1."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 9 ⬜ 4?",
+  "options": [
+   "<",
+   "+",
+   ">",
+   "="
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 9 > 4, denn 9 ist größer als 4."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wie heißen die beiden Nachbarzahlen von 14?",
+  "options": [
+   "12 und 16",
+   "13 und 14",
+   "14 und 15",
+   "13 und 15"
+  ],
+  "correct": 3,
+  "explanation": "Die Nachbarn von 14 sind 13 (davor) und 15 (danach)."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Welche Zahl kommt direkt vor der 2?",
+  "options": [
+   "1",
+   "3",
+   "2",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt vor 2 ist 1."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wie heißen die beiden Nachbarzahlen von 3?",
+  "options": [
+   "1 und 5",
+   "3 und 4",
+   "2 und 4",
+   "2 und 3"
+  ],
+  "correct": 2,
+  "explanation": "Die Nachbarn von 3 sind 2 (davor) und 4 (danach)."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 14 + 1 = 15. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "1 + 15 = 14",
+   "1 + 14 = 15",
+   "15 + 1 = 14",
+   "14 − 1 = 15"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 1 + 14 = 15."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die größte: 7, 8, 17, 13?",
+  "options": [
+   "7",
+   "8",
+   "13",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Geordnet: 7 < 8 < 13 < 17. Die größte Zahl ist 17."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die kleinste: 10, 19, 1, 7?",
+  "options": [
+   "10",
+   "1",
+   "19",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 1 < 7 < 10 < 19. Die kleinste Zahl ist 1."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 1, 6, 11, 16, ?",
+  "options": [
+   "19",
+   "23",
+   "20",
+   "21"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 5 dazugezählt: 16 + 5 = 21."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 13 + 1 = ?",
+  "options": [
+   "12",
+   "16",
+   "14",
+   "13"
+  ],
+  "correct": 2,
+  "explanation": "13 + 1 = 14."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 4 + 12 = 16. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "16 + 12 = 4",
+   "12 + 4 = 16",
+   "12 + 16 = 4",
+   "4 − 12 = 16"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 12 + 4 = 16."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 4 + 9 = 13. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "9 + 13 = 4",
+   "4 − 9 = 13",
+   "13 + 9 = 4",
+   "9 + 4 = 13"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 9 + 4 = 13."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die kleinste: 16, 11, 18, 9?",
+  "options": [
+   "18",
+   "16",
+   "11",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "Geordnet: 9 < 11 < 16 < 18. Die kleinste Zahl ist 9."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 11: 11 = 6 + ?",
+  "options": [
+   "7",
+   "3",
+   "5",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "6 + 5 = 11, also fehlt die 5."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 11 + 3 = 14. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "3 + 11 = 14",
+   "11 − 3 = 14",
+   "3 + 14 = 11",
+   "14 + 3 = 11"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 3 + 11 = 14."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welche dieser Zahlen ist die kleinste: 7, 6, 16, 1?",
+  "options": [
+   "16",
+   "1",
+   "6",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 1 < 6 < 7 < 16. Die kleinste Zahl ist 1."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 10 ⬜ 20?",
+  "options": [
+   ">",
+   "=",
+   "+",
+   "<"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 10 < 20, denn 10 ist kleiner als 20."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Wie heißen die beiden Nachbarzahlen von 12?",
+  "options": [
+   "10 und 14",
+   "11 und 12",
+   "11 und 13",
+   "12 und 13"
+  ],
+  "correct": 2,
+  "explanation": "Die Nachbarn von 12 sind 11 (davor) und 13 (danach)."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 20 ⬜ 15?",
+  "options": [
+   "=",
+   ">",
+   "<",
+   "+"
+  ],
+  "correct": 1,
+  "explanation": "Richtig ist 20 > 15, denn 20 ist größer als 15."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist das Doppelte von 7?",
+  "options": [
+   "12",
+   "16",
+   "15",
+   "14"
+  ],
+  "correct": 3,
+  "explanation": "Das Doppelte von 7 ist 7 + 7 = 14."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Wähle die richtige Antwort. Rechne: 13 − 3 = ?",
+  "options": [
+   "9",
+   "11",
+   "8",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "13 − 3 = 10."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Welche Zahl kommt direkt nach der 14?",
+  "options": [
+   "15",
+   "13",
+   "14",
+   "17"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt nach 14 ist 15."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist das Doppelte von 3?",
+  "options": [
+   "4",
+   "8",
+   "5",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Das Doppelte von 3 ist 3 + 3 = 6."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist die Hälfte von 10?",
+  "options": [
+   "6",
+   "3",
+   "4",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "Die Hälfte von 10 ist 5, denn 5 + 5 = 10."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt vor der 14?",
+  "options": [
+   "13",
+   "14",
+   "15",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "Die Zahl direkt vor 14 ist 13."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welches Zeichen gehört in die Lücke: 14 ⬜ 4?",
+  "options": [
+   "<",
+   "+",
+   "=",
+   ">"
+  ],
+  "correct": 3,
+  "explanation": "Richtig ist 14 > 4, denn 14 ist größer als 4."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Wähle die richtige Antwort. Rechne: 12 − 11 = ?",
+  "options": [
+   "3",
+   "2",
+   "0",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "12 − 11 = 1."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist die Hälfte von 18?",
+  "options": [
+   "10",
+   "9",
+   "11",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "Die Hälfte von 18 ist 9, denn 9 + 9 = 18."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Teste dein Wissen: Rechne: 9 − 8 = ?",
+  "options": [
+   "1",
+   "3",
+   "2",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "9 − 8 = 1."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "5 + 13 = 18. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "18 + 13 = 5",
+   "13 + 18 = 5",
+   "5 − 13 = 18",
+   "13 + 5 = 18"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 13 + 5 = 18."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Teste dein Wissen: Rechne: 14 + 1 = ?",
+  "options": [
+   "16",
+   "17",
+   "13",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "14 + 1 = 15."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 8 + 11 = 19. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "19 + 11 = 8",
+   "11 + 8 = 19",
+   "8 − 11 = 19",
+   "11 + 19 = 8"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 11 + 8 = 19."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Setze das Muster fort: 0, 2, 4, 6, ?",
+  "options": [
+   "7",
+   "6",
+   "9",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 2 dazugezählt: 6 + 2 = 8."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 17: 17 = 14 + ?",
+  "options": [
+   "4",
+   "2",
+   "5",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "14 + 3 = 17, also fehlt die 3."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 2 ⬜ 15?",
+  "options": [
+   "<",
+   "=",
+   ">",
+   "+"
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 2 < 15, denn 2 ist kleiner als 15."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Rechne: 9 − 3 = ?",
+  "options": [
+   "5",
+   "4",
+   "7",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "9 − 3 = 6."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 17 ⬜ 6?",
+  "options": [
+   "<",
+   "+",
+   ">",
+   "="
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 17 > 6, denn 17 ist größer als 6."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 4, 9, 14, 19, ?",
+  "options": [
+   "24",
+   "25",
+   "22",
+   "23"
+  ],
+  "correct": 0,
+  "explanation": "Es wird immer 5 dazugezählt: 19 + 5 = 24."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Teste dein Wissen: Rechne: 12 + 7 = ?",
+  "options": [
+   "18",
+   "19",
+   "17",
+   "20"
+  ],
+  "correct": 1,
+  "explanation": "12 + 7 = 19."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "4 + 3 = 7. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "4 − 3 = 7",
+   "7 + 3 = 4",
+   "3 + 4 = 7",
+   "3 + 7 = 4"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 3 + 4 = 7."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Wie heißen die beiden Nachbarzahlen von 2?",
+  "options": [
+   "2 und 3",
+   "1 und 2",
+   "1 und 3",
+   "0 und 4"
+  ],
+  "correct": 2,
+  "explanation": "Die Nachbarn von 2 sind 1 (davor) und 3 (danach)."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist das Doppelte von 2?",
+  "options": [
+   "4",
+   "6",
+   "3",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "Das Doppelte von 2 ist 2 + 2 = 4."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welche dieser Zahlen ist die kleinste: 16, 20, 14, 18?",
+  "options": [
+   "18",
+   "20",
+   "16",
+   "14"
+  ],
+  "correct": 3,
+  "explanation": "Geordnet: 14 < 16 < 18 < 20. Die kleinste Zahl ist 14."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Teste dein Wissen: Setze das Muster fort: 2, 4, 6, 8, ?",
+  "options": [
+   "9",
+   "11",
+   "12",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 2 dazugezählt: 8 + 2 = 10."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 0, 10, 20, 30, ?",
+  "options": [
+   "38",
+   "40",
+   "42",
+   "39"
+  ],
+  "correct": 1,
+  "explanation": "Es wird immer 10 dazugezählt: 30 + 10 = 40."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Teste dein Wissen: 15 + 1 = 16. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "15 − 1 = 16",
+   "1 + 16 = 15",
+   "1 + 15 = 16",
+   "16 + 1 = 15"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 1 + 15 = 16."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist die Hälfte von 8?",
+  "options": [
+   "3",
+   "5",
+   "4",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "Die Hälfte von 8 ist 4, denn 4 + 4 = 8."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist das Doppelte von 4?",
+  "options": [
+   "10",
+   "7",
+   "8",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "Das Doppelte von 4 ist 4 + 4 = 8."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 4 + 6 = 10. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "4 − 6 = 10",
+   "6 + 10 = 4",
+   "6 + 4 = 10",
+   "10 + 6 = 4"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 6 + 4 = 10."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Wie heißen die beiden Nachbarzahlen von 1?",
+  "options": [
+   "-1 und 3",
+   "0 und 2",
+   "1 und 2",
+   "0 und 1"
+  ],
+  "correct": 1,
+  "explanation": "Die Nachbarn von 1 sind 0 (davor) und 2 (danach)."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist die Hälfte von 4?",
+  "options": [
+   "0",
+   "1",
+   "4",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "Die Hälfte von 4 ist 2, denn 2 + 2 = 4."
+ },
+ {
+  "topic": "Plus und Minus",
+  "question": "Wähle die richtige Antwort. Rechne: 10 − 4 = ?",
+  "options": [
+   "6",
+   "5",
+   "7",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "10 − 4 = 6."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Teste dein Wissen: 1 + 2 = 3. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "2 + 3 = 1",
+   "1 − 2 = 3",
+   "2 + 1 = 3",
+   "3 + 2 = 1"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 2 + 1 = 3."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl kommt direkt vor der 18?",
+  "options": [
+   "16",
+   "15",
+   "18",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Die Zahl direkt vor 18 ist 17."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Wähle die richtige Antwort. Was ist das Doppelte von 7?",
+  "options": [
+   "16",
+   "15",
+   "13",
+   "14"
+  ],
+  "correct": 3,
+  "explanation": "Das Doppelte von 7 ist 7 + 7 = 14."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welche dieser Zahlen ist die größte: 19, 4, 16, 7?",
+  "options": [
+   "19",
+   "16",
+   "7",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 4 < 7 < 16 < 19. Die größte Zahl ist 19."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist die Hälfte von 6?",
+  "options": [
+   "1",
+   "4",
+   "5",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "Die Hälfte von 6 ist 3, denn 3 + 3 = 6."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist das Doppelte von 3?",
+  "options": [
+   "6",
+   "8",
+   "7",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "Das Doppelte von 3 ist 3 + 3 = 6."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die größte: 6, 2, 9, 11?",
+  "options": [
+   "11",
+   "9",
+   "2",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 2 < 6 < 9 < 11. Die größte Zahl ist 11."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die größte: 17, 13, 2, 20?",
+  "options": [
+   "13",
+   "17",
+   "2",
+   "20"
+  ],
+  "correct": 3,
+  "explanation": "Geordnet: 2 < 13 < 17 < 20. Die größte Zahl ist 20."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Welche Zahl kommt direkt vor der 5?",
+  "options": [
+   "6",
+   "4",
+   "2",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "Die Zahl direkt vor 5 ist 4."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Was ist das Doppelte von 1?",
+  "options": [
+   "2",
+   "4",
+   "0",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "Das Doppelte von 1 ist 1 + 1 = 2."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 14 + 3 = 17. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "3 + 17 = 14",
+   "17 + 3 = 14",
+   "14 − 3 = 17",
+   "3 + 14 = 17"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 3 + 14 = 17."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die kleinste: 18, 15, 6, 20?",
+  "options": [
+   "15",
+   "20",
+   "18",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Geordnet: 6 < 15 < 18 < 20. Die kleinste Zahl ist 6."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Aufgabe: Welche dieser Zahlen ist die kleinste: 12, 18, 15, 9?",
+  "options": [
+   "18",
+   "9",
+   "15",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 9 < 12 < 15 < 18. Die kleinste Zahl ist 9."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Teste dein Wissen: Zerlege die 9: 9 = 7 + ?",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "7 + 2 = 9, also fehlt die 2."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Welche Zahl kommt direkt vor der 14?",
+  "options": [
+   "12",
+   "11",
+   "13",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "Die Zahl direkt vor 14 ist 13."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welche dieser Zahlen ist die kleinste: 14, 3, 0, 10?",
+  "options": [
+   "14",
+   "10",
+   "0",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Geordnet: 0 < 3 < 10 < 14. Die kleinste Zahl ist 0."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "5 + 9 = 14. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "9 + 14 = 5",
+   "14 + 9 = 5",
+   "5 − 9 = 14",
+   "9 + 5 = 14"
+  ],
+  "correct": 3,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 9 + 5 = 14."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 1?",
+  "options": [
+   "-1 und 3",
+   "1 und 2",
+   "0 und 2",
+   "0 und 1"
+  ],
+  "correct": 2,
+  "explanation": "Die Nachbarn von 1 sind 0 (davor) und 2 (danach)."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Wie heißen die beiden Nachbarzahlen von 17?",
+  "options": [
+   "17 und 18",
+   "16 und 18",
+   "16 und 17",
+   "15 und 19"
+  ],
+  "correct": 1,
+  "explanation": "Die Nachbarn von 17 sind 16 (davor) und 18 (danach)."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 18 + 2 = 20. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "18 − 2 = 20",
+   "2 + 18 = 20",
+   "20 + 2 = 18",
+   "2 + 20 = 18"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 2 + 18 = 20."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 12?",
+  "options": [
+   "11 und 13",
+   "12 und 13",
+   "11 und 12",
+   "10 und 14"
+  ],
+  "correct": 0,
+  "explanation": "Die Nachbarn von 12 sind 11 (davor) und 13 (danach)."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Teste dein Wissen: Was ist das Doppelte von 6?",
+  "options": [
+   "13",
+   "12",
+   "11",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "Das Doppelte von 6 ist 6 + 6 = 12."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die größte: 5, 13, 17, 6?",
+  "options": [
+   "17",
+   "5",
+   "6",
+   "13"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 5 < 6 < 13 < 17. Die größte Zahl ist 17."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 6 + 1 = 7. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "6 − 1 = 7",
+   "1 + 7 = 6",
+   "1 + 6 = 7",
+   "7 + 1 = 6"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 1 + 6 = 7."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Wie heißen die beiden Nachbarzahlen von 19?",
+  "options": [
+   "19 und 20",
+   "17 und 21",
+   "18 und 19",
+   "18 und 20"
+  ],
+  "correct": 3,
+  "explanation": "Die Nachbarn von 19 sind 18 (davor) und 20 (danach)."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Aufgabe: Setze das Muster fort: 10, 20, 30, 40, ?",
+  "options": [
+   "52",
+   "49",
+   "50",
+   "51"
+  ],
+  "correct": 2,
+  "explanation": "Es wird immer 10 dazugezählt: 40 + 10 = 50."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 13?",
+  "options": [
+   "11 und 15",
+   "12 und 13",
+   "12 und 14",
+   "13 und 14"
+  ],
+  "correct": 2,
+  "explanation": "Die Nachbarn von 13 sind 12 (davor) und 14 (danach)."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die kleinste: 1, 5, 15, 17?",
+  "options": [
+   "5",
+   "17",
+   "15",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "Geordnet: 1 < 5 < 15 < 17. Die kleinste Zahl ist 1."
+ },
+ {
+  "topic": "Verdoppeln und Halbieren",
+  "question": "Aufgabe: Was ist das Doppelte von 6?",
+  "options": [
+   "12",
+   "11",
+   "13",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "Das Doppelte von 6 ist 6 + 6 = 12."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Setze das Muster fort: 20, 30, 40, 50, ?",
+  "options": [
+   "61",
+   "58",
+   "60",
+   "62"
+  ],
+  "correct": 2,
+  "explanation": "Es wird immer 10 dazugezählt: 50 + 10 = 60."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die größte: 5, 7, 17, 6?",
+  "options": [
+   "17",
+   "5",
+   "7",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Geordnet: 5 < 6 < 7 < 17. Die größte Zahl ist 17."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "2 + 15 = 17. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "2 − 15 = 17",
+   "15 + 2 = 17",
+   "17 + 15 = 2",
+   "15 + 17 = 2"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 15 + 2 = 17."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Wähle die richtige Antwort. Zerlege die 7: 7 = 5 + ?",
+  "options": [
+   "1",
+   "3",
+   "4",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "5 + 2 = 7, also fehlt die 2."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Teste dein Wissen: Wie heißen die beiden Nachbarzahlen von 3?",
+  "options": [
+   "2 und 3",
+   "3 und 4",
+   "2 und 4",
+   "1 und 5"
+  ],
+  "correct": 2,
+  "explanation": "Die Nachbarn von 3 sind 2 (davor) und 4 (danach)."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Setze das Muster fort: 1, 3, 5, 7, ?",
+  "options": [
+   "10",
+   "9",
+   "11",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "Es wird immer 2 dazugezählt: 7 + 2 = 9."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Setze das Muster fort: 0, 10, 20, 30, ?",
+  "options": [
+   "39",
+   "38",
+   "42",
+   "40"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 10 dazugezählt: 30 + 10 = 40."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 0, 1, 2, 3, ?",
+  "options": [
+   "2",
+   "6",
+   "3",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Es wird immer 1 dazugezählt: 3 + 1 = 4."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welches Zeichen gehört in die Lücke: 1 ⬜ 5?",
+  "options": [
+   "=",
+   "+",
+   "<",
+   ">"
+  ],
+  "correct": 2,
+  "explanation": "Richtig ist 1 < 5, denn 1 ist kleiner als 5."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "11 + 3 = 14. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "14 + 3 = 11",
+   "3 + 14 = 11",
+   "3 + 11 = 14",
+   "11 − 3 = 14"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 3 + 11 = 14."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Wähle die richtige Antwort. 17 + 1 = 18. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "18 + 1 = 17",
+   "1 + 17 = 18",
+   "1 + 18 = 17",
+   "17 − 1 = 18"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 1 + 17 = 18."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Teste dein Wissen: Welche dieser Zahlen ist die kleinste: 0, 3, 17, 19?",
+  "options": [
+   "3",
+   "0",
+   "19",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "Geordnet: 0 < 3 < 17 < 19. Die kleinste Zahl ist 0."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 6: 6 = 5 + ?",
+  "options": [
+   "2",
+   "3",
+   "1",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "5 + 1 = 6, also fehlt die 1."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 6 ⬜ 10?",
+  "options": [
+   "<",
+   "+",
+   "=",
+   ">"
+  ],
+  "correct": 0,
+  "explanation": "Richtig ist 6 < 10, denn 6 ist kleiner als 10."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Wähle die richtige Antwort. Welche dieser Zahlen ist die größte: 0, 2, 20, 11?",
+  "options": [
+   "0",
+   "11",
+   "20",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "Geordnet: 0 < 2 < 11 < 20. Die größte Zahl ist 20."
+ },
+ {
+  "topic": "Zahlzerlegung",
+  "question": "Zerlege die 20: 20 = 11 + ?",
+  "options": [
+   "9",
+   "7",
+   "10",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "11 + 9 = 20, also fehlt die 9."
+ },
+ {
+  "topic": "Muster und Reihen",
+  "question": "Wähle die richtige Antwort. Setze das Muster fort: 4, 5, 6, 7, ?",
+  "options": [
+   "7",
+   "8",
+   "10",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "Es wird immer 1 dazugezählt: 7 + 1 = 8."
+ },
+ {
+  "topic": "Nachbarzahlen",
+  "question": "Aufgabe: Wie heißen die beiden Nachbarzahlen von 14?",
+  "options": [
+   "13 und 14",
+   "12 und 16",
+   "14 und 15",
+   "13 und 15"
+  ],
+  "correct": 3,
+  "explanation": "Die Nachbarn von 14 sind 13 (davor) und 15 (danach)."
+ },
+ {
+  "topic": "Zahlen vergleichen",
+  "question": "Welches Zeichen gehört in die Lücke: 5 ⬜ 13?",
+  "options": [
+   "=",
+   "<",
+   ">",
+   "+"
+  ],
+  "correct": 1,
+  "explanation": "Richtig ist 5 < 13, denn 5 ist kleiner als 13."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 8 + 7 = 15. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "15 + 7 = 8",
+   "7 + 8 = 15",
+   "8 − 7 = 15",
+   "7 + 15 = 8"
+  ],
+  "correct": 1,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 7 + 8 = 15."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "Aufgabe: 8 + 9 = 17. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "9 + 8 = 17",
+   "8 − 9 = 17",
+   "17 + 9 = 8",
+   "9 + 17 = 8"
+  ],
+  "correct": 0,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 9 + 8 = 17."
+ },
+ {
+  "topic": "Tauschaufgaben",
+  "question": "15 + 4 = 19. Wie lautet die Tauschaufgabe?",
+  "options": [
+   "4 + 19 = 15",
+   "19 + 4 = 15",
+   "4 + 15 = 19",
+   "15 − 4 = 19"
+  ],
+  "correct": 2,
+  "explanation": "Beim Tauschen der Zahlen bleibt das Ergebnis gleich: 4 + 15 = 19."
+ }
+]

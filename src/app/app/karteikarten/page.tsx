@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
+import { ImportDeckForm } from "./ImportDeckForm";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -95,6 +96,7 @@ export default async function KarteikartenPage() {
             <Sparkles className="size-3.5" />
             Aus PDF generieren
           </Link>
+          <ImportDeckForm />
         </div>
       </header>
 

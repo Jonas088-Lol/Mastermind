@@ -207,6 +207,15 @@ export default async function QuestsPage() {
   const totalClaimed   = userQuests.filter((uq) => uq.claimedAt).length;
   const pendingClaim   = userQuests.filter((uq) => uq.completedAt && !uq.claimedAt).length;
 
+  // "Heute"-Statistiken (server-berechnet)
+  const startOfDay = new Date(now);
+  startOfDay.setHours(0, 0, 0, 0);
+  const dailyDone = daily.filter((uq) => uq.completedAt).length;
+  const completedToday = userQuests.filter(
+    (uq) => uq.completedAt && uq.completedAt >= startOfDay,
+  );
+  const xpToday = completedToday.reduce((sum, uq) => sum + uq.quest.xpReward, 0);
+
   function timeLeft(expiresAt: Date | null): string {
     if (!expiresAt) return "";
     const ms = expiresAt.getTime() - now.getTime();
@@ -218,14 +227,31 @@ export default async function QuestsPage() {
     return `${m}m`;
   }
 
+  function endetIn(expiresAt: Date): string {
+    const ms = expiresAt.getTime() - now.getTime();
+    if (ms <= 0) return "abgelaufen";
+    const totalMinutes = Math.floor(ms / 60_000);
+    const d = Math.floor(totalMinutes / 1440);
+    const h = Math.floor((totalMinutes % 1440) / 60);
+    const m = totalMinutes % 60;
+    if (d > 0) return `endet in ${d}T ${h}h`;
+    return `endet in ${h}h ${m}m`;
+  }
+
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-8">
       <header className="flex items-end justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Gamification</p>
           <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Quests</h1>
-          <p className="mt-1 text-sm text-muted-fg">
+          <p className="mt-1 text-sm font-semibold">
+            {dailyDone} von {daily.length} Quests heute geschafft
+          </p>
+          <p className="mt-0.5 text-sm text-muted-fg">
             {totalCompleted} abgeschlossen · {totalClaimed} eingelöst
+            {xpToday > 0 && (
+              <span className="ml-2 font-semibold text-brand">+{xpToday} XP heute</span>
+            )}
             {pendingClaim > 0 && (
               <span className="ml-2 font-semibold text-warning">{pendingClaim} bereit zum Einlösen</span>
             )}
@@ -234,9 +260,29 @@ export default async function QuestsPage() {
         <Zap className="size-10 text-warning opacity-20" strokeWidth={1} />
       </header>
 
-      <QuestSection title="Täglich" subtitle={`Erneuert sich um Mitternacht`} quests={daily} timeLeft={timeLeft} claimAction={claimQuestReward} />
-      <QuestSection title="Wöchentlich" subtitle="Diese Woche" quests={weekly} timeLeft={timeLeft} claimAction={claimQuestReward} />
-      <QuestSection title="Monatlich" subtitle="Diesen Monat" quests={monthly} timeLeft={timeLeft} claimAction={claimQuestReward} />
+      {completedToday.length > 0 && (
+        <section className="rounded-2xl border border-success/30 bg-success/5 px-4 py-3">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <p className="text-xs font-semibold uppercase tracking-wide text-success">
+              Erledigt heute
+            </p>
+            {completedToday.map((uq) => (
+              <span
+                key={uq.id}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-surface px-2.5 py-1 text-xs"
+              >
+                <CheckCircle2 className="size-3.5 shrink-0 text-success" />
+                <span className="max-w-40 truncate font-medium">{uq.quest.title}</span>
+                <span className="text-muted-fg">+{uq.quest.xpReward} XP</span>
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <QuestSection title="Täglich" subtitle={`Erneuert sich um Mitternacht · ${endetIn(endOfDay)}`} quests={daily} timeLeft={timeLeft} claimAction={claimQuestReward} />
+      <QuestSection title="Wöchentlich" subtitle={`Diese Woche · ${endetIn(endOfWeek)}`} quests={weekly} timeLeft={timeLeft} claimAction={claimQuestReward} />
+      <QuestSection title="Monatlich" subtitle={`Diesen Monat · ${endetIn(endOfMonth)}`} quests={monthly} timeLeft={timeLeft} claimAction={claimQuestReward} />
       <HiddenSection quests={hidden} claimAction={claimQuestReward} />
     </div>
   );

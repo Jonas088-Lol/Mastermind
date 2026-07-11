@@ -8,12 +8,12 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
-import { createSubstitution } from "./actions";
+import { cancelTeacherDay, copyFromYesterday, createSubstitution } from "./actions";
 
 export const metadata: Metadata = { title: "Vertretungsplan · Admin" };
 
 interface PageProps {
-  searchParams: Promise<{ date?: string; show?: string }>;
+  searchParams: Promise<{ date?: string; show?: string; done?: string }>;
 }
 
 const TYPE_LABELS: Record<string, string> = {
@@ -33,7 +33,8 @@ export default async function AdminVertretungsplanPage({ searchParams }: PagePro
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
 
-  const { date: dateParam, show: showParam } = await searchParams;
+  const { date: dateParam, show: showParam, done: doneParam } = await searchParams;
+  const doneCount = doneParam != null && /^\d+$/.test(doneParam) ? parseInt(doneParam, 10) : null;
 
   const schoolId = session.schoolId ?? "";
 
@@ -164,6 +165,72 @@ export default async function AdminVertretungsplanPage({ searchParams }: PagePro
           </Link>
         </div>
       </div>
+
+      {/* Erfolgsmeldung */}
+      {doneCount !== null && (
+        <div className="border border-green-600/40 bg-green-500/10 px-4 py-3 text-sm font-semibold text-green-700 dark:text-green-400">
+          {doneCount === 0
+            ? "Keine neuen Einträge angelegt (bereits vorhanden oder kein Unterricht an diesem Tag)."
+            : `${doneCount} ${doneCount === 1 ? "Eintrag" : "Einträge"} erfolgreich angelegt.`}
+        </div>
+      )}
+
+      {/* Schnellerfassung */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Lehrkraft ganztägig abwesend</CardTitle>
+        </CardHeader>
+        <CardBody className="space-y-4">
+          <form action={cancelTeacherDay} className="flex flex-wrap items-end gap-3">
+            <div className="min-w-48 flex-1">
+              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">
+                Lehrkraft
+              </label>
+              <select
+                name="teacherId"
+                required
+                className="w-full border border-border bg-bg px-3 py-2 text-sm"
+              >
+                <option value="">Lehrkraft wählen…</option>
+                {teachers.map((t) => (
+                  <option key={t.id} value={t.id}>
+                    {t.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">
+                Datum
+              </label>
+              <input
+                type="date"
+                name="date"
+                defaultValue={selectedDate.toISOString().split("T")[0]}
+                required
+                className="border border-border bg-bg px-3 py-2 text-sm"
+              />
+            </div>
+            <Button type="submit" variant="secondary">
+              Ganzen Tag als Ausfall eintragen
+            </Button>
+          </form>
+          <form action={copyFromYesterday} className="flex flex-wrap items-center gap-3 border-t border-border pt-4">
+            <input
+              type="hidden"
+              name="date"
+              value={selectedDate.toISOString().split("T")[0]}
+            />
+            <Button type="submit" variant="secondary">
+              <RefreshCw className="size-3.5" />
+              Einträge von gestern übernehmen
+            </Button>
+            <p className="text-xs text-muted-fg">
+              Kopiert alle Einträge des Vortags auf den {selectedDate.toLocaleDateString("de-DE")} (Duplikate werden übersprungen).
+            </p>
+          </form>
+        </CardBody>
+      </Card>
 
       {/* Inline create form */}
       {showCreate && (

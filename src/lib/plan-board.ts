@@ -56,6 +56,14 @@ export type BoardTeam = {
   results: BoardTeamResult[];
 };
 
+export type BoardAnnouncement = {
+  id: string;
+  title: string;
+  body: string | null;
+  emoji: string | null;
+  color: string | null;
+};
+
 export type PlanBoardData = {
   classes: BoardClass[];
   substitutions: BoardSubstitution[];
@@ -63,6 +71,7 @@ export type PlanBoardData = {
   todayLabel: string;
   events: BoardEvent[];
   teams: BoardTeam[];
+  announcements: BoardAnnouncement[];
 };
 
 const DEFAULT_TIMES = [
@@ -77,7 +86,7 @@ export async function loadPlanBoardData(schoolId: string): Promise<PlanBoardData
 
   const in14Days = new Date(today.getTime() + 14 * 86_400_000);
 
-  const [classes, substitutions, periodConfigs, events, teams] = await Promise.all([
+  const [classes, substitutions, periodConfigs, events, teams, announcements] = await Promise.all([
     prisma.schoolClass.findMany({
       where: { schoolId },
       orderBy: [{ grade: "asc" }, { name: "asc" }],
@@ -117,6 +126,11 @@ export async function loadPlanBoardData(schoolId: string): Promise<PlanBoardData
       where: { schoolId },
       orderBy: { name: "asc" },
       take: 12,
+    }),
+    prisma.boardAnnouncement.findMany({
+      where: { schoolId, active: true },
+      orderBy: { order: "asc" },
+      take: 10,
     }),
   ]);
 
@@ -177,6 +191,13 @@ export async function loadPlanBoardData(schoolId: string): Promise<PlanBoardData
         results: results.slice(-5).reverse(), // die letzten 5, neueste zuerst
       };
     }),
+    announcements: announcements.map((a) => ({
+      id: a.id,
+      title: a.title,
+      body: a.body,
+      emoji: a.emoji,
+      color: a.color,
+    })),
     periodTimes,
     todayLabel: today.toLocaleDateString("de-DE", {
       weekday: "long",

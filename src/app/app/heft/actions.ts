@@ -109,6 +109,64 @@ export async function deletePage(pageId: string) {
   redirect(`/app/heft/${page.notebookId}/${remaining[0].id}`);
 }
 
+export async function duplicatePage(pageId: string) {
+  const session = await getSession();
+  if (!session) return;
+
+  const page = await prisma.notebookPage.findUnique({
+    where: { id: pageId },
+    include: { notebook: true },
+  });
+  if (!page || page.notebook.userId !== session.userId) return;
+
+  const count = await prisma.notebookPage.count({
+    where: { notebookId: page.notebookId },
+  });
+
+  const copy = await prisma.notebookPage.create({
+    data: {
+      notebookId: page.notebookId,
+      title: `${page.title} (Kopie)`.slice(0, 200),
+      content: page.content,
+      order: count,
+    },
+  });
+
+  redirect(`/app/heft/${page.notebookId}/${copy.id}`);
+}
+
+export async function movePage(pageId: string, direction: "up" | "down") {
+  const session = await getSession();
+  if (!session) return;
+  if (direction !== "up" && direction !== "down") return;
+
+  const page = await prisma.notebookPage.findUnique({
+    where: { id: pageId },
+    include: { notebook: { include: { pages: { orderBy: { order: "asc" } } } } },
+  });
+  if (!page || page.notebook.userId !== session.userId) return;
+
+  const pages = page.notebook.pages;
+  const idx = pages.findIndex((p) => p.id === pageId);
+  const neighborIdx = direction === "up" ? idx - 1 : idx + 1;
+  if (neighborIdx < 0 || neighborIdx >= pages.length) return;
+
+  const neighbor = pages[neighborIdx];
+
+  await prisma.$transaction([
+    prisma.notebookPage.update({
+      where: { id: page.id },
+      data: { order: neighbor.order },
+    }),
+    prisma.notebookPage.update({
+      where: { id: neighbor.id },
+      data: { order: pages[idx].order },
+    }),
+  ]);
+
+  revalidatePath(`/app/heft/${page.notebookId}`, "layout");
+}
+
 export async function savePageContent(pageId: string, content: string) {
   const session = await getSession();
   if (!session) return;
@@ -123,6 +181,37 @@ export async function savePageContent(pageId: string, content: string) {
     where: { id: pageId },
     data: { content, updatedAt: new Date() },
   });
+}
+
+export async function duplicateNotebook(notebookId: string) {
+  const session = await getSession();
+  if (!session) redirect("/login");
+  if (effectiveRole(session) !== "student") redirect("/");
+
+  const nb = await prisma.notebook.findUnique({
+    where: { id: notebookId },
+    include: { pages: { orderBy: { order: "asc" } } },
+  });
+  if (!nb || nb.userId !== session.userId) redirect("/app/heft");
+
+  await prisma.notebook.create({
+    data: {
+      userId: session.userId,
+      title: `${nb.title} (Kopie)`.slice(0, 200),
+      subject: nb.subject,
+      color: nb.color,
+      icon: nb.icon,
+      pages: {
+        create: nb.pages.map((p, i) => ({
+          title: p.title,
+          content: p.content,
+          order: i,
+        })),
+      },
+    },
+  });
+
+  revalidatePath("/app/heft");
 }
 
 export async function deleteNotebook(notebookId: string) {

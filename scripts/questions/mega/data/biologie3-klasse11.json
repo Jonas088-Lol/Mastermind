@@ -1,0 +1,5402 @@
+[
+ {
+  "topic": "Enzyme",
+  "question": "Wissenscheck Biologie: Was geschieht mit einem Enzym oberhalb seiner Optimaltemperatur?",
+  "options": [
+   "es vermehrt sich",
+   "es wird zum Substrat",
+   "es denaturiert und verliert die Wirkung",
+   "es arbeitet immer schneller"
+  ],
+  "correct": 2,
+  "explanation": "Zu hohe Temperatur zerstört die Raumstruktur (Denaturierung) – das Enzym wird inaktiv."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Biologie-Quiz: Nach welchem Prinzip passt ein Substrat in das aktive Zentrum eines Enzyms?",
+  "options": [
+   "Zufallsprinzip",
+   "Diffusionsprinzip",
+   "Schlüssel-Schloss-Prinzip",
+   "Reißverschlussprinzip"
+  ],
+  "correct": 2,
+  "explanation": "Substrat und aktives Zentrum passen räumlich zueinander (Schlüssel-Schloss / induced fit)."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Was hält den Ionengradienten am Ruhepotential aufrecht?",
+  "options": [
+   "die Myelinscheide",
+   "freie Diffusion allein",
+   "die Natrium-Kalium-Pumpe (unter ATP-Verbrauch)",
+   "die Neurotransmitter"
+  ],
+  "correct": 2,
+  "explanation": "Die Na⁺/K⁺-ATPase pumpt 3 Na⁺ raus und 2 K⁺ rein und erhält so den Gradienten."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Teste dein Wissen: Über lange Zeit bleiben die Durchschnittsgrößen beider Populationen konstant. Welche Regel?",
+  "options": [
+   "3. Regel (Störung des Mittelwerts)",
+   "keine der Regeln",
+   "2. Regel (Konstanz der Mittelwerte)",
+   "1. Regel (periodische Schwankungen)"
+  ],
+  "correct": 2,
+  "explanation": "2. Regel: Die Mittelwerte der Populationen bleiben langfristig konstant."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Biologie-Quiz: Wie groß ist das Ruhepotential einer typischen Nervenzelle etwa?",
+  "options": [
+   "etwa −200 mV",
+   "etwa +30 mV",
+   "etwa 0 mV",
+   "etwa −70 mV"
+  ],
+  "correct": 3,
+  "explanation": "Das Ruhepotential liegt bei rund −70 mV (innen negativ gegenüber außen)."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "4000",
+   "3000",
+   "8000",
+   "6000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Wissenscheck Biologie: Die Bestände von Räuber und Beute schwanken periodisch um Mittelwerte. Welche Lotka-Volterra-Regel?",
+  "options": [
+   "2. Regel (konstante Mittelwerte)",
+   "keine der Regeln",
+   "3. Regel (Störung des Mittelwerts)",
+   "1. Regel (periodische Schwankungen)"
+  ],
+  "correct": 3,
+  "explanation": "1. Regel: Die Populationsgrößen von Räuber und Beute schwanken periodisch, zeitlich versetzt."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Die Bestände von Räuber und Beute schwanken periodisch um Mittelwerte. Welche Lotka-Volterra-Regel?",
+  "options": [
+   "3. Regel (Störung des Mittelwerts)",
+   "1. Regel (periodische Schwankungen)",
+   "2. Regel (konstante Mittelwerte)",
+   "keine der Regeln"
+  ],
+  "correct": 1,
+  "explanation": "1. Regel: Die Populationsgrößen von Räuber und Beute schwanken periodisch, zeitlich versetzt."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Über lange Zeit bleiben die Durchschnittsgrößen beider Populationen konstant. Welche Regel?",
+  "options": [
+   "2. Regel (Konstanz der Mittelwerte)",
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)",
+   "3. Regel (Störung des Mittelwerts)"
+  ],
+  "correct": 0,
+  "explanation": "2. Regel: Die Mittelwerte der Populationen bleiben langfristig konstant."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Biologie-Quiz: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "5000 kJ",
+   "500.0000000000001 kJ",
+   "10000 kJ",
+   "2500 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^2 = 500.0000000000001 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Teste dein Wissen: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "333.3333333333333 kJ",
+   "100.00000000000001 kJ",
+   "10.000000000000002 kJ",
+   "3000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^3 = 10.000000000000002 kJ."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Aufgabe: Was besagt die RGT-Regel für enzymatische Reaktionen (bis zum Optimum)?",
+  "options": [
+   "nur Kälte beschleunigt",
+   "Temperatur hat keinen Einfluss",
+   "10 °C mehr verdoppeln bis verdreifachen die Reaktionsgeschwindigkeit",
+   "10 °C mehr halbieren die Geschwindigkeit"
+  ],
+  "correct": 2,
+  "explanation": "Die Reaktions-Geschwindigkeits-Temperatur-Regel: pro 10 °C etwa Faktor 2–3 – nur bis zum Temperaturoptimum."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wissenscheck Biologie: Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "20000 kJ",
+   "10000 kJ",
+   "5000 kJ",
+   "1000.0000000000002 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^2 = 1000.0000000000002 kJ."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Wähle die richtige Antwort. Beide Populationen werden gleichmäßig dezimiert; danach erholt sich die Beute schneller/stärker. Welche Regel?",
+  "options": [
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)",
+   "3. Regel (Störung der Mittelwerte)",
+   "2. Regel (konstante Mittelwerte)"
+  ],
+  "correct": 2,
+  "explanation": "3. Regel: Nach gleichmäßiger Störung nimmt die Beute rascher zu als der Räuber (Vorteil der Beute)."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Frage aus dem Bio-Unterricht: Was besagt die RGT-Regel für enzymatische Reaktionen (bis zum Optimum)?",
+  "options": [
+   "10 °C mehr verdoppeln bis verdreifachen die Reaktionsgeschwindigkeit",
+   "nur Kälte beschleunigt",
+   "Temperatur hat keinen Einfluss",
+   "10 °C mehr halbieren die Geschwindigkeit"
+  ],
+  "correct": 0,
+  "explanation": "Die Reaktions-Geschwindigkeits-Temperatur-Regel: pro 10 °C etwa Faktor 2–3 – nur bis zum Temperaturoptimum."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Welches Ion strömt bei der Depolarisation (Aktionspotential) in die Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Calcium bleibt außen",
+   "Natrium (Na⁺)",
+   "Kalium (K⁺)"
+  ],
+  "correct": 2,
+  "explanation": "Bei der Depolarisation öffnen sich spannungsgesteuerte Na⁺-Kanäle, Na⁺ strömt ein."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Weißt du es? Wie wird das Signal an einer chemischen Synapse übertragen?",
+  "options": [
+   "durch direkten Stromfluss über die Membran",
+   "durch Neurotransmitter über den synaptischen Spalt",
+   "durch Kalkbrücken",
+   "durch DNA-Übertragung"
+  ],
+  "correct": 1,
+  "explanation": "An chemischen Synapsen setzt das Aktionspotential Neurotransmitter frei, die an Rezeptoren binden."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Weißt du es? Wozu dient die Refraktärzeit?",
+  "options": [
+   "sie baut Neurotransmitter auf",
+   "sie verstärkt jedes Signal",
+   "sie erzeugt das Ruhepotential dauerhaft",
+   "sie sichert die Einbahn-Richtung und begrenzt die Frequenz der Erregung"
+  ],
+  "correct": 3,
+  "explanation": "In der Refraktärzeit ist die Membran unerregbar – das AP kann nur vorwärts laufen."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Aufgabe: Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "1000.0000000000002 kJ",
+   "5000 kJ",
+   "10000 kJ",
+   "20000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^2 = 1000.0000000000002 kJ."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Aufgabe: Beide Populationen werden gleichmäßig dezimiert; danach erholt sich die Beute schneller/stärker. Welche Regel?",
+  "options": [
+   "2. Regel (konstante Mittelwerte)",
+   "3. Regel (Störung der Mittelwerte)",
+   "1. Regel (periodische Schwankungen)",
+   "keine der Regeln"
+  ],
+  "correct": 1,
+  "explanation": "3. Regel: Nach gleichmäßiger Störung nimmt die Beute rascher zu als der Räuber (Vorteil der Beute)."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Frage aus dem Bio-Unterricht: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "50.000000000000014 kJ",
+   "1666.6666666666667 kJ",
+   "15000 kJ",
+   "500.0000000000001 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^3 = 50.000000000000014 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Wie wird die Reizstärke im Nervensystem codiert?",
+  "options": [
+   "über die Amplitude einzelner AP",
+   "über die Temperatur",
+   "über die Frequenz der Aktionspotentiale",
+   "über die Farbe des Signals"
+  ],
+  "correct": 2,
+  "explanation": "Stärkere Reize erhöhen die AP-Frequenz (Frequenzcodierung), nicht die AP-Höhe."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 5 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "45",
+   "30",
+   "15",
+   "25"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 5 × 3^2 = 45."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Frage aus dem Bio-Unterricht: Die Bestände von Räuber und Beute schwanken periodisch um Mittelwerte. Welche Lotka-Volterra-Regel?",
+  "options": [
+   "2. Regel (konstante Mittelwerte)",
+   "3. Regel (Störung des Mittelwerts)",
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)"
+  ],
+  "correct": 3,
+  "explanation": "1. Regel: Die Populationsgrößen von Räuber und Beute schwanken periodisch, zeitlich versetzt."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wozu dient die Refraktärzeit?",
+  "options": [
+   "sie erzeugt das Ruhepotential dauerhaft",
+   "sie verstärkt jedes Signal",
+   "sie baut Neurotransmitter auf",
+   "sie sichert die Einbahn-Richtung und begrenzt die Frequenz der Erregung"
+  ],
+  "correct": 3,
+  "explanation": "In der Refraktärzeit ist die Membran unerregbar – das AP kann nur vorwärts laufen."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Frage aus dem Bio-Unterricht: Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "1000.0000000000002 kJ",
+   "5000 kJ",
+   "20000 kJ",
+   "10000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^2 = 1000.0000000000002 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Was hält den Ionengradienten am Ruhepotential aufrecht?",
+  "options": [
+   "freie Diffusion allein",
+   "die Myelinscheide",
+   "die Natrium-Kalium-Pumpe (unter ATP-Verbrauch)",
+   "die Neurotransmitter"
+  ],
+  "correct": 2,
+  "explanation": "Die Na⁺/K⁺-ATPase pumpt 3 Na⁺ raus und 2 K⁺ rein und erhält so den Gradienten."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Weißt du es? Was hält den Ionengradienten am Ruhepotential aufrecht?",
+  "options": [
+   "die Myelinscheide",
+   "die Natrium-Kalium-Pumpe (unter ATP-Verbrauch)",
+   "die Neurotransmitter",
+   "freie Diffusion allein"
+  ],
+  "correct": 1,
+  "explanation": "Die Na⁺/K⁺-ATPase pumpt 3 Na⁺ raus und 2 K⁺ rein und erhält so den Gradienten."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Biologie-Quiz: Warum folgt das Maximum der Räuberpopulation zeitlich dem Maximum der Beute?",
+  "options": [
+   "beide Maxima fallen exakt zusammen",
+   "der Räuber vermehrt sich erst, wenn viel Beute vorhanden ist",
+   "der Räuber vermehrt sich vor der Beute",
+   "die Beute frisst den Räuber"
+  ],
+  "correct": 1,
+  "explanation": "Die Räuberkurve ist der Beutekurve nachlaufend (phasenverschoben) – 1. Regel."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Biologie-Quiz: Was besagt das Alles-oder-Nichts-Prinzip des Aktionspotentials?",
+  "options": [
+   "das AP läuft rückwärts",
+   "es gibt beliebig viele AP-Stärken",
+   "ab dem Schwellenwert wird ein volles AP ausgelöst, sonst keines",
+   "die Stärke des AP hängt vom Reiz ab"
+  ],
+  "correct": 2,
+  "explanation": "Überschreitet der Reiz den Schwellenwert, entsteht ein vollständiges AP – unabhängig von der Reizstärke darüber."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Frage aus dem Bio-Unterricht: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 6 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "36",
+   "18",
+   "26",
+   "54"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 6 × 3^2 = 54."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Aufgabe: Nach welchem Prinzip passt ein Substrat in das aktive Zentrum eines Enzyms?",
+  "options": [
+   "Diffusionsprinzip",
+   "Schlüssel-Schloss-Prinzip",
+   "Reißverschlussprinzip",
+   "Zufallsprinzip"
+  ],
+  "correct": 1,
+  "explanation": "Substrat und aktives Zentrum passen räumlich zueinander (Schlüssel-Schloss / induced fit)."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Teste dein Wissen: Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "3333.3333333333335 kJ",
+   "30000 kJ",
+   "100.00000000000003 kJ",
+   "1000.0000000000002 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^3 = 100.00000000000003 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Weißt du es? Wie wird die Erregung an einer myelinisierten Nervenfaser weitergeleitet?",
+  "options": [
+   "kontinuierlich über die ganze Faser",
+   "saltatorisch (sprunghaft von Schnürring zu Schnürring)",
+   "gar nicht",
+   "nur rückwärts"
+  ],
+  "correct": 1,
+  "explanation": "An den Ranvier-Schnürringen springt das Aktionspotential – saltatorische, schnellere Leitung."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wähle die richtige Antwort. Nach welchem Prinzip passt ein Substrat in das aktive Zentrum eines Enzyms?",
+  "options": [
+   "Zufallsprinzip",
+   "Reißverschlussprinzip",
+   "Schlüssel-Schloss-Prinzip",
+   "Diffusionsprinzip"
+  ],
+  "correct": 2,
+  "explanation": "Substrat und aktives Zentrum passen räumlich zueinander (Schlüssel-Schloss / induced fit)."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Was besagt das Alles-oder-Nichts-Prinzip des Aktionspotentials?",
+  "options": [
+   "es gibt beliebig viele AP-Stärken",
+   "die Stärke des AP hängt vom Reiz ab",
+   "das AP läuft rückwärts",
+   "ab dem Schwellenwert wird ein volles AP ausgelöst, sonst keines"
+  ],
+  "correct": 3,
+  "explanation": "Überschreitet der Reiz den Schwellenwert, entsteht ein vollständiges AP – unabhängig von der Reizstärke darüber."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Weißt du es? Was ist ein Cofaktor bzw. Coenzym?",
+  "options": [
+   "ein Abbauprodukt",
+   "ein Nicht-Protein-Bestandteil, den manche Enzyme zur Funktion brauchen",
+   "das Endprodukt der Reaktion",
+   "das Substrat selbst"
+  ],
+  "correct": 1,
+  "explanation": "Coenzyme/Cofaktoren (z. B. Vitamine, Metallionen) unterstützen die Enzymfunktion."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "6400",
+   "12800",
+   "1200",
+   "2400"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^6 = 12800."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Teste dein Wissen: Die Bestände von Räuber und Beute schwanken periodisch um Mittelwerte. Welche Lotka-Volterra-Regel?",
+  "options": [
+   "keine der Regeln",
+   "2. Regel (konstante Mittelwerte)",
+   "1. Regel (periodische Schwankungen)",
+   "3. Regel (Störung des Mittelwerts)"
+  ],
+  "correct": 2,
+  "explanation": "1. Regel: Die Populationsgrößen von Räuber und Beute schwanken periodisch, zeitlich versetzt."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Teste dein Wissen: Nach welchem Prinzip passt ein Substrat in das aktive Zentrum eines Enzyms?",
+  "options": [
+   "Schlüssel-Schloss-Prinzip",
+   "Diffusionsprinzip",
+   "Zufallsprinzip",
+   "Reißverschlussprinzip"
+  ],
+  "correct": 0,
+  "explanation": "Substrat und aktives Zentrum passen räumlich zueinander (Schlüssel-Schloss / induced fit)."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wissenscheck Biologie: Nach welchem Prinzip passt ein Substrat in das aktive Zentrum eines Enzyms?",
+  "options": [
+   "Schlüssel-Schloss-Prinzip",
+   "Zufallsprinzip",
+   "Reißverschlussprinzip",
+   "Diffusionsprinzip"
+  ],
+  "correct": 0,
+  "explanation": "Substrat und aktives Zentrum passen räumlich zueinander (Schlüssel-Schloss / induced fit)."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "800",
+   "1600",
+   "250",
+   "500"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Wie wird die Erregung an einer myelinisierten Nervenfaser weitergeleitet?",
+  "options": [
+   "nur rückwärts",
+   "gar nicht",
+   "saltatorisch (sprunghaft von Schnürring zu Schnürring)",
+   "kontinuierlich über die ganze Faser"
+  ],
+  "correct": 2,
+  "explanation": "An den Ranvier-Schnürringen springt das Aktionspotential – saltatorische, schnellere Leitung."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Weißt du es? Was passiert bei allosterischer (nichtkompetitiver) Hemmung?",
+  "options": [
+   "er erhöht die Enzymmenge",
+   "der Hemmstoff bindet außerhalb des aktiven Zentrums und verändert dessen Form",
+   "er bindet direkt im aktiven Zentrum",
+   "er senkt die Temperatur"
+  ],
+  "correct": 1,
+  "explanation": "Der allosterische Hemmstoff bindet an anderer Stelle und ändert die Enzymstruktur."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Aufgabe: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "100.00000000000001 kJ",
+   "500 kJ",
+   "2000 kJ",
+   "1000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^2 = 100.00000000000001 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Biologie-Quiz: Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Calcium (Ca²⁺)",
+   "Natrium (Na⁺)",
+   "Chlorid (Cl⁻)",
+   "Kalium (K⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Bei der Repolarisation strömt K⁺ nach außen, das Potential wird wieder negativer."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "2500 kJ",
+   "500.0000000000001 kJ",
+   "5000 kJ",
+   "10000 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^2 = 500.0000000000001 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "8000",
+   "5000",
+   "2500",
+   "16000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Wähle die richtige Antwort. Warum folgt das Maximum der Räuberpopulation zeitlich dem Maximum der Beute?",
+  "options": [
+   "beide Maxima fallen exakt zusammen",
+   "der Räuber vermehrt sich vor der Beute",
+   "der Räuber vermehrt sich erst, wenn viel Beute vorhanden ist",
+   "die Beute frisst den Räuber"
+  ],
+  "correct": 2,
+  "explanation": "Die Räuberkurve ist der Beutekurve nachlaufend (phasenverschoben) – 1. Regel."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Wie wird das Signal an einer chemischen Synapse übertragen?",
+  "options": [
+   "durch Neurotransmitter über den synaptischen Spalt",
+   "durch Kalkbrücken",
+   "durch DNA-Übertragung",
+   "durch direkten Stromfluss über die Membran"
+  ],
+  "correct": 0,
+  "explanation": "An chemischen Synapsen setzt das Aktionspotential Neurotransmitter frei, die an Rezeptoren binden."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Wähle die richtige Antwort. Über lange Zeit bleiben die Durchschnittsgrößen beider Populationen konstant. Welche Regel?",
+  "options": [
+   "3. Regel (Störung des Mittelwerts)",
+   "2. Regel (Konstanz der Mittelwerte)",
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)"
+  ],
+  "correct": 1,
+  "explanation": "2. Regel: Die Mittelwerte der Populationen bleiben langfristig konstant."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wähle die richtige Antwort. Was geschieht bei einer kompetitiven Hemmung?",
+  "options": [
+   "das Substrat wird verdoppelt",
+   "der Hemmstoff bindet an anderer Stelle",
+   "der Hemmstoff besetzt das aktive Zentrum wie das Substrat",
+   "das Enzym wird dauerhaft zerstört"
+  ],
+  "correct": 2,
+  "explanation": "Beim kompetitiven Hemmstoff konkurriert er mit dem Substrat um das aktive Zentrum – durch mehr Substrat aufhebbar."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "800",
+   "500",
+   "1600",
+   "250"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Wozu dient die Refraktärzeit?",
+  "options": [
+   "sie erzeugt das Ruhepotential dauerhaft",
+   "sie sichert die Einbahn-Richtung und begrenzt die Frequenz der Erregung",
+   "sie baut Neurotransmitter auf",
+   "sie verstärkt jedes Signal"
+  ],
+  "correct": 1,
+  "explanation": "In der Refraktärzeit ist die Membran unerregbar – das AP kann nur vorwärts laufen."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Was bewirkt ein Enzym als Biokatalysator?",
+  "options": [
+   "es liefert Energie für die Reaktion",
+   "es setzt die Aktivierungsenergie herab",
+   "es verschiebt das Gleichgewicht",
+   "es erhöht die Aktivierungsenergie"
+  ],
+  "correct": 1,
+  "explanation": "Enzyme senken die Aktivierungsenergie und beschleunigen so die Reaktion, ohne sich zu verbrauchen."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Biologie-Quiz: Was bewirkt ein Enzym als Biokatalysator?",
+  "options": [
+   "es setzt die Aktivierungsenergie herab",
+   "es verschiebt das Gleichgewicht",
+   "es liefert Energie für die Reaktion",
+   "es erhöht die Aktivierungsenergie"
+  ],
+  "correct": 0,
+  "explanation": "Enzyme senken die Aktivierungsenergie und beschleunigen so die Reaktion, ohne sich zu verbrauchen."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wähle die richtige Antwort. Was passiert bei allosterischer (nichtkompetitiver) Hemmung?",
+  "options": [
+   "er bindet direkt im aktiven Zentrum",
+   "er senkt die Temperatur",
+   "der Hemmstoff bindet außerhalb des aktiven Zentrums und verändert dessen Form",
+   "er erhöht die Enzymmenge"
+  ],
+  "correct": 2,
+  "explanation": "Der allosterische Hemmstoff bindet an anderer Stelle und ändert die Enzymstruktur."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Frage aus dem Bio-Unterricht: Was besagt das Alles-oder-Nichts-Prinzip des Aktionspotentials?",
+  "options": [
+   "das AP läuft rückwärts",
+   "ab dem Schwellenwert wird ein volles AP ausgelöst, sonst keines",
+   "es gibt beliebig viele AP-Stärken",
+   "die Stärke des AP hängt vom Reiz ab"
+  ],
+  "correct": 1,
+  "explanation": "Überschreitet der Reiz den Schwellenwert, entsteht ein vollständiges AP – unabhängig von der Reizstärke darüber."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Weißt du es? Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "3333.3333333333335 kJ",
+   "1000.0000000000002 kJ",
+   "100.00000000000003 kJ",
+   "30000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^3 = 100.00000000000003 kJ."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Frage aus dem Bio-Unterricht: Über lange Zeit bleiben die Durchschnittsgrößen beider Populationen konstant. Welche Regel?",
+  "options": [
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)",
+   "2. Regel (Konstanz der Mittelwerte)",
+   "3. Regel (Störung des Mittelwerts)"
+  ],
+  "correct": 2,
+  "explanation": "2. Regel: Die Mittelwerte der Populationen bleiben langfristig konstant."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Aufgabe: Was geschieht mit einem Enzym oberhalb seiner Optimaltemperatur?",
+  "options": [
+   "es arbeitet immer schneller",
+   "es wird zum Substrat",
+   "es denaturiert und verliert die Wirkung",
+   "es vermehrt sich"
+  ],
+  "correct": 2,
+  "explanation": "Zu hohe Temperatur zerstört die Raumstruktur (Denaturierung) – das Enzym wird inaktiv."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Weißt du es? Die Bestände von Räuber und Beute schwanken periodisch um Mittelwerte. Welche Lotka-Volterra-Regel?",
+  "options": [
+   "1. Regel (periodische Schwankungen)",
+   "keine der Regeln",
+   "2. Regel (konstante Mittelwerte)",
+   "3. Regel (Störung des Mittelwerts)"
+  ],
+  "correct": 0,
+  "explanation": "1. Regel: Die Populationsgrößen von Räuber und Beute schwanken periodisch, zeitlich versetzt."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Welches Ion strömt bei der Depolarisation (Aktionspotential) in die Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Kalium (K⁺)",
+   "Calcium bleibt außen",
+   "Natrium (Na⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Bei der Depolarisation öffnen sich spannungsgesteuerte Na⁺-Kanäle, Na⁺ strömt ein."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wissenscheck Biologie: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "100.00000000000001 kJ",
+   "2000 kJ",
+   "1000 kJ",
+   "500 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^2 = 100.00000000000001 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "15000 kJ",
+   "50.000000000000014 kJ",
+   "500.0000000000001 kJ",
+   "1666.6666666666667 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^3 = 50.000000000000014 kJ."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Biologie-Quiz: Was geschieht mit einem Enzym oberhalb seiner Optimaltemperatur?",
+  "options": [
+   "es vermehrt sich",
+   "es arbeitet immer schneller",
+   "es wird zum Substrat",
+   "es denaturiert und verliert die Wirkung"
+  ],
+  "correct": 3,
+  "explanation": "Zu hohe Temperatur zerstört die Raumstruktur (Denaturierung) – das Enzym wird inaktiv."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "5000",
+   "8000",
+   "2500",
+   "16000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Aufgabe: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "333.3333333333333 kJ",
+   "10.000000000000002 kJ",
+   "100.00000000000001 kJ",
+   "3000 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^3 = 10.000000000000002 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wissenscheck Biologie: Wie wird die Reizstärke im Nervensystem codiert?",
+  "options": [
+   "über die Frequenz der Aktionspotentiale",
+   "über die Farbe des Signals",
+   "über die Temperatur",
+   "über die Amplitude einzelner AP"
+  ],
+  "correct": 0,
+  "explanation": "Stärkere Reize erhöhen die AP-Frequenz (Frequenzcodierung), nicht die AP-Höhe."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Wissenscheck Biologie: Warum folgt das Maximum der Räuberpopulation zeitlich dem Maximum der Beute?",
+  "options": [
+   "der Räuber vermehrt sich vor der Beute",
+   "der Räuber vermehrt sich erst, wenn viel Beute vorhanden ist",
+   "beide Maxima fallen exakt zusammen",
+   "die Beute frisst den Räuber"
+  ],
+  "correct": 1,
+  "explanation": "Die Räuberkurve ist der Beutekurve nachlaufend (phasenverschoben) – 1. Regel."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Beide Populationen werden gleichmäßig dezimiert; danach erholt sich die Beute schneller/stärker. Welche Regel?",
+  "options": [
+   "2. Regel (konstante Mittelwerte)",
+   "3. Regel (Störung der Mittelwerte)",
+   "1. Regel (periodische Schwankungen)",
+   "keine der Regeln"
+  ],
+  "correct": 1,
+  "explanation": "3. Regel: Nach gleichmäßiger Störung nimmt die Beute rascher zu als der Räuber (Vorteil der Beute)."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 8 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "28",
+   "24",
+   "72",
+   "48"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 8 × 3^2 = 72."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wähle die richtige Antwort. Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "100.00000000000003 kJ",
+   "30000 kJ",
+   "3333.3333333333335 kJ",
+   "1000.0000000000002 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^3 = 100.00000000000003 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "10000",
+   "5000",
+   "16000",
+   "32000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Biologie-Quiz: Was passiert bei allosterischer (nichtkompetitiver) Hemmung?",
+  "options": [
+   "er bindet direkt im aktiven Zentrum",
+   "er erhöht die Enzymmenge",
+   "er senkt die Temperatur",
+   "der Hemmstoff bindet außerhalb des aktiven Zentrums und verändert dessen Form"
+  ],
+  "correct": 3,
+  "explanation": "Der allosterische Hemmstoff bindet an anderer Stelle und ändert die Enzymstruktur."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Teste dein Wissen: Was passiert bei allosterischer (nichtkompetitiver) Hemmung?",
+  "options": [
+   "er erhöht die Enzymmenge",
+   "er senkt die Temperatur",
+   "er bindet direkt im aktiven Zentrum",
+   "der Hemmstoff bindet außerhalb des aktiven Zentrums und verändert dessen Form"
+  ],
+  "correct": 3,
+  "explanation": "Der allosterische Hemmstoff bindet an anderer Stelle und ändert die Enzymstruktur."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Weißt du es? Über lange Zeit bleiben die Durchschnittsgrößen beider Populationen konstant. Welche Regel?",
+  "options": [
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)",
+   "2. Regel (Konstanz der Mittelwerte)",
+   "3. Regel (Störung des Mittelwerts)"
+  ],
+  "correct": 2,
+  "explanation": "2. Regel: Die Mittelwerte der Populationen bleiben langfristig konstant."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wissenscheck Biologie: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 2 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "6",
+   "22",
+   "18",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 2 × 3^2 = 18."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Weißt du es? Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 11 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "66",
+   "99",
+   "33",
+   "31"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 11 × 3^2 = 99."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "2000",
+   "1500",
+   "3000",
+   "4000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "800",
+   "600",
+   "1600",
+   "1200"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "300",
+   "600",
+   "1600",
+   "3200"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^6 = 3200."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Aufgabe: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "200.00000000000003 kJ",
+   "2000 kJ",
+   "1000 kJ",
+   "4000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^2 = 200.00000000000003 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Wie groß ist das Ruhepotential einer typischen Nervenzelle etwa?",
+  "options": [
+   "etwa −70 mV",
+   "etwa +30 mV",
+   "etwa 0 mV",
+   "etwa −200 mV"
+  ],
+  "correct": 0,
+  "explanation": "Das Ruhepotential liegt bei rund −70 mV (innen negativ gegenüber außen)."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "1000.0000000000002 kJ",
+   "3333.3333333333335 kJ",
+   "30000 kJ",
+   "100.00000000000003 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^3 = 100.00000000000003 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wie wird die Erregung an einer myelinisierten Nervenfaser weitergeleitet?",
+  "options": [
+   "saltatorisch (sprunghaft von Schnürring zu Schnürring)",
+   "gar nicht",
+   "nur rückwärts",
+   "kontinuierlich über die ganze Faser"
+  ],
+  "correct": 0,
+  "explanation": "An den Ranvier-Schnürringen springt das Aktionspotential – saltatorische, schnellere Leitung."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "23",
+   "18",
+   "9",
+   "27"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Biologie-Quiz: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "27",
+   "9",
+   "18",
+   "23"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Biologie-Quiz: Die Bestände von Räuber und Beute schwanken periodisch um Mittelwerte. Welche Lotka-Volterra-Regel?",
+  "options": [
+   "keine der Regeln",
+   "2. Regel (konstante Mittelwerte)",
+   "3. Regel (Störung des Mittelwerts)",
+   "1. Regel (periodische Schwankungen)"
+  ],
+  "correct": 3,
+  "explanation": "1. Regel: Die Populationsgrößen von Räuber und Beute schwanken periodisch, zeitlich versetzt."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wissenscheck Biologie: Was passiert bei allosterischer (nichtkompetitiver) Hemmung?",
+  "options": [
+   "der Hemmstoff bindet außerhalb des aktiven Zentrums und verändert dessen Form",
+   "er senkt die Temperatur",
+   "er erhöht die Enzymmenge",
+   "er bindet direkt im aktiven Zentrum"
+  ],
+  "correct": 0,
+  "explanation": "Der allosterische Hemmstoff bindet an anderer Stelle und ändert die Enzymstruktur."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Biologie-Quiz: Wozu dient die Refraktärzeit?",
+  "options": [
+   "sie erzeugt das Ruhepotential dauerhaft",
+   "sie baut Neurotransmitter auf",
+   "sie verstärkt jedes Signal",
+   "sie sichert die Einbahn-Richtung und begrenzt die Frequenz der Erregung"
+  ],
+  "correct": 3,
+  "explanation": "In der Refraktärzeit ist die Membran unerregbar – das AP kann nur vorwärts laufen."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wie wird die Reizstärke im Nervensystem codiert?",
+  "options": [
+   "über die Frequenz der Aktionspotentiale",
+   "über die Amplitude einzelner AP",
+   "über die Temperatur",
+   "über die Farbe des Signals"
+  ],
+  "correct": 0,
+  "explanation": "Stärkere Reize erhöhen die AP-Frequenz (Frequenzcodierung), nicht die AP-Höhe."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Biologie-Quiz: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "15000 kJ",
+   "500.0000000000001 kJ",
+   "1666.6666666666667 kJ",
+   "50.000000000000014 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^3 = 50.000000000000014 kJ."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Teste dein Wissen: Warum folgt das Maximum der Räuberpopulation zeitlich dem Maximum der Beute?",
+  "options": [
+   "beide Maxima fallen exakt zusammen",
+   "der Räuber vermehrt sich vor der Beute",
+   "der Räuber vermehrt sich erst, wenn viel Beute vorhanden ist",
+   "die Beute frisst den Räuber"
+  ],
+  "correct": 2,
+  "explanation": "Die Räuberkurve ist der Beutekurve nachlaufend (phasenverschoben) – 1. Regel."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wissenscheck Biologie: Was besagt das Alles-oder-Nichts-Prinzip des Aktionspotentials?",
+  "options": [
+   "ab dem Schwellenwert wird ein volles AP ausgelöst, sonst keines",
+   "das AP läuft rückwärts",
+   "die Stärke des AP hängt vom Reiz ab",
+   "es gibt beliebig viele AP-Stärken"
+  ],
+  "correct": 0,
+  "explanation": "Überschreitet der Reiz den Schwellenwert, entsteht ein vollständiges AP – unabhängig von der Reizstärke darüber."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "800",
+   "600",
+   "300",
+   "400"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Aufgabe: Was passiert bei allosterischer (nichtkompetitiver) Hemmung?",
+  "options": [
+   "der Hemmstoff bindet außerhalb des aktiven Zentrums und verändert dessen Form",
+   "er bindet direkt im aktiven Zentrum",
+   "er senkt die Temperatur",
+   "er erhöht die Enzymmenge"
+  ],
+  "correct": 0,
+  "explanation": "Der allosterische Hemmstoff bindet an anderer Stelle und ändert die Enzymstruktur."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Wie wird die Erregung an einer myelinisierten Nervenfaser weitergeleitet?",
+  "options": [
+   "kontinuierlich über die ganze Faser",
+   "gar nicht",
+   "saltatorisch (sprunghaft von Schnürring zu Schnürring)",
+   "nur rückwärts"
+  ],
+  "correct": 2,
+  "explanation": "An den Ranvier-Schnürringen springt das Aktionspotential – saltatorische, schnellere Leitung."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Was hält den Ionengradienten am Ruhepotential aufrecht?",
+  "options": [
+   "die Neurotransmitter",
+   "die Myelinscheide",
+   "die Natrium-Kalium-Pumpe (unter ATP-Verbrauch)",
+   "freie Diffusion allein"
+  ],
+  "correct": 2,
+  "explanation": "Die Na⁺/K⁺-ATPase pumpt 3 Na⁺ raus und 2 K⁺ rein und erhält so den Gradienten."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wissenscheck Biologie: Wozu dient die Refraktärzeit?",
+  "options": [
+   "sie sichert die Einbahn-Richtung und begrenzt die Frequenz der Erregung",
+   "sie erzeugt das Ruhepotential dauerhaft",
+   "sie verstärkt jedes Signal",
+   "sie baut Neurotransmitter auf"
+  ],
+  "correct": 0,
+  "explanation": "In der Refraktärzeit ist die Membran unerregbar – das AP kann nur vorwärts laufen."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "1500",
+   "4000",
+   "3000",
+   "2000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Wie wird das Signal an einer chemischen Synapse übertragen?",
+  "options": [
+   "durch direkten Stromfluss über die Membran",
+   "durch Kalkbrücken",
+   "durch Neurotransmitter über den synaptischen Spalt",
+   "durch DNA-Übertragung"
+  ],
+  "correct": 2,
+  "explanation": "An chemischen Synapsen setzt das Aktionspotential Neurotransmitter frei, die an Rezeptoren binden."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "1600",
+   "250",
+   "500",
+   "800"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wähle die richtige Antwort. Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "50.000000000000014 kJ",
+   "1666.6666666666667 kJ",
+   "500.0000000000001 kJ",
+   "15000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^3 = 50.000000000000014 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Weißt du es? Was besagt das Alles-oder-Nichts-Prinzip des Aktionspotentials?",
+  "options": [
+   "die Stärke des AP hängt vom Reiz ab",
+   "es gibt beliebig viele AP-Stärken",
+   "das AP läuft rückwärts",
+   "ab dem Schwellenwert wird ein volles AP ausgelöst, sonst keines"
+  ],
+  "correct": 3,
+  "explanation": "Überschreitet der Reiz den Schwellenwert, entsteht ein vollständiges AP – unabhängig von der Reizstärke darüber."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "8000",
+   "2500",
+   "16000",
+   "5000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Was ist ein Cofaktor bzw. Coenzym?",
+  "options": [
+   "ein Nicht-Protein-Bestandteil, den manche Enzyme zur Funktion brauchen",
+   "ein Abbauprodukt",
+   "das Endprodukt der Reaktion",
+   "das Substrat selbst"
+  ],
+  "correct": 0,
+  "explanation": "Coenzyme/Cofaktoren (z. B. Vitamine, Metallionen) unterstützen die Enzymfunktion."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Wissenscheck Biologie: Beide Populationen werden gleichmäßig dezimiert; danach erholt sich die Beute schneller/stärker. Welche Regel?",
+  "options": [
+   "1. Regel (periodische Schwankungen)",
+   "3. Regel (Störung der Mittelwerte)",
+   "2. Regel (konstante Mittelwerte)",
+   "keine der Regeln"
+  ],
+  "correct": 1,
+  "explanation": "3. Regel: Nach gleichmäßiger Störung nimmt die Beute rascher zu als der Räuber (Vorteil der Beute)."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Frage aus dem Bio-Unterricht: Was hält den Ionengradienten am Ruhepotential aufrecht?",
+  "options": [
+   "die Neurotransmitter",
+   "freie Diffusion allein",
+   "die Natrium-Kalium-Pumpe (unter ATP-Verbrauch)",
+   "die Myelinscheide"
+  ],
+  "correct": 2,
+  "explanation": "Die Na⁺/K⁺-ATPase pumpt 3 Na⁺ raus und 2 K⁺ rein und erhält so den Gradienten."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "800",
+   "500",
+   "1600",
+   "250"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "6000",
+   "32000",
+   "16000",
+   "3000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Wie wird das Signal an einer chemischen Synapse übertragen?",
+  "options": [
+   "durch DNA-Übertragung",
+   "durch Kalkbrücken",
+   "durch Neurotransmitter über den synaptischen Spalt",
+   "durch direkten Stromfluss über die Membran"
+  ],
+  "correct": 2,
+  "explanation": "An chemischen Synapsen setzt das Aktionspotential Neurotransmitter frei, die an Rezeptoren binden."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Welches Ion strömt bei der Depolarisation (Aktionspotential) in die Zelle?",
+  "options": [
+   "Natrium (Na⁺)",
+   "Chlorid (Cl⁻)",
+   "Calcium bleibt außen",
+   "Kalium (K⁺)"
+  ],
+  "correct": 0,
+  "explanation": "Bei der Depolarisation öffnen sich spannungsgesteuerte Na⁺-Kanäle, Na⁺ strömt ein."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "3000",
+   "32000",
+   "6000",
+   "16000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "600",
+   "800",
+   "400",
+   "300"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Was besagt die RGT-Regel für enzymatische Reaktionen (bis zum Optimum)?",
+  "options": [
+   "10 °C mehr verdoppeln bis verdreifachen die Reaktionsgeschwindigkeit",
+   "nur Kälte beschleunigt",
+   "Temperatur hat keinen Einfluss",
+   "10 °C mehr halbieren die Geschwindigkeit"
+  ],
+  "correct": 0,
+  "explanation": "Die Reaktions-Geschwindigkeits-Temperatur-Regel: pro 10 °C etwa Faktor 2–3 – nur bis zum Temperaturoptimum."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wähle die richtige Antwort. Was besagt die RGT-Regel für enzymatische Reaktionen (bis zum Optimum)?",
+  "options": [
+   "nur Kälte beschleunigt",
+   "10 °C mehr verdoppeln bis verdreifachen die Reaktionsgeschwindigkeit",
+   "10 °C mehr halbieren die Geschwindigkeit",
+   "Temperatur hat keinen Einfluss"
+  ],
+  "correct": 1,
+  "explanation": "Die Reaktions-Geschwindigkeits-Temperatur-Regel: pro 10 °C etwa Faktor 2–3 – nur bis zum Temperaturoptimum."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Biologie-Quiz: Was hält den Ionengradienten am Ruhepotential aufrecht?",
+  "options": [
+   "die Neurotransmitter",
+   "die Myelinscheide",
+   "die Natrium-Kalium-Pumpe (unter ATP-Verbrauch)",
+   "freie Diffusion allein"
+  ],
+  "correct": 2,
+  "explanation": "Die Na⁺/K⁺-ATPase pumpt 3 Na⁺ raus und 2 K⁺ rein und erhält so den Gradienten."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "4000",
+   "1500",
+   "2000",
+   "3000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wähle die richtige Antwort. Was bewirkt ein Enzym als Biokatalysator?",
+  "options": [
+   "es erhöht die Aktivierungsenergie",
+   "es liefert Energie für die Reaktion",
+   "es verschiebt das Gleichgewicht",
+   "es setzt die Aktivierungsenergie herab"
+  ],
+  "correct": 3,
+  "explanation": "Enzyme senken die Aktivierungsenergie und beschleunigen so die Reaktion, ohne sich zu verbrauchen."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Wähle die richtige Antwort. Die Bestände von Räuber und Beute schwanken periodisch um Mittelwerte. Welche Lotka-Volterra-Regel?",
+  "options": [
+   "2. Regel (konstante Mittelwerte)",
+   "keine der Regeln",
+   "3. Regel (Störung des Mittelwerts)",
+   "1. Regel (periodische Schwankungen)"
+  ],
+  "correct": 3,
+  "explanation": "1. Regel: Die Populationsgrößen von Räuber und Beute schwanken periodisch, zeitlich versetzt."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 11 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "99",
+   "33",
+   "66",
+   "31"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 11 × 3^2 = 99."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "400",
+   "800",
+   "600",
+   "300"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Weißt du es? Warum folgt das Maximum der Räuberpopulation zeitlich dem Maximum der Beute?",
+  "options": [
+   "beide Maxima fallen exakt zusammen",
+   "die Beute frisst den Räuber",
+   "der Räuber vermehrt sich erst, wenn viel Beute vorhanden ist",
+   "der Räuber vermehrt sich vor der Beute"
+  ],
+  "correct": 2,
+  "explanation": "Die Räuberkurve ist der Beutekurve nachlaufend (phasenverschoben) – 1. Regel."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "500",
+   "800",
+   "250",
+   "1600"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Aufgabe: Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "100.00000000000003 kJ",
+   "1000.0000000000002 kJ",
+   "3333.3333333333335 kJ",
+   "30000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^3 = 100.00000000000003 kJ."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Aufgabe: Die Bestände von Räuber und Beute schwanken periodisch um Mittelwerte. Welche Lotka-Volterra-Regel?",
+  "options": [
+   "3. Regel (Störung des Mittelwerts)",
+   "2. Regel (konstante Mittelwerte)",
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)"
+  ],
+  "correct": 3,
+  "explanation": "1. Regel: Die Populationsgrößen von Räuber und Beute schwanken periodisch, zeitlich versetzt."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Frage aus dem Bio-Unterricht: Was geschieht mit einem Enzym oberhalb seiner Optimaltemperatur?",
+  "options": [
+   "es arbeitet immer schneller",
+   "es vermehrt sich",
+   "es denaturiert und verliert die Wirkung",
+   "es wird zum Substrat"
+  ],
+  "correct": 2,
+  "explanation": "Zu hohe Temperatur zerstört die Raumstruktur (Denaturierung) – das Enzym wird inaktiv."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Frage aus dem Bio-Unterricht: Beide Populationen werden gleichmäßig dezimiert; danach erholt sich die Beute schneller/stärker. Welche Regel?",
+  "options": [
+   "2. Regel (konstante Mittelwerte)",
+   "3. Regel (Störung der Mittelwerte)",
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)"
+  ],
+  "correct": 1,
+  "explanation": "3. Regel: Nach gleichmäßiger Störung nimmt die Beute rascher zu als der Räuber (Vorteil der Beute)."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "800",
+   "600",
+   "400",
+   "300"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Frage aus dem Bio-Unterricht: Wie wird die Erregung an einer myelinisierten Nervenfaser weitergeleitet?",
+  "options": [
+   "nur rückwärts",
+   "gar nicht",
+   "kontinuierlich über die ganze Faser",
+   "saltatorisch (sprunghaft von Schnürring zu Schnürring)"
+  ],
+  "correct": 3,
+  "explanation": "An den Ranvier-Schnürringen springt das Aktionspotential – saltatorische, schnellere Leitung."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Frage aus dem Bio-Unterricht: Welches Ion strömt bei der Depolarisation (Aktionspotential) in die Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Calcium bleibt außen",
+   "Kalium (K⁺)",
+   "Natrium (Na⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Bei der Depolarisation öffnen sich spannungsgesteuerte Na⁺-Kanäle, Na⁺ strömt ein."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "3200",
+   "2000",
+   "1000",
+   "6400"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "1600",
+   "500",
+   "800",
+   "250"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Was geschieht mit einem Enzym oberhalb seiner Optimaltemperatur?",
+  "options": [
+   "es arbeitet immer schneller",
+   "es wird zum Substrat",
+   "es vermehrt sich",
+   "es denaturiert und verliert die Wirkung"
+  ],
+  "correct": 3,
+  "explanation": "Zu hohe Temperatur zerstört die Raumstruktur (Denaturierung) – das Enzym wird inaktiv."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "1000.0000000000002 kJ",
+   "5000 kJ",
+   "10000 kJ",
+   "20000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^2 = 1000.0000000000002 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wissenscheck Biologie: Wie wird die Erregung an einer myelinisierten Nervenfaser weitergeleitet?",
+  "options": [
+   "gar nicht",
+   "kontinuierlich über die ganze Faser",
+   "saltatorisch (sprunghaft von Schnürring zu Schnürring)",
+   "nur rückwärts"
+  ],
+  "correct": 2,
+  "explanation": "An den Ranvier-Schnürringen springt das Aktionspotential – saltatorische, schnellere Leitung."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wissenscheck Biologie: Was ist ein Cofaktor bzw. Coenzym?",
+  "options": [
+   "das Endprodukt der Reaktion",
+   "das Substrat selbst",
+   "ein Abbauprodukt",
+   "ein Nicht-Protein-Bestandteil, den manche Enzyme zur Funktion brauchen"
+  ],
+  "correct": 3,
+  "explanation": "Coenzyme/Cofaktoren (z. B. Vitamine, Metallionen) unterstützen die Enzymfunktion."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Weißt du es? Welches Ion strömt bei der Depolarisation (Aktionspotential) in die Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Calcium bleibt außen",
+   "Kalium (K⁺)",
+   "Natrium (Na⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Bei der Depolarisation öffnen sich spannungsgesteuerte Na⁺-Kanäle, Na⁺ strömt ein."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "32000",
+   "64000",
+   "6000",
+   "12000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^6 = 64000."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Natrium (Na⁺)",
+   "Kalium (K⁺)",
+   "Chlorid (Cl⁻)",
+   "Calcium (Ca²⁺)"
+  ],
+  "correct": 1,
+  "explanation": "Bei der Repolarisation strömt K⁺ nach außen, das Potential wird wieder negativer."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wissenscheck Biologie: Was bezeichnet die Substratspezifität eines Enzyms?",
+  "options": [
+   "es verbraucht sich bei der Reaktion",
+   "es katalysiert jede Reaktion",
+   "es wirkt bei jeder Temperatur",
+   "es setzt nur ein bestimmtes Substrat um"
+  ],
+  "correct": 3,
+  "explanation": "Substratspezifisch heißt: Das Enzym erkennt und wandelt nur ein bestimmtes Substrat um."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Calcium (Ca²⁺)",
+   "Natrium (Na⁺)",
+   "Kalium (K⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Bei der Repolarisation strömt K⁺ nach außen, das Potential wird wieder negativer."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "2000",
+   "4000",
+   "1500",
+   "3000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Biologie-Quiz: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "200.00000000000003 kJ",
+   "2000 kJ",
+   "1000 kJ",
+   "4000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^2 = 200.00000000000003 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "500",
+   "800",
+   "250",
+   "1600"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "16000",
+   "5000",
+   "32000",
+   "10000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "5000",
+   "2500",
+   "16000",
+   "8000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Frage aus dem Bio-Unterricht: Was geschieht bei einer kompetitiven Hemmung?",
+  "options": [
+   "der Hemmstoff besetzt das aktive Zentrum wie das Substrat",
+   "das Enzym wird dauerhaft zerstört",
+   "das Substrat wird verdoppelt",
+   "der Hemmstoff bindet an anderer Stelle"
+  ],
+  "correct": 0,
+  "explanation": "Beim kompetitiven Hemmstoff konkurriert er mit dem Substrat um das aktive Zentrum – durch mehr Substrat aufhebbar."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Weißt du es? Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "10000 kJ",
+   "500.0000000000001 kJ",
+   "2500 kJ",
+   "5000 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^2 = 500.0000000000001 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Was besagt das Alles-oder-Nichts-Prinzip des Aktionspotentials?",
+  "options": [
+   "ab dem Schwellenwert wird ein volles AP ausgelöst, sonst keines",
+   "es gibt beliebig viele AP-Stärken",
+   "die Stärke des AP hängt vom Reiz ab",
+   "das AP läuft rückwärts"
+  ],
+  "correct": 0,
+  "explanation": "Überschreitet der Reiz den Schwellenwert, entsteht ein vollständiges AP – unabhängig von der Reizstärke darüber."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "21",
+   "27",
+   "63",
+   "42"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Frage aus dem Bio-Unterricht: Warum folgt das Maximum der Räuberpopulation zeitlich dem Maximum der Beute?",
+  "options": [
+   "der Räuber vermehrt sich erst, wenn viel Beute vorhanden ist",
+   "beide Maxima fallen exakt zusammen",
+   "die Beute frisst den Räuber",
+   "der Räuber vermehrt sich vor der Beute"
+  ],
+  "correct": 0,
+  "explanation": "Die Räuberkurve ist der Beutekurve nachlaufend (phasenverschoben) – 1. Regel."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Biologie-Quiz: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "100.00000000000001 kJ",
+   "1000 kJ",
+   "500 kJ",
+   "2000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^2 = 100.00000000000001 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wissenscheck Biologie: Wie wird das Signal an einer chemischen Synapse übertragen?",
+  "options": [
+   "durch Neurotransmitter über den synaptischen Spalt",
+   "durch direkten Stromfluss über die Membran",
+   "durch DNA-Übertragung",
+   "durch Kalkbrücken"
+  ],
+  "correct": 0,
+  "explanation": "An chemischen Synapsen setzt das Aktionspotential Neurotransmitter frei, die an Rezeptoren binden."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "200.00000000000003 kJ",
+   "4000 kJ",
+   "2000 kJ",
+   "1000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^2 = 200.00000000000003 kJ."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 5 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "30",
+   "15",
+   "25",
+   "45"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 5 × 3^2 = 45."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Teste dein Wissen: Was bewirkt ein Enzym als Biokatalysator?",
+  "options": [
+   "es liefert Energie für die Reaktion",
+   "es erhöht die Aktivierungsenergie",
+   "es verschiebt das Gleichgewicht",
+   "es setzt die Aktivierungsenergie herab"
+  ],
+  "correct": 3,
+  "explanation": "Enzyme senken die Aktivierungsenergie und beschleunigen so die Reaktion, ohne sich zu verbrauchen."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wähle die richtige Antwort. Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "6000 kJ",
+   "666.6666666666666 kJ",
+   "200.00000000000003 kJ",
+   "20.000000000000004 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^3 = 20.000000000000004 kJ."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Warum folgt das Maximum der Räuberpopulation zeitlich dem Maximum der Beute?",
+  "options": [
+   "die Beute frisst den Räuber",
+   "beide Maxima fallen exakt zusammen",
+   "der Räuber vermehrt sich erst, wenn viel Beute vorhanden ist",
+   "der Räuber vermehrt sich vor der Beute"
+  ],
+  "correct": 2,
+  "explanation": "Die Räuberkurve ist der Beutekurve nachlaufend (phasenverschoben) – 1. Regel."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wissenscheck Biologie: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "6000 kJ",
+   "200.00000000000003 kJ",
+   "20.000000000000004 kJ",
+   "666.6666666666666 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^3 = 20.000000000000004 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "800",
+   "1600",
+   "500",
+   "250"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 9 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "81",
+   "29",
+   "54",
+   "27"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 9 × 3^2 = 81."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Frage aus dem Bio-Unterricht: Wie groß ist das Ruhepotential einer typischen Nervenzelle etwa?",
+  "options": [
+   "etwa +30 mV",
+   "etwa −70 mV",
+   "etwa 0 mV",
+   "etwa −200 mV"
+  ],
+  "correct": 1,
+  "explanation": "Das Ruhepotential liegt bei rund −70 mV (innen negativ gegenüber außen)."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wähle die richtige Antwort. Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "100.00000000000001 kJ",
+   "1000 kJ",
+   "500 kJ",
+   "2000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^2 = 100.00000000000001 kJ."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Weißt du es? Nach welchem Prinzip passt ein Substrat in das aktive Zentrum eines Enzyms?",
+  "options": [
+   "Zufallsprinzip",
+   "Reißverschlussprinzip",
+   "Diffusionsprinzip",
+   "Schlüssel-Schloss-Prinzip"
+  ],
+  "correct": 3,
+  "explanation": "Substrat und aktives Zentrum passen räumlich zueinander (Schlüssel-Schloss / induced fit)."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Nach welchem Prinzip passt ein Substrat in das aktive Zentrum eines Enzyms?",
+  "options": [
+   "Schlüssel-Schloss-Prinzip",
+   "Zufallsprinzip",
+   "Diffusionsprinzip",
+   "Reißverschlussprinzip"
+  ],
+  "correct": 0,
+  "explanation": "Substrat und aktives Zentrum passen räumlich zueinander (Schlüssel-Schloss / induced fit)."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "12800",
+   "2400",
+   "6400",
+   "1200"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^6 = 12800."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wissenscheck Biologie: Was geschieht bei einer kompetitiven Hemmung?",
+  "options": [
+   "das Enzym wird dauerhaft zerstört",
+   "das Substrat wird verdoppelt",
+   "der Hemmstoff bindet an anderer Stelle",
+   "der Hemmstoff besetzt das aktive Zentrum wie das Substrat"
+  ],
+  "correct": 3,
+  "explanation": "Beim kompetitiven Hemmstoff konkurriert er mit dem Substrat um das aktive Zentrum – durch mehr Substrat aufhebbar."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Frage aus dem Bio-Unterricht: Nach welchem Prinzip passt ein Substrat in das aktive Zentrum eines Enzyms?",
+  "options": [
+   "Diffusionsprinzip",
+   "Zufallsprinzip",
+   "Schlüssel-Schloss-Prinzip",
+   "Reißverschlussprinzip"
+  ],
+  "correct": 2,
+  "explanation": "Substrat und aktives Zentrum passen räumlich zueinander (Schlüssel-Schloss / induced fit)."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Wie groß ist das Ruhepotential einer typischen Nervenzelle etwa?",
+  "options": [
+   "etwa +30 mV",
+   "etwa −70 mV",
+   "etwa 0 mV",
+   "etwa −200 mV"
+  ],
+  "correct": 1,
+  "explanation": "Das Ruhepotential liegt bei rund −70 mV (innen negativ gegenüber außen)."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wissenscheck Biologie: Wie groß ist das Ruhepotential einer typischen Nervenzelle etwa?",
+  "options": [
+   "etwa 0 mV",
+   "etwa −200 mV",
+   "etwa +30 mV",
+   "etwa −70 mV"
+  ],
+  "correct": 3,
+  "explanation": "Das Ruhepotential liegt bei rund −70 mV (innen negativ gegenüber außen)."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Wozu dient die Refraktärzeit?",
+  "options": [
+   "sie baut Neurotransmitter auf",
+   "sie erzeugt das Ruhepotential dauerhaft",
+   "sie verstärkt jedes Signal",
+   "sie sichert die Einbahn-Richtung und begrenzt die Frequenz der Erregung"
+  ],
+  "correct": 3,
+  "explanation": "In der Refraktärzeit ist die Membran unerregbar – das AP kann nur vorwärts laufen."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "8000",
+   "5000",
+   "2500",
+   "16000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Weißt du es? Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Kalium (K⁺)",
+   "Chlorid (Cl⁻)",
+   "Natrium (Na⁺)",
+   "Calcium (Ca²⁺)"
+  ],
+  "correct": 0,
+  "explanation": "Bei der Repolarisation strömt K⁺ nach außen, das Potential wird wieder negativer."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "8000",
+   "6000",
+   "4000",
+   "3000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Biologie-Quiz: Was geschieht bei einer kompetitiven Hemmung?",
+  "options": [
+   "das Enzym wird dauerhaft zerstört",
+   "der Hemmstoff bindet an anderer Stelle",
+   "das Substrat wird verdoppelt",
+   "der Hemmstoff besetzt das aktive Zentrum wie das Substrat"
+  ],
+  "correct": 3,
+  "explanation": "Beim kompetitiven Hemmstoff konkurriert er mit dem Substrat um das aktive Zentrum – durch mehr Substrat aufhebbar."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "1000",
+   "500",
+   "1600",
+   "3200"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Weißt du es? Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "500 kJ",
+   "2000 kJ",
+   "100.00000000000001 kJ",
+   "1000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^2 = 100.00000000000001 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Frage aus dem Bio-Unterricht: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "20.000000000000004 kJ",
+   "6000 kJ",
+   "200.00000000000003 kJ",
+   "666.6666666666666 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^3 = 20.000000000000004 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "2000",
+   "3000",
+   "1500",
+   "4000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Was geschieht bei einer kompetitiven Hemmung?",
+  "options": [
+   "der Hemmstoff bindet an anderer Stelle",
+   "der Hemmstoff besetzt das aktive Zentrum wie das Substrat",
+   "das Substrat wird verdoppelt",
+   "das Enzym wird dauerhaft zerstört"
+  ],
+  "correct": 1,
+  "explanation": "Beim kompetitiven Hemmstoff konkurriert er mit dem Substrat um das aktive Zentrum – durch mehr Substrat aufhebbar."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wähle die richtige Antwort. Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "2500 kJ",
+   "500.0000000000001 kJ",
+   "5000 kJ",
+   "10000 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^2 = 500.0000000000001 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Teste dein Wissen: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "1000 kJ",
+   "2000 kJ",
+   "200.00000000000003 kJ",
+   "4000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^2 = 200.00000000000003 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wissenscheck Biologie: Was hält den Ionengradienten am Ruhepotential aufrecht?",
+  "options": [
+   "freie Diffusion allein",
+   "die Natrium-Kalium-Pumpe (unter ATP-Verbrauch)",
+   "die Myelinscheide",
+   "die Neurotransmitter"
+  ],
+  "correct": 1,
+  "explanation": "Die Na⁺/K⁺-ATPase pumpt 3 Na⁺ raus und 2 K⁺ rein und erhält so den Gradienten."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Was bezeichnet die Substratspezifität eines Enzyms?",
+  "options": [
+   "es katalysiert jede Reaktion",
+   "es verbraucht sich bei der Reaktion",
+   "es setzt nur ein bestimmtes Substrat um",
+   "es wirkt bei jeder Temperatur"
+  ],
+  "correct": 2,
+  "explanation": "Substratspezifisch heißt: Das Enzym erkennt und wandelt nur ein bestimmtes Substrat um."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Wissenscheck Biologie: Über lange Zeit bleiben die Durchschnittsgrößen beider Populationen konstant. Welche Regel?",
+  "options": [
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)",
+   "3. Regel (Störung des Mittelwerts)",
+   "2. Regel (Konstanz der Mittelwerte)"
+  ],
+  "correct": 3,
+  "explanation": "2. Regel: Die Mittelwerte der Populationen bleiben langfristig konstant."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Teste dein Wissen: Was geschieht bei einer kompetitiven Hemmung?",
+  "options": [
+   "der Hemmstoff bindet an anderer Stelle",
+   "das Enzym wird dauerhaft zerstört",
+   "der Hemmstoff besetzt das aktive Zentrum wie das Substrat",
+   "das Substrat wird verdoppelt"
+  ],
+  "correct": 2,
+  "explanation": "Beim kompetitiven Hemmstoff konkurriert er mit dem Substrat um das aktive Zentrum – durch mehr Substrat aufhebbar."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Frage aus dem Bio-Unterricht: Wie wird das Signal an einer chemischen Synapse übertragen?",
+  "options": [
+   "durch Neurotransmitter über den synaptischen Spalt",
+   "durch DNA-Übertragung",
+   "durch direkten Stromfluss über die Membran",
+   "durch Kalkbrücken"
+  ],
+  "correct": 0,
+  "explanation": "An chemischen Synapsen setzt das Aktionspotential Neurotransmitter frei, die an Rezeptoren binden."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wissenscheck Biologie: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "50.000000000000014 kJ",
+   "500.0000000000001 kJ",
+   "1666.6666666666667 kJ",
+   "15000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^3 = 50.000000000000014 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Biologie-Quiz: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "200.00000000000003 kJ",
+   "666.6666666666666 kJ",
+   "20.000000000000004 kJ",
+   "6000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^3 = 20.000000000000004 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Weißt du es? Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "200.00000000000003 kJ",
+   "666.6666666666666 kJ",
+   "6000 kJ",
+   "20.000000000000004 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^3 = 20.000000000000004 kJ."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Was passiert bei allosterischer (nichtkompetitiver) Hemmung?",
+  "options": [
+   "er senkt die Temperatur",
+   "er erhöht die Enzymmenge",
+   "er bindet direkt im aktiven Zentrum",
+   "der Hemmstoff bindet außerhalb des aktiven Zentrums und verändert dessen Form"
+  ],
+  "correct": 3,
+  "explanation": "Der allosterische Hemmstoff bindet an anderer Stelle und ändert die Enzymstruktur."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wähle die richtige Antwort. Was bezeichnet die Substratspezifität eines Enzyms?",
+  "options": [
+   "es wirkt bei jeder Temperatur",
+   "es setzt nur ein bestimmtes Substrat um",
+   "es katalysiert jede Reaktion",
+   "es verbraucht sich bei der Reaktion"
+  ],
+  "correct": 1,
+  "explanation": "Substratspezifisch heißt: Das Enzym erkennt und wandelt nur ein bestimmtes Substrat um."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Frage aus dem Bio-Unterricht: Was ist ein Cofaktor bzw. Coenzym?",
+  "options": [
+   "ein Nicht-Protein-Bestandteil, den manche Enzyme zur Funktion brauchen",
+   "das Endprodukt der Reaktion",
+   "ein Abbauprodukt",
+   "das Substrat selbst"
+  ],
+  "correct": 0,
+  "explanation": "Coenzyme/Cofaktoren (z. B. Vitamine, Metallionen) unterstützen die Enzymfunktion."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "1600",
+   "500",
+   "3200",
+   "1000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wissenscheck Biologie: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 5 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "45",
+   "25",
+   "15",
+   "30"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 5 × 3^2 = 45."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "63",
+   "42",
+   "21",
+   "27"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Wozu dient die Refraktärzeit?",
+  "options": [
+   "sie baut Neurotransmitter auf",
+   "sie verstärkt jedes Signal",
+   "sie erzeugt das Ruhepotential dauerhaft",
+   "sie sichert die Einbahn-Richtung und begrenzt die Frequenz der Erregung"
+  ],
+  "correct": 3,
+  "explanation": "In der Refraktärzeit ist die Membran unerregbar – das AP kann nur vorwärts laufen."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "32000",
+   "64000",
+   "12000",
+   "6000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^6 = 64000."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Frage aus dem Bio-Unterricht: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "200.00000000000003 kJ",
+   "1000 kJ",
+   "2000 kJ",
+   "4000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^2 = 200.00000000000003 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "16000",
+   "5000",
+   "2500",
+   "8000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Biologie-Quiz: Was bezeichnet die Substratspezifität eines Enzyms?",
+  "options": [
+   "es wirkt bei jeder Temperatur",
+   "es setzt nur ein bestimmtes Substrat um",
+   "es verbraucht sich bei der Reaktion",
+   "es katalysiert jede Reaktion"
+  ],
+  "correct": 1,
+  "explanation": "Substratspezifisch heißt: Das Enzym erkennt und wandelt nur ein bestimmtes Substrat um."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "23",
+   "18",
+   "9",
+   "27"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "64000",
+   "12000",
+   "32000",
+   "6000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^6 = 64000."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Teste dein Wissen: Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "10000 kJ",
+   "1000.0000000000002 kJ",
+   "20000 kJ",
+   "5000 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^2 = 1000.0000000000002 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "8000",
+   "3000",
+   "6000",
+   "4000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Teste dein Wissen: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "200.00000000000003 kJ",
+   "666.6666666666666 kJ",
+   "20.000000000000004 kJ",
+   "6000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^3 = 20.000000000000004 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wissenscheck Biologie: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "5000 kJ",
+   "10000 kJ",
+   "2500 kJ",
+   "500.0000000000001 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^2 = 500.0000000000001 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Teste dein Wissen: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "1000 kJ",
+   "100.00000000000001 kJ",
+   "500 kJ",
+   "2000 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^2 = 100.00000000000001 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "800",
+   "600",
+   "1200",
+   "1600"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "300",
+   "3200",
+   "600",
+   "1600"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^6 = 3200."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "600",
+   "1600",
+   "1200",
+   "800"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wie groß ist das Ruhepotential einer typischen Nervenzelle etwa?",
+  "options": [
+   "etwa 0 mV",
+   "etwa −70 mV",
+   "etwa +30 mV",
+   "etwa −200 mV"
+  ],
+  "correct": 1,
+  "explanation": "Das Ruhepotential liegt bei rund −70 mV (innen negativ gegenüber außen)."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wissenscheck Biologie: Was bewirkt ein Enzym als Biokatalysator?",
+  "options": [
+   "es liefert Energie für die Reaktion",
+   "es setzt die Aktivierungsenergie herab",
+   "es erhöht die Aktivierungsenergie",
+   "es verschiebt das Gleichgewicht"
+  ],
+  "correct": 1,
+  "explanation": "Enzyme senken die Aktivierungsenergie und beschleunigen so die Reaktion, ohne sich zu verbrauchen."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Frage aus dem Bio-Unterricht: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 11 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "33",
+   "99",
+   "31",
+   "66"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 11 × 3^2 = 99."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Biologie-Quiz: Wie wird die Reizstärke im Nervensystem codiert?",
+  "options": [
+   "über die Amplitude einzelner AP",
+   "über die Temperatur",
+   "über die Frequenz der Aktionspotentiale",
+   "über die Farbe des Signals"
+  ],
+  "correct": 2,
+  "explanation": "Stärkere Reize erhöhen die AP-Frequenz (Frequenzcodierung), nicht die AP-Höhe."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wissenscheck Biologie: Was besagt die RGT-Regel für enzymatische Reaktionen (bis zum Optimum)?",
+  "options": [
+   "10 °C mehr verdoppeln bis verdreifachen die Reaktionsgeschwindigkeit",
+   "Temperatur hat keinen Einfluss",
+   "10 °C mehr halbieren die Geschwindigkeit",
+   "nur Kälte beschleunigt"
+  ],
+  "correct": 0,
+  "explanation": "Die Reaktions-Geschwindigkeits-Temperatur-Regel: pro 10 °C etwa Faktor 2–3 – nur bis zum Temperaturoptimum."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Biologie-Quiz: Über lange Zeit bleiben die Durchschnittsgrößen beider Populationen konstant. Welche Regel?",
+  "options": [
+   "keine der Regeln",
+   "3. Regel (Störung des Mittelwerts)",
+   "1. Regel (periodische Schwankungen)",
+   "2. Regel (Konstanz der Mittelwerte)"
+  ],
+  "correct": 3,
+  "explanation": "2. Regel: Die Mittelwerte der Populationen bleiben langfristig konstant."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wissenscheck Biologie: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "10.000000000000002 kJ",
+   "333.3333333333333 kJ",
+   "100.00000000000001 kJ",
+   "3000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^3 = 10.000000000000002 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Teste dein Wissen: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "500.0000000000001 kJ",
+   "15000 kJ",
+   "50.000000000000014 kJ",
+   "1666.6666666666667 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^3 = 50.000000000000014 kJ."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Aufgabe: Was geschieht bei einer kompetitiven Hemmung?",
+  "options": [
+   "das Substrat wird verdoppelt",
+   "der Hemmstoff bindet an anderer Stelle",
+   "der Hemmstoff besetzt das aktive Zentrum wie das Substrat",
+   "das Enzym wird dauerhaft zerstört"
+  ],
+  "correct": 2,
+  "explanation": "Beim kompetitiven Hemmstoff konkurriert er mit dem Substrat um das aktive Zentrum – durch mehr Substrat aufhebbar."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "5000",
+   "10000",
+   "32000",
+   "16000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "150",
+   "400",
+   "200",
+   "300"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Biologie-Quiz: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "10.000000000000002 kJ",
+   "333.3333333333333 kJ",
+   "100.00000000000001 kJ",
+   "3000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^3 = 10.000000000000002 kJ."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Teste dein Wissen: Beide Populationen werden gleichmäßig dezimiert; danach erholt sich die Beute schneller/stärker. Welche Regel?",
+  "options": [
+   "keine der Regeln",
+   "3. Regel (Störung der Mittelwerte)",
+   "1. Regel (periodische Schwankungen)",
+   "2. Regel (konstante Mittelwerte)"
+  ],
+  "correct": 1,
+  "explanation": "3. Regel: Nach gleichmäßiger Störung nimmt die Beute rascher zu als der Räuber (Vorteil der Beute)."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Weißt du es? Was besagt die RGT-Regel für enzymatische Reaktionen (bis zum Optimum)?",
+  "options": [
+   "10 °C mehr verdoppeln bis verdreifachen die Reaktionsgeschwindigkeit",
+   "nur Kälte beschleunigt",
+   "Temperatur hat keinen Einfluss",
+   "10 °C mehr halbieren die Geschwindigkeit"
+  ],
+  "correct": 0,
+  "explanation": "Die Reaktions-Geschwindigkeits-Temperatur-Regel: pro 10 °C etwa Faktor 2–3 – nur bis zum Temperaturoptimum."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "1200",
+   "800",
+   "1600",
+   "600"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Weißt du es? Wie wird die Reizstärke im Nervensystem codiert?",
+  "options": [
+   "über die Farbe des Signals",
+   "über die Amplitude einzelner AP",
+   "über die Temperatur",
+   "über die Frequenz der Aktionspotentiale"
+  ],
+  "correct": 3,
+  "explanation": "Stärkere Reize erhöhen die AP-Frequenz (Frequenzcodierung), nicht die AP-Höhe."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "500",
+   "3200",
+   "1000",
+   "1600"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "64000",
+   "32000",
+   "6000",
+   "12000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^6 = 64000."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Frage aus dem Bio-Unterricht: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "100.00000000000001 kJ",
+   "500 kJ",
+   "1000 kJ",
+   "2000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^2 = 100.00000000000001 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "32000",
+   "3000",
+   "6000",
+   "16000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Aufgabe: Über lange Zeit bleiben die Durchschnittsgrößen beider Populationen konstant. Welche Regel?",
+  "options": [
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)",
+   "3. Regel (Störung des Mittelwerts)",
+   "2. Regel (Konstanz der Mittelwerte)"
+  ],
+  "correct": 3,
+  "explanation": "2. Regel: Die Mittelwerte der Populationen bleiben langfristig konstant."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Weißt du es? Beide Populationen werden gleichmäßig dezimiert; danach erholt sich die Beute schneller/stärker. Welche Regel?",
+  "options": [
+   "1. Regel (periodische Schwankungen)",
+   "keine der Regeln",
+   "2. Regel (konstante Mittelwerte)",
+   "3. Regel (Störung der Mittelwerte)"
+  ],
+  "correct": 3,
+  "explanation": "3. Regel: Nach gleichmäßiger Störung nimmt die Beute rascher zu als der Räuber (Vorteil der Beute)."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wähle die richtige Antwort. Was geschieht mit einem Enzym oberhalb seiner Optimaltemperatur?",
+  "options": [
+   "es denaturiert und verliert die Wirkung",
+   "es vermehrt sich",
+   "es wird zum Substrat",
+   "es arbeitet immer schneller"
+  ],
+  "correct": 0,
+  "explanation": "Zu hohe Temperatur zerstört die Raumstruktur (Denaturierung) – das Enzym wird inaktiv."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Biologie-Quiz: Wie wird das Signal an einer chemischen Synapse übertragen?",
+  "options": [
+   "durch DNA-Übertragung",
+   "durch Neurotransmitter über den synaptischen Spalt",
+   "durch Kalkbrücken",
+   "durch direkten Stromfluss über die Membran"
+  ],
+  "correct": 1,
+  "explanation": "An chemischen Synapsen setzt das Aktionspotential Neurotransmitter frei, die an Rezeptoren binden."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "63",
+   "21",
+   "27",
+   "42"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Aufgabe: Was bezeichnet die Substratspezifität eines Enzyms?",
+  "options": [
+   "es verbraucht sich bei der Reaktion",
+   "es wirkt bei jeder Temperatur",
+   "es setzt nur ein bestimmtes Substrat um",
+   "es katalysiert jede Reaktion"
+  ],
+  "correct": 2,
+  "explanation": "Substratspezifisch heißt: Das Enzym erkennt und wandelt nur ein bestimmtes Substrat um."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "600",
+   "3200",
+   "6400"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Weißt du es? Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "2000 kJ",
+   "1000 kJ",
+   "4000 kJ",
+   "200.00000000000003 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^2 = 200.00000000000003 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Welches Ion strömt bei der Depolarisation (Aktionspotential) in die Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Kalium (K⁺)",
+   "Calcium bleibt außen",
+   "Natrium (Na⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Bei der Depolarisation öffnen sich spannungsgesteuerte Na⁺-Kanäle, Na⁺ strömt ein."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "6000",
+   "8000",
+   "3000",
+   "4000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 5 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "15",
+   "30",
+   "25",
+   "45"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 5 × 3^2 = 45."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Natrium (Na⁺)",
+   "Kalium (K⁺)",
+   "Chlorid (Cl⁻)",
+   "Calcium (Ca²⁺)"
+  ],
+  "correct": 1,
+  "explanation": "Bei der Repolarisation strömt K⁺ nach außen, das Potential wird wieder negativer."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wähle die richtige Antwort. Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "1000.0000000000002 kJ",
+   "20000 kJ",
+   "10000 kJ",
+   "5000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^2 = 1000.0000000000002 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "4000",
+   "1500",
+   "2000",
+   "3000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 6 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "36",
+   "18",
+   "26",
+   "54"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 6 × 3^2 = 54."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Was hält den Ionengradienten am Ruhepotential aufrecht?",
+  "options": [
+   "die Myelinscheide",
+   "freie Diffusion allein",
+   "die Neurotransmitter",
+   "die Natrium-Kalium-Pumpe (unter ATP-Verbrauch)"
+  ],
+  "correct": 3,
+  "explanation": "Die Na⁺/K⁺-ATPase pumpt 3 Na⁺ raus und 2 K⁺ rein und erhält so den Gradienten."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Biologie-Quiz: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 5 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "25",
+   "30",
+   "45",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 5 × 3^2 = 45."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wähle die richtige Antwort. Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "3000 kJ",
+   "333.3333333333333 kJ",
+   "100.00000000000001 kJ",
+   "10.000000000000002 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^3 = 10.000000000000002 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wissenscheck Biologie: Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "1000.0000000000002 kJ",
+   "100.00000000000003 kJ",
+   "30000 kJ",
+   "3333.3333333333335 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^3 = 100.00000000000003 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "8000",
+   "3000",
+   "4000",
+   "6000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "300",
+   "400",
+   "600",
+   "800"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 11 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "31",
+   "99",
+   "66",
+   "33"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 11 × 3^2 = 99."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Aufgabe: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "50.000000000000014 kJ",
+   "500.0000000000001 kJ",
+   "15000 kJ",
+   "1666.6666666666667 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^3 = 50.000000000000014 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "5000",
+   "2500",
+   "16000",
+   "8000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Biologie-Quiz: Welches Ion strömt bei der Depolarisation (Aktionspotential) in die Zelle?",
+  "options": [
+   "Chlorid (Cl⁻)",
+   "Kalium (K⁺)",
+   "Calcium bleibt außen",
+   "Natrium (Na⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Bei der Depolarisation öffnen sich spannungsgesteuerte Na⁺-Kanäle, Na⁺ strömt ein."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Biologie-Quiz: Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "20000 kJ",
+   "1000.0000000000002 kJ",
+   "10000 kJ",
+   "5000 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^2 = 1000.0000000000002 kJ."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Frage aus dem Bio-Unterricht: Was passiert bei allosterischer (nichtkompetitiver) Hemmung?",
+  "options": [
+   "der Hemmstoff bindet außerhalb des aktiven Zentrums und verändert dessen Form",
+   "er bindet direkt im aktiven Zentrum",
+   "er erhöht die Enzymmenge",
+   "er senkt die Temperatur"
+  ],
+  "correct": 0,
+  "explanation": "Der allosterische Hemmstoff bindet an anderer Stelle und ändert die Enzymstruktur."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Wie wird die Erregung an einer myelinisierten Nervenfaser weitergeleitet?",
+  "options": [
+   "saltatorisch (sprunghaft von Schnürring zu Schnürring)",
+   "kontinuierlich über die ganze Faser",
+   "nur rückwärts",
+   "gar nicht"
+  ],
+  "correct": 0,
+  "explanation": "An den Ranvier-Schnürringen springt das Aktionspotential – saltatorische, schnellere Leitung."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "1500",
+   "3000",
+   "2000",
+   "4000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "8000",
+   "16000",
+   "2500",
+   "5000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 9 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "29",
+   "54",
+   "27",
+   "81"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 9 × 3^2 = 81."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 2 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "12",
+   "22",
+   "18",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 2 × 3^2 = 18."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "200",
+   "400",
+   "300",
+   "150"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "800",
+   "600",
+   "400",
+   "300"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Frage aus dem Bio-Unterricht: Wie wird die Reizstärke im Nervensystem codiert?",
+  "options": [
+   "über die Temperatur",
+   "über die Amplitude einzelner AP",
+   "über die Farbe des Signals",
+   "über die Frequenz der Aktionspotentiale"
+  ],
+  "correct": 3,
+  "explanation": "Stärkere Reize erhöhen die AP-Frequenz (Frequenzcodierung), nicht die AP-Höhe."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "27",
+   "21",
+   "63",
+   "42"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Frage aus dem Bio-Unterricht: Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Natrium (Na⁺)",
+   "Kalium (K⁺)",
+   "Chlorid (Cl⁻)",
+   "Calcium (Ca²⁺)"
+  ],
+  "correct": 1,
+  "explanation": "Bei der Repolarisation strömt K⁺ nach außen, das Potential wird wieder negativer."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "1000",
+   "500",
+   "3200",
+   "1600"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Aufgabe: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "10000 kJ",
+   "2500 kJ",
+   "5000 kJ",
+   "500.0000000000001 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^2 = 500.0000000000001 kJ."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Biologie-Quiz: Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "1000.0000000000002 kJ",
+   "3333.3333333333335 kJ",
+   "100.00000000000003 kJ",
+   "30000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^3 = 100.00000000000003 kJ."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Frage aus dem Bio-Unterricht: Was bewirkt ein Enzym als Biokatalysator?",
+  "options": [
+   "es setzt die Aktivierungsenergie herab",
+   "es erhöht die Aktivierungsenergie",
+   "es liefert Energie für die Reaktion",
+   "es verschiebt das Gleichgewicht"
+  ],
+  "correct": 0,
+  "explanation": "Enzyme senken die Aktivierungsenergie und beschleunigen so die Reaktion, ohne sich zu verbrauchen."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Weißt du es? Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "15000 kJ",
+   "50.000000000000014 kJ",
+   "500.0000000000001 kJ",
+   "1666.6666666666667 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^3 = 50.000000000000014 kJ."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Biologie-Quiz: Beide Populationen werden gleichmäßig dezimiert; danach erholt sich die Beute schneller/stärker. Welche Regel?",
+  "options": [
+   "3. Regel (Störung der Mittelwerte)",
+   "2. Regel (konstante Mittelwerte)",
+   "keine der Regeln",
+   "1. Regel (periodische Schwankungen)"
+  ],
+  "correct": 0,
+  "explanation": "3. Regel: Nach gleichmäßiger Störung nimmt die Beute rascher zu als der Räuber (Vorteil der Beute)."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "600",
+   "1200",
+   "800",
+   "1600"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "6000",
+   "12000",
+   "32000",
+   "64000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^6 = 64000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "600",
+   "6400",
+   "3200"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "32000",
+   "6000",
+   "12000",
+   "64000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^6 = 64000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "500",
+   "250",
+   "800",
+   "1600"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "6400",
+   "600",
+   "3200"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Teste dein Wissen: Was bezeichnet die Substratspezifität eines Enzyms?",
+  "options": [
+   "es wirkt bei jeder Temperatur",
+   "es katalysiert jede Reaktion",
+   "es verbraucht sich bei der Reaktion",
+   "es setzt nur ein bestimmtes Substrat um"
+  ],
+  "correct": 3,
+  "explanation": "Substratspezifisch heißt: Das Enzym erkennt und wandelt nur ein bestimmtes Substrat um."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Weißt du es? Wie groß ist das Ruhepotential einer typischen Nervenzelle etwa?",
+  "options": [
+   "etwa −200 mV",
+   "etwa −70 mV",
+   "etwa +30 mV",
+   "etwa 0 mV"
+  ],
+  "correct": 1,
+  "explanation": "Das Ruhepotential liegt bei rund −70 mV (innen negativ gegenüber außen)."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "5000",
+   "8000",
+   "16000",
+   "2500"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Biologie-Quiz: Was ist ein Cofaktor bzw. Coenzym?",
+  "options": [
+   "das Substrat selbst",
+   "ein Nicht-Protein-Bestandteil, den manche Enzyme zur Funktion brauchen",
+   "ein Abbauprodukt",
+   "das Endprodukt der Reaktion"
+  ],
+  "correct": 1,
+  "explanation": "Coenzyme/Cofaktoren (z. B. Vitamine, Metallionen) unterstützen die Enzymfunktion."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "1600",
+   "1000",
+   "3200",
+   "500"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Lotka-Volterra",
+  "question": "Aufgabe: Warum folgt das Maximum der Räuberpopulation zeitlich dem Maximum der Beute?",
+  "options": [
+   "die Beute frisst den Räuber",
+   "der Räuber vermehrt sich erst, wenn viel Beute vorhanden ist",
+   "beide Maxima fallen exakt zusammen",
+   "der Räuber vermehrt sich vor der Beute"
+  ],
+  "correct": 1,
+  "explanation": "Die Räuberkurve ist der Beutekurve nachlaufend (phasenverschoben) – 1. Regel."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "42",
+   "27",
+   "21",
+   "63"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "6000",
+   "16000",
+   "3000",
+   "32000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Wähle die richtige Antwort. Was ist ein Cofaktor bzw. Coenzym?",
+  "options": [
+   "ein Nicht-Protein-Bestandteil, den manche Enzyme zur Funktion brauchen",
+   "ein Abbauprodukt",
+   "das Substrat selbst",
+   "das Endprodukt der Reaktion"
+  ],
+  "correct": 0,
+  "explanation": "Coenzyme/Cofaktoren (z. B. Vitamine, Metallionen) unterstützen die Enzymfunktion."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "10000",
+   "5000",
+   "16000",
+   "32000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Aufgabe: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "20.000000000000004 kJ",
+   "6000 kJ",
+   "200.00000000000003 kJ",
+   "666.6666666666666 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^3 = 20.000000000000004 kJ."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Was besagt das Alles-oder-Nichts-Prinzip des Aktionspotentials?",
+  "options": [
+   "die Stärke des AP hängt vom Reiz ab",
+   "es gibt beliebig viele AP-Stärken",
+   "das AP läuft rückwärts",
+   "ab dem Schwellenwert wird ein volles AP ausgelöst, sonst keines"
+  ],
+  "correct": 3,
+  "explanation": "Überschreitet der Reiz den Schwellenwert, entsteht ein vollständiges AP – unabhängig von der Reizstärke darüber."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Weißt du es? Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "3000 kJ",
+   "100.00000000000001 kJ",
+   "333.3333333333333 kJ",
+   "10.000000000000002 kJ"
+  ],
+  "correct": 3,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^3 = 10.000000000000002 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "500",
+   "1600",
+   "1000",
+   "3200"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Natrium (Na⁺)",
+   "Calcium (Ca²⁺)",
+   "Chlorid (Cl⁻)",
+   "Kalium (K⁺)"
+  ],
+  "correct": 3,
+  "explanation": "Bei der Repolarisation strömt K⁺ nach außen, das Potential wird wieder negativer."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "1500",
+   "3000",
+   "2000",
+   "4000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wissenscheck Biologie: Welches Ion strömt bei der Depolarisation (Aktionspotential) in die Zelle?",
+  "options": [
+   "Calcium bleibt außen",
+   "Natrium (Na⁺)",
+   "Kalium (K⁺)",
+   "Chlorid (Cl⁻)"
+  ],
+  "correct": 1,
+  "explanation": "Bei der Depolarisation öffnen sich spannungsgesteuerte Na⁺-Kanäle, Na⁺ strömt ein."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Aufgabe: Was bewirkt ein Enzym als Biokatalysator?",
+  "options": [
+   "es erhöht die Aktivierungsenergie",
+   "es liefert Energie für die Reaktion",
+   "es verschiebt das Gleichgewicht",
+   "es setzt die Aktivierungsenergie herab"
+  ],
+  "correct": 3,
+  "explanation": "Enzyme senken die Aktivierungsenergie und beschleunigen so die Reaktion, ohne sich zu verbrauchen."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "3000",
+   "2000",
+   "4000",
+   "1500"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Weißt du es? Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 12 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "108",
+   "36",
+   "32",
+   "72"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 12 × 3^2 = 108."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "10000",
+   "16000",
+   "5000",
+   "32000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Wissenscheck Biologie: Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "200.00000000000003 kJ",
+   "2000 kJ",
+   "4000 kJ",
+   "1000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^2 = 200.00000000000003 kJ."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 8 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "48",
+   "28",
+   "72",
+   "24"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 8 × 3^2 = 72."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wähle die richtige Antwort. Wie groß ist das Ruhepotential einer typischen Nervenzelle etwa?",
+  "options": [
+   "etwa −200 mV",
+   "etwa +30 mV",
+   "etwa 0 mV",
+   "etwa −70 mV"
+  ],
+  "correct": 3,
+  "explanation": "Das Ruhepotential liegt bei rund −70 mV (innen negativ gegenüber außen)."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 2 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "6",
+   "12",
+   "18",
+   "22"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 2 × 3^2 = 18."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "400",
+   "600",
+   "800",
+   "300"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "12000",
+   "6000",
+   "64000",
+   "32000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^6 = 64000."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Biologie-Quiz: Wie wird die Erregung an einer myelinisierten Nervenfaser weitergeleitet?",
+  "options": [
+   "saltatorisch (sprunghaft von Schnürring zu Schnürring)",
+   "nur rückwärts",
+   "kontinuierlich über die ganze Faser",
+   "gar nicht"
+  ],
+  "correct": 0,
+  "explanation": "An den Ranvier-Schnürringen springt das Aktionspotential – saltatorische, schnellere Leitung."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "8000",
+   "6000",
+   "3000",
+   "4000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Weißt du es? Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "27",
+   "18",
+   "9",
+   "23"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Weißt du es? Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 9 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "81",
+   "29",
+   "27",
+   "54"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 9 × 3^2 = 81."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "3200",
+   "6400",
+   "1000",
+   "2000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Weißt du es? Was geschieht mit einem Enzym oberhalb seiner Optimaltemperatur?",
+  "options": [
+   "es wird zum Substrat",
+   "es denaturiert und verliert die Wirkung",
+   "es arbeitet immer schneller",
+   "es vermehrt sich"
+  ],
+  "correct": 1,
+  "explanation": "Zu hohe Temperatur zerstört die Raumstruktur (Denaturierung) – das Enzym wird inaktiv."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "12000",
+   "6000",
+   "64000",
+   "32000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^6 = 64000."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Biologie-Quiz: Was besagt die RGT-Regel für enzymatische Reaktionen (bis zum Optimum)?",
+  "options": [
+   "10 °C mehr halbieren die Geschwindigkeit",
+   "10 °C mehr verdoppeln bis verdreifachen die Reaktionsgeschwindigkeit",
+   "nur Kälte beschleunigt",
+   "Temperatur hat keinen Einfluss"
+  ],
+  "correct": 1,
+  "explanation": "Die Reaktions-Geschwindigkeits-Temperatur-Regel: pro 10 °C etwa Faktor 2–3 – nur bis zum Temperaturoptimum."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "3000",
+   "8000",
+   "4000",
+   "6000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "3200",
+   "500",
+   "1000",
+   "1600"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Frage aus dem Bio-Unterricht: Was bezeichnet die Substratspezifität eines Enzyms?",
+  "options": [
+   "es setzt nur ein bestimmtes Substrat um",
+   "es verbraucht sich bei der Reaktion",
+   "es katalysiert jede Reaktion",
+   "es wirkt bei jeder Temperatur"
+  ],
+  "correct": 0,
+  "explanation": "Substratspezifisch heißt: Das Enzym erkennt und wandelt nur ein bestimmtes Substrat um."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "2400",
+   "12800",
+   "6400"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^6 = 12800."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Teste dein Wissen: Was geschieht mit einem Enzym oberhalb seiner Optimaltemperatur?",
+  "options": [
+   "es denaturiert und verliert die Wirkung",
+   "es arbeitet immer schneller",
+   "es vermehrt sich",
+   "es wird zum Substrat"
+  ],
+  "correct": 0,
+  "explanation": "Zu hohe Temperatur zerstört die Raumstruktur (Denaturierung) – das Enzym wird inaktiv."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Weißt du es? Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 8 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "24",
+   "48",
+   "72",
+   "28"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 8 × 3^2 = 72."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Aufgabe: Was ist ein Cofaktor bzw. Coenzym?",
+  "options": [
+   "das Substrat selbst",
+   "ein Abbauprodukt",
+   "das Endprodukt der Reaktion",
+   "ein Nicht-Protein-Bestandteil, den manche Enzyme zur Funktion brauchen"
+  ],
+  "correct": 3,
+  "explanation": "Coenzyme/Cofaktoren (z. B. Vitamine, Metallionen) unterstützen die Enzymfunktion."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Teste dein Wissen: Was besagt die RGT-Regel für enzymatische Reaktionen (bis zum Optimum)?",
+  "options": [
+   "Temperatur hat keinen Einfluss",
+   "10 °C mehr verdoppeln bis verdreifachen die Reaktionsgeschwindigkeit",
+   "10 °C mehr halbieren die Geschwindigkeit",
+   "nur Kälte beschleunigt"
+  ],
+  "correct": 1,
+  "explanation": "Die Reaktions-Geschwindigkeits-Temperatur-Regel: pro 10 °C etwa Faktor 2–3 – nur bis zum Temperaturoptimum."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "300",
+   "3200",
+   "1600",
+   "600"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^6 = 3200."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "100.00000000000001 kJ",
+   "1000 kJ",
+   "500 kJ",
+   "2000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^2 = 100.00000000000001 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "600",
+   "300",
+   "800",
+   "400"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 12 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "36",
+   "72",
+   "108",
+   "32"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 12 × 3^2 = 108."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 5 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "45",
+   "15",
+   "30",
+   "25"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 5 × 3^2 = 45."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "6400",
+   "3200",
+   "1000",
+   "2000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "8000",
+   "16000",
+   "2500",
+   "5000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Frage aus dem Bio-Unterricht: Wozu dient die Refraktärzeit?",
+  "options": [
+   "sie sichert die Einbahn-Richtung und begrenzt die Frequenz der Erregung",
+   "sie erzeugt das Ruhepotential dauerhaft",
+   "sie verstärkt jedes Signal",
+   "sie baut Neurotransmitter auf"
+  ],
+  "correct": 0,
+  "explanation": "In der Refraktärzeit ist die Membran unerregbar – das AP kann nur vorwärts laufen."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Weißt du es? Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "9",
+   "23",
+   "18",
+   "27"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "400",
+   "600",
+   "800",
+   "300"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 12 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "108",
+   "32",
+   "72",
+   "36"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 12 × 3^2 = 108."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wissenscheck Biologie: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 8 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "28",
+   "72",
+   "48",
+   "24"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 8 × 3^2 = 72."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "27",
+   "63",
+   "42",
+   "21"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "300",
+   "3200",
+   "600",
+   "1600"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^6 = 3200."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Teste dein Wissen: Was ist ein Cofaktor bzw. Coenzym?",
+  "options": [
+   "ein Nicht-Protein-Bestandteil, den manche Enzyme zur Funktion brauchen",
+   "das Endprodukt der Reaktion",
+   "das Substrat selbst",
+   "ein Abbauprodukt"
+  ],
+  "correct": 0,
+  "explanation": "Coenzyme/Cofaktoren (z. B. Vitamine, Metallionen) unterstützen die Enzymfunktion."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Teste dein Wissen: Wie wird die Reizstärke im Nervensystem codiert?",
+  "options": [
+   "über die Amplitude einzelner AP",
+   "über die Frequenz der Aktionspotentiale",
+   "über die Temperatur",
+   "über die Farbe des Signals"
+  ],
+  "correct": 1,
+  "explanation": "Stärkere Reize erhöhen die AP-Frequenz (Frequenzcodierung), nicht die AP-Höhe."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "6400",
+   "2000",
+   "1000",
+   "3200"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "16000",
+   "6000",
+   "3000",
+   "32000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "32000",
+   "6000",
+   "3000",
+   "16000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "2400",
+   "12800",
+   "6400",
+   "1200"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^6 = 12800."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Teste dein Wissen: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "2500 kJ",
+   "5000 kJ",
+   "500.0000000000001 kJ",
+   "10000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^2 = 500.0000000000001 kJ."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Weißt du es? Was bezeichnet die Substratspezifität eines Enzyms?",
+  "options": [
+   "es wirkt bei jeder Temperatur",
+   "es setzt nur ein bestimmtes Substrat um",
+   "es verbraucht sich bei der Reaktion",
+   "es katalysiert jede Reaktion"
+  ],
+  "correct": 1,
+  "explanation": "Substratspezifisch heißt: Das Enzym erkennt und wandelt nur ein bestimmtes Substrat um."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wissenscheck Biologie: Welches Ion strömt bei der Repolarisation aus der Zelle?",
+  "options": [
+   "Kalium (K⁺)",
+   "Calcium (Ca²⁺)",
+   "Natrium (Na⁺)",
+   "Chlorid (Cl⁻)"
+  ],
+  "correct": 0,
+  "explanation": "Bei der Repolarisation strömt K⁺ nach außen, das Potential wird wieder negativer."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "2400",
+   "6400",
+   "12800"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^6 = 12800."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "23",
+   "18",
+   "27",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 12 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "36",
+   "32",
+   "72",
+   "108"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 12 × 3^2 = 108."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "500",
+   "1000",
+   "1600",
+   "3200"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 6 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "18",
+   "36",
+   "26",
+   "54"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 6 × 3^2 = 54."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "150",
+   "200",
+   "400",
+   "300"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "2000",
+   "1000",
+   "3200",
+   "6400"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "400",
+   "300",
+   "200",
+   "150"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "1500",
+   "4000",
+   "2000",
+   "3000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "3000",
+   "6000",
+   "8000",
+   "4000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Frage aus dem Bio-Unterricht: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "42",
+   "21",
+   "27",
+   "63"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "800",
+   "1600",
+   "600",
+   "1200"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Weißt du es? Auf der Produzentenebene stehen 100000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "20000 kJ",
+   "5000 kJ",
+   "1000.0000000000002 kJ",
+   "10000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 100000 · 0,1^2 = 1000.0000000000002 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "800",
+   "1200",
+   "1600",
+   "600"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 6 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "26",
+   "36",
+   "54",
+   "18"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 6 × 3^2 = 54."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 8 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "24",
+   "72",
+   "48",
+   "28"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 8 × 3^2 = 72."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "300",
+   "3200",
+   "1600",
+   "600"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^6 = 3200."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "600",
+   "1600",
+   "3200",
+   "300"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^6 = 3200."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Was besagt das Alles-oder-Nichts-Prinzip des Aktionspotentials?",
+  "options": [
+   "ab dem Schwellenwert wird ein volles AP ausgelöst, sonst keines",
+   "das AP läuft rückwärts",
+   "es gibt beliebig viele AP-Stärken",
+   "die Stärke des AP hängt vom Reiz ab"
+  ],
+  "correct": 0,
+  "explanation": "Überschreitet der Reiz den Schwellenwert, entsteht ein vollständiges AP – unabhängig von der Reizstärke darüber."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Frage aus dem Bio-Unterricht: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "18",
+   "9",
+   "27",
+   "23"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "6400",
+   "1000",
+   "2000",
+   "3200"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Wie wird das Signal an einer chemischen Synapse übertragen?",
+  "options": [
+   "durch Kalkbrücken",
+   "durch Neurotransmitter über den synaptischen Spalt",
+   "durch direkten Stromfluss über die Membran",
+   "durch DNA-Übertragung"
+  ],
+  "correct": 1,
+  "explanation": "An chemischen Synapsen setzt das Aktionspotential Neurotransmitter frei, die an Rezeptoren binden."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Biologie-Quiz: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 5 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "25",
+   "45",
+   "30",
+   "15"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 5 × 3^2 = 45."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "6400",
+   "3200",
+   "600",
+   "1200"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Frage aus dem Bio-Unterricht: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 12 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "32",
+   "36",
+   "108",
+   "72"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 12 × 3^2 = 108."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "400",
+   "200",
+   "300",
+   "150"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "3200",
+   "1000",
+   "6400",
+   "2000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "6000",
+   "32000",
+   "3000",
+   "16000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "400",
+   "300",
+   "150",
+   "200"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "4000",
+   "6000",
+   "8000",
+   "3000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 6 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "18",
+   "26",
+   "36",
+   "54"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 6 × 3^2 = 54."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "3200",
+   "6400",
+   "600"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "6400",
+   "600",
+   "1200",
+   "3200"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "5000",
+   "8000",
+   "16000",
+   "2500"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "32000",
+   "6000",
+   "3000",
+   "16000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "250",
+   "800",
+   "1600",
+   "500"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "1600",
+   "1000",
+   "500",
+   "3200"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "16000",
+   "10000",
+   "5000",
+   "32000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "64000",
+   "12000",
+   "32000",
+   "6000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^6 = 64000."
+ },
+ {
+  "topic": "Neurobiologie",
+  "question": "Aufgabe: Wie wird die Reizstärke im Nervensystem codiert?",
+  "options": [
+   "über die Temperatur",
+   "über die Farbe des Signals",
+   "über die Amplitude einzelner AP",
+   "über die Frequenz der Aktionspotentiale"
+  ],
+  "correct": 3,
+  "explanation": "Stärkere Reize erhöhen die AP-Frequenz (Frequenzcodierung), nicht die AP-Höhe."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "600",
+   "800",
+   "1200",
+   "1600"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "63",
+   "27",
+   "21",
+   "42"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "600",
+   "1200",
+   "6400",
+   "3200"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "400",
+   "200",
+   "300",
+   "150"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Frage aus dem Bio-Unterricht: Auf der Produzentenebene stehen 50000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 2. Konsumentenebene?",
+  "options": [
+   "10000 kJ",
+   "2500 kJ",
+   "500.0000000000001 kJ",
+   "5000 kJ"
+  ],
+  "correct": 2,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 50000 · 0,1^2 = 500.0000000000001 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "6000",
+   "32000",
+   "16000",
+   "3000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "10000",
+   "16000",
+   "5000",
+   "32000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "600",
+   "1600",
+   "300",
+   "3200"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^6 = 3200."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Frage aus dem Bio-Unterricht: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 9 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "81",
+   "27",
+   "29",
+   "54"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 9 × 3^2 = 81."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Auf der Produzentenebene stehen 20000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "200.00000000000003 kJ",
+   "20.000000000000004 kJ",
+   "666.6666666666666 kJ",
+   "6000 kJ"
+  ],
+  "correct": 1,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 20000 · 0,1^3 = 20.000000000000004 kJ."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 12 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "36",
+   "72",
+   "108",
+   "32"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 12 × 3^2 = 108."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "16000",
+   "32000",
+   "6000",
+   "3000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "400",
+   "200",
+   "300",
+   "150"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Frage aus dem Bio-Unterricht: Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 12 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "36",
+   "72",
+   "108",
+   "32"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 12 × 3^2 = 108."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Biologie-Quiz: Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "27",
+   "21",
+   "42",
+   "63"
+  ],
+  "correct": 3,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "9",
+   "27",
+   "18",
+   "23"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "500",
+   "1000",
+   "1600",
+   "3200"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^5 = 3200."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "600",
+   "6400",
+   "3200"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "200",
+   "150",
+   "300",
+   "400"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Teste dein Wissen: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "42",
+   "21",
+   "63",
+   "27"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "1600",
+   "250",
+   "800",
+   "500"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^5 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "5000",
+   "32000",
+   "16000",
+   "10000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "300",
+   "600",
+   "400",
+   "800"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "300",
+   "400",
+   "150",
+   "200"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "3200",
+   "6400",
+   "1000",
+   "2000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Biologie-Quiz: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 8 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "24",
+   "72",
+   "28",
+   "48"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 8 × 3^2 = 72."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 50 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "300",
+   "400",
+   "200",
+   "150"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 50 · 2^3 = 400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "600",
+   "800",
+   "300",
+   "400"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^3 = 800."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wissenscheck Biologie: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "18",
+   "9",
+   "27",
+   "23"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "2000",
+   "4000",
+   "3000",
+   "1500"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Weißt du es? Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "3200",
+   "6400",
+   "1000",
+   "2000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "600",
+   "1600",
+   "1200",
+   "800"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "12800",
+   "6400",
+   "1200",
+   "2400"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^6 = 12800."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "2000",
+   "6400",
+   "1000",
+   "3200"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^5 = 6400."
+ },
+ {
+  "topic": "Enzyme",
+  "question": "Weißt du es? Was bewirkt ein Enzym als Biokatalysator?",
+  "options": [
+   "es erhöht die Aktivierungsenergie",
+   "es liefert Energie für die Reaktion",
+   "es setzt die Aktivierungsenergie herab",
+   "es verschiebt das Gleichgewicht"
+  ],
+  "correct": 2,
+  "explanation": "Enzyme senken die Aktivierungsenergie und beschleunigen so die Reaktion, ohne sich zu verbrauchen."
+ },
+ {
+  "topic": "Energiefluss",
+  "question": "Frage aus dem Bio-Unterricht: Auf der Produzentenebene stehen 10000 kJ zur Verfügung. Wie viel Energie erreicht nach der 10-%-Regel die 3. Konsumentenebene?",
+  "options": [
+   "10.000000000000002 kJ",
+   "333.3333333333333 kJ",
+   "100.00000000000001 kJ",
+   "3000 kJ"
+  ],
+  "correct": 0,
+  "explanation": "Pro Trophiestufe werden nur ~10 % weitergegeben: 10000 · 0,1^3 = 10.000000000000002 kJ."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "3200",
+   "600",
+   "6400"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "1500",
+   "4000",
+   "2000",
+   "3000"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "6400",
+   "12800",
+   "2400"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^6 = 12800."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Weißt du es? Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 2 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "6",
+   "18",
+   "22",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 2 × 3^2 = 18."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "32000",
+   "3000",
+   "6000",
+   "16000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^6 = 32000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Frage aus dem Bio-Unterricht: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 7 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "42",
+   "27",
+   "63",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 7 × 3^2 = 63."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "4000",
+   "1500",
+   "3000",
+   "2000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "10000",
+   "16000",
+   "5000",
+   "32000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 100 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "1200",
+   "6400",
+   "600",
+   "3200"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 100 · 2^6 = 6400."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Aufgabe: Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 9 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "27",
+   "81",
+   "29",
+   "54"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 9 × 3^2 = 81."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "1600",
+   "800",
+   "600",
+   "1200"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wähle die richtige Antwort. Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "8000",
+   "6000",
+   "4000",
+   "3000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^3 = 8000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "10000",
+   "5000",
+   "32000",
+   "16000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Biologie-Quiz: Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 2 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "18",
+   "6",
+   "22",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 2 × 3^2 = 18."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 3 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "27",
+   "9",
+   "23",
+   "18"
+  ],
+  "correct": 0,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 3 × 3^2 = 27."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "600",
+   "1600",
+   "800",
+   "1200"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Weißt du es? Eine enzymatische Reaktion hat bei 25 °C die Geschwindigkeit 9 (rel.). Wie hoch ist sie bei 45 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "54",
+   "29",
+   "81",
+   "27"
+  ],
+  "correct": 2,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 9 × 3^2 = 81."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Aufgabe: Eine Bakterienkultur startet mit 1000 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "16000",
+   "10000",
+   "5000",
+   "32000"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 1000 · 2^5 = 32000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 10 °C die Geschwindigkeit 12 (rel.). Wie hoch ist sie bei 30 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "72",
+   "108",
+   "36",
+   "32"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 12 × 3^2 = 108."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "800",
+   "1200",
+   "1600",
+   "600"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^3 = 1600."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Biologie-Quiz: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 30 min. Wie viele Zellen sind es nach 5 Verdopplungen?",
+  "options": [
+   "16000",
+   "8000",
+   "2500",
+   "5000"
+  ],
+  "correct": 0,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^5 = 16000."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Frage aus dem Bio-Unterricht: Eine Bakterienkultur startet mit 500 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 3 Verdopplungen?",
+  "options": [
+   "1500",
+   "3000",
+   "4000",
+   "2000"
+  ],
+  "correct": 2,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 500 · 2^3 = 4000."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Wähle die richtige Antwort. Eine enzymatische Reaktion hat bei 20 °C die Geschwindigkeit 2 (rel.). Wie hoch ist sie bei 40 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "12",
+   "18",
+   "6",
+   "22"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 2 × 3^2 = 18."
+ },
+ {
+  "topic": "Enzyme (RGT-Regel)",
+  "question": "Biologie-Quiz: Eine enzymatische Reaktion hat bei 15 °C die Geschwindigkeit 6 (rel.). Wie hoch ist sie bei 35 °C, wenn Q₁₀ = 3 gilt (unterhalb des Optimums)?",
+  "options": [
+   "18",
+   "54",
+   "36",
+   "26"
+  ],
+  "correct": 1,
+  "explanation": "Pro 10 °C multipliziert sich die Geschwindigkeit mit Q₁₀ = 3. Bei 2×10 °C: 6 × 3^2 = 54."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Teste dein Wissen: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "2400",
+   "6400",
+   "1200",
+   "12800"
+  ],
+  "correct": 3,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^6 = 12800."
+ },
+ {
+  "topic": "Populationswachstum",
+  "question": "Wissenscheck Biologie: Eine Bakterienkultur startet mit 200 Zellen und verdoppelt sich alle 20 min. Wie viele Zellen sind es nach 6 Verdopplungen?",
+  "options": [
+   "6400",
+   "12800",
+   "2400",
+   "1200"
+  ],
+  "correct": 1,
+  "explanation": "Bei exponentiellem Wachstum: N = N₀ · 2ⁿ = 200 · 2^6 = 12800."
+ }
+]

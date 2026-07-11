@@ -72,11 +72,13 @@ export default async function ElternLayout({
     { href: "/eltern/abwesenheit", label: "Abwesenheit", icon: "clipboardEdit" },
     { href: "/eltern/fehlzeiten", label: "Fehlzeiten", icon: "calendarX" },
     { href: "/eltern/leistungsentwicklung", label: "Leistung", icon: "trendingUp" },
+    { href: "/eltern/bericht", label: "Wochenbericht", icon: "barChart3" },
     { href: "/eltern/elternsprechtag", label: "Sprechtag", icon: "calendarDays" },
     { href: "/eltern/kalender", label: "Kalender", icon: "calendar" },
     { href: "/eltern/einwilligungen", label: "Einwilligungen", icon: "fileCheck" },
     { href: "/eltern/lernfortschritt", label: "Lernfortschritt", icon: "zap" },
     { href: "/eltern/arbeitsblatter", label: "Arbeitsblätter", icon: "fileText" },
+    { href: "/eltern/belohnungen", label: "Belohnungen", icon: "gift" },
   ];
 
   return (

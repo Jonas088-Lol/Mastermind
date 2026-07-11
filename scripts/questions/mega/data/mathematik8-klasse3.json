@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wie schreibt man die Zahl 8 in römischen Zahlen?",
+  "options": [
+   "VIII",
+   "X",
+   "V",
+   "IX"
+  ],
+  "correct": 0,
+  "explanation": "8 = VIII. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 544 − 418 = ?",
+  "options": [
+   "124",
+   "127",
+   "26",
+   "126"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 544 − 418 = 126. Probe: 126 + 418 = 544."
+ },
+ {
+  "topic": "Runden",
+  "question": "Runde 44 auf den nächsten Zehner.",
+  "options": [
+   "40",
+   "50",
+   "30",
+   "60"
+  ],
+  "correct": 0,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 44 wird abgerundet zu 40."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: J, S, D, Q?",
+  "options": [
+   "D",
+   "J",
+   "S",
+   "Q"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe D hat eine waagerechte Symmetrieachse, die anderen (J, Q, S) nicht."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wie schreibt man die Zahl 6 in römischen Zahlen?",
+  "options": [
+   "IX",
+   "III",
+   "V",
+   "VI"
+  ],
+  "correct": 3,
+  "explanation": "6 = VI. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie viele Ecken hat ein Achteck?",
+  "options": [
+   "7",
+   "9",
+   "8",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Ein Achteck hat 8 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Runden",
+  "question": "Runde 11 auf den nächsten Zehner.",
+  "options": [
+   "20",
+   "30",
+   "0",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 11 wird abgerundet zu 10."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 490 − 199 = ?",
+  "options": [
+   "300",
+   "292",
+   "291",
+   "281"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 490 − 199 = 291. Probe: 291 + 199 = 490."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 20 und 40?",
+  "options": [
+   "30",
+   "40",
+   "20",
+   "25"
+  ],
+  "correct": 0,
+  "explanation": "Die Mitte zwischen 20 und 40 ist (20 + 40) : 2 = 30."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Aufgabe: Wie viel Grad hat ein rechter Winkel?",
+  "options": [
+   "100°",
+   "45°",
+   "90°",
+   "180°"
+  ],
+  "correct": 2,
+  "explanation": "Ein rechter Winkel misst genau 90°. Man erkennt ihn z. B. am Geodreieck."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Auf einem Zahlenstrahl sind es von Strich zu Strich 10. Wie viele Schritte sind es von 90 bis 160?",
+  "options": [
+   "9",
+   "7",
+   "5",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "(160 − 90) : 10 = 7 Schritte."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Wie viele Symmetrieachsen hat ein Rechteck (kein Quadrat)?",
+  "options": [
+   "unendlich viele",
+   "0",
+   "2",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Ein Rechteck hat 2 Symmetrieachsen durch die Seitenmitten. Die Diagonalen sind KEINE Symmetrieachsen."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Wie viele Symmetrieachsen hat ein Rechteck (kein Quadrat)?",
+  "options": [
+   "0",
+   "3",
+   "1",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "Ein Rechteck hat 2 Symmetrieachsen durch die Seitenmitten. Die Diagonalen sind KEINE Symmetrieachsen."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Auf einem Zahlenstrahl sind es von Strich zu Strich 2. Wie viele Schritte sind es von 18 bis 22?",
+  "options": [
+   "0",
+   "4",
+   "2",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "(22 − 18) : 2 = 2 Schritte."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wähle die richtige Antwort. Wie viele rechte Winkel hat ein rechtwinkliges Dreieck?",
+  "options": [
+   "1",
+   "2",
+   "0",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "Ein rechtwinkliges Dreieck hat genau 1 rechten Winkel."
+ },
+ {
+  "topic": "Runden",
+  "question": "Teste dein Wissen: Welche Zahl ergibt auf den Zehner gerundet 40?",
+  "options": [
+   "29",
+   "35",
+   "45",
+   "34"
+  ],
+  "correct": 1,
+  "explanation": "35 liegt näher an 40 (Rest 5 → aufrunden), also gerundet 40."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wie viel Grad hat ein rechter Winkel?",
+  "options": [
+   "90°",
+   "180°",
+   "45°",
+   "100°"
+  ],
+  "correct": 0,
+  "explanation": "Ein rechter Winkel misst genau 90°. Man erkennt ihn z. B. am Geodreieck."
+ },
+ {
+  "topic": "Runden",
+  "question": "Wähle die richtige Antwort. Welche Zahl ergibt auf den Zehner gerundet 40?",
+  "options": [
+   "29",
+   "34",
+   "45",
+   "35"
+  ],
+  "correct": 3,
+  "explanation": "35 liegt näher an 40 (Rest 5 → aufrunden), also gerundet 40."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Welche Figur ist gemeint? Gegenüberliegende Seiten sind gleich lang, alle Winkel sind rechte Winkel, aber nicht alle Seiten gleich lang.",
+  "options": [
+   "Trapez",
+   "Rechteck",
+   "Quadrat",
+   "Raute"
+  ],
+  "correct": 1,
+  "explanation": "Diese Beschreibung passt zum Rechteck: Gegenüberliegende Seiten sind gleich lang, alle Winkel sind rechte Winkel, aber nicht alle Seiten gleich lang."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 75 · 2 = ?",
+  "options": [
+   "150",
+   "160",
+   "225",
+   "75"
+  ],
+  "correct": 0,
+  "explanation": "75 · 2 = 150."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Welche Figur ist gemeint? Die Figur hat keine Ecken und keinen Anfang und kein Ende.",
+  "options": [
+   "Achteck",
+   "Kreis",
+   "Dreieck",
+   "Quadrat"
+  ],
+  "correct": 1,
+  "explanation": "Diese Beschreibung passt zum Kreis: Die Figur hat keine Ecken und keinen Anfang und kein Ende."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Welche Zahl bedeutet die römische Zahl III?",
+  "options": [
+   "6",
+   "3",
+   "5",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "III = 3. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Welcher dieser Großbuchstaben ist achsensymmetrisch: U, Z, P, G?",
+  "options": [
+   "G",
+   "Z",
+   "P",
+   "U"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe U hat eine senkrechte Symmetrieachse, die anderen (Z, G, P) nicht."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 22 · 5 = ?",
+  "options": [
+   "110",
+   "120",
+   "88",
+   "132"
+  ],
+  "correct": 0,
+  "explanation": "22 · 5 = 110."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: D, S, Q, P?",
+  "options": [
+   "Q",
+   "D",
+   "S",
+   "P"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe D hat eine waagerechte Symmetrieachse, die anderen (Q, S, P) nicht."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Welche Zahl ergibt auf den Zehner gerundet 60?",
+  "options": [
+   "65",
+   "55",
+   "49",
+   "54"
+  ],
+  "correct": 1,
+  "explanation": "55 liegt näher an 60 (Rest 5 → aufrunden), also gerundet 60."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Aufgabe: Rechne schriftlich: 859 − 472 = ?",
+  "options": [
+   "287",
+   "388",
+   "387",
+   "377"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 859 − 472 = 387. Probe: 387 + 472 = 859."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wähle die richtige Antwort. Wie viel Grad hat ein rechter Winkel?",
+  "options": [
+   "100°",
+   "45°",
+   "90°",
+   "180°"
+  ],
+  "correct": 2,
+  "explanation": "Ein rechter Winkel misst genau 90°. Man erkennt ihn z. B. am Geodreieck."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 70 · 6 = ?",
+  "options": [
+   "420",
+   "350",
+   "430",
+   "490"
+  ],
+  "correct": 0,
+  "explanation": "70 · 6 = 420."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Welche Figur ist gemeint? Alle 4 Seiten sind gleich lang, aber die Winkel müssen keine rechten Winkel sein.",
+  "options": [
+   "Rechteck",
+   "Quadrat",
+   "Raute",
+   "Trapez"
+  ],
+  "correct": 2,
+  "explanation": "Diese Beschreibung passt zum zur Raute: Alle 4 Seiten sind gleich lang, aber die Winkel müssen keine rechten Winkel sein."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Runde 12 auf den nächsten Zehner.",
+  "options": [
+   "10",
+   "30",
+   "0",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 12 wird abgerundet zu 10."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Teste dein Wissen: Wie viel Grad hat ein rechter Winkel?",
+  "options": [
+   "100°",
+   "90°",
+   "180°",
+   "45°"
+  ],
+  "correct": 1,
+  "explanation": "Ein rechter Winkel misst genau 90°. Man erkennt ihn z. B. am Geodreieck."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wähle die richtige Antwort. Wie viele rechte Winkel hat ein Rechteck?",
+  "options": [
+   "6",
+   "2",
+   "4",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "Im Rechteck sind alle 4 Innenwinkel rechte Winkel (90°)."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie viele Ecken hat ein Sechseck?",
+  "options": [
+   "5",
+   "4",
+   "7",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Ein Sechseck hat 6 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wie viele rechte Winkel hat ein Quadrat?",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Im Quadrat sind alle 4 Innenwinkel rechte Winkel (90°)."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 89 · 9 = ?",
+  "options": [
+   "811",
+   "801",
+   "712",
+   "890"
+  ],
+  "correct": 1,
+  "explanation": "89 · 9 = 801."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Auf einem Zahlenstrahl sind es von Strich zu Strich 2. Wie viele Schritte sind es von 6 bis 10?",
+  "options": [
+   "2",
+   "0",
+   "4",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "(10 − 6) : 2 = 2 Schritte."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Wie heißt eine Figur mit genau 8 Ecken?",
+  "options": [
+   "Dreieck",
+   "Fünfeck",
+   "Sechseck",
+   "Achteck"
+  ],
+  "correct": 3,
+  "explanation": "Eine Figur mit 8 Ecken heißt Achteck."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Wie schreibt man die Zahl 12 in römischen Zahlen?",
+  "options": [
+   "XIV",
+   "IX",
+   "XII",
+   "XV"
+  ],
+  "correct": 2,
+  "explanation": "12 = XII. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Aufgabe: Rechne schriftlich: 906 − 456 = ?",
+  "options": [
+   "461",
+   "449",
+   "460",
+   "450"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 906 − 456 = 450. Probe: 450 + 456 = 906."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Ein Zahlenstrahl beginnt bei 9, von Strich zu Strich sind es 1. Welche Zahl steht am 3. Strich nach 9?",
+  "options": [
+   "13",
+   "14",
+   "12",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "3 Schritte à 1: 9 + 3 · 1 = 12."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Welcher dieser Großbuchstaben ist achsensymmetrisch: G, M, F, S?",
+  "options": [
+   "F",
+   "S",
+   "G",
+   "M"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe M hat eine senkrechte Symmetrieachse, die anderen (G, F, S) nicht."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Aufgabe: Rechne schriftlich: 611 + 846 = ?",
+  "options": [
+   "1557",
+   "1459",
+   "1457",
+   "1456"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 611 + 846 = 1457."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Welche Figur ist gemeint? Gegenüberliegende Seiten sind gleich lang, alle Winkel sind rechte Winkel, aber nicht alle Seiten gleich lang.",
+  "options": [
+   "Quadrat",
+   "Rechteck",
+   "Trapez",
+   "Raute"
+  ],
+  "correct": 1,
+  "explanation": "Diese Beschreibung passt zum Rechteck: Gegenüberliegende Seiten sind gleich lang, alle Winkel sind rechte Winkel, aber nicht alle Seiten gleich lang."
+ },
+ {
+  "topic": "Runden",
+  "question": "Wähle die richtige Antwort. Welche Zahl ergibt auf den Zehner gerundet 50?",
+  "options": [
+   "39",
+   "55",
+   "45",
+   "44"
+  ],
+  "correct": 2,
+  "explanation": "45 liegt näher an 50 (Rest 5 → aufrunden), also gerundet 50."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 90 und 110?",
+  "options": [
+   "110",
+   "95",
+   "90",
+   "100"
+  ],
+  "correct": 3,
+  "explanation": "Die Mitte zwischen 90 und 110 ist (90 + 110) : 2 = 100."
+ },
+ {
+  "topic": "Runden",
+  "question": "Wähle die richtige Antwort. Welche Zahl ergibt auf den Zehner gerundet 80?",
+  "options": [
+   "85",
+   "74",
+   "69",
+   "75"
+  ],
+  "correct": 3,
+  "explanation": "75 liegt näher an 80 (Rest 5 → aufrunden), also gerundet 80."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 0 bis 5?",
+  "options": [
+   "5",
+   "4",
+   "7",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "(5 − 0) : 1 = 5 Schritte."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie heißt eine Figur mit genau 4 Ecken?",
+  "options": [
+   "Achteck",
+   "Sechseck",
+   "Viereck",
+   "Dreieck"
+  ],
+  "correct": 2,
+  "explanation": "Eine Figur mit 4 Ecken heißt Viereck."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Wie heißt eine Figur mit genau 6 Ecken?",
+  "options": [
+   "Dreieck",
+   "Fünfeck",
+   "Achteck",
+   "Sechseck"
+  ],
+  "correct": 3,
+  "explanation": "Eine Figur mit 6 Ecken heißt Sechseck."
+ },
+ {
+  "topic": "Runden",
+  "question": "Welche Zahl ergibt auf den Zehner gerundet 70?",
+  "options": [
+   "65",
+   "75",
+   "64",
+   "59"
+  ],
+  "correct": 0,
+  "explanation": "65 liegt näher an 70 (Rest 5 → aufrunden), also gerundet 70."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Wie viele Symmetrieachsen hat ein gleichseitiges Dreieck?",
+  "options": [
+   "2",
+   "3",
+   "1",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Beim gleichseitigen Dreieck geht durch jede Ecke eine Symmetrieachse: 3 Achsen."
+ },
+ {
+  "topic": "Runden",
+  "question": "Wähle die richtige Antwort. Runde 64 auf den nächsten Zehner.",
+  "options": [
+   "80",
+   "60",
+   "50",
+   "70"
+  ],
+  "correct": 1,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 64 wird abgerundet zu 60."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Ein Zahlenstrahl beginnt bei 25, von Strich zu Strich sind es 5. Welche Zahl steht am 8. Strich nach 25?",
+  "options": [
+   "66",
+   "65",
+   "67",
+   "64"
+  ],
+  "correct": 1,
+  "explanation": "8 Schritte à 5: 25 + 8 · 5 = 65."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Welche Zahl ergibt auf den Zehner gerundet 50?",
+  "options": [
+   "39",
+   "45",
+   "55",
+   "44"
+  ],
+  "correct": 1,
+  "explanation": "45 liegt näher an 50 (Rest 5 → aufrunden), also gerundet 50."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Ein Zahlenstrahl beginnt bei 5, von Strich zu Strich sind es 5. Welche Zahl steht am 6. Strich nach 5?",
+  "options": [
+   "34",
+   "37",
+   "35",
+   "36"
+  ],
+  "correct": 2,
+  "explanation": "6 Schritte à 5: 5 + 6 · 5 = 35."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Wie heißt eine Figur mit genau 4 Ecken?",
+  "options": [
+   "Viereck",
+   "Fünfeck",
+   "Achteck",
+   "Sechseck"
+  ],
+  "correct": 0,
+  "explanation": "Eine Figur mit 4 Ecken heißt Viereck."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 19 · 4 = ?",
+  "options": [
+   "57",
+   "76",
+   "86",
+   "95"
+  ],
+  "correct": 1,
+  "explanation": "19 · 4 = 76."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Aufgabe: Rechne schriftlich: 464 + 834 = ?",
+  "options": [
+   "1398",
+   "1309",
+   "1298",
+   "1297"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 464 + 834 = 1298."
+ },
+ {
+  "topic": "Runden",
+  "question": "Teste dein Wissen: Runde 13 auf den nächsten Zehner.",
+  "options": [
+   "0",
+   "30",
+   "10",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 13 wird abgerundet zu 10."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Welche Zahl bedeutet die römische Zahl IX?",
+  "options": [
+   "10",
+   "12",
+   "9",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "IX = 9. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie viele Ecken hat ein Quadrat?",
+  "options": [
+   "4",
+   "2",
+   "3",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "Ein Quadrat hat 4 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 2 bis 7?",
+  "options": [
+   "7",
+   "3",
+   "5",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "(7 − 2) : 1 = 5 Schritte."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Aufgabe: Wie schreibt man die Zahl 9 in römischen Zahlen?",
+  "options": [
+   "VII",
+   "XII",
+   "XI",
+   "IX"
+  ],
+  "correct": 3,
+  "explanation": "9 = IX. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 60 · 2 = ?",
+  "options": [
+   "180",
+   "120",
+   "60",
+   "130"
+  ],
+  "correct": 1,
+  "explanation": "60 · 2 = 120."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 30 und 50?",
+  "options": [
+   "50",
+   "30",
+   "35",
+   "40"
+  ],
+  "correct": 3,
+  "explanation": "Die Mitte zwischen 30 und 50 ist (30 + 50) : 2 = 40."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 10 und 20?",
+  "options": [
+   "13",
+   "10",
+   "20",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "Die Mitte zwischen 10 und 20 ist (10 + 20) : 2 = 15."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 72 · 7 = ?",
+  "options": [
+   "432",
+   "576",
+   "504",
+   "514"
+  ],
+  "correct": 2,
+  "explanation": "72 · 7 = 504."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Aufgabe: Wie schreibt man die Zahl 10 in römischen Zahlen?",
+  "options": [
+   "VII",
+   "XIII",
+   "X",
+   "XI"
+  ],
+  "correct": 2,
+  "explanation": "10 = X. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: G, Z, S, V?",
+  "options": [
+   "G",
+   "V",
+   "Z",
+   "S"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe V hat eine senkrechte Symmetrieachse, die anderen (S, G, Z) nicht."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wie schreibt man die Zahl 7 in römischen Zahlen?",
+  "options": [
+   "IX",
+   "V",
+   "VII",
+   "IV"
+  ],
+  "correct": 2,
+  "explanation": "7 = VII. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Formen",
+  "question": "Welche Figur ist gemeint? Gegenüberliegende Seiten sind gleich lang, alle Winkel sind rechte Winkel, aber nicht alle Seiten gleich lang.",
+  "options": [
+   "Raute",
+   "Trapez",
+   "Quadrat",
+   "Rechteck"
+  ],
+  "correct": 3,
+  "explanation": "Diese Beschreibung passt zum Rechteck: Gegenüberliegende Seiten sind gleich lang, alle Winkel sind rechte Winkel, aber nicht alle Seiten gleich lang."
+ },
+ {
+  "topic": "Formen",
+  "question": "Welche Figur ist gemeint? Genau zwei Seiten sind parallel zueinander.",
+  "options": [
+   "Raute",
+   "Dreieck",
+   "Trapez",
+   "Rechteck"
+  ],
+  "correct": 2,
+  "explanation": "Diese Beschreibung passt zum Trapez: Genau zwei Seiten sind parallel zueinander."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wähle die richtige Antwort. Wie viele rechte Winkel hat ein regelmäßiges Sechseck?",
+  "options": [
+   "1",
+   "2",
+   "0",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Im regelmäßigen Sechseck sind alle Winkel 120° — kein rechter Winkel."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Wie viele Ecken hat ein Fünfeck?",
+  "options": [
+   "6",
+   "3",
+   "5",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "Ein Fünfeck hat 5 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wähle die richtige Antwort. Wie viele rechte Winkel hat ein gleichseitiges Dreieck?",
+  "options": [
+   "2",
+   "6",
+   "1",
+   "0"
+  ],
+  "correct": 3,
+  "explanation": "Im gleichseitigen Dreieck sind alle Winkel 60° — kein rechter Winkel."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Welche Figur ist gemeint? Alle 4 Seiten sind gleich lang und alle Winkel sind rechte Winkel.",
+  "options": [
+   "Rechteck",
+   "Quadrat",
+   "Raute",
+   "Parallelogramm"
+  ],
+  "correct": 1,
+  "explanation": "Diese Beschreibung passt zum Quadrat: Alle 4 Seiten sind gleich lang und alle Winkel sind rechte Winkel."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wie schreibt man die Zahl 5 in römischen Zahlen?",
+  "options": [
+   "II",
+   "V",
+   "III",
+   "VI"
+  ],
+  "correct": 1,
+  "explanation": "5 = V. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Wie viele Ecken hat ein Viereck?",
+  "options": [
+   "6",
+   "2",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Ein Viereck hat 4 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Teste dein Wissen: Wie viele rechte Winkel hat ein gleichseitiges Dreieck?",
+  "options": [
+   "4",
+   "2",
+   "0",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "Im gleichseitigen Dreieck sind alle Winkel 60° — kein rechter Winkel."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Ein Zahlenstrahl beginnt bei 18, von Strich zu Strich sind es 2. Welche Zahl steht am 5. Strich nach 18?",
+  "options": [
+   "30",
+   "27",
+   "29",
+   "28"
+  ],
+  "correct": 3,
+  "explanation": "5 Schritte à 2: 18 + 5 · 2 = 28."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie heißt eine Figur mit genau 5 Ecken?",
+  "options": [
+   "Achteck",
+   "Viereck",
+   "Fünfeck",
+   "Dreieck"
+  ],
+  "correct": 2,
+  "explanation": "Eine Figur mit 5 Ecken heißt Fünfeck."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: F, B, J, Z?",
+  "options": [
+   "B",
+   "Z",
+   "J",
+   "F"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe B hat eine waagerechte Symmetrieachse, die anderen (Z, J, F) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 1 bis 3?",
+  "options": [
+   "4",
+   "0",
+   "1",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "(3 − 1) : 1 = 2 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Ein Zahlenstrahl beginnt bei 20, von Strich zu Strich sind es 10. Welche Zahl steht am 8. Strich nach 20?",
+  "options": [
+   "101",
+   "100",
+   "99",
+   "102"
+  ],
+  "correct": 1,
+  "explanation": "8 Schritte à 10: 20 + 8 · 10 = 100."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Aufgabe: Welche Zahl bedeutet die römische Zahl VIII?",
+  "options": [
+   "9",
+   "8",
+   "10",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "VIII = 8. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Runden",
+  "question": "Teste dein Wissen: Welche Zahl ergibt auf den Zehner gerundet 20?",
+  "options": [
+   "14",
+   "15",
+   "25",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "15 liegt näher an 20 (Rest 5 → aufrunden), also gerundet 20."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Welche Zahl ergibt auf den Zehner gerundet 70?",
+  "options": [
+   "64",
+   "65",
+   "59",
+   "75"
+  ],
+  "correct": 1,
+  "explanation": "65 liegt näher an 70 (Rest 5 → aufrunden), also gerundet 70."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Aufgabe: Wie viele rechte Winkel hat ein regelmäßiges Sechseck?",
+  "options": [
+   "1",
+   "6",
+   "3",
+   "0"
+  ],
+  "correct": 3,
+  "explanation": "Im regelmäßigen Sechseck sind alle Winkel 120° — kein rechter Winkel."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie heißt eine Figur mit genau 3 Ecken?",
+  "options": [
+   "Sechseck",
+   "Dreieck",
+   "Viereck",
+   "Achteck"
+  ],
+  "correct": 1,
+  "explanation": "Eine Figur mit 3 Ecken heißt Dreieck."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Auf einem Zahlenstrahl sind es von Strich zu Strich 10. Wie viele Schritte sind es von 40 bis 100?",
+  "options": [
+   "8",
+   "4",
+   "6",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "(100 − 40) : 10 = 6 Schritte."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie viele Ecken hat ein Quadrat?",
+  "options": [
+   "5",
+   "4",
+   "3",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Ein Quadrat hat 4 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Aufgabe: Rechne schriftlich: 984 + 416 = ?",
+  "options": [
+   "1390",
+   "1398",
+   "1500",
+   "1400"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 984 + 416 = 1400."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Teste dein Wissen: Wie viele rechte Winkel hat ein Quadrat?",
+  "options": [
+   "0",
+   "4",
+   "6",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Im Quadrat sind alle 4 Innenwinkel rechte Winkel (90°)."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wie schreibt man die Zahl 10 in römischen Zahlen?",
+  "options": [
+   "X",
+   "VII",
+   "IX",
+   "XII"
+  ],
+  "correct": 0,
+  "explanation": "10 = X. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Rechne schriftlich: 642 + 847 = ?",
+  "options": [
+   "1389",
+   "1499",
+   "1489",
+   "1490"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 642 + 847 = 1489."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Auf einem Zahlenstrahl sind es von Strich zu Strich 2. Wie viele Schritte sind es von 2 bis 14?",
+  "options": [
+   "4",
+   "6",
+   "8",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "(14 − 2) : 2 = 6 Schritte."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Welche Figur ist gemeint? Genau zwei Seiten sind parallel zueinander.",
+  "options": [
+   "Rechteck",
+   "Trapez",
+   "Dreieck",
+   "Raute"
+  ],
+  "correct": 1,
+  "explanation": "Diese Beschreibung passt zum Trapez: Genau zwei Seiten sind parallel zueinander."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 363 − 123 = ?",
+  "options": [
+   "239",
+   "240",
+   "241",
+   "238"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 363 − 123 = 240. Probe: 240 + 123 = 363."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Aufgabe: Rechne schriftlich: 258 − 100 = ?",
+  "options": [
+   "58",
+   "156",
+   "169",
+   "158"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 258 − 100 = 158. Probe: 158 + 100 = 258."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 43 · 8 = ?",
+  "options": [
+   "344",
+   "387",
+   "301",
+   "354"
+  ],
+  "correct": 0,
+  "explanation": "43 · 8 = 344."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 675 − 229 = ?",
+  "options": [
+   "447",
+   "445",
+   "446",
+   "456"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 675 − 229 = 446. Probe: 446 + 229 = 675."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Wie schreibt man die Zahl 9 in römischen Zahlen?",
+  "options": [
+   "VII",
+   "X",
+   "IX",
+   "XII"
+  ],
+  "correct": 2,
+  "explanation": "9 = IX. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 882 + 837 = ?",
+  "options": [
+   "1728",
+   "1719",
+   "1720",
+   "1709"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 882 + 837 = 1719."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 595 − 114 = ?",
+  "options": [
+   "581",
+   "491",
+   "481",
+   "471"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 595 − 114 = 481. Probe: 481 + 114 = 595."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie heißt eine Figur mit genau 3 Ecken?",
+  "options": [
+   "Achteck",
+   "Viereck",
+   "Fünfeck",
+   "Dreieck"
+  ],
+  "correct": 3,
+  "explanation": "Eine Figur mit 3 Ecken heißt Dreieck."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Auf einem Zahlenstrahl sind es von Strich zu Strich 2. Wie viele Schritte sind es von 10 bis 20?",
+  "options": [
+   "5",
+   "7",
+   "4",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "(20 − 10) : 2 = 5 Schritte."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 30 · 7 = ?",
+  "options": [
+   "180",
+   "240",
+   "220",
+   "210"
+  ],
+  "correct": 3,
+  "explanation": "30 · 7 = 210."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 2 und 6?",
+  "options": [
+   "6",
+   "3",
+   "4",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "Die Mitte zwischen 2 und 6 ist (2 + 6) : 2 = 4."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: F, S, L, V?",
+  "options": [
+   "F",
+   "V",
+   "L",
+   "S"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe V hat eine senkrechte Symmetrieachse, die anderen (S, L, F) nicht."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 30 · 6 = ?",
+  "options": [
+   "190",
+   "180",
+   "150",
+   "210"
+  ],
+  "correct": 1,
+  "explanation": "30 · 6 = 180."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Welcher dieser Großbuchstaben ist achsensymmetrisch: J, M, P, S?",
+  "options": [
+   "S",
+   "P",
+   "M",
+   "J"
+  ],
+  "correct": 2,
+  "explanation": "Der Buchstabe M hat eine senkrechte Symmetrieachse, die anderen (P, J, S) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 20 und 40?",
+  "options": [
+   "30",
+   "40",
+   "25",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "Die Mitte zwischen 20 und 40 ist (20 + 40) : 2 = 30."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: G, Q, E, P?",
+  "options": [
+   "P",
+   "Q",
+   "E",
+   "G"
+  ],
+  "correct": 2,
+  "explanation": "Der Buchstabe E hat eine waagerechte Symmetrieachse, die anderen (Q, P, G) nicht."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Welche Figur ist gemeint? Genau zwei Seiten sind parallel zueinander.",
+  "options": [
+   "Rechteck",
+   "Trapez",
+   "Raute",
+   "Dreieck"
+  ],
+  "correct": 1,
+  "explanation": "Diese Beschreibung passt zum Trapez: Genau zwei Seiten sind parallel zueinander."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 777 + 950 = ?",
+  "options": [
+   "1717",
+   "1727",
+   "1737",
+   "1736"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 777 + 950 = 1727."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Wie heißt eine Figur mit genau 3 Ecken?",
+  "options": [
+   "Achteck",
+   "Dreieck",
+   "Sechseck",
+   "Fünfeck"
+  ],
+  "correct": 1,
+  "explanation": "Eine Figur mit 3 Ecken heißt Dreieck."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Ein Zahlenstrahl beginnt bei 6, von Strich zu Strich sind es 1. Welche Zahl steht am 4. Strich nach 6?",
+  "options": [
+   "12",
+   "9",
+   "10",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "4 Schritte à 1: 6 + 4 · 1 = 10."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Teste dein Wissen: Rechne schriftlich: 792 + 670 = ?",
+  "options": [
+   "1362",
+   "1452",
+   "1562",
+   "1462"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 792 + 670 = 1462."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wie viele rechte Winkel hat ein gleichseitiges Dreieck?",
+  "options": [
+   "3",
+   "2",
+   "1",
+   "0"
+  ],
+  "correct": 3,
+  "explanation": "Im gleichseitigen Dreieck sind alle Winkel 60° — kein rechter Winkel."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Wie schreibt man die Zahl 3 in römischen Zahlen?",
+  "options": [
+   "IV",
+   "III",
+   "II",
+   "V"
+  ],
+  "correct": 1,
+  "explanation": "3 = III. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Runde 54 auf den nächsten Zehner.",
+  "options": [
+   "50",
+   "60",
+   "70",
+   "40"
+  ],
+  "correct": 0,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 54 wird abgerundet zu 50."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Runde 52 auf den nächsten Zehner.",
+  "options": [
+   "40",
+   "60",
+   "70",
+   "50"
+  ],
+  "correct": 3,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 52 wird abgerundet zu 50."
+ },
+ {
+  "topic": "Runden",
+  "question": "Teste dein Wissen: Welche Zahl ergibt auf den Zehner gerundet 30?",
+  "options": [
+   "35",
+   "19",
+   "25",
+   "24"
+  ],
+  "correct": 2,
+  "explanation": "25 liegt näher an 30 (Rest 5 → aufrunden), also gerundet 30."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Welcher dieser Großbuchstaben ist achsensymmetrisch: E, G, P, Q?",
+  "options": [
+   "E",
+   "P",
+   "G",
+   "Q"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe E hat eine waagerechte Symmetrieachse, die anderen (P, G, Q) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 10 und 14?",
+  "options": [
+   "14",
+   "12",
+   "11",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "Die Mitte zwischen 10 und 14 ist (10 + 14) : 2 = 12."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 673 − 196 = ?",
+  "options": [
+   "478",
+   "477",
+   "486",
+   "488"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 673 − 196 = 477. Probe: 477 + 196 = 673."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 20 bis 65?",
+  "options": [
+   "7",
+   "9",
+   "10",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "(65 − 20) : 5 = 9 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 2 und 4?",
+  "options": [
+   "5",
+   "3",
+   "2",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "Die Mitte zwischen 2 und 4 ist (2 + 4) : 2 = 3."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Wie schreibt man die Zahl 8 in römischen Zahlen?",
+  "options": [
+   "VIII",
+   "VII",
+   "X",
+   "VI"
+  ],
+  "correct": 0,
+  "explanation": "8 = VIII. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Auf einem Zahlenstrahl sind es von Strich zu Strich 10. Wie viele Schritte sind es von 0 bis 90?",
+  "options": [
+   "9",
+   "8",
+   "7",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "(90 − 0) : 10 = 9 Schritte."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Welche Zahl bedeutet die römische Zahl VII?",
+  "options": [
+   "8",
+   "7",
+   "4",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "VII = 7. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie heißt eine Figur mit genau 6 Ecken?",
+  "options": [
+   "Fünfeck",
+   "Viereck",
+   "Sechseck",
+   "Dreieck"
+  ],
+  "correct": 2,
+  "explanation": "Eine Figur mit 6 Ecken heißt Sechseck."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Aufgabe: Rechne schriftlich: 894 + 456 = ?",
+  "options": [
+   "1360",
+   "1450",
+   "1351",
+   "1350"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 894 + 456 = 1350."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wie viele Symmetrieachsen hat ein gleichschenkliges Dreieck (nicht gleichseitig)?",
+  "options": [
+   "4",
+   "0",
+   "1",
+   "unendlich viele"
+  ],
+  "correct": 2,
+  "explanation": "Ein gleichschenkliges Dreieck hat genau 1 Symmetrieachse durch die Spitze."
+ },
+ {
+  "topic": "Formen",
+  "question": "Welche Figur ist gemeint? Alle 4 Seiten sind gleich lang und alle Winkel sind rechte Winkel.",
+  "options": [
+   "Rechteck",
+   "Quadrat",
+   "Raute",
+   "Parallelogramm"
+  ],
+  "correct": 1,
+  "explanation": "Diese Beschreibung passt zum Quadrat: Alle 4 Seiten sind gleich lang und alle Winkel sind rechte Winkel."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: S, Q, C, L?",
+  "options": [
+   "S",
+   "Q",
+   "L",
+   "C"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe C hat eine waagerechte Symmetrieachse, die anderen (S, L, Q) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 1 und 3?",
+  "options": [
+   "4",
+   "1",
+   "2",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Die Mitte zwischen 1 und 3 ist (1 + 3) : 2 = 2."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Wie viele Ecken hat ein Dreieck?",
+  "options": [
+   "5",
+   "2",
+   "3",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "Ein Dreieck hat 3 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 350 − 196 = ?",
+  "options": [
+   "163",
+   "54",
+   "155",
+   "154"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 350 − 196 = 154. Probe: 154 + 196 = 350."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Welche Figur ist gemeint? Alle 4 Seiten sind gleich lang, aber die Winkel müssen keine rechten Winkel sein.",
+  "options": [
+   "Quadrat",
+   "Rechteck",
+   "Raute",
+   "Trapez"
+  ],
+  "correct": 2,
+  "explanation": "Diese Beschreibung passt zum zur Raute: Alle 4 Seiten sind gleich lang, aber die Winkel müssen keine rechten Winkel sein."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Wie schreibt man die Zahl 10 in römischen Zahlen?",
+  "options": [
+   "XI",
+   "XIII",
+   "IX",
+   "X"
+  ],
+  "correct": 3,
+  "explanation": "10 = X. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Welcher dieser Großbuchstaben ist achsensymmetrisch: J, P, S, B?",
+  "options": [
+   "P",
+   "B",
+   "S",
+   "J"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe B hat eine waagerechte Symmetrieachse, die anderen (J, S, P) nicht."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie viele Ecken hat ein Viereck?",
+  "options": [
+   "5",
+   "6",
+   "2",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Ein Viereck hat 4 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Wie schreibt man die Zahl 10 in römischen Zahlen?",
+  "options": [
+   "VII",
+   "VIII",
+   "X",
+   "IX"
+  ],
+  "correct": 2,
+  "explanation": "10 = X. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Wie viele Ecken hat ein Quadrat?",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Ein Quadrat hat 4 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 703 − 255 = ?",
+  "options": [
+   "458",
+   "459",
+   "548",
+   "448"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 703 − 255 = 448. Probe: 448 + 255 = 703."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Wie heißt eine Figur mit genau 6 Ecken?",
+  "options": [
+   "Achteck",
+   "Viereck",
+   "Dreieck",
+   "Sechseck"
+  ],
+  "correct": 3,
+  "explanation": "Eine Figur mit 6 Ecken heißt Sechseck."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Teste dein Wissen: Wie viele rechte Winkel hat ein Rechteck?",
+  "options": [
+   "4",
+   "1",
+   "6",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "Im Rechteck sind alle 4 Innenwinkel rechte Winkel (90°)."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 681 − 425 = ?",
+  "options": [
+   "255",
+   "256",
+   "267",
+   "254"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 681 − 425 = 256. Probe: 256 + 425 = 681."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 23 · 7 = ?",
+  "options": [
+   "161",
+   "171",
+   "184",
+   "138"
+  ],
+  "correct": 0,
+  "explanation": "23 · 7 = 161."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 826 − 439 = ?",
+  "options": [
+   "389",
+   "387",
+   "385",
+   "388"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 826 − 439 = 387. Probe: 387 + 439 = 826."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Teste dein Wissen: Rechne schriftlich: 280 + 479 = ?",
+  "options": [
+   "761",
+   "759",
+   "768",
+   "757"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 280 + 479 = 759."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 0 bis 25?",
+  "options": [
+   "6",
+   "3",
+   "5",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "(25 − 0) : 5 = 5 Schritte."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie heißt eine Figur mit genau 4 Ecken?",
+  "options": [
+   "Sechseck",
+   "Viereck",
+   "Achteck",
+   "Dreieck"
+  ],
+  "correct": 1,
+  "explanation": "Eine Figur mit 4 Ecken heißt Viereck."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Ein Zahlenstrahl beginnt bei 2, von Strich zu Strich sind es 2. Welche Zahl steht am 7. Strich nach 2?",
+  "options": [
+   "17",
+   "18",
+   "16",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "7 Schritte à 2: 2 + 7 · 2 = 16."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 2 und 4?",
+  "options": [
+   "3",
+   "4",
+   "2",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "Die Mitte zwischen 2 und 4 ist (2 + 4) : 2 = 3."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 48 · 3 = ?",
+  "options": [
+   "96",
+   "154",
+   "144",
+   "192"
+  ],
+  "correct": 2,
+  "explanation": "48 · 3 = 144."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 70 und 90?",
+  "options": [
+   "75",
+   "80",
+   "70",
+   "90"
+  ],
+  "correct": 1,
+  "explanation": "Die Mitte zwischen 70 und 90 ist (70 + 90) : 2 = 80."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Ein Zahlenstrahl beginnt bei 2, von Strich zu Strich sind es 2. Welche Zahl steht am 7. Strich nach 2?",
+  "options": [
+   "17",
+   "16",
+   "15",
+   "18"
+  ],
+  "correct": 1,
+  "explanation": "7 Schritte à 2: 2 + 7 · 2 = 16."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Wie heißt eine Figur mit genau 5 Ecken?",
+  "options": [
+   "Fünfeck",
+   "Dreieck",
+   "Viereck",
+   "Sechseck"
+  ],
+  "correct": 0,
+  "explanation": "Eine Figur mit 5 Ecken heißt Fünfeck."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 10 und 30?",
+  "options": [
+   "10",
+   "15",
+   "30",
+   "20"
+  ],
+  "correct": 3,
+  "explanation": "Die Mitte zwischen 10 und 30 ist (10 + 30) : 2 = 20."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie viele Ecken hat ein Viereck?",
+  "options": [
+   "6",
+   "3",
+   "2",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Ein Viereck hat 4 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: L, U, S, Z?",
+  "options": [
+   "L",
+   "Z",
+   "S",
+   "U"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe U hat eine senkrechte Symmetrieachse, die anderen (Z, L, S) nicht."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Wie viele Ecken hat ein Achteck?",
+  "options": [
+   "9",
+   "7",
+   "6",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "Ein Achteck hat 8 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: L, T, P, Z?",
+  "options": [
+   "Z",
+   "L",
+   "P",
+   "T"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe T hat eine senkrechte Symmetrieachse, die anderen (L, P, Z) nicht."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Welcher dieser Großbuchstaben ist achsensymmetrisch: M, N, S, P?",
+  "options": [
+   "M",
+   "N",
+   "S",
+   "P"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe M hat eine senkrechte Symmetrieachse, die anderen (P, N, S) nicht."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: S, T, N, G?",
+  "options": [
+   "S",
+   "T",
+   "G",
+   "N"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe T hat eine senkrechte Symmetrieachse, die anderen (S, N, G) nicht."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Wie viele Ecken hat ein Dreieck?",
+  "options": [
+   "1",
+   "3",
+   "2",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "Ein Dreieck hat 3 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: L, N, R, V?",
+  "options": [
+   "V",
+   "L",
+   "N",
+   "R"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe V hat eine senkrechte Symmetrieachse, die anderen (L, R, N) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 7 bis 16?",
+  "options": [
+   "9",
+   "8",
+   "11",
+   "10"
+  ],
+  "correct": 0,
+  "explanation": "(16 − 7) : 1 = 9 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 14 und 18?",
+  "options": [
+   "14",
+   "15",
+   "18",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "Die Mitte zwischen 14 und 18 ist (14 + 18) : 2 = 16."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: F, B, J, R?",
+  "options": [
+   "R",
+   "B",
+   "J",
+   "F"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe B hat eine waagerechte Symmetrieachse, die anderen (R, J, F) nicht."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Rechne schriftlich: 211 + 819 = ?",
+  "options": [
+   "1031",
+   "1020",
+   "1030",
+   "1041"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 211 + 819 = 1030."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 395 − 259 = ?",
+  "options": [
+   "236",
+   "136",
+   "145",
+   "134"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 395 − 259 = 136. Probe: 136 + 259 = 395."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Rechne schriftlich: 324 + 154 = ?",
+  "options": [
+   "479",
+   "489",
+   "578",
+   "478"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 324 + 154 = 478."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie heißt eine Figur mit genau 8 Ecken?",
+  "options": [
+   "Achteck",
+   "Dreieck",
+   "Viereck",
+   "Fünfeck"
+  ],
+  "correct": 0,
+  "explanation": "Eine Figur mit 8 Ecken heißt Achteck."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 96 · 7 = ?",
+  "options": [
+   "768",
+   "672",
+   "576",
+   "682"
+  ],
+  "correct": 1,
+  "explanation": "96 · 7 = 672."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Wie schreibt man die Zahl 12 in römischen Zahlen?",
+  "options": [
+   "XIII",
+   "XI",
+   "IX",
+   "XII"
+  ],
+  "correct": 3,
+  "explanation": "12 = XII. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 61 · 3 = ?",
+  "options": [
+   "183",
+   "193",
+   "122",
+   "244"
+  ],
+  "correct": 0,
+  "explanation": "61 · 3 = 183."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 68 · 4 = ?",
+  "options": [
+   "340",
+   "282",
+   "204",
+   "272"
+  ],
+  "correct": 3,
+  "explanation": "68 · 4 = 272."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Ein Zahlenstrahl beginnt bei 90, von Strich zu Strich sind es 10. Welche Zahl steht am 8. Strich nach 90?",
+  "options": [
+   "172",
+   "170",
+   "171",
+   "169"
+  ],
+  "correct": 1,
+  "explanation": "8 Schritte à 10: 90 + 8 · 10 = 170."
+ },
+ {
+  "topic": "Runden",
+  "question": "Wähle die richtige Antwort. Welche Zahl ergibt auf den Zehner gerundet 20?",
+  "options": [
+   "9",
+   "15",
+   "14",
+   "25"
+  ],
+  "correct": 1,
+  "explanation": "15 liegt näher an 20 (Rest 5 → aufrunden), also gerundet 20."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Welche Zahl ergibt auf den Zehner gerundet 90?",
+  "options": [
+   "85",
+   "95",
+   "79",
+   "84"
+  ],
+  "correct": 0,
+  "explanation": "85 liegt näher an 90 (Rest 5 → aufrunden), also gerundet 90."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 839 + 571 = ?",
+  "options": [
+   "1420",
+   "1409",
+   "1410",
+   "1408"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 839 + 571 = 1410."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 25 bis 60?",
+  "options": [
+   "5",
+   "9",
+   "7",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "(60 − 25) : 5 = 7 Schritte."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Welche Figur ist gemeint? Gegenüberliegende Seiten sind gleich lang, alle Winkel sind rechte Winkel, aber nicht alle Seiten gleich lang.",
+  "options": [
+   "Raute",
+   "Trapez",
+   "Quadrat",
+   "Rechteck"
+  ],
+  "correct": 3,
+  "explanation": "Diese Beschreibung passt zum Rechteck: Gegenüberliegende Seiten sind gleich lang, alle Winkel sind rechte Winkel, aber nicht alle Seiten gleich lang."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Wie heißt eine Figur mit genau 4 Ecken?",
+  "options": [
+   "Dreieck",
+   "Fünfeck",
+   "Sechseck",
+   "Viereck"
+  ],
+  "correct": 3,
+  "explanation": "Eine Figur mit 4 Ecken heißt Viereck."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Welche Figur ist gemeint? Alle 4 Seiten sind gleich lang und alle Winkel sind rechte Winkel.",
+  "options": [
+   "Raute",
+   "Parallelogramm",
+   "Rechteck",
+   "Quadrat"
+  ],
+  "correct": 3,
+  "explanation": "Diese Beschreibung passt zum Quadrat: Alle 4 Seiten sind gleich lang und alle Winkel sind rechte Winkel."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Teste dein Wissen: Rechne schriftlich: 47 · 6 = ?",
+  "options": [
+   "292",
+   "329",
+   "282",
+   "235"
+  ],
+  "correct": 2,
+  "explanation": "47 · 6 = 282."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Wie viele Symmetrieachsen hat ein regelmäßiges Sechseck?",
+  "options": [
+   "2",
+   "0",
+   "4",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Ein regelmäßiges Sechseck hat 6 Symmetrieachsen."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Welche Zahl ergibt auf den Zehner gerundet 80?",
+  "options": [
+   "69",
+   "75",
+   "85",
+   "74"
+  ],
+  "correct": 1,
+  "explanation": "75 liegt näher an 80 (Rest 5 → aufrunden), also gerundet 80."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wie viele Symmetrieachsen hat ein Kreis?",
+  "options": [
+   "0",
+   "unendlich viele",
+   "6",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Jede Gerade durch den Mittelpunkt ist Symmetrieachse — der Kreis hat unendlich viele."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 703 − 256 = ?",
+  "options": [
+   "449",
+   "448",
+   "447",
+   "446"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 703 − 256 = 447. Probe: 447 + 256 = 703."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Wie viele Symmetrieachsen hat ein regelmäßiges Sechseck?",
+  "options": [
+   "6",
+   "3",
+   "1",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "Ein regelmäßiges Sechseck hat 6 Symmetrieachsen."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 5 und 15?",
+  "options": [
+   "5",
+   "8",
+   "10",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "Die Mitte zwischen 5 und 15 ist (5 + 15) : 2 = 10."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Teste dein Wissen: Rechne schriftlich: 337 + 796 = ?",
+  "options": [
+   "1142",
+   "1133",
+   "1143",
+   "1135"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 337 + 796 = 1133."
+ },
+ {
+  "topic": "Runden",
+  "question": "Runde 64 auf den nächsten Zehner.",
+  "options": [
+   "80",
+   "60",
+   "50",
+   "70"
+  ],
+  "correct": 1,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 64 wird abgerundet zu 60."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 84 · 5 = ?",
+  "options": [
+   "336",
+   "420",
+   "430",
+   "504"
+  ],
+  "correct": 1,
+  "explanation": "84 · 5 = 420."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Aufgabe: Wie viele rechte Winkel hat ein gleichseitiges Dreieck?",
+  "options": [
+   "3",
+   "4",
+   "1",
+   "0"
+  ],
+  "correct": 3,
+  "explanation": "Im gleichseitigen Dreieck sind alle Winkel 60° — kein rechter Winkel."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Aufgabe: Wie viele rechte Winkel hat ein rechtwinkliges Dreieck?",
+  "options": [
+   "4",
+   "1",
+   "3",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Ein rechtwinkliges Dreieck hat genau 1 rechten Winkel."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 849 − 480 = ?",
+  "options": [
+   "370",
+   "469",
+   "369",
+   "368"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 849 − 480 = 369. Probe: 369 + 480 = 849."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 3 und 5?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Die Mitte zwischen 3 und 5 ist (3 + 5) : 2 = 4."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 93 · 3 = ?",
+  "options": [
+   "289",
+   "279",
+   "372",
+   "186"
+  ],
+  "correct": 1,
+  "explanation": "93 · 3 = 279."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: F, V, P, Q?",
+  "options": [
+   "P",
+   "F",
+   "Q",
+   "V"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe V hat eine senkrechte Symmetrieachse, die anderen (Q, F, P) nicht."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl bedeutet die römische Zahl X?",
+  "options": [
+   "8",
+   "9",
+   "10",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "X = 10. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Wie viele Ecken hat ein Rechteck?",
+  "options": [
+   "3",
+   "5",
+   "4",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "Ein Rechteck hat 4 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Welche Zahl bedeutet die römische Zahl VI?",
+  "options": [
+   "7",
+   "3",
+   "6",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "VI = 6. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie viele Ecken hat ein Sechseck?",
+  "options": [
+   "7",
+   "5",
+   "4",
+   "6"
+  ],
+  "correct": 3,
+  "explanation": "Ein Sechseck hat 6 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Runden",
+  "question": "Teste dein Wissen: Welche Zahl ergibt auf den Zehner gerundet 50?",
+  "options": [
+   "45",
+   "55",
+   "44",
+   "39"
+  ],
+  "correct": 0,
+  "explanation": "45 liegt näher an 50 (Rest 5 → aufrunden), also gerundet 50."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: P, B, N, S?",
+  "options": [
+   "S",
+   "N",
+   "P",
+   "B"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe B hat eine waagerechte Symmetrieachse, die anderen (P, S, N) nicht."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Runde 82 auf den nächsten Zehner.",
+  "options": [
+   "80",
+   "90",
+   "70",
+   "100"
+  ],
+  "correct": 0,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 82 wird abgerundet zu 80."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Welcher dieser Großbuchstaben ist achsensymmetrisch: L, F, D, P?",
+  "options": [
+   "D",
+   "L",
+   "F",
+   "P"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe D hat eine waagerechte Symmetrieachse, die anderen (F, P, L) nicht."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Welche Figur ist gemeint? Alle 4 Seiten sind gleich lang und alle Winkel sind rechte Winkel.",
+  "options": [
+   "Quadrat",
+   "Raute",
+   "Rechteck",
+   "Parallelogramm"
+  ],
+  "correct": 0,
+  "explanation": "Diese Beschreibung passt zum Quadrat: Alle 4 Seiten sind gleich lang und alle Winkel sind rechte Winkel."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Welche Zahl ergibt auf den Zehner gerundet 30?",
+  "options": [
+   "19",
+   "25",
+   "24",
+   "35"
+  ],
+  "correct": 1,
+  "explanation": "25 liegt näher an 30 (Rest 5 → aufrunden), also gerundet 30."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Wie schreibt man die Zahl 6 in römischen Zahlen?",
+  "options": [
+   "VIII",
+   "VI",
+   "IV",
+   "V"
+  ],
+  "correct": 1,
+  "explanation": "6 = VI. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Wie schreibt man die Zahl 5 in römischen Zahlen?",
+  "options": [
+   "V",
+   "VIII",
+   "IV",
+   "III"
+  ],
+  "correct": 0,
+  "explanation": "5 = V. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Runde 61 auf den nächsten Zehner.",
+  "options": [
+   "50",
+   "60",
+   "80",
+   "70"
+  ],
+  "correct": 1,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 61 wird abgerundet zu 60."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie heißt eine Figur mit genau 5 Ecken?",
+  "options": [
+   "Dreieck",
+   "Fünfeck",
+   "Sechseck",
+   "Viereck"
+  ],
+  "correct": 1,
+  "explanation": "Eine Figur mit 5 Ecken heißt Fünfeck."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: P, Z, J, K?",
+  "options": [
+   "Z",
+   "K",
+   "P",
+   "J"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe K hat eine waagerechte Symmetrieachse, die anderen (Z, J, P) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Auf einem Zahlenstrahl sind es von Strich zu Strich 2. Wie viele Schritte sind es von 16 bis 20?",
+  "options": [
+   "0",
+   "4",
+   "3",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "(20 − 16) : 2 = 2 Schritte."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: E, S, Q, L?",
+  "options": [
+   "L",
+   "E",
+   "Q",
+   "S"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe E hat eine waagerechte Symmetrieachse, die anderen (L, S, Q) nicht."
+ },
+ {
+  "topic": "Runden",
+  "question": "Teste dein Wissen: Welche Zahl ergibt auf den Zehner gerundet 80?",
+  "options": [
+   "85",
+   "75",
+   "74",
+   "69"
+  ],
+  "correct": 1,
+  "explanation": "75 liegt näher an 80 (Rest 5 → aufrunden), also gerundet 80."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Aufgabe: Rechne schriftlich: 824 − 335 = ?",
+  "options": [
+   "489",
+   "500",
+   "499",
+   "498"
+  ],
+  "correct": 0,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 824 − 335 = 489. Probe: 489 + 335 = 824."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 4 bis 10?",
+  "options": [
+   "8",
+   "6",
+   "4",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "(10 − 4) : 1 = 6 Schritte."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 487 − 133 = ?",
+  "options": [
+   "356",
+   "355",
+   "365",
+   "354"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 487 − 133 = 354. Probe: 354 + 133 = 487."
+ },
+ {
+  "topic": "Runden",
+  "question": "Wähle die richtige Antwort. Welche Zahl ergibt auf den Zehner gerundet 70?",
+  "options": [
+   "75",
+   "64",
+   "59",
+   "65"
+  ],
+  "correct": 3,
+  "explanation": "65 liegt näher an 70 (Rest 5 → aufrunden), also gerundet 70."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Teste dein Wissen: Wie viele rechte Winkel hat ein regelmäßiges Sechseck?",
+  "options": [
+   "1",
+   "2",
+   "6",
+   "0"
+  ],
+  "correct": 3,
+  "explanation": "Im regelmäßigen Sechseck sind alle Winkel 120° — kein rechter Winkel."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Aufgabe: Welche Zahl bedeutet die römische Zahl IV?",
+  "options": [
+   "2",
+   "5",
+   "3",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "IV = 4. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Aufgabe: Rechne schriftlich: 587 + 856 = ?",
+  "options": [
+   "1442",
+   "1433",
+   "1443",
+   "1444"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 587 + 856 = 1443."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Ein Zahlenstrahl beginnt bei 2, von Strich zu Strich sind es 2. Welche Zahl steht am 4. Strich nach 2?",
+  "options": [
+   "10",
+   "12",
+   "9",
+   "11"
+  ],
+  "correct": 0,
+  "explanation": "4 Schritte à 2: 2 + 4 · 2 = 10."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 20 und 30?",
+  "options": [
+   "20",
+   "25",
+   "30",
+   "23"
+  ],
+  "correct": 1,
+  "explanation": "Die Mitte zwischen 20 und 30 ist (20 + 30) : 2 = 25."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 6 und 8?",
+  "options": [
+   "9",
+   "7",
+   "6",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "Die Mitte zwischen 6 und 8 ist (6 + 8) : 2 = 7."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 90 · 4 = ?",
+  "options": [
+   "450",
+   "270",
+   "360",
+   "370"
+  ],
+  "correct": 2,
+  "explanation": "90 · 4 = 360."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 30 und 50?",
+  "options": [
+   "40",
+   "50",
+   "35",
+   "30"
+  ],
+  "correct": 0,
+  "explanation": "Die Mitte zwischen 30 und 50 ist (30 + 50) : 2 = 40."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Welche Figur ist gemeint? Die Figur hat keine Ecken und keinen Anfang und kein Ende.",
+  "options": [
+   "Kreis",
+   "Quadrat",
+   "Achteck",
+   "Dreieck"
+  ],
+  "correct": 0,
+  "explanation": "Diese Beschreibung passt zum Kreis: Die Figur hat keine Ecken und keinen Anfang und kein Ende."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Ein Zahlenstrahl beginnt bei 30, von Strich zu Strich sind es 10. Welche Zahl steht am 8. Strich nach 30?",
+  "options": [
+   "109",
+   "111",
+   "110",
+   "112"
+  ],
+  "correct": 2,
+  "explanation": "8 Schritte à 10: 30 + 8 · 10 = 110."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: L, J, D, Q?",
+  "options": [
+   "Q",
+   "D",
+   "L",
+   "J"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe D hat eine waagerechte Symmetrieachse, die anderen (L, J, Q) nicht."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 43 · 2 = ?",
+  "options": [
+   "129",
+   "43",
+   "86",
+   "96"
+  ],
+  "correct": 2,
+  "explanation": "43 · 2 = 86."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Wie schreibt man die Zahl 7 in römischen Zahlen?",
+  "options": [
+   "VII",
+   "V",
+   "IV",
+   "IX"
+  ],
+  "correct": 0,
+  "explanation": "7 = VII. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Ein Zahlenstrahl beginnt bei 40, von Strich zu Strich sind es 10. Welche Zahl steht am 4. Strich nach 40?",
+  "options": [
+   "80",
+   "79",
+   "81",
+   "82"
+  ],
+  "correct": 0,
+  "explanation": "4 Schritte à 10: 40 + 4 · 10 = 80."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: F, T, J, Z?",
+  "options": [
+   "T",
+   "Z",
+   "J",
+   "F"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe T hat eine senkrechte Symmetrieachse, die anderen (F, J, Z) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Auf einem Zahlenstrahl sind es von Strich zu Strich 2. Wie viele Schritte sind es von 12 bis 28?",
+  "options": [
+   "8",
+   "7",
+   "10",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "(28 − 12) : 2 = 8 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 4 bis 12?",
+  "options": [
+   "7",
+   "8",
+   "6",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "(12 − 4) : 1 = 8 Schritte."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Wie viele Symmetrieachsen hat ein gleichschenkliges Dreieck (nicht gleichseitig)?",
+  "options": [
+   "1",
+   "3",
+   "6",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "Ein gleichschenkliges Dreieck hat genau 1 Symmetrieachse durch die Spitze."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Wie viele Symmetrieachsen hat ein gleichschenkliges Dreieck (nicht gleichseitig)?",
+  "options": [
+   "3",
+   "0",
+   "1",
+   "unendlich viele"
+  ],
+  "correct": 2,
+  "explanation": "Ein gleichschenkliges Dreieck hat genau 1 Symmetrieachse durch die Spitze."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Ein Zahlenstrahl beginnt bei 8, von Strich zu Strich sind es 2. Welche Zahl steht am 5. Strich nach 8?",
+  "options": [
+   "20",
+   "18",
+   "19",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "5 Schritte à 2: 8 + 5 · 2 = 18."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Welcher dieser Großbuchstaben ist achsensymmetrisch: J, T, S, L?",
+  "options": [
+   "L",
+   "S",
+   "T",
+   "J"
+  ],
+  "correct": 2,
+  "explanation": "Der Buchstabe T hat eine senkrechte Symmetrieachse, die anderen (S, L, J) nicht."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 347 − 179 = ?",
+  "options": [
+   "178",
+   "168",
+   "166",
+   "158"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 347 − 179 = 168. Probe: 168 + 179 = 347."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 9 bis 14?",
+  "options": [
+   "6",
+   "3",
+   "5",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "(14 − 9) : 1 = 5 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Ein Zahlenstrahl beginnt bei 14, von Strich zu Strich sind es 2. Welche Zahl steht am 6. Strich nach 14?",
+  "options": [
+   "25",
+   "26",
+   "27",
+   "28"
+  ],
+  "correct": 1,
+  "explanation": "6 Schritte à 2: 14 + 6 · 2 = 26."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Wie viele Symmetrieachsen hat ein Parallelogramm (kein Rechteck, keine Raute)?",
+  "options": [
+   "4",
+   "1",
+   "6",
+   "0"
+  ],
+  "correct": 3,
+  "explanation": "Ein allgemeines Parallelogramm hat keine Symmetrieachse, nur einen Drehpunkt."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: Z, R, K, L?",
+  "options": [
+   "R",
+   "Z",
+   "L",
+   "K"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe K hat eine waagerechte Symmetrieachse, die anderen (L, R, Z) nicht."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 12 · 2 = ?",
+  "options": [
+   "34",
+   "24",
+   "36",
+   "12"
+  ],
+  "correct": 1,
+  "explanation": "12 · 2 = 24."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 12 und 16?",
+  "options": [
+   "14",
+   "13",
+   "12",
+   "16"
+  ],
+  "correct": 0,
+  "explanation": "Die Mitte zwischen 12 und 16 ist (12 + 16) : 2 = 14."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Wie schreibt man die Zahl 11 in römischen Zahlen?",
+  "options": [
+   "VIII",
+   "X",
+   "XII",
+   "XI"
+  ],
+  "correct": 3,
+  "explanation": "11 = XI. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 25 und 35?",
+  "options": [
+   "25",
+   "35",
+   "28",
+   "30"
+  ],
+  "correct": 3,
+  "explanation": "Die Mitte zwischen 25 und 35 ist (25 + 35) : 2 = 30."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Ein Zahlenstrahl beginnt bei 0, von Strich zu Strich sind es 1. Welche Zahl steht am 8. Strich nach 0?",
+  "options": [
+   "9",
+   "10",
+   "7",
+   "8"
+  ],
+  "correct": 3,
+  "explanation": "8 Schritte à 1: 0 + 8 · 1 = 8."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 375 − 110 = ?",
+  "options": [
+   "274",
+   "265",
+   "365",
+   "275"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 375 − 110 = 265. Probe: 265 + 110 = 375."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 6 bis 15?",
+  "options": [
+   "10",
+   "7",
+   "9",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "(15 − 6) : 1 = 9 Schritte."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Teste dein Wissen: Rechne schriftlich: 246 + 414 = ?",
+  "options": [
+   "669",
+   "662",
+   "671",
+   "660"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 246 + 414 = 660."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Wie viele Ecken hat ein Fünfeck?",
+  "options": [
+   "3",
+   "4",
+   "6",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "Ein Fünfeck hat 5 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 20 bis 60?",
+  "options": [
+   "8",
+   "10",
+   "7",
+   "9"
+  ],
+  "correct": 0,
+  "explanation": "(60 − 20) : 5 = 8 Schritte."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Welcher dieser Großbuchstaben ist achsensymmetrisch: T, F, R, P?",
+  "options": [
+   "F",
+   "R",
+   "P",
+   "T"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe T hat eine senkrechte Symmetrieachse, die anderen (R, P, F) nicht."
+ },
+ {
+  "topic": "Runden",
+  "question": "Wähle die richtige Antwort. Runde 54 auf den nächsten Zehner.",
+  "options": [
+   "70",
+   "40",
+   "50",
+   "60"
+  ],
+  "correct": 2,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 54 wird abgerundet zu 50."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: Q, C, N, J?",
+  "options": [
+   "J",
+   "N",
+   "C",
+   "Q"
+  ],
+  "correct": 2,
+  "explanation": "Der Buchstabe C hat eine waagerechte Symmetrieachse, die anderen (N, J, Q) nicht."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 486 − 140 = ?",
+  "options": [
+   "346",
+   "347",
+   "345",
+   "446"
+  ],
+  "correct": 0,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 486 − 140 = 346. Probe: 346 + 140 = 486."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Teste dein Wissen: Rechne schriftlich: 83 · 5 = ?",
+  "options": [
+   "415",
+   "425",
+   "498",
+   "332"
+  ],
+  "correct": 0,
+  "explanation": "83 · 5 = 415."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wie viele rechte Winkel hat ein rechtwinkliges Dreieck?",
+  "options": [
+   "0",
+   "6",
+   "1",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Ein rechtwinkliges Dreieck hat genau 1 rechten Winkel."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: F, V, R, J?",
+  "options": [
+   "V",
+   "J",
+   "R",
+   "F"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe V hat eine senkrechte Symmetrieachse, die anderen (R, F, J) nicht."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 478 − 337 = ?",
+  "options": [
+   "151",
+   "141",
+   "143",
+   "150"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 478 − 337 = 141. Probe: 141 + 337 = 478."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Teste dein Wissen: Rechne schriftlich: 32 · 8 = ?",
+  "options": [
+   "288",
+   "256",
+   "266",
+   "224"
+  ],
+  "correct": 1,
+  "explanation": "32 · 8 = 256."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Ein Zahlenstrahl beginnt bei 90, von Strich zu Strich sind es 10. Welche Zahl steht am 6. Strich nach 90?",
+  "options": [
+   "150",
+   "151",
+   "149",
+   "152"
+  ],
+  "correct": 0,
+  "explanation": "6 Schritte à 10: 90 + 6 · 10 = 150."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Ein Zahlenstrahl beginnt bei 3, von Strich zu Strich sind es 1. Welche Zahl steht am 1. Strich nach 3?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "1 Schritte à 1: 3 + 1 · 1 = 4."
+ },
+ {
+  "topic": "Formen",
+  "question": "Welche Figur ist gemeint? Alle 4 Seiten sind gleich lang, aber die Winkel müssen keine rechten Winkel sein.",
+  "options": [
+   "Rechteck",
+   "Trapez",
+   "Quadrat",
+   "Raute"
+  ],
+  "correct": 3,
+  "explanation": "Diese Beschreibung passt zum zur Raute: Alle 4 Seiten sind gleich lang, aber die Winkel müssen keine rechten Winkel sein."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Aufgabe: Rechne schriftlich: 671 − 368 = ?",
+  "options": [
+   "203",
+   "303",
+   "304",
+   "305"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 671 − 368 = 303. Probe: 303 + 368 = 671."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Aufgabe: Wie schreibt man die Zahl 3 in römischen Zahlen?",
+  "options": [
+   "II",
+   "III",
+   "IV",
+   "VI"
+  ],
+  "correct": 1,
+  "explanation": "3 = III. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Wie schreibt man die Zahl 6 in römischen Zahlen?",
+  "options": [
+   "VII",
+   "VI",
+   "IV",
+   "VIII"
+  ],
+  "correct": 1,
+  "explanation": "6 = VI. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: G, M, N, L?",
+  "options": [
+   "N",
+   "L",
+   "M",
+   "G"
+  ],
+  "correct": 2,
+  "explanation": "Der Buchstabe M hat eine senkrechte Symmetrieachse, die anderen (G, L, N) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 50 und 70?",
+  "options": [
+   "70",
+   "55",
+   "50",
+   "60"
+  ],
+  "correct": 3,
+  "explanation": "Die Mitte zwischen 50 und 70 ist (50 + 70) : 2 = 60."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl bedeutet die römische Zahl XI?",
+  "options": [
+   "8",
+   "13",
+   "10",
+   "11"
+  ],
+  "correct": 3,
+  "explanation": "XI = 11. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Wie heißt eine Figur mit genau 5 Ecken?",
+  "options": [
+   "Viereck",
+   "Dreieck",
+   "Achteck",
+   "Fünfeck"
+  ],
+  "correct": 3,
+  "explanation": "Eine Figur mit 5 Ecken heißt Fünfeck."
+ },
+ {
+  "topic": "Runden",
+  "question": "Teste dein Wissen: Runde 41 auf den nächsten Zehner.",
+  "options": [
+   "40",
+   "30",
+   "50",
+   "60"
+  ],
+  "correct": 0,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 41 wird abgerundet zu 40."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 25 bis 45?",
+  "options": [
+   "4",
+   "3",
+   "2",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "(45 − 25) : 5 = 4 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Ein Zahlenstrahl beginnt bei 40, von Strich zu Strich sind es 10. Welche Zahl steht am 8. Strich nach 40?",
+  "options": [
+   "121",
+   "122",
+   "120",
+   "119"
+  ],
+  "correct": 2,
+  "explanation": "8 Schritte à 10: 40 + 8 · 10 = 120."
+ },
+ {
+  "topic": "Formen",
+  "question": "Welche Figur ist gemeint? Die Figur hat keine Ecken und keinen Anfang und kein Ende.",
+  "options": [
+   "Dreieck",
+   "Kreis",
+   "Achteck",
+   "Quadrat"
+  ],
+  "correct": 1,
+  "explanation": "Diese Beschreibung passt zum Kreis: Die Figur hat keine Ecken und keinen Anfang und kein Ende."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Wie viele Symmetrieachsen hat ein Rechteck (kein Quadrat)?",
+  "options": [
+   "2",
+   "4",
+   "6",
+   "unendlich viele"
+  ],
+  "correct": 0,
+  "explanation": "Ein Rechteck hat 2 Symmetrieachsen durch die Seitenmitten. Die Diagonalen sind KEINE Symmetrieachsen."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Runde 14 auf den nächsten Zehner.",
+  "options": [
+   "30",
+   "10",
+   "20",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 14 wird abgerundet zu 10."
+ },
+ {
+  "topic": "Formen",
+  "question": "Teste dein Wissen: Welche Figur ist gemeint? Die Figur hat keine Ecken und keinen Anfang und kein Ende.",
+  "options": [
+   "Achteck",
+   "Kreis",
+   "Quadrat",
+   "Dreieck"
+  ],
+  "correct": 1,
+  "explanation": "Diese Beschreibung passt zum Kreis: Die Figur hat keine Ecken und keinen Anfang und kein Ende."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wie schreibt man die Zahl 3 in römischen Zahlen?",
+  "options": [
+   "III",
+   "I",
+   "IV",
+   "V"
+  ],
+  "correct": 0,
+  "explanation": "3 = III. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Runden",
+  "question": "Welche Zahl ergibt auf den Zehner gerundet 50?",
+  "options": [
+   "55",
+   "45",
+   "39",
+   "44"
+  ],
+  "correct": 1,
+  "explanation": "45 liegt näher an 50 (Rest 5 → aufrunden), also gerundet 50."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl bedeutet die römische Zahl V?",
+  "options": [
+   "2",
+   "5",
+   "6",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "V = 5. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Welcher dieser Großbuchstaben ist achsensymmetrisch: Q, F, P, U?",
+  "options": [
+   "U",
+   "F",
+   "Q",
+   "P"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe U hat eine senkrechte Symmetrieachse, die anderen (F, Q, P) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 15 und 25?",
+  "options": [
+   "25",
+   "20",
+   "15",
+   "18"
+  ],
+  "correct": 1,
+  "explanation": "Die Mitte zwischen 15 und 25 ist (15 + 25) : 2 = 20."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 1 bis 5?",
+  "options": [
+   "4",
+   "6",
+   "2",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "(5 − 1) : 1 = 4 Schritte."
+ },
+ {
+  "topic": "Runden",
+  "question": "Welche Zahl ergibt auf den Zehner gerundet 60?",
+  "options": [
+   "49",
+   "55",
+   "65",
+   "54"
+  ],
+  "correct": 1,
+  "explanation": "55 liegt näher an 60 (Rest 5 → aufrunden), also gerundet 60."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wie schreibt man die Zahl 12 in römischen Zahlen?",
+  "options": [
+   "X",
+   "XII",
+   "IX",
+   "XIV"
+  ],
+  "correct": 1,
+  "explanation": "12 = XII. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Welche Zahl bedeutet die römische Zahl XII?",
+  "options": [
+   "9",
+   "14",
+   "15",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "XII = 12. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 25 bis 45?",
+  "options": [
+   "6",
+   "5",
+   "4",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "(45 − 25) : 5 = 4 Schritte."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wähle die richtige Antwort. Welche Figur ist gemeint? Alle 4 Seiten sind gleich lang, aber die Winkel müssen keine rechten Winkel sein.",
+  "options": [
+   "Raute",
+   "Quadrat",
+   "Rechteck",
+   "Trapez"
+  ],
+  "correct": 0,
+  "explanation": "Diese Beschreibung passt zum zur Raute: Alle 4 Seiten sind gleich lang, aber die Winkel müssen keine rechten Winkel sein."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wie viele Symmetrieachsen hat ein Parallelogramm (kein Rechteck, keine Raute)?",
+  "options": [
+   "unendlich viele",
+   "1",
+   "0",
+   "3"
+  ],
+  "correct": 2,
+  "explanation": "Ein allgemeines Parallelogramm hat keine Symmetrieachse, nur einen Drehpunkt."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Ein Zahlenstrahl beginnt bei 8, von Strich zu Strich sind es 2. Welche Zahl steht am 4. Strich nach 8?",
+  "options": [
+   "15",
+   "18",
+   "17",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "4 Schritte à 2: 8 + 4 · 2 = 16."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 605 − 374 = ?",
+  "options": [
+   "231",
+   "331",
+   "241",
+   "232"
+  ],
+  "correct": 0,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 605 − 374 = 231. Probe: 231 + 374 = 605."
+ },
+ {
+  "topic": "Runden",
+  "question": "Runde 72 auf den nächsten Zehner.",
+  "options": [
+   "70",
+   "90",
+   "80",
+   "60"
+  ],
+  "correct": 0,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 72 wird abgerundet zu 70."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Welcher dieser Großbuchstaben ist achsensymmetrisch: S, R, L, W?",
+  "options": [
+   "S",
+   "W",
+   "R",
+   "L"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe W hat eine senkrechte Symmetrieachse, die anderen (L, S, R) nicht."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie heißt eine Figur mit genau 6 Ecken?",
+  "options": [
+   "Viereck",
+   "Achteck",
+   "Sechseck",
+   "Fünfeck"
+  ],
+  "correct": 2,
+  "explanation": "Eine Figur mit 6 Ecken heißt Sechseck."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Welcher dieser Großbuchstaben ist achsensymmetrisch: G, F, T, N?",
+  "options": [
+   "G",
+   "T",
+   "N",
+   "F"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe T hat eine senkrechte Symmetrieachse, die anderen (F, G, N) nicht."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Runde 43 auf den nächsten Zehner.",
+  "options": [
+   "60",
+   "50",
+   "30",
+   "40"
+  ],
+  "correct": 3,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 43 wird abgerundet zu 40."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 28 · 6 = ?",
+  "options": [
+   "168",
+   "196",
+   "140",
+   "178"
+  ],
+  "correct": 0,
+  "explanation": "28 · 6 = 168."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Aufgabe: Rechne schriftlich: 536 − 101 = ?",
+  "options": [
+   "435",
+   "425",
+   "535",
+   "433"
+  ],
+  "correct": 0,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 536 − 101 = 435. Probe: 435 + 101 = 536."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Ein Zahlenstrahl beginnt bei 0, von Strich zu Strich sind es 10. Welche Zahl steht am 6. Strich nach 0?",
+  "options": [
+   "59",
+   "61",
+   "60",
+   "62"
+  ],
+  "correct": 2,
+  "explanation": "6 Schritte à 10: 0 + 6 · 10 = 60."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 5 bis 15?",
+  "options": [
+   "3",
+   "0",
+   "2",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "(15 − 5) : 5 = 2 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Ein Zahlenstrahl beginnt bei 9, von Strich zu Strich sind es 1. Welche Zahl steht am 8. Strich nach 9?",
+  "options": [
+   "17",
+   "19",
+   "16",
+   "18"
+  ],
+  "correct": 0,
+  "explanation": "8 Schritte à 1: 9 + 8 · 1 = 17."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Wie viele Symmetrieachsen hat ein Quadrat?",
+  "options": [
+   "0",
+   "3",
+   "1",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Ein Quadrat hat 4 Symmetrieachsen: 2 durch die Seitenmitten und 2 durch die Diagonalen."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Ein Zahlenstrahl beginnt bei 70, von Strich zu Strich sind es 10. Welche Zahl steht am 5. Strich nach 70?",
+  "options": [
+   "122",
+   "119",
+   "120",
+   "121"
+  ],
+  "correct": 2,
+  "explanation": "5 Schritte à 10: 70 + 5 · 10 = 120."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 443 − 163 = ?",
+  "options": [
+   "380",
+   "290",
+   "280",
+   "289"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 443 − 163 = 280. Probe: 280 + 163 = 443."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Aufgabe: Wie viele rechte Winkel hat ein Quadrat?",
+  "options": [
+   "2",
+   "6",
+   "3",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Im Quadrat sind alle 4 Innenwinkel rechte Winkel (90°)."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 52 · 2 = ?",
+  "options": [
+   "104",
+   "114",
+   "52",
+   "156"
+  ],
+  "correct": 0,
+  "explanation": "52 · 2 = 104."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: Z, C, L, G?",
+  "options": [
+   "C",
+   "G",
+   "Z",
+   "L"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe C hat eine waagerechte Symmetrieachse, die anderen (Z, G, L) nicht."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie viele Ecken hat ein Dreieck?",
+  "options": [
+   "4",
+   "3",
+   "5",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "Ein Dreieck hat 3 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Ein Zahlenstrahl beginnt bei 5, von Strich zu Strich sind es 5. Welche Zahl steht am 1. Strich nach 5?",
+  "options": [
+   "12",
+   "9",
+   "11",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "1 Schritte à 5: 5 + 1 · 5 = 10."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: G, Q, P, B?",
+  "options": [
+   "B",
+   "G",
+   "P",
+   "Q"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe B hat eine waagerechte Symmetrieachse, die anderen (Q, G, P) nicht."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: Q, Z, G, T?",
+  "options": [
+   "Z",
+   "T",
+   "Q",
+   "G"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe T hat eine senkrechte Symmetrieachse, die anderen (Q, G, Z) nicht."
+ },
+ {
+  "topic": "Runden",
+  "question": "Welche Zahl ergibt auf den Zehner gerundet 30?",
+  "options": [
+   "35",
+   "25",
+   "19",
+   "24"
+  ],
+  "correct": 1,
+  "explanation": "25 liegt näher an 30 (Rest 5 → aufrunden), also gerundet 30."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 31 · 4 = ?",
+  "options": [
+   "155",
+   "93",
+   "134",
+   "124"
+  ],
+  "correct": 3,
+  "explanation": "31 · 4 = 124."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Teste dein Wissen: Rechne schriftlich: 619 + 562 = ?",
+  "options": [
+   "1281",
+   "1191",
+   "1179",
+   "1181"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 619 + 562 = 1181."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Teste dein Wissen: Rechne schriftlich: 60 · 7 = ?",
+  "options": [
+   "480",
+   "360",
+   "430",
+   "420"
+  ],
+  "correct": 3,
+  "explanation": "60 · 7 = 420."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Wie viele Symmetrieachsen hat ein regelmäßiges Sechseck?",
+  "options": [
+   "0",
+   "4",
+   "6",
+   "unendlich viele"
+  ],
+  "correct": 2,
+  "explanation": "Ein regelmäßiges Sechseck hat 6 Symmetrieachsen."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Wie viele Symmetrieachsen hat ein Parallelogramm (kein Rechteck, keine Raute)?",
+  "options": [
+   "6",
+   "1",
+   "0",
+   "4"
+  ],
+  "correct": 2,
+  "explanation": "Ein allgemeines Parallelogramm hat keine Symmetrieachse, nur einen Drehpunkt."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Aufgabe: Wie schreibt man die Zahl 1 in römischen Zahlen?",
+  "options": [
+   "II",
+   "IV",
+   "III",
+   "I"
+  ],
+  "correct": 3,
+  "explanation": "1 = I. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Teste dein Wissen: Rechne schriftlich: 48 · 9 = ?",
+  "options": [
+   "480",
+   "384",
+   "432",
+   "442"
+  ],
+  "correct": 2,
+  "explanation": "48 · 9 = 432."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Aufgabe: Welche Zahl bedeutet die römische Zahl XI?",
+  "options": [
+   "10",
+   "9",
+   "11",
+   "8"
+  ],
+  "correct": 2,
+  "explanation": "XI = 11. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 53 · 4 = ?",
+  "options": [
+   "212",
+   "159",
+   "265",
+   "222"
+  ],
+  "correct": 0,
+  "explanation": "53 · 4 = 212."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 366 − 171 = ?",
+  "options": [
+   "206",
+   "204",
+   "197",
+   "195"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 366 − 171 = 195. Probe: 195 + 171 = 366."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 639 − 255 = ?",
+  "options": [
+   "284",
+   "393",
+   "384",
+   "385"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 639 − 255 = 384. Probe: 384 + 255 = 639."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Auf einem Zahlenstrahl sind es von Strich zu Strich 2. Wie viele Schritte sind es von 8 bis 12?",
+  "options": [
+   "3",
+   "2",
+   "4",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "(12 − 8) : 2 = 2 Schritte."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: A, S, Q, N?",
+  "options": [
+   "N",
+   "Q",
+   "A",
+   "S"
+  ],
+  "correct": 2,
+  "explanation": "Der Buchstabe A hat eine senkrechte Symmetrieachse, die anderen (S, Q, N) nicht."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wähle die richtige Antwort. Wie viele rechte Winkel hat ein Quadrat?",
+  "options": [
+   "2",
+   "4",
+   "0",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Im Quadrat sind alle 4 Innenwinkel rechte Winkel (90°)."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Wie viele Symmetrieachsen hat ein Kreis?",
+  "options": [
+   "3",
+   "1",
+   "unendlich viele",
+   "0"
+  ],
+  "correct": 2,
+  "explanation": "Jede Gerade durch den Mittelpunkt ist Symmetrieachse — der Kreis hat unendlich viele."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 558 − 345 = ?",
+  "options": [
+   "213",
+   "215",
+   "214",
+   "113"
+  ],
+  "correct": 0,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 558 − 345 = 213. Probe: 213 + 345 = 558."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 5 bis 15?",
+  "options": [
+   "3",
+   "2",
+   "1",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "(15 − 5) : 5 = 2 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 40 bis 50?",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "(50 − 40) : 5 = 2 Schritte."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 34 · 7 = ?",
+  "options": [
+   "272",
+   "248",
+   "204",
+   "238"
+  ],
+  "correct": 3,
+  "explanation": "34 · 7 = 238."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Teste dein Wissen: Rechne schriftlich: 927 + 822 = ?",
+  "options": [
+   "1751",
+   "1749",
+   "1750",
+   "1739"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 927 + 822 = 1749."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Ein Zahlenstrahl beginnt bei 8, von Strich zu Strich sind es 1. Welche Zahl steht am 4. Strich nach 8?",
+  "options": [
+   "12",
+   "14",
+   "11",
+   "13"
+  ],
+  "correct": 0,
+  "explanation": "4 Schritte à 1: 8 + 4 · 1 = 12."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Aufgabe: Wie schreibt man die Zahl 11 in römischen Zahlen?",
+  "options": [
+   "X",
+   "XII",
+   "XI",
+   "IX"
+  ],
+  "correct": 2,
+  "explanation": "11 = XI. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Aufgabe: Wie viele rechte Winkel hat ein Rechteck?",
+  "options": [
+   "4",
+   "1",
+   "6",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "Im Rechteck sind alle 4 Innenwinkel rechte Winkel (90°)."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 13 · 7 = ?",
+  "options": [
+   "78",
+   "91",
+   "104",
+   "101"
+  ],
+  "correct": 1,
+  "explanation": "13 · 7 = 91."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Rechne schriftlich: 757 + 413 = ?",
+  "options": [
+   "1180",
+   "1160",
+   "1170",
+   "1171"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 757 + 413 = 1170."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 705 − 357 = ?",
+  "options": [
+   "448",
+   "359",
+   "248",
+   "348"
+  ],
+  "correct": 3,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 705 − 357 = 348. Probe: 348 + 357 = 705."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 833 − 414 = ?",
+  "options": [
+   "417",
+   "419",
+   "519",
+   "429"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 833 − 414 = 419. Probe: 419 + 414 = 833."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Ein Zahlenstrahl beginnt bei 70, von Strich zu Strich sind es 10. Welche Zahl steht am 8. Strich nach 70?",
+  "options": [
+   "150",
+   "152",
+   "151",
+   "149"
+  ],
+  "correct": 0,
+  "explanation": "8 Schritte à 10: 70 + 8 · 10 = 150."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Wie viele Symmetrieachsen hat ein Quadrat?",
+  "options": [
+   "3",
+   "4",
+   "6",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "Ein Quadrat hat 4 Symmetrieachsen: 2 durch die Seitenmitten und 2 durch die Diagonalen."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: T, L, J, N?",
+  "options": [
+   "N",
+   "L",
+   "J",
+   "T"
+  ],
+  "correct": 3,
+  "explanation": "Der Buchstabe T hat eine senkrechte Symmetrieachse, die anderen (J, L, N) nicht."
+ },
+ {
+  "topic": "Runden",
+  "question": "Wähle die richtige Antwort. Runde 71 auf den nächsten Zehner.",
+  "options": [
+   "80",
+   "70",
+   "60",
+   "90"
+  ],
+  "correct": 1,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 71 wird abgerundet zu 70."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 329 + 508 = ?",
+  "options": [
+   "837",
+   "839",
+   "838",
+   "937"
+  ],
+  "correct": 0,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 329 + 508 = 837."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Teste dein Wissen: Wie viele rechte Winkel hat ein rechtwinkliges Dreieck?",
+  "options": [
+   "0",
+   "6",
+   "1",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "Ein rechtwinkliges Dreieck hat genau 1 rechten Winkel."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Wähle die richtige Antwort. Wie schreibt man die Zahl 11 in römischen Zahlen?",
+  "options": [
+   "XII",
+   "XIII",
+   "XIV",
+   "XI"
+  ],
+  "correct": 3,
+  "explanation": "11 = XI. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Welche Zahl bedeutet die römische Zahl IV?",
+  "options": [
+   "6",
+   "3",
+   "4",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "IV = 4. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Wie viele Symmetrieachsen hat ein gleichseitiges Dreieck?",
+  "options": [
+   "1",
+   "4",
+   "3",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "Beim gleichseitigen Dreieck geht durch jede Ecke eine Symmetrieachse: 3 Achsen."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Teste dein Wissen: Welcher dieser Großbuchstaben ist achsensymmetrisch: L, Q, A, F?",
+  "options": [
+   "L",
+   "F",
+   "A",
+   "Q"
+  ],
+  "correct": 2,
+  "explanation": "Der Buchstabe A hat eine senkrechte Symmetrieachse, die anderen (Q, L, F) nicht."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Aufgabe: Welcher dieser Großbuchstaben ist achsensymmetrisch: P, S, G, A?",
+  "options": [
+   "A",
+   "S",
+   "P",
+   "G"
+  ],
+  "correct": 0,
+  "explanation": "Der Buchstabe A hat eine senkrechte Symmetrieachse, die anderen (S, G, P) nicht."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: E, S, N, Q?",
+  "options": [
+   "N",
+   "E",
+   "S",
+   "Q"
+  ],
+  "correct": 1,
+  "explanation": "Der Buchstabe E hat eine waagerechte Symmetrieachse, die anderen (Q, S, N) nicht."
+ },
+ {
+  "topic": "Runden",
+  "question": "Teste dein Wissen: Runde 72 auf den nächsten Zehner.",
+  "options": [
+   "80",
+   "70",
+   "90",
+   "60"
+  ],
+  "correct": 1,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 72 wird abgerundet zu 70."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie viele Ecken hat ein Fünfeck?",
+  "options": [
+   "5",
+   "3",
+   "6",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "Ein Fünfeck hat 5 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Runden",
+  "question": "Aufgabe: Runde 41 auf den nächsten Zehner.",
+  "options": [
+   "50",
+   "30",
+   "40",
+   "60"
+  ],
+  "correct": 2,
+  "explanation": "Die Ziffer dahinter entscheidet: ab 5 wird aufgerundet. 41 wird abgerundet zu 40."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 41 · 3 = ?",
+  "options": [
+   "164",
+   "123",
+   "133",
+   "82"
+  ],
+  "correct": 1,
+  "explanation": "41 · 3 = 123."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 241 − 101 = ?",
+  "options": [
+   "151",
+   "140",
+   "139",
+   "149"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 241 − 101 = 140. Probe: 140 + 101 = 241."
+ },
+ {
+  "topic": "Rechte Winkel",
+  "question": "Wie viele rechte Winkel hat ein Rechteck?",
+  "options": [
+   "4",
+   "1",
+   "2",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Im Rechteck sind alle 4 Innenwinkel rechte Winkel (90°)."
+ },
+ {
+  "topic": "Symmetrie",
+  "question": "Wähle die richtige Antwort. Welcher dieser Großbuchstaben ist achsensymmetrisch: J, B, S, L?",
+  "options": [
+   "S",
+   "L",
+   "B",
+   "J"
+  ],
+  "correct": 2,
+  "explanation": "Der Buchstabe B hat eine waagerechte Symmetrieachse, die anderen (L, S, J) nicht."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 20 und 30?",
+  "options": [
+   "25",
+   "30",
+   "20",
+   "23"
+  ],
+  "correct": 0,
+  "explanation": "Die Mitte zwischen 20 und 30 ist (20 + 30) : 2 = 25."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Teste dein Wissen: Rechne schriftlich: 56 · 4 = ?",
+  "options": [
+   "280",
+   "234",
+   "224",
+   "168"
+  ],
+  "correct": 2,
+  "explanation": "56 · 4 = 224."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Teste dein Wissen: Rechne schriftlich: 88 · 5 = ?",
+  "options": [
+   "450",
+   "352",
+   "528",
+   "440"
+  ],
+  "correct": 3,
+  "explanation": "88 · 5 = 440."
+ },
+ {
+  "topic": "Formen",
+  "question": "Wie viele Ecken hat ein Dreieck?",
+  "options": [
+   "4",
+   "3",
+   "2",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "Ein Dreieck hat 3 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 52 · 9 = ?",
+  "options": [
+   "520",
+   "478",
+   "468",
+   "416"
+  ],
+  "correct": 2,
+  "explanation": "52 · 9 = 468."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Aufgabe: Rechne schriftlich: 885 + 655 = ?",
+  "options": [
+   "1550",
+   "1551",
+   "1540",
+   "1539"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 885 + 655 = 1540."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 39 · 4 = ?",
+  "options": [
+   "156",
+   "195",
+   "166",
+   "117"
+  ],
+  "correct": 0,
+  "explanation": "39 · 4 = 156."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Aufgabe: Welche Zahl bedeutet die römische Zahl V?",
+  "options": [
+   "2",
+   "8",
+   "4",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "V = 5. Kleineres Zeichen vor größerem wird abgezogen (z. B. IV = 4)."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie viele Ecken hat ein Achteck?",
+  "options": [
+   "9",
+   "8",
+   "10",
+   "6"
+  ],
+  "correct": 1,
+  "explanation": "Ein Achteck hat 8 Ecken und ebenso viele Seiten."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 8 und 12?",
+  "options": [
+   "8",
+   "12",
+   "9",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "Die Mitte zwischen 8 und 12 ist (8 + 12) : 2 = 10."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Rechne schriftlich: 498 − 234 = ?",
+  "options": [
+   "264",
+   "164",
+   "263",
+   "274"
+  ],
+  "correct": 0,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 498 − 234 = 264. Probe: 264 + 234 = 498."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Wähle die richtige Antwort. Rechne schriftlich: 338 + 511 = ?",
+  "options": [
+   "849",
+   "860",
+   "859",
+   "749"
+  ],
+  "correct": 0,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 338 + 511 = 849."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 437 − 202 = ?",
+  "options": [
+   "335",
+   "235",
+   "233",
+   "225"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 437 − 202 = 235. Probe: 235 + 202 = 437."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Auf einem Zahlenstrahl sind es von Strich zu Strich 2. Wie viele Schritte sind es von 0 bis 12?",
+  "options": [
+   "7",
+   "6",
+   "8",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "(12 − 0) : 2 = 6 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Auf einem Zahlenstrahl sind es von Strich zu Strich 10. Wie viele Schritte sind es von 0 bis 90?",
+  "options": [
+   "10",
+   "11",
+   "7",
+   "9"
+  ],
+  "correct": 3,
+  "explanation": "(90 − 0) : 10 = 9 Schritte."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Aufgabe: Rechne schriftlich: 69 · 5 = ?",
+  "options": [
+   "355",
+   "345",
+   "276",
+   "414"
+  ],
+  "correct": 1,
+  "explanation": "69 · 5 = 345."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Auf einem Zahlenstrahl sind es von Strich zu Strich 1. Wie viele Schritte sind es von 7 bis 12?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "correct": 1,
+  "explanation": "(12 − 7) : 1 = 5 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Aufgabe: Auf einem Zahlenstrahl sind es von Strich zu Strich 2. Wie viele Schritte sind es von 4 bis 14?",
+  "options": [
+   "6",
+   "7",
+   "3",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "(14 − 4) : 2 = 5 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Ein Zahlenstrahl beginnt bei 6, von Strich zu Strich sind es 1. Welche Zahl steht am 6. Strich nach 6?",
+  "options": [
+   "13",
+   "12",
+   "11",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "6 Schritte à 1: 6 + 6 · 1 = 12."
+ },
+ {
+  "topic": "Formen",
+  "question": "Aufgabe: Wie heißt eine Figur mit genau 8 Ecken?",
+  "options": [
+   "Viereck",
+   "Dreieck",
+   "Fünfeck",
+   "Achteck"
+  ],
+  "correct": 3,
+  "explanation": "Eine Figur mit 8 Ecken heißt Achteck."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 862 − 402 = ?",
+  "options": [
+   "462",
+   "469",
+   "460",
+   "459"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 862 − 402 = 460. Probe: 460 + 402 = 862."
+ },
+ {
+  "topic": "Römische Zahlen",
+  "question": "Teste dein Wissen: Wie schreibt man die Zahl 4 in römischen Zahlen?",
+  "options": [
+   "III",
+   "VII",
+   "V",
+   "IV"
+  ],
+  "correct": 3,
+  "explanation": "4 = IV. Grundzeichen: I=1, V=5, X=10, L=50, C=100, D=500, M=1000."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Welche Zahl liegt auf dem Zahlenstrahl genau in der Mitte zwischen 25 und 35?",
+  "options": [
+   "25",
+   "28",
+   "30",
+   "35"
+  ],
+  "correct": 2,
+  "explanation": "Die Mitte zwischen 25 und 35 ist (25 + 35) : 2 = 30."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Aufgabe: Rechne schriftlich: 347 − 102 = ?",
+  "options": [
+   "235",
+   "245",
+   "247",
+   "246"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 347 − 102 = 245. Probe: 245 + 102 = 347."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Wähle die richtige Antwort. Auf einem Zahlenstrahl sind es von Strich zu Strich 5. Wie viele Schritte sind es von 20 bis 60?",
+  "options": [
+   "7",
+   "8",
+   "6",
+   "9"
+  ],
+  "correct": 1,
+  "explanation": "(60 − 20) : 5 = 8 Schritte."
+ },
+ {
+  "topic": "Zahlenstrahl",
+  "question": "Teste dein Wissen: Ein Zahlenstrahl beginnt bei 5, von Strich zu Strich sind es 1. Welche Zahl steht am 8. Strich nach 5?",
+  "options": [
+   "15",
+   "14",
+   "12",
+   "13"
+  ],
+  "correct": 3,
+  "explanation": "8 Schritte à 1: 5 + 8 · 1 = 13."
+ },
+ {
+  "topic": "Schriftliche Subtraktion",
+  "question": "Teste dein Wissen: Rechne schriftlich: 586 − 281 = ?",
+  "options": [
+   "315",
+   "305",
+   "304",
+   "306"
+  ],
+  "correct": 1,
+  "explanation": "Stellenweise von rechts subtrahieren (mit Entbündeln): 586 − 281 = 305. Probe: 305 + 281 = 586."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Rechne schriftlich: 880 + 885 = ?",
+  "options": [
+   "1766",
+   "1665",
+   "1765",
+   "1774"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 880 + 885 = 1765."
+ },
+ {
+  "topic": "Schriftliche Multiplikation",
+  "question": "Rechne schriftlich: 59 · 7 = ?",
+  "options": [
+   "354",
+   "472",
+   "413",
+   "423"
+  ],
+  "correct": 2,
+  "explanation": "59 · 7 = 413."
+ },
+ {
+  "topic": "Schriftliche Addition",
+  "question": "Rechne schriftlich: 476 + 975 = ?",
+  "options": [
+   "1461",
+   "1452",
+   "1451",
+   "1462"
+  ],
+  "correct": 2,
+  "explanation": "Stellenweise von rechts addieren (mit Übertrag): 476 + 975 = 1451."
+ }
+]

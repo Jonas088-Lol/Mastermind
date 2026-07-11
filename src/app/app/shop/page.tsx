@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { ShoppingBag, Zap } from "lucide-react";
+import { ShoppingBag, Sparkles, Zap } from "lucide-react";
 import { CoinIcon } from "@/components/ui/CoinIcon";
 import { Badge } from "@/components/ui/badge";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { getBalance } from "@/lib/coins";
 import { COMPONENT_ICON } from "@/lib/shop";
+import { safeJsonParse } from "@/lib/safe-json";
 import { cn } from "@/lib/utils";
 import { purchaseItemDef } from "./actions";
 
 export const metadata: Metadata = { title: "Shop · MasterMind" };
 
-interface PageProps { searchParams: Promise<{ cat?: string }> }
+interface PageProps { searchParams: Promise<{ cat?: string; rarity?: string; sort?: string }> }
 
 // Map ItemKind → category tab key
 const CATEGORIES = [
@@ -36,6 +37,29 @@ const RARITY_STYLE: Record<string, { label: string; badge: string; border: strin
   SECRET:    { label: "Geheim",       badge: "bg-yellow-500/15 text-yellow-400",                 border: "border-yellow-400/40" },
 };
 
+const RARITY_FILTERS = ["COMMON", "UNCOMMON", "RARE", "EPIC", "LEGENDARY", "MYTHIC", "SECRET"] as const;
+
+const SORT_OPTIONS = [
+  { key: "standard",  label: "Standard" },
+  { key: "preis_auf", label: "Preis ↑" },
+  { key: "preis_ab",  label: "Preis ↓" },
+  { key: "neueste",   label: "Neueste" },
+] as const;
+type SortKey = typeof SORT_OPTIONS[number]["key"];
+
+function shopHref(cat: CatKey, rarity: string | null, sort: SortKey): string {
+  const params = new URLSearchParams();
+  if (cat !== "alle") params.set("cat", cat);
+  if (rarity) params.set("rarity", rarity);
+  if (sort !== "standard") params.set("sort", sort);
+  const qs = params.toString();
+  return qs ? `/app/shop?${qs}` : "/app/shop";
+}
+
+function dayOfYear(d: Date): number {
+  return Math.floor((d.getTime() - Date.UTC(d.getUTCFullYear(), 0, 0)) / 86_400_000);
+}
+
 const BOOSTER_LABEL: Record<string, string> = {
   boost_xp: "XP-Booster", streak_freeze: "Streak-Schutz", ai_quota: "KI-Anfragen",
 };
@@ -45,8 +69,10 @@ export default async function ShopPage({ searchParams }: PageProps) {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect(ROLE_HOME[effectiveRole(session)]);
 
-  const { cat: catParam } = await searchParams;
+  const { cat: catParam, rarity: rarityParam, sort: sortParam } = await searchParams;
   const activeCat: CatKey = (CATEGORIES.find((c) => c.key === catParam)?.key ?? "alle") as CatKey;
+  const activeRarity: string | null = RARITY_FILTERS.find((r) => r === rarityParam?.trim().toUpperCase()) ?? null;
+  const activeSort: SortKey = (SORT_OPTIONS.find((s) => s.key === sortParam)?.key ?? "standard") as SortKey;
 
   const now = new Date();
 
@@ -79,11 +105,28 @@ export default async function ShopPage({ searchParams }: PageProps) {
 
   const ownedMap = new Map(ownedItems.map((o) => [o.itemId, o]));
 
-  const filtered = listings.filter((l) => {
-    if (activeCat === "alle")     return true;
-    if (activeCat === "featured") return l.featured;
-    return l.item.kind === activeCat;
-  });
+  const filtered = listings
+    .filter((l) => {
+      if (activeRarity && l.item.rarity !== activeRarity) return false;
+      if (activeCat === "alle")     return true;
+      if (activeCat === "featured") return l.featured;
+      return l.item.kind === activeCat;
+    })
+    .sort((a, b) => {
+      if (activeSort === "preis_auf") return (a.item.priceCoins ?? Infinity) - (b.item.priceCoins ?? Infinity);
+      if (activeSort === "preis_ab")  return (b.item.priceCoins ?? -1) - (a.item.priceCoins ?? -1);
+      if (activeSort === "neueste")   return b.item.createdAt.getTime() - a.item.createdAt.getTime();
+      return 0; // "standard": keep featured-first order from query
+    });
+
+  // Deterministische Empfehlung des Tages (kein Math.random im Render)
+  const dailyPool = [...listings].sort((a, b) => a.item.key.localeCompare(b.item.key));
+  const dailyPick = dailyPool.length > 0 ? dailyPool[dayOfYear(now) % dailyPool.length] : null;
+
+  // Wie viele Artikel kann sich der User aktuell leisten?
+  const affordableCount = listings.filter(
+    (l) => l.item.priceCoins != null && l.item.priceCoins > 0 && l.item.priceCoins <= balance,
+  ).length;
 
   function boosterTimeLeft(expiresAt: Date): string {
     const ms = expiresAt.getTime() - now.getTime();
@@ -104,12 +147,42 @@ export default async function ShopPage({ searchParams }: PageProps) {
           <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Shop</h1>
           <p className="mt-1 text-sm text-muted-fg">Kaufe Booster, Kosmetiken und Ausrüstung mit Münzen</p>
         </div>
-        <div className="flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2 shrink-0">
-          <CoinIcon className="size-5 text-warning" />
-          <span className="font-mono text-lg font-bold">{balance.toLocaleString("de-DE")}</span>
-          <span className="text-sm text-muted-fg">Münzen</span>
+        <div className="flex flex-col items-end gap-1 rounded-2xl border border-warning/30 bg-warning/5 px-5 py-3 shrink-0">
+          <div className="flex items-center gap-2">
+            <CoinIcon className="size-6 text-warning" />
+            <span className="font-mono text-2xl font-bold tabular-nums">{balance.toLocaleString("de-DE")}</span>
+            <span className="text-sm text-muted-fg">Münzen</span>
+          </div>
+          <p className="text-xs text-muted-fg">
+            {affordableCount === 0
+              ? "Reicht aktuell für keinen Artikel"
+              : `Reicht für ${affordableCount} ${affordableCount === 1 ? "Artikel" : "Artikel"} im Shop`}
+          </p>
         </div>
       </header>
+
+      {/* Empfehlung des Tages */}
+      {dailyPick && (
+        <div className="relative overflow-hidden rounded-2xl border-2 border-brand/50 bg-surface p-4 shadow-[0_0_24px_-6px] shadow-brand/40 sm:p-5">
+          <div className="pointer-events-none absolute -top-12 -right-12 size-40 rounded-full bg-brand/10 blur-2xl" />
+          <div className="flex items-center gap-4">
+            <span className="text-5xl leading-none">{COMPONENT_ICON[dailyPick.item.componentKey] ?? "📦"}</span>
+            <div className="min-w-0 flex-1">
+              <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand">
+                <Sparkles className="size-3.5" /> Empfehlung des Tages
+              </p>
+              <p className="mt-0.5 truncate text-base font-bold">{dailyPick.item.name}</p>
+              <p className="truncate text-xs text-muted-fg">{dailyPick.item.description}</p>
+            </div>
+            {dailyPick.item.priceCoins ? (
+              <div className="flex shrink-0 items-center gap-1.5 rounded-xl border border-border bg-bg px-3 py-2">
+                <CoinIcon className="size-4 text-warning" />
+                <span className="font-mono text-sm font-bold">{dailyPick.item.priceCoins.toLocaleString("de-DE")}</span>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      )}
 
       {/* Active boosters */}
       {activeBoosters.length > 0 && (
@@ -133,28 +206,76 @@ export default async function ShopPage({ searchParams }: PageProps) {
       )}
 
       {/* Category tabs */}
-      <nav className="flex flex-wrap gap-1.5">
-        {CATEGORIES.map((cat) => {
-          const isActive = activeCat === cat.key;
-          return (
-            <Link key={cat.key}
-              href={cat.key === "alle" ? "/app/shop" : `/app/shop?cat=${cat.key}`}
-              className={cn(
-                "rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
-                isActive ? "bg-brand text-brand-fg" : "bg-surface border border-border text-fg hover:border-fg/30",
-              )}>
-              {cat.label}
-            </Link>
-          );
-        })}
-      </nav>
+      <div className="flex flex-col gap-3">
+        <nav className="flex flex-wrap gap-1.5">
+          {CATEGORIES.map((cat) => {
+            const isActive = activeCat === cat.key;
+            return (
+              <Link key={cat.key}
+                href={shopHref(cat.key, activeRarity, activeSort)}
+                className={cn(
+                  "rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
+                  isActive ? "bg-brand text-brand-fg" : "bg-surface border border-border text-fg hover:border-fg/30",
+                )}>
+                {cat.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Rarity filter pills */}
+        <nav className="flex flex-wrap items-center gap-1.5">
+          <span className="text-xs font-semibold uppercase tracking-wider text-muted-fg mr-1">Seltenheit</span>
+          <Link
+            href={shopHref(activeCat, null, activeSort)}
+            className={cn(
+              "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
+              !activeRarity ? "bg-brand text-brand-fg" : "bg-surface border border-border text-fg hover:border-fg/30",
+            )}>
+            Alle
+          </Link>
+          {RARITY_FILTERS.map((r) => {
+            const style = RARITY_STYLE[r]!;
+            const isActive = activeRarity === r;
+            return (
+              <Link key={r}
+                href={shopHref(activeCat, isActive ? null : r, activeSort)}
+                className={cn(
+                  "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
+                  isActive ? "bg-brand text-brand-fg" : cn(style.badge, "hover:opacity-80"),
+                )}>
+                {style.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Sort pills */}
+        <nav className="flex flex-wrap items-center gap-1.5">
+          <span className="text-xs font-semibold uppercase tracking-wider text-muted-fg mr-1">Sortierung</span>
+          {SORT_OPTIONS.map((s) => {
+            const isActive = activeSort === s.key;
+            return (
+              <Link key={s.key}
+                href={shopHref(activeCat, activeRarity, s.key)}
+                className={cn(
+                  "rounded-full px-2.5 py-1 text-xs font-medium transition-colors",
+                  isActive ? "bg-brand text-brand-fg" : "bg-surface border border-border text-fg hover:border-fg/30",
+                )}>
+                {s.label}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
 
       {/* Items grid */}
       {filtered.length === 0 ? (
         <div className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-surface py-16 text-center">
           <ShoppingBag className="size-10 text-muted-fg/40" strokeWidth={1} />
           <p className="text-lg font-bold">Keine Artikel gefunden</p>
-          <p className="text-sm text-muted-fg">In dieser Kategorie gibt es aktuell keine Artikel</p>
+          <p className="text-sm text-muted-fg">Mit diesen Filtern gibt es aktuell keine Artikel</p>
+          <Link href="/app/shop" className="text-sm font-semibold text-brand hover:underline">Filter zurücksetzen</Link>
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -166,7 +287,8 @@ export default async function ShopPage({ searchParams }: PageProps) {
             const canAfford = price ? balance >= price : false;
             const icon     = COMPONENT_ICON[item.componentKey] ?? "📦";
             const isLimited = !!activeTo;
-            const meta = (item.meta ? JSON.parse(item.meta) : {}) as {
+            const isDailyPick = dailyPick?.item.id === item.id;
+            const meta = safeJsonParse(item.meta, {}) as {
               multiplier?: number; minutes?: number; days?: number;
               amount?: number; hpBonus?: number; dmgBonus?: number;
               slot?: string; text?: string;
@@ -178,6 +300,7 @@ export default async function ShopPage({ searchParams }: PageProps) {
                   "relative flex flex-col gap-3 rounded-2xl border-2 bg-bg p-4 transition-colors",
                   style.border,
                   featured && "ring-1 ring-brand/40",
+                  isDailyPick && "border-brand/60 shadow-[0_0_20px_-4px] shadow-brand/40",
                 )}>
                 {featured && (
                   <span className="absolute top-2 left-2 text-[10px] font-bold text-brand bg-brand/10 border border-brand/20 rounded-full px-1.5 py-0.5">

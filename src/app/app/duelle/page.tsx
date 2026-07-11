@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Swords, Trophy, Clock, CheckCircle2, XCircle } from "lucide-react";
+import { ArrowRight, Swords, Trophy, Clock, CheckCircle2, XCircle, RotateCcw, Medal } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { Avatar } from "@/components/ui/avatar";
@@ -10,7 +10,7 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { COIN_REWARDS } from "@/lib/coins";
-import { acceptDuel, declineDuel, sendChallenge } from "./actions";
+import { acceptDuel, declineDuel, rematchDuel, sendChallenge } from "./actions";
 import { AutoRefresh } from "@/components/app/AutoRefresh";
 
 export const metadata: Metadata = { title: "Duelle" };
@@ -29,7 +29,7 @@ export default async function DuellePage() {
 
   const now = new Date();
 
-  const [myDuels, classmates, topics] = await Promise.all([
+  const [myDuels, classmates, topics, allCompleted, schoolStudents] = await Promise.all([
     prisma.duel.findMany({
       where: {
         OR: [{ challengerId: userId }, { challengedId: userId }],
@@ -59,7 +59,61 @@ export default async function DuellePage() {
       orderBy: [{ subject: "asc" }, { grade: "asc" }],
       take: 50,
     }),
+    // Alle abgeschlossenen Duelle für Bilanz, Streak & Kopf-an-Kopf
+    prisma.duel.findMany({
+      where: {
+        OR: [{ challengerId: userId }, { challengedId: userId }],
+        status: "completed",
+      },
+      select: { id: true, challengerId: true, challengedId: true, winnerId: true, completedAt: true, createdAt: true },
+      orderBy: [{ completedAt: "desc" }, { createdAt: "desc" }],
+      take: 500,
+    }),
+    // Schüler der Schule für die Sieger-Rangliste
+    prisma.user.findMany({
+      where: { schoolId: session!.schoolId ?? "", role: "student" },
+      select: { id: true, name: true },
+      take: 500,
+    }),
   ]);
+
+  // Eigene Bilanz
+  const wins = allCompleted.filter((d) => d.winnerId === userId).length;
+  const draws = allCompleted.filter((d) => d.winnerId === null).length;
+  const losses = allCompleted.length - wins - draws;
+  const winrate = allCompleted.length > 0 ? Math.round((wins / allCompleted.length) * 100) : 0;
+  let streak = 0;
+  for (const d of allCompleted) {
+    if (d.winnerId === userId) streak += 1;
+    else break;
+  }
+
+  // Kopf-an-Kopf-Bilanz je Gegner (Siege–Niederlagen)
+  const headToHead = new Map<string, { wins: number; losses: number }>();
+  for (const d of allCompleted) {
+    const oppId = d.challengerId === userId ? d.challengedId : d.challengerId;
+    const h = headToHead.get(oppId) ?? { wins: 0, losses: 0 };
+    if (d.winnerId === userId) h.wins += 1;
+    else if (d.winnerId !== null) h.losses += 1;
+    headToHead.set(oppId, h);
+  }
+
+  // Sieger-Rangliste der Schule (Top 10 nach Siegen)
+  const schoolStudentIds = schoolStudents.map((s) => s.id);
+  const nameById = new Map(schoolStudents.map((s) => [s.id, s.name]));
+  const winCounts =
+    schoolStudentIds.length > 0
+      ? await prisma.duel.groupBy({
+          by: ["winnerId"],
+          where: { status: "completed", winnerId: { in: schoolStudentIds } },
+          _count: { winnerId: true },
+        })
+      : [];
+  const leaderboard = winCounts
+    .filter((w) => w.winnerId !== null)
+    .map((w) => ({ userId: w.winnerId as string, wins: w._count.winnerId }))
+    .sort((a, b) => b.wins - a.wins)
+    .slice(0, 10);
 
   const pending = myDuels.filter((d) => d.status === "pending" && d.challengedId === userId);
   const active = myDuels.filter((d) => d.status === "accepted");
@@ -101,12 +155,15 @@ export default async function DuellePage() {
         ))}
       </div>
 
-      {/* Stats */}
-      <section className="grid grid-cols-3 gap-px border border-border bg-border">
+      {/* Statistik-Kopf: eigene Bilanz */}
+      <section className="grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-3 lg:grid-cols-6">
         {[
-          { label: "Offen", value: pending.length + active.length, icon: Clock, tone: "text-warning" },
-          { label: "Gewonnen", value: completed.filter((d) => d.winnerId === userId).length, icon: Trophy, tone: "text-success" },
-          { label: "Gespielt", value: completed.length, icon: Swords, tone: "text-brand" },
+          { label: "Offen", value: `${pending.length + active.length}`, icon: Clock, tone: "text-warning" },
+          { label: "Siege", value: `${wins}`, icon: Trophy, tone: "text-success" },
+          { label: "Niederlagen", value: `${losses}`, icon: XCircle, tone: "text-danger" },
+          { label: "Unentschieden", value: `${draws}`, icon: Swords, tone: "text-muted-fg" },
+          { label: "Winrate", value: `${winrate}%`, icon: CheckCircle2, tone: "text-brand" },
+          { label: "Sieges-Streak", value: `${streak}`, icon: Trophy, tone: "text-warning" },
         ].map((s) => (
           <div key={s.label} className="bg-bg p-4">
             <div className="flex items-center justify-between">
@@ -282,17 +339,68 @@ export default async function DuellePage() {
                 const { text, cls } = outcomeLabel(d);
                 const myScore = isChallenger ? d.challengerScore : d.challengedScore;
                 const oppScore = isChallenger ? d.challengedScore : d.challengerScore;
+                const h2h = headToHead.get(opponent.id);
                 return (
-                  <li key={d.id} className="flex items-center gap-3 px-5 py-3">
+                  <li key={d.id} className="flex flex-wrap items-center gap-3 px-5 py-3">
                     <Avatar name={opponent.name} size="sm" />
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-medium">{opponent.name}</p>
                       <p className="text-xs text-muted-fg">{d.topic.title}</p>
+                      {h2h && (
+                        <p className="mt-0.5 text-[10px] text-muted-fg">
+                          Bilanz gegen {opponent.name}: {h2h.wins}–{h2h.losses}
+                        </p>
+                      )}
                     </div>
                     <span className="font-mono text-sm font-bold">
                       {myScore ?? "—"}:{oppScore ?? "—"}
                     </span>
                     <span className={cn("text-xs font-semibold", cls)}>{text}</span>
+                    <form action={rematchDuel.bind(null, d.id)}>
+                      <button
+                        type="submit"
+                        className="flex items-center gap-1 rounded-xl border border-border px-3 py-1.5 text-xs font-semibold text-muted-fg transition-colors hover:border-brand hover:text-brand"
+                      >
+                        <RotateCcw className="size-3" /> Revanche
+                      </button>
+                    </form>
+                  </li>
+                );
+              })}
+            </ul>
+          </CardBody>
+        </Card>
+      )}
+
+      {/* Sieger-Rangliste der Schule */}
+      {leaderboard.length > 0 && (
+        <Card>
+          <CardHeader>
+            <div>
+              <CardTitle>Duell-Rangliste der Schule</CardTitle>
+              <p className="mt-1 text-sm text-muted-fg">Top 10 nach Siegen</p>
+            </div>
+            <Medal className="size-5 text-warning" strokeWidth={1.75} />
+          </CardHeader>
+          <CardBody className="px-0! pb-0!">
+            <ul className="divide-y divide-border border-t border-border">
+              {leaderboard.map((entry, i) => {
+                const name = nameById.get(entry.userId) ?? "Unbekannt";
+                const isMe = entry.userId === userId;
+                return (
+                  <li key={entry.userId} className={cn("flex items-center gap-3 px-5 py-3", isMe && "bg-brand/5")}>
+                    <span className="w-6 shrink-0 font-mono text-sm font-bold text-muted-fg">
+                      {i + 1}.
+                    </span>
+                    <Avatar name={name} size="sm" />
+                    <p className="min-w-0 flex-1 truncate text-sm font-medium">
+                      {name}
+                      {isMe && <span className="ml-1.5 text-xs text-brand">(du)</span>}
+                    </p>
+                    <span className="flex items-center gap-1.5 font-mono text-sm font-bold">
+                      <Trophy className="size-3.5 text-success" strokeWidth={1.75} />
+                      {entry.wins}
+                    </span>
                   </li>
                 );
               })}

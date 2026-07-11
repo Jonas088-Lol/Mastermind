@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Streak-Tracker · MasterMind" };
 
-const MILESTONES = [3, 7, 14, 30, 50, 100];
+const MILESTONES = [7, 14, 30, 60, 100];
 
 const DAY_LABELS = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
 
@@ -47,9 +47,14 @@ export default async function StreaksPage() {
       take: 30,
     }),
     prisma.xpLog.findMany({
-      where: { userId: session.userId },
+      where: {
+        userId: session.userId,
+        createdAt: {
+          gte: new Date(Date.now() - 12 * 7 * 24 * 60 * 60 * 1000),
+        },
+      },
       orderBy: { createdAt: "desc" },
-      take: 60,
+      select: { amount: true, createdAt: true },
     }),
   ]);
 
@@ -83,6 +88,45 @@ export default async function StreaksPage() {
       isToday: i === 6,
     };
   });
+
+  // Heatmap: XP-Summe pro Tag, letzte 12 Wochen (Mo–So)
+  const xpPerDay = new Map<string, number>();
+  for (const log of xpHistory) {
+    const key = log.createdAt.toISOString().slice(0, 10);
+    xpPerDay.set(key, (xpPerDay.get(key) ?? 0) + log.amount);
+  }
+  const maxXpPerDay = Math.max(1, ...xpPerDay.values());
+  const mondayOffset = (today.getDay() + 6) % 7; // Mo=0 … So=6
+  const gridStart = new Date(today);
+  gridStart.setDate(today.getDate() - mondayOffset - 77); // Montag vor 11 Wochen
+
+  const HEAT_CLASSES = [
+    "bg-surface-2",
+    "bg-brand/20",
+    "bg-brand/40",
+    "bg-brand/70",
+    "bg-brand",
+  ];
+
+  const heatmapWeeks = Array.from({ length: 12 }, (_, w) =>
+    Array.from({ length: 7 }, (_, d) => {
+      const date = new Date(gridStart);
+      date.setDate(gridStart.getDate() + w * 7 + d);
+      const key = date.toISOString().slice(0, 10);
+      const xp = xpPerDay.get(key) ?? 0;
+      const level =
+        xp <= 0 ? 0 : Math.min(4, Math.max(1, Math.ceil((xp / maxXpPerDay) * 4)));
+      return {
+        key,
+        xp,
+        level,
+        isFuture: date > today,
+        title: `${String(date.getDate()).padStart(2, "0")}.${String(
+          date.getMonth() + 1
+        ).padStart(2, "0")}.: ${xp} XP`,
+      };
+    })
+  );
 
   // Milestone progress
   const nextMilestone = getNextMilestone(streak);
@@ -197,6 +241,54 @@ export default async function StreaksPage() {
             Verpasst
           </span>
         </div>
+      </section>
+
+      {/* Section 2b — Aktivitäts-Heatmap (12 Wochen) */}
+      <section>
+        <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-fg">
+          Aktivität der letzten 12 Wochen
+        </h2>
+        <Card>
+          <CardBody>
+            <div className="overflow-x-auto">
+              <div className="flex gap-2">
+                <div className="flex flex-col gap-1 pr-1 text-[10px] text-muted-fg">
+                  {["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"].map((l, i) => (
+                    <span
+                      key={l}
+                      className="flex h-4 items-center leading-none"
+                    >
+                      {i % 2 === 0 ? l : ""}
+                    </span>
+                  ))}
+                </div>
+                {heatmapWeeks.map((week, w) => (
+                  <div key={w} className="flex flex-col gap-1">
+                    {week.map((day) => (
+                      <div
+                        key={day.key}
+                        title={day.isFuture ? undefined : day.title}
+                        className={cn(
+                          "size-4 rounded-sm",
+                          day.isFuture
+                            ? "bg-transparent"
+                            : HEAT_CLASSES[day.level]
+                        )}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-3 flex items-center gap-1.5 text-xs text-muted-fg">
+              <span>Weniger</span>
+              {HEAT_CLASSES.map((c) => (
+                <span key={c} className={cn("size-3 rounded-sm", c)} />
+              ))}
+              <span>Mehr</span>
+            </div>
+          </CardBody>
+        </Card>
       </section>
 
       {/* Section 3 — Streak milestones */}

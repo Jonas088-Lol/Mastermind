@@ -1,0 +1,4802 @@
+[
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Tabelle schueler(name, alter, klasse) hat 6 Zeilen. Was liefert: SELECT COUNT(*) FROM schueler WHERE klasse='10b'; (drei Schüler pro Klasse)?",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "In der Klasse 10b befinden sich 3 Schüler."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Welche Subnetzmaske gehört zum Präfix /8?",
+  "options": [
+   "255.255.0.0",
+   "255.255.255.0",
+   "255.0.0.0",
+   "255.255.255.128"
+  ],
+  "correct": 2,
+  "explanation": "/8 entspricht der Maske 255.0.0.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 85.245.160.201 mit Präfix /24?",
+  "options": [
+   "85.245.255.255",
+   "85.245.160.0",
+   "85.245.160.254",
+   "85.245.160.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 85.245.160.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 203.174.30.129 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "203.174.30.1",
+   "203.174.30.255",
+   "203.174.0.0",
+   "203.174.30.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 203.174.30.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Für Tabelle schueler mit Altern {16,17,16,18,17,16}: Wie viele Zeilen liefert SELECT * FROM schueler WHERE alter > 16;?",
+  "options": [
+   "3",
+   "5",
+   "0",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 16: 3 Einträge."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Welche Subnetzmaske gehört zum Präfix /25?",
+  "options": [
+   "255.255.255.128",
+   "255.255.255.0",
+   "255.0.0.0",
+   "255.255.0.0"
+  ],
+  "correct": 0,
+  "explanation": "/25 entspricht der Maske 255.255.255.128."
+ },
+ {
+  "topic": "SQL",
+  "question": "Was bewirkt „ORDER BY alter DESC LIMIT 1“?",
+  "options": [
+   "Löscht die älteste Zeile",
+   "Liefert die Zeile mit dem niedrigsten Alter",
+   "Zählt alle Zeilen",
+   "Liefert die Zeile mit dem höchsten Alter"
+  ],
+  "correct": 3,
+  "explanation": "DESC sortiert absteigend, LIMIT 1 nimmt die erste (also größte) Zeile."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {17, 15, 14, 16, 14, 12}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 8;?",
+  "options": [
+   "7",
+   "6",
+   "9",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 8: 17, 15, 14, 16, 14, 12 → 6."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /25?",
+  "options": [
+   "111",
+   "126",
+   "141",
+   "121"
+  ],
+  "correct": 1,
+  "explanation": "2^(32−25) − 2 (Netz- und Broadcast-Adresse) = 126."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 43.176.166.54 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "43.176.166.0",
+   "43.176.166.1",
+   "43.176.0.0",
+   "43.176.166.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 43.176.166.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Alter in schueler: {16,17,16,18,17,16}. Was liefert SELECT MIN(alter) FROM schueler;?",
+  "options": [
+   "15",
+   "16",
+   "18",
+   "17"
+  ],
+  "correct": 1,
+  "explanation": "MIN der Werte ist 16."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Vereinfache den Ausdruck: A ∨ A",
+  "options": [
+   "1",
+   "0",
+   "A",
+   "B"
+  ],
+  "correct": 2,
+  "explanation": "A ∨ A = A."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Wende das Gesetz von De Morgan an: ¬(A ∧ B) = ?",
+  "options": [
+   "A ∧ B",
+   "¬A ∧ ¬B",
+   "¬A ∨ ¬B",
+   "A ∨ B"
+  ],
+  "correct": 2,
+  "explanation": "De Morgan: ¬(A ∧ B) = ¬A ∨ ¬B."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {23, 36, 28, 21, 3, 33}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "132",
+   "156",
+   "144",
+   "146"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 144."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {25, 22, 18, 14}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "79",
+   "74",
+   "80",
+   "70"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 79."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Welche Zeitkomplexität hat: Zugriff auf ein Array-Element per Index?",
+  "options": [
+   "O(2^n)",
+   "O(1)",
+   "O(n log n)",
+   "O(log n)"
+  ],
+  "correct": 1,
+  "explanation": "Zugriff auf ein Array-Element per Index: O(1)."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {24, 4, 8}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "10",
+   "12",
+   "15",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 24+4+8 = 36, geteilt durch 3 = 12."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 109.231.209.202 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "109.231.209.255",
+   "109.231.209.1",
+   "109.231.209.0",
+   "109.231.0.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 109.231.209.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Alter in schueler: {16,17,16,18,17,16}. Was liefert SELECT MIN(alter) FROM schueler;?",
+  "options": [
+   "15",
+   "14",
+   "16",
+   "18"
+  ],
+  "correct": 2,
+  "explanation": "MIN der Werte ist 16."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Wähle die richtige Antwort. Vereinfache den Ausdruck: A ∨ (A ∧ B)",
+  "options": [
+   "¬A",
+   "A ∧ B",
+   "A",
+   "B"
+  ],
+  "correct": 2,
+  "explanation": "A ∨ (A ∧ B) = A."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {31, 11, 12, 11}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "61",
+   "67",
+   "56",
+   "65"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 65."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {34, 33, 27, 6, 25, 32}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "157",
+   "148",
+   "165",
+   "156"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 157."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {9, 16, 15, 2, 20, 3, 18}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 15;?",
+  "options": [
+   "3",
+   "2",
+   "6",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 15: 16, 20, 18 → 3."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Vereinfache den Ausdruck: A ∨ 0",
+  "options": [
+   "B",
+   "¬A",
+   "A",
+   "A ∨ B"
+  ],
+  "correct": 2,
+  "explanation": "A ∨ 0 = A."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Wähle die richtige Antwort. Vereinfache den Ausdruck: ¬(¬A)",
+  "options": [
+   "A",
+   "A ∧ B",
+   "1",
+   "¬A"
+  ],
+  "correct": 0,
+  "explanation": "¬(¬A) = A."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Alter in schueler: {16,17,16,18,17,16}. Was liefert SELECT MIN(alter) FROM schueler;?",
+  "options": [
+   "17",
+   "14",
+   "16",
+   "15"
+  ],
+  "correct": 2,
+  "explanation": "MIN der Werte ist 16."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte note enthält {1, 10, 12, 2, 5}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "4",
+   "6",
+   "9",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 1+10+12+2+5 = 30, geteilt durch 5 = 6."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /25?",
+  "options": [
+   "126",
+   "139",
+   "96",
+   "138"
+  ],
+  "correct": 0,
+  "explanation": "2^(32−25) − 2 (Netz- und Broadcast-Adresse) = 126."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 200.119.37.152 mit Präfix /24?",
+  "options": [
+   "200.119.37.255",
+   "200.119.37.0",
+   "200.119.37.254",
+   "200.119.255.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 200.119.37.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {10, 9, 17, 2, 37}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "13",
+   "17",
+   "14",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 10+9+17+2+37 = 75, geteilt durch 5 = 15."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Wähle die richtige Antwort. Vereinfache den Ausdruck: A ∧ A",
+  "options": [
+   "0",
+   "¬A",
+   "A",
+   "B"
+  ],
+  "correct": 2,
+  "explanation": "A ∧ A = A."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Wende das Gesetz von De Morgan an: ¬(A ∧ B) = ?",
+  "options": [
+   "A ∨ B",
+   "¬A ∨ ¬B",
+   "A ∧ B",
+   "¬A ∧ ¬B"
+  ],
+  "correct": 1,
+  "explanation": "De Morgan: ¬(A ∧ B) = ¬A ∨ ¬B."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Wähle die richtige Antwort. Vereinfache den Ausdruck: A ∨ A",
+  "options": [
+   "A ∨ B",
+   "A",
+   "B",
+   "A ∧ B"
+  ],
+  "correct": 1,
+  "explanation": "A ∨ A = A."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Welche Subnetzmaske gehört zum Präfix /24?",
+  "options": [
+   "255.255.255.0",
+   "255.255.255.128",
+   "255.255.0.0",
+   "255.0.0.0"
+  ],
+  "correct": 0,
+  "explanation": "/24 entspricht der Maske 255.255.255.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Für Tabelle schueler mit Altern {16,17,16,18,17,16}: Wie viele Zeilen liefert SELECT * FROM schueler WHERE alter > 17;?",
+  "options": [
+   "4",
+   "1",
+   "2",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 17: 1 Einträge."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte note enthält {14, 4, 19, 3, 25}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "10",
+   "17",
+   "13",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 14+4+19+3+25 = 65, geteilt durch 5 = 13."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 87.24.94.16 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "87.24.94.0",
+   "87.24.94.255",
+   "87.24.0.0",
+   "87.24.94.1"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 87.24.94.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Was bewirkt „ORDER BY alter DESC LIMIT 1“?",
+  "options": [
+   "Liefert die Zeile mit dem höchsten Alter",
+   "Löscht die älteste Zeile",
+   "Zählt alle Zeilen",
+   "Liefert die Zeile mit dem niedrigsten Alter"
+  ],
+  "correct": 0,
+  "explanation": "DESC sortiert absteigend, LIMIT 1 nimmt die erste (also größte) Zeile."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {40, 25, 35, 10}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "110",
+   "112",
+   "118",
+   "114"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 110."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {28, 26, 1, 27, 38, 4}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "114",
+   "119",
+   "120",
+   "124"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 124."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Für Tabelle schueler mit Altern {16,17,16,18,17,16}: Wie viele Zeilen liefert SELECT * FROM schueler WHERE alter > 16;?",
+  "options": [
+   "4",
+   "6",
+   "1",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 16: 3 Einträge."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Welche IP-Adresse gehört zu einem privaten Netz?",
+  "options": [
+   "8.8.8.8",
+   "1.1.1.1",
+   "192.168.1.10",
+   "93.184.216.34"
+  ],
+  "correct": 2,
+  "explanation": "Private Netze: 10.0.0.0/8, 172.16.0.0/12 und 192.168.0.0/16."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 57.185.140.47 mit Präfix /24?",
+  "options": [
+   "57.185.255.255",
+   "57.185.140.0",
+   "57.185.140.254",
+   "57.185.140.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 57.185.140.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Für Tabelle schueler mit Altern {16,17,16,18,17,16}: Wie viele Zeilen liefert SELECT * FROM schueler WHERE alter > 17;?",
+  "options": [
+   "4",
+   "1",
+   "-2",
+   "-1"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 17: 1 Einträge."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Aufgabe: Welche Zeitkomplexität hat: Lineare Suche im Array?",
+  "options": [
+   "O(1)",
+   "O(log n)",
+   "O(n log n)",
+   "O(n)"
+  ],
+  "correct": 3,
+  "explanation": "Lineare Suche im Array: O(n)."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 168.192.202.218 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "168.192.202.0",
+   "168.192.0.0",
+   "168.192.202.255",
+   "168.192.202.1"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 168.192.202.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Alter in schueler: {16,17,16,18,17,16}. Was liefert SELECT MAX(alter) FROM schueler;?",
+  "options": [
+   "18",
+   "19",
+   "16",
+   "17"
+  ],
+  "correct": 0,
+  "explanation": "MAX der Werte ist 18."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Wende das Gesetz von De Morgan an: ¬(A ∨ B) = ?",
+  "options": [
+   "A ∨ B",
+   "A ∧ B",
+   "¬A ∧ ¬B",
+   "¬A ∨ ¬B"
+  ],
+  "correct": 2,
+  "explanation": "De Morgan: ¬(A ∨ B) = ¬A ∧ ¬B."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Welche IP-Adresse gehört zu einem privaten Netz?",
+  "options": [
+   "93.184.216.34",
+   "1.1.1.1",
+   "192.168.1.10",
+   "8.8.8.8"
+  ],
+  "correct": 2,
+  "explanation": "Private Netze: 10.0.0.0/8, 172.16.0.0/12 und 192.168.0.0/16."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: A ∧ 1",
+  "options": [
+   "¬A",
+   "A ∨ B",
+   "0",
+   "A"
+  ],
+  "correct": 3,
+  "explanation": "A ∧ 1 = A."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Welche Subnetzmaske gehört zum Präfix /16?",
+  "options": [
+   "255.255.0.0",
+   "255.255.255.0",
+   "255.0.0.0",
+   "255.255.255.128"
+  ],
+  "correct": 0,
+  "explanation": "/16 entspricht der Maske 255.255.0.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Welche Subnetzmaske gehört zum Präfix /8?",
+  "options": [
+   "255.255.255.128",
+   "255.255.255.0",
+   "255.255.0.0",
+   "255.0.0.0"
+  ],
+  "correct": 3,
+  "explanation": "/8 entspricht der Maske 255.0.0.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 4.116.163.182 mit Präfix /24?",
+  "options": [
+   "4.116.255.255",
+   "4.116.163.255",
+   "4.116.163.254",
+   "4.116.163.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 4.116.163.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 215.212.118.235 mit Präfix /24?",
+  "options": [
+   "215.212.255.255",
+   "215.212.118.254",
+   "215.212.118.255",
+   "215.212.118.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 215.212.118.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Was bewirkt „ORDER BY alter DESC LIMIT 1“?",
+  "options": [
+   "Zählt alle Zeilen",
+   "Liefert die Zeile mit dem höchsten Alter",
+   "Löscht die älteste Zeile",
+   "Liefert die Zeile mit dem niedrigsten Alter"
+  ],
+  "correct": 1,
+  "explanation": "DESC sortiert absteigend, LIMIT 1 nimmt die erste (also größte) Zeile."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Tabelle schueler(name, alter, klasse) hat 6 Zeilen. Was liefert: SELECT COUNT(*) FROM schueler WHERE klasse='10a'; (drei Schüler pro Klasse)?",
+  "options": [
+   "4",
+   "6",
+   "3",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "In der Klasse 10a befinden sich 3 Schüler."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 13.23.168.243 mit Präfix /24?",
+  "options": [
+   "13.23.255.255",
+   "13.23.168.255",
+   "13.23.168.254",
+   "13.23.168.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 13.23.168.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {7, 1, 17, 18, 14, 6, 13}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 6;?",
+  "options": [
+   "5",
+   "7",
+   "2",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 6: 7, 17, 18, 14, 13 → 5."
+ },
+ {
+  "topic": "SQL",
+  "question": "Tabelle schueler(name, alter, klasse) hat 6 Zeilen. Was liefert: SELECT COUNT(*) FROM schueler WHERE klasse='10a'; (drei Schüler pro Klasse)?",
+  "options": [
+   "6",
+   "2",
+   "4",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "In der Klasse 10a befinden sich 3 Schüler."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Alter in schueler: {16,17,16,18,17,16}. Was liefert SELECT MAX(alter) FROM schueler;?",
+  "options": [
+   "17",
+   "16",
+   "18",
+   "19"
+  ],
+  "correct": 2,
+  "explanation": "MAX der Werte ist 18."
+ },
+ {
+  "topic": "SQL",
+  "question": "Für Tabelle schueler mit Altern {16,17,16,18,17,16}: Wie viele Zeilen liefert SELECT * FROM schueler WHERE alter > 16;?",
+  "options": [
+   "0",
+   "4",
+   "3",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Werte > 16: 3 Einträge."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 49.123.252.161 mit Präfix /24?",
+  "options": [
+   "49.123.252.0",
+   "49.123.252.254",
+   "49.123.255.255",
+   "49.123.252.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 49.123.252.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Was bewirkt „ORDER BY alter DESC LIMIT 1“?",
+  "options": [
+   "Zählt alle Zeilen",
+   "Liefert die Zeile mit dem niedrigsten Alter",
+   "Löscht die älteste Zeile",
+   "Liefert die Zeile mit dem höchsten Alter"
+  ],
+  "correct": 3,
+  "explanation": "DESC sortiert absteigend, LIMIT 1 nimmt die erste (also größte) Zeile."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 208.236.201.51 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "208.236.201.0",
+   "208.236.201.1",
+   "208.236.201.255",
+   "208.236.0.0"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 208.236.201.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 26.204.93.29 mit Präfix /24?",
+  "options": [
+   "26.204.93.254",
+   "26.204.93.255",
+   "26.204.255.255",
+   "26.204.93.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 26.204.93.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 80.42.79.113 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "80.42.79.255",
+   "80.42.79.0",
+   "80.42.0.0",
+   "80.42.79.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 80.42.79.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte note enthält {15, 38, 23, 37, 2}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "28",
+   "23",
+   "21",
+   "26"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 15+38+23+37+2 = 115, geteilt durch 5 = 23."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {19, 10, 49, 13, 34}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "26",
+   "25",
+   "21",
+   "29"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 19+10+49+13+34 = 125, geteilt durch 5 = 25."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 163.254.121.198 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "163.254.121.1",
+   "163.254.0.0",
+   "163.254.121.0",
+   "163.254.121.255"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 163.254.121.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {16, 18, 7, 16, 1, 9}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 5;?",
+  "options": [
+   "5",
+   "3",
+   "6",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 5: 16, 18, 7, 16, 9 → 5."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Vereinfache den Ausdruck: A ∧ ¬A",
+  "options": [
+   "0",
+   "A",
+   "A ∨ B",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "A ∧ ¬A = 0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 116.227.34.90 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "116.227.34.255",
+   "116.227.34.1",
+   "116.227.0.0",
+   "116.227.34.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 116.227.34.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 68.94.41.179 mit Präfix /24?",
+  "options": [
+   "68.94.41.254",
+   "68.94.41.0",
+   "68.94.255.255",
+   "68.94.41.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 68.94.41.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 19.6.227.108 mit Präfix /24?",
+  "options": [
+   "19.6.227.254",
+   "19.6.255.255",
+   "19.6.227.255",
+   "19.6.227.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 19.6.227.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Welche Subnetzmaske gehört zum Präfix /16?",
+  "options": [
+   "255.255.255.128",
+   "255.255.255.0",
+   "255.255.0.0",
+   "255.0.0.0"
+  ],
+  "correct": 2,
+  "explanation": "/16 entspricht der Maske 255.255.0.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /26?",
+  "options": [
+   "84",
+   "64",
+   "62",
+   "38"
+  ],
+  "correct": 2,
+  "explanation": "2^(32−26) − 2 (Netz- und Broadcast-Adresse) = 62."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {2, 17, 7, 20, 14}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "11",
+   "13",
+   "12",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 2+17+7+20+14 = 60, geteilt durch 5 = 12."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /26?",
+  "options": [
+   "76",
+   "39",
+   "62",
+   "53"
+  ],
+  "correct": 2,
+  "explanation": "2^(32−26) − 2 (Netz- und Broadcast-Adresse) = 62."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {7, 12, 18, 14, 29}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "17",
+   "18",
+   "16",
+   "12"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 7+12+18+14+29 = 80, geteilt durch 5 = 16."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Tabelle schueler(name, alter, klasse) hat 6 Zeilen. Was liefert: SELECT COUNT(*) FROM schueler WHERE klasse='10a'; (drei Schüler pro Klasse)?",
+  "options": [
+   "3",
+   "4",
+   "6",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "In der Klasse 10a befinden sich 3 Schüler."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 220.212.240.148 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "220.212.0.0",
+   "220.212.240.0",
+   "220.212.240.255",
+   "220.212.240.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 220.212.240.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /26?",
+  "options": [
+   "52",
+   "62",
+   "48",
+   "91"
+  ],
+  "correct": 1,
+  "explanation": "2^(32−26) − 2 (Netz- und Broadcast-Adresse) = 62."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {4, 19, 64}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "34",
+   "32",
+   "29",
+   "33"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 4+19+64 = 87, geteilt durch 3 = 29."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {10, 17, 4, 17}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "9",
+   "8",
+   "16",
+   "12"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 10+17+4+17 = 48, geteilt durch 4 = 12."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /25?",
+  "options": [
+   "140",
+   "125",
+   "98",
+   "126"
+  ],
+  "correct": 3,
+  "explanation": "2^(32−25) − 2 (Netz- und Broadcast-Adresse) = 126."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 104.123.121.21 mit Präfix /24?",
+  "options": [
+   "104.123.121.255",
+   "104.123.121.0",
+   "104.123.121.254",
+   "104.123.255.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 104.123.121.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte alter enthält {13, 4, 17, 2, 9, 11, 9}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 5;?",
+  "options": [
+   "5",
+   "3",
+   "6",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 5: 13, 17, 9, 11, 9 → 5."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Wähle die richtige Antwort. Welche Zeitkomplexität hat: Bubblesort im schlechtesten Fall?",
+  "options": [
+   "O(n)",
+   "O(n log n)",
+   "O(n²)",
+   "O(log n)"
+  ],
+  "correct": 2,
+  "explanation": "Bubblesort im schlechtesten Fall: O(n²)."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Welche IP-Adresse gehört zu einem privaten Netz?",
+  "options": [
+   "8.8.8.8",
+   "93.184.216.34",
+   "1.1.1.1",
+   "192.168.1.10"
+  ],
+  "correct": 3,
+  "explanation": "Private Netze: 10.0.0.0/8, 172.16.0.0/12 und 192.168.0.0/16."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Alter in schueler: {16,17,16,18,17,16}. Was liefert SELECT MIN(alter) FROM schueler;?",
+  "options": [
+   "18",
+   "15",
+   "16",
+   "14"
+  ],
+  "correct": 2,
+  "explanation": "MIN der Werte ist 16."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Wähle die richtige Antwort. Wende das Gesetz von De Morgan an: ¬(A ∧ B) = ?",
+  "options": [
+   "¬A ∧ ¬B",
+   "A ∧ B",
+   "¬A ∨ ¬B",
+   "A ∨ B"
+  ],
+  "correct": 2,
+  "explanation": "De Morgan: ¬(A ∧ B) = ¬A ∨ ¬B."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Wende das Gesetz von De Morgan an: ¬(A ∨ B) = ?",
+  "options": [
+   "¬A ∧ ¬B",
+   "¬A ∨ ¬B",
+   "A ∧ B",
+   "A ∨ B"
+  ],
+  "correct": 0,
+  "explanation": "De Morgan: ¬(A ∨ B) = ¬A ∧ ¬B."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {23, 22, 8, 6, 6}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "17",
+   "9",
+   "13",
+   "16"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 23+22+8+6+6 = 65, geteilt durch 5 = 13."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {15, 14, 20, 5, 5, 20, 13}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 14;?",
+  "options": [
+   "3",
+   "2",
+   "5",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 14: 15, 20, 20 → 3."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Vereinfache den Ausdruck: A ∨ 1",
+  "options": [
+   "1",
+   "B",
+   "¬A",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "A ∨ 1 = 1."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {30, 47, 2, 27, 19}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "27",
+   "23",
+   "25",
+   "20"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 30+47+2+27+19 = 125, geteilt durch 5 = 25."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 118.19.19.20 mit Präfix /24?",
+  "options": [
+   "118.19.255.255",
+   "118.19.19.254",
+   "118.19.19.0",
+   "118.19.19.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 118.19.19.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {8, 21, 16, 30, 18}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "99",
+   "98",
+   "93",
+   "83"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 93."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Wähle die richtige Antwort. Welche Zeitkomplexität hat: Zugriff auf ein Array-Element per Index?",
+  "options": [
+   "O(log n)",
+   "O(1)",
+   "O(2^n)",
+   "O(n)"
+  ],
+  "correct": 1,
+  "explanation": "Zugriff auf ein Array-Element per Index: O(1)."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Wende das Gesetz von De Morgan an: ¬(A ∨ B) = ?",
+  "options": [
+   "A ∨ B",
+   "¬A ∨ ¬B",
+   "A ∧ B",
+   "¬A ∧ ¬B"
+  ],
+  "correct": 3,
+  "explanation": "De Morgan: ¬(A ∨ B) = ¬A ∧ ¬B."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Welche Subnetzmaske gehört zum Präfix /16?",
+  "options": [
+   "255.0.0.0",
+   "255.255.255.128",
+   "255.255.255.0",
+   "255.255.0.0"
+  ],
+  "correct": 3,
+  "explanation": "/16 entspricht der Maske 255.255.0.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /24?",
+  "options": [
+   "254",
+   "233",
+   "271",
+   "278"
+  ],
+  "correct": 0,
+  "explanation": "2^(32−24) − 2 (Netz- und Broadcast-Adresse) = 254."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {25, 4, 13}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "14",
+   "19",
+   "17",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 25+4+13 = 42, geteilt durch 3 = 14."
+ },
+ {
+  "topic": "SQL",
+  "question": "Tabelle schueler(name, alter, klasse) hat 6 Zeilen. Was liefert: SELECT COUNT(*) FROM schueler WHERE klasse='10b'; (drei Schüler pro Klasse)?",
+  "options": [
+   "6",
+   "3",
+   "2",
+   "4"
+  ],
+  "correct": 1,
+  "explanation": "In der Klasse 10b befinden sich 3 Schüler."
+ },
+ {
+  "topic": "SQL",
+  "question": "Für Tabelle schueler mit Altern {16,17,16,18,17,16}: Wie viele Zeilen liefert SELECT * FROM schueler WHERE alter > 17;?",
+  "options": [
+   "4",
+   "1",
+   "2",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 17: 1 Einträge."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Vereinfache den Ausdruck: ¬(¬A)",
+  "options": [
+   "B",
+   "A ∨ B",
+   "¬A",
+   "A"
+  ],
+  "correct": 3,
+  "explanation": "¬(¬A) = A."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Teste dein Wissen: Welche Zeitkomplexität hat: Mergesort?",
+  "options": [
+   "O(n log n)",
+   "O(1)",
+   "O(n²)",
+   "O(n)"
+  ],
+  "correct": 0,
+  "explanation": "Mergesort: O(n log n)."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {38, 34, 25, 15, 11}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "115",
+   "120",
+   "134",
+   "123"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 123."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 206.178.168.141 mit Präfix /24?",
+  "options": [
+   "206.178.168.254",
+   "206.178.255.255",
+   "206.178.168.255",
+   "206.178.168.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 206.178.168.255."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Wähle die richtige Antwort. Welche Zeitkomplexität hat: Lineare Suche im Array?",
+  "options": [
+   "O(1)",
+   "O(n log n)",
+   "O(2^n)",
+   "O(n)"
+  ],
+  "correct": 3,
+  "explanation": "Lineare Suche im Array: O(n)."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: A ∧ A",
+  "options": [
+   "A ∨ B",
+   "0",
+   "¬A",
+   "A"
+  ],
+  "correct": 3,
+  "explanation": "A ∧ A = A."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 10.60.7.208 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "10.60.0.0",
+   "10.60.7.0",
+   "10.60.7.255",
+   "10.60.7.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 10.60.7.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {11, 10, 15, 13, 2, 2, 2}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 14;?",
+  "options": [
+   "1",
+   "0",
+   "2",
+   "3"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 14: 15 → 1."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 151.14.170.99 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "151.14.170.0",
+   "151.14.170.1",
+   "151.14.0.0",
+   "151.14.170.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 151.14.170.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 204.216.185.74 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "204.216.185.1",
+   "204.216.185.255",
+   "204.216.0.0",
+   "204.216.185.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 204.216.185.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 71.208.226.63 mit Präfix /24?",
+  "options": [
+   "71.208.226.0",
+   "71.208.255.255",
+   "71.208.226.254",
+   "71.208.226.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 71.208.226.255."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Vereinfache den Ausdruck: A ∧ 1",
+  "options": [
+   "B",
+   "A ∨ B",
+   "¬A",
+   "A"
+  ],
+  "correct": 3,
+  "explanation": "A ∧ 1 = A."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Teste dein Wissen: Welche Zeitkomplexität hat: Bubblesort im schlechtesten Fall?",
+  "options": [
+   "O(log n)",
+   "O(n log n)",
+   "O(n²)",
+   "O(n)"
+  ],
+  "correct": 2,
+  "explanation": "Bubblesort im schlechtesten Fall: O(n²)."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /24?",
+  "options": [
+   "283",
+   "264",
+   "254",
+   "266"
+  ],
+  "correct": 2,
+  "explanation": "2^(32−24) − 2 (Netz- und Broadcast-Adresse) = 254."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {24, 30, 10, 4}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "59",
+   "68",
+   "75",
+   "62"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 68."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {8, 12, 16, 5, 19, 11}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 11;?",
+  "options": [
+   "2",
+   "3",
+   "5",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 11: 12, 16, 19 → 3."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 158.19.104.217 mit Präfix /24?",
+  "options": [
+   "158.19.255.255",
+   "158.19.104.255",
+   "158.19.104.0",
+   "158.19.104.254"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 158.19.104.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Welche IP-Adresse gehört zu einem privaten Netz?",
+  "options": [
+   "93.184.216.34",
+   "8.8.8.8",
+   "1.1.1.1",
+   "10.0.0.5"
+  ],
+  "correct": 3,
+  "explanation": "Private Netze: 10.0.0.0/8, 172.16.0.0/12 und 192.168.0.0/16."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Für Tabelle schueler mit Altern {16,17,16,18,17,16}: Wie viele Zeilen liefert SELECT * FROM schueler WHERE alter > 17;?",
+  "options": [
+   "0",
+   "1",
+   "3",
+   "-1"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 17: 1 Einträge."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 87.174.98.46 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "87.174.98.255",
+   "87.174.0.0",
+   "87.174.98.0",
+   "87.174.98.1"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 87.174.98.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 168.198.230.23 mit Präfix /24?",
+  "options": [
+   "168.198.255.255",
+   "168.198.230.255",
+   "168.198.230.0",
+   "168.198.230.254"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 168.198.230.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {20, 4, 1, 27}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "10",
+   "18",
+   "12",
+   "13"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 20+4+1+27 = 52, geteilt durch 4 = 13."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 18.247.61.145 mit Präfix /24?",
+  "options": [
+   "18.247.255.255",
+   "18.247.61.255",
+   "18.247.61.0",
+   "18.247.61.254"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 18.247.61.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 90.119.42.177 mit Präfix /24?",
+  "options": [
+   "90.119.42.254",
+   "90.119.42.0",
+   "90.119.42.255",
+   "90.119.255.255"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 90.119.42.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {7, 27, 2, 6, 6}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "55",
+   "57",
+   "45",
+   "48"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 48."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {17, 17, 1, 37, 36}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "107",
+   "108",
+   "102",
+   "101"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 108."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte punkte enthält die Werte {1, 13, 40, 18, 37}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "116",
+   "109",
+   "119",
+   "97"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 109."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 129.186.210.123 mit Präfix /24?",
+  "options": [
+   "129.186.255.255",
+   "129.186.210.0",
+   "129.186.210.254",
+   "129.186.210.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 129.186.210.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 52.211.148.211 mit Präfix /24?",
+  "options": [
+   "52.211.148.255",
+   "52.211.255.255",
+   "52.211.148.254",
+   "52.211.148.0"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 52.211.148.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {18, 11, 1, 10, 10}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "10",
+   "12",
+   "15",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 18+11+1+10+10 = 50, geteilt durch 5 = 10."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 141.109.31.140 mit Präfix /24?",
+  "options": [
+   "141.109.255.255",
+   "141.109.31.254",
+   "141.109.31.255",
+   "141.109.31.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 141.109.31.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 208.241.239.175 mit Präfix /24?",
+  "options": [
+   "208.241.239.254",
+   "208.241.239.255",
+   "208.241.239.0",
+   "208.241.255.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 208.241.239.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {27, 2, 19, 5}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "61",
+   "53",
+   "50",
+   "45"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 53."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {57, 17, 13}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "29",
+   "33",
+   "26",
+   "24"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 57+17+13 = 87, geteilt durch 3 = 29."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {49, 8, 20, 43}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "35",
+   "30",
+   "26",
+   "33"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 49+8+20+43 = 120, geteilt durch 4 = 30."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Welche Zeitkomplexität hat: Bubblesort im schlechtesten Fall?",
+  "options": [
+   "O(2^n)",
+   "O(n²)",
+   "O(n)",
+   "O(1)"
+  ],
+  "correct": 1,
+  "explanation": "Bubblesort im schlechtesten Fall: O(n²)."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Aufgabe: Welche Zeitkomplexität hat: Binäre Suche in einem sortierten Array?",
+  "options": [
+   "O(n²)",
+   "O(log n)",
+   "O(n)",
+   "O(n log n)"
+  ],
+  "correct": 1,
+  "explanation": "Binäre Suche in einem sortierten Array: O(log n)."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 75.251.47.144 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "75.251.47.255",
+   "75.251.47.1",
+   "75.251.0.0",
+   "75.251.47.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 75.251.47.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Tabelle schueler(name, alter, klasse) hat 6 Zeilen. Was liefert: SELECT COUNT(*) FROM schueler WHERE klasse='10b'; (drei Schüler pro Klasse)?",
+  "options": [
+   "6",
+   "4",
+   "3",
+   "2"
+  ],
+  "correct": 2,
+  "explanation": "In der Klasse 10b befinden sich 3 Schüler."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 188.162.220.174 mit Präfix /24?",
+  "options": [
+   "188.162.220.255",
+   "188.162.220.0",
+   "188.162.220.254",
+   "188.162.255.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 188.162.220.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /26?",
+  "options": [
+   "62",
+   "55",
+   "45",
+   "82"
+  ],
+  "correct": 0,
+  "explanation": "2^(32−26) − 2 (Netz- und Broadcast-Adresse) = 62."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte note enthält {21, 5, 48, 22}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "24",
+   "27",
+   "26",
+   "25"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 21+5+48+22 = 96, geteilt durch 4 = 24."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 207.95.90.94 mit Präfix /24?",
+  "options": [
+   "207.95.90.0",
+   "207.95.90.254",
+   "207.95.255.255",
+   "207.95.90.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 207.95.90.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte alter enthält {3, 11, 19, 19, 19}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 10;?",
+  "options": [
+   "4",
+   "5",
+   "3",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 10: 11, 19, 19, 19 → 4."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 222.115.136.144 mit Präfix /24?",
+  "options": [
+   "222.115.136.0",
+   "222.115.136.254",
+   "222.115.136.255",
+   "222.115.255.255"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 222.115.136.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {2, 22, 7, 34}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "72",
+   "61",
+   "62",
+   "65"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 65."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 142.124.84.36 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "142.124.84.255",
+   "142.124.84.0",
+   "142.124.84.1",
+   "142.124.0.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 142.124.84.0."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Wähle die richtige Antwort. Wende das Gesetz von De Morgan an: ¬(A ∨ B) = ?",
+  "options": [
+   "A ∧ B",
+   "A ∨ B",
+   "¬A ∨ ¬B",
+   "¬A ∧ ¬B"
+  ],
+  "correct": 3,
+  "explanation": "De Morgan: ¬(A ∨ B) = ¬A ∧ ¬B."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 4.45.71.225 mit Präfix /24?",
+  "options": [
+   "4.45.71.0",
+   "4.45.71.254",
+   "4.45.71.255",
+   "4.45.255.255"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 4.45.71.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {18, 17, 4}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "17",
+   "13",
+   "9",
+   "10"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 18+17+4 = 39, geteilt durch 3 = 13."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte alter enthält {1, 12, 10, 8, 9, 5}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 8;?",
+  "options": [
+   "2",
+   "0",
+   "5",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 8: 12, 10, 9 → 3."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {25, 16, 34, 10, 10}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "17",
+   "19",
+   "18",
+   "16"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 25+16+34+10+10 = 95, geteilt durch 5 = 19."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Für Tabelle schueler mit Altern {16,17,16,18,17,16}: Wie viele Zeilen liefert SELECT * FROM schueler WHERE alter > 16;?",
+  "options": [
+   "6",
+   "4",
+   "0",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 16: 3 Einträge."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 32.221.55.210 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "32.221.55.1",
+   "32.221.0.0",
+   "32.221.55.255",
+   "32.221.55.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 32.221.55.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {19, 1, 13, 3, 2}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 11;?",
+  "options": [
+   "5",
+   "4",
+   "1",
+   "2"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 11: 19, 13 → 2."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 218.127.176.26 mit Präfix /24?",
+  "options": [
+   "218.127.255.255",
+   "218.127.176.0",
+   "218.127.176.254",
+   "218.127.176.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 218.127.176.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {3, 5, 18, 16, 15, 14}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 9;?",
+  "options": [
+   "5",
+   "2",
+   "7",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 9: 18, 16, 15, 14 → 4."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {24, 27, 21, 16}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "79",
+   "93",
+   "95",
+   "88"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 88."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {16, 38, 60, 6}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "25",
+   "32",
+   "27",
+   "30"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 16+38+60+6 = 120, geteilt durch 4 = 30."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {2, 19, 18, 3, 18}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 6;?",
+  "options": [
+   "5",
+   "3",
+   "4",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 6: 19, 18, 18 → 3."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {40, 38, 39, 13, 22, 21}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "178",
+   "175",
+   "173",
+   "163"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 173."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte alter enthält {1, 3, 9, 17, 4, 11, 10}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 8;?",
+  "options": [
+   "4",
+   "6",
+   "3",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 8: 9, 17, 11, 10 → 4."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Welche Subnetzmaske gehört zum Präfix /24?",
+  "options": [
+   "255.0.0.0",
+   "255.255.255.128",
+   "255.255.255.0",
+   "255.255.0.0"
+  ],
+  "correct": 2,
+  "explanation": "/24 entspricht der Maske 255.255.255.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 105.130.242.5 mit Präfix /24?",
+  "options": [
+   "105.130.255.255",
+   "105.130.242.255",
+   "105.130.242.254",
+   "105.130.242.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 105.130.242.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {20, 8, 18, 19, 16, 18, 7}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 9;?",
+  "options": [
+   "8",
+   "7",
+   "3",
+   "5"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 9: 20, 18, 19, 16, 18 → 5."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: A ∨ ¬A",
+  "options": [
+   "1",
+   "A",
+   "¬A",
+   "A ∨ B"
+  ],
+  "correct": 0,
+  "explanation": "A ∨ ¬A = 1."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 143.111.203.152 mit Präfix /24?",
+  "options": [
+   "143.111.255.255",
+   "143.111.203.254",
+   "143.111.203.0",
+   "143.111.203.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 143.111.203.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 85.247.53.198 mit Präfix /24?",
+  "options": [
+   "85.247.53.0",
+   "85.247.255.255",
+   "85.247.53.255",
+   "85.247.53.254"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 85.247.53.255."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Wähle die richtige Antwort. Vereinfache den Ausdruck: A ∨ 1",
+  "options": [
+   "B",
+   "A",
+   "A ∧ B",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "A ∨ 1 = 1."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {26, 24, 2, 44}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "19",
+   "20",
+   "24",
+   "23"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 26+24+2+44 = 96, geteilt durch 4 = 24."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {3, 40, 38, 34, 7}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "125",
+   "115",
+   "122",
+   "132"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 122."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Welche Subnetzmaske gehört zum Präfix /25?",
+  "options": [
+   "255.255.255.128",
+   "255.0.0.0",
+   "255.255.0.0",
+   "255.255.255.0"
+  ],
+  "correct": 0,
+  "explanation": "/25 entspricht der Maske 255.255.255.128."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Tabelle schueler(name, alter, klasse) hat 6 Zeilen. Was liefert: SELECT COUNT(*) FROM schueler WHERE klasse='10b'; (drei Schüler pro Klasse)?",
+  "options": [
+   "2",
+   "4",
+   "3",
+   "6"
+  ],
+  "correct": 2,
+  "explanation": "In der Klasse 10b befinden sich 3 Schüler."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte punkte enthält die Werte {7, 26, 30, 16, 36}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "127",
+   "112",
+   "115",
+   "118"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 115."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 38.107.195.167 mit Präfix /24?",
+  "options": [
+   "38.107.195.0",
+   "38.107.255.255",
+   "38.107.195.254",
+   "38.107.195.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 38.107.195.255."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Wende das Gesetz von De Morgan an: ¬(A ∧ B) = ?",
+  "options": [
+   "¬A ∨ ¬B",
+   "A ∨ B",
+   "¬A ∧ ¬B",
+   "A ∧ B"
+  ],
+  "correct": 0,
+  "explanation": "De Morgan: ¬(A ∧ B) = ¬A ∨ ¬B."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Vereinfache den Ausdruck: A ∨ ¬A",
+  "options": [
+   "1",
+   "¬A",
+   "A ∧ B",
+   "A"
+  ],
+  "correct": 0,
+  "explanation": "A ∨ ¬A = 1."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Welche Subnetzmaske gehört zum Präfix /24?",
+  "options": [
+   "255.255.0.0",
+   "255.255.255.128",
+   "255.0.0.0",
+   "255.255.255.0"
+  ],
+  "correct": 3,
+  "explanation": "/24 entspricht der Maske 255.255.255.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {18, 8, 1, 14, 12}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 11;?",
+  "options": [
+   "5",
+   "4",
+   "1",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 11: 18, 14, 12 → 3."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 72.126.211.156 mit Präfix /24?",
+  "options": [
+   "72.126.211.255",
+   "72.126.211.0",
+   "72.126.211.254",
+   "72.126.255.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 72.126.211.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Welche Subnetzmaske gehört zum Präfix /25?",
+  "options": [
+   "255.255.255.128",
+   "255.255.0.0",
+   "255.255.255.0",
+   "255.0.0.0"
+  ],
+  "correct": 0,
+  "explanation": "/25 entspricht der Maske 255.255.255.128."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 197.210.108.80 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "197.210.108.1",
+   "197.210.0.0",
+   "197.210.108.0",
+   "197.210.108.255"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 197.210.108.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {17, 19, 6, 22}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "11",
+   "14",
+   "15",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 17+19+6+22 = 64, geteilt durch 4 = 16."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 56.105.109.31 mit Präfix /24?",
+  "options": [
+   "56.105.109.254",
+   "56.105.255.255",
+   "56.105.109.255",
+   "56.105.109.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 56.105.109.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 6.104.193.87 mit Präfix /24?",
+  "options": [
+   "6.104.193.0",
+   "6.104.255.255",
+   "6.104.193.255",
+   "6.104.193.254"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 6.104.193.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 146.147.227.74 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "146.147.227.1",
+   "146.147.227.255",
+   "146.147.227.0",
+   "146.147.0.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 146.147.227.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {19, 4, 3, 8, 19, 32}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "83",
+   "80",
+   "85",
+   "73"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 85."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {14, 26, 23, 37, 21, 36}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "154",
+   "169",
+   "152",
+   "157"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 157."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Vereinfache den Ausdruck: A ∧ A",
+  "options": [
+   "B",
+   "A ∨ B",
+   "A",
+   "A ∧ B"
+  ],
+  "correct": 2,
+  "explanation": "A ∧ A = A."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 79.23.150.153 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "79.23.150.255",
+   "79.23.150.0",
+   "79.23.0.0",
+   "79.23.150.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 79.23.150.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 80.150.221.238 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "80.150.221.1",
+   "80.150.221.255",
+   "80.150.0.0",
+   "80.150.221.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 80.150.221.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 77.116.2.150 mit Präfix /24?",
+  "options": [
+   "77.116.2.254",
+   "77.116.255.255",
+   "77.116.2.0",
+   "77.116.2.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 77.116.2.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 88.2.101.9 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "88.2.101.0",
+   "88.2.0.0",
+   "88.2.101.255",
+   "88.2.101.1"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 88.2.101.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Alter in schueler: {16,17,16,18,17,16}. Was liefert SELECT MAX(alter) FROM schueler;?",
+  "options": [
+   "18",
+   "20",
+   "17",
+   "19"
+  ],
+  "correct": 0,
+  "explanation": "MAX der Werte ist 18."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {4, 14, 13, 5, 4}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "12",
+   "4",
+   "8",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 4+14+13+5+4 = 40, geteilt durch 5 = 8."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {26, 40, 22, 20, 21, 3}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "121",
+   "127",
+   "132",
+   "144"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 132."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 5.183.135.10 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "5.183.135.255",
+   "5.183.0.0",
+   "5.183.135.1",
+   "5.183.135.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 5.183.135.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 201.205.27.97 mit Präfix /24?",
+  "options": [
+   "201.205.27.254",
+   "201.205.27.0",
+   "201.205.27.255",
+   "201.205.255.255"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 201.205.27.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 219.35.19.170 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "219.35.19.1",
+   "219.35.19.255",
+   "219.35.19.0",
+   "219.35.0.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 219.35.19.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 179.48.95.105 mit Präfix /24?",
+  "options": [
+   "179.48.95.0",
+   "179.48.95.255",
+   "179.48.255.255",
+   "179.48.95.254"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 179.48.95.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte alter enthält {16, 14, 7, 16, 6, 20, 1}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 12;?",
+  "options": [
+   "3",
+   "1",
+   "2",
+   "4"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 12: 16, 14, 16, 20 → 4."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 76.143.130.86 mit Präfix /24?",
+  "options": [
+   "76.143.130.254",
+   "76.143.130.255",
+   "76.143.130.0",
+   "76.143.255.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 76.143.130.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {5, 18, 18, 9, 20, 13, 4}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 6;?",
+  "options": [
+   "5",
+   "6",
+   "2",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 6: 18, 18, 9, 20, 13 → 5."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {10, 9, 3, 19, 11, 3}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 6;?",
+  "options": [
+   "1",
+   "7",
+   "4",
+   "5"
+  ],
+  "correct": 2,
+  "explanation": "Werte > 6: 10, 9, 19, 11 → 4."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {17, 2, 1, 19, 6, 16}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 13;?",
+  "options": [
+   "1",
+   "0",
+   "4",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 13: 17, 19, 16 → 3."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Vereinfache den Ausdruck: A ∨ A",
+  "options": [
+   "A",
+   "A ∨ B",
+   "0",
+   "B"
+  ],
+  "correct": 0,
+  "explanation": "A ∨ A = A."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 67.167.222.17 mit Präfix /24?",
+  "options": [
+   "67.167.222.0",
+   "67.167.255.255",
+   "67.167.222.254",
+   "67.167.222.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 67.167.222.255."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Vereinfache den Ausdruck: A ∧ ¬A",
+  "options": [
+   "0",
+   "A ∧ B",
+   "A ∨ B",
+   "A"
+  ],
+  "correct": 0,
+  "explanation": "A ∧ ¬A = 0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {29, 9, 46}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "23",
+   "30",
+   "26",
+   "28"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 29+9+46 = 84, geteilt durch 3 = 28."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {29, 10, 26, 7}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "18",
+   "14",
+   "19",
+   "20"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 29+10+26+7 = 72, geteilt durch 4 = 18."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /25?",
+  "options": [
+   "126",
+   "110",
+   "144",
+   "153"
+  ],
+  "correct": 0,
+  "explanation": "2^(32−25) − 2 (Netz- und Broadcast-Adresse) = 126."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Tabelle schueler(name, alter, klasse) hat 6 Zeilen. Was liefert: SELECT COUNT(*) FROM schueler WHERE klasse='10a'; (drei Schüler pro Klasse)?",
+  "options": [
+   "3",
+   "6",
+   "4",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "In der Klasse 10a befinden sich 3 Schüler."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 73.255.232.39 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "73.255.232.1",
+   "73.255.232.0",
+   "73.255.232.255",
+   "73.255.0.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 73.255.232.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 174.52.228.235 mit Präfix /24?",
+  "options": [
+   "174.52.228.0",
+   "174.52.228.254",
+   "174.52.255.255",
+   "174.52.228.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 174.52.228.255."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Wähle die richtige Antwort. Welche Zeitkomplexität hat: Zwei verschachtelte Schleifen über n Elemente?",
+  "options": [
+   "O(2^n)",
+   "O(n)",
+   "O(n²)",
+   "O(1)"
+  ],
+  "correct": 2,
+  "explanation": "Zwei verschachtelte Schleifen über n Elemente: O(n²)."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Aufgabe: Welche Zeitkomplexität hat: Mergesort?",
+  "options": [
+   "O(n²)",
+   "O(n log n)",
+   "O(n)",
+   "O(1)"
+  ],
+  "correct": 1,
+  "explanation": "Mergesort: O(n log n)."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /24?",
+  "options": [
+   "283",
+   "254",
+   "255",
+   "267"
+  ],
+  "correct": 1,
+  "explanation": "2^(32−24) − 2 (Netz- und Broadcast-Adresse) = 254."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Aufgabe: Welche Zeitkomplexität hat: Zugriff auf ein Array-Element per Index?",
+  "options": [
+   "O(1)",
+   "O(n²)",
+   "O(log n)",
+   "O(2^n)"
+  ],
+  "correct": 0,
+  "explanation": "Zugriff auf ein Array-Element per Index: O(1)."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {12, 30, 31, 17}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "102",
+   "90",
+   "89",
+   "79"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 90."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 222.20.230.98 mit Präfix /24?",
+  "options": [
+   "222.20.230.254",
+   "222.20.230.255",
+   "222.20.255.255",
+   "222.20.230.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 222.20.230.255."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Vereinfache den Ausdruck: A ∨ 1",
+  "options": [
+   "1",
+   "A",
+   "A ∨ B",
+   "A ∧ B"
+  ],
+  "correct": 0,
+  "explanation": "A ∨ 1 = 1."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte alter enthält {7, 8, 15, 2, 6}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 12;?",
+  "options": [
+   "0",
+   "2",
+   "4",
+   "1"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 12: 15 → 1."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Wähle die richtige Antwort. Welche Zeitkomplexität hat: Binäre Suche in einem sortierten Array?",
+  "options": [
+   "O(1)",
+   "O(n log n)",
+   "O(log n)",
+   "O(n)"
+  ],
+  "correct": 2,
+  "explanation": "Binäre Suche in einem sortierten Array: O(log n)."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {8, 1, 2, 5, 1}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "11",
+   "17",
+   "28",
+   "20"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 17."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 59.88.162.84 mit Präfix /24?",
+  "options": [
+   "59.88.162.0",
+   "59.88.162.255",
+   "59.88.162.254",
+   "59.88.255.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 59.88.162.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 176.110.254.121 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "176.110.254.1",
+   "176.110.254.0",
+   "176.110.254.255",
+   "176.110.0.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 176.110.254.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte note enthält {50, 9, 16}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "22",
+   "30",
+   "25",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 50+9+16 = 75, geteilt durch 3 = 25."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 131.86.64.156 mit Präfix /24?",
+  "options": [
+   "131.86.64.254",
+   "131.86.255.255",
+   "131.86.64.255",
+   "131.86.64.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 131.86.64.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 63.52.227.146 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "63.52.0.0",
+   "63.52.227.0",
+   "63.52.227.1",
+   "63.52.227.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 63.52.227.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 55.155.122.134 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "55.155.0.0",
+   "55.155.122.0",
+   "55.155.122.1",
+   "55.155.122.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 55.155.122.0."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Vereinfache den Ausdruck: ¬(¬A)",
+  "options": [
+   "A ∧ B",
+   "A",
+   "0",
+   "A ∨ B"
+  ],
+  "correct": 1,
+  "explanation": "¬(¬A) = A."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: A ∨ (A ∧ B)",
+  "options": [
+   "0",
+   "¬A",
+   "A",
+   "B"
+  ],
+  "correct": 2,
+  "explanation": "A ∨ (A ∧ B) = A."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Welche Subnetzmaske gehört zum Präfix /8?",
+  "options": [
+   "255.255.255.128",
+   "255.0.0.0",
+   "255.255.0.0",
+   "255.255.255.0"
+  ],
+  "correct": 1,
+  "explanation": "/8 entspricht der Maske 255.0.0.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {32, 9, 15, 22, 27}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "102",
+   "104",
+   "94",
+   "105"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 105."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {17, 19, 17, 6, 14, 10, 2}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 6;?",
+  "options": [
+   "5",
+   "6",
+   "3",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 6: 17, 19, 17, 14, 10 → 5."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 75.57.175.99 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "75.57.175.255",
+   "75.57.175.0",
+   "75.57.175.1",
+   "75.57.0.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 75.57.175.0."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: ¬(¬A)",
+  "options": [
+   "A",
+   "1",
+   "A ∧ B",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "¬(¬A) = A."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Aufgabe: Welche Zeitkomplexität hat: Zwei verschachtelte Schleifen über n Elemente?",
+  "options": [
+   "O(n)",
+   "O(1)",
+   "O(log n)",
+   "O(n²)"
+  ],
+  "correct": 3,
+  "explanation": "Zwei verschachtelte Schleifen über n Elemente: O(n²)."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {10, 2, 2, 10}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "11",
+   "2",
+   "6",
+   "9"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 10+2+2+10 = 24, geteilt durch 4 = 6."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 206.130.83.42 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "206.130.0.0",
+   "206.130.83.0",
+   "206.130.83.255",
+   "206.130.83.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 206.130.83.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {11, 11, 18, 27}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "69",
+   "77",
+   "64",
+   "67"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 67."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 204.231.249.240 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "204.231.249.0",
+   "204.231.249.255",
+   "204.231.0.0",
+   "204.231.249.1"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 204.231.249.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Welche Subnetzmaske gehört zum Präfix /8?",
+  "options": [
+   "255.0.0.0",
+   "255.255.0.0",
+   "255.255.255.0",
+   "255.255.255.128"
+  ],
+  "correct": 0,
+  "explanation": "/8 entspricht der Maske 255.0.0.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {5, 44, 28, 31, 17}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "25",
+   "29",
+   "26",
+   "21"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 5+44+28+31+17 = 125, geteilt durch 5 = 25."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 110.118.173.119 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "110.118.173.1",
+   "110.118.0.0",
+   "110.118.173.0",
+   "110.118.173.255"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 110.118.173.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 190.198.209.107 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "190.198.0.0",
+   "190.198.209.255",
+   "190.198.209.0",
+   "190.198.209.1"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 190.198.209.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 203.50.217.173 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "203.50.217.1",
+   "203.50.217.0",
+   "203.50.0.0",
+   "203.50.217.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 203.50.217.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {11, 20, 29}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "17",
+   "22",
+   "20",
+   "16"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 11+20+29 = 60, geteilt durch 3 = 20."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 154.128.136.82 mit Präfix /24?",
+  "options": [
+   "154.128.136.0",
+   "154.128.136.255",
+   "154.128.136.254",
+   "154.128.255.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 154.128.136.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 49.185.107.189 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "49.185.107.255",
+   "49.185.0.0",
+   "49.185.107.0",
+   "49.185.107.1"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 49.185.107.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {33, 3, 21, 14, 29}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "20",
+   "24",
+   "22",
+   "18"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 33+3+21+14+29 = 100, geteilt durch 5 = 20."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: A ∧ (A ∨ B)",
+  "options": [
+   "A ∧ B",
+   "A",
+   "B",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "A ∧ (A ∨ B) = A."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {17, 12, 5, 18, 7}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 8;?",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "2"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 8: 17, 12, 18 → 3."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: A ∧ ¬A",
+  "options": [
+   "A ∨ B",
+   "¬A",
+   "0",
+   "1"
+  ],
+  "correct": 2,
+  "explanation": "A ∧ ¬A = 0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 181.186.216.74 mit Präfix /24?",
+  "options": [
+   "181.186.216.255",
+   "181.186.216.0",
+   "181.186.255.255",
+   "181.186.216.254"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 181.186.216.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 140.236.32.239 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "140.236.32.255",
+   "140.236.32.1",
+   "140.236.32.0",
+   "140.236.0.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 140.236.32.0."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Teste dein Wissen: Welche Zeitkomplexität hat: Zugriff auf ein Array-Element per Index?",
+  "options": [
+   "O(n log n)",
+   "O(1)",
+   "O(2^n)",
+   "O(log n)"
+  ],
+  "correct": 1,
+  "explanation": "Zugriff auf ein Array-Element per Index: O(1)."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Aufgabe: Welche Zeitkomplexität hat: Bubblesort im schlechtesten Fall?",
+  "options": [
+   "O(log n)",
+   "O(2^n)",
+   "O(n²)",
+   "O(n log n)"
+  ],
+  "correct": 2,
+  "explanation": "Bubblesort im schlechtesten Fall: O(n²)."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {14, 5, 23, 18}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "10",
+   "16",
+   "13",
+   "15"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 14+5+23+18 = 60, geteilt durch 4 = 15."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte note enthält {6, 39, 39, 32, 4}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "29",
+   "26",
+   "21",
+   "24"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 6+39+39+32+4 = 120, geteilt durch 5 = 24."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 106.247.32.71 mit Präfix /24?",
+  "options": [
+   "106.247.255.255",
+   "106.247.32.255",
+   "106.247.32.254",
+   "106.247.32.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 106.247.32.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {10, 2, 6, 1, 6}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "6",
+   "5",
+   "8",
+   "3"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 10+2+6+1+6 = 25, geteilt durch 5 = 5."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {20, 13, 35, 15}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "91",
+   "76",
+   "83",
+   "75"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 83."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {18, 7, 17, 10, 2}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 8;?",
+  "options": [
+   "3",
+   "5",
+   "2",
+   "4"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 8: 18, 17, 10 → 3."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Vereinfache den Ausdruck: A ∧ 1",
+  "options": [
+   "¬A",
+   "A",
+   "B",
+   "A ∧ B"
+  ],
+  "correct": 1,
+  "explanation": "A ∧ 1 = A."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie viele nutzbare Host-Adressen hat ein IPv4-Netz mit Präfix /24?",
+  "options": [
+   "254",
+   "255",
+   "237",
+   "235"
+  ],
+  "correct": 0,
+  "explanation": "2^(32−24) − 2 (Netz- und Broadcast-Adresse) = 254."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 39.34.224.197 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "39.34.224.0",
+   "39.34.224.1",
+   "39.34.224.255",
+   "39.34.0.0"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 39.34.224.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 65.173.250.187 mit Präfix /24?",
+  "options": [
+   "65.173.250.255",
+   "65.173.250.254",
+   "65.173.250.0",
+   "65.173.255.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 65.173.250.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 104.249.132.66 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "104.249.132.0",
+   "104.249.0.0",
+   "104.249.132.1",
+   "104.249.132.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 104.249.132.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {10, 6, 6, 18, 13, 6, 16}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 11;?",
+  "options": [
+   "6",
+   "5",
+   "4",
+   "3"
+  ],
+  "correct": 3,
+  "explanation": "Werte > 11: 18, 13, 16 → 3."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {1, 12, 13, 7, 8, 1}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 7;?",
+  "options": [
+   "3",
+   "4",
+   "0",
+   "1"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 7: 12, 13, 8 → 3."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Teste dein Wissen: Welche Zeitkomplexität hat: Zwei verschachtelte Schleifen über n Elemente?",
+  "options": [
+   "O(n log n)",
+   "O(2^n)",
+   "O(n²)",
+   "O(n)"
+  ],
+  "correct": 2,
+  "explanation": "Zwei verschachtelte Schleifen über n Elemente: O(n²)."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Welche Zeitkomplexität hat: Binäre Suche in einem sortierten Array?",
+  "options": [
+   "O(n²)",
+   "O(n log n)",
+   "O(log n)",
+   "O(1)"
+  ],
+  "correct": 2,
+  "explanation": "Binäre Suche in einem sortierten Array: O(log n)."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 97.95.63.124 mit Präfix /24?",
+  "options": [
+   "97.95.63.0",
+   "97.95.63.254",
+   "97.95.255.255",
+   "97.95.63.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 97.95.63.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 85.101.124.9 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "85.101.124.1",
+   "85.101.124.255",
+   "85.101.124.0",
+   "85.101.0.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 85.101.124.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 117.128.242.225 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "117.128.242.1",
+   "117.128.242.0",
+   "117.128.242.255",
+   "117.128.0.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 117.128.242.0."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: A ∧ 0",
+  "options": [
+   "0",
+   "A ∨ B",
+   "A",
+   "¬A"
+  ],
+  "correct": 0,
+  "explanation": "A ∧ 0 = 0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 69.201.96.97 mit Präfix /24?",
+  "options": [
+   "69.201.255.255",
+   "69.201.96.254",
+   "69.201.96.255",
+   "69.201.96.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 69.201.96.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 32.253.163.75 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "32.253.163.0",
+   "32.253.0.0",
+   "32.253.163.1",
+   "32.253.163.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 32.253.163.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {10, 13, 14, 3}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "11",
+   "14",
+   "6",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 10+13+14+3 = 40, geteilt durch 4 = 10."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 45.165.200.188 mit Präfix /24?",
+  "options": [
+   "45.165.200.255",
+   "45.165.200.254",
+   "45.165.255.255",
+   "45.165.200.0"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 45.165.200.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 7.155.187.152 mit Präfix /24?",
+  "options": [
+   "7.155.187.255",
+   "7.155.187.0",
+   "7.155.255.255",
+   "7.155.187.254"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 7.155.187.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 100.45.85.30 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "100.45.85.255",
+   "100.45.85.0",
+   "100.45.0.0",
+   "100.45.85.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 100.45.85.0."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Vereinfache den Ausdruck: A ∧ A",
+  "options": [
+   "B",
+   "¬A",
+   "A ∨ B",
+   "A"
+  ],
+  "correct": 3,
+  "explanation": "A ∧ A = A."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 157.106.198.127 mit Präfix /24?",
+  "options": [
+   "157.106.255.255",
+   "157.106.198.0",
+   "157.106.198.255",
+   "157.106.198.254"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 157.106.198.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {5, 17, 9, 18, 20, 19}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 8;?",
+  "options": [
+   "2",
+   "6",
+   "5",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "Werte > 8: 17, 9, 18, 20, 19 → 5."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 25.246.238.224 mit Präfix /24?",
+  "options": [
+   "25.246.238.0",
+   "25.246.238.255",
+   "25.246.238.254",
+   "25.246.255.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 25.246.238.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 48.154.194.122 mit Präfix /24?",
+  "options": [
+   "48.154.255.255",
+   "48.154.194.255",
+   "48.154.194.0",
+   "48.154.194.254"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 48.154.194.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 33.216.143.137 mit Präfix /24?",
+  "options": [
+   "33.216.255.255",
+   "33.216.143.254",
+   "33.216.143.255",
+   "33.216.143.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 33.216.143.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 191.120.229.169 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "191.120.229.255",
+   "191.120.0.0",
+   "191.120.229.0",
+   "191.120.229.1"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 191.120.229.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 24.67.222.243 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "24.67.222.1",
+   "24.67.222.0",
+   "24.67.222.255",
+   "24.67.0.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 24.67.222.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 37.96.228.190 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "37.96.0.0",
+   "37.96.228.0",
+   "37.96.228.255",
+   "37.96.228.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 37.96.228.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {7, 6, 2, 33, 72}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "19",
+   "29",
+   "24",
+   "21"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 7+6+2+33+72 = 120, geteilt durch 5 = 24."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {26, 21, 13}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "25",
+   "20",
+   "16",
+   "19"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 26+21+13 = 60, geteilt durch 3 = 20."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 204.48.232.124 mit Präfix /24?",
+  "options": [
+   "204.48.232.0",
+   "204.48.255.255",
+   "204.48.232.254",
+   "204.48.232.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 204.48.232.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte note enthält {39, 20, 10}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "20",
+   "24",
+   "23",
+   "27"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 39+20+10 = 69, geteilt durch 3 = 23."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {20, 7, 11, 2, 16, 16}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 10;?",
+  "options": [
+   "2",
+   "4",
+   "7",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 10: 20, 11, 16, 16 → 4."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {3, 50, 22}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "25",
+   "24",
+   "23",
+   "28"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 3+50+22 = 75, geteilt durch 3 = 25."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 223.84.37.39 mit Präfix /24?",
+  "options": [
+   "223.84.37.0",
+   "223.84.255.255",
+   "223.84.37.255",
+   "223.84.37.254"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 223.84.37.255."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Teste dein Wissen: Welche Zeitkomplexität hat: Binäre Suche in einem sortierten Array?",
+  "options": [
+   "O(2^n)",
+   "O(n log n)",
+   "O(log n)",
+   "O(n)"
+  ],
+  "correct": 2,
+  "explanation": "Binäre Suche in einem sortierten Array: O(log n)."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 12.115.237.111 mit Präfix /24?",
+  "options": [
+   "12.115.237.254",
+   "12.115.237.0",
+   "12.115.255.255",
+   "12.115.237.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 12.115.237.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte punkte enthält die Werte {31, 21, 33, 25, 19, 2}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "138",
+   "139",
+   "123",
+   "131"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 131."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte alter enthält {12, 3, 10, 18, 3, 12}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 10;?",
+  "options": [
+   "3",
+   "1",
+   "5",
+   "0"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 10: 12, 18, 12 → 3."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 11.19.222.4 mit Präfix /24?",
+  "options": [
+   "11.19.222.254",
+   "11.19.222.255",
+   "11.19.222.0",
+   "11.19.255.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 11.19.222.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 82.249.6.47 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "82.249.0.0",
+   "82.249.6.1",
+   "82.249.6.255",
+   "82.249.6.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 82.249.6.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {16, 27, 32, 9, 10, 23}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "123",
+   "110",
+   "117",
+   "119"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 117."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 39.196.187.142 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "39.196.0.0",
+   "39.196.187.255",
+   "39.196.187.1",
+   "39.196.187.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 39.196.187.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 198.183.92.85 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "198.183.92.255",
+   "198.183.92.0",
+   "198.183.0.0",
+   "198.183.92.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 198.183.92.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {8, 8, 13, 8, 13}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "7",
+   "15",
+   "6",
+   "10"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 8+8+13+8+13 = 50, geteilt durch 5 = 10."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {7, 7, 19, 35}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "22",
+   "17",
+   "21",
+   "14"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 7+7+19+35 = 68, geteilt durch 4 = 17."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 223.156.129.35 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "223.156.129.255",
+   "223.156.0.0",
+   "223.156.129.0",
+   "223.156.129.1"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 223.156.129.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {16, 16, 18, 9}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "63",
+   "59",
+   "49",
+   "53"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 59."
+ },
+ {
+  "topic": "SQL",
+  "question": "Alter in schueler: {16,17,16,18,17,16}. Was liefert SELECT MAX(alter) FROM schueler;?",
+  "options": [
+   "19",
+   "20",
+   "16",
+   "18"
+  ],
+  "correct": 3,
+  "explanation": "MAX der Werte ist 18."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte alter enthält {14, 16, 16, 11, 10}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 13;?",
+  "options": [
+   "6",
+   "3",
+   "1",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 13: 14, 16, 16 → 3."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 33.112.207.23 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "33.112.0.0",
+   "33.112.207.255",
+   "33.112.207.1",
+   "33.112.207.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 33.112.207.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {12, 4, 32}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "15",
+   "11",
+   "12",
+   "16"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 12+4+32 = 48, geteilt durch 3 = 16."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {20, 4, 24}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "16",
+   "13",
+   "17",
+   "12"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 20+4+24 = 48, geteilt durch 3 = 16."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Aufgabe: Vereinfache den Ausdruck: A ∨ (A ∧ B)",
+  "options": [
+   "A ∧ B",
+   "A",
+   "1",
+   "A ∨ B"
+  ],
+  "correct": 1,
+  "explanation": "A ∨ (A ∧ B) = A."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {32, 5, 40, 37}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "114",
+   "112",
+   "113",
+   "107"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 114."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 98.160.149.236 mit Präfix /24?",
+  "options": [
+   "98.160.149.255",
+   "98.160.149.0",
+   "98.160.149.254",
+   "98.160.255.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 98.160.149.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {39, 9, 36, 23, 5, 39}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "161",
+   "151",
+   "152",
+   "146"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 151."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Broadcast-Adresse zur IP 64.26.92.58 mit Präfix /24?",
+  "options": [
+   "64.26.92.0",
+   "64.26.92.254",
+   "64.26.255.255",
+   "64.26.92.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 64.26.92.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {30, 28, 16, 17, 36}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "127",
+   "136",
+   "116",
+   "133"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 127."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Welche Zeitkomplexität hat: Lineare Suche im Array?",
+  "options": [
+   "O(1)",
+   "O(n)",
+   "O(log n)",
+   "O(2^n)"
+  ],
+  "correct": 1,
+  "explanation": "Lineare Suche im Array: O(n)."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 189.44.131.239 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "189.44.131.0",
+   "189.44.131.255",
+   "189.44.131.1",
+   "189.44.0.0"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 189.44.131.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 98.40.50.46 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "98.40.50.0",
+   "98.40.0.0",
+   "98.40.50.255",
+   "98.40.50.1"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 98.40.50.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 15.249.162.134 mit Präfix /24?",
+  "options": [
+   "15.249.162.0",
+   "15.249.162.254",
+   "15.249.255.255",
+   "15.249.162.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 15.249.162.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {18, 14, 39, 28, 32, 12}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "153",
+   "155",
+   "150",
+   "143"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 143."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Welche Subnetzmaske gehört zum Präfix /25?",
+  "options": [
+   "255.255.255.0",
+   "255.255.0.0",
+   "255.0.0.0",
+   "255.255.255.128"
+  ],
+  "correct": 3,
+  "explanation": "/25 entspricht der Maske 255.255.255.128."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {6, 6, 27, 30}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "77",
+   "69",
+   "66",
+   "79"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 69."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 96.142.204.231 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "96.142.204.1",
+   "96.142.0.0",
+   "96.142.204.0",
+   "96.142.204.255"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 96.142.204.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {32, 6, 40}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "31",
+   "30",
+   "25",
+   "26"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 32+6+40 = 78, geteilt durch 3 = 26."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {14, 27, 27, 18, 17}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "92",
+   "103",
+   "98",
+   "112"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 103."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {9, 32, 22, 14, 21, 15}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "119",
+   "122",
+   "113",
+   "123"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 113."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte punkte enthält die Werte {39, 21, 25, 30, 33, 16}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "160",
+   "164",
+   "167",
+   "172"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 164."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {31, 16, 15, 6}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "17",
+   "15",
+   "21",
+   "22"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 31+16+15+6 = 68, geteilt durch 4 = 17."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 108.178.210.158 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "108.178.210.0",
+   "108.178.0.0",
+   "108.178.210.1",
+   "108.178.210.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 108.178.210.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte note enthält {43, 11, 30, 19, 12}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "26",
+   "23",
+   "28",
+   "21"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 43+11+30+19+12 = 115, geteilt durch 5 = 23."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 202.236.178.91 mit Präfix /24?",
+  "options": [
+   "202.236.178.254",
+   "202.236.255.255",
+   "202.236.178.255",
+   "202.236.178.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 202.236.178.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 129.51.72.164 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "129.51.0.0",
+   "129.51.72.1",
+   "129.51.72.255",
+   "129.51.72.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 129.51.72.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {19, 1, 17, 25, 8, 8}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "90",
+   "74",
+   "81",
+   "78"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 78."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {35, 27, 1, 10}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "73",
+   "85",
+   "77",
+   "61"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 73."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {1, 7, 14, 12, 6}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "8",
+   "13",
+   "4",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 1+7+14+12+6 = 40, geteilt durch 5 = 8."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte alter enthält {4, 16, 2, 15, 6, 17, 15}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 8;?",
+  "options": [
+   "1",
+   "4",
+   "7",
+   "5"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 8: 16, 15, 17, 15 → 4."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 171.172.224.159 mit Präfix /24?",
+  "options": [
+   "171.172.255.255",
+   "171.172.224.0",
+   "171.172.224.254",
+   "171.172.224.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 171.172.224.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {29, 31, 27, 19, 21, 27}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "151",
+   "154",
+   "159",
+   "144"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 154."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 35.153.178.55 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "35.153.178.0",
+   "35.153.178.1",
+   "35.153.0.0",
+   "35.153.178.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 35.153.178.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {32, 15, 8, 5, 26}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "86",
+   "77",
+   "93",
+   "79"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 86."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: A ∨ 1",
+  "options": [
+   "A ∨ B",
+   "0",
+   "1",
+   "¬A"
+  ],
+  "correct": 2,
+  "explanation": "A ∨ 1 = 1."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 171.141.51.13 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "171.141.0.0",
+   "171.141.51.0",
+   "171.141.51.255",
+   "171.141.51.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 171.141.51.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 180.9.194.203 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "180.9.194.255",
+   "180.9.194.0",
+   "180.9.194.1",
+   "180.9.0.0"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 180.9.194.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {3, 13, 19, 17, 9, 20}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 9;?",
+  "options": [
+   "3",
+   "4",
+   "1",
+   "2"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 9: 13, 19, 17, 20 → 4."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte alter enthält {3, 15, 14, 5, 10, 6, 19}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 11;?",
+  "options": [
+   "4",
+   "3",
+   "6",
+   "0"
+  ],
+  "correct": 1,
+  "explanation": "Werte > 11: 15, 14, 19 → 3."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {15, 9, 10, 3, 2, 31}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "70",
+   "75",
+   "65",
+   "60"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 70."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 64.237.44.157 mit Präfix /24?",
+  "options": [
+   "64.237.44.0",
+   "64.237.44.254",
+   "64.237.44.255",
+   "64.237.255.255"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 64.237.44.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {15, 3, 11, 17, 19, 27}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "86",
+   "96",
+   "92",
+   "85"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 92."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 172.182.208.115 mit Präfix /24?",
+  "options": [
+   "172.182.208.0",
+   "172.182.208.255",
+   "172.182.255.255",
+   "172.182.208.254"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 172.182.208.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {43, 16, 2, 55}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "24",
+   "31",
+   "29",
+   "34"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 43+16+2+55 = 116, geteilt durch 4 = 29."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Welche Subnetzmaske gehört zum Präfix /16?",
+  "options": [
+   "255.255.255.128",
+   "255.255.255.0",
+   "255.0.0.0",
+   "255.255.0.0"
+  ],
+  "correct": 3,
+  "explanation": "/16 entspricht der Maske 255.255.0.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte punkte enthält die Werte {3, 23, 35, 13, 23}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "97",
+   "102",
+   "104",
+   "85"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 97."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {3, 9, 10, 6, 19, 1}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 8;?",
+  "options": [
+   "3",
+   "2",
+   "0",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 8: 9, 10, 19 → 3."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 180.213.190.250 mit Präfix /24?",
+  "options": [
+   "180.213.190.255",
+   "180.213.190.0",
+   "180.213.190.254",
+   "180.213.255.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 180.213.190.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 195.163.126.14 mit Präfix /24?",
+  "options": [
+   "195.163.126.0",
+   "195.163.255.255",
+   "195.163.126.254",
+   "195.163.126.255"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 195.163.126.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte punkte enthält die Werte {12, 19, 12, 34, 37}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "105",
+   "114",
+   "109",
+   "102"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 114."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte note enthält {18, 14, 11, 5}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "9",
+   "8",
+   "12",
+   "11"
+  ],
+  "correct": 2,
+  "explanation": "Durchschnitt = 18+14+11+5 = 48, geteilt durch 4 = 12."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte alter enthält {11, 11, 18, 19, 16, 4}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 9;?",
+  "options": [
+   "4",
+   "6",
+   "5",
+   "7"
+  ],
+  "correct": 2,
+  "explanation": "Werte > 9: 11, 11, 18, 19, 16 → 5."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {14, 34, 34, 21, 32}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "138",
+   "135",
+   "131",
+   "140"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 135."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {3, 36, 19, 12, 24, 4}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "93",
+   "98",
+   "105",
+   "89"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 98."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Netz-Adresse zur IP 191.229.13.168 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "191.229.13.255",
+   "191.229.0.0",
+   "191.229.13.0",
+   "191.229.13.1"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 191.229.13.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte punkte enthält die Werte {18, 27, 27, 21, 21, 22}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "125",
+   "124",
+   "148",
+   "136"
+  ],
+  "correct": 3,
+  "explanation": "Die Summe der Werte ist 136."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte alter enthält {10, 16, 17, 7, 12, 8}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 11;?",
+  "options": [
+   "3",
+   "2",
+   "0",
+   "5"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 11: 16, 17, 12 → 3."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {15, 24, 1, 20}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "10",
+   "15",
+   "16",
+   "11"
+  ],
+  "correct": 1,
+  "explanation": "Durchschnitt = 15+24+1+20 = 60, geteilt durch 4 = 15."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {20, 28, 16, 12, 8}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "83",
+   "84",
+   "86",
+   "88"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 84."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte alter enthält {19, 15, 16, 16, 6}. Wie viele Zeilen liefert SELECT COUNT(*) FROM t WHERE alter > 11;?",
+  "options": [
+   "4",
+   "2",
+   "1",
+   "6"
+  ],
+  "correct": 0,
+  "explanation": "Werte > 11: 19, 15, 16, 16 → 4."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 2.96.119.242 mit Präfix /24?",
+  "options": [
+   "2.96.119.254",
+   "2.96.255.255",
+   "2.96.119.255",
+   "2.96.119.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 2.96.119.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 103.173.152.32 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "103.173.0.0",
+   "103.173.152.1",
+   "103.173.152.255",
+   "103.173.152.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 103.173.152.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte punkte enthält die Werte {35, 6, 39, 9, 39}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "127",
+   "128",
+   "120",
+   "138"
+  ],
+  "correct": 1,
+  "explanation": "Die Summe der Werte ist 128."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Teste dein Wissen: Wie lautet die Broadcast-Adresse zur IP 187.16.189.124 mit Präfix /24?",
+  "options": [
+   "187.16.189.255",
+   "187.16.255.255",
+   "187.16.189.254",
+   "187.16.189.0"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 187.16.189.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 209.232.110.141 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "209.232.110.255",
+   "209.232.110.0",
+   "209.232.0.0",
+   "209.232.110.1"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 209.232.110.0."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Welche Zeitkomplexität hat: Zwei verschachtelte Schleifen über n Elemente?",
+  "options": [
+   "O(log n)",
+   "O(n log n)",
+   "O(1)",
+   "O(n²)"
+  ],
+  "correct": 3,
+  "explanation": "Zwei verschachtelte Schleifen über n Elemente: O(n²)."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte note enthält {23, 27, 15, 12, 8}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "14",
+   "22",
+   "16",
+   "17"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 23+27+15+12+8 = 85, geteilt durch 5 = 17."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 25.61.113.186 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "25.61.113.1",
+   "25.61.113.0",
+   "25.61.0.0",
+   "25.61.113.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 25.61.113.0."
+ },
+ {
+  "topic": "O-Notation",
+  "question": "Teste dein Wissen: Welche Zeitkomplexität hat: Lineare Suche im Array?",
+  "options": [
+   "O(log n)",
+   "O(n)",
+   "O(n²)",
+   "O(1)"
+  ],
+  "correct": 1,
+  "explanation": "Lineare Suche im Array: O(n)."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Broadcast-Adresse zur IP 125.192.158.52 mit Präfix /24?",
+  "options": [
+   "125.192.158.254",
+   "125.192.158.255",
+   "125.192.158.0",
+   "125.192.255.255"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 125.192.158.255."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Netz-Adresse zur IP 181.220.176.56 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "181.220.176.0",
+   "181.220.0.0",
+   "181.220.176.1",
+   "181.220.176.255"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 181.220.176.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Teste dein Wissen: Die Spalte punkte enthält die Werte {1, 29, 38, 3}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "71",
+   "75",
+   "79",
+   "61"
+  ],
+  "correct": 0,
+  "explanation": "Die Summe der Werte ist 71."
+ },
+ {
+  "topic": "SQL",
+  "question": "Aufgabe: Die Spalte note enthält {18, 10, 62}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "30",
+   "35",
+   "33",
+   "31"
+  ],
+  "correct": 0,
+  "explanation": "Durchschnitt = 18+10+62 = 90, geteilt durch 3 = 30."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 49.82.178.98 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "49.82.178.1",
+   "49.82.0.0",
+   "49.82.178.255",
+   "49.82.178.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 49.82.178.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 32.68.239.225 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "32.68.239.1",
+   "32.68.239.255",
+   "32.68.239.0",
+   "32.68.0.0"
+  ],
+  "correct": 2,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 32.68.239.0."
+ },
+ {
+  "topic": "SQL",
+  "question": "Die Spalte punkte enthält die Werte {6, 6, 37, 7}. Was liefert SELECT SUM(punkte) FROM t;?",
+  "options": [
+   "65",
+   "45",
+   "56",
+   "62"
+  ],
+  "correct": 2,
+  "explanation": "Die Summe der Werte ist 56."
+ },
+ {
+  "topic": "Boolesche Algebra",
+  "question": "Teste dein Wissen: Vereinfache den Ausdruck: A ∨ 0",
+  "options": [
+   "A ∧ B",
+   "A",
+   "¬A",
+   "1"
+  ],
+  "correct": 1,
+  "explanation": "A ∨ 0 = A."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wie lautet die Broadcast-Adresse zur IP 34.147.27.65 mit Präfix /24?",
+  "options": [
+   "34.147.255.255",
+   "34.147.27.255",
+   "34.147.27.0",
+   "34.147.27.254"
+  ],
+  "correct": 1,
+  "explanation": "Bei /24 ist das letzte Oktett 255: 34.147.27.255."
+ },
+ {
+  "topic": "SQL",
+  "question": "Wähle die richtige Antwort. Die Spalte note enthält {42, 3, 18}. Was liefert SELECT AVG(note) FROM t;?",
+  "options": [
+   "18",
+   "20",
+   "26",
+   "21"
+  ],
+  "correct": 3,
+  "explanation": "Durchschnitt = 42+3+18 = 63, geteilt durch 3 = 21."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Wähle die richtige Antwort. Wie lautet die Netz-Adresse zur IP 22.104.156.54 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "22.104.156.0",
+   "22.104.156.1",
+   "22.104.156.255",
+   "22.104.0.0"
+  ],
+  "correct": 0,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 22.104.156.0."
+ },
+ {
+  "topic": "Netzwerk",
+  "question": "Aufgabe: Wie lautet die Netz-Adresse zur IP 67.224.227.31 mit der Maske /24 (255.255.255.0)?",
+  "options": [
+   "67.224.0.0",
+   "67.224.227.1",
+   "67.224.227.255",
+   "67.224.227.0"
+  ],
+  "correct": 3,
+  "explanation": "Bei /24 wird das letzte Oktett 0 gesetzt: 67.224.227.0."
+ }
+]

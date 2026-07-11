@@ -5,6 +5,8 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { onPptxCreated } from "@/lib/tree-quest-engine";
+import { awardCoins } from "@/lib/coins";
+import { getTemplate } from "./templates";
 
 async function requireStudent() {
   const session = await getSession();
@@ -18,6 +20,22 @@ export async function createPresentation(): Promise<void> {
   const pres = await prisma.presentation.create({
     data: { userId: session.userId },
   });
+  awardCoins(session.userId, "office_dokument_erstellt", undefined, pres.id).catch(() => undefined);
+  redirect(`/app/praesentationen/${pres.id}`);
+}
+
+export async function createPresentationFromTemplate(key: string): Promise<void> {
+  const session = await requireStudent();
+  const template = getTemplate(String(key ?? "").trim().slice(0, 50));
+  if (!template) redirect("/app/praesentationen");
+  const pres = await prisma.presentation.create({
+    data: {
+      userId: session.userId,
+      title: template.title,
+      slides: JSON.stringify(template.slides),
+    },
+  });
+  awardCoins(session.userId, "office_dokument_erstellt", undefined, pres.id).catch(() => undefined);
   redirect(`/app/praesentationen/${pres.id}`);
 }
 

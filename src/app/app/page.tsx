@@ -16,13 +16,15 @@ import { redirect } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { prisma } from "@/lib/db/client";
 import { DashboardGreeting } from "@/components/app/DashboardGreeting";
 import { getAiQuota } from "@/lib/db/store";
 import { getSession } from "@/lib/session";
+import { DailyGoalCard } from "@/components/app/DailyGoalCard";
+import { getDailyGoalStatus, getWeeklyGoalStatus } from "@/lib/learning-goals";
+import { COIN_REWARDS } from "@/lib/coins";
 import { levelFromXp, getRankForXp } from "@/lib/game";
 import { cn } from "@/lib/utils";
 
@@ -115,7 +117,7 @@ export default async function DashboardPage() {
   // Streak + XP from stored fields
   const sevenDaysAgo = new Date(now.getTime() - 7 * 86_400_000);
   const todayStart = new Date(now.toISOString().slice(0, 10) + "T00:00:00.000Z");
-  const [userXpData, weeklyXpLogs, dailyXpLog] = await Promise.all([
+  const [userXpData, weeklyXpLogs, dailyGoal, weeklyGoal] = await Promise.all([
     prisma.user.findUnique({
       where: { id: session.userId },
       select: { xp: true, streak: true, lastActiveDate: true },
@@ -124,15 +126,12 @@ export default async function DashboardPage() {
       where: { userId: session.userId, createdAt: { gte: sevenDaysAgo } },
       _sum: { amount: true },
     }),
-    prisma.xpLog.aggregate({
-      where: { userId: session.userId, createdAt: { gte: todayStart } },
-      _sum: { amount: true },
-    }),
+    getDailyGoalStatus(session.userId),
+    getWeeklyGoalStatus(session.userId),
   ]);
   const streak = userXpData?.streak ?? 0;
   const currentXp = userXpData?.xp ?? 0;
   const weeklyXp = weeklyXpLogs._sum.amount ?? 0;
-  const dailyXp = dailyXpLog._sum.amount ?? 0;
   const rank = getRankForXp(currentXp);
   const level = levelFromXp(currentXp);
 
@@ -172,8 +171,6 @@ export default async function DashboardPage() {
         },
       }))
     : false;
-  const DAILY_GOAL = 50;
-  const dailyGoalReached = dailyXp >= DAILY_GOAL;
 
   const openCount = upcomingAssignments.length;
   const todayDate = now.toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" });
@@ -536,31 +533,12 @@ export default async function DashboardPage() {
             </Card>
           )}
 
-          <Card className={cn("rounded-2xl shadow-sm", dailyGoalReached && "border-success/40 bg-gradient-to-br from-success/6 to-transparent")}>
-            <CardBody className="p-5!">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Zap className={cn("size-4", dailyGoalReached ? "text-success" : "text-brand")} strokeWidth={1.75} />
-                  <p className={cn("text-xs font-semibold uppercase tracking-wider", dailyGoalReached ? "text-success" : "text-brand")}>
-                    Tagesziel
-                  </p>
-                </div>
-                <p className="font-mono text-sm font-bold">
-                  {dailyXp}<span className="text-muted-fg font-normal"> / {DAILY_GOAL} XP</span>
-                </p>
-              </div>
-              <Progress
-                value={Math.min(100, (dailyXp / DAILY_GOAL) * 100)}
-                tone={dailyGoalReached ? "success" : "brand"}
-                className="mt-3"
-              />
-              <p className="mt-2 text-xs text-muted-fg">
-                {dailyGoalReached
-                  ? "Tagesziel erreicht! Weiter so."
-                  : `Noch ${DAILY_GOAL - dailyXp} XP bis zum Tagesziel.`}
-              </p>
-            </CardBody>
-          </Card>
+          <DailyGoalCard
+            daily={dailyGoal}
+            weekly={weeklyGoal}
+            dailyReward={COIN_REWARDS.daily_goal}
+            weeklyReward={COIN_REWARDS.weekly_goal}
+          />
 
           {recentAchievements.length > 0 && (
             <Card className="rounded-2xl shadow-sm">

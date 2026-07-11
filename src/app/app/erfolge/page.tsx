@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { ACHIEVEMENTS } from "@/lib/achievements";
+import { levelFromXp } from "@/lib/xp";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Erfolge · Schüler" };
@@ -38,14 +39,61 @@ export default async function ErfolgePage() {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect(ROLE_HOME[effectiveRole(session)]);
 
-  const earned = await prisma.userAchievement.findMany({
-    where: { userId: session.userId },
-    select: { slug: true, unlockedAt: true },
-    orderBy: { unlockedAt: "desc" },
-  });
+  const [earned, user, xpLogs] = await Promise.all([
+    prisma.userAchievement.findMany({
+      where: { userId: session.userId },
+      select: { slug: true, unlockedAt: true },
+      orderBy: { unlockedAt: "desc" },
+    }),
+    prisma.user.findUnique({
+      where: { id: session.userId },
+      select: { xp: true, streak: true },
+    }),
+    prisma.xpLog.groupBy({
+      by: ["reason"],
+      where: { userId: session.userId },
+      _count: { id: true },
+    }),
+  ]);
 
   const earnedMap = new Map(earned.map((a) => [a.slug, a.unlockedAt]));
   const earnedCount = earnedMap.size;
+  const totalCount = ACHIEVEMENTS.length;
+  const overallPct = totalCount > 0 ? Math.round((earnedCount / totalCount) * 100) : 0;
+
+  // Progress values for locked achievements, derived from existing user fields/counts
+  const reasonCounts = Object.fromEntries(xpLogs.map((l) => [l.reason, l._count.id]));
+  const assignmentCount = reasonCounts["aufgabe_abgabe"] ?? 0;
+  const noteCount = reasonCounts["note_geteilt"] ?? 0;
+  const flashcardCount = reasonCounts["karteikarte_session"] ?? 0;
+  const xp = user?.xp ?? 0;
+  const streak = user?.streak ?? 0;
+  const level = levelFromXp(xp);
+
+  const PROGRESS: Record<string, { current: number; target: number; unit: string }> = {
+    streak_3:       { current: streak, target: 3,  unit: "Tage Streak" },
+    streak_7:       { current: streak, target: 7,  unit: "Tage Streak" },
+    streak_30:      { current: streak, target: 30, unit: "Tage Streak" },
+    level_5:        { current: level, target: 5,  unit: "Level" },
+    level_10:       { current: level, target: 10, unit: "Level" },
+    level_25:       { current: level, target: 25, unit: "Level" },
+    assignments_5:  { current: assignmentCount, target: 5,  unit: "Aufgaben" },
+    assignments_25: { current: assignmentCount, target: 25, unit: "Aufgaben" },
+    notes_5:        { current: noteCount, target: 5, unit: "Notizen" },
+    flashcards_50:  { current: flashcardCount, target: 50, unit: "Karteikarten" },
+    xp_500:         { current: xp, target: 500,  unit: "XP" },
+    xp_2500:        { current: xp, target: 2500, unit: "XP" },
+  };
+
+  const almostThere = ACHIEVEMENTS
+    .filter((a) => !earnedMap.has(a.slug) && PROGRESS[a.slug])
+    .map((a) => {
+      const p = PROGRESS[a.slug];
+      return { ...a, ...p, ratio: Math.min(p.current / p.target, 1) };
+    })
+    .filter((a) => a.ratio > 0)
+    .sort((a, b) => b.ratio - a.ratio)
+    .slice(0, 5);
 
   const byCategory = new Map<string, typeof ACHIEVEMENTS>();
   for (const a of ACHIEVEMENTS) {
@@ -82,6 +130,76 @@ export default async function ErfolgePage() {
           </div>
         </div>
       </header>
+
+      {/* Overall progress */}
+      <section className="rounded-2xl border border-border bg-surface p-4 sm:p-5">
+        <div className="flex items-center justify-between gap-4">
+          <p className="text-sm font-semibold">Gesamtfortschritt</p>
+          <p className="font-mono text-sm text-muted-fg">
+            {earnedCount}/{totalCount} · {overallPct}%
+          </p>
+        </div>
+        <div className="mt-2 h-2 overflow-hidden rounded-xl bg-bg">
+          <div
+            className="h-full rounded-xl bg-brand transition-all"
+            style={{ width: `${overallPct}%` }}
+          />
+        </div>
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          {orderedCategories.map((cat) => {
+            const items = byCategory.get(cat) ?? [];
+            const catEarned = items.filter((a) => earnedMap.has(a.slug)).length;
+            const catPct = items.length > 0 ? Math.round((catEarned / items.length) * 100) : 0;
+            return (
+              <div key={cat}>
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-muted-fg">{CATEGORY[cat]?.label ?? "Sonstiges"}</span>
+                  <span className="font-mono text-muted-fg">{catEarned}/{items.length}</span>
+                </div>
+                <div className="mt-1 h-1.5 overflow-hidden rounded-xl bg-bg">
+                  <div className="h-full rounded-xl bg-brand/70" style={{ width: `${catPct}%` }} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Almost there */}
+      {almostThere.length > 0 && (
+        <section>
+          <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-muted-fg">
+            Fast geschafft
+          </h2>
+          <div className="grid gap-px border border-border bg-border sm:grid-cols-2">
+            {almostThere.map((a) => (
+              <div key={a.slug} className="flex gap-3 bg-bg p-4">
+                <div className="grid size-11 shrink-0 place-items-center bg-surface text-xl grayscale">
+                  {a.icon}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-sm font-semibold">{a.title}</p>
+                    <span className="shrink-0 font-mono text-xs text-muted-fg">
+                      {a.current}/{a.target}
+                    </span>
+                  </div>
+                  <p className="mt-0.5 text-xs text-muted-fg">{a.description}</p>
+                  <div className="mt-2 h-1.5 overflow-hidden rounded-xl bg-surface">
+                    <div
+                      className="h-full rounded-xl bg-brand"
+                      style={{ width: `${Math.round(a.ratio * 100)}%` }}
+                    />
+                  </div>
+                  <p className="mt-1 text-[10px] text-muted-fg/70">
+                    Noch {Math.max(a.target - a.current, 0)} {a.unit}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Recently earned */}
       {earned.length > 0 && (
@@ -134,7 +252,7 @@ export default async function ErfolgePage() {
                     className={cn(
                       "flex gap-3 bg-bg p-4",
                       !isEarned && "opacity-40",
-                      isEarned && a.rarity === "epic" && "bg-gradient-to-br from-brand/6 to-transparent",
+                      isEarned && a.rarity === "epic" && "bg-linear-to-br from-brand/6 to-transparent",
                     )}
                   >
                     <div

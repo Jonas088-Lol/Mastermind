@@ -1,0 +1,4202 @@
+[
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Braunschweig?",
+  "options": [
+   "Nordrhein-Westfalen",
+   "Thüringen",
+   "Sachsen-Anhalt",
+   "Niedersachsen"
+  ],
+  "correct": 3,
+  "explanation": "Braunschweig liegt in Niedersachsen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Wie heißt die Hauptstadt von Spanien?",
+  "options": [
+   "Reykjavik",
+   "Wien",
+   "Riga",
+   "Madrid"
+  ],
+  "correct": 3,
+  "explanation": "Die Hauptstadt von Spanien ist Madrid."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Welcher Berg ist höchster Berg des Schwarzwaldes?",
+  "options": [
+   "Wasserkuppe",
+   "Brocken",
+   "Feldberg",
+   "Großer Arber"
+  ],
+  "correct": 2,
+  "explanation": "Der Gipfel „Feldberg“ (1493 m) ist höchster Berg des Schwarzwaldes."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Ein Wanderer blickt nach Norden und dreht sich um 270° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Süden",
+   "Osten",
+   "Norden",
+   "Westen"
+  ],
+  "correct": 1,
+  "explanation": "270° entsprechen 6 Schritten auf der Windrose (je 45°): von Norden aus landet man bei Osten."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Teste dein Wissen: Wo entspringt der Fluss Donau?",
+  "options": [
+   "aus Werra und Fulda bei Hann. Münden",
+   "in Tschechien",
+   "in den Vogesen (Frankreich)",
+   "im Schwarzwald (Zusammenfluss bei Donaueschingen)"
+  ],
+  "correct": 3,
+  "explanation": "Donau entspringt im Schwarzwald (Zusammenfluss bei Donaueschingen) und mündet ins Schwarze Meer."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wo entspringt der Fluss Neckar?",
+  "options": [
+   "in Tschechien",
+   "auf der Schwäbischen Alb (Baar)",
+   "in den Schweizer Alpen",
+   "im Schwarzwald (Zusammenfluss bei Donaueschingen)"
+  ],
+  "correct": 1,
+  "explanation": "Neckar entspringt auf der Schwäbischen Alb (Baar) und mündet in den Rhein bei Mannheim."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Überlege genau: Wie hoch ist der Gipfel „Wasserkuppe“ (höchster Berg der Rhön)?",
+  "options": [
+   "950 m",
+   "1215 m",
+   "2962 m",
+   "1141 m"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Wasserkuppe“ ist 950 m hoch — höchster Berg der Rhön."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Zwischen welchen Angaben liegt eine Ortsangabe wie „48° Nord, 11° Ost“?",
+  "options": [
+   "Höhe und Tiefe",
+   "geografische Breite und geografische Länge",
+   "Zeitzone und Datum",
+   "Temperatur und Luftdruck"
+  ],
+  "correct": 1,
+  "explanation": "Erst die Breite (Nord/Süd), dann die Länge (Ost/West) — so gibt man Orte im Gradnetz an."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: drei senkrechte Streifen: schwarz, gelb, rot?",
+  "options": [
+   "Belgien",
+   "Ukraine",
+   "Polen",
+   "Vereinigtes Königreich"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „drei senkrechte Streifen: schwarz, gelb, rot“ gehört zu Belgien."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Schweden?",
+  "options": [
+   "Lissabon",
+   "Stockholm",
+   "Reykjavik",
+   "Dublin"
+  ],
+  "correct": 1,
+  "explanation": "Die Hauptstadt von Schweden ist Stockholm."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Überlege genau: Wie viele Nachbarländer hat Deutschland?",
+  "options": [
+   "9",
+   "11",
+   "7",
+   "8"
+  ],
+  "correct": 0,
+  "explanation": "Deutschland grenzt an neun Länder: Dänemark, Polen, Tschechien, Österreich, Schweiz, Frankreich, Luxemburg, Belgien und die Niederlande."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wo entspringt der Fluss Isar?",
+  "options": [
+   "in den Alpen (Karwendel)",
+   "auf der Schwäbischen Alb (Baar)",
+   "in den Vogesen (Frankreich)",
+   "im Fichtelgebirge/Fränkische Alb"
+  ],
+  "correct": 0,
+  "explanation": "Isar entspringt in den Alpen (Karwendel) und mündet in die Donau."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Niederlande?",
+  "options": [
+   "Berlin",
+   "Amsterdam",
+   "Sofia",
+   "Warschau"
+  ],
+  "correct": 1,
+  "explanation": "Die Hauptstadt von Niederlande ist Amsterdam."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Wähle die richtige Antwort. Welches dieser Länder grenzt NICHT an Deutschland?",
+  "options": [
+   "Niederlande",
+   "Österreich",
+   "Dänemark",
+   "Italien"
+  ],
+  "correct": 3,
+  "explanation": "Italien hat keine gemeinsame Grenze mit Deutschland. Deutschland hat neun Nachbarländer."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Wie hoch ist der Gipfel „Wasserkuppe“ (höchster Berg der Rhön)?",
+  "options": [
+   "1141 m",
+   "950 m",
+   "1456 m",
+   "1215 m"
+  ],
+  "correct": 1,
+  "explanation": "Der Gipfel „Wasserkuppe“ ist 950 m hoch — höchster Berg der Rhön."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Trier?",
+  "options": [
+   "Rheinland-Pfalz",
+   "Schleswig-Holstein",
+   "Nordrhein-Westfalen",
+   "Niedersachsen"
+  ],
+  "correct": 0,
+  "explanation": "Trier liegt in Rheinland-Pfalz."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Du blickst nach Osten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Westen",
+   "Südosten",
+   "Südwesten",
+   "Osten"
+  ],
+  "correct": 0,
+  "explanation": "Die Gegenrichtung von Osten ist Westen."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Aufgabe: Wohin mündet der Fluss Elbe?",
+  "options": [
+   "in die Donau",
+   "in die Nordsee",
+   "in den Rhein bei Mainz",
+   "in die Donau bei Passau"
+  ],
+  "correct": 1,
+  "explanation": "Elbe mündet in die Nordsee."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Tschechien?",
+  "options": [
+   "Reykjavik",
+   "Paris",
+   "Kiew",
+   "Prag"
+  ],
+  "correct": 3,
+  "explanation": "Die Hauptstadt von Tschechien ist Prag."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Wie heißt die Hauptstadt von Deutschland?",
+  "options": [
+   "Warschau",
+   "Berlin",
+   "Reykjavik",
+   "Paris"
+  ],
+  "correct": 1,
+  "explanation": "Die Hauptstadt von Deutschland ist Berlin."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Teste dein Wissen: Welches dieser Länder grenzt direkt an Deutschland?",
+  "options": [
+   "Spanien",
+   "Norwegen",
+   "Tschechien",
+   "Italien"
+  ],
+  "correct": 2,
+  "explanation": "Tschechien ist eines der neun Nachbarländer Deutschlands."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Stockholm ist die Hauptstadt welches Landes?",
+  "options": [
+   "Estland",
+   "Norwegen",
+   "Schweden",
+   "Albanien"
+  ],
+  "correct": 2,
+  "explanation": "Stockholm ist die Hauptstadt von Schweden."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Ein Wanderer blickt nach Südwesten und dreht sich um 90° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südwesten",
+   "Südosten",
+   "Süden",
+   "Norden"
+  ],
+  "correct": 1,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Südwesten aus landet man bei Südosten."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Teste dein Wissen: Wo entspringt der Fluss Mosel?",
+  "options": [
+   "in den Vogesen (Frankreich)",
+   "auf der Schwäbischen Alb (Baar)",
+   "in den Schweizer Alpen",
+   "in Tschechien"
+  ],
+  "correct": 0,
+  "explanation": "Mosel entspringt in den Vogesen (Frankreich) und mündet in den Rhein bei Koblenz."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Wähle die richtige Antwort. In welchem Bundesland liegt Potsdam?",
+  "options": [
+   "Brandenburg",
+   "Rheinland-Pfalz",
+   "Nordrhein-Westfalen",
+   "Saarland"
+  ],
+  "correct": 0,
+  "explanation": "Potsdam liegt in Brandenburg."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Welche Himmelsrichtung liegt genau zwischen Osten und Süden?",
+  "options": [
+   "Nordwesten",
+   "Südosten",
+   "Nordosten",
+   "Osten"
+  ],
+  "correct": 1,
+  "explanation": "Zwischen Osten und Süden liegt Südosten."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wie heißt die Hauptstadt von Irland?",
+  "options": [
+   "Kiew",
+   "Skopje",
+   "Dublin",
+   "Sarajevo"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Irland ist Dublin."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Aufgabe: Welcher Berg ist höchster Berg des Erzgebirges (deutscher Teil)?",
+  "options": [
+   "Brocken",
+   "Zugspitze",
+   "Großer Arber",
+   "Fichtelberg"
+  ],
+  "correct": 3,
+  "explanation": "Der Gipfel „Fichtelberg“ (1215 m) ist höchster Berg des Erzgebirges (deutscher Teil)."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Teste dein Wissen: Wie viele Nachbarländer hat Deutschland?",
+  "options": [
+   "9",
+   "11",
+   "8",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Deutschland grenzt an neun Länder: Dänemark, Polen, Tschechien, Österreich, Schweiz, Frankreich, Luxemburg, Belgien und die Niederlande."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Warschau ist die Hauptstadt welches Landes?",
+  "options": [
+   "Albanien",
+   "Niederlande",
+   "Polen",
+   "Bosnien und Herzegowina"
+  ],
+  "correct": 2,
+  "explanation": "Warschau ist die Hauptstadt von Polen."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Teste dein Wissen: Wie hoch ist der Gipfel „Fichtelberg“ (höchster Berg des Erzgebirges (deutscher Teil))?",
+  "options": [
+   "2962 m",
+   "1456 m",
+   "950 m",
+   "1215 m"
+  ],
+  "correct": 3,
+  "explanation": "Der Gipfel „Fichtelberg“ ist 1215 m hoch — höchster Berg des Erzgebirges (deutscher Teil)."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Aufgabe: Welches dieser Länder grenzt NICHT an Deutschland?",
+  "options": [
+   "Dänemark",
+   "Österreich",
+   "Luxemburg",
+   "Norwegen"
+  ],
+  "correct": 3,
+  "explanation": "Norwegen hat keine gemeinsame Grenze mit Deutschland. Deutschland hat neun Nachbarländer."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Ein Wanderer blickt nach Nordwesten und dreht sich um 180° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Nordwesten",
+   "Süden",
+   "Südosten",
+   "Osten"
+  ],
+  "correct": 2,
+  "explanation": "180° entsprechen 4 Schritten auf der Windrose (je 45°): von Nordwesten aus landet man bei Südosten."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Teste dein Wissen: In welchem Bundesland liegt Nürnberg?",
+  "options": [
+   "Saarland",
+   "Hessen",
+   "Bayern",
+   "Brandenburg"
+  ],
+  "correct": 2,
+  "explanation": "Nürnberg liegt in Bayern."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wohin mündet der Fluss Neckar?",
+  "options": [
+   "in die Donau bei Passau",
+   "in den Rhein bei Mainz",
+   "in die Donau",
+   "in den Rhein bei Mannheim"
+  ],
+  "correct": 3,
+  "explanation": "Neckar mündet in den Rhein bei Mannheim."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Welche Himmelsrichtung liegt genau zwischen Westen und Norden?",
+  "options": [
+   "Osten",
+   "Südwesten",
+   "Nordwesten",
+   "Südosten"
+  ],
+  "correct": 2,
+  "explanation": "Zwischen Westen und Norden liegt Nordwesten."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wie heißt die Hauptstadt von Spanien?",
+  "options": [
+   "Bukarest",
+   "Ljubljana",
+   "Madrid",
+   "Reykjavik"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Spanien ist Madrid."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Überlege genau: Zu welchem Land gehört diese Flagge: drei waagerechte Streifen: rot, weiß, grün?",
+  "options": [
+   "Türkei",
+   "Schweiz",
+   "Polen",
+   "Ungarn"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „drei waagerechte Streifen: rot, weiß, grün“ gehört zu Ungarn."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Überlege genau: In welchem Bundesland liegt Augsburg?",
+  "options": [
+   "Schleswig-Holstein",
+   "Sachsen",
+   "Bayern",
+   "Baden-Württemberg"
+  ],
+  "correct": 2,
+  "explanation": "Augsburg liegt in Bayern."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Auf welcher Halbkugel liegt Deutschland?",
+  "options": [
+   "genau auf dem Äquator",
+   "auf der Westhalbkugel südlich des Äquators",
+   "auf der Nordhalbkugel",
+   "auf der Südhalbkugel"
+  ],
+  "correct": 2,
+  "explanation": "Deutschland liegt zwischen etwa 47° und 55° nördlicher Breite — also auf der Nordhalbkugel."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wie heißt die Hauptstadt von Vereinigtes Königreich?",
+  "options": [
+   "London",
+   "Kiew",
+   "Luxemburg",
+   "Budapest"
+  ],
+  "correct": 0,
+  "explanation": "Die Hauptstadt von Vereinigtes Königreich ist London."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Aufgabe: Zu welchem Land gehört diese Flagge: drei senkrechte Streifen: blau, weiß, rot?",
+  "options": [
+   "Deutschland",
+   "Dänemark",
+   "Spanien",
+   "Frankreich"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „drei senkrechte Streifen: blau, weiß, rot“ gehört zu Frankreich."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Teste dein Wissen: Welcher Berg ist höchster Berg des Erzgebirges (deutscher Teil)?",
+  "options": [
+   "Feldberg",
+   "Fichtelberg",
+   "Brocken",
+   "Zugspitze"
+  ],
+  "correct": 1,
+  "explanation": "Der Gipfel „Fichtelberg“ (1215 m) ist höchster Berg des Erzgebirges (deutscher Teil)."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Überlege genau: Zu welchem Land gehört diese Flagge: zwei waagerechte Streifen: weiß oben, rot unten?",
+  "options": [
+   "Ungarn",
+   "Dänemark",
+   "Ukraine",
+   "Polen"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „zwei waagerechte Streifen: weiß oben, rot unten“ gehört zu Polen."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: drei senkrechte Streifen: blau, weiß, rot?",
+  "options": [
+   "Frankreich",
+   "Niederlande",
+   "Spanien",
+   "Griechenland"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „drei senkrechte Streifen: blau, weiß, rot“ gehört zu Frankreich."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wie heißt die Hauptstadt von Litauen?",
+  "options": [
+   "Warschau",
+   "Sarajevo",
+   "Wien",
+   "Vilnius"
+  ],
+  "correct": 3,
+  "explanation": "Die Hauptstadt von Litauen ist Vilnius."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Welches dieser Länder grenzt NICHT an Deutschland?",
+  "options": [
+   "Rumänien",
+   "Polen",
+   "Belgien",
+   "Dänemark"
+  ],
+  "correct": 0,
+  "explanation": "Rumänien hat keine gemeinsame Grenze mit Deutschland. Deutschland hat neun Nachbarländer."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Wähle die richtige Antwort. Welches dieser Länder grenzt direkt an Deutschland?",
+  "options": [
+   "Finnland",
+   "Italien",
+   "Niederlande",
+   "Schweden"
+  ],
+  "correct": 2,
+  "explanation": "Niederlande ist eines der neun Nachbarländer Deutschlands."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Teste dein Wissen: Wie verlaufen die Breitenkreise auf dem Globus?",
+  "options": [
+   "schräg über den Globus",
+   "waagerecht, parallel zum Äquator",
+   "kreuz und quer",
+   "senkrecht von Pol zu Pol"
+  ],
+  "correct": 1,
+  "explanation": "Breitenkreise verlaufen parallel zum Äquator; Längenkreise von Pol zu Pol."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wähle die richtige Antwort. Wo entspringt der Fluss Oder?",
+  "options": [
+   "in den Vogesen (Frankreich)",
+   "in den Schweizer Alpen (Engadin)",
+   "in Tschechien",
+   "im Fichtelgebirge/Fränkische Alb"
+  ],
+  "correct": 2,
+  "explanation": "Oder entspringt in Tschechien und mündet in die Ostsee (Stettiner Haff)."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Überlege genau: In welchem Bundesland liegt Weimar?",
+  "options": [
+   "Sachsen",
+   "Schleswig-Holstein",
+   "Thüringen",
+   "Baden-Württemberg"
+  ],
+  "correct": 2,
+  "explanation": "Weimar liegt in Thüringen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Lissabon ist die Hauptstadt welches Landes?",
+  "options": [
+   "Deutschland",
+   "Spanien",
+   "Bulgarien",
+   "Portugal"
+  ],
+  "correct": 3,
+  "explanation": "Lissabon ist die Hauptstadt von Portugal."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Welche Himmelsrichtung liegt genau zwischen Osten und Süden?",
+  "options": [
+   "Südosten",
+   "Südwesten",
+   "Nordwesten",
+   "Süden"
+  ],
+  "correct": 0,
+  "explanation": "Zwischen Osten und Süden liegt Südosten."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Tirana ist die Hauptstadt welches Landes?",
+  "options": [
+   "Albanien",
+   "Spanien",
+   "Bosnien und Herzegowina",
+   "Tschechien"
+  ],
+  "correct": 0,
+  "explanation": "Tirana ist die Hauptstadt von Albanien."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Teste dein Wissen: Wo entspringt der Fluss Oder?",
+  "options": [
+   "im Fichtelgebirge/Fränkische Alb",
+   "auf der Schwäbischen Alb (Baar)",
+   "in Tschechien",
+   "in den Schweizer Alpen"
+  ],
+  "correct": 2,
+  "explanation": "Oder entspringt in Tschechien und mündet in die Ostsee (Stettiner Haff)."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Wie heißt die Hauptstadt von Niederlande?",
+  "options": [
+   "Helsinki",
+   "Tirana",
+   "Amsterdam",
+   "Athen"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Niederlande ist Amsterdam."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Teste dein Wissen: Wohin mündet der Fluss Neckar?",
+  "options": [
+   "in die Ostsee (Stettiner Haff)",
+   "in den Rhein bei Mannheim",
+   "in die Elbe",
+   "in den Rhein bei Koblenz"
+  ],
+  "correct": 1,
+  "explanation": "Neckar mündet in den Rhein bei Mannheim."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "In welchem Bundesland liegt Nürnberg?",
+  "options": [
+   "Mecklenburg-Vorpommern",
+   "Bayern",
+   "Sachsen",
+   "Thüringen"
+  ],
+  "correct": 1,
+  "explanation": "Nürnberg liegt in Bayern."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Zu welchem Land gehört diese Flagge: drei senkrechte Streifen: blau, weiß, rot?",
+  "options": [
+   "Frankreich",
+   "Tschechien",
+   "Griechenland",
+   "Vereinigtes Königreich"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „drei senkrechte Streifen: blau, weiß, rot“ gehört zu Frankreich."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Frankfurt am Main?",
+  "options": [
+   "Mecklenburg-Vorpommern",
+   "Thüringen",
+   "Hessen",
+   "Rheinland-Pfalz"
+  ],
+  "correct": 2,
+  "explanation": "Frankfurt am Main liegt in Hessen."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Welche Himmelsrichtung liegt genau zwischen Süden und Westen?",
+  "options": [
+   "Südwesten",
+   "Süden",
+   "Osten",
+   "Westen"
+  ],
+  "correct": 0,
+  "explanation": "Zwischen Süden und Westen liegt Südwesten."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Überlege genau: Welcher Berg ist höchster Berg Deutschlands (Alpen)?",
+  "options": [
+   "Zugspitze",
+   "Großer Arber",
+   "Brocken",
+   "Fichtelberg"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Zugspitze“ (2962 m) ist höchster Berg Deutschlands (Alpen)."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Teste dein Wissen: Welche geografische Breite hat der Nordpol?",
+  "options": [
+   "45° Nord",
+   "90° Nord",
+   "0°",
+   "180° Nord"
+  ],
+  "correct": 1,
+  "explanation": "Am Nordpol beträgt die geografische Breite 90° Nord."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Überlege genau: Zu welchem Land gehört diese Flagge: blaues Kreuz auf weißem Grund?",
+  "options": [
+   "Finnland",
+   "Italien",
+   "Deutschland",
+   "Frankreich"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „blaues Kreuz auf weißem Grund“ gehört zu Finnland."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Potsdam?",
+  "options": [
+   "Nordrhein-Westfalen",
+   "Sachsen",
+   "Brandenburg",
+   "Baden-Württemberg"
+  ],
+  "correct": 2,
+  "explanation": "Potsdam liegt in Brandenburg."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Du blickst nach Südwesten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südwesten",
+   "Nordwesten",
+   "Nordosten",
+   "Westen"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Südwesten ist Nordosten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Welche Himmelsrichtung liegt genau zwischen Norden und Osten?",
+  "options": [
+   "Osten",
+   "Nordosten",
+   "Westen",
+   "Südwesten"
+  ],
+  "correct": 1,
+  "explanation": "Zwischen Norden und Osten liegt Nordosten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Ein Wanderer blickt nach Nordosten und dreht sich um 90° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Nordwesten",
+   "Südosten",
+   "Süden",
+   "Nordosten"
+  ],
+  "correct": 1,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Nordosten aus landet man bei Südosten."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wähle die richtige Antwort. Wo entspringt der Fluss Rhein?",
+  "options": [
+   "im Riesengebirge (Tschechien)",
+   "in den Vogesen (Frankreich)",
+   "in den Schweizer Alpen (Engadin)",
+   "in den Schweizer Alpen"
+  ],
+  "correct": 3,
+  "explanation": "Rhein entspringt in den Schweizer Alpen und mündet in die Nordsee."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Wie hoch ist der Gipfel „Zugspitze“ (höchster Berg Deutschlands (Alpen))?",
+  "options": [
+   "2962 m",
+   "1215 m",
+   "950 m",
+   "1141 m"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Zugspitze“ ist 2962 m hoch — höchster Berg Deutschlands (Alpen)."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Spanien?",
+  "options": [
+   "Berlin",
+   "Stockholm",
+   "Madrid",
+   "Helsinki"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Spanien ist Madrid."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Du blickst nach Nordosten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Süden",
+   "Südwesten",
+   "Nordosten",
+   "Südosten"
+  ],
+  "correct": 1,
+  "explanation": "Die Gegenrichtung von Nordosten ist Südwesten."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Welcher Berg ist höchster Berg der Rhön?",
+  "options": [
+   "Großer Arber",
+   "Wasserkuppe",
+   "Zugspitze",
+   "Fichtelberg"
+  ],
+  "correct": 1,
+  "explanation": "Der Gipfel „Wasserkuppe“ (950 m) ist höchster Berg der Rhön."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Aufgabe: Wo entspringt der Fluss Donau?",
+  "options": [
+   "in Tschechien",
+   "im Fichtelgebirge/Fränkische Alb",
+   "auf der Schwäbischen Alb (Baar)",
+   "im Schwarzwald (Zusammenfluss bei Donaueschingen)"
+  ],
+  "correct": 3,
+  "explanation": "Donau entspringt im Schwarzwald (Zusammenfluss bei Donaueschingen) und mündet ins Schwarze Meer."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Du blickst nach Südosten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südosten",
+   "Norden",
+   "Westen",
+   "Nordwesten"
+  ],
+  "correct": 3,
+  "explanation": "Die Gegenrichtung von Südosten ist Nordwesten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Du blickst nach Süden. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Nordosten",
+   "Süden",
+   "Norden",
+   "Osten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Süden ist Norden."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Ljubljana ist die Hauptstadt welches Landes?",
+  "options": [
+   "Dänemark",
+   "Slowenien",
+   "Schweden",
+   "Island"
+  ],
+  "correct": 1,
+  "explanation": "Ljubljana ist die Hauptstadt von Slowenien."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Aufgabe: Zu welchem Land gehört diese Flagge: zwei waagerechte Streifen: blau oben, gelb unten?",
+  "options": [
+   "Ukraine",
+   "Türkei",
+   "Tschechien",
+   "Ungarn"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „zwei waagerechte Streifen: blau oben, gelb unten“ gehört zu Ukraine."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Welche Himmelsrichtung liegt genau zwischen Osten und Süden?",
+  "options": [
+   "Südosten",
+   "Westen",
+   "Nordosten",
+   "Süden"
+  ],
+  "correct": 0,
+  "explanation": "Zwischen Osten und Süden liegt Südosten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Welche geografische Breite hat der Nordpol?",
+  "options": [
+   "0°",
+   "180° Nord",
+   "90° Nord",
+   "45° Nord"
+  ],
+  "correct": 2,
+  "explanation": "Am Nordpol beträgt die geografische Breite 90° Nord."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Welches dieser Länder grenzt direkt an Deutschland?",
+  "options": [
+   "Schweden",
+   "Ungarn",
+   "Irland",
+   "Schweiz"
+  ],
+  "correct": 3,
+  "explanation": "Schweiz ist eines der neun Nachbarländer Deutschlands."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Du blickst nach Südwesten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Westen",
+   "Südosten",
+   "Südwesten",
+   "Nordosten"
+  ],
+  "correct": 3,
+  "explanation": "Die Gegenrichtung von Südwesten ist Nordosten."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: drei senkrechte Streifen: grün, weiß, orange?",
+  "options": [
+   "Belgien",
+   "Dänemark",
+   "Irland",
+   "Deutschland"
+  ],
+  "correct": 2,
+  "explanation": "Die Flagge „drei senkrechte Streifen: grün, weiß, orange“ gehört zu Irland."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Welche Himmelsrichtung liegt genau zwischen Norden und Osten?",
+  "options": [
+   "Osten",
+   "Südwesten",
+   "Nordosten",
+   "Südosten"
+  ],
+  "correct": 2,
+  "explanation": "Zwischen Norden und Osten liegt Nordosten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Du blickst nach Nordwesten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Süden",
+   "Nordwesten",
+   "Südosten",
+   "Südwesten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Nordwesten ist Südosten."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Tirana ist die Hauptstadt welches Landes?",
+  "options": [
+   "Litauen",
+   "Bulgarien",
+   "Spanien",
+   "Albanien"
+  ],
+  "correct": 3,
+  "explanation": "Tirana ist die Hauptstadt von Albanien."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Wie heißt die Hauptstadt von Finnland?",
+  "options": [
+   "Wien",
+   "Dublin",
+   "Belgrad",
+   "Helsinki"
+  ],
+  "correct": 3,
+  "explanation": "Die Hauptstadt von Finnland ist Helsinki."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Wie viele Grad umfasst ein voller Kreis um die Erde?",
+  "options": [
+   "100°",
+   "180°",
+   "360°",
+   "400°"
+  ],
+  "correct": 2,
+  "explanation": "Ein Vollkreis hat 360° — Längengrade zählen je 180° nach Ost und West."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Aufgabe: Wohin mündet der Fluss Rhein?",
+  "options": [
+   "in die Donau bei Passau",
+   "in den Rhein bei Koblenz",
+   "in die Ostsee (Stettiner Haff)",
+   "in die Nordsee"
+  ],
+  "correct": 3,
+  "explanation": "Rhein mündet in die Nordsee."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Ein Wanderer blickt nach Nordosten und dreht sich um 180° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Osten",
+   "Südwesten",
+   "Norden",
+   "Süden"
+  ],
+  "correct": 1,
+  "explanation": "180° entsprechen 4 Schritten auf der Windrose (je 45°): von Nordosten aus landet man bei Südwesten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Überlege genau: Zwischen welchen Angaben liegt eine Ortsangabe wie „48° Nord, 11° Ost“?",
+  "options": [
+   "Zeitzone und Datum",
+   "Höhe und Tiefe",
+   "geografische Breite und geografische Länge",
+   "Temperatur und Luftdruck"
+  ],
+  "correct": 2,
+  "explanation": "Erst die Breite (Nord/Süd), dann die Länge (Ost/West) — so gibt man Orte im Gradnetz an."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Welche Himmelsrichtung liegt genau zwischen Westen und Norden?",
+  "options": [
+   "Norden",
+   "Osten",
+   "Nordwesten",
+   "Südosten"
+  ],
+  "correct": 2,
+  "explanation": "Zwischen Westen und Norden liegt Nordwesten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Überlege genau: Welche geografische Breite hat der Nordpol?",
+  "options": [
+   "90° Nord",
+   "180° Nord",
+   "0°",
+   "45° Nord"
+  ],
+  "correct": 0,
+  "explanation": "Am Nordpol beträgt die geografische Breite 90° Nord."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Wie hoch ist der Gipfel „Großer Arber“ (höchster Berg des Bayerischen Waldes)?",
+  "options": [
+   "2962 m",
+   "1493 m",
+   "950 m",
+   "1456 m"
+  ],
+  "correct": 3,
+  "explanation": "Der Gipfel „Großer Arber“ ist 1456 m hoch — höchster Berg des Bayerischen Waldes."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Albanien?",
+  "options": [
+   "Helsinki",
+   "Stockholm",
+   "Tirana",
+   "Paris"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Albanien ist Tirana."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Zu welchem Land gehört diese Flagge: blaues Kreuz mit weißem Rand auf rotem Grund?",
+  "options": [
+   "Schweiz",
+   "Norwegen",
+   "Dänemark",
+   "Schweden"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „blaues Kreuz mit weißem Rand auf rotem Grund“ gehört zu Norwegen."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Aufgabe: Wo entspringt der Fluss Weser?",
+  "options": [
+   "im Schwarzwald (Zusammenfluss bei Donaueschingen)",
+   "in den Alpen (Karwendel)",
+   "in den Vogesen (Frankreich)",
+   "aus Werra und Fulda bei Hann. Münden"
+  ],
+  "correct": 3,
+  "explanation": "Weser entspringt aus Werra und Fulda bei Hann. Münden und mündet in die Nordsee."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wähle die richtige Antwort. Wohin mündet der Fluss Inn?",
+  "options": [
+   "in den Rhein bei Koblenz",
+   "in die Donau bei Passau",
+   "in den Bodensee",
+   "in die Nordsee"
+  ],
+  "correct": 1,
+  "explanation": "Inn mündet in die Donau bei Passau."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Bratislava ist die Hauptstadt welches Landes?",
+  "options": [
+   "Ukraine",
+   "Irland",
+   "Slowakei",
+   "Schweiz"
+  ],
+  "correct": 2,
+  "explanation": "Bratislava ist die Hauptstadt von Slowakei."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Überlege genau: Wie hoch ist der Gipfel „Großer Arber“ (höchster Berg des Bayerischen Waldes)?",
+  "options": [
+   "1456 m",
+   "950 m",
+   "1215 m",
+   "1141 m"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Großer Arber“ ist 1456 m hoch — höchster Berg des Bayerischen Waldes."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Aufgabe: Welches dieser Länder grenzt direkt an Deutschland?",
+  "options": [
+   "Rumänien",
+   "Österreich",
+   "Griechenland",
+   "Norwegen"
+  ],
+  "correct": 1,
+  "explanation": "Österreich ist eines der neun Nachbarländer Deutschlands."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Überlege genau: Welches dieser Länder grenzt NICHT an Deutschland?",
+  "options": [
+   "Belgien",
+   "Tschechien",
+   "Finnland",
+   "Frankreich"
+  ],
+  "correct": 2,
+  "explanation": "Finnland hat keine gemeinsame Grenze mit Deutschland. Deutschland hat neun Nachbarländer."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Aufgabe: Wie viele Nachbarländer hat Deutschland?",
+  "options": [
+   "9",
+   "11",
+   "8",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Deutschland grenzt an neun Länder: Dänemark, Polen, Tschechien, Österreich, Schweiz, Frankreich, Luxemburg, Belgien und die Niederlande."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: drei waagerechte Streifen: schwarz, rot, gold?",
+  "options": [
+   "Finnland",
+   "Dänemark",
+   "Schweiz",
+   "Deutschland"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „drei waagerechte Streifen: schwarz, rot, gold“ gehört zu Deutschland."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Wähle die richtige Antwort. In welchem Bundesland liegt Braunschweig?",
+  "options": [
+   "Niedersachsen",
+   "Sachsen-Anhalt",
+   "Hessen",
+   "Nordrhein-Westfalen"
+  ],
+  "correct": 0,
+  "explanation": "Braunschweig liegt in Niedersachsen."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Wähle die richtige Antwort. Welcher Berg ist höchster Berg des Bayerischen Waldes?",
+  "options": [
+   "Großer Arber",
+   "Wasserkuppe",
+   "Feldberg",
+   "Brocken"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Großer Arber“ (1456 m) ist höchster Berg des Bayerischen Waldes."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Wie heißt die Hauptstadt von Finnland?",
+  "options": [
+   "Zagreb",
+   "Lissabon",
+   "Vilnius",
+   "Helsinki"
+  ],
+  "correct": 3,
+  "explanation": "Die Hauptstadt von Finnland ist Helsinki."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wo entspringt der Fluss Elbe?",
+  "options": [
+   "aus Werra und Fulda bei Hann. Münden",
+   "in den Schweizer Alpen (Engadin)",
+   "auf der Schwäbischen Alb (Baar)",
+   "im Riesengebirge (Tschechien)"
+  ],
+  "correct": 3,
+  "explanation": "Elbe entspringt im Riesengebirge (Tschechien) und mündet in die Nordsee."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Aufgabe: Zu welchem Land gehört diese Flagge: blaues Kreuz auf weißem Grund?",
+  "options": [
+   "Finnland",
+   "Deutschland",
+   "Belgien",
+   "Schweden"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „blaues Kreuz auf weißem Grund“ gehört zu Finnland."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Luxemburg ist die Hauptstadt welches Landes?",
+  "options": [
+   "Luxemburg",
+   "Bosnien und Herzegowina",
+   "Ungarn",
+   "Nordmazedonien"
+  ],
+  "correct": 0,
+  "explanation": "Luxemburg ist die Hauptstadt von Luxemburg."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Rom ist die Hauptstadt welches Landes?",
+  "options": [
+   "Türkei",
+   "Ukraine",
+   "Italien",
+   "Finnland"
+  ],
+  "correct": 2,
+  "explanation": "Rom ist die Hauptstadt von Italien."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Kopenhagen ist die Hauptstadt welches Landes?",
+  "options": [
+   "Norwegen",
+   "Kroatien",
+   "Dänemark",
+   "Rumänien"
+  ],
+  "correct": 2,
+  "explanation": "Kopenhagen ist die Hauptstadt von Dänemark."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Überlege genau: Wie hoch ist der Gipfel „Brocken“ (höchster Berg des Harzes)?",
+  "options": [
+   "950 m",
+   "1493 m",
+   "1141 m",
+   "2962 m"
+  ],
+  "correct": 2,
+  "explanation": "Der Gipfel „Brocken“ ist 1141 m hoch — höchster Berg des Harzes."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: blaues Kreuz mit weißem Rand auf rotem Grund?",
+  "options": [
+   "Niederlande",
+   "Vereinigtes Königreich",
+   "Finnland",
+   "Norwegen"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „blaues Kreuz mit weißem Rand auf rotem Grund“ gehört zu Norwegen."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Ein Wanderer blickt nach Osten und dreht sich um 90° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südwesten",
+   "Westen",
+   "Norden",
+   "Süden"
+  ],
+  "correct": 3,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Osten aus landet man bei Süden."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Wähle die richtige Antwort. Zu welchem Land gehört diese Flagge: weißes Kreuz auf rotem Grund?",
+  "options": [
+   "Vereinigtes Königreich",
+   "Dänemark",
+   "Irland",
+   "Italien"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „weißes Kreuz auf rotem Grund“ gehört zu Dänemark."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Ein Wanderer blickt nach Südwesten und dreht sich um 270° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südosten",
+   "Norden",
+   "Nordwesten",
+   "Süden"
+  ],
+  "correct": 0,
+  "explanation": "270° entsprechen 6 Schritten auf der Windrose (je 45°): von Südwesten aus landet man bei Südosten."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wohin mündet der Fluss Inn?",
+  "options": [
+   "in den Rhein bei Mainz",
+   "in die Donau bei Passau",
+   "in die Ostsee (Stettiner Haff)",
+   "in den Bodensee"
+  ],
+  "correct": 1,
+  "explanation": "Inn mündet in die Donau bei Passau."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Wähle die richtige Antwort. Wie hoch ist der Gipfel „Fichtelberg“ (höchster Berg des Erzgebirges (deutscher Teil))?",
+  "options": [
+   "1215 m",
+   "2962 m",
+   "1456 m",
+   "1141 m"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Fichtelberg“ ist 1215 m hoch — höchster Berg des Erzgebirges (deutscher Teil)."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Teste dein Wissen: Welches dieser Länder grenzt NICHT an Deutschland?",
+  "options": [
+   "Frankreich",
+   "Schweiz",
+   "Österreich",
+   "Rumänien"
+  ],
+  "correct": 3,
+  "explanation": "Rumänien hat keine gemeinsame Grenze mit Deutschland. Deutschland hat neun Nachbarländer."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Ein Wanderer blickt nach Westen und dreht sich um 270° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Süden",
+   "Westen",
+   "Norden",
+   "Nordosten"
+  ],
+  "correct": 0,
+  "explanation": "270° entsprechen 6 Schritten auf der Windrose (je 45°): von Westen aus landet man bei Süden."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Zu welchem Land gehört diese Flagge: zwei waagerechte Streifen: weiß oben, rot unten?",
+  "options": [
+   "Schweiz",
+   "Tschechien",
+   "Dänemark",
+   "Polen"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „zwei waagerechte Streifen: weiß oben, rot unten“ gehört zu Polen."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Aufgabe: Welcher Berg ist höchster Berg der Rhön?",
+  "options": [
+   "Wasserkuppe",
+   "Brocken",
+   "Fichtelberg",
+   "Feldberg"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Wasserkuppe“ (950 m) ist höchster Berg der Rhön."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wohin mündet der Fluss Main?",
+  "options": [
+   "in den Rhein bei Koblenz",
+   "in den Bodensee",
+   "in die Donau bei Passau",
+   "in den Rhein bei Mainz"
+  ],
+  "correct": 3,
+  "explanation": "Main mündet in den Rhein bei Mainz."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Teste dein Wissen: Wo entspringt der Fluss Neckar?",
+  "options": [
+   "in den Vogesen (Frankreich)",
+   "auf der Schwäbischen Alb (Baar)",
+   "in den Alpen (Karwendel)",
+   "im Schwarzwald (Zusammenfluss bei Donaueschingen)"
+  ],
+  "correct": 1,
+  "explanation": "Neckar entspringt auf der Schwäbischen Alb (Baar) und mündet in den Rhein bei Mannheim."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Welche Himmelsrichtung liegt genau zwischen Osten und Süden?",
+  "options": [
+   "Südosten",
+   "Westen",
+   "Süden",
+   "Südwesten"
+  ],
+  "correct": 0,
+  "explanation": "Zwischen Osten und Süden liegt Südosten."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Zu welchem Land gehört diese Flagge: drei waagerechte Streifen: rot, weiß, grün?",
+  "options": [
+   "Schweiz",
+   "Türkei",
+   "Irland",
+   "Ungarn"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „drei waagerechte Streifen: rot, weiß, grün“ gehört zu Ungarn."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Du blickst nach Norden. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Nordosten",
+   "Norden",
+   "Süden",
+   "Südwesten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Norden ist Süden."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wo entspringt der Fluss Donau?",
+  "options": [
+   "in den Vogesen (Frankreich)",
+   "in den Alpen (Karwendel)",
+   "im Schwarzwald (Zusammenfluss bei Donaueschingen)",
+   "im Riesengebirge (Tschechien)"
+  ],
+  "correct": 2,
+  "explanation": "Donau entspringt im Schwarzwald (Zusammenfluss bei Donaueschingen) und mündet ins Schwarze Meer."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Du blickst nach Nordosten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Nordwesten",
+   "Norden",
+   "Südwesten",
+   "Nordosten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Nordosten ist Südwesten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Wähle die richtige Antwort. Durch welche Stadt verläuft der Nullmeridian (0° Länge)?",
+  "options": [
+   "Berlin",
+   "Rom",
+   "Greenwich (London)",
+   "Paris"
+  ],
+  "correct": 2,
+  "explanation": "Der Nullmeridian verläuft durch die Sternwarte von Greenwich bei London."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Niederlande?",
+  "options": [
+   "Bukarest",
+   "Kopenhagen",
+   "Amsterdam",
+   "Bern"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Niederlande ist Amsterdam."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Serbien?",
+  "options": [
+   "Oslo",
+   "Brüssel",
+   "Belgrad",
+   "Reykjavik"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Serbien ist Belgrad."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Aufgabe: Welcher Berg ist höchster Berg des Schwarzwaldes?",
+  "options": [
+   "Großer Arber",
+   "Feldberg",
+   "Zugspitze",
+   "Fichtelberg"
+  ],
+  "correct": 1,
+  "explanation": "Der Gipfel „Feldberg“ (1493 m) ist höchster Berg des Schwarzwaldes."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Ein Wanderer blickt nach Osten und dreht sich um 270° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Süden",
+   "Südwesten",
+   "Osten",
+   "Norden"
+  ],
+  "correct": 3,
+  "explanation": "270° entsprechen 6 Schritten auf der Windrose (je 45°): von Osten aus landet man bei Norden."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Überlege genau: Welches dieser Länder grenzt direkt an Deutschland?",
+  "options": [
+   "Polen",
+   "Portugal",
+   "Italien",
+   "Kroatien"
+  ],
+  "correct": 0,
+  "explanation": "Polen ist eines der neun Nachbarländer Deutschlands."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Welche Himmelsrichtung liegt genau zwischen Osten und Süden?",
+  "options": [
+   "Südosten",
+   "Westen",
+   "Süden",
+   "Nordwesten"
+  ],
+  "correct": 0,
+  "explanation": "Zwischen Osten und Süden liegt Südosten."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: gelbes Kreuz auf blauem Grund?",
+  "options": [
+   "Schweden",
+   "Polen",
+   "Vereinigtes Königreich",
+   "Griechenland"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „gelbes Kreuz auf blauem Grund“ gehört zu Schweden."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Wien ist die Hauptstadt welches Landes?",
+  "options": [
+   "Finnland",
+   "Bosnien und Herzegowina",
+   "Österreich",
+   "Deutschland"
+  ],
+  "correct": 2,
+  "explanation": "Wien ist die Hauptstadt von Österreich."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Aufgabe: Zu welchem Land gehört diese Flagge: drei waagerechte Streifen: schwarz, rot, gold?",
+  "options": [
+   "Deutschland",
+   "Griechenland",
+   "Spanien",
+   "Italien"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „drei waagerechte Streifen: schwarz, rot, gold“ gehört zu Deutschland."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: drei waagerechte Streifen: rot, weiß, grün?",
+  "options": [
+   "Dänemark",
+   "Griechenland",
+   "Ungarn",
+   "Niederlande"
+  ],
+  "correct": 2,
+  "explanation": "Die Flagge „drei waagerechte Streifen: rot, weiß, grün“ gehört zu Ungarn."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Wie heißt die Hauptstadt von Ungarn?",
+  "options": [
+   "Budapest",
+   "Riga",
+   "Dublin",
+   "Luxemburg"
+  ],
+  "correct": 0,
+  "explanation": "Die Hauptstadt von Ungarn ist Budapest."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "In welchem Bundesland liegt Chemnitz?",
+  "options": [
+   "Hessen",
+   "Sachsen-Anhalt",
+   "Nordrhein-Westfalen",
+   "Sachsen"
+  ],
+  "correct": 3,
+  "explanation": "Chemnitz liegt in Sachsen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Warschau ist die Hauptstadt welches Landes?",
+  "options": [
+   "Portugal",
+   "Polen",
+   "Türkei",
+   "Vereinigtes Königreich"
+  ],
+  "correct": 1,
+  "explanation": "Warschau ist die Hauptstadt von Polen."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Aufgabe: Zu welchem Land gehört diese Flagge: drei senkrechte Streifen: grün, weiß, orange?",
+  "options": [
+   "Finnland",
+   "Irland",
+   "Niederlande",
+   "Belgien"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „drei senkrechte Streifen: grün, weiß, orange“ gehört zu Irland."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Bukarest ist die Hauptstadt welches Landes?",
+  "options": [
+   "Rumänien",
+   "Slowenien",
+   "Belgien",
+   "Vereinigtes Königreich"
+  ],
+  "correct": 0,
+  "explanation": "Bukarest ist die Hauptstadt von Rumänien."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Wie viele Nachbarländer hat Deutschland?",
+  "options": [
+   "7",
+   "9",
+   "11",
+   "8"
+  ],
+  "correct": 1,
+  "explanation": "Deutschland grenzt an neun Länder: Dänemark, Polen, Tschechien, Österreich, Schweiz, Frankreich, Luxemburg, Belgien und die Niederlande."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Du blickst nach Südosten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südosten",
+   "Osten",
+   "Süden",
+   "Nordwesten"
+  ],
+  "correct": 3,
+  "explanation": "Die Gegenrichtung von Südosten ist Nordwesten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Wähle die richtige Antwort. Wie verlaufen die Längenkreise (Meridiane)?",
+  "options": [
+   "nur über die Nordhalbkugel",
+   "im Kreis um Deutschland",
+   "von Pol zu Pol",
+   "parallel zum Äquator"
+  ],
+  "correct": 2,
+  "explanation": "Meridiane verbinden Nordpol und Südpol und geben die geografische Länge an."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Du blickst nach Süden. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südosten",
+   "Nordosten",
+   "Süden",
+   "Norden"
+  ],
+  "correct": 3,
+  "explanation": "Die Gegenrichtung von Süden ist Norden."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Luxemburg ist die Hauptstadt welches Landes?",
+  "options": [
+   "Luxemburg",
+   "Norwegen",
+   "Estland",
+   "Spanien"
+  ],
+  "correct": 0,
+  "explanation": "Luxemburg ist die Hauptstadt von Luxemburg."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wo entspringt der Fluss Neckar?",
+  "options": [
+   "im Riesengebirge (Tschechien)",
+   "in den Schweizer Alpen",
+   "in Tschechien",
+   "auf der Schwäbischen Alb (Baar)"
+  ],
+  "correct": 3,
+  "explanation": "Neckar entspringt auf der Schwäbischen Alb (Baar) und mündet in den Rhein bei Mannheim."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Du blickst nach Norden. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südwesten",
+   "Nordwesten",
+   "Süden",
+   "Westen"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Norden ist Süden."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Ljubljana ist die Hauptstadt welches Landes?",
+  "options": [
+   "Spanien",
+   "Slowenien",
+   "Belgien",
+   "Estland"
+  ],
+  "correct": 1,
+  "explanation": "Ljubljana ist die Hauptstadt von Slowenien."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Aufgabe: Welche geografische Breite hat der Nordpol?",
+  "options": [
+   "0°",
+   "45° Nord",
+   "180° Nord",
+   "90° Nord"
+  ],
+  "correct": 3,
+  "explanation": "Am Nordpol beträgt die geografische Breite 90° Nord."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Ein Wanderer blickt nach Nordwesten und dreht sich um 90° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südwesten",
+   "Westen",
+   "Nordosten",
+   "Norden"
+  ],
+  "correct": 0,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Nordwesten aus landet man bei Südwesten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Du blickst nach Westen. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südwesten",
+   "Osten",
+   "Westen",
+   "Nordwesten"
+  ],
+  "correct": 1,
+  "explanation": "Die Gegenrichtung von Westen ist Osten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Teste dein Wissen: Durch welche Stadt verläuft der Nullmeridian (0° Länge)?",
+  "options": [
+   "Berlin",
+   "Greenwich (London)",
+   "Rom",
+   "Paris"
+  ],
+  "correct": 1,
+  "explanation": "Der Nullmeridian verläuft durch die Sternwarte von Greenwich bei London."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Saarbrücken?",
+  "options": [
+   "Hessen",
+   "Brandenburg",
+   "Saarland",
+   "Bayern"
+  ],
+  "correct": 2,
+  "explanation": "Saarbrücken liegt in Saarland."
+ },
+ {
+  "topic": "Nachbarländer Deutschlands",
+  "question": "Wähle die richtige Antwort. Wie viele Nachbarländer hat Deutschland?",
+  "options": [
+   "9",
+   "11",
+   "8",
+   "7"
+  ],
+  "correct": 0,
+  "explanation": "Deutschland grenzt an neun Länder: Dänemark, Polen, Tschechien, Österreich, Schweiz, Frankreich, Luxemburg, Belgien und die Niederlande."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Welche Himmelsrichtung liegt genau zwischen Norden und Osten?",
+  "options": [
+   "Südosten",
+   "Osten",
+   "Nordosten",
+   "Südwesten"
+  ],
+  "correct": 2,
+  "explanation": "Zwischen Norden und Osten liegt Nordosten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Aufgabe: Wie heißt der Breitenkreis, der die Erde in Nord- und Südhalbkugel teilt?",
+  "options": [
+   "Äquator",
+   "Wendekreis",
+   "Polarkreis",
+   "Nullmeridian"
+  ],
+  "correct": 0,
+  "explanation": "Der Äquator liegt bei 0° Breite und teilt die Erde in Nord- und Südhalbkugel."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Aufgabe: Zu welchem Land gehört diese Flagge: drei senkrechte Streifen: schwarz, gelb, rot?",
+  "options": [
+   "Belgien",
+   "Griechenland",
+   "Finnland",
+   "Irland"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „drei senkrechte Streifen: schwarz, gelb, rot“ gehört zu Belgien."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Athen ist die Hauptstadt welches Landes?",
+  "options": [
+   "Griechenland",
+   "Belgien",
+   "Vereinigtes Königreich",
+   "Albanien"
+  ],
+  "correct": 0,
+  "explanation": "Athen ist die Hauptstadt von Griechenland."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Wähle die richtige Antwort. In welchem Bundesland liegt Augsburg?",
+  "options": [
+   "Sachsen-Anhalt",
+   "Saarland",
+   "Rheinland-Pfalz",
+   "Bayern"
+  ],
+  "correct": 3,
+  "explanation": "Augsburg liegt in Bayern."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Wie heißt die Hauptstadt von Kroatien?",
+  "options": [
+   "Rom",
+   "Belgrad",
+   "Zagreb",
+   "Vilnius"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Kroatien ist Zagreb."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Aufgabe: Zu welchem Land gehört diese Flagge: gelbes Kreuz auf blauem Grund?",
+  "options": [
+   "Schweden",
+   "Frankreich",
+   "Polen",
+   "Dänemark"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „gelbes Kreuz auf blauem Grund“ gehört zu Schweden."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Amsterdam ist die Hauptstadt welches Landes?",
+  "options": [
+   "Ungarn",
+   "Niederlande",
+   "Slowakei",
+   "Estland"
+  ],
+  "correct": 1,
+  "explanation": "Amsterdam ist die Hauptstadt von Niederlande."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Kopenhagen ist die Hauptstadt welches Landes?",
+  "options": [
+   "Bulgarien",
+   "Estland",
+   "Österreich",
+   "Dänemark"
+  ],
+  "correct": 3,
+  "explanation": "Kopenhagen ist die Hauptstadt von Dänemark."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Wozu dient das Gradnetz der Erde?",
+  "options": [
+   "um Länder zu vergrößern",
+   "um jeden Ort genau anzugeben (Breite und Länge)",
+   "um Zeitzonen abzuschaffen",
+   "um das Wetter zu messen"
+  ],
+  "correct": 1,
+  "explanation": "Mit Breiten- und Längengrad lässt sich jeder Punkt der Erde eindeutig bestimmen."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Wie hoch ist der Gipfel „Feldberg“ (höchster Berg des Schwarzwaldes)?",
+  "options": [
+   "2962 m",
+   "1215 m",
+   "1141 m",
+   "1493 m"
+  ],
+  "correct": 3,
+  "explanation": "Der Gipfel „Feldberg“ ist 1493 m hoch — höchster Berg des Schwarzwaldes."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Du blickst nach Westen. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südosten",
+   "Nordosten",
+   "Norden",
+   "Osten"
+  ],
+  "correct": 3,
+  "explanation": "Die Gegenrichtung von Westen ist Osten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Welche Himmelsrichtung liegt genau zwischen Süden und Westen?",
+  "options": [
+   "Osten",
+   "Nordosten",
+   "Südwesten",
+   "Nordwesten"
+  ],
+  "correct": 2,
+  "explanation": "Zwischen Süden und Westen liegt Südwesten."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Teste dein Wissen: In welchem Bundesland liegt Mainz?",
+  "options": [
+   "Rheinland-Pfalz",
+   "Mecklenburg-Vorpommern",
+   "Saarland",
+   "Niedersachsen"
+  ],
+  "correct": 0,
+  "explanation": "Mainz liegt in Rheinland-Pfalz."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Ein Wanderer blickt nach Norden und dreht sich um 90° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Westen",
+   "Nordwesten",
+   "Südwesten",
+   "Nordosten"
+  ],
+  "correct": 0,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Norden aus landet man bei Westen."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Dortmund?",
+  "options": [
+   "Thüringen",
+   "Rheinland-Pfalz",
+   "Nordrhein-Westfalen",
+   "Brandenburg"
+  ],
+  "correct": 2,
+  "explanation": "Dortmund liegt in Nordrhein-Westfalen."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Wähle die richtige Antwort. Zu welchem Land gehört diese Flagge: weißes Kreuz auf rotem, quadratischem Grund?",
+  "options": [
+   "Dänemark",
+   "Schweiz",
+   "Vereinigtes Königreich",
+   "Deutschland"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „weißes Kreuz auf rotem, quadratischem Grund“ gehört zu Schweiz."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Cottbus?",
+  "options": [
+   "Saarland",
+   "Rheinland-Pfalz",
+   "Brandenburg",
+   "Schleswig-Holstein"
+  ],
+  "correct": 2,
+  "explanation": "Cottbus liegt in Brandenburg."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Ein Wanderer blickt nach Nordosten und dreht sich um 90° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Nordwesten",
+   "Westen",
+   "Norden",
+   "Osten"
+  ],
+  "correct": 0,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Nordosten aus landet man bei Nordwesten."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Rom ist die Hauptstadt welches Landes?",
+  "options": [
+   "Lettland",
+   "Litauen",
+   "Dänemark",
+   "Italien"
+  ],
+  "correct": 3,
+  "explanation": "Rom ist die Hauptstadt von Italien."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Österreich?",
+  "options": [
+   "Luxemburg",
+   "Kopenhagen",
+   "Berlin",
+   "Wien"
+  ],
+  "correct": 3,
+  "explanation": "Die Hauptstadt von Österreich ist Wien."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Welche Himmelsrichtung liegt genau zwischen Norden und Osten?",
+  "options": [
+   "Nordosten",
+   "Südosten",
+   "Süden",
+   "Osten"
+  ],
+  "correct": 0,
+  "explanation": "Zwischen Norden und Osten liegt Nordosten."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Aufgabe: Welcher Berg ist höchster Berg des Bayerischen Waldes?",
+  "options": [
+   "Fichtelberg",
+   "Großer Arber",
+   "Brocken",
+   "Feldberg"
+  ],
+  "correct": 1,
+  "explanation": "Der Gipfel „Großer Arber“ (1456 m) ist höchster Berg des Bayerischen Waldes."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Teste dein Wissen: Wie heißt der Breitenkreis, der die Erde in Nord- und Südhalbkugel teilt?",
+  "options": [
+   "Äquator",
+   "Wendekreis",
+   "Nullmeridian",
+   "Polarkreis"
+  ],
+  "correct": 0,
+  "explanation": "Der Äquator liegt bei 0° Breite und teilt die Erde in Nord- und Südhalbkugel."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Teste dein Wissen: In welchem Bundesland liegt Leipzig?",
+  "options": [
+   "Sachsen",
+   "Mecklenburg-Vorpommern",
+   "Bayern",
+   "Niedersachsen"
+  ],
+  "correct": 0,
+  "explanation": "Leipzig liegt in Sachsen."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Teste dein Wissen: In welchem Bundesland liegt Saarbrücken?",
+  "options": [
+   "Thüringen",
+   "Brandenburg",
+   "Bayern",
+   "Saarland"
+  ],
+  "correct": 3,
+  "explanation": "Saarbrücken liegt in Saarland."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Überlege genau: In welchem Bundesland liegt Düsseldorf?",
+  "options": [
+   "Niedersachsen",
+   "Baden-Württemberg",
+   "Nordrhein-Westfalen",
+   "Thüringen"
+  ],
+  "correct": 2,
+  "explanation": "Düsseldorf liegt in Nordrhein-Westfalen."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Überlege genau: In welchem Bundesland liegt Jena?",
+  "options": [
+   "Schleswig-Holstein",
+   "Thüringen",
+   "Brandenburg",
+   "Hessen"
+  ],
+  "correct": 1,
+  "explanation": "Jena liegt in Thüringen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Tallinn ist die Hauptstadt welches Landes?",
+  "options": [
+   "Vereinigtes Königreich",
+   "Estland",
+   "Litauen",
+   "Finnland"
+  ],
+  "correct": 1,
+  "explanation": "Tallinn ist die Hauptstadt von Estland."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wo entspringt der Fluss Rhein?",
+  "options": [
+   "im Fichtelgebirge/Fränkische Alb",
+   "in den Schweizer Alpen",
+   "aus Werra und Fulda bei Hann. Münden",
+   "im Riesengebirge (Tschechien)"
+  ],
+  "correct": 1,
+  "explanation": "Rhein entspringt in den Schweizer Alpen und mündet in die Nordsee."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Wähle die richtige Antwort. Wie verlaufen die Breitenkreise auf dem Globus?",
+  "options": [
+   "kreuz und quer",
+   "waagerecht, parallel zum Äquator",
+   "schräg über den Globus",
+   "senkrecht von Pol zu Pol"
+  ],
+  "correct": 1,
+  "explanation": "Breitenkreise verlaufen parallel zum Äquator; Längenkreise von Pol zu Pol."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Du blickst nach Nordwesten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Westen",
+   "Südwesten",
+   "Südosten",
+   "Nordosten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Nordwesten ist Südosten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Ein Wanderer blickt nach Süden und dreht sich um 270° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Süden",
+   "Südosten",
+   "Nordosten",
+   "Osten"
+  ],
+  "correct": 3,
+  "explanation": "270° entsprechen 6 Schritten auf der Windrose (je 45°): von Süden aus landet man bei Osten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Welche Himmelsrichtung liegt genau zwischen Westen und Norden?",
+  "options": [
+   "Nordwesten",
+   "Süden",
+   "Südwesten",
+   "Nordosten"
+  ],
+  "correct": 0,
+  "explanation": "Zwischen Westen und Norden liegt Nordwesten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Ein Wanderer blickt nach Süden und dreht sich um 90° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Osten",
+   "Nordwesten",
+   "Norden",
+   "Westen"
+  ],
+  "correct": 0,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Süden aus landet man bei Osten."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Wähle die richtige Antwort. In welchem Bundesland liegt Stuttgart?",
+  "options": [
+   "Sachsen",
+   "Nordrhein-Westfalen",
+   "Niedersachsen",
+   "Baden-Württemberg"
+  ],
+  "correct": 3,
+  "explanation": "Stuttgart liegt in Baden-Württemberg."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Du blickst nach Südwesten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Westen",
+   "Osten",
+   "Nordosten",
+   "Nordwesten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Südwesten ist Nordosten."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wähle die richtige Antwort. Wohin mündet der Fluss Isar?",
+  "options": [
+   "in die Nordsee",
+   "in die Donau",
+   "in den Rhein bei Mannheim",
+   "in den Rhein bei Koblenz"
+  ],
+  "correct": 1,
+  "explanation": "Isar mündet in die Donau."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Teste dein Wissen: In welchem Bundesland liegt Hannover?",
+  "options": [
+   "Sachsen-Anhalt",
+   "Niedersachsen",
+   "Schleswig-Holstein",
+   "Sachsen"
+  ],
+  "correct": 1,
+  "explanation": "Hannover liegt in Niedersachsen."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wo entspringt der Fluss Elbe?",
+  "options": [
+   "in den Schweizer Alpen",
+   "auf der Schwäbischen Alb (Baar)",
+   "in den Alpen (Karwendel)",
+   "im Riesengebirge (Tschechien)"
+  ],
+  "correct": 3,
+  "explanation": "Elbe entspringt im Riesengebirge (Tschechien) und mündet in die Nordsee."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Aufgabe: Wie verlaufen die Längenkreise (Meridiane)?",
+  "options": [
+   "von Pol zu Pol",
+   "im Kreis um Deutschland",
+   "parallel zum Äquator",
+   "nur über die Nordhalbkugel"
+  ],
+  "correct": 0,
+  "explanation": "Meridiane verbinden Nordpol und Südpol und geben die geografische Länge an."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Vilnius ist die Hauptstadt welches Landes?",
+  "options": [
+   "Island",
+   "Spanien",
+   "Türkei",
+   "Litauen"
+  ],
+  "correct": 3,
+  "explanation": "Vilnius ist die Hauptstadt von Litauen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Frankreich?",
+  "options": [
+   "Sarajevo",
+   "Helsinki",
+   "Bukarest",
+   "Paris"
+  ],
+  "correct": 3,
+  "explanation": "Die Hauptstadt von Frankreich ist Paris."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Du blickst nach Nordwesten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südwesten",
+   "Südosten",
+   "Süden",
+   "Westen"
+  ],
+  "correct": 1,
+  "explanation": "Die Gegenrichtung von Nordwesten ist Südosten."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wo entspringt der Fluss Inn?",
+  "options": [
+   "in den Schweizer Alpen (Engadin)",
+   "aus Werra und Fulda bei Hann. Münden",
+   "in den Vogesen (Frankreich)",
+   "in Tschechien"
+  ],
+  "correct": 0,
+  "explanation": "Inn entspringt in den Schweizer Alpen (Engadin) und mündet in die Donau bei Passau."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Island?",
+  "options": [
+   "Warschau",
+   "Reykjavik",
+   "Budapest",
+   "Bratislava"
+  ],
+  "correct": 1,
+  "explanation": "Die Hauptstadt von Island ist Reykjavik."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Welche Breite hat der Äquator?",
+  "options": [
+   "100°",
+   "45° Süd",
+   "0°",
+   "90° Nord"
+  ],
+  "correct": 2,
+  "explanation": "Der Äquator ist der Ausgangs-Breitenkreis mit 0°."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Rom ist die Hauptstadt welches Landes?",
+  "options": [
+   "Italien",
+   "Vereinigtes Königreich",
+   "Nordmazedonien",
+   "Ukraine"
+  ],
+  "correct": 0,
+  "explanation": "Rom ist die Hauptstadt von Italien."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Teste dein Wissen: Welcher Berg ist höchster Berg des Harzes?",
+  "options": [
+   "Feldberg",
+   "Fichtelberg",
+   "Brocken",
+   "Wasserkuppe"
+  ],
+  "correct": 2,
+  "explanation": "Der Gipfel „Brocken“ (1141 m) ist höchster Berg des Harzes."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Ein Wanderer blickt nach Nordwesten und dreht sich um 180° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Osten",
+   "Nordwesten",
+   "Südosten",
+   "Norden"
+  ],
+  "correct": 2,
+  "explanation": "180° entsprechen 4 Schritten auf der Windrose (je 45°): von Nordwesten aus landet man bei Südosten."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Zu welchem Land gehört diese Flagge: blaues Kreuz auf weißem Grund?",
+  "options": [
+   "Finnland",
+   "Dänemark",
+   "Frankreich",
+   "Griechenland"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „blaues Kreuz auf weißem Grund“ gehört zu Finnland."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Ein Wanderer blickt nach Osten und dreht sich um 270° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Nordosten",
+   "Norden",
+   "Nordwesten",
+   "Westen"
+  ],
+  "correct": 1,
+  "explanation": "270° entsprechen 6 Schritten auf der Windrose (je 45°): von Osten aus landet man bei Norden."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wohin mündet der Fluss Elbe?",
+  "options": [
+   "in die Nordsee",
+   "in die Ostsee (Stettiner Haff)",
+   "in die Donau bei Passau",
+   "in die Elbe"
+  ],
+  "correct": 0,
+  "explanation": "Elbe mündet in die Nordsee."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Teste dein Wissen: Wohin mündet der Fluss Elbe?",
+  "options": [
+   "in den Rhein bei Mannheim",
+   "in die Ostsee (Stettiner Haff)",
+   "in die Nordsee",
+   "ins Schwarze Meer"
+  ],
+  "correct": 2,
+  "explanation": "Elbe mündet in die Nordsee."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wähle die richtige Antwort. Wohin mündet der Fluss Elbe?",
+  "options": [
+   "in den Rhein bei Mannheim",
+   "in den Bodensee",
+   "in die Elbe",
+   "in die Nordsee"
+  ],
+  "correct": 3,
+  "explanation": "Elbe mündet in die Nordsee."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Teste dein Wissen: In welchem Bundesland liegt Jena?",
+  "options": [
+   "Thüringen",
+   "Hessen",
+   "Nordrhein-Westfalen",
+   "Mecklenburg-Vorpommern"
+  ],
+  "correct": 0,
+  "explanation": "Jena liegt in Thüringen."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Wähle die richtige Antwort. Zu welchem Land gehört diese Flagge: blaues Kreuz mit weißem Rand auf rotem Grund?",
+  "options": [
+   "Belgien",
+   "Finnland",
+   "Niederlande",
+   "Norwegen"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „blaues Kreuz mit weißem Rand auf rotem Grund“ gehört zu Norwegen."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "In welchem Bundesland liegt Rostock?",
+  "options": [
+   "Mecklenburg-Vorpommern",
+   "Brandenburg",
+   "Rheinland-Pfalz",
+   "Sachsen-Anhalt"
+  ],
+  "correct": 0,
+  "explanation": "Rostock liegt in Mecklenburg-Vorpommern."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Aufgabe: Welche Breite hat der Äquator?",
+  "options": [
+   "100°",
+   "0°",
+   "90° Nord",
+   "45° Süd"
+  ],
+  "correct": 1,
+  "explanation": "Der Äquator ist der Ausgangs-Breitenkreis mit 0°."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Litauen?",
+  "options": [
+   "Belgrad",
+   "Amsterdam",
+   "Vilnius",
+   "Wien"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Litauen ist Vilnius."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wähle die richtige Antwort. Wo entspringt der Fluss Mosel?",
+  "options": [
+   "im Riesengebirge (Tschechien)",
+   "in den Vogesen (Frankreich)",
+   "in den Schweizer Alpen (Engadin)",
+   "in den Alpen (Karwendel)"
+  ],
+  "correct": 1,
+  "explanation": "Mosel entspringt in den Vogesen (Frankreich) und mündet in den Rhein bei Koblenz."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Wähle die richtige Antwort. Wozu dient das Gradnetz der Erde?",
+  "options": [
+   "um Länder zu vergrößern",
+   "um jeden Ort genau anzugeben (Breite und Länge)",
+   "um Zeitzonen abzuschaffen",
+   "um das Wetter zu messen"
+  ],
+  "correct": 1,
+  "explanation": "Mit Breiten- und Längengrad lässt sich jeder Punkt der Erde eindeutig bestimmen."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Wähle die richtige Antwort. Wie heißt der Breitenkreis, der die Erde in Nord- und Südhalbkugel teilt?",
+  "options": [
+   "Nullmeridian",
+   "Wendekreis",
+   "Polarkreis",
+   "Äquator"
+  ],
+  "correct": 3,
+  "explanation": "Der Äquator liegt bei 0° Breite und teilt die Erde in Nord- und Südhalbkugel."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Aufgabe: Wie hoch ist der Gipfel „Fichtelberg“ (höchster Berg des Erzgebirges (deutscher Teil))?",
+  "options": [
+   "950 m",
+   "1493 m",
+   "1215 m",
+   "1141 m"
+  ],
+  "correct": 2,
+  "explanation": "Der Gipfel „Fichtelberg“ ist 1215 m hoch — höchster Berg des Erzgebirges (deutscher Teil)."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Du blickst nach Südosten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Norden",
+   "Nordwesten",
+   "Süden",
+   "Nordosten"
+  ],
+  "correct": 1,
+  "explanation": "Die Gegenrichtung von Südosten ist Nordwesten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Du blickst nach Norden. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südwesten",
+   "Osten",
+   "Süden",
+   "Nordwesten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Norden ist Süden."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Du blickst nach Norden. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südwesten",
+   "Westen",
+   "Süden",
+   "Nordwesten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Norden ist Süden."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Überlege genau: In welchem Bundesland liegt Saarbrücken?",
+  "options": [
+   "Nordrhein-Westfalen",
+   "Saarland",
+   "Schleswig-Holstein",
+   "Niedersachsen"
+  ],
+  "correct": 1,
+  "explanation": "Saarbrücken liegt in Saarland."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Du blickst nach Nordosten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Norden",
+   "Süden",
+   "Südwesten",
+   "Südosten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Nordosten ist Südwesten."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Aufgabe: Zu welchem Land gehört diese Flagge: blau-weiße Streifen mit weißem Kreuz im blauen Feld?",
+  "options": [
+   "Finnland",
+   "Schweden",
+   "Griechenland",
+   "Norwegen"
+  ],
+  "correct": 2,
+  "explanation": "Die Flagge „blau-weiße Streifen mit weißem Kreuz im blauen Feld“ gehört zu Griechenland."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wie heißt die Hauptstadt von Portugal?",
+  "options": [
+   "Budapest",
+   "Skopje",
+   "Lissabon",
+   "Bukarest"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Portugal ist Lissabon."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Brüssel ist die Hauptstadt welches Landes?",
+  "options": [
+   "Griechenland",
+   "Rumänien",
+   "Serbien",
+   "Belgien"
+  ],
+  "correct": 3,
+  "explanation": "Brüssel ist die Hauptstadt von Belgien."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Luxemburg?",
+  "options": [
+   "Berlin",
+   "Dublin",
+   "Luxemburg",
+   "Wien"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Luxemburg ist Luxemburg."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Wähle die richtige Antwort. In welchem Bundesland liegt Frankfurt am Main?",
+  "options": [
+   "Hessen",
+   "Nordrhein-Westfalen",
+   "Baden-Württemberg",
+   "Brandenburg"
+  ],
+  "correct": 0,
+  "explanation": "Frankfurt am Main liegt in Hessen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Prag ist die Hauptstadt welches Landes?",
+  "options": [
+   "Lettland",
+   "Niederlande",
+   "Litauen",
+   "Tschechien"
+  ],
+  "correct": 3,
+  "explanation": "Prag ist die Hauptstadt von Tschechien."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Stuttgart?",
+  "options": [
+   "Baden-Württemberg",
+   "Sachsen",
+   "Saarland",
+   "Niedersachsen"
+  ],
+  "correct": 0,
+  "explanation": "Stuttgart liegt in Baden-Württemberg."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Wähle die richtige Antwort. In welchem Bundesland liegt Kiel?",
+  "options": [
+   "Sachsen",
+   "Sachsen-Anhalt",
+   "Thüringen",
+   "Schleswig-Holstein"
+  ],
+  "correct": 3,
+  "explanation": "Kiel liegt in Schleswig-Holstein."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Luxemburg ist die Hauptstadt welches Landes?",
+  "options": [
+   "Rumänien",
+   "Frankreich",
+   "Tschechien",
+   "Luxemburg"
+  ],
+  "correct": 3,
+  "explanation": "Luxemburg ist die Hauptstadt von Luxemburg."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Aufgabe: Wie hoch ist der Gipfel „Brocken“ (höchster Berg des Harzes)?",
+  "options": [
+   "1493 m",
+   "1456 m",
+   "1141 m",
+   "950 m"
+  ],
+  "correct": 2,
+  "explanation": "Der Gipfel „Brocken“ ist 1141 m hoch — höchster Berg des Harzes."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wie heißt die Hauptstadt von Dänemark?",
+  "options": [
+   "Lissabon",
+   "Madrid",
+   "Luxemburg",
+   "Kopenhagen"
+  ],
+  "correct": 3,
+  "explanation": "Die Hauptstadt von Dänemark ist Kopenhagen."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Ein Wanderer blickt nach Westen und dreht sich um 180° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Westen",
+   "Norden",
+   "Südwesten",
+   "Osten"
+  ],
+  "correct": 3,
+  "explanation": "180° entsprechen 4 Schritten auf der Windrose (je 45°): von Westen aus landet man bei Osten."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Wähle die richtige Antwort. Zu welchem Land gehört diese Flagge: zwei waagerechte Streifen: weiß oben, rot unten?",
+  "options": [
+   "Niederlande",
+   "Polen",
+   "Deutschland",
+   "Ungarn"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „zwei waagerechte Streifen: weiß oben, rot unten“ gehört zu Polen."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: blaues Kreuz auf weißem Grund?",
+  "options": [
+   "Griechenland",
+   "Österreich",
+   "Deutschland",
+   "Finnland"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „blaues Kreuz auf weißem Grund“ gehört zu Finnland."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Durch welche Stadt verläuft der Nullmeridian (0° Länge)?",
+  "options": [
+   "Greenwich (London)",
+   "Paris",
+   "Rom",
+   "Berlin"
+  ],
+  "correct": 0,
+  "explanation": "Der Nullmeridian verläuft durch die Sternwarte von Greenwich bei London."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Überlege genau: Durch welche Stadt verläuft der Nullmeridian (0° Länge)?",
+  "options": [
+   "Rom",
+   "Berlin",
+   "Greenwich (London)",
+   "Paris"
+  ],
+  "correct": 2,
+  "explanation": "Der Nullmeridian verläuft durch die Sternwarte von Greenwich bei London."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Überlege genau: Zu welchem Land gehört diese Flagge: blaues Kreuz mit weißem Rand auf rotem Grund?",
+  "options": [
+   "Spanien",
+   "Norwegen",
+   "Irland",
+   "Niederlande"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „blaues Kreuz mit weißem Rand auf rotem Grund“ gehört zu Norwegen."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Welche Himmelsrichtung liegt genau zwischen Westen und Norden?",
+  "options": [
+   "Süden",
+   "Nordosten",
+   "Nordwesten",
+   "Südwesten"
+  ],
+  "correct": 2,
+  "explanation": "Zwischen Westen und Norden liegt Nordwesten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Welche Himmelsrichtung liegt genau zwischen Süden und Westen?",
+  "options": [
+   "Nordosten",
+   "Nordwesten",
+   "Südwesten",
+   "Süden"
+  ],
+  "correct": 2,
+  "explanation": "Zwischen Süden und Westen liegt Südwesten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Du blickst nach Osten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Norden",
+   "Süden",
+   "Westen",
+   "Nordosten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Osten ist Westen."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Köln?",
+  "options": [
+   "Bayern",
+   "Sachsen-Anhalt",
+   "Rheinland-Pfalz",
+   "Nordrhein-Westfalen"
+  ],
+  "correct": 3,
+  "explanation": "Köln liegt in Nordrhein-Westfalen."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wohin mündet der Fluss Oder?",
+  "options": [
+   "in den Bodensee",
+   "in die Donau",
+   "in die Nordsee",
+   "in die Ostsee (Stettiner Haff)"
+  ],
+  "correct": 3,
+  "explanation": "Oder mündet in die Ostsee (Stettiner Haff)."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Hannover?",
+  "options": [
+   "Baden-Württemberg",
+   "Schleswig-Holstein",
+   "Niedersachsen",
+   "Sachsen"
+  ],
+  "correct": 2,
+  "explanation": "Hannover liegt in Niedersachsen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Zagreb ist die Hauptstadt welches Landes?",
+  "options": [
+   "Lettland",
+   "Italien",
+   "Kroatien",
+   "Albanien"
+  ],
+  "correct": 2,
+  "explanation": "Zagreb ist die Hauptstadt von Kroatien."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Überlege genau: In welchem Bundesland liegt Dortmund?",
+  "options": [
+   "Niedersachsen",
+   "Hessen",
+   "Sachsen-Anhalt",
+   "Nordrhein-Westfalen"
+  ],
+  "correct": 3,
+  "explanation": "Dortmund liegt in Nordrhein-Westfalen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Wie heißt die Hauptstadt von Kroatien?",
+  "options": [
+   "Riga",
+   "Zagreb",
+   "Ljubljana",
+   "Sarajevo"
+  ],
+  "correct": 1,
+  "explanation": "Die Hauptstadt von Kroatien ist Zagreb."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Albanien?",
+  "options": [
+   "Ljubljana",
+   "Amsterdam",
+   "Tirana",
+   "Prag"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Albanien ist Tirana."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Luxemburg?",
+  "options": [
+   "Warschau",
+   "Lissabon",
+   "Luxemburg",
+   "Helsinki"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Luxemburg ist Luxemburg."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Prag ist die Hauptstadt welches Landes?",
+  "options": [
+   "Slowenien",
+   "Bosnien und Herzegowina",
+   "Spanien",
+   "Tschechien"
+  ],
+  "correct": 3,
+  "explanation": "Prag ist die Hauptstadt von Tschechien."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Teste dein Wissen: Wohin mündet der Fluss Isar?",
+  "options": [
+   "in die Ostsee (Stettiner Haff)",
+   "in den Rhein bei Mannheim",
+   "in die Donau",
+   "in die Elbe"
+  ],
+  "correct": 2,
+  "explanation": "Isar mündet in die Donau."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "In welchem Bundesland liegt Erfurt?",
+  "options": [
+   "Niedersachsen",
+   "Baden-Württemberg",
+   "Brandenburg",
+   "Thüringen"
+  ],
+  "correct": 3,
+  "explanation": "Erfurt liegt in Thüringen."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Teste dein Wissen: In welchem Bundesland liegt Karlsruhe?",
+  "options": [
+   "Sachsen",
+   "Rheinland-Pfalz",
+   "Nordrhein-Westfalen",
+   "Baden-Württemberg"
+  ],
+  "correct": 3,
+  "explanation": "Karlsruhe liegt in Baden-Württemberg."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Magdeburg?",
+  "options": [
+   "Bayern",
+   "Hessen",
+   "Brandenburg",
+   "Sachsen-Anhalt"
+  ],
+  "correct": 3,
+  "explanation": "Magdeburg liegt in Sachsen-Anhalt."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Überlege genau: Welcher Berg ist höchster Berg des Harzes?",
+  "options": [
+   "Brocken",
+   "Großer Arber",
+   "Wasserkuppe",
+   "Feldberg"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Brocken“ (1141 m) ist höchster Berg des Harzes."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Tallinn ist die Hauptstadt welches Landes?",
+  "options": [
+   "Estland",
+   "Ukraine",
+   "Finnland",
+   "Vereinigtes Königreich"
+  ],
+  "correct": 0,
+  "explanation": "Tallinn ist die Hauptstadt von Estland."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Aufgabe: Wo entspringt der Fluss Neckar?",
+  "options": [
+   "auf der Schwäbischen Alb (Baar)",
+   "aus Werra und Fulda bei Hann. Münden",
+   "im Fichtelgebirge/Fränkische Alb",
+   "in den Schweizer Alpen (Engadin)"
+  ],
+  "correct": 0,
+  "explanation": "Neckar entspringt auf der Schwäbischen Alb (Baar) und mündet in den Rhein bei Mannheim."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Teste dein Wissen: In welchem Bundesland liegt Dortmund?",
+  "options": [
+   "Nordrhein-Westfalen",
+   "Rheinland-Pfalz",
+   "Hessen",
+   "Sachsen"
+  ],
+  "correct": 0,
+  "explanation": "Dortmund liegt in Nordrhein-Westfalen."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Überlege genau: Wie verlaufen die Längenkreise (Meridiane)?",
+  "options": [
+   "von Pol zu Pol",
+   "nur über die Nordhalbkugel",
+   "im Kreis um Deutschland",
+   "parallel zum Äquator"
+  ],
+  "correct": 0,
+  "explanation": "Meridiane verbinden Nordpol und Südpol und geben die geografische Länge an."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Wie heißt die Hauptstadt von Portugal?",
+  "options": [
+   "Lissabon",
+   "Berlin",
+   "Ljubljana",
+   "Prag"
+  ],
+  "correct": 0,
+  "explanation": "Die Hauptstadt von Portugal ist Lissabon."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Wähle die richtige Antwort. Zu welchem Land gehört diese Flagge: drei waagerechte Streifen: rot, weiß, blau?",
+  "options": [
+   "Belgien",
+   "Niederlande",
+   "Polen",
+   "Spanien"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „drei waagerechte Streifen: rot, weiß, blau“ gehört zu Niederlande."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Aufgabe: Wie hoch ist der Gipfel „Feldberg“ (höchster Berg des Schwarzwaldes)?",
+  "options": [
+   "1493 m",
+   "1215 m",
+   "1456 m",
+   "1141 m"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Feldberg“ ist 1493 m hoch — höchster Berg des Schwarzwaldes."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wohin mündet der Fluss Weser?",
+  "options": [
+   "in die Nordsee",
+   "in die Donau bei Passau",
+   "in den Bodensee",
+   "in die Elbe"
+  ],
+  "correct": 0,
+  "explanation": "Weser mündet in die Nordsee."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Du blickst nach Westen. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Süden",
+   "Südwesten",
+   "Norden",
+   "Osten"
+  ],
+  "correct": 3,
+  "explanation": "Die Gegenrichtung von Westen ist Osten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Überlege genau: Wozu dient das Gradnetz der Erde?",
+  "options": [
+   "um Länder zu vergrößern",
+   "um das Wetter zu messen",
+   "um jeden Ort genau anzugeben (Breite und Länge)",
+   "um Zeitzonen abzuschaffen"
+  ],
+  "correct": 2,
+  "explanation": "Mit Breiten- und Längengrad lässt sich jeder Punkt der Erde eindeutig bestimmen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Bosnien und Herzegowina?",
+  "options": [
+   "Bukarest",
+   "Amsterdam",
+   "Lissabon",
+   "Sarajevo"
+  ],
+  "correct": 3,
+  "explanation": "Die Hauptstadt von Bosnien und Herzegowina ist Sarajevo."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Berlin ist die Hauptstadt welches Landes?",
+  "options": [
+   "Schweiz",
+   "Bosnien und Herzegowina",
+   "Deutschland",
+   "Ungarn"
+  ],
+  "correct": 2,
+  "explanation": "Berlin ist die Hauptstadt von Deutschland."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Ein Wanderer blickt nach Süden und dreht sich um 270° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südwesten",
+   "Nordosten",
+   "Westen",
+   "Nordwesten"
+  ],
+  "correct": 2,
+  "explanation": "270° entsprechen 6 Schritten auf der Windrose (je 45°): von Süden aus landet man bei Westen."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Aufgabe: Zu welchem Land gehört diese Flagge: drei waagerechte Streifen: rot, weiß, grün?",
+  "options": [
+   "Finnland",
+   "Frankreich",
+   "Österreich",
+   "Ungarn"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „drei waagerechte Streifen: rot, weiß, grün“ gehört zu Ungarn."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Slowakei?",
+  "options": [
+   "Kopenhagen",
+   "Belgrad",
+   "Bratislava",
+   "Dublin"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Slowakei ist Bratislava."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Italien?",
+  "options": [
+   "Warschau",
+   "Brüssel",
+   "Rom",
+   "Ankara"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Italien ist Rom."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Welche Himmelsrichtung liegt genau zwischen Westen und Norden?",
+  "options": [
+   "Nordwesten",
+   "Süden",
+   "Osten",
+   "Südosten"
+  ],
+  "correct": 0,
+  "explanation": "Zwischen Westen und Norden liegt Nordwesten."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Stockholm ist die Hauptstadt welches Landes?",
+  "options": [
+   "Estland",
+   "Deutschland",
+   "Kroatien",
+   "Schweden"
+  ],
+  "correct": 3,
+  "explanation": "Stockholm ist die Hauptstadt von Schweden."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Zu welchem Land gehört diese Flagge: blau-weiße Streifen mit weißem Kreuz im blauen Feld?",
+  "options": [
+   "Griechenland",
+   "Niederlande",
+   "Österreich",
+   "Deutschland"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „blau-weiße Streifen mit weißem Kreuz im blauen Feld“ gehört zu Griechenland."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Überlege genau: Zu welchem Land gehört diese Flagge: weißer Halbmond und Stern auf rotem Grund?",
+  "options": [
+   "Türkei",
+   "Irland",
+   "Österreich",
+   "Norwegen"
+  ],
+  "correct": 0,
+  "explanation": "Die Flagge „weißer Halbmond und Stern auf rotem Grund“ gehört zu Türkei."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Aufgabe: Wie verlaufen die Breitenkreise auf dem Globus?",
+  "options": [
+   "schräg über den Globus",
+   "kreuz und quer",
+   "waagerecht, parallel zum Äquator",
+   "senkrecht von Pol zu Pol"
+  ],
+  "correct": 2,
+  "explanation": "Breitenkreise verlaufen parallel zum Äquator; Längenkreise von Pol zu Pol."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Paris ist die Hauptstadt welches Landes?",
+  "options": [
+   "Belgien",
+   "Griechenland",
+   "Frankreich",
+   "Slowenien"
+  ],
+  "correct": 2,
+  "explanation": "Paris ist die Hauptstadt von Frankreich."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Aufgabe: Zwischen welchen Angaben liegt eine Ortsangabe wie „48° Nord, 11° Ost“?",
+  "options": [
+   "Höhe und Tiefe",
+   "geografische Breite und geografische Länge",
+   "Temperatur und Luftdruck",
+   "Zeitzone und Datum"
+  ],
+  "correct": 1,
+  "explanation": "Erst die Breite (Nord/Süd), dann die Länge (Ost/West) — so gibt man Orte im Gradnetz an."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Aufgabe: Auf welcher Halbkugel liegt Deutschland?",
+  "options": [
+   "auf der Südhalbkugel",
+   "auf der Westhalbkugel südlich des Äquators",
+   "genau auf dem Äquator",
+   "auf der Nordhalbkugel"
+  ],
+  "correct": 3,
+  "explanation": "Deutschland liegt zwischen etwa 47° und 55° nördlicher Breite — also auf der Nordhalbkugel."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Du blickst nach Nordosten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Südwesten",
+   "Süden",
+   "Norden",
+   "Nordosten"
+  ],
+  "correct": 0,
+  "explanation": "Die Gegenrichtung von Nordosten ist Südwesten."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Teste dein Wissen: In welchem Bundesland liegt Magdeburg?",
+  "options": [
+   "Sachsen-Anhalt",
+   "Hessen",
+   "Rheinland-Pfalz",
+   "Saarland"
+  ],
+  "correct": 0,
+  "explanation": "Magdeburg liegt in Sachsen-Anhalt."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Bulgarien?",
+  "options": [
+   "Vilnius",
+   "Sofia",
+   "Reykjavik",
+   "Budapest"
+  ],
+  "correct": 1,
+  "explanation": "Die Hauptstadt von Bulgarien ist Sofia."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Teste dein Wissen: Luxemburg ist die Hauptstadt welches Landes?",
+  "options": [
+   "Serbien",
+   "Luxemburg",
+   "Deutschland",
+   "Polen"
+  ],
+  "correct": 1,
+  "explanation": "Luxemburg ist die Hauptstadt von Luxemburg."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Teste dein Wissen: Welcher Berg ist höchster Berg des Bayerischen Waldes?",
+  "options": [
+   "Brocken",
+   "Wasserkuppe",
+   "Feldberg",
+   "Großer Arber"
+  ],
+  "correct": 3,
+  "explanation": "Der Gipfel „Großer Arber“ (1456 m) ist höchster Berg des Bayerischen Waldes."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wohin mündet der Fluss Elbe?",
+  "options": [
+   "in den Rhein bei Mainz",
+   "in die Nordsee",
+   "in die Donau bei Passau",
+   "in die Donau"
+  ],
+  "correct": 1,
+  "explanation": "Elbe mündet in die Nordsee."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Aufgabe: In welchem Bundesland liegt Lübeck?",
+  "options": [
+   "Thüringen",
+   "Baden-Württemberg",
+   "Sachsen",
+   "Schleswig-Holstein"
+  ],
+  "correct": 3,
+  "explanation": "Lübeck liegt in Schleswig-Holstein."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Madrid ist die Hauptstadt welches Landes?",
+  "options": [
+   "Spanien",
+   "Bulgarien",
+   "Rumänien",
+   "Bosnien und Herzegowina"
+  ],
+  "correct": 0,
+  "explanation": "Madrid ist die Hauptstadt von Spanien."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Teste dein Wissen: Wie hoch ist der Gipfel „Wasserkuppe“ (höchster Berg der Rhön)?",
+  "options": [
+   "1493 m",
+   "1141 m",
+   "950 m",
+   "1215 m"
+  ],
+  "correct": 2,
+  "explanation": "Der Gipfel „Wasserkuppe“ ist 950 m hoch — höchster Berg der Rhön."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Teste dein Wissen: Welche Breite hat der Äquator?",
+  "options": [
+   "100°",
+   "0°",
+   "90° Nord",
+   "45° Süd"
+  ],
+  "correct": 1,
+  "explanation": "Der Äquator ist der Ausgangs-Breitenkreis mit 0°."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Ein Wanderer blickt nach Westen und dreht sich um 180° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Osten",
+   "Südwesten",
+   "Norden",
+   "Nordosten"
+  ],
+  "correct": 0,
+  "explanation": "180° entsprechen 4 Schritten auf der Windrose (je 45°): von Westen aus landet man bei Osten."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Überlege genau: Wie hoch ist der Gipfel „Fichtelberg“ (höchster Berg des Erzgebirges (deutscher Teil))?",
+  "options": [
+   "1215 m",
+   "1493 m",
+   "2962 m",
+   "1141 m"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Fichtelberg“ ist 1215 m hoch — höchster Berg des Erzgebirges (deutscher Teil)."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Wähle die richtige Antwort. Zu welchem Land gehört diese Flagge: rot-gelb-rot gestreift mit Wappen?",
+  "options": [
+   "Irland",
+   "Finnland",
+   "Spanien",
+   "Italien"
+  ],
+  "correct": 2,
+  "explanation": "Die Flagge „rot-gelb-rot gestreift mit Wappen“ gehört zu Spanien."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Bern ist die Hauptstadt welches Landes?",
+  "options": [
+   "Bosnien und Herzegowina",
+   "Schweiz",
+   "Deutschland",
+   "Ungarn"
+  ],
+  "correct": 1,
+  "explanation": "Bern ist die Hauptstadt von Schweiz."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wähle die richtige Antwort. Wohin mündet der Fluss Main?",
+  "options": [
+   "in die Donau",
+   "in den Rhein bei Mainz",
+   "in die Nordsee",
+   "ins Schwarze Meer"
+  ],
+  "correct": 1,
+  "explanation": "Main mündet in den Rhein bei Mainz."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Ein Wanderer blickt nach Südwesten und dreht sich um 180° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südwesten",
+   "Osten",
+   "Nordosten",
+   "Westen"
+  ],
+  "correct": 2,
+  "explanation": "180° entsprechen 4 Schritten auf der Windrose (je 45°): von Südwesten aus landet man bei Nordosten."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Wähle die richtige Antwort. Wie hoch ist der Gipfel „Zugspitze“ (höchster Berg Deutschlands (Alpen))?",
+  "options": [
+   "950 m",
+   "1456 m",
+   "1493 m",
+   "2962 m"
+  ],
+  "correct": 3,
+  "explanation": "Der Gipfel „Zugspitze“ ist 2962 m hoch — höchster Berg Deutschlands (Alpen)."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Budapest ist die Hauptstadt welches Landes?",
+  "options": [
+   "Ungarn",
+   "Slowenien",
+   "Schweiz",
+   "Tschechien"
+  ],
+  "correct": 0,
+  "explanation": "Budapest ist die Hauptstadt von Ungarn."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wohin mündet der Fluss Donau?",
+  "options": [
+   "in den Rhein bei Mannheim",
+   "in die Nordsee",
+   "in den Rhein bei Koblenz",
+   "ins Schwarze Meer"
+  ],
+  "correct": 3,
+  "explanation": "Donau mündet ins Schwarze Meer."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Welche Himmelsrichtung liegt genau zwischen Süden und Westen?",
+  "options": [
+   "Südwesten",
+   "Südosten",
+   "Norden",
+   "Osten"
+  ],
+  "correct": 0,
+  "explanation": "Zwischen Süden und Westen liegt Südwesten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Ein Wanderer blickt nach Nordwesten und dreht sich um 90° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Nordosten",
+   "Osten",
+   "Süden",
+   "Südosten"
+  ],
+  "correct": 0,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Nordwesten aus landet man bei Nordosten."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Wie heißt die Hauptstadt von Polen?",
+  "options": [
+   "Warschau",
+   "Belgrad",
+   "Kopenhagen",
+   "Reykjavik"
+  ],
+  "correct": 0,
+  "explanation": "Die Hauptstadt von Polen ist Warschau."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Ein Wanderer blickt nach Südosten und dreht sich um 180° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südwesten",
+   "Norden",
+   "Südosten",
+   "Nordwesten"
+  ],
+  "correct": 3,
+  "explanation": "180° entsprechen 4 Schritten auf der Windrose (je 45°): von Südosten aus landet man bei Nordwesten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Wähle die richtige Antwort. Welche geografische Breite hat der Nordpol?",
+  "options": [
+   "0°",
+   "45° Nord",
+   "90° Nord",
+   "180° Nord"
+  ],
+  "correct": 2,
+  "explanation": "Am Nordpol beträgt die geografische Breite 90° Nord."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Wähle die richtige Antwort. Zu welchem Land gehört diese Flagge: blaues Kreuz auf weißem Grund?",
+  "options": [
+   "Polen",
+   "Finnland",
+   "Österreich",
+   "Deutschland"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „blaues Kreuz auf weißem Grund“ gehört zu Finnland."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Wie heißt die Hauptstadt von Lettland?",
+  "options": [
+   "Rom",
+   "Athen",
+   "Riga",
+   "Bukarest"
+  ],
+  "correct": 2,
+  "explanation": "Die Hauptstadt von Lettland ist Riga."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Ein Wanderer blickt nach Westen und dreht sich um 270° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südosten",
+   "Nordwesten",
+   "Westen",
+   "Norden"
+  ],
+  "correct": 3,
+  "explanation": "270° entsprechen 6 Schritten auf der Windrose (je 45°): von Westen aus landet man bei Norden."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Ein Wanderer blickt nach Norden und dreht sich um 180° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Nordwesten",
+   "Südwesten",
+   "Norden",
+   "Süden"
+  ],
+  "correct": 3,
+  "explanation": "180° entsprechen 4 Schritten auf der Windrose (je 45°): von Norden aus landet man bei Süden."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: weißes Kreuz auf rotem Grund?",
+  "options": [
+   "Italien",
+   "Dänemark",
+   "Irland",
+   "Deutschland"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „weißes Kreuz auf rotem Grund“ gehört zu Dänemark."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Zu welchem Land gehört diese Flagge: weißer Halbmond und Stern auf rotem Grund?",
+  "options": [
+   "Schweiz",
+   "Vereinigtes Königreich",
+   "Österreich",
+   "Türkei"
+  ],
+  "correct": 3,
+  "explanation": "Die Flagge „weißer Halbmond und Stern auf rotem Grund“ gehört zu Türkei."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Aufgabe: Welche Himmelsrichtung liegt genau zwischen Süden und Westen?",
+  "options": [
+   "Süden",
+   "Südwesten",
+   "Nordosten",
+   "Osten"
+  ],
+  "correct": 1,
+  "explanation": "Zwischen Süden und Westen liegt Südwesten."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Überlege genau: In welchem Bundesland liegt Kiel?",
+  "options": [
+   "Thüringen",
+   "Schleswig-Holstein",
+   "Sachsen-Anhalt",
+   "Nordrhein-Westfalen"
+  ],
+  "correct": 1,
+  "explanation": "Kiel liegt in Schleswig-Holstein."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Berlin ist die Hauptstadt welches Landes?",
+  "options": [
+   "Serbien",
+   "Deutschland",
+   "Schweden",
+   "Kroatien"
+  ],
+  "correct": 1,
+  "explanation": "Berlin ist die Hauptstadt von Deutschland."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Teste dein Wissen: Wo entspringt der Fluss Inn?",
+  "options": [
+   "in den Schweizer Alpen",
+   "in den Schweizer Alpen (Engadin)",
+   "auf der Schwäbischen Alb (Baar)",
+   "in den Vogesen (Frankreich)"
+  ],
+  "correct": 1,
+  "explanation": "Inn entspringt in den Schweizer Alpen (Engadin) und mündet in die Donau bei Passau."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Überlege genau: In welchem Bundesland liegt Lübeck?",
+  "options": [
+   "Brandenburg",
+   "Baden-Württemberg",
+   "Hessen",
+   "Schleswig-Holstein"
+  ],
+  "correct": 3,
+  "explanation": "Lübeck liegt in Schleswig-Holstein."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Teste dein Wissen: Wozu dient das Gradnetz der Erde?",
+  "options": [
+   "um Länder zu vergrößern",
+   "um Zeitzonen abzuschaffen",
+   "um jeden Ort genau anzugeben (Breite und Länge)",
+   "um das Wetter zu messen"
+  ],
+  "correct": 2,
+  "explanation": "Mit Breiten- und Längengrad lässt sich jeder Punkt der Erde eindeutig bestimmen."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: drei senkrechte Streifen: grün, weiß, rot?",
+  "options": [
+   "Tschechien",
+   "Deutschland",
+   "Italien",
+   "Polen"
+  ],
+  "correct": 2,
+  "explanation": "Die Flagge „drei senkrechte Streifen: grün, weiß, rot“ gehört zu Italien."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Überlege genau: Oslo ist die Hauptstadt welches Landes?",
+  "options": [
+   "Belgien",
+   "Österreich",
+   "Ungarn",
+   "Norwegen"
+  ],
+  "correct": 3,
+  "explanation": "Oslo ist die Hauptstadt von Norwegen."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Ein Wanderer blickt nach Osten und dreht sich um 90° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Norden",
+   "Südosten",
+   "Südwesten",
+   "Süden"
+  ],
+  "correct": 3,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Osten aus landet man bei Süden."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wähle die richtige Antwort. Wie heißt die Hauptstadt von Luxemburg?",
+  "options": [
+   "Budapest",
+   "Luxemburg",
+   "Berlin",
+   "Reykjavik"
+  ],
+  "correct": 1,
+  "explanation": "Die Hauptstadt von Luxemburg ist Luxemburg."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Wähle die richtige Antwort. Wie hoch ist der Gipfel „Großer Arber“ (höchster Berg des Bayerischen Waldes)?",
+  "options": [
+   "1493 m",
+   "1456 m",
+   "1215 m",
+   "2962 m"
+  ],
+  "correct": 1,
+  "explanation": "Der Gipfel „Großer Arber“ ist 1456 m hoch — höchster Berg des Bayerischen Waldes."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Wähle die richtige Antwort. In welchem Bundesland liegt München?",
+  "options": [
+   "Saarland",
+   "Brandenburg",
+   "Sachsen",
+   "Bayern"
+  ],
+  "correct": 3,
+  "explanation": "München liegt in Bayern."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Dublin ist die Hauptstadt welches Landes?",
+  "options": [
+   "Finnland",
+   "Irland",
+   "Polen",
+   "Österreich"
+  ],
+  "correct": 1,
+  "explanation": "Dublin ist die Hauptstadt von Irland."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Ein Wanderer blickt nach Nordosten und dreht sich um 90° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Westen",
+   "Südwesten",
+   "Osten",
+   "Nordwesten"
+  ],
+  "correct": 3,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Nordosten aus landet man bei Nordwesten."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Teste dein Wissen: Wo entspringt der Fluss Isar?",
+  "options": [
+   "aus Werra und Fulda bei Hann. Münden",
+   "im Fichtelgebirge/Fränkische Alb",
+   "auf der Schwäbischen Alb (Baar)",
+   "in den Alpen (Karwendel)"
+  ],
+  "correct": 3,
+  "explanation": "Isar entspringt in den Alpen (Karwendel) und mündet in die Donau."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Budapest ist die Hauptstadt welches Landes?",
+  "options": [
+   "Irland",
+   "Dänemark",
+   "Ungarn",
+   "Niederlande"
+  ],
+  "correct": 2,
+  "explanation": "Budapest ist die Hauptstadt von Ungarn."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Überlege genau: Wohin mündet der Fluss Isar?",
+  "options": [
+   "in den Rhein bei Mainz",
+   "in den Bodensee",
+   "in die Nordsee",
+   "in die Donau"
+  ],
+  "correct": 3,
+  "explanation": "Isar mündet in die Donau."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Wähle die richtige Antwort. Ein Wanderer blickt nach Osten und dreht sich um 270° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südosten",
+   "Norden",
+   "Westen",
+   "Nordwesten"
+  ],
+  "correct": 1,
+  "explanation": "270° entsprechen 6 Schritten auf der Windrose (je 45°): von Osten aus landet man bei Norden."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Ein Wanderer blickt nach Süden und dreht sich um 90° gegen den Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südwesten",
+   "Osten",
+   "Nordosten",
+   "Westen"
+  ],
+  "correct": 1,
+  "explanation": "90° entsprechen 2 Schritten auf der Windrose (je 45°): von Süden aus landet man bei Osten."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Ein Wanderer blickt nach Südwesten und dreht sich um 180° im Uhrzeigersinn. Wohin blickt er jetzt?",
+  "options": [
+   "Südosten",
+   "Osten",
+   "Norden",
+   "Nordosten"
+  ],
+  "correct": 3,
+  "explanation": "180° entsprechen 4 Schritten auf der Windrose (je 45°): von Südwesten aus landet man bei Nordosten."
+ },
+ {
+  "topic": "Gradnetz",
+  "question": "Wähle die richtige Antwort. Wie viele Grad umfasst ein voller Kreis um die Erde?",
+  "options": [
+   "360°",
+   "400°",
+   "180°",
+   "100°"
+  ],
+  "correct": 0,
+  "explanation": "Ein Vollkreis hat 360° — Längengrade zählen je 180° nach Ost und West."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wo entspringt der Fluss Main?",
+  "options": [
+   "im Fichtelgebirge/Fränkische Alb",
+   "im Riesengebirge (Tschechien)",
+   "in den Vogesen (Frankreich)",
+   "im Schwarzwald (Zusammenfluss bei Donaueschingen)"
+  ],
+  "correct": 0,
+  "explanation": "Main entspringt im Fichtelgebirge/Fränkische Alb und mündet in den Rhein bei Mainz."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Madrid ist die Hauptstadt welches Landes?",
+  "options": [
+   "Türkei",
+   "Bulgarien",
+   "Ungarn",
+   "Spanien"
+  ],
+  "correct": 3,
+  "explanation": "Madrid ist die Hauptstadt von Spanien."
+ },
+ {
+  "topic": "Deutschland: Flüsse",
+  "question": "Wähle die richtige Antwort. Wo entspringt der Fluss Elbe?",
+  "options": [
+   "in den Vogesen (Frankreich)",
+   "im Fichtelgebirge/Fränkische Alb",
+   "im Riesengebirge (Tschechien)",
+   "in Tschechien"
+  ],
+  "correct": 2,
+  "explanation": "Elbe entspringt im Riesengebirge (Tschechien) und mündet in die Nordsee."
+ },
+ {
+  "topic": "Deutschland: Gebirge",
+  "question": "Aufgabe: Wie hoch ist der Gipfel „Zugspitze“ (höchster Berg Deutschlands (Alpen))?",
+  "options": [
+   "2962 m",
+   "1215 m",
+   "1141 m",
+   "1456 m"
+  ],
+  "correct": 0,
+  "explanation": "Der Gipfel „Zugspitze“ ist 2962 m hoch — höchster Berg Deutschlands (Alpen)."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Teste dein Wissen: Du blickst nach Südosten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Süden",
+   "Osten",
+   "Nordwesten",
+   "Südwesten"
+  ],
+  "correct": 2,
+  "explanation": "Die Gegenrichtung von Südosten ist Nordwesten."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Teste dein Wissen: Zu welchem Land gehört diese Flagge: zwei waagerechte Streifen: weiß oben, rot unten?",
+  "options": [
+   "Frankreich",
+   "Niederlande",
+   "Polen",
+   "Tschechien"
+  ],
+  "correct": 2,
+  "explanation": "Die Flagge „zwei waagerechte Streifen: weiß oben, rot unten“ gehört zu Polen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Wie heißt die Hauptstadt von Deutschland?",
+  "options": [
+   "Berlin",
+   "Tallinn",
+   "Wien",
+   "Lissabon"
+  ],
+  "correct": 0,
+  "explanation": "Die Hauptstadt von Deutschland ist Berlin."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Wähle die richtige Antwort. In welchem Bundesland liegt Düsseldorf?",
+  "options": [
+   "Nordrhein-Westfalen",
+   "Niedersachsen",
+   "Brandenburg",
+   "Saarland"
+  ],
+  "correct": 0,
+  "explanation": "Düsseldorf liegt in Nordrhein-Westfalen."
+ },
+ {
+  "topic": "Europa: Hauptstädte",
+  "question": "Aufgabe: Skopje ist die Hauptstadt welches Landes?",
+  "options": [
+   "Slowakei",
+   "Nordmazedonien",
+   "Türkei",
+   "Bosnien und Herzegowina"
+  ],
+  "correct": 1,
+  "explanation": "Skopje ist die Hauptstadt von Nordmazedonien."
+ },
+ {
+  "topic": "Deutschland: Städte & Bundesländer",
+  "question": "Wähle die richtige Antwort. In welchem Bundesland liegt Nürnberg?",
+  "options": [
+   "Rheinland-Pfalz",
+   "Bayern",
+   "Mecklenburg-Vorpommern",
+   "Thüringen"
+  ],
+  "correct": 1,
+  "explanation": "Nürnberg liegt in Bayern."
+ },
+ {
+  "topic": "Himmelsrichtungen",
+  "question": "Überlege genau: Du blickst nach Nordwesten. In welche Richtung zeigt dein Rücken?",
+  "options": [
+   "Westen",
+   "Nordwesten",
+   "Südwesten",
+   "Südosten"
+  ],
+  "correct": 3,
+  "explanation": "Die Gegenrichtung von Nordwesten ist Südosten."
+ },
+ {
+  "topic": "Europa: Flaggen",
+  "question": "Zu welchem Land gehört diese Flagge: weißes Kreuz auf rotem, quadratischem Grund?",
+  "options": [
+   "Tschechien",
+   "Schweiz",
+   "Schweden",
+   "Türkei"
+  ],
+  "correct": 1,
+  "explanation": "Die Flagge „weißes Kreuz auf rotem, quadratischem Grund“ gehört zu Schweiz."
+ }
+]

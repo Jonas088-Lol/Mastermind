@@ -1,0 +1,6002 @@
+[
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 6 s gleichmäßig auf v = 42 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "6 m/s²",
+   "21 m/s²",
+   "7 m/s²",
+   "9 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 42 m/s / 6 s = 7 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 11 s gleichmäßig auf v = 99 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "9 m/s²",
+   "10 m/s²",
+   "8 m/s²",
+   "50 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 99 m/s / 11 s = 9 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine Schwingung hat die Frequenz f = 10¹ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻2 s",
+   "10⁻5 s",
+   "10⁻1 s",
+   "10⁻4 s"
+  ],
+  "correct": 2,
+  "explanation": "T = 1/f = 1/10^1 s = 10⁻1 s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Frequenz f = 300 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "100 m",
+   "10 m",
+   "1 m",
+   "20 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (300·10⁶ Hz) = 1 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 60 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "300 m",
+   "5 m",
+   "10 m",
+   "60 m"
+  ],
+  "correct": 1,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (60·10⁶ Hz) = 5 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 4 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "4 m",
+   "15 m",
+   "75 m",
+   "12 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (4·10⁶ Hz) = 75 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 8 m/s². Welche Geschwindigkeit hat er nach t = 10 s?",
+  "options": [
+   "18 m/s",
+   "160 m/s",
+   "90 m/s",
+   "80 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 8 m/s² · 10 s = 80 m/s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine Schwingung hat die Frequenz f = 10⁶ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻6 s",
+   "10⁻2 s",
+   "10⁻3 s",
+   "10⁻1 s"
+  ],
+  "correct": 0,
+  "explanation": "T = 1/f = 1/10^6 s = 10⁻6 s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 7 kg wird um h = 23 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "161 J",
+   "1610 J",
+   "1620 J",
+   "805 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 7 kg · 10 m/s² · 23 m = 1610 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 10 s gleichmäßig auf v = 60 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "30 m/s²",
+   "6 m/s²",
+   "10 m/s²",
+   "7 m/s²"
+  ],
+  "correct": 1,
+  "explanation": "a = v/t = 60 m/s / 10 s = 6 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Frequenz f = 15 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "20 m",
+   "2 m",
+   "5 m",
+   "50 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (15·10⁶ Hz) = 20 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 4 kg) bewegt sich mit v = 7 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "98 J",
+   "14 J",
+   "196 J",
+   "102 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 4 · 7² = 98 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 10 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "150 m",
+   "300 m",
+   "30 m",
+   "5 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (10·10⁶ Hz) = 30 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 5 m/s². Welche Geschwindigkeit hat er nach t = 8 s?",
+  "options": [
+   "40 m/s",
+   "80 m/s",
+   "45 m/s",
+   "13 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 5 m/s² · 8 s = 40 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Welcher Begriff passt: „ist das Verhältnis von Ladung zu Spannung: C = Q/U“?",
+  "options": [
+   "die Einheit der elektrischen Ladung",
+   "die Kapazität C eines Kondensators",
+   "die Energie im geladenen Kondensator",
+   "die Richtung elektrischer Feldlinien"
+  ],
+  "correct": 1,
+  "explanation": "die Kapazität C eines Kondensators: ist das Verhältnis von Ladung zu Spannung: C = Q/U."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Wellenlänge λ = 3 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "12 MHz",
+   "6 MHz",
+   "300 MHz",
+   "100 MHz"
+  ],
+  "correct": 3,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 3 m = 100·10⁶ Hz = 100 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 7 m/s². Welche Geschwindigkeit hat er nach t = 6 s?",
+  "options": [
+   "49 m/s",
+   "42 m/s",
+   "13 m/s",
+   "84 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 7 m/s² · 6 s = 42 m/s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Wellenlänge λ = 60 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "20 MHz",
+   "30 MHz",
+   "5 MHz",
+   "4 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 60 m = 5·10⁶ Hz = 5 MHz."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 3 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "20 m",
+   "10 m",
+   "2 m",
+   "100 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (3·10⁶ Hz) = 100 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 4 m/s². Welche Geschwindigkeit hat er nach t = 9 s?",
+  "options": [
+   "36 m/s",
+   "45 m/s",
+   "13 m/s",
+   "72 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 4 m/s² · 9 s = 36 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 10 s gleichmäßig auf v = 10 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "1 m/s²",
+   "3 m/s²",
+   "5 m/s²",
+   "2 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 10 m/s / 10 s = 1 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 4 kg) bewegt sich mit v = 9 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "324 J",
+   "166 J",
+   "153 J",
+   "162 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 4 · 9² = 162 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 2 kg wird um h = 28 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "560 J",
+   "280 J",
+   "1120 J",
+   "550 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 2 kg · 10 m/s² · 28 m = 560 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Welcher Begriff passt: „ist definiert als Kraft pro Ladung: E = F/q“?",
+  "options": [
+   "die Energie im geladenen Kondensator",
+   "die Richtung elektrischer Feldlinien",
+   "die Einheit der elektrischen Feldstärke",
+   "die elektrische Feldstärke E"
+  ],
+  "correct": 3,
+  "explanation": "die elektrische Feldstärke E: ist definiert als Kraft pro Ladung: E = F/q."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Frequenz f = 3 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "300 m",
+   "150 m",
+   "100 m",
+   "4 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (3·10⁶ Hz) = 100 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „ist das Coulomb (C)“?",
+  "options": [
+   "das Radialfeld (Feld einer Punktladung)",
+   "die Elementarladung e",
+   "die Einheit der elektrischen Ladung",
+   "die Energie im geladenen Kondensator"
+  ],
+  "correct": 2,
+  "explanation": "die Einheit der elektrischen Ladung: ist das Coulomb (C)."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 3 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "60 m",
+   "25 m",
+   "20 m",
+   "100 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (3·10⁶ Hz) = 100 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 75 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "4 m",
+   "3 m",
+   "60 m",
+   "5 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (75·10⁶ Hz) = 4 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 10 m/s². Welche Strecke legt er in t = 8 s zurück?",
+  "options": [
+   "320 m",
+   "640 m",
+   "310 m",
+   "330 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 10 · 8² = 320 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Was gilt für die elektrische Spannung U?",
+  "options": [
+   "ist das Coulomb (C)",
+   "ist die Arbeit pro Ladung: U = W/q",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld",
+   "schirmt seinen Innenraum von äußeren elektrischen Feldern ab"
+  ],
+  "correct": 1,
+  "explanation": "die elektrische Spannung U: ist die Arbeit pro Ladung: U = W/q."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Was gilt für die Einheit der Kapazität?",
+  "options": [
+   "hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)",
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U",
+   "berechnet sich aus Spannung und Plattenabstand: E = U/d",
+   "ist das Farad (F)"
+  ],
+  "correct": 3,
+  "explanation": "die Einheit der Kapazität: ist das Farad (F)."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 15 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "20 m",
+   "4 m",
+   "300 m",
+   "25 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (15·10⁶ Hz) = 20 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 10 kg) bewegt sich mit v = 14 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "1960 J",
+   "70 J",
+   "980 J",
+   "990 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 10 · 14² = 980 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 23 kg wird um h = 7 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "805 J",
+   "3220 J",
+   "1610 J",
+   "1600 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 23 kg · 10 m/s² · 7 m = 1610 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Was gilt für die Influenz?",
+  "options": [
+   "beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C",
+   "ist definiert als Kraft pro Ladung: E = F/q"
+  ],
+  "correct": 1,
+  "explanation": "die Influenz: ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 1 m/s². Welche Geschwindigkeit hat er nach t = 3 s?",
+  "options": [
+   "4 m/s",
+   "2 m/s",
+   "3 m/s",
+   "6 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 1 m/s² · 3 s = 3 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 8 s gleichmäßig auf v = 72 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "36 m/s²",
+   "9 m/s²",
+   "10 m/s²",
+   "8 m/s²"
+  ],
+  "correct": 1,
+  "explanation": "a = v/t = 72 m/s / 8 s = 9 m/s²."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Welcher Begriff passt: „beträgt etwa 1,6 · 10⁻¹⁹ C“?",
+  "options": [
+   "die Energie im geladenen Kondensator",
+   "die Einheit der Kapazität",
+   "ein Faradayscher Käfig",
+   "die Elementarladung e"
+  ],
+  "correct": 3,
+  "explanation": "die Elementarladung e: beträgt etwa 1,6 · 10⁻¹⁹ C."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 18 kg) hat die Lageenergie E = 1620 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "9 m",
+   "10 m",
+   "18 m",
+   "8 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 1620 J / (18 kg · 10 m/s²) = 9 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 41 kg wird um h = 17 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "3485 J",
+   "13940 J",
+   "6960 J",
+   "6970 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 41 kg · 10 m/s² · 17 m = 6970 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 4 m/s². Welche Geschwindigkeit hat er nach t = 8 s?",
+  "options": [
+   "40 m/s",
+   "32 m/s",
+   "12 m/s",
+   "64 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 4 m/s² · 8 s = 32 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 10 kg) bewegt sich mit v = 5 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "120 J",
+   "250 J",
+   "135 J",
+   "125 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 10 · 5² = 125 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Frequenz f = 50 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "6 m",
+   "60 m",
+   "300 m",
+   "75 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (50·10⁶ Hz) = 6 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²“?",
+  "options": [
+   "das Coulomb-Gesetz",
+   "die Einheit der Kapazität",
+   "ein Faradayscher Käfig",
+   "die Influenz"
+  ],
+  "correct": 0,
+  "explanation": "das Coulomb-Gesetz: beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 10 kg wird um h = 22 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "2190 J",
+   "2200 J",
+   "1100 J",
+   "2210 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 10 kg · 10 m/s² · 22 m = 2200 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 3 s gleichmäßig auf v = 9 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "5 m/s²",
+   "2 m/s²",
+   "3 m/s²",
+   "4 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 9 m/s / 3 s = 3 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 3 m/s². Welche Geschwindigkeit hat er nach t = 8 s?",
+  "options": [
+   "11 m/s",
+   "27 m/s",
+   "24 m/s",
+   "21 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 3 m/s² · 8 s = 24 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 7 m/s². Welche Geschwindigkeit hat er nach t = 3 s?",
+  "options": [
+   "42 m/s",
+   "24 m/s",
+   "21 m/s",
+   "10 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 7 m/s² · 3 s = 21 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 7 m/s². Welche Geschwindigkeit hat er nach t = 9 s?",
+  "options": [
+   "16 m/s",
+   "72 m/s",
+   "63 m/s",
+   "126 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 7 m/s² · 9 s = 63 m/s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Wellenlänge λ = 1 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "10 MHz",
+   "25 MHz",
+   "300 MHz",
+   "150 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 1 m = 300·10⁶ Hz = 300 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 2 kg wird um h = 26 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "520 J",
+   "1040 J",
+   "52 J",
+   "530 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 2 kg · 10 m/s² · 26 m = 520 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 3 kg wird um h = 17 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "255 J",
+   "51 J",
+   "510 J",
+   "1020 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 3 kg · 10 m/s² · 17 m = 510 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Was gilt für die Einheit der elektrischen Ladung?",
+  "options": [
+   "schirmt seinen Innenraum von äußeren elektrischen Feldern ab",
+   "berechnet sich aus Spannung und Plattenabstand: E = U/d",
+   "ist das Coulomb (C)",
+   "ist die Arbeit pro Ladung: U = W/q"
+  ],
+  "correct": 2,
+  "explanation": "die Einheit der elektrischen Ladung: ist das Coulomb (C)."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine Schwingung hat die Frequenz f = 10⁵ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻5 s",
+   "10⁻2 s",
+   "10⁻6 s",
+   "10⁻1 s"
+  ],
+  "correct": 0,
+  "explanation": "T = 1/f = 1/10^5 s = 10⁻5 s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Wellenlänge λ = 100 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "3 MHz",
+   "4 MHz",
+   "60 MHz",
+   "1 MHz"
+  ],
+  "correct": 0,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 100 m = 3·10⁶ Hz = 3 MHz."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Was gilt für die Feldstärke im Plattenkondensator?",
+  "options": [
+   "ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)",
+   "beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²",
+   "berechnet sich aus Spannung und Plattenabstand: E = U/d",
+   "beträgt F = q·E"
+  ],
+  "correct": 2,
+  "explanation": "die Feldstärke im Plattenkondensator: berechnet sich aus Spannung und Plattenabstand: E = U/d."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 8 s zurück?",
+  "options": [
+   "192 m",
+   "384 m",
+   "256 m",
+   "186 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 6 · 8² = 192 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 3 s zurück?",
+  "options": [
+   "9 m",
+   "7 m",
+   "18 m",
+   "11 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 2 · 3² = 9 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Wellenlänge λ = 1 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "15 MHz",
+   "150 MHz",
+   "25 MHz",
+   "300 MHz"
+  ],
+  "correct": 3,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 1 m = 300·10⁶ Hz = 300 MHz."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Welcher Begriff passt: „beträgt W = ½·C·U²“?",
+  "options": [
+   "die Energie im geladenen Kondensator",
+   "die Einheit der elektrischen Ladung",
+   "die Kapazität C eines Kondensators",
+   "die Einheit der elektrischen Feldstärke"
+  ],
+  "correct": 0,
+  "explanation": "die Energie im geladenen Kondensator: beträgt W = ½·C·U²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Wellenlänge λ = 5 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "2 MHz",
+   "100 MHz",
+   "60 MHz",
+   "4 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 5 m = 60·10⁶ Hz = 60 MHz."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Welcher Begriff passt: „ist das Coulomb (C)“?",
+  "options": [
+   "das Coulomb-Gesetz",
+   "die Einheit der elektrischen Ladung",
+   "die Kraft auf eine Ladung q im Feld E",
+   "das Radialfeld (Feld einer Punktladung)"
+  ],
+  "correct": 1,
+  "explanation": "die Einheit der elektrischen Ladung: ist das Coulomb (C)."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 10 s zurück?",
+  "options": [
+   "102 m",
+   "200 m",
+   "100 m",
+   "10 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 2 · 10² = 100 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 6 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "50 m",
+   "100 m",
+   "1 m",
+   "300 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (6·10⁶ Hz) = 50 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 5 s gleichmäßig auf v = 20 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "4 m/s²",
+   "6 m/s²",
+   "3 m/s²",
+   "10 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 20 m/s / 5 s = 4 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 7 m/s². Welche Geschwindigkeit hat er nach t = 9 s?",
+  "options": [
+   "70 m/s",
+   "16 m/s",
+   "63 m/s",
+   "72 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 7 m/s² · 9 s = 63 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 47 kg wird um h = 19 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "893 J",
+   "4465 J",
+   "8930 J",
+   "8940 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 47 kg · 10 m/s² · 19 m = 8930 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 3 kg wird um h = 4 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "60 J",
+   "120 J",
+   "130 J",
+   "110 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 3 kg · 10 m/s² · 4 m = 120 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 6 kg) hat die Lageenergie E = 660 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "10 m",
+   "6 m",
+   "11 m",
+   "22 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 660 J / (6 kg · 10 m/s²) = 11 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 8 m/s². Welche Strecke legt er in t = 8 s zurück?",
+  "options": [
+   "256 m",
+   "32 m",
+   "512 m",
+   "320 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 8 · 8² = 256 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Welcher Begriff passt: „verläuft von der positiven zur negativen Ladung“?",
+  "options": [
+   "die Einheit der elektrischen Ladung",
+   "das Coulomb-Gesetz",
+   "die Kraft auf eine Ladung q im Feld E",
+   "die Richtung elektrischer Feldlinien"
+  ],
+  "correct": 3,
+  "explanation": "die Richtung elektrischer Feldlinien: verläuft von der positiven zur negativen Ladung."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für die Energie im geladenen Kondensator?",
+  "options": [
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U",
+   "ist definiert als Kraft pro Ladung: E = F/q",
+   "beträgt F = q·E",
+   "beträgt W = ½·C·U²"
+  ],
+  "correct": 3,
+  "explanation": "die Energie im geladenen Kondensator: beträgt W = ½·C·U²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 8 m/s². Welche Strecke legt er in t = 7 s zurück?",
+  "options": [
+   "392 m",
+   "188 m",
+   "196 m",
+   "245 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 8 · 7² = 196 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Welcher Begriff passt: „ist das Farad (F)“?",
+  "options": [
+   "die elektrische Spannung U",
+   "die Kapazität C eines Kondensators",
+   "die Einheit der Kapazität",
+   "die Feldstärke im Plattenkondensator"
+  ],
+  "correct": 2,
+  "explanation": "die Einheit der Kapazität: ist das Farad (F)."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 25 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "75 m",
+   "150 m",
+   "1 m",
+   "12 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (25·10⁶ Hz) = 12 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 8 s gleichmäßig auf v = 56 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "28 m/s²",
+   "7 m/s²",
+   "9 m/s²",
+   "8 m/s²"
+  ],
+  "correct": 1,
+  "explanation": "a = v/t = 56 m/s / 8 s = 7 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 2 kg) bewegt sich mit v = 15 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "227 J",
+   "15 J",
+   "450 J",
+   "225 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 2 · 15² = 225 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 2 s gleichmäßig auf v = 4 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "4 m/s²",
+   "3 m/s²",
+   "1 m/s²",
+   "2 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 4 m/s / 2 s = 2 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 9 s gleichmäßig auf v = 45 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "23 m/s²",
+   "6 m/s²",
+   "9 m/s²",
+   "5 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 45 m/s / 9 s = 5 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 48 kg wird um h = 22 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "5280 J",
+   "10550 J",
+   "10560 J",
+   "21120 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 48 kg · 10 m/s² · 22 m = 10560 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 6 s zurück?",
+  "options": [
+   "102 m",
+   "216 m",
+   "108 m",
+   "114 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 6 · 6² = 108 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Frequenz f = 2 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "60 m",
+   "30 m",
+   "150 m",
+   "10 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (2·10⁶ Hz) = 150 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 8 m/s². Welche Geschwindigkeit hat er nach t = 11 s?",
+  "options": [
+   "88 m/s",
+   "19 m/s",
+   "99 m/s",
+   "96 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 8 m/s² · 11 s = 88 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Was gilt für die Kraft auf eine Ladung q im Feld E?",
+  "options": [
+   "ist das Coulomb (C)",
+   "schirmt seinen Innenraum von äußeren elektrischen Feldern ab",
+   "beträgt F = q·E",
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U"
+  ],
+  "correct": 2,
+  "explanation": "die Kraft auf eine Ladung q im Feld E: beträgt F = q·E."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 20 kg) hat die Lageenergie E = 4600 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "23 m",
+   "24 m",
+   "28 m",
+   "22 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 4600 J / (20 kg · 10 m/s²) = 23 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 5 m/s². Welche Geschwindigkeit hat er nach t = 10 s?",
+  "options": [
+   "60 m/s",
+   "100 m/s",
+   "15 m/s",
+   "50 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 5 m/s² · 10 s = 50 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 8 m/s². Welche Geschwindigkeit hat er nach t = 9 s?",
+  "options": [
+   "144 m/s",
+   "64 m/s",
+   "72 m/s",
+   "81 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 8 m/s² · 9 s = 72 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 10 s zurück?",
+  "options": [
+   "196 m",
+   "300 m",
+   "20 m",
+   "200 m"
+  ],
+  "correct": 3,
+  "explanation": "s = ½·a·t² = ½ · 4 · 10² = 200 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Wellenlänge λ = 2 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "15 MHz",
+   "100 MHz",
+   "150 MHz",
+   "4 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 2 m = 150·10⁶ Hz = 150 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 5 s gleichmäßig auf v = 10 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "3 m/s²",
+   "5 m/s²",
+   "2 m/s²",
+   "4 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 10 m/s / 5 s = 2 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 6 kg) bewegt sich mit v = 4 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "44 J",
+   "96 J",
+   "48 J",
+   "54 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 6 · 4² = 48 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 8 kg) bewegt sich mit v = 13 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "684 J",
+   "1352 J",
+   "676 J",
+   "52 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 8 · 13² = 676 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 3 m/s². Welche Geschwindigkeit hat er nach t = 6 s?",
+  "options": [
+   "36 m/s",
+   "9 m/s",
+   "24 m/s",
+   "18 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 3 m/s² · 6 s = 18 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Welcher Begriff passt: „ist die Arbeit pro Ladung: U = W/q“?",
+  "options": [
+   "die Kraft auf eine Ladung q im Feld E",
+   "die Kapazität C eines Kondensators",
+   "die Energie im geladenen Kondensator",
+   "die elektrische Spannung U"
+  ],
+  "correct": 3,
+  "explanation": "die elektrische Spannung U: ist die Arbeit pro Ladung: U = W/q."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 2 kg) bewegt sich mit v = 8 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "64 J",
+   "128 J",
+   "56 J",
+   "66 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 2 · 8² = 64 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 50 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "20 m",
+   "25 m",
+   "6 m",
+   "4 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (50·10⁶ Hz) = 6 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 4 s gleichmäßig auf v = 36 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "9 m/s²",
+   "11 m/s²",
+   "4 m/s²",
+   "8 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 36 m/s / 4 s = 9 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Wellenlänge λ = 300 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "1 MHz",
+   "150 MHz",
+   "3 MHz",
+   "10 MHz"
+  ],
+  "correct": 0,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 300 m = 1·10⁶ Hz = 1 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 9 s zurück?",
+  "options": [
+   "81 m",
+   "83 m",
+   "162 m",
+   "9 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 2 · 9² = 81 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 2 kg) bewegt sich mit v = 12 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "12 J",
+   "288 J",
+   "132 J",
+   "144 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 2 · 12² = 144 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Frequenz f = 25 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "25 m",
+   "30 m",
+   "60 m",
+   "12 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (25·10⁶ Hz) = 12 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 6 m/s². Welche Geschwindigkeit hat er nach t = 2 s?",
+  "options": [
+   "24 m/s",
+   "6 m/s",
+   "8 m/s",
+   "12 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 6 m/s² · 2 s = 12 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Welcher Begriff passt: „berechnet sich aus Spannung und Plattenabstand: E = U/d“?",
+  "options": [
+   "die Feldstärke im Plattenkondensator",
+   "ein Faradayscher Käfig",
+   "die Kraft auf eine Ladung q im Feld E",
+   "die Energie im geladenen Kondensator"
+  ],
+  "correct": 0,
+  "explanation": "die Feldstärke im Plattenkondensator: berechnet sich aus Spannung und Plattenabstand: E = U/d."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 21 kg wird um h = 26 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "5460 J",
+   "5450 J",
+   "2730 J",
+   "546 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 21 kg · 10 m/s² · 26 m = 5460 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 3 s zurück?",
+  "options": [
+   "22 m",
+   "14 m",
+   "18 m",
+   "27 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 4 · 3² = 18 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 8 kg) bewegt sich mit v = 15 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "908 J",
+   "900 J",
+   "885 J",
+   "1800 J"
+  ],
+  "correct": 1,
+  "explanation": "E = ½·m·v² = ½ · 8 · 15² = 900 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 50 kg wird um h = 8 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "4000 J",
+   "2000 J",
+   "400 J",
+   "4010 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 50 kg · 10 m/s² · 8 m = 4000 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 2 kg) bewegt sich mit v = 11 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "121 J",
+   "242 J",
+   "123 J",
+   "11 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 2 · 11² = 121 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Wellenlänge λ = 3 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "3 MHz",
+   "50 MHz",
+   "300 MHz",
+   "100 MHz"
+  ],
+  "correct": 3,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 3 m = 100·10⁶ Hz = 100 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 8 m/s². Welche Strecke legt er in t = 10 s zurück?",
+  "options": [
+   "500 m",
+   "400 m",
+   "800 m",
+   "392 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 8 · 10² = 400 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Wellenlänge λ = 4 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "100 MHz",
+   "6 MHz",
+   "75 MHz",
+   "60 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 4 m = 75·10⁶ Hz = 75 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 5 s zurück?",
+  "options": [
+   "25 m",
+   "27 m",
+   "5 m",
+   "50 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 2 · 5² = 25 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Welcher Begriff passt: „hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)“?",
+  "options": [
+   "ein homogenes elektrisches Feld",
+   "die Einheit der elektrischen Feldstärke",
+   "die Richtung elektrischer Feldlinien",
+   "die Kraft auf eine Ladung q im Feld E"
+  ],
+  "correct": 0,
+  "explanation": "ein homogenes elektrisches Feld: hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 3 kg) hat die Lageenergie E = 210 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "7 m",
+   "6 m",
+   "3 m",
+   "14 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 210 J / (3 kg · 10 m/s²) = 7 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Wellenlänge λ = 12 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "3 MHz",
+   "2 MHz",
+   "25 MHz",
+   "5 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 12 m = 25·10⁶ Hz = 25 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 5 s gleichmäßig auf v = 10 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "4 m/s²",
+   "3 m/s²",
+   "1 m/s²",
+   "2 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 10 m/s / 5 s = 2 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 2 kg) hat die Lageenergie E = 300 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "15 m",
+   "2 m",
+   "20 m",
+   "14 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 300 J / (2 kg · 10 m/s²) = 15 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 4 kg) bewegt sich mit v = 4 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "64 J",
+   "36 J",
+   "28 J",
+   "32 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 4 · 4² = 32 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 8 m/s². Welche Strecke legt er in t = 4 s zurück?",
+  "options": [
+   "16 m",
+   "64 m",
+   "128 m",
+   "56 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 8 · 4² = 64 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 12 kg) bewegt sich mit v = 8 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "384 J",
+   "768 J",
+   "48 J",
+   "396 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 12 · 8² = 384 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine Schwingung hat die Frequenz f = 10¹ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻5 s",
+   "10⁻1 s",
+   "10⁻2 s",
+   "10⁻6 s"
+  ],
+  "correct": 1,
+  "explanation": "T = 1/f = 1/10^1 s = 10⁻1 s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine Schwingung hat die Frequenz f = 10³ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻2 s",
+   "10⁻1 s",
+   "10⁻3 s",
+   "10⁻6 s"
+  ],
+  "correct": 2,
+  "explanation": "T = 1/f = 1/10^3 s = 10⁻3 s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 6 s zurück?",
+  "options": [
+   "12 m",
+   "68 m",
+   "144 m",
+   "72 m"
+  ],
+  "correct": 3,
+  "explanation": "s = ½·a·t² = ½ · 4 · 6² = 72 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 8 m/s². Welche Strecke legt er in t = 2 s zurück?",
+  "options": [
+   "8 m",
+   "32 m",
+   "24 m",
+   "16 m"
+  ],
+  "correct": 3,
+  "explanation": "s = ½·a·t² = ½ · 8 · 2² = 16 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 9 kg) hat die Lageenergie E = 1800 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "19 m",
+   "25 m",
+   "21 m",
+   "20 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 1800 J / (9 kg · 10 m/s²) = 20 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 12 kg) hat die Lageenergie E = 240 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "1 m",
+   "7 m",
+   "12 m",
+   "2 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 240 J / (12 kg · 10 m/s²) = 2 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 8 kg) hat die Lageenergie E = 320 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "5 m",
+   "4 m",
+   "8 m",
+   "3 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 320 J / (8 kg · 10 m/s²) = 4 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 8 kg) bewegt sich mit v = 5 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "108 J",
+   "100 J",
+   "200 J",
+   "20 J"
+  ],
+  "correct": 1,
+  "explanation": "E = ½·m·v² = ½ · 8 · 5² = 100 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Was gilt für die Influenz?",
+  "options": [
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U",
+   "verläuft von der positiven zur negativen Ladung",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld"
+  ],
+  "correct": 3,
+  "explanation": "die Influenz: ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 4 kg wird um h = 16 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1280 J",
+   "64 J",
+   "630 J",
+   "640 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 4 kg · 10 m/s² · 16 m = 640 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 15 kg wird um h = 6 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "890 J",
+   "900 J",
+   "450 J",
+   "910 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 15 kg · 10 m/s² · 6 m = 900 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Wellenlänge λ = 150 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "2 MHz",
+   "1 MHz",
+   "100 MHz",
+   "4 MHz"
+  ],
+  "correct": 0,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 150 m = 2·10⁶ Hz = 2 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 18 kg wird um h = 20 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1800 J",
+   "7200 J",
+   "360 J",
+   "3600 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 18 kg · 10 m/s² · 20 m = 3600 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine Schwingung hat die Frequenz f = 10² Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻2 s",
+   "10⁻1 s",
+   "10⁻6 s",
+   "10⁻3 s"
+  ],
+  "correct": 0,
+  "explanation": "T = 1/f = 1/10^2 s = 10⁻2 s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 10 m/s². Welche Strecke legt er in t = 10 s zurück?",
+  "options": [
+   "510 m",
+   "50 m",
+   "1000 m",
+   "500 m"
+  ],
+  "correct": 3,
+  "explanation": "s = ½·a·t² = ½ · 10 · 10² = 500 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Was gilt für die Richtung elektrischer Feldlinien?",
+  "options": [
+   "verläuft von der positiven zur negativen Ladung",
+   "hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)",
+   "beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld"
+  ],
+  "correct": 0,
+  "explanation": "die Richtung elektrischer Feldlinien: verläuft von der positiven zur negativen Ladung."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 14 kg) hat die Lageenergie E = 1680 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "12 m",
+   "14 m",
+   "13 m",
+   "24 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 1680 J / (14 kg · 10 m/s²) = 12 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 10 kg) hat die Lageenergie E = 1000 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "15 m",
+   "20 m",
+   "10 m",
+   "11 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 1000 J / (10 kg · 10 m/s²) = 10 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 2 kg) bewegt sich mit v = 11 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "11 J",
+   "242 J",
+   "121 J",
+   "110 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 2 · 11² = 121 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Wellenlänge λ = 150 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "25 MHz",
+   "3 MHz",
+   "2 MHz",
+   "150 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 150 m = 2·10⁶ Hz = 2 MHz."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 60 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "25 m",
+   "10 m",
+   "4 m",
+   "5 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (60·10⁶ Hz) = 5 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 8 m/s². Welche Geschwindigkeit hat er nach t = 4 s?",
+  "options": [
+   "36 m/s",
+   "64 m/s",
+   "40 m/s",
+   "32 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 8 m/s² · 4 s = 32 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 31 kg wird um h = 7 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "2170 J",
+   "1085 J",
+   "217 J",
+   "2180 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 31 kg · 10 m/s² · 7 m = 2170 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Welcher Begriff passt: „ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld“?",
+  "options": [
+   "die elektrische Spannung U",
+   "die Einheit der Kapazität",
+   "ein homogenes elektrisches Feld",
+   "die Influenz"
+  ],
+  "correct": 3,
+  "explanation": "die Influenz: ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Wellenlänge λ = 25 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "1 MHz",
+   "50 MHz",
+   "5 MHz",
+   "12 MHz"
+  ],
+  "correct": 3,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 25 m = 12·10⁶ Hz = 12 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 9 m/s². Welche Geschwindigkeit hat er nach t = 12 s?",
+  "options": [
+   "108 m/s",
+   "117 m/s",
+   "120 m/s",
+   "99 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 9 m/s² · 12 s = 108 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 10 kg) bewegt sich mit v = 10 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "50 J",
+   "1000 J",
+   "490 J",
+   "500 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 10 · 10² = 500 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 2 s zurück?",
+  "options": [
+   "4 m",
+   "16 m",
+   "8 m",
+   "12 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 4 · 2² = 8 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „beträgt W = ½·C·U²“?",
+  "options": [
+   "die Feldstärke im Plattenkondensator",
+   "die Energie im geladenen Kondensator",
+   "die Einheit der Kapazität",
+   "die Kraft auf eine Ladung q im Feld E"
+  ],
+  "correct": 1,
+  "explanation": "die Energie im geladenen Kondensator: beträgt W = ½·C·U²."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Was gilt für die Elementarladung e?",
+  "options": [
+   "berechnet sich aus Spannung und Plattenabstand: E = U/d",
+   "hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C",
+   "ist das Farad (F)"
+  ],
+  "correct": 2,
+  "explanation": "die Elementarladung e: beträgt etwa 1,6 · 10⁻¹⁹ C."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 2 s gleichmäßig auf v = 10 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "5 m/s²",
+   "2 m/s²",
+   "6 m/s²",
+   "7 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 10 m/s / 2 s = 5 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine Schwingung hat die Frequenz f = 10⁵ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻6 s",
+   "10⁻1 s",
+   "10⁻3 s",
+   "10⁻5 s"
+  ],
+  "correct": 3,
+  "explanation": "T = 1/f = 1/10^5 s = 10⁻5 s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 4 s gleichmäßig auf v = 12 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "5 m/s²",
+   "4 m/s²",
+   "3 m/s²",
+   "6 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 12 m/s / 4 s = 3 m/s²."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „ist das Verhältnis von Ladung zu Spannung: C = Q/U“?",
+  "options": [
+   "das Radialfeld (Feld einer Punktladung)",
+   "die Kapazität C eines Kondensators",
+   "die Richtung elektrischer Feldlinien",
+   "die Einheit der Kapazität"
+  ],
+  "correct": 1,
+  "explanation": "die Kapazität C eines Kondensators: ist das Verhältnis von Ladung zu Spannung: C = Q/U."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine Schwingung hat die Frequenz f = 10² Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻2 s",
+   "10⁻5 s",
+   "10⁻6 s",
+   "10⁻4 s"
+  ],
+  "correct": 0,
+  "explanation": "T = 1/f = 1/10^2 s = 10⁻2 s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 300 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "5 m",
+   "20 m",
+   "1 m",
+   "300 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (300·10⁶ Hz) = 1 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 3 m/s². Welche Geschwindigkeit hat er nach t = 2 s?",
+  "options": [
+   "9 m/s",
+   "6 m/s",
+   "3 m/s",
+   "12 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 3 m/s² · 2 s = 6 m/s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Wellenlänge λ = 75 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "60 MHz",
+   "4 MHz",
+   "2 MHz",
+   "100 MHz"
+  ],
+  "correct": 1,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 75 m = 4·10⁶ Hz = 4 MHz."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Welcher Begriff passt: „hat Feldlinien, die strahlenförmig von der Ladung ausgehen“?",
+  "options": [
+   "die elektrische Spannung U",
+   "die elektrische Feldstärke E",
+   "das Radialfeld (Feld einer Punktladung)",
+   "das Coulomb-Gesetz"
+  ],
+  "correct": 2,
+  "explanation": "das Radialfeld (Feld einer Punktladung): hat Feldlinien, die strahlenförmig von der Ladung ausgehen."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 45 kg wird um h = 17 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "7640 J",
+   "15300 J",
+   "7660 J",
+   "7650 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 45 kg · 10 m/s² · 17 m = 7650 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 5 s gleichmäßig auf v = 5 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "3 m/s²",
+   "5 m/s²",
+   "1 m/s²",
+   "2 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 5 m/s / 5 s = 1 m/s²."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Welcher Begriff passt: „ist die Arbeit pro Ladung: U = W/q“?",
+  "options": [
+   "die elektrische Feldstärke E",
+   "die elektrische Spannung U",
+   "die Kapazität C eines Kondensators",
+   "die Energie im geladenen Kondensator"
+  ],
+  "correct": 1,
+  "explanation": "die elektrische Spannung U: ist die Arbeit pro Ladung: U = W/q."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 8 kg) bewegt sich mit v = 4 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "60 J",
+   "128 J",
+   "16 J",
+   "64 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 8 · 4² = 64 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Was gilt für die Kraft auf eine Ladung q im Feld E?",
+  "options": [
+   "beträgt etwa 1,6 · 10⁻¹⁹ C",
+   "beträgt F = q·E",
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U",
+   "ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)"
+  ],
+  "correct": 1,
+  "explanation": "die Kraft auf eine Ladung q im Feld E: beträgt F = q·E."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 14 kg) hat die Lageenergie E = 3500 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "24 m",
+   "14 m",
+   "30 m",
+   "25 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 3500 J / (14 kg · 10 m/s²) = 25 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 12 kg) bewegt sich mit v = 15 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "2700 J",
+   "90 J",
+   "1350 J",
+   "1335 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 12 · 15² = 1350 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Welcher Begriff passt: „ist definiert als Kraft pro Ladung: E = F/q“?",
+  "options": [
+   "die Kraft auf eine Ladung q im Feld E",
+   "die Feldstärke im Plattenkondensator",
+   "ein Faradayscher Käfig",
+   "die elektrische Feldstärke E"
+  ],
+  "correct": 3,
+  "explanation": "die elektrische Feldstärke E: ist definiert als Kraft pro Ladung: E = F/q."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 3 s gleichmäßig auf v = 12 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "5 m/s²",
+   "6 m/s²",
+   "4 m/s²",
+   "3 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 12 m/s / 3 s = 4 m/s²."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Welcher Begriff passt: „ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)“?",
+  "options": [
+   "ein homogenes elektrisches Feld",
+   "die Einheit der elektrischen Feldstärke",
+   "die Einheit der Kapazität",
+   "die Influenz"
+  ],
+  "correct": 1,
+  "explanation": "die Einheit der elektrischen Feldstärke: ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Welcher Begriff passt: „hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)“?",
+  "options": [
+   "die Feldstärke im Plattenkondensator",
+   "die Einheit der elektrischen Ladung",
+   "ein homogenes elektrisches Feld",
+   "die Einheit der elektrischen Feldstärke"
+  ],
+  "correct": 2,
+  "explanation": "ein homogenes elektrisches Feld: hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 17 kg wird um h = 4 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "670 J",
+   "690 J",
+   "68 J",
+   "680 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 17 kg · 10 m/s² · 4 m = 680 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 12 kg) bewegt sich mit v = 8 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "48 J",
+   "396 J",
+   "384 J",
+   "768 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 12 · 8² = 384 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine Schwingung hat die Frequenz f = 10⁴ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻5 s",
+   "10⁻4 s",
+   "10⁻2 s",
+   "10⁻1 s"
+  ],
+  "correct": 1,
+  "explanation": "T = 1/f = 1/10^4 s = 10⁻4 s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 42 kg wird um h = 14 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "2940 J",
+   "11760 J",
+   "5880 J",
+   "5870 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 42 kg · 10 m/s² · 14 m = 5880 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Welcher Begriff passt: „ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld“?",
+  "options": [
+   "die Influenz",
+   "die elektrische Feldstärke E",
+   "die Kapazität C eines Kondensators",
+   "die Energie im geladenen Kondensator"
+  ],
+  "correct": 0,
+  "explanation": "die Influenz: ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für ein Faradayscher Käfig?",
+  "options": [
+   "ist definiert als Kraft pro Ladung: E = F/q",
+   "ist die Arbeit pro Ladung: U = W/q",
+   "schirmt seinen Innenraum von äußeren elektrischen Feldern ab",
+   "hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)"
+  ],
+  "correct": 2,
+  "explanation": "ein Faradayscher Käfig: schirmt seinen Innenraum von äußeren elektrischen Feldern ab."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine Schwingung hat die Frequenz f = 10⁶ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻6 s",
+   "10⁻1 s",
+   "10⁻3 s",
+   "10⁻5 s"
+  ],
+  "correct": 0,
+  "explanation": "T = 1/f = 1/10^6 s = 10⁻6 s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 15 kg) hat die Lageenergie E = 3750 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "25 m",
+   "30 m",
+   "15 m",
+   "26 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 3750 J / (15 kg · 10 m/s²) = 25 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Welcher Begriff passt: „beträgt F = q·E“?",
+  "options": [
+   "die elektrische Spannung U",
+   "ein Faradayscher Käfig",
+   "die Feldstärke im Plattenkondensator",
+   "die Kraft auf eine Ladung q im Feld E"
+  ],
+  "correct": 3,
+  "explanation": "die Kraft auf eine Ladung q im Feld E: beträgt F = q·E."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Frequenz f = 150 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "60 m",
+   "2 m",
+   "5 m",
+   "25 m"
+  ],
+  "correct": 1,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (150·10⁶ Hz) = 2 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 10 kg) bewegt sich mit v = 6 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "190 J",
+   "174 J",
+   "360 J",
+   "180 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 10 · 6² = 180 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Wellenlänge λ = 12 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "25 MHz",
+   "12 MHz",
+   "10 MHz",
+   "100 MHz"
+  ],
+  "correct": 0,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 12 m = 25·10⁶ Hz = 25 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 9 s zurück?",
+  "options": [
+   "18 m",
+   "162 m",
+   "324 m",
+   "166 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 4 · 9² = 162 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 12 kg) bewegt sich mit v = 11 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "715 J",
+   "726 J",
+   "1452 J",
+   "66 J"
+  ],
+  "correct": 1,
+  "explanation": "E = ½·m·v² = ½ · 12 · 11² = 726 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 7 s gleichmäßig auf v = 14 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "2 m/s²",
+   "4 m/s²",
+   "3 m/s²",
+   "7 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 14 m/s / 7 s = 2 m/s²."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „beträgt F = q·E“?",
+  "options": [
+   "die elektrische Spannung U",
+   "die Kraft auf eine Ladung q im Feld E",
+   "die Einheit der Kapazität",
+   "die Richtung elektrischer Feldlinien"
+  ],
+  "correct": 1,
+  "explanation": "die Kraft auf eine Ladung q im Feld E: beträgt F = q·E."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Welcher Begriff passt: „ist das Coulomb (C)“?",
+  "options": [
+   "ein Faradayscher Käfig",
+   "die Einheit der elektrischen Ladung",
+   "die Energie im geladenen Kondensator",
+   "das Coulomb-Gesetz"
+  ],
+  "correct": 1,
+  "explanation": "die Einheit der elektrischen Ladung: ist das Coulomb (C)."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 2 s gleichmäßig auf v = 16 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "7 m/s²",
+   "8 m/s²",
+   "9 m/s²",
+   "2 m/s²"
+  ],
+  "correct": 1,
+  "explanation": "a = v/t = 16 m/s / 2 s = 8 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 9 kg wird um h = 9 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "81 J",
+   "820 J",
+   "405 J",
+   "810 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 9 kg · 10 m/s² · 9 m = 810 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 4 s zurück?",
+  "options": [
+   "32 m",
+   "48 m",
+   "64 m",
+   "36 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 4 · 4² = 32 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Was gilt für die Feldstärke im Plattenkondensator?",
+  "options": [
+   "berechnet sich aus Spannung und Plattenabstand: E = U/d",
+   "verläuft von der positiven zur negativen Ladung",
+   "hat Feldlinien, die strahlenförmig von der Ladung ausgehen",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C"
+  ],
+  "correct": 0,
+  "explanation": "die Feldstärke im Plattenkondensator: berechnet sich aus Spannung und Plattenabstand: E = U/d."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 9 s zurück?",
+  "options": [
+   "237 m",
+   "243 m",
+   "27 m",
+   "486 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 6 · 9² = 243 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 4 kg) bewegt sich mit v = 12 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "276 J",
+   "24 J",
+   "576 J",
+   "288 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 4 · 12² = 288 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 7 m/s². Welche Geschwindigkeit hat er nach t = 5 s?",
+  "options": [
+   "40 m/s",
+   "35 m/s",
+   "12 m/s",
+   "28 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 7 m/s² · 5 s = 35 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 6 s gleichmäßig auf v = 30 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "15 m/s²",
+   "4 m/s²",
+   "6 m/s²",
+   "5 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 30 m/s / 6 s = 5 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Wellenlänge λ = 100 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "3 MHz",
+   "50 MHz",
+   "150 MHz",
+   "1 MHz"
+  ],
+  "correct": 0,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 100 m = 3·10⁶ Hz = 3 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 7 s gleichmäßig auf v = 28 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "7 m/s²",
+   "5 m/s²",
+   "4 m/s²",
+   "3 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 28 m/s / 7 s = 4 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 28 kg wird um h = 26 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "728 J",
+   "7270 J",
+   "7290 J",
+   "7280 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 28 kg · 10 m/s² · 26 m = 7280 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 8 m/s². Welche Strecke legt er in t = 9 s zurück?",
+  "options": [
+   "405 m",
+   "324 m",
+   "648 m",
+   "316 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 8 · 9² = 324 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 2 s zurück?",
+  "options": [
+   "4 m",
+   "12 m",
+   "16 m",
+   "8 m"
+  ],
+  "correct": 3,
+  "explanation": "s = ½·a·t² = ½ · 4 · 2² = 8 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 20 kg wird um h = 28 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "560 J",
+   "5600 J",
+   "11200 J",
+   "5610 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 20 kg · 10 m/s² · 28 m = 5600 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Was gilt für die elektrische Spannung U?",
+  "options": [
+   "ist die Arbeit pro Ladung: U = W/q",
+   "beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²",
+   "ist definiert als Kraft pro Ladung: E = F/q",
+   "schirmt seinen Innenraum von äußeren elektrischen Feldern ab"
+  ],
+  "correct": 0,
+  "explanation": "die elektrische Spannung U: ist die Arbeit pro Ladung: U = W/q."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 2 s zurück?",
+  "options": [
+   "8 m",
+   "16 m",
+   "4 m",
+   "12 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 4 · 2² = 8 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 8 s zurück?",
+  "options": [
+   "128 m",
+   "16 m",
+   "124 m",
+   "192 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 4 · 8² = 128 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für die elektrische Spannung U?",
+  "options": [
+   "ist die Arbeit pro Ladung: U = W/q",
+   "beträgt F = q·E",
+   "hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)",
+   "ist definiert als Kraft pro Ladung: E = F/q"
+  ],
+  "correct": 0,
+  "explanation": "die elektrische Spannung U: ist die Arbeit pro Ladung: U = W/q."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 6 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "50 m",
+   "100 m",
+   "75 m",
+   "10 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (6·10⁶ Hz) = 50 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 10 m/s². Welche Strecke legt er in t = 5 s zurück?",
+  "options": [
+   "125 m",
+   "250 m",
+   "135 m",
+   "150 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 10 · 5² = 125 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 6 s gleichmäßig auf v = 30 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "6 m/s²",
+   "4 m/s²",
+   "15 m/s²",
+   "5 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 30 m/s / 6 s = 5 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 1 kg wird um h = 10 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "110 J",
+   "50 J",
+   "200 J",
+   "100 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 1 kg · 10 m/s² · 10 m = 100 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 8 s zurück?",
+  "options": [
+   "124 m",
+   "192 m",
+   "128 m",
+   "16 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 4 · 8² = 128 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Wellenlänge λ = 300 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "100 MHz",
+   "6 MHz",
+   "1 MHz",
+   "30 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 300 m = 1·10⁶ Hz = 1 MHz."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Welcher Begriff passt: „beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²“?",
+  "options": [
+   "die Influenz",
+   "die Einheit der Kapazität",
+   "das Radialfeld (Feld einer Punktladung)",
+   "das Coulomb-Gesetz"
+  ],
+  "correct": 3,
+  "explanation": "das Coulomb-Gesetz: beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 6 s zurück?",
+  "options": [
+   "108 m",
+   "216 m",
+   "18 m",
+   "114 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 6 · 6² = 108 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 49 kg wird um h = 6 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "2950 J",
+   "2930 J",
+   "5880 J",
+   "2940 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 49 kg · 10 m/s² · 6 m = 2940 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 11 s gleichmäßig auf v = 55 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "11 m/s²",
+   "28 m/s²",
+   "5 m/s²",
+   "6 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 55 m/s / 11 s = 5 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine Schwingung hat die Frequenz f = 10³ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻2 s",
+   "10⁻1 s",
+   "10⁻3 s",
+   "10⁻5 s"
+  ],
+  "correct": 2,
+  "explanation": "T = 1/f = 1/10^3 s = 10⁻3 s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Frequenz f = 60 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "150 m",
+   "6 m",
+   "5 m",
+   "10 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (60·10⁶ Hz) = 5 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 5 s gleichmäßig auf v = 5 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "2 m/s²",
+   "3 m/s²",
+   "1 m/s²",
+   "5 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 5 m/s / 5 s = 1 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 4 m/s². Welche Geschwindigkeit hat er nach t = 10 s?",
+  "options": [
+   "80 m/s",
+   "44 m/s",
+   "40 m/s",
+   "50 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 4 m/s² · 10 s = 40 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 7 s gleichmäßig auf v = 21 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "7 m/s²",
+   "2 m/s²",
+   "4 m/s²",
+   "3 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 21 m/s / 7 s = 3 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 9 kg) hat die Lageenergie E = 630 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "14 m",
+   "7 m",
+   "8 m",
+   "9 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 630 J / (9 kg · 10 m/s²) = 7 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 9 s gleichmäßig auf v = 36 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "5 m/s²",
+   "9 m/s²",
+   "3 m/s²",
+   "4 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 36 m/s / 9 s = 4 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 4 s gleichmäßig auf v = 20 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "6 m/s²",
+   "10 m/s²",
+   "5 m/s²",
+   "4 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 20 m/s / 4 s = 5 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 7 m/s². Welche Geschwindigkeit hat er nach t = 4 s?",
+  "options": [
+   "11 m/s",
+   "56 m/s",
+   "35 m/s",
+   "28 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 7 m/s² · 4 s = 28 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 8 m/s². Welche Geschwindigkeit hat er nach t = 4 s?",
+  "options": [
+   "32 m/s",
+   "12 m/s",
+   "24 m/s",
+   "64 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 8 m/s² · 4 s = 32 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 6 s gleichmäßig auf v = 24 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "3 m/s²",
+   "5 m/s²",
+   "4 m/s²",
+   "6 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 24 m/s / 6 s = 4 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 10 m/s². Welche Strecke legt er in t = 6 s zurück?",
+  "options": [
+   "170 m",
+   "180 m",
+   "360 m",
+   "30 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 10 · 6² = 180 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 2 kg) hat die Lageenergie E = 440 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "22 m",
+   "44 m",
+   "2 m",
+   "23 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 440 J / (2 kg · 10 m/s²) = 22 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 17 kg) hat die Lageenergie E = 1870 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "11 m",
+   "16 m",
+   "17 m",
+   "10 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 1870 J / (17 kg · 10 m/s²) = 11 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 20 kg) bewegt sich mit v = 13 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "3380 J",
+   "130 J",
+   "1710 J",
+   "1690 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 20 · 13² = 1690 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 1 m/s². Welche Geschwindigkeit hat er nach t = 5 s?",
+  "options": [
+   "10 m/s",
+   "5 m/s",
+   "6 m/s",
+   "4 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 1 m/s² · 5 s = 5 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 8 kg) bewegt sich mit v = 7 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "196 J",
+   "189 J",
+   "392 J",
+   "28 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 8 · 7² = 196 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 36 kg wird um h = 7 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "2510 J",
+   "2530 J",
+   "252 J",
+   "2520 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 36 kg · 10 m/s² · 7 m = 2520 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine Schwingung hat die Frequenz f = 10⁵ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻6 s",
+   "10⁻5 s",
+   "10⁻3 s",
+   "10⁻4 s"
+  ],
+  "correct": 1,
+  "explanation": "T = 1/f = 1/10^5 s = 10⁻5 s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Welcher Begriff passt: „ist das Coulomb (C)“?",
+  "options": [
+   "die Einheit der elektrischen Ladung",
+   "die Influenz",
+   "die Kapazität C eines Kondensators",
+   "ein Faradayscher Käfig"
+  ],
+  "correct": 0,
+  "explanation": "die Einheit der elektrischen Ladung: ist das Coulomb (C)."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine Schwingung hat die Frequenz f = 10⁵ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻4 s",
+   "10⁻5 s",
+   "10⁻1 s",
+   "10⁻2 s"
+  ],
+  "correct": 1,
+  "explanation": "T = 1/f = 1/10^5 s = 10⁻5 s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Was gilt für die Feldstärke im Plattenkondensator?",
+  "options": [
+   "berechnet sich aus Spannung und Plattenabstand: E = U/d",
+   "ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)",
+   "ist die Arbeit pro Ladung: U = W/q",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld"
+  ],
+  "correct": 0,
+  "explanation": "die Feldstärke im Plattenkondensator: berechnet sich aus Spannung und Plattenabstand: E = U/d."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 5 kg wird um h = 27 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1350 J",
+   "1340 J",
+   "1360 J",
+   "2700 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 5 kg · 10 m/s² · 27 m = 1350 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 9 m/s². Welche Geschwindigkeit hat er nach t = 5 s?",
+  "options": [
+   "90 m/s",
+   "45 m/s",
+   "36 m/s",
+   "14 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 9 m/s² · 5 s = 45 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 18 kg) hat die Lageenergie E = 1260 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "12 m",
+   "8 m",
+   "7 m",
+   "14 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 1260 J / (18 kg · 10 m/s²) = 7 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 15 kg) hat die Lageenergie E = 1200 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "7 m",
+   "15 m",
+   "8 m",
+   "9 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 1200 J / (15 kg · 10 m/s²) = 8 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 6 s gleichmäßig auf v = 6 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "3 m/s²",
+   "2 m/s²",
+   "6 m/s²",
+   "1 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 6 m/s / 6 s = 1 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 1 m/s². Welche Geschwindigkeit hat er nach t = 10 s?",
+  "options": [
+   "10 m/s",
+   "9 m/s",
+   "20 m/s",
+   "11 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 1 m/s² · 10 s = 10 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 5 kg) hat die Lageenergie E = 600 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "24 m",
+   "5 m",
+   "13 m",
+   "12 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 600 J / (5 kg · 10 m/s²) = 12 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 7 kg) hat die Lageenergie E = 1470 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "42 m",
+   "21 m",
+   "22 m",
+   "26 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 1470 J / (7 kg · 10 m/s²) = 21 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 3 kg) hat die Lageenergie E = 570 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "18 m",
+   "20 m",
+   "19 m",
+   "24 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 570 J / (3 kg · 10 m/s²) = 19 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Wellenlänge λ = 50 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "100 MHz",
+   "50 MHz",
+   "25 MHz",
+   "6 MHz"
+  ],
+  "correct": 3,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 50 m = 6·10⁶ Hz = 6 MHz."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld“?",
+  "options": [
+   "die Einheit der elektrischen Ladung",
+   "die Influenz",
+   "die Elementarladung e",
+   "die elektrische Feldstärke E"
+  ],
+  "correct": 1,
+  "explanation": "die Influenz: ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 10 m/s². Welche Strecke legt er in t = 5 s zurück?",
+  "options": [
+   "115 m",
+   "150 m",
+   "250 m",
+   "125 m"
+  ],
+  "correct": 3,
+  "explanation": "s = ½·a·t² = ½ · 10 · 5² = 125 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Welcher Begriff passt: „schirmt seinen Innenraum von äußeren elektrischen Feldern ab“?",
+  "options": [
+   "die Kraft auf eine Ladung q im Feld E",
+   "die Energie im geladenen Kondensator",
+   "die Richtung elektrischer Feldlinien",
+   "ein Faradayscher Käfig"
+  ],
+  "correct": 3,
+  "explanation": "ein Faradayscher Käfig: schirmt seinen Innenraum von äußeren elektrischen Feldern ab."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 8 s zurück?",
+  "options": [
+   "62 m",
+   "128 m",
+   "64 m",
+   "66 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 2 · 8² = 64 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 35 kg wird um h = 9 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "3140 J",
+   "1575 J",
+   "3150 J",
+   "315 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 35 kg · 10 m/s² · 9 m = 3150 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 2 kg) hat die Lageenergie E = 360 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "18 m",
+   "17 m",
+   "36 m",
+   "19 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 360 J / (2 kg · 10 m/s²) = 18 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 6 m/s². Welche Geschwindigkeit hat er nach t = 11 s?",
+  "options": [
+   "66 m/s",
+   "132 m/s",
+   "60 m/s",
+   "72 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 6 m/s² · 11 s = 66 m/s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 20 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "15 m",
+   "30 m",
+   "25 m",
+   "300 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (20·10⁶ Hz) = 15 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für die Feldstärke im Plattenkondensator?",
+  "options": [
+   "berechnet sich aus Spannung und Plattenabstand: E = U/d",
+   "ist das Coulomb (C)",
+   "ist die Arbeit pro Ladung: U = W/q",
+   "ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)"
+  ],
+  "correct": 0,
+  "explanation": "die Feldstärke im Plattenkondensator: berechnet sich aus Spannung und Plattenabstand: E = U/d."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 3 s gleichmäßig auf v = 18 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "6 m/s²",
+   "7 m/s²",
+   "9 m/s²",
+   "3 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 18 m/s / 3 s = 6 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 10 s gleichmäßig auf v = 50 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "25 m/s²",
+   "6 m/s²",
+   "5 m/s²",
+   "10 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 50 m/s / 10 s = 5 m/s²."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Was gilt für die Influenz?",
+  "options": [
+   "verläuft von der positiven zur negativen Ladung",
+   "ist das Farad (F)",
+   "beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld"
+  ],
+  "correct": 3,
+  "explanation": "die Influenz: ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 14 kg wird um h = 27 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "7560 J",
+   "378 J",
+   "3790 J",
+   "3780 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 14 kg · 10 m/s² · 27 m = 3780 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 6 kg) bewegt sich mit v = 6 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "216 J",
+   "18 J",
+   "114 J",
+   "108 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 6 · 6² = 108 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Wellenlänge λ = 5 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "150 MHz",
+   "100 MHz",
+   "60 MHz",
+   "1 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 5 m = 60·10⁶ Hz = 60 MHz."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Wellenlänge λ = 20 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "15 MHz",
+   "30 MHz",
+   "50 MHz",
+   "5 MHz"
+  ],
+  "correct": 0,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 20 m = 15·10⁶ Hz = 15 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 8 kg) bewegt sich mit v = 9 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "315 J",
+   "324 J",
+   "332 J",
+   "648 J"
+  ],
+  "correct": 1,
+  "explanation": "E = ½·m·v² = ½ · 8 · 9² = 324 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 16 kg) hat die Lageenergie E = 320 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "7 m",
+   "3 m",
+   "4 m",
+   "2 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 320 J / (16 kg · 10 m/s²) = 2 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 1 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "1 m",
+   "10 m",
+   "300 m",
+   "15 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (1·10⁶ Hz) = 300 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Frequenz f = 10 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "4 m",
+   "6 m",
+   "30 m",
+   "25 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (10·10⁶ Hz) = 30 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 20 kg) hat die Lageenergie E = 4000 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "40 m",
+   "20 m",
+   "25 m",
+   "21 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 4000 J / (20 kg · 10 m/s²) = 20 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 11 kg) hat die Lageenergie E = 1430 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "26 m",
+   "12 m",
+   "11 m",
+   "13 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 1430 J / (11 kg · 10 m/s²) = 13 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 8 kg) bewegt sich mit v = 12 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "1152 J",
+   "584 J",
+   "48 J",
+   "576 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 8 · 12² = 576 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Was gilt für ein Faradayscher Käfig?",
+  "options": [
+   "schirmt seinen Innenraum von äußeren elektrischen Feldern ab",
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U",
+   "ist das Coulomb (C)",
+   "berechnet sich aus Spannung und Plattenabstand: E = U/d"
+  ],
+  "correct": 0,
+  "explanation": "ein Faradayscher Käfig: schirmt seinen Innenraum von äußeren elektrischen Feldern ab."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 10 m/s². Welche Strecke legt er in t = 5 s zurück?",
+  "options": [
+   "25 m",
+   "135 m",
+   "125 m",
+   "250 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 10 · 5² = 125 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 12 kg) bewegt sich mit v = 13 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "78 J",
+   "2028 J",
+   "1001 J",
+   "1014 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 12 · 13² = 1014 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Wellenlänge λ = 60 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "20 MHz",
+   "12 MHz",
+   "6 MHz",
+   "5 MHz"
+  ],
+  "correct": 3,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 60 m = 5·10⁶ Hz = 5 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 10 kg wird um h = 5 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "500 J",
+   "250 J",
+   "490 J",
+   "1000 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 10 kg · 10 m/s² · 5 m = 500 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 17 kg) hat die Lageenergie E = 510 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "4 m",
+   "6 m",
+   "2 m",
+   "3 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 510 J / (17 kg · 10 m/s²) = 3 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Welcher Begriff passt: „ist das Verhältnis von Ladung zu Spannung: C = Q/U“?",
+  "options": [
+   "die Feldstärke im Plattenkondensator",
+   "das Radialfeld (Feld einer Punktladung)",
+   "die Kapazität C eines Kondensators",
+   "die Influenz"
+  ],
+  "correct": 2,
+  "explanation": "die Kapazität C eines Kondensators: ist das Verhältnis von Ladung zu Spannung: C = Q/U."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine Schwingung hat die Frequenz f = 10¹ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻4 s",
+   "10⁻1 s",
+   "10⁻6 s",
+   "10⁻3 s"
+  ],
+  "correct": 1,
+  "explanation": "T = 1/f = 1/10^1 s = 10⁻1 s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 2 m/s². Welche Geschwindigkeit hat er nach t = 11 s?",
+  "options": [
+   "20 m/s",
+   "24 m/s",
+   "22 m/s",
+   "33 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 2 m/s² · 11 s = 22 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 3 kg) hat die Lageenergie E = 660 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "21 m",
+   "3 m",
+   "22 m",
+   "44 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 660 J / (3 kg · 10 m/s²) = 22 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 9 kg wird um h = 10 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1800 J",
+   "900 J",
+   "890 J",
+   "450 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 9 kg · 10 m/s² · 10 m = 900 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 6 s zurück?",
+  "options": [
+   "108 m",
+   "72 m",
+   "144 m",
+   "68 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 4 · 6² = 72 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Wellenlänge λ = 1 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "4 MHz",
+   "300 MHz",
+   "1 MHz",
+   "6 MHz"
+  ],
+  "correct": 1,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 1 m = 300·10⁶ Hz = 300 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 2 kg wird um h = 25 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "510 J",
+   "490 J",
+   "500 J",
+   "50 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 2 kg · 10 m/s² · 25 m = 500 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 7 s gleichmäßig auf v = 14 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "2 m/s²",
+   "7 m/s²",
+   "1 m/s²",
+   "4 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 14 m/s / 7 s = 2 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 7 s gleichmäßig auf v = 42 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "5 m/s²",
+   "8 m/s²",
+   "6 m/s²",
+   "7 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 42 m/s / 7 s = 6 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 8 s gleichmäßig auf v = 16 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "8 m/s²",
+   "4 m/s²",
+   "2 m/s²",
+   "1 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 16 m/s / 8 s = 2 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 12 s gleichmäßig auf v = 24 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "3 m/s²",
+   "1 m/s²",
+   "4 m/s²",
+   "2 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 24 m/s / 12 s = 2 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 10 s zurück?",
+  "options": [
+   "600 m",
+   "300 m",
+   "400 m",
+   "30 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 6 · 10² = 300 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 40 kg wird um h = 10 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "400 J",
+   "3990 J",
+   "4000 J",
+   "8000 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 40 kg · 10 m/s² · 10 m = 4000 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Wellenlänge λ = 15 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "3 MHz",
+   "15 MHz",
+   "20 MHz",
+   "6 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 15 m = 20·10⁶ Hz = 20 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 12 kg wird um h = 9 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1090 J",
+   "1080 J",
+   "1070 J",
+   "2160 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 12 kg · 10 m/s² · 9 m = 1080 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 6 kg) bewegt sich mit v = 14 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "1176 J",
+   "594 J",
+   "42 J",
+   "588 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 6 · 14² = 588 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Was gilt für ein Faradayscher Käfig?",
+  "options": [
+   "schirmt seinen Innenraum von äußeren elektrischen Feldern ab",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C",
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U",
+   "ist die Arbeit pro Ladung: U = W/q"
+  ],
+  "correct": 0,
+  "explanation": "ein Faradayscher Käfig: schirmt seinen Innenraum von äußeren elektrischen Feldern ab."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 10 m/s². Welche Strecke legt er in t = 6 s zurück?",
+  "options": [
+   "360 m",
+   "180 m",
+   "170 m",
+   "30 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 10 · 6² = 180 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 8 kg) bewegt sich mit v = 7 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "189 J",
+   "28 J",
+   "204 J",
+   "196 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 8 · 7² = 196 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 10 kg) bewegt sich mit v = 9 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "396 J",
+   "405 J",
+   "415 J",
+   "810 J"
+  ],
+  "correct": 1,
+  "explanation": "E = ½·m·v² = ½ · 10 · 9² = 405 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Wellenlänge λ = 50 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "300 MHz",
+   "5 MHz",
+   "6 MHz",
+   "15 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 50 m = 6·10⁶ Hz = 6 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 14 kg) hat die Lageenergie E = 1680 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "12 m",
+   "13 m",
+   "14 m",
+   "17 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 1680 J / (14 kg · 10 m/s²) = 12 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 15 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "20 m",
+   "50 m",
+   "1 m",
+   "75 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (15·10⁶ Hz) = 20 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 19 kg) hat die Lageenergie E = 3420 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "17 m",
+   "18 m",
+   "19 m",
+   "36 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 3420 J / (19 kg · 10 m/s²) = 18 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 10 kg) hat die Lageenergie E = 800 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "9 m",
+   "8 m",
+   "10 m",
+   "7 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 800 J / (10 kg · 10 m/s²) = 8 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 49 kg wird um h = 15 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "7350 J",
+   "14700 J",
+   "735 J",
+   "3675 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 49 kg · 10 m/s² · 15 m = 7350 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Frequenz f = 15 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "2 m",
+   "100 m",
+   "75 m",
+   "20 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (15·10⁶ Hz) = 20 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Welcher Begriff passt: „ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)“?",
+  "options": [
+   "die Einheit der Kapazität",
+   "die Einheit der elektrischen Feldstärke",
+   "die Energie im geladenen Kondensator",
+   "die Elementarladung e"
+  ],
+  "correct": 1,
+  "explanation": "die Einheit der elektrischen Feldstärke: ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Wellenlänge λ = 30 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "150 MHz",
+   "10 MHz",
+   "5 MHz",
+   "20 MHz"
+  ],
+  "correct": 1,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 30 m = 10·10⁶ Hz = 10 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 4 kg) bewegt sich mit v = 9 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "324 J",
+   "166 J",
+   "162 J",
+   "18 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 4 · 9² = 162 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 15 kg) hat die Lageenergie E = 3750 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "30 m",
+   "26 m",
+   "50 m",
+   "25 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 3750 J / (15 kg · 10 m/s²) = 25 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 6 m/s². Welche Geschwindigkeit hat er nach t = 6 s?",
+  "options": [
+   "42 m/s",
+   "36 m/s",
+   "12 m/s",
+   "30 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 6 m/s² · 6 s = 36 m/s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Wellenlänge λ = 10 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "4 MHz",
+   "1 MHz",
+   "30 MHz",
+   "3 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 10 m = 30·10⁶ Hz = 30 MHz."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für die Einheit der Kapazität?",
+  "options": [
+   "beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C",
+   "ist das Farad (F)",
+   "ist die Arbeit pro Ladung: U = W/q"
+  ],
+  "correct": 2,
+  "explanation": "die Einheit der Kapazität: ist das Farad (F)."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 15 kg) hat die Lageenergie E = 1500 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "10 m",
+   "9 m",
+   "15 m",
+   "11 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 1500 J / (15 kg · 10 m/s²) = 10 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine Schwingung hat die Frequenz f = 10³ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻6 s",
+   "10⁻2 s",
+   "10⁻3 s",
+   "10⁻5 s"
+  ],
+  "correct": 2,
+  "explanation": "T = 1/f = 1/10^3 s = 10⁻3 s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 6 m/s². Welche Geschwindigkeit hat er nach t = 11 s?",
+  "options": [
+   "66 m/s",
+   "72 m/s",
+   "60 m/s",
+   "132 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 6 m/s² · 11 s = 66 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 14 kg) hat die Lageenergie E = 1820 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "14 m",
+   "18 m",
+   "13 m",
+   "26 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 1820 J / (14 kg · 10 m/s²) = 13 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Wellenlänge λ = 6 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "300 MHz",
+   "6 MHz",
+   "50 MHz",
+   "5 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 6 m = 50·10⁶ Hz = 50 MHz."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Frequenz f = 10 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "2 m",
+   "25 m",
+   "30 m",
+   "15 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (10·10⁶ Hz) = 30 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Wellenlänge λ = 20 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "100 MHz",
+   "12 MHz",
+   "15 MHz",
+   "2 MHz"
+  ],
+  "correct": 2,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 20 m = 15·10⁶ Hz = 15 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 4 s zurück?",
+  "options": [
+   "32 m",
+   "14 m",
+   "16 m",
+   "18 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 2 · 4² = 16 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 14 kg) hat die Lageenergie E = 1400 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "20 m",
+   "10 m",
+   "9 m",
+   "14 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 1400 J / (14 kg · 10 m/s²) = 10 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 20 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "4 m",
+   "50 m",
+   "15 m",
+   "60 m"
+  ],
+  "correct": 2,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (20·10⁶ Hz) = 15 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 6 s gleichmäßig auf v = 30 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "7 m/s²",
+   "4 m/s²",
+   "5 m/s²",
+   "15 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 30 m/s / 6 s = 5 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine Schwingung hat die Frequenz f = 10⁴ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻4 s",
+   "10⁻3 s",
+   "10⁻5 s",
+   "10⁻1 s"
+  ],
+  "correct": 0,
+  "explanation": "T = 1/f = 1/10^4 s = 10⁻4 s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine Schwingung hat die Frequenz f = 10⁶ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻6 s",
+   "10⁻4 s",
+   "10⁻1 s",
+   "10⁻3 s"
+  ],
+  "correct": 0,
+  "explanation": "T = 1/f = 1/10^6 s = 10⁻6 s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 20 kg) hat die Lageenergie E = 4200 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "22 m",
+   "42 m",
+   "21 m",
+   "26 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 4200 J / (20 kg · 10 m/s²) = 21 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für das Radialfeld (Feld einer Punktladung)?",
+  "options": [
+   "ist das Coulomb (C)",
+   "ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)",
+   "ist die Arbeit pro Ladung: U = W/q",
+   "hat Feldlinien, die strahlenförmig von der Ladung ausgehen"
+  ],
+  "correct": 3,
+  "explanation": "das Radialfeld (Feld einer Punktladung): hat Feldlinien, die strahlenförmig von der Ladung ausgehen."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 49 kg wird um h = 27 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "6615 J",
+   "13240 J",
+   "1323 J",
+   "13230 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 49 kg · 10 m/s² · 27 m = 13230 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 6 kg) hat die Lageenergie E = 300 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "6 m",
+   "5 m",
+   "10 m",
+   "4 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 300 J / (6 kg · 10 m/s²) = 5 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 2 m/s². Welche Geschwindigkeit hat er nach t = 2 s?",
+  "options": [
+   "6 m/s",
+   "4 m/s",
+   "8 m/s",
+   "2 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 2 m/s² · 2 s = 4 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Was gilt für die Richtung elektrischer Feldlinien?",
+  "options": [
+   "beträgt F = q·E",
+   "verläuft von der positiven zur negativen Ladung",
+   "ist das Coulomb (C)",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C"
+  ],
+  "correct": 1,
+  "explanation": "die Richtung elektrischer Feldlinien: verläuft von der positiven zur negativen Ladung."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 30 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "300 m",
+   "15 m",
+   "2 m",
+   "10 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (30·10⁶ Hz) = 10 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 12 s gleichmäßig auf v = 24 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "4 m/s²",
+   "2 m/s²",
+   "3 m/s²",
+   "12 m/s²"
+  ],
+  "correct": 1,
+  "explanation": "a = v/t = 24 m/s / 12 s = 2 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 9 s gleichmäßig auf v = 18 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "9 m/s²",
+   "4 m/s²",
+   "2 m/s²",
+   "1 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 18 m/s / 9 s = 2 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 19 kg) hat die Lageenergie E = 3990 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "26 m",
+   "19 m",
+   "20 m",
+   "21 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 3990 J / (19 kg · 10 m/s²) = 21 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Frequenz f = 12 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "30 m",
+   "50 m",
+   "10 m",
+   "25 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (12·10⁶ Hz) = 25 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Was gilt für ein homogenes elektrisches Feld?",
+  "options": [
+   "berechnet sich aus Spannung und Plattenabstand: E = U/d",
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U",
+   "hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)",
+   "ist die Arbeit pro Ladung: U = W/q"
+  ],
+  "correct": 2,
+  "explanation": "ein homogenes elektrisches Feld: hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 12 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "3 m",
+   "25 m",
+   "30 m",
+   "2 m"
+  ],
+  "correct": 1,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (12·10⁶ Hz) = 25 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 2 s gleichmäßig auf v = 16 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "2 m/s²",
+   "7 m/s²",
+   "10 m/s²",
+   "8 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 16 m/s / 2 s = 8 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 3 s gleichmäßig auf v = 18 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "8 m/s²",
+   "5 m/s²",
+   "6 m/s²",
+   "3 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 18 m/s / 3 s = 6 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 7 s zurück?",
+  "options": [
+   "94 m",
+   "102 m",
+   "98 m",
+   "147 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 4 · 7² = 98 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 9 s gleichmäßig auf v = 72 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "10 m/s²",
+   "36 m/s²",
+   "8 m/s²",
+   "9 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 72 m/s / 9 s = 8 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 11 kg) hat die Lageenergie E = 550 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "5 m",
+   "11 m",
+   "10 m",
+   "6 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 550 J / (11 kg · 10 m/s²) = 5 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 4 m/s². Welche Geschwindigkeit hat er nach t = 2 s?",
+  "options": [
+   "12 m/s",
+   "10 m/s",
+   "16 m/s",
+   "8 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 4 m/s² · 2 s = 8 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Welcher Begriff passt: „beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²“?",
+  "options": [
+   "das Coulomb-Gesetz",
+   "die Influenz",
+   "die Kraft auf eine Ladung q im Feld E",
+   "die Einheit der elektrischen Ladung"
+  ],
+  "correct": 0,
+  "explanation": "das Coulomb-Gesetz: beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 30 kg wird um h = 29 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "4350 J",
+   "17400 J",
+   "8700 J",
+   "870 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 30 kg · 10 m/s² · 29 m = 8700 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „schirmt seinen Innenraum von äußeren elektrischen Feldern ab“?",
+  "options": [
+   "ein Faradayscher Käfig",
+   "ein homogenes elektrisches Feld",
+   "die Feldstärke im Plattenkondensator",
+   "die Richtung elektrischer Feldlinien"
+  ],
+  "correct": 0,
+  "explanation": "ein Faradayscher Käfig: schirmt seinen Innenraum von äußeren elektrischen Feldern ab."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 7 kg wird um h = 27 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1890 J",
+   "1880 J",
+   "3780 J",
+   "945 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 7 kg · 10 m/s² · 27 m = 1890 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Wellenlänge λ = 2 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "150 MHz",
+   "2 MHz",
+   "100 MHz",
+   "25 MHz"
+  ],
+  "correct": 0,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 2 m = 150·10⁶ Hz = 150 MHz."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 9 s zurück?",
+  "options": [
+   "324 m",
+   "243 m",
+   "486 m",
+   "27 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 6 · 9² = 243 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 3 s gleichmäßig auf v = 21 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "7 m/s²",
+   "3 m/s²",
+   "11 m/s²",
+   "9 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 21 m/s / 3 s = 7 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Wellenlänge λ = 15 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "100 MHz",
+   "75 MHz",
+   "10 MHz",
+   "20 MHz"
+  ],
+  "correct": 3,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 15 m = 20·10⁶ Hz = 20 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 10 kg wird um h = 13 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1310 J",
+   "1300 J",
+   "130 J",
+   "650 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 10 kg · 10 m/s² · 13 m = 1300 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 4 kg) hat die Lageenergie E = 80 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "7 m",
+   "4 m",
+   "3 m",
+   "2 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 80 J / (4 kg · 10 m/s²) = 2 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 28 kg wird um h = 9 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "2530 J",
+   "2510 J",
+   "5040 J",
+   "2520 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 28 kg · 10 m/s² · 9 m = 2520 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 11 s gleichmäßig auf v = 77 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "39 m/s²",
+   "11 m/s²",
+   "7 m/s²",
+   "9 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 77 m/s / 11 s = 7 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 15 kg wird um h = 25 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "7500 J",
+   "1875 J",
+   "3750 J",
+   "3740 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 15 kg · 10 m/s² · 25 m = 3750 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 16 kg) hat die Lageenergie E = 1440 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "14 m",
+   "18 m",
+   "8 m",
+   "9 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 1440 J / (16 kg · 10 m/s²) = 9 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Welcher Begriff passt: „ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld“?",
+  "options": [
+   "die Influenz",
+   "die Kraft auf eine Ladung q im Feld E",
+   "die Einheit der elektrischen Feldstärke",
+   "das Coulomb-Gesetz"
+  ],
+  "correct": 0,
+  "explanation": "die Influenz: ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 41 kg wird um h = 4 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1640 J",
+   "3280 J",
+   "1650 J",
+   "1630 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 41 kg · 10 m/s² · 4 m = 1640 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 26 kg wird um h = 6 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1560 J",
+   "1570 J",
+   "780 J",
+   "3120 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 26 kg · 10 m/s² · 6 m = 1560 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 9 kg) hat die Lageenergie E = 180 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "2 m",
+   "4 m",
+   "9 m",
+   "1 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 180 J / (9 kg · 10 m/s²) = 2 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Was gilt für die Elementarladung e?",
+  "options": [
+   "hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C",
+   "schirmt seinen Innenraum von äußeren elektrischen Feldern ab",
+   "ist das Farad (F)"
+  ],
+  "correct": 1,
+  "explanation": "die Elementarladung e: beträgt etwa 1,6 · 10⁻¹⁹ C."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 9 m/s². Welche Geschwindigkeit hat er nach t = 3 s?",
+  "options": [
+   "30 m/s",
+   "36 m/s",
+   "27 m/s",
+   "12 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 9 m/s² · 3 s = 27 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 10 s gleichmäßig auf v = 80 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "7 m/s²",
+   "10 m/s²",
+   "9 m/s²",
+   "8 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 80 m/s / 10 s = 8 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 18 kg) hat die Lageenergie E = 1620 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "18 m",
+   "14 m",
+   "10 m",
+   "9 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 1620 J / (18 kg · 10 m/s²) = 9 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 2 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "20 m",
+   "25 m",
+   "100 m",
+   "150 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (2·10⁶ Hz) = 150 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 7 s gleichmäßig auf v = 28 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "6 m/s²",
+   "5 m/s²",
+   "4 m/s²",
+   "7 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 28 m/s / 7 s = 4 m/s²."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Welcher Begriff passt: „schirmt seinen Innenraum von äußeren elektrischen Feldern ab“?",
+  "options": [
+   "ein Faradayscher Käfig",
+   "die Kraft auf eine Ladung q im Feld E",
+   "die Elementarladung e",
+   "die Einheit der elektrischen Ladung"
+  ],
+  "correct": 0,
+  "explanation": "ein Faradayscher Käfig: schirmt seinen Innenraum von äußeren elektrischen Feldern ab."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 34 kg wird um h = 20 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "6800 J",
+   "3400 J",
+   "6810 J",
+   "680 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 34 kg · 10 m/s² · 20 m = 6800 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 6 kg) hat die Lageenergie E = 180 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "3 m",
+   "8 m",
+   "4 m",
+   "6 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 180 J / (6 kg · 10 m/s²) = 3 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 4 kg) bewegt sich mit v = 7 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "14 J",
+   "196 J",
+   "98 J",
+   "91 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 4 · 7² = 98 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 1 m/s². Welche Geschwindigkeit hat er nach t = 7 s?",
+  "options": [
+   "7 m/s",
+   "8 m/s",
+   "14 m/s",
+   "6 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 1 m/s² · 7 s = 7 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Was gilt für ein homogenes elektrisches Feld?",
+  "options": [
+   "ist definiert als Kraft pro Ladung: E = F/q",
+   "beträgt F = q·E",
+   "schirmt seinen Innenraum von äußeren elektrischen Feldern ab",
+   "hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)"
+  ],
+  "correct": 3,
+  "explanation": "ein homogenes elektrisches Feld: hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 11 s gleichmäßig auf v = 11 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "2 m/s²",
+   "11 m/s²",
+   "6 m/s²",
+   "1 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 11 m/s / 11 s = 1 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 18 kg) hat die Lageenergie E = 3600 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "20 m",
+   "21 m",
+   "18 m",
+   "40 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 3600 J / (18 kg · 10 m/s²) = 20 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 7 m/s². Welche Geschwindigkeit hat er nach t = 6 s?",
+  "options": [
+   "13 m/s",
+   "84 m/s",
+   "42 m/s",
+   "48 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 7 m/s² · 6 s = 42 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 9 s zurück?",
+  "options": [
+   "27 m",
+   "249 m",
+   "243 m",
+   "237 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 6 · 9² = 243 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Wellenlänge λ = 50 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "6 MHz",
+   "150 MHz",
+   "1 MHz",
+   "5 MHz"
+  ],
+  "correct": 0,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 50 m = 6·10⁶ Hz = 6 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 21 kg wird um h = 20 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "2100 J",
+   "4200 J",
+   "4190 J",
+   "4210 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 21 kg · 10 m/s² · 20 m = 4200 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 10 s gleichmäßig auf v = 10 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "2 m/s²",
+   "1 m/s²",
+   "3 m/s²",
+   "5 m/s²"
+  ],
+  "correct": 1,
+  "explanation": "a = v/t = 10 m/s / 10 s = 1 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 5 s zurück?",
+  "options": [
+   "100 m",
+   "75 m",
+   "81 m",
+   "150 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 6 · 5² = 75 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 8 s gleichmäßig auf v = 24 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "5 m/s²",
+   "3 m/s²",
+   "4 m/s²",
+   "8 m/s²"
+  ],
+  "correct": 1,
+  "explanation": "a = v/t = 24 m/s / 8 s = 3 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 4 kg wird um h = 19 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "760 J",
+   "1520 J",
+   "76 J",
+   "750 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 4 kg · 10 m/s² · 19 m = 760 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 4 kg) bewegt sich mit v = 7 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "91 J",
+   "98 J",
+   "102 J",
+   "196 J"
+  ],
+  "correct": 1,
+  "explanation": "E = ½·m·v² = ½ · 4 · 7² = 98 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 5 s gleichmäßig auf v = 5 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "5 m/s²",
+   "3 m/s²",
+   "1 m/s²",
+   "2 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 5 m/s / 5 s = 1 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 9 s zurück?",
+  "options": [
+   "81 m",
+   "9 m",
+   "162 m",
+   "79 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 2 · 9² = 81 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für die Influenz?",
+  "options": [
+   "beträgt W = ½·C·U²",
+   "beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²",
+   "ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld"
+  ],
+  "correct": 3,
+  "explanation": "die Influenz: ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 5 kg) hat die Lageenergie E = 150 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "5 m",
+   "3 m",
+   "8 m",
+   "2 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 150 J / (5 kg · 10 m/s²) = 3 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 9 m/s². Welche Geschwindigkeit hat er nach t = 6 s?",
+  "options": [
+   "54 m/s",
+   "63 m/s",
+   "45 m/s",
+   "60 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 9 m/s² · 6 s = 54 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 4 kg) hat die Lageenergie E = 760 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "24 m",
+   "18 m",
+   "19 m",
+   "4 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 760 J / (4 kg · 10 m/s²) = 19 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „ist die Arbeit pro Ladung: U = W/q“?",
+  "options": [
+   "die elektrische Spannung U",
+   "die Kapazität C eines Kondensators",
+   "ein homogenes elektrisches Feld",
+   "die Richtung elektrischer Feldlinien"
+  ],
+  "correct": 0,
+  "explanation": "die elektrische Spannung U: ist die Arbeit pro Ladung: U = W/q."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 10 kg) hat die Lageenergie E = 1800 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "10 m",
+   "18 m",
+   "19 m",
+   "23 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 1800 J / (10 kg · 10 m/s²) = 18 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Frequenz f = 100 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "300 m",
+   "3 m",
+   "12 m",
+   "6 m"
+  ],
+  "correct": 1,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (100·10⁶ Hz) = 3 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 19 kg wird um h = 18 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "3430 J",
+   "6840 J",
+   "3410 J",
+   "3420 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 19 kg · 10 m/s² · 18 m = 3420 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 3 kg wird um h = 19 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "570 J",
+   "580 J",
+   "285 J",
+   "560 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 3 kg · 10 m/s² · 19 m = 570 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 4 kg) bewegt sich mit v = 4 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "36 J",
+   "32 J",
+   "64 J",
+   "8 J"
+  ],
+  "correct": 1,
+  "explanation": "E = ½·m·v² = ½ · 4 · 4² = 32 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 6 kg) bewegt sich mit v = 13 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "507 J",
+   "1014 J",
+   "513 J",
+   "39 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 6 · 13² = 507 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für die Einheit der elektrischen Feldstärke?",
+  "options": [
+   "beträgt F = q·E",
+   "verläuft von der positiven zur negativen Ladung",
+   "ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld"
+  ],
+  "correct": 2,
+  "explanation": "die Einheit der elektrischen Feldstärke: ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 1 kg wird um h = 29 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "290 J",
+   "29 J",
+   "280 J",
+   "300 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 1 kg · 10 m/s² · 29 m = 290 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „ist das Farad (F)“?",
+  "options": [
+   "die Einheit der Kapazität",
+   "die Richtung elektrischer Feldlinien",
+   "das Coulomb-Gesetz",
+   "die Elementarladung e"
+  ],
+  "correct": 0,
+  "explanation": "die Einheit der Kapazität: ist das Farad (F)."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 12 kg) bewegt sich mit v = 6 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "216 J",
+   "228 J",
+   "432 J",
+   "210 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 12 · 6² = 216 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 17 kg) hat die Lageenergie E = 3740 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "44 m",
+   "27 m",
+   "21 m",
+   "22 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 3740 J / (17 kg · 10 m/s²) = 22 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 7 s zurück?",
+  "options": [
+   "51 m",
+   "49 m",
+   "47 m",
+   "98 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 2 · 7² = 49 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 9 s gleichmäßig auf v = 9 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "3 m/s²",
+   "9 m/s²",
+   "2 m/s²",
+   "1 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 9 m/s / 9 s = 1 m/s²."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Was gilt für die Energie im geladenen Kondensator?",
+  "options": [
+   "verläuft von der positiven zur negativen Ladung",
+   "hat überall die gleiche Feldstärke nach Betrag und Richtung (z.B. im Plattenkondensator)",
+   "hat Feldlinien, die strahlenförmig von der Ladung ausgehen",
+   "beträgt W = ½·C·U²"
+  ],
+  "correct": 3,
+  "explanation": "die Energie im geladenen Kondensator: beträgt W = ½·C·U²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 2 m/s². Welche Geschwindigkeit hat er nach t = 7 s?",
+  "options": [
+   "21 m/s",
+   "9 m/s",
+   "12 m/s",
+   "14 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 2 m/s² · 7 s = 14 m/s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine Schwingung hat die Frequenz f = 10⁶ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻4 s",
+   "10⁻1 s",
+   "10⁻6 s",
+   "10⁻3 s"
+  ],
+  "correct": 2,
+  "explanation": "T = 1/f = 1/10^6 s = 10⁻6 s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 8 m/s². Welche Strecke legt er in t = 2 s zurück?",
+  "options": [
+   "16 m",
+   "8 m",
+   "32 m",
+   "24 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 8 · 2² = 16 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 6 kg wird um h = 22 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "2640 J",
+   "1310 J",
+   "1320 J",
+   "660 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 6 kg · 10 m/s² · 22 m = 1320 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 13 kg) hat die Lageenergie E = 3120 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "48 m",
+   "24 m",
+   "13 m",
+   "25 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 3120 J / (13 kg · 10 m/s²) = 24 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 150 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "300 m",
+   "60 m",
+   "4 m",
+   "2 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (150·10⁶ Hz) = 2 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 9 m/s². Welche Geschwindigkeit hat er nach t = 8 s?",
+  "options": [
+   "63 m/s",
+   "81 m/s",
+   "72 m/s",
+   "17 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 9 m/s² · 8 s = 72 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 14 kg) hat die Lageenergie E = 2380 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "16 m",
+   "14 m",
+   "18 m",
+   "17 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 2380 J / (14 kg · 10 m/s²) = 17 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 100 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "4 m",
+   "15 m",
+   "50 m",
+   "3 m"
+  ],
+  "correct": 3,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (100·10⁶ Hz) = 3 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 6 m/s². Welche Geschwindigkeit hat er nach t = 8 s?",
+  "options": [
+   "42 m/s",
+   "48 m/s",
+   "56 m/s",
+   "14 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 6 m/s² · 8 s = 48 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für die Elementarladung e?",
+  "options": [
+   "verläuft von der positiven zur negativen Ladung",
+   "beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²",
+   "ist das Coulomb (C)",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C"
+  ],
+  "correct": 3,
+  "explanation": "die Elementarladung e: beträgt etwa 1,6 · 10⁻¹⁹ C."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 20 kg wird um h = 22 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "440 J",
+   "4390 J",
+   "4400 J",
+   "4410 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 20 kg · 10 m/s² · 22 m = 4400 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 5 m/s². Welche Geschwindigkeit hat er nach t = 11 s?",
+  "options": [
+   "110 m/s",
+   "60 m/s",
+   "55 m/s",
+   "50 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 5 m/s² · 11 s = 55 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 3 s gleichmäßig auf v = 27 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "11 m/s²",
+   "14 m/s²",
+   "10 m/s²",
+   "9 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 27 m/s / 3 s = 9 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Frequenz f = 25 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "12 m",
+   "10 m",
+   "150 m",
+   "15 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (25·10⁶ Hz) = 12 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 14 kg wird um h = 21 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "2950 J",
+   "294 J",
+   "2930 J",
+   "2940 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 14 kg · 10 m/s² · 21 m = 2940 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 7 s gleichmäßig auf v = 56 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "7 m/s²",
+   "8 m/s²",
+   "10 m/s²",
+   "9 m/s²"
+  ],
+  "correct": 1,
+  "explanation": "a = v/t = 56 m/s / 7 s = 8 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 19 kg wird um h = 13 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "4940 J",
+   "2480 J",
+   "2470 J",
+   "247 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 19 kg · 10 m/s² · 13 m = 2470 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 3 kg) hat die Lageenergie E = 360 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "12 m",
+   "13 m",
+   "17 m",
+   "3 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 360 J / (3 kg · 10 m/s²) = 12 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 12 kg wird um h = 30 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "3610 J",
+   "1800 J",
+   "3600 J",
+   "360 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 12 kg · 10 m/s² · 30 m = 3600 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 13 kg) hat die Lageenergie E = 390 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "13 m",
+   "8 m",
+   "6 m",
+   "3 m"
+  ],
+  "correct": 3,
+  "explanation": "h = E/(m·g) = 390 J / (13 kg · 10 m/s²) = 3 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine Schwingung hat die Frequenz f = 10⁴ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻3 s",
+   "10⁻4 s",
+   "10⁻5 s",
+   "10⁻1 s"
+  ],
+  "correct": 1,
+  "explanation": "T = 1/f = 1/10^4 s = 10⁻4 s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine elektromagnetische Welle hat die Frequenz f = 300 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "1 m",
+   "12 m",
+   "15 m",
+   "5 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (300·10⁶ Hz) = 1 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 8 kg) bewegt sich mit v = 9 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "324 J",
+   "315 J",
+   "648 J",
+   "36 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 8 · 9² = 324 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für das Coulomb-Gesetz?",
+  "options": [
+   "ist die Arbeit pro Ladung: U = W/q",
+   "beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²",
+   "ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)",
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U"
+  ],
+  "correct": 1,
+  "explanation": "das Coulomb-Gesetz: beschreibt die Kraft zwischen zwei Punktladungen: F ~ q₁·q₂/r²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 8 m/s². Welche Geschwindigkeit hat er nach t = 8 s?",
+  "options": [
+   "72 m/s",
+   "128 m/s",
+   "56 m/s",
+   "64 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 8 m/s² · 8 s = 64 m/s."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine Schwingung hat die Frequenz f = 10² Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻3 s",
+   "10⁻1 s",
+   "10⁻6 s",
+   "10⁻2 s"
+  ],
+  "correct": 3,
+  "explanation": "T = 1/f = 1/10^2 s = 10⁻2 s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Berechne. Was gilt für die Kapazität C eines Kondensators?",
+  "options": [
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C",
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U",
+   "ist definiert als Kraft pro Ladung: E = F/q"
+  ],
+  "correct": 2,
+  "explanation": "die Kapazität C eines Kondensators: ist das Verhältnis von Ladung zu Spannung: C = Q/U."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 9 s gleichmäßig auf v = 63 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "7 m/s²",
+   "6 m/s²",
+   "32 m/s²",
+   "9 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 63 m/s / 9 s = 7 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 8 m/s². Welche Geschwindigkeit hat er nach t = 6 s?",
+  "options": [
+   "56 m/s",
+   "48 m/s",
+   "14 m/s",
+   "54 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 8 m/s² · 6 s = 48 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 9 m/s². Welche Geschwindigkeit hat er nach t = 11 s?",
+  "options": [
+   "90 m/s",
+   "20 m/s",
+   "110 m/s",
+   "99 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 9 m/s² · 11 s = 99 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper wird aus der Ruhe in t = 7 s gleichmäßig auf v = 56 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "8 m/s²",
+   "10 m/s²",
+   "9 m/s²",
+   "28 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 56 m/s / 7 s = 8 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 3 s gleichmäßig auf v = 27 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "9 m/s²",
+   "14 m/s²",
+   "8 m/s²",
+   "10 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 27 m/s / 3 s = 9 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 10 kg) bewegt sich mit v = 11 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "1210 J",
+   "605 J",
+   "615 J",
+   "55 J"
+  ],
+  "correct": 1,
+  "explanation": "E = ½·m·v² = ½ · 10 · 11² = 605 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 39 kg wird um h = 18 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "7030 J",
+   "3510 J",
+   "14040 J",
+   "7020 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 39 kg · 10 m/s² · 18 m = 7020 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 6 m/s². Welche Geschwindigkeit hat er nach t = 8 s?",
+  "options": [
+   "54 m/s",
+   "56 m/s",
+   "96 m/s",
+   "48 m/s"
+  ],
+  "correct": 3,
+  "explanation": "v = a·t = 6 m/s² · 8 s = 48 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 7 s zurück?",
+  "options": [
+   "294 m",
+   "141 m",
+   "196 m",
+   "147 m"
+  ],
+  "correct": 3,
+  "explanation": "s = ½·a·t² = ½ · 6 · 7² = 147 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 4 s gleichmäßig auf v = 12 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "4 m/s²",
+   "6 m/s²",
+   "2 m/s²",
+   "3 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 12 m/s / 4 s = 3 m/s²."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Frequenz f = 75 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "6 m",
+   "4 m",
+   "150 m",
+   "12 m"
+  ],
+  "correct": 1,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (75·10⁶ Hz) = 4 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 13 kg) hat die Lageenergie E = 260 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "13 m",
+   "4 m",
+   "2 m",
+   "7 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 260 J / (13 kg · 10 m/s²) = 2 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 8 kg) hat die Lageenergie E = 1120 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "8 m",
+   "14 m",
+   "15 m",
+   "13 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 1120 J / (8 kg · 10 m/s²) = 14 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Physik: Was gilt für das Radialfeld (Feld einer Punktladung)?",
+  "options": [
+   "ist das Farad (F)",
+   "beträgt F = q·E",
+   "hat Feldlinien, die strahlenförmig von der Ladung ausgehen",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C"
+  ],
+  "correct": 2,
+  "explanation": "das Radialfeld (Feld einer Punktladung): hat Feldlinien, die strahlenförmig von der Ladung ausgehen."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 31 kg wird um h = 26 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "4030 J",
+   "8060 J",
+   "8050 J",
+   "8070 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 31 kg · 10 m/s² · 26 m = 8060 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 20 kg) bewegt sich mit v = 5 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "270 J",
+   "500 J",
+   "250 J",
+   "245 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 20 · 5² = 250 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 20 kg) bewegt sich mit v = 12 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "2880 J",
+   "120 J",
+   "1460 J",
+   "1440 J"
+  ],
+  "correct": 3,
+  "explanation": "E = ½·m·v² = ½ · 20 · 12² = 1440 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 8 kg) bewegt sich mit v = 8 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "248 J",
+   "256 J",
+   "32 J",
+   "512 J"
+  ],
+  "correct": 1,
+  "explanation": "E = ½·m·v² = ½ · 8 · 8² = 256 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 2 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "150 m",
+   "15 m",
+   "30 m",
+   "1 m"
+  ],
+  "correct": 0,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (2·10⁶ Hz) = 150 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 5 s gleichmäßig auf v = 15 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "4 m/s²",
+   "8 m/s²",
+   "5 m/s²",
+   "3 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 15 m/s / 5 s = 3 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 11 s gleichmäßig auf v = 99 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "8 m/s²",
+   "50 m/s²",
+   "10 m/s²",
+   "9 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 99 m/s / 11 s = 9 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 2 kg) bewegt sich mit v = 2 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "4 J",
+   "6 J",
+   "8 J",
+   "2 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 2 · 2² = 4 J."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)“?",
+  "options": [
+   "die Kraft auf eine Ladung q im Feld E",
+   "das Radialfeld (Feld einer Punktladung)",
+   "die Einheit der elektrischen Feldstärke",
+   "die Elementarladung e"
+  ],
+  "correct": 2,
+  "explanation": "die Einheit der elektrischen Feldstärke: ist Volt pro Meter (V/m) bzw. Newton pro Coulomb (N/C)."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 1 m/s². Welche Geschwindigkeit hat er nach t = 10 s?",
+  "options": [
+   "9 m/s",
+   "11 m/s",
+   "10 m/s",
+   "20 m/s"
+  ],
+  "correct": 2,
+  "explanation": "v = a·t = 1 m/s² · 10 s = 10 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 10 m/s². Welche Strecke legt er in t = 9 s zurück?",
+  "options": [
+   "810 m",
+   "395 m",
+   "405 m",
+   "486 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 10 · 9² = 405 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 9 m/s². Welche Geschwindigkeit hat er nach t = 8 s?",
+  "options": [
+   "72 m/s",
+   "17 m/s",
+   "80 m/s",
+   "63 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 9 m/s² · 8 s = 72 m/s."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 8 m/s². Welche Strecke legt er in t = 7 s zurück?",
+  "options": [
+   "28 m",
+   "196 m",
+   "392 m",
+   "204 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 8 · 7² = 196 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 6 s zurück?",
+  "options": [
+   "76 m",
+   "12 m",
+   "72 m",
+   "68 m"
+  ],
+  "correct": 2,
+  "explanation": "s = ½·a·t² = ½ · 4 · 6² = 72 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 6 m/s². Welche Strecke legt er in t = 4 s zurück?",
+  "options": [
+   "96 m",
+   "54 m",
+   "42 m",
+   "48 m"
+  ],
+  "correct": 3,
+  "explanation": "s = ½·a·t² = ½ · 6 · 4² = 48 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 45 kg wird um h = 19 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "8540 J",
+   "17100 J",
+   "8550 J",
+   "8560 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 45 kg · 10 m/s² · 19 m = 8550 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Frequenz f = 50 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "12 m",
+   "6 m",
+   "10 m",
+   "15 m"
+  ],
+  "correct": 1,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (50·10⁶ Hz) = 6 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Mechanik/Felder: Eine elektromagnetische Welle hat die Frequenz f = 25 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "20 m",
+   "12 m",
+   "1 m",
+   "5 m"
+  ],
+  "correct": 1,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (25·10⁶ Hz) = 12 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper (m = 10 kg) bewegt sich mit v = 8 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "320 J",
+   "330 J",
+   "640 J",
+   "312 J"
+  ],
+  "correct": 0,
+  "explanation": "E = ½·m·v² = ½ · 10 · 8² = 320 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 2 m/s². Welche Geschwindigkeit hat er nach t = 9 s?",
+  "options": [
+   "18 m/s",
+   "20 m/s",
+   "27 m/s",
+   "16 m/s"
+  ],
+  "correct": 0,
+  "explanation": "v = a·t = 2 m/s² · 9 s = 18 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Mechanik/Felder: Was gilt für die Einheit der Kapazität?",
+  "options": [
+   "verläuft von der positiven zur negativen Ladung",
+   "ist das Farad (F)",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld",
+   "ist definiert als Kraft pro Ladung: E = F/q"
+  ],
+  "correct": 1,
+  "explanation": "die Einheit der Kapazität: ist das Farad (F)."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 30 kg wird um h = 22 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "3300 J",
+   "6610 J",
+   "6600 J",
+   "6590 J"
+  ],
+  "correct": 2,
+  "explanation": "E = m·g·h = 30 kg · 10 m/s² · 22 m = 6600 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine Schwingung hat die Frequenz f = 10³ Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻5 s",
+   "10⁻1 s",
+   "10⁻6 s",
+   "10⁻3 s"
+  ],
+  "correct": 3,
+  "explanation": "T = 1/f = 1/10^3 s = 10⁻3 s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 12 kg) hat die Lageenergie E = 1680 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "28 m",
+   "15 m",
+   "14 m",
+   "12 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 1680 J / (12 kg · 10 m/s²) = 14 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 2 s gleichmäßig auf v = 4 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "2 m/s²",
+   "4 m/s²",
+   "1 m/s²",
+   "3 m/s²"
+  ],
+  "correct": 0,
+  "explanation": "a = v/t = 4 m/s / 2 s = 2 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 4 m/s². Welche Strecke legt er in t = 4 s zurück?",
+  "options": [
+   "64 m",
+   "36 m",
+   "8 m",
+   "32 m"
+  ],
+  "correct": 3,
+  "explanation": "s = ½·a·t² = ½ · 4 · 4² = 32 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 7 kg wird um h = 3 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "210 J",
+   "420 J",
+   "200 J",
+   "105 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 7 kg · 10 m/s² · 3 m = 210 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Physik: Ein Körper wird aus der Ruhe in t = 7 s gleichmäßig auf v = 28 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "14 m/s²",
+   "4 m/s²",
+   "6 m/s²",
+   "5 m/s²"
+  ],
+  "correct": 1,
+  "explanation": "a = v/t = 28 m/s / 7 s = 4 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 3 m/s². Welche Geschwindigkeit hat er nach t = 7 s?",
+  "options": [
+   "24 m/s",
+   "21 m/s",
+   "42 m/s",
+   "10 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 3 m/s² · 7 s = 21 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Physik: Ein Körper der Masse m = 48 kg wird um h = 30 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "14400 J",
+   "14390 J",
+   "14410 J",
+   "1440 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 48 kg · 10 m/s² · 30 m = 14400 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 18 kg) hat die Lageenergie E = 360 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "18 m",
+   "2 m",
+   "3 m",
+   "1 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 360 J / (18 kg · 10 m/s²) = 2 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 4 s zurück?",
+  "options": [
+   "16 m",
+   "32 m",
+   "14 m",
+   "4 m"
+  ],
+  "correct": 0,
+  "explanation": "s = ½·a·t² = ½ · 2 · 4² = 16 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Eine elektromagnetische Welle hat die Wellenlänge λ = 100 m. Welche Frequenz hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "6 MHz",
+   "25 MHz",
+   "10 MHz",
+   "3 MHz"
+  ],
+  "correct": 3,
+  "explanation": "f = c/λ = 3·10⁸ m/s / 100 m = 3·10⁶ Hz = 3 MHz."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 19 kg) hat die Lageenergie E = 3420 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "17 m",
+   "36 m",
+   "18 m",
+   "19 m"
+  ],
+  "correct": 2,
+  "explanation": "h = E/(m·g) = 3420 J / (19 kg · 10 m/s²) = 18 m."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Was gilt für die elektrische Feldstärke E?",
+  "options": [
+   "ist definiert als Kraft pro Ladung: E = F/q",
+   "ist die Ladungsverschiebung in einem Leiter durch ein äußeres elektrisches Feld",
+   "beträgt etwa 1,6 · 10⁻¹⁹ C",
+   "ist das Verhältnis von Ladung zu Spannung: C = Q/U"
+  ],
+  "correct": 0,
+  "explanation": "die elektrische Feldstärke E: ist definiert als Kraft pro Ladung: E = F/q."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 3 m/s². Welche Geschwindigkeit hat er nach t = 3 s?",
+  "options": [
+   "6 m/s",
+   "9 m/s",
+   "12 m/s",
+   "18 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 3 m/s² · 3 s = 9 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper (m = 14 kg) hat die Lageenergie E = 3220 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "23 m",
+   "14 m",
+   "22 m",
+   "46 m"
+  ],
+  "correct": 0,
+  "explanation": "h = E/(m·g) = 3220 J / (14 kg · 10 m/s²) = 23 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 8 m/s². Welche Geschwindigkeit hat er nach t = 2 s?",
+  "options": [
+   "18 m/s",
+   "16 m/s",
+   "8 m/s",
+   "10 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 8 m/s² · 2 s = 16 m/s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 5 kg wird um h = 13 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1300 J",
+   "65 J",
+   "640 J",
+   "650 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 5 kg · 10 m/s² · 13 m = 650 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 41 kg wird um h = 3 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1230 J",
+   "615 J",
+   "1220 J",
+   "1240 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 41 kg · 10 m/s² · 3 m = 1230 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper wird aus der Ruhe in t = 8 s gleichmäßig auf v = 8 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "8 m/s²",
+   "4 m/s²",
+   "1 m/s²",
+   "3 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 8 m/s / 8 s = 1 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Ein Körper startet aus der Ruhe und beschleunigt gleichmäßig mit a = 2 m/s². Welche Strecke legt er in t = 6 s zurück?",
+  "options": [
+   "6 m",
+   "36 m",
+   "72 m",
+   "38 m"
+  ],
+  "correct": 1,
+  "explanation": "s = ½·a·t² = ½ · 2 · 6² = 36 m."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper (m = 2 kg) bewegt sich mit v = 2 m/s. Wie groß ist seine kinetische Energie?",
+  "options": [
+   "6 J",
+   "2 J",
+   "4 J",
+   "8 J"
+  ],
+  "correct": 2,
+  "explanation": "E = ½·m·v² = ½ · 2 · 2² = 4 J."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Mechanik/Felder: Ein Körper beschleunigt aus der Ruhe gleichmäßig mit a = 5 m/s². Welche Geschwindigkeit hat er nach t = 9 s?",
+  "options": [
+   "14 m/s",
+   "45 m/s",
+   "90 m/s",
+   "40 m/s"
+  ],
+  "correct": 1,
+  "explanation": "v = a·t = 5 m/s² · 9 s = 45 m/s."
+ },
+ {
+  "topic": "Elektrische Felder",
+  "question": "Welcher Begriff passt: „hat Feldlinien, die strahlenförmig von der Ladung ausgehen“?",
+  "options": [
+   "das Radialfeld (Feld einer Punktladung)",
+   "die Richtung elektrischer Feldlinien",
+   "die Feldstärke im Plattenkondensator",
+   "die Kapazität C eines Kondensators"
+  ],
+  "correct": 0,
+  "explanation": "das Radialfeld (Feld einer Punktladung): hat Feldlinien, die strahlenförmig von der Ladung ausgehen."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper (m = 20 kg) hat die Lageenergie E = 2000 J. In welcher Höhe befindet er sich? (g = 10 m/s²)",
+  "options": [
+   "11 m",
+   "10 m",
+   "20 m",
+   "15 m"
+  ],
+  "correct": 1,
+  "explanation": "h = E/(m·g) = 2000 J / (20 kg · 10 m/s²) = 10 m."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Berechne. Eine elektromagnetische Welle hat die Frequenz f = 150 MHz. Welche Wellenlänge hat sie? (c = 3·10⁸ m/s)",
+  "options": [
+   "1 m",
+   "2 m",
+   "20 m",
+   "5 m"
+  ],
+  "correct": 1,
+  "explanation": "λ = c/f = 3·10⁸ m/s / (150·10⁶ Hz) = 2 m."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 2 s gleichmäßig auf v = 12 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "2 m/s²",
+   "8 m/s²",
+   "5 m/s²",
+   "6 m/s²"
+  ],
+  "correct": 3,
+  "explanation": "a = v/t = 12 m/s / 2 s = 6 m/s²."
+ },
+ {
+  "topic": "Kinematik",
+  "question": "Berechne. Ein Körper wird aus der Ruhe in t = 10 s gleichmäßig auf v = 60 m/s beschleunigt. Wie groß ist die Beschleunigung a?",
+  "options": [
+   "7 m/s²",
+   "10 m/s²",
+   "6 m/s²",
+   "30 m/s²"
+  ],
+  "correct": 2,
+  "explanation": "a = v/t = 60 m/s / 10 s = 6 m/s²."
+ },
+ {
+  "topic": "Energie",
+  "question": "Berechne. Ein Körper der Masse m = 27 kg wird um h = 2 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "1080 J",
+   "270 J",
+   "550 J",
+   "540 J"
+  ],
+  "correct": 3,
+  "explanation": "E = m·g·h = 27 kg · 10 m/s² · 2 m = 540 J."
+ },
+ {
+  "topic": "Energie",
+  "question": "Mechanik/Felder: Ein Körper der Masse m = 50 kg wird um h = 18 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "8990 J",
+   "9000 J",
+   "9010 J",
+   "18000 J"
+  ],
+  "correct": 1,
+  "explanation": "E = m·g·h = 50 kg · 10 m/s² · 18 m = 9000 J."
+ },
+ {
+  "topic": "Wellen",
+  "question": "Physik: Eine Schwingung hat die Frequenz f = 10² Hz. Wie groß ist die Periodendauer T?",
+  "options": [
+   "10⁻1 s",
+   "10⁻3 s",
+   "10⁻2 s",
+   "10⁻4 s"
+  ],
+  "correct": 2,
+  "explanation": "T = 1/f = 1/10^2 s = 10⁻2 s."
+ },
+ {
+  "topic": "Energie",
+  "question": "Ein Körper der Masse m = 40 kg wird um h = 11 m angehoben. Wie groß ist die Zunahme der Lageenergie? (g = 10 m/s²)",
+  "options": [
+   "4400 J",
+   "2200 J",
+   "440 J",
+   "4410 J"
+  ],
+  "correct": 0,
+  "explanation": "E = m·g·h = 40 kg · 10 m/s² · 11 m = 4400 J."
+ }
+]

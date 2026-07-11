@@ -5,6 +5,8 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { rateLimit } from "@/lib/security/rate-limit";
+import { awardCoins } from "@/lib/coins";
+import { getDocumentTemplate } from "./templates";
 
 async function requireStudent() {
   const session = await getSession();
@@ -21,6 +23,21 @@ export async function createDocument(): Promise<void> {
   const doc = await prisma.document.create({
     data: { userId: session.userId },
   });
+  awardCoins(session.userId, "office_dokument_erstellt", undefined, doc.id).catch(() => undefined);
+  redirect(`/app/dokumente/${doc.id}`);
+}
+
+export async function createDocumentFromTemplate(templateKey: string): Promise<void> {
+  const session = await requireStudent();
+  const template = getDocumentTemplate(String(templateKey).trim().slice(0, 100));
+  if (!template) redirect("/app/dokumente");
+  // Missbrauchsschutz: gleiches Limit wie createDocument (30 neue Dokumente/Stunde).
+  const rl = await rateLimit({ scope: "create-doc", key: session.userId, limit: 30, windowSec: 3600 });
+  if (!rl.ok) redirect("/app/dokumente");
+  const doc = await prisma.document.create({
+    data: { userId: session.userId, title: template.title, content: template.content },
+  });
+  awardCoins(session.userId, "office_dokument_erstellt", undefined, doc.id).catch(() => undefined);
   redirect(`/app/dokumente/${doc.id}`);
 }
 

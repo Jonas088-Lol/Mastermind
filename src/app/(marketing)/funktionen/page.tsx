@@ -10,6 +10,10 @@ import {
   Users,
   ShieldCheck,
   School,
+  FileSpreadsheet,
+  Newspaper,
+  Swords,
+  MonitorPlay,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
@@ -89,6 +93,46 @@ const features = [
       "Stundenpläne flexibel importieren oder erstellen",
       "Wichtige Informationen mit einem Klick versenden",
       "Nutzer mit wenigen Klicks einladen",
+    ],
+  },
+  {
+    icon: FileSpreadsheet,
+    color: "text-blue-500 bg-blue-50 dark:bg-blue-950/30",
+    title: "Office-Suite",
+    bullets: [
+      "Dokumente, Tabellen und Präsentationen direkt im Browser",
+      "Tabellen mit Formeln und Diagrammen auswerten",
+      "Fertige Vorlagen für den schnellen Start",
+    ],
+  },
+  {
+    icon: Newspaper,
+    color: "text-amber-500 bg-amber-50 dark:bg-amber-950/30",
+    title: "Schülerzeitung",
+    bullets: [
+      "Artikel in Rubriken organisieren und veröffentlichen",
+      "Kommentare fördern den Austausch in der Schulgemeinschaft",
+      "Ausgaben mit einem Klick als PDF drucken",
+    ],
+  },
+  {
+    icon: Swords,
+    color: "text-red-500 bg-red-50 dark:bg-red-950/30",
+    title: "Boss-Fights & Duelle",
+    bullets: [
+      "Boss-Fights in der Vollbild-Arena gegen Wissens-Gegner",
+      "Fragen-Duelle gegen Mitschüler mit Revanche-Funktion",
+      "Lernen wird zum spannenden Wettkampf",
+    ],
+  },
+  {
+    icon: MonitorPlay,
+    color: "text-cyan-600 bg-cyan-50 dark:bg-cyan-950/30",
+    title: "Anzeigetafel",
+    bullets: [
+      "Kiosk-Modus für Bildschirme im Schulgebäude",
+      "Vertretungsplan, Termine und Ankündigungen live",
+      "Mannschaften und Ergebnisse für alle sichtbar",
     ],
   },
   {

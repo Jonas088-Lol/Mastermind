@@ -1,0 +1,6002 @@
+[
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 10 km mit 5 km/h. Wie lange braucht er?",
+  "options": [
+   "1 h",
+   "2 h",
+   "3 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 10 km / 5 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 78 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "80 km",
+   "234 km",
+   "78 km",
+   "156 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 78 km/h · 2 h = 156 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 29 cm³ und die Masse 258,1 g. Welche Dichte hat er?",
+  "options": [
+   "7484,9 g/cm³",
+   "8,9 g/cm³",
+   "9,4 g/cm³",
+   "17,8 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 258,1 g / 29 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 29 cm³ und die Masse 26,1 g. Welche Dichte hat er?",
+  "options": [
+   "756,9 g/cm³",
+   "0,9 g/cm³",
+   "1,4 g/cm³",
+   "1,8 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 26,1 g / 29 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 72 km mit 24 km/h. Wie lange braucht er?",
+  "options": [
+   "48 h",
+   "2 h",
+   "4 h",
+   "3 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 72 km / 24 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 13 cm³ und die Masse 250,9 g. Welche Dichte hat er?",
+  "options": [
+   "19,8 g/cm³",
+   "19,3 g/cm³",
+   "38,6 g/cm³",
+   "3261,7 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 250,9 g / 13 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 29 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "145 km",
+   "33 km",
+   "58 km",
+   "116 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 29 km/h · 4 h = 116 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 72 km mit 18 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "4 h",
+   "5 h",
+   "54 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 72 km / 18 km/h = 4 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 33 cm³?",
+  "options": [
+   "41,9 g",
+   "146,9 g",
+   "293,7 g",
+   "2937 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 8,9 · 33 = 293,7 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 133 km mit 19 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "6 h",
+   "7 h",
+   "114 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 133 km / 19 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 70 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "140 km/h",
+   "40 km/h",
+   "35 km/h",
+   "33 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 70 km / 2 h = 35 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 68 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "306 km",
+   "77 km",
+   "612 km",
+   "680 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 68 km/h · 9 h = 612 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 60 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "67 km",
+   "210 km",
+   "480 km",
+   "420 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 60 km/h · 7 h = 420 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 12 cm³ und die Masse 12 g. Welche Dichte hat er?",
+  "options": [
+   "1,5 g/cm³",
+   "144 g/cm³",
+   "1 g/cm³",
+   "2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 12 g / 12 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 22 cm³?",
+  "options": [
+   "23 g",
+   "220 g",
+   "22 g",
+   "11 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 22 = 22 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 18 cm³?",
+  "options": [
+   "2034 g",
+   "203,4 g",
+   "29,3 g",
+   "101,7 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 11,3 · 18 = 203,4 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 75 km mit 15 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "60 h",
+   "5 h",
+   "6 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 75 km / 15 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 34 cm³?",
+  "options": [
+   "3026 g",
+   "151,3 g",
+   "302,6 g",
+   "42,9 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 8,9 · 34 = 302,6 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 132 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "22 km/h",
+   "27 km/h",
+   "20 km/h",
+   "792 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 132 km / 6 h = 22 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 80 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "21 km/h",
+   "14 km/h",
+   "400 km/h",
+   "16 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 80 km / 5 h = 16 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 19 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "57 km",
+   "114 km",
+   "25 km",
+   "133 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 19 km/h · 6 h = 114 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 86 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "94 km",
+   "774 km",
+   "344 km",
+   "688 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 86 km/h · 8 h = 688 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 75 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "30 km/h",
+   "23 km/h",
+   "225 km/h",
+   "25 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 75 km / 3 h = 25 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 29 cm³?",
+  "options": [
+   "37,9 g",
+   "2581 g",
+   "129,1 g",
+   "258,1 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 29 = 258,1 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 65 km mit 13 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "6 h",
+   "4 h",
+   "52 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 65 km / 13 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 10 cm³?",
+  "options": [
+   "56,5 g",
+   "1130 g",
+   "113 g",
+   "21,3 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 11,3 · 10 = 113 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 15 cm³ und die Masse 15 g. Welche Dichte hat er?",
+  "options": [
+   "225 g/cm³",
+   "2 g/cm³",
+   "1,5 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 15 g / 15 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 40 cm³?",
+  "options": [
+   "42,7 g",
+   "108 g",
+   "1080 g",
+   "54 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 2,7 · 40 = 108 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 126 km mit 18 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "108 h",
+   "7 h",
+   "8 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 126 km / 18 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 70 km mit 14 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "56 h",
+   "6 h",
+   "4 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 70 km / 14 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 65 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "520 km",
+   "228 km",
+   "455 km",
+   "72 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 65 km/h · 7 h = 455 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 48 km mit 6 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "9 h",
+   "7 h",
+   "42 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 48 km / 6 km/h = 8 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 22 cm³?",
+  "options": [
+   "594 g",
+   "29,7 g",
+   "24,7 g",
+   "59,4 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 2,7 · 22 = 59,4 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 51 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "15 km/h",
+   "22 km/h",
+   "17 km/h",
+   "153 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 51 km / 3 h = 17 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 39 cm³ und die Masse 35,1 g. Welche Dichte hat er?",
+  "options": [
+   "1368,9 g/cm³",
+   "1,4 g/cm³",
+   "1,8 g/cm³",
+   "0,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 35,1 g / 39 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 26 km mit 13 km/h. Wie lange braucht er?",
+  "options": [
+   "2 h",
+   "13 h",
+   "3 h",
+   "1 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 26 km / 13 km/h = 2 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 38 cm³ und die Masse 429,4 g. Welche Dichte hat er?",
+  "options": [
+   "11,8 g/cm³",
+   "22,6 g/cm³",
+   "11,3 g/cm³",
+   "16317,2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 429,4 g / 38 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 43 cm³ und die Masse 43 g. Welche Dichte hat er?",
+  "options": [
+   "1849 g/cm³",
+   "1,5 g/cm³",
+   "2 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 43 g / 43 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 195 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "37 km/h",
+   "39 km/h",
+   "44 km/h",
+   "975 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 195 km / 5 h = 39 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 15 cm³ und die Masse 40,5 g. Welche Dichte hat er?",
+  "options": [
+   "5,4 g/cm³",
+   "2,7 g/cm³",
+   "607,5 g/cm³",
+   "3,2 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 40,5 g / 15 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 42 cm³ und die Masse 37,8 g. Welche Dichte hat er?",
+  "options": [
+   "1,8 g/cm³",
+   "1587,6 g/cm³",
+   "1,4 g/cm³",
+   "0,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 37,8 g / 42 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 29 cm³?",
+  "options": [
+   "783 g",
+   "78,3 g",
+   "39,2 g",
+   "31,7 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 2,7 · 29 = 78,3 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 240 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "28 km/h",
+   "1920 km/h",
+   "35 km/h",
+   "30 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 240 km / 8 h = 30 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 16 cm³ und die Masse 14,4 g. Welche Dichte hat er?",
+  "options": [
+   "0,9 g/cm³",
+   "1,8 g/cm³",
+   "230,4 g/cm³",
+   "1,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 14,4 g / 16 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 32 cm³ und die Masse 284,8 g. Welche Dichte hat er?",
+  "options": [
+   "17,8 g/cm³",
+   "9,4 g/cm³",
+   "8,9 g/cm³",
+   "9113,6 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 284,8 g / 32 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 12 cm³?",
+  "options": [
+   "23,3 g",
+   "1356 g",
+   "67,8 g",
+   "135,6 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 11,3 · 12 = 135,6 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 28 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "112 km",
+   "224 km",
+   "36 km",
+   "252 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 28 km/h · 8 h = 224 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 57 km mit 19 km/h. Wie lange braucht er?",
+  "options": [
+   "38 h",
+   "4 h",
+   "3 h",
+   "2 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 57 km / 19 km/h = 3 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 10 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "60 km",
+   "16 km",
+   "30 km",
+   "70 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 10 km/h · 6 h = 60 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 40 cm³?",
+  "options": [
+   "356 g",
+   "3560 g",
+   "178 g",
+   "48,9 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 8,9 · 40 = 356 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 40 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "10 km/h",
+   "15 km/h",
+   "8 km/h",
+   "160 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 40 km / 4 h = 10 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 66 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "2 h",
+   "44 h",
+   "3 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 66 km / 22 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 34 cm³ und die Masse 268,6 g. Welche Dichte hat er?",
+  "options": [
+   "7,9 g/cm³",
+   "8,4 g/cm³",
+   "9132,4 g/cm³",
+   "15,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 268,6 g / 34 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 148 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "37 km/h",
+   "42 km/h",
+   "35 km/h",
+   "592 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 148 km / 4 h = 37 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 10 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "45 km",
+   "100 km",
+   "19 km",
+   "90 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 10 km/h · 9 h = 90 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 14 cm³ und die Masse 14 g. Welche Dichte hat er?",
+  "options": [
+   "196 g/cm³",
+   "1 g/cm³",
+   "1,5 g/cm³",
+   "2 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 14 g / 14 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 58 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "116 km/h",
+   "29 km/h",
+   "27 km/h",
+   "34 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 58 km / 2 h = 29 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 35 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "53 km",
+   "140 km",
+   "38 km",
+   "105 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 35 km/h · 3 h = 105 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 16 km mit 8 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "8 h",
+   "2 h",
+   "1 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 16 km / 8 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 84 km mit 21 km/h. Wie lange braucht er?",
+  "options": [
+   "63 h",
+   "5 h",
+   "3 h",
+   "4 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 84 km / 21 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 120 km mit 15 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "9 h",
+   "7 h",
+   "105 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 120 km / 15 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 280 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "40 km/h",
+   "35 km/h",
+   "33 km/h",
+   "2240 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 280 km / 8 h = 35 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 23 cm³?",
+  "options": [
+   "259,9 g",
+   "2599 g",
+   "130 g",
+   "34,3 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 11,3 · 23 = 259,9 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 18 cm³ und die Masse 16,2 g. Welche Dichte hat er?",
+  "options": [
+   "0,9 g/cm³",
+   "291,6 g/cm³",
+   "1,4 g/cm³",
+   "1,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 16,2 g / 18 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 27 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "2 h",
+   "18 h",
+   "3 h",
+   "4 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 27 km / 9 km/h = 3 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 8 km mit 4 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "4 h",
+   "1 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 8 km / 4 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 70 km mit 10 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "60 h",
+   "6 h",
+   "7 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 70 km / 10 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 92 km mit 23 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "4 h",
+   "3 h",
+   "69 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 92 km / 23 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 182 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1274 km/h",
+   "26 km/h",
+   "24 km/h",
+   "31 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 182 km / 7 h = 26 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 185 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "37 km/h",
+   "42 km/h",
+   "35 km/h",
+   "925 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 185 km / 5 h = 37 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 272 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "2176 km/h",
+   "39 km/h",
+   "34 km/h",
+   "32 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 272 km / 8 h = 34 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 24 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "144 km",
+   "30 km",
+   "72 km",
+   "168 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 24 km/h · 6 h = 144 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 44 cm³ und die Masse 497,2 g. Welche Dichte hat er?",
+  "options": [
+   "11,8 g/cm³",
+   "21876,8 g/cm³",
+   "11,3 g/cm³",
+   "22,6 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 497,2 g / 44 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 50 cm³ und die Masse 965 g. Welche Dichte hat er?",
+  "options": [
+   "48250 g/cm³",
+   "38,6 g/cm³",
+   "19,3 g/cm³",
+   "19,8 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 965 g / 50 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 44 cm³ und die Masse 30,8 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "1355,2 g/cm³",
+   "0,7 g/cm³",
+   "1,2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 30,8 g / 44 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 43 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "45 km",
+   "86 km",
+   "43 km",
+   "129 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 43 km/h · 2 h = 86 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 40 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "120 km",
+   "60 km",
+   "160 km",
+   "43 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 40 km/h · 3 h = 120 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 6 cm³ und die Masse 5,4 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "0,9 g/cm³",
+   "32,4 g/cm³",
+   "1,8 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 5,4 g / 6 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 288 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "36 km/h",
+   "41 km/h",
+   "2304 km/h",
+   "34 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 288 km / 8 h = 36 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 17 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "60 km",
+   "136 km",
+   "119 km",
+   "24 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 17 km/h · 7 h = 119 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 11 cm³?",
+  "options": [
+   "49 g",
+   "97,9 g",
+   "19,9 g",
+   "979 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 8,9 · 11 = 97,9 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 76 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "152 km",
+   "76 km",
+   "228 km",
+   "78 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 76 km/h · 2 h = 152 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 69 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "242 km",
+   "552 km",
+   "483 km",
+   "76 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 69 km/h · 7 h = 483 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 48 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "4 h",
+   "32 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 48 km / 16 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 17 cm³?",
+  "options": [
+   "25,9 g",
+   "75,7 g",
+   "1513 g",
+   "151,3 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 17 = 151,3 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 18 cm³ und die Masse 142,2 g. Welche Dichte hat er?",
+  "options": [
+   "8,4 g/cm³",
+   "15,8 g/cm³",
+   "2559,6 g/cm³",
+   "7,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 142,2 g / 18 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 20 cm³ und die Masse 20 g. Welche Dichte hat er?",
+  "options": [
+   "1 g/cm³",
+   "400 g/cm³",
+   "1,5 g/cm³",
+   "2 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 20 g / 20 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 24 cm³?",
+  "options": [
+   "35,3 g",
+   "271,2 g",
+   "2712 g",
+   "135,6 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 11,3 · 24 = 271,2 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 14 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "140 km",
+   "23 km",
+   "126 km",
+   "63 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 14 km/h · 9 h = 126 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 200 km mit 25 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "9 h",
+   "7 h",
+   "175 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 200 km / 25 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 168 km mit 21 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "9 h",
+   "7 h",
+   "147 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 168 km / 21 km/h = 8 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 30 cm³ und die Masse 27 g. Welche Dichte hat er?",
+  "options": [
+   "0,9 g/cm³",
+   "810 g/cm³",
+   "1,4 g/cm³",
+   "1,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 27 g / 30 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 20 cm³?",
+  "options": [
+   "200 g",
+   "10 g",
+   "20 g",
+   "21 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 20 = 20 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 33 km mit 11 km/h. Wie lange braucht er?",
+  "options": [
+   "22 h",
+   "3 h",
+   "2 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 33 km / 11 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 36 cm³ und die Masse 32,4 g. Welche Dichte hat er?",
+  "options": [
+   "1166,4 g/cm³",
+   "1,8 g/cm³",
+   "1,4 g/cm³",
+   "0,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 32,4 g / 36 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 30 cm³?",
+  "options": [
+   "32,7 g",
+   "810 g",
+   "81 g",
+   "40,5 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 2,7 · 30 = 81 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 19 cm³ und die Masse 150,1 g. Welche Dichte hat er?",
+  "options": [
+   "2851,9 g/cm³",
+   "7,9 g/cm³",
+   "8,4 g/cm³",
+   "15,8 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 150,1 g / 19 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 145 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "34 km/h",
+   "27 km/h",
+   "725 km/h",
+   "29 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 145 km / 5 h = 29 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 19 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "76 km",
+   "29 km",
+   "22 km",
+   "57 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 19 km/h · 3 h = 57 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 8 cm³ und die Masse 21,6 g. Welche Dichte hat er?",
+  "options": [
+   "2,7 g/cm³",
+   "172,8 g/cm³",
+   "5,4 g/cm³",
+   "3,2 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 21,6 g / 8 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 25 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "175 km",
+   "32 km",
+   "200 km",
+   "88 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 25 km/h · 7 h = 175 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 36 cm³?",
+  "options": [
+   "3204 g",
+   "44,9 g",
+   "320,4 g",
+   "160,2 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 8,9 · 36 = 320,4 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 80 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "45 km/h",
+   "40 km/h",
+   "160 km/h",
+   "38 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 80 km / 2 h = 40 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 24 cm³ und die Masse 21,6 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "1,8 g/cm³",
+   "0,9 g/cm³",
+   "518,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 21,6 g / 24 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 64 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "30 km/h",
+   "32 km/h",
+   "128 km/h",
+   "37 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 64 km / 2 h = 32 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 14 km mit 7 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "2 h",
+   "1 h",
+   "3 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 14 km / 7 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 42 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "84 km/h",
+   "26 km/h",
+   "21 km/h",
+   "19 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 42 km / 2 h = 21 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 32 cm³?",
+  "options": [
+   "126,4 g",
+   "39,9 g",
+   "2528 g",
+   "252,8 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 7,9 · 32 = 252,8 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 26 cm³?",
+  "options": [
+   "115,7 g",
+   "231,4 g",
+   "34,9 g",
+   "2314 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 8,9 · 26 = 231,4 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 22 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "9 km/h",
+   "44 km/h",
+   "11 km/h",
+   "16 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 22 km / 2 h = 11 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 231 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "33 km/h",
+   "31 km/h",
+   "38 km/h",
+   "1617 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 231 km / 7 h = 33 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 7 cm³ und die Masse 18,9 g. Welche Dichte hat er?",
+  "options": [
+   "3,2 g/cm³",
+   "5,4 g/cm³",
+   "2,7 g/cm³",
+   "132,3 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 18,9 g / 7 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 32 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "6 km/h",
+   "128 km/h",
+   "8 km/h",
+   "13 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 32 km / 4 h = 8 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 6 cm³?",
+  "options": [
+   "17,3 g",
+   "33,9 g",
+   "67,8 g",
+   "678 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 11,3 · 6 = 67,8 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 20 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "8 km/h",
+   "40 km/h",
+   "15 km/h",
+   "10 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 20 km / 2 h = 10 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 55 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "385 km",
+   "61 km",
+   "330 km",
+   "165 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 55 km/h · 6 h = 330 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 72 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "14 km/h",
+   "576 km/h",
+   "7 km/h",
+   "9 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 72 km / 8 h = 9 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 27 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "34 km",
+   "216 km",
+   "189 km",
+   "95 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 27 km/h · 7 h = 189 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 98 km mit 14 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "8 h",
+   "6 h",
+   "84 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 98 km / 14 km/h = 7 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 18 cm³?",
+  "options": [
+   "160,2 g",
+   "1602 g",
+   "80,1 g",
+   "26,9 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 8,9 · 18 = 160,2 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 70 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "630 km",
+   "700 km",
+   "79 km",
+   "315 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 70 km/h · 9 h = 630 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 203 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1421 km/h",
+   "34 km/h",
+   "29 km/h",
+   "27 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 203 km / 7 h = 29 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 77 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "16 km/h",
+   "539 km/h",
+   "11 km/h",
+   "9 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 77 km / 7 h = 11 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 64 km mit 8 km/h. Wie lange braucht er?",
+  "options": [
+   "56 h",
+   "7 h",
+   "9 h",
+   "8 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 64 km / 8 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 160 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "40 km/h",
+   "38 km/h",
+   "45 km/h",
+   "640 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 160 km / 4 h = 40 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 152 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1216 km/h",
+   "24 km/h",
+   "19 km/h",
+   "17 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 152 km / 8 h = 19 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 64 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "64 km",
+   "192 km",
+   "128 km",
+   "66 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 64 km/h · 2 h = 128 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 144 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "18 km/h",
+   "16 km/h",
+   "23 km/h",
+   "1152 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 144 km / 8 h = 18 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 46 cm³ und die Masse 41,4 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "1,8 g/cm³",
+   "0,9 g/cm³",
+   "1904,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 41,4 g / 46 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 19 cm³?",
+  "options": [
+   "51,3 g",
+   "21,7 g",
+   "25,7 g",
+   "513 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 2,7 · 19 = 51,3 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 150 km mit 25 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "7 h",
+   "125 h",
+   "5 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 150 km / 25 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 266 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1862 km/h",
+   "38 km/h",
+   "36 km/h",
+   "43 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 266 km / 7 h = 38 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 96 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "288 km/h",
+   "32 km/h",
+   "30 km/h",
+   "37 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 96 km / 3 h = 32 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 44 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "176 km",
+   "66 km",
+   "47 km",
+   "132 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 44 km/h · 3 h = 132 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 21 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "7 km/h",
+   "63 km/h",
+   "5 km/h",
+   "12 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 21 km / 3 h = 7 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 28 cm³ und die Masse 28 g. Welche Dichte hat er?",
+  "options": [
+   "1,5 g/cm³",
+   "784 g/cm³",
+   "1 g/cm³",
+   "2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 28 g / 28 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 28 cm³ und die Masse 249,2 g. Welche Dichte hat er?",
+  "options": [
+   "8,9 g/cm³",
+   "17,8 g/cm³",
+   "9,4 g/cm³",
+   "6977,6 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 249,2 g / 28 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 37 cm³ und die Masse 99,9 g. Welche Dichte hat er?",
+  "options": [
+   "2,7 g/cm³",
+   "3,2 g/cm³",
+   "3696,3 g/cm³",
+   "5,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 99,9 g / 37 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 60 km mit 10 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "6 h",
+   "50 h",
+   "7 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 60 km / 10 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 15 km mit 5 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "10 h",
+   "2 h",
+   "4 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 15 km / 5 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 25 cm³ und die Masse 25 g. Welche Dichte hat er?",
+  "options": [
+   "2 g/cm³",
+   "1,5 g/cm³",
+   "625 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 25 g / 25 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 21 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "29 km",
+   "189 km",
+   "168 km",
+   "84 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 21 km/h · 8 h = 168 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 24 cm³ und die Masse 463,2 g. Welche Dichte hat er?",
+  "options": [
+   "11116,8 g/cm³",
+   "38,6 g/cm³",
+   "19,8 g/cm³",
+   "19,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 463,2 g / 24 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 11 cm³?",
+  "options": [
+   "110 g",
+   "5,5 g",
+   "11 g",
+   "12 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 11 = 11 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 245 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "33 km/h",
+   "40 km/h",
+   "35 km/h",
+   "1715 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 245 km / 7 h = 35 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 40 km mit 20 km/h. Wie lange braucht er?",
+  "options": [
+   "20 h",
+   "1 h",
+   "2 h",
+   "3 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 40 km / 20 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 57 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "342 km",
+   "399 km",
+   "63 km",
+   "171 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 57 km/h · 6 h = 342 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 30 cm³?",
+  "options": [
+   "38,9 g",
+   "2670 g",
+   "133,5 g",
+   "267 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 30 = 267 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 27 cm³ und die Masse 213,3 g. Welche Dichte hat er?",
+  "options": [
+   "5759,1 g/cm³",
+   "8,4 g/cm³",
+   "7,9 g/cm³",
+   "15,8 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 213,3 g / 27 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 41 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "287 km",
+   "47 km",
+   "123 km",
+   "246 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 41 km/h · 6 h = 246 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 35 km mit 7 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "4 h",
+   "28 h",
+   "5 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 35 km / 7 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 140 km mit 20 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "8 h",
+   "7 h",
+   "120 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 140 km / 20 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 30 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "240 km",
+   "270 km",
+   "120 km",
+   "38 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 30 km/h · 8 h = 240 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 18 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "2 h",
+   "1 h",
+   "9 h",
+   "3 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 18 km / 9 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 48 km mit 8 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "5 h",
+   "40 h",
+   "7 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 48 km / 8 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 43 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "52 km",
+   "194 km",
+   "387 km",
+   "430 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 43 km/h · 9 h = 387 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 232 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "34 km/h",
+   "1856 km/h",
+   "29 km/h",
+   "27 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 232 km / 8 h = 29 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 26 cm³ und die Masse 205,4 g. Welche Dichte hat er?",
+  "options": [
+   "5340,4 g/cm³",
+   "8,4 g/cm³",
+   "15,8 g/cm³",
+   "7,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 205,4 g / 26 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 76 km mit 19 km/h. Wie lange braucht er?",
+  "options": [
+   "57 h",
+   "4 h",
+   "5 h",
+   "3 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 76 km / 19 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 84 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "672 km",
+   "294 km",
+   "588 km",
+   "91 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 84 km/h · 7 h = 588 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 44 cm³ und die Masse 118,8 g. Welche Dichte hat er?",
+  "options": [
+   "5227,2 g/cm³",
+   "5,4 g/cm³",
+   "3,2 g/cm³",
+   "2,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 118,8 g / 44 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 26 cm³ und die Masse 231,4 g. Welche Dichte hat er?",
+  "options": [
+   "9,4 g/cm³",
+   "6016,4 g/cm³",
+   "17,8 g/cm³",
+   "8,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 231,4 g / 26 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 28 cm³ und die Masse 19,6 g. Welche Dichte hat er?",
+  "options": [
+   "548,8 g/cm³",
+   "1,4 g/cm³",
+   "0,7 g/cm³",
+   "1,2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 19,6 g / 28 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 20 cm³ und die Masse 158 g. Welche Dichte hat er?",
+  "options": [
+   "15,8 g/cm³",
+   "7,9 g/cm³",
+   "8,4 g/cm³",
+   "3160 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 158 g / 20 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 73 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "146 km",
+   "75 km",
+   "219 km",
+   "73 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 73 km/h · 2 h = 146 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 4 cm³?",
+  "options": [
+   "45,2 g",
+   "22,6 g",
+   "452 g",
+   "15,3 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 11,3 · 4 = 45,2 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 9 cm³ und die Masse 71,1 g. Welche Dichte hat er?",
+  "options": [
+   "7,9 g/cm³",
+   "8,4 g/cm³",
+   "15,8 g/cm³",
+   "639,9 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 71,1 g / 9 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 30 km mit 10 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "20 h",
+   "4 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 30 km / 10 km/h = 3 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 152 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "36 km/h",
+   "43 km/h",
+   "38 km/h",
+   "608 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 152 km / 4 h = 38 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 2 cm³ und die Masse 1,4 g. Welche Dichte hat er?",
+  "options": [
+   "0,7 g/cm³",
+   "2,8 g/cm³",
+   "1,4 g/cm³",
+   "1,2 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 1,4 g / 2 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 26 cm³?",
+  "options": [
+   "26 g",
+   "13 g",
+   "27 g",
+   "260 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 1 · 26 = 26 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 17 cm³ und die Masse 151,3 g. Welche Dichte hat er?",
+  "options": [
+   "17,8 g/cm³",
+   "8,9 g/cm³",
+   "9,4 g/cm³",
+   "2572,1 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 151,3 g / 17 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 86 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "387 km",
+   "774 km",
+   "95 km",
+   "860 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 86 km/h · 9 h = 774 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 22 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "44 km",
+   "110 km",
+   "88 km",
+   "26 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 22 km/h · 4 h = 88 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 24 cm³?",
+  "options": [
+   "32,9 g",
+   "2136 g",
+   "106,8 g",
+   "213,6 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 24 = 213,6 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 40 cm³ und die Masse 40 g. Welche Dichte hat er?",
+  "options": [
+   "1,5 g/cm³",
+   "1600 g/cm³",
+   "2 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 40 g / 40 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 10 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "60 km",
+   "15 km",
+   "50 km",
+   "25 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 10 km/h · 5 h = 50 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 14 cm³ und die Masse 270,2 g. Welche Dichte hat er?",
+  "options": [
+   "19,3 g/cm³",
+   "38,6 g/cm³",
+   "3782,8 g/cm³",
+   "19,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 270,2 g / 14 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 50 km mit 10 km/h. Wie lange braucht er?",
+  "options": [
+   "40 h",
+   "5 h",
+   "6 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 50 km / 10 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 24 km mit 6 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "18 h",
+   "4 h",
+   "3 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 24 km / 6 km/h = 4 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 10 cm³ und die Masse 79 g. Welche Dichte hat er?",
+  "options": [
+   "15,8 g/cm³",
+   "790 g/cm³",
+   "7,9 g/cm³",
+   "8,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 79 g / 10 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 144 km mit 18 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "9 h",
+   "126 h",
+   "7 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 144 km / 18 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 56 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "280 km",
+   "140 km",
+   "61 km",
+   "336 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 56 km/h · 5 h = 280 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 210 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "28 km/h",
+   "1470 km/h",
+   "30 km/h",
+   "35 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 210 km / 7 h = 30 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 11 cm³ und die Masse 9,9 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "108,9 g/cm³",
+   "1,8 g/cm³",
+   "0,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 9,9 g / 11 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 8 cm³?",
+  "options": [
+   "31,6 g",
+   "63,2 g",
+   "632 g",
+   "15,9 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 7,9 · 8 = 63,2 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 18 cm³ und die Masse 12,6 g. Welche Dichte hat er?",
+  "options": [
+   "226,8 g/cm³",
+   "1,4 g/cm³",
+   "1,2 g/cm³",
+   "0,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 12,6 g / 18 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 45 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "450 km",
+   "203 km",
+   "405 km",
+   "54 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 45 km/h · 9 h = 405 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 21 cm³?",
+  "options": [
+   "186,9 g",
+   "29,9 g",
+   "1869 g",
+   "93,5 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 8,9 · 21 = 186,9 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 23 cm³?",
+  "options": [
+   "30,9 g",
+   "181,7 g",
+   "1817 g",
+   "90,9 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 7,9 · 23 = 181,7 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 69 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "77 km",
+   "621 km",
+   "276 km",
+   "552 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 69 km/h · 8 h = 552 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 20 cm³?",
+  "options": [
+   "89 g",
+   "1780 g",
+   "178 g",
+   "28,9 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 8,9 · 20 = 178 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 40 cm³ und die Masse 36 g. Welche Dichte hat er?",
+  "options": [
+   "1,8 g/cm³",
+   "1440 g/cm³",
+   "0,9 g/cm³",
+   "1,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 36 g / 40 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 12 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "60 km",
+   "24 km",
+   "16 km",
+   "48 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 12 km/h · 4 h = 48 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 104 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "13 km/h",
+   "832 km/h",
+   "11 km/h",
+   "18 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 104 km / 8 h = 13 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 19 cm³ und die Masse 169,1 g. Welche Dichte hat er?",
+  "options": [
+   "3212,9 g/cm³",
+   "8,9 g/cm³",
+   "9,4 g/cm³",
+   "17,8 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 169,1 g / 19 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 63 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "158 km",
+   "68 km",
+   "315 km",
+   "378 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 63 km/h · 5 h = 315 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 24 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "48 km/h",
+   "10 km/h",
+   "17 km/h",
+   "12 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 24 km / 2 h = 12 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 48 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "17 km/h",
+   "12 km/h",
+   "192 km/h",
+   "10 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 48 km / 4 h = 12 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 22 cm³ und die Masse 173,8 g. Welche Dichte hat er?",
+  "options": [
+   "3823,6 g/cm³",
+   "7,9 g/cm³",
+   "15,8 g/cm³",
+   "8,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 173,8 g / 22 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 25 cm³ und die Masse 67,5 g. Welche Dichte hat er?",
+  "options": [
+   "5,4 g/cm³",
+   "2,7 g/cm³",
+   "3,2 g/cm³",
+   "1687,5 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 67,5 g / 25 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 3 cm³?",
+  "options": [
+   "13,4 g",
+   "11,9 g",
+   "267 g",
+   "26,7 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 3 = 26,7 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 75 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "79 km",
+   "300 km",
+   "375 km",
+   "150 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 75 km/h · 4 h = 300 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 17 cm³ und die Masse 17 g. Welche Dichte hat er?",
+  "options": [
+   "289 g/cm³",
+   "1,5 g/cm³",
+   "1 g/cm³",
+   "2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 17 g / 17 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 22 cm³ und die Masse 59,4 g. Welche Dichte hat er?",
+  "options": [
+   "2,7 g/cm³",
+   "5,4 g/cm³",
+   "3,2 g/cm³",
+   "1306,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 59,4 g / 22 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 48 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "288 km",
+   "336 km",
+   "144 km",
+   "54 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 48 km/h · 6 h = 288 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 5 cm³?",
+  "options": [
+   "50 g",
+   "2,5 g",
+   "5 g",
+   "6 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 5 = 5 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 96 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "17 km/h",
+   "10 km/h",
+   "768 km/h",
+   "12 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 96 km / 8 h = 12 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 57 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "228 km",
+   "456 km",
+   "513 km",
+   "65 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 57 km/h · 8 h = 456 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 175 km mit 25 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "8 h",
+   "6 h",
+   "150 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 175 km / 25 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 144 km mit 24 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "120 h",
+   "6 h",
+   "7 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 144 km / 24 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 133 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "19 km/h",
+   "931 km/h",
+   "24 km/h",
+   "17 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 133 km / 7 h = 19 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 45 cm³ und die Masse 45 g. Welche Dichte hat er?",
+  "options": [
+   "1,5 g/cm³",
+   "2 g/cm³",
+   "1 g/cm³",
+   "2025 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 45 g / 45 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 80 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "64 h",
+   "5 h",
+   "4 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 80 km / 16 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 20 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "10 km/h",
+   "3 km/h",
+   "80 km/h",
+   "5 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 20 km / 4 h = 5 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 35 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "280 km",
+   "42 km",
+   "123 km",
+   "245 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 35 km/h · 7 h = 245 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 27 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "35 km",
+   "243 km",
+   "216 km",
+   "108 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 27 km/h · 8 h = 216 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 34 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "17 km/h",
+   "15 km/h",
+   "22 km/h",
+   "68 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 34 km / 2 h = 17 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 82 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "287 km",
+   "574 km",
+   "89 km",
+   "656 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 82 km/h · 7 h = 574 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 54 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "27 km/h",
+   "25 km/h",
+   "108 km/h",
+   "32 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 54 km / 2 h = 27 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 56 km mit 8 km/h. Wie lange braucht er?",
+  "options": [
+   "48 h",
+   "8 h",
+   "7 h",
+   "6 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 56 km / 8 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 42 km mit 7 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "35 h",
+   "5 h",
+   "7 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 42 km / 7 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 180 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "900 km/h",
+   "36 km/h",
+   "34 km/h",
+   "41 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 180 km / 5 h = 36 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 22 km mit 11 km/h. Wie lange braucht er?",
+  "options": [
+   "2 h",
+   "3 h",
+   "1 h",
+   "11 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 22 km / 11 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 68 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "272 km/h",
+   "15 km/h",
+   "22 km/h",
+   "17 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 68 km / 4 h = 17 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 12 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "15 km",
+   "18 km",
+   "48 km",
+   "36 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 12 km/h · 3 h = 36 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 72 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "36 km/h",
+   "41 km/h",
+   "144 km/h",
+   "34 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 72 km / 2 h = 36 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 56 km mit 14 km/h. Wie lange braucht er?",
+  "options": [
+   "42 h",
+   "4 h",
+   "3 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 56 km / 14 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 65 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "390 km",
+   "455 km",
+   "195 km",
+   "71 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 65 km/h · 6 h = 390 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 120 km mit 20 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "6 h",
+   "7 h",
+   "100 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 120 km / 20 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 16 km mit 4 km/h. Wie lange braucht er?",
+  "options": [
+   "12 h",
+   "5 h",
+   "3 h",
+   "4 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 16 km / 4 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 60 km mit 12 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "48 h",
+   "6 h",
+   "4 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 60 km / 12 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 96 km mit 24 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "4 h",
+   "72 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 96 km / 24 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 68 km mit 17 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "5 h",
+   "3 h",
+   "51 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 68 km / 17 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 70 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "490 km/h",
+   "15 km/h",
+   "8 km/h",
+   "10 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 70 km / 7 h = 10 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 119 km mit 17 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "102 h",
+   "7 h",
+   "8 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 119 km / 17 km/h = 7 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 48 cm³ und die Masse 427,2 g. Welche Dichte hat er?",
+  "options": [
+   "20505,6 g/cm³",
+   "8,9 g/cm³",
+   "9,4 g/cm³",
+   "17,8 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 427,2 g / 48 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 126 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "18 km/h",
+   "16 km/h",
+   "23 km/h",
+   "882 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 126 km / 7 h = 18 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 15 cm³?",
+  "options": [
+   "150 g",
+   "15 g",
+   "7,5 g",
+   "16 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 1 · 15 = 15 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 75 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "80 km",
+   "450 km",
+   "375 km",
+   "188 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 75 km/h · 5 h = 375 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 41 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "185 km",
+   "50 km",
+   "410 km",
+   "369 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 41 km/h · 9 h = 369 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 5 cm³ und die Masse 3,5 g. Welche Dichte hat er?",
+  "options": [
+   "1,2 g/cm³",
+   "17,5 g/cm³",
+   "0,7 g/cm³",
+   "1,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 3,5 g / 5 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 55 km mit 11 km/h. Wie lange braucht er?",
+  "options": [
+   "44 h",
+   "6 h",
+   "5 h",
+   "4 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 55 km / 11 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 9 cm³?",
+  "options": [
+   "1017 g",
+   "101,7 g",
+   "50,9 g",
+   "20,3 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 11,3 · 9 = 101,7 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 11 cm³ und die Masse 86,9 g. Welche Dichte hat er?",
+  "options": [
+   "15,8 g/cm³",
+   "7,9 g/cm³",
+   "955,9 g/cm³",
+   "8,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 86,9 g / 11 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 10 cm³ und die Masse 113 g. Welche Dichte hat er?",
+  "options": [
+   "11,8 g/cm³",
+   "11,3 g/cm³",
+   "22,6 g/cm³",
+   "1130 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 113 g / 10 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 34 cm³ und die Masse 34 g. Welche Dichte hat er?",
+  "options": [
+   "2 g/cm³",
+   "1,5 g/cm³",
+   "1156 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 34 g / 34 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 88 km mit 11 km/h. Wie lange braucht er?",
+  "options": [
+   "77 h",
+   "7 h",
+   "8 h",
+   "9 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 88 km / 11 km/h = 8 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 28 cm³?",
+  "options": [
+   "110,6 g",
+   "221,2 g",
+   "35,9 g",
+   "2212 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 7,9 · 28 = 221,2 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 54 km mit 18 km/h. Wie lange braucht er?",
+  "options": [
+   "2 h",
+   "4 h",
+   "3 h",
+   "36 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 54 km / 18 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 39 cm³ und die Masse 27,3 g. Welche Dichte hat er?",
+  "options": [
+   "1,2 g/cm³",
+   "1,4 g/cm³",
+   "0,7 g/cm³",
+   "1064,7 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 27,3 g / 39 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 24 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "48 km",
+   "28 km",
+   "120 km",
+   "96 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 24 km/h · 4 h = 96 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 38 cm³?",
+  "options": [
+   "19 g",
+   "38 g",
+   "39 g",
+   "380 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 1 · 38 = 38 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 36 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "45 km",
+   "324 km",
+   "162 km",
+   "360 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 36 km/h · 9 h = 324 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 72 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "288 km/h",
+   "16 km/h",
+   "18 km/h",
+   "23 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 72 km / 4 h = 18 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 87 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "261 km/h",
+   "27 km/h",
+   "29 km/h",
+   "34 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 87 km / 3 h = 29 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 12 cm³ und die Masse 8,4 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "100,8 g/cm³",
+   "1,2 g/cm³",
+   "0,7 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 8,4 g / 12 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 76 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "152 km/h",
+   "43 km/h",
+   "36 km/h",
+   "38 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 76 km / 2 h = 38 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 48 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "4 km/h",
+   "384 km/h",
+   "6 km/h",
+   "11 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 48 km / 8 h = 6 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 15 cm³ und die Masse 289,5 g. Welche Dichte hat er?",
+  "options": [
+   "4342,5 g/cm³",
+   "19,8 g/cm³",
+   "38,6 g/cm³",
+   "19,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 289,5 g / 15 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 154 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "6 h",
+   "8 h",
+   "7 h",
+   "132 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 154 km / 22 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 154 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "27 km/h",
+   "22 km/h",
+   "1078 km/h",
+   "20 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 154 km / 7 h = 22 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 48 cm³ und die Masse 379,2 g. Welche Dichte hat er?",
+  "options": [
+   "7,9 g/cm³",
+   "18201,6 g/cm³",
+   "15,8 g/cm³",
+   "8,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 379,2 g / 48 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 30 cm³ und die Masse 81 g. Welche Dichte hat er?",
+  "options": [
+   "3,2 g/cm³",
+   "2,7 g/cm³",
+   "2430 g/cm³",
+   "5,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 81 g / 30 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 192 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1152 km/h",
+   "30 km/h",
+   "32 km/h",
+   "37 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 192 km / 6 h = 32 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 35 cm³ und die Masse 675,5 g. Welche Dichte hat er?",
+  "options": [
+   "38,6 g/cm³",
+   "19,3 g/cm³",
+   "19,8 g/cm³",
+   "23642,5 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 675,5 g / 35 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 184 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "21 km/h",
+   "1472 km/h",
+   "23 km/h",
+   "28 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 184 km / 8 h = 23 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 26 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "260 km",
+   "234 km",
+   "117 km",
+   "35 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 26 km/h · 9 h = 234 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 59 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "66 km",
+   "472 km",
+   "413 km",
+   "207 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 59 km/h · 7 h = 413 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 15 cm³?",
+  "options": [
+   "169,5 g",
+   "26,3 g",
+   "84,8 g",
+   "1695 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 11,3 · 15 = 169,5 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 13 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "22 km",
+   "117 km",
+   "130 km",
+   "59 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 13 km/h · 9 h = 117 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 43 cm³ und die Masse 485,9 g. Welche Dichte hat er?",
+  "options": [
+   "22,6 g/cm³",
+   "11,8 g/cm³",
+   "20893,7 g/cm³",
+   "11,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 485,9 g / 43 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 132 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "6 h",
+   "110 h",
+   "7 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 132 km / 22 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 198 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1188 km/h",
+   "38 km/h",
+   "33 km/h",
+   "31 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 198 km / 6 h = 33 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 175 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "23 km/h",
+   "30 km/h",
+   "1225 km/h",
+   "25 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 175 km / 7 h = 25 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 10 cm³ und die Masse 27 g. Welche Dichte hat er?",
+  "options": [
+   "270 g/cm³",
+   "2,7 g/cm³",
+   "3,2 g/cm³",
+   "5,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 27 g / 10 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 39 cm³ und die Masse 105,3 g. Welche Dichte hat er?",
+  "options": [
+   "2,7 g/cm³",
+   "3,2 g/cm³",
+   "4106,7 g/cm³",
+   "5,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 105,3 g / 39 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 84 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "26 km/h",
+   "252 km/h",
+   "28 km/h",
+   "33 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 84 km / 3 h = 28 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 126 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "21 km/h",
+   "26 km/h",
+   "756 km/h",
+   "19 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 126 km / 6 h = 21 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 29 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "261 km",
+   "116 km",
+   "232 km",
+   "37 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 29 km/h · 8 h = 232 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 62 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "434 km",
+   "68 km",
+   "186 km",
+   "372 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 62 km/h · 6 h = 372 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 162 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "27 km/h",
+   "972 km/h",
+   "32 km/h",
+   "25 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 162 km / 6 h = 27 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 13 cm³?",
+  "options": [
+   "17,6 g",
+   "351 g",
+   "15,7 g",
+   "35,1 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 2,7 · 13 = 35,1 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 112 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "19 km/h",
+   "12 km/h",
+   "14 km/h",
+   "896 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 112 km / 8 h = 14 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 27 cm³?",
+  "options": [
+   "729 g",
+   "72,9 g",
+   "29,7 g",
+   "36,5 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 2,7 · 27 = 72,9 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 19 cm³ und die Masse 51,3 g. Welche Dichte hat er?",
+  "options": [
+   "2,7 g/cm³",
+   "3,2 g/cm³",
+   "974,7 g/cm³",
+   "5,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 51,3 g / 19 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 31 cm³?",
+  "options": [
+   "2759 g",
+   "39,9 g",
+   "138 g",
+   "275,9 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 31 = 275,9 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 48 cm³ und die Masse 542,4 g. Welche Dichte hat er?",
+  "options": [
+   "22,6 g/cm³",
+   "11,3 g/cm³",
+   "11,8 g/cm³",
+   "26035,2 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 542,4 g / 48 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 43 cm³ und die Masse 30,1 g. Welche Dichte hat er?",
+  "options": [
+   "0,7 g/cm³",
+   "1294,3 g/cm³",
+   "1,2 g/cm³",
+   "1,4 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 30,1 g / 43 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 39 km mit 13 km/h. Wie lange braucht er?",
+  "options": [
+   "26 h",
+   "4 h",
+   "3 h",
+   "2 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 39 km / 13 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 38 cm³?",
+  "options": [
+   "150,1 g",
+   "45,9 g",
+   "300,2 g",
+   "3002 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 7,9 · 38 = 300,2 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 30 cm³ und die Masse 579 g. Welche Dichte hat er?",
+  "options": [
+   "19,3 g/cm³",
+   "17370 g/cm³",
+   "38,6 g/cm³",
+   "19,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 579 g / 30 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 18 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "7 km/h",
+   "9 km/h",
+   "36 km/h",
+   "14 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 18 km / 2 h = 9 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 30 km mit 5 km/h. Wie lange braucht er?",
+  "options": [
+   "25 h",
+   "6 h",
+   "7 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 30 km / 5 km/h = 6 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 9 cm³ und die Masse 8,1 g. Welche Dichte hat er?",
+  "options": [
+   "1,8 g/cm³",
+   "1,4 g/cm³",
+   "0,9 g/cm³",
+   "72,9 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 8,1 g / 9 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 35 cm³?",
+  "options": [
+   "36 g",
+   "35 g",
+   "350 g",
+   "17,5 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 1 · 35 = 35 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 66 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "198 km",
+   "72 km",
+   "462 km",
+   "396 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 66 km/h · 6 h = 396 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 46 cm³ und die Masse 46 g. Welche Dichte hat er?",
+  "options": [
+   "2116 g/cm³",
+   "1 g/cm³",
+   "1,5 g/cm³",
+   "2 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 46 g / 46 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 5 cm³?",
+  "options": [
+   "19,8 g",
+   "39,5 g",
+   "12,9 g",
+   "395 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 7,9 · 5 = 39,5 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 128 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "8 h",
+   "112 h",
+   "9 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 128 km / 16 km/h = 8 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 46 cm³ und die Masse 887,8 g. Welche Dichte hat er?",
+  "options": [
+   "38,6 g/cm³",
+   "40838,8 g/cm³",
+   "19,3 g/cm³",
+   "19,8 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 887,8 g / 46 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 33 cm³ und die Masse 29,7 g. Welche Dichte hat er?",
+  "options": [
+   "1,8 g/cm³",
+   "1,4 g/cm³",
+   "0,9 g/cm³",
+   "980,1 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 29,7 g / 33 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 49 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "196 km",
+   "98 km",
+   "53 km",
+   "245 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 49 km/h · 4 h = 196 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 95 km mit 19 km/h. Wie lange braucht er?",
+  "options": [
+   "76 h",
+   "5 h",
+   "6 h",
+   "4 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 95 km / 19 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 16 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "20 km",
+   "32 km",
+   "64 km",
+   "80 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 16 km/h · 4 h = 64 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 28 cm³ und die Masse 316,4 g. Welche Dichte hat er?",
+  "options": [
+   "22,6 g/cm³",
+   "11,8 g/cm³",
+   "11,3 g/cm³",
+   "8859,2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 316,4 g / 28 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 45 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "315 km",
+   "135 km",
+   "270 km",
+   "51 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 45 km/h · 6 h = 270 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 23 cm³?",
+  "options": [
+   "24 g",
+   "230 g",
+   "23 g",
+   "11,5 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 23 = 23 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 42 cm³ und die Masse 810,6 g. Welche Dichte hat er?",
+  "options": [
+   "19,8 g/cm³",
+   "34045,2 g/cm³",
+   "38,6 g/cm³",
+   "19,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 810,6 g / 42 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 4 cm³ und die Masse 2,8 g. Welche Dichte hat er?",
+  "options": [
+   "11,2 g/cm³",
+   "0,7 g/cm³",
+   "1,4 g/cm³",
+   "1,2 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 2,8 g / 4 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 115 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "28 km/h",
+   "575 km/h",
+   "21 km/h",
+   "23 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 115 km / 5 h = 23 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 20 km mit 5 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "15 h",
+   "4 h",
+   "3 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 20 km / 5 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 138 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "21 km/h",
+   "28 km/h",
+   "23 km/h",
+   "828 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 138 km / 6 h = 23 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 17 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "22 km",
+   "85 km",
+   "102 km",
+   "43 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 17 km/h · 5 h = 85 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 62 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "65 km",
+   "248 km",
+   "186 km",
+   "93 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 62 km/h · 3 h = 186 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 77 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "86 km",
+   "770 km",
+   "693 km",
+   "347 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 77 km/h · 9 h = 693 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 62 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "310 km",
+   "124 km",
+   "66 km",
+   "248 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 62 km/h · 4 h = 248 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 56 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "112 km/h",
+   "26 km/h",
+   "28 km/h",
+   "33 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 56 km / 2 h = 28 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 24 cm³?",
+  "options": [
+   "1896 g",
+   "189,6 g",
+   "31,9 g",
+   "94,8 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 7,9 · 24 = 189,6 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 10 cm³ und die Masse 193 g. Welche Dichte hat er?",
+  "options": [
+   "19,3 g/cm³",
+   "1930 g/cm³",
+   "19,8 g/cm³",
+   "38,6 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 193 g / 10 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 17 cm³?",
+  "options": [
+   "192,1 g",
+   "1921 g",
+   "96,1 g",
+   "28,3 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 11,3 · 17 = 192,1 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 16 cm³?",
+  "options": [
+   "63,2 g",
+   "126,4 g",
+   "1264 g",
+   "23,9 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 7,9 · 16 = 126,4 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 19 cm³ und die Masse 366,7 g. Welche Dichte hat er?",
+  "options": [
+   "38,6 g/cm³",
+   "19,3 g/cm³",
+   "19,8 g/cm³",
+   "6967,3 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 366,7 g / 19 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 39 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "48 km",
+   "351 km",
+   "176 km",
+   "390 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 39 km/h · 9 h = 351 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 46 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "54 km",
+   "368 km",
+   "414 km",
+   "184 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 46 km/h · 8 h = 368 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 21 cm³ und die Masse 18,9 g. Welche Dichte hat er?",
+  "options": [
+   "396,9 g/cm³",
+   "1,8 g/cm³",
+   "0,9 g/cm³",
+   "1,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 18,9 g / 21 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 99 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "33 km/h",
+   "31 km/h",
+   "297 km/h",
+   "38 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 99 km / 3 h = 33 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 115 km mit 23 km/h. Wie lange braucht er?",
+  "options": [
+   "92 h",
+   "4 h",
+   "5 h",
+   "6 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 115 km / 23 km/h = 5 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 104 km mit 13 km/h. Wie lange braucht er?",
+  "options": [
+   "9 h",
+   "91 h",
+   "7 h",
+   "8 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 104 km / 13 km/h = 8 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 37 cm³?",
+  "options": [
+   "39,7 g",
+   "99,9 g",
+   "999 g",
+   "50 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 2,7 · 37 = 99,9 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 86 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "430 km",
+   "344 km",
+   "90 km",
+   "172 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 86 km/h · 4 h = 344 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 28 cm³?",
+  "options": [
+   "2492 g",
+   "36,9 g",
+   "124,6 g",
+   "249,2 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 28 = 249,2 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 6 cm³ und die Masse 67,8 g. Welche Dichte hat er?",
+  "options": [
+   "22,6 g/cm³",
+   "11,8 g/cm³",
+   "406,8 g/cm³",
+   "11,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 67,8 g / 6 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 96 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "21 km/h",
+   "14 km/h",
+   "576 km/h",
+   "16 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 96 km / 6 h = 16 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 59 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "177 km",
+   "236 km",
+   "89 km",
+   "62 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 59 km/h · 3 h = 177 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 40 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "10 km/h",
+   "320 km/h",
+   "3 km/h",
+   "5 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 40 km / 8 h = 5 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 50 cm³ und die Masse 50 g. Welche Dichte hat er?",
+  "options": [
+   "1,5 g/cm³",
+   "2500 g/cm³",
+   "1 g/cm³",
+   "2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 50 g / 50 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 96 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "7 h",
+   "6 h",
+   "80 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 96 km / 16 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 36 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "27 h",
+   "3 h",
+   "5 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 36 km / 9 km/h = 4 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 48 cm³ und die Masse 33,6 g. Welche Dichte hat er?",
+  "options": [
+   "1612,8 g/cm³",
+   "0,7 g/cm³",
+   "1,2 g/cm³",
+   "1,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 33,6 g / 48 cm³ = 0,7 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 8 cm³?",
+  "options": [
+   "9 g",
+   "4 g",
+   "80 g",
+   "8 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 1 · 8 = 8 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 7 cm³?",
+  "options": [
+   "70 g",
+   "3,5 g",
+   "7 g",
+   "8 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 7 = 7 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 30 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "10 km/h",
+   "8 km/h",
+   "15 km/h",
+   "90 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 30 km / 3 h = 10 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 2 cm³ und die Masse 22,6 g. Welche Dichte hat er?",
+  "options": [
+   "11,3 g/cm³",
+   "22,6 g/cm³",
+   "45,2 g/cm³",
+   "11,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 22,6 g / 2 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 32 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "36 km",
+   "128 km",
+   "160 km",
+   "64 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 32 km/h · 4 h = 128 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 77 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "308 km",
+   "154 km",
+   "385 km",
+   "81 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 77 km/h · 4 h = 308 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 49 cm³ und die Masse 49 g. Welche Dichte hat er?",
+  "options": [
+   "1 g/cm³",
+   "1,5 g/cm³",
+   "2 g/cm³",
+   "2401 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 49 g / 49 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 64 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "48 h",
+   "3 h",
+   "5 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 64 km / 16 km/h = 4 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 5 cm³?",
+  "options": [
+   "445 g",
+   "13,9 g",
+   "22,3 g",
+   "44,5 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 8,9 · 5 = 44,5 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 35 km mit 5 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "30 h",
+   "7 h",
+   "6 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 35 km / 5 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 52 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "104 km/h",
+   "31 km/h",
+   "24 km/h",
+   "26 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 52 km / 2 h = 26 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 89 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "267 km",
+   "92 km",
+   "356 km",
+   "134 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 89 km/h · 3 h = 267 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 120 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "28 km/h",
+   "35 km/h",
+   "480 km/h",
+   "30 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 120 km / 4 h = 30 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 9 cm³?",
+  "options": [
+   "80,1 g",
+   "40,1 g",
+   "801 g",
+   "17,9 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 8,9 · 9 = 80,1 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 25 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "5 km/h",
+   "3 km/h",
+   "10 km/h",
+   "125 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 25 km / 5 h = 5 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 190 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "950 km/h",
+   "36 km/h",
+   "38 km/h",
+   "43 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 190 km / 5 h = 38 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 40 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "140 km",
+   "320 km",
+   "280 km",
+   "47 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 40 km/h · 7 h = 280 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 42 km mit 6 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "36 h",
+   "6 h",
+   "8 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 42 km / 6 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 114 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "684 km/h",
+   "19 km/h",
+   "24 km/h",
+   "17 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 114 km / 6 h = 19 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 59 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "61 km",
+   "118 km",
+   "59 km",
+   "177 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 59 km/h · 2 h = 118 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 72 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "432 km/h",
+   "17 km/h",
+   "10 km/h",
+   "12 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 72 km / 6 h = 12 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 24 cm³?",
+  "options": [
+   "24 g",
+   "25 g",
+   "240 g",
+   "12 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 1 · 24 = 24 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 63 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "8 h",
+   "54 h",
+   "6 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 63 km / 9 km/h = 7 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 10 cm³?",
+  "options": [
+   "790 g",
+   "17,9 g",
+   "79 g",
+   "39,5 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 7,9 · 10 = 79 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 6 cm³?",
+  "options": [
+   "14,9 g",
+   "534 g",
+   "53,4 g",
+   "26,7 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 8,9 · 6 = 53,4 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 43 cm³ und die Masse 339,7 g. Welche Dichte hat er?",
+  "options": [
+   "8,4 g/cm³",
+   "15,8 g/cm³",
+   "14607,1 g/cm³",
+   "7,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 339,7 g / 43 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 44 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "46 km",
+   "132 km",
+   "88 km",
+   "44 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 44 km/h · 2 h = 88 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 85 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "850 km",
+   "383 km",
+   "765 km",
+   "94 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 85 km/h · 9 h = 765 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 56 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "62 km",
+   "168 km",
+   "392 km",
+   "336 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 56 km/h · 6 h = 336 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 69 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "621 km",
+   "78 km",
+   "690 km",
+   "311 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 69 km/h · 9 h = 621 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 40 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "160 km",
+   "44 km",
+   "80 km",
+   "200 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 40 km/h · 4 h = 160 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 20 cm³ und die Masse 178 g. Welche Dichte hat er?",
+  "options": [
+   "9,4 g/cm³",
+   "17,8 g/cm³",
+   "3560 g/cm³",
+   "8,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 178 g / 20 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 30 cm³?",
+  "options": [
+   "15 g",
+   "30 g",
+   "300 g",
+   "31 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 1 · 30 = 30 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 36 cm³ und die Masse 36 g. Welche Dichte hat er?",
+  "options": [
+   "1 g/cm³",
+   "1,5 g/cm³",
+   "2 g/cm³",
+   "1296 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 36 g / 36 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 23 cm³ und die Masse 204,7 g. Welche Dichte hat er?",
+  "options": [
+   "17,8 g/cm³",
+   "4708,1 g/cm³",
+   "9,4 g/cm³",
+   "8,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 204,7 g / 23 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 22 cm³ und die Masse 19,8 g. Welche Dichte hat er?",
+  "options": [
+   "1,4 g/cm³",
+   "1,8 g/cm³",
+   "0,9 g/cm³",
+   "435,6 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 19,8 g / 22 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 87 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "696 km",
+   "348 km",
+   "783 km",
+   "95 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 87 km/h · 8 h = 696 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 34 cm³ und die Masse 384,2 g. Welche Dichte hat er?",
+  "options": [
+   "22,6 g/cm³",
+   "13062,8 g/cm³",
+   "11,8 g/cm³",
+   "11,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 384,2 g / 34 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 15 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "150 km",
+   "24 km",
+   "135 km",
+   "68 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 15 km/h · 9 h = 135 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 86 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "602 km",
+   "301 km",
+   "688 km",
+   "93 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 86 km/h · 7 h = 602 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 21 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "168 km",
+   "28 km",
+   "147 km",
+   "74 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 21 km/h · 7 h = 147 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 39 km in 3 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "13 km/h",
+   "18 km/h",
+   "11 km/h",
+   "117 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 39 km / 3 h = 13 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 48 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "240 km",
+   "96 km",
+   "192 km",
+   "52 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 48 km/h · 4 h = 192 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 22 cm³?",
+  "options": [
+   "173,8 g",
+   "86,9 g",
+   "29,9 g",
+   "1738 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 7,9 · 22 = 173,8 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 50 cm³ und die Masse 395 g. Welche Dichte hat er?",
+  "options": [
+   "19750 g/cm³",
+   "15,8 g/cm³",
+   "8,4 g/cm³",
+   "7,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 395 g / 50 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 32 cm³ und die Masse 252,8 g. Welche Dichte hat er?",
+  "options": [
+   "7,9 g/cm³",
+   "8089,6 g/cm³",
+   "8,4 g/cm³",
+   "15,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 252,8 g / 32 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 98 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "19 km/h",
+   "686 km/h",
+   "14 km/h",
+   "12 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 98 km / 7 h = 14 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 2,7 g/cm³ und V = 15 cm³?",
+  "options": [
+   "17,7 g",
+   "20,3 g",
+   "405 g",
+   "40,5 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 2,7 · 15 = 40,5 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 4 cm³?",
+  "options": [
+   "35,6 g",
+   "17,8 g",
+   "12,9 g",
+   "356 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 8,9 · 4 = 35,6 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 138 km mit 23 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "7 h",
+   "115 h",
+   "6 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 138 km / 23 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 81 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "648 km",
+   "88 km",
+   "284 km",
+   "567 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 81 km/h · 7 h = 567 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 36 cm³ und die Masse 320,4 g. Welche Dichte hat er?",
+  "options": [
+   "11534,4 g/cm³",
+   "8,9 g/cm³",
+   "17,8 g/cm³",
+   "9,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 320,4 g / 36 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 140 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "33 km/h",
+   "35 km/h",
+   "40 km/h",
+   "560 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 140 km / 4 h = 35 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 102 km mit 17 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "85 h",
+   "7 h",
+   "6 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 102 km / 17 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 60 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "150 km",
+   "360 km",
+   "65 km",
+   "300 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 60 km/h · 5 h = 300 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 41 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "41 km",
+   "43 km",
+   "123 km",
+   "82 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 41 km/h · 2 h = 82 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 33 cm³ und die Masse 372,9 g. Welche Dichte hat er?",
+  "options": [
+   "12305,7 g/cm³",
+   "11,3 g/cm³",
+   "11,8 g/cm³",
+   "22,6 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 372,9 g / 33 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 50 km mit 25 km/h. Wie lange braucht er?",
+  "options": [
+   "25 h",
+   "2 h",
+   "1 h",
+   "3 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 50 km / 25 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 18 km mit 6 km/h. Wie lange braucht er?",
+  "options": [
+   "12 h",
+   "4 h",
+   "3 h",
+   "2 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 18 km / 6 km/h = 3 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 63 km mit 21 km/h. Wie lange braucht er?",
+  "options": [
+   "3 h",
+   "2 h",
+   "4 h",
+   "42 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 63 km / 21 km/h = 3 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 37 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "296 km",
+   "333 km",
+   "148 km",
+   "45 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 37 km/h · 8 h = 296 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 14 cm³?",
+  "options": [
+   "140 g",
+   "7 g",
+   "15 g",
+   "14 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 1 · 14 = 14 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 28 km mit 4 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "8 h",
+   "6 h",
+   "24 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 28 km / 4 km/h = 7 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 19 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "95 km",
+   "114 km",
+   "48 km",
+   "24 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 19 km/h · 5 h = 95 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 28 cm³ und die Masse 75,6 g. Welche Dichte hat er?",
+  "options": [
+   "5,4 g/cm³",
+   "2116,8 g/cm³",
+   "2,7 g/cm³",
+   "3,2 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 75,6 g / 28 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 80 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "10 km/h",
+   "8 km/h",
+   "640 km/h",
+   "15 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 80 km / 8 h = 10 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 53 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "159 km",
+   "106 km",
+   "53 km",
+   "55 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 53 km/h · 2 h = 106 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 62 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "620 km",
+   "558 km",
+   "279 km",
+   "71 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 62 km/h · 9 h = 558 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 78 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "11 km/h",
+   "13 km/h",
+   "18 km/h",
+   "468 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 78 km / 6 h = 13 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 32 km mit 16 km/h. Wie lange braucht er?",
+  "options": [
+   "1 h",
+   "2 h",
+   "3 h",
+   "16 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 32 km / 16 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 91 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "13 km/h",
+   "11 km/h",
+   "637 km/h",
+   "18 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 91 km / 7 h = 13 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 25 cm³ und die Masse 222,5 g. Welche Dichte hat er?",
+  "options": [
+   "5562,5 g/cm³",
+   "9,4 g/cm³",
+   "17,8 g/cm³",
+   "8,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 222,5 g / 25 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 80 km mit 10 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "70 h",
+   "9 h",
+   "7 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 80 km / 10 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 56 km mit 7 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "9 h",
+   "8 h",
+   "49 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 56 km / 7 km/h = 8 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 7 cm³ und die Masse 135,1 g. Welche Dichte hat er?",
+  "options": [
+   "945,7 g/cm³",
+   "19,8 g/cm³",
+   "38,6 g/cm³",
+   "19,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 135,1 g / 7 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 304 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "2432 km/h",
+   "38 km/h",
+   "43 km/h",
+   "36 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 304 km / 8 h = 38 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 180 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "30 km/h",
+   "35 km/h",
+   "1080 km/h",
+   "28 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 180 km / 6 h = 30 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 264 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "31 km/h",
+   "2112 km/h",
+   "38 km/h",
+   "33 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 264 km / 8 h = 33 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 50 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "400 km",
+   "58 km",
+   "450 km",
+   "200 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 50 km/h · 8 h = 400 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 18 cm³?",
+  "options": [
+   "142,2 g",
+   "71,1 g",
+   "25,9 g",
+   "1422 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 7,9 · 18 = 142,2 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 114 km mit 19 km/h. Wie lange braucht er?",
+  "options": [
+   "95 h",
+   "6 h",
+   "7 h",
+   "5 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 114 km / 19 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 20 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "140 km",
+   "120 km",
+   "60 km",
+   "26 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 20 km/h · 6 h = 120 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 24 cm³ und die Masse 271,2 g. Welche Dichte hat er?",
+  "options": [
+   "11,3 g/cm³",
+   "22,6 g/cm³",
+   "11,8 g/cm³",
+   "6508,8 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 271,2 g / 24 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 87 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "261 km",
+   "89 km",
+   "87 km",
+   "174 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 87 km/h · 2 h = 174 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 16 cm³ und die Masse 43,2 g. Welche Dichte hat er?",
+  "options": [
+   "691,2 g/cm³",
+   "3,2 g/cm³",
+   "2,7 g/cm³",
+   "5,4 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 43,2 g / 16 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 70 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "75 km",
+   "175 km",
+   "350 km",
+   "420 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 70 km/h · 5 h = 350 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 74 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "666 km",
+   "83 km",
+   "740 km",
+   "333 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 74 km/h · 9 h = 666 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 41 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "246 km",
+   "103 km",
+   "205 km",
+   "46 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 41 km/h · 5 h = 205 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 22 cm³?",
+  "options": [
+   "124,3 g",
+   "33,3 g",
+   "248,6 g",
+   "2486 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 11,3 · 22 = 248,6 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 88 km mit 22 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "66 h",
+   "3 h",
+   "5 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 88 km / 22 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 36 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "180 km",
+   "90 km",
+   "216 km",
+   "41 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 36 km/h · 5 h = 180 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 9 cm³?",
+  "options": [
+   "9 g",
+   "90 g",
+   "10 g",
+   "4,5 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 1 · 9 = 9 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 47 cm³ und die Masse 42,3 g. Welche Dichte hat er?",
+  "options": [
+   "1988,1 g/cm³",
+   "1,4 g/cm³",
+   "1,8 g/cm³",
+   "0,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 42,3 g / 47 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 32 cm³?",
+  "options": [
+   "284,8 g",
+   "142,4 g",
+   "2848 g",
+   "40,9 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 8,9 · 32 = 284,8 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 88 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "704 km",
+   "96 km",
+   "352 km",
+   "792 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 88 km/h · 8 h = 704 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 192 km mit 24 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "168 h",
+   "9 h",
+   "8 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 192 km / 24 km/h = 8 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 33 cm³ und die Masse 293,7 g. Welche Dichte hat er?",
+  "options": [
+   "17,8 g/cm³",
+   "8,9 g/cm³",
+   "9692,1 g/cm³",
+   "9,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 293,7 g / 33 cm³ = 8,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 217 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "36 km/h",
+   "31 km/h",
+   "1519 km/h",
+   "29 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 217 km / 7 h = 31 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 136 km mit 17 km/h. Wie lange braucht er?",
+  "options": [
+   "8 h",
+   "7 h",
+   "9 h",
+   "119 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 136 km / 17 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 248 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1984 km/h",
+   "36 km/h",
+   "29 km/h",
+   "31 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 248 km / 8 h = 31 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 2 cm³?",
+  "options": [
+   "3 g",
+   "20 g",
+   "2 g",
+   "1 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 1 · 2 = 2 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 24 km mit 8 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "2 h",
+   "16 h",
+   "3 h"
+  ],
+  "correct": 3,
+  "explanation": "t = s/v = 24 km / 8 km/h = 3 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 59 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "266 km",
+   "590 km",
+   "68 km",
+   "531 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 59 km/h · 9 h = 531 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 56 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "448 km/h",
+   "5 km/h",
+   "12 km/h",
+   "7 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 56 km / 8 h = 7 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 27 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "41 km",
+   "108 km",
+   "81 km",
+   "30 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 27 km/h · 3 h = 81 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 35 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "158 km",
+   "315 km",
+   "44 km",
+   "350 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 35 km/h · 9 h = 315 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 4 Stunden lang mit 53 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "57 km",
+   "212 km",
+   "106 km",
+   "265 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 53 km/h · 4 h = 212 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 296 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "37 km/h",
+   "2368 km/h",
+   "42 km/h",
+   "35 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 296 km / 8 h = 37 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 4 cm³ und die Masse 31,6 g. Welche Dichte hat er?",
+  "options": [
+   "15,8 g/cm³",
+   "7,9 g/cm³",
+   "126,4 g/cm³",
+   "8,4 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 31,6 g / 4 cm³ = 7,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 35 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "245 km/h",
+   "5 km/h",
+   "10 km/h",
+   "3 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 35 km / 7 h = 5 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 72 km mit 9 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "8 h",
+   "63 h",
+   "9 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 72 km / 9 km/h = 8 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 83 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "581 km",
+   "498 km",
+   "89 km",
+   "249 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 83 km/h · 6 h = 498 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 46 cm³ und die Masse 519,8 g. Welche Dichte hat er?",
+  "options": [
+   "11,8 g/cm³",
+   "22,6 g/cm³",
+   "23910,8 g/cm³",
+   "11,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 519,8 g / 46 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 64 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "73 km",
+   "288 km",
+   "640 km",
+   "576 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 64 km/h · 9 h = 576 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 20 cm³ und die Masse 226 g. Welche Dichte hat er?",
+  "options": [
+   "11,8 g/cm³",
+   "22,6 g/cm³",
+   "11,3 g/cm³",
+   "4520 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 226 g / 20 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 2 Stunden lang mit 79 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "79 km",
+   "158 km",
+   "237 km",
+   "81 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 79 km/h · 2 h = 158 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 31 cm³ und die Masse 31 g. Welche Dichte hat er?",
+  "options": [
+   "961 g/cm³",
+   "1,5 g/cm³",
+   "2 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 31 g / 31 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 112 km in 4 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "448 km/h",
+   "33 km/h",
+   "26 km/h",
+   "28 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 112 km / 4 h = 28 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 9 cm³ und die Masse 173,7 g. Welche Dichte hat er?",
+  "options": [
+   "1563,3 g/cm³",
+   "19,3 g/cm³",
+   "38,6 g/cm³",
+   "19,8 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 173,7 g / 9 cm³ = 19,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 62 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "496 km",
+   "434 km",
+   "217 km",
+   "69 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 62 km/h · 7 h = 434 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 147 km mit 21 km/h. Wie lange braucht er?",
+  "options": [
+   "7 h",
+   "6 h",
+   "8 h",
+   "126 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 147 km / 21 km/h = 7 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 39 cm³?",
+  "options": [
+   "50,3 g",
+   "4407 g",
+   "220,4 g",
+   "440,7 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 11,3 · 39 = 440,7 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 85 km mit 17 km/h. Wie lange braucht er?",
+  "options": [
+   "4 h",
+   "6 h",
+   "5 h",
+   "68 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 85 km / 17 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 33 cm³ und die Masse 89,1 g. Welche Dichte hat er?",
+  "options": [
+   "2940,3 g/cm³",
+   "2,7 g/cm³",
+   "5,4 g/cm³",
+   "3,2 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 89,1 g / 33 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 44 km mit 11 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "3 h",
+   "4 h",
+   "33 h"
+  ],
+  "correct": 2,
+  "explanation": "t = s/v = 44 km / 11 km/h = 4 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 7 Stunden lang mit 33 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "231 km",
+   "264 km",
+   "116 km",
+   "40 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 33 km/h · 7 h = 231 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 30 km mit 15 km/h. Wie lange braucht er?",
+  "options": [
+   "2 h",
+   "15 h",
+   "1 h",
+   "3 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 30 km / 15 km/h = 2 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 34 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "306 km",
+   "43 km",
+   "153 km",
+   "340 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 34 km/h · 9 h = 306 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 36 cm³?",
+  "options": [
+   "43,9 g",
+   "2844 g",
+   "142,2 g",
+   "284,4 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 7,9 · 36 = 284,4 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 150 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "750 km/h",
+   "35 km/h",
+   "28 km/h",
+   "30 km/h"
+  ],
+  "correct": 3,
+  "explanation": "v = s/t = 150 km / 5 h = 30 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 21 cm³ und die Masse 21 g. Welche Dichte hat er?",
+  "options": [
+   "2 g/cm³",
+   "1 g/cm³",
+   "1,5 g/cm³",
+   "441 g/cm³"
+  ],
+  "correct": 1,
+  "explanation": "ρ = m/V = 21 g / 21 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 16 cm³ und die Masse 16 g. Welche Dichte hat er?",
+  "options": [
+   "1,5 g/cm³",
+   "256 g/cm³",
+   "2 g/cm³",
+   "1 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 16 g / 16 cm³ = 1 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 42 km in 6 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "7 km/h",
+   "252 km/h",
+   "12 km/h",
+   "5 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 42 km / 6 h = 7 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 57 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "60 km",
+   "86 km",
+   "171 km",
+   "228 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 57 km/h · 3 h = 171 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 7 cm³?",
+  "options": [
+   "791 g",
+   "39,6 g",
+   "18,3 g",
+   "79,1 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 11,3 · 7 = 79,1 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 37 cm³ und die Masse 418,1 g. Welche Dichte hat er?",
+  "options": [
+   "11,3 g/cm³",
+   "11,8 g/cm³",
+   "22,6 g/cm³",
+   "15469,7 g/cm³"
+  ],
+  "correct": 0,
+  "explanation": "ρ = m/V = 418,1 g / 37 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 41 cm³ und die Masse 463,3 g. Welche Dichte hat er?",
+  "options": [
+   "11,8 g/cm³",
+   "18995,3 g/cm³",
+   "22,6 g/cm³",
+   "11,3 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 463,3 g / 41 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 19 cm³?",
+  "options": [
+   "2147 g",
+   "30,3 g",
+   "214,7 g",
+   "107,4 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 11,3 · 19 = 214,7 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 9 Stunden lang mit 82 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "738 km",
+   "91 km",
+   "369 km",
+   "820 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 82 km/h · 9 h = 738 km."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 6 cm³?",
+  "options": [
+   "3 g",
+   "6 g",
+   "60 g",
+   "7 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 1 · 6 = 6 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 108 km mit 18 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "6 h",
+   "7 h",
+   "90 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 108 km / 18 km/h = 6 h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 26 km in 2 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "13 km/h",
+   "52 km/h",
+   "11 km/h",
+   "18 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 26 km / 2 h = 13 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 11 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "14 km",
+   "17 km",
+   "33 km",
+   "44 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 11 km/h · 3 h = 33 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 8 Stunden lang mit 35 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "43 km",
+   "280 km",
+   "140 km",
+   "315 km"
+  ],
+  "correct": 1,
+  "explanation": "s = v · t = 35 km/h · 8 h = 280 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 161 km in 7 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "1127 km/h",
+   "23 km/h",
+   "21 km/h",
+   "28 km/h"
+  ],
+  "correct": 1,
+  "explanation": "v = s/t = 161 km / 7 h = 23 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 2 cm³ und die Masse 5,4 g. Welche Dichte hat er?",
+  "options": [
+   "3,2 g/cm³",
+   "5,4 g/cm³",
+   "2,7 g/cm³",
+   "10,8 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 5,4 g / 2 cm³ = 2,7 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 60 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "300 km/h",
+   "10 km/h",
+   "12 km/h",
+   "17 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 60 km / 5 h = 12 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 7,9 g/cm³ und V = 25 cm³?",
+  "options": [
+   "98,8 g",
+   "1975 g",
+   "197,5 g",
+   "32,9 g"
+  ],
+  "correct": 2,
+  "explanation": "m = ρ · V = 7,9 · 25 = 197,5 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 50 cm³ und die Masse 565 g. Welche Dichte hat er?",
+  "options": [
+   "22,6 g/cm³",
+   "11,8 g/cm³",
+   "11,3 g/cm³",
+   "28250 g/cm³"
+  ],
+  "correct": 2,
+  "explanation": "ρ = m/V = 565 g / 50 cm³ = 11,3 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 5 Stunden lang mit 47 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "235 km",
+   "282 km",
+   "118 km",
+   "52 km"
+  ],
+  "correct": 0,
+  "explanation": "s = v · t = 47 km/h · 5 h = 235 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 6 Stunden lang mit 38 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "266 km",
+   "114 km",
+   "228 km",
+   "44 km"
+  ],
+  "correct": 2,
+  "explanation": "s = v · t = 38 km/h · 6 h = 228 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Zug fährt 3 Stunden lang mit 31 km/h. Welche Strecke legt er zurück?",
+  "options": [
+   "34 km",
+   "47 km",
+   "124 km",
+   "93 km"
+  ],
+  "correct": 3,
+  "explanation": "s = v · t = 31 km/h · 3 h = 93 km."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 55 km in 5 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "11 km/h",
+   "16 km/h",
+   "275 km/h",
+   "9 km/h"
+  ],
+  "correct": 0,
+  "explanation": "v = s/t = 55 km / 5 h = 11 km/h."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 12 km mit 4 km/h. Wie lange braucht er?",
+  "options": [
+   "2 h",
+   "3 h",
+   "4 h",
+   "8 h"
+  ],
+  "correct": 1,
+  "explanation": "t = s/v = 12 km / 4 km/h = 3 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Ein Körper hat das Volumen 7 cm³ und die Masse 6,3 g. Welche Dichte hat er?",
+  "options": [
+   "44,1 g/cm³",
+   "1,4 g/cm³",
+   "1,8 g/cm³",
+   "0,9 g/cm³"
+  ],
+  "correct": 3,
+  "explanation": "ρ = m/V = 6,3 g / 7 cm³ = 0,9 g/cm³."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Fahrzeug legt 216 km in 8 Stunden zurück. Wie groß ist die Geschwindigkeit?",
+  "options": [
+   "25 km/h",
+   "32 km/h",
+   "27 km/h",
+   "1728 km/h"
+  ],
+  "correct": 2,
+  "explanation": "v = s/t = 216 km / 8 h = 27 km/h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 1 g/cm³ und V = 29 cm³?",
+  "options": [
+   "29 g",
+   "30 g",
+   "14,5 g",
+   "290 g"
+  ],
+  "correct": 0,
+  "explanation": "m = ρ · V = 1 · 29 = 29 g."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 11,3 g/cm³ und V = 26 cm³?",
+  "options": [
+   "2938 g",
+   "37,3 g",
+   "146,9 g",
+   "293,8 g"
+  ],
+  "correct": 3,
+  "explanation": "m = ρ · V = 11,3 · 26 = 293,8 g."
+ },
+ {
+  "topic": "Geschwindigkeit",
+  "question": "Ein Radfahrer fährt 105 km mit 21 km/h. Wie lange braucht er?",
+  "options": [
+   "5 h",
+   "84 h",
+   "6 h",
+   "4 h"
+  ],
+  "correct": 0,
+  "explanation": "t = s/v = 105 km / 21 km/h = 5 h."
+ },
+ {
+  "topic": "Dichte",
+  "question": "Wie groß ist die Masse eines Körpers mit ρ = 8,9 g/cm³ und V = 37 cm³?",
+  "options": [
+   "3293 g",
+   "329,3 g",
+   "45,9 g",
+   "164,7 g"
+  ],
+  "correct": 1,
+  "explanation": "m = ρ · V = 8,9 · 37 = 329,3 g."
+ }
+]

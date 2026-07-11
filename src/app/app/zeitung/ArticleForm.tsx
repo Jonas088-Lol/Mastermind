@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ARTICLE_COLORS } from "./colors";
+import { ARTICLE_COLORS, KATEGORIEN } from "./colors";
 
 /**
  * Artikel-Formular der Schülerzeitung — "leicht designbar":
@@ -9,7 +9,7 @@ import { ARTICLE_COLORS } from "./colors";
  */
 interface Props {
   action: (formData: FormData) => void;
-  initial?: { title: string; subtitle: string | null; content: string; color: string | null; coverUrl: string | null };
+  initial?: { title: string; subtitle: string | null; content: string; color: string | null; coverUrl: string | null; category: string | null };
   submitLabel: string;
 }
 
@@ -17,6 +17,7 @@ export function ArticleForm({ action, initial, submitLabel }: Props) {
   const [color, setColor] = useState(initial?.color ?? ARTICLE_COLORS[0]);
   const [title, setTitle] = useState(initial?.title ?? "");
   const [coverUrl, setCoverUrl] = useState(initial?.coverUrl ?? "");
+  const [category, setCategory] = useState(initial?.category ?? "");
 
   return (
     <form action={action} className="flex flex-col gap-5">
@@ -32,6 +33,22 @@ export function ArticleForm({ action, initial, submitLabel }: Props) {
         <input id="subtitle" name="subtitle" maxLength={250} defaultValue={initial?.subtitle ?? ""}
           placeholder="Kurzer Teaser unter dem Titel"
           className="rounded-xl border border-border bg-bg px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">Rubrik</span>
+        <div className="flex flex-wrap gap-2">
+          {KATEGORIEN.map((k) => (
+            <button key={k.value} type="button"
+              onClick={() => setCategory(category === k.value ? "" : k.value)}
+              className={`rounded-xl border px-3 py-1.5 text-xs font-semibold transition-colors ${
+                category === k.value ? "border-brand bg-brand text-brand-fg" : "border-border bg-bg text-muted-fg hover:text-fg"
+              }`}>
+              {k.emoji} {k.label}
+            </button>
+          ))}
+        </div>
+        <input type="hidden" name="category" value={category} />
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">

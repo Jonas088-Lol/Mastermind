@@ -735,6 +735,105 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
     setCtx(null);
   }
 
+  // ── Spalte sortieren ───────────────────────────────────────────────────
+  // Sortiert alle benutzten Zeilen (Zeilen mit mind. einer befüllten Zelle)
+  // stabil nach der Spalte. Styles wandern mit der Zeile mit.
+  function sortColumn(colIdx: number, asc: boolean) {
+    setCtx(null);
+    const rowSet = new Set<number>();
+    Object.entries(cells).forEach(([k, cd]) => { if (cd?.v) rowSet.add(Number(k.split(",")[0])); });
+    const usedRows = [...rowSet].sort((a, b) => a - b);
+    if (usedRows.length < 2) return;
+    const valOf = (r0: number) => evaluateCell(`${r0},${colIdx}`, cells);
+    // Array.prototype.sort ist stabil — Zeilen mit gleichem Wert behalten ihre Reihenfolge
+    const sorted = [...usedRows].sort((ra, rb) => {
+      const va = valOf(ra), vb = valOf(rb);
+      if (va === "" && vb === "") return 0;
+      if (va === "") return 1;  // leere Zellen immer ans Ende
+      if (vb === "") return -1;
+      const na = Number(va), nb = Number(vb);
+      const cmp = !isNaN(na) && !isNaN(nb) ? na - nb : va.localeCompare(vb, "de");
+      return asc ? cmp : -cmp;
+    });
+    const nextCells: Record<string, CellData> = {};
+    Object.entries(cells).forEach(([k, cd]) => {
+      const [r0, c0] = k.split(",").map(Number);
+      const pos = sorted.indexOf(r0);
+      if (pos < 0) nextCells[k] = cd;                     // Zeile ohne Inhalt: bleibt
+      else nextCells[`${usedRows[pos]},${c0}`] = cd;      // ganze Zeile (inkl. Styles) wandert
+    });
+    updateSheet({ cells: nextCells });
+  }
+
+  // ── Nach unten ausfüllen ───────────────────────────────────────────────
+  // Kopiert Wert+Format der Zelle in die leere Lücke darunter bis zur
+  // nächsten befüllten Zelle; relative A1-Bezüge in Formeln werden pro Zeile verschoben.
+  function fillDown() {
+    const { row, col } = ctx!;
+    setCtx(null);
+    const src = cells[key(row, col)];
+    if (!src?.v) return;
+    let maxR = -1;
+    Object.entries(cells).forEach(([k, cd]) => { if (cd?.v) maxR = Math.max(maxR, Number(k.split(",")[0])); });
+    const nextCells = { ...cells };
+    let changed = false;
+    for (let r0 = row + 1; r0 <= maxR; r0++) {
+      if (cells[key(r0, col)]?.v) break; // Lücke endet an der nächsten befüllten Zelle
+      const offset = r0 - row;
+      let v2 = src.v;
+      if (v2.startsWith("=")) {
+        v2 = v2.replace(/([A-Z]+)(\d+)/gi, (_, c1: string, n: string) => `${c1}${parseInt(n) + offset}`);
+      }
+      nextCells[key(r0, col)] = { ...src, v: v2 };
+      changed = true;
+    }
+    if (changed) updateSheet({ cells: nextCells });
+  }
+
+  // ── Farbskala für Spalte ───────────────────────────────────────────────
+  // Numerische Zellen der Spalte: bg von rot (Min) über gelb nach grün (Max),
+  // einmalig berechnet und als normale Formate gespeichert.
+  function applyColorScale(colIdx: number) {
+    setCtx(null);
+    const entries: { k: string; n: number }[] = [];
+    Object.entries(cells).forEach(([k, cd]) => {
+      if (Number(k.split(",")[1]) !== colIdx || !cd?.v) return;
+      const ev = cd.v.startsWith("=") ? evaluateCell(k, cells) : cd.v;
+      const n = Number(ev);
+      if (ev !== "" && !isNaN(n)) entries.push({ k, n });
+    });
+    if (entries.length === 0) return;
+    const min = Math.min(...entries.map((e) => e.n));
+    const max = Math.max(...entries.map((e) => e.n));
+    const span = max - min || 1;
+    const C_R = [248, 113, 113], C_Y = [253, 224, 71], C_G = [74, 222, 128];
+    const mix = (a: number[], b: number[], x: number) => a.map((v3, i) => Math.round(v3 + (b[i] - v3) * x));
+    const toHex = (rgb: number[]) => "#" + rgb.map((v3) => v3.toString(16).padStart(2, "0")).join("");
+    const nextCells = { ...cells };
+    entries.forEach(({ k, n }) => {
+      const t = (n - min) / span;
+      const rgb = t < 0.5 ? mix(C_R, C_Y, t * 2) : mix(C_Y, C_G, (t - 0.5) * 2);
+      nextCells[k] = { ...nextCells[k], bg: toHex(rgb) };
+    });
+    updateSheet({ cells: nextCells });
+  }
+
+  function clearColorScale(colIdx: number) {
+    setCtx(null);
+    const nextCells: Record<string, CellData> = {};
+    let changed = false;
+    Object.entries(cells).forEach(([k, cd]) => {
+      if (Number(k.split(",")[1]) === colIdx && cd?.bg) {
+        const { bg: _bg, ...rest } = cd;
+        changed = true;
+        if (Object.keys(rest).length > 0) nextCells[k] = rest as CellData;
+      } else {
+        nextCells[k] = cd;
+      }
+    });
+    if (changed) updateSheet({ cells: nextCells });
+  }
+
   // ── Column resize ──────────────────────────────────────────────────────
 
   function startResize(e: React.MouseEvent, col: number) {
@@ -833,6 +932,7 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
   ];
 
   const [chartDlg, setChartDlg] = useState(false);
+  const [freezeR1, setFreezeR1] = useState(false);
   const charts = sheet.charts ?? [];
 
   function addChart(def: Omit<ChartDef, "id">) {
@@ -850,6 +950,92 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
     document.addEventListener("mousedown", h);
     return () => document.removeEventListener("mousedown", h);
   }, []);
+
+  // ── Zeilen-Rendering (auch für fixierte Zeile 1) ─────────────────────────
+  // Bei aktivierter Fixierung wird Zeile 0 aus der Virtualisierung ausgenommen
+  // und einmal sticky unter dem Spalten-Header gerendert.
+  const firstBodyRow = freezeR1 ? 1 : 0;
+  const bodyStart = Math.max(vStart, firstBodyRow);
+
+  const renderRow = (rr: number, frozen = false) => (
+    <tr key={frozen ? "frozen-0" : rr} style={{ height: ROW_H }}>
+      <td className={`sheet-hdr sticky left-0 border text-center text-[10px] font-semibold select-none ${frozen ? "z-40" : "z-10"}`}
+        style={{
+          top: frozen ? HDR_H : undefined,
+          backgroundColor: sel?.r === rr ? "var(--sheet-sel)" : (frozen ? "var(--sheet-bg)" : undefined),
+        }}>
+        {rr + 1}
+      </td>
+      {Array.from({ length: displayCols }, (_, cc) => {
+        const k = key(rr, cc);
+        const isSel = sel?.r === rr && sel?.c === cc;
+        const isEd  = isSel && editing !== null;
+        const cellDef = cells[k];
+        const raw     = cellDef?.v ?? "";
+        const evaluated = raw.startsWith("=") ? evaluateCell(k, cells) : raw;
+        const display   = formatDisplay(raw, evaluated, cellDef?.fmt);
+        const isErr     = display === "#ERR" || display === "#LOOP";
+        const isFormula = raw.startsWith("=");
+        const numVal    = !raw.startsWith("=") && !isNaN(Number(raw)) && raw !== "";
+        const borderStyle = {
+          borderTopWidth:    cellDef?.bTop    ? "2px" : undefined,
+          borderRightWidth:  cellDef?.bRight  ? "2px" : undefined,
+          borderBottomWidth: cellDef?.bBottom ? "2px" : undefined,
+          borderLeftWidth:   cellDef?.bLeft   ? "2px" : undefined,
+          borderTopColor:    cellDef?.bTop    ? "var(--sheet-border-strong)" : undefined,
+          borderRightColor:  cellDef?.bRight  ? "var(--sheet-border-strong)" : undefined,
+          borderBottomColor: cellDef?.bBottom ? "var(--sheet-border-strong)" : undefined,
+          borderLeftColor:   cellDef?.bLeft   ? "var(--sheet-border-strong)" : undefined,
+        };
+        return (
+          <td
+            key={cc}
+            id={`cell-${rr}-${cc}`}
+            tabIndex={0}
+            onFocus={() => { if (!isSel) setSel({ r: rr, c: cc }); }}
+            onClick={() => { if (!isSel) { setSel({ r: rr, c: cc }); setEditing(null); } }}
+            onDoubleClick={() => { setEditing(raw); setTimeout(() => cellInputRef.current?.focus(), 0); }}
+            onKeyDown={(e) => handleCellKey(e, rr, cc)}
+            onContextMenu={(e) => openCtx(e, rr, cc)}
+            className={`relative border focus:outline-none cursor-default select-none overflow-hidden ${frozen ? "sticky" : ""}`}
+            style={{
+              ...(frozen ? { top: HDR_H, zIndex: 15 } : {}),
+              backgroundColor: isSel
+                ? "var(--sheet-sel)"
+                : (cellDef?.bg && cellDef.bg !== "#ffffff" ? cellDef.bg : (frozen ? "var(--sheet-bg)" : undefined)),
+              color: isErr ? "#ef4444" : (cellDef?.color ?? (isFormula ? "var(--sheet-formula)" : "var(--sheet-fg)")),
+              fontWeight: cellDef?.bold ? "bold" : undefined,
+              fontStyle: cellDef?.italic ? "italic" : undefined,
+              textDecoration: cellDef?.under ? "underline" : undefined,
+              textAlign: cellDef?.align ?? (numVal ? "right" : "left"),
+              fontSize: 12,
+              ...borderStyle,
+              ...(isSel ? { outline: "2px solid #14b8a6", outlineOffset: "-1px" } : {}),
+            }}
+          >
+            {isEd ? (
+              <input
+                ref={cellInputRef}
+                value={editing}
+                onChange={(e) => setEditing(e.target.value)}
+                onBlur={commitEdit}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") { e.preventDefault(); commitEdit(); setSel({ r: Math.min(rr + 1, displayRows - 1), c: cc }); }
+                  if (e.key === "Escape") setEditing(null);
+                  if (e.key === "Tab") { e.preventDefault(); commitEdit(); setSel({ r: rr, c: Math.min(cc + 1, displayCols - 1) }); }
+                }}
+                className="absolute inset-0 w-full px-1 font-mono text-[12px] focus:outline-none border-0 z-10"
+                style={{ backgroundColor: "var(--sheet-bg)", color: "var(--sheet-fg)" }}
+                autoFocus
+              />
+            ) : (
+              <span className="block truncate px-1">{display}</span>
+            )}
+          </td>
+        );
+      })}
+    </tr>
+  );
 
   return (
     <div className={`office-shell ${officeClasses} -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden lg:-mx-10 lg:-mb-10 lg:-mt-10`}>
@@ -936,6 +1122,13 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
           className="flex h-6 items-center gap-1 rounded border border-gray-200 px-2 text-[10px] text-gray-600 hover:bg-gray-50" title="Diagramm einfügen">
           <BarChart3 className="size-3" strokeWidth={1.75} /> Diagramm
         </button>
+        <div className="mx-1 h-4 w-px bg-gray-200" />
+        {/* Zeile 1 fixieren */}
+        <button type="button" onClick={() => setFreezeR1((v) => !v)}
+          className={`flex h-6 items-center gap-1 rounded border px-2 text-[10px] ${freezeR1 ? "border-brand/40 bg-brand/15 text-brand" : "border-gray-200 text-gray-600 hover:bg-gray-50"}`}
+          title="Zeile 1 fixieren">
+          Zeile 1 fixieren
+        </button>
       </div>
 
       {/* ── Formula bar ──────────────────────────────────────────────────────── */}
@@ -982,81 +1175,11 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
             </tr>
           </thead>
           <tbody>
-            {/* Spacer oben: Höhe der nicht gerenderten Zeilen davor */}
-            {vStart > 0 && <tr style={{ height: vStart * ROW_H }} aria-hidden />}
-            {Array.from({ length: vEnd - vStart }, (_, vi) => vStart + vi).map((rr) => (
-              <tr key={rr} style={{ height: ROW_H }}>
-                <td className="sheet-hdr sticky left-0 z-10 border text-center text-[10px] font-semibold select-none"
-                  style={{ backgroundColor: sel?.r === rr ? "var(--sheet-sel)" : undefined }}>
-                  {rr + 1}
-                </td>
-                {Array.from({ length: displayCols }, (_, cc) => {
-                  const k = key(rr, cc);
-                  const isSel = sel?.r === rr && sel?.c === cc;
-                  const isEd  = isSel && editing !== null;
-                  const cellDef = cells[k];
-                  const raw     = cellDef?.v ?? "";
-                  const evaluated = raw.startsWith("=") ? evaluateCell(k, cells) : raw;
-                  const display   = formatDisplay(raw, evaluated, cellDef?.fmt);
-                  const isErr     = display === "#ERR" || display === "#LOOP";
-                  const isFormula = raw.startsWith("=");
-                  const numVal    = !raw.startsWith("=") && !isNaN(Number(raw)) && raw !== "";
-                  const borderStyle = {
-                    borderTopWidth:    cellDef?.bTop    ? "2px" : undefined,
-                    borderRightWidth:  cellDef?.bRight  ? "2px" : undefined,
-                    borderBottomWidth: cellDef?.bBottom ? "2px" : undefined,
-                    borderLeftWidth:   cellDef?.bLeft   ? "2px" : undefined,
-                    borderTopColor:    cellDef?.bTop    ? "var(--sheet-border-strong)" : undefined,
-                    borderRightColor:  cellDef?.bRight  ? "var(--sheet-border-strong)" : undefined,
-                    borderBottomColor: cellDef?.bBottom ? "var(--sheet-border-strong)" : undefined,
-                    borderLeftColor:   cellDef?.bLeft   ? "var(--sheet-border-strong)" : undefined,
-                  };
-                  return (
-                    <td
-                      key={cc}
-                      id={`cell-${rr}-${cc}`}
-                      tabIndex={0}
-                      onFocus={() => { if (!isSel) setSel({ r: rr, c: cc }); }}
-                      onClick={() => { if (!isSel) { setSel({ r: rr, c: cc }); setEditing(null); } }}
-                      onDoubleClick={() => { setEditing(raw); setTimeout(() => cellInputRef.current?.focus(), 0); }}
-                      onKeyDown={(e) => handleCellKey(e, rr, cc)}
-                      onContextMenu={(e) => openCtx(e, rr, cc)}
-                      className="relative border focus:outline-none cursor-default select-none overflow-hidden"
-                      style={{
-                        backgroundColor: isSel ? "var(--sheet-sel)" : (cellDef?.bg && cellDef.bg !== "#ffffff" ? cellDef.bg : undefined),
-                        color: isErr ? "#ef4444" : (cellDef?.color ?? (isFormula ? "var(--sheet-formula)" : "var(--sheet-fg)")),
-                        fontWeight: cellDef?.bold ? "bold" : undefined,
-                        fontStyle: cellDef?.italic ? "italic" : undefined,
-                        textDecoration: cellDef?.under ? "underline" : undefined,
-                        textAlign: cellDef?.align ?? (numVal ? "right" : "left"),
-                        fontSize: 12,
-                        ...borderStyle,
-                        ...(isSel ? { outline: "2px solid #14b8a6", outlineOffset: "-1px" } : {}),
-                      }}
-                    >
-                      {isEd ? (
-                        <input
-                          ref={cellInputRef}
-                          value={editing}
-                          onChange={(e) => setEditing(e.target.value)}
-                          onBlur={commitEdit}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter") { e.preventDefault(); commitEdit(); setSel({ r: Math.min(rr + 1, displayRows - 1), c: cc }); }
-                            if (e.key === "Escape") setEditing(null);
-                            if (e.key === "Tab") { e.preventDefault(); commitEdit(); setSel({ r: rr, c: Math.min(cc + 1, displayCols - 1) }); }
-                          }}
-                          className="absolute inset-0 w-full px-1 font-mono text-[12px] focus:outline-none border-0 z-10"
-                          style={{ backgroundColor: "var(--sheet-bg)", color: "var(--sheet-fg)" }}
-                          autoFocus
-                        />
-                      ) : (
-                        <span className="block truncate px-1">{display}</span>
-                      )}
-                    </td>
-                  );
-                })}
-              </tr>
-            ))}
+            {/* Fixierte Zeile 1: immer gerendert, sticky unter dem Spalten-Header */}
+            {freezeR1 && renderRow(0, true)}
+            {/* Spacer oben: Höhe der nicht gerenderten Zeilen davor (ohne fixierte Zeile) */}
+            {bodyStart > firstBodyRow && <tr style={{ height: (bodyStart - firstBodyRow) * ROW_H }} aria-hidden />}
+            {Array.from({ length: Math.max(0, vEnd - bodyStart) }, (_, vi) => bodyStart + vi).map((rr) => renderRow(rr))}
             {/* Spacer unten: restliche Zeilen bis displayRows */}
             {vEnd < displayRows && <tr style={{ height: (displayRows - vEnd) * ROW_H }} aria-hidden />}
           </tbody>
@@ -1131,6 +1254,13 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
             { label: "Spalte links einfügen", action: () => insertCol(true) },
             { label: "Spalte rechts einfügen", action: () => insertCol(false) },
             { label: "Spalte löschen", action: deleteCol },
+            { label: "—", action: null },
+            { label: "Spalte aufsteigend sortieren", action: () => sortColumn(ctx.col, true) },
+            { label: "Spalte absteigend sortieren", action: () => sortColumn(ctx.col, false) },
+            { label: "Nach unten ausfüllen", action: fillDown },
+            { label: "—", action: null },
+            { label: "Farbskala für Spalte", action: () => applyColorScale(ctx.col) },
+            { label: "Farbskala entfernen", action: () => clearColorScale(ctx.col) },
           ].map((item, i) =>
             item.action === null ? (
               <div key={i} className="my-0.5 h-px bg-gray-100" />

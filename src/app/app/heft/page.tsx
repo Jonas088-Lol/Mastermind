@@ -1,10 +1,10 @@
-import { BookOpen, Plus, FileText, Pencil } from "lucide-react";
+import { BookOpen, Copy, Plus, FileText } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { createNotebook } from "./actions";
+import { createNotebook, duplicateNotebook } from "./actions";
 
 export const metadata: Metadata = { title: "Meine Hefte" };
 
@@ -185,10 +185,27 @@ export default async function HeftPage() {
             : `/app/heft`;
 
           return (
-            <Link
+            <div
               key={nb.id}
-              href={href}
               className="group relative flex flex-col overflow-hidden border border-border bg-bg transition-shadow hover:shadow-md"
+            >
+              {/* Heft duplizieren (Hover) */}
+              <form
+                action={duplicateNotebook.bind(null, nb.id)}
+                className="absolute right-2 top-2 z-10 hidden group-hover:block"
+              >
+                <button
+                  type="submit"
+                  className="grid size-7 place-items-center border border-white/40 bg-black/25 text-white transition-colors hover:bg-black/45"
+                  title="Heft duplizieren"
+                >
+                  <Copy className="size-3.5" strokeWidth={1.75} />
+                </button>
+              </form>
+
+            <Link
+              href={href}
+              className="flex flex-1 flex-col"
             >
               {/* Heft-Einband (farbiger Bereich oben) */}
               <div
@@ -229,18 +246,22 @@ export default async function HeftPage() {
                   )}
                 </ul>
 
-                <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
+                <div className="mt-3 border-t border-border pt-3">
                   <span className="flex items-center gap-1 text-[11px] text-muted-fg">
-                    <BookOpen className="size-3" strokeWidth={1.75} />
-                    {pageCount} {pageCount === 1 ? "Seite" : "Seiten"}
-                  </span>
-                  <span className="flex items-center gap-1 text-[11px] text-muted-fg">
-                    <Pencil className="size-3" strokeWidth={1.75} />
-                    {lastEdit.toLocaleDateString("de-DE", { day: "2-digit", month: "short" })}
+                    <BookOpen className="size-3 shrink-0" strokeWidth={1.75} />
+                    <span className="truncate">
+                      {pageCount} {pageCount === 1 ? "Seite" : "Seiten"} · zuletzt bearbeitet am{" "}
+                      {lastEdit.toLocaleDateString("de-DE", {
+                        day: "2-digit",
+                        month: "2-digit",
+                        year: "numeric",
+                      })}
+                    </span>
                   </span>
                 </div>
               </div>
             </Link>
+            </div>
           );
         })}
       </div>

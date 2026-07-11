@@ -79,6 +79,7 @@ export default async function AdminLayout({
     { href: "/admin/gamification",  label: "Gamification", icon: "zap" },
     { href: "/admin/vertretungsplan", label: "Vertretungsplan", icon: "refreshCw" },
     { href: "/admin/schulkalender",   label: "Schulkalender",   icon: "calendar" },
+    { href: "/admin/anzeigetafel-verwaltung", label: "Anzeigetafel-Inhalte", icon: "monitor" },
     { href: "/admin/einwilligungen",  label: "Einwilligungen",  icon: "fileCheck" },
     { href: "/admin/berichte",        label: "Berichte",        icon: "barChart3" },
     { href: "/admin/branding",      label: "Branding",     icon: "sparkles" },
