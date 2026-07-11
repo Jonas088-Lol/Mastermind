@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { nanoid } from "@/lib/utils";
 import { savePresentationSlides, renamePresentation, deletePresentation } from "../actions";
+import { OfficeThemeMenu, useOfficeTheme } from "@/components/office/OfficeTheme";
 
 // ── Types ─────────────────────────────────────────────────────────────────
 
@@ -418,6 +419,7 @@ interface Props { presentationId: string; initialTitle: string; initialSlides: s
 export function PresentationEditor({ presentationId, initialTitle, initialSlides }: Props) {
   const [slides, setSlides] = useState<Slide[]>(() => parseSlides(initialSlides));
   const [curIdx, setCurIdx] = useState(0);
+  const { mode: officeMode, setMode: setOfficeMode, officeClasses } = useOfficeTheme();
   const [title, setTitle]   = useState(initialTitle);
   const [editTitle, setEditTitle] = useState(false);
   const [presenting, setPresenting] = useState(false);
@@ -532,7 +534,7 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
   }
 
   return (
-    <div ref={wrapRef} className="office-shell -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden lg:-mx-10 lg:-mb-10 lg:-mt-10">
+    <div ref={wrapRef} className={`office-shell ${officeClasses} -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden lg:-mx-10 lg:-mb-10 lg:-mt-10`}>
 
       {/* ── Title bar ──────────────────────────────────────────────────────── */}
       <div className="flex shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-3 py-1.5 shadow-sm">
@@ -551,6 +553,7 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
         <span className="font-mono text-[10px] text-gray-400">
           {saveStatus === "saving" ? "Speichert…" : saveStatus === "unsaved" ? "●" : "✓"}
         </span>
+        <OfficeThemeMenu mode={officeMode} setMode={setOfficeMode} />
         <button type="button" onClick={() => setShowNotes((v) => !v)}
           className={`rounded border px-2 py-1 text-[11px] font-medium transition-colors ${showNotes ? "border-brand bg-brand/10 text-brand" : "border-gray-200 text-gray-500 hover:bg-gray-50"}`}>
           Notizen

@@ -3,7 +3,8 @@
     "allow": [
       "Bash(node -e \"const l = require\\('lucide-react'\\); console.log\\('ClockAlert:', !!l.ClockAlert, 'CalendarClock:', !!l.CalendarClock, 'Clock:', !!l.Clock\\);\")",
       "Bash(npx eslint *)",
-      "Bash(echo \"EXIT: $?\")"
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(python3 -)"
     ]
   }
 }

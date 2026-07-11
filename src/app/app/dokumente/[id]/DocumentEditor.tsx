@@ -8,6 +8,7 @@ import {
   Strikethrough, Trash2, Underline, Undo, ZoomIn, ZoomOut,
 } from "lucide-react";
 import { saveDocumentContent, renameDocument, deleteDocument } from "../actions";
+import { OfficeThemeMenu, useOfficeTheme } from "@/components/office/OfficeTheme";
 
 // ── Constants ──────────────────────────────────────────────────────────────
 
@@ -164,6 +165,7 @@ interface Props {
 
 export function DocumentEditor({ documentId, initialTitle, initialContent }: Props) {
   const [tab, setTab] = useState<Tab>("start");
+  const { mode: officeMode, setMode: setOfficeMode, officeClasses } = useOfficeTheme();
   const [title, setTitle] = useState(initialTitle);
   const [editingTitle, setEditingTitle] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"saved" | "saving" | "unsaved">("saved");
@@ -400,7 +402,7 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
   );
 
   return (
-    <div className="office-shell -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden bg-[#f0f0f0] lg:-mx-10 lg:-mb-10 lg:-mt-10">
+    <div className={`office-shell ${officeClasses} -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden bg-[#f0f0f0] lg:-mx-10 lg:-mb-10 lg:-mt-10`}>
 
       {/* Title bar */}
       <div className="flex shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-3 py-1.5 shadow-sm">
@@ -419,6 +421,7 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
         <span className="font-mono text-[10px] text-gray-400">
           {saveStatus === "saving" ? "Speichert…" : saveStatus === "unsaved" ? "●" : "✓ Gespeichert"}
         </span>
+        <OfficeThemeMenu mode={officeMode} setMode={setOfficeMode} />
         <button type="button" onClick={() => window.print()} className="grid size-7 place-items-center rounded border border-gray-200 text-gray-500 hover:bg-gray-50" title="Drucken">
           <Printer className="size-3.5" strokeWidth={1.75} />
         </button>

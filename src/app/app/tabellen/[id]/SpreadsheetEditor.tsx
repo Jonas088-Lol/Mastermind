@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import { saveSpreadsheetData, renameSpreadsheet, deleteSpreadsheet } from "../actions";
 import { ChartCard, ChartDialog, extractChartData, type ChartDef } from "./SpreadsheetCharts";
+import { OfficeThemeMenu, useOfficeTheme } from "@/components/office/OfficeTheme";
 import { evaluateExpression } from "@/lib/math/evaluate";
 
 // ── Sichere Bedingungs-Auswertung für WENN/IF (kein new Function/eval) ───────
@@ -841,6 +842,7 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
     updateSheet({ charts: charts.filter((c) => c.id !== id) });
   }
 
+  const { mode: officeMode, setMode: setOfficeMode, officeClasses } = useOfficeTheme();
   const [fmtDrop, setFmtDrop] = useState(false);
   const fmtRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -850,7 +852,7 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
   }, []);
 
   return (
-    <div className="office-shell -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden lg:-mx-10 lg:-mb-10 lg:-mt-10">
+    <div className={`office-shell ${officeClasses} -mx-6 -mb-24 -mt-8 flex h-[calc(100vh-4rem)] flex-col overflow-hidden lg:-mx-10 lg:-mb-10 lg:-mt-10`}>
 
       {/* ── Title bar ──────────────────────────────────────────────────────── */}
       <div className="flex shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-3 py-1.5 shadow-sm">
@@ -869,6 +871,7 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
         <span className="font-mono text-[10px] text-gray-400">
           {saveStatus === "saving" ? "Speichert…" : saveStatus === "unsaved" ? "●" : "✓"}
         </span>
+        <OfficeThemeMenu mode={officeMode} setMode={setOfficeMode} />
         <button type="button" onClick={exportCsv} className="grid size-7 place-items-center rounded border border-gray-200 text-gray-500 hover:bg-gray-50" title="CSV exportieren">
           <Download className="size-3.5" strokeWidth={1.75} />
         </button>

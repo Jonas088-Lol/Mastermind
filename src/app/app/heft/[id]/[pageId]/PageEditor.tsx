@@ -16,6 +16,7 @@ import {
 import { BlockEditor } from "@/components/app/BlockEditor";
 import { DrawingCanvas } from "@/components/app/DrawingCanvas";
 import { QuizGenerator } from "./QuizGenerator";
+import { useOfficeTheme } from "@/components/office/OfficeTheme";
 import {
   savePageContent,
   renamePage,
@@ -49,6 +50,7 @@ export function PageEditor({
   currentPage,
   allPages,
 }: Props) {
+  const { officeClasses } = useOfficeTheme();
   const [tab, setTab] = useState<"text" | "draw">("text");
 
   // Notebook title rename
@@ -390,7 +392,7 @@ export function PageEditor({
 
         {/* ── A4 page area ───────────────────────────────────── */}
         <div
-          className={`office-shell flex-1 overflow-y-auto print:overflow-visible ${
+          className={`office-shell ${officeClasses} flex-1 overflow-y-auto print:overflow-visible ${
             tab === "text"
               ? "bg-[#e8e8e8] dark:bg-[#1a1a2e] py-8 print:bg-transparent print:p-0"
               : "bg-surface"
