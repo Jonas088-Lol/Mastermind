@@ -11,10 +11,24 @@ interface Props {
 export function BossDeathAnimation({ bossIcon, tierColor, onComplete }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
+  // onComplete in einem Ref halten und den Timer NUR EINMAL beim Mount starten.
+  // Mit [onComplete] als Dependency würde jeder Parent-Re-Render (z. B. der
+  // sekündliche Battle-Countdown) den Timer zurücksetzen — er feuert dann nie
+  // und die Animation bleibt für immer stehen.
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
+  const firedRef = useRef(false);
+  const finish = () => {
+    if (firedRef.current) return;
+    firedRef.current = true;
+    onCompleteRef.current();
+  };
+
   useEffect(() => {
-    const timer = setTimeout(onComplete, 3400);
+    const timer = setTimeout(finish, 3400);
     return () => clearTimeout(timer);
-  }, [onComplete]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Generate beam angles (8 beams like Ender Dragon's energy pillars)
   const beams = Array.from({ length: 8 }, (_, i) => i * 45);
@@ -22,8 +36,10 @@ export function BossDeathAnimation({ bossIcon, tierColor, onComplete }: Props) {
   return (
     <div
       ref={ref}
-      className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
+      onClick={finish}
+      className="fixed inset-0 z-[9999] flex cursor-pointer items-center justify-center overflow-hidden"
       style={{ background: "rgba(0,0,0,0.85)" }}
+      title="Klicken zum Überspringen"
     >
       <style>{`
         @keyframes boss-core-pulse {
