@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  memo,
   useCallback,
   useEffect,
   useRef,
@@ -418,6 +419,10 @@ function BlockRow({
   );
 }
 
+// Memoisiert: Beim Tippen ändert sich nur der bearbeitete Block — ohne memo
+// rendert jeder Tastendruck ALLE Blöcke neu, was lange Seiten spürbar ausbremst.
+const MemoBlockRow = memo(BlockRow);
+
 function getPlaceholder(type: BlockType): string {
   const map: Record<BlockType, string> = {
     h1: "Überschrift eingeben…",
@@ -511,24 +516,24 @@ export function BlockEditor({ pageId, initialContent, onSave, className = "" }: 
     [pageId, onSave]
   );
 
-  function updateBlock(id: string, content: string) {
+  const updateBlock = useCallback((id: string, content: string) => {
     setBlocks((prev) => {
       const next = prev.map((b) => (b.id === id ? { ...b, content } : b));
       triggerSave(next);
       return next;
     });
-  }
+  }, [triggerSave]);
 
-  function changeType(id: string, type: BlockType) {
+  const changeType = useCallback((id: string, type: BlockType) => {
     setBlocks((prev) => {
       const next = prev.map((b) => (b.id === id ? { ...b, type } : b));
       triggerSave(next);
       return next;
     });
     focusBlock(id);
-  }
+  }, [triggerSave, focusBlock]);
 
-  function insertAfter(id: string) {
+  const insertAfter = useCallback((id: string) => {
     setBlocks((prev) => {
       const idx = prev.findIndex((b) => b.id === id);
       const nb = makeBlock();
@@ -537,9 +542,9 @@ export function BlockEditor({ pageId, initialContent, onSave, className = "" }: 
       setTimeout(() => focusBlock(nb.id), 0);
       return next;
     });
-  }
+  }, [triggerSave, focusBlock]);
 
-  function deleteBlock(id: string) {
+  const deleteBlock = useCallback((id: string) => {
     setBlocks((prev) => {
       const idx = prev.findIndex((b) => b.id === id);
       const next = prev.filter((b) => b.id !== id);
@@ -548,28 +553,28 @@ export function BlockEditor({ pageId, initialContent, onSave, className = "" }: 
       triggerSave(next);
       return next;
     });
-  }
+  }, [triggerSave, focusBlock]);
 
-  function arrowUp(id: string) {
+  const arrowUp = useCallback((id: string) => {
     setBlocks((prev) => {
       const idx = prev.findIndex((b) => b.id === id);
       if (idx > 0) focusBlock(prev[idx - 1].id);
       return prev;
     });
-  }
+  }, [focusBlock]);
 
-  function arrowDown(id: string) {
+  const arrowDown = useCallback((id: string) => {
     setBlocks((prev) => {
       const idx = prev.findIndex((b) => b.id === id);
       if (idx < prev.length - 1) focusBlock(prev[idx + 1].id);
       return prev;
     });
-  }
+  }, [focusBlock]);
 
-  function openSlashMenu(id: string) {
+  const openSlashMenu = useCallback((id: string) => {
     setMenuBlockId(id);
     setMenuOpen(true);
-  }
+  }, []);
 
   function selectMenuType(type: BlockType) {
     if (!menuBlockId) return;
@@ -694,7 +699,7 @@ export function BlockEditor({ pageId, initialContent, onSave, className = "" }: 
               }
             }}
           >
-            <BlockRow
+            <MemoBlockRow
               block={block}
               index={numberedIndex - 1}
               isOnly={blocks.length === 1}

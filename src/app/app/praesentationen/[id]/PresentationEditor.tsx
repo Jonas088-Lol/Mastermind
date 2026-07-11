@@ -67,13 +67,22 @@ const THEMES = [
 
 const FONTS = ["Arial", "Times New Roman", "Georgia", "Calibri", "Helvetica", "Courier New", "Trebuchet MS", "Verdana"];
 
+// Platzhalter-Texte (nur Anzeige bei leerem Element, nie echter Inhalt)
+const EL_PLACEHOLDERS: Partial<Record<ElType, string>> = {
+  title: "Folientitel",
+  subtitle: "Untertitel eingeben",
+  text: "Textfeld bearbeiten",
+};
+
 function makeElement(type: ElType, bg: string): SlideElement {
   const isDark = bg !== "#ffffff" && bg !== "#f8fafc";
   const baseColor = isDark ? "#ffffff" : "#1a1a1a";
   const defaults: Record<ElType, Partial<SlideElement>> = {
-    title:    { x: 10, y: 25, w: 80, h: 18, content: "Folientitel", fontSize: 40, bold: true, align: "center", color: baseColor },
-    subtitle: { x: 15, y: 48, w: 70, h: 14, content: "Untertitel eingeben", fontSize: 22, bold: false, align: "center", color: isDark ? "#9ca3af" : "#4b5563" },
-    text:     { x: 15, y: 20, w: 70, h: 20, content: "Textfeld bearbeiten", fontSize: 18, bold: false, align: "left", color: baseColor },
+    // content bleibt leer — "Folientitel" etc. sind nur Platzhalter (Anzeige),
+    // kein echter Text, den man erst löschen müsste.
+    title:    { x: 10, y: 25, w: 80, h: 18, content: "", fontSize: 40, bold: true, align: "center", color: baseColor },
+    subtitle: { x: 15, y: 48, w: 70, h: 14, content: "", fontSize: 22, bold: false, align: "center", color: isDark ? "#9ca3af" : "#4b5563" },
+    text:     { x: 15, y: 20, w: 70, h: 20, content: "", fontSize: 18, bold: false, align: "left", color: baseColor },
     image:    { x: 25, y: 20, w: 50, h: 40, content: "", fontSize: 14, bold: false, align: "center", color: "#6b7280" },
     shape:    { x: 30, y: 30, w: 40, h: 25, content: "", fontSize: 14, bold: false, align: "center", color: "#ffffff", bg: "#2FC5E7", shapeType: "rect" },
   };
@@ -321,6 +330,7 @@ function SlideCanvas({ slide, onUpdate, presenting }: CanvasProps) {
                 <textarea
                   autoFocus
                   value={elem.content}
+                  placeholder={EL_PLACEHOLDERS[elem.type]}
                   onChange={(e) => upEl(elem.id, { content: e.target.value })}
                   onBlur={() => setEditId(null)}
                   onKeyDown={(e) => { if (e.key === "Escape") setEditId(null); }}
@@ -337,7 +347,7 @@ function SlideCanvas({ slide, onUpdate, presenting }: CanvasProps) {
                   fontStyle: elem.italic ? "italic" : "normal", textDecoration: elem.underline ? "underline" : "none",
                   fontFamily: elem.fontFamily, textAlign: elem.align, lineHeight: 1.3, whiteSpace: "pre-wrap",
                 }}>
-                  {elem.content || (presenting ? "" : <span style={{ opacity: 0.3 }}>Doppelklick zum Bearbeiten</span>)}
+                  {elem.content || (presenting ? "" : <span style={{ opacity: 0.35 }}>{EL_PLACEHOLDERS[elem.type] ?? "Doppelklick zum Bearbeiten"}</span>)}
                 </p>
               )}
 
