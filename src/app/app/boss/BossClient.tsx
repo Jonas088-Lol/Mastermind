@@ -243,7 +243,13 @@ export function BossClient({
     const elapsedMs = Date.now() - questionShownAtRef.current;
     startTransition(async () => {
       const res = await attackBoss(battleId, question!.id, idx, { elapsedMs, streak: combo });
-      if ("error" in res) { setPhase("idle"); return; }
+      if ("error" in res) {
+        setLoadError(`${res.error} — versuch es nochmal.`);
+        setPhase("idle");
+        setQuestion(null);
+        setSelected(null);
+        return;
+      }
       setResult(res);
       if (res.correct) {
         setHp(res.newHp);

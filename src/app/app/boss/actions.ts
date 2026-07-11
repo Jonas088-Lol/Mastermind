@@ -8,6 +8,8 @@ import { BOSS_TIERS, BOSS_INDEX, type BossTier } from "@/lib/game";
 import { getEventMultiplier } from "@/lib/settings";
 import { onBossFightWin } from "@/lib/tree-quest-engine";
 import { BUILTIN_BOSS_QUESTIONS } from "@/lib/boss-fallback-questions";
+import { safeJsonParse } from "@/lib/safe-json";
+import { logger } from "@/lib/logger";
 
 /** Antwortzeit unter diesem Wert → kritischer Treffer (doppelter Schaden). */
 const CRIT_MS = 3_500;
@@ -41,7 +43,38 @@ export interface AttackResult {
   };
 }
 
+/**
+ * Robustes Parsen des Lösungs-Felds einer Frage.
+ * Verkraftet: echtes Array (Postgres String[]), JSON-String ('["a"]'),
+ * und nackte Buchstaben ("a" oder "a,b") — wirft nie.
+ */
+function parseLoesung(raw: unknown): string[] {
+  if (Array.isArray(raw)) return raw.map(String);
+  if (typeof raw !== "string" || raw === "") return [];
+  const parsed = safeJsonParse<unknown>(raw, null);
+  if (Array.isArray(parsed)) return parsed.map(String);
+  if (typeof parsed === "string") return [parsed];
+  // kein JSON: als Buchstabenliste interpretieren ("a" / "a,b")
+  return raw.split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
+}
+
 export async function attackBoss(
+  battleId: string,
+  questionId: string,
+  selectedOptionIndex: number,
+  meta?: { elapsedMs?: number; streak?: number },
+): Promise<AttackResult | { error: string }> {
+  // Schutz-Wrapper: eine geworfene Exception in einer Server Action rendert
+  // sonst die Fehlerseite — der Client soll stattdessen eine Meldung zeigen.
+  try {
+    return await attackBossInner(battleId, questionId, selectedOptionIndex, meta);
+  } catch (err) {
+    logger.error("attackBoss failed", { battleId, questionId, err: err instanceof Error ? err.message : String(err) });
+    return { error: "Antwort konnte nicht verarbeitet werden" };
+  }
+}
+
+async function attackBossInner(
   battleId: string,
   questionId: string,
   selectedOptionIndex: number,
@@ -75,11 +108,7 @@ export async function attackBoss(
     ? String(selectedOptionIndex) === genQ.correct
     : (() => {
         const letter  = String.fromCharCode(97 + selectedOptionIndex); // 0→"a", 1→"b", …
-        const loesung = (
-          Array.isArray(frageQ!.loesung)
-            ? frageQ!.loesung
-            : JSON.parse(frageQ!.loesung as string)
-        ) as string[];
+        const loesung = parseLoesung(frageQ!.loesung);
         return loesung.includes(letter);
       })();
 
@@ -96,9 +125,7 @@ export async function attackBoss(
     correctIndex = Number(genQ.correct);
     explanation = genQ.explanation ?? null;
   } else if (frageQ) {
-    const loesung = (
-      Array.isArray(frageQ.loesung) ? frageQ.loesung : JSON.parse(frageQ.loesung as string)
-    ) as string[];
+    const loesung = parseLoesung(frageQ.loesung);
     correctIndex = loesung[0] ? loesung[0].toLowerCase().charCodeAt(0) - 97 : undefined;
     explanation = (frageQ.erklaerung as string | undefined) ?? null;
   }
