@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
+import { logger } from "@/lib/logger";
+import { safeJsonParse } from "@/lib/safe-json";
 
 export async function GET(
   _req: NextRequest,
@@ -77,33 +79,54 @@ export async function GET(
     }) as Promise<Record<string, unknown> | null>;
   };
 
-  const frageQ = (fach ? (await pickFrage(true) ?? await pickFrage(false)) : null);
+  // Fallback: irgendeine Frage (egal welches Fach), damit der Kampf nie leer läuft.
+  const pickFrageAny = async () => {
+    const total = (await db.frage.count({})) as number;
+    if (total === 0) return null;
+    return db.frage.findFirst({
+      skip: Math.floor(Math.random() * total),
+    }) as Promise<Record<string, unknown> | null>;
+  };
+
+  const frageQ = fach
+    ? (await pickFrage(true) ?? await pickFrage(false) ?? await pickFrageAny())
+    : await pickFrageAny();
 
   if (frageQ) {
     const rawAntworten = frageQ.antworten;
     const antworten = (
       Array.isArray(rawAntworten)
         ? rawAntworten
-        : JSON.parse(rawAntworten as string)
+        : safeJsonParse<Array<{ id: string; text: string; korrekt: boolean }>>(rawAntworten as string, [])
     ) as Array<{ id: string; text: string; korrekt: boolean }>;
 
-    return NextResponse.json({
-      id: `fq_${frageQ.id as string}`,
-      question: frageQ.frage as string,
-      subject: battle.subject ?? "Allgemein",
-      grade: frageQ.jahrgangsstufe as number,
-      source: "frage",
-      options: antworten.map((a, i) => ({ id: i, text: a.text })),
-    });
+    if (antworten.length >= 2) {
+      return NextResponse.json({
+        id: `fq_${frageQ.id as string}`,
+        question: frageQ.frage as string,
+        subject: battle.subject ?? "Allgemein",
+        grade: frageQ.jahrgangsstufe as number,
+        source: "frage",
+        options: antworten.map((a, i) => ({ id: i, text: a.text })),
+      });
+    }
+    // sonst: weiter zum ExerciseQuestion-Fallback
   }
 
   // ── Path B fallback: ExerciseQuestion-Pool ───────────────────────────────
   const subjectFilter = battle.subject ? { subject: battle.subject } : {};
-  const whereExact   = { type: "mc", topic: { ...subjectFilter, ...(grade ? { grade } : {}) } };
-  const whereSubject = { type: "mc", topic: subjectFilter };
-  const whereAny     = { type: "mc" };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const whereExact: any   = { type: "mc", topic: { ...subjectFilter, ...(grade ? { grade } : {}) } };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const whereSubject: any = { type: "mc", topic: subjectFilter };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const whereAny: any     = { type: "mc" };
+  // Letzter Rettungsanker: auch blitz (ebenfalls Multiple-Choice-artig).
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const whereAnyType: any = { type: { in: ["mc", "blitz"] }, options: { not: null } };
 
-  const pickRandom = async (w: typeof whereAny) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const pickRandom = async (w: any) => {
     const total = await prisma.exerciseQuestion.count({ where: w });
     if (total === 0) return null;
     return prisma.exerciseQuestion.findFirst({
@@ -115,11 +138,18 @@ export async function GET(
 
   const q = await pickRandom(whereExact)
     ?? await pickRandom(whereSubject)
-    ?? await pickRandom(whereAny);
+    ?? await pickRandom(whereAny)
+    ?? await pickRandom(whereAnyType);
 
-  if (!q) return NextResponse.json({ error: "No questions" }, { status: 404 });
+  if (!q) {
+    logger.warn("boss question: kein Fragen-Content gefunden", { battleId, subject: battle.subject, grade });
+    return NextResponse.json({ error: "No questions" }, { status: 404 });
+  }
 
-  const opts = q.options ? (JSON.parse(q.options) as string[]) : [];
+  const opts = safeJsonParse<string[]>(q.options, []);
+  if (opts.length < 2) {
+    return NextResponse.json({ error: "No questions" }, { status: 404 });
+  }
 
   return NextResponse.json({
     id: q.id,
