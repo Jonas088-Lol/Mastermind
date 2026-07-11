@@ -99,6 +99,10 @@ export default async function MannschaftenPage() {
               <Label htmlFor="coach">Trainer <span className="font-normal text-muted-fg">(optional)</span></Label>
               <Input id="coach" name="coach" placeholder="z. B. Herr Mayer" />
             </div>
+            <div className="space-y-1.5 sm:col-span-2">
+              <Label htmlFor="imageUrl">Teamfoto-URL <span className="font-normal text-muted-fg">(optional — wird auf der Anzeigetafel gezeigt)</span></Label>
+              <Input id="imageUrl" name="imageUrl" type="url" placeholder="https://… oder /uploads/…" />
+            </div>
             <div className="sm:col-span-2">
               <Button type="submit">Mannschaft anlegen</Button>
             </div>

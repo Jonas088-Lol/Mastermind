@@ -35,11 +35,34 @@ export type BoardSubstitution = {
   room: string | null;
 };
 
+export type BoardEvent = {
+  id: string;
+  title: string;
+  description: string | null;
+  startAt: string; // ISO
+  allDay: boolean;
+  category: string;
+};
+
+export type BoardTeamResult = { date?: string; opponent?: string; scoreHome?: number; scoreAway?: number };
+
+export type BoardTeam = {
+  id: string;
+  name: string;
+  sport: string;
+  season: string | null;
+  coach: string | null;
+  imageUrl: string | null;
+  results: BoardTeamResult[];
+};
+
 export type PlanBoardData = {
   classes: BoardClass[];
   substitutions: BoardSubstitution[];
   periodTimes: string[];
   todayLabel: string;
+  events: BoardEvent[];
+  teams: BoardTeam[];
 };
 
 const DEFAULT_TIMES = [
@@ -52,7 +75,9 @@ export async function loadPlanBoardData(schoolId: string): Promise<PlanBoardData
   const todayEnd = new Date(today.getTime() + 86_399_999);
   const todayDow = today.getDay() === 0 ? 7 : today.getDay(); // 1=Mon…5=Fri
 
-  const [classes, substitutions, periodConfigs] = await Promise.all([
+  const in14Days = new Date(today.getTime() + 14 * 86_400_000);
+
+  const [classes, substitutions, periodConfigs, events, teams] = await Promise.all([
     prisma.schoolClass.findMany({
       where: { schoolId },
       orderBy: [{ grade: "asc" }, { name: "asc" }],
@@ -82,6 +107,16 @@ export async function loadPlanBoardData(schoolId: string): Promise<PlanBoardData
     prisma.schoolPeriodConfig.findMany({
       where: { schoolId },
       orderBy: { period: "asc" },
+    }),
+    prisma.schoolEvent.findMany({
+      where: { schoolId, startAt: { gte: today, lte: in14Days } },
+      orderBy: { startAt: "asc" },
+      take: 12,
+    }),
+    prisma.schoolTeam.findMany({
+      where: { schoolId },
+      orderBy: { name: "asc" },
+      take: 12,
     }),
   ]);
 
@@ -118,6 +153,30 @@ export async function loadPlanBoardData(schoolId: string): Promise<PlanBoardData
       absentTeacher: s.absentTeacher?.name ?? null,
       room: s.room,
     })),
+    events: events.map((e) => ({
+      id: e.id,
+      title: e.title,
+      description: e.description,
+      startAt: e.startAt.toISOString(),
+      allDay: e.allDay,
+      category: e.category,
+    })),
+    teams: teams.map((t) => {
+      let results: BoardTeamResult[] = [];
+      try {
+        const parsed = t.results ? JSON.parse(t.results) : [];
+        if (Array.isArray(parsed)) results = parsed as BoardTeamResult[];
+      } catch { /* defektes JSON → keine Ergebnisse */ }
+      return {
+        id: t.id,
+        name: t.name,
+        sport: t.sport,
+        season: t.season,
+        coach: t.coach,
+        imageUrl: (t as { imageUrl?: string | null }).imageUrl ?? null,
+        results: results.slice(-5).reverse(), // die letzten 5, neueste zuerst
+      };
+    }),
     periodTimes,
     todayLabel: today.toLocaleDateString("de-DE", {
       weekday: "long",

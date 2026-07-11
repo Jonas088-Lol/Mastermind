@@ -23,11 +23,14 @@ export async function createTeam(formData: FormData): Promise<void> {
   const sport = (formData.get("sport") as string | null)?.trim() ?? "";
   const season = (formData.get("season") as string | null)?.trim() || null;
   const coach = (formData.get("coach") as string | null)?.trim() || null;
+  // Teamfoto: nur interne Upload-Pfade oder https-URLs zulassen
+  const imageRaw = (formData.get("imageUrl") as string | null)?.trim() || null;
+  const imageUrl = imageRaw && (/^https:\/\//.test(imageRaw) || imageRaw.startsWith("/uploads/")) ? imageRaw.slice(0, 500) : null;
 
   if (!name || !sport) return;
 
   await prisma.schoolTeam.create({
-    data: { schoolId: session.schoolId, name, sport, season, coach },
+    data: { schoolId: session.schoolId, name, sport, season, coach, imageUrl },
   });
 
   revalidatePath("/rektor/mannschaften");

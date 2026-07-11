@@ -989,6 +989,7 @@ model SchoolTeam {
   sport    String  // fussball | basketball | volleyball | handball | leichtathletik | schwimmen | tennis
   season   String? // "2025/26"
   coach    String?
+  imageUrl String? // Teamfoto (URL, z. B. /uploads/…) — u. a. für die Anzeigetafel
   results  String? // JSON: array of {date, opponent, scoreHome, scoreAway}
 
   @@index([schoolId])
