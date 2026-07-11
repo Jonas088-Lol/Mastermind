@@ -9,10 +9,26 @@ import { BossDefeatedOverlay } from "./BossDefeatedOverlay";
 import { BossDeathAnimation } from "./BossDeathAnimation";
 import { cn } from "@/lib/utils";
 
-const QUESTION_TIME = 20;
+const QUESTION_TIME = 10;
 const LETTERS = ["A", "B", "C", "D"] as const;
 const MAX_HEARTS = 3;
 const KO_SECONDS = 8;
+/** Antwort schneller als das → kritischer Treffer (muss zu CRIT_MS in actions.ts passen). */
+const CRIT_MS = 3_500;
+/** Ab dieser Streak gibt es +1 Bonusschaden (muss zu STREAK_BONUS_AT in actions.ts passen). */
+const STREAK_BONUS_AT = 5;
+/** Angriffsziele: Lebensdauer, Spawn-Intervall, max. gleichzeitig. */
+const TARGET_TTL_MS = 2_800;
+const TARGET_SPAWN_MS = 1_200;
+const MAX_TARGETS = 3;
+
+interface AttackTarget {
+  key: number;
+  /** Position in % der Arena. */
+  x: number;
+  y: number;
+  bornAt: number;
+}
 
 function shuffleOptions<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -91,6 +107,11 @@ export function BossClient({
   const [ko, setKo] = useState(false);
   const [koLeft, setKoLeft] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // Vollbild-Kampfmodus: Angriffsziele poppen über die Arena verteilt auf
+  const [battleMode, setBattleMode] = useState(false);
+  const [targets, setTargets] = useState<AttackTarget[]>([]);
+  const questionShownAtRef = useRef(0);
+  const targetKeyRef = useRef(0);
 
   const safeTier = (tier as BossTier) in BOSS_TIERS ? (tier as BossTier) : "common";
   const tierData = BOSS_TIERS[safeTier];
@@ -143,8 +164,55 @@ export function BossClient({
     return () => clearTimeout(id);
   }, [ko, koLeft]);
 
+  // Angriffsziele spawnen, solange der Kampfmodus läuft und keine Frage offen ist
+  useEffect(() => {
+    if (!battleMode || phase !== "idle" || ko || defeated) {
+      setTargets([]);
+      return;
+    }
+    const spawn = () => {
+      setTargets((ts) => {
+        const now = Date.now();
+        const alive = ts.filter((t) => now - t.bornAt < TARGET_TTL_MS);
+        if (alive.length >= MAX_TARGETS) return alive;
+        return [
+          ...alive,
+          {
+            key: targetKeyRef.current++,
+            x: 8 + Math.random() * 76,
+            y: 14 + Math.random() * 62,
+            bornAt: now,
+          },
+        ];
+      });
+    };
+    spawn();
+    const id = setInterval(spawn, TARGET_SPAWN_MS);
+    return () => clearInterval(id);
+  }, [battleMode, phase, ko, defeated]);
+
+  // Vollbild verlassen (z. B. per ESC) beendet den Kampfmodus nicht —
+  // die Arena bleibt als Overlay bestehen, bis der Spieler auf ✕ tippt.
+  function startBattle() {
+    if (defeated || ko) return;
+    setBattleMode(true);
+    document.documentElement.requestFullscreen?.().catch(() => null);
+  }
+
+  function stopBattle() {
+    setBattleMode(false);
+    setTargets([]);
+    if (phase === "question" || phase === "loading") {
+      setPhase("idle");
+      setQuestion(null);
+      setSelected(null);
+    }
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => null);
+  }
+
   async function handleAttack() {
     if (defeated || phase !== "idle" || ko) return;
+    setTargets([]);
     setPhase("loading");
     try {
       const res = await fetch(`/api/boss/${battleId}/question`);
@@ -154,6 +222,7 @@ export function BossClient({
       setShuffledOptions(shuffleOptions(q.options));
       setSelected(null);
       setResult(null);
+      questionShownAtRef.current = Date.now();
       setPhase("question");
     } catch {
       setPhase("idle");
@@ -164,8 +233,9 @@ export function BossClient({
     if (selected !== null || phase !== "question") return;
     if (timerRef.current) clearInterval(timerRef.current);
     setSelected(idx);
+    const elapsedMs = Date.now() - questionShownAtRef.current;
     startTransition(async () => {
-      const res = await attackBoss(battleId, question!.id, idx);
+      const res = await attackBoss(battleId, question!.id, idx, { elapsedMs, streak: combo });
       if ("error" in res) { setPhase("idle"); return; }
       setResult(res);
       if (res.correct) {
@@ -190,6 +260,10 @@ export function BossClient({
         });
       }
       if (res.defeated) {
+        // Kampfmodus beenden, damit Todesanimation & Sieges-Overlay frei liegen
+        setBattleMode(false);
+        setTargets([]);
+        if (document.fullscreenElement) document.exitFullscreen().catch(() => null);
         setShowDeathAnim(true);
         if (res.killData) setKillData(res.killData);
       }
@@ -223,6 +297,9 @@ export function BossClient({
         @keyframes timer-urgent { 0%,100%{opacity:1} 50%{opacity:.35} }
         @keyframes pulse-ring { 0%{transform:scale(.85);opacity:.6} 100%{transform:scale(1.6);opacity:0} }
         @keyframes heart-pop { 0%{transform:scale(1)} 40%{transform:scale(1.5)} 100%{transform:scale(1)} }
+        @keyframes target-in { 0%{transform:scale(0) rotate(-90deg);opacity:0} 60%{transform:scale(1.25) rotate(8deg);opacity:1} 100%{transform:scale(1) rotate(0);opacity:1} }
+        @keyframes target-pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+        @keyframes crit-pop { 0%{transform:scale(.4) rotate(-8deg);opacity:0} 40%{transform:scale(1.5) rotate(4deg);opacity:1} 100%{transform:scale(1) rotate(0);opacity:1} }
       `}</style>
 
       {showDeathAnim && (
@@ -252,12 +329,68 @@ export function BossClient({
 
         {/* ══ 2D-ARENA ══ */}
         <div
-          className="relative w-full overflow-hidden rounded-2xl border border-border"
+          className={cn(
+            "relative w-full overflow-hidden",
+            battleMode
+              ? "fixed inset-0 z-40"
+              : "rounded-2xl border border-border"
+          )}
           style={{
-            minHeight: 400,
+            minHeight: battleMode ? undefined : 400,
             background: `radial-gradient(120% 80% at 70% 15%, ${color}22 0%, transparent 55%), linear-gradient(180deg, #0b1220 0%, #0d1117 60%, #131a26 100%)`,
           }}
         >
+          {/* ── Kampfmodus-HUD: HP-Bar + Streak + Exit ── */}
+          {battleMode && (
+            <div className="absolute inset-x-0 top-0 z-30 flex items-center gap-3 px-4 py-3 sm:px-6" style={{ background: "linear-gradient(180deg, rgba(0,0,0,.55), transparent)" }}>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center justify-between text-[11px] font-semibold">
+                  <span className="truncate" style={{ color }}>{bossIcon} {bossName}</span>
+                  <span className="ml-2 shrink-0 font-mono tabular-nums text-white/70">
+                    {hp.toLocaleString("de-DE")} / {maxHp.toLocaleString("de-DE")} HP
+                  </span>
+                </div>
+                <div className="mt-1 h-2.5 w-full overflow-hidden rounded-full bg-white/10">
+                  <div className="h-full rounded-full" style={{ width: `${hpPct}%`, backgroundColor: hpBarColor, boxShadow: `0 0 8px ${hpBarColor}80`, transition: "width .55s cubic-bezier(.25,.46,.45,.94)" }} />
+                </div>
+              </div>
+              {combo >= 2 && (
+                <span className="shrink-0 rounded-full px-2.5 py-1 text-xs font-black uppercase tracking-wider" style={{ color, backgroundColor: `${color}22`, border: `1px solid ${color}55` }}>
+                  🔥 {combo}×{combo >= STREAK_BONUS_AT ? " +DMG" : ""}
+                </span>
+              )}
+              <button
+                type="button"
+                onClick={stopBattle}
+                aria-label="Kampfmodus beenden"
+                className="grid size-9 shrink-0 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+
+          {/* ── Aufpoppende Angriffsziele (Kampfmodus) ── */}
+          {battleMode && phase === "idle" && !ko && !defeated && targets.map((t) => (
+            <button
+              key={t.key}
+              type="button"
+              onClick={handleAttack}
+              aria-label="Angreifen"
+              className="absolute z-20 -translate-x-1/2 -translate-y-1/2 select-none"
+              style={{ left: `${t.x}%`, top: `${t.y}%`, animation: "target-in .3s cubic-bezier(.175,.885,.32,1.275) both" }}
+            >
+              <span className="absolute inset-0 rounded-full" style={{ backgroundColor: `${color}30`, animation: "pulse-ring 1.4s ease-out infinite" }} />
+              <span className="relative grid size-14 place-items-center rounded-full text-3xl sm:size-16 sm:text-4xl" style={{ backgroundColor: `${color}25`, border: `2px solid ${color}88`, boxShadow: `0 0 18px ${color}66`, animation: "target-pulse 1s ease-in-out infinite" }}>
+                ⚔️
+              </span>
+            </button>
+          ))}
+          {battleMode && phase === "idle" && !ko && !defeated && targets.length === 0 && (
+            <p className="pointer-events-none absolute inset-x-0 top-1/2 z-10 text-center text-sm font-bold uppercase tracking-widest text-white/40">
+              Mach dich bereit…
+            </p>
+          )}
           {/* Boden */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24" style={{ background: `linear-gradient(180deg, transparent, ${color}14)`, borderTop: `1px solid ${color}22` }} />
 
@@ -277,8 +410,15 @@ export function BossClient({
             >
               {bossIcon}
               {showFloatingDmg && (
-                <span className="pointer-events-none absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-base font-black" style={{ color, textShadow: `0 0 10px ${color}`, animation: "float-dmg .95s ease-out forwards" }}>
-                  −1 HP!
+                <span
+                  className={cn("pointer-events-none absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap font-black", result?.crit ? "text-xl" : "text-base")}
+                  style={{
+                    color: result?.crit ? "#facc15" : color,
+                    textShadow: result?.crit ? "0 0 14px #facc15" : `0 0 10px ${color}`,
+                    animation: "float-dmg .95s ease-out forwards",
+                  }}
+                >
+                  {result?.crit && "💥 CRIT! "}−{result?.damage ?? 1} HP!
                 </span>
               )}
             </div>
@@ -334,7 +474,10 @@ export function BossClient({
 
           {/* ── Frage + Antworten (poppen im Bild auf) ── */}
           {(phase === "question" || phase === "result") && question && (
-            <div className="absolute inset-x-0 top-4 z-10 mx-auto flex max-w-md flex-col gap-3 px-4">
+            <div className={cn(
+              "absolute inset-x-0 z-10 mx-auto flex max-w-md flex-col gap-3 px-4",
+              battleMode ? "top-1/2 max-h-[calc(100%-5rem)] -translate-y-1/2 overflow-y-auto sm:max-w-lg" : "top-4"
+            )}>
               {/* Sprechblase mit Frage */}
               <div
                 className="relative rounded-2xl border-2 bg-bg/95 p-4 shadow-xl backdrop-blur"
@@ -349,6 +492,11 @@ export function BossClient({
                   )}
                 </div>
                 <p className="text-sm font-semibold leading-snug">{question.question}</p>
+                {phase === "question" && timeLeft > QUESTION_TIME - CRIT_MS / 1000 && (
+                  <p className="mt-1.5 text-[10px] font-black uppercase tracking-widest text-yellow-500" style={{ animation: "timer-urgent .8s ease-in-out infinite" }}>
+                    ⚡ Jetzt antworten = kritischer Treffer!
+                  </p>
+                )}
                 {phase === "question" && (
                   <div className="mt-2 h-1 w-full overflow-hidden rounded-full bg-surface-2">
                     <div className="h-full rounded-full" style={{ width: `${(timeLeft / QUESTION_TIME) * 100}%`, backgroundColor: timerColor, transition: "width 1s linear" }} />
@@ -404,6 +552,41 @@ export function BossClient({
               )}
             </div>
           )}
+
+          {/* ── Kampfmodus: Lade-Anzeige ── */}
+          {battleMode && phase === "loading" && (
+            <div className="absolute inset-0 z-10 grid place-items-center">
+              <div className="flex items-center gap-3">
+                <div className="size-6 animate-spin rounded-full border-4 border-white/20" style={{ borderTopColor: color }} />
+                <p className="text-[11px] font-bold uppercase tracking-widest text-white/60">Gegner rückt vor…</p>
+              </div>
+            </div>
+          )}
+
+          {/* ── Kampfmodus: Ergebnis-Leiste unten ── */}
+          {battleMode && phase === "result" && result && !result.defeated && (
+            <div className="absolute inset-x-0 bottom-0 z-20 flex flex-wrap items-center justify-center gap-1.5 px-4 py-4" style={{ background: "linear-gradient(0deg, rgba(0,0,0,.6), transparent)" }}>
+              {result.correct && result.crit && (
+                <span className="flex items-center gap-1 rounded-full border border-yellow-400/50 bg-yellow-500/15 px-2.5 py-1 text-xs font-black text-yellow-400" style={{ animation: "crit-pop .4s cubic-bezier(.175,.885,.32,1.275)" }}>💥 CRIT ×2</span>
+              )}
+              {result.correct && combo >= STREAK_BONUS_AT && (
+                <span className="flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-bold" style={{ borderColor: `${color}60`, color, backgroundColor: `${color}15` }}>🔥 Streak +1 DMG</span>
+              )}
+              {result.correct && result.firstBlood && (
+                <span className="flex items-center gap-1 rounded-full border border-red-400/40 bg-red-500/10 px-2.5 py-1 text-xs font-bold text-red-400"><Droplets className="size-3" /> First Blood +10</span>
+              )}
+              {result.correct && result.coinsEarned > 0 && (
+                <span className="flex items-center gap-1 rounded-full border border-amber-400/40 bg-amber-500/10 px-2.5 py-1 text-xs font-bold text-amber-500"><Coins className="size-3" /> +{result.coinsEarned}</span>
+              )}
+              <button
+                onClick={handleNext}
+                className="ml-2 flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white transition-all active:scale-95"
+                style={{ background: `linear-gradient(135deg, ${color} 0%, ${color}cc 100%)`, boxShadow: `0 0 14px ${color}40` }}
+              >
+                <Zap className="size-4" />{result.correct ? "Weiter!" : "Nochmal"}
+              </button>
+            </div>
+          )}
         </div>
 
         {/* ── Status-Zeile unter der Arena ── */}
@@ -416,23 +599,26 @@ export function BossClient({
         )}
 
         {/* ── Aktions-Buttons ── */}
-        {phase === "idle" && !defeated && !ko && (
+        {phase === "idle" && !defeated && !ko && !battleMode && (
           <button
-            onClick={handleAttack}
+            onClick={startBattle}
             className="group relative w-full overflow-hidden rounded-2xl py-4 text-base font-black uppercase tracking-widest text-white transition-all duration-150 hover:scale-[1.02] active:scale-95"
             style={{ background: `linear-gradient(135deg, ${color} 0%, ${color}bb 100%)`, boxShadow: `0 0 24px ${color}55, 0 4px 16px rgba(0,0,0,.35)` }}
           >
             <span className="relative z-10 flex items-center justify-center gap-2.5"><Swords className="size-5" />Angreifen!</span>
           </button>
         )}
-        {phase === "loading" && (
+        {phase === "loading" && !battleMode && (
           <div className="flex items-center justify-center gap-3 py-3">
             <div className="size-6 animate-spin rounded-full border-4 border-border" style={{ borderTopColor: color }} />
             <p className="text-[11px] font-bold uppercase tracking-widest text-muted-fg">Gegner rückt vor…</p>
           </div>
         )}
-        {phase === "result" && result && !result.defeated && (
+        {phase === "result" && result && !result.defeated && !battleMode && (
           <div className="flex flex-wrap items-center gap-1.5">
+            {result.correct && result.crit && (
+              <span className="flex items-center gap-1 rounded-full border border-yellow-400/50 bg-yellow-500/15 px-2.5 py-1 text-xs font-black text-yellow-500">💥 CRIT ×2</span>
+            )}
             {result.correct && result.firstBlood && (
               <span className="flex items-center gap-1 rounded-full border border-red-400/40 bg-red-500/10 px-2.5 py-1 text-xs font-bold text-red-400"><Droplets className="size-3" /> First Blood +10</span>
             )}

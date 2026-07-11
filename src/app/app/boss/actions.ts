@@ -8,8 +8,17 @@ import { BOSS_TIERS, BOSS_INDEX, type BossTier } from "@/lib/game";
 import { getEventMultiplier } from "@/lib/settings";
 import { onBossFightWin } from "@/lib/tree-quest-engine";
 
+/** Antwortzeit unter diesem Wert → kritischer Treffer (doppelter Schaden). */
+const CRIT_MS = 3_500;
+/** Ab dieser Streak-Länge gibt es +1 Bonusschaden. */
+const STREAK_BONUS_AT = 5;
+
 export interface AttackResult {
   correct: boolean;
+  /** Verursachter Schaden (0 bei falscher Antwort). */
+  damage: number;
+  /** Kritischer Treffer (besonders schnell geantwortet). */
+  crit: boolean;
   newHp: number;
   maxHp: number;
   defeated: boolean;
@@ -35,6 +44,7 @@ export async function attackBoss(
   battleId: string,
   questionId: string,
   selectedOptionIndex: number,
+  meta?: { elapsedMs?: number; streak?: number },
 ): Promise<AttackResult | { error: string }> {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "student") return { error: "Unauthorized" };
@@ -102,10 +112,18 @@ export async function attackBoss(
       create: { userId: session.userId, battleId, wrongAnswers: 1 },
       update: { wrongAnswers: { increment: 1 } },
     });
-    return { correct: false, newHp: battle.currentHp, maxHp: battle.maxHp, defeated: false, firstBlood: false, lastHit: false, coinsEarned: 0, correctIndex, explanation };
+    return { correct: false, damage: 0, crit: false, newHp: battle.currentHp, maxHp: battle.maxHp, defeated: false, firstBlood: false, lastHit: false, coinsEarned: 0, correctIndex, explanation };
   }
 
-  const newHp = Math.max(0, battle.currentHp - 1);
+  // Schadensberechnung: 1 Basis, +1 bei Crit (schnelle Antwort), +1 ab 5er-Streak.
+  // elapsedMs/streak sind client-gemeldet (wie Herzen: client-seitiges Gameplay) —
+  // Werte werden geclampt, der Maximalschaden ist 3 pro Antwort.
+  const elapsedMs = Math.max(0, Number(meta?.elapsedMs ?? Number.MAX_SAFE_INTEGER));
+  const streak = Math.max(0, Math.floor(Number(meta?.streak ?? 0)));
+  const crit = elapsedMs <= CRIT_MS;
+  const damage = Math.min(battle.currentHp, 1 + (crit ? 1 : 0) + (streak >= STREAK_BONUS_AT ? 1 : 0));
+
+  const newHp = Math.max(0, battle.currentHp - damage);
   const defeated = newHp === 0;
   let coinsEarned = 0;
   let isMvp = false;
@@ -131,8 +149,8 @@ export async function attackBoss(
     // Upsert participant
     await tx.bossParticipant.upsert({
       where: { userId_battleId: { userId: session.userId, battleId } },
-      create: { userId: session.userId, battleId, damage: 1, correctAnswers: 1, firstBlood: isFirstBlood },
-      update: { damage: { increment: 1 }, correctAnswers: { increment: 1 }, ...(isFirstBlood ? { firstBlood: true } : {}) },
+      create: { userId: session.userId, battleId, damage, correctAnswers: 1, firstBlood: isFirstBlood },
+      update: { damage: { increment: damage }, correctAnswers: { increment: 1 }, ...(isFirstBlood ? { firstBlood: true } : {}) },
     });
 
     // First blood coin bonus
@@ -240,6 +258,8 @@ export async function attackBoss(
 
   return {
     correct: true,
+    damage,
+    crit,
     newHp,
     maxHp: battle.maxHp,
     defeated,
