@@ -129,11 +129,11 @@ export default function FunktionenPage() {
       {/* Feature grid */}
       <section className="border-b border-border section">
         <Container>
-          <div className="grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {features.map((f) => (
               <article
                 key={f.title}
-                className="flex flex-col gap-4 bg-bg p-7 transition-colors hover:bg-surface"
+                className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-border-strong hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <div className={`inline-grid size-11 shrink-0 place-items-center rounded-2xl ${f.color}`}>
@@ -144,7 +144,7 @@ export default function FunktionenPage() {
                 <ul className="space-y-2">
                   {f.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2 text-sm text-muted-fg">
-                      <span className="mt-1.5 size-1.5 shrink-0 bg-brand" aria-hidden />
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand" aria-hidden />
                       {b}
                     </li>
                   ))}

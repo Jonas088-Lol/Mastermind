@@ -226,25 +226,28 @@
     transform: translateY(-1px);
   }
 
-  /* Pastel gradient CTA — light green (left) → light blue (right).
-     Hover: slight darken + smooth gradient sweep right→left and back. */
+  /* Pastel gradient CTA — pastel light-blue (left) → pastel light-green (right),
+     oriented on the logo/lens gradient. Deep enough for readable dark text in
+     BOTH light and dark mode. `color` is !important so it beats the Button's
+     `text-white` utility (which otherwise wins by cascade-layer order).
+     Hover: subtle darken + smooth gradient sweep. */
   .pastel-cta {
     background-image: linear-gradient(
       90deg,
-      #a7e8c9 0%,
-      #a8dcf0 50%,
-      #a7e8c9 100%
+      #6ec6ef 0%,
+      #74dcb0 50%,
+      #6ec6ef 100%
     );
     background-size: 200% 100%;
     background-position: 0% 0%;
-    color: #123b2a;
+    color: #0c3327 !important;
     border: none;
     transition: background-position 700ms cubic-bezier(0.4, 0, 0.2, 1), filter 250ms ease, box-shadow 250ms ease, transform 250ms ease;
   }
   .pastel-cta:hover {
-    filter: brightness(0.92);
+    filter: brightness(0.96);
     background-position: 100% 0%;
-    box-shadow: 0 4px 18px rgba(120, 200, 230, 0.35);
+    box-shadow: 0 4px 18px rgba(90, 190, 210, 0.4);
     transform: translateY(-1px);
   }
 
@@ -253,11 +256,11 @@
     border: 2px solid transparent;
     background:
       linear-gradient(hsl(var(--bg)), hsl(var(--bg))) padding-box,
-      linear-gradient(90deg, #a7e8c9 0%, #a8dcf0 100%) border-box;
+      linear-gradient(90deg, #6ec6ef 0%, #74dcb0 100%) border-box;
   }
   .pastel-badge {
-    background-image: linear-gradient(90deg, #a7e8c9 0%, #a8dcf0 100%);
-    color: #123b2a;
+    background-image: linear-gradient(90deg, #6ec6ef 0%, #74dcb0 100%);
+    color: #0c3327;
   }
 
   /* Gradient mesh backgrounds */

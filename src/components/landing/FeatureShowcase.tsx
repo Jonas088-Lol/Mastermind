@@ -129,7 +129,7 @@ function MockupPreview({ mockup }: { mockup: MockupKey }) {
           />
           <button
             type="button"
-            className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-brand py-2 text-xs font-bold text-brand-fg"
+            className="pastel-cta w-full flex items-center justify-center gap-1.5 rounded-xl py-2 text-xs font-bold"
           >
             <Sparkles className="size-3.5" strokeWidth={1.75} />
             Generieren
