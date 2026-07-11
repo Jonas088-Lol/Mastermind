@@ -48,6 +48,12 @@ export default async function BossPage() {
     },
   });
 
+  // Spieler-Avatar + Name für die Kampf-Arena
+  const me = await prisma.user.findUnique({
+    where: { id: session.userId },
+    select: { avatarUrl: true, name: true },
+  });
+
   // MVP / rarity tracker from new BossDef system
   const bossProgress = await prisma.userBossProgress.findMany({
     where: { userId: session.userId },
@@ -164,6 +170,8 @@ export default async function BossPage() {
                 maxHp={battle.maxHp}
                 myCorrectAnswers={myParticipation?.correctAnswers ?? 0}
                 endAtIso={battle.endAt.toISOString()}
+                avatarUrl={me?.avatarUrl ?? null}
+                playerName={me?.name ?? "Du"}
               />
             </div>
 

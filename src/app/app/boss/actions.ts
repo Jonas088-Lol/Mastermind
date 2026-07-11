@@ -17,6 +17,10 @@ export interface AttackResult {
   lastHit: boolean;
   coinsEarned: number;
   isMvp?: boolean;
+  /** Index der richtigen Option (0-basiert, Originalreihenfolge). */
+  correctIndex?: number;
+  /** Erklärung, warum die Antwort richtig/falsch ist (falls vorhanden). */
+  explanation?: string | null;
   killData?: {
     mvpName: string;
     mvpAnswers: number;
@@ -64,6 +68,23 @@ export async function attackBoss(
         return loesung.includes(letter);
       })();
 
+  // Richtige-Antwort-Index + Erklärung fürs Client-Feedback ("warum falsch").
+  let correctIndex: number | undefined;
+  let explanation: string | null | undefined;
+  if (bossQ) {
+    correctIndex = bossQ.correct;
+    explanation = null; // BossQuestion hat kein Erklärungsfeld
+  } else if (genQ) {
+    correctIndex = Number(genQ.correct);
+    explanation = genQ.explanation ?? null;
+  } else if (frageQ) {
+    const loesung = (
+      Array.isArray(frageQ.loesung) ? frageQ.loesung : JSON.parse(frageQ.loesung as string)
+    ) as string[];
+    correctIndex = loesung[0] ? loesung[0].toLowerCase().charCodeAt(0) - 97 : undefined;
+    explanation = (frageQ.erklaerung as string | undefined) ?? null;
+  }
+
   // Record seen status for boss-custom questions
   if (bossQ) {
     await prisma.bossQuestionSeen.upsert({
@@ -81,7 +102,7 @@ export async function attackBoss(
       create: { userId: session.userId, battleId, wrongAnswers: 1 },
       update: { wrongAnswers: { increment: 1 } },
     });
-    return { correct: false, newHp: battle.currentHp, maxHp: battle.maxHp, defeated: false, firstBlood: false, lastHit: false, coinsEarned: 0 };
+    return { correct: false, newHp: battle.currentHp, maxHp: battle.maxHp, defeated: false, firstBlood: false, lastHit: false, coinsEarned: 0, correctIndex, explanation };
   }
 
   const newHp = Math.max(0, battle.currentHp - 1);
@@ -227,5 +248,7 @@ export async function attackBoss(
     coinsEarned,
     isMvp,
     killData,
+    correctIndex,
+    explanation,
   };
 }

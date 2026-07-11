@@ -2,7 +2,7 @@
 
 import { useState, useTransition, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
-import { Swords, Coins, Crown, Droplets, Skull, Zap, Timer as TimerIcon } from "lucide-react";
+import { Swords, Coins, Crown, Droplets, Skull, Zap, Timer as TimerIcon, Heart } from "lucide-react";
 import { BOSS_TIERS, type BossTier } from "@/lib/game";
 import { attackBoss, type AttackResult } from "./actions";
 import { BossDefeatedOverlay } from "./BossDefeatedOverlay";
@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils";
 
 const QUESTION_TIME = 20;
 const LETTERS = ["A", "B", "C", "D"] as const;
+const MAX_HEARTS = 3;
+const KO_SECONDS = 8;
 
 function shuffleOptions<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -38,13 +40,13 @@ interface BossClientProps {
   maxHp: number;
   myCorrectAnswers: number;
   endAtIso?: string;
+  avatarUrl?: string | null;
+  playerName: string;
 }
 
 type Phase = "idle" | "loading" | "question" | "result";
 type BossAnim = "idle" | "hit" | "defeated";
 
-// Format remaining ms as "2d 3h 15m 42s" — days shown only when > 0,
-// smaller units always shown so the countdown visibly ticks
 function formatTimeLeft(ms: number): string {
   const totalSec = Math.floor(ms / 1000);
   const days = Math.floor(totalSec / 86_400);
@@ -58,22 +60,18 @@ function formatTimeLeft(ms: number): string {
   return parts.join(" ");
 }
 
-export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxHp, myCorrectAnswers, endAtIso }: BossClientProps) {
+function initials(name: string) {
+  return name.split(" ").map((p) => p[0]).filter(Boolean).slice(0, 2).join("").toUpperCase();
+}
+
+export function BossClient({
+  battleId, tier, bossName, bossIcon, initialHp, maxHp, myCorrectAnswers, endAtIso, avatarUrl, playerName,
+}: BossClientProps) {
   const router = useRouter();
   const [hp, setHp] = useState(initialHp);
   const [battleMsLeft, setBattleMsLeft] = useState(() =>
     endAtIso ? Math.max(0, new Date(endAtIso).getTime() - Date.now()) : null
   );
-
-  useEffect(() => {
-    if (!endAtIso) return;
-    const id = setInterval(() => {
-      const ms = Math.max(0, new Date(endAtIso).getTime() - Date.now());
-      setBattleMsLeft(ms);
-      if (ms === 0) clearInterval(id);
-    }, 1_000);
-    return () => clearInterval(id);
-  }, [endAtIso]);
   const [phase, setPhase] = useState<Phase>("idle");
   const [question, setQuestion] = useState<Question | null>(null);
   const [shuffledOptions, setShuffledOptions] = useState<Question["options"]>([]);
@@ -87,6 +85,11 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
   const [timeLeft, setTimeLeft] = useState(QUESTION_TIME);
   const [showFloatingDmg, setShowFloatingDmg] = useState(false);
   const [showDeathAnim, setShowDeathAnim] = useState(false);
+  // Spieler-Zustand (client-seitiges Gameplay: Herzen als Einsatz)
+  const [hearts, setHearts] = useState(MAX_HEARTS);
+  const [playerHurt, setPlayerHurt] = useState(false);
+  const [ko, setKo] = useState(false);
+  const [koLeft, setKoLeft] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const safeTier = (tier as BossTier) in BOSS_TIERS ? (tier as BossTier) : "common";
@@ -98,6 +101,18 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
   const hpBarColor = hpPct > 50 ? "#22c55e" : hpPct > 25 ? "#eab308" : "#ef4444";
   const timerColor = timeLeft > 10 ? "#22c55e" : timeLeft > 5 ? "#eab308" : "#ef4444";
 
+  // Battle-Countdown
+  useEffect(() => {
+    if (!endAtIso) return;
+    const id = setInterval(() => {
+      const ms = Math.max(0, new Date(endAtIso).getTime() - Date.now());
+      setBattleMsLeft(ms);
+      if (ms === 0) clearInterval(id);
+    }, 1_000);
+    return () => clearInterval(id);
+  }, [endAtIso]);
+
+  // Frage-Timer
   useEffect(() => {
     if (phase !== "question") {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -120,8 +135,16 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [phase]);
 
+  // K.O.-Countdown → Herzen füllen sich wieder
+  useEffect(() => {
+    if (!ko) return;
+    if (koLeft <= 0) { setKo(false); setHearts(MAX_HEARTS); return; }
+    const id = setTimeout(() => setKoLeft((s) => s - 1), 1000);
+    return () => clearTimeout(id);
+  }, [ko, koLeft]);
+
   async function handleAttack() {
-    if (defeated || phase !== "idle") return;
+    if (defeated || phase !== "idle" || ko) return;
     setPhase("loading");
     try {
       const res = await fetch(`/api/boss/${battleId}/question`);
@@ -130,6 +153,7 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
       setQuestion(q);
       setShuffledOptions(shuffleOptions(q.options));
       setSelected(null);
+      setResult(null);
       setPhase("question");
     } catch {
       setPhase("idle");
@@ -156,6 +180,14 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
         }, 700);
       } else {
         setCombo(0);
+        // Spieler nimmt Schaden
+        setPlayerHurt(true);
+        setTimeout(() => setPlayerHurt(false), 600);
+        setHearts((h) => {
+          const next = Math.max(0, h - 1);
+          if (next === 0) { setKo(true); setKoLeft(KO_SECONDS); }
+          return next;
+        });
       }
       if (res.defeated) {
         setShowDeathAnim(true);
@@ -173,378 +205,255 @@ export function BossClient({ battleId, tier, bossName, bossIcon, initialHp, maxH
     setResult(null);
   }
 
+  const correctIdx = result?.correctIndex;
+
   return (
     <>
       <style>{`
-        @keyframes boss-glow {
-          0%,100% { filter: drop-shadow(0 0 14px ${color}70) drop-shadow(0 0 4px ${color}40); }
-          50%      { filter: drop-shadow(0 0 28px ${color}cc) drop-shadow(0 0 10px ${color}80); }
-        }
-        @keyframes boss-hit {
-          0%   { transform: scale(1) rotate(0deg); }
-          12%  { transform: scale(1.3) rotate(-10deg); filter: brightness(2.5) drop-shadow(0 0 50px ${color}ff); }
-          28%  { transform: scale(0.82) rotate(7deg); }
-          45%  { transform: scale(1.14) rotate(-4deg); filter: brightness(1.6); }
-          62%  { transform: scale(0.93) rotate(2deg); }
-          78%  { transform: scale(1.05) rotate(-1deg); }
-          100% { transform: scale(1) rotate(0deg); filter: none; }
-        }
-        @keyframes boss-defeated {
-          0%  { transform: scale(1); opacity: 1; filter: brightness(1); }
-          8%  { transform: scale(1.35) rotate(-12deg); filter: brightness(3) drop-shadow(0 0 80px ${color}ff); }
-          22% { transform: scale(0.65) rotate(9deg); }
-          38% { transform: scale(1.1) rotate(-6deg) translateY(-12px); }
-          55% { transform: scale(0.75) rotate(6deg) translateY(4px); }
-          75% { transform: scale(0.4) rotate(-200deg); opacity: 0.25; }
-          100%{ transform: scale(0) rotate(-400deg); opacity: 0; }
-        }
-        @keyframes float-dmg {
-          0%   { opacity: 1; transform: translateY(0) scale(1.2); }
-          30%  { opacity: 1; transform: translateY(-22px) scale(1.5); }
-          100% { opacity: 0; transform: translateY(-65px) scale(0.8); }
-        }
-        @keyframes combo-in {
-          0%   { transform: scale(0.3) translateY(8px); opacity: 0; }
-          55%  { transform: scale(1.25); opacity: 1; }
-          100% { transform: scale(1); opacity: 1; }
-        }
-        @keyframes opt-in {
-          from { opacity: 0; transform: translateX(-14px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes result-in {
-          from { opacity: 0; transform: translateY(10px) scale(0.96); }
-          to   { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        @keyframes timer-urgent {
-          0%,100% { opacity: 1; }
-          50%     { opacity: 0.35; }
-        }
-        @keyframes hp-pulse {
-          0%,100% { box-shadow: 0 0 8px ${hpBarColor}60; }
-          50%     { box-shadow: 0 0 18px ${hpBarColor}aa; }
-        }
-        @keyframes pulse-ring {
-          0%   { transform: scale(0.85); opacity: 0.7; }
-          100% { transform: scale(1.7);  opacity: 0; }
-        }
-        @keyframes wrong-shake {
-          0%,100% { transform: translateX(0); }
-          18%  { transform: translateX(-7px); }
-          36%  { transform: translateX(7px); }
-          54%  { transform: translateX(-5px); }
-          72%  { transform: translateX(5px); }
-          90%  { transform: translateX(-2px); }
-        }
+        @keyframes boss-glow { 0%,100%{filter:drop-shadow(0 0 14px ${color}70) drop-shadow(0 0 4px ${color}40)} 50%{filter:drop-shadow(0 0 28px ${color}cc) drop-shadow(0 0 10px ${color}80)} }
+        @keyframes boss-hit { 0%{transform:scale(1) rotate(0)} 12%{transform:scale(1.3) rotate(-10deg);filter:brightness(2.5) drop-shadow(0 0 50px ${color}ff)} 28%{transform:scale(.82) rotate(7deg)} 45%{transform:scale(1.14) rotate(-4deg);filter:brightness(1.6)} 62%{transform:scale(.93) rotate(2deg)} 78%{transform:scale(1.05) rotate(-1deg)} 100%{transform:scale(1) rotate(0);filter:none} }
+        @keyframes boss-defeated { 0%{transform:scale(1);opacity:1} 8%{transform:scale(1.35) rotate(-12deg);filter:brightness(3) drop-shadow(0 0 80px ${color}ff)} 22%{transform:scale(.65) rotate(9deg)} 38%{transform:scale(1.1) rotate(-6deg) translateY(-12px)} 55%{transform:scale(.75) rotate(6deg) translateY(4px)} 75%{transform:scale(.4) rotate(-200deg);opacity:.25} 100%{transform:scale(0) rotate(-400deg);opacity:0} }
+        @keyframes float-dmg { 0%{opacity:1;transform:translateY(0) scale(1.2)} 30%{opacity:1;transform:translateY(-26px) scale(1.6)} 100%{opacity:0;transform:translateY(-72px) scale(.8)} }
+        @keyframes float-hurt { 0%{opacity:1;transform:translateY(0) scale(1)} 100%{opacity:0;transform:translateY(-40px) scale(1.4)} }
+        @keyframes combo-in { 0%{transform:scale(.3) translateY(8px);opacity:0} 55%{transform:scale(1.25);opacity:1} 100%{transform:scale(1);opacity:1} }
+        @keyframes q-pop { 0%{opacity:0;transform:translateY(14px) scale(.9)} 60%{transform:translateY(-2px) scale(1.02)} 100%{opacity:1;transform:translateY(0) scale(1)} }
+        @keyframes opt-in { from{opacity:0;transform:scale(.85)} to{opacity:1;transform:scale(1)} }
+        @keyframes player-hit { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-8px) rotate(-4deg);filter:brightness(1.4) sepia(1) hue-rotate(-30deg)} 50%{transform:translateX(7px) rotate(3deg)} 75%{transform:translateX(-4px)} }
+        @keyframes player-idle { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+        @keyframes timer-urgent { 0%,100%{opacity:1} 50%{opacity:.35} }
+        @keyframes pulse-ring { 0%{transform:scale(.85);opacity:.6} 100%{transform:scale(1.6);opacity:0} }
+        @keyframes heart-pop { 0%{transform:scale(1)} 40%{transform:scale(1.5)} 100%{transform:scale(1)} }
       `}</style>
 
       {showDeathAnim && (
         <BossDeathAnimation
           bossIcon={bossIcon}
           tierColor={color}
-          onComplete={() => {
-            setShowDeathAnim(false);
-            // Falls kein Overlay folgt, direkt refreshen
-            if (!killData) router.refresh();
-          }}
+          onComplete={() => { setShowDeathAnim(false); if (!killData) router.refresh(); }}
         />
       )}
       {!showDeathAnim && killData && (
-        <BossDefeatedOverlay
-          data={killData}
-          onClose={() => {
-            setKillData(null);
-            // Jetzt erst die Seite refreshen → "Kein Boss aktiv" erscheint sanft
-            router.refresh();
-          }}
-        />
+        <BossDefeatedOverlay data={killData} onClose={() => { setKillData(null); router.refresh(); }} />
       )}
 
-      <div className="flex flex-col gap-5">
-
-        {/* ── Boss Arena ── */}
-        <div className="relative flex flex-col items-center py-2">
-          {!defeated && phase === "idle" && (
-            <div
-              className="absolute rounded-full pointer-events-none"
-              style={{ width: 100, height: 100, backgroundColor: `${color}18`, animation: "pulse-ring 2.2s ease-out infinite" }}
-            />
-          )}
-          {!defeated && phase === "idle" && (
-            <div
-              className="absolute rounded-full pointer-events-none"
-              style={{ width: 100, height: 100, backgroundColor: `${color}10`, animation: "pulse-ring 2.2s ease-out 0.7s infinite" }}
-            />
-          )}
-
-          <div
-            className="relative text-6xl sm:text-7xl leading-none select-none"
-            style={{
-              animation:
-                bossAnim === "hit"     ? "boss-hit 0.65s cubic-bezier(.36,.07,.19,.97)" :
-                bossAnim === "defeated"? "boss-defeated 1.3s ease-in forwards" :
-                defeated               ? undefined :
-                                         "boss-glow 2.8s ease-in-out infinite",
-            }}
-          >
-            {bossIcon}
-
-            {showFloatingDmg && (
-              <span
-                className="pointer-events-none absolute -top-1 left-1/2 -translate-x-1/2 whitespace-nowrap font-black text-sm"
-                style={{ color, textShadow: `0 0 10px ${color}`, animation: "float-dmg 0.95s ease-out forwards" }}
-              >
-                −1 HP!
-              </span>
-            )}
-          </div>
-
-          {combo >= 2 && phase !== "question" && !defeated && (
-            <p
-              className="mt-2 text-xs font-black uppercase tracking-widest"
-              style={{ color, textShadow: `0 0 12px ${color}80`, animation: "combo-in 0.4s cubic-bezier(.175,.885,.32,1.275)" }}
-            >
-              {combo}× COMBO!
-            </p>
-          )}
-        </div>
-
-        {/* ── HP Bar ── */}
+      <div className="flex flex-col gap-4">
+        {/* ── Boss HP Bar (oben) ── */}
         <div className="space-y-1.5">
           <div className="flex items-center justify-between text-xs font-semibold">
-            <span style={{ color }}>Boss HP</span>
+            <span style={{ color }}>{bossName}</span>
             <span className="font-mono tabular-nums text-muted-fg">
-              {hp.toLocaleString("de-DE")} / {maxHp.toLocaleString("de-DE")}
+              {hp.toLocaleString("de-DE")} / {maxHp.toLocaleString("de-DE")} HP
             </span>
           </div>
           <div className="relative h-4 w-full overflow-hidden rounded-full border border-border bg-surface-2">
+            <div className="h-full rounded-full" style={{ width: `${hpPct}%`, backgroundColor: hpBarColor, boxShadow: `0 0 10px ${hpBarColor}80, inset 0 1px 0 rgba(255,255,255,.25)`, transition: "width .55s cubic-bezier(.25,.46,.45,.94)" }} />
+          </div>
+        </div>
+
+        {/* ══ 2D-ARENA ══ */}
+        <div
+          className="relative w-full overflow-hidden rounded-2xl border border-border"
+          style={{
+            minHeight: 400,
+            background: `radial-gradient(120% 80% at 70% 15%, ${color}22 0%, transparent 55%), linear-gradient(180deg, #0b1220 0%, #0d1117 60%, #131a26 100%)`,
+          }}
+        >
+          {/* Boden */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24" style={{ background: `linear-gradient(180deg, transparent, ${color}14)`, borderTop: `1px solid ${color}22` }} />
+
+          {/* ── Boss (oben rechts) ── */}
+          <div className="absolute right-5 top-6 flex flex-col items-center sm:right-10">
+            {!defeated && phase === "idle" && !ko && (
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ width: 96, height: 96, backgroundColor: `${color}18`, animation: "pulse-ring 2.2s ease-out infinite" }} />
+            )}
             <div
-              className="h-full rounded-full"
+              className="relative select-none text-6xl leading-none sm:text-7xl"
               style={{
-                width: `${hpPct}%`,
-                backgroundColor: hpBarColor,
-                boxShadow: `0 0 10px ${hpBarColor}80, inset 0 1px 0 rgba(255,255,255,0.25)`,
-                transition: "width 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+                animation:
+                  bossAnim === "hit" ? "boss-hit .65s cubic-bezier(.36,.07,.19,.97)" :
+                  bossAnim === "defeated" ? "boss-defeated 1.3s ease-in forwards" :
+                  defeated ? undefined : "boss-glow 2.8s ease-in-out infinite",
               }}
-            />
+            >
+              {bossIcon}
+              {showFloatingDmg && (
+                <span className="pointer-events-none absolute -top-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-base font-black" style={{ color, textShadow: `0 0 10px ${color}`, animation: "float-dmg .95s ease-out forwards" }}>
+                  −1 HP!
+                </span>
+              )}
+            </div>
+            {combo >= 2 && !defeated && (
+              <p className="mt-1 text-xs font-black uppercase tracking-widest" style={{ color, textShadow: `0 0 12px ${color}80`, animation: "combo-in .4s cubic-bezier(.175,.885,.32,1.275)" }}>
+                {combo}× Combo!
+              </p>
+            )}
           </div>
-          <div className="flex items-center justify-between text-xs text-muted-fg">
-            <span>{hpPct}% verbleibend</span>
-            <span className="font-semibold" style={{ color }}>
-              {hits} Treffer 💥
-            </span>
+
+          {/* ── Spieler (unten links) ── */}
+          <div className="absolute bottom-5 left-5 flex flex-col items-center gap-1.5 sm:left-8">
+            {/* Herzen */}
+            <div className="flex items-center gap-0.5">
+              {Array.from({ length: MAX_HEARTS }).map((_, i) => (
+                <Heart
+                  key={i}
+                  className={cn("size-4 transition-colors", i < hearts ? "fill-red-500 text-red-500" : "fill-transparent text-white/20")}
+                  style={i === hearts ? { animation: "heart-pop .4s ease" } : undefined}
+                />
+              ))}
+            </div>
+            <div
+              className="relative grid size-16 place-items-center overflow-hidden rounded-full ring-2 ring-cyan-400 sm:size-20"
+              style={{
+                boxShadow: "0 0 18px #22d3ee55",
+                animation: playerHurt ? "player-hit .6s ease" : ko ? undefined : "player-idle 2.6s ease-in-out infinite",
+                filter: ko ? "grayscale(1) brightness(.6)" : undefined,
+              }}
+            >
+              {avatarUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={avatarUrl} alt={playerName} className="size-full object-cover" />
+              ) : (
+                <div className="grid size-full place-items-center bg-brand/20 text-lg font-black text-brand">{initials(playerName)}</div>
+              )}
+              {playerHurt && (
+                <span className="pointer-events-none absolute -top-4 left-1/2 -translate-x-1/2 text-sm font-black text-red-500" style={{ textShadow: "0 0 8px #ef4444", animation: "float-hurt .6s ease-out forwards" }}>−1 ♥</span>
+              )}
+            </div>
+            <span className="max-w-28 truncate text-[11px] font-semibold text-white/80">{playerName}</span>
           </div>
-          {battleMsLeft !== null && battleMsLeft > 0 && (
-            <p className="text-center text-[10px] font-mono text-muted-fg">
-              ⏳ {formatTimeLeft(battleMsLeft)} verbleibend
-            </p>
+
+          {/* ── K.O.-Overlay ── */}
+          {ko && (
+            <div className="absolute inset-0 z-20 grid place-items-center bg-black/60 backdrop-blur-sm">
+              <div className="text-center">
+                <p className="text-4xl font-black text-red-500" style={{ textShadow: "0 0 20px #ef4444" }}>K.O.!</p>
+                <p className="mt-1 text-sm text-white/70">Du sammelst dich… <span className="font-mono font-bold">{koLeft}s</span></p>
+              </div>
+            </div>
           )}
-          {battleMsLeft === 0 && (
-            <p className="text-center text-[10px] font-bold text-danger">⚔️ Battle beendet</p>
+
+          {/* ── Frage + Antworten (poppen im Bild auf) ── */}
+          {(phase === "question" || phase === "result") && question && (
+            <div className="absolute inset-x-0 top-4 z-10 mx-auto flex max-w-md flex-col gap-3 px-4">
+              {/* Sprechblase mit Frage */}
+              <div
+                className="relative rounded-2xl border-2 bg-bg/95 p-4 shadow-xl backdrop-blur"
+                style={{ borderColor: `${color}55`, animation: "q-pop .35s cubic-bezier(.175,.885,.32,1.275) both" }}
+              >
+                <div className="mb-1.5 flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-muted-fg">{question.subject} · Kl. {question.grade}</span>
+                  {phase === "question" && (
+                    <span className="flex items-center gap-1 text-xs font-black tabular-nums" style={{ color: timerColor, animation: timeLeft <= 5 ? "timer-urgent .5s ease-in-out infinite" : undefined }}>
+                      <TimerIcon className="size-3" />{timeLeft}s
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm font-semibold leading-snug">{question.question}</p>
+                {phase === "question" && (
+                  <div className="mt-2 h-1 w-full overflow-hidden rounded-full bg-surface-2">
+                    <div className="h-full rounded-full" style={{ width: `${(timeLeft / QUESTION_TIME) * 100}%`, backgroundColor: timerColor, transition: "width 1s linear" }} />
+                  </div>
+                )}
+                {/* Blasen-Zipfel Richtung Spieler */}
+                <div className="absolute -bottom-2 left-8 size-4 rotate-45 border-b-2 border-r-2 bg-bg/95" style={{ borderColor: `${color}55` }} />
+              </div>
+
+              {/* Antwort-Buttons als schwebende Kacheln */}
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {shuffledOptions.map((opt, i) => {
+                  const isSelected = selected === opt.id;
+                  const isTheCorrect = result != null && correctIdx === opt.id;
+                  const showCorrect = result != null && isTheCorrect;
+                  const showWrong = isSelected && result != null && !result.correct;
+                  return (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      disabled={selected !== null || isPending}
+                      onClick={() => handleSelect(opt.id)}
+                      className={cn(
+                        "flex items-center gap-2.5 rounded-xl border-2 px-3 py-2.5 text-left text-sm font-medium shadow-lg transition-all duration-150",
+                        selected === null && "border-border bg-bg/95 backdrop-blur hover:scale-[1.03]",
+                        showCorrect && "border-green-500 bg-green-500/15",
+                        showWrong && "border-red-500 bg-red-500/15",
+                        selected !== null && !isSelected && !showCorrect && "opacity-40 border-border bg-bg/80",
+                      )}
+                      style={{ animation: selected === null && i < 4 ? `opt-in .25s ease ${i * 0.07}s both` : undefined }}
+                    >
+                      <span className={cn(
+                        "grid size-7 shrink-0 place-items-center rounded-lg text-xs font-black",
+                        selected === null && "bg-surface-2 text-muted-fg",
+                        showCorrect && "bg-green-500 text-white",
+                        showWrong && "bg-red-500 text-white",
+                        selected !== null && !isSelected && !showCorrect && "bg-surface-2 text-muted-fg/40",
+                      )}>{LETTERS[i]}</span>
+                      <span className="leading-snug">{opt.text}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Erklärung bei falscher Antwort */}
+              {phase === "result" && result && !result.correct && (
+                <div className="rounded-xl border-2 border-red-500/40 bg-red-500/10 p-3 text-sm shadow-lg" style={{ animation: "q-pop .3s ease both" }}>
+                  <p className="font-bold text-red-400">Falsch — du nimmst Schaden!</p>
+                  {result.explanation
+                    ? <p className="mt-1 text-xs leading-relaxed text-fg/80">{result.explanation}</p>
+                    : correctIdx != null && <p className="mt-1 text-xs text-fg/70">Die richtige Antwort war grün markiert.</p>}
+                </div>
+              )}
+            </div>
           )}
         </div>
 
-        {/* ── IDLE: Attack button ── */}
-        {phase === "idle" && !defeated && (
+        {/* ── Status-Zeile unter der Arena ── */}
+        <div className="flex items-center justify-between text-xs text-muted-fg">
+          <span>{hpPct}% Boss-HP</span>
+          <span className="font-semibold" style={{ color }}>{hits} Treffer 💥</span>
+        </div>
+        {battleMsLeft !== null && battleMsLeft > 0 && (
+          <p className="-mt-2 text-center text-[10px] font-mono text-muted-fg">⏳ {formatTimeLeft(battleMsLeft)} verbleibend</p>
+        )}
+
+        {/* ── Aktions-Buttons ── */}
+        {phase === "idle" && !defeated && !ko && (
           <button
             onClick={handleAttack}
-            className="group relative w-full overflow-hidden rounded-2xl py-4 text-base font-black uppercase tracking-widest text-white transition-all duration-150 active:scale-95 hover:scale-[1.02]"
-            style={{
-              background: `linear-gradient(135deg, ${color} 0%, ${color}bb 100%)`,
-              boxShadow: `0 0 24px ${color}55, 0 4px 16px rgba(0,0,0,0.35)`,
-            }}
+            className="group relative w-full overflow-hidden rounded-2xl py-4 text-base font-black uppercase tracking-widest text-white transition-all duration-150 hover:scale-[1.02] active:scale-95"
+            style={{ background: `linear-gradient(135deg, ${color} 0%, ${color}bb 100%)`, boxShadow: `0 0 24px ${color}55, 0 4px 16px rgba(0,0,0,.35)` }}
           >
-            <span className="relative z-10 flex items-center justify-center gap-2.5">
-              <Swords className="size-5" />
-              Angreifen!
-            </span>
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-              style={{ background: `linear-gradient(135deg, ${color}ee 0%, ${color}cc 100%)` }}
-            />
+            <span className="relative z-10 flex items-center justify-center gap-2.5"><Swords className="size-5" />Angreifen!</span>
           </button>
         )}
-
-        {/* ── LOADING ── */}
         {phase === "loading" && (
-          <div className="flex flex-col items-center gap-3 py-6">
-            <div className="size-10 animate-spin rounded-full border-4 border-border" style={{ borderTopColor: color }} />
-            <p className="text-[11px] font-bold uppercase tracking-widest text-muted-fg">Frage wird geladen…</p>
+          <div className="flex items-center justify-center gap-3 py-3">
+            <div className="size-6 animate-spin rounded-full border-4 border-border" style={{ borderTopColor: color }} />
+            <p className="text-[11px] font-bold uppercase tracking-widest text-muted-fg">Gegner rückt vor…</p>
           </div>
         )}
-
-        {/* ── QUESTION ── */}
-        {phase === "question" && question && (
-          <div
-            className="rounded-2xl border-2 p-5 space-y-4"
-            style={{ borderColor: `${color}45`, backgroundColor: `${color}07` }}
-          >
-            {/* Timer bar + meta */}
-            <div className="space-y-1.5">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-muted-fg">
-                  {question.subject} · Klasse {question.grade}
-                </span>
-                <span
-                  className="flex items-center gap-1 text-xs font-black tabular-nums"
-                  style={{
-                    color: timerColor,
-                    animation: timeLeft <= 5 ? "timer-urgent 0.5s ease-in-out infinite" : undefined,
-                  }}
-                >
-                  <TimerIcon className="size-3" />
-                  {timeLeft}s
-                </span>
-              </div>
-              <div className="h-1.5 w-full overflow-hidden rounded-full bg-surface-2">
-                <div
-                  className="h-full rounded-full"
-                  style={{
-                    width: `${(timeLeft / QUESTION_TIME) * 100}%`,
-                    backgroundColor: timerColor,
-                    boxShadow: `0 0 6px ${timerColor}80`,
-                    transition: "width 1s linear, background-color 0.3s",
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Question */}
-            <p className="text-sm font-semibold leading-relaxed">{question.question}</p>
-
-            {/* Options A/B/C/D */}
-            <div className="grid gap-2">
-              {shuffledOptions.map((opt, i) => {
-                const isSelected = selected === opt.id;
-                const showCorrect = isSelected && !!result?.correct;
-                const showWrong   = isSelected && result != null && !result.correct;
-
-                return (
-                  <button
-                    key={opt.id}
-                    type="button"
-                    disabled={selected !== null || isPending}
-                    onClick={() => handleSelect(opt.id)}
-                    className={cn(
-                      "flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left text-sm font-medium transition-all duration-150",
-                      selected === null && "border-border bg-bg hover:scale-[1.01]",
-                      showCorrect && "border-green-500 bg-green-500/10",
-                      showWrong   && "border-red-500 bg-red-500/10",
-                      selected !== null && !isSelected && "opacity-40 border-border bg-bg",
-                    )}
-                    style={{
-                      animation:
-                        showWrong ? "wrong-shake 0.45s ease" :
-                        i < 4 ? `opt-in 0.22s ease ${i * 0.07}s both` :
-                        undefined,
-                      boxShadow: showCorrect
-                        ? "0 0 0 2px rgba(34,197,94,0.35)"
-                        : showWrong
-                        ? "0 0 0 2px rgba(239,68,68,0.35)"
-                        : undefined,
-                    }}
-                  >
-                    <span
-                      className={cn(
-                        "flex size-7 shrink-0 items-center justify-center rounded-lg text-xs font-black transition-colors duration-150",
-                        selected === null      && "bg-surface-2 text-muted-fg",
-                        showCorrect            && "bg-green-500 text-white",
-                        showWrong              && "bg-red-500 text-white",
-                        selected !== null && !isSelected && "bg-surface-2 text-muted-fg/40",
-                      )}
-                    >
-                      {LETTERS[i]}
-                    </span>
-                    <span className="leading-snug">{opt.text}</span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {isPending && (
-              <p className="text-center text-[11px] text-muted-fg animate-pulse">Wird ausgewertet…</p>
+        {phase === "result" && result && !result.defeated && (
+          <div className="flex flex-wrap items-center gap-1.5">
+            {result.correct && result.firstBlood && (
+              <span className="flex items-center gap-1 rounded-full border border-red-400/40 bg-red-500/10 px-2.5 py-1 text-xs font-bold text-red-400"><Droplets className="size-3" /> First Blood +10</span>
             )}
+            {result.correct && result.lastHit && result.defeated && (
+              <span className="flex items-center gap-1 rounded-full border border-yellow-400/40 bg-yellow-500/10 px-2.5 py-1 text-xs font-bold text-yellow-500"><Skull className="size-3" /> Last Hit +15</span>
+            )}
+            {result.correct && result.coinsEarned > 0 && (
+              <span className="flex items-center gap-1 rounded-full border border-amber-400/40 bg-amber-500/10 px-2.5 py-1 text-xs font-bold text-amber-500"><Coins className="size-3" /> +{result.coinsEarned}</span>
+            )}
+            {result.correct && result.isMvp && (
+              <span className="flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-bold" style={{ borderColor: `${color}60`, color, backgroundColor: `${color}15` }}><Crown className="size-3" /> MVP!</span>
+            )}
+            <button
+              onClick={handleNext}
+              className="ml-auto flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold text-white transition-all active:scale-95"
+              style={{ background: `linear-gradient(135deg, ${color} 0%, ${color}cc 100%)`, boxShadow: `0 0 14px ${color}40` }}
+            >
+              <Zap className="size-4" />{result.correct ? "Weiter!" : "Nochmal"}
+            </button>
           </div>
         )}
-
-        {/* ── RESULT ── */}
-        {phase === "result" && result && (
-          <div
-            className={cn(
-              "rounded-2xl border-2 p-5 space-y-3",
-              result.correct ? "border-green-500/30 bg-green-500/5" : "border-red-500/30 bg-red-500/5",
-            )}
-            style={{ animation: "result-in 0.3s ease both" }}
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-2xl leading-none">{result.correct ? "⚡" : "🛡️"}</span>
-              <div>
-                <p className={cn("text-lg font-black", result.correct ? "text-green-500" : "text-red-500")}>
-                  {result.correct
-                    ? combo >= 3 ? `${combo}× COMBO TREFFER!` : combo >= 2 ? "DOPPEL TREFFER!" : "Treffer!"
-                    : "Verfehlt!"}
-                </p>
-                <p className="text-xs text-muted-fg">
-                  {result.correct
-                    ? `Boss HP: ${result.newHp} verbleibend`
-                    : "Kein Schaden — versuche es erneut"}
-                </p>
-              </div>
-            </div>
-
-            {result.correct && (
-              <div className="flex flex-wrap gap-1.5">
-                {result.firstBlood && (
-                  <span className="flex items-center gap-1 rounded-full border border-red-400/40 bg-red-500/10 px-2.5 py-1 text-xs font-bold text-red-400">
-                    <Droplets className="size-3" /> First Blood +10
-                  </span>
-                )}
-                {result.lastHit && result.defeated && (
-                  <span className="flex items-center gap-1 rounded-full border border-yellow-400/40 bg-yellow-500/10 px-2.5 py-1 text-xs font-bold text-yellow-500">
-                    <Skull className="size-3" /> Last Hit +15
-                  </span>
-                )}
-                {result.coinsEarned > 0 && (
-                  <span className="flex items-center gap-1 rounded-full border border-amber-400/40 bg-amber-500/10 px-2.5 py-1 text-xs font-bold text-amber-500">
-                    <Coins className="size-3" /> +{result.coinsEarned} Münzen
-                  </span>
-                )}
-                {result.isMvp && (
-                  <span
-                    className="flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs font-bold"
-                    style={{ borderColor: `${color}60`, color, backgroundColor: `${color}15` }}
-                  >
-                    <Crown className="size-3" /> MVP!
-                  </span>
-                )}
-              </div>
-            )}
-
-            {result.defeated ? (
-              <div
-                className="rounded-xl border px-4 py-3 text-center"
-                style={{ borderColor: `${color}40`, backgroundColor: `${color}10` }}
-              >
-                <p className="text-xl font-black" style={{ color }}>💀 Boss besiegt!</p>
-                <p className="mt-0.5 text-xs text-muted-fg">Belohnungen werden gutgeschrieben…</p>
-              </div>
-            ) : (
-              <button
-                onClick={handleNext}
-                className="flex w-full items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-bold text-white transition-all active:scale-95"
-                style={{
-                  background: `linear-gradient(135deg, ${color} 0%, ${color}cc 100%)`,
-                  boxShadow: `0 0 14px ${color}40`,
-                }}
-              >
-                <Zap className="size-4" />
-                Nochmal angreifen
-              </button>
-            )}
-          </div>
-        )}
-
-        {/* ── Already defeated ── */}
         {defeated && phase === "idle" && (
           <div className="rounded-2xl border border-yellow-400/25 bg-yellow-500/5 p-5 text-center">
             <p className="text-3xl font-black">💀</p>

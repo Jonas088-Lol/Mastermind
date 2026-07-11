@@ -113,6 +113,57 @@ export async function deleteThreadMessage(messageId: string) {
   revalidateMessagePages();
 }
 
+/**
+ * Meldet eine Nachricht an die Schul-Administration (Mobbing-/Missbrauchs-Schutz).
+ * Erstellt eine Benachrichtigung an alle Admins/Rektoren der Schule. Rate-limitiert.
+ */
+export async function reportThreadMessage(messageId: string, reason?: string) {
+  const session = await getSession();
+  if (!session) return { error: "Nicht angemeldet" };
+  if (!messageId) return { error: "Ungültig" };
+
+  // Rate-Limit: max. 10 Meldungen / Stunde pro Nutzer (gegen Melde-Spam).
+  const rl = await rateLimit({ scope: "msg-report", key: session.userId, limit: 10, windowSec: 3600 });
+  if (!rl.ok) return { error: "Zu viele Meldungen. Bitte später erneut." };
+
+  const message = await prisma.message.findUnique({
+    where: { id: messageId },
+    select: {
+      content: true,
+      sender: { select: { name: true } },
+      thread: { select: { id: true, schoolId: true, participants: { select: { userId: true } } } },
+    },
+  });
+  if (!message) return { error: "Nachricht nicht gefunden" };
+
+  // Nur Teilnehmer des Threads dürfen melden.
+  if (!message.thread.participants.some((p) => p.userId === session.userId)) {
+    return { error: "Nicht berechtigt" };
+  }
+
+  const schoolId = message.thread.schoolId ?? session.schoolId;
+  if (!schoolId) return { error: "Keine Schule" };
+
+  const admins = await prisma.user.findMany({
+    where: { schoolId, role: { in: ["admin", "rector", "vice_rector"] } },
+    select: { id: true },
+  });
+  if (admins.length > 0) {
+    const snippet = message.content.slice(0, 120);
+    await prisma.appNotification.createMany({
+      data: admins.map((a) => ({
+        userId: a.id,
+        type: "system",
+        title: "⚠ Gemeldete Nachricht",
+        body: `${session.name} meldete eine Nachricht von ${message.sender.name}${reason ? ` (Grund: ${reason.slice(0, 80)})` : ""}: „${snippet}"`,
+        linkUrl: `/admin/nachrichten/${message.thread.id}`,
+      })),
+    });
+  }
+
+  return { ok: true };
+}
+
 // Revalidate list pages + dynamic thread pages for all roles
 function revalidateMessagePages() {
   for (const base of ["/app", "/teach", "/eltern", "/admin"]) {

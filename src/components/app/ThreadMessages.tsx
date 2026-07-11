@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef, useState, useTransition } from "react";
-import { Pencil, Reply, Send, Trash2, X, Check } from "lucide-react";
+import { Pencil, Reply, Send, Trash2, X, Check, Flag } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
-import { sendMessage, editThreadMessage, deleteThreadMessage } from "@/lib/actions/messaging";
+import { sendMessage, editThreadMessage, deleteThreadMessage, reportThreadMessage } from "@/lib/actions/messaging";
 import { cn } from "@/lib/utils";
 
 export type ThreadMsg = {
@@ -62,6 +62,16 @@ export function ThreadMessages({
   function handleDelete(msgId: string) {
     setHovered(null);
     startTransition(() => deleteThreadMessage(msgId));
+  }
+
+  const [reported, setReported] = useState<Set<string>>(new Set());
+  function handleReport(msgId: string) {
+    setHovered(null);
+    if (reported.has(msgId)) return;
+    startTransition(async () => {
+      const r = await reportThreadMessage(msgId);
+      if (r && "ok" in r) setReported((prev) => new Set(prev).add(msgId));
+    });
   }
 
   function startReply(msg: ThreadMsg) {
@@ -159,6 +169,21 @@ export function ThreadMessages({
                   >
                     <Reply className="size-3.5" />
                   </button>
+                  {!isOwn && (
+                    <button
+                      onClick={() => handleReport(msg.id)}
+                      title={reported.has(msg.id) ? "Gemeldet" : "Melden"}
+                      disabled={reported.has(msg.id)}
+                      className={cn(
+                        "rounded p-1.5",
+                        reported.has(msg.id)
+                          ? "text-green-500"
+                          : "text-muted-fg hover:bg-amber-500 hover:text-white"
+                      )}
+                    >
+                      {reported.has(msg.id) ? <Check className="size-3.5" /> : <Flag className="size-3.5" />}
+                    </button>
+                  )}
                   {isOwn && (
                     <>
                       <button
