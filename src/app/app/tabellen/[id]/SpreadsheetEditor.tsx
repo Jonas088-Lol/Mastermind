@@ -450,18 +450,17 @@ function evaluateCell(key: string, cells: Record<string, CellData>, depth = 0): 
     }
   }
 
-  // Arithmetic expression with cell refs
+  // Arithmetic expression with cell refs.
+  // WICHTIG: kein new Function/eval — die Produktions-CSP hat kein 'unsafe-eval',
+  // dort würde jede Formel mit #ERR fehlschlagen. evaluateExpression ist eval-frei.
   const resolved = exprUp.replace(/[A-Z]+\d+/g, ref => {
     const val = evaluateCell(cellRefToKey(ref), cells, depth + 1);
     const num = Number(val);
     return isNaN(num) ? "0" : String(num);
   });
-  try {
-    // eslint-disable-next-line no-new-func
-    const result = new Function(`return (${resolved})`)() as unknown;
-    if (typeof result === "number") return String(r(result));
-    return String(result);
-  } catch { return "#ERR"; }
+  const evalRes = evaluateExpression(resolved);
+  if (evalRes.ok) return String(r(evalRes.value));
+  return "#ERR";
 }
 
 function r(n: number): number { return Math.round(n * 1_000_000) / 1_000_000; }

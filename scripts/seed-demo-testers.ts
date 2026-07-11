@@ -47,10 +47,11 @@ async function main() {
   const passwordHash = await hashPassword(password);
 
   // ── Schule + Klasse ──────────────────────────────────────
+  // Demo-Schule läuft auf "pro", damit Tester alle Features (KI, Heatmaps, …) sehen
   const school = await prisma.school.upsert({
     where: { id: SCHOOL_ID },
-    update: {},
-    create: { id: SCHOOL_ID, slug: "demo-schule", name: "Demo-Schule" },
+    update: { plan: "pro" },
+    create: { id: SCHOOL_ID, slug: "demo-schule", name: "Demo-Schule", plan: "pro" },
     select: { id: true },
   });
 

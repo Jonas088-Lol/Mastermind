@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
 import { logger } from "@/lib/logger";
 import { safeJsonParse } from "@/lib/safe-json";
+import { pickBuiltinQuestion } from "@/lib/boss-fallback-questions";
 
 export async function GET(
   _req: NextRequest,
@@ -40,7 +41,7 @@ export async function GET(
     const pickedId = pickFrom[Math.floor(Math.random() * pickFrom.length)];
 
     const q = await prisma.bossQuestion.findUnique({ where: { id: pickedId } });
-    if (!q) return NextResponse.json({ error: "No questions" }, { status: 404 });
+    if (!q) return NextResponse.json(pickBuiltinQuestion());
 
     return NextResponse.json({
       id: q.id,
@@ -142,13 +143,14 @@ export async function GET(
     ?? await pickRandom(whereAnyType);
 
   if (!q) {
-    logger.warn("boss question: kein Fragen-Content gefunden", { battleId, subject: battle.subject, grade });
-    return NextResponse.json({ error: "No questions" }, { status: 404 });
+    // Letzter Rettungsanker: eingebauter Fragen-Pool — der Kampf läuft immer.
+    logger.warn("boss question: kein Fragen-Content gefunden — nutze Builtin-Pool", { battleId, subject: battle.subject, grade });
+    return NextResponse.json(pickBuiltinQuestion());
   }
 
   const opts = safeJsonParse<string[]>(q.options, []);
   if (opts.length < 2) {
-    return NextResponse.json({ error: "No questions" }, { status: 404 });
+    return NextResponse.json(pickBuiltinQuestion());
   }
 
   return NextResponse.json({

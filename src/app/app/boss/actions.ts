@@ -7,6 +7,7 @@ import { pushToUsers } from "@/lib/push";
 import { BOSS_TIERS, BOSS_INDEX, type BossTier } from "@/lib/game";
 import { getEventMultiplier } from "@/lib/settings";
 import { onBossFightWin } from "@/lib/tree-quest-engine";
+import { BUILTIN_BOSS_QUESTIONS } from "@/lib/boss-fallback-questions";
 
 /** Antwortzeit unter diesem Wert → kritischer Treffer (doppelter Schaden). */
 const CRIT_MS = 3_500;
@@ -52,19 +53,23 @@ export async function attackBoss(
   const battle = await prisma.bossBattle.findFirst({ where: { id: battleId, isActive: true, currentHp: { gt: 0 } } });
   if (!battle) return { error: "Boss not active" };
 
-  // Resolve question — boss-custom pool → Frage-Pool (fq_ prefix) → general pool
+  // Resolve question — builtin-Pool → boss-custom pool → Frage-Pool (fq_ prefix) → general pool
+  const isBuiltin = questionId.startsWith("builtin_");
+  const builtinQ  = isBuiltin ? BUILTIN_BOSS_QUESTIONS[Number(questionId.slice(8))] ?? null : null;
   const isFrage   = questionId.startsWith("fq_");
   const realId    = isFrage ? questionId.slice(3) : questionId;
 
-  const bossQ  = !isFrage ? await prisma.bossQuestion.findUnique({ where: { id: realId } }) : null;
-  const genQ   = (!isFrage && !bossQ) ? await prisma.exerciseQuestion.findUnique({ where: { id: realId } }) : null;
+  const bossQ  = (!isFrage && !isBuiltin) ? await prisma.bossQuestion.findUnique({ where: { id: realId } }) : null;
+  const genQ   = (!isFrage && !isBuiltin && !bossQ) ? await prisma.exerciseQuestion.findUnique({ where: { id: realId } }) : null;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const frageQ = isFrage ? await (prisma as any).frage.findUnique({ where: { id: realId } }) as Record<string, unknown> | null : null;
 
-  if (!bossQ && !genQ && !frageQ) return { error: "Question not found" };
+  if (!bossQ && !genQ && !frageQ && !builtinQ) return { error: "Question not found" };
 
   // Check correctness
-  const correct = bossQ
+  const correct = builtinQ
+    ? selectedOptionIndex === builtinQ.correct
+    : bossQ
     ? selectedOptionIndex === bossQ.correct
     : genQ
     ? String(selectedOptionIndex) === genQ.correct
@@ -81,7 +86,10 @@ export async function attackBoss(
   // Richtige-Antwort-Index + Erklärung fürs Client-Feedback ("warum falsch").
   let correctIndex: number | undefined;
   let explanation: string | null | undefined;
-  if (bossQ) {
+  if (builtinQ) {
+    correctIndex = builtinQ.correct;
+    explanation = builtinQ.explanation;
+  } else if (bossQ) {
     correctIndex = bossQ.correct;
     explanation = null; // BossQuestion hat kein Erklärungsfeld
   } else if (genQ) {

@@ -110,6 +110,7 @@ export function BossClient({
   // Vollbild-Kampfmodus: Angriffsziele poppen über die Arena verteilt auf
   const [battleMode, setBattleMode] = useState(false);
   const [targets, setTargets] = useState<AttackTarget[]>([]);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const questionShownAtRef = useRef(0);
   const targetKeyRef = useRef(0);
 
@@ -214,9 +215,14 @@ export function BossClient({
     if (defeated || phase !== "idle" || ko) return;
     setTargets([]);
     setPhase("loading");
+    setLoadError(null);
     try {
       const res = await fetch(`/api/boss/${battleId}/question`);
-      if (!res.ok) { setPhase("idle"); return; }
+      if (!res.ok) {
+        setLoadError(res.status === 404 ? "Dieser Boss ist nicht mehr aktiv." : "Frage konnte nicht geladen werden — versuch es nochmal.");
+        setPhase("idle");
+        return;
+      }
       const q = (await res.json()) as Question;
       setQuestion(q);
       setShuffledOptions(shuffleOptions(q.options));
@@ -225,6 +231,7 @@ export function BossClient({
       questionShownAtRef.current = Date.now();
       setPhase("question");
     } catch {
+      setLoadError("Verbindungsfehler — versuch es nochmal.");
       setPhase("idle");
     }
   }
@@ -386,10 +393,15 @@ export function BossClient({
               </span>
             </button>
           ))}
-          {battleMode && phase === "idle" && !ko && !defeated && targets.length === 0 && (
+          {battleMode && phase === "idle" && !ko && !defeated && targets.length === 0 && !loadError && (
             <p className="pointer-events-none absolute inset-x-0 top-1/2 z-10 text-center text-sm font-bold uppercase tracking-widest text-white/40">
               Mach dich bereit…
             </p>
+          )}
+          {loadError && (
+            <div className="absolute inset-x-0 bottom-16 z-30 mx-auto w-fit max-w-[90%] rounded-xl border border-red-400/40 bg-red-500/15 px-4 py-2 text-center text-sm font-semibold text-red-300 backdrop-blur">
+              {loadError}
+            </div>
           )}
           {/* Boden */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24" style={{ background: `linear-gradient(180deg, transparent, ${color}14)`, borderTop: `1px solid ${color}22` }} />
