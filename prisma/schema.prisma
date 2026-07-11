@@ -1041,6 +1041,7 @@ model FileUpload {
   mimeType     String
   size         Int      // bytes
   path         String   // storage path
+  encrypted    Boolean  @default(false) // at-rest verschlüsselt (AES-256-GCM)
   assignmentId String?
   assignment   Assignment? @relation(fields: [assignmentId], references: [id], onDelete: SetNull)
   createdAt    DateTime @default(now())

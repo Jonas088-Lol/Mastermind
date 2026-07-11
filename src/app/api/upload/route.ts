@@ -81,26 +81,35 @@ export async function POST(req: NextRequest) {
     const finalName = `${uploadId}_${safeName}`;
     const finalPath = join(userDir, finalName);
 
-    // Rename temp to final
-    const { rename } = await import("fs/promises");
-    await rename(tempPath, finalPath);
+    const { rename, unlink } = await import("fs/promises");
+    const plainSize = (await stat(tempPath)).size;
 
-    // Verify final size
-    const { size } = await stat(finalPath);
+    // At-Rest-Verschlüsselung (AES-256-GCM), wenn Keys konfiguriert sind.
+    // Ohne Keys: Klartext wie bisher (graceful) — encrypted-Flag bleibt false.
+    const { encryptFile, isFileEncryptionConfigured } = await import("@/lib/privacy/file-encryption");
+    let encrypted = false;
+    if (isFileEncryptionConfigured()) {
+      await encryptFile(tempPath, finalPath);
+      await unlink(tempPath);
+      encrypted = true;
+    } else {
+      await rename(tempPath, finalPath);
+    }
 
-    // Store in DB
+    // Store in DB (size = Klartext-Größe, wie sie der Nutzer kennt)
     const record = await prisma.fileUpload.create({
       data: {
         userId: session.userId,
         filename: safeName,
         mimeType,
-        size,
+        size: plainSize,
         path: `uploads/${session.userId}/${finalName}`,
+        encrypted,
         assignmentId: assignmentId ?? null,
       },
     });
 
-    return Response.json({ id: record.id, filename: safeName, size, mimeType });
+    return Response.json({ id: record.id, filename: safeName, size: plainSize, mimeType });
   }
 
   return Response.json({ uploadId, chunk: chunkIndex, received: true });

@@ -10,6 +10,7 @@ import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { BOSS_TIERS, type BossTier } from "@/lib/game";
 import { cn } from "@/lib/utils";
 import { BossClient } from "./BossClient";
+import { AutoRefresh } from "@/components/app/AutoRefresh";
 
 export const metadata: Metadata = { title: "Boss-Battle · MasterMind" };
 
@@ -64,6 +65,8 @@ export default async function BossPage() {
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">
+      {/* Live: Boss-HP/Leaderboard aktualisieren sich ohne Neuladen */}
+      <AutoRefresh seconds={10} />
       {/* Header */}
       <header>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Gamification</p>

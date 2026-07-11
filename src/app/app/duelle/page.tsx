@@ -11,6 +11,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { COIN_REWARDS } from "@/lib/coins";
 import { acceptDuel, declineDuel, sendChallenge } from "./actions";
+import { AutoRefresh } from "@/components/app/AutoRefresh";
 
 export const metadata: Metadata = { title: "Duelle" };
 
@@ -78,6 +79,8 @@ export default async function DuellePage() {
 
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-8">
+      {/* Live: eingehende/angenommene Duelle erscheinen ohne manuelles Neuladen */}
+      <AutoRefresh seconds={5} />
       <header>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Gamification</p>
         <h1 className="mt-1 text-3xl font-bold tracking-tight">Duelle</h1>

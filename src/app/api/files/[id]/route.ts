@@ -34,8 +34,24 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
     return new Response("File not found on disk", { status: 404 });
   }
 
-  const { size } = await stat(filePath);
-  const stream = createReadStream(filePath);
+  // Verschlüsselte Dateien werden beim Ausliefern transparent entschlüsselt
+  // (Flag aus der DB; zur Sicherheit zusätzlich Magic-Byte-Check).
+  let size: number;
+  let stream: NodeJS.ReadableStream;
+  const { isEncryptedFile, createDecryptStream } = await import("@/lib/privacy/file-encryption");
+  const recEncrypted = (record as { encrypted?: boolean }).encrypted ?? false;
+  if (recEncrypted || (await isEncryptedFile(filePath).catch(() => false))) {
+    try {
+      const dec = await createDecryptStream(filePath);
+      stream = dec.stream;
+      size = dec.plainSize;
+    } catch {
+      return new Response("Datei konnte nicht entschlüsselt werden", { status: 500 });
+    }
+  } else {
+    size = (await stat(filePath)).size;
+    stream = createReadStream(filePath);
+  }
   const body = new ReadableStream({
     start(controller) {
       stream.on("data", (chunk) => controller.enqueue(chunk));
