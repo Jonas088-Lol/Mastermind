@@ -144,24 +144,27 @@ export async function cancelTwoFactorLogin() {
 // Demo-Quick-Login: meldet gezielt in einen der demo.*-Wegwerf-Accounts an
 // (KEIN "erster User dieser Rolle" — das könnte echte Konten treffen).
 // Über ENV DISABLE_DEMO_LOGIN=true abschaltbar.
-const DEMO_LOGIN_EMAILS: Record<string, string> = {
-  super:          "demo.super@konvertis.de",
-  admin:          "demo.admin@konvertis.de",
-  rector:         "demo.schulleiter@konvertis.de",
-  vice_rector:    "demo.konrektor@konvertis.de",
-  secretary:      "demo.sekretariat@konvertis.de",
-  teacher:        "demo.lehrer@konvertis.de",
-  student:        "demo.schueler@konvertis.de",
-  parent:         "demo.eltern@konvertis.de",
-  school_company: "demo.traeger@konvertis.de",
+// Key = Kachel-Slug (kann von der Rolle abweichen, z. B. student2 → Rolle student)
+const DEMO_LOGINS: Record<string, { email: string; role: string }> = {
+  super:          { email: "demo.super@konvertis.de",       role: "super" },
+  admin:          { email: "demo.admin@konvertis.de",       role: "admin" },
+  rector:         { email: "demo.schulleiter@konvertis.de", role: "rector" },
+  vice_rector:    { email: "demo.konrektor@konvertis.de",   role: "vice_rector" },
+  secretary:      { email: "demo.sekretariat@konvertis.de", role: "secretary" },
+  teacher:        { email: "demo.lehrer@konvertis.de",      role: "teacher" },
+  student:        { email: "demo.schueler@konvertis.de",    role: "student" },
+  student2:       { email: "demo.schueler2@konvertis.de",   role: "student" },
+  parent:         { email: "demo.eltern@konvertis.de",      role: "parent" },
+  school_company: { email: "demo.traeger@konvertis.de",     role: "school_company" },
 };
 
-export async function loginAsDemoRole(role: string) {
+export async function loginAsDemoRole(roleKey: string) {
   if (process.env.DISABLE_DEMO_LOGIN === "true") {
     redirect("/login?error=demo-disabled");
   }
-  const email = DEMO_LOGIN_EMAILS[role];
-  if (!email) redirect("/login?error=invalid");
+  const entry = DEMO_LOGINS[roleKey];
+  if (!entry) redirect("/login?error=invalid");
+  const { email, role } = entry;
 
   // Nur einloggen, wenn der Demo-Account wirklich existiert und die Rolle passt.
   const user = await prisma.user.findUnique({

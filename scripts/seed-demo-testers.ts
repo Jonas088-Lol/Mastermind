@@ -25,7 +25,7 @@ function arg(name: string): string | undefined {
 const SCHOOL_ID = "demo-school";
 const CLASS_ID = "demo-class-9b";
 
-const TESTERS: { role: string; email: string; name: string; needsClass?: boolean }[] = [
+const TESTERS: { role: string; email: string; name: string; needsClass?: boolean; key?: string }[] = [
   { role: "super",          email: "demo.super@konvertis.de",       name: "Demo Plattform-Admin" },
   { role: "admin",          email: "demo.admin@konvertis.de",       name: "Demo Schul-Admin" },
   { role: "rector",         email: "demo.schulleiter@konvertis.de", name: "Demo Schulleiter" },
@@ -33,6 +33,8 @@ const TESTERS: { role: string; email: string; name: string; needsClass?: boolean
   { role: "secretary",      email: "demo.sekretariat@konvertis.de", name: "Demo Sekretariat" },
   { role: "teacher",        email: "demo.lehrer@konvertis.de",      name: "Demo Lehrkraft" },
   { role: "student",        email: "demo.schueler@konvertis.de",    name: "Demo Schüler",  needsClass: true },
+  // Zweiter Schüler in derselben Klasse — zum Testen von Duellen & Co.
+  { role: "student",        email: "demo.schueler2@konvertis.de",   name: "Demo Schüler 2", needsClass: true, key: "student2" },
   { role: "parent",         email: "demo.eltern@konvertis.de",      name: "Demo Elternteil" },
   { role: "school_company", email: "demo.traeger@konvertis.de",     name: "Demo Schulträger" },
 ];
@@ -81,7 +83,7 @@ async function main() {
       },
       select: { id: true },
     });
-    ids[t.role] = user.id;
+    ids[t.key ?? t.role] = user.id;
   }
 
   // ── Eltern ↔ Schüler verknüpfen (sonst leere Eltern-Ansicht) ──
@@ -92,6 +94,56 @@ async function main() {
       create: { parentId: ids.parent, studentId: ids.student },
     });
   }
+
+  // ── Mathe-Übungsfragen (Duell-/Übungs-Pool) ──────────────
+  // Duelle laufen über ExerciseTopic + ExerciseQuestion (Typ "mc",
+  // correct = 0-basierter Index als String).
+  const MATHE_TOPIC_ID = "demo-topic-mathe-9";
+  await prisma.exerciseTopic.upsert({
+    where: { id: MATHE_TOPIC_ID },
+    update: {},
+    create: {
+      id: MATHE_TOPIC_ID,
+      subject: "mathematik",
+      grade: 9,
+      title: "Mathe-Grundlagen",
+      description: "Einfache Rechenaufgaben zum Testen von Duellen und Übungen.",
+    },
+  });
+
+  const MATHE_FRAGEN: { q: string; options: string[]; correct: number; explanation: string }[] = [
+    { q: "Was ist 12 × 12?", options: ["124", "144", "142", "154"], correct: 1, explanation: "12 × 12 = 144." },
+    { q: "Was ist 81 ÷ 9?", options: ["8", "7", "9", "11"], correct: 2, explanation: "9 × 9 = 81, also 81 ÷ 9 = 9." },
+    { q: "Löse: 3x = 21. Was ist x?", options: ["6", "7", "8", "9"], correct: 1, explanation: "x = 21 ÷ 3 = 7." },
+    { q: "Was ist 15 % von 200?", options: ["15", "20", "25", "30"], correct: 3, explanation: "10 % = 20, 5 % = 10 → 15 % = 30." },
+    { q: "Was ist die Wurzel aus 64?", options: ["6", "7", "8", "9"], correct: 2, explanation: "8 × 8 = 64." },
+    { q: "Was ist 2⁵ (2 hoch 5)?", options: ["16", "32", "64", "25"], correct: 1, explanation: "2·2·2·2·2 = 32." },
+    { q: "Was ist −5 + 12?", options: ["−7", "7", "17", "−17"], correct: 1, explanation: "12 − 5 = 7." },
+    { q: "Wie viel ist ¾ von 40?", options: ["25", "28", "30", "32"], correct: 2, explanation: "40 ÷ 4 = 10, 10 × 3 = 30." },
+    { q: "Löse: 2x + 4 = 14. Was ist x?", options: ["4", "5", "6", "7"], correct: 1, explanation: "2x = 10 → x = 5." },
+    { q: "Was ist 0,5 × 0,4?", options: ["0,9", "0,02", "0,2", "2"], correct: 2, explanation: "0,5 × 0,4 = 0,20." },
+    { q: "Ein Dreieck hat die Winkel 90° und 45°. Wie groß ist der dritte Winkel?", options: ["35°", "40°", "45°", "55°"], correct: 2, explanation: "180° − 90° − 45° = 45°." },
+    { q: "Was ist 7 + 8 × 2?", options: ["30", "23", "22", "15"], correct: 1, explanation: "Punkt vor Strich: 8 × 2 = 16, dann 7 + 16 = 23." },
+  ];
+
+  for (let i = 0; i < MATHE_FRAGEN.length; i++) {
+    const f = MATHE_FRAGEN[i];
+    await prisma.exerciseQuestion.upsert({
+      where: { id: `demo-mathe-q${i + 1}` },
+      update: {},
+      create: {
+        id: `demo-mathe-q${i + 1}`,
+        topicId: MATHE_TOPIC_ID,
+        type: "mc",
+        question: f.q,
+        options: JSON.stringify(f.options),
+        correct: String(f.correct),
+        explanation: f.explanation,
+        order: i,
+      },
+    });
+  }
+  console.log(`\n✓ Mathe-Topic "Mathe-Grundlagen" mit ${MATHE_FRAGEN.length} Fragen angelegt (Duell-Pool).`);
 
   console.log("\n✓ Demo-Tester-Accounts angelegt (Passwort für ALLE gleich):\n");
   for (const t of TESTERS) {
