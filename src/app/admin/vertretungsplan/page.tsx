@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { RefreshCw } from "lucide-react";
+import { Maximize2, RefreshCw } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
@@ -147,15 +147,22 @@ export default async function AdminVertretungsplanPage({ searchParams }: PagePro
             Anzeigen
           </button>
         </form>
-        <Link
-          href={`/admin/vertretungsplan?date=${selectedDate.toISOString().split("T")[0]}&show=create`}
-          className="ml-auto"
-        >
-          <Button size="sm" variant="secondary">
-            <RefreshCw className="size-3.5" />
-            Neue Vertretung
-          </Button>
-        </Link>
+        <div className="ml-auto flex items-center gap-2">
+          <Link href="/admin/anzeigetafel">
+            <Button size="sm" variant="secondary">
+              <Maximize2 className="size-3.5" />
+              Vollbildanzeige
+            </Button>
+          </Link>
+          <Link
+            href={`/admin/vertretungsplan?date=${selectedDate.toISOString().split("T")[0]}&show=create`}
+          >
+            <Button size="sm" variant="secondary">
+              <RefreshCw className="size-3.5" />
+              Neue Vertretung
+            </Button>
+          </Link>
+        </div>
       </div>
 
       {/* Inline create form */}

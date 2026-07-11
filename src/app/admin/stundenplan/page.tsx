@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { Clock, Plus } from "lucide-react";
+import Link from "next/link";
+import { Clock, Maximize2, Plus } from "lucide-react";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
@@ -53,9 +54,18 @@ export default async function AdminStundenplanPage() {
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schul-Admin</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Stundenplan</h1>
+      <header className="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schul-Admin</p>
+          <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Stundenplan</h1>
+        </div>
+        <Link
+          href="/admin/anzeigetafel"
+          className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2 text-sm font-semibold text-fg transition-colors hover:border-brand/40 hover:bg-surface-2"
+        >
+          <Maximize2 className="size-4 text-muted-fg" />
+          Vollbildanzeige
+        </Link>
       </header>
 
       <Card>
