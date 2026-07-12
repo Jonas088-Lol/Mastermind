@@ -56,10 +56,10 @@ RUN if [ -f node_modules/.bin/esbuild ]; then \
 # Admin-Setup-Skripte → .cjs (für ersten Login nach frischem DB-Setup)
 # Kein "|| true" — ein Compile-Fehler soll den Build stoppen, nicht still
 # fehlende Skripte hinterlassen.
-RUN for s in create-admin purge-demo-accounts seed-demo-testers questions/mega/import-mega seed-topics seed-mega; do \
+RUN for s in create-admin purge-demo-accounts seed-demo-testers questions/mega/import-mega seed-topics seed-mega reencrypt-fields; do \
       node_modules/.bin/esbuild scripts/$s.ts \
         --bundle --platform=node --target=node22 --format=cjs \
-        --outfile=scripts/$s.cjs --external:@prisma/client; \
+        --outfile=scripts/$s.cjs --external:@prisma/client || exit 1; \
       echo "✓ compiled scripts/$s.cjs"; \
     done
 

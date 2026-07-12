@@ -10,7 +10,8 @@ export const dynamic = "force-dynamic";
 function csvRow(values: (string | number | boolean | null | undefined)[]): string {
   return values
     .map((v) => {
-      const s = v == null ? "" : String(v);
+      let s = v == null ? "" : String(v);
+      if (/^[=+\-@\t\r]/.test(s)) s = "'" + s;
       return `"${s.replace(/"/g, '""')}"`;
     })
     .join(",");

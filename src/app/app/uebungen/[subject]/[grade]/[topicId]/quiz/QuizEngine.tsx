@@ -58,6 +58,9 @@ export function QuizEngine({
   const isBlitz = question?.type === "blitz";
 
   useEffect(() => {
+    // answerState MUSS in den Deps sein: sonst läuft das Intervall nach dem
+    // Beantworten weiter und feuert bei 0 ein stale handleSubmit (Closure mit
+    // answerState "pending") — die Frage würde doppelt in results gezählt.
     if (!isBlitz || answerState !== "pending") return;
     setTimeLeft(10);
     const interval = setInterval(() => {
@@ -72,7 +75,7 @@ export function QuizEngine({
     }, 1000);
     return () => clearInterval(interval);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [idx]);
+  }, [idx, isBlitz, answerState]);
 
   const handleSubmit = useCallback(
     (userAnswer: string) => {
@@ -125,6 +128,10 @@ export function QuizEngine({
   }, [answerState, question, idx]);
 
   const handleNext = useCallback(async () => {
+    // Guard: handleNext hängt auch am globalen Enter-Listener — ohne Guard
+    // würde jedes Enter auf dem Ergebnisbildschirm (oder während des
+    // Speicherns) onComplete und damit die XP-Vergabe erneut auslösen.
+    if (saving || done) return;
     if (idx + 1 >= questions.length) {
       const score = Math.round((results.filter(Boolean).length / questions.length) * 100);
       setSaving(true);
@@ -138,7 +145,7 @@ export function QuizEngine({
     setAnswerState("pending");
     setTimeLeft(null);
     setHintUsed(false);
-  }, [idx, questions.length, results, onComplete, comboEnabled, maxCombo]);
+  }, [idx, questions.length, results, onComplete, comboEnabled, maxCombo, saving, done]);
 
   if (done) {
     const correctCount = results.filter(Boolean).length;

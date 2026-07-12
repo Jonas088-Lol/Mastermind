@@ -2,8 +2,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ArrowRight, CheckCircle2, Flame, Sparkles, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { DashboardPreviewModal } from "@/components/landing/DashboardPreviewModal";
 import { CoinIcon } from "@/components/ui/CoinIcon";
 import { HeroGreeting } from "@/components/landing/HeroGreeting";
@@ -62,19 +63,25 @@ export function Hero({ loggedInName = null }: { loggedInName?: string | null }) 
 
               {/* CTA buttons */}
               <div className="animate-fade-in animate-delay-300 mt-10 flex flex-col gap-3 sm:flex-row">
-                <Button
-                  size="lg"
-                  className="pastel-cta w-full font-bold sm:w-auto"
+                <Link
+                  href="/onboarding"
+                  className={buttonVariants({
+                    size: "lg",
+                    className: "pastel-cta w-full font-bold sm:w-auto",
+                  })}
                 >
                   Schule kostenlos testen
                   <ArrowRight className="size-4" />
-                </Button>
-                <Button
-                  size="lg"
-                  className="pastel-cta w-full font-bold sm:w-auto"
+                </Link>
+                <Link
+                  href="/kontakt"
+                  className={buttonVariants({
+                    size: "lg",
+                    className: "pastel-cta w-full font-bold sm:w-auto",
+                  })}
                 >
                   30-Min-Demo buchen
-                </Button>
+                </Link>
               </div>
 
               {/* "App live erleben" */}

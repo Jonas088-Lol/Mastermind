@@ -10,10 +10,10 @@ export async function createWikiEntry(formData: FormData) {
   const session = await getSession();
   if (!session || !session.schoolId) redirect("/login");
 
-  const title = String(formData.get("title") ?? "").trim();
-  const content = String(formData.get("content") ?? "").trim();
-  const subject = String(formData.get("subject") ?? "").trim() || null;
-  const tags = String(formData.get("tags") ?? "").trim();
+  const title = String(formData.get("title") ?? "").trim().slice(0, 200);
+  const content = String(formData.get("content") ?? "").trim().slice(0, 200_000);
+  const subject = String(formData.get("subject") ?? "").trim().slice(0, 100) || null;
+  const tags = String(formData.get("tags") ?? "").trim().slice(0, 500);
 
   if (!title) return;
 
@@ -37,16 +37,18 @@ export async function updateWikiEntry(id: string, formData: FormData) {
   if (!session) redirect("/login");
 
   const entry = await prisma.schoolWikiEntry.findUnique({ where: { id } });
-  if (!entry) return;
+  if (!entry || entry.schoolId !== session.schoolId) return;
 
   const role = effectiveRole(session);
   const canEdit = entry.authorId === session.userId || role === "admin" || role === "teacher";
   if (!canEdit) return;
 
-  const title = String(formData.get("title") ?? "").trim();
-  const content = String(formData.get("content") ?? "").trim();
-  const subject = String(formData.get("subject") ?? "").trim() || null;
-  const tags = String(formData.get("tags") ?? "").trim();
+  const title = String(formData.get("title") ?? "").trim().slice(0, 200);
+  const content = String(formData.get("content") ?? "").trim().slice(0, 200_000);
+  const subject = String(formData.get("subject") ?? "").trim().slice(0, 100) || null;
+  const tags = String(formData.get("tags") ?? "").trim().slice(0, 500);
+
+  if (!title) return;
 
   await prisma.schoolWikiEntry.update({
     where: { id },
@@ -63,7 +65,7 @@ export async function deleteWikiEntry(id: string) {
   if (!session) return;
 
   const entry = await prisma.schoolWikiEntry.findUnique({ where: { id } });
-  if (!entry) return;
+  if (!entry || entry.schoolId !== session.schoolId) return;
 
   const role = effectiveRole(session);
   const canDelete = entry.authorId === session.userId || role === "admin";
@@ -101,8 +103,11 @@ export async function duplicateWikiEntry(id: string) {
 }
 
 export async function incrementViewCount(id: string) {
-  await prisma.schoolWikiEntry.update({
-    where: { id },
+  const session = await getSession();
+  if (!session) return;
+  // Nur Einträge der eigenen Schule zählen (kein anonymer Spam über die Action)
+  await prisma.schoolWikiEntry.updateMany({
+    where: { id, schoolId: session.schoolId ?? "" },
     data: { viewCount: { increment: 1 } },
   }).catch(() => null);
 }

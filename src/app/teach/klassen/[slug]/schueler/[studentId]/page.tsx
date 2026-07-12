@@ -37,7 +37,7 @@ export default async function StudentProfilePage({ params }: PageParams) {
   if (effectiveRole(session) !== "teacher") redirect("/");
 
   const student = await prisma.user.findUnique({
-    where: { id: studentId, role: "student" },
+    where: { id: studentId, role: "student", schoolId: session.schoolId ?? "" },
     select: {
       id: true,
       name: true,

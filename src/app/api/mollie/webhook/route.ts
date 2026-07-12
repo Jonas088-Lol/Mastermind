@@ -45,22 +45,26 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ received: true });
   }
 
-  await prisma.mollieOrder.update({
-    where: { mollieId },
-    data: {
-      status: newStatus,
-      method: payment.method ?? null,
-      paidAt: newStatus === "paid" ? new Date() : undefined,
-    },
-  });
-
-  if (newStatus === "paid" && order.status !== "paid") {
-    await awardCoins(
-      order.userId,
-      "mollie_purchase",
-      order.coinsAwarded,
-      mollieId
-    );
+  if (newStatus === "paid") {
+    // Atomarer Übergang → verhindert Doppel-Gutschrift, wenn Webhook und
+    // Return-Route gleichzeitig eintreffen (Race: read-check-then-write).
+    const res = await prisma.mollieOrder.updateMany({
+      where: { mollieId, status: { not: "paid" } },
+      data: { status: "paid", method: payment.method ?? null, paidAt: new Date() },
+    });
+    if (res.count === 1) {
+      await awardCoins(
+        order.userId,
+        "mollie_purchase",
+        order.coinsAwarded,
+        mollieId
+      );
+    }
+  } else {
+    await prisma.mollieOrder.updateMany({
+      where: { mollieId, status: { not: "paid" } },
+      data: { status: newStatus, method: payment.method ?? null },
+    });
   }
 
   return NextResponse.json({ received: true });

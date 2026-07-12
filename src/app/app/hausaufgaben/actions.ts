@@ -13,6 +13,14 @@ export async function toggleHomeworkDone(homeworkId: string, done: boolean): Pro
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect("/");
 
+  // Hausaufgabe muss existieren und zur Klasse des Schülers gehören
+  // (sonst FK-Crash bei erfundener ID bzw. Fremd-Completions)
+  const hw = await prisma.homework.findUnique({
+    where: { id: homeworkId },
+    select: { classId: true },
+  });
+  if (!hw || !session.classId || hw.classId !== session.classId) return;
+
   await prisma.homeworkCompletion.upsert({
     where: { homeworkId_studentId: { homeworkId, studentId: session.userId } },
     create: {
@@ -79,7 +87,7 @@ export async function uploadHomeworkFile(formData: FormData): Promise<void> {
       done: true,
       doneAt: new Date(),
       fileUrl,
-      fileName: file.name,
+      fileName: String(file.name ?? "").slice(0, 255),
     },
   });
 

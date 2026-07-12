@@ -48,6 +48,15 @@ export async function updateUserClass(userId: string, formData: FormData): Promi
   const target = await prisma.user.findUnique({ where: { id: userId } });
   if (!target || target.schoolId !== session.schoolId) return;
 
+  // Klasse muss zur eigenen Schule gehören — sonst schulfremde Zuweisung möglich
+  if (classId) {
+    const klass = await prisma.schoolClass.findUnique({
+      where: { id: classId },
+      select: { schoolId: true },
+    });
+    if (!klass || klass.schoolId !== session.schoolId) return;
+  }
+
   await prisma.user.update({ where: { id: userId }, data: { classId } });
   revalidatePath(`/admin/nutzer/${userId}`);
 }
@@ -156,7 +165,8 @@ export async function unlinkParentFromStudent(parentId: string, linkId: string):
   const parent = await prisma.user.findUnique({ where: { id: parentId } });
   if (!parent || parent.schoolId !== session.schoolId) return;
 
-  await prisma.parentStudentLink.delete({ where: { id: linkId } });
+  // Link muss zu diesem Elternteil gehören — sonst Löschen beliebiger fremder Links
+  await prisma.parentStudentLink.deleteMany({ where: { id: linkId, parentId } });
 
   revalidatePath(`/admin/nutzer/${parentId}`);
 }

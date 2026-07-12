@@ -80,17 +80,19 @@ export async function createBossBattle(formData: FormData) {
     select: { schoolId: true },
   });
 
-  const name        = (formData.get("name") as string).trim();
+  const name        = String(formData.get("name") ?? "").trim();
   const description = (formData.get("description") as string | null)?.trim() || `${name} – Bosskampf`;
   const lore        = (formData.get("lore") as string | null)?.trim() || null;
   const subject     = (formData.get("subject") as string | null)?.trim() || null;
   const gradeLevel  = parseInt(formData.get("gradeLevel") as string || "0", 10) || null;
   const tier        = (formData.get("tier") as string) || "common";
-  const icon        = (formData.get("icon") as string).trim() || "👹";
+  const icon        = String(formData.get("icon") ?? "").trim() || "👹";
   const useAI       = formData.get("useAI") === "on";
   const aiCount     = Math.min(20, Math.max(5, parseInt(formData.get("aiCount") as string || "10", 10)));
   const startHrs    = parseInt(formData.get("startHours") as string || "0", 10);
   const durationHrs = Math.max(1, parseInt(formData.get("durationHours") as string || "24", 10));
+
+  if (!name) redirect("/teach/boss/neu");
 
   const tierData = BOSS_TIERS[(tier as BossTier) in BOSS_TIERS ? (tier as BossTier) : "common"];
   const startAt  = new Date(Date.now() + startHrs * 3_600_000);
@@ -101,7 +103,22 @@ export async function createBossBattle(formData: FormData) {
   let manualQuestions: ParsedQuestion[] = [];
   if (manualRaw) {
     try {
-      manualQuestions = JSON.parse(manualRaw) as ParsedQuestion[];
+      const parsed = JSON.parse(manualRaw) as unknown[];
+      if (Array.isArray(parsed)) {
+        manualQuestions = parsed
+          .filter((q): q is ParsedQuestion =>
+            typeof q === "object" && q !== null &&
+            "question" in q && "optionA" in q && "correct" in q
+          )
+          .map((q) => ({
+            question: String(q.question),
+            optionA:  String(q.optionA),
+            optionB:  String(q.optionB ?? ""),
+            optionC:  String(q.optionC ?? ""),
+            optionD:  String(q.optionD ?? ""),
+            correct:  Math.min(3, Math.max(0, Number(q.correct) || 0)),
+          }));
+      }
     } catch { /* ignore */ }
   }
 

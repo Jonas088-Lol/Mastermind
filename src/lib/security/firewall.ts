@@ -354,20 +354,20 @@ export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
   }
 
   // Next.js Router prefetch requests are read-only GETs triggered by the browser
-  // when links become visible. They cannot cause harm and must not consume rate-limit
-  // quota — otherwise page loads with many visible links (nav + hero + features)
-  // would deplete the counter before the user clicks anything.
-  if (req.headers.get("next-router-prefetch") === "1") {
-    return { blocked: false, ip: getIp(req) };
-  }
-
-  // RSC (React Server Component) navigation requests are normal Next.js page transitions.
-  // They are browser-initiated, cannot carry attack payloads in a meaningful way,
-  // and excluding them from rate-limiting prevents false-positive blocks when a user
-  // navigates quickly between pages (e.g. landing → login).
-  if (req.headers.get("rsc") === "1") {
-    return { blocked: false, ip: getIp(req) };
-  }
+  // when links become visible. They must not consume rate-limit quota — otherwise
+  // page loads with many visible links (nav + hero + features) would deplete the
+  // counter before the user clicks anything.
+  //
+  // RSC (React Server Component) navigation requests are normal Next.js page
+  // transitions; excluding them from rate-limiting prevents false-positive blocks
+  // when a user navigates quickly between pages (e.g. landing → login).
+  //
+  // WICHTIG: Beide Header sind vom Client frei setzbar — sie überspringen daher
+  // NUR Layer 1 (Quota). Layer 2 (Pattern) und Layer 3 (Brute-Force-Block) laufen
+  // immer, sonst wäre die Firewall per selbst gesetztem Header komplett umgehbar.
+  const skipRateLimit =
+    req.headers.get("next-router-prefetch") === "1" ||
+    req.headers.get("rsc") === "1";
 
   const ip = getIp(req);
 
@@ -392,6 +392,7 @@ export async function runFirewall(req: NextRequest): Promise<FirewallResult> {
   }
 
   // Layer 1 — Rate limit (10s window, separate auth vs general bucket)
+  if (skipRateLimit) return { blocked: false, ip };
   const rateCheck = checkRateLimit(ip, pathname, req.method);
   if (rateCheck.blocked) {
     void sendSecurityAlert({

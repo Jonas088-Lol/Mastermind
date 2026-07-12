@@ -114,6 +114,9 @@ export async function sendSpaceMessage(formData: FormData): Promise<void> {
 export async function toggleReaction(messageId: string, emoji: string): Promise<void> {
   const session = await requireSession();
 
+  emoji = String(emoji ?? "").trim().slice(0, 16);
+  if (!emoji) return;
+
   const msg = await prisma.spaceMessage.findUnique({
     where: { id: messageId },
     select: { channelId: true, channel: { select: { spaceId: true } } },

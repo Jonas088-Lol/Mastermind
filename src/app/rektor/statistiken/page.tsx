@@ -18,7 +18,7 @@ export default async function StatistikenPage() {
   const schoolId = session.schoolId ?? "";
   const thirtyDaysAgo = new Date(Date.now() - 30 * 86400_000);
 
-  const [classes, gradesBySubject, topAbsentees, recentIncidents, incidentCounts] = await Promise.all([
+  const [classes, gradesBySubject, topAbsentees, recentIncidents, incidentCounts, subjects] = await Promise.all([
     prisma.schoolClass.findMany({
       where: { schoolId },
       include: { _count: { select: { students: true } } },
@@ -54,12 +54,12 @@ export default async function StatistikenPage() {
       where: { student: { schoolId }, date: { gte: thirtyDaysAgo } },
       _count: { type: true },
     }),
+    prisma.subject.findMany({
+      where: { schoolId },
+      select: { id: true, name: true, shortName: true, color: true },
+    }),
   ]);
 
-  const subjects = await prisma.subject.findMany({
-    where: { schoolId },
-    select: { id: true, name: true, shortName: true, color: true },
-  });
   const subjectMap = Object.fromEntries(subjects.map((s) => [s.id, s]));
 
   // Aggregate absences per student

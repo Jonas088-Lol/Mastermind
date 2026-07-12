@@ -222,7 +222,7 @@ export default function DownloadsPage() {
       {/* Footer note */}
       <p className="mt-10 text-center text-xs text-muted-fg">
         Alle Downloads sind kostenlos. Für die Nutzung wird ein MasterMind-Konto benötigt.{" "}
-        <a href="/registrieren" className="underline underline-offset-2 hover:text-fg">
+        <a href="/onboarding" className="underline underline-offset-2 hover:text-fg">
           Jetzt registrieren
         </a>
       </p>

@@ -61,6 +61,12 @@ interface Props {
   existingSubmissionId?: string;
   existingAnswers?: Record<string, string>;
   onSubmit: (answers: Record<string, string>, timeTakenSec: number) => Promise<{ ok: boolean; score?: number; maxScore?: number }>;
+  /**
+   * Lädt die Musterlösungen (itemId → correctAnswer-JSON) für die Review-Ansicht
+   * nach. Wird erst NACH der Abgabe aufgerufen, damit die Lösung nie im
+   * Client-Payload steht, solange der Schüler bearbeitet.
+   */
+  onRequestSolutions?: () => Promise<Record<string, string>>;
   mode?: "student" | "preview";
   fontSize?: "sm" | "base" | "lg" | "xl";
   highContrast?: boolean;
@@ -72,6 +78,7 @@ export function WorksheetPlayer({
   worksheet,
   existingAnswers,
   onSubmit,
+  onRequestSolutions,
   mode = "student",
   fontSize = "base",
   highContrast = false,
@@ -83,6 +90,12 @@ export function WorksheetPlayer({
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState<{ score: number; maxScore: number } | null>(null);
   const [gradeResults, setGradeResults] = useState<Map<string, { isCorrect: boolean | null; pointsEarned: number }>>(new Map());
+  // Nach Abgabe nachgeladene Musterlösungen (itemId → correctAnswer-JSON). Im
+  // Payload steht die Lösung nicht mehr, deshalb kommt sie hier für die Review-
+  // Ansicht rein. Im Vorschau-Modus (Lehrer) bleibt sie leer und die Lösung
+  // stammt direkt aus item.correctAnswer.
+  const [solutions, setSolutions] = useState<Record<string, string>>({});
+  const [loadingReview, setLoadingReview] = useState(false);
   const [hintsShown, setHintsShown] = useState<Set<string>>(new Set());
   const [error, setError] = useState<string | null>(null);
   const startTime = useRef(Date.now());
@@ -119,7 +132,7 @@ export function WorksheetPlayer({
   async function handleSubmit() {
     if (mode === "preview") {
       const results = gradeSubmission(
-        items.map((i) => ({ id: i.id, type: i.type, correctAnswer: i.correctAnswer, points: i.points })),
+        items.map((i) => ({ id: i.id, type: i.type, correctAnswer: solutions[i.id] ?? i.correctAnswer, points: i.points })),
         new Map(Object.entries(answers))
       );
       setGradeResults(results.itemResults);
@@ -148,9 +161,22 @@ export function WorksheetPlayer({
     }
   }
 
-  function handleReview() {
+  async function handleReview() {
+    // Musterlösungen erst nach Abgabe vom Server holen (nicht im Payload).
+    let sol = solutions;
+    if (onRequestSolutions && Object.keys(sol).length === 0) {
+      setLoadingReview(true);
+      try {
+        sol = await onRequestSolutions();
+        setSolutions(sol);
+      } catch {
+        sol = solutions;
+      } finally {
+        setLoadingReview(false);
+      }
+    }
     const results = gradeSubmission(
-      items.map((i) => ({ id: i.id, type: i.type, correctAnswer: i.correctAnswer, points: i.points })),
+      items.map((i) => ({ id: i.id, type: i.type, correctAnswer: sol[i.id] ?? i.correctAnswer, points: i.points })),
       new Map(Object.entries(answers))
     );
     setGradeResults(results.itemResults);
@@ -201,17 +227,18 @@ export function WorksheetPlayer({
             <p className="mt-2 text-muted-fg">
               Ergebnis: <span className="font-mono font-bold text-fg">{result.score}</span>
               {" / "}{result.maxScore} Punkte
-              {" "}({Math.round((result.score / result.maxScore) * 100)}%)
+              {" "}({result.maxScore > 0 ? Math.round((result.score / result.maxScore) * 100) : 0}%)
             </p>
           )}
         </div>
         {showSolution && (
           <button
             onClick={handleReview}
-            className="inline-flex items-center gap-2 border border-border bg-bg px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-surface"
+            disabled={loadingReview}
+            className="inline-flex items-center gap-2 border border-border bg-bg px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-surface disabled:opacity-50"
           >
             <RotateCcw className="size-4" />
-            Lösung anzeigen
+            {loadingReview ? "Wird geladen…" : "Lösung anzeigen"}
           </button>
         )}
       </div>
@@ -308,7 +335,9 @@ export function WorksheetPlayer({
 
         {/* Widget */}
         <WidgetRenderer
+          key={item.id}
           item={item}
+          correctAnswer={solutions[item.id] ?? item.correctAnswer}
           parseAnswer={parseAnswer}
           getRawAnswer={getRawAnswer}
           setAnswer={setAnswer}
@@ -391,6 +420,8 @@ export function WorksheetPlayer({
 
 interface RendererProps {
   item: WorksheetItemData;
+  /** Effektive Musterlösung (nach Abgabe nachgeladen) – nicht item.correctAnswer nutzen. */
+  correctAnswer: string | null;
   parseAnswer: <T>(id: string, fallback: T) => T;
   getRawAnswer: (id: string) => string;
   setAnswer: (id: string, value: unknown) => void;
@@ -400,12 +431,12 @@ interface RendererProps {
   onSpeak: (text: string) => void;
 }
 
-function WidgetRenderer({ item, parseAnswer, setAnswer, feedback, readOnly, showSolution, onSpeak }: RendererProps) {
+function WidgetRenderer({ item, correctAnswer, parseAnswer, setAnswer, feedback, readOnly, showSolution, onSpeak }: RendererProps) {
   let cfg: Record<string, unknown> = {};
   try { cfg = JSON.parse(item.config); } catch {}
 
   let correct: unknown = null;
-  try { if (item.correctAnswer) correct = JSON.parse(item.correctAnswer); } catch {}
+  try { if (correctAnswer) correct = JSON.parse(correctAnswer); } catch {}
 
   const fb = feedback
     ? {

@@ -94,10 +94,17 @@ export default async function SaisonPage() {
   // ── Leaderboard rank ──
   // Rank = how many passes in this season have more XP than the current user + 1
   const betterCount = await prisma.userSeasonPass.count({
-    where: { seasonId: activeSeason.id, xpEarned: { gt: currentXp } },
+    where: {
+      seasonId: activeSeason.id,
+      xpEarned: { gt: currentXp },
+      user: { schoolId: session.schoolId ?? null, role: "student" },
+    },
   });
   const totalParticipants = await prisma.userSeasonPass.count({
-    where: { seasonId: activeSeason.id },
+    where: {
+      seasonId: activeSeason.id,
+      user: { schoolId: session.schoolId ?? null, role: "student" },
+    },
   });
   const leaderboardRank = hasPremium ? betterCount + 1 : null;
 

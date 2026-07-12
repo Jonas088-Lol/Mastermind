@@ -23,14 +23,21 @@ export async function saveCurriculumSetup(formData: FormData): Promise<void> {
   const bundeslandCode = userWithSchool?.school?.bundeslandCode;
   if (!bundeslandCode) return;
 
-  const landkreisId      = formData.get("landkreisId")    as string;
+  let landkreisId        = (formData.get("landkreisId") as string | null)?.trim() || "";
   const schulartRaw      = formData.get("schulart")       as string;
   const jahrgangsstufe   = parseInt(formData.get("jahrgangsstufe") as string, 10);
-  const displayName      = (formData.get("displayName") as string | null)?.trim() || null;
+  const displayName      = (formData.get("displayName") as string | null)?.trim().slice(0, 50) || null;
   const leaderboardOptIn = formData.get("leaderboardOptIn") === "on";
   const extraSubjectIds  = formData.getAll("extraSubjectId") as string[];
 
   if (!schulartRaw || isNaN(jahrgangsstufe)) return;
+  if (jahrgangsstufe < 1 || jahrgangsstufe > 13) return;
+
+  // landkreisId ist FK — ungültige Werte würden das user.update crashen
+  if (landkreisId) {
+    const lk = await prisma.landkreis.findUnique({ where: { id: landkreisId }, select: { id: true } });
+    if (!lk) landkreisId = "";
+  }
 
   let schulart: Schulart;
   try {
@@ -89,7 +96,7 @@ export async function updateLeaderboardPrefs(formData: FormData): Promise<void> 
   if (!session || effectiveRole(session) !== "student") return;
 
   const optIn       = formData.get("leaderboardOptIn") === "on";
-  const displayName = (formData.get("displayName") as string | null)?.trim() || null;
+  const displayName = (formData.get("displayName") as string | null)?.trim().slice(0, 50) || null;
 
   const user = await prisma.user.update({
     where:  { id: session.userId },

@@ -12,13 +12,13 @@ export async function POST(req: NextRequest) {
   const session = await getSession();
   if (!session) return new Response("Unauthorized", { status: 401 });
 
-  const body = await req.json();
+  const body = await req.json().catch(() => ({}));
   const { endpoint, keys } = body as {
-    endpoint: string;
-    keys: { p256dh: string; auth: string };
+    endpoint?: string;
+    keys?: { p256dh?: string; auth?: string };
   };
 
-  if (!endpoint || !keys?.p256dh || !keys?.auth) {
+  if (typeof endpoint !== "string" || !endpoint || typeof keys?.p256dh !== "string" || typeof keys?.auth !== "string") {
     return Response.json({ error: "Invalid subscription" }, { status: 400 });
   }
 
@@ -44,10 +44,10 @@ export async function DELETE(req: NextRequest) {
   const session = await getSession();
   if (!session) return new Response("Unauthorized", { status: 401 });
 
-  const body = await req.json();
-  const { endpoint } = body as { endpoint: string };
+  const body = await req.json().catch(() => ({}));
+  const { endpoint } = body as { endpoint?: string };
 
-  if (endpoint) {
+  if (typeof endpoint === "string" && endpoint) {
     await prisma.pushSubscription.deleteMany({
       where: { endpoint, userId: session.userId },
     });

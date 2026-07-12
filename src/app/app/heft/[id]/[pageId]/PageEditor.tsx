@@ -436,8 +436,11 @@ export function PageEditor({
               : "bg-surface"
           }`}
         >
-          {tab === "text" ? (
-            /* A4 paper — white page with shadow like Word */
+          {/* Text-Bereich bleibt gemountet (nur versteckt): Unmount beim Tab-
+              Wechsel würde den BlockEditor mit dem veralteten Server-Stand
+              remounten — alle seit dem Laden getippten Blöcke wären weg. */}
+          <div className={tab === "text" ? undefined : "hidden"}>
+            {/* A4 paper — white page with shadow like Word */}
             <div
               className="
                 office-page
@@ -474,7 +477,8 @@ export function PageEditor({
                 </p>
               </div>
             </div>
-          ) : (
+          </div>
+          {tab === "draw" && (
             <div className="h-full p-4">
               <DrawingCanvas pageId={currentPage.id} />
             </div>

@@ -40,6 +40,7 @@ export async function renameSpreadsheet(spreadsheetId: string, title: string): P
 
 export async function saveSpreadsheetData(spreadsheetId: string, data: string): Promise<void> {
   const session = await requireStudent();
+  if (typeof data !== "string" || data.length > 2_000_000) return;
   const sheet = await prisma.spreadsheet.findUnique({ where: { id: spreadsheetId } });
   if (!sheet || sheet.userId !== session.userId) return;
   await prisma.spreadsheet.update({ where: { id: spreadsheetId }, data: { data } });

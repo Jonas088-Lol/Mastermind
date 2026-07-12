@@ -384,7 +384,7 @@ function SlideCanvas({ slide, onUpdate, presenting }: CanvasProps) {
             { icon: <Italic className="size-3" />, key: "italic" as const, val: el.italic },
             { icon: <Underline className="size-3" />, key: "underline" as const, val: el.underline },
           ].map(({ icon, key, val }) => (
-            <button key={key} type="button" onClick={() => upEl(el.id, { [key]: val! })}
+            <button key={key} type="button" onClick={() => upEl(el.id, { [key]: !val })}
               className={`grid size-6 place-items-center rounded transition-colors ${val ? "bg-brand/15 text-brand" : "text-gray-600 hover:bg-gray-100"}`}>
               {icon}
             </button>
@@ -439,6 +439,9 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
   const [saveStatus, setSaveStatus] = useState<"saved" | "saving" | "unsaved">("saved");
   const [, startTr] = useTransition();
   const saveTimer  = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Zuletzt gespeicherter Titel — Vergleich mit initialTitle würde ein
+  // Zurück-Umbenennen auf den Ursprungstitel verschlucken.
+  const savedTitle = useRef(initialTitle);
   const wrapRef    = useRef<HTMLDivElement>(null);
 
   const current = slides[Math.min(curIdx, slides.length - 1)] ?? slides[0];
@@ -483,7 +486,10 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
   function commitTitle() {
     const val = title.trim() || "Unbenannte Präsentation";
     setTitle(val); setEditTitle(false);
-    if (val !== initialTitle) startTr(() => renamePresentation(presentationId, val));
+    if (val !== savedTitle.current) {
+      savedTitle.current = val;
+      startTr(() => renamePresentation(presentationId, val));
+    }
   }
 
   function handleDelete() {
@@ -507,6 +513,13 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
     document.addEventListener("fullscreenchange", h);
     return () => document.removeEventListener("fullscreenchange", h);
   }, []);
+
+  // Im Präsentationsmodus den Wrapper fokussieren — autoFocus greift bei einem
+  // per Re-Render umgebauten <div> nicht, ohne Fokus funktionieren die
+  // Pfeiltasten erst nach einem Klick in die Folie.
+  useEffect(() => {
+    if (presenting) wrapRef.current?.focus();
+  }, [presenting]);
 
   // ── Presentation mode ─────────────────────────────────────────────────────
 
@@ -555,7 +568,7 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
         <div className="min-w-0 flex-1">
           {editTitle ? (
             <input autoFocus value={title} onChange={(e) => setTitle(e.target.value)} onBlur={commitTitle}
-              onKeyDown={(e) => { if (e.key === "Enter") commitTitle(); if (e.key === "Escape") { setTitle(initialTitle); setEditTitle(false); } }}
+              onKeyDown={(e) => { if (e.key === "Enter") commitTitle(); if (e.key === "Escape") { setTitle(savedTitle.current); setEditTitle(false); } }}
               className="w-full border-b border-brand bg-transparent text-sm font-semibold focus:outline-none" />
           ) : (
             <button type="button" onClick={() => setEditTitle(true)} className="truncate text-sm font-semibold hover:text-brand">{title}</button>

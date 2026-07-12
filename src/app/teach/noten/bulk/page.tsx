@@ -54,7 +54,7 @@ export default async function BulkNotenPage({ searchParams }: PageProps) {
   if (classId && subjectId) {
     const [schoolClass, subject] = await Promise.all([
       prisma.schoolClass.findUnique({
-        where: { id: classId },
+        where: { id: classId, schoolId: session.schoolId ?? "" },
         include: {
           students: {
             where: { role: "student" },
@@ -64,7 +64,7 @@ export default async function BulkNotenPage({ searchParams }: PageProps) {
         },
       }),
       prisma.subject.findUnique({
-        where: { id: subjectId },
+        where: { id: subjectId, schoolId: session.schoolId ?? "" },
         select: { id: true, name: true },
       }),
     ]);

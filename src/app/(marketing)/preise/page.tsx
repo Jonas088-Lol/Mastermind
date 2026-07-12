@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, X } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Pricing } from "@/components/landing/Pricing";
 import { cn } from "@/lib/utils";
 
@@ -164,16 +164,18 @@ export default function PreisePage() {
               30 Tage kostenlos testen — keine Kreditkarte, kein Risiko.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link href="/register">
-                <Button size="lg" className="pastel-cta">
-                  Kostenlos testen
-                  <ArrowRight className="size-4" />
-                </Button>
+              <Link
+                href="/onboarding"
+                className={buttonVariants({ size: "lg", className: "pastel-cta" })}
+              >
+                Kostenlos testen
+                <ArrowRight className="size-4" />
               </Link>
-              <Link href="/kontakt">
-                <Button size="lg" variant="outline">
-                  Vertrieb kontaktieren
-                </Button>
+              <Link
+                href="/kontakt"
+                className={buttonVariants({ variant: "outline", size: "lg" })}
+              >
+                Vertrieb kontaktieren
               </Link>
             </div>
           </div>

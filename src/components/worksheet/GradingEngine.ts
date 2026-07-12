@@ -21,6 +21,13 @@ export function gradeAnswer(
     return { isCorrect: false, pointsEarned: 0, maxPoints: 1 };
   }
 
+  // Unbeantwortete Items kommen als "null" an (JSON.parse → null). Ohne diesen
+  // Guard crasht z. B. (student as string).trim() oder sZones[k] mit TypeError —
+  // sowohl im Player (Lösung anzeigen) als auch in der Submit-API (500).
+  if (student === null || student === undefined) {
+    return { isCorrect: false, pointsEarned: 0, maxPoints: 1 };
+  }
+
   switch (type) {
     case "text_input": {
       const accepted = correct as string[];

@@ -35,11 +35,12 @@ export default async function ModulePage({
     where: { id: moduleId },
     include: {
       questions: { orderBy: { order: "asc" } },
-      path: { select: { id: true, title: true } },
+      path: { select: { id: true, title: true, schoolId: true } },
     },
   });
 
   if (!learningModule || learningModule.path.id !== pathId) notFound();
+  if (learningModule.path.schoolId !== session.schoolId) notFound();
   if (learningModule.questions.length === 0) {
     return (
       <div className="mx-auto max-w-2xl py-12 text-center text-muted-fg">

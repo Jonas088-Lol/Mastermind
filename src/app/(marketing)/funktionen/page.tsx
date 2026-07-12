@@ -17,7 +17,7 @@ import {
   MonitorPlay,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Funktionen | MasterMind",
@@ -209,16 +209,18 @@ export default function FunktionenPage() {
               30 Tage kostenlos — keine Kreditkarte, kein Risiko.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link href="/register">
-                <Button size="lg" className="glow-on-hover">
-                  Schule kostenlos testen
-                  <ArrowRight className="size-4" />
-                </Button>
+              <Link
+                href="/onboarding"
+                className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
+              >
+                Schule kostenlos testen
+                <ArrowRight className="size-4" />
               </Link>
-              <Link href="/kontakt">
-                <Button size="lg" variant="outline">
-                  Demo buchen
-                </Button>
+              <Link
+                href="/kontakt"
+                className={buttonVariants({ variant: "outline", size: "lg" })}
+              >
+                Demo buchen
               </Link>
             </div>
           </div>

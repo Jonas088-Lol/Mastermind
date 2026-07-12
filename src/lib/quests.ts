@@ -19,15 +19,15 @@ export async function incrementQuestProgress(
   });
 
   for (const uq of activeQuests) {
-    const newProgress = uq.progress + increment;
-    const isComplete = newProgress >= uq.quest.targetCount;
-
+    // Atomarer Increment statt Read-Modify-Write: zwei parallele Events
+    // würden sonst denselben Ausgangswert lesen und Fortschritt verlieren.
     await prisma.userQuest.update({
       where: { id: uq.id },
-      data: {
-        progress: newProgress,
-        ...(isComplete ? { completedAt: now } : {}),
-      },
+      data: { progress: { increment } },
+    });
+    await prisma.userQuest.updateMany({
+      where: { id: uq.id, completedAt: null, progress: { gte: uq.quest.targetCount } },
+      data: { completedAt: now },
     });
   }
 }

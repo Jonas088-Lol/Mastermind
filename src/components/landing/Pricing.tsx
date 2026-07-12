@@ -1,6 +1,7 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
+import Link from "next/link";
 import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 
@@ -18,6 +19,7 @@ const plans = [
       "E-Mail-Support",
     ],
     cta: "Starten",
+    href: "/onboarding",
     highlight: false,
   },
   {
@@ -34,6 +36,7 @@ const plans = [
       "Priority Support",
     ],
     cta: "Pilot anfragen",
+    href: "/kontakt",
     highlight: true,
   },
   {
@@ -50,6 +53,7 @@ const plans = [
       "Persönlicher CSM",
     ],
     cta: "Vertrieb kontaktieren",
+    href: "/kontakt",
     highlight: false,
   },
 ];
@@ -123,13 +127,19 @@ export function Pricing() {
                 ))}
               </ul>
 
-              <Button
-                className={cn("mt-7 w-full", p.highlight && "pastel-cta")}
-                variant={p.highlight ? "primary" : "secondary"}
-                size="lg"
+              <Link
+                href={p.href}
+                className={cn(
+                  buttonVariants({
+                    variant: p.highlight ? "primary" : "secondary",
+                    size: "lg",
+                  }),
+                  "mt-7 w-full",
+                  p.highlight && "pastel-cta"
+                )}
               >
                 {p.cta}
-              </Button>
+              </Link>
             </article>
             </AnimateOnScroll>
           ))}

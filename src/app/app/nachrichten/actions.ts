@@ -11,7 +11,7 @@ export async function sendMessage(formData: FormData) {
   if (!session) redirect("/login");
 
   const threadId = String(formData.get("threadId") ?? "").trim();
-  const content = String(formData.get("content") ?? "").trim();
+  const content = String(formData.get("content") ?? "").trim().slice(0, 5000);
 
   if (!threadId || !content) return;
 

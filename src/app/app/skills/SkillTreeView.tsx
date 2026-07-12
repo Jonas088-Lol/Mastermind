@@ -589,6 +589,7 @@ function UnlockPanel({
       {/* Close */}
       <button
         onClick={onClose}
+        aria-label="Schließen"
         className="shrink-0 text-white/30 hover:text-white/70 text-xl leading-none"
       >
         ×

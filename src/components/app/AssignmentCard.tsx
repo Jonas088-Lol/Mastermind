@@ -39,8 +39,11 @@ const DEFAULT_EMOJI: Record<string, string> = {
 };
 
 function formatDue(dueAt: Date): string {
+  // Kalendertage vergleichen, nicht rohe Millisekunden: sonst zeigt eine
+  // Abgabe "morgen früh 8:00" um 22:00 Uhr noch "Heute" an (Diff < 24h).
+  const startOfDay = (d: Date) => new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
   const now = new Date();
-  const diff = Math.floor((dueAt.getTime() - now.getTime()) / 86_400_000);
+  const diff = Math.round((startOfDay(dueAt) - startOfDay(now)) / 86_400_000);
   const dateStr = dueAt.toLocaleDateString("de-DE", {
     day: "numeric",
     month: "short",

@@ -28,10 +28,19 @@ export async function createSubstitution(formData: FormData): Promise<void> {
   const room = (formData.get("room") as string) || null;
 
   if (!dateStr || !classId || isNaN(period)) return;
+  if (!session.schoolId) return;
+
+  // Klasse muss zur eigenen Schule gehören — sonst Einträge/Benachrichtigungen
+  // für Klassen fremder Schulen möglich
+  const klass = await prisma.schoolClass.findUnique({
+    where: { id: classId },
+    select: { schoolId: true },
+  });
+  if (!klass || klass.schoolId !== session.schoolId) return;
 
   const entry = await prisma.substitutionEntry.create({
     data: {
-      schoolId: session.schoolId ?? "",
+      schoolId: session.schoolId,
       date: new Date(dateStr),
       period,
       classId,
@@ -191,7 +200,8 @@ export async function deleteSubstitution(id: string): Promise<void> {
   const session = await requireAdmin();
   if (!session) return;
 
-  await prisma.substitutionEntry.delete({ where: { id, schoolId: session.schoolId ?? "" } });
+  // deleteMany statt delete: kein P2025-Crash bei fremder/veralteter ID
+  await prisma.substitutionEntry.deleteMany({ where: { id, schoolId: session.schoolId ?? "" } });
 
   revalidatePath("/admin/vertretungsplan");
   revalidatePath("/app/plan");

@@ -19,11 +19,15 @@ export async function claimQuestReward(questId: string): Promise<void> {
 
   const xpReward = userQuest.quest.xpReward;
 
+  // Claim atomar: nur der ERSTE Aufruf gewinnt (Race: Doppelklick/parallele
+  // Requests würden sonst XP+Coins doppelt vergeben).
+  const claimed = await prisma.userQuest.updateMany({
+    where: { id: userQuest.id, claimedAt: null },
+    data: { claimedAt: new Date() },
+  });
+  if (claimed.count === 0) return;
+
   await prisma.$transaction([
-    prisma.userQuest.update({
-      where: { id: userQuest.id },
-      data: { claimedAt: new Date() },
-    }),
     prisma.xpLog.create({
       data: { userId: session.userId, amount: xpReward, reason: "quest_reward", referenceId: questId },
     }),

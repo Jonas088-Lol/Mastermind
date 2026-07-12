@@ -172,7 +172,7 @@ export default async function KalenderPage({ searchParams }: PageProps) {
             where: {
               startAt: { lte: sunday },
               OR: [{ endAt: { gte: monday } }, { startAt: { gte: monday } }],
-              schoolId: session.schoolId ?? undefined,
+              schoolId: session.schoolId ?? "",
             },
             orderBy: { startAt: "asc" },
           })

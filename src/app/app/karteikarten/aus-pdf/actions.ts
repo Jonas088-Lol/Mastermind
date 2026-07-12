@@ -20,7 +20,7 @@ export async function generateCardsFromPdf(formData: FormData): Promise<{ error:
   if (effectiveRole(session) !== "student") redirect("/");
 
   const file = formData.get("pdf") as File | null;
-  const deckName = ((formData.get("deckName") as string | null) ?? "").trim();
+  const deckName = ((formData.get("deckName") as string | null) ?? "").trim().slice(0, 120);
   const subjectId = ((formData.get("subjectId") as string | null) ?? "").trim() || null;
 
   if (!file || file.size === 0) return { error: "Bitte eine PDF-Datei hochladen." };

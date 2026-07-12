@@ -2,6 +2,7 @@
 "use client";
 
 import { WorksheetPlayer, type WorksheetData } from "@/components/worksheet/WorksheetPlayer";
+import { getWorksheetSolutions } from "./actions";
 
 interface Props {
   assignmentId: string;
@@ -16,6 +17,7 @@ export function WorksheetPlayerPage({
   assignmentId,
   worksheet,
   existingAnswers,
+  showSolution,
 }: Props) {
   const handleSubmit = async (
     answers: Record<string, string>,
@@ -37,6 +39,9 @@ export function WorksheetPlayerPage({
         worksheet={worksheet}
         existingAnswers={existingAnswers}
         onSubmit={handleSubmit}
+        onRequestSolutions={
+          showSolution ? () => getWorksheetSolutions(assignmentId) : undefined
+        }
         mode="student"
       />
     </div>

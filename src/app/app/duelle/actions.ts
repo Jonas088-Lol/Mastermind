@@ -14,10 +14,17 @@ export async function sendChallenge(formData: FormData): Promise<void> {
 
   const challengedId = (formData.get("challengedId") as string | null)?.trim();
   const topicId = (formData.get("topicId") as string | null)?.trim();
-  const message = (formData.get("message") as string | null)?.trim() ?? null;
+  const message = (formData.get("message") as string | null)?.trim().slice(0, 500) || null;
 
   if (!challengedId || !topicId) return;
   if (challengedId === session.userId) return;
+
+  // Topic muss existieren (sonst FK-Fehler → Crash der Action)
+  const topic = await prisma.exerciseTopic.findUnique({
+    where: { id: topicId },
+    select: { id: true },
+  });
+  if (!topic) return;
 
   // Verify opponent is in the same school and class
   const opponent = await prisma.user.findUnique({
@@ -112,6 +119,7 @@ export async function acceptDuel(duelId: string): Promise<void> {
 
   const duel = await prisma.duel.findUnique({ where: { id: duelId } });
   if (!duel || duel.challengedId !== session.userId || duel.status !== "pending") return;
+  if (duel.expiresAt < new Date()) return;
 
   await prisma.duel.update({
     where: { id: duelId },
@@ -147,6 +155,10 @@ export async function submitDuelScore(duelId: string, score: number): Promise<{ 
   const isChallenged = duel.challengedId === session.userId;
   if (!isChallenger && !isChallenged) return { done: false };
 
+  // Score validieren: ganzzahlig, nicht negativ, maximal Fragenanzahl des Themas
+  const questionCount = await prisma.exerciseQuestion.count({ where: { topicId: duel.topicId } });
+  if (!Number.isInteger(score) || score < 0 || score > questionCount) return { done: false };
+
   if (isChallenger && duel.challengerScore !== null) return { done: false };
   if (isChallenged && duel.challengedScore !== null) return { done: false };
 
@@ -154,10 +166,22 @@ export async function submitDuelScore(duelId: string, score: number): Promise<{ 
     ? { challengerScore: score }
     : { challengedScore: score };
 
-  const updated = await prisma.duel.update({
-    where: { id: duelId },
+  // Score atomar claimen: nur die ERSTE Abgabe zählt. Zwei parallele Submits
+  // desselben Spielers würden sonst beide den Null-Check oben passieren und
+  // der zweite könnte den Score nach der Finalisierung noch überschreiben
+  // (gespeicherter Score ≠ Score, der den Sieger bestimmt hat).
+  const claimed = await prisma.duel.updateMany({
+    where: {
+      id: duelId,
+      status: "accepted",
+      ...(isChallenger ? { challengerScore: null } : { challengedScore: null }),
+    },
     data: update,
   });
+  if (claimed.count === 0) return { done: false };
+
+  const updated = await prisma.duel.findUnique({ where: { id: duelId } });
+  if (!updated) return { done: false };
 
   // Both submitted → finalize
   const challScore = isChallenger ? score : updated.challengerScore;
@@ -171,10 +195,12 @@ export async function submitDuelScore(duelId: string, score: number): Promise<{ 
         ? duel.challengedId
         : null;
 
-    await prisma.duel.update({
-      where: { id: duelId },
+    // Nur genau EIN Aufruf darf finalisieren (Race: beide Spieler senden gleichzeitig → doppelte XP/Coins)
+    const finalized = await prisma.duel.updateMany({
+      where: { id: duelId, status: "accepted" },
       data: { status: "completed", winnerId, completedAt: new Date() },
     });
+    if (finalized.count === 0) return { done: true };
 
     // XP awards — all writes in one transaction to avoid partial state
     const WINNER_XP = 30;

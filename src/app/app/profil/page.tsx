@@ -347,7 +347,7 @@ export default async function ProfilPage() {
         <Stat label="Achievements" value={String(earnedCount)} suffix={`/ ${ACHIEVEMENTS.length}`} icon={Sparkles} tone="text-info" />
       </section>
 
-      <section className="rounded-2xl border bg-gradient-to-r from-brand/8 to-transparent p-5" style={{ borderColor: `${rank.color}40` }}>
+      <section className="rounded-2xl border bg-linear-to-r from-brand/8 to-transparent p-5" style={{ borderColor: `${rank.color}40` }}>
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <span className="text-xl">{rank.icon}</span>
@@ -676,7 +676,7 @@ export default async function ProfilPage() {
                       className={cn(
                         "flex gap-3 bg-bg p-4 transition-opacity",
                         !earned && "opacity-40",
-                        earned && a.rarity === "epic" && "bg-gradient-to-br from-brand/6 to-transparent",
+                        earned && a.rarity === "epic" && "bg-linear-to-br from-brand/6 to-transparent",
                       )}
                     >
                       <div className={cn(

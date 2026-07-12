@@ -17,7 +17,8 @@ async function requireSecretary() {
 export async function confirmAttest(absenceId: string): Promise<void> {
   const session = await requireSecretary();
 
-  await prisma.absence.update({
+  // updateMany statt update: kein P2025-Crash bei fremder/veralteter ID
+  await prisma.absence.updateMany({
     where: { id: absenceId, schoolId: session.schoolId ?? "" },
     data: {
       status: "confirmed",
@@ -32,7 +33,7 @@ export async function confirmAttest(absenceId: string): Promise<void> {
 export async function rejectAttest(absenceId: string): Promise<void> {
   const session = await requireSecretary();
 
-  await prisma.absence.update({
+  await prisma.absence.updateMany({
     where: { id: absenceId, schoolId: session.schoolId ?? "" },
     data: {
       status: "rejected",

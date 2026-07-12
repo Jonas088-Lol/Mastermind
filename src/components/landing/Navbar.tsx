@@ -3,7 +3,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Menu, X } from "lucide-react";
@@ -95,12 +95,15 @@ export function Navbar() {
             >
               Anmelden
             </Link>
-            <Button
-              size="sm"
-              className="pastel-cta hidden sm:inline-flex"
+            <Link
+              href="/onboarding"
+              className={cn(
+                buttonVariants({ size: "sm" }),
+                "pastel-cta hidden sm:inline-flex"
+              )}
             >
               Kostenlos testen
-            </Button>
+            </Link>
             {/* Mobile hamburger */}
             <button
               type="button"
@@ -145,7 +148,7 @@ export function Navbar() {
           ))}
           <div className="mt-4 flex flex-col gap-2.5 border-t border-border pt-4">
             <div className="flex items-center justify-between pb-1">
-              <span className="text-sm text-gray-400">Darstellung</span>
+              <span className="text-sm text-muted-fg">Darstellung</span>
               <ThemeToggle />
             </div>
             <Link
@@ -158,13 +161,16 @@ export function Navbar() {
             >
               Anmelden
             </Link>
-            <Button
-              size="lg"
-              className="pastel-cta w-full"
+            <Link
+              href="/onboarding"
               onClick={() => setOpen(false)}
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "pastel-cta w-full"
+              )}
             >
               Kostenlos testen
-            </Button>
+            </Link>
           </div>
         </nav>
       </div>

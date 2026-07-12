@@ -11,7 +11,8 @@ import { safeJsonParse } from "@/lib/safe-json";
 export async function updatePref(key: string, formData: FormData) {
   const session = await getSession();
   if (!session) return;
-  const value = formData.get("value") as string;
+  if (typeof key !== "string" || !key || key.length > 100) return;
+  const value = String(formData.get("value") ?? "").slice(0, 1000);
   const user = await prisma.user.findUnique({
     where: { id: session.userId },
     select: { prefs: true },
@@ -37,14 +38,9 @@ export async function logoutDevice(sessionId: string) {
 export async function logoutAllDevices() {
   const session = await getSession();
   if (!session) return;
-  // Exclude the current session (identified by the sid on the session object)
-  const currentToken = session.sid;
-  await prisma.session.deleteMany({
-    where: {
-      userId: session.userId,
-      ...(currentToken ? { NOT: { token: currentToken } } : {}),
-    },
-  });
+  // session.sid ist der ROHE Token, in der DB liegt nur der SHA-256-Hash —
+  // der zentrale Helper hasht korrekt und schont die aktuelle Sitzung.
+  await invalidateOtherSessions(session.userId);
   revalidatePath("/app/einstellungen");
 }
 

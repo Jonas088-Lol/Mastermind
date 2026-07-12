@@ -122,7 +122,8 @@ export function BossClient({
   const defeated = hp === 0;
 
   const hpBarColor = hpPct > 50 ? "#22c55e" : hpPct > 25 ? "#eab308" : "#ef4444";
-  const timerColor = timeLeft > 10 ? "#22c55e" : timeLeft > 5 ? "#eab308" : "#ef4444";
+  // QUESTION_TIME ist 10 — "timeLeft > 10" wäre nie wahr, Grün also unerreichbar
+  const timerColor = timeLeft > 7 ? "#22c55e" : timeLeft > 5 ? "#eab308" : "#ef4444";
 
   // Battle-Countdown
   useEffect(() => {

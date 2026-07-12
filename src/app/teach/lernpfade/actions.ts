@@ -34,16 +34,20 @@ export async function createLearningPath(formData: FormData): Promise<void> {
 
   for (let mi = 0; mi < modules.length; mi++) {
     const m = modules[mi];
+    // Ungeprüftes JSON: fehlerhafte Einträge überspringen statt Prisma-Crash
+    if (!m || typeof m.title !== "string" || !m.title.trim()) continue;
     const learningModule = await prisma.learningModule.create({
       data: { pathId: path.id, title: m.title, order: mi + 1 },
     });
-    for (let qi = 0; qi < m.questions.length; qi++) {
-      const q = m.questions[qi];
+    const questions = Array.isArray(m.questions) ? m.questions : [];
+    for (let qi = 0; qi < questions.length; qi++) {
+      const q = questions[qi];
+      if (!q || typeof q.question !== "string" || !q.question.trim()) continue;
       await prisma.quizQuestion.create({
         data: {
           moduleId: learningModule.id,
           question: q.question,
-          options: JSON.stringify(q.options),
+          options: JSON.stringify(Array.isArray(q.options) ? q.options : []),
           correct: String(q.correct),
           explanation: q.explanation ?? null,
           order: qi + 1,

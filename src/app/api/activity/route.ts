@@ -39,21 +39,25 @@ export async function POST(req: NextRequest) {
   if (!consent?.activityTracking) return NextResponse.json({ ok: true, skipped: true });
 
   const body = await req.json().catch(() => ({}));
-  const {
-    page = "",
-    activity = "",
-    isActive = false,
-    tabFocused = true,
-    tabSwitchesDelta = 0,
-    activeSecondsDelta = 0,
-  } = body as {
-    page?: string;
-    activity?: string;
-    isActive?: boolean;
-    tabFocused?: boolean;
-    tabSwitchesDelta?: number;
-    activeSecondsDelta?: number;
+  const raw = body as {
+    page?: unknown;
+    activity?: unknown;
+    isActive?: unknown;
+    tabFocused?: unknown;
+    tabSwitchesDelta?: unknown;
+    activeSecondsDelta?: unknown;
   };
+  // Client-Deltas validieren & begrenzen: Heartbeat kommt alle 20 s — mehr als
+  // 10 min pro Request ist nie legitim (verhindert XP-Farming & Prisma-Fehler
+  // durch Nicht-Zahlen).
+  const clampDelta = (v: unknown, max: number) =>
+    typeof v === "number" && Number.isFinite(v) ? Math.min(Math.max(0, v), max) : 0;
+  const page = typeof raw.page === "string" ? raw.page.slice(0, 500) : "";
+  const activity = typeof raw.activity === "string" ? raw.activity.slice(0, 200) : "";
+  const isActive = raw.isActive === true;
+  const tabFocused = raw.tabFocused !== false;
+  const tabSwitchesDelta = clampDelta(raw.tabSwitchesDelta, 1000);
+  const activeSecondsDelta = clampDelta(raw.activeSecondsDelta, 600);
 
   const today = new Date().toISOString().slice(0, 10);
 

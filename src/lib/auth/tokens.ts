@@ -107,10 +107,13 @@ export async function consumeToken(
   if (found.consumedAt) return null;
   if (found.expiresAt < new Date()) return null;
 
-  await prisma.verificationToken.update({
-    where: { id: found.id },
+  // Atomar konsumieren: nur wenn noch unverbraucht (kein Double-Consume bei
+  // parallelen Requests — gleiche Semantik wie consumeBackupCode).
+  const updated = await prisma.verificationToken.updateMany({
+    where: { id: found.id, consumedAt: null },
     data: { consumedAt: new Date() },
   });
+  if (updated.count !== 1) return null;
 
   return { email: found.email, userId: found.userId };
 }

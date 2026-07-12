@@ -32,7 +32,14 @@ export async function updateAssignment(id: string, formData: FormData): Promise<
 
   await prisma.assignment.update({
     where: { id },
-    data: { title, description, dueAt, type, maxPoints: maxPoints ?? undefined },
+    data: {
+      title,
+      description,
+      dueAt,
+      type,
+      // NaN (ungültige Eingabe) darf nicht an Prisma gehen — Feld dann unverändert lassen
+      maxPoints: maxPoints !== null && !isNaN(maxPoints) ? maxPoints : undefined,
+    },
   });
 
   revalidatePath(`/teach/aufgaben/${id}`);

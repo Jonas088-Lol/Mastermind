@@ -27,13 +27,16 @@ export default async function NoteDetailPage({ params }: PageParams) {
   const note = await prisma.note.findUnique({
     where: { id },
     include: {
-      author: { select: { name: true } },
+      author: { select: { name: true, schoolId: true } },
       images: { select: { id: true, filename: true } },
     },
   });
 
   if (!note) notFound();
   if (!note.isPublic && note.authorId !== session.userId) notFound();
+  if (note.authorId !== session.userId && note.author.schoolId !== (session.schoolId ?? "")) {
+    notFound();
+  }
 
   const isOwner = note.authorId === session.userId;
 

@@ -24,14 +24,19 @@ export async function createSchoolEvent(formData: FormData): Promise<void> {
   const category = (formData.get("category") as string) || "event";
 
   if (!title || !startAtStr) return;
+  if (!session.schoolId) return;
+
+  const startAt = new Date(startAtStr);
+  if (isNaN(startAt.getTime())) return;
+  const endAt = endAtStr ? new Date(endAtStr) : null;
 
   await prisma.schoolEvent.create({
     data: {
-      schoolId: session.schoolId ?? "",
+      schoolId: session.schoolId,
       title,
       description: description || undefined,
-      startAt: new Date(startAtStr),
-      endAt: endAtStr ? new Date(endAtStr) : null,
+      startAt,
+      endAt: endAt && !isNaN(endAt.getTime()) ? endAt : null,
       allDay,
       category,
       createdBy: session.userId,

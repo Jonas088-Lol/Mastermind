@@ -1,7 +1,7 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const OPTIONS = [
@@ -13,18 +13,19 @@ const OPTIONS = [
 type FontSize = "standard" | "large" | "xlarge";
 
 export function FontSizePicker() {
-  const [size, setSize] = useState<FontSize>(() => {
-    if (typeof window === "undefined") return "standard";
+  // localStorage erst NACH dem Mount lesen — im useState-Initializer rendert
+  // der Client sonst anders als der Server (Hydration-Mismatch).
+  const [size, setSize] = useState<FontSize>("standard");
+  useEffect(() => {
     try {
       const raw = localStorage.getItem("mm_display_prefs");
       if (raw) {
         const prefs = JSON.parse(raw) as Record<string, unknown>;
         const stored = prefs.font_size as FontSize | undefined;
-        if (stored && ["standard", "large", "xlarge"].includes(stored)) return stored;
+        if (stored && ["standard", "large", "xlarge"].includes(stored)) setSize(stored);
       }
     } catch {}
-    return "standard";
-  });
+  }, []);
 
   function pick(v: FontSize) {
     setSize(v);

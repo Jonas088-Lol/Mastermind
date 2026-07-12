@@ -6,13 +6,15 @@ import { AlertTriangle, RefreshCw } from "lucide-react";
 
 export default function AdminError({
   error,
-  reset,
+  unstable_retry,
 }: {
   error: Error & { digest?: string };
-  reset: () => void;
+  unstable_retry: () => void;
 }) {
   useEffect(() => {
-    console.error("Admin error:", error);
+    if (process.env.NODE_ENV !== "production") {
+      console.error(error);
+    }
   }, [error]);
 
   return (
@@ -31,7 +33,7 @@ export default function AdminError({
       </div>
       <button
         type="button"
-        onClick={reset}
+        onClick={unstable_retry}
         className="flex items-center gap-2 border border-border bg-bg px-4 py-2 text-sm font-medium transition-colors hover:bg-surface"
       >
         <RefreshCw className="size-4" strokeWidth={1.75} />

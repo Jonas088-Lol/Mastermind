@@ -14,6 +14,6 @@ current=$(grep -oE 'versionCode[[:space:]]+[0-9]+' "$GRADLE" | grep -oE '[0-9]+'
 next=$((current + 1))
 
 # In-place ersetzen (portabel: temporäre Datei statt sed -i Varianten)
-sed "s/versionCode[[:space:]]\+$current/versionCode $next/" "$GRADLE" > "$GRADLE.tmp" && mv "$GRADLE.tmp" "$GRADLE"
+sed -E "s/versionCode[[:space:]]+$current/versionCode $next/" "$GRADLE" > "$GRADLE.tmp" && mv "$GRADLE.tmp" "$GRADLE"
 
 echo "▶ versionCode: $current → $next"

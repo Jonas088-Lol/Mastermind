@@ -138,7 +138,7 @@ function DashboardMockup() {
             <span className="font-mono text-[8px] text-brand">840/1000 XP</span>
           </div>
           <div className="h-1.5 w-full rounded-full bg-surface overflow-hidden">
-            <div className="h-full w-[84%] rounded-full bg-gradient-to-r from-brand to-accent" />
+            <div className="h-full w-[84%] rounded-full bg-linear-to-r from-brand to-accent" />
           </div>
         </div>
         {/* Quest progress */}
@@ -505,7 +505,7 @@ export function FeatureMockup({ variant, className }: FeatureMockupProps) {
     <div className={cn("relative", className)}>
       <Component />
       {/* Subtle brand gradient overlay at bottom */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-surface/20 to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-8 bg-linear-to-t from-surface/20 to-transparent" />
     </div>
   );
 }

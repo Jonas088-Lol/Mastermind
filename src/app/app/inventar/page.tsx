@@ -172,7 +172,7 @@ export default async function InventarPage() {
             <div className="mt-3 border-t border-border pt-3">
               <p className="text-xs text-muted-fg">
                 Kein Schutz verfügbar.{" "}
-                <Link href="/app/shop?cat=streak_freeze" className="text-brand hover:underline">
+                <Link href="/app/shop?cat=CONSUMABLE" className="text-brand hover:underline">
                   Im Shop kaufen →
                 </Link>
               </p>
@@ -296,7 +296,7 @@ export default async function InventarPage() {
         </div>
         <Link
           href="/app/shop"
-          className="inline-flex items-center gap-2 rounded bg-surface-2 px-4 py-2 text-sm font-semibold transition-colors hover:bg-surface-3"
+          className="inline-flex items-center gap-2 rounded bg-surface-2 px-4 py-2 text-sm font-semibold transition-colors hover:bg-border"
         >
           <ShoppingBag className="size-4" />
           Shop

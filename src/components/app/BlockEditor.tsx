@@ -150,13 +150,15 @@ function KaTeXBlock({ latex }: { latex: string }) {
   useEffect(() => {
     if (!ref.current) return;
     import("katex").then((k) => {
+      // Kann nach Unmount auflösen — dann ist ref.current null.
+      if (!ref.current) return;
       try {
-        ref.current!.innerHTML = k.default.renderToString(latex || "\\text{Formel eingeben…}", {
+        ref.current.innerHTML = k.default.renderToString(latex || "\\text{Formel eingeben…}", {
           throwOnError: false,
           displayMode: true,
         });
       } catch {
-        ref.current!.textContent = latex;
+        ref.current.textContent = latex;
       }
     });
   }, [latex]);
@@ -268,6 +270,7 @@ function BlockRow({
         <button
           type="button"
           onClick={() => onDelete(block.id)}
+          aria-label="Block löschen"
           className="absolute right-0 hidden group-hover:flex size-5 items-center justify-center text-muted-fg hover:text-danger"
         >
           ×
@@ -396,7 +399,10 @@ function BlockRow({
     h3:       "text-[16px] font-semibold mt-5 mb-1 text-[#1a1a1a]",
     p:        "text-[15px] leading-[1.8] text-[#1a1a1a]",
     bullet:   "text-[15px] leading-[1.8] pl-6 before:content-['•'] before:absolute before:left-0 before:text-gray-500 relative text-[#1a1a1a]",
-    numbered: `text-[15px] leading-[1.8] pl-7 before:content-['${index + 1}.'] before:absolute before:left-0 before:text-gray-500 relative text-[#1a1a1a]`,
+    // Nummer wird unten als echtes <span> gerendert — eine interpolierte
+    // Tailwind-Klasse wie before:content-['${n}.'] existiert zur Buildzeit
+    // nicht und würde nie Nummern anzeigen.
+    numbered: "text-[15px] leading-[1.8] pl-7 relative text-[#1a1a1a]",
     quote:    "text-[15px] leading-[1.8] italic border-l-4 border-gray-300 pl-5 text-gray-600",
     code:     "font-mono text-[13px]",
     divider:  "",
@@ -407,7 +413,7 @@ function BlockRow({
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const el = elRef as React.RefObject<any>;
 
-  return (
+  const editable = (
     <div
       ref={el}
       contentEditable
@@ -418,6 +424,23 @@ function BlockRow({
       className={`min-h-[1.5em] focus:outline-none caret-brand empty:before:content-[attr(data-placeholder)] empty:before:text-muted-fg/50 ${typeClass[block.type]}`}
     />
   );
+
+  if (block.type === "numbered") {
+    return (
+      <div className="relative">
+        <span
+          aria-hidden
+          contentEditable={false}
+          className="absolute left-0 top-0 select-none text-[15px] leading-[1.8] text-gray-500"
+        >
+          {index + 1}.
+        </span>
+        {editable}
+      </div>
+    );
+  }
+
+  return editable;
 }
 
 // Memoisiert: Beim Tippen ändert sich nur der bearbeitete Block — ohne memo
@@ -671,6 +694,7 @@ export function BlockEditor({ pageId, initialContent, onSave, className = "" }: 
           <button
             type="button"
             onClick={() => setMathPaletteOpen(false)}
+            aria-label="Formelpalette schließen"
             className="ml-auto text-xs text-muted-fg hover:text-fg"
           >
             ✕

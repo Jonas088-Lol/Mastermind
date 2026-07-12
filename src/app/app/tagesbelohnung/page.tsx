@@ -5,6 +5,7 @@ import { CheckCircle2, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
+import { berlinDayKey } from "@/lib/date-de";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { LOGIN_REWARD_SCHEDULE } from "@/lib/game";
 import { cn } from "@/lib/utils";
@@ -18,7 +19,7 @@ export default async function TagesbelohnungPage() {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect(ROLE_HOME[effectiveRole(session)]);
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = berlinDayKey();
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },

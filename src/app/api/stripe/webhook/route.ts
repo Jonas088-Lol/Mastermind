@@ -32,14 +32,16 @@ export async function POST(req: NextRequest) {
 
     const coins = Number(coinsAmount);
 
-    await prisma.$transaction([
-      prisma.stripeOrder.updateMany({
-        where: { sessionId: session.id },
-        data: { status: "completed", completedAt: new Date() },
-      }),
-    ]);
+    // Idempotenz-Guard: Stripe stellt Webhooks erneut zu — nur beim ersten
+    // Übergang auf "completed" Münzen gutschreiben (sonst Doppel-Gutschrift).
+    const res = await prisma.stripeOrder.updateMany({
+      where: { sessionId: session.id, status: { not: "completed" } },
+      data: { status: "completed", completedAt: new Date() },
+    });
 
-    await awardCoins(userId, "stripe_purchase", coins, session.id);
+    if (res.count === 1) {
+      await awardCoins(userId, "stripe_purchase", coins, session.id);
+    }
   }
 
   return NextResponse.json({ received: true });

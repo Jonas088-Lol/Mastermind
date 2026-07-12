@@ -437,7 +437,7 @@ export default async function AdminPage() {
         </div>
 
         <div className="space-y-6">
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+          <Card className="border-brand/40 bg-linear-to-br from-brand/8 to-transparent">
             <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <KeyRound className="size-4 text-brand" strokeWidth={1.75} />

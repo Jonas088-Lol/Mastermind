@@ -38,6 +38,11 @@ export async function GET() {
   // Use DTSTART:YYYYMMDDTHHMMSSZ format
   // RRULE:FREQ=WEEKLY;COUNT=52
 
+  // RFC 5545: In TEXT-Werten müssen \ ; , und Zeilenumbrüche escaped werden,
+  // sonst bricht der Feed bei Fachnamen wie "Politik, Wirtschaft".
+  const icalEscape = (s: string) =>
+    s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\r?\n/g, "\\n");
+
   const PERIOD_START_TIMES = ["080000", "085000", "095000", "104000", "113500", "122500", "132500", "141500", "150000"];
   const PERIOD_END_TIMES   = ["084500", "093500", "103500", "112500", "122000", "131000", "141000", "150000", "154500"];
 
@@ -71,9 +76,9 @@ export async function GET() {
     lines.push(`DTSTART;TZID=Europe/Berlin:${dateStr}T${startTime}`);
     lines.push(`DTEND;TZID=Europe/Berlin:${dateStr}T${endTime}`);
     lines.push("RRULE:FREQ=WEEKLY;COUNT=52");
-    lines.push(`SUMMARY:${e.subject.name}${e.room ? " · " + e.room : ""}`);
-    lines.push(`DESCRIPTION:${e.teacher.name}`);
-    if (e.room) lines.push(`LOCATION:${e.room}`);
+    lines.push(`SUMMARY:${icalEscape(`${e.subject.name}${e.room ? " · " + e.room : ""}`)}`);
+    lines.push(`DESCRIPTION:${icalEscape(e.teacher.name)}`);
+    if (e.room) lines.push(`LOCATION:${icalEscape(e.room)}`);
     lines.push("END:VEVENT");
   }
 

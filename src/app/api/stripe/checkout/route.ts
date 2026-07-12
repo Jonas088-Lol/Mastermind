@@ -10,7 +10,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { slug } = await req.json() as { slug: string };
+  const body = (await req.json().catch(() => ({}))) as { slug?: unknown };
+  const slug = typeof body.slug === "string" ? body.slug : "";
   const pack = getCoinPack(slug);
   if (!pack) {
     return NextResponse.json({ error: "Invalid pack" }, { status: 400 });

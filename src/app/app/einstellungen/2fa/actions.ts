@@ -7,6 +7,7 @@ import { generateTotpSecret, verifyTotp } from "@/lib/auth/totp";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { TwoFactorSecret } from "@/lib/privacy/field-encryption";
+import { rateLimit } from "@/lib/security/rate-limit";
 
 export interface StartSetupResult {
   ok: boolean;
@@ -51,6 +52,11 @@ export async function confirmTwoFactorSetup(
   const code = String(formData.get("code") ?? "");
 
   if (!secret || !code) return { ok: false, error: "Code fehlt" };
+
+  // Brute-Force-Schutz für den 6-stelligen Code
+  const rl = await rateLimit({ scope: "2fa-confirm", key: session.userId, limit: 10, windowSec: 900 });
+  if (!rl.ok) return { ok: false, error: "Zu viele Versuche. Bitte kurz warten." };
+
   if (!verifyTotp(secret, code)) return { ok: false, error: "Code ungültig" };
 
   const user = await prisma.user.update({
@@ -73,6 +79,11 @@ export async function disableTwoFactor(formData: FormData) {
   if (!session) redirect("/login");
 
   const code = String(formData.get("code") ?? "");
+
+  // Brute-Force-Schutz: 2FA-Deaktivierung darf nicht durchprobierbar sein
+  const rl = await rateLimit({ scope: "2fa-disable", key: session.userId, limit: 10, windowSec: 900 });
+  if (!rl.ok) redirect("/app/einstellungen?error=2fa-code-invalid");
+
   const user = await prisma.user.findUnique({
     where: { email: session.email },
     select: { twoFactorSecret: true, twoFactor: true },

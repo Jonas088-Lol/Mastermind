@@ -27,6 +27,11 @@ export async function loginGate(formData: FormData) {
     maxAge: 60 * 60 * 24 * 30,
   });
 
-  const destination = redirectTo.startsWith("/") ? redirectTo : "/";
+  // Nur schema-relative interne Pfade zulassen — "//evil.com" (protokoll-relativ)
+  // und "/\evil.com" würden sonst als Open-Redirect nach extern führen.
+  const destination =
+    redirectTo.startsWith("/") && !redirectTo.startsWith("//") && !redirectTo.startsWith("/\\")
+      ? redirectTo
+      : "/";
   redirect(destination);
 }

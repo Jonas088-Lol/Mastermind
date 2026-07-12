@@ -41,7 +41,8 @@ export async function addModule(pathId: string, formData: FormData): Promise<voi
 
 export async function deleteModule(pathId: string, moduleId: string): Promise<void> {
   await guardTeacher(pathId);
-  await prisma.learningModule.delete({ where: { id: moduleId } });
+  // Modul muss zum geprüften Pfad gehören — sonst Löschen fremder Module möglich
+  await prisma.learningModule.deleteMany({ where: { id: moduleId, pathId } });
   revalidatePath(`/teach/lernpfade/${pathId}`);
 }
 
@@ -59,6 +60,12 @@ export async function addQuestion(
   const correct = String(formData.get("correct") ?? "0").trim();
   const explanation = String(formData.get("explanation") ?? "").trim() || null;
   if (!question || !optA || !optB) return;
+  // Modul muss zum geprüften Pfad gehören — sonst Fragen in fremde Module injizierbar
+  const owned = await prisma.learningModule.findFirst({
+    where: { id: moduleId, pathId },
+    select: { id: true },
+  });
+  if (!owned) return;
   const count = await prisma.quizQuestion.count({ where: { moduleId } });
   await prisma.quizQuestion.create({
     data: {
@@ -78,7 +85,8 @@ export async function deleteQuestion(
   questionId: string
 ): Promise<void> {
   await guardTeacher(pathId);
-  await prisma.quizQuestion.delete({ where: { id: questionId } });
+  // Frage muss über ihr Modul zum geprüften Pfad gehören
+  await prisma.quizQuestion.deleteMany({ where: { id: questionId, module: { pathId } } });
   revalidatePath(`/teach/lernpfade/${pathId}`);
 }
 
@@ -86,6 +94,13 @@ export async function recommendToClass(pathId: string, formData: FormData): Prom
   const session = await guardTeacher(pathId);
   const classId = (formData.get("classId") as string | null)?.trim() ?? "";
   if (!classId) return;
+
+  // Lehrer darf nur an eigene Klassen empfehlen
+  const tsc = await prisma.teacherSubjectClass.findFirst({
+    where: { teacherId: session.userId, classId },
+    select: { id: true },
+  });
+  if (!tsc) return;
 
   const path = await prisma.learningPath.findUnique({
     where: { id: pathId },

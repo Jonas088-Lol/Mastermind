@@ -16,7 +16,7 @@ export async function submitAssignment(formData: FormData) {
   if (role !== "student") throw new Error("Nur Schüler:innen können Aufgaben abgeben");
 
   const assignmentId = String(formData.get("assignmentId") ?? "");
-  const content = String(formData.get("content") ?? "");
+  const content = String(formData.get("content") ?? "").slice(0, 100_000);
   if (!assignmentId) throw new Error("assignmentId fehlt");
 
   const assignment = await prisma.assignment.findUnique({
@@ -51,8 +51,16 @@ export async function submitAssignment(formData: FormData) {
     awardCoins(session.userId, "erste_aufgabe_semester", undefined, assignmentId).catch(() => undefined);
   }
 
-  await awardXp(session.userId, "aufgabe_abgabe", assignmentId);
-  await incrementQuestProgress(session.userId, "submission");
+  // XP/Coins nur bei der ERSTEN Abgabe dieser Aufgabe — erneutes Abgeben
+  // (Upsert) darf keine Belohnung mehr auslösen (Farming-Exploit).
+  const alreadyRewarded = await prisma.xpLog.findFirst({
+    where: { userId: session.userId, reason: "aufgabe_abgabe", referenceId: assignmentId },
+    select: { id: true },
+  });
+  if (!alreadyRewarded) {
+    await awardXp(session.userId, "aufgabe_abgabe", assignmentId);
+    await incrementQuestProgress(session.userId, "submission");
+  }
 
   revalidatePath("/app/aufgaben");
   redirect("/app/aufgaben");

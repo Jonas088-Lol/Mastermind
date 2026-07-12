@@ -19,7 +19,9 @@ export async function createSlot(formData: FormData): Promise<void> {
   const startsAt = new Date(startsAtRaw);
   if (isNaN(startsAt.getTime())) return;
 
-  const duration = durationRaw ? Number(durationRaw) : 15;
+  const parsedDuration = durationRaw ? Number(durationRaw) : 15;
+  // NaN/0/negativ abfangen — sonst Prisma-Fehler bzw. unsinnige Slots
+  const duration = Number.isFinite(parsedDuration) && parsedDuration > 0 ? parsedDuration : 15;
 
   await prisma.parentTeacherSlot.create({
     data: {

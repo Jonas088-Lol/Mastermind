@@ -10,8 +10,14 @@ export async function GET(req: Request) {
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { searchParams } = new URL(req.url);
-  const from = searchParams.get("from");
-  const to = searchParams.get("to");
+  // Ungültige Datumsstrings ignorieren (Invalid Date → Prisma-Fehler → 500)
+  const parseDate = (s: string | null) => {
+    if (!s) return null;
+    const d = new Date(s);
+    return Number.isNaN(d.getTime()) ? null : d;
+  };
+  const from = parseDate(searchParams.get("from"));
+  const to = parseDate(searchParams.get("to"));
 
   const events = await prisma.personalEvent.findMany({
     where: {
@@ -19,8 +25,8 @@ export async function GET(req: Request) {
       ...(from || to
         ? {
             startAt: {
-              ...(from ? { gte: new Date(from) } : {}),
-              ...(to ? { lte: new Date(to) } : {}),
+              ...(from ? { gte: from } : {}),
+              ...(to ? { lte: to } : {}),
             },
           }
         : {}),
@@ -35,23 +41,30 @@ export async function POST(req: Request) {
   const session = await getSession();
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const body = await req.json();
-  const { title, description, startAt, endAt, allDay, color, category } = body;
+  const body = await req.json().catch(() => ({}));
+  const { title, description, startAt, endAt, allDay, color, category } = body as Record<string, unknown>;
 
   if (!title || !startAt) {
     return NextResponse.json({ error: "title and startAt required" }, { status: 400 });
   }
+
+  // Ungültige Datumswerte abfangen (Invalid Date → Prisma-Fehler → 500)
+  const start = new Date(String(startAt));
+  if (Number.isNaN(start.getTime())) {
+    return NextResponse.json({ error: "startAt invalid" }, { status: 400 });
+  }
+  const end = endAt ? new Date(String(endAt)) : null;
 
   const event = await prisma.personalEvent.create({
     data: {
       userId: session.userId,
       title: String(title).slice(0, 100),
       description: description ? String(description).slice(0, 500) : null,
-      startAt: new Date(startAt),
-      endAt: endAt ? new Date(endAt) : null,
+      startAt: start,
+      endAt: end && !Number.isNaN(end.getTime()) ? end : null,
       allDay: Boolean(allDay),
-      color: color ?? "#6366f1",
-      category: category ?? "personal",
+      color: color ? String(color).slice(0, 32) : "#6366f1",
+      category: category ? String(category).slice(0, 50) : "personal",
     },
   });
 

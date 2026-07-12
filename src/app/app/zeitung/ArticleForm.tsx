@@ -67,7 +67,7 @@ export function ArticleForm({ action, initial, submitLabel }: Props) {
 
         <div className="flex flex-col gap-2">
           <label htmlFor="coverUrl" className="text-[10px] font-semibold uppercase tracking-wider text-muted-fg">Titelbild-URL (optional)</label>
-          <input id="coverUrl" name="coverUrl" type="url" value={coverUrl} onChange={(e) => setCoverUrl(e.target.value)}
+          <input id="coverUrl" name="coverUrl" type="text" inputMode="url" value={coverUrl} onChange={(e) => setCoverUrl(e.target.value)}
             placeholder="https://… oder /uploads/…"
             className="rounded-xl border border-border bg-bg px-3 py-2.5 text-sm focus:border-brand focus:outline-none" />
         </div>

@@ -583,8 +583,8 @@ function Step2({ plan: currentPlan }: { plan?: string }) {
               className={cn(
                 "flex flex-col gap-4 bg-bg p-6",
                 p.recommended && !isSelected &&
-                  "border-l-2 border-l-brand bg-gradient-to-b from-brand/4 to-transparent",
-                isSelected && "border-l-2 border-l-success bg-gradient-to-b from-success/4 to-transparent"
+                  "border-l-2 border-l-brand bg-linear-to-b from-brand/4 to-transparent",
+                isSelected && "border-l-2 border-l-success bg-linear-to-b from-success/4 to-transparent"
               )}
             >
               <div className="flex items-center gap-2">

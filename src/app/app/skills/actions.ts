@@ -13,6 +13,7 @@ export async function unlockSkillNode(
 ): Promise<{ ok: boolean; error?: string; newXp?: number }> {
   const session = await getSession();
   if (!session) return { ok: false, error: "Nicht eingeloggt" };
+  if (effectiveRole(session) !== "student") return { ok: false, error: "Nur für Schüler" };
 
   const node = SKILL_NODE_MAP.get(nodeKey);
   if (!node || node.isHub) return { ok: false, error: "Ungültiger Knoten" };
@@ -44,16 +45,30 @@ export async function unlockSkillNode(
     };
   }
 
-  const [updated] = await prisma.$transaction([
-    prisma.user.update({
-      where: { id: session.userId },
-      data: { xp: { decrement: node.xpCost } },
-      select: { xp: true },
-    }),
-    prisma.userSkillPurchase.create({
-      data: { userId: session.userId, nodeKey },
-    }),
-  ]);
+  // Atomar: XP nur abziehen, wenn noch genug vorhanden (Race: parallele Käufe),
+  // und Doppelkauf über das Unique-Constraint abfangen (Doppelklick → kein Crash).
+  let newXpValue: number;
+  try {
+    newXpValue = await prisma.$transaction(async (tx) => {
+      const spent = await tx.user.updateMany({
+        where: { id: session.userId, xp: { gte: node.xpCost } },
+        data: { xp: { decrement: node.xpCost } },
+      });
+      if (spent.count === 0) throw new Error("INSUFFICIENT_XP");
+      await tx.userSkillPurchase.create({
+        data: { userId: session.userId, nodeKey },
+      });
+      const u = await tx.user.findUnique({ where: { id: session.userId }, select: { xp: true } });
+      return u?.xp ?? 0;
+    });
+  } catch (err) {
+    if (err instanceof Error && err.message === "INSUFFICIENT_XP") {
+      return { ok: false, error: `Nicht genug XP — du brauchst ${node.xpCost.toLocaleString("de-DE")} XP` };
+    }
+    // z. B. Unique-Violation bei Doppelklick
+    return { ok: false, error: "Bereits freigeschaltet" };
+  }
+  const updated = { xp: newXpValue };
 
   // Apply feature effects immediately on purchase
   if (node.nodeType === "feature" && node.featureId) {
@@ -168,9 +183,16 @@ export async function practiceAnswer(
   // Verify the question exists and get the correct answer
   const q = await prisma.exerciseQuestion.findUnique({
     where: { id: questionId },
-    select: { correct: true },
+    select: { correct: true, topic: { select: { subject: true } } },
   });
   if (!q) return { correct: false };
+
+  // Frage muss zum Fach des Skill-Knotens gehören (sonst: eine bekannte leichte
+  // Frage für beliebige Skills wiederverwenden)
+  const nodeSubjects = node.subjects ?? (node.subject ? [node.subject] : []);
+  if (nodeSubjects.length > 0 && !nodeSubjects.includes(q.topic.subject)) {
+    return { correct: false };
+  }
 
   const correctIdx = parseInt(q.correct ?? "-1", 10);
   const isCorrect  = answeredOption === correctIdx;

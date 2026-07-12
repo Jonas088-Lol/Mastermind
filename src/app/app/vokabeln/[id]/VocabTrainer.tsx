@@ -1,7 +1,7 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { CheckCircle2, XCircle, RotateCcw, ChevronRight, Lightbulb, Volume2 } from "lucide-react";
 import { recordVocabAnswer } from "../actions";
 
@@ -234,6 +234,10 @@ function QuizMode({ entries, color, onDone }: { entries: VocabEntry[]; color: st
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [correct, setCorrect] = useState(0);
+  // Verhindert, dass der 900ms-Timeout nach "Modus wechseln" noch onDone
+  // feuert — sonst zeigt der nächste Modus sofort einen stale ResultScreen.
+  const unmountedRef = useRef(false);
+  useEffect(() => () => { unmountedRef.current = true; }, []);
 
   const current = deck[idx];
   const options = useMemo(() => {
@@ -252,6 +256,7 @@ function QuizMode({ entries, color, onDone }: { entries: VocabEntry[]; color: st
     recordVocabAnswer(current.id, isCorrect ? 4 : 1);
     if (isCorrect) setCorrect(c => c + 1);
     setTimeout(() => {
+      if (unmountedRef.current) return;
       if (idx + 1 >= deck.length) {
         onDone(isCorrect ? correct + 1 : correct, deck.length);
       } else {
@@ -314,6 +319,9 @@ function MatchMode({ entries, color, onDone }: { entries: VocabEntry[]; color: s
   const [matched, setMatched] = useState<Set<string>>(new Set());
   const [wrong, setWrong] = useState<string | null>(null);
   const [score, setScore] = useState(0);
+  // Wie im QuizMode: onDone nicht mehr feuern, wenn der Modus gewechselt wurde.
+  const unmountedRef = useRef(false);
+  useEffect(() => () => { unmountedRef.current = true; }, []);
 
   function pickRight(id: string) {
     if (!leftSel || matched.has(id) || matched.has(leftSel)) return;
@@ -323,7 +331,7 @@ function MatchMode({ entries, color, onDone }: { entries: VocabEntry[]; color: s
       setLeftSel(null);
       setScore(s => s + 1);
       if (next.size === pairs.length) {
-        setTimeout(() => onDone(score + 1, pairs.length), 500);
+        setTimeout(() => { if (!unmountedRef.current) onDone(score + 1, pairs.length); }, 500);
       }
     } else {
       setWrong(id);

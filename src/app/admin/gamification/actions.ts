@@ -15,14 +15,17 @@ export async function createSeason(formData: FormData): Promise<void> {
   const durationDays = Number(formData.get("durationDays") ?? 30);
   if (!name) return;
 
-  const existing = await prisma.season.count({ where: { schoolId: session.schoolId ?? undefined } });
+  // "?? null" statt "?? undefined": ohne schoolId würde der Filter komplett
+  // entfallen und ALLE Saisons aller Schulen deaktiviert werden
+  const existing = await prisma.season.count({ where: { schoolId: session.schoolId ?? null } });
   const seasonNumber = existing + 1;
 
+  const safeDuration = Number.isFinite(durationDays) && durationDays > 0 ? durationDays : 30;
   const startAt = new Date();
-  const endAt   = new Date(startAt.getTime() + durationDays * 86_400_000);
+  const endAt   = new Date(startAt.getTime() + safeDuration * 86_400_000);
 
   await prisma.season.updateMany({
-    where: { schoolId: session.schoolId ?? undefined },
+    where: { schoolId: session.schoolId ?? null },
     data:  { isActive: false },
   });
 

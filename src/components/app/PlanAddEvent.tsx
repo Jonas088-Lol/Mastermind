@@ -18,7 +18,13 @@ export function PlanAddEvent({ defaultDate }: { defaultDate?: string }) {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [title, setTitle] = useState("");
-  const [date, setDate] = useState(defaultDate ?? new Date().toISOString().slice(0, 10));
+  // Lokales Datum statt toISOString(): das wäre UTC — zwischen Mitternacht und
+  // 1/2 Uhr (MEZ/MESZ) würde sonst der Vortag vorausgefüllt.
+  const [date, setDate] = useState(() => {
+    if (defaultDate) return defaultDate;
+    const t = new Date();
+    return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, "0")}-${String(t.getDate()).padStart(2, "0")}`;
+  });
   const [time, setTime] = useState("");
   const [category, setCategory] = useState<"personal" | "exam" | "appointment">("personal");
   const [allDay, setAllDay] = useState(true);

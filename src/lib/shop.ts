@@ -2,6 +2,7 @@
 import { prisma } from "@/lib/db/client";
 import { spendCoins } from "@/lib/coins";
 import { activateBooster } from "@/lib/booster";
+import { safeJsonParse } from "@/lib/safe-json";
 
 export interface ShopItemDef {
   slug: string;
@@ -182,7 +183,8 @@ export async function buyItemDef(
   const paid = await spendCoins(userId, price, "shop_purchase", item.key);
   if (!paid) return { ok: false, message: "Nicht genug Münzen" };
 
-  const meta: Record<string, unknown> = item.meta ? JSON.parse(item.meta) : {};
+  // safeJsonParse: kaputtes meta-JSON darf den Kauf nach dem Abbuchen nicht crashen
+  const meta: Record<string, unknown> = safeJsonParse<Record<string, unknown>>(item.meta, {});
 
   // Dispatch by componentKey
   if (item.componentKey === "boost_xp") {

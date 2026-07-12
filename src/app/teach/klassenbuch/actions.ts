@@ -24,8 +24,9 @@ export async function updateAttendance(
   if (!lesson || lesson.teacherId !== session.userId) throw new Error("Unauthorized");
 
   if (recordId) {
-    await prisma.attendanceRecord.update({
-      where: { id: recordId },
+    // Scope auf die Stunde des Lehrers — verhindert Update fremder Records per beliebiger recordId
+    await prisma.attendanceRecord.updateMany({
+      where: { id: recordId, lessonId },
       data: { status },
     });
   } else {
@@ -78,6 +79,14 @@ export async function createIncident(formData: FormData) {
     where: { teacherId: session.userId, classId },
   });
   if (!tsc) throw new Error("Unauthorized");
+
+  // Schüler muss wirklich in dieser Klasse sein — sonst Einträge (und Eltern-
+  // Benachrichtigungen) für beliebige fremde Schüler möglich
+  const student = await prisma.user.findFirst({
+    where: { id: studentId, classId, role: "student" },
+    select: { id: true },
+  });
+  if (!student) throw new Error("Unauthorized");
 
   await prisma.classbookIncident.create({
     data: {

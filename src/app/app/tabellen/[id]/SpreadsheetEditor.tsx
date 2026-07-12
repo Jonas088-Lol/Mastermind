@@ -42,7 +42,8 @@ function safeCondition(cond: string): boolean {
       case "<>": case "!=": return lhs !== rhs;
     }
   }
-  const ls = String(lhs), rs = String(rhs);
+  // Textvergleich wie in Excel: Groß-/Kleinschreibung ignorieren
+  const ls = String(lhs).toLowerCase(), rs = String(rhs).toLowerCase();
   switch (op) {
     case "=": case "==": return ls === rs;
     case "<>": case "!=": return ls !== rs;
@@ -224,8 +225,12 @@ function evaluateCell(key: string, cells: Record<string, CellData>, depth = 0): 
       // Logical
       case "WENN": case "IF": {
         const [condArg, trueArg = "0", falseArg = "0"] = args;
-        const resolveRefs = (s: string) => s.toUpperCase().replace(/[A-Z]+\d+/g, ref => {
-          const val = evaluateCell(cellRefToKey(ref), cells, depth + 1);
+        // String-Literale unangetastet lassen: kein toUpperCase über den ganzen
+        // Ausdruck (sonst wird `A1="ja"` zu `"ja"="JA"` und "AB1" in Anführungs-
+        // zeichen fälschlich als Zellbezug ersetzt).
+        const resolveRefs = (s: string) => s.replace(/"[^"]*"|[A-Za-z]+\d+/g, tok => {
+          if (tok.startsWith('"')) return tok;
+          const val = evaluateCell(cellRefToKey(tok.toUpperCase()), cells, depth + 1);
           const num = Number(val);
           return isNaN(num) ? `"${val}"` : String(num);
         });
@@ -519,6 +524,9 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
   const [resizing, setResizing] = useState<{ col: number; startX: number; startW: number } | null>(null);
   const [, startTr]           = useTransition();
   const saveTimer             = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Zuletzt gespeicherter Titel — Vergleich mit initialTitle würde ein
+  // Zurück-Umbenennen auf den Ursprungstitel verschlucken.
+  const savedTitle            = useRef(initialTitle);
   const cellInputRef          = useRef<HTMLInputElement>(null);
   const fbarRef               = useRef<HTMLInputElement>(null);
   const containerRef          = useRef<HTMLDivElement>(null);
@@ -783,7 +791,9 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
       const offset = r0 - row;
       let v2 = src.v;
       if (v2.startsWith("=")) {
-        v2 = v2.replace(/([A-Z]+)(\d+)/gi, (_, c1: string, n: string) => `${c1}${parseInt(n) + offset}`);
+        // (?![\d(]) verhindert, dass Funktionsnamen mit Ziffern (LOG10, ANZAHL2, …)
+        // als Zellbezug verschoben werden (aus =LOG10(A1) würde sonst =LOG11(A2)).
+        v2 = v2.replace(/([A-Z]+)(\d+)(?![\d(])/gi, (_, c1: string, n: string) => `${c1}${parseInt(n) + offset}`);
       }
       nextCells[key(r0, col)] = { ...src, v: v2 };
       changed = true;
@@ -903,7 +913,10 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
   function commitTitle() {
     const val = title.trim() || "Unbenannte Tabelle";
     setTitle(val); setEditTitle(false);
-    if (val !== initialTitle) startTr(() => renameSpreadsheet(spreadsheetId, val));
+    if (val !== savedTitle.current) {
+      savedTitle.current = val;
+      startTr(() => renameSpreadsheet(spreadsheetId, val));
+    }
   }
 
   function handleDelete() {
@@ -1049,7 +1062,7 @@ export function SpreadsheetEditor({ spreadsheetId, initialTitle, initialData }: 
         <div className="min-w-0 flex-1">
           {editTitle ? (
             <input autoFocus value={title} onChange={(e) => setTitle(e.target.value)} onBlur={commitTitle}
-              onKeyDown={(e) => { if (e.key === "Enter") commitTitle(); if (e.key === "Escape") { setTitle(initialTitle); setEditTitle(false); } }}
+              onKeyDown={(e) => { if (e.key === "Enter") commitTitle(); if (e.key === "Escape") { setTitle(savedTitle.current); setEditTitle(false); } }}
               className="w-full border-b border-brand bg-transparent text-sm font-semibold focus:outline-none" />
           ) : (
             <button type="button" onClick={() => setEditTitle(true)} className="truncate text-sm font-semibold hover:text-brand">{title}</button>

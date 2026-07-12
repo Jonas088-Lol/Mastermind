@@ -181,5 +181,5 @@ export async function activateStudentInvite(formData: FormData) {
   });
 
   await setSession({ email, realRole: "student" });
-  redirect("/app/dashboard");
+  redirect("/app");
 }

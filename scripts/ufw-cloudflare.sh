@@ -57,7 +57,7 @@ add_rules() {
   done <<< "$1"
 }
 add_rules "$CF_V4"
-[[ -n "$CF_V6" ]] && add_rules "$CF_V6"
+if [[ -n "$CF_V6" ]]; then add_rules "$CF_V6"; fi
 
 ufw --force enable >/dev/null
 echo "✓ Fertig. Aktive Regeln:"

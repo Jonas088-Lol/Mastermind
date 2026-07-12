@@ -27,15 +27,19 @@ export async function GET(req: NextRequest) {
     const order = await prisma.mollieOrder.findUnique({ where: { mollieId } });
 
     if (order && status === "paid" && order.status !== "paid") {
-      // Webhook hasn't arrived yet — fulfil immediately so user doesn't wait
-      await prisma.mollieOrder.update({
-        where: { mollieId },
+      // Webhook hasn't arrived yet — fulfil immediately so user doesn't wait.
+      // Atomarer Übergang (updateMany + Status-Guard) verhindert Doppel-
+      // Gutschrift, wenn der Webhook zeitgleich eintrifft.
+      const res = await prisma.mollieOrder.updateMany({
+        where: { mollieId, status: { not: "paid" } },
         data: { status: "paid", method: payment.method ?? null, paidAt: new Date() },
       });
-      await awardCoins(order.userId, "mollie_purchase", order.coinsAwarded, mollieId);
+      if (res.count === 1) {
+        await awardCoins(order.userId, "mollie_purchase", order.coinsAwarded, mollieId);
+      }
     } else if (order && status !== order.status) {
-      await prisma.mollieOrder.update({
-        where: { mollieId },
+      await prisma.mollieOrder.updateMany({
+        where: { mollieId, status: { not: "paid" } },
         data: { status, method: payment.method ?? null },
       });
     }

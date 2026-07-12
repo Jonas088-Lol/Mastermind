@@ -102,6 +102,7 @@ export function PomodoroTimer({ onClose }: { onClose: () => void }) {
         <button
           type="button"
           onClick={onClose}
+          aria-label="Schließen"
           className="text-muted-fg transition-colors hover:text-fg"
         >
           <X className="size-3.5" strokeWidth={2} />
@@ -167,6 +168,7 @@ export function PomodoroTimer({ onClose }: { onClose: () => void }) {
           <button
             type="button"
             onClick={toggle}
+            aria-label={running ? "Pausieren" : "Starten"}
             className="grid size-12 place-items-center bg-fg text-bg transition-opacity hover:opacity-90"
           >
             {running

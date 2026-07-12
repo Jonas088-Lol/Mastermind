@@ -13,10 +13,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Kein Bypass konfiguriert" }, { status: 403 });
   }
 
-  const { email, password } = await req.json();
+  const body = (await req.json().catch(() => ({}))) as { email?: unknown; password?: unknown };
+  const { email, password } = body;
   if (
-    !email ||
-    !password ||
+    typeof email !== "string" ||
+    typeof password !== "string" ||
     !ALLOWED_EMAILS.includes(email.trim().toLowerCase()) ||
     password !== BYPASS_TOKEN
   ) {

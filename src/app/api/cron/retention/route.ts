@@ -14,7 +14,7 @@ import { logger } from "@/lib/logger";
 //   Solange RETENTION_DRY_RUN != "false" wird NUR protokolliert, nicht gelöscht.
 export async function GET(req: NextRequest) {
   const secret = req.headers.get("x-cron-secret");
-  if (secret !== process.env.CRON_SECRET) return new Response("Unauthorized", { status: 401 });
+  if (!process.env.CRON_SECRET || secret !== process.env.CRON_SECRET) return new Response("Unauthorized", { status: 401 });
 
   const months = Number(process.env.RETENTION_MONTHS ?? "36");
   const dryRun = process.env.RETENTION_DRY_RUN !== "false"; // default: dry-run

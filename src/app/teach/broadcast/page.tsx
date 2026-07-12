@@ -38,40 +38,40 @@ export default async function TeacherBroadcastPage({ searchParams }: PageProps) 
 
   const myClassIds = classes.map((c) => c.id);
 
-  // Recipient counts for preview
-  const allStudentCount = await prisma.user.count({
-    where: { classId: { in: myClassIds }, role: "student" },
-  });
-
-  const allParentCount = await prisma.parentStudentLink.count({
-    where: { student: { classId: { in: myClassIds } } },
-  });
-
-  // Per-class student counts
-  const classStudentCounts = await Promise.all(
-    classes.map(async (c) => ({
-      classId: c.id,
-      count: await prisma.user.count({ where: { classId: c.id, role: "student" } }),
-    }))
+  // Empfänger-Zahlen, Klassen-Zählung (eine groupBy statt N Einzel-Counts) und
+  // Verlauf parallel laden — alle Abfragen sind voneinander unabhängig.
+  const [allStudentCount, allParentCount, classGroupCounts, recentBroadcasts] = await Promise.all([
+    prisma.user.count({
+      where: { classId: { in: myClassIds }, role: "student" },
+    }),
+    prisma.parentStudentLink.count({
+      where: { student: { classId: { in: myClassIds } } },
+    }),
+    prisma.user.groupBy({
+      by: ["classId"],
+      where: { classId: { in: myClassIds }, role: "student" },
+      _count: { id: true },
+    }),
+    // Broadcast history — last 10 notifications of type "broadcast" for any student in teacher's classes
+    prisma.appNotification.findMany({
+      where: {
+        type: "broadcast",
+        user: { classId: { in: myClassIds } },
+      },
+      orderBy: { createdAt: "desc" },
+      distinct: ["title", "body", "createdAt"],
+      take: 10,
+      select: {
+        id: true,
+        title: true,
+        body: true,
+        createdAt: true,
+      },
+    }),
+  ]);
+  const classCountMap = Object.fromEntries(
+    classGroupCounts.map((c) => [c.classId, c._count.id]),
   );
-  const classCountMap = Object.fromEntries(classStudentCounts.map((c) => [c.classId, c.count]));
-
-  // Broadcast history — last 10 notifications of type "broadcast" for any student in teacher's classes
-  const recentBroadcasts = await prisma.appNotification.findMany({
-    where: {
-      type: "broadcast",
-      user: { classId: { in: myClassIds } },
-    },
-    orderBy: { createdAt: "desc" },
-    distinct: ["title", "body", "createdAt"],
-    take: 10,
-    select: {
-      id: true,
-      title: true,
-      body: true,
-      createdAt: true,
-    },
-  });
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">

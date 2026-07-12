@@ -57,6 +57,7 @@ export default async function LernpfadPage({
   ]);
 
   if (!path) notFound();
+  if (path.schoolId !== session.schoolId) notFound();
 
   const doneSet = new Set(progressRecords.map((p) => p.moduleId));
   const doneCount = doneSet.size;

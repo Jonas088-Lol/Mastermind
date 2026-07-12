@@ -32,6 +32,7 @@ export function BossCompendiumWrapper({ grade, defeatedIds }: Props) {
             style={{ borderColor: RARITY_COLOR[selected.rarity as keyof typeof RARITY_COLOR] + "60" }}
             onClick={(e) => e.stopPropagation()}>
             <button className="absolute top-3 right-3 text-muted-fg hover:text-fg text-xl leading-none"
+              aria-label="Schließen"
               onClick={() => setSelected(null)}>✕</button>
             <BossCard boss={selected} grade={grade} defeated={defeatedSet.has(selected.id)} size="lg" />
           </div>

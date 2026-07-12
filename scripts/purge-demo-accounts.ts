@@ -75,10 +75,12 @@ async function main() {
 
   // Nur echte Seed-Konten löschen (deterministische seed-* IDs oder Demo-Mail)
   for (const f of found) {
-    await prisma.user.delete({ where: { id: f.id } }).catch((e) => {
-      console.error(`  ✖ ${f.email}: ${e.message}`);
-    });
-    console.log(`  ✓ gelöscht: ${f.email}`);
+    try {
+      await prisma.user.delete({ where: { id: f.id } });
+      console.log(`  ✓ gelöscht: ${f.email}`);
+    } catch (e) {
+      console.error(`  ✖ ${f.email}: ${(e as Error).message}`);
+    }
   }
   console.log("\n✓ Fertig. Prüfe, ob echte Nutzerkonten unberührt geblieben sind.");
 }

@@ -83,7 +83,7 @@ export default async function PraesentationenPage() {
                 className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-bg transition-shadow hover:shadow-md"
               >
                 {/* Slide preview — 16:9 ratio */}
-                <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-brand/10 to-brand/5 flex items-center justify-center">
+                <div className="relative aspect-[16/9] overflow-hidden bg-linear-to-br from-brand/10 to-brand/5 flex items-center justify-center">
                   <div className="text-center px-4">
                     <p className="text-sm font-bold text-fg line-clamp-2">{pres.title}</p>
                     {slideCount > 0 && (

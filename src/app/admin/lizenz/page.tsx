@@ -120,7 +120,7 @@ export default async function LizenzPage() {
         </div>
       </section>
 
-      <Card className="border-brand/40 bg-gradient-to-br from-brand/6 to-transparent">
+      <Card className="border-brand/40 bg-linear-to-br from-brand/6 to-transparent">
         <CardHeader>
           <div className="flex items-center gap-2">
             <KeyRound className="size-4 text-brand" strokeWidth={1.75} />

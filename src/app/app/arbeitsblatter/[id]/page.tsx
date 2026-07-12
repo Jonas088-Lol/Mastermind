@@ -39,6 +39,11 @@ export default async function WorksheetAssignmentPage({ params }: PageProps) {
 
   if (!assignment) notFound();
 
+  // Verify the worksheet belongs to the student's school (classId can be null)
+  if (assignment.worksheet.schoolId !== session.schoolId) {
+    notFound();
+  }
+
   // Verify the student's class matches this assignment
   if (assignment.classId && assignment.classId !== session.classId) {
     notFound();
@@ -111,7 +116,11 @@ export default async function WorksheetAssignmentPage({ params }: PageProps) {
       type: item.type,
       order: item.order,
       config: item.config,
-      correctAnswer: item.correctAnswer,
+      // Lösung NIE an den Schüler senden, solange er bearbeitet – sonst via
+      // DevTools auslesbar. Bewertung passiert serverseitig (submit-API), die
+      // Musterlösung für die Review-Ansicht wird erst nach Abgabe über
+      // getWorksheetSolutions nachgeladen.
+      correctAnswer: null,
       hint: item.hint,
       points: item.points,
       required: item.required,

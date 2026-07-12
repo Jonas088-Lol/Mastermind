@@ -1,7 +1,7 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 
 interface Props {
   bossIcon: string;
@@ -33,6 +33,25 @@ export function BossDeathAnimation({ bossIcon, tierColor, onComplete }: Props) {
 
   // Generate beam angles (8 beams like Ender Dragon's energy pillars)
   const beams = Array.from({ length: 8 }, (_, i) => i * 45);
+
+  // Partikel EINMAL würfeln: Math.random() direkt im Render würde bei jedem
+  // Parent-Re-Render (z. B. sekündlicher Battle-Countdown) alle Positionen,
+  // Größen und Timings neu auslosen — die Partikel springen dann sichtbar.
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 24 }, (_, i) => {
+        const angle = (i / 24) * 360;
+        const dist = 80 + Math.random() * 120;
+        return {
+          tx: Math.cos((angle * Math.PI) / 180) * dist,
+          ty: Math.sin((angle * Math.PI) / 180) * dist,
+          size: 4 + Math.random() * 6,
+          duration: 1.5 + Math.random(),
+          delay: 0.4 + Math.random() * 0.6,
+        };
+      }),
+    []
+  );
 
   return (
     <div
@@ -129,28 +148,22 @@ export function BossDeathAnimation({ bossIcon, tierColor, onComplete }: Props) {
       ))}
 
       {/* Particles */}
-      {Array.from({ length: 24 }, (_, i) => {
-        const angle = (i / 24) * 360;
-        const dist = 80 + Math.random() * 120;
-        const tx = Math.cos((angle * Math.PI) / 180) * dist;
-        const ty = Math.sin((angle * Math.PI) / 180) * dist;
-        return (
-          <div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              width: 4 + Math.random() * 6,
-              height: 4 + Math.random() * 6,
-              background: tierColor,
-              boxShadow: `0 0 6px ${tierColor}`,
-              // @ts-ignore
-              "--tx": `${tx}px`,
-              "--ty": `${ty}px`,
-              animation: `boss-particle ${1.5 + Math.random()}s ease-out ${0.4 + Math.random() * 0.6}s forwards`,
-            }}
-          />
-        );
-      })}
+      {particles.map((p, i) => (
+        <div
+          key={i}
+          className="absolute rounded-full"
+          style={{
+            width: p.size,
+            height: p.size,
+            background: tierColor,
+            boxShadow: `0 0 6px ${tierColor}`,
+            // @ts-ignore
+            "--tx": `${p.tx}px`,
+            "--ty": `${p.ty}px`,
+            animation: `boss-particle ${p.duration}s ease-out ${p.delay}s forwards`,
+          }}
+        />
+      ))}
 
       {/* Boss icon */}
       <div

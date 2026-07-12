@@ -10,7 +10,7 @@ import {
   Layers,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { FeatureMockup } from "@/components/marketing/FeatureMockup";
 
 type MockupKey = "chat" | "dashboard" | "grades" | "flashcard" | "assignment" | "analytics" | "admin" | "security" | "learning";
@@ -93,16 +93,18 @@ export default function FuerSchuelerPage() {
               motiviert, und Lernpfade, die wirklich funktionieren — alles in einer App.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link href="/kontakt">
-                <Button size="lg" className="glow-on-hover">
-                  Demo ansehen
-                  <ArrowRight className="size-4" />
-                </Button>
+              <Link
+                href="/kontakt"
+                className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
+              >
+                Demo ansehen
+                <ArrowRight className="size-4" />
               </Link>
-              <Link href="/funktionen">
-                <Button size="lg" variant="outline">
-                  Alle Funktionen
-                </Button>
+              <Link
+                href="/funktionen"
+                className={buttonVariants({ variant: "outline", size: "lg" })}
+              >
+                Alle Funktionen
               </Link>
             </div>
           </div>
@@ -154,11 +156,12 @@ export default function FuerSchuelerPage() {
               Sprich deine Lehrkräfte an oder fordere eine Demo für deine Schule an.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link href="/kontakt">
-                <Button size="lg" className="glow-on-hover">
-                  Demo für meine Schule
-                  <ArrowRight className="size-4" />
-                </Button>
+              <Link
+                href="/kontakt"
+                className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
+              >
+                Demo für meine Schule
+                <ArrowRight className="size-4" />
               </Link>
             </div>
           </div>

@@ -29,8 +29,13 @@ function currentSchoolPeriod(): string {
   const year = now.getFullYear();
   // School year starts in September; Halbjahr 1 = Sep–Jan, Halbjahr 2 = Feb–Aug
   const schoolYearStart = month >= 9 ? year : year - 1;
-  const halbjahr = month >= 2 && month <= 8 ? 2 : 1;
+  const halbjahr = currentHalbjahr();
   return `Halbjahr ${halbjahr} · Schuljahr ${schoolYearStart}/${String(schoolYearStart + 1).slice(2)}`;
+}
+
+function currentHalbjahr(): number {
+  const month = new Date().getMonth() + 1;
+  return month >= 2 && month <= 8 ? 2 : 1;
 }
 
 const TYPE_DE: Record<string, string> = {
@@ -147,7 +152,7 @@ export default async function NotenPage() {
       {subjects.length > 0 && (
         <>
           <section className="grid grid-cols-2 gap-px border border-border bg-border lg:grid-cols-4">
-            <Stat label="Ø Halbjahr 2" value={fmt(overallAvg)} suffix="alle Fächer" tone="text-brand" />
+            <Stat label={`Ø Halbjahr ${currentHalbjahr()}`} value={fmt(overallAvg)} suffix="alle Fächer" tone="text-brand" />
             <Stat label="Bestes Fach" value={best ? fmt(best.avg) : "—"} suffix={best?.subject.name ?? "—"} tone="text-success" />
             <Stat label="Schwächstes Fach" value={worst ? fmt(worst.avg) : "—"} suffix={worst?.subject.name ?? "—"} tone="text-warning" />
             <Stat label="Gesamt Noten" value={String(grades.length)} suffix={`in ${subjects.length} Fächern`} tone="text-info" />
@@ -284,7 +289,7 @@ export default async function NotenPage() {
               </CardBody>
             </Card>
 
-            <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+            <Card className="border-brand/40 bg-linear-to-br from-brand/8 to-transparent">
               <CardBody className="p-5!">
                 <div className="flex items-center gap-2">
                   <Sparkles className="size-4 text-brand" strokeWidth={1.75} />

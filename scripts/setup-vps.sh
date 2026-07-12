@@ -43,7 +43,7 @@ if ! command -v docker &>/dev/null; then
   echo "▶ Installing Docker..."
   curl -fsSL https://get.docker.com | sh
   systemctl enable --now docker
-  usermod -aG docker "$SUDO_USER" 2>/dev/null || true
+  [ -n "${SUDO_USER:-}" ] && usermod -aG docker "$SUDO_USER" 2>/dev/null || true
   echo "✓ Docker installed"
 else
   echo "✓ Docker already installed ($(docker --version))"
@@ -68,7 +68,7 @@ fi
 if [ -d "$APP_DIR/.git" ]; then
   echo "▶ Repository already exists — pulling latest..."
   cd "$APP_DIR"
-  git pull origin main
+  git pull
 else
   echo "▶ Cloning repository to $APP_DIR..."
   git clone "$REPO_URL" "$APP_DIR"

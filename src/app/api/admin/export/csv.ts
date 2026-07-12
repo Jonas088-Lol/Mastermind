@@ -7,7 +7,11 @@ export const CSV_BOM = "\uFEFF";
 export function csvRow(values: (string | number | boolean | null | undefined)[]): string {
   return values
     .map((v) => {
-      const s = v == null ? "" : String(v);
+      let s = v == null ? "" : String(v);
+      // CSV-Formel-Injection verhindern: Zellen, die mit = + - @ (oder Tab/CR)
+      // beginnen, würde Excel als Formel ausführen. Führendes Hochkomma
+      // neutralisiert das, ohne den Wert sichtbar zu verändern.
+      if (/^[=+\-@\t\r]/.test(s)) s = "'" + s;
       return `"${s.replace(/"/g, '""')}"`;
     })
     .join(";");

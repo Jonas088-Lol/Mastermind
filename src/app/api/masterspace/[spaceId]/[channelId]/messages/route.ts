@@ -20,7 +20,7 @@ export async function GET(
   if (!membership) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
 
   const messages = await prisma.spaceMessage.findMany({
-    where: { channelId },
+    where: { channelId, channel: { spaceId } },
     include: {
       author: { select: { id: true, name: true } },
       parent: { select: { id: true, content: true, author: { select: { name: true } } } },

@@ -252,7 +252,7 @@ export default async function PlattformPage() {
             <QuickTile href="/app" icon={<HelpCircle className="size-4" />} label="Schüler-App" hint="Lernbereich" />
           </div>
 
-          <Card className="border-brand/40 bg-gradient-to-br from-brand/8 to-transparent">
+          <Card className="border-brand/40 bg-linear-to-br from-brand/8 to-transparent">
             <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <Zap className="size-4 text-brand" strokeWidth={1.75} />

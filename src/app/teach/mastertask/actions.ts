@@ -34,18 +34,27 @@ export async function createMasterTask(formData: FormData) {
   });
   if (!schoolClass) return;
 
+  // Ungültige Datums-/Zahleneingaben dürfen nicht an Prisma gehen (DateTime?/Int?
+  // crashen bei Invalid Date bzw. NaN) — bei ungültiger Eingabe auf null fallen.
+  const dueAtParsed = dueAtRaw ? new Date(dueAtRaw) : null;
+  const dueAt = dueAtParsed && !isNaN(dueAtParsed.getTime()) ? dueAtParsed : null;
+  const bookPageFromParsed = bookPageFromRaw ? parseInt(bookPageFromRaw, 10) : null;
+  const bookPageFrom = bookPageFromParsed !== null && !isNaN(bookPageFromParsed) ? bookPageFromParsed : null;
+  const bookPageToParsed = bookPageToRaw ? parseInt(bookPageToRaw, 10) : null;
+  const bookPageTo = bookPageToParsed !== null && !isNaN(bookPageToParsed) ? bookPageToParsed : null;
+
   const task = await prisma.masterTask.create({
     data: {
       title,
       description,
       subject,
-      dueAt: dueAtRaw ? new Date(dueAtRaw) : null,
+      dueAt,
       classId,
       teacherId: session.userId,
       schoolId: schoolClass.schoolId,
       bookName,
-      bookPageFrom: bookPageFromRaw ? parseInt(bookPageFromRaw, 10) : null,
-      bookPageTo: bookPageToRaw ? parseInt(bookPageToRaw, 10) : null,
+      bookPageFrom,
+      bookPageTo,
       exerciseNr,
     },
   });

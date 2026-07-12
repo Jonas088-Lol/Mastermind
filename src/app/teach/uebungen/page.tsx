@@ -13,13 +13,24 @@ export default async function TeachUebungenPage() {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "teacher") redirect("/");
 
-  const tscEntries = await prisma.teacherSubjectClass.findMany({
-    where: { teacherId: session.userId },
-    include: {
-      class: { select: { id: true, name: true } },
-      subject: { select: { name: true } },
-    },
-  });
+  // Beide Abfragen sind unabhängig — parallel laden.
+  const [tscEntries, exercises] = await Promise.all([
+    prisma.teacherSubjectClass.findMany({
+      where: { teacherId: session.userId },
+      include: {
+        class: { select: { id: true, name: true } },
+        subject: { select: { name: true } },
+      },
+    }),
+    prisma.teacherExercise.findMany({
+      where: { teacherId: session.userId },
+      include: {
+        class: { select: { name: true, _count: { select: { students: true } } } },
+        _count: { select: { completions: true } },
+      },
+      orderBy: { createdAt: "desc" },
+    }),
+  ]);
 
   // Unique classes + unique subject names for the form selects
   const classMap = new Map<string, string>();
@@ -30,15 +41,6 @@ export default async function TeachUebungenPage() {
   }
   const classes = [...classMap.entries()].map(([id, name]) => ({ id, name }));
   const subjects = [...subjectSet].sort();
-
-  const exercises = await prisma.teacherExercise.findMany({
-    where: { teacherId: session.userId },
-    include: {
-      class: { select: { name: true, _count: { select: { students: true } } } },
-      _count: { select: { completions: true } },
-    },
-    orderBy: { createdAt: "desc" },
-  });
 
   return (
     <div className="mx-auto flex max-w-4xl flex-col gap-8">

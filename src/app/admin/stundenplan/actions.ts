@@ -43,6 +43,17 @@ export async function saveTimetableEntry(formData: FormData): Promise<void> {
 
   if (!classId || !teacherId || !subjectId || !day || !period) return;
 
+  // Klasse, Lehrer und Fach müssen zur eigenen Schule gehören — sonst kann ein
+  // Admin per manipulierter ID den Stundenplan fremder Schulen überschreiben
+  const [klass, teacher, subject] = await Promise.all([
+    prisma.schoolClass.findUnique({ where: { id: classId }, select: { schoolId: true } }),
+    prisma.user.findUnique({ where: { id: teacherId }, select: { schoolId: true, role: true } }),
+    prisma.subject.findUnique({ where: { id: subjectId }, select: { schoolId: true } }),
+  ]);
+  if (!klass || klass.schoolId !== session.schoolId) return;
+  if (!teacher || teacher.schoolId !== session.schoolId || teacher.role !== "teacher") return;
+  if (!subject || subject.schoolId !== session.schoolId) return;
+
   await prisma.timetableEntry.upsert({
     where: { classId_day_period: { classId, day, period } },
     update: { teacherId, subjectId, room },

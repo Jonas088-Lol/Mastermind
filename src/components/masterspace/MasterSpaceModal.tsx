@@ -1619,11 +1619,15 @@ export function MasterSpaceModal() {
   // Cleanup streams + WebRTC on unmount
   useEffect(() => {
     return () => {
-      screenStream?.getTracks().forEach((t) => t.stop());
-      cameraStream?.getTracks().forEach((t) => t.stop());
+      // WICHTIG: Refs statt State verwenden — dieser Cleanup läuft mit dem
+      // Mount-Closure, in dem screenStream/cameraStream/voiceChannelId noch
+      // null sind. Mit State würden Kamera/Screen-Tracks nie gestoppt und
+      // der Sprachkanal beim Unmount nie verlassen.
+      screenStreamRef.current?.getTracks().forEach((t) => t.stop());
+      cameraStreamRef.current?.getTracks().forEach((t) => t.stop());
       localAudioRef.current?.getTracks().forEach((t) => t.stop());
       rtcFnRef.current?.closeAllPeers();
-      if (voiceChannelId) leaveAllVoiceModal().catch(() => null);
+      if (voiceChannelIdRef.current) leaveAllVoiceModal().catch(() => null);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

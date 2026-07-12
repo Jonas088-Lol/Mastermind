@@ -106,7 +106,7 @@ export default async function VocabListPage({ params }: Props) {
                         <td className="px-4 py-2 text-center font-mono text-xs text-muted-fg">{e.repetitions}×</td>
                         <td className="px-2 py-2">
                           <form action={deleteVocabEntry.bind(null, e.id, list.id)}>
-                            <button type="submit" className="hidden size-6 place-items-center text-muted-fg hover:text-danger group-hover:grid">
+                            <button type="submit" aria-label={`Vokabel „${e.word}" löschen`} className="hidden size-6 place-items-center text-muted-fg hover:text-danger group-hover:grid">
                               <Trash2 className="size-3" strokeWidth={2} />
                             </button>
                           </form>

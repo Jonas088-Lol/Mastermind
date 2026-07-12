@@ -11,8 +11,8 @@ export async function createThread(formData: FormData) {
   if (!session) redirect("/login");
 
   const recipientId = String(formData.get("recipientId") ?? "").trim();
-  const subject = String(formData.get("subject") ?? "").trim();
-  const content = String(formData.get("content") ?? "").trim();
+  const subject = String(formData.get("subject") ?? "").trim().slice(0, 200);
+  const content = String(formData.get("content") ?? "").trim().slice(0, 5000);
 
   if (!recipientId || !subject || !content) return;
   if (!session.schoolId) redirect("/app/nachrichten");

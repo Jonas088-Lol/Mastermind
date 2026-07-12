@@ -20,6 +20,7 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { prisma } from "@/lib/db/client";
+import { berlinDayKey, berlinStartOfDay } from "@/lib/date-de";
 import { DashboardGreeting } from "@/components/app/DashboardGreeting";
 import { getAiQuota } from "@/lib/db/store";
 import { getSession } from "@/lib/session";
@@ -117,7 +118,7 @@ export default async function DashboardPage() {
 
   // Streak + XP from stored fields
   const sevenDaysAgo = new Date(now.getTime() - 7 * 86_400_000);
-  const todayStart = new Date(now.toISOString().slice(0, 10) + "T00:00:00.000Z");
+  const todayStart = berlinStartOfDay(now);
   const [userXpData, weeklyXpLogs, dailyGoal, weeklyGoal] = await Promise.all([
     prisma.user.findUnique({
       where: { id: session.userId },
@@ -148,7 +149,7 @@ export default async function DashboardPage() {
   });
 
   // Daily login reward status
-  const todayLoginStr = now.toISOString().slice(0, 10);
+  const todayLoginStr = berlinDayKey(now);
   const userLoginData = await prisma.user.findUnique({
     where: { id: session.userId },
     select: { lastLoginDate: true },
@@ -160,7 +161,7 @@ export default async function DashboardPage() {
     select: { id: true, title: true, subject: true, grade: true, description: true },
     orderBy: { id: "asc" },
   });
-  const todayStr = now.toISOString().slice(0, 10);
+  const todayStr = berlinDayKey(now);
   const dateSeed = todayStr.replace(/-/g, "").split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
   const dailyTopic = allTopics.length > 0 ? allTopics[dateSeed % allTopics.length] : null;
   const dailyChallengeCompleted = dailyTopic
@@ -180,7 +181,7 @@ export default async function DashboardPage() {
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
 
       {/* ── Hero greeting banner ── */}
-      <header className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#BBF7D0] to-[#BAE6FD] px-6 py-8 shadow-sm sm:px-10">
+      <header className="relative overflow-hidden rounded-2xl bg-linear-to-r from-[#BBF7D0] to-[#BAE6FD] px-6 py-8 shadow-sm sm:px-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-5">
             <span className="text-5xl leading-none drop-shadow-sm">{rank.icon}</span>
@@ -375,7 +376,7 @@ export default async function DashboardPage() {
         </div>
 
         <div className="space-y-6">
-          <Card className="rounded-2xl border-brand/40 bg-gradient-to-br from-brand/8 to-transparent shadow-sm">
+          <Card className="rounded-2xl border-brand/40 bg-linear-to-br from-brand/8 to-transparent shadow-sm">
             <CardBody className="p-5!">
               <div className="flex items-center gap-2">
                 <Sparkles className="size-4 text-brand" strokeWidth={1.75} />
@@ -501,8 +502,8 @@ export default async function DashboardPage() {
               "rounded-2xl shadow-sm",
               "border-warning/40",
               dailyChallengeCompleted
-                ? "bg-gradient-to-br from-success/6 to-transparent border-success/40"
-                : "bg-gradient-to-br from-warning/6 to-transparent"
+                ? "bg-linear-to-br from-success/6 to-transparent border-success/40"
+                : "bg-linear-to-br from-warning/6 to-transparent"
             )}>
               <CardBody className="p-5!">
                 <div className="flex items-center gap-2">

@@ -77,7 +77,8 @@ export default async function NutzerPage({ searchParams }: PageProps) {
     } : {}),
   };
 
-  const [users, totalCounts] = await Promise.all([
+  // Alle Abfragen sind voneinander unabhängig — parallel statt sequenziell laden.
+  const [users, totalCounts, unverifiedCount, teacherAdminWith2FA, school] = await Promise.all([
     prisma.user.findMany({
       where,
       select: {
@@ -99,23 +100,22 @@ export default async function NutzerPage({ searchParams }: PageProps) {
       where: schoolId ? { schoolId } : {},
       _count: { id: true },
     }),
+    prisma.user.count({
+      where: { ...(schoolId ? { schoolId } : {}), verifiedAt: null },
+    }),
+    prisma.user.count({
+      where: { ...(schoolId ? { schoolId } : {}), role: { in: ["teacher", "admin", "super"] }, twoFactor: true },
+    }),
+    schoolId
+      ? prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } })
+      : Promise.resolve(null),
   ]);
 
   const countByRole = Object.fromEntries(totalCounts.map((r) => [r.role, r._count.id]));
   const totalAll = Object.values(countByRole).reduce((s, n) => s + n, 0);
-  const unverifiedCount = await prisma.user.count({
-    where: { ...(schoolId ? { schoolId } : {}), verifiedAt: null },
-  });
 
   const teacherAdminCount = (countByRole["teacher"] ?? 0) + (countByRole["admin"] ?? 0) + (countByRole["super"] ?? 0);
-  const teacherAdminWith2FA = await prisma.user.count({
-    where: { ...(schoolId ? { schoolId } : {}), role: { in: ["teacher", "admin", "super"] }, twoFactor: true },
-  });
   const twoFAPct = teacherAdminCount > 0 ? Math.round((teacherAdminWith2FA / teacherAdminCount) * 100) : 0;
-
-  const school = schoolId
-    ? await prisma.school.findUnique({ where: { id: schoolId }, select: { name: true } })
-    : null;
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
@@ -262,7 +262,7 @@ export default async function NutzerPage({ searchParams }: PageProps) {
         </CardBody>
       </Card>
 
-      <Card className="border-brand/40 bg-gradient-to-br from-brand/6 to-transparent">
+      <Card className="border-brand/40 bg-linear-to-br from-brand/6 to-transparent">
         <CardBody className="p-5!">
           <div className="flex items-center gap-2">
             <ShieldCheck className="size-4 text-brand" strokeWidth={1.75} />

@@ -55,6 +55,7 @@ export async function renameDocument(documentId: string, title: string): Promise
 
 export async function saveDocumentContent(documentId: string, content: string): Promise<void> {
   const session = await requireStudent();
+  if (typeof content !== "string" || content.length > 2_000_000) return;
   const doc = await prisma.document.findUnique({ where: { id: documentId } });
   if (!doc || doc.userId !== session.userId) return;
   await prisma.document.update({ where: { id: documentId }, data: { content } });

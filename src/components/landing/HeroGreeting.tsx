@@ -1,7 +1,7 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 
 const RANDOM_NAMES = [
   "Lukas", "Emma", "Leon", "Lena", "Felix", "Hannah", "Noah", "Sofia",
@@ -10,10 +10,12 @@ const RANDOM_NAMES = [
 ];
 
 export function HeroGreeting({ loggedInName }: { loggedInName: string | null }) {
-  const name = useMemo(() => {
-    if (loggedInName) return loggedInName;
-    return RANDOM_NAMES[Math.floor(Math.random() * RANDOM_NAMES.length)]!;
-  }, [loggedInName]);
+  // Zufallsname erst NACH dem Mount würfeln — Math.random() im Render liefert
+  // auf Server und Client verschiedene Namen (Hydration-Mismatch).
+  const [randomName, setRandomName] = useState(RANDOM_NAMES[0]!);
+  useEffect(() => {
+    setRandomName(RANDOM_NAMES[Math.floor(Math.random() * RANDOM_NAMES.length)]!);
+  }, []);
 
-  return <span>Hi {name} 👋</span>;
+  return <span>Hi {loggedInName ?? randomName} 👋</span>;
 }

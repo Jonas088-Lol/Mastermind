@@ -111,8 +111,9 @@ export async function saveWorksheetItem(worksheetId: string, formData: FormData)
   const required = formData.get("required") === "on" || formData.get("required") === "true";
 
   if (itemId) {
-    await prisma.worksheetItem.update({
-      where: { id: itemId },
+    // Item muss zum geprüften Arbeitsblatt gehören — sonst Update fremder Items möglich
+    await prisma.worksheetItem.updateMany({
+      where: { id: itemId, worksheetId },
       data: {
         type,
         order: isNaN(order) ? 0 : order,
@@ -147,7 +148,7 @@ export async function deleteWorksheetItem(worksheetId: string, itemId: string): 
   const worksheet = await prisma.worksheet.findUnique({ where: { id: worksheetId } });
   if (!worksheet || worksheet.creatorId !== session.userId) return;
 
-  await prisma.worksheetItem.delete({ where: { id: itemId } });
+  await prisma.worksheetItem.deleteMany({ where: { id: itemId, worksheetId } });
   revalidatePath(`/teach/arbeitsblatter/${worksheetId}`);
 }
 
@@ -159,7 +160,7 @@ export async function reorderItems(worksheetId: string, itemIds: string[]): Prom
 
   await Promise.all(
     itemIds.map((id, index) =>
-      prisma.worksheetItem.update({ where: { id }, data: { order: index + 1 } })
+      prisma.worksheetItem.updateMany({ where: { id, worksheetId }, data: { order: index + 1 } })
     )
   );
 
@@ -179,6 +180,16 @@ export async function assignWorksheet(worksheetId: string, formData: FormData): 
   const showSolution = formData.get("showSolution") === "on" || formData.get("showSolution") === "true";
 
   const dueAt = dueAtRaw ? new Date(dueAtRaw) : null;
+
+  // Klasse muss zur Schule des Lehrers gehören — sonst Zuweisung/Benachrichtigung
+  // an Klassen fremder Schulen möglich
+  if (classId) {
+    const klass = await prisma.schoolClass.findUnique({
+      where: { id: classId },
+      select: { schoolId: true },
+    });
+    if (!klass || klass.schoolId !== session.schoolId) return;
+  }
 
   await prisma.worksheetAssignment.create({
     data: {

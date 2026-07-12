@@ -77,21 +77,22 @@ export async function checkAndAwardAchievements(userId: string): Promise<string[
     }
   }
 
-  if (newSlugs.length > 0) {
-    await Promise.all(
-      newSlugs.map((slug) =>
-        prisma.userAchievement.upsert({
-          where: { userId_slug: { userId, slug } },
-          create: { userId, slug },
-          update: {},
-        })
-      )
-    );
-    // Award coins for each newly unlocked achievement (fire-and-forget)
-    for (const slug of newSlugs) {
-      awardCoins(userId, "achievement_unlock", undefined, slug).catch(() => undefined);
+  // create statt upsert: Bei zwei parallelen Checks gewinnt nur einer den
+  // Insert (@@unique([userId, slug])) — nur der vergibt die Coins. Sonst
+  // würden die achievement_unlock-Coins doppelt ausgezahlt.
+  const created: string[] = [];
+  for (const slug of newSlugs) {
+    try {
+      await prisma.userAchievement.create({ data: { userId, slug } });
+      created.push(slug);
+    } catch {
+      // Unique-Konflikt: Achievement wurde parallel bereits vergeben
     }
   }
+  // Award coins for each newly unlocked achievement (fire-and-forget)
+  for (const slug of created) {
+    awardCoins(userId, "achievement_unlock", undefined, slug).catch(() => undefined);
+  }
 
-  return newSlugs;
+  return created;
 }

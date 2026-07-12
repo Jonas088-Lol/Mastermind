@@ -39,7 +39,8 @@ export async function POST(req: NextRequest) {
   // Aufgabe muss existieren und zur Schule des Schülers gehören — verhindert das
   // Ablegen von Dateien in beliebige Ordner (Path-Traversal über taskId).
   const task = await prisma.masterTask.findUnique({ where: { id: taskId }, select: { schoolId: true } });
-  if (!task || (session.schoolId && task.schoolId !== session.schoolId)) {
+  // Strikt: schullose Sessions dürfen NICHT in fremde Schul-Tasks hochladen.
+  if (!task || !session.schoolId || task.schoolId !== session.schoolId) {
     return NextResponse.json({ error: "Aufgabe nicht gefunden" }, { status: 404 });
   }
 

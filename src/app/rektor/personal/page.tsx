@@ -56,9 +56,13 @@ export default async function PersonalPage() {
       schoolId: session.schoolId ?? "",
       role: { in: ["teacher", "admin", "secretary", "rector", "vice_rector"] },
     },
-    include: {
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      role: true,
       teacherSubjectClasses: {
-        include: {
+        select: {
           subject: { select: { shortName: true, color: true } },
           class: { select: { name: true } },
         },

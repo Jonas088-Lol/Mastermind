@@ -2,19 +2,17 @@
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/session";
 import Link from "next/link";
-import { Shield, Users, Swords, Settings, Terminal, BarChart3, AlertTriangle } from "lucide-react";
+import { Terminal, BarChart3, AlertTriangle } from "lucide-react";
 
 export default async function SuperAdminLayout({ children }: { children: React.ReactNode }) {
   const session = await getSession();
   if (!session?.isSuperAdmin) redirect("/login");
 
+  // Nur real existierende Routen verlinken (schulen/nutzer/events/settings
+  // waren geplant, aber nie gebaut → tote Links entfernt).
   const navItems = [
     { href: "/super-admin",          label: "Übersicht",    icon: BarChart3   },
-    { href: "/super-admin/schulen",  label: "Schulen",      icon: Shield      },
-    { href: "/super-admin/nutzer",   label: "Alle Nutzer",  icon: Users       },
-    { href: "/super-admin/events",   label: "Events",       icon: Swords      },
     { href: "/super-admin/terminal", label: "Terminal",     icon: Terminal    },
-    { href: "/super-admin/settings", label: "Einstellungen",icon: Settings    },
   ];
 
   return (

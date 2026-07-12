@@ -38,6 +38,11 @@ function isValidEmail(s: string): boolean {
 }
 
 async function origin(): Promise<string> {
+  // Konfigurierte URL bevorzugen — Host/X-Forwarded-Proto sind Client-Header.
+  // Sonst könnte ein Angreifer per Host-Header-Injection Reset-/Magic-Links
+  // auf seine Domain in fremde E-Mails schleusen (Token-Diebstahl).
+  const configured = process.env.NEXT_PUBLIC_APP_URL?.trim();
+  if (configured) return configured.replace(/\/+$/, "");
   const h = await headers();
   const proto = h.get("x-forwarded-proto") ?? "http";
   const host = h.get("host") ?? "localhost:3000";
@@ -167,6 +172,12 @@ export async function loginAsDemoRole(roleKey: string) {
   const entry = DEMO_LOGINS[roleKey];
   if (!entry) redirect("/login?error=invalid");
   const { email, role } = entry;
+
+  // Sicherheit: passwortloser super-Admin (Plattform-Betreiber) darf NIE
+  // per Demo-Kachel erreichbar sein, außer ausdrücklich freigeschaltet.
+  if (role === "super" && process.env.ALLOW_DEMO_SUPER !== "true") {
+    redirect("/login?error=demo-disabled");
+  }
 
   // Nur einloggen, wenn der Demo-Account wirklich existiert und die Rolle passt.
   const user = await prisma.user.findUnique({

@@ -44,7 +44,7 @@ export default async function AbwesenheitPage({ searchParams }: PageProps) {
 
   const absences = await prisma.absence.findMany({
     where: {
-      schoolId: session.schoolId ?? undefined,
+      schoolId: session.schoolId ?? "",
       ...(activeClassId
         ? { student: { classId: activeClassId } }
         : {}),

@@ -71,7 +71,8 @@ export async function deleteVocabEntry(entryId: string, listId: string) {
   if (!session) return;
   const list = await prisma.vocabList.findUnique({ where: { id: listId } });
   if (!list || list.userId !== session.userId) return;
-  await prisma.vocabEntry.delete({ where: { id: entryId } });
+  // deleteMany mit listId-Scope: verhindert Löschen fremder Einträge über eigene listId (IDOR)
+  await prisma.vocabEntry.deleteMany({ where: { id: entryId, listId } });
   revalidatePath(`/app/vokabeln/${listId}`);
 }
 
@@ -80,6 +81,7 @@ export async function deleteVocabEntry(entryId: string, listId: string) {
 export async function recordVocabAnswer(entryId: string, quality: 0 | 1 | 2 | 3 | 4 | 5) {
   const session = await getSession();
   if (!session) return;
+  if (!Number.isInteger(quality) || quality < 0 || quality > 5) return;
 
   const entry = await prisma.vocabEntry.findUnique({
     where: { id: entryId },
@@ -110,10 +112,21 @@ export async function recordVocabAnswer(entryId: string, quality: 0 | 1 | 2 | 3 
   });
 
   // Award coins for a correct answer (quality >= 3 = pass)
+  // Tages-Cap gegen Farming (gleiche Vokabel endlos beantworten)
   if (quality >= 3) {
-    awardCoins(entry.list.userId, "vokabel_session").catch(() => undefined);
-    // +2 XP pro richtiger Vokabel (zählt auch für Tages-Streak)
-    awardXpCustom(entry.list.userId, 2, "vokabel_antwort", entryId).catch(() => undefined);
+    const startOfDay = new Date();
+    startOfDay.setHours(0, 0, 0, 0);
+    const [coinCount, xpCount] = await Promise.all([
+      prisma.coinLog.count({ where: { userId: session.userId, reason: "vokabel_session", createdAt: { gte: startOfDay } } }),
+      prisma.xpLog.count({ where: { userId: session.userId, reason: "vokabel_antwort", createdAt: { gte: startOfDay } } }),
+    ]);
+    if (coinCount < 15) {
+      awardCoins(entry.list.userId, "vokabel_session").catch(() => undefined);
+    }
+    if (xpCount < 50) {
+      // +2 XP pro richtiger Vokabel (zählt auch für Tages-Streak)
+      awardXpCustom(entry.list.userId, 2, "vokabel_antwort", entryId).catch(() => undefined);
+    }
   }
 }
 

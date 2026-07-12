@@ -3,6 +3,7 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
+import { berlinDayKey } from "@/lib/date-de";
 import { effectiveRole, getSession } from "@/lib/session";
 import { LOGIN_REWARD_SCHEDULE } from "@/lib/game";
 import { incrementQuestProgress } from "@/lib/quests";
@@ -12,7 +13,7 @@ export async function claimDailyLoginReward(): Promise<void> {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "student") return;
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = berlinDayKey();
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },
@@ -25,15 +26,22 @@ export async function claimDailyLoginReward(): Promise<void> {
   const dayInCycle = ((newTotalLogins - 1) % LOGIN_REWARD_SCHEDULE.length) + 1;
   const reward = LOGIN_REWARD_SCHEDULE.find((r) => r.day === dayInCycle) ?? LOGIN_REWARD_SCHEDULE[0];
 
+  // Claim atomar: nur der ERSTE Request des Tages gewinnt (Race: parallele
+  // Requests würden sonst die Tagesbelohnung doppelt vergeben).
+  const claimed = await prisma.user.updateMany({
+    where: {
+      id: session.userId,
+      OR: [{ lastLoginDate: null }, { lastLoginDate: { not: today } }],
+    },
+    data: {
+      lastLoginDate: today,
+      totalDailyLogins: newTotalLogins,
+      xp: { increment: reward.xp },
+    },
+  });
+  if (claimed.count === 0) return;
+
   await prisma.$transaction([
-    prisma.user.update({
-      where: { id: session.userId },
-      data: {
-        lastLoginDate: today,
-        totalDailyLogins: newTotalLogins,
-        xp: { increment: reward.xp },
-      },
-    }),
     prisma.xpLog.create({
       data: { userId: session.userId, amount: reward.xp, reason: "daily_login_reward" },
     }),

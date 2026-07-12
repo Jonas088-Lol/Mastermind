@@ -23,6 +23,13 @@ export async function bookResource(formData: FormData): Promise<void> {
   if (isNaN(startsAt.getTime()) || isNaN(endsAt.getTime())) return;
   if (endsAt <= startsAt) return;
 
+  // Ressource muss zur Schule des Lehrers gehören — sonst schulfremde Buchungen möglich
+  const resource = await prisma.resource.findUnique({
+    where: { id: resourceId },
+    select: { schoolId: true },
+  });
+  if (!resource || !session.schoolId || resource.schoolId !== session.schoolId) return;
+
   // Check for conflicts
   const conflict = await prisma.resourceBooking.findFirst({
     where: {

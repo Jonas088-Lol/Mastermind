@@ -10,7 +10,7 @@ import {
   Code2,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { FeatureMockup } from "@/components/marketing/FeatureMockup";
 
 type MockupKey = "chat" | "dashboard" | "grades" | "flashcard" | "assignment" | "analytics" | "admin" | "security" | "learning";
@@ -94,16 +94,18 @@ export default function FuerSchulenPage() {
               Ihre Schule wirklich braucht.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link href="/kontakt">
-                <Button size="lg" className="glow-on-hover">
-                  Pilot anfragen
-                  <ArrowRight className="size-4" />
-                </Button>
+              <Link
+                href="/kontakt"
+                className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
+              >
+                Pilot anfragen
+                <ArrowRight className="size-4" />
               </Link>
-              <Link href="/preise">
-                <Button size="lg" variant="outline">
-                  Preise für Schulen
-                </Button>
+              <Link
+                href="/preise"
+                className={buttonVariants({ variant: "outline", size: "lg" })}
+              >
+                Preise für Schulen
               </Link>
             </div>
           </div>
@@ -177,16 +179,18 @@ export default function FuerSchulenPage() {
               den Einführungsprozess.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <Link href="/kontakt">
-                <Button size="lg" className="glow-on-hover">
-                  Vertrieb kontaktieren
-                  <ArrowRight className="size-4" />
-                </Button>
+              <Link
+                href="/kontakt"
+                className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
+              >
+                Vertrieb kontaktieren
+                <ArrowRight className="size-4" />
               </Link>
-              <Link href="/preise">
-                <Button size="lg" variant="outline">
-                  Preise vergleichen
-                </Button>
+              <Link
+                href="/preise"
+                className={buttonVariants({ variant: "outline", size: "lg" })}
+              >
+                Preise vergleichen
               </Link>
             </div>
           </div>

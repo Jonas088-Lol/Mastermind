@@ -32,7 +32,7 @@ export default async function NoteNeuPage({ searchParams }: PageProps) {
 
   const [schoolClass, tscEntries] = await Promise.all([
     prisma.schoolClass.findUnique({
-      where: { id: classId },
+      where: { id: classId, schoolId: session.schoolId ?? "" },
       include: { students: { where: { role: "student" }, select: { id: true, name: true }, orderBy: { name: "asc" } } },
     }),
     prisma.teacherSubjectClass.findMany({

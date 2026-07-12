@@ -1,5 +1,6 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { prisma } from "@/lib/db/client";
+import { berlinDayKey, berlinStartOfDay } from "@/lib/date-de";
 import { checkAndAwardAchievements } from "@/lib/achievements";
 import { applyBoosterToXp } from "@/lib/booster";
 import { awardCoins, COIN_REWARDS } from "@/lib/coins";
@@ -24,8 +25,13 @@ export function xpToNextLevel(xp: number): number {
   return currentLevel * 100 - xp;
 }
 
-function todayUTC(): string {
-  return new Date().toISOString().slice(0, 10);
+/**
+ * Heutiger Kalendertag in Europe/Berlin ("YYYY-MM-DD"). Streak-Grenzen richten
+ * sich nach der deutschen Ortszeit, nicht nach UTC — sonst würde der Streak für
+ * deutsche Nutzer nachts um 1–2 Uhr auf den falschen Tag kippen.
+ */
+function todayBerlin(): string {
+  return berlinDayKey();
 }
 
 async function awardXpCore(
@@ -34,19 +40,54 @@ async function awardXpCore(
   reason: string,
   referenceId?: string
 ): Promise<{ newStreak: number; prevStreak: number }> {
-  const today = todayUTC();
+  // Alle Tagesgrenzen in Europe/Berlin, damit Aktivität dem richtigen deutschen
+  // Kalendertag zugeordnet wird (siehe todayBerlin / date-de).
+  const today = todayBerlin();
+  const startOfToday = berlinStartOfDay();
 
   const user = await prisma.user.findUnique({
     where: { id: userId },
-    select: { streak: true, lastActiveDate: true },
+    select: { streak: true, lastActiveDate: true, streakFreezes: true },
   });
 
-  let newStreak = user?.streak ?? 0;
-  const lastDate = user?.lastActiveDate?.toISOString().slice(0, 10);
+  const prevStreak = user?.streak ?? 0;
+  let newStreak = prevStreak;
+  const lastActive = user?.lastActiveDate ?? null;
+  const lastDate = lastActive ? berlinDayKey(lastActive) : undefined;
 
   if (lastDate !== today) {
-    const yesterday = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
-    newStreak = lastDate === yesterday ? newStreak + 1 : 1;
+    const yesterday = berlinDayKey(new Date(Date.now() - 86_400_000));
+    let candidate = 1;
+    let freezesUsed = 0;
+    if (lastDate === yesterday) {
+      candidate = prevStreak + 1;
+    } else if (lastActive) {
+      // Lücke von >= 1 Tag: gekaufte Streak-Freezes decken die verpassten Tage ab
+      const gapDays = Math.max(
+        0,
+        Math.round((startOfToday.getTime() - berlinStartOfDay(lastActive).getTime()) / 86_400_000) - 1
+      );
+      if (gapDays > 0 && (user?.streakFreezes ?? 0) >= gapDays) {
+        candidate = prevStreak + 1;
+        freezesUsed = gapDays;
+      }
+    }
+
+    // Konditionales Update: Nur der ERSTE Award des Tages schreibt den Streak
+    // fort (Gate: lastActiveDate < heute). Zwei parallele Requests würden sonst
+    // beide den Milestone-Übergang sehen und die Streak-Coins doppelt vergeben.
+    const rollover = await prisma.user.updateMany({
+      where: {
+        id: userId,
+        OR: [{ lastActiveDate: null }, { lastActiveDate: { lt: startOfToday } }],
+      },
+      data: {
+        streak: candidate,
+        lastActiveDate: new Date(),
+        ...(freezesUsed > 0 ? { streakFreezes: { decrement: freezesUsed } } : {}),
+      },
+    });
+    if (rollover.count > 0) newStreak = candidate;
   }
 
   await prisma.$transaction([
@@ -55,13 +96,12 @@ async function awardXpCore(
       where: { id: userId },
       data: {
         xp: { increment: amount },
-        streak: newStreak,
         lastActiveDate: new Date(),
       },
     }),
   ]);
 
-  return { newStreak, prevStreak: user?.streak ?? 0 };
+  return { newStreak, prevStreak };
 }
 
 /** Award a fixed XP amount with an arbitrary reason string (for skill tree rank-ups etc.) */

@@ -408,7 +408,10 @@ p, span, input, textarea, [contenteditable] {
 * { scrollbar-width: none; }
 
 @media (prefers-color-scheme: dark) {
-  :root { color-scheme: dark; }
+  /* Nur solange kein explizites Theme gesetzt ist — sonst überschreibt diese
+     ungelayerte Regel die @layer-base-Regeln (html / html[data-theme="dark"])
+     und dunkle Formularelemente erscheinen im hellen Theme (OS dunkel, App hell). */
+  :root:not([data-theme]) { color-scheme: dark; }
 }
 
 @supports (padding-top: env(safe-area-inset-top)) {
@@ -450,14 +453,15 @@ p, span, input, textarea, [contenteditable] {
     border-radius: 0 !important;
     background: transparent !important;
     -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .ws-print-container canvas {
     border: 1px solid #ccc !important;
   }
 
-  .ws-correct { background-color: #d1fae5 !important; -webkit-print-color-adjust: exact; }
-  .ws-wrong   { background-color: #fee2e2 !important; -webkit-print-color-adjust: exact; }
+  .ws-correct { background-color: #d1fae5 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ws-wrong   { background-color: #fee2e2 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
   @page {
     margin: 1.5cm;

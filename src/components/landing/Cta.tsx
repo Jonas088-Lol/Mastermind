@@ -1,7 +1,8 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 
 const trustBadges = [
@@ -30,20 +31,26 @@ export function Cta() {
 
         <AnimateOnScroll animation="fade-up" delay={160} className="mt-10">
           <div className="flex flex-col items-center gap-3 sm:flex-row">
-            <Button
-              size="lg"
-              className="pastel-cta w-full sm:w-auto"
+            <Link
+              href="/kontakt"
+              className={buttonVariants({
+                size: "lg",
+                className: "pastel-cta w-full sm:w-auto",
+              })}
             >
               Pilot anfragen
               <ArrowRight className="size-4" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto"
+            </Link>
+            <Link
+              href="/downloads"
+              className={buttonVariants({
+                variant: "outline",
+                size: "lg",
+                className: "w-full sm:w-auto",
+              })}
             >
               Whitepaper laden →
-            </Button>
+            </Link>
           </div>
         </AnimateOnScroll>
 

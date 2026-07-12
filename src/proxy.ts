@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { GATE_COOKIE, isGateValid } from "@/lib/gate";
-import { runFirewall, recordAuthFailure } from "@/lib/security/firewall";
+import { runFirewall } from "@/lib/security/firewall";
 
 const MAINTENANCE = process.env.MAINTENANCE_MODE === "true";
 const BYPASS_TOKEN = process.env.MAINTENANCE_BYPASS_TOKEN ?? "";
@@ -150,13 +150,12 @@ export async function proxy(req: NextRequest) {
     }
   }
 
-  // Record auth failures (called after failed login — see login actions.ts)
-  // The app sets a header x-auth-failed: 1 on 401 responses; we detect it here
-  // to feed Layer 3 data without needing a DB query in proxy.
-  const authFailed = req.headers.get("x-auth-failed") === "1";
-  if (authFailed) {
-    recordAuthFailure(fw.ip);
-  }
+  // HINWEIS: Früher wurde hier ein "x-auth-failed"-REQUEST-Header ausgewertet,
+  // um Layer 3 (Brute-Force) zu füttern. Das war doppelt falsch: Response-Header
+  // der App erreichen den Proxy nie als Request-Header (der Hook feuerte also
+  // nie legitim), und ein Angreifer konnte den Header selbst setzen und — ggf.
+  // kombiniert mit gespooftem x-real-ip — beliebige IPs sperren lassen (DoS).
+  // Auth-Fehler-Erkennung muss serverseitig erfolgen (siehe firewall.recordAuthFailure).
 
   const isNativeApp = req.headers.get("user-agent")?.includes("MasterMindApp/") ?? false;
 

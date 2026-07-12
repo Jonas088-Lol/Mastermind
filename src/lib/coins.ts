@@ -60,14 +60,19 @@ export async function spendCoins(
   reason: string,
   referenceId?: string,
 ): Promise<boolean> {
-  const user = await prisma.user.findUnique({ where: { id: userId }, select: { coins: true } });
-  if (!user || user.coins < amount) return false;
+  if (!Number.isFinite(amount) || amount <= 0) return false;
 
-  await prisma.$transaction([
-    prisma.user.update({ where: { id: userId }, data: { coins: { decrement: amount } } }),
-    prisma.coinLog.create({ data: { userId, amount: -amount, reason, referenceId } }),
-  ]);
-  return true;
+  // Atomarer, konditionaler Abzug: verhindert Race (zwei parallele Käufe mit
+  // einem Guthaben) und negative Kontostände — kein Check-then-Act.
+  return prisma.$transaction(async (tx) => {
+    const updated = await tx.user.updateMany({
+      where: { id: userId, coins: { gte: amount } },
+      data: { coins: { decrement: amount } },
+    });
+    if (updated.count === 0) return false;
+    await tx.coinLog.create({ data: { userId, amount: -amount, reason, referenceId } });
+    return true;
+  });
 }
 
 export async function getBalance(userId: string): Promise<number> {

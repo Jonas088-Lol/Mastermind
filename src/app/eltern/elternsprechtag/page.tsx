@@ -51,6 +51,7 @@ export default async function ElternsprechtPage() {
     where: {
       isBooked: false,
       startsAt: { gte: now },
+      teacher: { schoolId: session.schoolId ?? "" },
     },
     include: {
       teacher: { select: { id: true, name: true } },

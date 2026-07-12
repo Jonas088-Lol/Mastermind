@@ -1,8 +1,10 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use server";
+import { randomBytes } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
+import { hashPassword } from "@/lib/auth/passwords";
 import { effectiveRole, getSession } from "@/lib/session";
 
 type ImportRow = { name: string; email: string; klasse?: string; role: "student" | "teacher" };
@@ -12,9 +14,11 @@ export async function importUsers(formData: FormData): Promise<void> {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "admin") redirect("/login");
 
-  const csvRaw = formData.get("csv") as string;
-  const defaultRole = (formData.get("role") as string || "student") as "student" | "teacher";
-  const schoolId = session.schoolId!;
+  if (!session.schoolId) redirect("/admin");
+
+  const csvRaw = String(formData.get("csv") ?? "");
+  const defaultRole = (formData.get("role") === "teacher" ? "teacher" : "student") as "student" | "teacher";
+  const schoolId = session.schoolId;
 
   const lines = csvRaw.split("\n").map(l => l.trim()).filter(Boolean);
   // Skip header if first line contains "name" or "email"
@@ -31,8 +35,13 @@ export async function importUsers(formData: FormData): Promise<void> {
     const existing = await prisma.user.findFirst({ where: { email } });
     if (existing) { skipped++; continue; }
 
+    // Temporäres Passwort wie in admin/nutzer/neu — kein leerer Hash, sonst
+    // ist Login unmöglich und kein Passwort-Reset-Flow greift.
+    const tempPassword = randomBytes(8).toString("hex");
+    const passwordHash = await hashPassword(tempPassword);
+
     await prisma.user.create({
-      data: { name, email, role: defaultRole, schoolId, klasse: klasse || null, passwordHash: "" },
+      data: { name, email, role: defaultRole, schoolId, klasse: klasse || null, passwordHash },
     });
     created++;
   }

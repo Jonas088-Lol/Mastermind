@@ -193,6 +193,7 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
     document.addEventListener("scroll",     onActivity, { passive: true, capture: true });
     document.addEventListener("touchmove",  onActivity, { passive: true, capture: true });
     return () => {
+      if (hideTimerRef.current) clearTimeout(hideTimerRef.current);
       document.removeEventListener("scroll",    onActivity, { capture: true });
       document.removeEventListener("touchmove", onActivity, { capture: true });
     };

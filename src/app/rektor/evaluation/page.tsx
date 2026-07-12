@@ -17,9 +17,12 @@ export default async function EvaluationPage() {
   const [teachers, allGrades] = await Promise.all([
     prisma.user.findMany({
       where: { schoolId, role: "teacher" },
-      include: {
+      select: {
+        id: true,
+        name: true,
+        email: true,
         teacherSubjectClasses: {
-          include: {
+          select: {
             subject: { select: { name: true, color: true } },
             class: { select: { name: true } },
           },

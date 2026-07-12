@@ -1,9 +1,11 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use server";
 
+import { randomBytes } from "node:crypto";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
+import { hashPassword } from "@/lib/auth/passwords";
 import { effectiveRole, getSession } from "@/lib/session";
 
 export async function registerNewStudent(formData: FormData): Promise<void> {
@@ -19,14 +21,36 @@ export async function registerNewStudent(formData: FormData): Promise<void> {
   const parentEmail = (formData.get("parentEmail") as string) || null;
 
   if (!name || !email) return;
+  if (!session.schoolId) redirect("/sekretariat");
 
-  const schoolId = session.schoolId!;
+  const schoolId = session.schoolId;
+
+  // Doppelte E-Mail würde am Unique-Constraint crashen (Fehlerseite)
+  const existing = await prisma.user.findUnique({
+    where: { email: email.trim().toLowerCase() },
+    select: { id: true },
+  });
+  if (existing) return;
+
+  // Klasse muss zur eigenen Schule gehören — sonst schulfremde Zuweisung möglich
+  if (classId) {
+    const klass = await prisma.schoolClass.findUnique({
+      where: { id: classId },
+      select: { schoolId: true },
+    });
+    if (!klass || klass.schoolId !== schoolId) return;
+  }
+
+  // Temporäres Passwort wie in admin/nutzer/neu — kein leerer Hash, sonst
+  // ist Login unmöglich und kein Passwort-Reset-Flow greift.
+  const tempPassword = randomBytes(8).toString("hex");
+  const passwordHash = await hashPassword(tempPassword);
 
   const student = await prisma.user.create({
     data: {
       name,
-      email,
-      passwordHash: "",
+      email: email.trim().toLowerCase(),
+      passwordHash,
       role: "student",
       schoolId,
       classId: classId || null,

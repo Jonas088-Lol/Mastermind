@@ -21,6 +21,13 @@ export async function createClassJoinCode(classId: string, schoolId: string, for
   if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
   if (session.schoolId !== schoolId) redirect("/admin");
 
+  // Klasse muss zur eigenen Schule gehören — sonst Join-Codes für fremde Klassen erstellbar
+  const klass = await prisma.schoolClass.findUnique({
+    where: { id: classId },
+    select: { schoolId: true },
+  });
+  if (!klass || klass.schoolId !== schoolId) redirect("/admin");
+
   const maxUses = Math.max(1, parseInt(formData.get("maxUses") as string) || 30);
   const expiresInDays = parseInt(formData.get("expiresInDays") as string) || 0;
   const expiresAt = expiresInDays > 0

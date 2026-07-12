@@ -76,6 +76,14 @@ export async function POST(req: NextRequest) {
     await writeFile(tempPath, chunk);
   }
 
+  // Tatsächliche Größe erzwingen — der X-Total-Size-Header ist nur eine
+  // Client-Angabe (sonst Disk-Fill-DoS über beliebig viele Chunks).
+  if ((await stat(tempPath)).size > MAX_FILE_SIZE) {
+    const { unlink } = await import("fs/promises");
+    await unlink(tempPath).catch(() => undefined);
+    return Response.json({ error: "Datei zu groß (max. 500 MB)" }, { status: 413 });
+  }
+
   // Last chunk → finalize
   if (chunkIndex + 1 >= totalChunks) {
     const safeName = filename.replace(/[^a-zA-Z0-9._-]/g, "_").slice(0, 200);

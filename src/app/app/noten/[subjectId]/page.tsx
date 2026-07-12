@@ -42,9 +42,10 @@ export default async function NotenDetailPage({ params }: Props) {
 
   const subject = await prisma.subject.findUnique({
     where: { id: subjectId },
-    select: { id: true, name: true, shortName: true, color: true },
+    select: { id: true, name: true, shortName: true, color: true, schoolId: true },
   });
   if (!subject) notFound();
+  if (subject.schoolId !== session.schoolId) notFound();
 
   const grades = await prisma.grade.findMany({
     where: { studentId: session.userId, subjectId },

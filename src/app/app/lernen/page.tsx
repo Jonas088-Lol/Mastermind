@@ -18,7 +18,7 @@ export default async function LernenPage() {
 
   const [paths, progressRecords] = await Promise.all([
     prisma.learningPath.findMany({
-      where: { schoolId: session.schoolId ?? undefined },
+      where: { schoolId: session.schoolId ?? "" },
       include: {
         subject: { select: { name: true, shortName: true, color: true } },
         _count: { select: { modules: true } },

@@ -9,7 +9,7 @@ export async function POST(request: Request) {
   const session = await getSession();
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const body = await request.json() as { token?: string; platform?: string };
+  const body = (await request.json().catch(() => ({}))) as { token?: string; platform?: string };
   const { token, platform } = body;
 
   if (!token || typeof token !== "string") {

@@ -106,6 +106,12 @@ export function TutorChat({
     });
   }, [messages]);
 
+  // Laufenden Stream beim Unmount abbrechen — sonst konsumiert der fetch im
+  // Hintergrund weiter (Quota) und setMessages feuert nach dem Unmount.
+  useEffect(() => {
+    return () => abortRef.current?.abort();
+  }, []);
+
   // Populate textarea when a quick-prompt or recent topic is selected.
   // The dependency on injectedPrompt.seq ensures this runs even when the same
   // prompt text is clicked twice in a row.

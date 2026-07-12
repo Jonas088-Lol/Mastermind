@@ -46,7 +46,9 @@ echo "✓ App gestartet"
 # ── 5. Health-Check abwarten ──────────────────────────────────────────────
 echo "⏳ Warte auf Health-Check..."
 RETRIES=30
-until curl -sf http://localhost:3000/api/health > /dev/null 2>&1; do
+# Port 3000 ist nicht auf den Host gemappt (nur nginx published Ports) —
+# deshalb im App-Container prüfen, wie es auch der Compose-Healthcheck tut.
+until $COMPOSE exec -T app wget -qO- http://127.0.0.1:3000/api/health > /dev/null 2>&1; do
   RETRIES=$((RETRIES - 1))
   if [ "$RETRIES" -le 0 ]; then
     echo "✗ Health-Check fehlgeschlagen — Logs:"

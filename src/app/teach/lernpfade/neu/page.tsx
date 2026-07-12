@@ -16,7 +16,7 @@ export default async function NeuLernpfadPage() {
   if (effectiveRole(session) !== "teacher") redirect("/");
 
   const subjects = await prisma.subject.findMany({
-    where: session.schoolId ? { schoolId: session.schoolId } : {},
+    where: { schoolId: session.schoolId ?? "" },
     orderBy: { name: "asc" },
     select: { id: true, name: true },
   });

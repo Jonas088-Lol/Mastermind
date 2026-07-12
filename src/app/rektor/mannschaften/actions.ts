@@ -100,6 +100,9 @@ export async function deleteResult(teamId: string, resultIndex: number): Promise
   let results: MatchResult[] = [];
   try { results = JSON.parse(team.results ?? "[]") as MatchResult[]; } catch { results = []; }
 
+  // Index validieren — splice(-1) würde sonst das falsche (letzte) Ergebnis löschen
+  if (!Number.isInteger(resultIndex) || resultIndex < 0 || resultIndex >= results.length) return;
+
   results.splice(resultIndex, 1);
 
   await prisma.schoolTeam.update({

@@ -187,6 +187,9 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
   const footerRef = useRef<HTMLDivElement>(null);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSaved = useRef<string>("");
+  // Zuletzt gespeicherter Titel — Vergleich mit initialTitle würde ein
+  // Zurück-Umbenennen auf den Ursprungstitel verschlucken.
+  const savedTitle = useRef(initialTitle);
 
   useEffect(() => {
     if (!editorRef.current) return;
@@ -195,7 +198,10 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
       try {
         const blocks = JSON.parse(html) as Array<{ text?: string; content?: string }>;
         html = blocks.map((b) => `<p>${b.text ?? b.content ?? ""}</p>`).join("");
-      } catch { html = ""; }
+      } catch {
+        // Kein Legacy-JSON (z. B. Dokument beginnt mit "[…]") — HTML unverändert
+        // lassen statt den Inhalt auf "" zu leeren.
+      }
     }
     editorRef.current.innerHTML = html || "<p><br></p>";
     setWordCount(countWords(html));
@@ -239,7 +245,10 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
     const val = title.trim() || "Unbenanntes Dokument";
     setTitle(val);
     setEditingTitle(false);
-    if (val !== initialTitle) startTransition(() => renameDocument(documentId, val));
+    if (val !== savedTitle.current) {
+      savedTitle.current = val;
+      startTransition(() => renameDocument(documentId, val));
+    }
   }
 
   function handleDelete() {
@@ -413,7 +422,7 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
         <div className="min-w-0 flex-1">
           {editingTitle ? (
             <input autoFocus value={title} onChange={(e) => setTitle(e.target.value)} onBlur={commitTitle}
-              onKeyDown={(e) => { if (e.key === "Enter") commitTitle(); if (e.key === "Escape") { setTitle(initialTitle); setEditingTitle(false); } }}
+              onKeyDown={(e) => { if (e.key === "Enter") commitTitle(); if (e.key === "Escape") { setTitle(savedTitle.current); setEditingTitle(false); } }}
               className="w-full border-b border-brand bg-transparent text-sm font-semibold focus:outline-none" />
           ) : (
             <button type="button" onClick={() => setEditingTitle(true)} className="truncate text-sm font-semibold hover:text-brand">{title}</button>

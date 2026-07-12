@@ -173,6 +173,7 @@ export function StudentTaskView({ task, progress }: { task: Task; progress: Prog
                 <button
                   type="button"
                   onClick={() => setUploadedFile(null)}
+                  aria-label="Datei entfernen"
                   className="text-muted-foreground hover:text-destructive shrink-0"
                 >
                   ✕

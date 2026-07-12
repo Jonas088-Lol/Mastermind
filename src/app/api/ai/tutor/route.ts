@@ -139,17 +139,33 @@ export async function POST(req: Request) {
     );
   }
 
-  const lastUser = body.messages[body.messages.length - 1];
-  if (lastUser.role !== "user" || typeof lastUser.content !== "string") {
+  // Nur die letzten 12 Nachrichten gehen an die KI — alle validieren, nicht
+  // nur die letzte (sonst: TypeError → 500 bei Nicht-Objekten bzw. riesige
+  // Alt-Nachrichten als Kosten-/DoS-Vektor).
+  const history = body.messages.slice(-12);
+  const isValidMessage = (m: unknown): m is { role: "user" | "assistant"; content: string } =>
+    !!m &&
+    typeof m === "object" &&
+    ((m as { role?: unknown }).role === "user" || (m as { role?: unknown }).role === "assistant") &&
+    typeof (m as { content?: unknown }).content === "string";
+  if (!history.every(isValidMessage)) {
     return NextResponse.json(
-      { error: "Letzte Nachricht muss vom User sein" },
+      { error: "Ungültiges Nachrichtenformat" },
       { status: 400 }
     );
   }
-  if (lastUser.content.length > 8000) {
+  if (history.some((m) => m.content.length > 8000)) {
     return NextResponse.json(
       { error: "Anfrage zu lang (max 8000 Zeichen)" },
       { status: 413 }
+    );
+  }
+
+  const lastUser = history[history.length - 1];
+  if (lastUser.role !== "user") {
+    return NextResponse.json(
+      { error: "Letzte Nachricht muss vom User sein" },
+      { status: 400 }
     );
   }
 
@@ -183,7 +199,7 @@ export async function POST(req: Request) {
         const systemPrompt = await buildSystemPrompt(session.userId);
         for await (const chunk of chatStream({
           system: systemPrompt,
-          messages: body.messages.slice(-12),
+          messages: history,
           model: MODELS.balanced,
           maxTokens: 2048,
         })) {

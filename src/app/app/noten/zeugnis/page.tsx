@@ -67,8 +67,12 @@ export default async function ZeugnisPage() {
       ? subjects.reduce((s, x) => s + x.avg, 0) / subjects.length
       : 0;
 
-  const currentYear = new Date().getFullYear();
-  const schoolYear = `${currentYear - 1}/${String(currentYear).slice(2)}`;
+  const now = new Date();
+  const month = now.getMonth() + 1;
+  // Schuljahr beginnt im September; Halbjahr 1 = Sep–Jan, Halbjahr 2 = Feb–Aug
+  const schoolYearStart = month >= 9 ? now.getFullYear() : now.getFullYear() - 1;
+  const schoolYear = `${schoolYearStart}/${String(schoolYearStart + 1).slice(2)}`;
+  const halbjahr = month >= 2 && month <= 8 ? 2 : 1;
 
   const today = new Date().toLocaleDateString("de-DE", {
     day: "2-digit",
@@ -133,7 +137,7 @@ export default async function ZeugnisPage() {
               </div>
               <div>
                 <dt className="text-[10px] font-semibold uppercase tracking-wider text-gray-400">Halbjahr</dt>
-                <dd className="mt-1 font-semibold">1. Halbjahr</dd>
+                <dd className="mt-1 font-semibold">{halbjahr}. Halbjahr</dd>
               </div>
             </dl>
           </div>

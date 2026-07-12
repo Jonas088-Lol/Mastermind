@@ -45,7 +45,7 @@ export function DailyGoalCard({
     <Card
       className={cn(
         "rounded-2xl shadow-sm",
-        allDone && "border-success/40 bg-gradient-to-br from-success/6 to-transparent",
+        allDone && "border-success/40 bg-linear-to-br from-success/6 to-transparent",
       )}
     >
       <CardBody className="p-5!">

@@ -16,14 +16,29 @@ export async function submitAnswer(
   const session = await getSession();
   if (!session) redirect("/login");
 
+  // Frage muss existieren (sonst FK-Fehler → Crash der Action)
+  const question = await prisma.quizQuestion.findUnique({
+    where: { id: questionId },
+    select: { id: true },
+  });
+  if (!question) return;
+
   await prisma.quizAnswer.create({
-    data: { userId: session.userId, questionId, answer, correct },
+    data: { userId: session.userId, questionId, answer: String(answer ?? "").slice(0, 1000), correct: Boolean(correct) },
   });
 }
 
 export async function completeModule(pathId: string, moduleId: string): Promise<void> {
   const session = await getSession();
   if (!session) redirect("/login");
+
+  // Modul muss existieren und zum angegebenen Pfad gehören
+  // (sonst FK-Fehler → Crash bzw. Fortschritt unter falschem Pfad)
+  const learningModule = await prisma.learningModule.findUnique({
+    where: { id: moduleId },
+    select: { pathId: true },
+  });
+  if (!learningModule || learningModule.pathId !== pathId) return;
 
   const existing = await prisma.learningProgress.findUnique({
     where: { userId_moduleId: { userId: session.userId, moduleId } },

@@ -27,7 +27,10 @@ export async function createLesson(formData: FormData) {
   });
   if (!tsc) throw new Error("Unauthorized");
 
-  const lessonDate = dateStr ? new Date(dateStr) : new Date();
+  // Ungültige Datumseingabe darf keine "Invalid Date" an Prisma (DateTime) geben
+  // und würde sonst auch lesson.date.toISOString() im Redirect crashen.
+  const parsedDate = dateStr ? new Date(dateStr) : new Date();
+  const lessonDate = isNaN(parsedDate.getTime()) ? new Date() : parsedDate;
 
   // Fetch students of the class
   const students = await prisma.user.findMany({

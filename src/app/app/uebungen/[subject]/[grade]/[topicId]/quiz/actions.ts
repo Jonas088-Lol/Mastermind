@@ -13,6 +13,17 @@ export async function saveQuizResult(topicId: string, score: number, maxCombo?: 
   const session = await getSession();
   if (!session) return;
 
+  // Eingaben validieren: score 0–100 (ganzzahlig), Topic muss existieren
+  // (sonst FK-Fehler → Crash), maxCombo geclampt (sonst unbegrenzte Bonus-XP).
+  if (!Number.isInteger(score) || score < 0 || score > 100) return;
+  const topic = await prisma.exerciseTopic.findUnique({
+    where: { id: topicId },
+    select: { _count: { select: { questions: true } } },
+  });
+  if (!topic) return;
+  const comboCap = Math.max(0, topic._count.questions);
+  const safeCombo = maxCombo ? Math.min(Math.max(0, Math.floor(maxCombo)), comboCap) : 0;
+
   const existing = await prisma.exerciseProgress.findUnique({
     where: { userId_topicId: { userId: session.userId, topicId } },
     select: { score: true },
@@ -35,9 +46,9 @@ export async function saveQuizResult(topicId: string, score: number, maxCombo?: 
   }
 
   // Award combo bonus XP if combo was active
-  if (maxCombo && maxCombo >= 3) {
-    const comboXp = maxCombo * 15;
-    await awardXpCustom(session.userId, comboXp, `combo_bonus_${maxCombo}x`, topicId);
+  if (safeCombo >= 3) {
+    const comboXp = safeCombo * 15;
+    await awardXpCustom(session.userId, comboXp, `combo_bonus_${safeCombo}x`, topicId);
   }
 
   // Update quest progress for exercise category (1 exercise completed)

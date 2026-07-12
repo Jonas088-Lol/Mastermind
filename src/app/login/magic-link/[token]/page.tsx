@@ -3,6 +3,7 @@ import { AlertTriangle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { setPending2FA } from "@/lib/auth/pending-2fa";
 import { consumeToken } from "@/lib/auth/tokens";
 import { prisma } from "@/lib/db/client";
 import { ClientRedirect } from "@/components/ClientRedirect";
@@ -33,14 +34,21 @@ export default async function MagicLinkConsumePage({ params }: PageProps) {
   const user = consumed.userId
     ? await prisma.user.findUnique({
         where: { id: consumed.userId },
-        select: { email: true, role: true },
+        select: { id: true, email: true, role: true, twoFactor: true },
       })
     : await prisma.user.findUnique({
         where: { email: consumed.email },
-        select: { email: true, role: true },
+        select: { id: true, email: true, role: true, twoFactor: true },
       });
 
   if (!user) return <InvalidLink />;
+
+  // 2FA-Gate: Magic-Link ersetzt nur das Passwort, nicht den zweiten Faktor —
+  // gleiche Behandlung wie loginWithCredentials (kein 2FA-Bypass per E-Mail-Link).
+  if (user.twoFactor) {
+    await setPending2FA({ userId: user.id, email: user.email });
+    redirect("/login/2fa");
+  }
 
   await setSession({ email: user.email, realRole: user.role as Role });
   redirect(ROLE_HOME[user.role as Role]);

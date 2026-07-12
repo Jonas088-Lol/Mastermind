@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  ClipboardList,
-  Sparkles,
   BarChart2,
-  Users,
+  CalendarClock,
   Bell,
+  ShieldCheck,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
@@ -16,65 +15,55 @@ import { FeatureMockup } from "@/components/marketing/FeatureMockup";
 type MockupKey = "chat" | "dashboard" | "grades" | "flashcard" | "assignment" | "analytics" | "admin" | "security" | "learning";
 
 export const metadata: Metadata = {
-  title: "Für Lehrer | MasterMind",
+  title: "Für Eltern | MasterMind",
   description:
-    "MasterMind für Lehrkräfte: Aufgaben erstellen, KI-Vorkorrektur, Notenmanagement, Klassenanalyse und Broadcast — weniger Verwaltung, mehr Unterricht.",
+    "MasterMind für Eltern: Noten und Fehlzeiten im Blick, Krankmeldung in wenigen Klicks, Elterngespräche online buchen und Lernfortschritt des Kindes verfolgen — DSGVO-konform.",
 };
 
 const sections: { icon: React.ComponentType<{ className?: string; strokeWidth?: number }>; title: string; bullets: string[]; mockup: MockupKey }[] = [
   {
-    icon: ClipboardList,
-    title: "Aufgaben erstellen — in Minuten",
-    mockup: "assignment",
-    bullets: [
-      "Hausaufgaben, Tests und Projekte mit wenigen Klicks erstellen",
-      "KI-Aufgaben-Generator: Thema eingeben, fertige Aufgabe erhalten",
-      "Datei-Uploads, Textabgaben und interaktive Quiz-Formate",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "KI-Vorkorrektur",
-    mockup: "chat",
-    bullets: [
-      "KI bewertet Abgaben nach deinen Kriterien vor — du hast die Endkontrolle",
-      "Automatische Rückmeldungs-Texte für jeden Schüler individualisiert",
-      "Spart durchschnittlich 60 % der Korrekturzeit",
-    ],
-  },
-  {
     icon: BarChart2,
-    title: "Notenmanagement",
+    title: "Noten & Lernfortschritt im Blick",
     mockup: "grades",
     bullets: [
-      "Alle Noten zentral erfassen — schriftlich, mündlich, praktisch",
-      "Gewichtung und Notenschlüssel frei konfigurierbar",
-      "Export als PDF, Excel oder direkt ins Zeugnis-System",
-    ],
-  },
-  {
-    icon: Users,
-    title: "Klassenanalyse",
-    mockup: "analytics",
-    bullets: [
-      "Kompetenz-Heatmap zeigt Lernlücken in der Klasse auf einen Blick",
-      "Differenzierung leicht gemacht: Gruppen nach Leistungsstand filtern",
-      "Lernfortschritt im Zeitverlauf — vor und nach einer Unterrichtseinheit",
+      "Alle Noten des Kindes zentral und immer aktuell einsehen",
+      "Wochenbericht mit Lernaktivität, Fehlzeiten und Trend zur Vorwoche",
+      "Leistungsentwicklung über die Zeit graphisch verfolgen",
     ],
   },
   {
     icon: Bell,
-    title: "Broadcast & Kommunikation",
+    title: "Krankmeldung in wenigen Klicks",
     mockup: "dashboard",
     bullets: [
-      "Klassen-Nachrichten und Erinnerungen per Push oder E-Mail",
-      "Eltern-Kommunikation DSGVO-konform direkt in MasterMind",
-      "Automatische Reminder 2 Stunden vor Abgabeschluss",
+      "Kind mit wenigen Klicks krankmelden — digital statt Zettel",
+      "Automatische Erinnerungen an wichtige Abgaben und Termine",
+      "Wichtige Schulnachrichten direkt per Benachrichtigung",
+    ],
+  },
+  {
+    icon: CalendarClock,
+    title: "Elterngespräche online buchen",
+    mockup: "assignment",
+    bullets: [
+      "Freie Sprechstunden-Slots der Lehrkräfte auf einen Blick",
+      "Termin in Sekunden buchen — ohne Telefonate und Warteschleifen",
+      "Belohnungs-Versprechen als Motivation für dein Kind hinterlegen",
+    ],
+  },
+  {
+    icon: ShieldCheck,
+    title: "Sicher & DSGVO-konform",
+    mockup: "security",
+    bullets: [
+      "Server in Deutschland, keine Weitergabe an Dritte",
+      "Nur Zugriff auf die Daten des eigenen Kindes",
+      "Kein Tracking, kein Datenverkauf",
     ],
   },
 ];
 
-export default function FuerLehrerPage() {
+export default function FuerElternPage() {
   return (
     <>
       {/* Hero */}
@@ -83,14 +72,15 @@ export default function FuerLehrerPage() {
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow">
               <span className="inline-block size-1.5 bg-brand" />
-              Für Lehrer
+              Für Eltern
             </span>
             <h1 className="mt-4 text-4xl sm:text-5xl">
-              Weniger Verwaltung, mehr Unterricht
+              Immer nah dran am Schulalltag
             </h1>
             <p className="mt-5 text-lg text-muted-fg">
-              MasterMind nimmt Lehrkräften den Papierkram ab. Aufgaben, Korrekturen,
-              Noten und Kommunikation — alles an einem Ort, mit KI-Unterstützung.
+              MasterMind hält Eltern auf dem Laufenden: Noten, Fehlzeiten und
+              Termine an einem Ort — Krankmeldung und Elterngespräche mit wenigen
+              Klicks, sicher und DSGVO-konform.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
@@ -151,23 +141,24 @@ export default function FuerLehrerPage() {
       <section className="section">
         <Container>
           <div className="mx-auto max-w-xl text-center">
-            <h2 className="text-3xl sm:text-4xl">Bereit, Zeit zu sparen?</h2>
+            <h2 className="text-3xl sm:text-4xl">Ihre Schule nutzt MasterMind noch nicht?</h2>
             <p className="mt-4 text-lg text-muted-fg">
-              Sprich deine Schulleitung an oder buche direkt eine persönliche Demo.
+              Empfehlen Sie MasterMind Ihrer Schulleitung — oder buchen Sie eine
+              unverbindliche Demo.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/kontakt"
                 className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
               >
-                Persönliche Demo buchen
+                Demo buchen
                 <ArrowRight className="size-4" />
               </Link>
               <Link
-                href="/preise"
+                href="/funktionen"
                 className={buttonVariants({ variant: "outline", size: "lg" })}
               >
-                Preise ansehen
+                Alle Funktionen ansehen
               </Link>
             </div>
           </div>

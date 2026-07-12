@@ -47,9 +47,9 @@ echo "   → SSH separat und bewusst härten: siehe docs/security/ssh-setup.md"
 echo "   (erst Key einrichten + testen, DANN Passwort-Login abschalten)"
 
 echo "==> auditd-Regeln für sensible Dateien…"
-cat > /etc/audit/rules.d/mastermind.rules <<'EOF'
+cat > /etc/audit/rules.d/mastermind.rules <<EOF
 # Überwache Änderungen an Secrets & sicherheitsrelevanten Configs
--w /root/Mastermind/.env.production -p wa -k mm_secrets
+-w $REPO_DIR/.env.production -p wa -k mm_secrets
 -w /etc/ssh/sshd_config -p wa -k sshd_config
 -w /etc/ssh/sshd_config.d/ -p wa -k sshd_config
 -w /etc/sudoers -p wa -k sudoers

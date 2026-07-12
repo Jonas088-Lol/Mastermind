@@ -35,7 +35,7 @@ const RARITY_STYLE: Record<string, { label: string; badge: string; border: strin
   EPIC:      { label: "Episch",       badge: "bg-brand/15 text-brand",                           border: "border-brand/30" },
   LEGENDARY: { label: "Legendär",     badge: "bg-warning/15 text-warning",                       border: "border-warning/40" },
   MYTHIC:    { label: "Mythisch",     badge: "bg-danger/15 text-danger",                         border: "border-danger/40" },
-  SECRET:    { label: "Geheim",       badge: "bg-yellow-500/15 text-yellow-400",                 border: "border-yellow-400/40" },
+  SECRET:    { label: "Geheim",       badge: "bg-yellow-500/15 text-yellow-600 dark:text-yellow-400", border: "border-yellow-400/40" },
 };
 
 const RARITY_FILTERS = ["COMMON", "UNCOMMON", "RARE", "EPIC", "LEGENDARY", "MYTHIC", "SECRET"] as const;
@@ -335,7 +335,7 @@ export default async function ShopPage({ searchParams }: PageProps) {
                 {/* Price + buy */}
                 <div className="mt-auto space-y-2">
                   {premium && !price ? (
-                    <div className="flex items-center gap-1 text-sm font-bold text-yellow-400">
+                    <div className="flex items-center gap-1 text-sm font-bold text-yellow-600 dark:text-yellow-400">
                       💎 {premium} Premium
                     </div>
                   ) : price ? (

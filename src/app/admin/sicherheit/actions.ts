@@ -26,7 +26,7 @@ export async function sendTwoFAReminders(): Promise<void> {
       type: "system",
       title: "Bitte 2FA aktivieren",
       body: "Die Schulleitung bittet Sie, die Zwei-Faktor-Authentifizierung in Ihrem Profil zu aktivieren.",
-      linkUrl: "/profil/sicherheit",
+      linkUrl: "/teach/einstellungen",
     })),
   });
 

@@ -1,6 +1,6 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type ToggleItem = {
   key: string;
@@ -17,15 +17,18 @@ export function ToggleSection({
   items: ToggleItem[];
   storageKey: string;
 }) {
-  const [values, setValues] = useState<Record<string, boolean>>(() => {
-    const defaults = Object.fromEntries(items.map((i) => [i.key, i.default]));
-    if (typeof window === "undefined") return defaults;
+  // Defaults für SSR + Hydration; localStorage erst NACH dem Mount lesen —
+  // im useState-Initializer rendert der Client sonst anders als der Server
+  // (Hydration-Mismatch).
+  const [values, setValues] = useState<Record<string, boolean>>(() =>
+    Object.fromEntries(items.map((i) => [i.key, i.default]))
+  );
+  useEffect(() => {
     try {
       const stored = localStorage.getItem(storageKey);
-      if (stored) return { ...defaults, ...JSON.parse(stored) };
+      if (stored) setValues((prev) => ({ ...prev, ...JSON.parse(stored) }));
     } catch {}
-    return defaults;
-  });
+  }, [storageKey]);
 
   function toggle(key: string) {
     setValues((prev) => {

@@ -6,7 +6,7 @@ import { logger } from "@/lib/logger";
 
 export async function GET(req: NextRequest) {
   const secret = req.headers.get("x-cron-secret");
-  if (secret !== process.env.CRON_SECRET) return new Response("Unauthorized", { status: 401 });
+  if (!process.env.CRON_SECRET || secret !== process.env.CRON_SECRET) return new Response("Unauthorized", { status: 401 });
 
   // Users who have a streak > 0 and haven't been active today
   const todayStr = new Date().toISOString().slice(0, 10);

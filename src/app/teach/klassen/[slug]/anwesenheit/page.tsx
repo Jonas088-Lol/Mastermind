@@ -25,7 +25,7 @@ export default async function AnwesenheitPage({ params }: PageParams) {
   if (effectiveRole(session) !== "teacher") redirect("/");
 
   const schoolClass = await prisma.schoolClass.findFirst({
-    where: { name: decodeURIComponent(slug) },
+    where: { name: decodeURIComponent(slug), schoolId: session.schoolId ?? "" },
     include: {
       students: {
         where: { role: "student" },

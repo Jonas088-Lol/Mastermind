@@ -10,7 +10,7 @@ export async function createDeck(formData: FormData) {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") throw new Error("Nur Schüler:innen können Decks erstellen");
 
-  const name = String(formData.get("name") ?? "").trim();
+  const name = String(formData.get("name") ?? "").trim().slice(0, 120);
   const subjectId = String(formData.get("subjectId") ?? "").trim();
 
   if (!name) throw new Error("Deck-Name ist erforderlich");

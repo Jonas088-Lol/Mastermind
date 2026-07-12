@@ -56,8 +56,8 @@ async function main(): Promise<void> {
         schwierigkeitScore: f.schwierigkeit_score,
         typ:                f.typ,
         frage:              f.frage,
-        antworten:          f.antwortmoeglichkeiten,  // Postgres: Json
-        loesung:            f.loesung,                // Postgres: String[]
+        antworten:          JSON.stringify(f.antwortmoeglichkeiten), // Schema: String (JSON-encoded)
+        loesung:            JSON.stringify(f.loesung),               // Schema: String (JSON-encoded)
         erklaerung:         f.erklaerung,
         modell:             f.modell ?? "ki-generiert",
         quelle:             "ki-generiert",

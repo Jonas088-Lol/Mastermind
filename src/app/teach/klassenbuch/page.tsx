@@ -53,32 +53,33 @@ export default async function KlassenbuchPage({ searchParams }: PageProps) {
   const todayStr = new Date().toISOString().slice(0, 10);
   const isToday = dayStart.toISOString().slice(0, 10) === todayStr;
 
-  const lessons = await prisma.lessonLog.findMany({
-    where: {
-      teacherId: session.userId,
-      date: { gte: dayStart, lt: dayEnd },
-    },
-    include: {
-      class: { select: { id: true, name: true } },
-      subject: { select: { name: true, shortName: true, color: true } },
-      attendanceRecords: {
-        include: { student: { select: { id: true, name: true } } },
+  const [lessons, incidents] = await Promise.all([
+    prisma.lessonLog.findMany({
+      where: {
+        teacherId: session.userId,
+        date: { gte: dayStart, lt: dayEnd },
       },
-    },
-    orderBy: { period: "asc" },
-  });
-
-  const incidents = await prisma.classbookIncident.findMany({
-    where: {
-      teacherId: session.userId,
-      date: { gte: dayStart, lt: dayEnd },
-    },
-    include: {
-      student: { select: { id: true, name: true } },
-      class: { select: { name: true } },
-    },
-    orderBy: { date: "desc" },
-  });
+      include: {
+        class: { select: { id: true, name: true } },
+        subject: { select: { name: true, shortName: true, color: true } },
+        attendanceRecords: {
+          include: { student: { select: { id: true, name: true } } },
+        },
+      },
+      orderBy: { period: "asc" },
+    }),
+    prisma.classbookIncident.findMany({
+      where: {
+        teacherId: session.userId,
+        date: { gte: dayStart, lt: dayEnd },
+      },
+      include: {
+        student: { select: { id: true, name: true } },
+        class: { select: { name: true } },
+      },
+      orderBy: { date: "desc" },
+    }),
+  ]);
 
   const allRecords = lessons.flatMap((l) => l.attendanceRecords);
   const totalPresent = allRecords.filter((a) => a.status === "anwesend").length;

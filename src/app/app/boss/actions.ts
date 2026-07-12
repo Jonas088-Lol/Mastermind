@@ -10,6 +10,7 @@ import { getEventMultiplier } from "@/lib/settings";
 import { onBossFightWin } from "@/lib/tree-quest-engine";
 import { BUILTIN_BOSS_QUESTIONS } from "@/lib/boss-fallback-questions";
 import { safeJsonParse } from "@/lib/safe-json";
+import { rateLimit } from "@/lib/security/rate-limit";
 import { logger } from "@/lib/logger";
 
 /** Antwortzeit unter diesem Wert → kritischer Treffer (doppelter Schaden). */
@@ -70,7 +71,7 @@ export async function attackBoss(
   try {
     return await attackBossInner(battleId, questionId, selectedOptionIndex, meta);
   } catch (err) {
-    logger.error("attackBoss failed", { battleId, questionId, err: err instanceof Error ? err.message : String(err) });
+    logger.error("attackBoss failed", err, { battleId, questionId });
     return { error: "Antwort konnte nicht verarbeitet werden" };
   }
 }
@@ -84,7 +85,14 @@ async function attackBossInner(
   const session = await getSession();
   if (!session || effectiveRole(session) !== "student") return { error: "Unauthorized" };
 
-  const battle = await prisma.bossBattle.findFirst({ where: { id: battleId, isActive: true, currentHp: { gt: 0 } } });
+  const battle = await prisma.bossBattle.findFirst({
+    where: {
+      id: battleId,
+      isActive: true,
+      currentHp: { gt: 0 },
+      OR: [{ schoolId: null }, { schoolId: session.schoolId ?? "" }],
+    },
+  });
   if (!battle) return { error: "Boss not active" };
 
   // Resolve question — builtin-Pool → boss-custom pool → Frage-Pool (fq_ prefix) → general pool
@@ -131,8 +139,18 @@ async function attackBossInner(
     explanation = (frageQ.erklaerung as string | undefined) ?? null;
   }
 
-  // Record seen status for boss-custom questions
+  // Record seen status for boss-custom questions — zugleich Replay-Exploit mindern:
+  // Eine bereits korrekt beantwortete Boss-Frage darf kein weiteres Mal Schaden
+  // verursachen, sonst wäre dieselbe Frage-ID + korrekter Index beliebig oft für
+  // Schaden spammbar (Solo-Kill durch Request-Spam).
   if (bossQ) {
+    const existingSeen = await prisma.bossQuestionSeen.findUnique({
+      where: { userId_questionId: { userId: session.userId, questionId: bossQ.id } },
+      select: { answeredCorrect: true },
+    });
+    if (existingSeen?.answeredCorrect) {
+      return { error: "Frage bereits beantwortet" };
+    }
     await prisma.bossQuestionSeen.upsert({
       where: { userId_questionId: { userId: session.userId, questionId: bossQ.id } },
       create: { userId: session.userId, questionId: bossQ.id, answeredCorrect: correct },
@@ -151,6 +169,17 @@ async function attackBossInner(
     return { correct: false, damage: 0, crit: false, newHp: battle.currentHp, maxHp: battle.maxHp, defeated: false, firstBlood: false, lastHit: false, coinsEarned: 0, correctIndex, explanation };
   }
 
+  // Replay-/Spam-Schutz für Fragen ohne per-User Seen-Tracking (Builtin-Pool,
+  // Frage-Pool, ExerciseQuestion): dieselbe Frage-ID + korrekter Index ließe sich
+  // sonst beliebig oft für Schaden senden. Serverseitiger Cooldown pro User+Battle
+  // drosselt den Schaden-Spam, ohne den normalen 1-Frage-1-Antwort-Fluss zu brechen.
+  if (!bossQ) {
+    const rl = await rateLimit({ scope: "boss-attack", key: `${session.userId}:${battleId}`, limit: 1, windowSec: 2 });
+    if (!rl.ok) {
+      return { error: "Zu schnell — kurz warten" };
+    }
+  }
+
   // Schadensberechnung: 1 Basis, +1 bei Crit (schnelle Antwort), +1 ab 5er-Streak.
   // elapsedMs/streak sind client-gemeldet (wie Herzen: client-seitiges Gameplay) —
   // Werte werden geclampt, der Maximalschaden ist 3 pro Antwort.
@@ -163,6 +192,7 @@ async function attackBossInner(
   const defeated = newHp === 0;
   let coinsEarned = 0;
   let isMvp = false;
+  let gotFirstBlood = false;
   let participantIds: string[] = [];
 
   const [xpMulti, coinMulti] = await Promise.all([
@@ -170,27 +200,42 @@ async function attackBossInner(
     getEventMultiplier("coins"),
   ]);
 
+  let alreadyFinished = false;
+
   await prisma.$transaction(async (tx) => {
-    // Update boss HP and first blood / last hit
-    await tx.bossBattle.update({
-      where: { id: battleId },
+    // Update boss HP — nur solange der Boss noch aktiv ist. Verhindert, dass
+    // zwei gleichzeitige Todesstöße beide die Reward-Schleife ausführen.
+    const hpRes = await tx.bossBattle.updateMany({
+      where: { id: battleId, isActive: true },
       data: {
         currentHp: newHp,
         isActive: defeated ? false : true,
-        ...(isFirstBlood ? { firstBloodUserId: session.userId } : {}),
         ...(defeated ? { killedByUserId: session.userId } : {}),
       },
     });
+    if (hpRes.count === 0) {
+      alreadyFinished = true;
+      return;
+    }
+
+    // First blood atomar claimen (Race: zwei gleichzeitige erste Treffer)
+    if (isFirstBlood) {
+      const fb = await tx.bossBattle.updateMany({
+        where: { id: battleId, firstBloodUserId: null },
+        data: { firstBloodUserId: session.userId },
+      });
+      gotFirstBlood = fb.count === 1;
+    }
 
     // Upsert participant
     await tx.bossParticipant.upsert({
       where: { userId_battleId: { userId: session.userId, battleId } },
-      create: { userId: session.userId, battleId, damage, correctAnswers: 1, firstBlood: isFirstBlood },
-      update: { damage: { increment: damage }, correctAnswers: { increment: 1 }, ...(isFirstBlood ? { firstBlood: true } : {}) },
+      create: { userId: session.userId, battleId, damage, correctAnswers: 1, firstBlood: gotFirstBlood },
+      update: { damage: { increment: damage }, correctAnswers: { increment: 1 }, ...(gotFirstBlood ? { firstBlood: true } : {}) },
     });
 
     // First blood coin bonus
-    if (isFirstBlood) {
+    if (gotFirstBlood) {
       coinsEarned += 10;
       await tx.user.update({ where: { id: session.userId }, data: { coins: { increment: 10 } } });
       await tx.coinLog.create({ data: { userId: session.userId, amount: 10, reason: "boss_first_blood", referenceId: battleId } });
@@ -246,6 +291,8 @@ async function attackBossInner(
     }
   });
 
+  if (alreadyFinished) return { error: "Boss not active" };
+
   let killData: AttackResult["killData"] | undefined;
 
   // Award boss-slayer title to MVP and build kill overlay data (non-critical, after TX)
@@ -299,7 +346,7 @@ async function attackBossInner(
     newHp,
     maxHp: battle.maxHp,
     defeated,
-    firstBlood: isFirstBlood,
+    firstBlood: gotFirstBlood,
     lastHit: defeated,
     coinsEarned,
     isMvp,

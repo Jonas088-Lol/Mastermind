@@ -33,7 +33,7 @@ export async function POST(req: Request) {
 
   const { assignmentId, answers, timeTakenSec } = body;
 
-  if (!assignmentId || typeof answers !== "object") {
+  if (!assignmentId || typeof assignmentId !== "string" || !answers || typeof answers !== "object") {
     return NextResponse.json({ error: "assignmentId und answers erforderlich" }, { status: 400 });
   }
 

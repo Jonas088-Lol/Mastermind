@@ -22,16 +22,21 @@ export async function createConsentForm(formData: FormData): Promise<void> {
   const targetClassIdsRaw = formData.getAll("targetClassIds") as string[];
 
   if (!title || !description) return;
+  if (!session.schoolId) return;
 
   const targetClassIds =
     targetClassIdsRaw.length > 0 ? JSON.stringify(targetClassIdsRaw) : null;
 
+  // Ungültige Datumseingabe darf keine "Invalid Date" an Prisma (DateTime?) geben
+  const deadlineParsed = deadlineStr ? new Date(deadlineStr) : null;
+  const deadline = deadlineParsed && !isNaN(deadlineParsed.getTime()) ? deadlineParsed : null;
+
   await prisma.consentForm.create({
     data: {
-      schoolId: session.schoolId ?? "",
+      schoolId: session.schoolId,
       title,
       description,
-      deadline: deadlineStr ? new Date(deadlineStr) : null,
+      deadline,
       isActive: true,
       targetClassIds,
     },

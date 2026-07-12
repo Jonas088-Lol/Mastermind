@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
+import { berlinDayKey, berlinStartOfDay, berlinStartOfWeek, berlinEndOfMonth, berlinMonthKey } from "@/lib/date-de";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import {
   DAILY_QUEST_POOL,
@@ -58,10 +59,22 @@ function deterministicPick<T extends { slug: string }>(
 }
 
 async function ensureQuestsSeeded(pool: QuestDef[]) {
-  for (const q of pool) {
-    await prisma.quest.upsert({
-      where: { slug: q.slug },
-      create: {
+  // Existenz-Ensure der statischen Quest-Definitionen. Statt pro Quest ein
+  // upsert (N Queries bei jedem Seitenaufruf) einmal die vorhandenen Slugs
+  // laden und nur die fehlenden per createMany anlegen — im eingeschwungenen
+  // Zustand nur noch eine einzige findMany-Abfrage. skipDuplicates gibt es nur
+  // beim Postgres-Client, daher stattdessen createMany im try/catch (bei
+  // parallelem Seed greift der @unique(slug), die andere Anfrage hat's angelegt).
+  const existing = await prisma.quest.findMany({
+    where: { slug: { in: pool.map((q) => q.slug) } },
+    select: { slug: true },
+  });
+  const have = new Set(existing.map((e) => e.slug));
+  const missing = pool.filter((q) => !have.has(q.slug));
+  if (missing.length === 0) return;
+  try {
+    await prisma.quest.createMany({
+      data: missing.map((q) => ({
         slug: q.slug,
         title: q.title,
         description: q.description,
@@ -74,9 +87,10 @@ async function ensureQuestsSeeded(pool: QuestDef[]) {
         icon: q.icon,
         difficulty: q.difficulty,
         rarity: q.rarity,
-      },
-      update: {},
+      })),
     });
+  } catch {
+    // Unique-Konflikt aus parallelem Seed — Definitionen sind bereits angelegt.
   }
 }
 
@@ -113,17 +127,25 @@ export default async function QuestsPage() {
   if (effectiveRole(session) !== "student") redirect(ROLE_HOME[effectiveRole(session)]);
 
   const now = new Date();
-  const todayStr = now.toISOString().slice(0, 10);
+  const todayStr = berlinDayKey(now);
 
-  // Calculate time boundaries
-  const endOfDay = new Date(now);
-  endOfDay.setHours(23, 59, 59, 999);
+  // Tagesgrenzen in Europe/Berlin (nicht Server-/UTC-Zeit), damit tägliche und
+  // wöchentliche Quests exakt zur deutschen Mitternacht rollen.
+  // Berlin-Tagesende = 1 ms vor der nächsten Berliner Mitternacht. +36 h ab
+  // Mitternacht landet garantiert im nächsten Kalendertag (auch an DST-Tagen).
+  const startOfDayBerlin = berlinStartOfDay(now);
+  const endOfDay = new Date(
+    berlinStartOfDay(new Date(startOfDayBerlin.getTime() + 36 * 3_600_000)).getTime() - 1,
+  );
 
-  const endOfWeek = new Date(now);
-  endOfWeek.setDate(now.getDate() + (7 - now.getDay()));
-  endOfWeek.setHours(23, 59, 59, 999);
+  // Berlin-Wochenende = 1 ms vor dem nächsten Montag. +10 Tage ab Wochenstart
+  // landet sicher in der Folgewoche.
+  const startOfWeekBerlin = berlinStartOfWeek(now);
+  const endOfWeek = new Date(
+    berlinStartOfWeek(new Date(startOfWeekBerlin.getTime() + 10 * 86_400_000)).getTime() - 1,
+  );
 
-  const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59, 999);
+  const endOfMonth = berlinEndOfMonth(now);
 
   // Seed quest definitions
   await ensureQuestsSeeded([...DAILY_QUEST_POOL, ...WEEKLY_QUEST_POOL, ...MONTHLY_QUEST_POOL, ...HIDDEN_QUEST_POOL]);
@@ -171,7 +193,7 @@ export default async function QuestsPage() {
   });
 
   if (existingMonthlies.length === 0) {
-    const monthStr = `${now.getFullYear()}-${now.getMonth()}`;
+    const monthStr = berlinMonthKey(now);
     const pickedMonthly = deterministicPick(MONTHLY_QUEST_POOL, session.userId, monthStr, 2);
     for (const q of pickedMonthly) {
       await ensureUserQuestAssigned(session.userId, q.slug, endOfMonth);
@@ -208,9 +230,8 @@ export default async function QuestsPage() {
   const totalClaimed   = userQuests.filter((uq) => uq.claimedAt).length;
   const pendingClaim   = userQuests.filter((uq) => uq.completedAt && !uq.claimedAt).length;
 
-  // "Heute"-Statistiken (server-berechnet)
-  const startOfDay = new Date(now);
-  startOfDay.setHours(0, 0, 0, 0);
+  // "Heute"-Statistiken (server-berechnet, Berliner Tagesgrenze)
+  const startOfDay = startOfDayBerlin;
   const dailyDone = daily.filter((uq) => uq.completedAt).length;
   const completedToday = userQuests.filter(
     (uq) => uq.completedAt && uq.completedAt >= startOfDay,

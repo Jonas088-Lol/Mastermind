@@ -17,6 +17,7 @@ export const BOOSTER_DEFS: BoosterDef[] = [
   { slug: "boost_1_5x_24h", name: "XP-Booster ×1.5 (24h)",  multiplier: 1.5, durationMinutes: 1440, icon: "🌟", color: "#8b5cf6" },
   { slug: "boost_2x_24h",   name: "XP-Booster ×2 (24h)",    multiplier: 2.0, durationMinutes: 1440, icon: "💎", color: "#7c3aed" },
   { slug: "boost_2x_7d",    name: "XP-Booster ×2 (7 Tage)", multiplier: 2.0, durationMinutes: 10080, icon: "👑", color: "#fbbf24" },
+  { slug: "boost_5x_15m",   name: "Mega-Booster ×5 (15min)", multiplier: 5.0, durationMinutes: 15,   icon: "🌪️", color: "#f43f5e" },
 ];
 
 export function getBoosterDef(slug: string): BoosterDef | undefined {

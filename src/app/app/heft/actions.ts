@@ -12,10 +12,10 @@ export async function createNotebook(formData: FormData) {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect("/");
 
-  const title = ((formData.get("title") as string | null) ?? "").trim();
-  const subject = ((formData.get("subject") as string | null) ?? "").trim() || null;
-  const color = ((formData.get("color") as string | null) ?? "#6366f1").trim();
-  const icon = ((formData.get("icon") as string | null) ?? "📓").trim();
+  const title = ((formData.get("title") as string | null) ?? "").trim().slice(0, 200);
+  const subject = ((formData.get("subject") as string | null) ?? "").trim().slice(0, 100) || null;
+  const color = ((formData.get("color") as string | null) ?? "#6366f1").trim().slice(0, 32);
+  const icon = ((formData.get("icon") as string | null) ?? "📓").trim().slice(0, 16);
 
   if (!title) return;
 
@@ -70,7 +70,15 @@ export async function createPage(notebookId: string) {
     },
   });
 
-  awardCoins(session.userId, "heft_seite_erstellt").catch(() => undefined);
+  // Coin-Farming verhindern: max. 5 belohnte Seiten pro Tag (über CoinLog gezählt)
+  const startOfDay = new Date();
+  startOfDay.setHours(0, 0, 0, 0);
+  const todayCount = await prisma.coinLog.count({
+    where: { userId: session.userId, reason: "heft_seite_erstellt", createdAt: { gte: startOfDay } },
+  });
+  if (todayCount < 5) {
+    awardCoins(session.userId, "heft_seite_erstellt").catch(() => undefined);
+  }
 
   redirect(`/app/heft/${notebookId}/${page.id}`);
 }
@@ -171,6 +179,7 @@ export async function movePage(pageId: string, direction: "up" | "down") {
 export async function savePageContent(pageId: string, content: string) {
   const session = await getSession();
   if (!session) return;
+  if (typeof content !== "string" || content.length > 2_000_000) return;
 
   const page = await prisma.notebookPage.findUnique({
     where: { id: pageId },

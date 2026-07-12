@@ -66,6 +66,21 @@ function fnv1a(s: string): string {
   return h.toString(16).padStart(8, "0") + h2.toString(16).padStart(8, "0");
 }
 
+/**
+ * Liest eine Daten-Datei tolerant: BOM entfernen, leere/kaputte/Nicht-Array-
+ * Dateien geben null zurück statt den gesamten Import zu crashen.
+ */
+function readQuestionFile(file: string): MegaQuestion[] | null {
+  try {
+    const raw = readFileSync(join(DATA_DIR, file), "utf8").replace(/^\uFEFF/, "").trim();
+    if (raw.length === 0) return null;
+    const parsed: unknown = JSON.parse(raw);
+    return Array.isArray(parsed) ? (parsed as MegaQuestion[]) : null;
+  } catch {
+    return null;
+  }
+}
+
 async function main() {
   const files = readdirSync(DATA_DIR).filter((f) => f.endsWith(".json")).sort();
   if (files.length === 0) {
@@ -76,10 +91,7 @@ async function main() {
   // Früh-Exit: Wenn die DB bereits (mindestens) so viele MEGA-Fragen enthält
   // wie die Dateien liefern, ist nichts zu tun. Macht den Import billig genug,
   // um ihn bei jedem Container-Start automatisch mitlaufen zu lassen.
-  const totalInFiles = files.reduce((sum, f) => {
-    try { return sum + (JSON.parse(readFileSync(join(DATA_DIR, f), "utf8")) as unknown[]).length; }
-    catch { return sum; }
-  }, 0);
+  const totalInFiles = files.reduce((sum, f) => sum + (readQuestionFile(f)?.length ?? 0), 0);
   const alreadyImported = await prisma.exerciseQuestion.count({ where: { id: { startsWith: "mega-q-" } } });
   if (alreadyImported >= totalInFiles) {
     console.log(`✓ MEGA-Fragenbank bereits vollständig importiert (${alreadyImported}/${totalInFiles}) — nichts zu tun.`);
@@ -96,7 +108,8 @@ async function main() {
     if (!m) { console.warn(`  Überspringe ${file} (unerwarteter Dateiname)`); continue; }
     const fach = m[1];
     const klasse = parseInt(m[2], 10);
-    const questions: MegaQuestion[] = JSON.parse(readFileSync(join(DATA_DIR, file), "utf8"));
+    const questions = readQuestionFile(file);
+    if (!questions) { console.warn(`  Überspringe ${file} (leer oder kein gültiges JSON-Array)`); continue; }
 
     // Nach Topic gruppieren
     const byTopic = new Map<string, MegaQuestion[]>();

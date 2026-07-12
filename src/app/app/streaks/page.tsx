@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { CheckCircle2, ShoppingBag } from "lucide-react";
 import { prisma } from "@/lib/db/client";
+import { berlinDayKey } from "@/lib/date-de";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { Card, CardBody } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,6 +25,18 @@ function getNextMilestone(streak: number): number {
 function getPrevMilestone(streak: number): number {
   const passed = MILESTONES.filter((m) => m <= streak);
   return passed[passed.length - 1] ?? 0;
+}
+
+const pad2 = (n: number): string => String(n).padStart(2, "0");
+
+/**
+ * Kalender-Schlüssel (YYYY-MM-DD) eines UTC-Instants — dient der DST-freien
+ * Zell-Iteration über UTC-Mittag. Echte Aktivitäts-Zeitstempel werden dagegen
+ * mit `berlinDayKey` auf den deutschen Kalendertag gebucketet.
+ */
+function utcKey(ms: number): string {
+  const d = new Date(ms);
+  return `${d.getUTCFullYear()}-${pad2(d.getUTCMonth() + 1)}-${pad2(d.getUTCDate())}`;
 }
 
 export default async function StreaksPage() {
@@ -63,28 +76,24 @@ export default async function StreaksPage() {
   const totalDailyLogins = user?.totalDailyLogins ?? 0;
   const freezeCount = user?.streakFreezes ?? 0;
 
-  // Build 7-day calendar: today = day 6, going back 6 days
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  // Anker: heutiger Berliner Kalendertag. Über einen UTC-Mittags-Instant rechnen
+  // wir kalendarisch rückwärts — DST-frei und unabhängig von der Server-Zeitzone.
+  const todayKey = berlinDayKey();
+  const [ty, tm, td] = todayKey.split("-").map(Number);
+  const todayNoonUtc = Date.UTC(ty, tm - 1, td, 12);
 
-  // Build set of login dates from login history (YYYY-MM-DD strings)
-  const loginDates = new Set(
-    loginHistory.map((r) => r.claimedAt.toISOString().slice(0, 10))
-  );
+  // Aktivität auf den deutschen Kalendertag bucketen (YYYY-MM-DD strings)
+  const loginDates = new Set(loginHistory.map((r) => berlinDayKey(r.claimedAt)));
   // Also use xpLog dates as activity markers
-  const xpDates = new Set(
-    xpHistory.map((r) => r.createdAt.toISOString().slice(0, 10))
-  );
+  const xpDates = new Set(xpHistory.map((r) => berlinDayKey(r.createdAt)));
 
   const sevenDays = Array.from({ length: 7 }, (_, i) => {
-    const d = new Date(today);
-    d.setDate(today.getDate() - (6 - i));
-    const dateStr = d.toISOString().slice(0, 10);
+    const ms = todayNoonUtc - (6 - i) * 86_400_000;
+    const dateStr = utcKey(ms);
     const hasLogin = loginDates.has(dateStr) || xpDates.has(dateStr);
     return {
-      date: d,
       dateStr,
-      label: DAY_LABELS[d.getDay()],
+      label: DAY_LABELS[new Date(ms).getUTCDay()],
       hasLogin,
       isToday: i === 6,
     };
@@ -93,13 +102,12 @@ export default async function StreaksPage() {
   // Heatmap: XP-Summe pro Tag, letzte 12 Wochen (Mo–So)
   const xpPerDay = new Map<string, number>();
   for (const log of xpHistory) {
-    const key = log.createdAt.toISOString().slice(0, 10);
+    const key = berlinDayKey(log.createdAt);
     xpPerDay.set(key, (xpPerDay.get(key) ?? 0) + log.amount);
   }
   const maxXpPerDay = Math.max(1, ...xpPerDay.values());
-  const mondayOffset = (today.getDay() + 6) % 7; // Mo=0 … So=6
-  const gridStart = new Date(today);
-  gridStart.setDate(today.getDate() - mondayOffset - 77); // Montag vor 11 Wochen
+  const mondayOffset = (new Date(todayNoonUtc).getUTCDay() + 6) % 7; // Mo=0 … So=6
+  const gridStartNoonUtc = todayNoonUtc - (mondayOffset + 77) * 86_400_000; // Montag vor 11 Wochen
 
   const HEAT_CLASSES = [
     "bg-surface-2",
@@ -111,9 +119,9 @@ export default async function StreaksPage() {
 
   const heatmapWeeks = Array.from({ length: 12 }, (_, w) =>
     Array.from({ length: 7 }, (_, d) => {
-      const date = new Date(gridStart);
-      date.setDate(gridStart.getDate() + w * 7 + d);
-      const key = date.toISOString().slice(0, 10);
+      const ms = gridStartNoonUtc + (w * 7 + d) * 86_400_000;
+      const cell = new Date(ms);
+      const key = utcKey(ms);
       const xp = xpPerDay.get(key) ?? 0;
       const level =
         xp <= 0 ? 0 : Math.min(4, Math.max(1, Math.ceil((xp / maxXpPerDay) * 4)));
@@ -121,10 +129,8 @@ export default async function StreaksPage() {
         key,
         xp,
         level,
-        isFuture: date > today,
-        title: `${String(date.getDate()).padStart(2, "0")}.${String(
-          date.getMonth() + 1
-        ).padStart(2, "0")}.: ${xp} XP`,
+        isFuture: key > todayKey,
+        title: `${pad2(cell.getUTCDate())}.${pad2(cell.getUTCMonth() + 1)}.: ${xp} XP`,
       };
     })
   );
