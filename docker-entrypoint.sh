@@ -67,4 +67,13 @@ fi
 
 # Start Next.js standalone server
 echo "✓ Starting Next.js on port ${PORT:-3000}..."
+# MEGA-Fragenbank automatisch importieren (idempotent; Skip wenn vollständig).
+# Läuft im Hintergrund, damit der Serverstart nicht blockiert.
+if [ -f "scripts/questions/mega/import-mega.cjs" ]; then
+  echo "⏳ MEGA-Fragenbank-Import startet im Hintergrund (Log: /tmp/import-mega.log)…"
+  (node scripts/questions/mega/import-mega.cjs > /tmp/import-mega.log 2>&1 \
+    && echo "✓ MEGA-Fragenbank-Import abgeschlossen." \
+    || echo "⚠ MEGA-Fragenbank-Import fehlgeschlagen — siehe /tmp/import-mega.log") &
+fi
+
 exec node server.js

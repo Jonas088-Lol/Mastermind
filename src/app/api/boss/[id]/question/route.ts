@@ -116,7 +116,10 @@ export async function GET(
   }
 
   // ── Path B fallback: ExerciseQuestion-Pool ───────────────────────────────
-  const subjectFilter = battle.subject ? { subject: battle.subject } : {};
+  // ExerciseTopic.subject ist lowercase ("mathematik") — Boss-Fächer können
+  // großgeschrieben sein ("Mathematik"). Ohne Normalisierung greift der
+  // Fach-Filter nie und der Boss bekäme fachfremde Fragen.
+  const subjectFilter = battle.subject ? { subject: battle.subject.trim().toLowerCase() } : {};
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const whereExact: any   = { type: "mc", topic: { ...subjectFilter, ...(grade ? { grade } : {}) } };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -73,6 +73,20 @@ async function main() {
     process.exit(1);
   }
 
+  // Früh-Exit: Wenn die DB bereits (mindestens) so viele MEGA-Fragen enthält
+  // wie die Dateien liefern, ist nichts zu tun. Macht den Import billig genug,
+  // um ihn bei jedem Container-Start automatisch mitlaufen zu lassen.
+  const totalInFiles = files.reduce((sum, f) => {
+    try { return sum + (JSON.parse(readFileSync(join(DATA_DIR, f), "utf8")) as unknown[]).length; }
+    catch { return sum; }
+  }, 0);
+  const alreadyImported = await prisma.exerciseQuestion.count({ where: { id: { startsWith: "mega-q-" } } });
+  if (alreadyImported >= totalInFiles) {
+    console.log(`✓ MEGA-Fragenbank bereits vollständig importiert (${alreadyImported}/${totalInFiles}) — nichts zu tun.`);
+    return;
+  }
+  console.log(`⏳ Importiere MEGA-Fragenbank: ${alreadyImported}/${totalInFiles} vorhanden …`);
+
   let topicCount = 0;
   let questionCount = 0;
 

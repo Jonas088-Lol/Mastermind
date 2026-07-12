@@ -21,6 +21,17 @@ const SUBJECTS = [
   { key: "wirtschaft",  label: "Wirtschaft",  icon: "📈", color: "bg-orange-500/10 text-orange-600 border-orange-200 dark:border-orange-800 dark:text-orange-400" },
   { key: "musik",       label: "Musik",       icon: "🎵", color: "bg-pink-500/10 text-pink-600 border-pink-200 dark:border-pink-800 dark:text-pink-400" },
   { key: "sport",       label: "Sport",       icon: "🏃", color: "bg-lime-500/10 text-lime-600 border-lime-200 dark:border-lime-800 dark:text-lime-400" },
+  // Fächer der MEGA-Fragenbank (Import nutzt "erdkunde", nicht "geografie")
+  { key: "erdkunde",    label: "Erdkunde",    icon: "🗺️", color: "bg-teal-500/10 text-teal-600 border-teal-200 dark:border-teal-800 dark:text-teal-400" },
+  { key: "franzoesisch",label: "Französisch", icon: "🇫🇷", color: "bg-blue-500/10 text-blue-600 border-blue-200 dark:border-blue-800 dark:text-blue-400" },
+  { key: "latein",      label: "Latein",      icon: "🏺", color: "bg-amber-500/10 text-amber-600 border-amber-200 dark:border-amber-800 dark:text-amber-400" },
+  { key: "spanisch",    label: "Spanisch",    icon: "🇪🇸", color: "bg-red-500/10 text-red-600 border-red-200 dark:border-red-800 dark:text-red-400" },
+  { key: "kunst",       label: "Kunst",       icon: "🎨", color: "bg-fuchsia-500/10 text-fuchsia-600 border-fuchsia-200 dark:border-fuchsia-800 dark:text-fuchsia-400" },
+  { key: "ethik",       label: "Ethik",       icon: "⚖️", color: "bg-slate-500/10 text-slate-600 border-slate-200 dark:border-slate-700 dark:text-slate-400" },
+  { key: "sachkunde",   label: "Sachkunde",   icon: "🔍", color: "bg-cyan-500/10 text-cyan-600 border-cyan-200 dark:border-cyan-800 dark:text-cyan-400" },
+  { key: "technik",     label: "Technik",     icon: "🔧", color: "bg-zinc-500/10 text-zinc-600 border-zinc-200 dark:border-zinc-700 dark:text-zinc-400" },
+  { key: "philosophie", label: "Philosophie", icon: "🦉", color: "bg-violet-500/10 text-violet-600 border-violet-200 dark:border-violet-800 dark:text-violet-400" },
+  { key: "psychologie", label: "Psychologie", icon: "🧠", color: "bg-rose-500/10 text-rose-600 border-rose-200 dark:border-rose-800 dark:text-rose-400" },
 ] as const;
 
 export default async function UebungenPage() {
