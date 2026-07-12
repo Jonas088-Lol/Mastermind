@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
 import { Minus, Plus, Trash2 } from "lucide-react";

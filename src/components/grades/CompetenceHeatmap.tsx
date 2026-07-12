@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // Kompetenz-Heatmap — Zellenfarbe anhand der Durchschnittsnote zum Thema
 // (1 = hellgrün … 6 = rot), Stil wie die Heatmap auf der Startseite.
 

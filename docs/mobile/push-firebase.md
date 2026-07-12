@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Push-Benachrichtigungen einrichten (Firebase Cloud Messaging)
 
 Der **Code ist fertig** — die App registriert sich für Push, sendet den Token

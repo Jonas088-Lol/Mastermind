@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { NextRequest, NextResponse } from "next/server";
 import { getSession } from "@/lib/session";
 import { auditLog } from "@/lib/audit";

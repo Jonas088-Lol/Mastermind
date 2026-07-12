@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { describe, it, expect, beforeEach, vi } from "vitest";
 
 // Mock Upstash to force in-memory fallback

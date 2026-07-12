@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
 import { Eye, Minus, Plus, ZoomIn } from "lucide-react";

@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Android PWA — Design Spec
 
 > **For agentic workers:** Use superpowers:executing-plans or superpowers:subagent-driven-development.

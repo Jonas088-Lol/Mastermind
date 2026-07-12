@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Sicheres JSON-Parsing — wirft nie. Gibt bei ungültigem/fehlendem Input den
  * Fallback zurück. Verhindert weiße Screens, wenn ein DB-/AI-Feld mal kein

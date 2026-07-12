@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 /** MASTERMIND — SECRET final boss. "Der Verfall in seiner reinsten Form."
  *  The platform's own logo corrupted. Brain entity, eye of knowledge, 5 orbiting shards. */

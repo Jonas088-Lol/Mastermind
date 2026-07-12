@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Origin-WAF (ModSecurity + OWASP CRS) — Rollout & Tuning (Phase 2.2)
 
 Zweite WAF-Schicht direkt am Origin (nginx), falls ein Angriff Cloudflare

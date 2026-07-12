@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 /** KALKULON — Mythic Mathematik. Living calculator with spinning gears + energy core. */
 

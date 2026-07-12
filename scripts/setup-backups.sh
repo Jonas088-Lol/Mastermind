@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ── Backup-Setup für MasterMind (Hetzner/Root-Server) ──────────────────────
 #
 # Richtet ein:

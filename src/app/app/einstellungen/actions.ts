@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ── Android Upload-Keystore erzeugen (einmalig) ────────────────────────────
 #
 # Der Keystore signiert deine App. Google identifiziert deine App über diesen

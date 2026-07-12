@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { ArrowLeft, KeyRound, Trash2, UserMinus, UserPlus } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";

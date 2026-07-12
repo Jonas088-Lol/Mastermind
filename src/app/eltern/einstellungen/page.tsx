@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Bell, Link2, Lock, User } from "lucide-react";

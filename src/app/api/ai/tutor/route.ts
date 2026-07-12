@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { NextResponse } from "next/server";
 import { effectiveRole, getSession } from "@/lib/session";
 import { chatStream, isAiConfigured, MODELS } from "@/lib/ai";

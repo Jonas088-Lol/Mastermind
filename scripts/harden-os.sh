@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ── OS-Härtung MasterMind (Ubuntu 24.04) — idempotent ──────────────────────
 #
 # Installiert & aktiviert: unattended-upgrades (Auto-Security-Patches), auditd

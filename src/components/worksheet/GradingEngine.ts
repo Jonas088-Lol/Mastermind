@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 export function gradeAnswer(
   type: string,
   correctAnswer: string | null,

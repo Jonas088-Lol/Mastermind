@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { type NextRequest, NextResponse } from "next/server";
 import { getMollie } from "@/lib/mollie";
 import { prisma } from "@/lib/db/client";

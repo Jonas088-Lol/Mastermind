@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { Fragment } from "react";
 import {
   ArrowRight,

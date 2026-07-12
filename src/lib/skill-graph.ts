@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // ── Mega Skill Graph — ~120 nodes, ~80 days of study ────────────────────────
 
 export const MASTERY_LABELS = ["Gesperrt", "Bronze", "Silber", "Gold"] as const;

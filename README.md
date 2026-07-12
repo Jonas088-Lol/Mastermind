@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

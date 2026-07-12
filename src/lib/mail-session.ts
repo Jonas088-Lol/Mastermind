@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // Eigenständige Auth für /mails — Credentials kommen aus Umgebungsvariablen
 // Setze in .env.production:
 //   MAIL_USER=Admin

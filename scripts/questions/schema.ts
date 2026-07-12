@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Datenmodell für eine einzelne Frage im Fragenpool.
  * Das Modell liefert nur die inhaltlichen Felder (GeneriertesItem),

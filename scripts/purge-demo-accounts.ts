@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Entfernt die Demo-Seed-Konten mit bekannten Passwörtern aus einer Datenbank.
  *

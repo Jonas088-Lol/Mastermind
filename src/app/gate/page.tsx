@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 import { Lock, Wrench, ArrowRight } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";

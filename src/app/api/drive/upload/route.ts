@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { writeFile, mkdir } from "fs/promises";
 import { join, extname, basename } from "path";
 import { NextRequest, NextResponse } from "next/server";

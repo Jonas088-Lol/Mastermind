@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Hetzner-Server einrichten — MasterMind
 
 Komplette Ersteinrichtung eines **Hetzner Cloud / Dedicated Root Servers**

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { Zap, Flame, Coins, ShoppingBag, Swords, Trophy, Shield, Crown } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { CoinIcon } from "@/components/ui/CoinIcon";

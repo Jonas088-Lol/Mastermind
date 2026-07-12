@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * curriculum.ts
  * Server-only functions for deriving a user's subject set from their

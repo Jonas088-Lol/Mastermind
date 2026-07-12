@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Self-Hosting via Cloudflare Tunnel
 
 **Datum:** 2026-05-16  

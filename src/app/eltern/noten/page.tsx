@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TrendingUp } from "lucide-react";

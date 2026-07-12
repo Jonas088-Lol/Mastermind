@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * QA-Report über die gesamte MEGA-Fragenbank (data/*.json).
  * Prüft pro Datei:

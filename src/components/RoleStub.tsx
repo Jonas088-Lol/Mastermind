@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import Link from "next/link";
 import { ArrowLeft, Construction } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ═══════════════════════════════════════════════════════════════════════════
 # MasterMind — VPS Setup Script (Debian/Ubuntu)
 # Tested on: Ubuntu 22.04 LTS / Debian 12 (ZAP-Hosting VServer)

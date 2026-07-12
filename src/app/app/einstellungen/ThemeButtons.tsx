@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";

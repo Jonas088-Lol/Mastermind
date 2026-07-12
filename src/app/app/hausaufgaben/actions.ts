@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use server";
 
 import { mkdir, writeFile } from "fs/promises";

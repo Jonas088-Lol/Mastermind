@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Re-Encrypt-Migration für field-level verschlüsselte Spalten.
  *

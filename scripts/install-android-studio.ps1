@@ -1,3 +1,4 @@
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ═══════════════════════════════════════════════════════════════════════════
 # MasterMind — Android Studio Setup (Windows)
 # Run as Administrator: powershell -ExecutionPolicy Bypass -File scripts/install-android-studio.ps1

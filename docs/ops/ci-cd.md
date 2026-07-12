@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Auto-Deployment (CI/CD)
 
 Bei jedem `git push` auf `master` deployt GitHub automatisch auf den Server —

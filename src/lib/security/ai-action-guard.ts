@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { incrementAiQuota } from "@/lib/db/store";
 import { rateLimit } from "@/lib/security/rate-limit";
 

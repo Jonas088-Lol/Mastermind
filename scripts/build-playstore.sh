@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ── Play-Store-Build (signiertes AAB) für MasterMind ───────────────────────
 #
 # Der Play Store nimmt App Bundles (.aab), keine .apk. Dieses Skript:

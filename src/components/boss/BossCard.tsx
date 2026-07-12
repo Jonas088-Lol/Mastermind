@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 /**
  * BossCard — Compact boss card with rarity frame, stats, lore, and renderer.

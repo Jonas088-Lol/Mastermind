@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * RFC 6238 TOTP (Time-Based One-Time Password) Verifier.
  *

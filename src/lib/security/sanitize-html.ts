@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Strikter Allowlist-HTML-Sanitizer für nicht vertrauenswürdiges HTML
  * (v.a. eingehende E-Mails, die im Postfach gerendert werden).

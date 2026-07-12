@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * boss-defs.ts — static boss catalog (client + server safe, no Prisma imports)
  *

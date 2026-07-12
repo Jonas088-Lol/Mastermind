@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # MasterMind → Google Play Store (Android)
 
 Kompletter Weg von null bis veröffentlichte App. Läuft komplett auf Windows.

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * MEGA curriculum seed — 150+ topics, 900+ questions
  * Run: DATABASE_URL="file:./prisma/prisma/dev.db" npx tsx scripts/seed-mega.ts

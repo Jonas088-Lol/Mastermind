@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { redirect } from "next/navigation";
 import { effectiveRole, getSession } from "@/lib/session";
 import { prisma } from "@/lib/db/client";

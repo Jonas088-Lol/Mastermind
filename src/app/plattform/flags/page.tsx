@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { ArrowLeft, Filter, Flag, Plus, Search } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";

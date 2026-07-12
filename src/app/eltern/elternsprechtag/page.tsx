@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { CalendarDays, Clock, MapPin, User } from "lucide-react";

@@ -1,4 +1,5 @@
 #!/bin/sh
+# Copyright 2026 Elian Schock, Jonas Schwenk
 
 echo "▶ MasterMind — Starting up..."
 

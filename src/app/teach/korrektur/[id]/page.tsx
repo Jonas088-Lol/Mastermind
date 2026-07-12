@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { ArrowLeft, CheckCircle2, Clock, Download, FileText, Paperclip } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";

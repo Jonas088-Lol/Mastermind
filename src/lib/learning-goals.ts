@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { prisma } from "@/lib/db/client";
 import { awardCoins, COIN_REWARDS } from "@/lib/coins";
 

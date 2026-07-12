@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Verzeichnis von Verarbeitungstätigkeiten (VVT)
 
 **Art. 30 DSGVO** · Plattform: MasterMind / konvertis.de

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 export { WorksheetPlayer } from "./WorksheetPlayer";
 export type { WorksheetData, WorksheetItemData } from "./WorksheetPlayer";
 export { WorksheetTimer } from "./WorksheetTimer";

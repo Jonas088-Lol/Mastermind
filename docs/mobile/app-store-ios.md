@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # MasterMind → Apple App Store (iOS)
 
 ⚠ iOS-Builds gehen NUR auf einem Mac (Xcode ist Apple-only). Diese Anleitung

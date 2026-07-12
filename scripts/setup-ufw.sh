@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # UFW Firewall Setup — Ubuntu 24.04
 # Usage:
 #   sudo bash scripts/setup-ufw.sh              # public HTTP/HTTPS + SSH

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use server";
 
 import { aiGradeSubmission, type GradeInput, type GradeResult } from "@/lib/ai/grade";

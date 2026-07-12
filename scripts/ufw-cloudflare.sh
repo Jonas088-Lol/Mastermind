@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ── ufw: 80/443 NUR von Cloudflare-IPs erlauben (idempotent) ────────────────
 #
 # WARUM: Wenn nur Cloudflare den Origin erreichen darf, laufen alle Angriffe

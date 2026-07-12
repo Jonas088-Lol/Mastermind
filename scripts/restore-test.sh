@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ═══════════════════════════════════════════════════════════════════════════
 # MasterMind — Backup Restore-Test
 #

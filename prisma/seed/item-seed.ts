@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * item-seed.ts — seeds ItemDef + ShopListing records
  * Run: npx ts-node --project tsconfig.json prisma/seed/item-seed.ts

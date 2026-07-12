@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 

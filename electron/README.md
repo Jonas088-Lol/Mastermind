@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # MasterMind Desktop App
 
 Electron-based desktop wrapper — loads all content from `https://app.mastermind.app`.

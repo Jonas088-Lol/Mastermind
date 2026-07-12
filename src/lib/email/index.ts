@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * E-Mail-Versand für Magic-Link, Passwort-Reset, Notifications.
  *

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Boss-Fragen-Seeder — generiert Fragen für alle Boss-Fächer/-Stufen via
  * Anthropic API und speichert sie direkt in der Postgres-Frage-Tabelle.

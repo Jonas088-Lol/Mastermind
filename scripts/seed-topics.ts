@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Comprehensive curriculum seed — ExerciseTopics + ExerciseQuestions
  * Run: npx tsx scripts/seed-topics.ts

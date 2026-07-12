@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
 import { WorksheetPlayer, type WorksheetData } from "@/components/worksheet/WorksheetPlayer";

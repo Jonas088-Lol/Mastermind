@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 export type DlcFeature = {
   id: string;
   name: string;

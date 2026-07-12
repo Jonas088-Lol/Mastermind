@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { BookOpen, Clock, FileText, Layers } from "lucide-react";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";

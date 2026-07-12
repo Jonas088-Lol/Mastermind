@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { randomBytes, createHash } from "node:crypto";
 import { cookies, headers } from "next/headers";
 import { signSession, verifySession } from "@/lib/auth/cookies";

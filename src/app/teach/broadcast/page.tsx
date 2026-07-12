@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { CheckCircle2, Megaphone, Users } from "lucide-react";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Eingebauter Notfall-Fragenpool für Boss-Fights.
  *

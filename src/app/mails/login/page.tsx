@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { Lock, Mail, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import { loginMail } from "./actions";

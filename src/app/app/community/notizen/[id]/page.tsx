@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { ArrowLeft, Trash2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

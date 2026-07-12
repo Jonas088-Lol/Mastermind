@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { describe, it, expect } from "vitest";
 import { MODELS } from "@/lib/ai";
 import { AI_DEFAULT_MODEL } from "@/lib/security/ai-guard";

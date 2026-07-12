@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # SSH-Key einrichten & härten (Windows → root, aktuell Passwort-Login)
 
 Ablauf so, dass du dich NICHT aussperren kannst. **Halte während der ganzen

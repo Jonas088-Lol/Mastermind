@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
 import { ArrowRight, CheckCircle2, Trophy, XCircle } from "lucide-react";

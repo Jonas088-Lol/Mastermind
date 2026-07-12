@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 #!/usr/bin/env node
 // Generates VAPID keys for Web Push and prints .env.local entries.
 // Run: node scripts/generate-vapid.mjs

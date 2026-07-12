@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 import { useTransition } from "react";
 import { Check } from "lucide-react";

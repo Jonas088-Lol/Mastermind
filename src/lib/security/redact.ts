@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Zentrale PII-Maskierung für Logs, Fehlermeldungen und Diagnose-Ausgaben.
  * Ziel: personenbezogene Daten (E-Mail, IP, Tokens) tauchen nicht im Klartext

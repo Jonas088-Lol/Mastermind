@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // Folien-Vorlagen für die Präsentations-Galerie.
 // Struktur muss zu den Typen in [id]/PresentationEditor.tsx passen
 // (SlideElement / Slide, Positionen in Prozent des 16:9-Canvas).

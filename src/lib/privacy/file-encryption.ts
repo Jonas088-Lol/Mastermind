@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * At-Rest-Verschlüsselung für hochgeladene Dateien (Art. 32 DSGVO).
  *

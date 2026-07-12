@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * MEGA-Fragen-Generator RUNDE 15 für MasterMind.
  *

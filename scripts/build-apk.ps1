@@ -1,3 +1,4 @@
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ===========================================================================
 # MasterMind -- APK Build Script (Windows / PowerShell)
 #

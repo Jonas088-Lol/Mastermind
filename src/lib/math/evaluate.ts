@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Sicherer mathematischer Ausdruck-Evaluator (KEIN eval).
  *

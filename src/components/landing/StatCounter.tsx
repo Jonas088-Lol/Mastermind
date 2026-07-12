@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
 import { useEffect, useRef, useState, useCallback, type CSSProperties } from "react";

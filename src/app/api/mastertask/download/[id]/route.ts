@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { readFile } from "fs/promises";
 import { join } from "path";
 import { type NextRequest, NextResponse } from "next/server";

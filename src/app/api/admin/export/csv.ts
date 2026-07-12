@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // Gemeinsame CSV-Helfer für die Admin-Exporte.
 // Semikolon als Trenner (deutsches Excel) + BOM für korrekte Umlaute.
 

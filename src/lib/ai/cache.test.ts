@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { describe, it, expect } from "vitest";
 import { aiCacheKey, aiCacheGet, aiCacheSet } from "@/lib/ai/cache";
 

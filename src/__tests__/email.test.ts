@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   sendEmail,

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { CheckCircle2, Key, Lock, ShieldCheck, Trash2, XCircle } from "lucide-react";

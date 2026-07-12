@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Store-Listing & Data Safety — fertig zum Eintragen
 
 Copy-&-paste-Vorlagen für die Play Console (und später App Store Connect).

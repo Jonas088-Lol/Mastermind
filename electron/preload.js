@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Preload script — runs in the renderer before page scripts.
  * Exposes a minimal safe bridge (contextBridge) for IPC.

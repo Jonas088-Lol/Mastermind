@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Converts a 6-digit hex color (#rrggbb) to HSL component string for CSS vars.
  * Returns e.g. "232 78% 56%" (no leading "hsl(" wrapper).

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * CoinIcon — custom coin symbol for MasterMind's virtual currency.
  *

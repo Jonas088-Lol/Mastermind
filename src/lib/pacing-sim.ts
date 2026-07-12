@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * pacing-sim.ts
  * Estimates the median completion time (in "learning days") for the skill tree.

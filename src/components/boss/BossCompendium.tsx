@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 /**
  * BossCompendium — Full 75-boss bestiary catalog.

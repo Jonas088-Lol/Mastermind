@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 /** Der Schwarze Prophet — Mythic Deutsch. Dark robed figure, ink tendrils, forbidden glyphs. */
 

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // Company details used across legal pages (Impressum, Datenschutz, AGB, AVV).
 // Update these before going live.
 export const COMPANY = {

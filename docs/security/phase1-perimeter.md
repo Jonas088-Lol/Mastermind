@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Phase 1 — Netzwerk- & Perimeter-Härtung
 
 Alle Bausteine liegen als versionierte Configs/Skripte im Repo. Sie laufen NICHT

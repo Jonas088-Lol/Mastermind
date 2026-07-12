@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # Installiert lokale Git-Hooks (gitleaks Pre-Commit) für MasterMind.
 # WARUM: verhindert, dass Secrets überhaupt erst in einen Commit gelangen —
 # die günstigste Stelle, ein Leak zu stoppen (vor Push, vor CI, vor Prod).

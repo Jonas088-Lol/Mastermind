@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { CapacitorConfig } from "@capacitor/cli";
 
 // Set CAPACITOR_APP_URL to your server domain, e.g.:

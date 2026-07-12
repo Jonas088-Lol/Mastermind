@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // Core game engine: 500-level system, rank tiers, XP curves, titles, quests, combos
 
 // ── Boss Tiers ────────────────────────────────────────────

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * curriculum-seed.ts
  * Seeds: Bundesland, Landkreis (Bayern full + stubs), CurriculumSubject,

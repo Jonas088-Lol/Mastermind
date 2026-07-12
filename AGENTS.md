@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 <!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 

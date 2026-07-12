@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ── nginx real_ip: Cloudflare-Ranges als set_real_ip_from generieren ───────
 #
 # WARUM: Hinter Cloudflare ist $remote_addr die CF-IP. Damit Rate-Limits,

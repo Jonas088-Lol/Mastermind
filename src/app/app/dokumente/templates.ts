@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // Dokument-Vorlagen für den Word-Editor.
 // content ist ein HTML-String (gleiches Format wie DocumentEditor speichert).
 

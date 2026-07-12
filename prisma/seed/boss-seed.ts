@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * boss-seed.ts — seeds all 75 BossDef records + achievement catalog
  * Run: npx ts-node --project tsconfig.json prisma/seed/boss-seed.ts

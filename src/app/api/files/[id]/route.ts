@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { createReadStream, existsSync } from "fs";
 import { stat } from "fs/promises";
 import { join } from "path";

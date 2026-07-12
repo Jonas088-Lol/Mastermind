@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { ArrowLeft, Building2, CircleDollarSign, Users } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";

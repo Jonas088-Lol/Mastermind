@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # MasterMind — Feature-Dokumentation
 
 > **Stand:** Juli 2026  

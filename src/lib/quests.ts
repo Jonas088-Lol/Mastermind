@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { prisma } from "@/lib/db/client";
 
 export async function incrementQuestProgress(

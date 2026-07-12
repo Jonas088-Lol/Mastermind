@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { writeFile, mkdir, stat, appendFile } from "fs/promises";
 import { join } from "path";
 import { NextRequest } from "next/server";

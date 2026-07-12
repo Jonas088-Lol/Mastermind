@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Extended curriculum seed — 60+ additional topics, 360+ questions
  * Run: DATABASE_URL="file:./prisma/prisma/dev.db" npx tsx scripts/seed-extended.ts

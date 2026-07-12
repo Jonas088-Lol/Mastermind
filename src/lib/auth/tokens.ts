@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Tokens für Magic-Link, Password-Reset, E-Mail-Verifizierung, 2FA.
  *

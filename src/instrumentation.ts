@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Next.js Instrumentation — läuft einmal beim Serverstart.
  * Wird für die ENV-Fail-Fast-Validierung genutzt: in Produktion startet der

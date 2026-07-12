@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Leichtgewichtige, dependency-freie Eingabe-Validierung für Route Handler
  * und Server Actions. Kein Zod (bewusst keine zusätzliche Dependency), aber

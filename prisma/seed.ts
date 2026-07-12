@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { PrismaClient } from "@prisma/client";
 import { hashPassword } from "../src/lib/auth/passwords";
 

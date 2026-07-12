@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { redirect } from "next/navigation";
 import { NextResponse } from "next/server";
 import { effectiveRole, getSession, type Role, type Session } from "@/lib/session";

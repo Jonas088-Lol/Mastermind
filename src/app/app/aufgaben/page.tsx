@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { AlertTriangle, CalendarClock, CheckCircle2, Clock, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * withApiSecurity — typed wrapper for Next.js Route Handlers.
  *

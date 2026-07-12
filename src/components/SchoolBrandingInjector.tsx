@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { hexToHsl, contrastFg } from "@/lib/hex-to-hsl";
 import type { SchoolBranding } from "@/lib/school-branding";
 

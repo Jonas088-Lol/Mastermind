@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Runbook — Incident Response (MasterMind)
 
 Handlungsleitfaden bei einem Sicherheitsvorfall / Datenschutzverstoß.

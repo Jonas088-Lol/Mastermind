@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Datenschutz-Folgenabschätzung (DSFA / DPIA)
 
 **Art. 35 DSGVO** · Plattform: MasterMind / konvertis.de

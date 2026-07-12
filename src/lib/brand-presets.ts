@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 export interface BrandPreset {
   id: string;
   name: string;

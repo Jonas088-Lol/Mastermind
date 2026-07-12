@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * leaderboard.ts
  * Leaderboard management using Upstash Redis ZSETs.

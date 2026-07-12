@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { ArrowRight, Users } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";

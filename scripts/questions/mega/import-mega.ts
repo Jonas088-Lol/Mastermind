@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Importiert die MEGA-Fragenbank (scripts/questions/mega/data/*.json)
  * in die Datenbank: pro (Fach, Klasse, Topic) ein ExerciseTopic,

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // MasterMind — Production Schema (PostgreSQL)
 // Identisch zu prisma/schema.prisma, aber mit provider = "postgresql"
 // Das Dockerfile kopiert diese Datei beim Build: cp prisma/schema.postgres.prisma prisma/schema.prisma

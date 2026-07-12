@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { prisma } from "@/lib/db/client";
 import { getActiveEvents } from "@/lib/settings";
 import { Zap, Users, School, Swords, AlertTriangle } from "lucide-react";

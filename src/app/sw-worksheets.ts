@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 export function registerWorksheetOfflineSupport(worksheetId: string, data: unknown): void {
   // Store worksheet data in IndexedDB for offline access
   if (typeof window === "undefined") return;

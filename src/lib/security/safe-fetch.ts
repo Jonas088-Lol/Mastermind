@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * SSRF-Schutz für serverseitige Fetches auf potenziell nutzergesteuerte URLs.
  *

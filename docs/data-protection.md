@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Datenschutz-Dokumentation — MasterMind
 
 > Arbeitsdokument, **keine Rechtsberatung**. ⚖️-Punkte müssen mit einer/einem

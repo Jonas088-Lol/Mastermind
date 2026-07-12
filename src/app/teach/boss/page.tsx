@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import Link from "next/link";
 import { Plus, Swords } from "lucide-react";
 import { prisma } from "@/lib/db/client";

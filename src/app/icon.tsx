@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { ImageResponse } from "next/og";
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";

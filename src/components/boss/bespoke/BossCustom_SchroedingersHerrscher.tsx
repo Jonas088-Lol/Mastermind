@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 /** Schrödingers Herrscher — Mythic Physik. Quantum superposition: two overlapping states, waveform aura. */
 

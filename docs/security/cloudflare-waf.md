@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # Cloudflare Edge-WAF — Konfiguration (Phase 2.1)
 
 Cloudflare ist die **erste** WAF-Schicht (vor dem Origin). Da die Einstellungen

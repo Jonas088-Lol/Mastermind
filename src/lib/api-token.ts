@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Token-Authentifizierung für die Read-only REST-API v1 (/api/v1/**).
  *

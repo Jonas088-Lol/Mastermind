@@ -1,3 +1,4 @@
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ===========================================================================
 # MasterMind -- Download-Dateien auf den Server deployen
 #

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Zwischenzustand zwischen Passwort-OK und 2FA-Code-Eingabe.
  *

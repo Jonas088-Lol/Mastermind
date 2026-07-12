@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * POST /api/tree/unlock-center
  * Validates the answer to the general-knowledge question and unlocks the hub.

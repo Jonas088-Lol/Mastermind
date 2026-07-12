@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ── versionCode +1 ─────────────────────────────────────────────────────────
 # Google Play verlangt bei JEDEM neuen Upload einen höheren versionCode.
 # Dieses Skript erhöht ihn in android/app/build.gradle automatisch um 1.

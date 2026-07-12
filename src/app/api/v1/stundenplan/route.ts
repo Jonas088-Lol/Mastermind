@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * GET /api/v1/stundenplan — Read-only API v1
  *

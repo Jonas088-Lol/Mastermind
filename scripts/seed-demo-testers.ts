@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Legt für JEDE Rolle einen funktionierenden Demo-Account für Tester an —
  * inklusive der nötigen Verknüpfungen (Schule, Klasse, Eltern-Kind-Link),

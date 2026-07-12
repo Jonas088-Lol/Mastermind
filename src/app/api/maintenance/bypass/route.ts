@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 

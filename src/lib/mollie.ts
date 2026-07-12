@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { createMollieClient, type MollieClient, PaymentMethod } from "@mollie/api-client";
 
 // ── Singleton client ───────────────────────────────────────────────────────

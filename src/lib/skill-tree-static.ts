@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Static 80h skill tree — 12 ranks per subject.
  * Thresholds in minutes. Same for every user.

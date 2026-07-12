@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Field-Level-Encryption für sensible DB-Spalten (Art. 32 DSGVO).
  *

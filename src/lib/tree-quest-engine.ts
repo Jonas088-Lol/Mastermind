@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * tree-quest-engine.ts
  * Server-only. Manages quest assignment and progress for the curriculum tree.

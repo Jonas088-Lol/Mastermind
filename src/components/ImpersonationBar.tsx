@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { Eye, RotateCcw } from "lucide-react";
 import { ROLE_LABEL, type Role, VIEW_ROLES } from "@/lib/session";
 import { stopImpersonation, switchView } from "@/app/login/actions";

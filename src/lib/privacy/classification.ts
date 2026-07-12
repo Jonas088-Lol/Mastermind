@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Zentrales Datenklassifizierungs-Schema (Art. 5, 25, 32 DSGVO).
  *

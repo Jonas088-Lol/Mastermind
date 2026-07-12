@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import Stripe from "stripe";
 
 let _stripe: Stripe | null = null;

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { Hero } from "@/components/landing/Hero";
 import { Trust } from "@/components/landing/Trust";
 import { FeatureShowcase } from "@/components/landing/FeatureShowcase";

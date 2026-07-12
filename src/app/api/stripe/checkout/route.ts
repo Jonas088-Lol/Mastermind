@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { type NextRequest, NextResponse } from "next/server";
 import { getSession, effectiveRole } from "@/lib/session";
 import { getStripe, getCoinPack } from "@/lib/stripe";

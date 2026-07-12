@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { type ComponentProps, forwardRef } from "react";
 import { cn } from "@/lib/utils";
 

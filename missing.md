@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # MasterMind — Offene Punkte
 
 > Stand: 2026-05-15  

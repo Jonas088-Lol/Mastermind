@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { prisma } from "@/lib/db/client";
 import { unstable_cache } from "next/cache";
 import type { Session } from "@/lib/session";

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ── Fail2ban einrichten für MasterMind (idempotent) ────────────────────────
 #
 # WARUM: Dynamisches IP-Banning gegen SSH-Brute-Force und HTTP-Scanning/Fuzzing.

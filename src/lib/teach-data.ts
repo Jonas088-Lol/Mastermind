@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 export type Trend = "up" | "down" | "flat";
 export type Risk = "low" | "medium" | "high";
 

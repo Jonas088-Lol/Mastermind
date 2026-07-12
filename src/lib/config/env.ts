@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Zentrale ENV-Validierung mit Fail-Fast.
  *

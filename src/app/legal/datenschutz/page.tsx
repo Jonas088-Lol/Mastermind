@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { CheckCircle2, MapPin, Server, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 

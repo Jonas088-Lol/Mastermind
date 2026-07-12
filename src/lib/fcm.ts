@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { JWT } from "google-auth-library";
 import { logger } from "@/lib/logger";
 

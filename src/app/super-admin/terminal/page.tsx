@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { SuperCommandField } from "@/app/plattform/gamification/CommandField";
 
 export default function SuperAdminTerminalPage() {

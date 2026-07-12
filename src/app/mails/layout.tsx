@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Postfach · Konvertis" };

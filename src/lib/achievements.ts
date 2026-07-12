@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { prisma } from "@/lib/db/client";
 import { levelFromXp } from "@/lib/xp";
 import { awardCoins } from "@/lib/coins";

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright 2026 Elian Schock, Jonas Schwenk
 # ── Security-Verifikation MasterMind ───────────────────────────────────────
 # Prüft die wichtigsten Härtungsmaßnahmen. Auf dem SERVER ausführen.
 # Nutzung:  bash scripts/security-verify.sh [domain]

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {

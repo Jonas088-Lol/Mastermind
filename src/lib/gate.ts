@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Zugangs-Gate ("Coming Soon"-Schutz vor der öffentlichen App).
  *

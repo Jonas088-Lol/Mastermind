@@ -1,3 +1,4 @@
+<!-- Copyright 2026 Elian Schock, Jonas Schwenk -->
 # MasterMind — Security Architecture
 
 ## Defense-in-Depth Overview

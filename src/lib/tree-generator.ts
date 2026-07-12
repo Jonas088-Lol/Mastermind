@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * tree-generator.ts
  * Initializes and updates a user's curriculum-driven skill tree.

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Legt einen einzelnen Admin-/Super-Account an — für den ersten Login nach
  * einem frischen DB-Setup (der Demo-Seed ist in Produktion blockiert).

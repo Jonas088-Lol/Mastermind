@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Activity, ArrowLeft, BarChart3, Building2, GraduationCap, MessageSquare, Users, Zap } from "lucide-react";

@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 // Generates icon.ico from icon.png using the PNG-embedded ICO format.
 // Supported by Windows Vista+ and all modern electron-builder versions.
 // No npm dependencies required.

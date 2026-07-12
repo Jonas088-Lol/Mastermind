@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Importiert die generierten JSONL-Shards in die Postgres-DB via Prisma.
  *

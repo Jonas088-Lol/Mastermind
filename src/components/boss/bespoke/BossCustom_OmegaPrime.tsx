@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 /** OMEGA-PRIME — Secret boss. The embodiment of decay. Void entity, fractal corruption. */
 

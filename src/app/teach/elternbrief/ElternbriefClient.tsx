@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
 import { Check, Copy, Loader2, Sparkles } from "lucide-react";

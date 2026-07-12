@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { randomBytes } from "node:crypto";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";

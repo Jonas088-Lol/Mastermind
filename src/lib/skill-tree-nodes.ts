@@ -1,3 +1,4 @@
+/* Copyright 2026 Elian Schock, Jonas Schwenk */
 /**
  * Static skill tree — 113 nodes total.
  * Hub (always unlocked) + 8 subjects × 14 nodes each.
