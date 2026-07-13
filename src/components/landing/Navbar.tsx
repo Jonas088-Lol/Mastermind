@@ -14,6 +14,8 @@ const navLinks = [
   { href: "/preise", label: "Preise" },
   { href: "/fuer/schulen", label: "Für Schulen" },
   { href: "/fuer/lehrer", label: "Für Lehrer" },
+  { href: "/fuer/schueler", label: "Für Schüler" },
+  { href: "/fuer/eltern", label: "Für Eltern" },
   { href: "/downloads", label: "App" },
 ];
 
@@ -65,14 +67,14 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <nav
-            className="hidden items-center gap-1 md:flex"
+            className="hidden items-center gap-0.5 xl:flex"
             aria-label="Hauptnavigation"
           >
             {navLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg"
+                className="rounded-lg px-3 py-2 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg"
               >
                 {l.label}
               </Link>
@@ -106,7 +108,7 @@ export function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={open}
-              className="grid size-9 place-items-center rounded-lg text-fg transition-colors hover:bg-surface-2 md:hidden"
+              className="grid size-9 place-items-center rounded-lg text-fg transition-colors hover:bg-surface-2 xl:hidden"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -117,7 +119,7 @@ export function Navbar() {
       {/* Mobile menu overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-40 flex flex-col bg-surface transition-all duration-300 ease-out md:hidden",
+          "fixed inset-0 z-40 flex flex-col bg-surface transition-all duration-300 ease-out xl:hidden",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
         style={{ paddingTop: "64px" }}
