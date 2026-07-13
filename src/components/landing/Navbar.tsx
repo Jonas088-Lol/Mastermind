@@ -100,16 +100,18 @@ export function Navbar() {
                 <ChevronDown className="size-3.5 transition-transform duration-200 group-hover:rotate-180" />
               </button>
 
-              {/* Schwebendes Panel (unscharf-transparent, wie die Navbar) */}
-              <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                <div className="translate-y-1 rounded-2xl border border-border-strong bg-surface/70 p-2 shadow-lg backdrop-blur-lg transition-transform duration-200 group-hover:translate-y-0">
+              {/* Schwebendes Panel — kleiner Abstand zur Navbar (pt-3 als Hover-Brücke).
+                  Wichtig: KEINE opacity auf dem Eltern-Container, sonst wird der
+                  backdrop-blur des Panels deaktiviert. */}
+              <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 group-hover:visible">
+                <div className="translate-y-1 rounded-2xl border border-border-strong bg-surface/70 p-2 opacity-0 shadow-lg backdrop-blur-lg transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
                   {roleLinks.map((r) => (
                     <Link
                       key={r.href}
                       href={r.href}
-                      className="flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-surface-2"
+                      className="flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-surface-2/25"
                     >
-                      <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand">
+                      <span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand/10 text-brand">
                         <r.icon className="size-4" strokeWidth={1.75} />
                       </span>
                       <span className="min-w-0">
@@ -205,9 +207,9 @@ export function Navbar() {
                   key={r.href}
                   href={r.href}
                   onClick={closeMobile}
-                  className="flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-surface-2"
+                  className="flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-surface-2/25"
                 >
-                  <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand">
+                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand/10 text-brand">
                     <r.icon className="size-4" strokeWidth={1.75} />
                   </span>
                   <span>
