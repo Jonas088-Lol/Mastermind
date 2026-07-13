@@ -44,8 +44,8 @@ const audiences: {
     headline: "Für Lehrer",
     subheadline: "Mehr Zeit für das Wesentliche.",
     points: [
-      "Aufgaben und Klassenarbeiten in wenigen Minuten erstellen",
-      "Noten, Kompetenzen und Lernstände übersichtlich zusammengeführt",
+      "Aufgaben und Klassenarbeiten in Minuten erstellen",
+      "Noten und Lernstände übersichtlich zusammengeführt",
       "Kompetenz-Heatmaps schaffen sofortigen Überblick",
       "KI übernimmt den ersten Korrekturdurchgang",
     ],
@@ -132,13 +132,14 @@ export function UseCases() {
         <AnimateOnScroll animation="fade-up" delay={200}>
           <div className="mt-8 mx-auto max-w-3xl">
             <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-sm">
-              <div className="flex flex-col sm:flex-row">
+              {/* feste Mindesthöhe → alle Rollen-Boxen gleich lang, kein Höhensprung beim Tab-Wechsel */}
+              <div className="flex flex-col sm:min-h-76 sm:flex-row">
                 {/* Left: icon panel with rainbow gradient + Landing-Symboldesign icon */}
                 <div
                   className="flex items-center justify-center sm:w-52 shrink-0 py-10 sm:py-0 rounded-t-3xl sm:rounded-t-none sm:rounded-l-3xl"
                   style={iconPanelStyle(current.rainbowPos)}
                 >
-                  <div className="grid size-20 place-items-center rounded-3xl bg-white/20 backdrop-blur-sm">
+                  <div className="grid size-20 place-items-center rounded-full bg-white/20 backdrop-blur-sm">
                     <current.Icon className="size-10 text-white" strokeWidth={1.5} />
                   </div>
                 </div>

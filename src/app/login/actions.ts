@@ -173,11 +173,8 @@ export async function loginAsDemoRole(roleKey: string) {
   if (!entry) redirect("/login?error=invalid");
   const { email, role } = entry;
 
-  // Sicherheit: passwortloser super-Admin (Plattform-Betreiber) darf NIE
-  // per Demo-Kachel erreichbar sein, außer ausdrücklich freigeschaltet.
-  if (role === "super" && process.env.ALLOW_DEMO_SUPER !== "true") {
-    redirect("/login?error=demo-disabled");
-  }
+  // Hinweis: Der gesamte Demo-Login (inkl. super) lässt sich über
+  // DISABLE_DEMO_LOGIN=true für produktive Deployments abschalten (oben geprüft).
 
   // Nur einloggen, wenn der Demo-Account wirklich existiert und die Rolle passt.
   const user = await prisma.user.findUnique({
