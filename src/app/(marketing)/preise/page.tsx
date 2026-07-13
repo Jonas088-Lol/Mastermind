@@ -1,7 +1,7 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check, X } from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
 import { Pricing } from "@/components/landing/Pricing";
@@ -83,15 +83,6 @@ export default function PreisePage() {
     <>
       {/* Preisliste — identisch mit der Startseite */}
       <div className="border-b border-border">
-        <Container>
-          <Link
-            href="/"
-            className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted-fg hover:text-fg"
-          >
-            <ArrowLeft className="size-3.5" />
-            Startseite
-          </Link>
-        </Container>
         <Pricing />
       </div>
 

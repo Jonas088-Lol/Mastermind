@@ -14,19 +14,17 @@ const navLinks = [
   { href: "/preise", label: "Preise" },
   { href: "/fuer/schulen", label: "Für Schulen" },
   { href: "/fuer/lehrer", label: "Für Lehrer" },
-  { href: "/download", label: "App" },
+  { href: "/downloads", label: "App" },
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handler = () => {
       const y = window.scrollY;
-      setScrolled(y > 8);
       // Hide on scroll-down past 80px, reveal on scroll-up
       if (y > 80) {
         setHidden(y > lastScrollY.current);
@@ -51,10 +49,8 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 w-full transition-all duration-300",
-          scrolled
-            ? "border-b border-border bg-surface/90 shadow-sm backdrop-blur-lg"
-            : "bg-transparent",
+          // Durchgängig unscharf-transparenter Hintergrund — auch ganz oben.
+          "sticky top-0 z-50 w-full border-b border-border bg-surface/70 shadow-sm backdrop-blur-lg transition-all duration-300",
           hidden && !open ? "-translate-y-full" : "translate-y-0"
         )}
       >
