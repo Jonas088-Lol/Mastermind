@@ -94,7 +94,7 @@ export default function FuerLehrerPage() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="/kontakt"
+                href="/kontakt?betreff=demo"
                 className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
               >
                 Demo buchen
@@ -157,7 +157,7 @@ export default function FuerLehrerPage() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="/kontakt"
+                href="/kontakt?betreff=demo"
                 className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
               >
                 Persönliche Demo buchen

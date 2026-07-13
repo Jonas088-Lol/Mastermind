@@ -217,7 +217,7 @@ export default function FunktionenPage() {
                 <ArrowRight className="size-4" />
               </Link>
               <Link
-                href="/kontakt"
+                href="/kontakt?betreff=demo"
                 className={buttonVariants({ variant: "outline", size: "lg" })}
               >
                 Demo buchen

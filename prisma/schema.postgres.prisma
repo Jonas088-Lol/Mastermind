@@ -2681,3 +2681,16 @@ model BoardAnnouncement {
 
   @@index([schoolId, active, order])
 }
+
+// ── Schul-Demos (7-Tage-Testzugang, von Plattform-Admins vergeben) ──
+model DemoAccess {
+  id           String   @id @default(cuid())
+  schoolName   String
+  passwordEnc  String   // 24-stelliges Passwort, feldverschlüsselt (Admin kann es wieder anzeigen)
+  demoSchoolId String   @unique
+  activatesAt  DateTime // Start der 7 Tage (kann in der Zukunft liegen)
+  endsAt       DateTime? // optionales Ende (bei Verlängerung gesetzt; sonst Start + 7 Tage)
+  createdAt    DateTime @default(now())
+
+  @@index([activatesAt])
+}

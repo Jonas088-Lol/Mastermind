@@ -34,7 +34,13 @@ const contactCards = [
   },
 ];
 
-export default function KontaktPage() {
+export default async function KontaktPage({ searchParams }: { searchParams: Promise<{ betreff?: string }> }) {
+  const { betreff } = await searchParams;
+  const isDemo = betreff === "demo";
+  const DEMO_SUBJECT = "Anfrage auf Demo";
+  // Demo-Anfragen gehen an die info@-Adresse, sonst an den allgemeinen Kontakt.
+  const mailAction = isDemo ? "mailto:info@konvertis.de" : "mailto:kontakt@mastermind.app";
+
   return (
     <>
       <Navbar />
@@ -103,7 +109,7 @@ export default function KontaktPage() {
                 </p>
 
                 <form
-                  action="mailto:kontakt@mastermind.app"
+                  action={mailAction}
                   method="get"
                   encType="text/plain"
                   className="mt-8 space-y-5"
@@ -152,9 +158,11 @@ export default function KontaktPage() {
                     <select
                       id="betreff"
                       name="subject"
+                      defaultValue={isDemo ? DEMO_SUBJECT : ""}
                       className="border border-border bg-bg px-4 py-2.5 text-sm outline-none transition-colors focus:border-brand"
                     >
                       <option value="">Bitte wählen …</option>
+                      <option value={DEMO_SUBJECT}>Anfrage auf Demo</option>
                       <option value="Vertrieb">Vertrieb</option>
                       <option value="Support">Support</option>
                       <option value="Datenschutz">Datenschutz</option>

@@ -74,7 +74,7 @@ export function Hero({ loggedInName = null }: { loggedInName?: string | null }) 
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
-                  href="/kontakt"
+                  href="/kontakt?betreff=demo"
                   className={buttonVariants({
                     size: "lg",
                     className: "pastel-cta w-full font-bold sm:w-auto",

@@ -15,7 +15,9 @@ export type AuditAction =
   | "school.settings_changed"
   | "exam.tab_switch"
   | "data.export"
-  | "data.deletion_request";
+  | "data.deletion_request"
+  | "demo.create"
+  | "demo.extend";
 
 export async function auditLog(opts: {
   action: AuditAction;
