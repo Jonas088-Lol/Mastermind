@@ -8,10 +8,10 @@ import { AnimateOnScroll } from "./AnimateOnScroll";
 const plans = [
   {
     name: "Pro",
-    description: "Der Standard für ambitionierte Schulen.",
+    description: "Alle Funktionen für einen vollständig digitalen Schulalltag.",
     price: "1.500",
     suffix: "€ / Jahr",
-    seats: "500 Schüler inklusive",
+    seats: "Bis zu 500 Schüler gratis",
     features: [
       "Lernen, Karteikarten, Aufgaben",
       "Stundenplan & Klassenbuch",
@@ -26,11 +26,11 @@ const plans = [
     highlight: true,
   },
   {
-    name: "Enterprise",
-    description: "Für Schulträger und Multi-Campus.",
-    price: "Auf Anfrage",
-    suffix: "",
-    seats: "Multi-Tenant + White-Label",
+    name: "Individual",
+    description: "Wählen Sie genau die Funktionen, die Ihre Schule benötigt.",
+    price: "ab 850",
+    suffix: "€ / Jahr",
+    seats: "Bis zu 500 Schüler gratis",
     features: [
       "Alles aus Pro",
       "SSO (SAML / SCIM)",
@@ -38,7 +38,7 @@ const plans = [
       "Dedicated DPA & SLA",
       "Persönlicher CSM",
     ],
-    cta: "Vertrieb kontaktieren",
+    cta: "Konfigurieren",
     href: "/kontakt",
     highlight: false,
   },
@@ -55,9 +55,6 @@ export function Pricing() {
             <br className="hidden sm:block" />
             Keine Überraschungen.
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-fg sm:text-lg">
-            Pilotphase 30 Tage gratis · Monatliche Abrechnung · Jederzeit kündbar.
-          </p>
         </AnimateOnScroll>
 
         <div className="mx-auto mt-12 grid max-w-3xl gap-5 sm:mt-16 sm:grid-cols-2">
@@ -83,12 +80,12 @@ export function Pricing() {
                 </span>
               )}
 
-              <div>
+              <div className="text-center">
                 <h3 className="text-xl font-bold">{p.name}</h3>
                 <p className="mt-1.5 text-sm text-muted-fg">{p.description}</p>
               </div>
 
-              <div className="mt-6 border-t border-border pt-6">
+              <div className="mt-6 border-t border-border pt-6 text-center">
                 <p className="font-mono text-4xl font-bold tracking-tight">
                   {p.price}
                   {p.suffix && (

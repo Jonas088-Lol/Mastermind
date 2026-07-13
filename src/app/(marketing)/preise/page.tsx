@@ -10,12 +10,12 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Preise | MasterMind",
   description:
-    "Transparente Preise für jede Schulgröße — Pro und Enterprise. 30 Tage kostenlos testen.",
+    "Transparente Preise für jede Schulgröße — Pro und Individual. 30 Tage kostenlos testen.",
 };
 
 const PLAN_NAMES = [
   { name: "Pro", highlight: true },
-  { name: "Enterprise", highlight: false },
+  { name: "Individual", highlight: false },
 ];
 
 const comparisonRows: {
