@@ -6,21 +6,26 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { BrandLogo } from "@/components/BrandLogo";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, School, Presentation, GraduationCap, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/funktionen", label: "Funktionen" },
   { href: "/preise", label: "Preise" },
-  { href: "/fuer/schulen", label: "Für Schulen" },
-  { href: "/fuer/lehrer", label: "Für Lehrer" },
-  { href: "/fuer/schueler", label: "Für Schüler" },
-  { href: "/fuer/eltern", label: "Für Eltern" },
-  { href: "/downloads", label: "App" },
+];
+
+const appLink = { href: "/download", label: "App" };
+
+const roleLinks = [
+  { href: "/fuer/schulen",  label: "Für Schulen",  desc: "Verwaltung & Übersicht",  icon: School },
+  { href: "/fuer/lehrer",   label: "Für Lehrer",   desc: "Unterricht & Korrektur",  icon: Presentation },
+  { href: "/fuer/schueler", label: "Für Schüler",  desc: "Lernen & Gamification",   icon: GraduationCap },
+  { href: "/fuer/eltern",   label: "Für Eltern",   desc: "Noten & Kommunikation",   icon: Users },
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [roleOpen, setRoleOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
 
@@ -41,11 +46,16 @@ export function Navbar() {
 
   useEffect(() => {
     if (open) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
+    else { document.body.style.overflow = ""; setRoleOpen(false); }
     return () => {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  function closeMobile() {
+    setOpen(false);
+    setRoleOpen(false);
+  }
 
   return (
     <>
@@ -67,7 +77,7 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <nav
-            className="hidden items-center gap-0.5 xl:flex"
+            className="hidden items-center gap-0.5 lg:flex"
             aria-label="Hauptnavigation"
           >
             {navLinks.map((l) => (
@@ -79,6 +89,45 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
+
+            {/* "Für jede Rolle" — Aufklapp-Menü beim Hovern */}
+            <div className="group relative">
+              <button
+                type="button"
+                className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg group-hover:bg-surface group-hover:text-fg"
+              >
+                Für jede Rolle
+                <ChevronDown className="size-3.5 transition-transform duration-200 group-hover:rotate-180" />
+              </button>
+
+              {/* Schwebendes Panel (unscharf-transparent, wie die Navbar) */}
+              <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                <div className="translate-y-1 rounded-2xl border border-border-strong bg-surface/70 p-2 shadow-lg backdrop-blur-lg transition-transform duration-200 group-hover:translate-y-0">
+                  {roleLinks.map((r) => (
+                    <Link
+                      key={r.href}
+                      href={r.href}
+                      className="flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-surface-2"
+                    >
+                      <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand">
+                        <r.icon className="size-4" strokeWidth={1.75} />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-sm font-semibold text-fg">{r.label}</span>
+                        <span className="block text-xs text-muted-fg">{r.desc}</span>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Link
+              href={appLink.href}
+              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg"
+            >
+              {appLink.label}
+            </Link>
           </nav>
 
           {/* Right side */}
@@ -108,7 +157,7 @@ export function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={open}
-              className="grid size-9 place-items-center rounded-lg text-fg transition-colors hover:bg-surface-2 xl:hidden"
+              className="grid size-9 place-items-center rounded-lg text-fg transition-colors hover:bg-surface-2 lg:hidden"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -119,7 +168,7 @@ export function Navbar() {
       {/* Mobile menu overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-40 flex flex-col bg-surface transition-all duration-300 ease-out xl:hidden",
+          "fixed inset-0 z-40 flex flex-col overflow-y-auto bg-surface transition-all duration-300 ease-out lg:hidden",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         )}
         style={{ paddingTop: "64px" }}
@@ -128,22 +177,56 @@ export function Navbar() {
           className="flex flex-col gap-1 p-5"
           aria-label="Mobile Navigation"
         >
-          {navLinks.map((l, i) => (
+          {navLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              onClick={() => setOpen(false)}
-              className={cn(
-                "flex items-center rounded-xl px-4 py-3.5 text-base font-medium text-fg transition-colors hover:bg-surface-2",
-                open &&
-                  `animate-slide-up animate-delay-${
-                    i === 0 ? "100" : i === 1 ? "200" : "300"
-                  }`
-              )}
+              onClick={closeMobile}
+              className="flex items-center rounded-xl px-4 py-3.5 text-base font-medium text-fg transition-colors hover:bg-surface-2"
             >
               {l.label}
             </Link>
           ))}
+
+          {/* "Für jede Rolle" — antippen zum Ausklappen */}
+          <button
+            type="button"
+            onClick={() => setRoleOpen((v) => !v)}
+            aria-expanded={roleOpen}
+            className="flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium text-fg transition-colors hover:bg-surface-2"
+          >
+            Für jede Rolle
+            <ChevronDown className={cn("size-4 transition-transform duration-200", roleOpen && "rotate-180")} />
+          </button>
+          {roleOpen && (
+            <div className="ml-2 flex flex-col gap-1 rounded-2xl border border-border-strong bg-surface/70 p-2 backdrop-blur-lg">
+              {roleLinks.map((r) => (
+                <Link
+                  key={r.href}
+                  href={r.href}
+                  onClick={closeMobile}
+                  className="flex items-center gap-3 rounded-xl p-2.5 transition-colors hover:bg-surface-2"
+                >
+                  <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand">
+                    <r.icon className="size-4" strokeWidth={1.75} />
+                  </span>
+                  <span>
+                    <span className="block text-sm font-semibold text-fg">{r.label}</span>
+                    <span className="block text-xs text-muted-fg">{r.desc}</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          <Link
+            href={appLink.href}
+            onClick={closeMobile}
+            className="flex items-center rounded-xl px-4 py-3.5 text-base font-medium text-fg transition-colors hover:bg-surface-2"
+          >
+            {appLink.label}
+          </Link>
+
           <div className="mt-4 flex flex-col gap-2.5 border-t border-border pt-4">
             <div className="flex items-center justify-between pb-1">
               <span className="text-sm text-muted-fg">Darstellung</span>
@@ -151,7 +234,7 @@ export function Navbar() {
             </div>
             <Link
               href="/login"
-              onClick={() => setOpen(false)}
+              onClick={closeMobile}
               className={cn(
                 buttonVariants({ variant: "secondary", size: "lg" }),
                 "w-full"
@@ -161,7 +244,7 @@ export function Navbar() {
             </Link>
             <Link
               href="/onboarding"
-              onClick={() => setOpen(false)}
+              onClick={closeMobile}
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "pastel-cta w-full"

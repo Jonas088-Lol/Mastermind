@@ -10,6 +10,8 @@ import {
   ExternalLink, Apple,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/landing/Navbar";
+import { Footer } from "@/components/landing/Footer";
 
 /* ─── Platform data ───────────────────────────────────────────────────────── */
 
@@ -190,7 +192,7 @@ interface Props {
   baseUrl: string;
 }
 
-export function DownloadPageClient({ appVersion, baseUrl }: Props) {
+export function DownloadPageClient({ baseUrl }: Props) {
   const platforms = getPlatforms(baseUrl);
   const [active, setActive] = useState<PlatformId>("android");
   const [showAllSteps, setShowAllSteps] = useState(false);
@@ -213,26 +215,10 @@ export function DownloadPageClient({ appVersion, baseUrl }: Props) {
   return (
     <div className="min-h-screen bg-bg text-fg">
 
-      {/* ── Nav ─────────────────────────────────────────────────────────────── */}
-      <nav className="sticky top-0 z-20 border-b border-border bg-bg/80 backdrop-blur">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-5">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/brand/logo.png" alt="MasterMind" width={28} height={28} className="size-7 rounded-lg object-contain" />
-            <span className="text-sm font-bold tracking-tight">MasterMind</span>
-          </Link>
-          <div className="flex items-center gap-3">
-            <span className="hidden text-xs text-muted-fg sm:block">v{appVersion}</span>
-            <Link
-              href="/login"
-              className="rounded-lg border border-border px-3 py-1.5 text-xs font-semibold text-muted-fg hover:bg-surface hover:text-fg transition-colors"
-            >
-              Anmelden
-            </Link>
-          </div>
-        </div>
-      </nav>
+      {/* Einheitliche Landing-Navigationsleiste */}
+      <Navbar />
 
-      <main className="mx-auto max-w-5xl px-5 pb-20">
+      <main className="mx-auto max-w-5xl px-5 pb-20 pt-8">
 
         {/* ── Hero ────────────────────────────────────────────────────────────── */}
         <div className="py-14 text-center">
@@ -433,17 +419,10 @@ export function DownloadPageClient({ appVersion, baseUrl }: Props) {
           </button>
         </div>
 
-        {/* ── Footer ────────────────────────────────────────────────────────────── */}
-        <div className="mt-12 text-center text-xs text-muted-fg">
-          <p>MasterMind · Schulmanagement-Plattform</p>
-          <p className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-            <Link href="/legal/datenschutz" className="hover:text-fg transition-colors">Datenschutz</Link>
-            <Link href="/legal/impressum" className="hover:text-fg transition-colors">Impressum</Link>
-            <Link href="/" className="hover:text-fg transition-colors">Zurück zur Startseite</Link>
-          </p>
-        </div>
-
       </main>
+
+      {/* Einheitlicher Landing-Footer */}
+      <Footer />
     </div>
   );
 }

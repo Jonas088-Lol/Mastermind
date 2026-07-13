@@ -42,14 +42,14 @@ export function Cta() {
               <ArrowRight className="size-4" />
             </Link>
             <Link
-              href="/downloads"
+              href="/download"
               className={buttonVariants({
                 variant: "outline",
                 size: "lg",
                 className: "w-full sm:w-auto",
               })}
             >
-              Whitepaper laden →
+              App herunterladen →
             </Link>
           </div>
         </AnimateOnScroll>
