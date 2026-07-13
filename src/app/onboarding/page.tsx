@@ -12,6 +12,7 @@ import {
   Upload,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { activateStudentInvite, activateTeacherInvite, createSchoolAndAdmin } from "./actions";
@@ -94,9 +95,13 @@ export default async function OnboardingPage({ searchParams }: PageProps) {
             href="/"
             className="flex items-center gap-2 font-bold tracking-tight"
           >
-            <span className="grid size-7 place-items-center bg-fg text-bg text-[11px] font-black">
-              MM
-            </span>
+            <Image
+              src="/brand/logo-transparent.png"
+              alt="MasterMind"
+              width={28}
+              height={28}
+              className="size-7 object-contain"
+            />
             <span>MasterMind</span>
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-widest text-muted-fg">
@@ -145,9 +150,13 @@ function TeacherActivatePage({
             href="/"
             className="flex items-center gap-2 font-bold tracking-tight"
           >
-            <span className="grid size-7 place-items-center bg-fg text-bg text-[11px] font-black">
-              MM
-            </span>
+            <Image
+              src="/brand/logo-transparent.png"
+              alt="MasterMind"
+              width={28}
+              height={28}
+              className="size-7 object-contain"
+            />
             <span>MasterMind</span>
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-widest text-muted-fg">
@@ -251,9 +260,13 @@ function StudentActivatePage({
             href="/"
             className="flex items-center gap-2 font-bold tracking-tight"
           >
-            <span className="grid size-7 place-items-center bg-fg text-bg text-[11px] font-black">
-              MM
-            </span>
+            <Image
+              src="/brand/logo-transparent.png"
+              alt="MasterMind"
+              width={28}
+              height={28}
+              className="size-7 object-contain"
+            />
             <span>MasterMind</span>
           </Link>
           <span className="font-mono text-[10px] uppercase tracking-widest text-muted-fg">
@@ -351,7 +364,7 @@ function StudentActivatePage({
 
 function Stepper({ current }: { current: number }) {
   return (
-    <ol className="grid grid-cols-5 gap-px border border-border bg-border">
+    <ol className="grid grid-cols-2 gap-3 sm:grid-cols-5">
       {STEPS.map((s) => {
         const Icon = s.icon;
         const done = current > s.num;
@@ -360,17 +373,17 @@ function Stepper({ current }: { current: number }) {
           <li
             key={s.num}
             className={cn(
-              "flex flex-col items-center gap-2 bg-bg p-4 sm:flex-row sm:gap-3 sm:p-5",
-              active && "border-l-2 border-l-brand"
+              "flex flex-col items-center gap-2 rounded-2xl border border-border bg-bg p-4 shadow-sm transition-colors sm:flex-row sm:gap-3 sm:p-5",
+              active && "border-brand/40 ring-1 ring-brand/30"
             )}
             aria-current={active ? "step" : undefined}
           >
             <div
               className={cn(
-                "grid size-9 shrink-0 place-items-center font-mono text-xs font-bold",
-                done && "bg-success text-bg",
-                active && "bg-brand text-brand-fg",
-                !done && !active && "bg-surface text-muted-fg"
+                "grid size-9 shrink-0 place-items-center rounded-xl font-mono text-xs font-bold",
+                done && "bg-success/15 text-success",
+                active && "bg-brand/10 text-brand",
+                !done && !active && "bg-muted-fg/10 text-muted-fg"
               )}
             >
               {done ? <Check className="size-4" /> : <Icon className="size-4" strokeWidth={1.75} />}
@@ -415,7 +428,7 @@ function Navigation({ step, plan, sso, schulname }: { step: number; plan?: strin
       </Link>
       <Link
         href={navHref(step + 1, plan, sso, schulname)}
-        className="inline-flex items-center gap-2 bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+        className="pastel-cta inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold"
       >
         {step === 4 ? "Onboarding abschließen" : "Weiter"}
         <ArrowRight className="size-4" />
@@ -450,7 +463,7 @@ function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: str
                   id="school-type"
                   name="schulart"
                   defaultValue="realschule"
-                  className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
+                  className="h-10 w-full rounded-xl border border-border bg-bg px-3 text-sm shadow-sm focus:border-brand/40 focus:outline-none focus:ring-1 focus:ring-brand/30"
                 >
                   <option value="grundschule">Grundschule</option>
                   <option value="hauptschule">Hauptschule</option>
@@ -467,7 +480,7 @@ function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: str
                   id="bundesland"
                   name="bundesland"
                   defaultValue="by"
-                  className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
+                  className="h-10 w-full rounded-xl border border-border bg-bg px-3 text-sm shadow-sm focus:border-brand/40 focus:outline-none focus:ring-1 focus:ring-brand/30"
                 >
                   <option value="bw">Baden-Württemberg</option>
                   <option value="by">Bayern</option>
@@ -533,7 +546,7 @@ function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: str
       <div className="mt-10 flex justify-end border-t border-border pt-6">
         <button
           type="submit"
-          className="inline-flex items-center gap-2 bg-fg px-5 py-2.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+          className="pastel-cta inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold"
         >
           Weiter
           <ArrowRight className="size-4" />
@@ -821,7 +834,7 @@ function Step5({ error, plan, schulname }: { error?: string; plan?: string; schu
                 id="plan"
                 name="plan"
                 defaultValue={plan ?? "pro"}
-                className="h-10 w-full border border-border bg-bg px-3 text-sm focus:border-fg/30 focus:outline-none"
+                className="h-10 w-full rounded-xl border border-border bg-bg px-3 text-sm shadow-sm focus:border-brand/40 focus:outline-none focus:ring-1 focus:ring-brand/30"
               >
                 <option value="basic">Basic — ab 0,90 € / Schüler / Mo.</option>
                 <option value="pro">Pro — 1,49 € / Schüler / Mo. (empfohlen)</option>

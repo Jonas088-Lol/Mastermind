@@ -57,8 +57,9 @@ export function Hero({ loggedInName = null }: { loggedInName?: string | null }) 
 
               {/* Subtext */}
               <p className="animate-fade-in animate-delay-200 mt-6 max-w-md text-base leading-relaxed text-muted-fg sm:text-lg">
-                KI-Tutor. Gamification. Echtzeit-Noten. —{" "}
-                <span className="text-fg">Eine Plattform für alle.</span>
+                Lernen. Kommunizieren. Organisieren.
+                <br />
+                <span className="text-fg">Eine Plattform für die gesamte Schule.</span>
               </p>
 
               {/* CTA buttons */}
@@ -70,7 +71,7 @@ export function Hero({ loggedInName = null }: { loggedInName?: string | null }) 
                     className: "pastel-cta w-full font-bold sm:w-auto",
                   })}
                 >
-                  Schule kostenlos testen
+                  Schule registrieren
                   <ArrowRight className="size-4" />
                 </Link>
                 <Link
@@ -80,7 +81,7 @@ export function Hero({ loggedInName = null }: { loggedInName?: string | null }) 
                     className: "pastel-cta w-full font-bold sm:w-auto",
                   })}
                 >
-                  30-Min-Demo buchen
+                  Demo buchen
                 </Link>
               </div>
 
