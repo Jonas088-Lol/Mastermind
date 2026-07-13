@@ -48,17 +48,44 @@ interface PageProps {
     plan?: string;
     sso?: string;
     schulname?: string;
+    schulart?: string;
+    bundesland?: string;
+    address?: string;
+    students?: string;
+    teachers?: string;
   }>;
 }
+
+/** Alle Angaben, die zwischen den Onboarding-Schritten erhalten bleiben. */
+type WizardParams = {
+  plan?: string;
+  sso?: string;
+  schulname?: string;
+  schulart?: string;
+  bundesland?: string;
+  address?: string;
+  students?: string;
+  teachers?: string;
+};
 
 const VALID_SSO = ["entra", "google", "apple", "saml", "email"] as const;
 type SsoKey = (typeof VALID_SSO)[number];
 
 export default async function OnboardingPage({ searchParams }: PageProps) {
-  const { step: stepStr, error, token, email, name, role, schoolId, klasse, plan: planParam, sso: ssoParam, schulname: schulnameParam } = await searchParams;
+  const { step: stepStr, error, token, email, name, role, schoolId, klasse, plan: planParam, sso: ssoParam, schulname: schulnameParam, schulart, bundesland, address, students, teachers } = await searchParams;
   const plan = ["basic", "pro", "enterprise"].includes(planParam ?? "") ? (planParam as string) : undefined;
   const sso = VALID_SSO.includes(ssoParam as SsoKey) ? (ssoParam as SsoKey) : undefined;
   const schulname = schulnameParam?.trim() || undefined;
+  const params: WizardParams = {
+    plan,
+    sso,
+    schulname,
+    schulart: schulart?.trim() || undefined,
+    bundesland: bundesland?.trim() || undefined,
+    address: address?.trim() || undefined,
+    students: students?.trim() || undefined,
+    teachers: teachers?.trim() || undefined,
+  };
 
   if (token && role === "teacher") {
     return (
@@ -114,14 +141,14 @@ export default async function OnboardingPage({ searchParams }: PageProps) {
         <Stepper current={stepNum} />
 
         <section className="mt-10">
-          {stepNum === 1 && <Step1 plan={plan} sso={sso} schulname={schulname} />}
-          {stepNum === 2 && <Step2 plan={plan} />}
-          {stepNum === 3 && <Step3 plan={plan} sso={sso} schulname={schulname} />}
+          {stepNum === 1 && <Step1 params={params} />}
+          {stepNum === 2 && <Step2 params={params} />}
+          {stepNum === 3 && <Step3 params={params} />}
           {stepNum === 4 && <Step4 />}
           {stepNum === 5 && <Step5 error={error} plan={plan} schulname={schulname} />}
         </section>
 
-        {stepNum > 1 && stepNum < 5 && <Navigation step={stepNum} plan={plan} sso={sso} schulname={schulname} />}
+        {stepNum > 1 && stepNum < 5 && <Navigation step={stepNum} params={params} />}
       </div>
     </main>
   );
@@ -408,26 +435,26 @@ function Stepper({ current }: { current: number }) {
   );
 }
 
-function navHref(step: number, plan?: string, sso?: string, schulname?: string) {
+function navHref(step: number, params: WizardParams) {
   const p = new URLSearchParams({ step: String(step) });
-  if (plan) p.set("plan", plan);
-  if (sso) p.set("sso", sso);
-  if (schulname) p.set("schulname", schulname);
+  for (const [key, value] of Object.entries(params)) {
+    if (value) p.set(key, value);
+  }
   return `/onboarding?${p.toString()}`;
 }
 
-function Navigation({ step, plan, sso, schulname }: { step: number; plan?: string; sso?: string; schulname?: string }) {
+function Navigation({ step, params }: { step: number; params: WizardParams }) {
   return (
     <div className="mt-10 flex items-center justify-between border-t border-border pt-6">
       <Link
-        href={navHref(step - 1, plan, sso, schulname)}
+        href={navHref(step - 1, params)}
         className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-fg transition-colors hover:text-fg"
       >
         <ArrowLeft className="size-3.5" />
         Zurück
       </Link>
       <Link
-        href={navHref(step + 1, plan, sso, schulname)}
+        href={navHref(step + 1, params)}
         className="pastel-cta inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold"
       >
         {step === 4 ? "Onboarding abschließen" : "Weiter"}
@@ -439,12 +466,12 @@ function Navigation({ step, plan, sso, schulname }: { step: number; plan?: strin
 
 /* ────────────────────────────────────────────── */
 
-function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: string; schulname?: string }) {
+function Step1({ params }: { params: WizardParams }) {
   return (
     <form method="GET" action="/onboarding">
       <input type="hidden" name="step" value="2" />
-      {plan && <input type="hidden" name="plan" value={plan} />}
-      {sso && <input type="hidden" name="sso" value={sso} />}
+      {params.plan && <input type="hidden" name="plan" value={params.plan} />}
+      {params.sso && <input type="hidden" name="sso" value={params.sso} />}
 
       <div className="grid gap-6 md:grid-cols-[1fr_320px]">
         <Card>
@@ -454,7 +481,7 @@ function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: str
           <CardBody className="space-y-5">
             <div className="space-y-1.5">
               <Label htmlFor="schulname">Schul-Name</Label>
-              <Input id="schulname" name="schulname" defaultValue={currentName ?? "Realschule München"} required />
+              <Input id="schulname" name="schulname" defaultValue={params.schulname ?? "Realschule München"} required />
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="space-y-1.5">
@@ -462,7 +489,7 @@ function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: str
                 <select
                   id="school-type"
                   name="schulart"
-                  defaultValue="realschule"
+                  defaultValue={params.schulart ?? "realschule"}
                   className="h-10 w-full rounded-xl border border-border bg-bg px-3 text-sm shadow-sm focus:border-brand/40 focus:outline-none focus:ring-1 focus:ring-brand/30"
                 >
                   <option value="grundschule">Grundschule</option>
@@ -479,7 +506,7 @@ function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: str
                 <select
                   id="bundesland"
                   name="bundesland"
-                  defaultValue="by"
+                  defaultValue={params.bundesland ?? "by"}
                   className="h-10 w-full rounded-xl border border-border bg-bg px-3 text-sm shadow-sm focus:border-brand/40 focus:outline-none focus:ring-1 focus:ring-brand/30"
                 >
                   <option value="bw">Baden-Württemberg</option>
@@ -506,19 +533,19 @@ function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: str
                   id="address"
                   name="address"
                   placeholder="Straße, PLZ, Ort"
-                  defaultValue="Pestalozzistraße 12, 80469 München"
+                  defaultValue={params.address ?? "Pestalozzistraße 12, 80469 München"}
                 />
               </div>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="space-y-1.5">
-                <Label htmlFor="students">Schüler-Zahl (ungefähr)</Label>
-                <Input id="students" name="students" type="number" defaultValue={750} />
+                <Label htmlFor="students">Genaue Schüler-Zahl</Label>
+                <Input id="students" name="students" type="number" defaultValue={params.students ?? 750} />
               </div>
               <div className="space-y-1.5">
                 <Label htmlFor="teachers">Lehrer-Zahl (ungefähr)</Label>
-                <Input id="teachers" name="teachers" type="number" defaultValue={95} />
+                <Input id="teachers" name="teachers" type="number" defaultValue={params.teachers ?? 95} />
               </div>
             </div>
           </CardBody>
@@ -556,7 +583,8 @@ function Step1({ plan, sso, schulname: currentName }: { plan?: string; sso?: str
   );
 }
 
-function Step2({ plan: currentPlan }: { plan?: string }) {
+function Step2({ params }: { params: WizardParams }) {
+  const currentPlan = params.plan;
   const plans = [
     {
       key: "basic",
@@ -618,7 +646,7 @@ function Step2({ plan: currentPlan }: { plan?: string }) {
                 ))}
               </ul>
               <Link
-                href={navHref(3, p.key)}
+                href={navHref(3, { ...params, plan: p.key })}
                 className={cn(
                   "mt-auto px-3 py-2 text-center text-xs font-semibold uppercase tracking-wider transition-colors",
                   isSelected
@@ -638,7 +666,8 @@ function Step2({ plan: currentPlan }: { plan?: string }) {
   );
 }
 
-function Step3({ plan, sso: currentSso, schulname }: { plan?: string; sso?: string; schulname?: string }) {
+function Step3({ params }: { params: WizardParams }) {
+  const currentSso = params.sso;
   const providers: { key: SsoKey; name: string; desc: string; recommended?: true }[] = [
     { key: "entra", name: "Microsoft Entra ID", desc: "SAML & SCIM · Schulkonten direkt", recommended: true },
     { key: "google", name: "Google Workspace", desc: "OAuth · empfohlen für G-Suite-Schulen" },
@@ -681,7 +710,7 @@ function Step3({ plan, sso: currentSso, schulname }: { plan?: string; sso?: stri
                   <p className="text-xs text-muted-fg">{p.desc}</p>
                 </div>
                 <Link
-                  href={navHref(4, plan, p.key, schulname)}
+                  href={navHref(4, { ...params, sso: p.key })}
                   className={buttonVariants({ size: "sm", variant: isActive ? "primary" : "outline" })}
                 >
                   {isActive ? "Aktiv" : "Wählen"}
