@@ -104,7 +104,13 @@ export function Navbar() {
               {/* Schwebendes Panel — kleiner Abstand zur Navbar (pt-3 als Hover-Brücke).
                   Wichtig: KEINE opacity auf dem Eltern-Container, sonst wird der
                   backdrop-blur des Panels deaktiviert. */}
-              <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-5 group-hover:visible">
+              {/* Beim Weg-Scrollen der Navbar (hidden) bleibt das Panel zu */}
+              <div
+                className={cn(
+                  "invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-5",
+                  !hidden && "group-hover:visible"
+                )}
+              >
                 <div className="translate-y-1 rounded-2xl border border-border-strong bg-surface/85 p-2 opacity-0 shadow-lg backdrop-blur-2xl transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
                   {roleLinks.map((r) => (
                     <Link
