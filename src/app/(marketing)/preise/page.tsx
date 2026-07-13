@@ -10,34 +10,53 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Preise | MasterMind",
   description:
-    "Transparente Preise für jede Schulgröße — Basic, Pro und Enterprise. 30 Tage kostenlos testen.",
+    "Transparente Preise für jede Schulgröße — Pro und Enterprise. 30 Tage kostenlos testen.",
 };
 
 const PLAN_NAMES = [
-  { name: "Basic", highlight: false },
   { name: "Pro", highlight: true },
   { name: "Enterprise", highlight: false },
 ];
 
 const comparisonRows: {
   feature: string;
-  basic: string | boolean;
   pro: string | boolean;
   enterprise: string | boolean;
 }[] = [
-  { feature: "Schüler", basic: "bis 100", pro: "bis 500", enterprise: "Unbegrenzt" },
-  { feature: "KI-Generator", basic: "50 Anfragen/Monat", pro: "500/Monat", enterprise: "Unbegrenzt" },
-  { feature: "Gamification", basic: true, pro: true, enterprise: true },
-  { feature: "Eltern-App", basic: false, pro: true, enterprise: true },
-  { feature: "API-Zugang", basic: false, pro: false, enterprise: true },
-  { feature: "SLA", basic: "99%", pro: "99,5%", enterprise: "99,9%" },
-  { feature: "Support", basic: "E-Mail", pro: "E-Mail + Chat", enterprise: "Dedizierter Manager" },
+  { feature: "Schüler", pro: "500 inklusive", enterprise: "Unbegrenzt" },
+  { feature: "KI-Generator", pro: "500/Monat", enterprise: "Unbegrenzt" },
+  { feature: "Gamification", pro: true, enterprise: true },
+  { feature: "Eltern-App", pro: true, enterprise: true },
+  { feature: "API-Zugang", pro: true, enterprise: true },
+  { feature: "SLA", pro: "99,5%", enterprise: "99,9%" },
+  { feature: "Support", pro: "E-Mail + Chat", enterprise: "Dedizierter Manager" },
 ];
 
-const faqs = [
+const faqs: { q: string; a: React.ReactNode }[] = [
   {
-    q: "Gibt es eine kostenlose Testphase?",
-    a: "Ja. Alle Pläne können 30 Tage lang kostenlos und ohne Kreditkarte getestet werden. Nach der Testphase können Sie frei wählen, welchen Plan Sie fortführen möchten.",
+    q: "Wie berechnet sich der Preis?",
+    a: (
+      <div className="space-y-3">
+        <p>
+          Alle Tarife umfassen bis zu 500 Schülerinnen und Schüler. Ab der 501.
+          Schülerin bzw. dem 501. Schüler berechnen wir zusätzlich 0,20 € pro
+          Person und Monat. Lehrkräfte sowie weiteres Schulpersonal werden dabei
+          nicht mitgezählt.
+        </p>
+        <p className="font-semibold text-fg">Beispiel:</p>
+        <p>
+          Eine Schule mit 600 Schülerinnen und Schülern entscheidet sich für den
+          Tarif „Pro" (125 € pro Monat).
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>Im Tarif enthalten: 500 Schülerinnen und Schüler</li>
+          <li>Zusätzlich berechnet: 100 × 0,20 € = 20,00 €</li>
+        </ul>
+        <p className="font-semibold text-fg">
+          Monatlicher Gesamtpreis: 125,00 € + 20,00 € = 145,00 €
+        </p>
+      </div>
+    ),
   },
   {
     q: "Kann ich meinen Plan jederzeit wechseln?",
@@ -113,9 +132,6 @@ export default function PreisePage() {
                   >
                     <td className="py-3.5 pr-6 font-medium">{row.feature}</td>
                     <td className="px-4 py-3.5 text-center text-muted-fg">
-                      <CellValue value={row.basic} />
-                    </td>
-                    <td className="px-4 py-3.5 text-center text-muted-fg">
                       <CellValue value={row.pro} />
                     </td>
                     <td className="px-4 py-3.5 text-center text-muted-fg">
@@ -145,9 +161,9 @@ export default function PreisePage() {
                       ▾
                     </span>
                   </summary>
-                  <p className="border-t border-border px-6 pb-5 pt-4 text-sm leading-relaxed text-muted-fg">
-                    {faq.a}
-                  </p>
+                  <div className="border-t border-border px-6 pb-5 pt-4 text-sm leading-relaxed text-muted-fg">
+                    {typeof faq.a === "string" ? <p>{faq.a}</p> : faq.a}
+                  </div>
                 </details>
               ))}
             </div>

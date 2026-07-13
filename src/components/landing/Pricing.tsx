@@ -7,29 +7,15 @@ import { AnimateOnScroll } from "./AnimateOnScroll";
 
 const plans = [
   {
-    name: "Basic",
-    description: "Für kleine Schulen, die digital starten.",
-    price: "1.490",
+    name: "Pro",
+    description: "Der Standard für ambitionierte Schulen.",
+    price: "1.500",
     suffix: "€ / Jahr",
-    seats: "bis 100 Accounts",
+    seats: "500 Schüler inklusive",
     features: [
       "Lernen, Karteikarten, Aufgaben",
       "Stundenplan & Klassenbuch",
       "Eltern-Modul + Krankmeldung",
-      "E-Mail-Support",
-    ],
-    cta: "Starten",
-    href: "/onboarding",
-    highlight: false,
-  },
-  {
-    name: "Pro",
-    description: "Der Standard für ambitionierte Schulen.",
-    price: "9",
-    suffix: "€ / User · Jahr",
-    seats: "Unbegrenzte Accounts",
-    features: [
-      "Alles aus Basic",
       "KI-Tutor + Aufgaben-Generator",
       "Auto-Korrektur & Kompetenz-Heatmaps",
       "API + Reports",
@@ -70,11 +56,11 @@ export function Pricing() {
             Keine Überraschungen.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-fg sm:text-lg">
-            Pilotphase 30 Tage gratis · Jährliche Abrechnung · Jederzeit kündbar.
+            Pilotphase 30 Tage gratis · Monatliche Abrechnung · Jederzeit kündbar.
           </p>
         </AnimateOnScroll>
 
-        <div className="mt-12 grid gap-5 sm:mt-16 lg:grid-cols-3">
+        <div className="mx-auto mt-12 grid max-w-3xl gap-5 sm:mt-16 sm:grid-cols-2">
           {plans.map((p, i) => (
             <AnimateOnScroll
               key={p.name}
@@ -146,8 +132,10 @@ export function Pricing() {
         </div>
 
         <p className="mx-auto mt-8 max-w-xl text-center text-xs text-muted-fg">
-          Schüler-Premium separat ab 7,99 € / Monat — buchbar zusätzlich zu jedem
-          Schulpaket. Preise inkl. 19 % MwSt., Hosting in Deutschland.
+          Monatliche Abrechnung. Alle Preise verstehen sich inklusive der
+          gesetzlichen Mehrwertsteuer. Die ersten 500 Schülerinnen und Schüler sind
+          im jeweiligen Tarif enthalten, jede weitere Person wird mit 0,20 € pro
+          Monat berechnet.
         </p>
       </div>
     </section>
