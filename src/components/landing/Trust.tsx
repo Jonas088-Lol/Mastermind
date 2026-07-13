@@ -17,10 +17,21 @@ export async function Trust() {
   let schuelerCount = 0, lehrerCount = 0, schulenCount = 0;
 
   try {
+    // Demo-Schulen (7-Tage-Testzugänge + Seed-Demo-Schule) zählen nicht mit
+    const demoSchoolIds = [
+      ...(await prisma.demoAccess.findMany({ select: { demoSchoolId: true } })).map(
+        (d) => d.demoSchoolId
+      ),
+      "demo-school",
+    ];
     [schuelerCount, lehrerCount, schulenCount] = await Promise.all([
-      prisma.user.count({ where: { role: "student" } }),
-      prisma.user.count({ where: { role: "teacher" } }),
-      prisma.school.count(),
+      prisma.user.count({
+        where: { role: "student", NOT: { schoolId: { in: demoSchoolIds } } },
+      }),
+      prisma.user.count({
+        where: { role: "teacher", NOT: { schoolId: { in: demoSchoolIds } } },
+      }),
+      prisma.school.count({ where: { id: { notIn: demoSchoolIds } } }),
     ]);
   } catch {
     // DB unavailable during static build — falls back to zeros at runtime

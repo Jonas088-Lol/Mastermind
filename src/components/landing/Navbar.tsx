@@ -104,13 +104,13 @@ export function Navbar() {
               {/* Schwebendes Panel — kleiner Abstand zur Navbar (pt-3 als Hover-Brücke).
                   Wichtig: KEINE opacity auf dem Eltern-Container, sonst wird der
                   backdrop-blur des Panels deaktiviert. */}
-              <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 group-hover:visible">
-                <div className="translate-y-1 rounded-2xl border border-border-strong bg-surface/70 p-2 opacity-0 shadow-lg backdrop-blur-lg transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-5 group-hover:visible">
+                <div className="translate-y-1 rounded-2xl border border-border-strong bg-surface/85 p-2 opacity-0 shadow-lg backdrop-blur-2xl transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100">
                   {roleLinks.map((r) => (
                     <Link
                       key={r.href}
                       href={r.href}
-                      className="flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-surface-2/25"
+                      className="flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-surface-2/50"
                     >
                       <span className="grid size-9 shrink-0 place-items-center rounded-full bg-brand/10 text-brand">
                         <r.icon className="size-4" strokeWidth={1.75} />
