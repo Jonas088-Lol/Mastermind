@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowRight, BarChart3, Layers } from "lucide-react";
 import { ExportDeckButton } from "./ExportDeckButton";
 import { FlashcardModes } from "./FlashcardModes";
+import { AddCardForm } from "./AddCardForm";
+import { DeleteCardButton } from "./DeleteCardButton";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -184,20 +186,25 @@ export default async function DeckDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Cards list */}
+      {/* Cards list + manuelles Hinzufügen */}
       <section>
         <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-fg">
-          Alle Karten ({total})
+          Karten erstellen &amp; verwalten ({total})
         </h2>
 
+        {/* Karte selbst hinzufügen */}
+        <AddCardForm deckId={deck.id} />
+
         {total === 0 ? (
-          <div className="border border-dashed border-border p-12 text-center">
+          <div className="mt-4 border border-dashed border-border p-10 text-center">
             <Layers className="mx-auto size-8 text-muted-fg" strokeWidth={1.5} />
             <p className="mt-4 text-base font-semibold">Noch keine Karten</p>
-            <p className="mt-1 text-sm text-muted-fg">Dieses Deck hat noch keine Karten.</p>
+            <p className="mt-1 text-sm text-muted-fg">
+              Füge oben deine erste Karte hinzu — oder importiere ein Deck bzw. generiere Karten aus einem PDF.
+            </p>
           </div>
         ) : (
-          <div className="flex flex-col gap-px border border-border bg-border">
+          <div className="mt-4 flex flex-col gap-px border border-border bg-border">
             {deck.cards.map((card) => {
               const isDue = card.nextReviewAt <= now;
               return (
@@ -209,9 +216,12 @@ export default async function DeckDetailPage({ params }: Props) {
                       </p>
                       <p className="text-sm font-medium">{card.front}</p>
                     </div>
-                    {isDue && (
-                      <Badge variant="brand" className="shrink-0 text-[10px]">fällig</Badge>
-                    )}
+                    <div className="flex shrink-0 items-center gap-2">
+                      {isDue && (
+                        <Badge variant="brand" className="text-[10px]">fällig</Badge>
+                      )}
+                      <DeleteCardButton deckId={deck.id} cardId={card.id} />
+                    </div>
                   </div>
                   <div className="mt-3 border-t border-border pt-3">
                     <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg mb-1">
