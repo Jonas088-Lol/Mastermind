@@ -44,6 +44,7 @@ export async function saveBranding(formData: FormData): Promise<void> {
 
   const brandName = (formData.get("brandName") as string | null)?.trim() || null;
   const accentColor = (formData.get("accentHex") as string | null)?.trim() ?? null;
+  const secondaryColor = (formData.get("secondaryHex") as string | null)?.trim() ?? null;
   const logoFile = formData.get("logo") as File | null;
   const logoDarkFile = formData.get("logoDark") as File | null;
   const faviconFile = formData.get("favicon") as File | null;
@@ -55,6 +56,10 @@ export async function saveBranding(formData: FormData): Promise<void> {
 
   if (accentColor && /^#[0-9a-fA-F]{6}$/.test(accentColor)) {
     data.accentColor = accentColor;
+  }
+
+  if (secondaryColor && /^#[0-9a-fA-F]{6}$/.test(secondaryColor)) {
+    data.secondaryColor = secondaryColor;
   }
 
   if (logoFile && logoFile.size > 0) {

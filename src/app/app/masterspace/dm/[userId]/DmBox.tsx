@@ -46,7 +46,7 @@ export function DmBox({ recipientId }: { recipientId: string }) {
       />
       <button
         type="submit"
-        className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand text-white hover:bg-brand/90 active:scale-95"
+        className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand text-brand-fg hover:bg-brand/90 active:scale-95"
       >
         <Send className="size-4" />
       </button>

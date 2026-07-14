@@ -1083,7 +1083,7 @@ function MessageInput({
           type="button"
           onClick={onSend}
           disabled={!value.trim()}
-          className="mb-0.5 flex size-8 shrink-0 items-center justify-center rounded-xl bg-brand text-white transition-opacity disabled:opacity-30 hover:opacity-90"
+          className="mb-0.5 flex size-8 shrink-0 items-center justify-center rounded-xl bg-brand text-brand-fg transition-opacity disabled:opacity-30 hover:opacity-90"
         >
           <Send className="size-4" />
         </button>
@@ -2376,7 +2376,7 @@ export function MasterSpaceModal() {
                         onKeyDown={(e) => { if (e.key === "Enter") submitEdit(); if (e.key === "Escape") setEditingMsg(null); }}
                         className="flex-1 rounded-xl border border-border bg-bg px-3 py-2 text-sm focus:border-brand focus:outline-none"
                       />
-                      <button onClick={submitEdit} className="flex size-9 items-center justify-center rounded-xl bg-brand text-white hover:opacity-90"><Check className="size-4" /></button>
+                      <button onClick={submitEdit} className="flex size-9 items-center justify-center rounded-xl bg-brand text-brand-fg hover:opacity-90"><Check className="size-4" /></button>
                       <button onClick={() => setEditingMsg(null)} className="flex size-9 items-center justify-center rounded-xl border border-border text-muted-fg hover:bg-muted"><X className="size-4" /></button>
                     </div>
                   </div>

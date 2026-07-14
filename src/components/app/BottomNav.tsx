@@ -374,7 +374,7 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
                       <span
                         className={cn(
                           "rounded-full px-1.5 py-0.5 font-mono text-[10px] font-bold",
-                          active ? "bg-brand/15 text-brand" : "bg-brand text-white"
+                          active ? "bg-brand/15 text-brand" : "bg-brand text-brand-fg"
                         )}
                       >
                         {item.badge}

@@ -29,12 +29,14 @@ export default async function AdminBrandingPage() {
           logoDarkUrl: true,
           faviconUrl: true,
           accentColor: true,
+          secondaryColor: true,
           plan: true,
         },
       })
     : null;
 
-  const accent = school?.accentColor ?? "#2563eb";
+  const accent = school?.accentColor ?? "#6ec6ef";
+  const secondary = school?.secondaryColor ?? "#74dcb0";
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">
@@ -116,13 +118,14 @@ export default async function AdminBrandingPage() {
               <Label>
                 <div className="flex items-center gap-2">
                   <Palette className="size-3.5" />
-                  Markenfarbe & Design-Preset
+                  Farben & Farbverläufe
                 </div>
               </Label>
               <p className="text-xs text-muted-fg">
-                Wähle ein vorgefertigtes Theme oder gib eine eigene Farbe ein. Wird sofort plattformweit angewendet — Buttons, Links, aktive Menüpunkte.
+                Lege Primär- und Sekundärfarbe fest. Beide werden sofort plattformweit angewendet —
+                Buttons, Links, aktive Menüpunkte und Farbverläufe (Primär → Sekundär).
               </p>
-              <BrandingColorPicker defaultAccent={accent} />
+              <BrandingColorPicker defaultAccent={accent} defaultSecondary={secondary} />
             </div>
 
             {/* ── Favicon ────────────────────────────────────────────────── */}
@@ -184,12 +187,26 @@ export default async function AdminBrandingPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-3 flex items-center gap-2">
+            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+              <div className="flex items-center gap-2">
+                <div
+                  className="size-4 rounded-sm border border-border shadow-sm"
+                  style={{ backgroundColor: accent }}
+                />
+                <span className="font-mono text-xs text-muted-fg">Primär: {accent}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div
+                  className="size-4 rounded-sm border border-border shadow-sm"
+                  style={{ backgroundColor: secondary }}
+                />
+                <span className="font-mono text-xs text-muted-fg">Sekundär: {secondary}</span>
+              </div>
               <div
-                className="size-4 rounded-sm border border-border shadow-sm"
-                style={{ backgroundColor: accent }}
+                className="h-3 w-24 rounded-full border border-border"
+                style={{ backgroundImage: `linear-gradient(90deg, ${accent}, ${secondary})` }}
+                title="Farbverlauf"
               />
-              <span className="font-mono text-xs text-muted-fg">Gespeicherte Farbe: {accent}</span>
             </div>
           </CardBody>
         </Card>

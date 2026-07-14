@@ -124,7 +124,7 @@ export default async function MailsPage({
               className={cn(
                 "mx-2 flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
                 tab === key
-                  ? "bg-brand text-white"
+                  ? "bg-brand text-brand-fg"
                   : "text-muted-fg hover:bg-muted hover:text-fg"
               )}
             >
@@ -134,7 +134,7 @@ export default async function MailsPage({
                 <span
                   className={cn(
                     "rounded-full px-1.5 py-0.5 text-[10px] font-bold leading-none",
-                    tab === key ? "bg-white/20 text-white" : "bg-brand text-white"
+                    tab === key ? "bg-white/20 text-white" : "bg-brand text-brand-fg"
                   )}
                 >
                   {badge}

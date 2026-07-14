@@ -82,7 +82,8 @@ model School {
   logoUrl          String?
   logoDarkUrl      String?
   faviconUrl       String?
-  accentColor      String?
+  accentColor      String?  // Primärfarbe (Hex)
+  secondaryColor   String?  // Sekundärfarbe (Hex) — für Farbverläufe
   brandName        String?  // Anzeigename (falls abweichend vom Schulnamen)
   featureSettings  String   @default("{}")  // JSON: { disabled: string[], windows: Record<string, {from: string, to: string}> }
   mailboxAddress   String?  // Schul-E-Mail-Adresse für das Postfach (z.B. info@schule.de)

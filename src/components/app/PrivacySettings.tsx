@@ -115,7 +115,7 @@ export function PrivacySettings() {
           <div
             className={cn(
               "flex size-5 items-center justify-center rounded border-2 transition-colors",
-              activityChecked ? "border-brand bg-brand text-white" : "border-border bg-bg"
+              activityChecked ? "border-brand bg-brand text-brand-fg" : "border-border bg-bg"
             )}
             onClick={() => setActivityChecked((v) => !v)}
           >

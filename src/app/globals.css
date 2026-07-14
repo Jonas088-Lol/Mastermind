@@ -11,15 +11,16 @@
 
 @layer base {
   :root {
-    /* Brand — #2FC5E7 cyan */
-    --brand: 191 77% 55%;
-    --brand-fg: 0 0% 100%;
-    --brand-glow: 191 82% 68%;
-    --brand-dark: 191 65% 42%;
+    /* Brand — Primärfarbe: Pastell-Hellblau (#6ec6ef) */
+    --brand: 199 80% 68%;
+    --brand-fg: 205 45% 15%;      /* dunkler Text — pastellheller Hintergrund */
+    --brand-glow: 199 85% 76%;
+    --brand-dark: 199 68% 50%;
 
-    /* Accent — slightly deeper cyan */
-    --accent: 191 65% 45%;
-    --accent-fg: 0 0% 100%;
+    /* Accent — Sekundärfarbe: Pastell-Hellgrün (#74dcb0) */
+    --accent: 155 60% 66%;
+    --accent-fg: 155 42% 14%;
+    --accent-dark: 155 50% 46%;
 
     /* Surface — Light (#EDF6FF background) */
     --bg: 210 100% 96.5%;
@@ -77,6 +78,7 @@
 
   --color-accent: hsl(var(--accent));
   --color-accent-fg: hsl(var(--accent-fg));
+  --color-accent-dark: hsl(var(--accent-dark));
 
   --color-success: hsl(var(--success));
   --color-warning: hsl(var(--warning));
@@ -227,28 +229,27 @@
     transform: translateY(-1px);
   }
 
-  /* Pastel gradient CTA — pastel light-blue (left) → pastel light-green (right),
-     oriented on the logo/lens gradient. Deep enough for readable dark text in
-     BOTH light and dark mode. `color` is !important so it beats the Button's
-     `text-white` utility (which otherwise wins by cascade-layer order).
-     Hover: subtle darken + smooth gradient sweep. */
+  /* Pastel gradient CTA — Primärfarbe (--brand) → Sekundärfarbe (--accent).
+     Folgt automatisch dem Schul-Branding. Dunkler Text (--brand-fg) bleibt in
+     BEIDEN Modi lesbar. `color` ist !important, damit es die `text-white`-
+     Utility des Buttons schlägt. Hover: sanftes Abdunkeln + Gradient-Sweep. */
   .pastel-cta {
     background-image: linear-gradient(
       90deg,
-      #6ec6ef 0%,
-      #74dcb0 50%,
-      #6ec6ef 100%
+      hsl(var(--brand)) 0%,
+      hsl(var(--accent)) 50%,
+      hsl(var(--brand)) 100%
     );
     background-size: 200% 100%;
     background-position: 0% 0%;
-    color: #0c3327 !important;
+    color: hsl(var(--brand-fg)) !important;
     border: none;
     transition: background-position 700ms cubic-bezier(0.4, 0, 0.2, 1), filter 250ms ease, box-shadow 250ms ease, transform 250ms ease;
   }
   .pastel-cta:hover {
     filter: brightness(0.96);
     background-position: 100% 0%;
-    box-shadow: 0 4px 18px rgba(90, 190, 210, 0.4);
+    box-shadow: var(--shadow-brand);
     transform: translateY(-1px);
   }
 
@@ -257,11 +258,43 @@
     border: 2px solid transparent;
     background:
       linear-gradient(hsl(var(--bg)), hsl(var(--bg))) padding-box,
-      linear-gradient(90deg, #6ec6ef 0%, #74dcb0 100%) border-box;
+      linear-gradient(90deg, hsl(var(--brand)) 0%, hsl(var(--accent)) 100%) border-box;
   }
   .pastel-badge {
-    background-image: linear-gradient(90deg, #6ec6ef 0%, #74dcb0 100%);
-    color: #0c3327;
+    background-image: linear-gradient(90deg, hsl(var(--brand)) 0%, hsl(var(--accent)) 100%);
+    color: hsl(var(--brand-fg));
+  }
+
+  /* ── Branding-Farbverläufe (Primär → Sekundär) ─────────────────────────────
+     Gehen alle von --brand nach --accent und folgen so dem Schul-Branding. */
+
+  /* Gefüllter Verlauf für Buttons/Flächen; dunkler, lesbarer Text. */
+  .brand-gradient {
+    background-image: linear-gradient(135deg, hsl(var(--brand)) 0%, hsl(var(--accent)) 100%);
+    color: hsl(var(--brand-fg));
+  }
+  .brand-gradient:hover {
+    filter: brightness(0.97);
+    box-shadow: var(--shadow-brand);
+  }
+
+  /* Verlaufstext (z. B. Überschriften-Akzent). */
+  .brand-gradient-text {
+    background-image: linear-gradient(90deg, hsl(var(--brand-dark)) 0%, hsl(var(--accent-dark)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Dezenter Verlaufshintergrund (Karten-/Header-Flächen). */
+  .brand-gradient-soft {
+    background-image: linear-gradient(135deg, hsl(var(--brand) / 0.14) 0%, hsl(var(--accent) / 0.10) 100%);
+  }
+
+  /* Dünne Verlaufslinie (Trenner/Progress). */
+  .brand-gradient-bar {
+    background-image: linear-gradient(90deg, hsl(var(--brand)) 0%, hsl(var(--accent)) 100%);
   }
 
   /* Gradient mesh backgrounds */
