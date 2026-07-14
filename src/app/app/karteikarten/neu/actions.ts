@@ -1,6 +1,7 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
@@ -27,7 +28,7 @@ export async function createDeck(formData: FormData) {
     }
   }
 
-  await prisma.flashcardDeck.create({
+  const deck = await prisma.flashcardDeck.create({
     data: {
       name,
       userId: session.userId,
@@ -35,5 +36,9 @@ export async function createDeck(formData: FormData) {
     },
   });
 
-  redirect("/app/karteikarten");
+  // Liste cache-invalidieren, dann in das frische, dynamische Deck springen —
+  // wie beim PDF-Import/Vokabeln (Redirect auf die gecachte Liste zeigte das
+  // neue Deck nicht an → wirkte, als schlüge das Erstellen fehl).
+  revalidatePath("/app/karteikarten");
+  redirect(`/app/karteikarten/${deck.id}`);
 }

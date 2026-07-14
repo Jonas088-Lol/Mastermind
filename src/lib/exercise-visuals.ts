@@ -82,3 +82,34 @@ export function topicVisual(subject: string, title: string): ExerciseVisual {
 export function subjectVisual(subject: string): ExerciseVisual {
   return SUBJECT_FALLBACK[subject] ?? { icon: Brain, color: "text-brand bg-brand/10" };
 }
+
+/** Kanonische Labels + Kurzbeschreibungen für alle Übungs-Fächer. */
+export const SUBJECT_INFO: Record<string, { label: string; description: string }> = {
+  mathematik:   { label: "Mathematik",   description: "Brüche bis Analysis" },
+  deutsch:      { label: "Deutsch",      description: "Grammatik, Aufsatz, Lektüre" },
+  englisch:     { label: "Englisch",     description: "Grammar, Vocabulary, Writing" },
+  franzoesisch: { label: "Französisch",  description: "Grammaire & Vocabulaire" },
+  latein:       { label: "Latein",       description: "Formen, Übersetzung, Kultur" },
+  spanisch:     { label: "Spanisch",     description: "Gramática & Vocabulario" },
+  physik:       { label: "Physik",       description: "Mechanik, Optik, Elektrik" },
+  chemie:       { label: "Chemie",       description: "Atombau bis Reaktionen" },
+  biologie:     { label: "Biologie",     description: "Zelle bis Evolution" },
+  geschichte:   { label: "Geschichte",   description: "Antike bis Moderne" },
+  erdkunde:     { label: "Erdkunde",     description: "Klima, Kontinente, Karten" },
+  geografie:    { label: "Geografie",    description: "Klima, Kontinente, Karten" },
+  informatik:   { label: "Informatik",   description: "Algorithmen bis Programmierung" },
+  wirtschaft:   { label: "Wirtschaft",   description: "Markt, Geld & Betrieb" },
+  musik:        { label: "Musik",        description: "Noten, Takt & Theorie" },
+  kunst:        { label: "Kunst",        description: "Farbe, Form & Epochen" },
+  sport:        { label: "Sport",        description: "Training, Regeln & Gesundheit" },
+  ethik:        { label: "Ethik",        description: "Werte, Moral & Philosophie" },
+  sachkunde:    { label: "Sachkunde",    description: "Natur & Alltag entdecken" },
+  technik:      { label: "Technik",      description: "Werkstoffe, Geräte & Konstruktion" },
+  philosophie:  { label: "Philosophie",  description: "Denken, Logik & Argumente" },
+  psychologie:  { label: "Psychologie",  description: "Wahrnehmung, Lernen & Verhalten" },
+};
+
+/** Anzeigename eines Fachs (Fallback: Erstbuchstabe groß). */
+export function subjectLabel(subject: string): string {
+  return SUBJECT_INFO[subject]?.label ?? (subject.charAt(0).toUpperCase() + subject.slice(1));
+}

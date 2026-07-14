@@ -6,7 +6,7 @@ import { ArrowLeft, BookOpen, FileText, NotebookPen, Play, Clock, CheckCircle2 }
 import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { topicVisual, EXERCISE_BLOCK_SIZE } from "@/lib/exercise-visuals";
+import { topicVisual, EXERCISE_BLOCK_SIZE, subjectLabel } from "@/lib/exercise-visuals";
 
 interface PageParams {
   params: Promise<{ subject: string; grade: string; topicId: string }>;
@@ -17,12 +17,6 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const topic = await prisma.exerciseTopic.findUnique({ where: { id: topicId }, select: { title: true } });
   return { title: topic?.title ?? "Thema" };
 }
-
-const SUBJECT_LABEL: Record<string, string> = {
-  mathematik: "Mathematik", deutsch: "Deutsch", englisch: "Englisch",
-  physik: "Physik", chemie: "Chemie", biologie: "Biologie",
-  geschichte: "Geschichte", informatik: "Informatik",
-};
 
 const QUESTION_TYPE_LABEL: Record<string, string> = {
   mc: "Multiple Choice",
@@ -50,7 +44,7 @@ export default async function TopicPage({ params }: PageParams) {
 
   if (!topic || topic.subject !== subject || topic.grade !== parseInt(grade, 10)) notFound();
 
-  const label = SUBJECT_LABEL[subject] ?? subject;
+  const label = subjectLabel(subject);
   const visual = topicVisual(subject, topic.title);
   const totalBlocks = Math.max(1, Math.ceil(topic.questions.length / EXERCISE_BLOCK_SIZE));
 

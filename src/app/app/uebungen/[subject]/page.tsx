@@ -1,22 +1,12 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Lock } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { getMaxUnlockedGradeFromMastery } from "@/lib/skill-graph";
-
-const SUBJECT_META: Record<string, { label: string; icon: string; description: string }> = {
-  mathematik: { label: "Mathematik", icon: "➕", description: "Brüche bis Analysis" },
-  deutsch:    { label: "Deutsch",    icon: "📖", description: "Grammatik, Aufsatz, Lektüre" },
-  englisch:   { label: "Englisch",   icon: "🌍", description: "Grammar, Vocabulary, Writing" },
-  physik:     { label: "Physik",     icon: "⚡", description: "Mechanik, Optik, Elektrik" },
-  chemie:     { label: "Chemie",     icon: "🧪", description: "Atombau bis Reaktionen" },
-  biologie:   { label: "Biologie",   icon: "🌱", description: "Zelle bis Evolution" },
-  geschichte: { label: "Geschichte", icon: "🏛️", description: "Antike bis Moderne" },
-  informatik: { label: "Informatik", icon: "💻", description: "Algorithmen bis Programmierung" },
-};
+import { SUBJECT_INFO, subjectLabel, subjectVisual } from "@/lib/exercise-visuals";
 
 interface PageParams {
   params: Promise<{ subject: string }>;
@@ -24,8 +14,7 @@ interface PageParams {
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { subject } = await params;
-  const meta = SUBJECT_META[subject];
-  return { title: meta ? `${meta.label} — Klasse wählen` : "Übungen" };
+  return { title: `${subjectLabel(subject)} — Klasse wählen` };
 }
 
 export default async function SubjectPage({ params }: PageParams) {
@@ -34,8 +23,9 @@ export default async function SubjectPage({ params }: PageParams) {
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect("/");
 
-  const meta = SUBJECT_META[subject];
-  if (!meta) notFound();
+  const label = subjectLabel(subject);
+  const description = SUBJECT_INFO[subject]?.description ?? "Interaktive Übungen";
+  const visual = subjectVisual(subject);
 
   const [grades, masteries] = await Promise.all([
     prisma.exerciseTopic.findMany({
@@ -63,10 +53,12 @@ export default async function SubjectPage({ params }: PageParams) {
           Alle Fächer
         </Link>
         <div className="flex items-center gap-3">
-          <span className="text-4xl">{meta.icon}</span>
+          <span className={`grid size-14 shrink-0 place-items-center rounded-2xl ${visual.color}`}>
+            <visual.icon className="size-7" strokeWidth={1.75} />
+          </span>
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">{meta.label}</h1>
-            <p className="mt-0.5 text-sm text-muted-fg">{meta.description}</p>
+            <h1 className="text-3xl font-bold tracking-tight">{label}</h1>
+            <p className="mt-0.5 text-sm text-muted-fg">{description}</p>
           </div>
         </div>
       </header>

@@ -5,13 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Layers } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
-import { topicVisual, EXERCISE_BLOCK_SIZE } from "@/lib/exercise-visuals";
-
-const SUBJECT_LABEL: Record<string, string> = {
-  mathematik: "Mathematik", deutsch: "Deutsch", englisch: "Englisch",
-  physik: "Physik", chemie: "Chemie", biologie: "Biologie",
-  geschichte: "Geschichte", informatik: "Informatik",
-};
+import { topicVisual, EXERCISE_BLOCK_SIZE, subjectLabel } from "@/lib/exercise-visuals";
 
 interface PageParams {
   params: Promise<{ subject: string; grade: string }>;
@@ -19,8 +13,7 @@ interface PageParams {
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { subject, grade } = await params;
-  const label = SUBJECT_LABEL[subject] ?? subject;
-  return { title: `${label} Klasse ${grade}` };
+  return { title: `${subjectLabel(subject)} Klasse ${grade}` };
 }
 
 export default async function GradePage({ params }: PageParams) {
@@ -32,8 +25,7 @@ export default async function GradePage({ params }: PageParams) {
   const grade = parseInt(gradeStr, 10);
   if (isNaN(grade)) notFound();
 
-  const label = SUBJECT_LABEL[subject];
-  if (!label) notFound();
+  const label = subjectLabel(subject);
 
   const topics = await prisma.exerciseTopic.findMany({
     where: { subject, grade },
