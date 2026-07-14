@@ -2,9 +2,10 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, Circle, Clock } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Layers } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { topicVisual, EXERCISE_BLOCK_SIZE } from "@/lib/exercise-visuals";
 
 const SUBJECT_LABEL: Record<string, string> = {
   mathematik: "Mathematik", deutsch: "Deutsch", englisch: "Englisch",
@@ -69,20 +70,22 @@ export default async function GradePage({ params }: PageParams) {
           const progress = topic.progress[0];
           const isDone = !!progress?.completedAt;
           const qCount = topic._count.questions;
+          const blocks = Math.max(1, Math.ceil(qCount / EXERCISE_BLOCK_SIZE));
+          const visual = topicVisual(subject, topic.title);
 
           return (
             <li key={topic.id}>
               <Link
                 href={`/app/uebungen/${subject}/${grade}/${topic.id}`}
-                className="group flex items-start gap-4 border border-border bg-bg p-5 transition-colors hover:border-brand hover:bg-brand/5"
+                className="group flex items-start gap-4 rounded-2xl border border-border bg-bg p-5 transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
               >
-                <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center font-mono text-sm font-bold text-muted-fg">
-                  {isDone ? (
-                    <CheckCircle2 className="size-5 text-success" />
-                  ) : (
-                    <Circle className="size-5" />
+                {/* Themen-Icon im Landing-Symboldesign */}
+                <span className={`relative grid size-11 shrink-0 place-items-center rounded-2xl ${visual.color}`}>
+                  <visual.icon className="size-5" strokeWidth={1.75} />
+                  {isDone && (
+                    <CheckCircle2 className="absolute -bottom-1 -right-1 size-4 rounded-full bg-bg text-success" />
                   )}
-                </div>
+                </span>
                 <div className="min-w-0 flex-1">
                   <p className="font-semibold group-hover:text-brand">
                     {idx + 1}. {topic.title}
@@ -90,10 +93,10 @@ export default async function GradePage({ params }: PageParams) {
                   {topic.description && (
                     <p className="mt-0.5 text-sm text-muted-fg">{topic.description}</p>
                   )}
-                  <div className="mt-2 flex items-center gap-3 text-xs text-muted-fg">
+                  <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-fg">
                     <span className="flex items-center gap-1">
-                      <Clock className="size-3" />
-                      ~{Math.ceil(qCount * 0.5)} min
+                      <Layers className="size-3" />
+                      {blocks} {blocks === 1 ? "Block" : "Blöcke"}
                     </span>
                     <span>{qCount} Fragen</span>
                     {isDone && progress?.score !== null && (

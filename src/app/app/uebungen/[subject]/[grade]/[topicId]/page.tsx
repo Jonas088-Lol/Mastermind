@@ -2,10 +2,11 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, FileText, NotebookPen, Play } from "lucide-react";
+import { ArrowLeft, BookOpen, FileText, NotebookPen, Play, Clock, CheckCircle2 } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { topicVisual, EXERCISE_BLOCK_SIZE } from "@/lib/exercise-visuals";
 
 interface PageParams {
   params: Promise<{ subject: string; grade: string; topicId: string }>;
@@ -50,6 +51,8 @@ export default async function TopicPage({ params }: PageParams) {
   if (!topic || topic.subject !== subject || topic.grade !== parseInt(grade, 10)) notFound();
 
   const label = SUBJECT_LABEL[subject] ?? subject;
+  const visual = topicVisual(subject, topic.title);
+  const totalBlocks = Math.max(1, Math.ceil(topic.questions.length / EXERCISE_BLOCK_SIZE));
 
   const relatedNotebooks = await prisma.notebook.findMany({
     where: {
@@ -88,9 +91,14 @@ export default async function TopicPage({ params }: PageParams) {
           <ArrowLeft className="size-3.5" />
           {label} Klasse {grade}
         </Link>
-        <h1 className="text-3xl font-bold tracking-tight">{topic.title}</h1>
+        <div className="flex items-center gap-3">
+          <span className={`grid size-12 shrink-0 place-items-center rounded-2xl ${visual.color}`}>
+            <visual.icon className="size-6" strokeWidth={1.75} />
+          </span>
+          <h1 className="text-3xl font-bold tracking-tight">{topic.title}</h1>
+        </div>
         {topic.description && (
-          <p className="mt-1 text-sm text-muted-fg">{topic.description}</p>
+          <p className="mt-2 text-sm text-muted-fg">{topic.description}</p>
         )}
       </header>
 
@@ -177,32 +185,60 @@ export default async function TopicPage({ params }: PageParams) {
 
       {/* Vorheriger Score */}
       {progress?.completedAt && (
-        <div className="flex items-center gap-3 border border-success/30 bg-success/5 px-5 py-4">
+        <div className="flex items-center gap-3 rounded-2xl border border-success/30 bg-success/5 px-5 py-4">
+          <CheckCircle2 className="size-5 shrink-0 text-success" />
           <div className="flex-1">
             <p className="text-sm font-semibold text-success">Bereits abgeschlossen</p>
             <p className="text-xs text-muted-fg">
               Score: {progress.score}% · {progress.completedAt.toLocaleDateString("de-DE")}
             </p>
           </div>
-          <Link
-            href={`/app/uebungen/${subject}/${grade}/${topicId}/quiz`}
-            className={buttonVariants({ size: "sm", variant: "outline" })}
-          >
-            Nochmal üben
-          </Link>
         </div>
       )}
 
-      {/* Start-Button */}
-      {!progress?.completedAt && (
-        <Link
-          href={`/app/uebungen/${subject}/${grade}/${topicId}/quiz`}
-          className={buttonVariants({ size: "lg" })}
-        >
-          <Play className="size-4" />
-          Quiz starten ({topic.questions.length} Fragen)
-        </Link>
-      )}
+      {/* Übungsblöcke — kurze Segmente statt eines langen Quiz */}
+      <section className="flex flex-col gap-3">
+        <div className="flex items-baseline justify-between">
+          <h2 className="text-lg font-bold">Übungsblöcke</h2>
+          <span className="text-xs text-muted-fg">
+            je max. {EXERCISE_BLOCK_SIZE} Fragen · ~{Math.ceil(EXERCISE_BLOCK_SIZE * 0.5)} Min
+          </span>
+        </div>
+
+        {totalBlocks === 1 ? (
+          <Link
+            href={`/app/uebungen/${subject}/${grade}/${topicId}/quiz`}
+            className={`${buttonVariants({ size: "lg" })} pastel-cta`}
+          >
+            <Play className="size-4" />
+            Quiz starten ({topic.questions.length} Fragen)
+          </Link>
+        ) : (
+          <div className="grid gap-3 sm:grid-cols-2">
+            {Array.from({ length: totalBlocks }, (_, b) => {
+              const count = Math.min(EXERCISE_BLOCK_SIZE, topic.questions.length - b * EXERCISE_BLOCK_SIZE);
+              return (
+                <Link
+                  key={b}
+                  href={`/app/uebungen/${subject}/${grade}/${topicId}/quiz?block=${b}`}
+                  className="group flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
+                >
+                  <span className={`grid size-10 shrink-0 place-items-center rounded-2xl ${visual.color}`}>
+                    <visual.icon className="size-5" strokeWidth={1.75} />
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-bold group-hover:text-brand">Block {b + 1}</p>
+                    <p className="flex items-center gap-1 text-xs text-muted-fg">
+                      <Clock className="size-3" /> {count} Fragen · ~{Math.ceil(count * 0.5)} Min
+                    </p>
+                  </div>
+                  <Play className="size-4 shrink-0 text-muted-fg transition-colors group-hover:text-brand" />
+                </Link>
+              );
+            })}
+          </div>
+        )}
+      </section>
     </div>
   );
 }
