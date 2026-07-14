@@ -2,10 +2,27 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Timer, Zap, Lightbulb } from "lucide-react";
+import Link from "next/link";
+import {
+  CheckCircle2, XCircle, ArrowRight, Trophy, RotateCcw, Timer, Zap, Lightbulb,
+  Circle, Square, Triangle, Diamond, Lock, ShoppingCart,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { native } from "@/lib/native";
 import { safeJsonParse } from "@/lib/safe-json";
+import { spendHintToken } from "./actions";
+
+/**
+ * Antwort-Symbole für Multiple-Choice / Blitz (In-App-Symboldesign) — je Option
+ * eine unverwechselbare Form + Farbe statt A/B/C/D.
+ */
+const MC_SHAPES: { icon: LucideIcon; color: string }[] = [
+  { icon: Circle,   color: "text-rose-500 bg-rose-500/10" },
+  { icon: Square,   color: "text-sky-500 bg-sky-500/10" },
+  { icon: Triangle, color: "text-amber-500 bg-amber-500/10" },
+  { icon: Diamond,  color: "text-emerald-500 bg-emerald-500/10" },
+];
 
 export interface QuizQuestion {
   id: string;
@@ -27,6 +44,7 @@ interface QuizEngineProps {
   xpPerQuiz: number;
   comboEnabled?: boolean;
   comboMasterEnabled?: boolean;
+  hintTokens?: number;
   onComplete: (score: number, maxCombo?: number) => Promise<void>;
 }
 
@@ -39,6 +57,7 @@ export function QuizEngine({
   xpPerQuiz,
   comboEnabled = false,
   comboMasterEnabled = false,
+  hintTokens = 0,
   onComplete,
 }: QuizEngineProps) {
   const [idx, setIdx] = useState(0);
@@ -48,6 +67,8 @@ export function QuizEngine({
   const [done, setDone] = useState(false);
   const [saving, setSaving] = useState(false);
   const [hintUsed, setHintUsed] = useState(false);
+  const [hintBalance, setHintBalance] = useState(hintTokens);
+  const [hintPending, setHintPending] = useState(false);
   const [combo, setCombo] = useState(0);
   const [maxCombo, setMaxCombo] = useState(0);
 
@@ -126,6 +147,20 @@ export function QuizEngine({
     return () => window.removeEventListener("keydown", onKey);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [answerState, question, idx]);
+
+  const handleHint = useCallback(async () => {
+    if (hintUsed || hintPending || hintBalance < 1) return;
+    setHintPending(true);
+    try {
+      const remaining = await spendHintToken();
+      if (remaining !== null) {
+        setHintBalance(remaining);
+        setHintUsed(true);
+      }
+    } finally {
+      setHintPending(false);
+    }
+  }, [hintUsed, hintPending, hintBalance]);
 
   const handleNext = useCallback(async () => {
     // Guard: handleNext hängt auch am globalen Enter-Listener — ohne Guard
@@ -246,7 +281,7 @@ export function QuizEngine({
           <div className="flex items-center gap-3">
             {(question.type === "mc" || question.type === "true_false") && answerState === "pending" && (
               <span className="hidden text-[10px] text-muted-fg sm:block">
-                {question.type === "mc" ? "Tipp: 1 2 3 4 eingeben" : "T = Wahr · F = Falsch"}
+                {question.type === "mc" ? "Tasten 1 – 4" : "T = Wahr · F = Falsch"}
               </span>
             )}
             {question.type === "blitz" && (
@@ -259,22 +294,50 @@ export function QuizEngine({
         <div className="p-5">
           <p className="text-base font-semibold leading-relaxed">{question.question}</p>
         </div>
-        {/* Hint button */}
+        {/* Tipp — muss im Shop gekauft werden und wird pro Aufdeckung verbraucht */}
         {answerState === "pending" && question.explanation && !hintUsed && (
-          <div className="border-t border-border px-5 py-2">
-            <button
-              type="button"
-              onClick={() => setHintUsed(true)}
-              className="flex items-center gap-1.5 text-xs text-muted-fg transition-colors hover:text-brand"
-            >
-              <Lightbulb className="size-3.5" strokeWidth={1.75} />
-              Tipp anzeigen
-            </button>
+          <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border px-5 py-2.5">
+            {hintBalance >= 1 ? (
+              <button
+                type="button"
+                onClick={handleHint}
+                disabled={hintPending}
+                className="flex items-center gap-2 text-xs font-medium text-muted-fg transition-colors hover:text-amber-500 disabled:opacity-50"
+              >
+                <span className="grid size-6 place-items-center rounded-lg bg-amber-500/10 text-amber-500">
+                  <Lightbulb className="size-3.5" strokeWidth={2} />
+                </span>
+                {hintPending ? "Wird aufgedeckt…" : "Tipp anzeigen"}
+              </button>
+            ) : (
+              <span className="flex items-center gap-2 text-xs text-muted-fg">
+                <span className="grid size-6 place-items-center rounded-lg bg-surface-2 text-muted-fg">
+                  <Lock className="size-3.5" strokeWidth={2} />
+                </span>
+                Keine Tipps übrig
+              </span>
+            )}
+            {hintBalance >= 1 ? (
+              <span className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-muted-fg">
+                <Lightbulb className="size-3 text-amber-500" strokeWidth={2} />
+                {hintBalance} übrig
+              </span>
+            ) : (
+              <Link
+                href="/app/shop"
+                className="flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-brand hover:underline"
+              >
+                <ShoppingCart className="size-3" strokeWidth={2} />
+                Im Shop kaufen
+              </Link>
+            )}
           </div>
         )}
         {hintUsed && question.explanation && answerState === "pending" && (
-          <div className="flex items-start gap-2 border-t border-brand/20 bg-brand/4 px-5 py-3">
-            <Lightbulb className="mt-0.5 size-3.5 shrink-0 text-brand" strokeWidth={1.75} />
+          <div className="flex items-start gap-2 border-t border-amber-500/20 bg-amber-500/5 px-5 py-3">
+            <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-lg bg-amber-500/10 text-amber-500">
+              <Lightbulb className="size-3.5" strokeWidth={2} />
+            </span>
             <p className="text-xs text-muted-fg">{question.explanation}</p>
           </div>
         )}
@@ -340,19 +403,22 @@ function AnswerInput({
   if (type === "mc" || type === "blitz") {
     const opts = options as string[];
     return (
-      <div className="grid gap-2">
-        {opts.map((opt, i) => (
-          <button
-            key={i}
-            onClick={() => onSubmit(String(i))}
-            className="flex items-center gap-3 border border-border bg-bg px-4 py-3 text-left text-sm font-medium transition-colors hover:border-brand hover:bg-brand/5"
-          >
-            <span className="flex size-6 shrink-0 items-center justify-center border border-border font-mono text-xs font-bold">
-              {String.fromCharCode(65 + i)}
-            </span>
-            {opt}
-          </button>
-        ))}
+      <div className="grid gap-2 sm:grid-cols-2">
+        {opts.map((opt, i) => {
+          const shape = MC_SHAPES[i % MC_SHAPES.length];
+          return (
+            <button
+              key={i}
+              onClick={() => onSubmit(String(i))}
+              className="flex items-center gap-3 rounded-2xl border border-border bg-bg px-4 py-3 text-left text-sm font-medium transition-colors hover:border-brand hover:bg-brand/5"
+            >
+              <span className={cn("grid size-8 shrink-0 place-items-center rounded-xl", shape.color)}>
+                <shape.icon className="size-4" strokeWidth={2.25} />
+              </span>
+              {opt}
+            </button>
+          );
+        })}
       </div>
     );
   }
@@ -364,7 +430,7 @@ function AnswerInput({
           <button
             key={label}
             onClick={() => onSubmit(label === "Wahr" ? "true" : "false")}
-            className="border border-border bg-bg py-5 text-center text-sm font-bold transition-colors hover:border-brand hover:bg-brand/5"
+            className="flex items-center justify-center gap-2 rounded-2xl border border-border bg-bg py-5 text-center text-sm font-bold transition-colors hover:border-brand hover:bg-brand/5"
           >
             {label}
           </button>

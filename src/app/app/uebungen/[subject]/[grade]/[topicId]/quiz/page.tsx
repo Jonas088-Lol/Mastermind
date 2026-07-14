@@ -30,7 +30,7 @@ export default async function QuizPage({ params, searchParams }: PageParams) {
 
   const grade = parseInt(gradeStr, 10);
 
-  const [topic, purchases] = await Promise.all([
+  const [topic, purchases, user] = await Promise.all([
     prisma.exerciseTopic.findUnique({
       where: { id: topicId },
       include: { questions: { orderBy: { order: "asc" } } },
@@ -38,6 +38,10 @@ export default async function QuizPage({ params, searchParams }: PageParams) {
     prisma.userSkillPurchase.findMany({
       where: { userId: session.userId },
       select: { nodeKey: true },
+    }),
+    prisma.user.findUnique({
+      where: { id: session.userId },
+      select: { hintTokens: true },
     }),
   ]);
 
@@ -86,6 +90,7 @@ export default async function QuizPage({ params, searchParams }: PageParams) {
         xpPerQuiz={XP_REWARDS.quiz_completed}
         comboEnabled={comboEnabled}
         comboMasterEnabled={comboMasterEnabled}
+        hintTokens={user?.hintTokens ?? 0}
         onComplete={handleComplete}
       />
     </div>

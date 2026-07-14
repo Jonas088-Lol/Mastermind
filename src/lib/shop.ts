@@ -38,6 +38,11 @@ export const SHOP_ITEMS: ShopItemDef[] = [
   { slug: "ai_quota_50",   name: "+50 KI-Anfragen",      description: "50 zusätzliche KI-Tutor Anfragen",        category: "powerup", coinPrice: 250,  icon: "🧠", rarity: "uncommon",  effect: "ai_quota", effectValue: "50",  sortOrder: 31 },
   { slug: "ai_quota_200",  name: "+200 KI-Anfragen",     description: "200 zusätzliche KI-Tutor Anfragen",       category: "powerup", coinPrice: 800,  icon: "💡", rarity: "rare",      effect: "ai_quota", effectValue: "200", sortOrder: 32 },
 
+  // ── Tipps (Übungen) ──────────────────────────────────────
+  { slug: "hint_1",   name: "1 Tipp",     description: "1 Tipp zum Freischalten in Übungen",       category: "powerup", coinPrice: 50,   icon: "💡", rarity: "common",   effect: "hint_token", effectValue: "1",  sortOrder: 33 },
+  { slug: "hint_5",   name: "5 Tipps",    description: "5 Tipps für Übungen — etwas günstiger",    category: "powerup", coinPrice: 220,  icon: "💡", rarity: "uncommon", effect: "hint_token", effectValue: "5",  sortOrder: 34 },
+  { slug: "hint_15",  name: "15 Tipps",   description: "15 Tipps für Übungen — bester Preis",      category: "powerup", coinPrice: 600,  icon: "💡", rarity: "rare",     effect: "hint_token", effectValue: "15", sortOrder: 35 },
+
   // ── Cosmetics: Profile Frames ─────────────────────────────
   { slug: "frame_gold",     name: "Gold-Rahmen",      description: "Goldener Profilrahmen",                     category: "cosmetic", coinPrice: 150,  icon: "🟡", rarity: "uncommon",  effect: "frame", effectValue: "gold",     sortOrder: 40 },
   { slug: "frame_fire",     name: "Feuer-Rahmen",     description: "Brennender Profilrahmen",                   category: "cosmetic", coinPrice: 250,  icon: "🔥", rarity: "rare",      effect: "frame", effectValue: "fire",     sortOrder: 41 },
@@ -128,6 +133,9 @@ export async function buyItem(
   } else if (itemDef.effect === "ai_quota") {
     const quota = Number(itemDef.effectValue ?? 10);
     await applyAiQuota(userId, quota);
+  } else if (itemDef.effect === "hint_token") {
+    const count = Number(itemDef.effectValue ?? 1);
+    await prisma.user.update({ where: { id: userId }, data: { hintTokens: { increment: count } } });
   } else if (itemDef.effect === "xp_grant") {
     const amount = Number(itemDef.effectValue ?? 0);
     if (amount > 0) {
@@ -195,6 +203,9 @@ export async function buyItemDef(
   } else if (item.componentKey === "ai_quota") {
     const amount = Number(meta.amount ?? 10);
     await applyAiQuota(userId, amount);
+  } else if (item.componentKey === "hint_token") {
+    const amount = Number(meta.amount ?? 1);
+    await prisma.user.update({ where: { id: userId }, data: { hintTokens: { increment: amount } } });
   } else {
     // Cosmetic, gear, title — track in UserItem (upsert qty)
     await prisma.userItem.upsert({
@@ -216,6 +227,7 @@ export const COMPONENT_ICON: Record<string, string> = {
   boost_xp:        "⚡",
   streak_freeze:   "🛡️",
   ai_quota:        "🤖",
+  hint_token:      "💡",
   gear_shield:     "🛡️", gear_sword:      "⚔️", gear_boots:   "👟",
   gear_tome:       "📖", gear_crown:      "👑",
   title:           "🏷️",

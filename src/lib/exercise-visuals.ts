@@ -57,6 +57,7 @@ const SUBJECT_FALLBACK: Record<string, ExerciseVisual> = {
   biologie:     { icon: Leaf,         color: "text-green-500 bg-green-500/10" },
   geschichte:   { icon: Landmark,     color: "text-red-500 bg-red-500/10" },
   erdkunde:     { icon: Globe2,       color: "text-teal-500 bg-teal-500/10" },
+  geografie:    { icon: Globe2,       color: "text-teal-500 bg-teal-500/10" },
   informatik:   { icon: Cpu,          color: "text-blue-500 bg-blue-500/10" },
   wirtschaft:   { icon: Scale,        color: "text-orange-500 bg-orange-500/10" },
   musik:        { icon: Music,        color: "text-pink-500 bg-pink-500/10" },
@@ -74,5 +75,10 @@ export function topicVisual(subject: string, title: string): ExerciseVisual {
   for (const k of KEYWORDS) {
     if (k.match.test(title)) return { icon: k.icon, color: k.color };
   }
+  return SUBJECT_FALLBACK[subject] ?? { icon: Brain, color: "text-brand bg-brand/10" };
+}
+
+/** Icon + Farbe für ein ganzes Fach (Landing-Symboldesign). */
+export function subjectVisual(subject: string): ExerciseVisual {
   return SUBJECT_FALLBACK[subject] ?? { icon: Brain, color: "text-brand bg-brand/10" };
 }

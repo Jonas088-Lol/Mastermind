@@ -9,6 +9,29 @@ import { awardCoins } from "@/lib/coins";
 import { incrementQuestProgress } from "@/lib/quests";
 import { onExerciseComplete } from "@/lib/tree-quest-engine";
 
+/**
+ * Verbraucht einen gekauften Tipp. Atomarer, konditionaler Abzug (kein
+ * Check-then-Act), damit paralleles Aufdecken nicht ins Minus läuft.
+ * Gibt das verbleibende Guthaben zurück, oder null wenn keine Tipps übrig.
+ */
+export async function spendHintToken(): Promise<number | null> {
+  const session = await getSession();
+  if (!session) return null;
+
+  return prisma.$transaction(async (tx) => {
+    const updated = await tx.user.updateMany({
+      where: { id: session.userId, hintTokens: { gte: 1 } },
+      data: { hintTokens: { decrement: 1 } },
+    });
+    if (updated.count === 0) return null;
+    const user = await tx.user.findUnique({
+      where: { id: session.userId },
+      select: { hintTokens: true },
+    });
+    return user?.hintTokens ?? 0;
+  });
+}
+
 export async function saveQuizResult(topicId: string, score: number, maxCombo?: number): Promise<void> {
   const session = await getSession();
   if (!session) return;

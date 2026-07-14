@@ -48,6 +48,11 @@ const ITEMS = [
   { key: "ai_quota_50",     name: "+50 KI-Anfragen",          description: "50 zusätzliche KI-Tutor Anfragen",   kind: ItemKind.CONSUMABLE, rarity: Rarity.UNCOMMON,  priceCoins: 250,  pricePremium: null, componentKey: "ai_quota", meta: { amount: 50 } },
   { key: "ai_quota_200",    name: "+200 KI-Anfragen",         description: "200 zusätzliche KI-Tutor Anfragen",  kind: ItemKind.CONSUMABLE, rarity: Rarity.RARE,      priceCoins: 800,  pricePremium: null, componentKey: "ai_quota", meta: { amount: 200 } },
 
+  // ── Consumable: Tipps für Übungen ─────────────────────────────────────────
+  { key: "hint_1",          name: "1 Tipp",                   description: "1 Tipp zum Aufdecken in Übungen",    kind: ItemKind.CONSUMABLE, rarity: Rarity.COMMON,    priceCoins: 50,   pricePremium: null, componentKey: "hint_token", meta: { amount: 1 } },
+  { key: "hint_5",          name: "5 Tipps",                  description: "5 Tipps für Übungen — etwas günstiger", kind: ItemKind.CONSUMABLE, rarity: Rarity.UNCOMMON, priceCoins: 220,  pricePremium: null, componentKey: "hint_token", meta: { amount: 5 } },
+  { key: "hint_15",         name: "15 Tipps",                 description: "15 Tipps für Übungen — bester Preis", kind: ItemKind.CONSUMABLE, rarity: Rarity.RARE,      priceCoins: 600,  pricePremium: null, componentKey: "hint_token", meta: { amount: 15 } },
+
   // ── Gear: Boss-Fight Equipment ────────────────────────────────────────────
   { key: "gear_shield",     name: "Schild der Weisheit",      description: "+10% HP bei Boss-Fights",            kind: ItemKind.GEAR,      rarity: Rarity.RARE,      priceCoins: 500,  pricePremium: null, componentKey: "gear_shield",    meta: { slot: "defense", hpBonus: 0.10 } },
   { key: "gear_sword",      name: "Schwert des Wissens",      description: "+15% Schaden bei Boss-Fights",       kind: ItemKind.GEAR,      rarity: Rarity.EPIC,      priceCoins: 900,  pricePremium: null, componentKey: "gear_sword",     meta: { slot: "weapon", dmgBonus: 0.15 } },

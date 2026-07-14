@@ -62,7 +62,7 @@ function dayOfYear(d: Date): number {
 }
 
 const BOOSTER_LABEL: Record<string, string> = {
-  boost_xp: "XP-Booster", streak_freeze: "Streak-Schutz", ai_quota: "KI-Anfragen",
+  boost_xp: "XP-Booster", streak_freeze: "Streak-Schutz", ai_quota: "KI-Anfragen", hint_token: "Tipps",
 };
 
 export default async function ShopPage({ searchParams }: PageProps) {

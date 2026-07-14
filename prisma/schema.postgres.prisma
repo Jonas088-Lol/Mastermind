@@ -200,6 +200,7 @@ model User {
   coins          Int     @default(0)
   premiumCoins   Int     @default(0)
   streakFreezes  Int     @default(0)
+  hintTokens     Int     @default(0)
   isPremium      Boolean @default(false)
   premiumUntil   DateTime?
 
