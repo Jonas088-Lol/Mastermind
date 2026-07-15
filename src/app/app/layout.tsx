@@ -181,6 +181,8 @@ export default async function AppLayout({
             coinBalance={userData?.coins ?? 0}
             premiumCoinBalance={userData?.premiumCoins ?? 0}
             appName={appName}
+            logoSrc={branding?.logoUrl}
+            logoHref="/app"
             doubleXp={events.doubleXp}
             doubleCoins={events.doubleCoins}
             eventBanner={events.banner}

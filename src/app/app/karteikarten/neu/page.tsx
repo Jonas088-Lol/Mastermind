@@ -2,11 +2,11 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
-import { createDeck } from "./actions";
+import { NewDeckForm } from "./NewDeckForm";
 
 export const metadata: Metadata = { title: "Neues Deck" };
 
@@ -39,53 +39,9 @@ export default async function NeueDeckPage() {
         <p className="mt-1 text-sm text-muted-fg">Erstelle ein neues Karteideck zum Lernen.</p>
       </header>
 
-      <form action={createDeck} className="flex flex-col gap-6 border border-border bg-bg p-6">
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="name"
-            className="text-xs font-semibold uppercase tracking-wider text-muted-fg"
-          >
-            Deck-Name <span className="text-danger">*</span>
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            placeholder="z. B. Mathe Trigonometrie"
-            className="border border-border bg-surface px-3 py-2 text-sm placeholder:text-muted-fg focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
-          />
-        </div>
-
-        {subjects.length > 0 && (
-          <div className="flex flex-col gap-1.5">
-            <label
-              htmlFor="subjectId"
-              className="text-xs font-semibold uppercase tracking-wider text-muted-fg"
-            >
-              Fach (optional)
-            </label>
-            <select
-              id="subjectId"
-              name="subjectId"
-              className="border border-border bg-surface px-3 py-2 text-sm text-fg focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
-            >
-              <option value="">Kein Fach</option>
-              {subjects.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.name} ({s.shortName})
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-
-        <div className="flex justify-end">
-          <Button type="submit" size="md">
-            Deck erstellen
-          </Button>
-        </div>
-      </form>
+      <NewDeckForm
+        subjects={subjects.map((s) => ({ id: s.id, name: s.name, shortName: s.shortName }))}
+      />
     </div>
   );
 }

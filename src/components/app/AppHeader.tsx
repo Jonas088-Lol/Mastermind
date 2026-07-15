@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { NotificationCenter, type NotificationItem } from "@/components/app/NotificationCenter";
 import { logout } from "@/app/login/actions";
 import { CoinIcon } from "@/components/ui/CoinIcon";
+import { BrandLogo } from "@/components/BrandLogo";
 
 export interface AppHeaderProps {
   user: { name: string; subtitle: string; avatarUrl?: string | null };
@@ -17,6 +18,10 @@ export interface AppHeaderProps {
   coinBalance?: number;
   premiumCoinBalance?: number;
   appName?: string;
+  /** Schul-Logo (falls vorhanden) — sonst Plattform-Logo als Fallback. */
+  logoSrc?: string | null;
+  /** Ziel des Logo-Links (Rollen-Startseite). */
+  logoHref?: string;
   activeBooster?: { multiplier: number; expiresAt: Date } | null;
   eventBanner?: string | null;
   doubleXp?: boolean;
@@ -31,6 +36,8 @@ export function AppHeader({
   coinBalance,
   premiumCoinBalance,
   appName,
+  logoSrc,
+  logoHref = "/app",
   activeBooster,
   eventBanner,
   doubleXp,
@@ -61,10 +68,11 @@ export function AppHeader({
       )}
 
       <header className="safe-top flex h-15 items-center gap-2 border-b border-border bg-bg/95 px-3 backdrop-blur-md supports-backdrop-filter:bg-bg/80 sm:h-16 sm:gap-3 sm:px-5 lg:h-17 lg:gap-4 lg:px-6">
-        {/* Mobile title — replaces search bar on small screens */}
-        <span className="flex-1 truncate text-sm font-semibold lg:hidden">
-          {appName ?? "MasterMind"}
-        </span>
+        {/* Mobile: Logo (Lupe) + Schriftzug — ersetzt die Suchleiste auf kleinen Screens */}
+        <Link href={logoHref} className="flex flex-1 items-center gap-2 truncate lg:hidden" aria-label="Startseite">
+          <BrandLogo height="h-7" showName={false} src={logoSrc} alt={appName ?? "MasterMind"} />
+          <span className="truncate text-sm font-semibold">{appName ?? "MasterMind"}</span>
+        </Link>
 
         {/* Search — desktop only (mobile: in "Mehr" drawer) */}
         <Link
