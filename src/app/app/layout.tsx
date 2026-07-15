@@ -129,7 +129,6 @@ export default async function AppLayout({
     { href: "/app/streaks",        label: "Streaks",       icon: "flame"         },
     { href: "/app/erfolge",        label: "Erfolge",       icon: "star"          },
     { href: "/app/saison",         label: "Saison",        icon: "gift"          },
-    { href: "/app/skills",         label: "Skill-Tree",    icon: "target"        },
     // ── Community & Social ────────────────────────────
     { href: "/app/community",      label: "Community",     icon: "users"         },
     { href: "/app/mannschaften",   label: "Mannschaften",  icon: "shield"        },
