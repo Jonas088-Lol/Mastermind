@@ -75,7 +75,7 @@ export function DemoClient() {
               className="rounded-xl border border-border bg-bg px-3 py-2.5 font-mono text-sm focus:border-brand focus:outline-none" />
           </div>
           <button type="submit" disabled={pending}
-            className="mt-1 flex items-center justify-center gap-2 rounded-xl bg-brand py-2.5 text-sm font-bold text-brand-fg transition-all hover:brightness-105 active:scale-95 disabled:opacity-50">
+            className="pastel-cta mt-1 flex items-center justify-center gap-2 rounded-xl py-2.5 text-sm font-bold active:scale-95 disabled:opacity-50">
             <LogIn className="size-4" /> {pending ? "Prüfe…" : "Demo öffnen"}
           </button>
         </form>
