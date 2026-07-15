@@ -1,0 +1,56 @@
+name: mastermind
+description: MasterMind — Lern-App (Android & iOS). Übungen & Karteikarten offline.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  # Lokale Speicherung (Karteikarten, Quiz-Fortschritt) — offline
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  # Online/Offline-Erkennung
+  connectivity_plus: ^6.0.5
+  # HTTP für Online-Features (Login, KI …) — nur wenn online
+  dio: ^5.7.0
+  # Einfaches State-Management
+  provider: ^6.1.2
+  # Sicheres Speichern des Session-Tokens
+  flutter_secure_storage: ^9.2.2
+  # Pfad zum App-Verzeichnis (gecachte Offline-Inhalte)
+  path_provider: ^2.1.4
+  # Push-Benachrichtigungen (FCM/APNs) — erscheinen auch auf Smartwatches
+  firebase_core: ^3.6.0
+  firebase_messaging: ^15.1.3
+  flutter_local_notifications: ^17.2.3
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1
+
+# App-Icon für alle Plattformen aus dem echten MasterMind-Logo generieren.
+# Einmalig ausführen:  dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: "assets/app_icon.png"
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  adaptive_icon_background: "#EDF6FF"
+  adaptive_icon_foreground: "assets/app_icon.png"
+  windows:
+    generate: true
+    image_path: "assets/app_icon.png"
+  macos:
+    generate: true
+    image_path: "assets/app_icon.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    # Gebündelte Übungsinhalte (per /api/offline/exercises exportiert).
+    # Für den ersten Start liegt eine Beispieldatei bei.
+    - assets/exercises.json

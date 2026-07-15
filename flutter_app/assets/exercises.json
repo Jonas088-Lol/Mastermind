@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedAt": "2026-01-01T00:00:00.000Z",
+  "topicCount": 2,
+  "topics": [
+    {
+      "id": "sample-math-1",
+      "subject": "mathematik",
+      "grade": 5,
+      "title": "Bruchrechnung — Grundlagen",
+      "description": "Brüche erkennen, kürzen und addieren.",
+      "order": 0,
+      "questions": [
+        {
+          "id": "q1",
+          "type": "mc",
+          "question": "Was ist 1/2 + 1/4?",
+          "options": "[\"1/6\", \"3/4\", \"2/6\", \"1/8\"]",
+          "correct": "1",
+          "explanation": "1/2 = 2/4, also 2/4 + 1/4 = 3/4.",
+          "order": 0
+        },
+        {
+          "id": "q2",
+          "type": "true_false",
+          "question": "3/6 lässt sich zu 1/2 kürzen.",
+          "options": null,
+          "correct": "true",
+          "explanation": "Zähler und Nenner durch 3 teilen: 3/6 = 1/2.",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": "sample-de-1",
+      "subject": "deutsch",
+      "grade": 5,
+      "title": "Wortarten",
+      "description": "Nomen, Verben und Adjektive unterscheiden.",
+      "order": 0,
+      "questions": [
+        {
+          "id": "q3",
+          "type": "mc",
+          "question": "Welches Wort ist ein Verb?",
+          "options": "[\"Haus\", \"schnell\", \"laufen\", \"grün\"]",
+          "correct": "2",
+          "explanation": "„laufen“ beschreibt eine Tätigkeit → Verb.",
+          "order": 0
+        }
+      ]
+    }
+  ]
+}

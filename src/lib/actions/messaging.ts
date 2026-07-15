@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
 import { rateLimit } from "@/lib/security/rate-limit";
+import { pushToUsers } from "@/lib/push";
 
 /** Maximale Nachrichtenlänge (Schutz vor riesigen Payloads). */
 const MESSAGE_MAX_CHARS = 5000;
@@ -59,15 +60,30 @@ export async function sendMessage(formData: FormData) {
   });
 
   if (others.length > 0) {
+    const linkUrl = backHref.replace(/\/[^/]+$/, "");
     await prisma.appNotification.createMany({
       data: others.map((p) => ({
         userId: p.userId,
         type: "message",
         title: "Neue Nachricht",
         body: `${session.name}: ${content.slice(0, 80)}`,
-        linkUrl: backHref.replace(/\/[^/]+$/, ""),
+        linkUrl,
       })),
     });
+
+    // Echte Push-Benachrichtigung (Web-Push + native FCM/APNs → erscheint auch
+    // auf gekoppelten Smartwatches). Fire-and-forget, blockiert das Senden nicht.
+    pushToUsers(
+      others.map((p) => p.userId),
+      {
+        title: "Neue Nachricht",
+        body: `${session.name}: ${content.slice(0, 80)}`,
+        url: linkUrl,
+        // Für Direkt-Antworten aus der Benachrichtigung (inkl. Apple Watch):
+        data: { type: "message", threadId },
+        category: "message_reply",
+      },
+    ).catch(() => undefined);
   }
 
   revalidatePath(backHref);

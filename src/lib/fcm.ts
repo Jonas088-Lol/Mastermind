@@ -61,17 +61,25 @@ export function isFcmConfigured(): boolean {
  */
 export async function sendFcm(
   token: string,
-  payload: { title: string; body: string; url?: string }
+  payload: { title: string; body: string; url?: string; data?: Record<string, string>; category?: string }
 ): Promise<{ ok: boolean; expired: boolean }> {
   const ctx = getClient();
   if (!ctx) return { ok: false, expired: false };
+
+  // data-Payload: url + beliebige Zusatzfelder (z. B. threadId für Antworten).
+  const data: Record<string, string> = { ...(payload.data ?? {}) };
+  if (payload.url) data.url = payload.url;
 
   const message = {
     message: {
       token,
       notification: { title: payload.title, body: payload.body },
-      data: payload.url ? { url: payload.url } : undefined,
+      data: Object.keys(data).length > 0 ? data : undefined,
       android: { priority: "high" as const, notification: { default_sound: true } },
+      // iOS: category aktiviert die Antwort-Aktion (auch auf der Apple Watch).
+      apns: payload.category
+        ? { payload: { aps: { category: payload.category, "mutable-content": 1 } } }
+        : undefined,
     },
   };
 

@@ -52,7 +52,7 @@ function isNativeSub(s: { p256dh: string }): boolean {
 
 export async function pushToUsers(
   userIds: string[],
-  payload: { title: string; body: string; url?: string }
+  payload: { title: string; body: string; url?: string; data?: Record<string, string>; category?: string }
 ): Promise<void> {
   if (userIds.length === 0) return;
   const { prisma } = await import("@/lib/db/client");
