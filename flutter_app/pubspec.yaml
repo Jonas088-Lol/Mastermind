@@ -27,6 +27,8 @@ dependencies:
   firebase_core: ^3.6.0
   firebase_messaging: ^15.1.3
   flutter_local_notifications: ^17.2.3
+  # Zeigt die echte Web-App (Login, Demo-Accounts, alles) in der App
+  webview_flutter: ^4.10.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0
@@ -51,6 +53,6 @@ flutter_launcher_icons:
 flutter:
   uses-material-design: true
   assets:
-    # Gebündelte Übungsinhalte (per /api/offline/exercises exportiert).
-    # Für den ersten Start liegt eine Beispieldatei bei.
-    - assets/exercises.json
+    # Komplette Übungsinhalte offline — pro Fach eine Datei + index.json.
+    # Erzeugt mit:  node scripts/build-offline-bundle.mjs
+    - assets/exercises/

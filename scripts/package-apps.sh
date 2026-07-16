@@ -15,7 +15,7 @@
 #   scripts/package-apps.sh --upload        # zusätzlich hochladen
 #
 # Server-Ziel per Env überschreibbar:
-#   DEPLOY_HOST=user@server DEPLOY_PATH=/srv/mastermind/downloads scripts/package-apps.sh --upload
+#   DEPLOY_HOST=user@server DEPLOY_PATH=/root/Mastermind/downloads scripts/package-apps.sh --upload
 
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -25,7 +25,7 @@ DIST="electron/dist"
 APK="flutter_app/build/app/outputs/flutter-apk/app-release.apk"
 
 DEPLOY_HOST="${DEPLOY_HOST:-}"
-DEPLOY_PATH="${DEPLOY_PATH:-/srv/mastermind/downloads}"
+DEPLOY_PATH="${DEPLOY_PATH:-/root/Mastermind/downloads}"
 
 mkdir -p "$DEST"
 

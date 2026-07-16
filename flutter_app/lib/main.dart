@@ -38,12 +38,6 @@ Future<void> main() async {
     NotificationService.instance.registerForPush();
   }
 
-  // Wenn online: im Hintergrund neueste Inhalte holen (fürs nächste Offline).
-  if (connectivity.isOnline) {
-    // absichtlich nicht awaited — blockiert den Start nicht.
-    contentSync.refreshFromServer();
-  }
-
   runApp(
     MultiProvider(
       providers: [

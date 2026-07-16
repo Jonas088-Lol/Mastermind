@@ -5,60 +5,74 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import '../models/exercise.dart';
 
-/// Lädt die gebündelten Übungsinhalte (offline) aus assets/exercises.json.
-/// Kann online per ApiClient.fetchExerciseContent() aktualisiert werden.
+/// Kurzinfo je Fach (aus index.json) — für die Fächer-Übersicht ohne dass die
+/// vollen Fragen geladen werden müssen.
+class SubjectInfo {
+  final String key;
+  final List<int> grades;
+  final int topicCount;
+  final int questionCount;
+
+  const SubjectInfo({
+    required this.key,
+    required this.grades,
+    required this.topicCount,
+    required this.questionCount,
+  });
+
+  factory SubjectInfo.fromJson(Map<String, dynamic> j) => SubjectInfo(
+        key: j['key'] as String,
+        grades: (j['grades'] as List<dynamic>).map((g) => (g as num).toInt()).toList(),
+        topicCount: (j['topicCount'] as num?)?.toInt() ?? 0,
+        questionCount: (j['questionCount'] as num?)?.toInt() ?? 0,
+      );
+}
+
+/// Lädt die gebündelten Übungsinhalte offline. Der komplette Content liegt pro
+/// Fach in `assets/exercises/<fach>.json`; die kleine `index.json` wird beim
+/// Start gelesen, die Fach-Dateien erst bei Bedarf (schnell + speicherschonend).
 class ExerciseRepository {
-  List<ExerciseTopic> _topics = const [];
+  List<SubjectInfo> _subjects = const [];
+  final Map<String, List<ExerciseTopic>> _cache = {};
 
-  List<ExerciseTopic> get topics => _topics;
+  List<SubjectInfo> get subjects => _subjects;
 
-  Future<void> load() async {
-    final raw = await rootBundle.loadString('assets/exercises.json');
-    _parse(raw);
-  }
-
-  /// Content aus einem geladenen JSON (z. B. vom Server) übernehmen.
-  void applyJson(Map<String, dynamic> json) {
-    final list = (json['topics'] as List<dynamic>? ?? const []);
-    _topics = list
-        .map((t) => ExerciseTopic.fromJson(t as Map<String, dynamic>))
+  /// Beim Start: nur den Index laden (winzig).
+  Future<void> loadIndex() async {
+    final raw = await rootBundle.loadString('assets/exercises/index.json');
+    final json = jsonDecode(raw) as Map<String, dynamic>;
+    _subjects = (json['subjects'] as List<dynamic>)
+        .map((s) => SubjectInfo.fromJson(s as Map<String, dynamic>))
         .toList();
   }
 
-  void _parse(String raw) {
-    final json = jsonDecode(raw) as Map<String, dynamic>;
-    applyJson(json);
-  }
-
-  /// Alle Fächer (Keys) mit Themenanzahl.
-  Map<String, int> subjectCounts() {
-    final map = <String, int>{};
-    for (final t in _topics) {
-      map[t.subject] = (map[t.subject] ?? 0) + 1;
-    }
-    return map;
-  }
-
-  List<int> gradesFor(String subject) {
-    final set = <int>{};
-    for (final t in _topics) {
-      if (t.subject == subject) set.add(t.grade);
-    }
-    final list = set.toList()..sort();
-    return list;
-  }
-
-  List<ExerciseTopic> topicsFor(String subject, int grade) {
-    final list = _topics.where((t) => t.subject == subject && t.grade == grade).toList()
-      ..sort((a, b) => a.order.compareTo(b.order));
-    return list;
-  }
-
-  ExerciseTopic? topicById(String id) {
-    for (final t in _topics) {
-      if (t.id == id) return t;
+  SubjectInfo? subjectInfo(String subject) {
+    for (final s in _subjects) {
+      if (s.key == subject) return s;
     }
     return null;
+  }
+
+  List<int> gradesFor(String subject) => subjectInfo(subject)?.grades ?? const [];
+
+  /// Alle Themen eines Fachs (aus der Fach-Datei; gecacht).
+  Future<List<ExerciseTopic>> loadSubject(String subject) async {
+    final cached = _cache[subject];
+    if (cached != null) return cached;
+    final raw = await rootBundle.loadString('assets/exercises/$subject.json');
+    final json = jsonDecode(raw) as Map<String, dynamic>;
+    final topics = (json['topics'] as List<dynamic>)
+        .map((t) => ExerciseTopic.fromJson(t as Map<String, dynamic>))
+        .toList();
+    _cache[subject] = topics;
+    return topics;
+  }
+
+  /// Themen eines Fachs für eine Klassenstufe.
+  Future<List<ExerciseTopic>> topicsFor(String subject, int grade) async {
+    final topics = await loadSubject(subject);
+    return topics.where((t) => t.grade == grade).toList()
+      ..sort((a, b) => a.order.compareTo(b.order));
   }
 }
 

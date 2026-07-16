@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Internet für WebView (echte Web-App), API-Aufrufe und Push -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Android 13+: Benachrichtigungs-Berechtigung -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <application
-        android:label="mastermind"
+        android:label="MasterMind"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

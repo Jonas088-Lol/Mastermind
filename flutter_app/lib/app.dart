@@ -9,6 +9,9 @@ class MasterMindApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Native App mit perfektem Handy-Design: Übungen & Karteikarten komplett
+    // offline. Die vollständige Online-App (Login, Demo-Accounts, KI, Nachrichten)
+    // ist über den Profil-Tab erreichbar.
     return MaterialApp(
       title: 'MasterMind',
       debugShowCheckedModeBanner: false,
