@@ -1,16 +1,24 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
-import { ArrowLeft, KeyRound, Trash2, UserMinus, UserPlus } from "lucide-react";
+import { ArrowLeft, KeyRound, Plus, Trash2, UserMinus, UserPlus, X } from "lucide-react";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
-import { assignStudent, deleteClass, removeStudent, updateClass } from "./actions";
+import {
+  assignStudent,
+  assignTeacherToClass,
+  deleteClass,
+  removeStudent,
+  unassignTeacherFromClass,
+  updateClass,
+} from "./actions";
 
 export const metadata: Metadata = { title: "Klasse bearbeiten · Admin" };
 
@@ -43,6 +51,20 @@ export default async function AdminKlasseDetailPage({ params }: PageProps) {
   });
 
   if (!klass || klass.schoolId !== session.schoolId) notFound();
+
+  // Für die Lehrer-Zuordnung: alle Lehrkräfte + Fächer der Schule.
+  const [schoolTeachers, schoolSubjects] = await Promise.all([
+    prisma.user.findMany({
+      where: { schoolId: session.schoolId, role: "teacher" },
+      select: { id: true, name: true },
+      orderBy: { name: "asc" },
+    }),
+    prisma.subject.findMany({
+      where: { schoolId: session.schoolId },
+      select: { id: true, name: true, shortName: true },
+      orderBy: { name: "asc" },
+    }),
+  ]);
 
   const unassignedStudents = await prisma.user.findMany({
     where: { schoolId: session.schoolId, role: "student", classId: null },
@@ -190,10 +212,65 @@ export default async function AdminKlasseDetailPage({ params }: PageProps) {
                         <p className="truncate text-xs font-semibold">{ts.subject.name}</p>
                         <p className="truncate text-xs text-muted-fg">{ts.teacher.name}</p>
                       </div>
+                      <form action={unassignTeacherFromClass}>
+                        <input type="hidden" name="id" value={ts.id} />
+                        <button
+                          type="submit"
+                          title="Zuordnung entfernen"
+                          className="rounded-lg p-1.5 text-muted-fg transition-colors hover:bg-danger/10 hover:text-danger"
+                        >
+                          <X className="size-4" />
+                        </button>
+                      </form>
                     </li>
                   ))}
                 </ul>
               )}
+
+              {/* Lehrkraft einer Klasse zuordnen */}
+              <form
+                action={assignTeacherToClass}
+                className="flex flex-col gap-2 border-t border-border px-4 py-4"
+              >
+                <input type="hidden" name="classId" value={klass.id} />
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">
+                  Lehrkraft zuordnen
+                </p>
+                {schoolTeachers.length === 0 || schoolSubjects.length === 0 ? (
+                  <p className="text-xs text-muted-fg">
+                    {schoolTeachers.length === 0
+                      ? "Noch keine Lehrkräfte an der Schule."
+                      : "Noch keine Fächer angelegt."}
+                  </p>
+                ) : (
+                  <>
+                    <select
+                      name="teacherId"
+                      required
+                      className="rounded-lg border border-border bg-surface px-3 py-2 text-sm text-fg focus:border-brand focus:outline-none"
+                    >
+                      <option value="">Lehrkraft wählen…</option>
+                      {schoolTeachers.map((t) => (
+                        <option key={t.id} value={t.id}>{t.name}</option>
+                      ))}
+                    </select>
+                    <select
+                      name="subjectId"
+                      required
+                      className="rounded-lg border border-border bg-surface px-3 py-2 text-sm text-fg focus:border-brand focus:outline-none"
+                    >
+                      <option value="">Fach wählen…</option>
+                      {schoolSubjects.map((s) => (
+                        <option key={s.id} value={s.id}>{s.name} ({s.shortName})</option>
+                      ))}
+                    </select>
+                    <Button type="submit" size="sm" className="w-full">
+                      <Plus className="size-3.5" />
+                      Zuordnen
+                    </Button>
+                  </>
+                )}
+              </form>
             </CardBody>
           </Card>
 

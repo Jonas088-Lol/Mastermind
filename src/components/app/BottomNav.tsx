@@ -205,7 +205,10 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
     <>
       <nav
         aria-label="Untere Navigation"
-        className="shrink-0 z-40 border-t border-border bg-bg/90 backdrop-blur-lg supports-backdrop-filter:bg-bg/80 lg:hidden"
+        // fixed statt Flex-Kind: sonst bleibt beim Ausblenden (translateY) der
+        // Layout-Platz leer und der Inhalt darunter fehlt. Als Overlay gibt die
+        // Leiste den Bereich frei, sobald sie ausgeblendet wird.
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-bg/90 backdrop-blur-lg supports-backdrop-filter:bg-bg/80 lg:hidden"
         style={{
           paddingBottom: "max(env(safe-area-inset-bottom), 8px)",
           transform: (navVisible || moreOpen) ? "translateY(0)" : "translateY(100%)",

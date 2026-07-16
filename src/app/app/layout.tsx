@@ -190,7 +190,7 @@ export default async function AppLayout({
         {/* Boss bar — shows when a boss is active */}
         <BossBar />
         {/* Only this area scrolls */}
-        <main className="flex-1 overflow-y-auto overflow-x-hidden min-w-0 px-4 py-6 lg:px-10 lg:py-10">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden min-w-0 px-4 py-6 pb-28 lg:px-10 lg:py-10 lg:pb-10">
           {children}
         </main>
         {/* BottomNav — always visible, never scrolls away */}

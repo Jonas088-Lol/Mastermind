@@ -9,31 +9,63 @@ import { TeacherExerciseCard, type TeacherExerciseItem } from "./TeacherExercise
 
 export const metadata: Metadata = { title: "Übungen" };
 
-const SUBJECTS = [
-  { key: "mathematik",  label: "Mathematik" },
-  { key: "deutsch",     label: "Deutsch" },
-  { key: "englisch",    label: "Englisch" },
-  { key: "physik",      label: "Physik" },
-  { key: "chemie",      label: "Chemie" },
-  { key: "biologie",    label: "Biologie" },
-  { key: "geschichte",  label: "Geschichte" },
-  { key: "informatik",  label: "Informatik" },
-  { key: "geografie",   label: "Geografie" },
-  { key: "wirtschaft",  label: "Wirtschaft" },
-  { key: "musik",       label: "Musik" },
-  { key: "sport",       label: "Sport" },
-  // Fächer der MEGA-Fragenbank (Import nutzt "erdkunde", nicht "geografie")
-  { key: "erdkunde",    label: "Erdkunde" },
-  { key: "franzoesisch",label: "Französisch" },
-  { key: "latein",      label: "Latein" },
-  { key: "spanisch",    label: "Spanisch" },
-  { key: "kunst",       label: "Kunst" },
-  { key: "ethik",       label: "Ethik" },
-  { key: "sachkunde",   label: "Sachkunde" },
-  { key: "technik",     label: "Technik" },
-  { key: "philosophie", label: "Philosophie" },
-  { key: "psychologie", label: "Psychologie" },
-] as const;
+// Fächer nach Kategorien gruppiert — die Kategorie steht als kleine Überschrift
+// über den jeweiligen Fächern.
+const SUBJECT_CATEGORIES: { category: string; subjects: { key: string; label: string }[] }[] = [
+  {
+    category: "Sprachen",
+    subjects: [
+      { key: "deutsch",      label: "Deutsch" },
+      { key: "englisch",     label: "Englisch" },
+      { key: "franzoesisch", label: "Französisch" },
+      { key: "spanisch",     label: "Spanisch" },
+      { key: "latein",       label: "Latein" },
+    ],
+  },
+  {
+    category: "Mathematik & Naturwissenschaften",
+    subjects: [
+      { key: "mathematik", label: "Mathematik" },
+      { key: "physik",     label: "Physik" },
+      { key: "chemie",     label: "Chemie" },
+      { key: "biologie",   label: "Biologie" },
+    ],
+  },
+  {
+    category: "Informatik & Technik",
+    subjects: [
+      { key: "informatik", label: "Informatik" },
+      { key: "technik",    label: "Technik" },
+    ],
+  },
+  {
+    category: "Gesellschaft & Wirtschaft",
+    subjects: [
+      { key: "geschichte", label: "Geschichte" },
+      // MEGA-Fragenbank nutzt "erdkunde"; "geografie" bleibt als Alias bestehen.
+      { key: "erdkunde",   label: "Erdkunde" },
+      { key: "geografie",  label: "Geografie" },
+      { key: "wirtschaft", label: "Wirtschaft" },
+      { key: "sachkunde",  label: "Sachkunde" },
+    ],
+  },
+  {
+    category: "Ethik & Philosophie",
+    subjects: [
+      { key: "ethik",       label: "Ethik" },
+      { key: "philosophie", label: "Philosophie" },
+      { key: "psychologie", label: "Psychologie" },
+    ],
+  },
+  {
+    category: "Kunst, Musik & Sport",
+    subjects: [
+      { key: "kunst", label: "Kunst" },
+      { key: "musik", label: "Musik" },
+      { key: "sport", label: "Sport" },
+    ],
+  },
+];
 
 export default async function UebungenPage() {
   const session = await getSession();
@@ -128,29 +160,44 @@ export default async function UebungenPage() {
         </Link>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {SUBJECTS.map((s) => {
-          const total = countMap[s.key] ?? 0;
-          const visual = subjectVisual(s.key);
+      {/* Fächer nach Kategorien gruppiert */}
+      <div className="flex flex-col gap-8">
+        {SUBJECT_CATEGORIES.map((cat) => {
+          // Nur Fächer zeigen, die auch Themen haben (sonst wirkt die Kategorie leer).
+          const visible = cat.subjects.filter((s) => (countMap[s.key] ?? 0) > 0);
+          if (visible.length === 0) return null;
           return (
-            <Link
-              key={s.key}
-              href={`/app/uebungen/${s.key}`}
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-surface p-5 text-center transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md"
-            >
-              <span className={`grid size-14 place-items-center rounded-2xl ${visual.color}`}>
-                <visual.icon className="size-7" strokeWidth={1.75} />
-              </span>
-              <div>
-                <p className="font-bold group-hover:text-brand">{s.label}</p>
-                <p className="mt-0.5 text-xs text-muted-fg">{total} Themen</p>
+            <section key={cat.category}>
+              <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-muted-fg">
+                {cat.category}
+              </h2>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {visible.map((s) => {
+                  const total = countMap[s.key] ?? 0;
+                  const visual = subjectVisual(s.key);
+                  return (
+                    <Link
+                      key={s.key}
+                      href={`/app/uebungen/${s.key}`}
+                      className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-surface p-5 text-center transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md"
+                    >
+                      <span className={`grid size-14 place-items-center rounded-2xl ${visual.color}`}>
+                        <visual.icon className="size-7" strokeWidth={1.75} />
+                      </span>
+                      <div>
+                        <p className="font-bold group-hover:text-brand">{s.label}</p>
+                        <p className="mt-0.5 text-xs text-muted-fg">{total} Themen</p>
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
-            </Link>
+            </section>
           );
         })}
       </div>
 
-      <section className="border border-border bg-bg p-6">
+      <section className="rounded-2xl border border-border bg-bg p-6">
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg">Tipp</p>
         <p className="mt-2 text-sm text-muted-fg">
           Jedes Thema enthält einen kurzen Lerntext und anschließend ein Quiz mit

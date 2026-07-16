@@ -89,6 +89,39 @@ async function main() {
     ids[t.key ?? t.role] = user.id;
   }
 
+  // ── Fächer + Lehrer-Zuordnung ────────────────────────────
+  // Ohne TeacherSubjectClass-Eintrag sieht die Lehrkraft keine Klasse und kann
+  // keine Übungen erstellen ("Du bist noch keiner Klasse zugeordnet").
+  const DEMO_SUBJECTS = [
+    { id: "demo-subject-ma", name: "Mathematik", shortName: "MA", color: "#6366f1" },
+    { id: "demo-subject-de", name: "Deutsch",    shortName: "DE", color: "#f59e0b" },
+    { id: "demo-subject-en", name: "Englisch",   shortName: "EN", color: "#0ea5e9" },
+  ];
+  for (const s of DEMO_SUBJECTS) {
+    await prisma.subject.upsert({
+      where: { id: s.id },
+      update: { name: s.name, shortName: s.shortName, color: s.color, schoolId: school.id },
+      create: { ...s, schoolId: school.id },
+    });
+  }
+
+  if (ids.teacher) {
+    for (const s of DEMO_SUBJECTS) {
+      await prisma.teacherSubjectClass.upsert({
+        where: {
+          teacherId_subjectId_classId: {
+            teacherId: ids.teacher,
+            subjectId: s.id,
+            classId: klasse.id,
+          },
+        },
+        create: { teacherId: ids.teacher, subjectId: s.id, classId: klasse.id },
+        update: {},
+      });
+    }
+    console.log(`  ✓ Demo-Lehrkraft ist Klasse 9b zugeordnet (${DEMO_SUBJECTS.length} Fächer)`);
+  }
+
   // ── Zusatzrollen für den Sprecher-/Redaktions-Demo-Account ──
   if (ids.student3) {
     await prisma.user.update({

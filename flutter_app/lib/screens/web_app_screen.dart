@@ -10,7 +10,9 @@ import 'app_shell.dart';
 /// normale Login-Seite → Demo-Accounts → kompletter Funktionsumfang.
 /// Bei fehlender Verbindung erscheint ein Fallback mit Offline-Übungen/Karten.
 class WebAppScreen extends StatefulWidget {
-  const WebAppScreen({super.key});
+  /// Ziel-Pfad in der Web-App (z. B. "/login", "/app/nachrichten").
+  final String path;
+  const WebAppScreen({super.key, this.path = '/login'});
 
   @override
   State<WebAppScreen> createState() => _WebAppScreenState();
@@ -43,12 +45,12 @@ class _WebAppScreenState extends State<WebAppScreen> {
           },
         ),
       )
-      ..loadRequest(Uri.parse('${ApiClient.baseUrl}/login'));
+      ..loadRequest(Uri.parse('${ApiClient.baseUrl}${widget.path}'));
   }
 
   Future<void> _reload() async {
     setState(() => _error = false);
-    await _controller.loadRequest(Uri.parse('${ApiClient.baseUrl}/login'));
+    await _controller.loadRequest(Uri.parse('${ApiClient.baseUrl}${widget.path}'));
   }
 
   @override

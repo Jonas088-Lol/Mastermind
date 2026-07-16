@@ -2,6 +2,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 
@@ -41,6 +42,19 @@ export async function addFlashcard(
   revalidatePath(`/app/karteikarten/${deckId}`);
   revalidatePath("/app/karteikarten");
   return { ok: true };
+}
+
+/** Ein ganzes Deck samt Karten löschen (nur eigenes Deck). */
+export async function deleteDeck(deckId: string): Promise<void> {
+  const session = await getSession();
+  if (!session || effectiveRole(session) !== "student") return;
+  if (!(await assertOwnDeck(deckId, session.userId))) return;
+
+  // Karten hängen per onDelete: Cascade am Deck.
+  await prisma.flashcardDeck.delete({ where: { id: deckId } });
+
+  revalidatePath("/app/karteikarten");
+  redirect("/app/karteikarten");
 }
 
 /** Eine Karteikarte löschen (nur aus eigenem Deck). */

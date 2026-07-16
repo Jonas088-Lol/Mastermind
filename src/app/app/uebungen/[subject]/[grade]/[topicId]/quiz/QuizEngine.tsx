@@ -403,7 +403,8 @@ function AnswerInput({
   if (type === "mc" || type === "blitz") {
     const opts = options as string[];
     return (
-      <div className="grid gap-2 sm:grid-cols-2">
+      // Bewusst einspaltig (Liste) — auch am Desktop, nicht als Raster.
+      <div className="flex flex-col gap-2">
         {opts.map((opt, i) => {
           const shape = MC_SHAPES[i % MC_SHAPES.length];
           return (

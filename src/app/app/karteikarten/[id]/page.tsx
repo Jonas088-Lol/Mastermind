@@ -7,6 +7,7 @@ import { ExportDeckButton } from "./ExportDeckButton";
 import { FlashcardModes } from "./FlashcardModes";
 import { AddCardForm } from "./AddCardForm";
 import { DeleteCardButton } from "./DeleteCardButton";
+import { DeleteDeckButton } from "./DeleteDeckButton";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -98,10 +99,13 @@ export default async function DeckDetailPage({ params }: Props) {
               {total} Karten · {mastered} gemeistert
             </p>
           </div>
-          <ExportDeckButton
-            name={deck.name}
-            cards={deck.cards.map((c) => ({ front: c.front, back: c.back }))}
-          />
+          <div className="flex shrink-0 flex-col items-end gap-2 sm:flex-row sm:items-center">
+            <ExportDeckButton
+              name={deck.name}
+              cards={deck.cards.map((c) => ({ front: c.front, back: c.back }))}
+            />
+            <DeleteDeckButton deckId={deck.id} deckName={deck.name} />
+          </div>
         </div>
 
         {/* Mastery progress */}

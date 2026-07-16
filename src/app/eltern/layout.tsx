@@ -100,7 +100,7 @@ export default async function ElternLayout({
             searchPlaceholder="Suchen — Nachrichten, Noten, Termine …"
           />
         </div>
-        <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 lg:px-10 lg:py-10">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 pb-28 lg:px-10 lg:py-10 lg:pb-10">
           {children}
         </main>
         <BottomNav items={mobileNav} moreItems={[...items, ...bottomItems]} user={displayUser(session)} />
