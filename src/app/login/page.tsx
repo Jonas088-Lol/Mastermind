@@ -49,40 +49,35 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
   return (
     <div className="grid min-h-dvh lg:grid-cols-2">
-      {/* LEFT: branding panel — Farbverlauf Pastell-Blau → Pastell-Grün → Seiten-
-          hintergrund, damit die harte Kante zur rechten Spalte verschwindet. */}
-      <aside className="relative hidden flex-col justify-between overflow-hidden bg-linear-to-r from-brand via-accent to-bg p-10 text-brand-fg lg:flex">
-        <div className="pointer-events-none absolute inset-0 opacity-25"
+      {/* LEFT: branding panel */}
+      <aside className="relative hidden flex-col justify-between overflow-hidden bg-brand p-10 text-white lg:flex">
+        <div className="pointer-events-none absolute inset-0 opacity-20"
           style={{ background: "radial-gradient(ellipse at 30% 20%, white 0%, transparent 60%)" }}
         />
         <Link href="/" className="relative flex items-center gap-2 font-bold tracking-tight">
-          <BrandLogo height="h-8" showName />
+          <BrandLogo height="h-8" showName variant="inverted" />
         </Link>
 
-        {/* Liquid-Glass-Box: leicht durchsichtig, Unschärfe, etwas kräftigere Outline */}
-        <div className="relative max-w-md rounded-2xl border border-white/45 bg-white/20 p-6 shadow-sm backdrop-blur-md">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-brand-fg/70">
-            Die Schule der Zukunft.
+        <div className="relative max-w-md">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/70">
+            Eine Plattform für Schule
           </p>
-          <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight xl:text-4xl">
-            Lernen. Kommunizieren. Organisieren.
-            <span className="mt-2 block text-2xl font-semibold xl:text-3xl">
-              Eine Plattform für die gesamte Schule.
-            </span>
+          <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight xl:text-5xl">
+            Lernen, Verwaltung und KI in einer Plattform.
           </h1>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-brand-fg/70">
-            Server in Deutschland · DSGVO-konform
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
+            Server in Deutschland · DSGVO-konform · 30-Min-Onboarding.
           </p>
         </div>
 
-        <ul className="relative space-y-2.5 text-sm text-brand-fg/80">
+        <ul className="relative space-y-2.5 text-sm text-white/80">
           {[
-            "DSGVO-konforme Entwicklung",
-            "AV-Verträge für Schulen verfügbar",
-            "Kein Datenverkauf",
+            "Hosting Frankfurt am Main · AVV in 24 h",
+            "SSO mit Microsoft, Google, Apple",
+            "2FA · Audit-Logs · Datenexport jederzeit",
           ].map((t) => (
             <li key={t} className="flex items-center gap-2.5">
-              <ShieldCheck className="size-4 shrink-0 text-brand-fg/60" />
+              <ShieldCheck className="size-4 text-white/60 shrink-0" />
               {t}
             </li>
           ))}
