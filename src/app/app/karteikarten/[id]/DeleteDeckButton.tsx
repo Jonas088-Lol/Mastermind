@@ -3,6 +3,7 @@
 
 import { useTransition } from "react";
 import { Trash2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { deleteDeck } from "./actions";
 
 interface Props {
@@ -15,18 +16,22 @@ export function DeleteDeckButton({ deckId, deckName }: Props) {
   const [pending, startTransition] = useTransition();
 
   return (
-    <button
+    // Gleiche Form/Größe wie der Exportieren-Button daneben (outline · sm),
+    // aber dauerhaft rot; beim Hovern wird das Rot etwas heller.
+    <Button
       type="button"
+      variant="outline"
+      size="sm"
       disabled={pending}
       title="Deck löschen"
       onClick={() => {
         if (!confirm(`Deck „${deckName}“ mit allen Karten wirklich löschen?`)) return;
         startTransition(() => deleteDeck(deckId));
       }}
-      className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs font-semibold text-muted-fg transition-colors hover:border-danger/40 hover:bg-danger/10 hover:text-danger disabled:opacity-50"
+      className="border-danger/40 text-danger hover:border-danger/60 hover:bg-danger/10 hover:text-danger/80"
     >
       <Trash2 className="size-3.5" />
       {pending ? "Löscht…" : "Deck löschen"}
-    </button>
+    </Button>
   );
 }
