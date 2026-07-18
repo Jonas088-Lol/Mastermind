@@ -68,7 +68,7 @@ export default async function TitelPage() {
         <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-fg">Aktuell ausgerüstet</p>
         {equippedTitle ? (
           <div className="flex items-center gap-4">
-            <span className="text-3xl">{equippedTitle.icon}</span>
+            <span className="grid size-14 shrink-0 place-items-center rounded-full bg-brand/10 text-2xl">{equippedTitle.icon}</span>
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <p
@@ -110,7 +110,7 @@ export default async function TitelPage() {
               )}
             >
               <div className="flex items-start gap-3">
-                <span className="text-2xl leading-none">{isOwned ? title.icon : "❓"}</span>
+                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand/10 text-xl leading-none">{isOwned ? title.icon : "❓"}</span>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5">
                     <p

@@ -86,7 +86,7 @@ export default async function TopicPage({ params }: PageParams) {
           {label} Klasse {grade}
         </Link>
         <div className="flex items-center gap-3">
-          <span className={`grid size-12 shrink-0 place-items-center rounded-2xl ${visual.color}`}>
+          <span className={`grid size-12 shrink-0 place-items-center rounded-full ${visual.color}`}>
             <visual.icon className="size-6" strokeWidth={1.75} />
           </span>
           <h1 className="text-3xl font-bold tracking-tight">{topic.title}</h1>
@@ -217,7 +217,7 @@ export default async function TopicPage({ params }: PageParams) {
                   href={`/app/uebungen/${subject}/${grade}/${topicId}/quiz?block=${b}`}
                   className="group flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
                 >
-                  <span className={`grid size-10 shrink-0 place-items-center rounded-2xl ${visual.color}`}>
+                  <span className={`grid size-10 shrink-0 place-items-center rounded-full ${visual.color}`}>
                     <visual.icon className="size-5" strokeWidth={1.75} />
                   </span>
                   <div className="min-w-0 flex-1">

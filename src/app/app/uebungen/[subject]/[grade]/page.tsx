@@ -72,7 +72,7 @@ export default async function GradePage({ params }: PageParams) {
                 className="group flex items-start gap-4 rounded-2xl border border-border bg-bg p-5 transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm"
               >
                 {/* Themen-Icon im Landing-Symboldesign */}
-                <span className={`relative grid size-11 shrink-0 place-items-center rounded-2xl ${visual.color}`}>
+                <span className={`relative grid size-11 shrink-0 place-items-center rounded-full ${visual.color}`}>
                   <visual.icon className="size-5" strokeWidth={1.75} />
                   {isDone && (
                     <CheckCircle2 className="absolute -bottom-1 -right-1 size-4 rounded-full bg-bg text-success" />

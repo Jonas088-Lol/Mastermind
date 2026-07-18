@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Preise | MasterMind",
   description:
-    "Transparente Preise für jede Schulgröße — Pro und Individual. 30 Tage kostenlos testen.",
+    "Transparente Preise für jede Schulgröße — Pro und Individual. 7-tägige Testversion von MasterMind.",
 };
 
 const PLAN_NAMES = [
@@ -168,21 +168,21 @@ export default function PreisePage() {
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-3xl sm:text-4xl">Bereit loszulegen?</h2>
             <p className="mt-4 text-lg text-muted-fg">
-              30 Tage kostenlos testen — keine Kreditkarte, kein Risiko.
+              7-tägige Testversion von MasterMind
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="/onboarding"
+                href="/kontakt?betreff=demo"
                 className={buttonVariants({ size: "lg", className: "pastel-cta" })}
               >
                 Kostenlos testen
                 <ArrowRight className="size-4" />
               </Link>
               <Link
-                href="/kontakt"
+                href="/download"
                 className={buttonVariants({ variant: "outline", size: "lg" })}
               >
-                Vertrieb kontaktieren
+                Herunterladen
               </Link>
             </div>
           </div>

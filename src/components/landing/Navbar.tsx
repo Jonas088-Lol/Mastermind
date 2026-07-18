@@ -85,7 +85,7 @@ export function Navbar() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg"
+                className="rounded-lg border border-transparent px-3 py-2 text-sm font-medium text-muted-fg transition-all hover:border-border-strong/60 hover:bg-surface/40 hover:text-fg hover:backdrop-blur-md"
               >
                 {l.label}
               </Link>
@@ -95,7 +95,7 @@ export function Navbar() {
             <div className="group relative">
               <button
                 type="button"
-                className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg group-hover:bg-surface group-hover:text-fg"
+                className="flex items-center gap-1 rounded-lg border border-transparent px-3 py-2 text-sm font-medium text-muted-fg transition-all hover:border-border-strong/60 hover:bg-surface/40 hover:text-fg hover:backdrop-blur-md group-hover:border-border-strong/60 group-hover:bg-surface/40 group-hover:text-fg group-hover:backdrop-blur-md"
               >
                 Für jede Rolle
                 <ChevronDown className="size-3.5 transition-transform duration-200 group-hover:rotate-180" />
@@ -133,7 +133,7 @@ export function Navbar() {
 
             <Link
               href={appLink.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-fg transition-colors hover:bg-surface hover:text-fg"
+              className="rounded-lg border border-transparent px-3 py-2 text-sm font-medium text-muted-fg transition-all hover:border-border-strong/60 hover:bg-surface/40 hover:text-fg hover:backdrop-blur-md"
             >
               {appLink.label}
             </Link>
@@ -146,7 +146,10 @@ export function Navbar() {
               href="/login"
               className={cn(
                 buttonVariants({ variant: "ghost", size: "sm" }),
-                "hidden text-muted-fg hover:text-fg sm:inline-flex"
+                // Dauerhaft sichtbare Glas-Box mit heller Outline; beim Hovern
+                // wird sie etwas heller und schwebt nach oben (wie der CTA daneben).
+                "hidden border border-border-strong/60 bg-surface/40 text-fg backdrop-blur-md transition-all",
+                "hover:-translate-y-0.5 hover:border-border-strong hover:bg-surface/60 hover:text-fg hover:shadow-md sm:inline-flex"
               )}
             >
               Anmelden

@@ -600,7 +600,8 @@ function Achievement({
 }) {
   return (
     <li className="flex gap-3">
-      <div className="grid size-9 shrink-0 place-items-center border border-border bg-surface text-brand">
+      {/* Landing-Symboldesign: voll-rund, leicht transparenter Hintergrund */}
+      <div className="grid size-10 shrink-0 place-items-center rounded-full bg-brand/10 text-brand">
         {icon}
       </div>
       <div className="min-w-0 flex-1">

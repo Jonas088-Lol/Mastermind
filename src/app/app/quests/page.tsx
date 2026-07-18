@@ -369,7 +369,7 @@ function QuestCard({
       )}
     >
       <div className="flex items-start gap-3">
-        <span className="text-2xl leading-none">{q.icon}</span>
+        <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand/10 text-xl leading-none">{q.icon}</span>
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
             <p className="text-sm font-bold leading-tight">{q.title}</p>
@@ -456,7 +456,7 @@ function HiddenSection({
               )}
             >
               <div className="flex items-start gap-3">
-                <span className="text-2xl leading-none">{isRevealed ? q.icon : "❓"}</span>
+                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand/10 text-xl leading-none">{isRevealed ? q.icon : "❓"}</span>
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-bold leading-tight">
                     {isRevealed ? q.title : "???"}

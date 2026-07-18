@@ -181,7 +181,7 @@ export default async function UebungenPage() {
                       href={`/app/uebungen/${s.key}`}
                       className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-surface p-5 text-center transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-md"
                     >
-                      <span className={`grid size-14 place-items-center rounded-2xl ${visual.color}`}>
+                      <span className={`grid size-14 place-items-center rounded-full ${visual.color}`}>
                         <visual.icon className="size-7" strokeWidth={1.75} />
                       </span>
                       <div>

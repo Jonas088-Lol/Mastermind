@@ -206,21 +206,21 @@ export default function FunktionenPage() {
           <div className="mx-auto max-w-xl text-center">
             <h2 className="text-3xl sm:text-4xl">Bereit, MasterMind auszuprobieren?</h2>
             <p className="mt-4 text-lg text-muted-fg">
-              30 Tage kostenlos — keine Kreditkarte, kein Risiko.
+              7-tägige Testversion von MasterMind
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="/onboarding"
+                href="/kontakt?betreff=demo"
                 className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
               >
-                Schule kostenlos testen
+                Demo kostenlos testen
                 <ArrowRight className="size-4" />
               </Link>
               <Link
-                href="/kontakt?betreff=demo"
+                href="/preise"
                 className={buttonVariants({ variant: "outline", size: "lg" })}
               >
-                Demo buchen
+                Unsere Preise
               </Link>
             </div>
           </div>

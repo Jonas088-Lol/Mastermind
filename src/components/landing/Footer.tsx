@@ -56,8 +56,8 @@ export function Footer() {
           <div className="lg:col-span-2">
             <BrandLogo height="h-8" showName />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-fg">
-              Eine Plattform für Schule. Lernen, Verwaltung und KI —
-              DSGVO-konform aus Deutschland.
+              Lernen. Kommunizieren. Organisieren.
+              <span className="block">Eine Plattform für die gesamte Schule.</span>
             </p>
             <div className="mt-5 flex items-center gap-2">
               <div className="size-2 rounded-full bg-success" />
@@ -96,7 +96,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-fg sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} MasterMind GmbH · Frankfurt am Main</p>
+          <p>© {new Date().getFullYear()} Masters Studios</p>
           <p>Made with <span className="text-brand">♥</span> in Deutschland</p>
         </div>
       </div>

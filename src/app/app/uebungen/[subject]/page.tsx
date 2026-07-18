@@ -43,7 +43,7 @@ export default async function SubjectPage({ params }: PageParams) {
           Alle Fächer
         </Link>
         <div className="flex items-center gap-3">
-          <span className={`grid size-14 shrink-0 place-items-center rounded-2xl ${visual.color}`}>
+          <span className={`grid size-14 shrink-0 place-items-center rounded-full ${visual.color}`}>
             <visual.icon className="size-7" strokeWidth={1.75} />
           </span>
           <div>

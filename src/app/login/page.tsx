@@ -58,23 +58,24 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           <BrandLogo height="h-8" showName variant="inverted" />
         </Link>
 
-        <div className="relative max-w-md">
+        {/* Glas-Box: leicht durchsichtig, Unschärfe, etwas kräftigere Outline */}
+        <div className="relative max-w-md rounded-2xl border border-white/45 bg-white/15 p-6 shadow-sm backdrop-blur-md">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/70">
-            Eine Plattform für Schule
+            Die Schule der Zukunft.
           </p>
-          <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight xl:text-5xl">
-            Lernen, Verwaltung und KI in einer Plattform.
+          <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight xl:text-4xl">
+            Lernen. Kommunizieren. Organisieren.
           </h1>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
-            Server in Deutschland · DSGVO-konform · 30-Min-Onboarding.
+            Server in Deutschland · DSGVO-konform
           </p>
         </div>
 
         <ul className="relative space-y-2.5 text-sm text-white/80">
           {[
-            "Hosting Frankfurt am Main · AVV in 24 h",
-            "SSO mit Microsoft, Google, Apple",
-            "2FA · Audit-Logs · Datenexport jederzeit",
+            "DSGVO-konforme Entwicklung",
+            "AV-Verträge für Schulen verfügbar",
+            "Kein Datenverkauf",
           ].map((t) => (
             <li key={t} className="flex items-center gap-2.5">
               <ShieldCheck className="size-4 text-white/60 shrink-0" />
