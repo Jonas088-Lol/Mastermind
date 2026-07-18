@@ -17,6 +17,7 @@ import { redirect } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
+import { LandingIcon } from "@/components/ui/LandingIcon";
 import { Separator } from "@/components/ui/separator";
 import { ACHIEVEMENTS } from "@/lib/achievements";
 import { prisma } from "@/lib/db/client";
@@ -564,7 +565,7 @@ export default async function DashboardPage() {
                       <Fragment key={ua.slug}>
                         {i > 0 && <Separator />}
                         <Achievement
-                          icon={<span className="text-base">{def.icon}</span>}
+                          icon={def.icon}
                           title={def.title}
                           body={def.description}
                           earned={earnedLabel}
@@ -593,7 +594,8 @@ function Achievement({
   body,
   earned,
 }: {
-  icon: React.ReactNode;
+  /** Emoji aus den Achievement-Daten — wird als lucide-Icon dargestellt. */
+  icon: string;
   title: string;
   body: string;
   earned: string;
@@ -601,9 +603,7 @@ function Achievement({
   return (
     <li className="flex gap-3">
       {/* Landing-Symboldesign: voll-rund, leicht transparenter Hintergrund */}
-      <div className="grid size-10 shrink-0 place-items-center rounded-full bg-brand/10 text-brand">
-        {icon}
-      </div>
+      <LandingIcon emoji={icon} size="size-10" iconSize="size-4.5" />
       <div className="min-w-0 flex-1">
         <p className="text-sm font-semibold">{title}</p>
         <p className="mt-0.5 text-xs text-muted-fg">{body}</p>

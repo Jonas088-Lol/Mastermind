@@ -1,4 +1,5 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
+import { LandingIcon } from "@/components/ui/LandingIcon";
 import { Clock, Monitor, Plus } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -50,7 +51,7 @@ export default async function PraesentationenPage() {
                 type="submit"
                 className="flex w-full flex-col items-start gap-1 rounded-2xl border border-border bg-surface px-4 py-4 text-left transition-colors hover:border-brand/50 hover:bg-bg"
               >
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand/10 text-xl" aria-hidden>{template.emoji}</span>
+                <LandingIcon emoji={template.emoji} />
                 <span className="mt-1 text-sm font-semibold text-fg">{template.name}</span>
                 <span className="text-[11px] text-muted-fg">
                   {template.slides.length} Folien · {template.description}

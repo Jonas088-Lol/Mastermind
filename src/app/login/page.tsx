@@ -54,12 +54,16 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
         <div className="pointer-events-none absolute inset-0 opacity-20"
           style={{ background: "radial-gradient(ellipse at 30% 20%, white 0%, transparent 60%)" }}
         />
-        <Link href="/" className="relative flex items-center gap-2 font-bold tracking-tight">
+        {/* Glas-Box hinter dem Logo: leicht durchsichtig, Unschärfe,
+            etwas kräftigere Outline als der Box-Hintergrund */}
+        <Link
+          href="/"
+          className="relative inline-flex w-fit items-center gap-2 rounded-2xl border border-white/45 bg-white/15 px-4 py-3 font-bold tracking-tight shadow-sm backdrop-blur-md"
+        >
           <BrandLogo height="h-8" showName variant="inverted" />
         </Link>
 
-        {/* Glas-Box: leicht durchsichtig, Unschärfe, etwas kräftigere Outline */}
-        <div className="relative max-w-md rounded-2xl border border-white/45 bg-white/15 p-6 shadow-sm backdrop-blur-md">
+        <div className="relative max-w-md">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/70">
             Die Schule der Zukunft.
           </p>

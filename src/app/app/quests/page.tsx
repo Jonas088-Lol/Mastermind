@@ -1,4 +1,5 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
+import { LandingIcon } from "@/components/ui/LandingIcon";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { CheckCircle2, Clock, Lock, Zap } from "lucide-react";
@@ -369,7 +370,7 @@ function QuestCard({
       )}
     >
       <div className="flex items-start gap-3">
-        <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand/10 text-xl leading-none">{q.icon}</span>
+        <LandingIcon emoji={q.icon} />
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
             <p className="text-sm font-bold leading-tight">{q.title}</p>
@@ -456,7 +457,7 @@ function HiddenSection({
               )}
             >
               <div className="flex items-start gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand/10 text-xl leading-none">{isRevealed ? q.icon : "❓"}</span>
+                <LandingIcon emoji={isRevealed ? q.icon : "❓"} />
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-bold leading-tight">
                     {isRevealed ? q.title : "???"}

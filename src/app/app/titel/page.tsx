@@ -1,4 +1,5 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
+import { LandingIcon } from "@/components/ui/LandingIcon";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { CheckCircle2, Lock, Tag } from "lucide-react";
@@ -68,7 +69,7 @@ export default async function TitelPage() {
         <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-fg">Aktuell ausgerüstet</p>
         {equippedTitle ? (
           <div className="flex items-center gap-4">
-            <span className="grid size-14 shrink-0 place-items-center rounded-full bg-brand/10 text-2xl">{equippedTitle.icon}</span>
+            <LandingIcon emoji={equippedTitle.icon} size="size-14" iconSize="size-6" />
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <p
@@ -110,7 +111,7 @@ export default async function TitelPage() {
               )}
             >
               <div className="flex items-start gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-brand/10 text-xl leading-none">{isOwned ? title.icon : "❓"}</span>
+                <LandingIcon emoji={isOwned ? title.icon : "❓"} />
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-1.5">
                     <p

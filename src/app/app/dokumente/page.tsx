@@ -1,4 +1,5 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
+import { LandingIcon } from "@/components/ui/LandingIcon";
 import { Clock, FileText, Plus } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -50,12 +51,7 @@ export default async function DokumentePage() {
                 type="submit"
                 className="flex w-full items-start gap-3 rounded-2xl border border-border bg-surface p-4 text-left transition-colors hover:border-brand/50 hover:bg-bg"
               >
-                <span
-                  className="grid size-11 shrink-0 place-items-center rounded-full bg-brand/10 text-xl leading-none"
-                  aria-hidden
-                >
-                  {template.emoji}
-                </span>
+                <LandingIcon emoji={template.emoji} />
                 <span className="min-w-0">
                   <span className="block truncate text-sm font-semibold">{template.name}</span>
                   <span className="mt-0.5 block text-xs text-muted-fg">
