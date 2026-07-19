@@ -6,6 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { updateWikiEntry } from "../../actions";
+import { canManageSchool } from "@/lib/school-admin";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -22,7 +23,7 @@ export default async function BearbeitenPage({ params }: Props) {
   if (!entry || entry.schoolId !== session.schoolId) notFound();
 
   const role = effectiveRole(session);
-  const canEdit = entry.authorId === session.userId || role === "admin" || role === "teacher";
+  const canEdit = entry.authorId === session.userId || canManageSchool(role) || role === "teacher";
   if (!canEdit) redirect(`/app/lernzettel/${id}`);
 
   const action = updateWikiEntry.bind(null, id);

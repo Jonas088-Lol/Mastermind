@@ -22,6 +22,7 @@ import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Nutzer · Admin" };
 
@@ -60,7 +61,8 @@ interface PageProps {
 export default async function NutzerPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "nutzer")) redirect("/admin");
 
   const { role, status, q } = await searchParams;
   const schoolId = session.schoolId;

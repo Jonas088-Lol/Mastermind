@@ -9,6 +9,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { hashPassword } from "@/lib/auth/passwords";
 import { STUDENT_FEATURES, serializeStudentFeatures } from "@/lib/student-features";
+import { canManageSchool } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Nutzer einladen" };
 
@@ -52,7 +53,7 @@ async function inviteUser(formData: FormData) {
 export default async function NutzerNeuPage() {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin" && effectiveRole(session) !== "super") {
+  if (!canManageSchool(effectiveRole(session)) && effectiveRole(session) !== "super") {
     redirect("/");
   }
 

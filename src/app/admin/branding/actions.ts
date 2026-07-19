@@ -7,6 +7,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 // SVG bewusst NICHT erlaubt — SVG kann <script> enthalten und wird direkt
 // statisch ausgeliefert (stored XSS). Nur Rastergrafiken.
@@ -36,7 +37,8 @@ async function saveUploadedFile(
 export async function saveBranding(formData: FormData): Promise<void> {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "branding")) redirect("/admin");
   if (!session.schoolId) return;
 
   const schoolName = (formData.get("schoolName") as string | null)?.trim() ?? "";

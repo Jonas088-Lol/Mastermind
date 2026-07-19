@@ -31,6 +31,7 @@ import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { canManageSchool } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Schul-Admin" };
 
@@ -68,7 +69,7 @@ function relativeTime(date: Date): string {
 export default async function AdminPage() {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect("/");
+  if (!canManageSchool(effectiveRole(session))) redirect("/");
 
   const schoolId = session.schoolId;
 

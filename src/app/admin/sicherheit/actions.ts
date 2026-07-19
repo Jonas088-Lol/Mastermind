@@ -6,11 +6,13 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export async function sendTwoFAReminders(): Promise<void> {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "sicherheit")) redirect("/admin");
 
   const schoolId = session.schoolId;
   const teachers = await prisma.user.findMany({
@@ -36,7 +38,7 @@ export async function sendTwoFAReminders(): Promise<void> {
 export async function createApiToken(formData: FormData): Promise<void> {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
   if (!session.schoolId) redirect("/admin");
 
   const name = (formData.get("name") as string | null)?.trim() ?? "";
@@ -75,7 +77,7 @@ export async function createApiToken(formData: FormData): Promise<void> {
 export async function revokeApiToken(tokenId: string): Promise<void> {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
   if (!session.schoolId) return;
 
   const token = await prisma.apiToken.findUnique({ where: { id: tokenId }, select: { schoolId: true } });

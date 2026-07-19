@@ -8,12 +8,14 @@ import { buttonVariants } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Fächer · Admin" };
 
 export default async function AdminFaecherPage() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "faecher")) redirect("/admin");
 
   const schoolId = session.schoolId ?? "";
 

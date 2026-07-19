@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardBody } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Integrationen · Admin" };
 
@@ -66,7 +67,8 @@ const INTEGRATIONS: Integration[] = [
 export default async function AdminIntegrationenPage() {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "integrationen")) redirect("/admin");
 
   const schoolId = session.schoolId;
   const school = schoolId

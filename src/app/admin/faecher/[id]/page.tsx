@@ -7,6 +7,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { updateSubject, deleteSubject } from "./actions";
 import { SUBJECT_CATEGORIES } from "../neu/page";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 interface PageParams { params: Promise<{ id: string }> }
 
@@ -20,7 +21,8 @@ const PRESET_COLORS = [
 export default async function FachBearbeitenPage({ params }: PageParams) {
   const { id } = await params;
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "faecher")) redirect("/admin");
 
   const subject = await prisma.subject.findFirst({
     where: { id, schoolId: session.schoolId ?? "" },

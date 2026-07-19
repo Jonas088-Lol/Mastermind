@@ -8,6 +8,7 @@ import { Card, CardBody } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { deleteNote } from "./[id]/actions";
+import { canManageSchool } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Notizen · Community" };
 
@@ -15,7 +16,7 @@ export default async function CommunityNotizenPage() {
   const session = await getSession();
   if (!session) redirect("/login");
   const role = effectiveRole(session);
-  const canModerate = role === "teacher" || role === "admin" || role === "super";
+  const canModerate = role === "teacher" || canManageSchool(role) || role === "super";
 
   const notes = await prisma.note.findMany({
     where: {

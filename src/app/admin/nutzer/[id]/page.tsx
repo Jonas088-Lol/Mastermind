@@ -12,6 +12,7 @@ import { prisma } from "@/lib/db/client";
 import { ROLE_LABEL, effectiveRole, getSession } from "@/lib/session";
 import { deleteUser, linkParentToStudent, resetTwoFactor, unlinkParentFromStudent, updateStudentFeatures, updateUserClass, updateUserRole } from "./actions";
 import { STUDENT_FEATURES, parseStudentFeatures } from "@/lib/student-features";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -31,7 +32,8 @@ const ROLE_OPTIONS = [
 export default async function NutzerDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect("/admin");
+  if (!canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "nutzer")) redirect("/admin");
 
   const { id } = await params;
 

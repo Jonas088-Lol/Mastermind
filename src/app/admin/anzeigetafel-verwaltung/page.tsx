@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 import {
   createAnnouncement,
   deleteAnnouncement,
@@ -30,7 +31,8 @@ const COLOR_PALETTE: { value: string; label: string }[] = [
 export default async function AnzeigetafelVerwaltungPage() {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "anzeigetafel-verwaltung")) redirect("/admin");
   if (!session.schoolId) redirect("/admin");
 
   const announcements = await prisma.boardAnnouncement.findMany({

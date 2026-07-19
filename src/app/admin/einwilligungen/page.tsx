@@ -10,6 +10,7 @@ import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import { createConsentForm, toggleConsentForm } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Einwilligungen · Admin" };
 
@@ -20,7 +21,8 @@ interface PageProps {
 export default async function AdminEinwilligungenPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "einwilligungen")) redirect("/admin");
 
   const { formId: selectedFormId, create: showCreateParam } = await searchParams;
   const schoolId = session.schoolId ?? "";

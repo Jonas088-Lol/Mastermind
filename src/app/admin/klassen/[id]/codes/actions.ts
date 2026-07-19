@@ -6,6 +6,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 function generateCode(): string {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -18,7 +19,8 @@ function generateCode(): string {
 export async function createClassJoinCode(classId: string, schoolId: string, formData: FormData) {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "klassen")) redirect("/admin");
   if (session.schoolId !== schoolId) redirect("/admin");
 
   // Klasse muss zur eigenen Schule gehören — sonst Join-Codes für fremde Klassen erstellbar
@@ -54,7 +56,7 @@ export async function createClassJoinCode(classId: string, schoolId: string, for
 export async function revokeClassCode(codeId: string, classId: string) {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
 
   const code = await prisma.provisioningCode.findUnique({ where: { id: codeId } });
   if (!code || code.schoolId !== session.schoolId) return;

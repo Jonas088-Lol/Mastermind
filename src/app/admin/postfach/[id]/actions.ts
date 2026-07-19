@@ -6,10 +6,12 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { sendEmail } from "@/lib/email";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export async function markAsRead(emailId: string): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") return;
+  if (!session || !canManageSchool(effectiveRole(session))) return;
+  if (!canAccessArea(effectiveRole(session), "postfach")) redirect("/admin");
 
   await prisma.mailboxEmail.updateMany({
     where: { id: emailId, schoolId: session.schoolId ?? "" },
@@ -19,7 +21,7 @@ export async function markAsRead(emailId: string): Promise<void> {
 
 export async function replyToEmail(formData: FormData): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/login");
   if (!session.schoolId) return;
 
   const emailId = String(formData.get("emailId") ?? "").trim();
@@ -77,7 +79,7 @@ export async function replyToEmail(formData: FormData): Promise<void> {
 
 export async function deleteEmail(emailId: string): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") return;
+  if (!session || !canManageSchool(effectiveRole(session))) return;
 
   await prisma.mailboxEmail.deleteMany({
     where: { id: emailId, schoolId: session.schoolId ?? "" },

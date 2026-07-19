@@ -12,6 +12,9 @@ import {
   isImpersonating,
   isSuper,
 } from "@/lib/session";
+import { mergeNavLayout } from "@/lib/nav-categories";
+import { getNavOverride } from "@/lib/nav-prefs";
+import { navForRole } from "@/lib/nav-school";
 import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
 
@@ -57,10 +60,15 @@ export default async function SekretariatLayout({
   ]);
   const schoolDisplayName = branding?.brandName ?? branding?.name;
 
+  // Gemeinsame Navigation (eigene Seiten + Verwaltungsbereiche der Rolle)
+  const navAll = navForRole("secretary");
+  const navOverride = await getNavOverride(session.userId, "secretary");
+  const navLayout = mergeNavLayout("secretary", navAll, navOverride);
+
   return (
     <div className="flex h-screen overflow-hidden bg-surface">
       <SchoolBrandingInjector branding={branding} />
-      <Sidebar items={navItems} rootHref="/sekretariat" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
+      <Sidebar items={navAll} rootHref="/sekretariat" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} categories={navLayout.categories} pinnedItems={navLayout.pinned} />
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="shrink-0 z-30">
           {isSuper(session) && (
@@ -76,7 +84,7 @@ export default async function SekretariatLayout({
         <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 pb-28 lg:px-10 lg:py-10 lg:pb-10">
           {children}
         </main>
-        <BottomNav items={bottomNav} moreItems={navItems} user={displayUser(session)} />
+        <BottomNav items={bottomNav} moreItems={navAll} categories={navLayout.categories} pinnedItems={navLayout.pinned} user={displayUser(session)} />
       </div>
     </div>
   );

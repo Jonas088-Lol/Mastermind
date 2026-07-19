@@ -6,6 +6,7 @@ import { ArrowLeft, Copy, Eye, Pencil, Trash2, Tag, BookOpen } from "lucide-reac
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { deleteWikiEntry, duplicateWikiEntry, incrementViewCount } from "../actions";
+import { canManageSchool } from "@/lib/school-admin";
 
 interface Props {
   params: Promise<{ id: string }>;
@@ -49,8 +50,8 @@ export default async function LernzettelDetailPage({ params }: Props) {
 
   const role = effectiveRole(session);
   const isAuthor = entry.authorId === session.userId;
-  const canEdit = isAuthor || role === "admin" || role === "teacher";
-  const canDelete = isAuthor || role === "admin";
+  const canEdit = isAuthor || canManageSchool(role) || role === "teacher";
+  const canDelete = isAuthor || canManageSchool(role);
 
   const tagList = entry.tags ? entry.tags.split(",").map((t) => t.trim()).filter(Boolean) : [];
 

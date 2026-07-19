@@ -5,10 +5,12 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { awardCoins } from "@/lib/coins";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export async function createSeason(formData: FormData): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") return;
+  if (!session || !canManageSchool(effectiveRole(session))) return;
+  if (!canAccessArea(effectiveRole(session), "gamification")) redirect("/admin");
 
   const name        = String(formData.get("name") ?? "");
   const theme       = String(formData.get("theme") ?? "");
@@ -47,7 +49,7 @@ export async function createSeason(formData: FormData): Promise<void> {
 
 export async function awardWeeklyClassRankings(): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") return;
+  if (!session || !canManageSchool(effectiveRole(session))) return;
 
   const schoolId = session.schoolId ?? "";
 

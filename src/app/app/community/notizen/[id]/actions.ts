@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { getSession } from "@/lib/session";
+import { canManageSchool } from "@/lib/school-admin";
 
 export async function deleteNote(noteId: string): Promise<void> {
   const session = await getSession();
@@ -20,7 +21,7 @@ export async function deleteNote(noteId: string): Promise<void> {
   const role = effectiveRole(session);
   const isOwner = note.authorId === session.userId;
   const isSameSchool = note.author.schoolId === session.schoolId;
-  const isModerator = (role === "teacher" || role === "admin" || role === "super") && isSameSchool;
+  const isModerator = (role === "teacher" || canManageSchool(role) || role === "super") && isSameSchool;
 
   if (!isOwner && !isModerator) return;
 

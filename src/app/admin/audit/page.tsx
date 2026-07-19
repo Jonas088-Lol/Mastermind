@@ -22,6 +22,7 @@ import { Input } from "@/components/ui/input";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Audit-Log" };
 
@@ -64,7 +65,8 @@ interface PageProps {
 export default async function AdminAuditPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect("/");
+  if (!canManageSchool(effectiveRole(session))) redirect("/");
+  if (!canAccessArea(effectiveRole(session), "audit")) redirect("/admin");
 
   const { type, severity, q } = await searchParams;
   const schoolId = session.schoolId;

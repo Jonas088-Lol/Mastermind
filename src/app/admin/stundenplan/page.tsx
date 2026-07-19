@@ -8,6 +8,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { savePeriodConfig, saveTimetableEntry, deleteTimetableEntry } from "./actions";
 import { CsvImportCard } from "./CsvImportCard";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Stundenplan · Admin" };
 
@@ -17,7 +18,8 @@ const DAY_LABELS = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"];
 
 export default async function AdminStundenplanPage() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "stundenplan")) redirect("/admin");
   if (!session.schoolId) redirect("/admin");
 
   const [classes, teachers, subjects, periodConfigs, timetableEntries] = await Promise.all([

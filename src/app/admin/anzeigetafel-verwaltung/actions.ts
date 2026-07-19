@@ -4,13 +4,15 @@
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 const PATH = "/admin/anzeigetafel-verwaltung";
 
 async function requireAdmin() {
   const session = await getSession();
   if (!session) return null;
-  if (effectiveRole(session) !== "admin") return null;
+  if (!canManageSchool(effectiveRole(session))) return null;
+  if (!canAccessArea(effectiveRole(session), "anzeigetafel-verwaltung")) redirect("/admin");
   if (!session.schoolId) return null;
   return session;
 }

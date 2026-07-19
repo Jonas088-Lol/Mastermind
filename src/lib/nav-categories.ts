@@ -147,6 +147,97 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
     },
   ],
 
+  // ── Schulleitung ──────────────────────────────────────────────────────────
+  rector: [
+    {
+      id: "uebersicht",
+      label: "Übersicht",
+      items: ["/rektor", "/rektor/statistiken", "/admin/berichte", "/rektor/evaluation"],
+    },
+    {
+      id: "schule",
+      label: "Schule & Personal",
+      items: ["/rektor/personal", "/rektor/schuljahr", "/rektor/mannschaften"],
+    },
+    {
+      id: "noten",
+      label: "Noten & Leistung",
+      items: ["/admin/notenspiegel", "/admin/notenschluessel"],
+    },
+    {
+      id: "kommunikation",
+      label: "Kommunikation",
+      items: ["/rektor/broadcast"],
+    },
+    {
+      id: "verwaltung",
+      label: "Verwaltung",
+      items: [
+        "/admin/branding",
+        "/admin/lizenz",
+        "/admin/einstellungen",
+        "/admin/integrationen",
+        "/admin/gamification",
+      ],
+    },
+    {
+      id: "sicherheit",
+      label: "Sicherheit & Recht",
+      items: ["/admin/sicherheit", "/admin/audit", "/admin/einwilligungen"],
+    },
+  ],
+
+  // ── Sekretariat ───────────────────────────────────────────────────────────
+  secretary: [
+    {
+      id: "uebersicht",
+      label: "Übersicht",
+      items: ["/sekretariat"],
+    },
+    {
+      id: "schueler",
+      label: "Schüler & Klassen",
+      items: [
+        "/sekretariat/schueler",
+        "/sekretariat/klassen",
+        "/sekretariat/neuanmeldung",
+        "/admin/nutzer",
+        "/admin/klassen",
+        "/admin/import",
+      ],
+    },
+    {
+      id: "anwesenheit",
+      label: "Anwesenheit",
+      items: ["/sekretariat/fehlzeiten", "/sekretariat/atteste", "/admin/fehlzeiten"],
+    },
+    {
+      id: "unterricht",
+      label: "Unterricht & Pläne",
+      items: [
+        "/admin/stundenplan",
+        "/admin/vertretungsplan",
+        "/admin/faecher",
+        "/admin/schulkalender",
+      ],
+    },
+    {
+      id: "dokumente",
+      label: "Dokumente & Ressourcen",
+      items: ["/sekretariat/zeugnisse", "/admin/abgaben", "/admin/ressourcen"],
+    },
+    {
+      id: "kommunikation",
+      label: "Kommunikation",
+      items: ["/admin/nachrichten", "/admin/postfach", "/admin/elternverwaltung"],
+    },
+    {
+      id: "anzeigetafel",
+      label: "Anzeigetafel",
+      items: ["/sekretariat/anzeigetafel", "/admin/anzeigetafel-verwaltung"],
+    },
+  ],
+
   // ── Eltern ────────────────────────────────────────────────────────────────
   parent: [
     {

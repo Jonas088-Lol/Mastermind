@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool } from "@/lib/school-admin";
 
 export async function GET() {
   const session = await getSession();
@@ -13,7 +14,7 @@ export async function GET() {
 
   // Teachers export the lessons they teach; students/parents export their class's lessons
   let entries;
-  if (role === "teacher" || role === "admin") {
+  if (role === "teacher" || canManageSchool(role)) {
     entries = await prisma.timetableEntry.findMany({
       where: { teacherId: session.userId },
       include: {

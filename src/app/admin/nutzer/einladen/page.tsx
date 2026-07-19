@@ -6,12 +6,14 @@ import { redirect } from "next/navigation";
 import { effectiveRole, getSession } from "@/lib/session";
 import { inviteTeacher } from "./actions";
 import { BulkInviteTeacherCard } from "./BulkInviteTeacherCard";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Lehrer einladen" };
 
 export default async function LehrerEinladenPage() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "nutzer")) redirect("/admin");
 
   return (
     <div className="mx-auto flex max-w-xl flex-col gap-6">

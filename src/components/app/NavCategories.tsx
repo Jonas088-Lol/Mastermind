@@ -37,7 +37,10 @@ const LONG_PRESS_MS = 350;
  * - Umbenennen der Überschrift
  * - Verschieben der Reiter per Gedrückt-Halten (Maus **und** Touch)
  *
- * Änderungen werden gebündelt im Nutzerprofil gespeichert.
+ * Umsetzung des Ziehens: Beim Long-Press wird der Pointer am Start-Element
+ * eingefangen (setPointerCapture) — dadurch kommen ALLE Bewegungen dort an,
+ * auch bei Touch. Das Ziel unter dem Finger/Cursor wird per elementFromPoint
+ * ermittelt; `onPointerEnter` der Nachbarn wäre bei Touch nie gefeuert.
  */
 export function NavCategories({ categories, renderItem, dense = false }: Props) {
   const [cats, setCats] = useState<NavCat[]>(categories);
@@ -45,8 +48,6 @@ export function NavCategories({ categories, renderItem, dense = false }: Props) 
   const [renaming, setRenaming] = useState<string | null>(null);
 
   // Sobald der Nutzer selbst etwas geändert hat, gewinnt der lokale Stand.
-  // Sonst würde beim Navigieren der (noch alte) Server-Stand die eigene
-  // Sortierung sichtbar zurückspringen lassen.
   const dirty = useRef(false);
   useEffect(() => {
     if (!dirty.current) setCats(categories);
@@ -54,8 +55,11 @@ export function NavCategories({ categories, renderItem, dense = false }: Props) 
 
   const longPress = useRef<ReturnType<typeof setTimeout> | null>(null);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const draggingRef = useRef(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  /** Verhindert, dass direkt nach dem Ziehen der Link geöffnet wird. */
+  const justDragged = useRef(false);
 
-  /** Speichert gebündelt (debounced), damit Drag&Drop nicht bei jedem Pixel schreibt. */
   const persist = useCallback((next: NavCat[]) => {
     dirty.current = true;
     if (saveTimer.current) clearTimeout(saveTimer.current);
@@ -78,6 +82,18 @@ export function NavCategories({ categories, renderItem, dense = false }: Props) 
     [persist],
   );
 
+  // Während des Ziehens das Scrollen per Touch unterdrücken. Muss passive:false
+  // sein, sonst lässt sich preventDefault nicht anwenden.
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    const onTouchMove = (e: TouchEvent) => {
+      if (draggingRef.current) e.preventDefault();
+    };
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    return () => el.removeEventListener("touchmove", onTouchMove);
+  }, []);
+
   useEffect(() => {
     return () => {
       if (longPress.current) clearTimeout(longPress.current);
@@ -95,63 +111,108 @@ export function NavCategories({ categories, renderItem, dense = false }: Props) 
     setRenaming(null);
   }
 
-  // ── Drag & Drop ───────────────────────────────────────────────────────────
-  function startLongPress(catId: string, href: string) {
+  // ── Ziehen ────────────────────────────────────────────────────────────────
+
+  function onPointerDown(e: React.PointerEvent<HTMLLIElement>, catId: string, href: string) {
+    // Nur linke Maustaste / Touch / Stift
+    if (e.button !== 0) return;
+    const el = e.currentTarget;
+    const pointerId = e.pointerId;
+
     if (longPress.current) clearTimeout(longPress.current);
     longPress.current = setTimeout(() => {
+      draggingRef.current = true;
       setDragging({ cat: catId, href });
-      // Kurzes haptisches Feedback auf Geräten, die es unterstützen.
+      // Pointer einfangen → alle weiteren Bewegungen landen hier,
+      // auch wenn der Finger/Cursor andere Elemente überstreicht.
+      try {
+        el.setPointerCapture(pointerId);
+      } catch {
+        /* ältere Browser: dann greift der Fallback über elementFromPoint */
+      }
       if (typeof navigator !== "undefined" && "vibrate" in navigator) {
         navigator.vibrate?.(15);
       }
     }, LONG_PRESS_MS);
   }
 
-  function cancelLongPress() {
+  function onPointerMove(e: React.PointerEvent<HTMLLIElement>) {
+    if (!draggingRef.current) {
+      // Vor dem Long-Press: kleine Bewegung = Scrollen/Klicken → abbrechen
+      return;
+    }
+    e.preventDefault();
+
+    // Element unter Finger/Cursor bestimmen (funktioniert auch mit Capture).
+    const under = document.elementFromPoint(e.clientX, e.clientY);
+    const target = under?.closest<HTMLElement>("[data-nav-href]");
+    if (!target) return;
+    const targetHref = target.dataset.navHref;
+    const targetCat = target.dataset.navCat;
+    if (targetHref && targetCat) moveOver(targetCat, targetHref);
+  }
+
+  /** Gezogenen Reiter vor dem Ziel einsortieren (auch kategorieübergreifend). */
+  function moveOver(targetCat: string, targetHref: string) {
+    setDragging((cur) => {
+      if (!cur) return cur;
+      if (cur.cat === targetCat && cur.href === targetHref) return cur;
+
+      setCats((prev) => {
+        const next = prev.map((c) => ({ ...c, items: [...c.items] }));
+        const from = next.find((c) => c.id === cur.cat);
+        const to = next.find((c) => c.id === targetCat);
+        if (!from || !to) return prev;
+
+        const fromIdx = from.items.findIndex((i) => i.href === cur.href);
+        if (fromIdx < 0) return prev;
+        const [moved] = from.items.splice(fromIdx, 1);
+
+        const toIdx = to.items.findIndex((i) => i.href === targetHref);
+        to.items.splice(toIdx < 0 ? to.items.length : toIdx, 0, moved);
+        return next;
+      });
+
+      return { cat: targetCat, href: cur.href };
+    });
+  }
+
+  function endDrag() {
     if (longPress.current) {
       clearTimeout(longPress.current);
       longPress.current = null;
     }
-  }
-
-  /** Reiter über einem anderen loslassen → dorthin einsortieren. */
-  function moveOver(targetCat: string, targetHref: string) {
-    if (!dragging) return;
-    if (dragging.cat === targetCat && dragging.href === targetHref) return;
-
-    const next = cats.map((c) => ({ ...c, items: [...c.items] }));
-    const from = next.find((c) => c.id === dragging.cat);
-    const to = next.find((c) => c.id === targetCat);
-    if (!from || !to) return;
-
-    const fromIdx = from.items.findIndex((i) => i.href === dragging.href);
-    if (fromIdx < 0) return;
-    const [moved] = from.items.splice(fromIdx, 1);
-
-    const toIdx = to.items.findIndex((i) => i.href === targetHref);
-    to.items.splice(toIdx < 0 ? to.items.length : toIdx, 0, moved);
-
-    setCats(next);
-    setDragging({ cat: targetCat, href: dragging.href });
-  }
-
-  function endDrag() {
-    cancelLongPress();
-    if (dragging) {
-      persist(cats);
+    if (draggingRef.current) {
+      draggingRef.current = false;
+      justDragged.current = true;
+      // Klick, der unmittelbar auf das Loslassen folgt, verwerfen.
+      setTimeout(() => {
+        justDragged.current = false;
+      }, 250);
       setDragging(null);
+      // aktuellen Stand sichern
+      setCats((cur) => {
+        persist(cur);
+        return cur;
+      });
     }
   }
 
   const isDragging = !!dragging;
 
   const wrapCls = useMemo(
-    () => cn("flex flex-col", dense ? "gap-3" : "gap-4"),
-    [dense],
+    () => cn("flex flex-col", dense ? "gap-3" : "gap-4", isDragging && "select-none"),
+    [dense, isDragging],
   );
 
   return (
-    <div className={wrapCls} onPointerUp={endDrag} onPointerCancel={endDrag}>
+    <div
+      ref={rootRef}
+      className={wrapCls}
+      onPointerUp={endDrag}
+      onPointerCancel={endDrag}
+      onLostPointerCapture={endDrag}
+    >
       {cats.map((cat) => (
         <div key={cat.id}>
           {/* Kategorie-Überschrift: klein, grau, klappbar, umbenennbar */}
@@ -208,17 +269,30 @@ export function NavCategories({ categories, renderItem, dense = false }: Props) 
                 return (
                   <li
                     key={item.href}
-                    onPointerDown={() => startLongPress(cat.id, item.href)}
-                    onPointerUp={cancelLongPress}
-                    onPointerLeave={cancelLongPress}
-                    onPointerEnter={() => isDragging && moveOver(cat.id, item.href)}
+                    data-nav-href={item.href}
+                    data-nav-cat={cat.id}
+                    onPointerDown={(e) => onPointerDown(e, cat.id, item.href)}
+                    onPointerMove={onPointerMove}
+                    onPointerUp={endDrag}
+                    // Verhindert, dass der Browser den Link selbst „wegzieht"
+                    // (natives Drag&Drop) und dabei die Pointer-Events schluckt.
+                    // dragstart blubbert vom <a> hoch und wird hier gestoppt.
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
+                    // Nach dem Ziehen nicht zur Seite navigieren.
+                    onClickCapture={(e) => {
+                      if (justDragged.current) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                      }
+                    }}
                     className={cn(
                       "transition-transform duration-150",
-                      // Aufgenommen: größer + hervorgehoben → signalisiert „verschiebbar"
-                      active && "scale-[1.06] rounded-xl bg-brand/10 shadow-md",
-                      isDragging && !active && "opacity-70",
+                      active && "z-10 scale-[1.06] rounded-xl bg-brand/10 shadow-lg",
+                      isDragging && !active && "opacity-60",
+                      isDragging && "cursor-grabbing",
                     )}
-                    style={isDragging ? { touchAction: "none" } : undefined}
+                    style={{ touchAction: isDragging ? "none" : "manipulation" }}
                   >
                     {renderItem(item)}
                   </li>

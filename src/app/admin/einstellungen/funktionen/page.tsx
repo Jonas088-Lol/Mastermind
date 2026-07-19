@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { FeatureSettingsForm, type FeatureDef } from "./FeatureSettingsForm";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Funktionen · Admin-Einstellungen" };
 
@@ -29,7 +30,8 @@ const SCHOOL_FEATURES: FeatureDef[] = [
 export default async function AdminFunktionenPage() {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "einstellungen")) redirect("/admin");
 
   const adminUser = await prisma.user.findUnique({
     where: { id: session.userId },

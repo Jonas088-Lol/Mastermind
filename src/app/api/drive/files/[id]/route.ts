@@ -4,6 +4,7 @@ import { join } from "path";
 import { type NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool } from "@/lib/school-admin";
 
 const UPLOAD_DIR = join(process.cwd(), "uploads");
 
@@ -20,7 +21,7 @@ export async function DELETE(
 
   const role = effectiveRole(session);
   const isOwner = file.userId === session.userId;
-  const isAdmin = role === "admin" && file.schoolId === session.schoolId;
+  const isAdmin = canManageSchool(role) && file.schoolId === session.schoolId;
   if (!isOwner && !isAdmin) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }

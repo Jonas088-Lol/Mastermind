@@ -5,12 +5,14 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { effectiveRole, getSession } from "@/lib/session";
 import { NeueKlasseForm } from "./NeueKlasseForm";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Klasse erstellen" };
 
 export default async function NeueKlassePage() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "klassen")) redirect("/admin");
 
   return (
     <div className="mx-auto flex max-w-xl flex-col gap-6">

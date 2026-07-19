@@ -19,11 +19,15 @@ export type Role =
 export const ROLES: Role[] = ["student", "teacher", "parent", "admin", "super", "secretary", "rector", "vice_rector", "school_company"];
 
 /**
- * Rollen, die ein Schul-Admin einem Nutzer seiner Schule zuweisen darf.
+ * Rollen, die die Schulverwaltung (Schulleitung/Sekretariat) vergeben darf.
  * Bewusst OHNE "super" und "school_company" — plattformweite Rollen dürfen
- * niemals über die Schul-Admin-Oberfläche vergeben werden (Privilege Escalation).
+ * niemals über die Schul-Oberfläche vergeben werden (Privilege Escalation).
+ *
+ * "admin" und "vice_rector" sind entfallen: Der Schul-Admin ist in Schulleitung
+ * und Sekretariat aufgegangen, der Konrektor in die Schulleitung. Beide Werte
+ * bleiben nur im Typ erhalten, damit Altdaten weiter lesbar sind.
  */
-export const ASSIGNABLE_BY_ADMIN: Role[] = ["student", "teacher", "parent", "secretary", "rector", "vice_rector", "admin"];
+export const ASSIGNABLE_BY_ADMIN: Role[] = ["student", "teacher", "parent", "secretary", "rector"];
 
 /** Prüft, ob ein Wert eine gültige, vom Admin vergebbare Rolle ist. */
 export function isAssignableRole(value: unknown): value is Role {
@@ -31,17 +35,17 @@ export function isAssignableRole(value: unknown): value is Role {
 }
 
 /** Rollen, in die ein super-User wechseln kann */
-export const VIEW_ROLES: Role[] = ["student", "teacher", "parent", "admin", "secretary", "rector", "vice_rector"];
+export const VIEW_ROLES: Role[] = ["student", "teacher", "parent", "secretary", "rector"];
 
 export const ROLE_LABEL: Record<Role, string> = {
   student: "Schüler",
   teacher: "Lehrer",
   parent: "Eltern",
-  admin: "Schul-Admin",
+  admin: "Schulverwaltung (alt)",
   super: "Plattform-Admin",
   secretary: "Sekretariat",
-  rector: "Schulleiter",
-  vice_rector: "Stellv. Schulleiter",
+  rector: "Schulleitung",
+  vice_rector: "Schulleitung (alt)",
   school_company: "Schulträger",
 };
 
@@ -49,7 +53,7 @@ export const ROLE_HOME: Record<Role, string> = {
   student: "/app",
   teacher: "/teach",
   parent: "/eltern",
-  admin: "/admin",
+  admin: "/rektor",
   super: "/plattform",
   secretary: "/sekretariat",
   rector: "/rektor",
@@ -360,11 +364,11 @@ const ROLE_SUBTITLE: Record<Role, string> = {
   student: "Schüler",
   teacher: "Lehrkraft",
   parent: "Elternteil",
-  admin: "Schul-Admin",
+  admin: "Schulverwaltung (alt)",
   super: "Plattform-Admin",
   secretary: "Sekretariat",
-  rector: "Schulleiter",
-  vice_rector: "Stellv. Schulleiter",
+  rector: "Schulleitung",
+  vice_rector: "Schulleitung (alt)",
   school_company: "Schulträger",
 };
 

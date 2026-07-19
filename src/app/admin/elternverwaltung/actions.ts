@@ -4,10 +4,12 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export async function linkParentToStudent(formData: FormData): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/login");
+  if (!canAccessArea(effectiveRole(session), "elternverwaltung")) redirect("/admin");
 
   const parentId = formData.get("parentId") as string;
   const studentId = formData.get("studentId") as string;
@@ -32,7 +34,7 @@ export async function linkParentToStudent(formData: FormData): Promise<void> {
 
 export async function unlinkParentFromStudent(linkId: string): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/login");
 
   const link = await prisma.parentStudentLink.findUnique({ where: { id: linkId } });
   if (!link) return;

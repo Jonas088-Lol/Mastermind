@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { deleteSsoConfig, saveSsoConfig } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 interface PageProps {
   params: Promise<{ provider: string }>;
@@ -45,7 +46,8 @@ export default async function SsoConfigPage({ params }: PageProps) {
   const { provider } = await params;
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "integrationen")) redirect("/admin");
 
   if (!(provider in PROVIDER_META)) notFound();
   const meta = PROVIDER_META[provider as keyof typeof PROVIDER_META];

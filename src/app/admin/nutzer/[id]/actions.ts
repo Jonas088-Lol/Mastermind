@@ -7,10 +7,12 @@ import { prisma } from "@/lib/db/client";
 import { auditLog } from "@/lib/audit";
 import { sendEmail, twoFactorResetEmail } from "@/lib/email";
 import { effectiveRole, getSession, isAssignableRole } from "@/lib/session";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export async function updateUserRole(userId: string, formData: FormData): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "nutzer")) redirect("/admin");
 
   const role = formData.get("role");
   // Nur vom Admin vergebbare Rollen zulassen — verhindert Eskalation auf
@@ -40,7 +42,7 @@ export async function updateUserRole(userId: string, formData: FormData): Promis
 
 export async function updateUserClass(userId: string, formData: FormData): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
 
   const raw = formData.get("classId") as string;
   const classId = raw || null;
@@ -63,7 +65,7 @@ export async function updateUserClass(userId: string, formData: FormData): Promi
 
 export async function updateStudentFeatures(userId: string, formData: FormData): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
 
   const target = await prisma.user.findUnique({ where: { id: userId } });
   if (!target || target.schoolId !== session.schoolId) return;
@@ -77,7 +79,7 @@ export async function updateStudentFeatures(userId: string, formData: FormData):
 
 export async function deleteUser(userId: string): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
 
   const target = await prisma.user.findUnique({ where: { id: userId } });
   if (!target || target.schoolId !== session.schoolId) return;
@@ -97,7 +99,7 @@ export async function deleteUser(userId: string): Promise<void> {
 
 export async function resetTwoFactor(userId: string): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
 
   const target = await prisma.user.findUnique({
     where: { id: userId },
@@ -135,7 +137,7 @@ export async function resetTwoFactor(userId: string): Promise<void> {
 
 export async function linkParentToStudent(parentId: string, formData: FormData): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
 
   const studentEmail = (formData.get("studentEmail") as string | null)?.trim().toLowerCase() ?? "";
   if (!studentEmail) return;
@@ -160,7 +162,7 @@ export async function linkParentToStudent(parentId: string, formData: FormData):
 
 export async function unlinkParentFromStudent(parentId: string, linkId: string): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
 
   const parent = await prisma.user.findUnique({ where: { id: parentId } });
   if (!parent || parent.schoolId !== session.schoolId) return;

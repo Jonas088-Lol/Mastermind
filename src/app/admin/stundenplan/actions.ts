@@ -5,10 +5,12 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { redirect } from "next/navigation";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export async function savePeriodConfig(formData: FormData): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/login");
+  if (!canAccessArea(effectiveRole(session), "stundenplan")) redirect("/admin");
   if (!session.schoolId) return;
 
   const ops = [];
@@ -31,7 +33,7 @@ export async function savePeriodConfig(formData: FormData): Promise<void> {
 
 export async function saveTimetableEntry(formData: FormData): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/login");
   if (!session.schoolId) return;
 
   const classId = formData.get("classId") as string;
@@ -66,7 +68,7 @@ export async function saveTimetableEntry(formData: FormData): Promise<void> {
 
 export async function deleteTimetableEntry(entryId: string): Promise<void> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") return;
+  if (!session || !canManageSchool(effectiveRole(session))) return;
   await prisma.timetableEntry.deleteMany({ where: { id: entryId, schoolId: session.schoolId ?? "" } });
   revalidatePath("/admin/stundenplan");
 }
@@ -84,7 +86,7 @@ export type ImportResult = {
 
 export async function importTimetableCsv(formData: FormData): Promise<ImportResult> {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/login");
   if (!session.schoolId) return { imported: 0, errors: [] };
 
   const file = formData.get("csvFile") as File | null;

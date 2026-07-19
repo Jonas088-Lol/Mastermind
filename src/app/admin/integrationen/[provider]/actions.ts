@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { SsoClientSecret } from "@/lib/privacy/field-encryption";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 const ALLOWED_PROVIDERS = ["entra", "google"] as const;
 type Provider = (typeof ALLOWED_PROVIDERS)[number];
@@ -13,7 +14,8 @@ type Provider = (typeof ALLOWED_PROVIDERS)[number];
 export async function saveSsoConfig(provider: Provider, formData: FormData): Promise<void> {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "integrationen")) redirect("/admin");
   if (!session.schoolId) return;
 
   const school = await prisma.school.findUnique({
@@ -43,7 +45,7 @@ export async function saveSsoConfig(provider: Provider, formData: FormData): Pro
 export async function deleteSsoConfig(provider: Provider): Promise<void> {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
   if (!session.schoolId) return;
 
   await prisma.ssoConfig.deleteMany({

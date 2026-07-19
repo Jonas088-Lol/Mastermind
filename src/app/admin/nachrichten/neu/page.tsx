@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { createAdminThread } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Neue Nachricht · Admin" };
 
@@ -20,7 +21,8 @@ const ROLE_ORDER = ["teacher", "student", "parent", "admin"];
 
 export default async function AdminNachrichtNeuPage() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "nachrichten")) redirect("/admin");
 
   const users = await prisma.user.findMany({
     where: {

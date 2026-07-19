@@ -8,6 +8,7 @@ import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import { CopyButton } from "./CopyButton";
 import { createClassJoinCode, revokeClassCode } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Beitrittscodes · Admin" };
 
@@ -18,7 +19,8 @@ interface PageProps {
 export default async function ClassCodesPage({ params }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "klassen")) redirect("/admin");
 
   const { id } = await params;
 

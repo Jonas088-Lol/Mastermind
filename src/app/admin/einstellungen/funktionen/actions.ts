@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession, ROLE_HOME } from "@/lib/session";
 import { auditLog } from "@/lib/audit";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 const FEATURE_KEYS = [
   "aufgaben", "noten", "stundenplan", "fehlzeiten", "nachrichten",
@@ -15,7 +16,8 @@ const FEATURE_KEYS = [
 export async function saveFeatureSettings(formData: FormData): Promise<void> {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "einstellungen")) redirect("/admin");
 
   const adminUser = await prisma.user.findUnique({
     where: { id: session.userId },

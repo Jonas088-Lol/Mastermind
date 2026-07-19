@@ -11,13 +11,15 @@ import { BrandingColorPicker } from "@/components/admin/BrandingColorPicker";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { saveBranding } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Branding · Admin" };
 
 export default async function AdminBrandingPage() {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "branding")) redirect("/admin");
 
   const school = session.schoolId
     ? await prisma.school.findUnique({

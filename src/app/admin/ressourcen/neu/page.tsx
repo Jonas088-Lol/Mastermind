@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { effectiveRole, getSession } from "@/lib/session";
 import { createResource } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Ressource erstellen · Admin" };
 
@@ -23,7 +24,8 @@ const PRESET_COLORS = [
 
 export default async function NeueRessourcePage() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "ressourcen")) redirect("/admin");
 
   return (
     <div className="mx-auto flex max-w-xl flex-col gap-6">

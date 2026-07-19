@@ -9,6 +9,7 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { createSchoolEvent, deleteSchoolEvent } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Schulkalender · Admin" };
 
@@ -52,7 +53,8 @@ function monthHref(year: number, month: number) {
 export default async function AdminSchulkalenderPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "schulkalender")) redirect("/admin");
 
   const { month: monthParam, create: showCreateParam } = await searchParams;
   const showCreate = showCreateParam === "1";

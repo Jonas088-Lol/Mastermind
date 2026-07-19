@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { effectiveRole, getSession } from "@/lib/session";
 import { createSubject } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Fach erstellen · Admin" };
 
@@ -26,7 +27,8 @@ export const SUBJECT_CATEGORIES = [
 
 export default async function NeuesFachPage() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "faecher")) redirect("/admin");
 
   return (
     <div className="mx-auto flex max-w-xl flex-col gap-6">

@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool } from "@/lib/school-admin";
 
 export async function createWikiEntry(formData: FormData) {
   const session = await getSession();
@@ -40,7 +41,7 @@ export async function updateWikiEntry(id: string, formData: FormData) {
   if (!entry || entry.schoolId !== session.schoolId) return;
 
   const role = effectiveRole(session);
-  const canEdit = entry.authorId === session.userId || role === "admin" || role === "teacher";
+  const canEdit = entry.authorId === session.userId || canManageSchool(role) || role === "teacher";
   if (!canEdit) return;
 
   const title = String(formData.get("title") ?? "").trim().slice(0, 200);
@@ -68,7 +69,7 @@ export async function deleteWikiEntry(id: string) {
   if (!entry || entry.schoolId !== session.schoolId) return;
 
   const role = effectiveRole(session);
-  const canDelete = entry.authorId === session.userId || role === "admin";
+  const canDelete = entry.authorId === session.userId || canManageSchool(role);
   if (!canDelete) return;
 
   await prisma.schoolWikiEntry.delete({ where: { id } });
@@ -84,7 +85,7 @@ export async function duplicateWikiEntry(id: string) {
   if (!entry || entry.schoolId !== session.schoolId) return;
 
   const role = effectiveRole(session);
-  const canDuplicate = entry.authorId === session.userId || role === "admin" || role === "teacher";
+  const canDuplicate = entry.authorId === session.userId || canManageSchool(role) || role === "teacher";
   if (!canDuplicate) return;
 
   const copy = await prisma.schoolWikiEntry.create({

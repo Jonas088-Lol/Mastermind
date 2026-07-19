@@ -15,6 +15,7 @@ import { Progress } from "@/components/ui/progress";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Notenspiegel" };
 
@@ -29,7 +30,8 @@ function avg(vals: number[]): number | null {
 export default async function NotenspiegelPage() {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect("/");
+  if (!canManageSchool(effectiveRole(session))) redirect("/");
+  if (!canAccessArea(effectiveRole(session), "notenspiegel")) redirect("/admin");
 
   const schoolId = session.schoolId ?? undefined;
 

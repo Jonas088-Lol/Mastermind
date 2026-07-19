@@ -233,7 +233,11 @@
      Folgt automatisch dem Schul-Branding. Dunkler Text (--brand-fg) bleibt in
      BEIDEN Modi lesbar. `color` ist !important, damit es die `text-white`-
      Utility des Buttons schlägt. Hover: sanftes Abdunkeln + Gradient-Sweep. */
-  .pastel-cta {
+  /* Doppelte Klasse = höhere Spezifität. Nötig, weil die primary-Variante der
+     Button-Komponente .brand-gradient mitbringt, das weiter unten steht und
+     sonst dieses background-image überschreiben würde (Ergebnis: nur die linke,
+     blaue Hälfte sichtbar, Grün erst beim Hovern). */
+  .pastel-cta.pastel-cta {
     background-image: linear-gradient(
       90deg,
       hsl(var(--brand)) 0%,
@@ -249,7 +253,7 @@
     transition: background-position 700ms cubic-bezier(0.4, 0, 0.2, 1), filter 250ms ease,
       box-shadow 250ms ease, transform 250ms ease, border-color 250ms ease;
   }
-  .pastel-cta:hover {
+  .pastel-cta.pastel-cta:hover {
     filter: brightness(0.96);
     background-position: 100% 0%;
     box-shadow: var(--shadow-brand);

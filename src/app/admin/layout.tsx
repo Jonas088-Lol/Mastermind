@@ -1,6 +1,6 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 import { redirect } from "next/navigation";
-import { Sidebar, type NavItem } from "@/components/app/Sidebar";
+import { Sidebar } from "@/components/app/Sidebar";
 import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
 import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
@@ -16,6 +16,10 @@ import {
 import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
 import { enforceStaff2FA } from "@/lib/auth/require-2fa";
+import { canManageSchool } from "@/lib/school-admin";
+import { navForRole } from "@/lib/nav-school";
+import { mergeNavLayout } from "@/lib/nav-categories";
+import { getNavOverride } from "@/lib/nav-prefs";
 import { prisma } from "@/lib/db/client";
 
 const adminBottomItems: BottomNavItem[] = [
@@ -35,7 +39,9 @@ export default async function AdminLayout({
   if (!session) redirect("/login");
 
   const effective = effectiveRole(session);
-  if (effective !== "admin") redirect(ROLE_HOME[effective]);
+  // Der frühere "Schul-Admin" ist aufgelöst: Schulverwaltung machen jetzt
+  // Schulleitung und Sekretariat — jeweils mit ihren eigenen Bereichen.
+  if (!canManageSchool(effective)) redirect(ROLE_HOME[effective]);
 
   await enforceStaff2FA();
 
@@ -64,40 +70,23 @@ export default async function AdminLayout({
     ).catch(() => 0),
   ]);
 
-  const adminNavItems: NavItem[] = [
-    { href: "/admin",               label: "Dashboard",    icon: "home",         exact: true },
-    { href: "/admin/nutzer",        label: "Nutzer",       icon: "users" },
-    { href: "/admin/import",        label: "Import",       icon: "fileCheck" },
-    { href: "/admin/klassen",       label: "Klassen",      icon: "building2" },
-    { href: "/admin/faecher",       label: "Fächer",       icon: "bookOpen" },
-    { href: "/admin/stundenplan",   label: "Stundenplan",  icon: "calendar" },
-    { href: "/admin/notenspiegel",  label: "Noten",        icon: "barChart3" },
-    { href: "/admin/abgaben",       label: "Abgaben",      icon: "clipboardEdit" },
-    { href: "/admin/nachrichten",   label: "Nachrichten",  icon: "messageSquare", badge: unreadMessages > 0 ? String(unreadMessages) : undefined },
-    { href: "/admin/postfach",      label: "Postfach",     icon: "mail" },
-    { href: "/admin/fehlzeiten",    label: "Fehlzeiten",   icon: "calendarX" },
-    { href: "/admin/elternverwaltung", label: "Elternverwaltung", icon: "users" },
-    { href: "/admin/gamification",  label: "Gamification", icon: "zap" },
-    { href: "/admin/vertretungsplan", label: "Vertretungsplan", icon: "refreshCw" },
-    { href: "/admin/schulkalender",   label: "Schulkalender",   icon: "calendar" },
-    { href: "/admin/anzeigetafel-verwaltung", label: "Anzeigetafel-Inhalte", icon: "monitor" },
-    { href: "/admin/einwilligungen",  label: "Einwilligungen",  icon: "fileCheck" },
-    { href: "/admin/berichte",        label: "Berichte",        icon: "barChart3" },
-    { href: "/admin/branding",      label: "Branding",     icon: "sparkles" },
-    { href: "/admin/sicherheit",    label: "Sicherheit",   icon: "shield" },
-    { href: "/admin/lizenz",        label: "Lizenz",       icon: "award" },
-    { href: "/admin/integrationen", label: "Integrationen",icon: "layers" },
-    { href: "/admin/audit",         label: "Audit-Log",    icon: "lineChart" },
-    { href: "/admin/ressourcen",    label: "Ressourcen",   icon: "box" },
-    { href: "/admin/notenschluessel", label: "Notenschlüssel", icon: "calculator" },
-  ];
+
+  // Gleiche Leiste wie in /rektor bzw. /sekretariat — der Wechsel in die
+  // Verwaltung soll sich nicht wie eine andere App anfühlen.
+  const navAll = navForRole(effective).map((i) =>
+    i.href === "/admin/nachrichten" && unreadMessages > 0
+      ? { ...i, badge: String(unreadMessages) }
+      : i,
+  );
+  const navOverride = await getNavOverride(session.userId, effective);
+  const navLayout = mergeNavLayout(effective, navAll, navOverride);
 
   const schoolDisplayName = branding?.brandName ?? branding?.name;
 
   return (
     <div className="flex h-screen overflow-hidden bg-surface">
       <SchoolBrandingInjector branding={branding} />
-      <Sidebar items={adminNavItems} rootHref="/admin" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
+      <Sidebar items={navAll} categories={navLayout.categories} pinnedItems={navLayout.pinned} rootHref="/admin" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="shrink-0 z-30">
           {isSuper(session) && (
@@ -116,7 +105,7 @@ export default async function AdminLayout({
         <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 pb-28 lg:px-10 lg:py-10 lg:pb-10">
           {children}
         </main>
-        <BottomNav items={adminBottomItems} moreItems={adminNavItems} user={displayUser(session)} />
+        <BottomNav items={adminBottomItems} moreItems={navAll} categories={navLayout.categories} pinnedItems={navLayout.pinned} user={displayUser(session)} />
       </div>
     </div>
   );

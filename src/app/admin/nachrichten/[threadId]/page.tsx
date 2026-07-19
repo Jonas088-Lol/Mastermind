@@ -7,6 +7,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { MarkReadOnMount } from "@/components/app/MarkReadOnMount";
 import { ThreadMessages, type ThreadMsg } from "@/components/app/ThreadMessages";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 interface Props {
   params: Promise<{ threadId: string }>;
@@ -21,7 +22,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function AdminThreadPage({ params }: Props) {
   const { threadId } = await params;
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/login");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/login");
+  if (!canAccessArea(effectiveRole(session), "nachrichten")) redirect("/admin");
 
   const participant = await prisma.messageParticipant.findUnique({
     where: { threadId_userId: { threadId, userId: session.userId } },

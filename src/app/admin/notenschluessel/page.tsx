@@ -6,6 +6,7 @@ import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { saveGradeScale } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Notenschlüssel · Admin" };
 
@@ -20,7 +21,8 @@ const DEFAULT_ENTRIES = [
 
 export default async function AdminNotenschluesselPage() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "notenschluessel")) redirect("/admin");
 
   const existing = await prisma.gradeScale.findUnique({
     where: { schoolId: session.schoolId ?? "" },

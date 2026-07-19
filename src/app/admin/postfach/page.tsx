@@ -7,6 +7,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Postfach · Admin" };
 
@@ -16,7 +17,8 @@ export default async function PostfachPage({
   searchParams: Promise<{ tab?: string }>;
 }) {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") redirect("/admin");
+  if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
+  if (!canAccessArea(effectiveRole(session), "postfach")) redirect("/admin");
   if (!session.schoolId) redirect("/admin");
 
   const { tab } = await searchParams;

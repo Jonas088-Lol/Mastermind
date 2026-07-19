@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { createApiToken, revokeApiToken, sendTwoFAReminders } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Sicherheit · Admin" };
 
@@ -19,7 +20,8 @@ interface PageProps {
 export default async function AdminSicherheitPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "sicherheit")) redirect("/admin");
 
   const { newToken, tokenName } = await searchParams;
   const schoolId = session.schoolId;

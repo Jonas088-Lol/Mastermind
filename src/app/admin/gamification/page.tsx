@@ -10,13 +10,15 @@ import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { BOSS_TIERS, type BossTier } from "@/lib/game";
 import { createSeason, awardWeeklyClassRankings } from "./actions";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Gamification · Admin" };
 
 export default async function AdminGamificationPage() {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "gamification")) redirect("/admin");
 
   const [activeSeason, globalBattles] = await Promise.all([
     prisma.season.findFirst({

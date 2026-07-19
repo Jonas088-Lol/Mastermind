@@ -19,6 +19,7 @@ import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { DLC_FEATURES, DLC_CATEGORIES, getEnabledDlcs, enterpriseTotalPrice, PRO_MONTHLY_PRICE, BASIC_MONTHLY_PRICE } from "@/lib/features";
 import { cn } from "@/lib/utils";
+import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Lizenz · Admin" };
 
@@ -58,7 +59,8 @@ const PLAN_LABEL: Record<string, string> = {
 export default async function LizenzPage() {
   const session = await getSession();
   if (!session) redirect("/login");
-  if (effectiveRole(session) !== "admin") redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
+  if (!canAccessArea(effectiveRole(session), "lizenz")) redirect("/admin");
 
   const schoolId = session.schoolId;
   if (!schoolId) redirect("/admin");

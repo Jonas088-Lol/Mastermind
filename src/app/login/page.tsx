@@ -31,9 +31,7 @@ interface LoginPageProps {
 // Demo-Quick-Login-Kacheln — jede meldet in einen demo.*-Wegwerf-Account an.
 const DEMO_TILES: { role: string; label: string; icon: string }[] = [
   { role: "super",          label: "Plattform-Admin", icon: "✨" },
-  { role: "admin",          label: "Schul-Admin",     icon: "🏫" },
-  { role: "rector",         label: "Schulleiter",     icon: "🎓" },
-  { role: "vice_rector",    label: "Konrektor",       icon: "🎓" },
+  { role: "rector",         label: "Schulleitung",    icon: "🎓" },
   { role: "secretary",      label: "Sekretariat",     icon: "📋" },
   { role: "teacher",        label: "Lehrkraft",       icon: "👩‍🏫" },
   { role: "student",        label: "Schüler",         icon: "🎒" },
