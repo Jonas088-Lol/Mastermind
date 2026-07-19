@@ -245,6 +245,15 @@ export function WorksheetPlayer({
     );
   }
 
+  if (!item) {
+    return (
+      <div className={`flex flex-col items-center gap-4 py-12 text-center ${containerClass}`}>
+        <AlertCircle className="size-8 text-muted-fg" strokeWidth={1.5} />
+        <p className="text-muted-fg">Dieses Arbeitsblatt enthält keine Aufgaben.</p>
+      </div>
+    );
+  }
+
   const feedback = phase === "reviewing" ? gradeResults.get(item.id) : undefined;
 
   return (
