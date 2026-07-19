@@ -5,7 +5,8 @@
       "Bash(npx eslint *)",
       "Bash(echo \"EXIT: $?\")",
       "Bash(python3 -)",
-      "Bash(grep -v \"^$\")"
+      "Bash(grep -v \"^$\")",
+      "Bash(awk '/^model Grade /{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)"
     ]
   }
 }

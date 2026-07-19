@@ -8,8 +8,11 @@ const button = cva(
   {
     variants: {
       variant: {
+        // Bewusst KEIN Verlauf hier: Buttons, die den Farbverlauf tragen sollen,
+        // bekommen explizit .pastel-cta. Zwei Verlaufs-Klassen auf demselben
+        // Element haben sich sonst gegenseitig überschrieben.
         primary:
-          "brand-gradient shadow-sm hover:shadow-md active:scale-[0.97]",
+          "bg-brand text-brand-fg shadow-sm hover:bg-brand-dark hover:shadow-md active:scale-[0.97]",
         secondary:
           "bg-surface-2 text-fg border border-border hover:border-border-strong hover:bg-surface active:scale-[0.97]",
         outline:
