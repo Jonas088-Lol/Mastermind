@@ -24,18 +24,6 @@ import { levelFromXp } from "@/lib/xp";
 
 export const metadata: Metadata = { title: "Community" };
 
-function relativeTime(date: Date): string {
-  const diff = Date.now() - date.getTime();
-  const min = Math.floor(diff / 60_000);
-  if (min < 1) return "gerade eben";
-  if (min < 60) return `vor ${min} Min.`;
-  const h = Math.floor(min / 60);
-  if (h < 24) return `vor ${h} Std.`;
-  const d = Math.floor(h / 24);
-  if (d === 1) return "gestern";
-  return `vor ${d} Tagen`;
-}
-
 export default async function CommunityPage() {
   const session = await getSession();
   if (!session) redirect("/login");
@@ -45,29 +33,12 @@ export default async function CommunityPage() {
   const now = new Date();
   const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
-  const [dbNotes, threads, leaderboardUsers, activeTodayCount, publicNotesCount, maxStreakResult, school] =
+  const [dbNotes, leaderboardUsers, activeTodayCount, publicNotesCount, maxStreakResult, school] =
     await Promise.all([
       prisma.note.findMany({
         where: { isPublic: true, author: { schoolId: schoolId ?? "" } },
         include: { author: { select: { name: true } } },
         orderBy: { createdAt: "desc" },
-        take: 10,
-      }),
-      prisma.messageThread.findMany({
-        where: {
-          participants: { some: { userId: session.userId } },
-          ...(schoolId ? { schoolId } : {}),
-        },
-        include: {
-          participants: { where: { userId: session.userId }, select: { lastReadAt: true } },
-          messages: {
-            orderBy: { sentAt: "desc" },
-            take: 1,
-            include: { sender: { select: { name: true } } },
-          },
-          _count: { select: { participants: true } },
-        },
-        orderBy: { updatedAt: "desc" },
         take: 10,
       }),
       prisma.user.findMany({
@@ -125,21 +96,6 @@ export default async function CommunityPage() {
   const weeklyXp = new Map(weeklyXpRaw.map((r) => [r.userId, r._sum.amount ?? 0]));
   const myWeekXp = weeklyXp.get(session.userId) ?? 0;
   const isStudent = effectiveRole(session) === "student";
-
-  const groups = threads.map((t) => {
-    const lastMsg = t.messages[0];
-    const myPart = t.participants[0];
-    const hasUnread = !!lastMsg && (!myPart?.lastReadAt || myPart.lastReadAt < lastMsg.sentAt);
-    return {
-      id: t.id,
-      name: t.subject,
-      members: t._count.participants,
-      unread: hasUnread ? 1 : 0,
-      lastMessage: lastMsg?.content?.slice(0, 100) ?? "",
-      lastFrom: lastMsg?.sender.name.split(" ")[0] ?? "",
-      lastTime: lastMsg ? relativeTime(lastMsg.sentAt) : "—",
-    };
-  });
 
   const myRank = leaderboardUsers.findIndex((u) => u.id === session.userId);
   const maxStreak = maxStreakResult._max.streak ?? 0;
@@ -252,33 +208,6 @@ export default async function CommunityPage() {
             </CardBody>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <div>
-                <CardTitle>Lerngruppen</CardTitle>
-                <p className="mt-1 text-sm text-muted-fg">
-                  {groups.length} Gespräche · {groups.filter((g) => g.unread > 0).length} ungelesen
-                </p>
-              </div>
-              <Link href="/app/nachrichten" className={buttonVariants({ variant: "ghost", size: "sm" })}>
-                Alle öffnen
-                <ArrowRight className="size-3.5" />
-              </Link>
-            </CardHeader>
-            <CardBody className="px-0! pb-0!">
-              {groups.length === 0 ? (
-                <div className="border-t border-border px-5 py-8 text-center text-sm text-muted-fg">
-                  Noch keine Nachrichten. Schreibe deiner Klasse!
-                </div>
-              ) : (
-                <ul className="divide-y divide-border border-t border-border">
-                  {groups.map((g) => (
-                    <GroupRow key={g.id} group={g} />
-                  ))}
-                </ul>
-              )}
-            </CardBody>
-          </Card>
         </div>
 
         <aside className="space-y-6">
@@ -532,35 +461,5 @@ function DbNoteRow({ note }: { note: DbNote }) {
         </p>
       </div>
     </div>
-  );
-}
-
-type ThreadGroup = { id: string; name: string; members: number; unread: number; lastMessage: string; lastFrom: string; lastTime: string };
-
-function GroupRow({ group }: { group: ThreadGroup }) {
-  return (
-    <Link
-      href={`/app/nachrichten/${group.id}`}
-      className="flex items-start gap-3 px-5 py-3.5 transition-colors hover:bg-surface"
-    >
-      <div className="grid size-10 shrink-0 place-items-center bg-fg text-bg">
-        <Users className="size-4" strokeWidth={1.75} />
-      </div>
-      <div className="min-w-0 flex-1">
-        <div className="flex flex-wrap items-center gap-2">
-          <p className="truncate text-sm font-semibold">{group.name}</p>
-          {group.unread > 0 && <Badge variant="brand">{group.unread}</Badge>}
-        </div>
-        {group.lastMessage && (
-          <p className="mt-0.5 line-clamp-1 text-xs text-muted-fg">
-            <span className="font-medium text-fg">{group.lastFrom}: </span>
-            {group.lastMessage}
-          </p>
-        )}
-        <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-fg">
-          {group.members} Teilnehmer · {group.lastTime}
-        </p>
-      </div>
-    </Link>
   );
 }
