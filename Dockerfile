@@ -106,6 +106,15 @@ RUN PRISMA_VER=$(node -e "process.stdout.write(require('/tmp/prisma-ver.json').v
 COPY docker-entrypoint.sh ./
 RUN chmod +x docker-entrypoint.sh
 
+# Upload-Verzeichnisse anlegen und dem App-Nutzer übergeben.
+# Ohne das schlägt mkdir/writeFile zur Laufzeit fehl (EACCES → HTTP 500),
+# weil /app root gehört, der Server aber als "nextjs" läuft.
+RUN mkdir -p /app/uploads/drive \
+             /app/uploads/mastertask \
+             /app/uploads/mastertask-submissions \
+             /app/public/uploads && \
+    chown -R nextjs:nodejs /app/uploads /app/public/uploads
+
 USER nextjs
 
 EXPOSE 3000

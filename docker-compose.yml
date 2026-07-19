@@ -140,8 +140,12 @@ services:
       # CORS
       ALLOWED_ORIGINS:               ${ALLOWED_ORIGINS:-}
     volumes:
-      # Persist uploaded files (logos, favicons, user uploads) across container restarts
+      # Persist uploaded files (logos, favicons) across container restarts
       - uploads_data:/app/public/uploads
+      # Nutzer-Uploads (Drive, MasterTask …) — die Routen schreiben nach
+      # process.cwd()/uploads, also /app/uploads. Ohne eigenes Volume wären
+      # diese Dateien nach jedem Neustart weg.
+      - drive_uploads:/app/uploads
     deploy:
       resources:
         limits:
@@ -212,6 +216,8 @@ volumes:
     name: mastermind_redis_data
   uploads_data:
     name: mastermind_uploads_data
+  drive_uploads:
+    name: mastermind_drive_uploads
   certbot_webroot:
     name: mastermind_certbot_webroot
   certbot_certs:

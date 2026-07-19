@@ -131,6 +131,24 @@ server {
     }
 
     # ── API rate limiting ──────────────────────────────────────────────────
+    # ── Datei-Uploads (Drive, MasterTask) ────────────────────────────────
+    # Global gilt client_max_body_size 25M; die App erlaubt hier bis 100 MB.
+    # Ohne diesen Block würden Dateien >25 MB von nginx mit 413 abgewiesen,
+    # obwohl die Oberfläche 100 MB verspricht.
+    location ~ ^/api/(drive/upload|upload|mastertask/(upload|submission))$ {
+        client_max_body_size 100M;
+        limit_req zone=api burst=10 nodelay;
+        limit_conn perip 5;
+        proxy_pass         http://nextjs;
+        proxy_http_version 1.1;
+        proxy_set_header   Host       $host;
+        proxy_set_header   X-Real-IP  $remote_addr;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_read_timeout 300s;
+        proxy_request_buffering on;
+    }
+
     location /api/ai/ {
         limit_req zone=api burst=20 nodelay;
         limit_conn perip 10;
