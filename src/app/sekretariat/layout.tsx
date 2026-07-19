@@ -16,7 +16,7 @@ import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
 
 const navItems: NavItem[] = [
-  { href: "/sekretariat",             label: "Übersicht",     icon: "home", exact: true },
+  { href: "/sekretariat",             label: "Dashboard",     icon: "home", exact: true },
   { href: "/sekretariat/klassen",     label: "Klassenlisten", icon: "bookOpen" },
   { href: "/sekretariat/schueler",    label: "Schüler",       icon: "users" },
   { href: "/sekretariat/fehlzeiten",  label: "Fehlzeiten",    icon: "clipboardList" },

@@ -17,7 +17,7 @@ import { fetchNotifications } from "@/lib/notifications";
 import { enforceStaff2FA } from "@/lib/auth/require-2fa";
 
 const navItems: NavItem[] = [
-  { href: "/rektor",             label: "Übersicht",          icon: "home", exact: true },
+  { href: "/rektor",             label: "Dashboard",          icon: "home", exact: true },
   { href: "/rektor/statistiken", label: "Statistiken",        icon: "barChart3" },
   { href: "/rektor/personal",    label: "Personal",           icon: "users" },
   { href: "/rektor/mannschaften",label: "Mannschaften",       icon: "shield" },
