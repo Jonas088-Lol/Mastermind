@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { Trophy, Coins, Crown, Timer, Flame, Swords } from "lucide-react";
+import { Trophy, Coins, Crown, Flame, Swords } from "lucide-react";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardBody } from "@/components/ui/card";
@@ -31,15 +31,6 @@ const cachedMvpRaw = unstable_cache(
       orderBy: { _count: { isMvp: "desc" } }, take: 30,
     } as unknown as Parameters<typeof prisma.bossParticipant.groupBy>[0])) as unknown as { userId: string; _count: { isMvp: number } }[],
   ["ranking-mvp"], { revalidate: 60 }
-);
-const cachedLernzeitRaw = unstable_cache(
-  async (schoolId: string) =>
-    (await prisma.activitySession.groupBy({
-      by: ["userId"], _sum: { activeSeconds: true },
-      where: { user: { schoolId, role: "student" } },
-      orderBy: { _sum: { activeSeconds: "desc" } }, take: 30,
-    } as unknown as Parameters<typeof prisma.activitySession.groupBy>[0])) as unknown as { userId: string; _sum: { activeSeconds: number | null } }[],
-  ["ranking-lernzeit"], { revalidate: 60 }
 );
 const cachedWeeklyRaw = unstable_cache(
   async (schoolId: string) => {
@@ -70,7 +61,6 @@ const TABS = [
   { key: "boss",     label: "Boss-Schaden",  icon: Swords  },
   { key: "mvp",      label: "MVP",           icon: Crown   },
   { key: "coins",    label: "Münzen",        icon: Coins   },
-  { key: "lernzeit", label: "Lernzeit",      icon: Timer   },
   { key: "weekly",   label: "Diese Woche",   icon: Trophy  },
 ] as const;
 
@@ -91,7 +81,6 @@ export default async function RankingPage({ searchParams }: PageProps) {
   let bossRaw: { userId: string; _sum: { damage: number | null } }[] = [];
   let mvpRaw: { userId: string; _count: { isMvp: number } }[] = [];
   let coinsRaw: Array<XpUser & { coins: number }> = [];
-  let lernzeitRaw: { userId: string; _sum: { activeSeconds: number | null } }[] = [];
   let weeklyRaw: { userId: string; _sum: { amount: number | null } }[] = [];
 
   if (activeTab === "klasse" && session.classId) {
@@ -125,8 +114,6 @@ export default async function RankingPage({ searchParams }: PageProps) {
       orderBy: { coins: "desc" },
       take: 30,
     })) as typeof coinsRaw;
-  } else if (activeTab === "lernzeit" && session.schoolId) {
-    lernzeitRaw = await cachedLernzeitRaw(session.schoolId);
   } else if (activeTab === "weekly" && session.schoolId) {
     weeklyRaw = await cachedWeeklyRaw(session.schoolId);
   }
@@ -135,7 +122,6 @@ export default async function RankingPage({ searchParams }: PageProps) {
   const extraIds = [
     ...bossRaw.map((r) => r.userId),
     ...mvpRaw.map((r) => r.userId),
-    ...lernzeitRaw.map((r) => r.userId),
     ...weeklyRaw.map((r) => r.userId),
   ];
   const uniqueExtraIds = [...new Set(extraIds)];
@@ -158,23 +144,12 @@ export default async function RankingPage({ searchParams }: PageProps) {
     .map((r) => ({ user: extraUserMap.get(r.userId)!, score: r._count.isMvp }))
     .filter((r) => r.user);
 
-  const lernzeitLeaderboard = lernzeitRaw
-    .map((r) => ({ user: extraUserMap.get(r.userId)!, seconds: r._sum.activeSeconds ?? 0 }))
-    .filter((r) => r.user);
-
   const weeklyLeaderboard = weeklyRaw
     .map((r) => ({ user: extraUserMap.get(r.userId)!, score: r._sum.amount ?? 0 }))
     .filter((r) => r.user);
 
   function tabHref(key: string) {
     return `/app/ranking?tab=${key}`;
-  }
-
-  function formatTime(seconds: number) {
-    const h = Math.floor(seconds / 3600);
-    const m = Math.floor((seconds % 3600) / 60);
-    if (h > 0) return `${h}h ${m}m`;
-    return `${m}m`;
   }
 
   return (
@@ -315,40 +290,6 @@ export default async function RankingPage({ searchParams }: PageProps) {
                     <div className="flex items-center gap-1.5">
                       <Coins className="size-4 text-amber-400" />
                       <span className="font-mono font-bold text-amber-500">{u.coins.toLocaleString("de-DE")}</span>
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
-          )
-      )}
-
-      {/* Lernzeit-Ranking */}
-      {activeTab === "lernzeit" && (
-        lernzeitLeaderboard.length === 0
-          ? (
-            <Card>
-              <CardBody className="py-10 text-center">
-                <Timer className="mx-auto mb-3 size-8 text-muted-fg" strokeWidth={1.5} />
-                <p className="text-sm font-semibold">Keine Lernzeit-Daten</p>
-                <p className="mt-1 text-xs text-muted-fg">
-                  Nur Schüler die der Aktivitätsverfolgung zugestimmt haben erscheinen hier.
-                </p>
-              </CardBody>
-            </Card>
-          ) : (
-            <ol className="space-y-2">
-              {lernzeitLeaderboard.map(({ user: u, seconds }, i) => {
-                const isMe = u.id === session.userId;
-                const medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : null;
-                return (
-                  <li key={u.id} className={cn("flex items-center gap-3 rounded-2xl border px-4 py-3", isMe && "border-brand/40 bg-brand/3")}>
-                    <span className="w-8 text-center font-mono text-sm font-bold text-muted-fg">{medal ?? `#${i + 1}`}</span>
-                    <Avatar name={u.name} size="sm" />
-                    <span className={cn("flex-1 text-sm font-medium", isMe && "font-bold")}>{u.name}{isMe && " (Du)"}</span>
-                    <div className="flex items-center gap-1.5">
-                      <Timer className="size-4 text-brand" strokeWidth={1.75} />
-                      <span className="font-mono font-bold text-brand">{formatTime(seconds)}</span>
                     </div>
                   </li>
                 );
