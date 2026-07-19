@@ -63,6 +63,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Avatar } from "@/components/ui/avatar";
 import { logout } from "@/app/login/actions";
+import { NavCategories } from "@/components/app/NavCategories";
 
 const ICONS = {
   award: Award,
@@ -137,12 +138,24 @@ export type MoreNavItem = {
   modal?: string;
 };
 
+/** Kategorien für das „Mehr"-Menü (vom Layout vorbereitet). */
+export interface MoreNavCategory {
+  id: string;
+  label: string;
+  collapsed: boolean;
+  items: { href: string; label: string }[];
+}
+
 export interface BottomNavProps {
   items: BottomNavItem[];
   /** All nav items shown in the full-screen "Mehr" drawer. */
   moreItems?: MoreNavItem[];
   /** When provided, Search + Profile are shown at top of "Mehr" drawer and hidden from AppHeader on mobile. */
   user?: { name: string; subtitle: string; avatarUrl?: string | null };
+  /** Gruppierte, personalisierbare Navigation im „Mehr"-Menü. */
+  categories?: MoreNavCategory[];
+  /** Immer unten, ohne Kategorie (z. B. Suche). */
+  pinnedItems?: MoreNavItem[];
 }
 
 function getIcon(key: string): LucideIcon {
@@ -154,7 +167,13 @@ function isActive(pathname: string, item: { href: string; exact?: boolean }) {
   return pathname === item.href || pathname.startsWith(`${item.href}/`);
 }
 
-export function BottomNav({ items, moreItems, user }: BottomNavProps) {
+export function BottomNav({
+  items,
+  moreItems,
+  user,
+  categories,
+  pinnedItems = [],
+}: BottomNavProps) {
   const pathname = usePathname();
   const [moreOpen, setMoreOpen] = useState(false);
   // Scroll-based visibility: always visible initially, hides after 3s of inactivity once user has scrolled
@@ -200,6 +219,54 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
   }, [moreOpen]);
 
   const displayItems = moreItems ? items.slice(0, 4) : items.slice(0, 5);
+
+  /** Ein Eintrag im „Mehr"-Menü. `bare` = ohne <li> (Kategorie-Liste liefert es). */
+  function renderMoreItem(item: MoreNavItem, bare = false) {
+    const Icon = getIcon(item.icon);
+    const active = isActive(pathname, item);
+    const itemCls = cn(
+      "flex items-center gap-3.5 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-150",
+      active ? "bg-brand/10 text-brand" : "text-fg hover:bg-surface",
+    );
+    const itemInner = (
+      <>
+        <Icon
+          className={cn("size-4 shrink-0", active ? "text-brand" : "text-muted-fg")}
+          strokeWidth={1.75}
+        />
+        <span className="flex-1">{item.label}</span>
+        {item.badge && (
+          <span
+            className={cn(
+              "rounded-full px-1.5 py-0.5 font-mono text-[10px] font-bold",
+              active ? "bg-brand/15 text-brand" : "bg-brand text-brand-fg",
+            )}
+          >
+            {item.badge}
+          </span>
+        )}
+      </>
+    );
+
+    const node = item.modal ? (
+      <button
+        type="button"
+        className={cn(itemCls, "w-full text-left")}
+        onClick={() => {
+          setMoreOpen(false);
+          window.dispatchEvent(new CustomEvent("ms:open"));
+        }}
+      >
+        {itemInner}
+      </button>
+    ) : (
+      <Link href={item.href} aria-current={active ? "page" : undefined} className={itemCls}>
+        {itemInner}
+      </Link>
+    );
+
+    return bare ? node : <li key={item.href}>{node}</li>;
+  }
 
   return (
     <>
@@ -356,61 +423,30 @@ export function BottomNav({ items, moreItems, user }: BottomNavProps) {
             </div>
           )}
 
-          {/* Nav item list */}
+          {/* Nav item list — kategorisiert, verschiebbar, klappbar */}
           <nav className="flex-1 overflow-y-auto p-3" aria-label="Alle Seiten">
-            <ul className="space-y-0.5">
-              {moreItems.map((item) => {
-                const Icon = getIcon(item.icon);
-                const active = isActive(pathname, item);
-                const itemCls = cn(
-                  "flex items-center gap-3.5 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-150",
-                  active ? "bg-brand/10 text-brand" : "text-fg hover:bg-surface"
-                );
-                const itemInner = (
-                  <>
-                    <Icon
-                      className={cn("size-4 shrink-0", active ? "text-brand" : "text-muted-fg")}
-                      strokeWidth={1.75}
-                    />
-                    <span className="flex-1">{item.label}</span>
-                    {item.badge && (
-                      <span
-                        className={cn(
-                          "rounded-full px-1.5 py-0.5 font-mono text-[10px] font-bold",
-                          active ? "bg-brand/15 text-brand" : "bg-brand text-brand-fg"
-                        )}
-                      >
-                        {item.badge}
-                      </span>
-                    )}
-                  </>
-                );
-                return (
-                  <li key={item.href}>
-                    {item.modal ? (
-                      <button
-                        type="button"
-                        className={cn(itemCls, "w-full text-left")}
-                        onClick={() => {
-                          setMoreOpen(false);
-                          window.dispatchEvent(new CustomEvent("ms:open"));
-                        }}
-                      >
-                        {itemInner}
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        aria-current={active ? "page" : undefined}
-                        className={itemCls}
-                      >
-                        {itemInner}
-                      </Link>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
+            {categories && categories.length > 0 ? (
+              <>
+                <NavCategories
+                  dense
+                  categories={categories}
+                  renderItem={(ci) => {
+                    // optional chaining: moreItems ist im Callback nicht verengt
+                    const item = moreItems?.find((m) => m.href === ci.href);
+                    return item ? renderMoreItem(item, true) : null;
+                  }}
+                />
+                {pinnedItems.length > 0 && (
+                  <ul className="mt-3 space-y-0.5 border-t border-border pt-3">
+                    {pinnedItems.map((item) => renderMoreItem(item))}
+                  </ul>
+                )}
+              </>
+            ) : (
+              <ul className="space-y-0.5">
+                {moreItems.map((item) => renderMoreItem(item))}
+              </ul>
+            )}
           </nav>
         </div>
       )}

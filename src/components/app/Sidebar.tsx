@@ -59,6 +59,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BrandLogo } from "@/components/BrandLogo";
+import { NavCategories } from "@/components/app/NavCategories";
 
 const ICONS = {
   award: Award,
@@ -125,16 +126,37 @@ export type NavItem = {
   modal?: string;
 };
 
+/** Kategorien für die gruppierte Navigation (vom Layout vorbereitet). */
+export interface SidebarCategory {
+  id: string;
+  label: string;
+  collapsed: boolean;
+  items: NavItem[];
+}
+
 export interface SidebarProps {
   items: NavItem[];
   bottomItems?: NavItem[];
   rootHref: string;
   logoSrc?: string | null;
   logoAlt?: string;
+  /** Wenn gesetzt: gruppierte, personalisierbare Navigation statt flacher Liste. */
+  categories?: SidebarCategory[];
+  /** Immer ganz unten, ohne Kategorie (z. B. Suche). */
+  pinnedItems?: NavItem[];
 }
 
-export function Sidebar({ items, bottomItems = [], rootHref, logoSrc, logoAlt }: SidebarProps) {
+export function Sidebar({
+  items,
+  bottomItems = [],
+  rootHref,
+  logoSrc,
+  logoAlt,
+  categories,
+  pinnedItems = [],
+}: SidebarProps) {
   const pathname = usePathname();
+  const byHref = new Map(items.map((i) => [i.href, i]));
 
   return (
     <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-border bg-surface/60 backdrop-blur-sm lg:flex">
@@ -148,11 +170,32 @@ export function Sidebar({ items, bottomItems = [], rootHref, logoSrc, logoAlt }:
 
       {/* Nav */}
       <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Hauptnavigation">
-        <ul className="space-y-0.5">
-          {items.map((item) => (
-            <NavLink key={item.href} item={item} active={isActive(pathname, item)} />
-          ))}
-        </ul>
+        {categories && categories.length > 0 ? (
+          <>
+            <NavCategories
+              categories={categories}
+              renderItem={(ci) => {
+                const item = byHref.get(ci.href);
+                return item ? (
+                  <NavLink item={item} active={isActive(pathname, item)} bare />
+                ) : null;
+              }}
+            />
+            {pinnedItems.length > 0 && (
+              <ul className="mt-4 space-y-0.5 border-t border-border pt-3">
+                {pinnedItems.map((item) => (
+                  <NavLink key={item.href} item={item} active={isActive(pathname, item)} />
+                ))}
+              </ul>
+            )}
+          </>
+        ) : (
+          <ul className="space-y-0.5">
+            {items.map((item) => (
+              <NavLink key={item.href} item={item} active={isActive(pathname, item)} />
+            ))}
+          </ul>
+        )}
       </nav>
 
       {/* Bottom items */}
@@ -174,7 +217,16 @@ function isActive(pathname: string, item: NavItem) {
   return pathname === item.href || pathname.startsWith(`${item.href}/`);
 }
 
-function NavLink({ item, active }: { item: NavItem; active: boolean }) {
+function NavLink({
+  item,
+  active,
+  bare = false,
+}: {
+  item: NavItem;
+  active: boolean;
+  /** true = ohne umschließendes <li> (die Kategorie-Liste liefert es selbst). */
+  bare?: boolean;
+}) {
   const Icon = ICONS[item.icon];
   const cls = cn(
     "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150",
@@ -203,27 +255,21 @@ function NavLink({ item, active }: { item: NavItem; active: boolean }) {
     </>
   );
 
-  if (item.modal) {
-    return (
-      <li>
-        <button
-          type="button"
-          className={cn(cls, "w-full text-left")}
-          onClick={() => window.dispatchEvent(new CustomEvent("ms:open"))}
-        >
-          {inner}
-        </button>
-      </li>
-    );
-  }
-
-  return (
-    <li>
-      {/* prefetch: Hauptnavigation wird schon beim Seitenaufbau vorgeladen →
-          Navigieren fühlt sich instant an */}
-      <Link href={item.href} prefetch className={cls}>
-        {inner}
-      </Link>
-    </li>
+  const node = item.modal ? (
+    <button
+      type="button"
+      className={cn(cls, "w-full text-left")}
+      onClick={() => window.dispatchEvent(new CustomEvent("ms:open"))}
+    >
+      {inner}
+    </button>
+  ) : (
+    // prefetch: Hauptnavigation wird schon beim Seitenaufbau vorgeladen →
+    // Navigieren fühlt sich instant an
+    <Link href={item.href} prefetch className={cls}>
+      {inner}
+    </Link>
   );
+
+  return bare ? node : <li>{node}</li>;
 }

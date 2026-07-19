@@ -14,6 +14,8 @@ import {
   isImpersonating,
   isSuper,
 } from "@/lib/session";
+import { mergeNavLayout } from "@/lib/nav-categories";
+import { getNavOverride } from "@/lib/nav-prefs";
 import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
 import { enforceStaff2FA } from "@/lib/auth/require-2fa";
@@ -113,10 +115,15 @@ export default async function TeachLayout({
 
   const schoolDisplayName = branding?.brandName ?? branding?.name;
 
+  // Suche steht immer ganz unten, ohne Kategorie
+  const navAll = [...items, { href: "/search", label: "Suche", icon: "search" as const }];
+  const navOverride = await getNavOverride(session.userId, "teacher");
+  const navLayout = mergeNavLayout("teacher", navAll, navOverride);
+
   return (
     <div className="flex h-screen overflow-hidden bg-surface">
       <SchoolBrandingInjector branding={branding} />
-      <Sidebar items={items} bottomItems={bottomItems} rootHref="/teach" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
+      <Sidebar items={navAll} bottomItems={bottomItems} rootHref="/teach" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} categories={navLayout.categories} pinnedItems={navLayout.pinned} />
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="shrink-0 z-30">
           {isSuper(session) && (
@@ -135,7 +142,7 @@ export default async function TeachLayout({
         <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 pb-28 lg:px-10 lg:py-10 lg:pb-10">
           {children}
         </main>
-        <BottomNav items={mobileNav} moreItems={[...items, ...bottomItems]} user={displayUser(session)} />
+        <BottomNav items={mobileNav} moreItems={[...navAll, ...bottomItems]} categories={navLayout.categories} pinnedItems={navLayout.pinned} user={displayUser(session)} />
         <MasterSpaceModal />
       </div>
     </div>

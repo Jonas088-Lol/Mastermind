@@ -24,6 +24,8 @@ import { ConsentBanner } from "@/components/app/ConsentBanner";
 import { ActivityTracker } from "@/components/app/ActivityTracker";
 import { BossBar } from "@/components/app/BossBar";
 import { getActiveEvents } from "@/lib/settings";
+import { mergeNavLayout } from "@/lib/nav-categories";
+import { getNavOverride } from "@/lib/nav-prefs";
 
 const bottomItems: NavItem[] = [
   { href: "/app/profil", label: "Profil", icon: "userCircle" },
@@ -157,13 +159,25 @@ export default async function AppLayout({
     { href: "/app/tutor", label: "Tutor", icon: "sparkles" },
   ];
 
+  // Persönliche Navigations-Anordnung (Kategorien, Reihenfolge, Namen)
+  const navOverride = await getNavOverride(session.userId, "student");
+  const navLayout = mergeNavLayout("student", navItems, navOverride);
+
   const appName = isPrivate ? "MasterMind" : undefined;
   const schoolDisplayName = branding?.brandName ?? branding?.name;
 
   return (
     <div className="flex h-screen overflow-hidden bg-surface">
       <SchoolBrandingInjector branding={branding} />
-      <Sidebar items={navItems} bottomItems={bottomItems} rootHref="/app" logoSrc={branding?.logoUrl} logoAlt={schoolDisplayName} />
+      <Sidebar
+        items={navItems}
+        bottomItems={bottomItems}
+        rootHref="/app"
+        logoSrc={branding?.logoUrl}
+        logoAlt={schoolDisplayName}
+        categories={navLayout.categories}
+        pinnedItems={navLayout.pinned}
+      />
       <div className="flex min-w-0 flex-1 flex-col">
         {/* Header — always visible, never scrolls away */}
         <div className="shrink-0 z-30">
@@ -194,7 +208,13 @@ export default async function AppLayout({
           {children}
         </main>
         {/* BottomNav — always visible, never scrolls away */}
-        <BottomNav items={mobileNavItems} moreItems={[...navItems, ...bottomItems]} user={{ ...displayUser(session), avatarUrl: userData?.avatarUrl }} />
+        <BottomNav
+          items={mobileNavItems}
+          moreItems={[...navItems, ...bottomItems]}
+          user={{ ...displayUser(session), avatarUrl: userData?.avatarUrl }}
+          categories={navLayout.categories}
+          pinnedItems={navLayout.pinned}
+        />
         <InstallPrompt />
         <AppShell />
         <MasterSpaceModal />

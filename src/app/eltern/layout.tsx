@@ -12,6 +12,8 @@ import {
   isImpersonating,
   isSuper,
 } from "@/lib/session";
+import { mergeNavLayout } from "@/lib/nav-categories";
+import { getNavOverride } from "@/lib/nav-prefs";
 import { fetchNotifications } from "@/lib/notifications";
 import { prisma } from "@/lib/db/client";
 
@@ -82,9 +84,14 @@ export default async function ElternLayout({
     { href: "/eltern/belohnungen", label: "Belohnungen", icon: "gift" },
   ];
 
+  // Suche steht immer ganz unten, ohne Kategorie
+  const navAll = [...items, { href: "/search", label: "Suche", icon: "search" as const }];
+  const navOverride = await getNavOverride(session.userId, "parent");
+  const navLayout = mergeNavLayout("parent", navAll, navOverride);
+
   return (
     <div className="flex h-screen overflow-hidden bg-surface">
-      <Sidebar items={items} bottomItems={bottomItems} rootHref="/eltern" />
+      <Sidebar items={navAll} bottomItems={bottomItems} rootHref="/eltern" categories={navLayout.categories} pinnedItems={navLayout.pinned} />
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="shrink-0 z-30">
           {isSuper(session) && (
@@ -103,7 +110,7 @@ export default async function ElternLayout({
         <main className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-6 pb-28 lg:px-10 lg:py-10 lg:pb-10">
           {children}
         </main>
-        <BottomNav items={mobileNav} moreItems={[...items, ...bottomItems]} user={displayUser(session)} />
+        <BottomNav items={mobileNav} moreItems={[...navAll, ...bottomItems]} categories={navLayout.categories} pinnedItems={navLayout.pinned} user={displayUser(session)} />
       </div>
     </div>
   );
