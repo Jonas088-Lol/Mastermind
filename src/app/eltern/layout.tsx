@@ -63,7 +63,7 @@ export default async function ElternLayout({
   ];
 
   const items: NavItem[] = [
-    { href: "/eltern", label: "Übersicht", icon: "home", exact: true },
+    { href: "/eltern", label: "Dashboard", icon: "home", exact: true },
     { href: "/eltern/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: unreadMessages > 0 ? String(unreadMessages) : undefined },
     { href: "/eltern/noten", label: "Noten", icon: "award" },
     { href: "/eltern/stundenplan", label: "Stundenplan", icon: "calendar" },

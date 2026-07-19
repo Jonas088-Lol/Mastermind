@@ -68,7 +68,7 @@ export function Hero({ loggedInName = null }: { loggedInName?: string | null }) 
                   href="/onboarding"
                   className={buttonVariants({
                     size: "lg",
-                    className: "pastel-cta w-full font-bold sm:w-auto",
+                    className: "pastel-cta-classic w-full font-bold sm:w-auto",
                   })}
                 >
                   Schule registrieren
@@ -78,7 +78,7 @@ export function Hero({ loggedInName = null }: { loggedInName?: string | null }) 
                   href="/kontakt?betreff=demo"
                   className={buttonVariants({
                     size: "lg",
-                    className: "pastel-cta w-full font-bold sm:w-auto",
+                    className: "pastel-cta-classic w-full font-bold sm:w-auto",
                   })}
                 >
                   Demo buchen
