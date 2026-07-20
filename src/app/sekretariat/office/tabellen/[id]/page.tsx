@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { TabelleEditorView } from "@/components/office/TabelleEditorView";
 
-export const metadata: Metadata = { title: "Tabelle · MasterMind" };
+export const metadata: Metadata = { title: "Tabelle · MasterOffice" };
 
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
   return <TabelleEditorView params={params} />;

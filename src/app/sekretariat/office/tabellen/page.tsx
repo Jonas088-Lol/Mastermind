@@ -2,8 +2,8 @@
 import type { Metadata } from "next";
 import { TabellenView } from "@/components/office/TabellenView";
 
-export const metadata: Metadata = { title: "Tabellen · MasterMind" };
+export const metadata: Metadata = { title: "Tabellen · MasterOffice" };
 
 export default function Page() {
-  return <TabellenView basePath="/app" />;
+  return <TabellenView basePath="/sekretariat/office" />;
 }

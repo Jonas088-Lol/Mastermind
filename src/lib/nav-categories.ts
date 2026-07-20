@@ -146,6 +146,11 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
         "/teach/elternbrief",
       ],
     },
+    {
+      id: "masteroffice",
+      label: "MasterOffice",
+      items: ["/teach/office/dokumente", "/teach/office/tabellen", "/teach/office/praesentationen", "/teach/office/drive"],
+    },
   ],
 
   // ── Schulleitung ──────────────────────────────────────────────────────────
@@ -190,6 +195,11 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
         "/admin/audit",
         "/admin/einwilligungen",
       ],
+    },
+    {
+      id: "masteroffice",
+      label: "MasterOffice",
+      items: ["/rektor/office/dokumente", "/rektor/office/tabellen", "/rektor/office/praesentationen", "/rektor/office/drive"],
     },
   ],
 
@@ -246,6 +256,11 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
       id: "anzeigetafel",
       label: "Anzeigetafel",
       items: ["/sekretariat/anzeigetafel", "/admin/anzeigetafel-verwaltung"],
+    },
+    {
+      id: "masteroffice",
+      label: "MasterOffice",
+      items: ["/sekretariat/office/dokumente", "/sekretariat/office/tabellen", "/sekretariat/office/praesentationen", "/sekretariat/office/drive"],
     },
   ],
 

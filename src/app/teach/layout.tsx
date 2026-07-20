@@ -107,6 +107,10 @@ export default async function TeachLayout({
     { href: "/teach/ressourcen", label: "Ressourcen", icon: "box" },
     { href: "/teach/notenschluessel", label: "Notenschlüssel", icon: "calculator" },
     { href: "/teach/masterspace", label: "MasterSpace", icon: "compass", modal: "masterspace" },
+    { href: "/teach/office/dokumente", label: "Dokumente", icon: "fileText" },
+    { href: "/teach/office/tabellen", label: "Tabellen", icon: "grid" },
+    { href: "/teach/office/praesentationen", label: "Präsentationen", icon: "monitor" },
+    { href: "/teach/office/drive", label: "Drive", icon: "hardDrive" },
   ];
 
   // Zusammengefasst: Reiter ausblenden, die der Erstellen-Hub abdeckt.

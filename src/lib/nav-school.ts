@@ -32,6 +32,10 @@ export const RECTOR_NAV: NavItem[] = [
   { href: "/admin/sicherheit",      label: "Sicherheit",      icon: "shield" },
   { href: "/admin/audit",           label: "Audit-Log",       icon: "lineChart" },
   { href: "/admin/einwilligungen",  label: "Einwilligungen",  icon: "fileCheck" },
+  { href: "/rektor/office/dokumente",       label: "Dokumente",      icon: "fileText" },
+  { href: "/rektor/office/tabellen",        label: "Tabellen",       icon: "grid" },
+  { href: "/rektor/office/praesentationen", label: "Präsentationen", icon: "monitor" },
+  { href: "/rektor/office/drive",           label: "Drive",          icon: "hardDrive" },
   { href: "/search",                label: "Suche",           icon: "search" },
 ];
 
@@ -61,6 +65,10 @@ export const SECRETARY_NAV: NavItem[] = [
   { href: "/admin/abgaben",                 label: "Abgaben",             icon: "clipboardEdit" },
   { href: "/admin/ressourcen",              label: "Ressourcen",          icon: "box" },
   { href: "/admin/anzeigetafel-verwaltung", label: "Anzeigetafel-Inhalte",icon: "monitor" },
+  { href: "/sekretariat/office/dokumente",       label: "Dokumente",      icon: "fileText" },
+  { href: "/sekretariat/office/tabellen",        label: "Tabellen",       icon: "grid" },
+  { href: "/sekretariat/office/praesentationen", label: "Präsentationen", icon: "monitor" },
+  { href: "/sekretariat/office/drive",           label: "Drive",          icon: "hardDrive" },
   { href: "/search",                        label: "Suche",               icon: "search" },
 ];
 

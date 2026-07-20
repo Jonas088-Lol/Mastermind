@@ -17,7 +17,9 @@
       "Bash(awk '/^model SubstitutionEntry/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
       "Bash(awk '/^model TimetableEntry/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
       "Bash(grep -n \"onChange={undefined}\\\\|disabled$\" src/app/admin/vertretungsplan/page.tsx)",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(grep -n -A3 \"const { session, role, base }\" src/app/app/dokumente/actions.ts)",
+      "Bash(grep -rn 'href={`/app/' src/components/office/)"
     ]
   }
 }
