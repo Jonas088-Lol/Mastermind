@@ -26,8 +26,10 @@ export type SchoolArea =
   | "fehlzeiten" | "elternverwaltung" | "postfach" | "nachrichten"
   | "schulkalender" | "ressourcen" | "import" | "abgaben"
   | "anzeigetafel" | "anzeigetafel-verwaltung" | "einwilligungen"
+  | "elternsprechtag"
   | "branding" | "lizenz" | "berichte" | "notenspiegel" | "notenschluessel"
-  | "gamification" | "sicherheit" | "audit" | "einstellungen" | "integrationen";
+  | "gamification" | "sicherheit" | "audit" | "einstellungen" | "integrationen"
+  | "rechte";
 
 /**
  * Schulleitung — strategisch, pädagogisch, rechtlich.
@@ -45,6 +47,7 @@ export const RECTOR_AREAS: SchoolArea[] = [
   "einstellungen",
   "integrationen",
   "einwilligungen",
+  "rechte",
 ];
 
 /**
@@ -66,6 +69,7 @@ export const SECRETARY_AREAS: SchoolArea[] = [
   "abgaben",
   "anzeigetafel",
   "anzeigetafel-verwaltung",
+  "elternsprechtag",
 ];
 
 /** Bereiche, die eine Rolle sehen darf. */

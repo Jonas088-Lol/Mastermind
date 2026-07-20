@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { Calendar, CheckCircle2, Clock, XCircle } from "lucide-react";
+import { Calendar, CheckCircle2, Clock, XCircle, CalendarDays } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
@@ -94,12 +94,23 @@ export default async function AdminFehlzeitenPage({ searchParams }: PageProps) {
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-8">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schul-Admin</p>
-        <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Fehlzeiten</h1>
-        <p className="mt-1 text-sm text-muted-fg">
-          {pending.length} ausstehend · {confirmed.length} bestätigt · {rejected.length} abgelehnt
-        </p>
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">
+            Schulverwaltung
+          </p>
+          <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Fehlzeiten</h1>
+          <p className="mt-1 text-sm text-muted-fg">
+            {pending.length} ausstehend · {confirmed.length} bestätigt · {rejected.length} abgelehnt
+          </p>
+        </div>
+        <a
+          href="/admin/fehlzeiten/jahresuebersicht"
+          className="inline-flex shrink-0 items-center gap-2 self-start rounded-xl border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-brand/40 hover:bg-surface"
+        >
+          <CalendarDays className="size-4" />
+          Jahresübersicht
+        </a>
       </header>
 
       {/* Stats */}

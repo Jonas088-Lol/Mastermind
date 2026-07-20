@@ -20,6 +20,7 @@ import { getSchoolBranding } from "@/lib/school-branding";
 import { fetchNotifications } from "@/lib/notifications";
 import { enforceStaff2FA } from "@/lib/auth/require-2fa";
 import { prisma } from "@/lib/db/client";
+import { can } from "@/lib/permissions";
 
 export default async function TeachLayout({
   children,
@@ -66,6 +67,7 @@ export default async function TeachLayout({
   }).length;
 
   const corrBadge = pendingCorrections > 0 ? String(pendingCorrections) : undefined;
+  const mayBroadcast = await can(session, "teacher.broadcast");
   const msgBadge = unreadThreadCount > 0 ? String(unreadThreadCount) : undefined;
 
   const items: NavItem[] = [
@@ -88,7 +90,10 @@ export default async function TeachLayout({
     { href: "/teach/klassenbuch", label: "Klassenbuch", icon: "bookMarked" },
     { href: "/teach/abwesenheit", label: "Abwesenheiten", icon: "calendar" },
     { href: "/teach/nachrichten", label: "Nachrichten", icon: "messageSquare", badge: msgBadge },
-    { href: "/teach/broadcast", label: "Broadcast", icon: "users" },
+    // Rundnachricht ist auch direkt in /teach/nachrichten verlinkt.
+    ...(mayBroadcast
+      ? [{ href: "/teach/broadcast", label: "Rundnachricht", icon: "users" as const }]
+      : []),
     { href: "/teach/sitzplan", label: "Sitzplan", icon: "grid" },
     { href: "/teach/elternbrief", label: "Elternbrief", icon: "fileText" },
     { href: "/teach/elterngespraeche", label: "Elterngespräche", icon: "userCheck" },

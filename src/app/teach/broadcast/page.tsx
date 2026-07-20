@@ -7,6 +7,7 @@ import { effectiveRole, getSession } from "@/lib/session";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { sendTeacherBroadcast } from "./actions";
+import { can } from "@/lib/permissions";
 
 export const metadata: Metadata = { title: "Broadcast · Lehrer" };
 
@@ -18,6 +19,8 @@ export default async function TeacherBroadcastPage({ searchParams }: PageProps) 
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "teacher") redirect("/");
+  // Von der Schulleitung sperrbar — dann gar kein Formular zeigen.
+  if (!(await can(session, "teacher.broadcast"))) redirect("/teach/nachrichten");
 
   const { sent } = await searchParams;
 

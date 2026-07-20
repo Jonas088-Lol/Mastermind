@@ -183,7 +183,12 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
     {
       id: "sicherheit",
       label: "Sicherheit & Recht",
-      items: ["/admin/sicherheit", "/admin/audit", "/admin/einwilligungen"],
+      items: [
+        "/admin/rechte",
+        "/admin/sicherheit",
+        "/admin/audit",
+        "/admin/einwilligungen",
+      ],
     },
   ],
 
@@ -229,7 +234,12 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
     {
       id: "kommunikation",
       label: "Kommunikation",
-      items: ["/admin/nachrichten", "/admin/postfach", "/admin/elternverwaltung"],
+      items: [
+        "/admin/nachrichten",
+        "/admin/postfach",
+        "/admin/elternverwaltung",
+        "/admin/elternsprechtag",
+      ],
     },
     {
       id: "anzeigetafel",

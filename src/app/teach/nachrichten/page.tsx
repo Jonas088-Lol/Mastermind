@@ -1,5 +1,5 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
-import { MessageSquare, Plus } from "lucide-react";
+import { MessageSquare, Plus, Megaphone } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
+import { can } from "@/lib/permissions";
 
 export const metadata: Metadata = { title: "Nachrichten" };
 
@@ -50,6 +51,9 @@ export default async function TeachNachrichtenPage() {
     return !p.lastReadAt || p.lastReadAt < last.sentAt;
   }).length;
 
+  // Rundnachrichten können von der Schulleitung gesperrt sein.
+  const mayBroadcast = await can(session, "teacher.broadcast");
+
   return (
     <div className="mx-auto flex max-w-7xl flex-col gap-6">
       <header className="flex items-end justify-between">
@@ -65,10 +69,25 @@ export default async function TeachNachrichtenPage() {
             {participations.length} Konversationen
           </p>
         </div>
-        <Link href="/teach/nachrichten/neu" className="inline-flex items-center gap-1.5 bg-fg px-3 py-2 text-xs font-semibold text-bg transition-opacity hover:opacity-90">
-          <Plus className="size-3.5" />
-          Neue Nachricht
-        </Link>
+        <div className="flex flex-wrap items-center gap-2">
+          {/* Broadcast direkt hier — kein eigener Reiter mehr nötig */}
+          {mayBroadcast && (
+            <Link
+              href="/teach/broadcast"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-xs font-semibold transition-colors hover:border-brand/40 hover:bg-surface"
+            >
+              <Megaphone className="size-3.5" />
+              Rundnachricht
+            </Link>
+          )}
+          <Link
+            href="/teach/nachrichten/neu"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-fg px-3 py-2 text-xs font-semibold text-bg transition-opacity hover:opacity-90"
+          >
+            <Plus className="size-3.5" />
+            Neue Nachricht
+          </Link>
+        </div>
       </header>
 
       {participations.length === 0 ? (

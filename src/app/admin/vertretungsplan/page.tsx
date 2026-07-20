@@ -11,11 +11,12 @@ import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import { cancelTeacherDay, copyFromYesterday, createSubstitution } from "./actions";
 import { canManageSchool, canAccessArea } from "@/lib/school-admin";
+import { teacherAvailability } from "@/lib/substitution";
 
 export const metadata: Metadata = { title: "Vertretungsplan · Admin" };
 
 interface PageProps {
-  searchParams: Promise<{ date?: string; show?: string; done?: string }>;
+  searchParams: Promise<{ date?: string; show?: string; done?: string ; period?: string; error?: string }>;
 }
 
 const TYPE_LABELS: Record<string, string> = {
@@ -36,7 +37,9 @@ export default async function AdminVertretungsplanPage({ searchParams }: PagePro
   if (!canManageSchool(effectiveRole(session))) redirect(ROLE_HOME[effectiveRole(session)]);
   if (!canAccessArea(effectiveRole(session), "vertretungsplan")) redirect("/admin");
 
-  const { date: dateParam, show: showParam, done: doneParam } = await searchParams;
+  const { date: dateParam, show: showParam, done: doneParam, period: periodParam, error: errorParam } = await searchParams;
+  // Stunde für die Verfügbarkeits-Vorschläge (Standard: 1.)
+  const suggestPeriod = periodParam && /^\d+$/.test(periodParam) ? parseInt(periodParam, 10) : 1;
   const doneCount = doneParam != null && /^\d+$/.test(doneParam) ? parseInt(doneParam, 10) : null;
 
   const schoolId = session.schoolId ?? "";
@@ -58,7 +61,7 @@ export default async function AdminVertretungsplanPage({ searchParams }: PagePro
   const rangeStart = isWeekView ? weekStart : selectedDate;
   const rangeEnd = isWeekView ? weekEnd : new Date(selectedDate.getTime() + 86399999);
 
-  const [entries, classes, teachers] = await Promise.all([
+  const [entries, classes, teachers, availability] = await Promise.all([
     prisma.substitutionEntry.findMany({
       where: {
         schoolId,
@@ -81,6 +84,7 @@ export default async function AdminVertretungsplanPage({ searchParams }: PagePro
       select: { id: true, name: true },
       orderBy: { name: "asc" },
     }),
+    teacherAvailability(schoolId, selectedDate, suggestPeriod),
   ]);
 
   // Group by date
@@ -168,6 +172,16 @@ export default async function AdminVertretungsplanPage({ searchParams }: PagePro
           </Link>
         </div>
       </div>
+
+      {/* Konflikt-Hinweis (z. B. Vertretungslehrkraft nicht frei) */}
+      {errorParam && (
+        <div
+          role="alert"
+          className="rounded-xl border border-danger/40 bg-danger/10 px-4 py-3 text-sm font-semibold text-danger"
+        >
+          {errorParam}
+        </div>
+      )}
 
       {/* Erfolgsmeldung */}
       {doneCount !== null && (
@@ -323,16 +337,41 @@ export default async function AdminVertretungsplanPage({ searchParams }: PagePro
                   <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">
                     Vertretung durch
                   </label>
+                  {/* Stunde für die Verfügbarkeits-Vorschläge wählen */}
+                  <div className="mb-1.5 flex flex-wrap items-center gap-1">
+                    <span className="mr-1 text-[11px] text-muted-fg">Frei-Vorschläge für Stunde:</span>
+                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((p) => (
+                      <Link
+                        key={p}
+                        href={`/admin/vertretungsplan?date=${selectedDate.toISOString().split("T")[0]}&show=create&period=${p}`}
+                        className={cn(
+                          "rounded border px-1.5 py-0.5 text-[11px] font-semibold transition-colors",
+                          p === suggestPeriod
+                            ? "border-brand bg-brand/10 text-brand"
+                            : "border-border text-muted-fg hover:border-brand/40 hover:text-fg",
+                        )}
+                      >
+                        {p}
+                      </Link>
+                    ))}
+                  </div>
                   <select
                     name="substituteTeacherId"
                     className="w-full border border-border bg-bg px-3 py-2 text-sm"
                   >
                     <option value="">Keine Vertretung</option>
-                    {teachers.map((t) => (
-                      <option key={t.id} value={t.id}>
-                        {t.name}
-                      </option>
-                    ))}
+                    <optgroup label={`Frei in der ${suggestPeriod}. Stunde`}>
+                      {availability.filter((t) => t.free).map((t) => (
+                        <option key={t.id} value={t.id}>{t.name}</option>
+                      ))}
+                    </optgroup>
+                    <optgroup label="Belegt">
+                      {availability.filter((t) => !t.free).map((t) => (
+                        <option key={t.id} value={t.id}>
+                          {t.name} — {t.reason}
+                        </option>
+                      ))}
+                    </optgroup>
                   </select>
                 </div>
                 <div>

@@ -8,6 +8,7 @@ import { effectiveRole, getSession } from "@/lib/session";
 import { getStudentFeatures } from "@/lib/student-features";
 import { AutoRefresh } from "@/components/app/AutoRefresh";
 import { KATEGORIEN, kategorieInfo } from "./colors";
+import { can } from "@/lib/permissions";
 
 export const metadata: Metadata = { title: "Schülerzeitung | MasterMind" };
 export const dynamic = "force-dynamic";
@@ -15,6 +16,8 @@ export const dynamic = "force-dynamic";
 export default async function ZeitungPage({ searchParams }: { searchParams: Promise<{ rubrik?: string }> }) {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "student") redirect("/app");
+  // Von der Schulleitung sperrbar
+  if (!(await can(session, "student.newspaper"))) redirect("/app");
   if (!session.schoolId) redirect("/app");
 
   const { rubrik: rubrikRaw } = await searchParams;

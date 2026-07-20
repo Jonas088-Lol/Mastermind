@@ -6,7 +6,17 @@
       "Bash(echo \"EXIT: $?\")",
       "Bash(python3 -)",
       "Bash(grep -v \"^$\")",
-      "Bash(awk '/^model Grade /{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)"
+      "Bash(awk '/^model Grade /{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(awk '/^model GradingScale|^model Notenschluessel/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(awk '/^model Substitution/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(awk '/^model Absence/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(awk '/^model GradeScale /{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(awk '/^model GradeScaleEntry/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(awk '/^model ParentMeetingDay|^model ParentDay|^model Elternsprechtag/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(awk '/^model ParentTeacherSlot/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(awk '/^model SubstitutionEntry/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(awk '/^model TimetableEntry/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
+      "Bash(grep -n \"onChange={undefined}\\\\|disabled$\" src/app/admin/vertretungsplan/page.tsx)"
     ]
   }
 }

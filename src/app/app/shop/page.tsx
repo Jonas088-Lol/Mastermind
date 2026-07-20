@@ -12,6 +12,7 @@ import { COMPONENT_ICON } from "@/lib/shop";
 import { safeJsonParse } from "@/lib/safe-json";
 import { cn } from "@/lib/utils";
 import { purchaseItemDef } from "./actions";
+import { can } from "@/lib/permissions";
 
 export const metadata: Metadata = { title: "Shop · MasterMind" };
 
@@ -69,6 +70,8 @@ export default async function ShopPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect(ROLE_HOME[effectiveRole(session)]);
+  // Von der Schulleitung sperrbar
+  if (!(await can(session, "student.shop"))) redirect("/app");
 
   const { cat: catParam, rarity: rarityParam, sort: sortParam } = await searchParams;
   const activeCat: CatKey = (CATEGORIES.find((c) => c.key === catParam)?.key ?? "alle") as CatKey;

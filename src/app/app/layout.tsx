@@ -26,6 +26,7 @@ import { BossBar } from "@/components/app/BossBar";
 import { getActiveEvents } from "@/lib/settings";
 import { mergeNavLayout } from "@/lib/nav-categories";
 import { getNavOverride } from "@/lib/nav-prefs";
+import { getPermissionOverrides, resolveCapability } from "@/lib/permissions";
 
 const bottomItems: NavItem[] = [
   { href: "/app/profil", label: "Profil", icon: "userCircle" },
@@ -159,9 +160,24 @@ export default async function AppLayout({
     { href: "/app/tutor", label: "Tutor", icon: "sparkles" },
   ];
 
+  // Von der Schulleitung gesperrte Bereiche aus der Navigation nehmen.
+  const perms = await getPermissionOverrides(session.schoolId);
+  const blocked = new Set<string>();
+  if (!resolveCapability("student.ai_tutor", "student", perms)) blocked.add("/app/tutor");
+  if (!resolveCapability("student.community", "student", perms)) blocked.add("/app/community");
+  if (!resolveCapability("student.duels", "student", perms)) blocked.add("/app/duelle");
+  if (!resolveCapability("student.masterspace", "student", perms)) blocked.add("/app/masterspace");
+  if (!resolveCapability("student.newspaper", "student", perms)) blocked.add("/app/zeitung");
+  if (!resolveCapability("student.shop", "student", perms)) {
+    blocked.add("/app/shop");
+    blocked.add("/app/inventar");
+    blocked.add("/app/coins");
+  }
+  const visibleNavItems = navItems.filter((i) => !blocked.has(i.href));
+
   // Persönliche Navigations-Anordnung (Kategorien, Reihenfolge, Namen)
   const navOverride = await getNavOverride(session.userId, "student");
-  const navLayout = mergeNavLayout("student", navItems, navOverride);
+  const navLayout = mergeNavLayout("student", visibleNavItems, navOverride);
 
   const appName = isPrivate ? "MasterMind" : undefined;
   const schoolDisplayName = branding?.brandName ?? branding?.name;
@@ -170,7 +186,7 @@ export default async function AppLayout({
     <div className="flex h-screen overflow-hidden bg-surface">
       <SchoolBrandingInjector branding={branding} />
       <Sidebar
-        items={navItems}
+        items={visibleNavItems}
         bottomItems={bottomItems}
         rootHref="/app"
         logoSrc={branding?.logoUrl}
@@ -210,7 +226,7 @@ export default async function AppLayout({
         {/* BottomNav — always visible, never scrolls away */}
         <BottomNav
           items={mobileNavItems}
-          moreItems={[...navItems, ...bottomItems]}
+          moreItems={[...visibleNavItems, ...bottomItems]}
           user={{ ...displayUser(session), avatarUrl: userData?.avatarUrl }}
           categories={navLayout.categories}
           pinnedItems={navLayout.pinned}

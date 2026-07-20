@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { canManageSchool, canAccessArea } from "@/lib/school-admin";
+import { teacherIsBusy } from "@/lib/substitution";
 
 async function requireAdmin() {
   const session = await getSession();
@@ -40,10 +41,23 @@ export async function createSubstitution(formData: FormData): Promise<void> {
   });
   if (!klass || klass.schoolId !== session.schoolId) return;
 
+  const date = new Date(dateStr);
+
+  // Doppelbelegung verhindern: Vertretungslehrkraft darf in dieser Stunde
+  // weder regulär unterrichten noch bereits als Vertretung eingeteilt sein.
+  if (substituteTeacherId) {
+    const busy = await teacherIsBusy(session.schoolId, date, period, substituteTeacherId);
+    if (busy) {
+      redirect(
+        `/admin/vertretungsplan?date=${dateStr}&error=${encodeURIComponent(`Lehrkraft ist in der ${period}. Stunde nicht frei (${busy}).`)}`,
+      );
+    }
+  }
+
   const entry = await prisma.substitutionEntry.create({
     data: {
       schoolId: session.schoolId,
-      date: new Date(dateStr),
+      date,
       period,
       classId,
       absentTeacherId: absentTeacherId || undefined,

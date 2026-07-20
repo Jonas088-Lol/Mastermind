@@ -13,10 +13,11 @@ const ROLE_LABEL: Record<string, string> = {
   student: "Schüler",
   parent: "Elternteil",
   teacher: "Kollege",
-  admin: "Schulleitung",
+  rector: "Schulleitung",
+  secretary: "Sekretariat",
 };
 
-const ROLE_ORDER = ["student", "parent", "teacher", "admin"];
+const ROLE_ORDER = ["student", "parent", "teacher", "rector", "secretary"];
 
 interface PageProps { searchParams: Promise<{ to?: string }> }
 
@@ -30,10 +31,18 @@ export default async function TeachNeueNachrichtPage({ searchParams }: PageProps
     where: {
       schoolId: session.schoolId,
       id: { not: session.userId },
-      role: { in: ["student", "teacher", "parent", "admin"] },
+      role: { in: ["student", "teacher", "parent", "rector", "secretary"] },
     },
     select: { id: true, name: true, role: true, klasse: true },
     orderBy: [{ role: "asc" }, { name: "asc" }],
+  });
+
+  // Klassen, die diese Lehrkraft unterrichtet — für den Sammelversand.
+  const myClasses = await prisma.teacherSubjectClass.findMany({
+    where: { teacherId: session.userId },
+    select: { class: { select: { id: true, name: true, _count: { select: { students: true } } } } },
+    distinct: ["classId"],
+    orderBy: { class: { name: "asc" } },
   });
 
   const byRole = new Map<string, typeof users>();
@@ -55,14 +64,38 @@ export default async function TeachNeueNachrichtPage({ searchParams }: PageProps
       </header>
 
       <form action={createThread} className="flex flex-col gap-5">
+        {myClasses.length > 0 && (
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="classId" className="text-sm font-semibold">
+              An ganze Klasse <span className="font-normal text-muted-fg">(optional)</span>
+            </label>
+            <select
+              id="classId"
+              name="classId"
+              defaultValue=""
+              className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+            >
+              <option value="">— keine Klasse —</option>
+              {myClasses.map((c) => (
+                <option key={c.class.id} value={c.class.id}>
+                  {c.class.name} ({c.class._count.students} Schüler)
+                </option>
+              ))}
+            </select>
+            <p className="text-xs text-muted-fg">
+              Ist eine Klasse gewählt, geht die Nachricht an alle Schüler dieser Klasse —
+              die Einzelauswahl darunter wird dann ignoriert.
+            </p>
+          </div>
+        )}
+
         <div className="flex flex-col gap-1.5">
           <label htmlFor="recipientId" className="text-sm font-semibold">
-            Empfänger
+            Einzelne Person
           </label>
           <select
             id="recipientId"
             name="recipientId"
-            required
             defaultValue={preselectedId ?? ""}
             className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           >

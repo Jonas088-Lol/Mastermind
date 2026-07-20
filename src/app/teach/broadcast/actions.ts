@@ -7,11 +7,14 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { pushToUsers } from "@/lib/push";
 import { logger } from "@/lib/logger";
+import { can } from "@/lib/permissions";
 
 export async function sendTeacherBroadcast(formData: FormData): Promise<void> {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "teacher") return;
+  // Von der Schulleitung sperrbar
+  if (!(await can(session, "teacher.broadcast"))) return;
 
   const targetType = (formData.get("targetType") as string | null)?.trim() ?? "class";
   const classId = (formData.get("classId") as string | null)?.trim() ?? "";

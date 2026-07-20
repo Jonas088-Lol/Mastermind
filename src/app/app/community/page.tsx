@@ -21,6 +21,7 @@ import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import { levelFromXp } from "@/lib/xp";
+import { can } from "@/lib/permissions";
 
 export const metadata: Metadata = { title: "Community" };
 
@@ -28,6 +29,10 @@ export default async function CommunityPage() {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) === "super") redirect("/plattform");
+  // Community kann von der Schulleitung gesperrt werden.
+  if (effectiveRole(session) === "student" && !(await can(session, "student.community"))) {
+    redirect("/app");
+  }
 
   const schoolId = session.schoolId;
   const now = new Date();

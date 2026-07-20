@@ -7,6 +7,7 @@ import { prisma } from "@/lib/db/client";
 import { getAiQuota } from "@/lib/db/store";
 import { getSession, ROLE_HOME, effectiveRole } from "@/lib/session";
 import { TutorWrapper } from "./TutorWrapper";
+import { can } from "@/lib/permissions";
 
 export const metadata: Metadata = { title: "KI-Tutor" };
 
@@ -17,6 +18,10 @@ export default async function TutorPage() {
   const role = effectiveRole(session);
   if (role !== "student" && role !== "super") {
     redirect(ROLE_HOME[role]);
+  }
+  // KI-Tutor kann von der Schulleitung gesperrt werden.
+  if (role === "student" && !(await can(session, "student.ai_tutor"))) {
+    redirect("/app");
   }
 
   const now = new Date();

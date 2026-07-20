@@ -1,6 +1,7 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
@@ -8,14 +9,24 @@ import { NotenschluesselRechner } from "./NotenschluesselRechner";
 
 export const metadata: Metadata = { title: "Notenschlüssel · Lehrer" };
 
-export default async function TeachNotenschluesselPage() {
+interface PageProps {
+  searchParams: Promise<{ scale?: string }>;
+}
+
+export default async function TeachNotenschluesselPage({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session || effectiveRole(session) !== "teacher") redirect("/teach");
 
-  const scale = await prisma.gradeScale.findUnique({
+  const { scale: scaleParam } = await searchParams;
+
+  // Die Schule kann mehrere Schlüssel haben (z. B. R- und M-Zweig).
+  const scales = await prisma.gradeScale.findMany({
     where: { schoolId: session.schoolId ?? "" },
     include: { entries: { orderBy: { grade: "asc" } } },
+    orderBy: [{ isDefault: "desc" }, { name: "asc" }],
   });
+
+  const scale = scales.find((s) => s.id === scaleParam) ?? scales[0] ?? null;
 
   return (
     <div className="mx-auto flex max-w-2xl flex-col gap-8">
@@ -26,6 +37,29 @@ export default async function TeachNotenschluesselPage() {
           Punkte eingeben — die passende Note wird automatisch ermittelt.
         </p>
       </header>
+
+      {/* Auswahl, sobald es mehr als einen Schlüssel gibt */}
+      {scales.length > 1 && (
+        <div className="flex flex-wrap gap-2">
+          {scales.map((s) => {
+            const active = s.id === scale?.id;
+            return (
+              <a
+                key={s.id}
+                href={`/teach/notenschluessel?scale=${s.id}`}
+                className={
+                  active
+                    ? "flex items-center gap-2 rounded-xl border border-brand bg-brand/10 px-3 py-2 text-sm font-semibold text-brand"
+                    : "flex items-center gap-2 rounded-xl border border-border bg-bg px-3 py-2 text-sm font-medium text-muted-fg transition-colors hover:border-brand/40 hover:text-fg"
+                }
+              >
+                {s.name}
+                {s.isDefault && <Badge variant="brand">Standard</Badge>}
+              </a>
+            );
+          })}
+        </div>
+      )}
 
       {!scale || scale.entries.length === 0 ? (
         <Card>
@@ -39,16 +73,18 @@ export default async function TeachNotenschluesselPage() {
         <>
           <NotenschluesselRechner entries={scale.entries} scaleName={scale.name} />
 
-          {/* Table overview */}
+          {/* Tabellen-Übersicht */}
           <Card>
             <CardHeader>
               <div>
                 <CardTitle>{scale.name}</CardTitle>
-                <p className="mt-0.5 text-sm text-muted-fg">Vollständige Tabelle</p>
+                <p className="mt-0.5 text-sm text-muted-fg">
+                  {scale.description ?? "Vollständige Tabelle"}
+                </p>
               </div>
             </CardHeader>
             <CardBody className="px-0! pb-0!">
-              <div className="grid grid-cols-[40px_1fr_130px] border-b border-border bg-surface px-5 py-2 text-xs font-semibold text-muted-fg">
+              <div className="grid grid-cols-[40px_1fr_110px] border-b border-border bg-surface px-5 py-2 text-xs font-semibold text-muted-fg sm:grid-cols-[40px_1fr_130px]">
                 <span>Note</span>
                 <span>Bezeichnung</span>
                 <span>Ab %</span>
@@ -56,7 +92,7 @@ export default async function TeachNotenschluesselPage() {
               {scale.entries.map((e) => (
                 <div
                   key={e.grade}
-                  className="grid grid-cols-[40px_1fr_130px] items-center gap-2 border-b border-border last:border-b-0 px-5 py-3"
+                  className="grid grid-cols-[40px_1fr_110px] items-center gap-2 border-b border-border px-5 py-3 last:border-b-0 sm:grid-cols-[40px_1fr_130px]"
                 >
                   <span className="text-xl font-bold">{e.grade}</span>
                   <span className="text-sm">{e.label}</span>

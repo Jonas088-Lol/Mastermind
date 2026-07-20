@@ -5,11 +5,14 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { can } from "@/lib/permissions";
 
 export async function createTeacherExercise(formData: FormData) {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "teacher") redirect("/");
+  // Von der Schulleitung sperrbar
+  if (!(await can(session, "teacher.create_exercises"))) redirect("/teach/uebungen");
 
   const classId = String(formData.get("classId") ?? "").trim();
   const subject = String(formData.get("subject") ?? "").trim();

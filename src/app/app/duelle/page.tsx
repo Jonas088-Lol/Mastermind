@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { COIN_REWARDS } from "@/lib/coins";
 import { acceptDuel, declineDuel, rematchDuel, sendChallenge } from "./actions";
 import { AutoRefresh } from "@/components/app/AutoRefresh";
+import { can } from "@/lib/permissions";
 
 export const metadata: Metadata = { title: "Duelle" };
 
@@ -26,6 +27,8 @@ export default async function DuellePage() {
   const session = await getSession();
   if (!session) redirect("/login");
   if (effectiveRole(session) !== "student") redirect("/");
+  // Von der Schulleitung sperrbar
+  if (!(await can(session, "student.duels"))) redirect("/app");
   const userId = session.userId;
 
   const now = new Date();
