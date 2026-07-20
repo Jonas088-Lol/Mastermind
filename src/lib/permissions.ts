@@ -20,6 +20,7 @@ export type Capability =
   | "teacher.create_exercises"
   | "teacher.ai_generator"
   | "teacher.parent_slots"
+  | "teacher.parent_letters"
   // Schüler
   | "student.ai_tutor"
   | "student.community"
@@ -64,6 +65,15 @@ export const CAPABILITIES: CapabilityDef[] = [
     label: "Elternsprechtag-Termine anbieten",
     description: "Lehrkräfte können eigene Gesprächstermine eintragen.",
     default: true,
+  },
+  {
+    id: "teacher.parent_letters",
+    role: "teacher",
+    group: "Kommunikation",
+    label: "Eigene Elternbriefe einstellen",
+    description:
+      "Lehrkräfte können eigene Elternbriefe hochladen; Eltern bestätigen digital. Ohne dieses Recht bleibt das der Verwaltung vorbehalten.",
+    default: false,
   },
   {
     id: "teacher.create_exercises",

@@ -21,6 +21,8 @@ import { fetchNotifications } from "@/lib/notifications";
 import { enforceStaff2FA } from "@/lib/auth/require-2fa";
 import { prisma } from "@/lib/db/client";
 import { can } from "@/lib/permissions";
+import { getWorkspaceMode } from "@/lib/workspace-prefs";
+import { HUB_ABSORBED_HREFS } from "@/lib/create-hub";
 
 export default async function TeachLayout({
   children,
@@ -68,10 +70,12 @@ export default async function TeachLayout({
 
   const corrBadge = pendingCorrections > 0 ? String(pendingCorrections) : undefined;
   const mayBroadcast = await can(session, "teacher.broadcast");
+  const workspaceMode = await getWorkspaceMode(session.userId);
   const msgBadge = unreadThreadCount > 0 ? String(unreadThreadCount) : undefined;
 
   const items: NavItem[] = [
     { href: "/teach", label: "Dashboard", icon: "home", exact: true },
+    { href: "/teach/erstellen", label: "Erstellen", icon: "pencil" },
     { href: "/teach/klassen", label: "Klassen", icon: "users" },
     { href: "/teach/aufgaben", label: "Aufgaben", icon: "checkSquare" },
     { href: "/teach/vorlagen", label: "Aufgaben-Vorlagen", icon: "layers" },
@@ -105,6 +109,12 @@ export default async function TeachLayout({
     { href: "/teach/masterspace", label: "MasterSpace", icon: "compass", modal: "masterspace" },
   ];
 
+  // Zusammengefasst: Reiter ausblenden, die der Erstellen-Hub abdeckt.
+  const visibleItems =
+    workspaceMode === "unified"
+      ? items.filter((i) => !HUB_ABSORBED_HREFS.includes(i.href))
+      : items;
+
   const bottomItems: NavItem[] = [
     { href: "/teach/profil", label: "Profil", icon: "userCircle" },
     { href: "/teach/einstellungen", label: "Einstellungen", icon: "settings" },
@@ -121,7 +131,7 @@ export default async function TeachLayout({
   const schoolDisplayName = branding?.brandName ?? branding?.name;
 
   // Suche steht immer ganz unten, ohne Kategorie
-  const navAll = [...items, { href: "/search", label: "Suche", icon: "search" as const }];
+  const navAll = [...visibleItems, { href: "/search", label: "Suche", icon: "search" as const }];
   const navOverride = await getNavOverride(session.userId, "teacher");
   const navLayout = mergeNavLayout("teacher", navAll, navOverride);
 

@@ -1,7 +1,7 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { CheckCircle2, Clock, XCircle } from "lucide-react";
+import { CheckCircle2, Clock, XCircle, FileText } from "lucide-react";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { prisma } from "@/lib/db/client";
@@ -94,7 +94,21 @@ export default async function EinwilligungenPage() {
               <CardHeader>
                 <div className="flex flex-col gap-1.5">
                   <h2 className="font-semibold text-fg">{form.title}</h2>
-                  <p className="text-sm text-muted-fg">{form.description}</p>
+                  {form.createdByName && (
+                    <p className="text-xs text-muted-fg">von {form.createdByName}</p>
+                  )}
+                  <p className="whitespace-pre-line text-sm text-muted-fg">{form.description}</p>
+                  {form.fileUrl && (
+                    <a
+                      href={form.fileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-fit items-center gap-1.5 rounded-lg border border-border px-2.5 py-1.5 text-xs font-semibold text-brand transition-colors hover:border-brand/40 hover:bg-surface"
+                    >
+                      <FileText className="size-3.5" />
+                      {form.fileName ?? "Elternbrief öffnen"}
+                    </a>
+                  )}
                 </div>
                 <div className="flex shrink-0 flex-col items-end gap-2">
                   {form.deadline && (

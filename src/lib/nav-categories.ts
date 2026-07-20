@@ -110,6 +110,7 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
       items: [
         "/teach/generator",
         "/teach/arbeitsblatter",
+        "/teach/erstellen",
         "/teach/aufgaben",
         "/teach/hausaufgaben",
         "/teach/uebungen",

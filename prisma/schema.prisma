@@ -1576,6 +1576,12 @@ model ConsentForm {
   deadline    DateTime?
   isActive    Boolean  @default(true)
   targetClassIds String? // JSON — null = all classes
+  // Von einer Lehrkraft hochgeladener Elternbrief (PDF/Bild). Leer = reiner Text.
+  fileUrl     String?
+  fileName    String?
+  // Wer den Brief eingestellt hat — Lehrkraft oder Verwaltung.
+  createdById String?
+  createdByName String?
   createdAt   DateTime @default(now())
 
   responses   ConsentResponse[]
