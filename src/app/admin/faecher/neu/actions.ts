@@ -28,10 +28,13 @@ export async function createSubject(formData: FormData): Promise<void> {
   const color = (formData.get("color") as string | null)?.trim() ?? "#6366f1";
   const rawCategory = (formData.get("category") as string | null)?.trim() || "allgemein";
 
-  // Bei „Sonstiges" zählt der frei eingegebene Text.
+  // Der Fachtyp kann frei eingegeben sein („Sonstiges" oder ein gemerkter
+  // eigener Typ) — deshalb immer kappen. CUSTOM_VALUE ist nur noch ein
+  // Rückfall für alte Formulare ohne das versteckte Feld.
   const custom = (formData.get("customCategory") as string | null)?.trim() ?? "";
-  const category =
-    rawCategory === CUSTOM_VALUE ? custom.slice(0, 40) || "allgemein" : rawCategory;
+  const category = (
+    rawCategory === CUSTOM_VALUE ? custom || "allgemein" : rawCategory
+  ).slice(0, 40);
 
   if (!name || !shortName) return;
 
@@ -73,5 +76,57 @@ export async function toggleSubjectCategory(label: string): Promise<string[]> {
   });
 
   revalidatePath("/admin/faecher/neu");
+  return next;
+}
+
+/** Gemerkte Fachtypen der Schule lesen — defensiv gegen kaputtes JSON. */
+async function readCategories(schoolId: string): Promise<string[]> {
+  const school = await prisma.school.findUnique({
+    where: { id: schoolId },
+    select: { subjectCategories: true },
+  });
+  const parsed = safeJsonParse<string[]>(school?.subjectCategories ?? null, []);
+  return Array.isArray(parsed) ? parsed.filter((c) => typeof c === "string") : [];
+}
+
+/**
+ * Einen gemerkten Fachtyp umbenennen.
+ *
+ * Bereits angelegte Fächer behalten ihren alten Fachtyp-Text — deshalb werden
+ * sie mit umgeschrieben, sonst zerfiele die Gruppierung in der Fächerliste.
+ */
+export async function renameSubjectCategory(
+  oldLabel: string,
+  newLabel: string,
+): Promise<string[]> {
+  const session = await requireSubjectAdmin();
+  if (!session.schoolId) return [];
+
+  const from = oldLabel.trim().slice(0, 40);
+  const to = newLabel.trim().slice(0, 40);
+  if (!from || !to || from === to) return readCategories(session.schoolId);
+
+  const list = await readCategories(session.schoolId);
+  if (!list.some((c) => c.toLowerCase() === from.toLowerCase())) return list;
+
+  // Kein Duplikat erzeugen, wenn der neue Name schon existiert.
+  const withoutBoth = list.filter(
+    (c) => c.toLowerCase() !== from.toLowerCase() && c.toLowerCase() !== to.toLowerCase(),
+  );
+  const next = [...withoutBoth, to].slice(-MAX_FAVORITES);
+
+  await prisma.$transaction([
+    prisma.school.update({
+      where: { id: session.schoolId },
+      data: { subjectCategories: JSON.stringify(next) },
+    }),
+    prisma.subject.updateMany({
+      where: { schoolId: session.schoolId, category: from },
+      data: { category: to },
+    }),
+  ]);
+
+  revalidatePath("/admin/faecher/neu");
+  revalidatePath("/admin/faecher");
   return next;
 }
