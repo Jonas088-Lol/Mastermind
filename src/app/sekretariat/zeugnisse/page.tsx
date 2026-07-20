@@ -108,26 +108,6 @@ export default async function ZeugnissePage({
     ? gradedSubjects.filter((s) => s.id === subjectFilter)
     : gradedSubjects;
 
-  // Vor-/zurückblättern durch die Fächer; am Rand wird umgebrochen, damit die
-  // Pfeile nie ins Leere zeigen.
-  const subjectIndex = subjectFilter
-    ? gradedSubjects.findIndex((s) => s.id === subjectFilter)
-    : -1;
-  const prevSubject =
-    gradedSubjects.length > 0
-      ? gradedSubjects[
-          subjectIndex <= 0 ? gradedSubjects.length - 1 : subjectIndex - 1
-        ]
-      : undefined;
-  const nextSubject =
-    gradedSubjects.length > 0
-      ? gradedSubjects[
-          subjectIndex === -1 || subjectIndex === gradedSubjects.length - 1
-            ? 0
-            : subjectIndex + 1
-        ]
-      : undefined;
-
   // ── Durchschnitte je Schüler ──────────────────────────────────────────────
   type StudentRow = {
     id: string;
@@ -413,21 +393,8 @@ export default async function ZeugnissePage({
           <p className="text-sm text-muted-fg">Noch keine Noten eingetragen.</p>
         </div>
       ) : (
-        <div className="flex items-stretch gap-2">
-          {/* Fach zurück — auf dem Handy schmaler, damit die Tabelle Platz behält */}
-          {gradedSubjects.length > 1 && prevSubject && (
-            <Link
-              href={hrefWith({ subject: prevSubject.id, page: undefined })}
-              aria-label={`Vorheriges Fach: ${prevSubject.name}`}
-              title={`Vorheriges Fach: ${prevSubject.name}`}
-              className="group flex shrink-0 items-center rounded-lg border border-border bg-surface px-1 transition-colors hover:border-brand/40 hover:bg-bg sm:px-2"
-            >
-              <ChevronLeft className="size-4 text-muted-fg transition-colors group-hover:text-brand" />
-            </Link>
-          )}
-
-          <div className="min-w-0 flex-1 overflow-x-auto border border-border">
-            <table className="w-full min-w-[600px] text-sm">
+        <div className="overflow-x-auto border border-border">
+          <table className="w-full min-w-[600px] text-sm">
             <thead>
               <tr className="border-b border-border bg-surface text-xs font-semibold uppercase tracking-wider text-muted-fg">
                 <th className="sticky left-0 bg-surface px-5 py-3 text-left">Schüler</th>
@@ -471,20 +438,7 @@ export default async function ZeugnissePage({
                 </tr>
               ))}
             </tbody>
-            </table>
-          </div>
-
-          {/* Fach vor */}
-          {gradedSubjects.length > 1 && nextSubject && (
-            <Link
-              href={hrefWith({ subject: nextSubject.id, page: undefined })}
-              aria-label={`Nächstes Fach: ${nextSubject.name}`}
-              title={`Nächstes Fach: ${nextSubject.name}`}
-              className="group flex shrink-0 items-center rounded-lg border border-border bg-surface px-1 transition-colors hover:border-brand/40 hover:bg-bg sm:px-2"
-            >
-              <ChevronRight className="size-4 text-muted-fg transition-colors group-hover:text-brand" />
-            </Link>
-          )}
+          </table>
         </div>
       )}
 
