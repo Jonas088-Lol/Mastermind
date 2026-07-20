@@ -17,7 +17,9 @@ export type AuditAction =
   | "data.export"
   | "data.deletion_request"
   | "demo.create"
-  | "demo.extend";
+  | "demo.extend"
+  | "platform.update_published"
+  | "platform.update_retracted";
 
 export async function auditLog(opts: {
   action: AuditAction;

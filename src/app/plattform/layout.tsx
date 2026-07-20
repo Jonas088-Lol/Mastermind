@@ -21,6 +21,7 @@ const plattformNavItems: NavItem[] = [
   { href: "/plattform/support",        label: "Support",      icon: "messageSquare" },
   { href: "/plattform/demo-zugriff",   label: "Demo-Zugriff", icon: "sparkles" },
   { href: "/plattform/aktive-demos",   label: "Aktive Demos", icon: "monitor" },
+  { href: "/plattform/updates",        label: "Updates",      icon: "megaphone" },
   { href: "/plattform/flags",          label: "Flags",        icon: "shield" },
   { href: "/plattform/audit",          label: "Audit-Log",    icon: "lineChart" },
   { href: "/plattform/kb",             label: "Wissensbasis", icon: "bookOpen" },

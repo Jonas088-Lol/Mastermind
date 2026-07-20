@@ -7,6 +7,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db/client";
 import { hashPassword } from "@/lib/auth/passwords";
 import { effectiveRole, getSession } from "@/lib/session";
+import { sendAccountVerification } from "@/lib/account-invite";
 
 export async function registerNewStudent(formData: FormData): Promise<void> {
   const session = await getSession();
@@ -56,6 +57,19 @@ export async function registerNewStudent(formData: FormData): Promise<void> {
       classId: classId || null,
       klasse: klasse || null,
     },
+  });
+
+  // Bestätigungs-Mail mit Verifizierungslink — dort setzt der Schüler sein
+  // eigenes Passwort (das Temp-Passwort wird nie verschickt).
+  const school = await prisma.school.findUnique({
+    where: { id: schoolId },
+    select: { name: true },
+  });
+  await sendAccountVerification({
+    userId: student.id,
+    email: student.email,
+    name,
+    schoolName: school?.name,
   });
 
   if (parentEmail) {

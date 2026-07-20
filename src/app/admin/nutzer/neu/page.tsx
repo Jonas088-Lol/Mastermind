@@ -10,6 +10,7 @@ import { effectiveRole, getSession } from "@/lib/session";
 import { hashPassword } from "@/lib/auth/passwords";
 import { STUDENT_FEATURES, serializeStudentFeatures } from "@/lib/student-features";
 import { canManageSchool } from "@/lib/school-admin";
+import { sendAccountVerification } from "@/lib/account-invite";
 
 export const metadata: Metadata = { title: "Nutzer einladen" };
 
@@ -18,7 +19,9 @@ async function inviteUser(formData: FormData) {
   const session = await getSession();
   if (!session) redirect("/login");
   const role = effectiveRole(session);
-  if (role !== "admin" && role !== "super") redirect("/");
+  // Gleicher Kreis wie der Seiten-Guard — vorher sperrte die Action
+  // Rektor/Sekretariat aus, obwohl sie das Formular sehen konnten.
+  if (!canManageSchool(role) && role !== "super") redirect("/");
 
   const name = (formData.get("name") as string | null)?.trim() ?? "";
   const email = (formData.get("email") as string | null)?.trim().toLowerCase() ?? "";
@@ -34,7 +37,7 @@ async function inviteUser(formData: FormData) {
   const tempPassword = randomBytes(8).toString("hex");
   const passwordHash = await hashPassword(tempPassword);
 
-  await prisma.user.create({
+  const created = await prisma.user.create({
     data: {
       name,
       email,
@@ -44,6 +47,16 @@ async function inviteUser(formData: FormData) {
       studentFeatures: features,
       schoolId: session.schoolId ?? null,
     },
+  });
+
+  const school = session.schoolId
+    ? await prisma.school.findUnique({ where: { id: session.schoolId }, select: { name: true } })
+    : null;
+  await sendAccountVerification({
+    userId: created.id,
+    email,
+    name,
+    schoolName: school?.name,
   });
 
   revalidatePath("/admin/nutzer");
@@ -77,8 +90,8 @@ export default async function NutzerNeuPage() {
           Nutzer einladen
         </h1>
         <p className="mt-1 text-sm text-muted-fg">
-          Ein temporäres Passwort wird automatisch generiert. Der Nutzer kann es
-          nach dem ersten Login ändern.
+          Der Nutzer erhält eine Bestätigungs-Mail mit einem Verifizierungslink
+          und legt darüber sein eigenes Passwort fest.
         </p>
       </header>
 

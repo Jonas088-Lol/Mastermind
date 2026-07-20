@@ -2,6 +2,7 @@
 import { redirect } from "next/navigation";
 import { Sidebar } from "@/components/app/Sidebar";
 import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
+import { PlatformUpdateGate } from "@/components/PlatformUpdateGate";
 import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
 import { SchoolBrandingInjector } from "@/components/SchoolBrandingInjector";
@@ -106,6 +107,7 @@ export default async function AdminLayout({
           {children}
         </main>
         <BottomNav items={adminBottomItems} moreItems={navAll} categories={navLayout.categories} pinnedItems={navLayout.pinned} user={displayUser(session)} />
+        <PlatformUpdateGate />
       </div>
     </div>
   );

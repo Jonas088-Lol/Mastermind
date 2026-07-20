@@ -21,6 +21,7 @@ import { InstallPrompt } from "@/components/app/InstallPrompt";
 import { AppShell } from "@/components/app/AppShell";
 import { MasterSpaceModal } from "@/components/masterspace/MasterSpaceModal";
 import { ConsentBanner } from "@/components/app/ConsentBanner";
+import { PlatformUpdateGate } from "@/components/PlatformUpdateGate";
 import { ActivityTracker } from "@/components/app/ActivityTracker";
 import { BossBar } from "@/components/app/BossBar";
 import { getActiveEvents } from "@/lib/settings";
@@ -235,6 +236,7 @@ export default async function AppLayout({
         <AppShell />
         <MasterSpaceModal />
         <ConsentBanner />
+        <PlatformUpdateGate />
         <ActivityTracker hasConsent={userConsent?.activityTracking ?? false} />
       </div>
     </div>

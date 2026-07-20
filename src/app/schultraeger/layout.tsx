@@ -2,6 +2,7 @@
 import { redirect } from "next/navigation";
 import { Sidebar, type NavItem } from "@/components/app/Sidebar";
 import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
+import { PlatformUpdateGate } from "@/components/PlatformUpdateGate";
 import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
 import { SchoolBrandingInjector } from "@/components/SchoolBrandingInjector";
@@ -62,6 +63,7 @@ export default async function SchultraegerLayout({ children }: { children: React
           {children}
         </main>
         <BottomNav items={bottomNav} moreItems={navItems} user={displayUser(session)} />
+        <PlatformUpdateGate />
       </div>
     </div>
   );

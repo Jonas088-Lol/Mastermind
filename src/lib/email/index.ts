@@ -140,6 +140,47 @@ export function passwordResetEmail(opts: {
   };
 }
 
+export function accountVerifyEmail(opts: {
+  email: string;
+  name: string;
+  schoolName?: string | null;
+  url: string;
+  expiresHours: number;
+}): EmailMessage {
+  return {
+    to: opts.email,
+    subject: "Dein MasterMind-Account — E-Mail bestätigen",
+    text:
+      `Hallo ${opts.name},\n\n` +
+      `für dich wurde ${opts.schoolName ? `von ${opts.schoolName} ` : ""}ein MasterMind-Account angelegt.\n\n` +
+      `Bestätige deine E-Mail-Adresse und lege dein Passwort fest:\n\n` +
+      `${opts.url}\n\n` +
+      `Der Link gilt ${opts.expiresHours} Stunden und kann nur einmal verwendet werden.\n` +
+      `Danach kannst du dich jederzeit unter /login anmelden.\n\n` +
+      `Falls du diesen Account nicht erwartest, ignoriere diese E-Mail.\n\n` +
+      `— MasterMind\n`,
+  };
+}
+
+export function platformUpdateEmail(opts: {
+  email: string;
+  title: string;
+  body: string;
+}): EmailMessage {
+  return {
+    to: opts.email,
+    subject: `MasterMind-Update: ${opts.title}`,
+    text:
+      `Hallo,\n\n` +
+      `es gibt Neuigkeiten in MasterMind:\n\n` +
+      `${opts.title}\n` +
+      `${"—".repeat(Math.min(opts.title.length, 40))}\n\n` +
+      `${opts.body}\n\n` +
+      `Viel Spaß mit dem Update!\n\n` +
+      `— Das MasterMind-Team\n`,
+  };
+}
+
 export function twoFactorResetEmail(opts: { email: string; adminName: string }): EmailMessage {
   return {
     to: opts.email,

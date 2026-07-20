@@ -8,7 +8,8 @@ export type SettingKey =
   | "MAINTENANCE_MODE"
   | "SUPER_ADMIN_EMAILS"
   | "BOSS_RUSH_ACTIVE"
-  | "ANNOUNCE_BANNER";
+  | "ANNOUNCE_BANNER"
+  | "PLATFORM_UPDATE";
 
 export async function getSetting(key: SettingKey): Promise<string | null> {
   const row = await prisma.globalSetting.findUnique({ where: { key } });

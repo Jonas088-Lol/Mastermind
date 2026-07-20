@@ -2,6 +2,7 @@
 import { redirect } from "next/navigation";
 import { Sidebar, type NavItem } from "@/components/app/Sidebar";
 import { BottomNav, type BottomNavItem } from "@/components/app/BottomNav";
+import { PlatformUpdateGate } from "@/components/PlatformUpdateGate";
 import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
 import {
@@ -111,6 +112,7 @@ export default async function ElternLayout({
           {children}
         </main>
         <BottomNav items={mobileNav} moreItems={[...navAll, ...bottomItems]} categories={navLayout.categories} pinnedItems={navLayout.pinned} user={displayUser(session)} />
+        <PlatformUpdateGate />
       </div>
     </div>
   );

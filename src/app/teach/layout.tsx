@@ -6,6 +6,7 @@ import { AppHeader } from "@/components/app/AppHeader";
 import { ImpersonationBar } from "@/components/ImpersonationBar";
 import { SchoolBrandingInjector } from "@/components/SchoolBrandingInjector";
 import { MasterSpaceModal } from "@/components/masterspace/MasterSpaceModal";
+import { PlatformUpdateGate } from "@/components/PlatformUpdateGate";
 import {
   ROLE_HOME,
   displayUser,
@@ -163,6 +164,7 @@ export default async function TeachLayout({
         </main>
         <BottomNav items={mobileNav} moreItems={[...navAll, ...bottomItems]} categories={navLayout.categories} pinnedItems={navLayout.pinned} user={displayUser(session)} />
         <MasterSpaceModal />
+        <PlatformUpdateGate />
       </div>
     </div>
   );
