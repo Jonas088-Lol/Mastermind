@@ -5,7 +5,10 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { effectiveRole, getSession } from "@/lib/session";
+import { prisma } from "@/lib/db/client";
+import { safeJsonParse } from "@/lib/safe-json";
 import { createSubject } from "./actions";
+import { SubjectTypePicker } from "./SubjectTypePicker";
 import { canManageSchool, canAccessArea } from "@/lib/school-admin";
 
 export const metadata: Metadata = { title: "Fach erstellen · Admin" };
@@ -30,6 +33,16 @@ export default async function NeuesFachPage() {
   if (!session || !canManageSchool(effectiveRole(session))) redirect("/admin");
   if (!canAccessArea(effectiveRole(session), "faecher")) redirect("/admin");
 
+  // Schulweit gemerkte eigene Fachtypen
+  const school = session.schoolId
+    ? await prisma.school.findUnique({
+        where: { id: session.schoolId },
+        select: { subjectCategories: true },
+      })
+    : null;
+  const parsed = safeJsonParse<string[]>(school?.subjectCategories ?? null, []);
+  const favorites = Array.isArray(parsed) ? parsed.filter((c) => typeof c === "string") : [];
+
   return (
     <div className="mx-auto flex max-w-xl flex-col gap-6">
       <header className="flex items-center gap-3">
@@ -43,26 +56,7 @@ export default async function NeuesFachPage() {
       </header>
 
       <form action={createSubject} className="flex flex-col gap-5">
-        {/* Fachtyp */}
-        <div className="flex flex-col gap-2">
-          <label className="text-sm font-semibold">Fachtyp *</label>
-          <div className="flex flex-wrap gap-2">
-            {SUBJECT_CATEGORIES.map((cat, i) => (
-              <label key={cat.value} className="cursor-pointer">
-                <input
-                  type="radio"
-                  name="category"
-                  value={cat.value}
-                  defaultChecked={i === 0}
-                  className="peer sr-only"
-                />
-                <span className="inline-flex items-center rounded-xl border border-border px-3 py-1.5 text-xs font-semibold text-muted-fg transition-colors peer-checked:border-brand peer-checked:bg-brand/10 peer-checked:text-brand">
-                  {cat.label}
-                </span>
-              </label>
-            ))}
-          </div>
-        </div>
+        <SubjectTypePicker presets={SUBJECT_CATEGORIES} favorites={favorites} />
 
         {/* Name */}
         <div className="flex flex-col gap-1.5">

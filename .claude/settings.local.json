@@ -16,7 +16,8 @@
       "Bash(awk '/^model ParentTeacherSlot/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
       "Bash(awk '/^model SubstitutionEntry/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
       "Bash(awk '/^model TimetableEntry/{f=1} f{print} /^}/{if\\(f\\)exit}' prisma/schema.prisma)",
-      "Bash(grep -n \"onChange={undefined}\\\\|disabled$\" src/app/admin/vertretungsplan/page.tsx)"
+      "Bash(grep -n \"onChange={undefined}\\\\|disabled$\" src/app/admin/vertretungsplan/page.tsx)",
+      "Bash(python3 -c ' *)"
     ]
   }
 }

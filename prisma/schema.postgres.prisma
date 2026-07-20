@@ -89,6 +89,9 @@ model School {
   // Rollenrechte je Schule — JSON: { [rolle]: { [faehigkeit]: boolean } }.
   // Leer = Standardrechte aus src/lib/permissions.ts.
   rolePermissions  String   @default("{}")
+  // Eigene Fachtypen ("Sonstiges"), die per Stern favorisiert wurden.
+  // JSON-Array von Strings, z. B. ["Förderunterricht","Ganztag"].
+  subjectCategories String  @default("[]")
   mailboxAddress   String?  // Schul-E-Mail-Adresse für das Postfach (z.B. info@schule.de)
   mailboxName      String?  // Anzeigename für ausgehende Mails
   createdAt        DateTime @default(now())
