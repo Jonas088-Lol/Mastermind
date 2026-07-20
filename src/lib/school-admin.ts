@@ -36,6 +36,9 @@ export type SchoolArea =
  * Alles, was die Schule als Ganzes betrifft oder Außenwirkung/Verantwortung hat.
  */
 export const RECTOR_AREAS: SchoolArea[] = [
+  // Die Schulleitung verwaltet ihr Personal — ohne diesen Bereich gab es
+  // keinen Weg, Lehrkräfte anzulegen oder zu bearbeiten.
+  "nutzer",
   "branding",
   "lizenz",
   "berichte",
@@ -55,6 +58,7 @@ export const RECTOR_AREAS: SchoolArea[] = [
  */
 export const SECRETARY_AREAS: SchoolArea[] = [
   "nutzer",
+  "einwilligungen",
   "klassen",
   "faecher",
   "stundenplan",

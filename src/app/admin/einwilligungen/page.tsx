@@ -105,6 +105,18 @@ export default async function AdminEinwilligungenPage({ searchParams }: PageProp
                     className="w-full border border-border bg-bg px-3 py-2 text-sm resize-none"
                   />
                 </div>
+                <div className="sm:col-span-2">
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">
+                    Elternbrief als Datei (optional)
+                  </label>
+                  <input
+                    type="file"
+                    name="file"
+                    accept=".pdf,.png,.jpg,.jpeg,.webp"
+                    className="w-full border border-border bg-bg px-3 py-2 text-sm file:mr-3 file:border-0 file:bg-surface file:px-2 file:py-1 file:text-xs file:font-semibold file:text-fg"
+                  />
+                  <p className="mt-1 text-xs text-muted-fg">PDF, PNG, JPEG oder WebP · max. 10 MB</p>
+                </div>
                 <div>
                   <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-muted-fg">
                     Frist (optional)
