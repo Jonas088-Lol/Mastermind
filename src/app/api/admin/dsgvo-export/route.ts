@@ -19,7 +19,7 @@ function csvRow(values: (string | number | boolean | null | undefined)[]): strin
 
 export async function GET() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") {
+  if (!session || effectiveRole(session) !== "rector") {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

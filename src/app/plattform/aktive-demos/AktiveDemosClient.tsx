@@ -2,7 +2,7 @@
 "use client";
 
 import { useMemo, useState, useTransition } from "react";
-import { Eye, EyeOff, Search, Clock, CalendarClock, Plus } from "lucide-react";
+import { Eye, EyeOff, Search, Clock, CalendarClock, Plus, Copy, Check } from "lucide-react";
 import { extendDemo } from "./actions";
 
 export interface DemoBox {
@@ -28,7 +28,14 @@ function formatRemaining(ms: number): string {
 export function AktiveDemosClient({ demos }: { demos: DemoBox[] }) {
   const [search, setSearch] = useState("");
   const [revealed, setRevealed] = useState<Set<string>>(new Set());
+  const [copiedId, setCopiedId] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
+
+  async function copyPassword(id: string, password: string) {
+    await navigator.clipboard.writeText(password);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId((prev) => (prev === id ? null : prev)), 2000);
+  }
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
@@ -91,6 +98,14 @@ export function AktiveDemosClient({ demos }: { demos: DemoBox[] }) {
                     className="shrink-0 text-muted-fg transition-colors hover:text-fg"
                   >
                     {show ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => copyPassword(d.id, d.password)}
+                    aria-label="Passwort kopieren"
+                    className="shrink-0 text-muted-fg transition-colors hover:text-fg"
+                  >
+                    {copiedId === d.id ? <Check className="size-4 text-success" /> : <Copy className="size-4" />}
                   </button>
                 </div>
 

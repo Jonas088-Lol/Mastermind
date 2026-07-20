@@ -312,11 +312,12 @@ export default async function AdminBerichtePage() {
           <Download className="size-5 text-muted-fg" strokeWidth={1.75} />
         </CardHeader>
         <CardBody className="flex flex-col gap-4">
-          <div className="grid gap-3 sm:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { href: "/api/admin/export/nutzer", label: "Nutzerliste", sub: "Name, E-Mail, Rolle, Klasse" },
               { href: "/api/admin/export/noten", label: "Noten", sub: "Schüler, Fach, Note, Art" },
               { href: "/api/admin/export/fehlzeiten", label: "Fehlzeiten", sub: "Anwesenheit & Gründe" },
+              { href: "/api/admin/export/asv", label: "ASV-Export", sub: "Schülerdaten im ASV-Format (Bayern)" },
             ].map((e) => (
               <a
                 key={e.href}

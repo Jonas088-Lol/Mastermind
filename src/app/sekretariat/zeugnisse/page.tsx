@@ -405,6 +405,7 @@ export default async function ZeugnissePage({
                   </th>
                 ))}
                 <th className="px-5 py-3 text-center">Gesamt-Ø</th>
+                <th className="px-5 py-3 text-center">Zeugnis</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -434,6 +435,14 @@ export default async function ZeugnissePage({
                     ) : (
                       <span className="text-muted-fg/40">—</span>
                     )}
+                  </td>
+                  <td className="px-5 py-3 text-center">
+                    <Link
+                      href={`/sekretariat/zeugnisse/${row.id}`}
+                      className="text-xs font-semibold text-brand hover:underline"
+                    >
+                      Öffnen
+                    </Link>
                   </td>
                 </tr>
               ))}

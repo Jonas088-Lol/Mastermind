@@ -51,6 +51,10 @@ export const RECTOR_AREAS: SchoolArea[] = [
   "integrationen",
   "einwilligungen",
   "rechte",
+  // Schulverwaltung insgesamt: Direktoren erstellen Vertretungspläne und
+  // legen Elternsprechtage an (nicht nur das Sekretariat).
+  "vertretungsplan",
+  "elternsprechtag",
 ];
 
 /**

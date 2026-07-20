@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db/client";
 import { effectiveRole, getSession } from "@/lib/session";
+import { canManageSchool } from "@/lib/school-admin";
 import { auditLog } from "@/lib/audit";
 import { csvResponse, csvRow } from "../csv";
 
@@ -18,7 +19,7 @@ const ROLE_DE: Record<string, string> = {
 
 export async function GET() {
   const session = await getSession();
-  if (!session || effectiveRole(session) !== "admin") {
+  if (!session || !canManageSchool(effectiveRole(session))) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

@@ -21,6 +21,8 @@ export const RECTOR_NAV: NavItem[] = [
   { href: "/rektor/broadcast",     label: "Broadcast",          icon: "megaphone" },
   // Verwaltungsbereiche der Schulleitung
   { href: "/admin/nutzer",          label: "Nutzer & Lehrer", icon: "users" },
+  { href: "/admin/vertretungsplan", label: "Vertretungsplan", icon: "refreshCw" },
+  { href: "/admin/elternsprechtag", label: "Elternsprechtag", icon: "calendarDays" },
   { href: "/admin/berichte",        label: "Berichte",        icon: "barChart3" },
   { href: "/admin/notenspiegel",    label: "Notenspiegel",    icon: "barChart3" },
   { href: "/admin/notenschluessel", label: "Notenschlüssel",  icon: "calculator" },

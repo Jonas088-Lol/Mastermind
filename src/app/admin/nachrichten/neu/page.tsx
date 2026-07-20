@@ -33,6 +33,12 @@ export default async function AdminNachrichtNeuPage() {
     orderBy: [{ role: "asc" }, { name: "asc" }],
   });
 
+  const classes = await prisma.schoolClass.findMany({
+    where: { schoolId: session.schoolId ?? undefined },
+    select: { id: true, name: true },
+    orderBy: { name: "asc" },
+  });
+
   const byRole = new Map<string, typeof users>();
   for (const u of users) {
     if (!byRole.has(u.role)) byRole.set(u.role, []);
@@ -55,7 +61,7 @@ export default async function AdminNachrichtNeuPage() {
         <div className="flex flex-col gap-1.5">
           <label htmlFor="recipientId" className="text-sm font-semibold">Empfänger</label>
           <select
-            id="recipientId" name="recipientId" required
+            id="recipientId" name="recipientId"
             className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
           >
             <option value="">Empfänger auswählen…</option>
@@ -68,6 +74,24 @@ export default async function AdminNachrichtNeuPage() {
             ))}
           </select>
         </div>
+
+        {classes.length > 0 && (
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor="classId" className="text-sm font-semibold">Oder an ganze Klasse</label>
+            <select
+              id="classId" name="classId"
+              className="h-10 border border-border bg-bg px-3 text-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
+            >
+              <option value="">Keine Klasse — nur Einzelempfänger</option>
+              {classes.map((c) => (
+                <option key={c.id} value={c.id}>Klasse {c.name} (alle Schüler)</option>
+              ))}
+            </select>
+            <p className="text-xs text-muted-fg">
+              Bei Auswahl einer Klasse geht die Nachricht an alle Schüler der Klasse; der Einzelempfänger wird ignoriert.
+            </p>
+          </div>
+        )}
 
         <div className="flex flex-col gap-1.5">
           <label htmlFor="subject" className="text-sm font-semibold">Betreff</label>
