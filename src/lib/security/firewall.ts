@@ -152,7 +152,11 @@ function checkRateLimit(ip: string, pathname: string, method: string): FirewallR
 const SQL_RE = /(\b(select|insert|update|delete|drop|truncate|union|exec|execute|declare|cast|convert|xp_|sp_|information_schema|sys\.|char\(|nchar\()\b|'[\s\S]*?--|;[\s\S]*?--|\/\*[\s\S]*?\*\/)/i;
 
 // XSS
-const XSS_RE = /<[\s\S]*?script[\s\S]*?>|javascript\s*:|data\s*:\s*text\/html|on\w+\s*=|<\s*iframe|<\s*object|<\s*embed|vbscript\s*:/i;
+// Event-Handler werden namentlich geprüft: das frühere `on\w+=` matchte auch
+// harmlose Query-Parameter wie `?done=0` ("d-one-=") und blockte legitime
+// Requests (Vertretungsplan-Ganztagsausfall). Jetzt nur echte on*-Handler,
+// jeweils mit Wortgrenze davor, damit "done="/"phone=" u. Ä. nicht triggern.
+const XSS_RE = /<[\s\S]*?script[\s\S]*?>|javascript\s*:|data\s*:\s*text\/html|\bon(abort|blur|change|click|contextmenu|copy|cut|dblclick|drag|drop|error|focus|input|keydown|keypress|keyup|load|mousedown|mousemove|mouseout|mouseover|mouseup|paste|pointer\w*|reset|resize|scroll|select|submit|toggle|touch\w*|unload|wheel|animation\w*|transition\w*)\s*=|<\s*iframe|<\s*object|<\s*embed|vbscript\s*:/i;
 
 // Path traversal
 const PATH_RE = /\.{2,}[/\\]|%2e{2,}%2f|%252e{2,}|\.%2f/i;

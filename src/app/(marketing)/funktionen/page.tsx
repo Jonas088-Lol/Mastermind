@@ -11,10 +11,6 @@ import {
   Users,
   ShieldCheck,
   School,
-  FileSpreadsheet,
-  Newspaper,
-  Swords,
-  MonitorPlay,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { buttonVariants } from "@/components/ui/button";
@@ -97,46 +93,6 @@ const features = [
     ],
   },
   {
-    icon: FileSpreadsheet,
-    color: "text-blue-500 bg-blue-50 dark:bg-blue-950/30",
-    title: "Office-Suite",
-    bullets: [
-      "Dokumente, Tabellen und Präsentationen direkt im Browser",
-      "Tabellen mit Formeln und Diagrammen auswerten",
-      "Fertige Vorlagen für den schnellen Start",
-    ],
-  },
-  {
-    icon: Newspaper,
-    color: "text-amber-500 bg-amber-50 dark:bg-amber-950/30",
-    title: "Schülerzeitung",
-    bullets: [
-      "Artikel in Rubriken organisieren und veröffentlichen",
-      "Kommentare fördern den Austausch in der Schulgemeinschaft",
-      "Ausgaben mit einem Klick als PDF drucken",
-    ],
-  },
-  {
-    icon: Swords,
-    color: "text-red-500 bg-red-50 dark:bg-red-950/30",
-    title: "Boss-Fights & Duelle",
-    bullets: [
-      "Boss-Fights in der Vollbild-Arena gegen Wissens-Gegner",
-      "Fragen-Duelle gegen Mitschüler mit Revanche-Funktion",
-      "Lernen wird zum spannenden Wettkampf",
-    ],
-  },
-  {
-    icon: MonitorPlay,
-    color: "text-cyan-600 bg-cyan-50 dark:bg-cyan-950/30",
-    title: "Anzeigetafel",
-    bullets: [
-      "Kiosk-Modus für Bildschirme im Schulgebäude",
-      "Vertretungsplan, Termine und Ankündigungen live",
-      "Mannschaften und Ergebnisse für alle sichtbar",
-    ],
-  },
-  {
     icon: ShieldCheck,
     color: "text-teal-600 bg-teal-50 dark:bg-teal-950/30",
     title: "DSGVO-konform",
@@ -175,10 +131,12 @@ export default function FunktionenPage() {
       <section className="border-b border-border section">
         <Container>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {features.map((f) => (
+            {features.map((f, i) => (
               <article
                 key={f.title}
-                className="flex flex-col gap-4 rounded-2xl border border-border bg-surface p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-border-strong hover:shadow-md"
+                // Aufschweben beim Laden, gestaffelt je Box (wie auf der Startseite).
+                style={{ animationDelay: `${i * 60}ms` }}
+                className="animate-slide-up flex flex-col gap-4 rounded-2xl border border-border bg-surface p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-border-strong hover:shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <div className={`inline-grid size-11 shrink-0 place-items-center rounded-2xl ${f.color}`}>
@@ -204,21 +162,21 @@ export default function FunktionenPage() {
       <section className="section">
         <Container>
           <div className="mx-auto max-w-xl text-center">
-            <h2 className="text-3xl sm:text-4xl">Bereit, MasterMind auszuprobieren?</h2>
-            <p className="mt-4 text-lg text-muted-fg">
+            <h2 className="animate-slide-up text-3xl sm:text-4xl">Bereit, MasterMind auszuprobieren?</h2>
+            <p className="animate-slide-up animate-delay-100 mt-4 text-lg text-muted-fg">
               7-tägige Testversion von MasterMind
             </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <div className="animate-slide-up animate-delay-200 mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/kontakt?betreff=demo"
-                className={buttonVariants({ size: "lg", className: "glow-on-hover" })}
+                className={buttonVariants({ size: "lg", className: "pastel-cta w-full font-bold sm:w-auto" })}
               >
                 Demo kostenlos testen
                 <ArrowRight className="size-4" />
               </Link>
               <Link
                 href="/preise"
-                className={buttonVariants({ variant: "outline", size: "lg" })}
+                className={buttonVariants({ variant: "outline", size: "lg", className: "w-full sm:w-auto" })}
               >
                 Unsere Preise
               </Link>

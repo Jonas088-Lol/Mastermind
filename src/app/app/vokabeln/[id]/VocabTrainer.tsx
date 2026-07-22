@@ -18,6 +18,33 @@ export type VocabEntry = {
 
 type Mode = "cards" | "write" | "quiz" | "match";
 
+// ── Mehrere Übersetzungen ────────────────────────────────────────────
+// Vokabeln können mehrere gültige Übersetzungen haben (z. B. "butcher" →
+// "Metzger; Metzgerin; Fleischer"). Gespeichert wird das mit ";" getrennt.
+
+/** Einzelne Übersetzungen, leere Teile entfernt. */
+export function parseTranslations(raw: string): string[] {
+  return raw.split(";").map((s) => s.trim()).filter(Boolean);
+}
+
+/** Erste Übersetzung — für kompakte Anzeigen (Quiz, Memory). */
+export function primaryTranslation(raw: string): string {
+  return parseTranslations(raw)[0] ?? raw.trim();
+}
+
+/** Alle Übersetzungen für die Anzeige, mit „, " verbunden. */
+export function formatTranslations(raw: string): string {
+  const list = parseTranslations(raw);
+  return list.length > 0 ? list.join(", ") : raw.trim();
+}
+
+/** Richtig, wenn die Eingabe zu EINER der Übersetzungen passt. */
+export function matchesTranslation(input: string, raw: string): boolean {
+  const norm = (s: string) => s.trim().toLowerCase();
+  const got = norm(input);
+  return parseTranslations(raw).some((t) => norm(t) === got);
+}
+
 interface Props {
   entries: VocabEntry[];
   listId: string;
@@ -90,13 +117,22 @@ function CardMode({ entries, color, onDone }: { entries: VocabEntry[]; color: st
         style={{ perspective: "1000px" }}
       >
         <div
+          // key an den Karten-Index: ein neues Wort hängt die Karte frisch auf
+          // der Vorderseite ein, statt von der Rückseite (Lösung!) zurück-
+          // zudrehen. Das Umdrehen per Antippen animiert weiter, weil idx
+          // dabei gleich bleibt.
+          key={idx}
           className="relative h-52 transition-all duration-500"
-          style={{ transformStyle: "preserve-3d", transform: flipped ? "rotateY(180deg)" : "rotateY(0)" }}
+          style={{
+            transformStyle: "preserve-3d",
+            WebkitTransformStyle: "preserve-3d",
+            transform: flipped ? "rotateY(180deg)" : "rotateY(0)",
+          }}
         >
           {/* Front */}
           <div
             className="absolute inset-0 flex flex-col items-center justify-center gap-3 border-2 bg-bg p-8 text-center"
-            style={{ backfaceVisibility: "hidden", borderColor: color + "60" }}
+            style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", borderColor: color + "60" }}
           >
             <p className="text-2xl font-bold">{current.word}</p>
             {current.hint && !showHint && (
@@ -115,9 +151,9 @@ function CardMode({ entries, color, onDone }: { entries: VocabEntry[]; color: st
           {/* Back */}
           <div
             className="absolute inset-0 flex flex-col items-center justify-center gap-3 border-2 bg-surface p-8 text-center"
-            style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)", borderColor: color }}
+            style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", transform: "rotateY(180deg)", borderColor: color }}
           >
-            <p className="text-2xl font-bold text-brand">{current.translation}</p>
+            <p className="text-2xl font-bold text-brand">{formatTranslations(current.translation)}</p>
             {current.example && (
               <p className="text-sm italic text-muted-fg">„{current.example}"</p>
             )}
@@ -154,7 +190,7 @@ function WriteMode({ entries, color, langTo, onDone }: { entries: VocabEntry[]; 
   if (!current) return null;
 
   function check() {
-    const isCorrect = input.trim().toLowerCase() === current.translation.toLowerCase();
+    const isCorrect = matchesTranslation(input, current.translation);
     setChecked(isCorrect);
     recordVocabAnswer(current.id, isCorrect ? 4 : 1);
     if (isCorrect) setCorrect(c => c + 1);
@@ -188,7 +224,7 @@ function WriteMode({ entries, color, langTo, onDone }: { entries: VocabEntry[]; 
         <div className="border border-border bg-bg p-8 text-center">
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-fg mb-3">Wie heißt das auf {langTo}?</p>
           <p className="text-3xl font-bold">{current.word}</p>
-          {current.example && <p className="mt-2 text-sm italic text-muted-fg">„{current.example?.replace(current.translation, "___")}"</p>}
+          {current.example && <p className="mt-2 text-sm italic text-muted-fg">„{current.example?.replace(primaryTranslation(current.translation), "___")}"</p>}
         </div>
 
         {checked === null ? (
@@ -212,7 +248,7 @@ function WriteMode({ entries, color, langTo, onDone }: { entries: VocabEntry[]; 
             ) : (
               <div>
                 <p className="flex items-center gap-2 font-semibold text-danger"><XCircle className="size-5" /> Falsch</p>
-                <p className="mt-1 text-sm">Richtige Antwort: <strong>{current.translation}</strong></p>
+                <p className="mt-1 text-sm">Richtige Antwort: <strong>{formatTranslations(current.translation)}</strong></p>
                 <p className="text-xs text-muted-fg">Deine Antwort: {input}</p>
               </div>
             )}
@@ -299,7 +335,7 @@ function QuizMode({ entries, color, onDone }: { entries: VocabEntry[]; color: st
             }
             return (
               <button key={opt.id} type="button" className={cls} onClick={() => pick(opt)}>
-                {opt.translation}
+                {formatTranslations(opt.translation)}
               </button>
             );
           })}
@@ -383,7 +419,7 @@ function MatchMode({ entries, color, onDone }: { entries: VocabEntry[]; color: s
                   "border-border bg-bg opacity-50"
                 }`}
               >
-                {e.translation}
+                {formatTranslations(e.translation)}
               </button>
             );
           })}

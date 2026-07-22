@@ -19,7 +19,8 @@
       "Bash(grep -n \"onChange={undefined}\\\\|disabled$\" src/app/admin/vertretungsplan/page.tsx)",
       "Bash(python3 -c ' *)",
       "Bash(grep -n -A3 \"const { session, role, base }\" src/app/app/dokumente/actions.ts)",
-      "Bash(grep -rn 'href={`/app/' src/components/office/)"
+      "Bash(grep -rn 'href={`/app/' src/components/office/)",
+      "Bash(node -e ' *)"
     ]
   }
 }

@@ -8,6 +8,7 @@ import { effectiveRole, getSession } from "@/lib/session";
 import { addVocabEntry, deleteVocabEntry, deleteVocabList, renameVocabList } from "../actions";
 import { VocabTrainer } from "./VocabTrainer";
 import { AIImportForm } from "./AIImportForm";
+import { InfoHint } from "./InfoHint";
 
 interface Props { params: Promise<{ id: string }> }
 
@@ -133,8 +134,14 @@ export default async function VocabListPage({ params }: Props) {
                 <input name="word" required placeholder={`${list.langFrom}es Wort`} className="h-9 w-full border border-border bg-surface px-3 text-sm focus:border-brand focus:outline-none" />
               </div>
               <div className="space-y-1">
-                <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">{list.langTo} *</label>
-                <input name="translation" required placeholder="Übersetzung" className="h-9 w-full border border-border bg-surface px-3 text-sm focus:border-brand focus:outline-none" />
+                <div className="flex items-center gap-1.5">
+                  <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">{list.langTo} *</label>
+                  <InfoHint
+                    label="Mehrere Übersetzungen"
+                    text="Mehrere gültige Übersetzungen mit Semikolon (;) trennen — z. B. „Metzger; Metzgerin; Fleischer". Jede davon gilt in den Übungen als richtig."
+                  />
+                </div>
+                <input name="translation" required placeholder="Übersetzung — mehrere mit ; trennen" className="h-9 w-full border border-border bg-surface px-3 text-sm focus:border-brand focus:outline-none" />
               </div>
               <div className="space-y-1">
                 <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">Beispielsatz (optional)</label>
