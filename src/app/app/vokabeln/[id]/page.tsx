@@ -138,7 +138,7 @@ export default async function VocabListPage({ params }: Props) {
                   <label className="text-[11px] font-semibold uppercase tracking-wider text-muted-fg">{list.langTo} *</label>
                   <InfoHint
                     label="Mehrere Übersetzungen"
-                    text="Mehrere gültige Übersetzungen mit Semikolon (;) trennen — z. B. „Metzger; Metzgerin; Fleischer". Jede davon gilt in den Übungen als richtig."
+                    text={"Mehrere gültige Übersetzungen mit Semikolon (;) trennen — z. B. „Metzger; Metzgerin; Fleischer“. Jede davon gilt in den Übungen als richtig."}
                   />
                 </div>
                 <input name="translation" required placeholder="Übersetzung — mehrere mit ; trennen" className="h-9 w-full border border-border bg-surface px-3 text-sm focus:border-brand focus:outline-none" />
