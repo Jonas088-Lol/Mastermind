@@ -1,9 +1,9 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
-import { ComingSoonView } from "@/components/office/ComingSoonView";
+import { MasterFolderView } from "@/components/office/MasterFolderView";
 
 export const metadata: Metadata = { title: "MasterFolder · MasterOffice" };
 
 export default function Page() {
-  return <ComingSoonView module="folder" />;
+  return <MasterFolderView />;
 }

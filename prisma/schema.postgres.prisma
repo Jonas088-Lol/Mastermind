@@ -2074,6 +2074,25 @@ model MailMergeLog {
   @@index([templateId])
 }
 
+model MasterFolderEntry {
+  id        String   @id @default(cuid())
+  userId    String
+  // Pfad ist pro Nutzer eindeutig — der Sync-Schluessel.
+  path      String
+  name      String
+  kind      String   @default("note") // note | file | folder
+  content   String   @default("")     // Textinhalt bzw. Drive-Blob-Referenz
+  mime      String   @default("text/plain")
+  size      Int      @default(0)
+  version   Int      @default(1)      // monoton steigend fuer Delta-Sync
+  updatedAt DateTime @default(now())
+  deviceId  String   @default("")     // Geraet der letzten Aenderung
+  deleted   Boolean  @default(false)
+
+  @@unique([userId, path])
+  @@index([userId, version])
+}
+
 model Spreadsheet {
   id        String   @id @default(cuid())
   userId    String

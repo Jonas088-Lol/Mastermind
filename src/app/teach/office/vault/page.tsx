@@ -1,9 +1,9 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 import type { Metadata } from "next";
-import { ComingSoonView } from "@/components/office/ComingSoonView";
+import { VaultView } from "@/components/office/VaultView";
 
 export const metadata: Metadata = { title: "MasterVault · MasterOffice" };
 
 export default function Page() {
-  return <ComingSoonView module="vault" />;
+  return <VaultView />;
 }
