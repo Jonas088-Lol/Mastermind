@@ -2,7 +2,8 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   Upload,
   FileText,
@@ -16,6 +17,8 @@ import {
   Lock,
   HardDrive,
   Search,
+  Star,
+  RotateCcw,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -25,6 +28,8 @@ type DriveFile = {
   mimeType: string;
   size: number;
   isPublic: boolean;
+  favorite: boolean;
+  deletedAt: string | null;
   createdAt: string;
   userId: string;
 };
@@ -81,6 +86,8 @@ export function DriveClient({
   ownFileCount,
   limitBytes,
   query,
+  trash = false,
+  trashCount = 0,
 }: {
   files: DriveFile[];
   ownUserId: string;
@@ -88,8 +95,11 @@ export function DriveClient({
   ownFileCount: number;
   limitBytes: number;
   query: string;
+  trash?: boolean;
+  trashCount?: number;
 }) {
   const router = useRouter();
+  const pathname = usePathname(); // Basis-Pfad je Rolle (/app/drive, /teach/office/drive …)
   const [uploading, setUploading] = useState(false);
   const [isPublic, setIsPublic] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -112,7 +122,11 @@ export function DriveClient({
 
   function submitSearch(value: string) {
     const q = value.trim().slice(0, 100);
-    router.push(q ? `/app/drive?q=${encodeURIComponent(q)}` : "/app/drive");
+    const params = new URLSearchParams();
+    if (q) params.set("q", q);
+    if (trash) params.set("trash", "1"); // Suche innerhalb der aktuellen Ansicht
+    const qs = params.toString();
+    router.push(qs ? `${pathname}?${qs}` : pathname);
   }
 
   async function upload(fileList: FileList | null) {
@@ -134,25 +148,60 @@ export function DriveClient({
   }
 
   async function deleteFile(id: string, name: string) {
-    if (!confirm(`"${name}" wirklich löschen?`)) return;
+    // Aktiv → in den Papierkorb; im Papierkorb → endgültig (mit Rückfrage).
+    if (trash && !confirm(`"${name}" endgültig löschen? Das kann nicht rückgängig gemacht werden.`)) return;
     try {
       const res = await fetch(`/api/drive/files/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error();
     } catch {
-      setError("Löschen fehlgeschlagen");
+      setError(trash ? "Endgültiges Löschen fehlgeschlagen" : "In den Papierkorb verschieben fehlgeschlagen");
     }
+    router.refresh();
+  }
+
+  async function restoreFile(id: string) {
+    try {
+      const res = await fetch(`/api/drive/files/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "restore" }),
+      });
+      if (!res.ok) throw new Error();
+    } catch { setError("Wiederherstellen fehlgeschlagen"); }
+    router.refresh();
+  }
+
+  async function toggleFavorite(id: string, next: boolean) {
+    try {
+      await fetch(`/api/drive/files/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ favorite: next }),
+      });
+    } catch { /* Fehler ist unkritisch */ }
     router.refresh();
   }
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6">
-      <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">MasterDrive</p>
-        <h1 className="mt-1 flex items-center gap-3 text-3xl font-bold tracking-tight sm:text-4xl">
-          <HardDrive className="size-8 text-brand" strokeWidth={1.5} />
-          Meine Dateien
-        </h1>
-        <p className="mt-1 text-sm text-muted-fg">{files.length} Dateien sichtbar</p>
+      <header className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">MasterDrive</p>
+          <h1 className="mt-1 flex items-center gap-3 text-3xl font-bold tracking-tight sm:text-4xl">
+            {trash ? <Trash2 className="size-8 text-brand" strokeWidth={1.5} /> : <HardDrive className="size-8 text-brand" strokeWidth={1.5} />}
+            {trash ? "Papierkorb" : "Meine Dateien"}
+          </h1>
+          <p className="mt-1 text-sm text-muted-fg">
+            {files.length} {files.length === 1 ? "Datei" : "Dateien"}
+            {trash ? " im Papierkorb · nach 30 Tagen automatisch endgültig gelöscht" : " sichtbar"}
+          </p>
+        </div>
+        <Link
+          href={trash ? pathname : `${pathname}?trash=1`}
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-xs font-semibold transition-colors hover:bg-surface"
+        >
+          {trash ? <><HardDrive className="size-3.5" /> Dateien</> : <><Trash2 className="size-3.5" /> Papierkorb{trashCount > 0 ? ` (${trashCount})` : ""}</>}
+        </Link>
       </header>
 
       {/* Speicher-Nutzung */}
@@ -175,7 +224,8 @@ export function DriveClient({
         </div>
       </div>
 
-      {/* Upload zone */}
+      {/* Upload zone — im Papierkorb ausgeblendet */}
+      {!trash && (
       <div
         className={cn(
           "relative flex flex-col items-center gap-4 rounded-2xl border-2 border-dashed p-10 text-center transition-colors",
@@ -217,6 +267,7 @@ export function DriveClient({
           onChange={(e) => void upload(e.target.files)}
         />
       </div>
+      )}
 
       {error && (
         <div className="rounded-xl border border-danger/20 bg-danger/10 px-4 py-3 text-sm text-danger">
@@ -308,18 +359,41 @@ export function DriveClient({
                   <Lock className="size-3" /> Privat
                 </span>
               )}
-              <a
-                href={`/api/drive/download/${f.id}`}
-                className="flex size-8 items-center justify-center rounded-lg text-muted-fg transition-colors hover:bg-muted hover:text-fg"
-                title="Herunterladen"
-              >
-                <Download className="size-4" />
-              </a>
+              {!trash && f.userId === ownUserId && (
+                <button
+                  onClick={() => void toggleFavorite(f.id, !f.favorite)}
+                  className={cn(
+                    "flex size-8 items-center justify-center rounded-lg transition-colors hover:bg-muted",
+                    f.favorite ? "text-warning" : "text-muted-fg hover:text-fg",
+                  )}
+                  title={f.favorite ? "Favorit entfernen" : "Als Favorit markieren"}
+                >
+                  <Star className="size-4" fill={f.favorite ? "currentColor" : "none"} />
+                </button>
+              )}
+              {!trash && (
+                <a
+                  href={`/api/drive/download/${f.id}`}
+                  className="flex size-8 items-center justify-center rounded-lg text-muted-fg transition-colors hover:bg-muted hover:text-fg"
+                  title="Herunterladen"
+                >
+                  <Download className="size-4" />
+                </a>
+              )}
+              {trash && f.userId === ownUserId && (
+                <button
+                  onClick={() => void restoreFile(f.id)}
+                  className="flex size-8 items-center justify-center rounded-lg text-muted-fg transition-colors hover:bg-brand/10 hover:text-brand"
+                  title="Wiederherstellen"
+                >
+                  <RotateCcw className="size-4" />
+                </button>
+              )}
               {f.userId === ownUserId && (
                 <button
                   onClick={() => void deleteFile(f.id, f.name)}
                   className="flex size-8 items-center justify-center rounded-lg text-muted-fg transition-colors hover:bg-danger/10 hover:text-danger"
-                  title="Löschen"
+                  title={trash ? "Endgültig löschen" : "In den Papierkorb"}
                 >
                   <Trash2 className="size-4" />
                 </button>

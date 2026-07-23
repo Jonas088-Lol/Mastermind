@@ -180,6 +180,11 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
   const [showFooter, setShowFooter] = useState(false);
   const [pageNumEnabled, setPageNumEnabled] = useState(false);
   const [footnoteCount, setFootnoteCount] = useState(0);
+  const [showFindReplace, setShowFindReplace] = useState(false);
+  const [findText, setFindText] = useState("");
+  const [replaceText, setReplaceText] = useState("");
+  const [findInfo, setFindInfo] = useState("");
+  const [speaking, setSpeaking] = useState(false);
   const [fmt, setFmt] = useState({ bold: false, italic: false, underline: false, strike: false, jL: true, jC: false, jR: false, jF: false, ul: false, ol: false });
   const [, startTransition] = useTransition();
   const editorRef = useRef<HTMLDivElement>(null);
@@ -289,6 +294,56 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
 
   const fe = () => editorRef.current?.focus();
 
+  // Link einfügen — auf die aktuelle Auswahl anwenden.
+  function insertLink() {
+    const url = window.prompt("Link-Adresse (URL):", "https://");
+    if (!url) return;
+    exec("createLink", url);
+    fe();
+  }
+
+  // Suchen & Ersetzen — sicher über Textknoten (kein innerHTML-Ersetzen, das
+  // Tags zerstören würde). Case-insensitive, literale Suche.
+  function replaceAll() {
+    const root = editorRef.current;
+    if (!root || !findText) { setFindInfo("Suchbegriff eingeben."); return; }
+    const needle = findText.toLowerCase();
+    let count = 0;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const textNodes: Text[] = [];
+    let node: Node | null;
+    while ((node = walker.nextNode())) textNodes.push(node as Text);
+    for (const tn of textNodes) {
+      const text = tn.nodeValue ?? "";
+      const lower = text.toLowerCase();
+      if (!lower.includes(needle)) continue;
+      let out = "";
+      let i = 0;
+      while (i < text.length) {
+        if (lower.startsWith(needle, i)) { out += replaceText; i += needle.length; count++; }
+        else { out += text[i]; i++; }
+      }
+      tn.nodeValue = out;
+    }
+    setFindInfo(count > 0 ? `${count} Ersetzung(en).` : "Nicht gefunden.");
+    if (count > 0) handleInput(); // Wortzahl + Speichern anstoßen
+  }
+
+  // Vorlesen (Barrierefreiheit) — markierten Text oder ganzes Dokument.
+  function speak() {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    if (speaking) { window.speechSynthesis.cancel(); setSpeaking(false); return; }
+    const sel = window.getSelection()?.toString();
+    const text = (sel && sel.trim()) || editorRef.current?.innerText || "";
+    if (!text.trim()) return;
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = "de-DE";
+    u.onend = () => setSpeaking(false);
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(u);
+    setSpeaking(true);
+  }
+
   // ── Ribbon tabs ────────────────────────────────────────────────────────────
 
   const StartTab = (
@@ -356,6 +411,15 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
       </div>
       <Btn onClick={() => { exec("insertHorizontalRule"); fe(); }} title="Horizontale Linie">
         <span className="text-xs">─ Linie</span>
+      </Btn>
+      <Btn onClick={insertLink} title="Link einfügen">
+        <span className="text-xs">🔗 Link</span>
+      </Btn>
+      <Btn onClick={() => setShowFindReplace((v) => !v)} title="Suchen & Ersetzen">
+        <span className="text-xs">🔍 Suchen</span>
+      </Btn>
+      <Btn onClick={speak} title="Vorlesen (Barrierefreiheit)">
+        <span className="text-xs">{speaking ? "⏹ Stopp" : "🔊 Vorlesen"}</span>
       </Btn>
       <label className="cursor-pointer rounded px-2 py-1 text-xs text-gray-600 hover:bg-gray-100">
         🖼 Bild
@@ -454,6 +518,33 @@ export function DocumentEditor({ documentId, initialTitle, initialContent }: Pro
         {tab === "einfuegen" && EinfuegenTab}
         {tab === "layout"    && LayoutTab}
         {tab === "verweise"  && VerweiseTab}
+
+        {/* Suchen & Ersetzen */}
+        {showFindReplace && (
+          <div className="flex flex-wrap items-center gap-2 border-t border-gray-100 bg-gray-50 px-3 py-2">
+            <input
+              value={findText}
+              onChange={(e) => { setFindText(e.target.value); setFindInfo(""); }}
+              placeholder="Suchen…"
+              className="w-40 rounded-md border border-gray-200 bg-white px-2 py-1 text-xs text-gray-800 outline-none focus:border-brand"
+            />
+            <input
+              value={replaceText}
+              onChange={(e) => setReplaceText(e.target.value)}
+              placeholder="Ersetzen durch…"
+              className="w-40 rounded-md border border-gray-200 bg-white px-2 py-1 text-xs text-gray-800 outline-none focus:border-brand"
+            />
+            <button type="button" onMouseDown={(e) => { e.preventDefault(); replaceAll(); }}
+              className="rounded-md bg-brand px-2.5 py-1 text-xs font-semibold text-brand-fg hover:opacity-90">
+              Alle ersetzen
+            </button>
+            {findInfo && <span className="text-xs text-gray-500">{findInfo}</span>}
+            <button type="button" onClick={() => setShowFindReplace(false)}
+              className="ml-auto rounded-md px-2 py-1 text-xs text-gray-500 hover:bg-gray-100">
+              Schließen
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Page area */}

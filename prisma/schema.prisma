@@ -2629,6 +2629,9 @@ model DriveFile {
   userId     String
   schoolId   String?
   isPublic   Boolean  @default(false) // true = sichtbar für alle Schulnutzer
+  favorite   Boolean  @default(false)
+  // Papierkorb: Soft-Delete, 30 Tage wiederherstellbar. Leer = aktiv.
+  deletedAt  DateTime?
   createdAt  DateTime @default(now())
 
   @@index([userId])

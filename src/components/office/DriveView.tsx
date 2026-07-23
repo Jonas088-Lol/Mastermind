@@ -8,42 +8,52 @@ import { DriveClient } from "@/app/app/drive/drive-client";
 const STORAGE_LIMIT_BYTES = 2 * 1024 * 1024 * 1024; // 2 GB (nur Anzeige, kein Enforcement)
 
 type PageProps = {
-  searchParams: Promise<{ q?: string }>;
+  searchParams: Promise<{ q?: string; trash?: string }>;
 };
 
 export async function DriveView({ searchParams }: PageProps) {
   const session = await getSession();
   if (!session) redirect("/login");
 
-  const { q: qRaw } = await searchParams;
+  const { q: qRaw, trash: trashRaw } = await searchParams;
   const q = (qRaw ?? "").trim().slice(0, 100);
+  const trash = trashRaw === "1";
 
-  const [files, ownUsage] = await Promise.all([
+  const [files, ownUsage, trashCount] = await Promise.all([
     prisma.driveFile.findMany({
-      where: {
-        OR: [
-          { userId: session.userId },
-          ...(session.schoolId ? [{ schoolId: session.schoolId, isPublic: true }] : []),
-        ],
-        ...(q ? { name: { contains: q } } : {}),
-      },
-      orderBy: { createdAt: "desc" },
+      where: trash
+        ? // Papierkorb: nur eigene, gelöschte Dateien
+          { userId: session.userId, deletedAt: { not: null }, ...(q ? { name: { contains: q } } : {}) }
+        : {
+            // Aktive Ansicht: eigene + geteilte, ohne gelöschte
+            deletedAt: null,
+            OR: [
+              { userId: session.userId },
+              ...(session.schoolId ? [{ schoolId: session.schoolId, isPublic: true }] : []),
+            ],
+            ...(q ? { name: { contains: q } } : {}),
+          },
+      // Favoriten zuerst, dann nach Datum
+      orderBy: [{ favorite: "desc" }, { createdAt: "desc" }],
       select: {
         id: true,
         name: true,
         mimeType: true,
         size: true,
         isPublic: true,
+        favorite: true,
+        deletedAt: true,
         createdAt: true,
         userId: true,
       },
     }),
-    // Speicher-Nutzung: Summe aller eigenen Dateien, unabhängig vom Suchfilter
+    // Speicher-Nutzung: aktive eigene Dateien (Papierkorb zählt nicht)
     prisma.driveFile.aggregate({
-      where: { userId: session.userId },
+      where: { userId: session.userId, deletedAt: null },
       _sum: { size: true },
       _count: true,
     }),
+    prisma.driveFile.count({ where: { userId: session.userId, deletedAt: { not: null } } }),
   ]);
 
   return (
@@ -54,6 +64,8 @@ export async function DriveView({ searchParams }: PageProps) {
       ownFileCount={ownUsage._count}
       limitBytes={STORAGE_LIMIT_BYTES}
       query={q}
+      trash={trash}
+      trashCount={trashCount}
     />
   );
 }

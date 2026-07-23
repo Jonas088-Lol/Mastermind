@@ -22,7 +22,8 @@
       "Bash(grep -rn 'href={`/app/' src/components/office/)",
       "Bash(node -e ' *)",
       "Bash(grep -rnE '=[[:space:]]*\"[^\"`]*„' src/app src/components)",
-      "Bash(node -e \"const i=require\\('lucide-react'\\); console.log\\('FolderSync',!!i.FolderSync,'DatabaseZap',!!i.DatabaseZap\\)\")"
+      "Bash(node -e \"const i=require\\('lucide-react'\\); console.log\\('FolderSync',!!i.FolderSync,'DatabaseZap',!!i.DatabaseZap\\)\")",
+      "Bash(grep -n \"async function\\\\|handleDelete\\\\|fetch\\(\\\\`/api/drive/files\\\\|Löschen\\\\|Trash2\\\\|Download\\\\|href=.*download\\\\|map\\(\\(f\\\\|visible.map\\\\|isPublic\" src/app/app/drive/drive-client.tsx)"
     ]
   }
 }

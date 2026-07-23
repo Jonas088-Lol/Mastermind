@@ -221,6 +221,33 @@ function evaluateCell(key: string, cells: Record<string, CellData>, depth = 0): 
       case "ANZAHL": case "COUNT": return String(args.flatMap(getNums).length);
       case "ANZAHL2": case "COUNTA": return String(args.flatMap(getArr).filter(x => x !== "").length);
       case "PRODUKT": case "PRODUCT": { let p = 1; args.flatMap(getNums).forEach(n => { p *= n; }); return String(r(p)); }
+      case "MEDIAN": {
+        const ns = args.flatMap(getNums).sort((a, b) => a - b);
+        if (!ns.length) return "0";
+        const mid = Math.floor(ns.length / 2);
+        return String(r(ns.length % 2 ? ns[mid] : (ns[mid - 1] + ns[mid]) / 2));
+      }
+      case "RANG": case "RANK": {
+        const val = getNums(args[0] ?? "")[0];
+        const list = getNums(args[1] ?? "");
+        if (val == null || !list.length) return "#NV";
+        // 3. Argument = 0/leer → absteigend (Standard), sonst aufsteigend.
+        const asc = Boolean(args[2]) && resVal(args[2]) !== "0" && !/^(falsch|false)$/i.test(resVal(args[2]));
+        const sorted = [...list].sort((a, b) => (asc ? a - b : b - a));
+        const idx = sorted.indexOf(val);
+        return idx < 0 ? "#NV" : String(idx + 1);
+      }
+      case "DATEDIF": {
+        const d1 = new Date(resVal(args[0] ?? "").replace(/"/g, ""));
+        const d2 = new Date(resVal(args[1] ?? "").replace(/"/g, ""));
+        const unit = resVal(args[2] ?? '"T"').replace(/"/g, "").toUpperCase();
+        if (isNaN(d1.getTime()) || isNaN(d2.getTime())) return "#ERR";
+        const ms = d2.getTime() - d1.getTime();
+        if (unit === "T" || unit === "D") return String(Math.floor(ms / 86_400_000));
+        if (unit === "M") return String((d2.getFullYear() - d1.getFullYear()) * 12 + (d2.getMonth() - d1.getMonth()));
+        if (unit === "Y" || unit === "J") return String(d2.getFullYear() - d1.getFullYear());
+        return "#ERR";
+      }
 
       // Logical
       case "WENN": case "IF": {

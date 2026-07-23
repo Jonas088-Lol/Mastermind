@@ -434,6 +434,8 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
   const [title, setTitle]   = useState(initialTitle);
   const [editTitle, setEditTitle] = useState(false);
   const [presenting, setPresenting] = useState(false);
+  const [elapsed, setElapsed] = useState(0);   // Referenten-Timer (Sekunden)
+  const [blackout, setBlackout] = useState(false);
   const [showNotes, setShowNotes]   = useState(false);
   const [showThemes, setShowThemes] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"saved" | "saving" | "unsaved">("saved");
@@ -521,6 +523,16 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
     if (presenting) wrapRef.current?.focus();
   }, [presenting]);
 
+  // Referenten-Timer: läuft während der Präsentation, wird beim Start genullt.
+  useEffect(() => {
+    if (!presenting) { setElapsed(0); setBlackout(false); return; }
+    const t = setInterval(() => setElapsed((s) => s + 1), 1000);
+    return () => clearInterval(t);
+  }, [presenting]);
+
+  const fmtTime = (s: number) =>
+    `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(s % 60).padStart(2, "0")}`;
+
   // ── Presentation mode ─────────────────────────────────────────────────────
 
   if (presenting) {
@@ -533,6 +545,7 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
           if (e.key === "Escape")                              togglePresent();
           if (e.key === "ArrowRight" || e.key === "ArrowDown") setCurIdx((i) => Math.min(i + 1, slides.length - 1));
           if (e.key === "ArrowLeft"  || e.key === "ArrowUp")   setCurIdx((i) => Math.max(0, i - 1));
+          if (e.key === "b" || e.key === "B")                  setBlackout((v) => !v);
         }}
         tabIndex={0} autoFocus>
         <style>{`
@@ -547,7 +560,13 @@ export function PresentationEditor({ presentationId, initialTitle, initialSlides
         {current.notes && (
           <div className="shrink-0 border-t border-white/10 bg-black/80 px-8 py-2 text-sm text-white/60">{current.notes}</div>
         )}
-        <div className="absolute bottom-4 right-4 flex items-center gap-3">
+        {blackout && (
+          <div className="absolute inset-0 z-10 bg-black" aria-label="Bildschirm geschwärzt" />
+        )}
+        <div className="absolute bottom-4 left-4 z-20 font-mono text-xs text-white/40" title="Vergangene Zeit (B = Bildschirm schwärzen)">
+          ⏱ {fmtTime(elapsed)}
+        </div>
+        <div className="absolute bottom-4 right-4 z-20 flex items-center gap-3">
           <span className="font-mono text-xs text-white/40">{curIdx + 1} / {slides.length}</span>
           <button type="button" onClick={() => setCurIdx((i) => Math.max(0, i - 1))} disabled={curIdx === 0} className="grid size-8 place-items-center text-white/60 hover:text-white disabled:opacity-20"><ChevronLeft className="size-5" /></button>
           <button type="button" onClick={() => setCurIdx((i) => Math.min(i + 1, slides.length - 1))} disabled={curIdx === slides.length - 1} className="grid size-8 place-items-center text-white/60 hover:text-white disabled:opacity-20"><ChevronRight className="size-5" /></button>
