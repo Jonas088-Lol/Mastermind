@@ -32,6 +32,10 @@ const nextConfig: NextConfig = {
   // Standalone output creates a self-contained bundle — no full node_modules needed
   // in production. Results in ~70% smaller Docker images.
   output: "standalone",
+  // Build-Maschine ist langsam und die DB ist beim Bauen nicht erreichbar —
+  // der Default von 60s pro Seite reicht nicht, wodurch selbst statische Seiten
+  // (z. B. /_not-found) nach 3 Versuchen aufgeben. 5 Minuten geben Luft.
+  staticPageGenerationTimeout: 300,
   async headers() {
     return [
       {

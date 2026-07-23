@@ -3,6 +3,10 @@ import { prisma } from "@/lib/db/client";
 import { getActiveEvents } from "@/lib/settings";
 import { Zap, Users, School, Swords, AlertTriangle } from "lucide-react";
 
+// Live-Kennzahlen aus der DB — niemals beim Build vorrendern (sonst „Can't reach
+// database server" während `next build`, da dort keine DB läuft).
+export const dynamic = "force-dynamic";
+
 export default async function SuperAdminDashboard() {
   const [totalUsers, totalSchools, activeEvents, activeBosses] = await Promise.all([
     prisma.user.count(),
