@@ -36,6 +36,7 @@ export default async function EinwilligungenPage() {
 
   const schoolIds = [...new Set(links.map((l) => l.student.schoolId).filter(Boolean))] as string[];
   const childClassIds = [...new Set(links.map((l) => l.student.classId).filter(Boolean))] as string[];
+  const childStudentIds = new Set(links.map((l) => l.student.id));
 
   // Fetch active consent forms for this school
   const allForms = schoolIds.length > 0
@@ -55,6 +56,8 @@ export default async function EinwilligungenPage() {
 
   // Filter forms relevant to children's classes
   const forms = allForms.filter((form) => {
+    // Personalisierter Serienbrief: ausschließlich für die Eltern DIESES Kindes.
+    if (form.targetStudentId) return childStudentIds.has(form.targetStudentId);
     if (!form.targetClassIds) return true; // applies to all
     try {
       const ids = JSON.parse(form.targetClassIds) as string[];

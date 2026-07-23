@@ -1583,6 +1583,9 @@ model ConsentForm {
   targetClassIds String? // JSON — null = all classes
   // Von einer Lehrkraft hochgeladener Elternbrief (PDF/Bild). Leer = reiner Text.
   fileUrl     String?
+  // Personalisierter Serienbrief: nur für Eltern DIESES Schülers sichtbar
+  // (DSGVO — kein Einblick in fremde personalisierte Briefe). Leer = klassenweit.
+  targetStudentId String?
   fileName    String?
   // Wer den Brief eingestellt hat — Lehrkraft oder Verwaltung.
   createdById String?

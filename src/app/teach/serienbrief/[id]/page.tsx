@@ -10,8 +10,10 @@ export const metadata: Metadata = { title: "Serienbrief bearbeiten · MasterDoc"
 
 export default async function SerienbriefEditorPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ sent?: string; parents?: string; error?: string }>;
 }) {
   const session = await getSession();
   if (!session) redirect("/login");
@@ -19,7 +21,9 @@ export default async function SerienbriefEditorPage({
   if (!(await can(session, "teacher.mail_merge"))) redirect("/teach");
 
   const { id } = await params;
-  const [template, sheets] = await Promise.all([
+  const { sent, parents, error } = await searchParams;
+
+  const [template, sheets, classLinks] = await Promise.all([
     prisma.mailMergeTemplate.findFirst({
       where: { id, schoolId: session.schoolId ?? "", createdById: session.userId },
     }),
@@ -28,8 +32,16 @@ export default async function SerienbriefEditorPage({
       orderBy: { updatedAt: "desc" },
       select: { id: true, title: true },
     }),
+    prisma.teacherSubjectClass.findMany({
+      where: { teacherId: session.userId },
+      select: { class: { select: { id: true, name: true } } },
+    }),
   ]);
   if (!template) notFound();
+
+  const classes = [...new Map(classLinks.map((l) => [l.class.id, l.class])).values()].sort(
+    (a, b) => a.name.localeCompare(b.name, "de", { numeric: true }),
+  );
 
   return (
     <SerienbriefEditor
@@ -43,6 +55,8 @@ export default async function SerienbriefEditorPage({
         sourceData: template.sourceData,
       }}
       spreadsheets={sheets}
+      classes={classes}
+      flash={{ sent, parents, error }}
     />
   );
 }

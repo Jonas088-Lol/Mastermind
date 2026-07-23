@@ -1,9 +1,9 @@
 /* Copyright 2026 Elian Schock, Jonas Schwenk */
 "use client";
 
-import { useMemo, useRef, useState, useTransition } from "react";
+import { useEffect, useMemo, useRef, useState, useTransition } from "react";
 import Link from "next/link";
-import { ArrowLeft, ChevronLeft, ChevronRight, Printer, Save, Table2, Upload } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Printer, Save, Send, Table2, Upload, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   parseCsv,
@@ -13,7 +13,7 @@ import {
   type MergeData,
   type MergeRow,
 } from "@/lib/mail-merge";
-import { saveTemplate, loadSpreadsheetSource } from "../actions";
+import { saveTemplate, loadSpreadsheetSource, loadSchoolClassSource, sendAsElternbrief } from "../actions";
 
 interface TemplateDTO {
   id: string;
@@ -25,22 +25,29 @@ interface TemplateDTO {
   sourceData: string | null;
 }
 
-type SourceType = "csv" | "spreadsheet";
+type SourceType = "csv" | "spreadsheet" | "schooldata";
 
 export function SerienbriefEditor({
   template,
   spreadsheets,
+  classes,
+  flash,
 }: {
   template: TemplateDTO;
   spreadsheets: { id: string; title: string }[];
+  classes: { id: string; name: string }[];
+  flash?: { sent?: string; parents?: string; error?: string };
 }) {
   const [title, setTitle] = useState(template.title);
   const [subject, setSubject] = useState(template.subject);
   const [body, setBody] = useState(template.body);
   const [sourceType, setSourceType] = useState<SourceType>(
-    template.sourceType === "spreadsheet" ? "spreadsheet" : "csv",
+    template.sourceType === "spreadsheet" || template.sourceType === "schooldata"
+      ? (template.sourceType as SourceType)
+      : "csv",
   );
-  const [sheetId, setSheetId] = useState(template.sourceRef ?? "");
+  const [sheetId, setSheetId] = useState(template.sourceType === "spreadsheet" ? (template.sourceRef ?? "") : "");
+  const [classId, setClassId] = useState(template.sourceType === "schooldata" ? (template.sourceRef ?? "") : "");
   const [data, setData] = useState<MergeData>(() => {
     if (template.sourceData) {
       try {
@@ -53,7 +60,20 @@ export function SerienbriefEditor({
   const [preview, setPreview] = useState(0);
   const [saving, startSave] = useTransition();
   const [loadingSheet, startSheet] = useTransition();
+  const [sending, startSend] = useTransition();
   const bodyRef = useRef<HTMLTextAreaElement>(null);
+
+  // Bei Quellen, die nicht mitgespeichert werden (MasterCalc/Schuldaten), die
+  // Daten beim Öffnen einmalig nachladen.
+  useEffect(() => {
+    if (sourceType === "spreadsheet" && sheetId) {
+      startSheet(async () => { const md = await loadSpreadsheetSource(sheetId); setData(md); });
+    } else if (sourceType === "schooldata" && classId) {
+      startSheet(async () => { const md = await loadSchoolClassSource(classId); setData(md); });
+    }
+    // Nur beim ersten Rendern.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const usedFields = useMemo(() => placeholdersIn(subject + "\n" + body), [subject, body]);
   const currentRow: MergeRow = data.rows[preview] ?? {};
@@ -67,18 +87,21 @@ export function SerienbriefEditor({
       .filter((p) => p.miss.length > 0);
   }, [data.rows, subject, body]);
 
-  function insertPlaceholder(field: string) {
+  function insertSnippet(token: string) {
     const ta = bodyRef.current;
-    const token = `{{${field}}}`;
     if (!ta) { setBody((b) => b + token); return; }
     const start = ta.selectionStart ?? body.length;
     const end = ta.selectionEnd ?? body.length;
     setBody(body.slice(0, start) + token + body.slice(end));
-    // Cursor nach dem eingefügten Token positionieren.
+    // Cursor nach dem eingefügten Text positionieren.
     requestAnimationFrame(() => {
       ta.focus();
       ta.selectionStart = ta.selectionEnd = start + token.length;
     });
+  }
+
+  function insertPlaceholder(field: string) {
+    insertSnippet(`{{${field}}}`);
   }
 
   function onCsvFile(file: File) {
@@ -101,17 +124,35 @@ export function SerienbriefEditor({
     });
   }
 
-  function save() {
+  function chooseClass(id: string) {
+    setClassId(id);
+    if (!id) { setData({ fields: [], rows: [] }); return; }
+    startSheet(async () => {
+      const md = await loadSchoolClassSource(id);
+      setData(md);
+      setPreview(0);
+    });
+  }
+
+  function buildFormData(): FormData {
     const fd = new FormData();
     fd.set("id", template.id);
     fd.set("title", title);
     fd.set("subject", subject);
     fd.set("body", body);
     fd.set("sourceType", sourceType);
-    fd.set("sourceRef", sourceType === "spreadsheet" ? sheetId : "");
-    // CSV-Daten mitspeichern, damit die Vorschau nach Reload erhalten bleibt.
+    fd.set(
+      "sourceRef",
+      sourceType === "spreadsheet" ? sheetId : sourceType === "schooldata" ? classId : "",
+    );
+    // CSV-Daten mitspeichern, damit die Vorschau/Sammeldruck nach Reload bleibt.
+    // Schuldaten NICHT einfrieren (DSGVO/Aktualität) — werden live nachgeladen.
     fd.set("sourceData", sourceType === "csv" ? JSON.stringify(data) : "");
-    startSave(async () => { await saveTemplate(fd); });
+    return fd;
+  }
+
+  function save() {
+    startSave(async () => { await saveTemplate(buildFormData()); });
   }
 
   const inputCls =
@@ -139,6 +180,18 @@ export function SerienbriefEditor({
           {saving ? "Speichert…" : "Speichern"}
         </button>
       </div>
+
+      {flash?.error && (
+        <div className="rounded-lg border border-danger/40 bg-danger/10 px-4 py-3 text-sm text-danger">
+          {flash.error}
+        </div>
+      )}
+      {flash?.sent && (
+        <div className="rounded-lg border border-success/40 bg-success/10 px-4 py-3 text-sm text-success">
+          {flash.sent} Elternbrief(e) versendet
+          {flash.parents ? ` · ${flash.parents} Elternteil(e) benachrichtigt` : ""}.
+        </div>
+      )}
 
       <div className="grid gap-5 lg:grid-cols-[1fr_360px]">
         {/* Links: Editor */}
@@ -181,6 +234,21 @@ export function SerienbriefEditor({
               </div>
             </div>
           )}
+
+          {/* Bedingungsblock einfügen */}
+          <div className="space-y-1.5">
+            <label className="text-xs font-semibold text-muted-fg">Bedingung</label>
+            <button
+              type="button"
+              onClick={() => insertSnippet("{{#wenn Feld > 10}}\nText, wenn zutrifft\n{{sonst}}\nText sonst\n{{/wenn}}")}
+              className="rounded-lg border border-border bg-surface px-2.5 py-1 text-xs font-medium transition-colors hover:border-brand/40 hover:text-brand"
+            >
+              wenn/sonst einfügen
+            </button>
+            <p className="text-[11px] text-muted-fg">
+              Beispiel: <code>{"{{#wenn Fehltage > 10}}…{{sonst}}…{{/wenn}}"}</code> · Operatoren: = ≠ &gt; &lt; ≥ ≤, oder nur Feldname (nicht leer).
+            </p>
+          </div>
         </div>
 
         {/* Rechts: Datenquelle + Vorschau */}
@@ -205,9 +273,17 @@ export function SerienbriefEditor({
               >
                 <Table2 className="mr-1 inline size-3.5" />MasterCalc
               </button>
+              <button
+                type="button"
+                onClick={() => setSourceType("schooldata")}
+                className={cn("flex-1 rounded-lg border px-2 py-1.5 text-xs font-semibold transition-colors",
+                  sourceType === "schooldata" ? "border-brand bg-brand/10 text-brand" : "border-border text-muted-fg hover:text-fg")}
+              >
+                <Users className="mr-1 inline size-3.5" />Klasse
+              </button>
             </div>
 
-            {sourceType === "csv" ? (
+            {sourceType === "csv" && (
               <div className="mt-3">
                 <input
                   type="file"
@@ -217,7 +293,8 @@ export function SerienbriefEditor({
                 />
                 <p className="mt-1 text-[11px] text-muted-fg">Erste Zeile = Spaltennamen. Trennzeichen , oder ; wird erkannt.</p>
               </div>
-            ) : (
+            )}
+            {sourceType === "spreadsheet" && (
               <div className="mt-3">
                 <select value={sheetId} onChange={(e) => chooseSheet(e.target.value)} className={inputCls}>
                   <option value="">Tabelle wählen…</option>
@@ -226,6 +303,21 @@ export function SerienbriefEditor({
                   ))}
                 </select>
                 {loadingSheet && <p className="mt-1 text-[11px] text-muted-fg">Lädt…</p>}
+              </div>
+            )}
+            {sourceType === "schooldata" && (
+              <div className="mt-3">
+                <select value={classId} onChange={(e) => chooseClass(e.target.value)} className={inputCls}>
+                  <option value="">Klasse wählen…</option>
+                  {classes.map((c) => (
+                    <option key={c.id} value={c.id}>{c.name}</option>
+                  ))}
+                </select>
+                {loadingSheet && <p className="mt-1 text-[11px] text-muted-fg">Lädt…</p>}
+                <p className="mt-1 text-[11px] text-muted-fg">
+                  Nur Klassen, die du unterrichtest. Felder: Name, Vorname, Nachname, Klasse.
+                  Direktversand nur mit dieser Quelle.
+                </p>
               </div>
             )}
 
@@ -272,15 +364,45 @@ export function SerienbriefEditor({
             )}
           </div>
 
-          {usedFields.length > 0 && rowCount > 0 && (
+          {rowCount > 0 && (
             <button
               type="button"
-              onClick={() => window.print()}
-              className="no-print inline-flex items-center justify-center gap-1.5 rounded-lg border border-border px-3 py-2 text-xs font-semibold transition-colors hover:bg-surface"
+              onClick={() => startSave(async () => {
+                // Erst speichern, dann Sammeldruck öffnen — die Druckseite liest
+                // die gespeicherten Daten serverseitig.
+                await saveTemplate(buildFormData());
+                window.open(`/teach/serienbrief/${template.id}/druck`, "_blank");
+              })}
+              disabled={saving}
+              className="no-print inline-flex items-center justify-center gap-1.5 rounded-lg bg-fg px-3 py-2 text-xs font-semibold text-bg transition-opacity hover:opacity-90 disabled:opacity-50"
             >
               <Printer className="size-3.5" />
-              Aktuelle Vorschau drucken / als PDF
+              Alle {rowCount} Briefe drucken / als PDF
             </button>
+          )}
+
+          {sourceType === "schooldata" && rowCount > 0 && (
+            <button
+              type="button"
+              onClick={() => startSend(async () => {
+                // Erst speichern, dann versenden — der Server rendert je Kind neu.
+                await saveTemplate(buildFormData());
+                const fd = new FormData();
+                fd.set("id", template.id);
+                await sendAsElternbrief(fd); // leitet mit Ergebnis zurück
+              })}
+              disabled={sending}
+              className="no-print inline-flex items-center justify-center gap-1.5 rounded-lg pastel-cta px-3 py-2 text-xs font-bold disabled:opacity-50"
+            >
+              <Send className="size-3.5" />
+              {sending ? "Versendet…" : "Als personalisierten Elternbrief senden"}
+            </button>
+          )}
+          {sourceType === "schooldata" && (
+            <p className="text-[11px] text-muted-fg">
+              Jede Familie sieht nur ihren eigenen Brief. Eltern werden benachrichtigt und
+              bestätigen digital.
+            </p>
           )}
         </div>
       </div>

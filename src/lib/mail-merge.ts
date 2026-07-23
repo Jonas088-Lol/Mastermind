@@ -129,9 +129,86 @@ function formatValue(raw: string, fmt?: string): string {
   return raw;
 }
 
-/** Alle `{{Feld}}` bzw. `{{Feld|Format}}` in einer Zeile ersetzen. */
+/**
+ * Eine einzelne Bedingung auswerten, z. B. `Fehltage > 10`, `Zweig = M` oder
+ * `Bemerkung` (nicht leer). Vergleiche numerisch, wenn beide Seiten Zahlen sind.
+ */
+function evalCondition(expr: string, row: MergeRow): boolean {
+  const m = expr.match(/^\s*(.+?)\s*(>=|<=|!=|=|>|<)\s*(.*?)\s*$/);
+  if (!m) {
+    // Kein Operator → wahr, wenn das Feld einen nicht-leeren Wert hat.
+    return Boolean((row[expr.trim()] ?? "").trim());
+  }
+  const [, field, op, rawWanted] = m;
+  const got = (row[field.trim()] ?? "").trim();
+  const wanted = rawWanted.trim();
+
+  const gotNum = Number(got.replace(",", "."));
+  const wantedNum = Number(wanted.replace(",", "."));
+  const numeric = Number.isFinite(gotNum) && Number.isFinite(wantedNum);
+
+  switch (op) {
+    case "=":  return numeric ? gotNum === wantedNum : got.toLowerCase() === wanted.toLowerCase();
+    case "!=": return numeric ? gotNum !== wantedNum : got.toLowerCase() !== wanted.toLowerCase();
+    case ">":  return numeric && gotNum > wantedNum;
+    case "<":  return numeric && gotNum < wantedNum;
+    case ">=": return numeric && gotNum >= wantedNum;
+    case "<=": return numeric && gotNum <= wantedNum;
+    default:   return false;
+  }
+}
+
+/**
+ * Bedingungsblöcke auflösen (wenn/sonst/ende), auch verschachtelt:
+ *   {{#wenn Fehltage > 10}}…{{sonst}}…{{/wenn}}
+ * Der `{{sonst}}`-Zweig ist optional. Wird vor der Platzhalter-Ersetzung
+ * ausgeführt, damit nur der zutreffende Zweig übrig bleibt.
+ */
+function resolveConditionals(template: string, row: MergeRow): string {
+  const open = /\{\{#wenn\s+([^}]+?)\}\}/;
+  let guard = 0;
+  while (guard++ < 1000) {
+    const start = template.search(open);
+    if (start === -1) break;
+    const openMatch = template.slice(start).match(open)!;
+    const condExpr = openMatch[1];
+    const afterOpen = start + openMatch[0].length;
+
+    // Passendes {{/wenn}} finden (Verschachtelung mitzählen).
+    let depth = 1;
+    let i = afterOpen;
+    let elseAt = -1;
+    const tokenRe = /\{\{#wenn\s+[^}]+?\}\}|\{\{\/wenn\}\}|\{\{sonst\}\}/g;
+    tokenRe.lastIndex = afterOpen;
+    let closeAt = -1;
+    let m: RegExpExecArray | null;
+    while ((m = tokenRe.exec(template))) {
+      if (m[0].startsWith("{{#wenn")) depth++;
+      else if (m[0] === "{{/wenn}}") { depth--; if (depth === 0) { closeAt = m.index; break; } }
+      else if (m[0] === "{{sonst}}" && depth === 1 && elseAt === -1) elseAt = m.index;
+      i = m.index;
+    }
+    if (closeAt === -1) break; // unvollständig → unverändert lassen
+
+    const inner = template.slice(afterOpen, closeAt);
+    const closeLen = "{{/wenn}}".length;
+    let chosen: string;
+    if (elseAt !== -1) {
+      const thenPart = template.slice(afterOpen, elseAt);
+      const elsePart = template.slice(elseAt + "{{sonst}}".length, closeAt);
+      chosen = evalCondition(condExpr, row) ? thenPart : elsePart;
+    } else {
+      chosen = evalCondition(condExpr, row) ? inner : "";
+    }
+    template = template.slice(0, start) + chosen + template.slice(closeAt + closeLen);
+  }
+  return template;
+}
+
+/** Alle `{{Feld}}` bzw. `{{Feld|Format}}` in einer Zeile ersetzen (inkl. Bedingungen). */
 export function renderTemplate(template: string, row: MergeRow): string {
-  return template.replace(/\{\{\s*([^}|]+?)\s*(?:\|\s*([^}]+?)\s*)?\}\}/g, (_m, field: string, fmt?: string) => {
+  const resolved = resolveConditionals(template, row);
+  return resolved.replace(/\{\{\s*([^}|]+?)\s*(?:\|\s*([^}]+?)\s*)?\}\}/g, (_m, field: string, fmt?: string) => {
     const key = field.trim();
     const val = row[key];
     if (val == null) return `⟨${key}?⟩`; // fehlendes Feld sichtbar markieren
@@ -143,7 +220,10 @@ export function renderTemplate(template: string, row: MergeRow): string {
 export function placeholdersIn(template: string): string[] {
   const set = new Set<string>();
   for (const m of template.matchAll(/\{\{\s*([^}|]+?)\s*(?:\|[^}]+)?\}\}/g)) {
-    set.add(m[1].trim());
+    const key = m[1].trim();
+    // Steuer-Tokens der Bedingungsblöcke sind keine Datenfelder.
+    if (key.startsWith("#wenn") || key === "sonst" || key === "/wenn") continue;
+    set.add(key);
   }
   return [...set];
 }
