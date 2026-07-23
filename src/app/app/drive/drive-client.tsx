@@ -147,7 +147,7 @@ export function DriveClient({
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schul-Drive</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">MasterDrive</p>
         <h1 className="mt-1 flex items-center gap-3 text-3xl font-bold tracking-tight sm:text-4xl">
           <HardDrive className="size-8 text-brand" strokeWidth={1.5} />
           Meine Dateien

@@ -22,8 +22,8 @@ export async function TabellenView({ basePath }: { basePath: string }) {
     <div className="mx-auto flex max-w-7xl flex-col gap-8">
       <header className="flex items-end justify-between gap-4">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Office</p>
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Tabellen</h1>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">MasterOffice</p>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">MasterCalc</h1>
           <p className="mt-1 text-sm text-muted-fg">Excel-Alternative · Formeln · CSV-Export</p>
         </div>
         <form action={createSpreadsheet}>

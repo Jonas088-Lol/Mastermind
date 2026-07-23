@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { DriveView } from "@/components/office/DriveView";
 
-export const metadata: Metadata = { title: "Drive · MasterOffice" };
+export const metadata: Metadata = { title: "MasterDrive · MasterOffice" };
 
 export default function Page({
   searchParams,

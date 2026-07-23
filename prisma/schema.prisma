@@ -2037,6 +2037,38 @@ model Document {
   @@index([userId])
 }
 
+model MailMergeTemplate {
+  id            String   @id @default(cuid())
+  schoolId      String
+  createdById   String
+  createdByName String
+  title         String
+  subject       String   @default("")
+  body          String   @default("")   // Text mit {{Platzhalter}}
+  // manual | spreadsheet | csv | schooldata
+  sourceType    String   @default("manual")
+  sourceRef     String?  // z. B. Spreadsheet-ID bei sourceType=spreadsheet
+  sourceData    String?  // JSON: hochgeladene CSV-Zeilen bzw. gecachte Empfaenger
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  logs          MailMergeLog[]
+
+  @@index([schoolId])
+}
+
+model MailMergeLog {
+  id             String   @id @default(cuid())
+  templateId     String
+  template       MailMergeTemplate @relation(fields: [templateId], references: [id], onDelete: Cascade)
+  recipientCount Int      @default(0)
+  channel        String   @default("pdf") // pdf | elternbrief
+  sentAt         DateTime @default(now())
+  detail         String?  // JSON: wer/wann/bestaetigt
+
+  @@index([templateId])
+}
+
 model Spreadsheet {
   id        String   @id @default(cuid())
   userId    String

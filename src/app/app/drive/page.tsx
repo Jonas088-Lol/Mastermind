@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { DriveView } from "@/components/office/DriveView";
 
-export const metadata: Metadata = { title: "Schul-Drive · MasterMind" };
+export const metadata: Metadata = { title: "MasterDrive · MasterMind" };
 
 export default function Page({
   searchParams,

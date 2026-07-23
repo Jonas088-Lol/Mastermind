@@ -21,7 +21,8 @@
       "Bash(grep -n -A3 \"const { session, role, base }\" src/app/app/dokumente/actions.ts)",
       "Bash(grep -rn 'href={`/app/' src/components/office/)",
       "Bash(node -e ' *)",
-      "Bash(grep -rnE '=[[:space:]]*\"[^\"`]*„' src/app src/components)"
+      "Bash(grep -rnE '=[[:space:]]*\"[^\"`]*„' src/app src/components)",
+      "Bash(node -e \"const i=require\\('lucide-react'\\); console.log\\('FolderSync',!!i.FolderSync,'DatabaseZap',!!i.DatabaseZap\\)\")"
     ]
   }
 }

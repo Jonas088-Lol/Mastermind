@@ -108,6 +108,16 @@ export const CREATE_ACTIONS: CreateAction[] = [
     navHref: "/teach/vorlagen",
   },
   {
+    id: "serienbrief",
+    label: "Serienbrief",
+    description: "Einen Brief an viele — mit persönlichen Platzhaltern aus Tabelle oder Liste.",
+    href: "/teach/serienbrief",
+    group: "material",
+    icon: "mail",
+    navHref: "/teach/serienbrief",
+    capability: "teacher.mail_merge",
+  },
+  {
     id: "ai",
     label: "KI-Generator",
     description: "Aufgaben von der KI vorschlagen lassen und an eine Klasse senden.",

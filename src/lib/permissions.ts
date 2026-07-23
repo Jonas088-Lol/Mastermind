@@ -21,6 +21,7 @@ export type Capability =
   | "teacher.ai_generator"
   | "teacher.parent_slots"
   | "teacher.parent_letters"
+  | "teacher.mail_merge"
   // Schüler
   | "student.ai_tutor"
   | "student.community"
@@ -73,6 +74,15 @@ export const CAPABILITIES: CapabilityDef[] = [
     label: "Eigene Elternbriefe einstellen",
     description:
       "Lehrkräfte können eigene Elternbriefe hochladen; Eltern bestätigen digital. Ohne dieses Recht bleibt das der Verwaltung vorbehalten.",
+    default: false,
+  },
+  {
+    id: "teacher.mail_merge",
+    role: "teacher",
+    group: "Kommunikation",
+    label: "Serienbrief",
+    description:
+      "Lehrkräfte können Serienbriefe aus Tabellen/Listen erstellen und als PDF oder digitalen Elternbrief versenden.",
     default: false,
   },
   {

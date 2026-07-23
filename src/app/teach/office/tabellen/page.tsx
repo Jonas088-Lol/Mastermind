@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { TabellenView } from "@/components/office/TabellenView";
 
-export const metadata: Metadata = { title: "Tabellen · MasterOffice" };
+export const metadata: Metadata = { title: "MasterCalc · MasterOffice" };
 
 export default function Page() {
   return <TabellenView basePath="/teach/office" />;

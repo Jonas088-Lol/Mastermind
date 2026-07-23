@@ -101,6 +101,7 @@ export default async function TeachLayout({
       : []),
     { href: "/teach/sitzplan", label: "Sitzplan", icon: "grid" },
     { href: "/teach/elternbrief", label: "Elternbrief", icon: "fileText" },
+    { href: "/teach/serienbrief", label: "Serienbrief", icon: "mail" },
     { href: "/teach/elterngespraeche", label: "Elterngespräche", icon: "userCheck" },
     { href: "/teach/elternsprechtag", label: "Elternsprechtag", icon: "calendarDays" },
     { href: "/teach/statistiken", label: "Statistiken", icon: "barChart3" },
@@ -108,10 +109,12 @@ export default async function TeachLayout({
     { href: "/teach/ressourcen", label: "Ressourcen", icon: "box" },
     { href: "/teach/notenschluessel", label: "Notenschlüssel", icon: "calculator" },
     { href: "/teach/masterspace", label: "MasterSpace", icon: "compass", modal: "masterspace" },
-    { href: "/teach/office/dokumente", label: "Dokumente", icon: "fileText" },
-    { href: "/teach/office/tabellen", label: "Tabellen", icon: "grid" },
-    { href: "/teach/office/praesentationen", label: "Präsentationen", icon: "monitor" },
-    { href: "/teach/office/drive", label: "Drive", icon: "hardDrive" },
+    { href: "/teach/office/dokumente", label: "MasterDoc", icon: "fileText" },
+    { href: "/teach/office/tabellen", label: "MasterCalc", icon: "grid" },
+    { href: "/teach/office/praesentationen", label: "MasterSlides", icon: "monitor" },
+    { href: "/teach/office/drive", label: "MasterDrive", icon: "hardDrive" },
+    { href: "/teach/office/folder", label: "MasterFolder", icon: "box" },
+    { href: "/teach/office/vault", label: "MasterVault", icon: "shield" },
   ];
 
   // Zusammengefasst: Reiter ausblenden, die der Erstellen-Hub abdeckt.

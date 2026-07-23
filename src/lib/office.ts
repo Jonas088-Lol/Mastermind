@@ -55,10 +55,12 @@ export interface OfficeTool {
 
 /** Die vier MasterOffice-Bereiche — Quelle für Navigation und Kategorien. */
 export const OFFICE_TOOLS: OfficeTool[] = [
-  { segment: "dokumente", label: "Dokumente", icon: "fileText" },
-  { segment: "tabellen", label: "Tabellen", icon: "grid" },
-  { segment: "praesentationen", label: "Präsentationen", icon: "monitor" },
-  { segment: "drive", label: "Drive", icon: "hardDrive" },
+  { segment: "dokumente", label: "MasterDoc", icon: "fileText" },
+  { segment: "tabellen", label: "MasterCalc", icon: "grid" },
+  { segment: "praesentationen", label: "MasterSlides", icon: "monitor" },
+  { segment: "drive", label: "MasterDrive", icon: "hardDrive" },
+  { segment: "folder", label: "MasterFolder", icon: "box" },
+  { segment: "vault", label: "MasterVault", icon: "shield" },
 ];
 
 /** Navigations-Einträge für eine Rolle (href + Label + Icon). */

@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { PraesentationenView } from "@/components/office/PraesentationenView";
 
-export const metadata: Metadata = { title: "Präsentationen · MasterOffice" };
+export const metadata: Metadata = { title: "MasterSlides · MasterOffice" };
 
 export default function Page() {
   return <PraesentationenView basePath="/teach/office" />;

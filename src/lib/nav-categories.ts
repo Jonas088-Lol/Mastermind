@@ -86,7 +86,7 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
     {
       id: "masteroffice",
       label: "MasterOffice",
-      items: ["/app/dokumente", "/app/tabellen", "/app/praesentationen", "/app/drive"],
+      items: ["/app/dokumente", "/app/tabellen", "/app/praesentationen", "/app/drive", "/app/folder", "/app/vault"],
     },
   ],
 
@@ -144,12 +144,13 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
         "/teach/elterngespraeche",
         "/teach/elternsprechtag",
         "/teach/elternbrief",
+        "/teach/serienbrief",
       ],
     },
     {
       id: "masteroffice",
       label: "MasterOffice",
-      items: ["/teach/office/dokumente", "/teach/office/tabellen", "/teach/office/praesentationen", "/teach/office/drive"],
+      items: ["/teach/office/dokumente", "/teach/office/tabellen", "/teach/office/praesentationen", "/teach/office/drive", "/teach/office/folder", "/teach/office/vault"],
     },
   ],
 
@@ -199,7 +200,7 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
     {
       id: "masteroffice",
       label: "MasterOffice",
-      items: ["/rektor/office/dokumente", "/rektor/office/tabellen", "/rektor/office/praesentationen", "/rektor/office/drive"],
+      items: ["/rektor/office/dokumente", "/rektor/office/tabellen", "/rektor/office/praesentationen", "/rektor/office/drive", "/rektor/office/folder", "/rektor/office/vault"],
     },
   ],
 
@@ -260,7 +261,7 @@ export const NAV_CATEGORIES: Record<string, NavCategoryDef[]> = {
     {
       id: "masteroffice",
       label: "MasterOffice",
-      items: ["/sekretariat/office/dokumente", "/sekretariat/office/tabellen", "/sekretariat/office/praesentationen", "/sekretariat/office/drive"],
+      items: ["/sekretariat/office/dokumente", "/sekretariat/office/tabellen", "/sekretariat/office/praesentationen", "/sekretariat/office/drive", "/sekretariat/office/folder", "/sekretariat/office/vault"],
     },
   ],
 

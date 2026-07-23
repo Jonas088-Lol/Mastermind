@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { PraesentationEditorView } from "@/components/office/PraesentationEditorView";
 
-export const metadata: Metadata = { title: "Präsentation · MasterMind" };
+export const metadata: Metadata = { title: "MasterSlides · MasterMind" };
 
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
   return <PraesentationEditorView params={params} />;
