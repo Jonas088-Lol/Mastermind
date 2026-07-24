@@ -82,6 +82,9 @@ model School {
   faviconUrl       String?
   accentColor      String?  // Primärfarbe (Hex)
   secondaryColor   String?  // Sekundärfarbe (Hex) — für Farbverläufe
+  // Standard-Hintergrund der Schule, getrennt für hellen und dunklen Modus.
+  bgLightColor     String?  // Hintergrund hell (Hex)
+  bgDarkColor      String?  // Hintergrund dunkel (Hex)
   brandName        String?  // Anzeigename (falls abweichend vom Schulnamen)
   featureSettings  String   @default("{}")  // JSON: { disabled: string[], windows: Record<string, {from: string, to: string}> }
   // Rollenrechte je Schule — JSON: { [rolle]: { [faehigkeit]: boolean } }.

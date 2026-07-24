@@ -2,12 +2,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-import { ImageIcon, Palette, Type } from "lucide-react";
+import { Type } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { BrandingColorPicker } from "@/components/admin/BrandingColorPicker";
+import { BrandingStudio } from "@/components/admin/BrandingStudio";
 import { prisma } from "@/lib/db/client";
 import { ROLE_HOME, effectiveRole, getSession } from "@/lib/session";
 import { saveBranding } from "./actions";
@@ -32,6 +32,8 @@ export default async function AdminBrandingPage() {
           faviconUrl: true,
           accentColor: true,
           secondaryColor: true,
+          bgLightColor: true,
+          bgDarkColor: true,
           plan: true,
         },
       })
@@ -41,7 +43,7 @@ export default async function AdminBrandingPage() {
   const secondary = school?.secondaryColor ?? "#74dcb0";
 
   return (
-    <div className="mx-auto flex max-w-2xl flex-col gap-8">
+    <div className="mx-auto flex max-w-4xl flex-col gap-6">
       <header>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-fg">Schul-Admin</p>
         <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Branding</h1>
@@ -115,22 +117,21 @@ export default async function AdminBrandingPage() {
               <p className="text-xs text-muted-fg">Wird im Dark Mode oder dunklen Seitenleisten verwendet. Optional — falls nicht gesetzt, wird das Standard-Logo verwendet.</p>
             </div>
 
-            {/* ── Markenfarbe ────────────────────────────────────────────── */}
-            <div className="space-y-2 pt-1">
-              <Label>
-                <div className="flex items-center gap-2">
-                  <Palette className="size-3.5" />
-                  Farben & Farbverläufe
-                </div>
-              </Label>
-              <p className="text-xs text-muted-fg">
-                Lege Primär- und Sekundärfarbe fest. Beide werden sofort plattformweit angewendet —
-                Buttons, Links, aktive Menüpunkte und Farbverläufe (Primär → Sekundär).
-              </p>
-              <BrandingColorPicker defaultAccent={accent} defaultSecondary={secondary} />
-            </div>
+            <Button type="submit" className="w-full sm:w-auto">Schulidentität speichern</Button>
+          </form>
+        </CardBody>
+      </Card>
 
-            {/* ── Favicon ────────────────────────────────────────────────── */}
+      {/* ── Farben: Voreinstellungen ODER Personalisierung ─────────────────── */}
+      <form action={saveBranding} className="space-y-6">
+        {/* Identitätsfelder erneut mitsenden wäre doppelt — dieses Formular
+            speichert ausschließlich die Farb- und Favicon-Einstellungen. */}
+        <BrandingStudio
+          defaultAccent={accent}
+          defaultSecondary={secondary}
+          defaultBgLight={school?.bgLightColor ?? null}
+          defaultBgDark={school?.bgDarkColor ?? null}
+          faviconSlot={
             <div className="space-y-1.5">
               <Label htmlFor="favicon">Favicon (Browser-Tab-Icon)</Label>
               {school?.faviconUrl && (
@@ -148,11 +149,11 @@ export default async function AdminBrandingPage() {
               <Input id="favicon" name="favicon" type="file" accept=".ico,.png,.svg" />
               <p className="text-xs text-muted-fg">PNG, SVG oder ICO · max. 2 MB · empfohlen: quadratisch, mind. 64 × 64 px</p>
             </div>
+          }
+        />
 
-            <Button type="submit" className="w-full sm:w-auto">Branding speichern</Button>
-          </form>
-        </CardBody>
-      </Card>
+        <Button type="submit" className="w-full sm:w-auto">Farben speichern</Button>
+      </form>
 
       {/* ── Logo-Vorschau ─────────────────────────────────────────────────── */}
       {school?.logoUrl && (

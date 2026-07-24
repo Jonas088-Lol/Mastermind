@@ -14,7 +14,7 @@ interface Props {
 export function SchoolBrandingInjector({ branding }: Props) {
   if (!branding) return null;
 
-  const { accentColor, secondaryColor, faviconUrl } = branding;
+  const { accentColor, secondaryColor, bgLightColor, bgDarkColor, faviconUrl } = branding;
 
   // Lightness um `delta` verschieben (für -dark/-glow-Varianten).
   const shiftL = (hsl: string, delta: number): string => {
@@ -51,7 +51,13 @@ export function SchoolBrandingInjector({ branding }: Props) {
     decls.push(`--accent:${brandHsl}`, `--accent-fg:${brandFg}`, `--accent-dark:${shiftL(brandHsl, -12)}`);
   }
 
-  const css = decls.length ? `:root{${decls.join(";")};}` : "";
+  // Schuleigene Hintergrundfarben — hell im :root, dunkel im .dark-Scope.
+  const bgLightHsl = bgLightColor ? hexToHsl(bgLightColor) : null;
+  const bgDarkHsl = bgDarkColor ? hexToHsl(bgDarkColor) : null;
+  if (bgLightHsl) decls.push(`--bg:${bgLightHsl}`);
+
+  const darkCss = bgDarkHsl ? `.dark{--bg:${bgDarkHsl};}` : "";
+  const css = (decls.length ? `:root{${decls.join(";")};}` : "") + darkCss;
 
   return (
     <>

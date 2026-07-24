@@ -12,6 +12,8 @@ export interface SchoolBranding {
   faviconUrl: string | null;
   accentColor: string | null;
   secondaryColor: string | null;
+  bgLightColor: string | null;
+  bgDarkColor: string | null;
 }
 
 async function _fetchSchoolBranding(schoolId: string): Promise<SchoolBranding | null> {
@@ -26,6 +28,8 @@ async function _fetchSchoolBranding(schoolId: string): Promise<SchoolBranding | 
       faviconUrl: true,
       accentColor: true,
       secondaryColor: true,
+      bgLightColor: true,
+      bgDarkColor: true,
     },
   });
   if (!school) return null;
@@ -38,6 +42,8 @@ async function _fetchSchoolBranding(schoolId: string): Promise<SchoolBranding | 
     faviconUrl: school.faviconUrl,
     accentColor: school.accentColor,
     secondaryColor: school.secondaryColor,
+    bgLightColor: school.bgLightColor,
+    bgDarkColor: school.bgDarkColor,
   };
 }
 

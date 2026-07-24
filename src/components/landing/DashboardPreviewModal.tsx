@@ -13,7 +13,7 @@ import { CoinIcon } from "@/components/ui/CoinIcon";
 import { BrandLogo } from "@/components/BrandLogo";
 import { cn } from "@/lib/utils";
 
-const SCREENS: { id: string; label: string; Icon: LucideIcon }[] = [
+export const SCREENS: { id: string; label: string; Icon: LucideIcon }[] = [
   { id: "dashboard", label: "Dashboard",    Icon: Home         },
   { id: "aufgaben",  label: "Aufgaben",     Icon: CheckSquare  },
   { id: "uebungen",  label: "Übungen",      Icon: Brain        },
@@ -24,7 +24,7 @@ const SCREENS: { id: string; label: string; Icon: LucideIcon }[] = [
   { id: "shop",      label: "Shop",         Icon: ShoppingBag  },
 ];
 
-type ScreenId = "dashboard" | "aufgaben" | "uebungen" | "ki-tutor" | "karten" | "noten" | "ranking" | "shop";
+export type ScreenId = "dashboard" | "aufgaben" | "uebungen" | "ki-tutor" | "karten" | "noten" | "ranking" | "shop";
 
 /* ─── Landing-Symboldesign helper ────────────────────────────── */
 function LandingIcon({
@@ -470,7 +470,7 @@ function ShopScreen() {
   );
 }
 
-const SCREEN_COMPONENTS: Record<ScreenId, () => React.JSX.Element> = {
+export const SCREEN_COMPONENTS: Record<ScreenId, () => React.JSX.Element> = {
   dashboard:  DashboardScreen,
   aufgaben:   AufgabenScreen,
   uebungen:   UebungenScreen,

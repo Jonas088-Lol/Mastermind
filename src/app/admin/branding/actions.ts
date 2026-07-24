@@ -42,27 +42,31 @@ export async function saveBranding(formData: FormData): Promise<void> {
   if (!session.schoolId) return;
 
   const schoolName = (formData.get("schoolName") as string | null)?.trim() ?? "";
-  if (!schoolName) return;
+  // Die Branding-Seite hat zwei getrennte Formulare (Identität / Farben).
+  // Deshalb nur setzen, was das jeweilige Formular auch mitschickt — sonst
+  // würde das Farb-Formular den Schulnamen leeren bzw. früh abbrechen.
+  const hasIdentity = formData.has("schoolName");
+  if (hasIdentity && !schoolName) return;
 
-  const brandName = (formData.get("brandName") as string | null)?.trim() || null;
   const accentColor = (formData.get("accentHex") as string | null)?.trim() ?? null;
   const secondaryColor = (formData.get("secondaryHex") as string | null)?.trim() ?? null;
+  const bgLightColor = (formData.get("bgLightHex") as string | null)?.trim() ?? null;
+  const bgDarkColor = (formData.get("bgDarkHex") as string | null)?.trim() ?? null;
   const logoFile = formData.get("logo") as File | null;
   const logoDarkFile = formData.get("logoDark") as File | null;
   const faviconFile = formData.get("favicon") as File | null;
 
-  const data: Record<string, unknown> = {
-    name: schoolName,
-    brandName,
-  };
-
-  if (accentColor && /^#[0-9a-fA-F]{6}$/.test(accentColor)) {
-    data.accentColor = accentColor;
+  const data: Record<string, unknown> = {};
+  if (hasIdentity) {
+    data.name = schoolName;
+    data.brandName = (formData.get("brandName") as string | null)?.trim() || null;
   }
 
-  if (secondaryColor && /^#[0-9a-fA-F]{6}$/.test(secondaryColor)) {
-    data.secondaryColor = secondaryColor;
-  }
+  const HEX = /^#[0-9a-fA-F]{6}$/;
+  if (accentColor && HEX.test(accentColor)) data.accentColor = accentColor;
+  if (secondaryColor && HEX.test(secondaryColor)) data.secondaryColor = secondaryColor;
+  if (bgLightColor && HEX.test(bgLightColor)) data.bgLightColor = bgLightColor;
+  if (bgDarkColor && HEX.test(bgDarkColor)) data.bgDarkColor = bgDarkColor;
 
   if (logoFile && logoFile.size > 0) {
     if (!(logoFile.type in ALLOWED_IMAGE_TYPES)) {
