@@ -24,7 +24,8 @@
       "Bash(grep -rnE '=[[:space:]]*\"[^\"`]*„' src/app src/components)",
       "Bash(node -e \"const i=require\\('lucide-react'\\); console.log\\('FolderSync',!!i.FolderSync,'DatabaseZap',!!i.DatabaseZap\\)\")",
       "Bash(grep -n \"async function\\\\|handleDelete\\\\|fetch\\(\\\\`/api/drive/files\\\\|Löschen\\\\|Trash2\\\\|Download\\\\|href=.*download\\\\|map\\(\\(f\\\\|visible.map\\\\|isPublic\" src/app/app/drive/drive-client.tsx)",
-      "Bash(python3 -c \"s=open\\('next.config.ts'\\).read\\(\\);print\\('{}',s.count\\('{'\\),s.count\\('}'\\),'\\(\\)',s.count\\('\\('\\),s.count\\('\\)'\\)\\)\")"
+      "Bash(python3 -c \"s=open\\('next.config.ts'\\).read\\(\\);print\\('{}',s.count\\('{'\\),s.count\\('}'\\),'\\(\\)',s.count\\('\\('\\),s.count\\('\\)'\\)\\)\")",
+      "Bash(python3 -c \"import yaml,sys; yaml.safe_load\\(open\\('docker-compose.yml'\\)\\); print\\('YAML valide'\\)\")"
     ]
   }
 }
