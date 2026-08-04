@@ -67,7 +67,7 @@ export function AppHeader({
         </div>
       )}
 
-      <header className="safe-top flex h-15 items-center gap-2 border-b border-border bg-bg/95 px-3 backdrop-blur-md supports-backdrop-filter:bg-bg/80 sm:h-16 sm:gap-3 sm:px-5 lg:h-17 lg:gap-4 lg:px-6">
+      <header className="safe-top flex h-15 items-center gap-2 border-b border-border bg-surface/95 px-3 backdrop-blur-md supports-backdrop-filter:bg-surface/80 sm:h-16 sm:gap-3 sm:px-5 lg:h-17 lg:gap-4 lg:px-6">
         {/* Mobile: Logo (Lupe) + Schriftzug — ersetzt die Suchleiste auf kleinen Screens */}
         <Link href={logoHref} className="flex flex-1 items-center gap-2 truncate lg:hidden" aria-label="Startseite">
           <BrandLogo height="h-7" showName={false} src={logoSrc} alt={appName ?? "MasterMind"} />
